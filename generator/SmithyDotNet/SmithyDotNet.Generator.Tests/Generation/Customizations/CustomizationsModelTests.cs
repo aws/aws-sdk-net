@@ -266,6 +266,31 @@ public class CustomizationsModelTests
         Assert.Contains("flattenShapes['DeleteObjectsRequest'] appears in more than one customizations file", ex.Message);
     }
 
+    // S3 keeps mergedEnums in its enums file and the other two in its main file.
+    [Fact]
+    public void Load_BaseClassAndEnumHooks_MergeAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "inheritAlternateBaseClass": { "PutObjectRequest": "PutWithACLRequest" }, "overrideTreatEnumsAsString": { "ObjectAttributesList": false } }""",
+            """{ "mergedEnums": { "MFADelete": "VersionStatus" } }""");
+
+        Assert.Equal("PutWithACLRequest", model.AlternateBaseClassFor("PutObjectRequest"));
+        Assert.Null(model.AlternateBaseClassFor("GetObjectRequest"));
+        Assert.Equal("VersionStatus", model.MergedEnums["MFADelete"]);
+        Assert.False(model.TreatsEnumsAsString("ObjectAttributesList"));
+        Assert.True(model.TreatsEnumsAsString("OtherList"));
+    }
+
+    [Theory]
+    [InlineData("""{ "inheritAlternateBaseClass": { "A": "B" } }""", "inheritAlternateBaseClass['A'] appears in more than one customizations file")]
+    [InlineData("""{ "mergedEnums": { "A": "B" } }""", "mergedEnums['A'] appears in more than one customizations file")]
+    [InlineData("""{ "overrideTreatEnumsAsString": { "A": false } }""", "overrideTreatEnumsAsString['A'] appears in more than one customizations file")]
+    public void Load_BaseClassAndEnumHooks_SameShapeInTwoFiles_Throws(string file, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(file, file));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     [Fact]
     public void Load_CombinesShapeModifiersAcrossFiles()
     {

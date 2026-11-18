@@ -309,10 +309,28 @@ public static class TypeMapper
             isNullableValueType = false;
         }
 
+        string dotNetType;
+        if (swap is not null)
+        {
+            dotNetType = swap.Type;
+        }
+        else if (isCollectionValue)
+        {
+            dotNetType = MapCollectionValueType(target, context, isSparse);
+        }
+        else if (target is ListShape enumList && !context.Customizations.TreatsEnumsAsString(member.Target.Name))
+        {
+            // overrideTreatEnumsAsString (S3's ObjectAttributesList): only the list's type names the enum, as C2J does. Its
+            // element descriptor stays a string, which the restXml writers convert to and from the ConstantClass implicitly.
+            dotNetType = $"List<{EnumTypeName(enumList.Member.Target, context)}>";
+        }
+        else
+        {
+            dotNetType = MapType(target, context);
+        }
+
         return new TypeDescriptor(
-            DotNetType: swap?.Type ?? (isCollectionValue
-                ? MapCollectionValueType(target, context, isSparse)
-                : MapType(target, context)),
+            DotNetType: dotNetType,
             Target: target,
             IsNullableValueType: swap is null ? isNullableValueType : swap.Type.EndsWith('?'),
             IsStructure: target is StructureShape,

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
@@ -290,6 +291,20 @@ public class TypeMapperTests
         Assert.Equal("string", element.DotNetType);
         Assert.True(element.IsString);
         Assert.False(element.IsEnum);
+    }
+
+    // S3's ObjectAttributesList: only the list's type names the enum; the writers keep reading and writing strings.
+    [Fact]
+    public void EnumListMember_WithOverrideTreatEnumsAsString_IsTypedByTheEnum()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OverrideTreatEnumsAsString["ChecksumAlgorithmList"] = false;
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "PutChecksummedThing");
+        var member = TypeMapper.ResolveMembers(operation.Input, context).Single(m => m.ModeledName == "algorithms");
+
+        Assert.Equal("List<ChecksumAlgorithm>", member.Type.DotNetType);
+        Assert.True(member.Type.ListElement?.IsString);
     }
 
     [Fact]

@@ -250,9 +250,9 @@ differ (see `marshalling`). Each `@streaming` union is emitted once, however man
 | Client class | `AmazonServiceClient, IAmazon{BaseName}` |
 | Service exception base | `AmazonServiceException` |
 | Service request base | `AmazonWebServiceRequest` |
-| Request classes | `Amazon{BaseName}Request` (the service request base), or `service.requestBaseClass` |
+| Request classes | `Amazon{BaseName}Request` (the service request base), or `service.requestBaseClass`; `inheritAlternateBaseClass` on the input wins over both |
 | Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream). With `service.streamingResponseBaseClass`, a response with a `@streaming` blob member derives from that class instead, without the member (the unmarshaller assigns its `ResponseStream`) |
-| Structure classes | No base type (plain class) |
+| Structure classes | No base type (plain class), or its `inheritAlternateBaseClass` (S3's `PartETag : IComparable<PartETag>`) |
 | Exception classes | `Amazon{BaseName}Exception` (the service exception base) |
 | Config class (`Amazon{BaseName}Config`) | `ClientConfig` |
 
@@ -410,6 +410,9 @@ Hooks that remove or reshape what is emitted:
   - The target keeps its class, as in C2J (S3's `Delete`), unless `excludeShapes` lists it.
   - It runs before `shapeModifiers`, which address the flattened members on the parent as C2J does, and drops their
     `@required` (C2J checks it against the parent).
+- `mergedEnums` (S3) copies an enum's values into the enum it maps to (deduplicated by value, before
+  `shapeModifiers`), and the merged enum gets no class. As in C2J, a member targeting it is still typed by its name, so
+  S3 `dataTypeSwap`s those members to the target.
 - `useWrappingResult` moves the output under one member, `wrappedResultMember`, of a new output structure. The response
   has a single property of the output's type, paginator paths go through it, and the JSON, CBOR and ec2Query response
   unmarshallers read it from the whole body.

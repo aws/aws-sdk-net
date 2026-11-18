@@ -308,6 +308,13 @@ public class GenerationContext
             throw new GeneratorException($"flattenShapes['{flattenedShape}'] flattens a payload, which is only supported for restXml.");
         }
 
+        // The element is still read as a string; restXml adds each one to the list (an implicit conversion), but the
+        // JSON and CBOR list unmarshallers build a List<string>.
+        if (Protocol is not AWSProtocol.RestXml && Customizations.OverrideTreatEnumsAsString.FirstOrDefault(entry => !entry.Value).Key is { } enumList)
+        {
+            throw new GeneratorException($"overrideTreatEnumsAsString['{enumList}'] types a list's elements as their enum, which is only supported for restXml.");
+        }
+
         // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
         var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
         foreach (var (operationName, modifier) in Customizations.OperationModifiers)
@@ -455,7 +462,7 @@ public class GenerationContext
         // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
         // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
         Enums = index.AllEnums
-            .Where(e => !Customizations.IsExcludedShape(e.Id.Name))
+            .Where(e => !Customizations.IsExcludedShape(e.Id.Name) && !Customizations.MergedEnums.ContainsKey(e.Id.Name))
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
 

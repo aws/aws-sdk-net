@@ -138,6 +138,16 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void OverrideTreatEnumsAsString_OutsideRestXml_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OverrideTreatEnumsAsString["StatusList"] = false;
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("overrideTreatEnumsAsString['StatusList'] types a list's elements as their enum, which is only supported for restXml.", ex.Message);
+    }
+
+    [Fact]
     public void EndpointResolverPartial_WithoutEndpointRuleSet_Throws()
     {
         var customizations = new CustomizationsModel { Service = new ServiceCustomizations { EndpointResolverPartial = true } };

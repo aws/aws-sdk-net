@@ -166,8 +166,13 @@
       "type": "structure",
       "members": {
         "checksumAlgorithm": { "target": "com.example#ChecksumAlgorithm", "traits": { "smithy.api#httpHeader": "x-amz-sdk-checksum-algorithm" } },
+        "algorithms": { "target": "com.example#ChecksumAlgorithmList", "traits": { "smithy.api#httpHeader": "x-algorithms" } },
         "details": { "target": "com.example#NestedThing", "traits": { "smithy.api#httpPayload": {} } }
       }
+    },
+    "com.example#ChecksumAlgorithmList": {
+      "type": "list",
+      "member": { "target": "com.example#ChecksumAlgorithm" }
     },
     "com.example#ChecksumAlgorithm": {
       "type": "enum",

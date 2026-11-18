@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Serialization;
@@ -66,6 +67,19 @@ public class EnumCodegenTests
 
         var enums = new ServiceEnumerationsWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
         Assert.Contains("""public static readonly InstanceType Num_0 = new InstanceType("0");""", enums);
+    }
+
+    // S3's ObjectStorageClass into StorageClass: the target takes the values, the merged enum has no class.
+    [Fact]
+    public void Emission_MergedEnum_AddsItsValuesToTheTargetOnly()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.MergedEnums["Category"] = "Status";
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var enums = new ServiceEnumerationsWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+        Assert.Contains("""public static readonly Status STANDARD = new Status("STANDARD");""", enums);
+        Assert.DoesNotContain("public class Category : ConstantClass", enums);
     }
 
     [Fact]

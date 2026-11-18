@@ -143,6 +143,28 @@
         "YES": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "yes" } }
       }
     },
+    "com.example#ObjectStorageClass": {
+      "type": "enum",
+      "members": {
+        "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } },
+        "GLACIER": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "GLACIER" } }
+      }
+    },
+    "com.example#ActionAlias": {
+      "type": "enum",
+      "members": {
+        "READ": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "READ" } }
+      }
+    },
+    "com.example#StorageClassMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "com.example#ObjectStorageClass" }
+    },
+    "com.example#StorageClassList": {
+      "type": "list",
+      "member": { "target": "com.example#ObjectStorageClass" }
+    },
     "com.example#InputStream": {
       "type": "union",
       "members": {

@@ -98,6 +98,10 @@ This matches C2J. Typing an element as its ConstantClass would be a public-API d
 SDK). A paginator's `items` element type follows the same element rules (string for an enum, nullability
 per rule 3), so the flattened enumerable agrees with the `List<T>` property it reads from.
 
+The one exception is `overrideTreatEnumsAsString` (S3, restXml only): a structure member targeting a listed
+`list<Status>` is `List<Status>`, as in C2J. Only the member's type changes; the element descriptor stays `string`, so
+the restXml writers convert through the ConstantClass's implicit operators. Maps are rejected (S3 only lists lists).
+
 ## Constrained Shapes
 
 Smithy allows constrained shapes (e.g. a `string` shape named `Uuid` with `@length` or `@pattern`). These do NOT get wrapper classes; they map to their underlying .NET type:

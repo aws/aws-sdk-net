@@ -488,6 +488,75 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    // mergedEnums
+
+    private static CustomizationsModel Merge(string source, string target)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.MergedEnums[source] = target;
+        return customizations;
+    }
+
+    [Fact]
+    public void MergedEnums_AddsValuesTheTargetLacks()
+    {
+        var model = Apply(Merge("ObjectStorageClass", "StorageClass"));
+
+        var target = Assert.IsType<EnumShape>(model.Shapes["com.example#StorageClass"]);
+        Assert.Equal(["STANDARD", "GLACIER"], target.Members.Values.Select(member => member.GetEnumValue()));
+    }
+
+    [Theory]
+    [InlineData("Grant", "StorageClass", "mergedEnums['Grant'] merges a shape that is not an enum, or into one")]
+    [InlineData("ObjectStorageClass", "Grant", "mergedEnums['ObjectStorageClass'] merges a shape that is not an enum, or into one")]
+    [InlineData("ObjectStorageClass", "NoSuchShape", "mergedEnums['ObjectStorageClass'] mergeInto 'NoSuchShape' does not match any shape")]
+    [InlineData("Taken", "Taken", "mergedEnums['Taken'] merges into 'Taken', which is itself merged")]
+    [InlineData("ActionAlias", "Action", "mergedEnums['ActionAlias'] adds member 'READ', which 'Action' has with a different value")]
+    public void MergedEnums_Invalid_Throws(string source, string target, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => Apply(Merge(source, target)));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    // inheritAlternateBaseClass, overrideTreatEnumsAsString
+
+    [Theory]
+    [InlineData("LegacyId", "Base", "inheritAlternateBaseClass['LegacyId'] targets a shape that is not a structure, or is an error")]
+    [InlineData("AccessDenied", "Base", "inheritAlternateBaseClass['AccessDenied'] targets a shape that is not a structure, or is an error")]
+    [InlineData("Grant", " ", "inheritAlternateBaseClass['Grant'] needs a non-empty base class")]
+    [InlineData("BucketPage", "Base", "inheritAlternateBaseClass['BucketPage'] targets an operation output, which is not supported")]
+    public void InheritAlternateBaseClass_Invalid_Throws(string shape, string baseClass, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.InheritAlternateBaseClass[shape] = baseClass;
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Theory]
+    [InlineData("NameList", "overrideTreatEnumsAsString['NameList'] targets a shape that is not a list of enums")]
+    [InlineData("StorageClassMap", "overrideTreatEnumsAsString['StorageClassMap'] targets a shape that is not a list of enums")]
+    [InlineData("Action", "overrideTreatEnumsAsString['Action'] targets a shape that is not a list of enums")]
+    public void OverrideTreatEnumsAsString_Invalid_Throws(string shape, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OverrideTreatEnumsAsString[shape] = false;
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void BaseClassAndEnumListHooks_Valid_Validate()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.InheritAlternateBaseClass["Grant"] = "Base";
+        customizations.OverrideTreatEnumsAsString["StorageClassList"] = false;
+
+        ApplyAndValidate(customizations);
+    }
+
     // excludeShapes, excludeMembers
 
     [Theory]

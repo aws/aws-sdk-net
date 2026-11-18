@@ -145,6 +145,18 @@ public class StructureWriterTests
         Assert.Contains("""context.Writer.WritePropertyName("created");""", marshaller);
     }
 
+    [Fact]
+    public void AlternateBaseClass_IsDerivedFrom()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.InheritAlternateBaseClass["ConflictDetails"] = "IComparable<ConflictDetails>";
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var output = new StructureWriter(context, ModelFileName)
+            .Write(context.Structures[ShapeId.Parse("com.example#ConflictDetails")], TestContext.Current.CancellationToken);
+        Assert.Contains("public partial class ConflictDetails : IComparable<ConflictDetails>", output);
+    }
+
     // C2J keys dataTypeSwap and emitIsSetProperties by the emitted name, so both reach a renamed member by its new one.
     [Fact]
     public void RenamedMember_HooksListedByNewName_Apply()

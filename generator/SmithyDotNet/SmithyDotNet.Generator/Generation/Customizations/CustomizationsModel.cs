@@ -159,6 +159,44 @@ public sealed record CustomizationsModel
     [JsonIgnore]
     public List<StructureShape> FlattenedTargets { get; } = [];
 
+    /// <summary>
+    /// Base classes, keyed by modeled structure name (an operation's input for its request), that the class derives
+    /// from instead of the default (S3's <c>PutObjectRequest : PutWithACLRequest</c>). Operation outputs are rejected.
+    /// </summary>
+    /// <remarks>
+    /// TODO: C2J's format is <c>"PutObjectRequest": { "alternateBaseClass": "PutWithACLRequest" }</c>; s3.customizations.json
+    /// must be changed to <c>"PutObjectRequest": "PutWithACLRequest"</c> when S3 migrates.
+    /// </remarks>
+    [JsonPropertyName("inheritAlternateBaseClass")]
+    public Dictionary<string, string> InheritAlternateBaseClass { get; init; } = [];
+
+    /// <summary>The <c>inheritAlternateBaseClass</c> base for modeled structure <paramref name="shapeName"/>, or null.</summary>
+    public string? AlternateBaseClassFor(string shapeName) => InheritAlternateBaseClass.GetValueOrDefault(shapeName);
+
+    /// <summary>
+    /// Enums, by modeled name, mapped to the enum their values are added to; they get no class of their own.
+    /// Applied by <see cref="Customizations.MergedEnums"/>.
+    /// </summary>
+    /// <remarks>
+    /// TODO: C2J's format is <c>"ObjectStorageClass": { "mergeInto": "StorageClass" }</c>; s3.customizations.enums.json
+    /// must be changed to <c>"ObjectStorageClass": "StorageClass"</c> when S3 migrates. Its MFADelete and MFADeleteStatus
+    /// merge into VersionStatus, which is only BucketVersioningStatus's renameShape name; C2J matches mergeInto by modeled
+    /// name, so they are no-ops there, while here they throw. Move both to excludeShapes instead: re-keying them to
+    /// BucketVersioningStatus would add a VersionStatus.Disabled the shipped SDK doesn't have.
+    /// </remarks>
+    [JsonPropertyName("mergedEnums")]
+    public Dictionary<string, string> MergedEnums { get; init; } = [];
+
+    /// <summary>
+    /// restXml-only: lists of enums, by modeled name, whose elements keep their <c>ConstantClass</c> type when
+    /// <c>false</c> (S3's <c>List&lt;ObjectAttributes&gt;</c>); by default they are <c>string</c>.
+    /// </summary>
+    [JsonPropertyName("overrideTreatEnumsAsString")]
+    public Dictionary<string, bool> OverrideTreatEnumsAsString { get; init; } = [];
+
+    /// <summary>False when <c>overrideTreatEnumsAsString</c> types list <paramref name="shapeName"/>'s elements as the enum.</summary>
+    public bool TreatsEnumsAsString(string shapeName) => OverrideTreatEnumsAsString.GetValueOrDefault(shapeName, true);
+
     /// <summary>True when <c>excludeShapes</c> lists modeled shape <paramref name="shapeName"/>.</summary>
     public bool IsExcludedShape(string shapeName) => ExcludeShapes.Contains(shapeName);
 
@@ -235,6 +273,9 @@ public sealed record CustomizationsModel
         var excludeShapes = new List<string>();
         var excludeMembers = new Dictionary<string, List<string>>();
         var flattenShapes = new Dictionary<string, List<string>>();
+        var inheritAlternateBaseClass = new Dictionary<string, string>();
+        var mergedEnums = new Dictionary<string, string>();
+        var overrideTreatEnumsAsString = new Dictionary<string, bool>();
 
         foreach (var path in paths)
         {
@@ -400,6 +441,30 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': flattenShapes['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            foreach (var (shapeName, baseClass) in file.InheritAlternateBaseClass)
+            {
+                if (!inheritAlternateBaseClass.TryAdd(shapeName, baseClass))
+                {
+                    throw new GeneratorException($"'{path}': inheritAlternateBaseClass['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
+            foreach (var (shapeName, merge) in file.MergedEnums)
+            {
+                if (!mergedEnums.TryAdd(shapeName, merge))
+                {
+                    throw new GeneratorException($"'{path}': mergedEnums['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
+            foreach (var (shapeName, treatAsString) in file.OverrideTreatEnumsAsString)
+            {
+                if (!overrideTreatEnumsAsString.TryAdd(shapeName, treatAsString))
+                {
+                    throw new GeneratorException($"'{path}': overrideTreatEnumsAsString['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
         return new CustomizationsModel
@@ -423,6 +488,9 @@ public sealed record CustomizationsModel
             ExcludeShapes = excludeShapes,
             ExcludeMembers = excludeMembers,
             FlattenShapes = flattenShapes,
+            InheritAlternateBaseClass = inheritAlternateBaseClass,
+            MergedEnums = mergedEnums,
+            OverrideTreatEnumsAsString = overrideTreatEnumsAsString,
         };
     }
 }

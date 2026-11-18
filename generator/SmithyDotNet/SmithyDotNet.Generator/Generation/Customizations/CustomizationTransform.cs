@@ -10,10 +10,10 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 /// <c>renameShape</c> adds a service <c>rename</c> entry; <c>locationName</c> sets <c>@ec2QueryName</c>) or a
 /// structural edit (a member-keyed <c>renameShape</c> copies the member's target; <c>exclude</c> unbinds an operation
 /// or drops members; <c>useWrappingResult</c> wraps an output; <c>emitAsShape</c> retargets members; <c>inject</c> adds
-/// one; <c>flattenShapes</c> replaces a payload with its members; <c>suppressResultGeneration</c> drops an output) is applied to the model; the rest, member renames included,
+/// one; <c>flattenShapes</c> replaces a payload with its members; <c>mergedEnums</c> copies enum values; <c>suppressResultGeneration</c> drops an output) is applied to the model; the rest, member renames included,
 /// are checked here and read from <see cref="GenerationContext.Customizations"/> by shape and member name where the
 /// member is resolved.
-/// Each hook family is applied by its own class (<see cref="ShapeSubstitutions"/>, <see cref="FlattenShapes"/>, <see cref="ShapeModifiers"/>,
+/// Each hook family is applied by its own class (<see cref="ShapeSubstitutions"/>, <see cref="FlattenShapes"/>, <see cref="MergedEnums"/>, <see cref="ShapeModifiers"/>,
 /// <see cref="OperationModifiers"/>). A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
@@ -25,6 +25,8 @@ public static class CustomizationTransform
         ShapeSubstitutions.Apply(model, customizations);
         // Before shapeModifiers, which address a flattened member on its new parent, as C2J does (S3's RestoreObjectRequest.Tier).
         FlattenShapes.Apply(model, customizations);
+        // Before shapeModifiers, so a merged value is a member of the target like any other.
+        MergedEnums.Apply(model, customizations);
         ShapeModifiers.Apply(model, customizations);
         OperationModifiers.Apply(model, customizations);
     }
@@ -148,6 +150,36 @@ public static class CustomizationTransform
                 {
                     throw new GeneratorException($"excludeMembers['{shapeName}'] lists member '{memberName}', which the shape does not have.");
                 }
+            }
+        }
+
+        // ExceptionWriter always derives from the service exception, so an error's entry would do nothing.
+        foreach (var (shapeName, baseClass) in customizations.InheritAlternateBaseClass)
+        {
+            if (FindSingleShape(model, shapeName, $"inheritAlternateBaseClass['{shapeName}']") is not StructureShape structure || structure.IsError())
+            {
+                throw new GeneratorException($"inheritAlternateBaseClass['{shapeName}'] targets a shape that is not a structure, or is an error.");
+            }
+
+            // No service gives a response an alternate base; OperationWriter would need to apply it.
+            if (model.Shapes.Values.OfType<OperationShape>().Any(operation => operation.Output == structure.Id))
+            {
+                throw new GeneratorException($"inheritAlternateBaseClass['{shapeName}'] targets an operation output, which is not supported.");
+            }
+
+            if (string.IsNullOrWhiteSpace(baseClass))
+            {
+                throw new GeneratorException($"inheritAlternateBaseClass['{shapeName}'] needs a non-empty base class.");
+            }
+        }
+
+        foreach (var shapeName in customizations.OverrideTreatEnumsAsString.Keys)
+        {
+            // S3 only lists lists; a map would also need its whole-map reads and writes changed.
+            if (FindSingleShape(model, shapeName, $"overrideTreatEnumsAsString['{shapeName}']") is not ListShape list
+                || model.Shapes.GetValueOrDefault(list.Member.Target.AbsoluteName) is not EnumShape)
+            {
+                throw new GeneratorException($"overrideTreatEnumsAsString['{shapeName}'] targets a shape that is not a list of enums.");
             }
         }
 

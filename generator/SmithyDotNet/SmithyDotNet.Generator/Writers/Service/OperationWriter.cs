@@ -38,7 +38,9 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     public string WriteRequest(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var baseClass = context.Customizations.Service?.RequestBaseClass ?? $"Amazon{context.BaseName}Request";
+        var baseClass = context.Customizations.AlternateBaseClassFor(operation.Input.Id.Name)
+            ?? context.Customizations.Service?.RequestBaseClass
+            ?? $"Amazon{context.BaseName}Request";
 
         // Cleanup the operation doc on its own first so its leading <p> wrapper is stripped,
         // then prepend the request preface so it reads as a single paragraph.

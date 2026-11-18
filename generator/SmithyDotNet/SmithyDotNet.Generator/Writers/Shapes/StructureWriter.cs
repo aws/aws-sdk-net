@@ -37,8 +37,17 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
             }
             // Fully qualified so it can't clash with a same-service {Namespace}.Model.IEventStreamEvent
             // (the per-stream interface generated for a union named "EventStream").
-            var declaration = isEventStreamEvent
-                ? $"public partial class {className} : Amazon.Runtime.EventStreams.IEventStreamEvent"
+            List<string> bases = [];
+            if (context.Customizations.AlternateBaseClassFor(structure.Id.Name) is { } baseClass)
+            {
+                bases.Add(baseClass);
+            }
+            if (isEventStreamEvent)
+            {
+                bases.Add("Amazon.Runtime.EventStreams.IEventStreamEvent");
+            }
+            var declaration = bases.Count > 0
+                ? $"public partial class {className} : {string.Join(", ", bases)}"
                 : $"public partial class {className}";
             writer.OpenBlock(declaration, () =>
             {

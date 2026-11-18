@@ -118,6 +118,20 @@ public class OperationWriterTests
         Assert.Contains("public partial class GetStreamingBlobPayloadRequest : AmazonWebServiceRequest", request);
     }
 
+    // Keyed by the modeled input, and ahead of service.requestBaseClass (S3's PutObjectRequest : PutWithACLRequest).
+    [Fact]
+    public void Request_WithAlternateBaseClass_DerivesFromIt()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { RequestBaseClass = "AmazonWebServiceRequest" } };
+        customizations.InheritAlternateBaseClass["DoStructurePayloadRequest"] = "PutWithACLRequest";
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), customizations);
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+
+        var request = writer.WriteRequest(context.Operations.Single(o => o.Name == "DoStructurePayload"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class DoStructurePayloadRequest : PutWithACLRequest", request);
+    }
+
     [Fact]
     public void Request_EmitsClassDocumentation()
     {
