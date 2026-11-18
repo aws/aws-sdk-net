@@ -60,6 +60,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AnalyticsConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AnalyticsConfigUnmarshaller.Instance;
+                    unmarshalledObject.AnalyticsConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ApplicationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationConfigUnmarshaller.Instance;

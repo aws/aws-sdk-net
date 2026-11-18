@@ -46,6 +46,20 @@ namespace Amazon.WAFV2.Model
     public partial class CreateWebACLRequest : AmazonWAFV2Request
     {
         /// <summary>
+        /// Gets and sets the property AnalyticsConfig. 
+        /// <para>
+        /// Specifies the security analytics configuration for the web ACL. For more information,
+        /// see <a>AnalyticsConfig</a>. 
+        /// </para>
+        /// </summary>
+        public AnalyticsConfig AnalyticsConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AnalyticsConfig property is set.
+        /// </summary>
+        internal bool IsSetAnalyticsConfig() => this.AnalyticsConfig != null;
+
+        /// <summary>
         /// Gets and sets the property ApplicationConfig. 
         /// <para>
         /// Configures the ability for the WAF console to store and retrieve application attributes

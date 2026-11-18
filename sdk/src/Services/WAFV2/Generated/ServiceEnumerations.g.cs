@@ -88,6 +88,47 @@ namespace Amazon.WAFV2
     }
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsMode.
+    /// </summary>
+    public class AnalyticsMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CROSS_REGION for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode CROSS_REGION = new AnalyticsMode("CROSS_REGION");
+
+        /// <summary>
+        /// Constant DISABLED for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode DISABLED = new AnalyticsMode("DISABLED");
+
+        /// <summary>
+        /// Constructs a custom AnalyticsMode for a value not among the defined constants.
+        /// </summary>
+        public AnalyticsMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsMode FindValue(string value)
+        {
+            return FindValue<AnalyticsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AssociatedResourceType.
     /// </summary>
     public class AssociatedResourceType : ConstantClass

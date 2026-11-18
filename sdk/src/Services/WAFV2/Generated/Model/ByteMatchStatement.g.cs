@@ -176,8 +176,9 @@ namespace Amazon.WAFV2.Model
         /// Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint
         /// is a 32-character hash derived from the TLS Client Hello of an incoming request. This
         /// fingerprint serves as a unique identifier for the client's TLS configuration. You
-        /// can use this choice only with a string match <c>ByteMatchStatement</c> with the <c>PositionalConstraint</c>
-        /// set to <c>EXACTLY</c>. 
+        /// can use this choice with a <c>ByteMatchStatement</c>, <c>RegexMatchStatement</c>,
+        /// <c>RegexPatternSetReferenceStatement</c>, or <c>SizeConstraintStatement</c>. You can't
+        /// use it with <c>SqliMatchStatement</c> or <c>XssMatchStatement</c>. 
         /// </para>
         ///  
         /// <para>
