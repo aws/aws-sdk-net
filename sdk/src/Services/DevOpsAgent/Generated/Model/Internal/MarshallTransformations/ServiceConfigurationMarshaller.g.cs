@@ -275,6 +275,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSourceAwsOrg())
+            {
+                context.Writer.WritePropertyName("sourceAwsOrg");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceAwsOrgConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceAwsOrg, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

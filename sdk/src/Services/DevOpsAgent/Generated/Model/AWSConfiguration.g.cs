@@ -108,5 +108,21 @@ namespace Amazon.DevOpsAgent.Model
         /// Checks to see if the AssumableRoleArn property is set.
         /// </summary>
         internal bool IsSetAssumableRoleArn() => this.AssumableRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceManagementRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps
+        /// uses to deploy and manage resources across the accounts in your Amazon Web Services
+        /// Organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ServiceManagementRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceManagementRoleArn property is set.
+        /// </summary>
+        internal bool IsSetServiceManagementRoleArn() => this.ServiceManagementRoleArn != null;
     }
 }

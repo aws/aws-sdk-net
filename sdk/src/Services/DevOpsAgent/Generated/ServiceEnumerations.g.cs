@@ -201,6 +201,47 @@ namespace Amazon.DevOpsAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type AwsSourceMode.
+    /// </summary>
+    public class AwsSourceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Organization for AwsSourceMode
+        /// </summary>
+        public static readonly AwsSourceMode Organization = new AwsSourceMode("organization");
+
+        /// <summary>
+        /// Constant Standalone for AwsSourceMode
+        /// </summary>
+        public static readonly AwsSourceMode Standalone = new AwsSourceMode("standalone");
+
+        /// <summary>
+        /// Constructs a custom AwsSourceMode for a value not among the defined constants.
+        /// </summary>
+        public AwsSourceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AwsSourceMode FindValue(string value)
+        {
+            return FindValue<AwsSourceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AwsSourceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CapabilityType.
     /// </summary>
     public class CapabilityType : ConstantClass
@@ -921,6 +962,72 @@ namespace Amazon.DevOpsAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrgSourceAccountReasonCode.
+    /// </summary>
+    public class OrgSourceAccountReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccessDenied for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode AccessDenied = new OrgSourceAccountReasonCode("accessDenied");
+
+        /// <summary>
+        /// Constant AccountNotInScope for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode AccountNotInScope = new OrgSourceAccountReasonCode("accountNotInScope");
+
+        /// <summary>
+        /// Constant AccountSuspended for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode AccountSuspended = new OrgSourceAccountReasonCode("accountSuspended");
+
+        /// <summary>
+        /// Constant DeploymentFailed for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode DeploymentFailed = new OrgSourceAccountReasonCode("deploymentFailed");
+
+        /// <summary>
+        /// Constant ManagementAccountNotSupported for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode ManagementAccountNotSupported = new OrgSourceAccountReasonCode("managementAccountNotSupported");
+
+        /// <summary>
+        /// Constant SecondaryAccountLimitExceeded for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode SecondaryAccountLimitExceeded = new OrgSourceAccountReasonCode("secondaryAccountLimitExceeded");
+
+        /// <summary>
+        /// Constant StackInstanceInoperable for OrgSourceAccountReasonCode
+        /// </summary>
+        public static readonly OrgSourceAccountReasonCode StackInstanceInoperable = new OrgSourceAccountReasonCode("stackInstanceInoperable");
+
+        /// <summary>
+        /// Constructs a custom OrgSourceAccountReasonCode for a value not among the defined constants.
+        /// </summary>
+        public OrgSourceAccountReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrgSourceAccountReasonCode FindValue(string value)
+        {
+            return FindValue<OrgSourceAccountReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrgSourceAccountReasonCode(string value)
         {
             return FindValue(value);
         }

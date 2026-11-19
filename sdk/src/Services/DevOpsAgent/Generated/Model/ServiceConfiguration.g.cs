@@ -307,5 +307,19 @@ namespace Amazon.DevOpsAgent.Model
         /// Checks to see if the SourceAws property is set.
         /// </summary>
         internal bool IsSetSourceAws() => this.SourceAws != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceAwsOrg. 
+        /// <para>
+        /// The Amazon Web Services Organization source configuration used to monitor resources
+        /// across an entire Amazon Web Services Organization or specified organizational units.
+        /// </para>
+        /// </summary>
+        public SourceAwsOrgConfiguration SourceAwsOrg { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceAwsOrg property is set.
+        /// </summary>
+        internal bool IsSetSourceAwsOrg() => this.SourceAwsOrg != null;
     }
 }

@@ -74,6 +74,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("assumableRoleArn");
                 context.Writer.WriteStringValue(requestObject.AssumableRoleArn);
             }
+
+            if (requestObject.IsSetServiceManagementRoleArn())
+            {
+                context.Writer.WritePropertyName("serviceManagementRoleArn");
+                context.Writer.WriteStringValue(requestObject.ServiceManagementRoleArn);
+            }
         }
 
         /// <summary>

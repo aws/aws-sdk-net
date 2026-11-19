@@ -36,6 +36,20 @@ namespace Amazon.DevOpsAgent.Model
     public partial class CreateAgentSpaceRequest : AmazonDevOpsAgentRequest
     {
         /// <summary>
+        /// Gets and sets the property AwsSourceMode. 
+        /// <para>
+        /// Specifies whether the AgentSpace's Amazon Web Services source configuration targets
+        /// an individual Amazon Web Services account or an Amazon Web Services Organization.
+        /// </para>
+        /// </summary>
+        public AwsSourceMode AwsSourceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsSourceMode property is set.
+        /// </summary>
+        internal bool IsSetAwsSourceMode() => this.AwsSourceMode != null;
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Client-provided token to ensure request idempotency. When the same token is provided

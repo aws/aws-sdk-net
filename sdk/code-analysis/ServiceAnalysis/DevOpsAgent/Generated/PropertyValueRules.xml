@@ -1099,6 +1099,12 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AWSConfiguration.ServiceManagementRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.AgentSpace.AgentSpaceId</property>
     <pattern>^[a-zA-Z0-9-]{1,64}$</pattern>
   </property-value-rule>
@@ -1518,6 +1524,19 @@
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.NewRelicApiKeyConfig.ApiKey</property>
     <pattern>^NRAK-[A-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.OrgSourceDeploymentState.DeployedAccountCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.OrgSourceIssue.AccountCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.OrgSourceIssue.Message</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.PagerDutyConfiguration.CustomerEmail</property>
@@ -1973,6 +1992,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov):iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.SourceAwsOrgUnit.OrganizationalUnitId</property>
+    <pattern>^(r-[0-9a-z]{4,32}|ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.TaskFilter.PrimaryTaskId</property>

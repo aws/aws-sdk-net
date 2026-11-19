@@ -68,6 +68,11 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAwsSourceMode())
+            {
+                context.Writer.WritePropertyName("awsSourceMode");
+                context.Writer.WriteStringValue(publicRequest.AwsSourceMode);
+            }
             if (publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

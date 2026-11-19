@@ -50,6 +50,21 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetAgentSpaceId() => this.AgentSpaceId != null;
 
         /// <summary>
+        /// Gets and sets the property AwsSourceMode. 
+        /// <para>
+        /// Specifies whether the AgentSpace's Amazon Web Services source configuration targets
+        /// an individual Amazon Web Services account or an Amazon Web Services Organization.
+        /// Use this parameter to switch an existing AgentSpace between source modes.
+        /// </para>
+        /// </summary>
+        public AwsSourceMode AwsSourceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsSourceMode property is set.
+        /// </summary>
+        internal bool IsSetAwsSourceMode() => this.AwsSourceMode != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The updated description of the AgentSpace.

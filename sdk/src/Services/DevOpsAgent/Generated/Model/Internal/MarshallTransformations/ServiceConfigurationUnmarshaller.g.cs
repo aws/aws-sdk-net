@@ -199,6 +199,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceAws = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("sourceAwsOrg", targetDepth, ref reader))
+                {
+                    var unmarshaller = SourceAwsOrgConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SourceAwsOrg = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
