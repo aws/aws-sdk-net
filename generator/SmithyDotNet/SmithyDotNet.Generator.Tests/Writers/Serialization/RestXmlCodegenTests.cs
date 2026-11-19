@@ -231,6 +231,133 @@ public class RestXmlCodegenTests
         Assert.DoesNotContain("PayloadThingUnmarshaller", source);
     }
 
+    // Listed by emitted name, as in S3's customizations. As in C2J, what the modeled members decide stays: the label,
+    // UseQueryString (S3's UploadPartRequest.PartNumber) and the host prefix.
+    [Fact]
+    public void Request_ExcludeFromMarshalling_SkipsTheMembers()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.RenameMember("trace", "TraceId");
+        modifier.ExcludeFromMarshalling.AddRange(["TraceId", "meta", "filter", "extra", "name", "id"]);
+        customizations.ShapeModifiers["PutThingRequest"] = modifier;
+        customizations.ShapeModifiers["RegionOpRequest"] = new ShapeModifier { ExcludeFromMarshalling = ["region"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var source = RequestMarshaller(context, "PutThing");
+        Assert.DoesNotContain("x-trace", source);
+        Assert.DoesNotContain("x-meta-", source);
+        Assert.DoesNotContain("publicRequest.Filter", source);
+        Assert.DoesNotContain("publicRequest.Extra", source);
+        Assert.DoesNotContain("ThingName", source);
+        Assert.Contains("request.UseQueryString = true;", source);
+        Assert.Contains("""request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));""", source);
+
+        var hostLabel = RequestMarshaller(context, "RegionOp");
+        Assert.Contains("var hostPrefixLabels = new", hostLabel);
+        Assert.Contains("""request.HostPrefix = $"{hostPrefixLabels.region}.";""", hostLabel);
+    }
+
+    // As in C2J: an excluded payload keeps the checksum call (S3's UploadPartRequest.InputStream), but with every
+    // body member excluded there is no generated body and no call.
+    [Fact]
+    public void Request_ExcludeFromMarshalling_ChecksumCallFollowsC2J()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["PutChecksummedBlobRequest"] = new ShapeModifier { ExcludeFromMarshalling = ["body"] };
+        customizations.FlattenShapes["PutChecksummedThingRequest"] = ["details"];
+        customizations.ShapeModifiers["PutChecksummedThingRequest"] = new ShapeModifier { ExcludeFromMarshalling = ["note", "nsAttr"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var payload = RequestMarshaller(context, "PutChecksummedBlob");
+        Assert.DoesNotContain("publicRequest.Body", payload);
+        Assert.Contains("ChecksumUtils.SetChecksumData(", payload);
+
+        Assert.DoesNotContain("ChecksumUtils", RequestMarshaller(context, "PutChecksummedThing"));
+    }
+
+    [Fact]
+    public void ExcludeFromUnmarshalling_SkipsTheMemberInResponseAndStructure()
+    {
+        var customizations = new CustomizationsModel();
+        var response = TestCustomizations.RenameMember("created", "CreatedAt");
+        response.ExcludeFromUnmarshalling.AddRange(["thingId", "CreatedAt"]);
+        customizations.ShapeModifiers["PutThingResponse"] = response;
+        customizations.ShapeModifiers["Thing"] = new ShapeModifier { ExcludeFromUnmarshalling = ["arn"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var responseSource = ResponseUnmarshaller(context, "PutThing");
+        Assert.DoesNotContain("x-thing-id", responseSource);
+        Assert.DoesNotContain("""context.TestExpression("created", targetDepth)""", responseSource);
+        Assert.Contains("""if (context.TestExpression("props", targetDepth))""", responseSource);
+
+        var structureSource = new XmlStructureUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Structures[Thing], TestContext.Current.CancellationToken);
+        Assert.DoesNotContain("""context.TestExpression("arn", targetDepth)""", structureSource);
+        Assert.Contains("""if (context.TestExpression("detail", targetDepth))""", structureSource);
+    }
+
+    // S3's UploadPartOutput.PartNumber: as in C2J, no body member left means no UnmarshallResult.
+    [Fact]
+    public void Response_ExcludeFromUnmarshalling_EveryBodyMember_EmitsNoUnmarshallResult()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["PutThingResponse"] = new ShapeModifier { ExcludeFromUnmarshalling = ["created", "data", "things", "props", "nestedProps"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        Assert.DoesNotContain("UnmarshallResult", ResponseUnmarshaller(context, "PutThing"));
+    }
+
+    // S3's FilterRule.Name, and PutObjectRequest.ContentType: an excluded header, which hand-written code sends.
+    [Fact]
+    public void Request_SkipXmlIsSet_SendsTheElementUnguarded()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify("trace", new PropertyModifier { SkipXmlIsSet = true });
+        modifier.ExcludeFromMarshalling.Add("trace");
+        customizations.ShapeModifiers["PutThingRequest"] = TestCustomizations.Modify("name", new PropertyModifier { SkipXmlIsSet = true }, modifier);
+        var source = RequestMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "PutThing");
+
+        Assert.DoesNotContain("x-trace", source);
+        Assert.DoesNotContain("publicRequest.IsSetName()", source);
+        Assert.Contains("""context.Writer.WriteElementString("ThingName", StringUtils.FromString(publicRequest.Name));""", source);
+    }
+
+    [Theory]
+    [InlineData("filter", "Filter", false)]
+    [InlineData("trace", "Trace", false)]
+    [InlineData("region", "Region", false)]
+    [InlineData("count", "Count", false)]
+    [InlineData("token", "Token", false)]
+    // An excluded label is still written.
+    [InlineData("id", "Id", true)]
+    public void Request_SkipXmlIsSet_NotAStringElement_Throws(string member, string property, bool excluded)
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify(member, new PropertyModifier { SkipXmlIsSet = true });
+        if (excluded)
+        {
+            modifier.ExcludeFromMarshalling.Add(member);
+        }
+
+        customizations.ShapeModifiers["PutThingRequest"] = modifier;
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var ex = Assert.Throws<GeneratorException>(() => RequestMarshaller(context, "PutThing"));
+        Assert.Equal($"shapeModifiers['PutThingRequest'] sets skipXmlIsSet on member '{property}', which is only supported for a string body element.", ex.Message);
+    }
+
+    // S3's Delete.Objects: the flattened target loses its IsSet, the request that takes the member keeps its own.
+    [Fact]
+    public void Request_SkipXmlIsSet_OnAFlattenedTarget_KeepsTheRequestGuard()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["PutPayloadRequest"] = ["details"];
+        customizations.ShapeModifiers["NestedThing"] = TestCustomizations.Modify("nsAttr", new PropertyModifier { SkipXmlIsSet = true });
+        var source = RequestMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "PutPayload");
+
+        Assert.Contains("if (publicRequest.IsSetNsAttr())", source);
+    }
+
     [Fact]
     public void Response_S3UnwrappedXmlOutput_ReadsTheMemberAtTheRoot()
     {

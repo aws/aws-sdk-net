@@ -183,8 +183,13 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     // algorithms it may validate through these AmazonWebServiceRequest overrides.
     private static void WriteResponseChecksumOverrides(CodeWriter writer, List<Member> members, string modeMemberName, IReadOnlyList<string> responseAlgorithms)
     {
-        var mode = members.FirstOrDefault(member => member.ModeledName == modeMemberName)?.PropertyName
-            ?? throw new GeneratorException($"httpChecksum requestValidationModeMember '{modeMemberName}' is not a member of the input.");
+        var modeMember = members.FirstOrDefault(member => member.ModeledName == modeMemberName) ?? throw new GeneratorException($"httpChecksum requestValidationModeMember '{modeMemberName}' is not a member of the input.");
+        if (modeMember.SkipIsSet)
+        {
+            throw new GeneratorException($"httpChecksum requestValidationModeMember '{modeMemberName}' sets skipXmlIsSet, but CoreChecksumMode needs its IsSet method.");
+        }
+
+        var mode = modeMember.PropertyName;
         var algorithms = responseAlgorithms.Where(ValidatableResponseAlgorithms.Contains).Select(algorithm => $"CoreChecksumAlgorithm.{algorithm}");
 
         writer.WriteLine();

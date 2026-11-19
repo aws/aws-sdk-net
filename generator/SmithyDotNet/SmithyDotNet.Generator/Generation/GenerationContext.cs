@@ -315,6 +315,14 @@ public class GenerationContext
             throw new GeneratorException($"overrideTreatEnumsAsString['{enumList}'] types a list's elements as their enum, which is only supported for restXml.");
         }
 
+        foreach (var (shapeName, modifier) in Customizations.ShapeModifiers)
+        {
+            if (modifier.HasRestXmlHooks() && Protocol is not AWSProtocol.RestXml)
+            {
+                throw new GeneratorException($"shapeModifiers['{shapeName}'] sets excludeFromMarshalling, excludeFromUnmarshalling or skipXmlIsSet, which are only supported for restXml.");
+            }
+        }
+
         // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
         var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
         foreach (var (operationName, modifier) in Customizations.OperationModifiers)

@@ -93,7 +93,6 @@ public sealed class HttpRequestBindings(GenerationContext context)
     //https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
     public void WriteQueryStringMembers(CodeWriter writer, List<(Member Member, string QueryName)> queryMembers)
     {
-        // TODO: handle customizations, such as exclusions in marshalling
         foreach (var (member, queryName) in queryMembers)
         {
             // An idempotency token is auto-populated, so it is never "required from the customer".
@@ -362,9 +361,11 @@ public sealed class HttpRequestBindings(GenerationContext context)
         var labelMembers = new List<Member>();
         var bodyMembers = new List<Member>();
         var hostLabelMembers = new List<Member>();
+        var writtenMembers = new List<Member>();
         Member? payloadMember = null;
         Member? queryParamsMember = null;
         (Member Member, string Prefix)? prefixHeadersMember = null;
+        var useQueryString = false;
 
         foreach (var member in members)
         {
@@ -382,6 +383,27 @@ public sealed class HttpRequestBindings(GenerationContext context)
                 }
             }
 
+            // @hostLabel is additive: a member can be bound to a bucket below AND contribute to the
+            // endpoint host prefix, so it is collected independently rather than in the else-if chain.
+            if (memberShape.IsHostLabel())
+            {
+                hostLabelMembers.Add(member);
+            }
+
+            // Counted before the exclusion below: hand-written code still sends an excluded query member.
+            if (httpBindings && (httpQuery is not null || memberShape.IsHttpQueryParams()))
+            {
+                useQueryString = true;
+            }
+
+            // excludeFromMarshalling: hand-written code sends the member, so it joins no bucket. As in C2J,
+            // a label is still written and a payload still counts as the body (for the checksum call).
+            if (member.IsExcludedFromMarshalling && !memberShape.IsHttpLabel() && !memberShape.IsHttpPayload())
+            {
+                continue;
+            }
+
+            writtenMembers.Add(member);
             if (!httpBindings)
             {
                 if (member.Type.IsEventStream)
@@ -438,13 +460,6 @@ public sealed class HttpRequestBindings(GenerationContext context)
             {
                 bodyMembers.Add(member);
             }
-
-            // @hostLabel is additive: a member can be bound to a bucket above AND contribute to the
-            // endpoint host prefix, so it is collected independently rather than in the else-if chain.
-            if (memberShape.IsHostLabel())
-            {
-                hostLabelMembers.Add(member);
-            }
         }
 
         // On HTTP protocols, @httpPayload excludes other body members. On awsJson the stream is the
@@ -455,7 +470,16 @@ public sealed class HttpRequestBindings(GenerationContext context)
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");
         }
 
-        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, hostLabelMembers, payloadMember, queryParamsMember, prefixHeadersMember);
+        // skipXmlIsSet leaves no IsSet method, and every emitter but the body's guards on it.
+        foreach (var member in writtenMembers)
+        {
+            if (member.SkipIsSet && !bodyMembers.Contains(member))
+            {
+                throw new GeneratorException(XmlBodyMemberMarshaller.UnsupportedSkipXmlIsSet(input, member));
+            }
+        }
+
+        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, hostLabelMembers, payloadMember, queryParamsMember, prefixHeadersMember, useQueryString);
     }
 }
 
@@ -471,4 +495,5 @@ public record PartitionedMembers(
     List<Member> HostLabelMembers,
     Member? PayloadMember,
     Member? QueryParamsMember,
-    (Member Member, string Prefix)? PrefixHeadersMember);
+    (Member Member, string Prefix)? PrefixHeadersMember,
+    bool UseQueryString);

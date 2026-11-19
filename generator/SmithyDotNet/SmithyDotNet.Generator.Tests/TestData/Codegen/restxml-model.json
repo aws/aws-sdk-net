@@ -13,6 +13,7 @@
         { "target": "com.example#GetLocation" },
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
+        { "target": "com.example#PutChecksummedBlob" },
         { "target": "com.example#AccountOp" },
         { "target": "com.example#RegionOp" },
         { "target": "com.example#GetItem" },
@@ -41,6 +42,8 @@
         "id":      { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
         "filter":  { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } },
         "trace":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
+        "meta":    { "target": "com.example#LabelMap", "traits": { "smithy.api#httpPrefixHeaders": "x-meta-" } },
+        "extra":   { "target": "com.example#LabelMap", "traits": { "smithy.api#httpQueryParams": {} } },
         "region":  { "target": "smithy.api#String", "traits": { "smithy.api#xmlAttribute": {} } },
         "name":    { "target": "smithy.api#String", "traits": { "smithy.api#xmlName": "ThingName" } },
         "count":   { "target": "smithy.api#Integer" },
@@ -169,13 +172,30 @@
       "output": { "target": "smithy.api#Unit" },
       "traits": {
         "smithy.api#http": { "uri": "/checksummed/{id}", "method": "GET" },
-        "aws.protocols#httpChecksum": { "requestChecksumRequired": true }
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true, "requestValidationModeMember": "checksumMode", "responseAlgorithms": ["CRC32"] }
+      }
+    },
+    "com.example#PutChecksummedBlob": {
+      "type": "operation",
+      "input": { "target": "com.example#PutChecksummedBlobRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/checksummed-blob", "method": "PUT" },
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true, "requestAlgorithmMember": "checksumAlgorithm" }
+      }
+    },
+    "com.example#PutChecksummedBlobRequest": {
+      "type": "structure",
+      "members": {
+        "checksumAlgorithm": { "target": "com.example#ChecksumAlgorithm", "traits": { "smithy.api#httpHeader": "x-amz-sdk-checksum-algorithm" } },
+        "body": { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {} } }
       }
     },
     "com.example#GetChecksummedThingRequest": {
       "type": "structure",
       "members": {
-        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+        "id": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "checksumMode": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-amz-checksum-mode" } }
       }
     },
     "com.example#PutChecksummedThingRequest": {

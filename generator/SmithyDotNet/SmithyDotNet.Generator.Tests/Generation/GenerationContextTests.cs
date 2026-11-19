@@ -126,6 +126,24 @@ public class GenerationContextTests
     }
 
     [Theory]
+    [InlineData("excludeFromMarshalling")]
+    [InlineData("excludeFromUnmarshalling")]
+    [InlineData("skipXmlIsSet")]
+    public void MarshallingExclusionHooks_OutsideRestXml_Throw(string hook)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["GetThingRequest"] = hook switch
+        {
+            "excludeFromMarshalling" => new ShapeModifier { ExcludeFromMarshalling = ["id"] },
+            "excludeFromUnmarshalling" => new ShapeModifier { ExcludeFromUnmarshalling = ["id"] },
+            _ => TestCustomizations.Modify("id", new PropertyModifier { SkipXmlIsSet = true }),
+        };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("shapeModifiers['GetThingRequest'] sets excludeFromMarshalling, excludeFromUnmarshalling or skipXmlIsSet, which are only supported for restXml.", ex.Message);
+    }
+
+    [Theory]
     [InlineData("Codegen/codegen-model.json")]
     [InlineData("Codegen/rpcv2cbor-model.json")]
     public void FlattenShapes_OutsideRestXml_Throws(string modelPath)

@@ -139,7 +139,7 @@ internal static class ShapeSubstitutions
         {
             throw new GeneratorException($"{context} modifies a shape substituted by '{to}', which a request already sends; the modifiers can't apply to the substituted members alone.");
         }
-        if (modifier.Exclude.Count > 0 || modifier.DeprecatedMessage is not null)
+        if (modifier.HasExclusions() || modifier.DeprecatedMessage is not null)
         {
             throw new GeneratorException($"{context} modifies a substituted shape, which only supports modify and inject.");
         }
@@ -150,6 +150,7 @@ internal static class ShapeSubstitutions
         foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
         {
             if (property.DeprecatedMessage is not null || property.AccessModifier is not null || property.OverridesBaseMember
+                || property.SkipXmlIsSet
                 || (property.EmitPropertyName ?? memberName) != customizations.EmittedName(newName, memberName))
             {
                 throw new GeneratorException($"{context} modifies '{memberName}' in a way that changes the emitted '{newName}' class; only locationName and customMarshall are supported.");

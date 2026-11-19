@@ -235,6 +235,31 @@ public class CustomizationsModelTests
         Assert.True(model.IsExcludedMember("S3ObjectVersion", "Key"));
     }
 
+    // The lists hold emitted names; the lookups take the modeled one.
+    [Fact]
+    public void Load_MarshallingExclusionsAndSkipXmlIsSet()
+    {
+        var model = LoadFiles(
+            """
+            {
+              "shapeModifiers": {
+                "PutObjectRequest": {
+                  "modify": [
+                    { "Tagging": { "emitPropertyName": "TagSet" } },
+                    { "ContentType": { "skipXmlIsSet": true } }
+                  ],
+                  "excludeFromMarshalling": ["TagSet"],
+                  "excludeFromUnmarshalling": ["Expiration"]
+                }
+              }
+            }
+            """);
+
+        Assert.True(model.IsExcludedFromMarshalling("PutObjectRequest", "Tagging"));
+        Assert.True(model.IsExcludedFromUnmarshalling("PutObjectRequest", "Expiration"));
+        Assert.True(model.SkipsXmlIsSet("PutObjectRequest", "ContentType"));
+    }
+
     [Theory]
     [InlineData("""{ "excludeShapes": ["Protocol"] }""", "excludeShapes lists 'Protocol' more than once")]
     [InlineData("""{ "excludeMembers": { "PartDetail": ["Size"] } }""", "excludeMembers['PartDetail'] appears in more than one customizations file")]

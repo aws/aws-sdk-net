@@ -93,6 +93,11 @@ public static class MemberWriter
             writer.WriteLine($"{declaration} {{ get; set; }}");
         }
 
+        if (member.SkipIsSet)
+        {
+            return;
+        }
+
         writer.WriteLine();
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Checks to see if the {member.PropertyName} property is set.");

@@ -312,6 +312,18 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void ResponseChecksumMode_WithSkipXmlIsSet_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["GetChecksummedThingRequest"] = TestCustomizations.Modify("checksumMode", new PropertyModifier { SkipXmlIsSet = true });
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "GetChecksummedThing");
+
+        var ex = Assert.Throws<GeneratorException>(() => new OperationWriter(context, "example-2023-01-01.normal.json").WriteRequest(operation, TestContext.Current.CancellationToken));
+        Assert.Equal("httpChecksum requestValidationModeMember 'checksumMode' sets skipXmlIsSet, but CoreChecksumMode needs its IsSet method.", ex.Message);
+    }
+
+    [Fact]
     public void Response_OmitsContentLengthMember()
     {
         // AmazonWebServiceResponse already declares ContentLength, so the member is skipped; other members are unaffected.

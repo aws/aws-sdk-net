@@ -30,8 +30,6 @@ internal static class ShapeModifiers
             // An inject's originalMember names a member as modeled, which exclude drops.
             var modeledMembers = new Dictionary<string, MemberShape>();
 
-            // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
-            // wire, so they need a marshalling-level flag rather than this removal.
             foreach (var memberName in modifier.Exclude)
             {
                 if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName, out var removed))
@@ -79,7 +77,7 @@ internal static class ShapeModifiers
     // becomes one entry per structure.
     private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
     {
-        if (global.Exclude.Count > 0 || global.DeprecatedMessage is not null)
+        if (global.HasExclusions() || global.DeprecatedMessage is not null)
         {
             throw new GeneratorException("shapeModifiers['*'] only supports modify.");
         }

@@ -214,6 +214,26 @@ public sealed record CustomizationsModel
         (PropertyModifierFor(shapeName, memberName)?.CustomMarshall ?? false)
         || (ShapeModifiers.TryGetValue(shapeName, out var modifier) && (modifier.InjectorFor(memberName)?.CustomMarshall ?? false));
 
+    /// <summary>
+    /// True when <c>excludeFromMarshalling</c> lists modeled member <paramref name="memberName"/> by its
+    /// <see cref="EmittedName"/>: hand-written code sends it.
+    /// </summary>
+    public bool IsExcludedFromMarshalling(string shapeName, string memberName) =>
+        ShapeModifiers.TryGetValue(shapeName, out var modifier) && modifier.ExcludeFromMarshalling.Contains(EmittedName(shapeName, memberName));
+
+    /// <summary>
+    /// True when <c>excludeFromUnmarshalling</c> lists modeled member <paramref name="memberName"/> by its
+    /// <see cref="EmittedName"/>: hand-written code reads it.
+    /// </summary>
+    public bool IsExcludedFromUnmarshalling(string shapeName, string memberName) =>
+        ShapeModifiers.TryGetValue(shapeName, out var modifier) && modifier.ExcludeFromUnmarshalling.Contains(EmittedName(shapeName, memberName));
+
+    /// <summary>
+    /// True when <c>skipXmlIsSet</c> leaves modeled member <paramref name="memberName"/> without an <c>IsSet</c>
+    /// method, so the restXml request marshaller sends it even when unset.
+    /// </summary>
+    public bool SkipsXmlIsSet(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.SkipXmlIsSet ?? false;
+
     /// <summary>True when <c>accessModifier</c> makes modeled member <paramref name="memberName"/> <c>internal</c>, the only value supported.</summary>
     public bool IsInternal(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AccessModifier == "internal";
 
@@ -631,9 +651,24 @@ public sealed record ShapeModifier
     [JsonPropertyName("exclude")]
     public List<string> Exclude { get; init; } = [];
 
+    /// <summary>restXml-only: see <see cref="CustomizationsModel.IsExcludedFromMarshalling"/>.</summary>
+    [JsonPropertyName("excludeFromMarshalling")]
+    public List<string> ExcludeFromMarshalling { get; init; } = [];
+
+    /// <summary>restXml-only: see <see cref="CustomizationsModel.IsExcludedFromUnmarshalling"/>.</summary>
+    [JsonPropertyName("excludeFromUnmarshalling")]
+    public List<string> ExcludeFromUnmarshalling { get; init; } = [];
+
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+
+    /// <summary>True when any of the three exclusion lists has an entry.</summary>
+    public bool HasExclusions() => Exclude.Count > 0 || ExcludeFromMarshalling.Count > 0 || ExcludeFromUnmarshalling.Count > 0;
+
+    /// <summary>True when the modifier sets <c>excludeFromMarshalling</c>, <c>excludeFromUnmarshalling</c> or a member's <c>skipXmlIsSet</c>.</summary>
+    public bool HasRestXmlHooks() => ExcludeFromMarshalling.Count > 0 || ExcludeFromUnmarshalling.Count > 0
+        || Modify.SelectMany(entry => entry).Any(entry => entry.Value.SkipXmlIsSet);
 
     /// <summary>The <c>modify</c> entry for <paramref name="memberName"/>, or null.</summary>
     public PropertyModifier? PropertyFor(string memberName) => Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value;
@@ -672,6 +707,10 @@ public sealed record PropertyModifier
     /// <summary>The property's accessibility instead of <c>public</c>; only <c>internal</c> is accepted (ec2's SDK-filled PresignedUrl).</summary>
     [JsonPropertyName("accessModifier")]
     public string? AccessModifier { get; init; }
+
+    /// <summary>restXml-only: see <see cref="CustomizationsModel.SkipsXmlIsSet"/>.</summary>
+    [JsonPropertyName("skipXmlIsSet")]
+    public bool SkipXmlIsSet { get; init; }
 }
 
 /// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>

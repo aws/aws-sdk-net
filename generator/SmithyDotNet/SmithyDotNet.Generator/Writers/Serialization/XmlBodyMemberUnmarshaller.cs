@@ -25,6 +25,9 @@ internal static class XmlBodyMemberUnmarshaller
     /// </summary>
     public static void WriteMemberBlocks(CodeWriter writer, StructureShape owner, List<Member> members, string? depthExpr, AWSProtocol protocol)
     {
+        // excludeFromUnmarshalling: a response's members are already out of its partition, a nested structure's are not.
+        members = [.. members.Where(member => !member.IsExcludedFromUnmarshalling)];
+
         for (var i = 0; i < members.Count; i++)
         {
             var member = members[i];

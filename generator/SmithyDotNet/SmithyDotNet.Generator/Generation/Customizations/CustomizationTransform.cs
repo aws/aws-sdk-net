@@ -153,6 +153,34 @@ public static class CustomizationTransform
             }
         }
 
+        foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
+        {
+            if (modifier.ExcludeFromMarshalling.Count == 0 && modifier.ExcludeFromUnmarshalling.Count == 0)
+            {
+                continue;
+            }
+
+            // Only the request marshaller reads the first list, and only the response and structure unmarshallers the second.
+            var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
+            var isInput = model.Shapes.Values.OfType<OperationShape>().Any(operation => operation.Input == shape.Id);
+            if (modifier.ExcludeFromMarshalling.Count > 0 && !isInput)
+            {
+                throw new GeneratorException($"shapeModifiers['{shapeName}'] sets excludeFromMarshalling, but is not an operation's input.");
+            }
+            if (modifier.ExcludeFromUnmarshalling.Count > 0 && isInput)
+            {
+                throw new GeneratorException($"shapeModifiers['{shapeName}'] sets excludeFromUnmarshalling, but is an operation's input.");
+            }
+
+            foreach (var memberName in modifier.ExcludeFromMarshalling.Concat(modifier.ExcludeFromUnmarshalling))
+            {
+                if (shape is not StructureShape structure || FindByEmittedName(structure, shapeName, memberName, customizations) is null)
+                {
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}' from (un)marshalling, which the shape does not have.");
+                }
+            }
+        }
+
         // ExceptionWriter always derives from the service exception, so an error's entry would do nothing.
         foreach (var (shapeName, baseClass) in customizations.InheritAlternateBaseClass)
         {

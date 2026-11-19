@@ -182,6 +182,14 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         foreach (var member in members)
         {
             var memberShape = structure.Members[member.ModeledName];
+
+            // excludeFromUnmarshalling: hand-written code reads the member, so it joins no bucket. As in C2J,
+            // a payload and the status code are still read.
+            if (member.IsExcludedFromUnmarshalling && !memberShape.IsHttpPayload() && !memberShape.IsHttpResponseCode())
+            {
+                continue;
+            }
+
             if (member.Type.IsEventStream)
             {
                 // A @streaming union/structure member is the event stream — it IS the body (like a

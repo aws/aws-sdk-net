@@ -199,4 +199,17 @@ public class StructureWriterTests
         Assert.DoesNotContain("IsSetTotal", structure);
         Assert.Contains("public DateTime? Created ", structure);
     }
+
+    [Fact]
+    public void SkipXmlIsSet_EmitsThePropertyWithoutIsSet()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Tag"] = TestCustomizations.Modify("key", new PropertyModifier { SkipXmlIsSet = true });
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var structure = new StructureWriter(context, "example.json").Write(context.Structures[ShapeId.Parse("com.example#Tag")], TestContext.Current.CancellationToken);
+        Assert.Contains("public string Key ", structure);
+        Assert.DoesNotContain("IsSetKey", structure);
+        Assert.Contains("IsSetValue", structure);
+    }
 }

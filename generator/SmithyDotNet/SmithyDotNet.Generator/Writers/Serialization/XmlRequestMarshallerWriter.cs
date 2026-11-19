@@ -154,7 +154,7 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
                 MarshallerCommon.WriteRequestChecksum(writer, context, operation);
             }
 
-            if (partitioned.QueryMembers.Count > 0 || partitioned.QueryParamsMember is not null)
+            if (partitioned.UseQueryString)
             {
                 writer.WriteLine("request.UseQueryString = true;");
                 writer.WriteLine("");
@@ -227,6 +227,12 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
     // stream with application/octet-stream (or the target's @mediaType). C2J ProcessNonStructurePayload.
     private void WriteNonStructurePayload(CodeWriter writer, Member payload)
     {
+        // excludeFromMarshalling: hand-written code sets the content.
+        if (payload.IsExcludedFromMarshalling)
+        {
+            return;
+        }
+
         if (payload.Type.MarshalsAsString)
         {
             var contentType = payload.Type.MediaType ?? "text/plain";

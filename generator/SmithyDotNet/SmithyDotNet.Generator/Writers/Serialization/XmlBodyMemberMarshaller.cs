@@ -30,6 +30,16 @@ public static class XmlBodyMemberMarshaller
     /// </summary>
     public static void WriteStructureBody(CodeWriter writer, StructureShape owner, List<Member> members, string objectVar)
     {
+        // skipXmlIsSet leaves no IsSet method, and only a string element is written without the guard.
+        foreach (var member in members)
+        {
+            var isStringElement = member.Type.MarshalsAsString && !member.IsIdempotencyToken && !owner.Members[member.ModeledName].IsXmlAttribute();
+            if (member.SkipIsSet && !isStringElement)
+            {
+                throw new GeneratorException(UnsupportedSkipXmlIsSet(owner, member));
+            }
+        }
+
         // XML attributes must precede child elements, so emit them first regardless of declaration order.
         foreach (var member in members.Where(m => owner.Members[m.ModeledName].IsXmlAttribute()))
         {
@@ -40,6 +50,9 @@ public static class XmlBodyMemberMarshaller
             WriteElementMember(writer, owner, member, objectVar);
         }
     }
+
+    internal static string UnsupportedSkipXmlIsSet(StructureShape owner, Member member) =>
+        $"shapeModifiers['{owner.Id.Name}'] sets skipXmlIsSet on member '{member.PropertyName}', which is only supported for a string body element.";
 
     private static void WriteAttributeMember(CodeWriter writer, StructureShape owner, Member member, string objectVar)
     {
@@ -117,6 +130,12 @@ public static class XmlBodyMemberMarshaller
 
         var conversion = BodyScalarConversion(member, access)
             ?? throw new GeneratorException($"Unsupported body member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
+        // skipXmlIsSet: there is no IsSet to call, so an unset string is written as an empty element, as in C2J (S3's FilterRule).
+        if (member.SkipIsSet)
+        {
+            WriteLeafElement(writer, name, ns, conversion);
+            return;
+        }
         writer.OpenBlock($"if ({isSet})", () =>
         {
             WriteLeafElement(writer, name, ns, conversion);

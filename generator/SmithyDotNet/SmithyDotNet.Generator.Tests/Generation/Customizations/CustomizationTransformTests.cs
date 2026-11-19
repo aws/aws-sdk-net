@@ -680,6 +680,23 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    [Theory]
+    [InlineData(false, "PutBucketRequest", "missing", "shapeModifiers['PutBucketRequest'] excludes member 'missing' from (un)marshalling, which the shape does not have")]
+    [InlineData(true, "Bucket", "missing", "shapeModifiers['Bucket'] excludes member 'missing' from (un)marshalling, which the shape does not have")]
+    [InlineData(true, "LegacyId", "name", "shapeModifiers['LegacyId'] excludes member 'name' from (un)marshalling, which the shape does not have")]
+    [InlineData(false, "Bucket", "name", "shapeModifiers['Bucket'] sets excludeFromMarshalling, but is not an operation's input.")]
+    [InlineData(true, "PutBucketRequest", "trace", "shapeModifiers['PutBucketRequest'] sets excludeFromUnmarshalling, but is an operation's input.")]
+    [InlineData(false, "*", "name", "shapeModifiers['*'] only supports modify.")]
+    [InlineData(true, "*", "name", "shapeModifiers['*'] only supports modify.")]
+    public void ExcludeFromMarshallingOrUnmarshalling_Invalid_Throws(bool unmarshalling, string shape, string member, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers[shape] = unmarshalling ? new ShapeModifier { ExcludeFromUnmarshalling = [member] } : new ShapeModifier { ExcludeFromMarshalling = [member] };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     // skipUriPropertyValidation
 
     [Theory]
@@ -763,6 +780,8 @@ public class CustomizationTransformTests
     [InlineData("unwrappedMapValue", "substitutes a key or value of map 'com.example#NameValueMap'")]
     [InlineData("sentByRequest", "which a request already sends")]
     [InlineData("oldNameRename", "changes the emitted 'Spec' class")]
+    [InlineData("oldNameExclusion", "modifies a substituted shape, which only supports modify and inject")]
+    [InlineData("oldNameSkipXmlIsSet", "changes the emitted 'Spec' class")]
     [InlineData("oldNameInject", "does not inject as 'IdList'")]
     [InlineData("newNameOnly", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
     [InlineData("differentLocationName", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
@@ -813,6 +832,14 @@ public class CustomizationTransformTests
             case "oldNameRename":
                 customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
                 customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.RenameMember("Kind", "Type");
+                break;
+            case "oldNameExclusion":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = new ShapeModifier { ExcludeFromUnmarshalling = ["Kind"] };
+                break;
+            case "oldNameSkipXmlIsSet":
+                customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Modify("Kind", new PropertyModifier { SkipXmlIsSet = true });
                 break;
             case "oldNameInject":
                 customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
