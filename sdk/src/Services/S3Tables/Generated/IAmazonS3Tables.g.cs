@@ -1130,6 +1130,131 @@ namespace Amazon.S3Tables
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disassociates a replica table from replication, making it a standalone writable table.
+        /// Any in-progress replication to the table stops, and in-flight commits fail without
+        /// being committed to the table. Disassociating a table from replication is permanent
+        /// and can't be reversed.
+        /// 
+        ///  
+        /// <para>
+        /// You can only disassociate a replica table. If you call this operation on a table that
+        /// isn't a replica table, including a table that you have already disassociated, the
+        /// request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you disassociate a table from replication, you can write to the table as you
+        /// do any other table. <c>GetTable</c> no longer returns <c>managedByService</c> and
+        /// <c>managedTableInformation</c> for the table, and <c>ListTables</c> no longer returns
+        /// <c>managedByService</c> for it. On the source table, <c>GetTableReplicationStatus</c>
+        /// reports a failure for this destination the next time replication to it is attempted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Disassociating a table from replication doesn't change its maintenance configuration.
+        /// Review the maintenance settings of the table, such as compaction, after you disassociate
+        /// it.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DisassociateTableReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTableReplication service method.</param>
+        /// <returns>The response from the DisassociateTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DisassociateTableReplication">REST API Reference for DisassociateTableReplication Operation</seealso>
+        DisassociateTableReplicationResponse DisassociateTableReplication(DisassociateTableReplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Disassociates a replica table from replication, making it a standalone writable table.
+        /// Any in-progress replication to the table stops, and in-flight commits fail without
+        /// being committed to the table. Disassociating a table from replication is permanent
+        /// and can't be reversed.
+        /// 
+        ///  
+        /// <para>
+        /// You can only disassociate a replica table. If you call this operation on a table that
+        /// isn't a replica table, including a table that you have already disassociated, the
+        /// request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you disassociate a table from replication, you can write to the table as you
+        /// do any other table. <c>GetTable</c> no longer returns <c>managedByService</c> and
+        /// <c>managedTableInformation</c> for the table, and <c>ListTables</c> no longer returns
+        /// <c>managedByService</c> for it. On the source table, <c>GetTableReplicationStatus</c>
+        /// reports a failure for this destination the next time replication to it is attempted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Disassociating a table from replication doesn't change its maintenance configuration.
+        /// Review the maintenance settings of the table, such as compaction, after you disassociate
+        /// it.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DisassociateTableReplication</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTableReplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateTableReplication service method, as returned by S3Tables.</returns>
+        /// <exception cref="Amazon.S3Tables.Model.AccessDeniedException">
+        /// The action cannot be performed because you do not have the required permission.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ConflictException">
+        /// The request failed because there is a conflict with a previous write. You can retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.InternalServerErrorException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.NotFoundException">
+        /// The request was rejected because the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Tables.Model.TooManyRequestsException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DisassociateTableReplication">REST API Reference for DisassociateTableReplication Operation</seealso>
+        Task<DisassociateTableReplicationResponse> DisassociateTableReplicationAsync(DisassociateTableReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets details about a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
         /// namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// 
