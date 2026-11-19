@@ -556,6 +556,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreventUserExistenceErrors() => this.PreventUserExistenceErrors != null;
 
         /// <summary>
+        /// Gets and sets the property PublishSecretsInAWSSecretsManager. 
+        /// <para>
+        /// Specifies whether Amazon Cognito stores and manages this app client's secret in <a
+        /// href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon
+        /// Web Services Secrets Manager</a> instead of returning the plaintext value. Applies
+        /// only when <c>GenerateSecret</c> is <c>true</c>. When you set this parameter to <c>true</c>,
+        /// the response returns <c>ClientSecretArn</c> instead of <c>ClientSecret</c>. Amazon
+        /// Cognito starts the first rotation of the secret right away, and then rotates the secret
+        /// every 7 days by default. You can change the rotation schedule in Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// Defaults to <c>false</c>. If you don't set this parameter, Amazon Cognito doesn't
+        /// manage the secret in Secrets Manager and returns the plaintext <c>ClientSecret</c>
+        /// value. The Amazon Cognito console turns on this option by default when it creates
+        /// an app client with a generated client secret.
+        /// </para>
+        /// </summary>
+        public bool? PublishSecretsInAWSSecretsManager { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PublishSecretsInAWSSecretsManager property is set.
+        /// </summary>
+        internal bool IsSetPublishSecretsInAWSSecretsManager() => this.PublishSecretsInAWSSecretsManager.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ReadAttributes. 
         /// <para>
         /// The list of user attributes that you want your app client to have read access to.

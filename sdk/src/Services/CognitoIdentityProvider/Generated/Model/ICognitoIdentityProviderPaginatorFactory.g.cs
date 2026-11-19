@@ -45,6 +45,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         IAdminListUserAuthEventsPaginator AdminListUserAuthEvents(AdminListUserAuthEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListCIMDPolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCIMDPoliciesPaginator ListCIMDPolicies(ListCIMDPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClientMetadataURLs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClientMetadataURLsPaginator ListClientMetadataURLs(ListClientMetadataURLsRequest request);
+
+        /// <summary>
         /// Paginator for ListGroups operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "Limit", OutputToken = ["NextToken"])]

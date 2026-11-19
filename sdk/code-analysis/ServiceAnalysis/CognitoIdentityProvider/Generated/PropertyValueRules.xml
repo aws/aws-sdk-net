@@ -658,6 +658,29 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateCIMDPolicyRequest.CacheDuration</property>
+    <min>86400</min>
+    <max>31556952</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateCIMDPolicyRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateCIMDPolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateCIMDPolicyRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateGroupRequest.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -864,6 +887,18 @@
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DeleteCIMDPolicyRequest.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DeleteCIMDPolicyRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DeleteGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
@@ -993,6 +1028,18 @@
     <property>Amazon.CognitoIdentityProvider.Model.DeleteWebAuthnCredentialRequest.CredentialId</property>
     <min>0</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribeCIMDPolicyRequest.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribeCIMDPolicyRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DescribeIdentityProviderRequest.ProviderName</property>
@@ -1410,6 +1457,54 @@
     <min>1</min>
     <max>55</max>
     <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListCIMDPoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListCIMDPoliciesRequest.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListCIMDPoliciesRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListCIMDPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListClientMetadataURLsRequest.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListClientMetadataURLsRequest.MaxResults</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListClientMetadataURLsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListClientMetadataURLsRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListClientMetadataURLsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListDevicesRequest.AccessToken</property>
@@ -1993,6 +2088,53 @@
     <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateCIMDPolicyRequest.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateCIMDPolicyRequest.CacheDuration</property>
+    <min>86400</min>
+    <max>31556952</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateCIMDPolicyRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateCIMDPolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateCIMDPolicyRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateClientMetadataURLStateRequest.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateClientMetadataURLStateRequest.URL</property>
+    <min>12</min>
+    <max>256</max>
+    <pattern>^https://[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateClientMetadataURLStateRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UpdateDeviceStatusRequest.AccessToken</property>
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
@@ -2319,6 +2461,58 @@
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicySummaryType.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicySummaryType.CacheDuration</property>
+    <min>86400</min>
+    <max>31556952</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicySummaryType.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicySummaryType.PolicyName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicyType.CIMDPolicyId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicyType.CacheDuration</property>
+    <min>86400</min>
+    <max>31556952</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicyType.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicyType.PolicyName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[\p{L}\p{M}\p{S}\p{N}\p{P}\p{Z}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CIMDPolicyType.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ClientAuthenticationResultType.AccessToken</property>
     <pattern>^[A-Za-z0-9-_=.]+$</pattern>
   </property-value-rule>
@@ -2326,6 +2520,12 @@
     <property>Amazon.CognitoIdentityProvider.Model.ClientAuthenticationResultType.TokenType</property>
     <min>0</min>
     <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ClientMetadataURLType.URL</property>
+    <min>12</min>
+    <max>256</max>
+    <pattern>^https://[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ClientSSOSessionConfigType.MaxValidityMinutes</property>
@@ -3111,6 +3311,12 @@
     <min>24</min>
     <max>64</max>
     <pattern>^[\w+]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.ClientSecretArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn\:(aws|aws-us-gov|aws-eusc)\:secretsmanager\:([\d\w\-]+):(\d{12})\:secret\/[\w+=\/,.@\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolClientType.DefaultRedirectURI</property>

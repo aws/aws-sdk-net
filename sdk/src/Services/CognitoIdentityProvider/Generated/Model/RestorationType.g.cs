@@ -77,8 +77,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <dl> <dt>PREVIEW_GENERATING</dt> <dd> 
         /// <para>
-        /// Amazon Cognito is waiting for available capacity in the Amazon Web Services Region
-        /// or is generating the recovery preview. Write operations in the user pool are paused.
+        /// Amazon Cognito is generating the recovery preview, which might not be available immediately.
+        /// Write operations in the user pool are paused.
         /// </para>
         ///  </dd> <dt>PREVIEW_GENERATED</dt> <dd> 
         /// <para>

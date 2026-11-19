@@ -535,6 +535,44 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreventUserExistenceErrors() => this.PreventUserExistenceErrors != null;
 
         /// <summary>
+        /// Gets and sets the property PublishSecretsInAWSSecretsManager. 
+        /// <para>
+        /// Specifies whether Amazon Cognito stores and manages this app client's secret in <a
+        /// href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon
+        /// Web Services Secrets Manager</a> instead of returning the plaintext value. When you
+        /// set this parameter to <c>true</c>, the response returns <c>ClientSecretArn</c> instead
+        /// of <c>ClientSecret</c>. By default, Amazon Cognito rotates the secret every 7 days.
+        /// You can change the rotation schedule in Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <c>true</c> to migrate an existing generated secret into Secrets Manager, or
+        /// <c>false</c> to move it back to Amazon Cognito and delete the Secrets Manager secret.
+        /// If you omit this parameter, Amazon Cognito doesn't change how it manages the existing
+        /// secret. Applies only to app clients that already have a generated secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set it to <c>true</c>, Amazon Cognito starts managing the app client's secret
+        /// in Secrets Manager and rotates it right away. If the app client has two secrets, that
+        /// first rotation deletes the older one.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you set this parameter to <c>false</c>, Amazon Cognito immediately and permanently
+        /// deletes the Secrets Manager secret. There's no recovery window. Applications that
+        /// read the secret from Secrets Manager can no longer get it.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool? PublishSecretsInAWSSecretsManager { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PublishSecretsInAWSSecretsManager property is set.
+        /// </summary>
+        internal bool IsSetPublishSecretsInAWSSecretsManager() => this.PublishSecretsInAWSSecretsManager.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ReadAttributes. 
         /// <para>
         /// The list of user attributes that you want your app client to have read access to.

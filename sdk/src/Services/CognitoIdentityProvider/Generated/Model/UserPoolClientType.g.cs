@@ -304,6 +304,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientSecret() => this.ClientSecret != null;
 
         /// <summary>
+        /// Gets and sets the property ClientSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon
+        /// Web Services Secrets Manager</a> secret that stores this app client's secret, when
+        /// Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets
+        /// Manager by this ARN. The <c>SecretString</c> value is a JSON object with <c>userPoolId</c>,
+        /// <c>userPoolClientId</c>, and <c>clientSecretValue</c> fields. Use <c>clientSecretValue</c>
+        /// as the app client secret. Amazon Cognito returns this ARN instead of <c>ClientSecret</c>
+        /// for app clients whose secret it manages in Secrets Manager.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string ClientSecretArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientSecretArn property is set.
+        /// </summary>
+        internal bool IsSetClientSecretArn() => this.ClientSecretArn != null;
+
+        /// <summary>
         /// Gets and sets the property ClientType. 
         /// <para>
         /// How the app client was created.

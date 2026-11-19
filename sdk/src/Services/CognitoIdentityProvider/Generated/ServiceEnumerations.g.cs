@@ -546,6 +546,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type CIMDCacheActionType.
+    /// </summary>
+    public class CIMDCacheActionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant INVALIDATE for CIMDCacheActionType
+        /// </summary>
+        public static readonly CIMDCacheActionType INVALIDATE = new CIMDCacheActionType("INVALIDATE");
+
+        /// <summary>
+        /// Constant REFRESH for CIMDCacheActionType
+        /// </summary>
+        public static readonly CIMDCacheActionType REFRESH = new CIMDCacheActionType("REFRESH");
+
+        /// <summary>
+        /// Constructs a custom CIMDCacheActionType for a value not among the defined constants.
+        /// </summary>
+        public CIMDCacheActionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CIMDCacheActionType FindValue(string value)
+        {
+            return FindValue<CIMDCacheActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CIMDCacheActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ChallengeName.
     /// </summary>
     public class ChallengeName : ConstantClass

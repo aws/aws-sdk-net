@@ -49,6 +49,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Paginator for ListCIMDPolicies operation
+        /// </summary>
+        public IListCIMDPoliciesPaginator ListCIMDPolicies(ListCIMDPoliciesRequest request)
+        {
+            return new ListCIMDPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClientMetadataURLs operation
+        /// </summary>
+        public IListClientMetadataURLsPaginator ListClientMetadataURLs(ListClientMetadataURLsRequest request)
+        {
+            return new ListClientMetadataURLsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGroups operation
         /// </summary>
         public IListGroupsPaginator ListGroups(ListGroupsRequest request)
