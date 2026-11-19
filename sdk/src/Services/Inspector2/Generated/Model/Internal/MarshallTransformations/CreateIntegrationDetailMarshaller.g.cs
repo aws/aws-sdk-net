@@ -45,6 +45,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetGithubEnterprise())
+            {
+                context.Writer.WritePropertyName("githubEnterprise");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateGitHubEnterpriseIntegrationDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.GithubEnterprise, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetGitlabSelfManaged())
             {
                 context.Writer.WritePropertyName("gitlabSelfManaged");

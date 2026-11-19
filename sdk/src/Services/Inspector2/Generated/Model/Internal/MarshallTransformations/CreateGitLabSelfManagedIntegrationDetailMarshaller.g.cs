@@ -56,6 +56,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("instanceUrl");
                 context.Writer.WriteStringValue(requestObject.InstanceUrl);
             }
+
+            if (requestObject.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("vpcConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeSecurityIntegrationVpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

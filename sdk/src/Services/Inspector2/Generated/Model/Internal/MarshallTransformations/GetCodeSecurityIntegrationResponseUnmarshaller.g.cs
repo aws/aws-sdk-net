@@ -66,6 +66,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("instanceUrl", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("integrationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +119,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = CodeSecurityIntegrationVpcConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

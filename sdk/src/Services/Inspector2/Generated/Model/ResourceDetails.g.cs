@@ -102,7 +102,11 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetImage() => this.Image != null;
 
         /// <summary>
-        /// Gets and sets the property MachineImage.
+        /// Gets and sets the property MachineImage. 
+        /// <para>
+        /// An object that contains details about the Amazon Machine Image (AMI) involved in the
+        /// finding.
+        /// </para>
         /// </summary>
         public MachineImageDetails MachineImage { get; set; }
 

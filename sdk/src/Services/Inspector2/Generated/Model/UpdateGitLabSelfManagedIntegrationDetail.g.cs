@@ -48,5 +48,19 @@ namespace Amazon.Inspector2.Model
         /// Checks to see if the AuthCode property is set.
         /// </summary>
         internal bool IsSetAuthCode() => this.AuthCode != null;
+
+        /// <summary>
+        /// Gets and sets the property StateToken. 
+        /// <para>
+        /// The PKCE state token used to validate the authorization request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 1024)]
+        public string StateToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StateToken property is set.
+        /// </summary>
+        internal bool IsSetStateToken() => this.StateToken != null;
     }
 }

@@ -50,6 +50,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("authCode");
                 context.Writer.WriteStringValue(requestObject.AuthCode);
             }
+
+            if (requestObject.IsSetStateToken())
+            {
+                context.Writer.WritePropertyName("stateToken");
+                context.Writer.WriteStringValue(requestObject.StateToken);
+            }
         }
 
         /// <summary>

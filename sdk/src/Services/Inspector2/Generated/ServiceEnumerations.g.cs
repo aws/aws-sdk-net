@@ -4011,9 +4011,34 @@ namespace Amazon.Inspector2
         public static readonly IntegrationStatus ACTIVE = new IntegrationStatus("ACTIVE");
 
         /// <summary>
+        /// Constant DELETE_FAILED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus DELETE_FAILED = new IntegrationStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus DELETE_IN_PROGRESS = new IntegrationStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
         /// Constant DISABLING for IntegrationStatus
         /// </summary>
         public static readonly IntegrationStatus DISABLING = new IntegrationStatus("DISABLING");
+
+        /// <summary>
+        /// Constant ESTABLISHING_CONNECTION_COMPLETED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus ESTABLISHING_CONNECTION_COMPLETED = new IntegrationStatus("ESTABLISHING_CONNECTION_COMPLETED");
+
+        /// <summary>
+        /// Constant ESTABLISHING_CONNECTION_FAILED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus ESTABLISHING_CONNECTION_FAILED = new IntegrationStatus("ESTABLISHING_CONNECTION_FAILED");
+
+        /// <summary>
+        /// Constant ESTABLISHING_CONNECTION_IN_PROGRESS for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus ESTABLISHING_CONNECTION_IN_PROGRESS = new IntegrationStatus("ESTABLISHING_CONNECTION_IN_PROGRESS");
 
         /// <summary>
         /// Constant INACTIVE for IntegrationStatus
@@ -4029,6 +4054,11 @@ namespace Amazon.Inspector2
         /// Constant PENDING for IntegrationStatus
         /// </summary>
         public static readonly IntegrationStatus PENDING = new IntegrationStatus("PENDING");
+
+        /// <summary>
+        /// Constant PENDING_MANIFEST_CODE for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus PENDING_MANIFEST_CODE = new IntegrationStatus("PENDING_MANIFEST_CODE");
 
         /// <summary>
         /// Constructs a custom IntegrationStatus for a value not among the defined constants.
@@ -4065,6 +4095,11 @@ namespace Amazon.Inspector2
         /// Constant GITHUB for IntegrationType
         /// </summary>
         public static readonly IntegrationType GITHUB = new IntegrationType("GITHUB");
+
+        /// <summary>
+        /// Constant GITHUB_ENTERPRISE_SERVER for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType GITHUB_ENTERPRISE_SERVER = new IntegrationType("GITHUB_ENTERPRISE_SERVER");
 
         /// <summary>
         /// Constant GITLAB_SELF_MANAGED for IntegrationType

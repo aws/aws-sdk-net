@@ -56,6 +56,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("installationId");
                 context.Writer.WriteStringValue(requestObject.InstallationId);
             }
+
+            if (requestObject.IsSetStateToken())
+            {
+                context.Writer.WritePropertyName("stateToken");
+                context.Writer.WriteStringValue(requestObject.StateToken);
+            }
         }
 
         /// <summary>

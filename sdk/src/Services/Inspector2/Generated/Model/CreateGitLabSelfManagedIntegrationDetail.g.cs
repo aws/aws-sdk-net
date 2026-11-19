@@ -61,5 +61,19 @@ namespace Amazon.Inspector2.Model
         /// Checks to see if the InstanceUrl property is set.
         /// </summary>
         internal bool IsSetInstanceUrl() => this.InstanceUrl != null;
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The VPC configuration used to connect to the self-managed GitLab instance in a private
+        /// network. For publicly accessible instances, omit this field.
+        /// </para>
+        /// </summary>
+        public CodeSecurityIntegrationVpcConfiguration VpcConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcConfiguration property is set.
+        /// </summary>
+        internal bool IsSetVpcConfiguration() => this.VpcConfiguration != null;
     }
 }

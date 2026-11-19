@@ -242,6 +242,10 @@
     <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetCodeSecurityIntegrationResponse.InstanceUrl</property>
+    <pattern>^https://[-a-zA-Z0-9()@:%_+.~#?&amp;//=]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.GetCodeSecurityIntegrationResponse.IntegrationArn</property>
     <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration/[a-f0-9-]{36}$</pattern>
   </property-value-rule>
@@ -1093,6 +1097,24 @@
     <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationVpcConfiguration.CodeConnectionsHostArn</property>
+    <pattern>^arn:aws(-[\w]+)*:(codestar-connections|codeconnections):.+:[0-9]{12}:host\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationVpcConfiguration.TlsCertificate</property>
+    <min>1</min>
+    <max>16384</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationVpcConfiguration.VpcEndpointId</property>
+    <pattern>^vpce-[0-9a-f]{8}([0-9a-f]{9})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSecurityIntegrationVpcConfiguration.VpcId</property>
+    <pattern>^vpc-([a-z0-9]{8}|[a-z0-9]{17}|\*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CodeSecurityResource.ProjectId</property>
     <pattern>^project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
@@ -1273,6 +1295,10 @@
     <min>10</min>
     <max>1024</max>
     <pattern>.*(^arn:.*:ecr:.*:\d{12}:repository\/[a-zA-Z0-9._\/-]+(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$)|(^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:codesecurity-integration\/[a-f0-9-]{36}\/project-[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$))|(^\/subscriptions\/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\/resourcegroups\/[a-z0-9_\-\.()]+\/providers\/(microsoft\.compute\/virtualmachines\/[a-z0-9_\-]+|microsoft\.web\/sites\/[a-z0-9_\-]+|microsoft\.containerregistry\/registries\/[a-z0-9_\-]+(\/repositories\/[a-z0-9_\-\/]+\/images?\/sha256:[a-f0-9]{64})?)$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateGitHubEnterpriseIntegrationDetail.InstanceUrl</property>
+    <pattern>^https://[-a-zA-Z0-9()@:%_+.~#?&amp;//=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CreateGitLabSelfManagedIntegrationDetail.InstanceUrl</property>
@@ -1488,6 +1514,12 @@
     <min>1</min>
     <max>512</max>
     <pattern>^arn:([^:]+):config:([^:]+):([^:]+):connector/([^/]+)/([^/]+)/([^/:\s]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GitHubEnterpriseServerAppRegistrationDetail.ManifestCode</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9._~+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Image.Architecture</property>
@@ -1945,6 +1977,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubEnterpriseServerAppInstallationDetail.Code</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubEnterpriseServerAppInstallationDetail.InstallationId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubEnterpriseServerAppInstallationDetail.StateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateGitHubIntegrationDetail.Code</property>
     <min>1</min>
     <max>1024</max>
@@ -1955,9 +2003,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitHubIntegrationDetail.StateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateGitLabSelfManagedIntegrationDetail.AuthCode</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateGitLabSelfManagedIntegrationDetail.StateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Usage.EstimatedMonthlyCost</property>

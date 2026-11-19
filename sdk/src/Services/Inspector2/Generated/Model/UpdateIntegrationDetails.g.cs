@@ -49,6 +49,19 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetGithub() => this.Github != null;
 
         /// <summary>
+        /// Gets and sets the property GithubEnterpriseServer. 
+        /// <para>
+        /// Details specific to updating an integration with a GitHub Enterprise Server instance.
+        /// </para>
+        /// </summary>
+        public UpdateGitHubEnterpriseServerIntegrationDetail GithubEnterpriseServer { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GithubEnterpriseServer property is set.
+        /// </summary>
+        internal bool IsSetGithubEnterpriseServer() => this.GithubEnterpriseServer != null;
+
+        /// <summary>
         /// Gets and sets the property GitlabSelfManaged. 
         /// <para>
         /// Details specific to updating an integration with a self-managed GitLab instance.

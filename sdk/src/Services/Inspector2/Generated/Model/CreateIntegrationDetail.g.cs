@@ -36,6 +36,19 @@ namespace Amazon.Inspector2.Model
     public partial class CreateIntegrationDetail
     {
         /// <summary>
+        /// Gets and sets the property GithubEnterprise. 
+        /// <para>
+        /// Details specific to creating an integration with a GitHub Enterprise Server instance.
+        /// </para>
+        /// </summary>
+        public CreateGitHubEnterpriseIntegrationDetail GithubEnterprise { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GithubEnterprise property is set.
+        /// </summary>
+        internal bool IsSetGithubEnterprise() => this.GithubEnterprise != null;
+
+        /// <summary>
         /// Gets and sets the property GitlabSelfManaged. 
         /// <para>
         /// Details specific to creating an integration with a self-managed GitLab instance.

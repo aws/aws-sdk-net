@@ -30,12 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// Contains details about an Amazon Machine Image (AMI) that Amazon Inspector scanned
+    /// directly.
     /// </summary>
     public partial class MachineImageDetails
     {
         /// <summary>
-        /// Gets and sets the property Architecture. CPU architecture (x86_64/arm64)
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The CPU architecture of the machine image, for example <c>x86_64</c> or <c>arm64</c>.
+        /// </para>
         /// </summary>
         public Architecture Architecture { get; set; }
 
@@ -45,7 +49,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetArchitecture() => this.Architecture != null;
 
         /// <summary>
-        /// Gets and sets the property CreationDate. When the image was created
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time that the machine image was created.
+        /// </para>
         /// </summary>
         public DateTime? CreationDate { get; set; }
 
@@ -55,7 +62,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCreationDate() => this.CreationDate.HasValue;
 
         /// <summary>
-        /// Gets and sets the property IsPublic. Whether the image is publicly shared
+        /// Gets and sets the property IsPublic. 
+        /// <para>
+        /// Indicates whether the machine image is shared publicly.
+        /// </para>
         /// </summary>
         public bool? IsPublic { get; set; }
 
@@ -65,7 +75,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetIsPublic() => this.IsPublic.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MachineImageId. The machine image ID (e.g., ami-0abcdef1234567890)
+        /// Gets and sets the property MachineImageId. 
+        /// <para>
+        /// The ID of the machine image, for example <c>ami-0abcdef1234567890</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1)]
         public string MachineImageId { get; set; }
@@ -76,7 +89,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetMachineImageId() => this.MachineImageId != null;
 
         /// <summary>
-        /// Gets and sets the property Name. Human-readable image name
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the machine image.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string Name { get; set; }
@@ -87,7 +103,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property OwnerAccountId. Account ID that owns the image
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The ID of the account that owns the machine image.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 6, Max = 36)]
         public string OwnerAccountId { get; set; }
@@ -98,7 +117,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetOwnerAccountId() => this.OwnerAccountId != null;
 
         /// <summary>
-        /// Gets and sets the property Platform. OS platform (Linux/Windows)
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The operating system platform of the machine image.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1024)]
         public string Platform { get; set; }
@@ -109,8 +131,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetPlatform() => this.Platform != null;
 
         /// <summary>
-        /// Gets and sets the property RootDeviceType. Root device type (ebs/instance-store) —
-        /// AWS-specific
+        /// Gets and sets the property RootDeviceType. 
+        /// <para>
+        /// The root device type of the machine image, either <c>ebs</c> or <c>instance-store</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string RootDeviceType { get; set; }
@@ -121,8 +145,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetRootDeviceType() => this.RootDeviceType != null;
 
         /// <summary>
-        /// Gets and sets the property SourceResourceId. Source resource the image was created
-        /// from (nullable)
+        /// Gets and sets the property SourceResourceId. 
+        /// <para>
+        /// The ID of the Amazon EC2 instance that the machine image was created from, if available.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string SourceResourceId { get; set; }
@@ -133,7 +159,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetSourceResourceId() => this.SourceResourceId != null;
 
         /// <summary>
-        /// Gets and sets the property State. Image state (available/pending/deregistered)
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the machine image, for example <c>available</c>, <c>pending</c>, or <c>deregistered</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string State { get; set; }
@@ -144,8 +173,10 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property VirtualizationType. Virtualization type (hvm/paravirtual)
-        /// — AWS-specific
+        /// Gets and sets the property VirtualizationType. 
+        /// <para>
+        /// The virtualization type of the machine image, either <c>hvm</c> or <c>paravirtual</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string VirtualizationType { get; set; }

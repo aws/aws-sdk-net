@@ -65,6 +65,21 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCreatedOn() => this.CreatedOn.HasValue;
 
         /// <summary>
+        /// Gets and sets the property InstanceUrl. 
+        /// <para>
+        /// The URL of the self-managed GitLab or GitHub Enterprise Server instance associated
+        /// with the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string InstanceUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceUrl property is set.
+        /// </summary>
+        internal bool IsSetInstanceUrl() => this.InstanceUrl != null;
+
+        /// <summary>
         /// Gets and sets the property IntegrationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the code security integration.
@@ -166,5 +181,19 @@ namespace Amazon.Inspector2.Model
         /// Checks to see if the Type property is set.
         /// </summary>
         internal bool IsSetType() => this.Type != null;
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The VPC configuration associated with the integration, if it connects to a repository
+        /// provider in a private network.
+        /// </para>
+        /// </summary>
+        public CodeSecurityIntegrationVpcConfiguration VpcConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcConfiguration property is set.
+        /// </summary>
+        internal bool IsSetVpcConfiguration() => this.VpcConfiguration != null;
     }
 }
