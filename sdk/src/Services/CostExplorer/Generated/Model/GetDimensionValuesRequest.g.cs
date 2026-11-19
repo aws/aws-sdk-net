@@ -437,6 +437,26 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         ///  <c>NormalizedUsageAmount</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BilledCost</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ContractedCost</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListCost</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PublicEquivalentBilledCost</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PublicOnDemandCost</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The supported values for the <c>SortOrder</c> key are <c>ASCENDING</c> or <c>DESCENDING</c>.

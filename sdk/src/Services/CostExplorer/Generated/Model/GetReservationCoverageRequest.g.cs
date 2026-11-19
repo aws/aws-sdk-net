@@ -32,17 +32,19 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetReservationCoverage operation. Retrieves the
     /// reservation coverage for your account, which you can use to see how much of your Amazon
-    /// Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or
-    /// Amazon Redshift usage is covered by a reservation. An organization's management account
-    /// can see the coverage of the associated member accounts. This supports dimensions,
-    /// cost categories, and nested expressions. For any time period, you can filter data
-    /// about reservation usage by the following dimensions: <ul> <li> <para> AZ </para> </li>
-    /// <li> <para> CACHE_ENGINE </para> </li> <li> <para> DATABASE_ENGINE </para> </li> <li>
-    /// <para> DEPLOYMENT_OPTION </para> </li> <li> <para> INSTANCE_TYPE </para> </li> <li>
-    /// <para> LINKED_ACCOUNT </para> </li> <li> <para> OPERATING_SYSTEM </para> </li> <li>
-    /// <para> PLATFORM </para> </li> <li> <para> REGION </para> </li> <li> <para> SERVICE
-    /// </para> </li> <li> <para> TAG </para> </li> <li> <para> TENANCY </para> </li> </ul>
-    /// <para> To determine valid values for a dimension, use the <c>GetDimensionValues</c>
+    /// Elastic Compute Cloud, Amazon Relational Database Service, Amazon ElastiCache, Amazon
+    /// MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, or Amazon OpenSearch Service
+    /// usage is covered by a reservation. An organization's management account can see the
+    /// coverage of the associated member accounts. This supports dimensions, cost categories,
+    /// and nested expressions. For any time period, you can filter data about reservation
+    /// usage by the following dimensions: <ul> <li> <para> AZ </para> </li> <li> <para> CACHE_ENGINE
+    /// </para> </li> <li> <para> DATABASE_ENGINE </para> </li> <li> <para> DEPLOYMENT_OPTION
+    /// </para> </li> <li> <para> INSTANCE_TYPE </para> </li> <li> <para> INSTANCE_TYPE_FAMILY
+    /// </para> </li> <li> <para> LINKED_ACCOUNT </para> </li> <li> <para> PLATFORM </para>
+    /// </li> <li> <para> REGION </para> </li> <li> <para> SERVICE </para> </li> <li> <para>
+    /// TAG </para> </li> <li> <para> TENANCY </para> </li> </ul> <para> The dimensions that
+    /// you can use depend on the service in the <c>SERVICE</c> filter. For details, see <c>Filter</c>.
+    /// </para> <para> To determine valid values for a dimension, use the <c>GetDimensionValues</c>
     /// operation. </para>
     /// </summary>
     public partial class GetReservationCoverageRequest : AmazonCostExplorerRequest
@@ -50,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filters utilization data by dimensions. You can filter by the following dimensions:
+        /// Filters coverage data by dimensions. You can filter by the following dimensions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -74,11 +76,11 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LINKED_ACCOUNT
+        /// INSTANCE_TYPE_FAMILY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OPERATING_SYSTEM
+        /// LINKED_ACCOUNT
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -92,7 +94,14 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// SERVICE
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// Supported values for <c>SERVICE</c> are Amazon Elastic Compute Cloud - Compute, Amazon
+        /// Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift,
+        /// Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to
+        /// two <c>SERVICE</c> values.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// TAG
         /// </para>
@@ -101,6 +110,14 @@ namespace Amazon.CostExplorer.Model
         /// TENANCY
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// The dimensions that you can use depend on the service in the <c>SERVICE</c> filter.
+        /// <c>CACHE_ENGINE</c> applies only to Amazon ElastiCache and Amazon MemoryDB. <c>DATABASE_ENGINE</c>
+        /// and <c>DEPLOYMENT_OPTION</c> apply only to Amazon Relational Database Service. <c>INSTANCE_TYPE_FAMILY</c>,
+        /// <c>PLATFORM</c>, and <c>TENANCY</c> apply only to Amazon Elastic Compute Cloud - Compute.
+        /// If you specify two <c>SERVICE</c> values, use only dimensions that both services support.
+        /// </para>
+        ///  
         /// <para>
         ///  <c>GetReservationCoverage</c> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <c>AND</c> is supported among each dimension.
@@ -151,53 +168,35 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group the data by the following attributes:
+        /// You can group the data by the following attributes. The attributes that you can use
+        /// depend on the service in the <c>SERVICE</c> filter. If you don't provide a <c>SERVICE</c>
+        /// filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AZ
+        /// Amazon Elastic Compute Cloud - Compute: <c>AZ</c>, <c>INSTANCE_TYPE</c>, <c>INSTANCE_TYPE_FAMILY</c>,
+        /// <c>LINKED_ACCOUNT</c>, <c>PLATFORM</c>, <c>REGION</c>, and <c>TENANCY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CACHE_ENGINE
+        /// Amazon Relational Database Service: <c>AZ</c>, <c>DATABASE_ENGINE</c>, <c>DEPLOYMENT_OPTION</c>,
+        /// <c>INSTANCE_TYPE</c>, <c>LINKED_ACCOUNT</c>, and <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DATABASE_ENGINE
+        /// Amazon ElastiCache and Amazon MemoryDB: <c>AZ</c>, <c>CACHE_ENGINE</c>, <c>INSTANCE_TYPE</c>,
+        /// <c>LINKED_ACCOUNT</c>, and <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DEPLOYMENT_OPTION
+        /// Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <c>AZ</c>,
+        /// <c>INSTANCE_TYPE</c>, <c>LINKED_ACCOUNT</c>, and <c>REGION</c> 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        /// INSTANCE_TYPE
+        /// If you specify two <c>SERVICE</c> values, use only attributes that both services support.
+        /// You can specify up to four attributes, and only the <c>DIMENSION</c> type is supported.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// INVOICING_ENTITY
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// LINKED_ACCOUNT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// OPERATING_SYSTEM
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// PLATFORM
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// REGION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// TENANCY
-        /// </para>
-        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -236,7 +235,10 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// Valid values are <c>Hour</c>, <c>Unit</c>, and <c>Cost</c>. You can use multiple values
-        /// in a request.
+        /// in a request. <c>Hour</c> returns <c>CoverageHours</c>, <c>Unit</c> returns <c>CoverageNormalizedUnits</c>,
+        /// and <c>Cost</c> returns <c>CoverageCost</c>. <c>Unit</c> is supported only for Amazon
+        /// Elastic Compute Cloud - Compute. If you don't specify <c>Metrics</c>, the response
+        /// includes only <c>CoverageHours</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

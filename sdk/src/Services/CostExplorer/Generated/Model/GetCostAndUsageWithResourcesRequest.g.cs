@@ -156,8 +156,15 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// Valid values are <c>AmortizedCost</c>, <c>BlendedCost</c>, <c>NetAmortizedCost</c>,
-        /// <c>NetUnblendedCost</c>, <c>NormalizedUsageAmount</c>, <c>UnblendedCost</c>, and <c>UsageQuantity</c>.
-        /// 
+        /// <c>NetUnblendedCost</c>, <c>NormalizedUsageAmount</c>, <c>UnblendedCost</c>, <c>UsageQuantity</c>,
+        /// <c>BilledCost</c>, <c>ContractedCost</c>, <c>ListCost</c>, <c>PublicEquivalentBilledCost</c>,
+        /// and <c>PublicOnDemandCost</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>BilledCost</c>, <c>ContractedCost</c>, <c>ListCost</c>, <c>PublicEquivalentBilledCost</c>,
+        /// and <c>PublicOnDemandCost</c> are cost analytics metrics. They use the same definitions
+        /// as the cost analytics columns in Cost and Usage Report (CUR) 2.0.
         /// </para>
         ///  <note> 
         /// <para>

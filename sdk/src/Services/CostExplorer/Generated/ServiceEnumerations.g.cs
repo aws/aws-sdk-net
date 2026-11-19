@@ -1387,9 +1387,24 @@ namespace Amazon.CostExplorer
         public static readonly Metric AMORTIZED_COST = new Metric("AMORTIZED_COST");
 
         /// <summary>
+        /// Constant BILLED_COST for Metric
+        /// </summary>
+        public static readonly Metric BILLED_COST = new Metric("BILLED_COST");
+
+        /// <summary>
         /// Constant BLENDED_COST for Metric
         /// </summary>
         public static readonly Metric BLENDED_COST = new Metric("BLENDED_COST");
+
+        /// <summary>
+        /// Constant CONTRACTED_COST for Metric
+        /// </summary>
+        public static readonly Metric CONTRACTED_COST = new Metric("CONTRACTED_COST");
+
+        /// <summary>
+        /// Constant LIST_COST for Metric
+        /// </summary>
+        public static readonly Metric LIST_COST = new Metric("LIST_COST");
 
         /// <summary>
         /// Constant NET_AMORTIZED_COST for Metric
@@ -1405,6 +1420,16 @@ namespace Amazon.CostExplorer
         /// Constant NORMALIZED_USAGE_AMOUNT for Metric
         /// </summary>
         public static readonly Metric NORMALIZED_USAGE_AMOUNT = new Metric("NORMALIZED_USAGE_AMOUNT");
+
+        /// <summary>
+        /// Constant PUBLIC_EQUIVALENT_BILLED_COST for Metric
+        /// </summary>
+        public static readonly Metric PUBLIC_EQUIVALENT_BILLED_COST = new Metric("PUBLIC_EQUIVALENT_BILLED_COST");
+
+        /// <summary>
+        /// Constant PUBLIC_ON_DEMAND_COST for Metric
+        /// </summary>
+        public static readonly Metric PUBLIC_ON_DEMAND_COST = new Metric("PUBLIC_ON_DEMAND_COST");
 
         /// <summary>
         /// Constant UNBLENDED_COST for Metric

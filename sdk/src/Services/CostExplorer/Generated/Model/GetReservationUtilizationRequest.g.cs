@@ -49,23 +49,15 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CACHE_ENGINE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DEPLOYMENT_OPTION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// INSTANCE_TYPE
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LINKED_ACCOUNT
+        /// INSTANCE_TYPE_FAMILY
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OPERATING_SYSTEM
+        /// LINKED_ACCOUNT
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -83,15 +75,22 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// If not specified, the <c>SERVICE</c> filter defaults to Amazon Elastic Compute Cloud
         /// - Compute. Supported values for <c>SERVICE</c> are Amazon Elastic Compute Cloud -
-        /// Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift,
-        /// and Amazon Elasticsearch Service. The value for the <c>SERVICE</c> filter should not
-        /// exceed "1".
+        /// Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB,
+        /// Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
         /// SCOPE
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// SUBSCRIPTION_ID
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Values for <c>SUBSCRIPTION_ID</c> must contain only digits.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// TENANCY
         /// </para>
