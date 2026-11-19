@@ -2095,6 +2095,11 @@ namespace Amazon.AppStream
         public static readonly StackAttribute USER_SETTINGS = new StackAttribute("USER_SETTINGS");
 
         /// <summary>
+        /// Constant WEB_AUTHN_REDIRECTION for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute WEB_AUTHN_REDIRECTION = new StackAttribute("WEB_AUTHN_REDIRECTION");
+
+        /// <summary>
         /// Constructs a custom StackAttribute for a value not among the defined constants.
         /// </summary>
         public StackAttribute(string value) : base(value) { }

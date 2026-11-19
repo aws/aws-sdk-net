@@ -304,5 +304,20 @@ namespace Amazon.AppStream.Model
         /// Checks to see if the UserSettings property is set.
         /// </summary>
         internal bool IsSetUserSettings() => this.UserSettings != null && (this.UserSettings.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnRedirection. 
+        /// <para>
+        /// Configuration for WebAuthn redirection between the streaming session and the user's
+        /// local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn
+        /// redirection on Windows fleets.
+        /// </para>
+        /// </summary>
+        public WebAuthnRedirection WebAuthnRedirection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WebAuthnRedirection property is set.
+        /// </summary>
+        internal bool IsSetWebAuthnRedirection() => this.WebAuthnRedirection != null;
     }
 }

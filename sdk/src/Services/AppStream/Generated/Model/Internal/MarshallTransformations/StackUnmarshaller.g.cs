@@ -164,6 +164,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "WebAuthnRedirection":
+                        context.AddPathSegment("WebAuthnRedirection");
+                        unmarshalledObject.WebAuthnRedirection = WebAuthnRedirectionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     default:
                         reader.SkipValue();
                         break;

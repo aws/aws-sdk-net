@@ -207,6 +207,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     }
                     context.Writer.WriteEndArray();
                 }
+                if (publicRequest.IsSetWebAuthnRedirection())
+                {
+                    context.Writer.WriteTextString("WebAuthnRedirection");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = WebAuthnRedirectionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WebAuthnRedirection, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
                 var encodedLength = writer.BytesWritten;
