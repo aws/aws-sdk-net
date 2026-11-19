@@ -1196,6 +1196,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow() => this.PreferredMaintenanceWindow != null;
 
         /// <summary>
+        /// Gets and sets the property PrimaryEndpoint. 
+        /// <para>
+        /// Specifies the connection endpoint for the DB instance that currently has the primary
+        /// role.
+        /// </para>
+        ///  
+        /// <para>
+        /// This endpoint points to the new primary DB instance after a switchover, so you don't
+        /// have to connect to a different DNS name.
+        /// </para>
+        ///  
+        /// <para>
+        /// A read replica reports the same primary endpoint as the DB instance it replicates
+        /// from. When you promote a read replica, it reports its own primary endpoint.
+        /// </para>
+        /// </summary>
+        public PrimaryEndpoint PrimaryEndpoint { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrimaryEndpoint property is set.
+        /// </summary>
+        internal bool IsSetPrimaryEndpoint() => this.PrimaryEndpoint != null;
+
+        /// <summary>
         /// Gets and sets the property ProcessorFeatures. 
         /// <para>
         /// The number of CPU cores and the number of threads per core for the DB instance class
@@ -1601,6 +1625,20 @@ namespace Amazon.RDS.Model
         /// Checks to see if the UpgradeRolloutOrder property is set.
         /// </summary>
         internal bool IsSetUpgradeRolloutOrder() => this.UpgradeRolloutOrder != null;
+
+        /// <summary>
+        /// Gets and sets the property VPCNetworkingEnabled. 
+        /// <para>
+        /// Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora
+        /// PostgreSQL DB cluster without VPC networking, the value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? VPCNetworkingEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VPCNetworkingEnabled property is set.
+        /// </summary>
+        internal bool IsSetVPCNetworkingEnabled() => this.VPCNetworkingEnabled.HasValue;
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 

@@ -2150,6 +2150,10 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
+        /// To create an Aurora PostgreSQL DB cluster without VPC networking, see <c>EnableVPCNetworking</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// You can use the <c>AssociatedRoles</c> parameter to associate one or more Amazon Web
         /// Services Identity and Access Management (IAM) roles with an Aurora DB cluster. Each
         /// associated role lets the DB cluster access other Amazon Web Services on your behalf,
@@ -2297,6 +2301,10 @@ namespace Amazon.RDS
         /// with express configuration and create cluster in seconds. Express configuration provides
         /// a cluster with a writer instance and feature specific values set to all other input
         /// parameters of this API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an Aurora PostgreSQL DB cluster without VPC networking, see <c>EnableVPCNetworking</c>.
         /// </para>
         ///  
         /// <para>
@@ -10914,6 +10922,12 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
+        /// To change the VPC networking configuration of an Aurora PostgreSQL DB cluster, see
+        /// <c>EnableVPCNetworking</c>. To move an Aurora MySQL or Aurora PostgreSQL DB cluster
+        /// to a different DB subnet group, in the same VPC or a different VPC, see <c>DBSubnetGroupName</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
@@ -11021,6 +11035,12 @@ namespace Amazon.RDS
         /// can change one or more settings by specifying these parameters and the new values
         /// in the request.
         /// 
+        ///  
+        /// <para>
+        /// To change the VPC networking configuration of an Aurora PostgreSQL DB cluster, see
+        /// <c>EnableVPCNetworking</c>. To move an Aurora MySQL or Aurora PostgreSQL DB cluster
+        /// to a different DB subnet group, in the same VPC or a different VPC, see <c>DBSubnetGroupName</c>.
+        /// </para>
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">

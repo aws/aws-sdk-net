@@ -192,6 +192,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication.Value));
             }
+            if (publicRequest.IsSetEnableInternetAccessGateway())
+            {
+                request.Parameters.Add("EnableInternetAccessGateway", StringUtils.FromBool(publicRequest.EnableInternetAccessGateway.Value));
+            }
             if (publicRequest.IsSetEnableLimitlessDatabase())
             {
                 request.Parameters.Add("EnableLimitlessDatabase", StringUtils.FromBool(publicRequest.EnableLimitlessDatabase.Value));
@@ -203,6 +207,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEnablePerformanceInsights())
             {
                 request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights.Value));
+            }
+            if (publicRequest.IsSetEnableVPCNetworking())
+            {
+                request.Parameters.Add("EnableVPCNetworking", StringUtils.FromBool(publicRequest.EnableVPCNetworking.Value));
             }
             if (publicRequest.IsSetEngine())
             {

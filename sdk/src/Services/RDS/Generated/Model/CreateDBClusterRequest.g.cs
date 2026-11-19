@@ -47,10 +47,11 @@ namespace Amazon.RDS.Model
     /// can use the <c>WithExpressConfiguration</c> parameter to create an Aurora DB Cluster
     /// with express configuration and create cluster in seconds. Express configuration provides
     /// a cluster with a writer instance and feature specific values set to all other input
-    /// parameters of this API. </para> <para> You can use the <c>AssociatedRoles</c> parameter
-    /// to associate one or more Amazon Web Services Identity and Access Management (IAM)
-    /// roles with an Aurora DB cluster. Each associated role lets the DB cluster access other
-    /// Amazon Web Services on your behalf, such as Amazon S3 for data import and export,
+    /// parameters of this API. </para> <para> To create an Aurora PostgreSQL DB cluster without
+    /// VPC networking, see <c>EnableVPCNetworking</c>. </para> <para> You can use the <c>AssociatedRoles</c>
+    /// parameter to associate one or more Amazon Web Services Identity and Access Management
+    /// (IAM) roles with an Aurora DB cluster. Each associated role lets the DB cluster access
+    /// other Amazon Web Services on your behalf, such as Amazon S3 for data import and export,
     /// or Amazon Web Services Lambda for invoking functions. </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonRDSRequest
@@ -424,6 +425,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid only for DB clusters inside a VPC. Don't specify it when you set <c>EnableVPCNetworking</c>
+        /// to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
@@ -702,6 +708,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnableIAMDatabaseAuthentication() => this.EnableIAMDatabaseAuthentication.HasValue;
 
         /// <summary>
+        /// Gets and sets the property EnableInternetAccessGateway. 
+        /// <para>
+        /// Specifies whether the DB cluster uses an internet access gateway. With an internet
+        /// access gateway, you connect to the DB cluster over the internet without a VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <c>true</c> only when you set <c>EnableVPCNetworking</c> to <c>false</c>. A
+        /// DB cluster can't use VPC networking and an internet access gateway at the same time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>false</c>. With <c>WithExpressConfiguration</c>, the default is <c>true</c>.
+        /// To create a DB cluster with express configuration in a VPC, set this parameter to
+        /// <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora PostgreSQL DB clusters only
+        /// </para>
+        /// </summary>
+        public bool? EnableInternetAccessGateway { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableInternetAccessGateway property is set.
+        /// </summary>
+        internal bool IsSetEnableInternetAccessGateway() => this.EnableInternetAccessGateway.HasValue;
+
+        /// <summary>
         /// Gets and sets the property EnableLimitlessDatabase. 
         /// <para>
         /// Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless
@@ -763,6 +798,34 @@ namespace Amazon.RDS.Model
         /// Checks to see if the EnablePerformanceInsights property is set.
         /// </summary>
         internal bool IsSetEnablePerformanceInsights() => this.EnablePerformanceInsights.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property EnableVPCNetworking. 
+        /// <para>
+        /// Specifies whether VPC networking is enabled for the DB cluster. Set to <c>false</c>
+        /// to create a DB cluster without VPC networking.
+        /// </para>
+        ///  
+        /// <para>
+        /// A DB cluster without VPC networking needs an internet access gateway and IAM database
+        /// authentication. Set <c>EnableInternetAccessGateway</c> and <c>EnableIAMDatabaseAuthentication</c>
+        /// to <c>true</c>, and set <c>MasterUserAuthenticationType</c> to <c>iam-db-auth</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>true</c>. With <c>WithExpressConfiguration</c>, the default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora PostgreSQL DB clusters only
+        /// </para>
+        /// </summary>
+        public bool? EnableVPCNetworking { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableVPCNetworking property is set.
+        /// </summary>
+        internal bool IsSetEnableVPCNetworking() => this.EnableVPCNetworking.HasValue;
 
         /// <summary>
         /// Gets and sets the property Engine. 
@@ -1343,6 +1406,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Don't specify it when you set <c>EnableVPCNetworking</c> to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         ///  
@@ -1887,6 +1954,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid only for DB clusters inside a VPC. Don't specify it when you set <c>EnableVPCNetworking</c>
+        /// to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// <para />
@@ -1909,6 +1981,24 @@ namespace Amazon.RDS.Model
         /// Specifies to create an Aurora DB Cluster with express configuration in seconds. Express
         /// configuration provides a cluster with a writer instance and feature specific values
         /// set to all other input parameters of this API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, a DB cluster with express configuration doesn't use VPC networking. You
+        /// connect to it over the internet through an internet access gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create the DB cluster in a VPC instead, set <c>EnableVPCNetworking</c> to <c>true</c>
+        /// and <c>EnableInternetAccessGateway</c> to <c>false</c>. You can also specify <c>DBSubnetGroupName</c>,
+        /// <c>VpcSecurityGroupIds</c>, and <c>NetworkType</c>. If you don't specify <c>DBSubnetGroupName</c>,
+        /// the DB cluster uses the default DB subnet group for your Amazon Web Services account,
+        /// in your default VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// A DB cluster with express configuration in a VPC takes longer to become available
+        /// than one without VPC networking.
         /// </para>
         ///  
         /// <para>

@@ -584,6 +584,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("PrimaryEndpoint", targetDepth))
+                    {
+                        var unmarshaller = PrimaryEndpointUnmarshaller.Instance;
+                        unmarshalledObject.PrimaryEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
                     {
                         if (unmarshalledObject.ProcessorFeatures == null)
@@ -755,6 +762,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UpgradeRolloutOrder = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("VPCNetworkingEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.VPCNetworkingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
 

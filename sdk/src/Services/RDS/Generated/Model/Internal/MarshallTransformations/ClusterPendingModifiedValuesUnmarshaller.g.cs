@@ -97,6 +97,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("InternetAccessGatewayEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.InternetAccessGatewayEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("Iops", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -129,6 +136,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("VPCNetworkingEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.VPCNetworkingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

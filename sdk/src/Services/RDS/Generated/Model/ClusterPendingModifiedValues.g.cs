@@ -114,6 +114,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetIAMDatabaseAuthenticationEnabled() => this.IAMDatabaseAuthenticationEnabled.HasValue;
 
         /// <summary>
+        /// Gets and sets the property InternetAccessGatewayEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster will use an internet access gateway after a pending
+        /// networking change completes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora PostgreSQL DB clusters only
+        /// </para>
+        /// </summary>
+        public bool? InternetAccessGatewayEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InternetAccessGatewayEnabled property is set.
+        /// </summary>
+        internal bool IsSetInternetAccessGatewayEnabled() => this.InternetAccessGatewayEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora
@@ -176,5 +194,24 @@ namespace Amazon.RDS.Model
         /// Checks to see if the StorageType property is set.
         /// </summary>
         internal bool IsSetStorageType() => this.StorageType != null;
+
+        /// <summary>
+        /// Gets and sets the property VPCNetworkingEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster will use VPC networking after a pending networking
+        /// change completes. For a pending move to a different DB subnet group, the value is
+        /// <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public bool? VPCNetworkingEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VPCNetworkingEnabled property is set.
+        /// </summary>
+        internal bool IsSetVPCNetworkingEnabled() => this.VPCNetworkingEnabled.HasValue;
     }
 }

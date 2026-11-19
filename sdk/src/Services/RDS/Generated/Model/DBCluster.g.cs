@@ -850,8 +850,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
-        /// configuration.
+        /// Valid for Cluster Type: Aurora PostgreSQL DB clusters only
         /// </para>
         /// </summary>
         public bool? InternetAccessGatewayEnabled { get; set; }
@@ -1495,12 +1494,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VPCNetworkingEnabled. 
         /// <para>
-        /// Indicates whether the DB cluster uses VPC-based networking.
+        /// Indicates whether the DB cluster uses VPC-based networking. The value is <c>false</c>
+        /// only for an Aurora PostgreSQL DB cluster without VPC networking.
         /// </para>
         ///  
         /// <para>
-        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
-        /// configuration.
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool? VPCNetworkingEnabled { get; set; }
