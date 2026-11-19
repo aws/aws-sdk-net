@@ -32,6 +32,14 @@ public class CoreVersionWriterTests
         Assert.Contains("<version>4.0.102.11-preview</version>", Writer.WriteNuspec());
     }
 
+    [Fact]
+    public void NuspecPacksTheReadme()
+    {
+        var nuspec = Writer.WriteNuspec();
+        Assert.Contains("<readme>README.md</readme>", nuspec);
+        Assert.Contains("""<file src="README.md" target="README.md" />""", nuspec);
+    }
+
     // Core needs AWSSDK.Extensions.Numerics (for BigDecimal) on every target framework, at the version in _sdk-versions.json
     // (preview-labeled here because the manifest sets DefaultToPreview).
     [Fact]

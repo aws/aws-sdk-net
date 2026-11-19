@@ -78,6 +78,7 @@ public sealed class CoreVersionWriter(SdkVersionManifest manifest)
                 writer.WriteLine("<projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>");
                 writer.WriteLine("<tags>AWS Amazon cloud aws-sdk-v4</tags>");
                 writer.WriteLine("""<icon>images\AWSLogo.png</icon>""");
+                writer.WriteLine("<readme>README.md</readme>");
                 writer.OpenXmlBlock("dependencies", () =>
                 {
                     var extensions = SdkExtension.CoreDependencies.Select(extension => (extension.PackageId, Range: manifest.GetExtensionRange(extension.Name))).ToList();
@@ -100,6 +101,7 @@ public sealed class CoreVersionWriter(SdkVersionManifest manifest)
             writer.OpenXmlBlock("files", () =>
             {
                 writer.WriteLine("""<file src="..\..\nuget-content\AWSLogo.png" target="images\" />""");
+                writer.WriteLine("""<file src="README.md" target="README.md" />""");
                 writer.WriteLine("""<file src="..\..\nuget-content\account-management.ps1" target="tools" />""");
                 foreach (var platform in TargetPlatforms.Platforms)
                 {
