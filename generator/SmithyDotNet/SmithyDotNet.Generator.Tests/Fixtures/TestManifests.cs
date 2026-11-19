@@ -23,13 +23,14 @@ internal static class TestManifests
         },
     };
 
-    public static SdkVersionManifest CloudTrailData() => new()
+    // serviceName lets a test generate the CloudTrailData model under another service's name.
+    public static SdkVersionManifest CloudTrailData(string serviceName = "CloudTrailData") => new()
     {
         CoreVersion = "4.0.100.3",
         DefaultAssemblyVersion = "4.0",
         ServiceVersions = new Dictionary<string, ServiceVersion>
         {
-            ["CloudTrailData"] = new()
+            [serviceName] = new()
             {
                 Version = "4.0.100.3",
                 AssemblyVersionOverride = "4.0",

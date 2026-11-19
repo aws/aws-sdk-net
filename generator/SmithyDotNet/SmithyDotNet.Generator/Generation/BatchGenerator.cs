@@ -43,6 +43,9 @@ public sealed class BatchGenerator(string repoRoot)
     private readonly string _testModelsRoot = SdkTreeLayout.TestModelsRoot(repoRoot);
     private readonly string _sdkRoot = SdkTreeLayout.SdkRoot(repoRoot);
 
+    // Built from partitions.json, not S3's model, so it's written with Core's files and S3's own run must not delete it.
+    private readonly string _s3EnumerationsPath = Path.Combine(SdkTreeLayout.ServiceSourceRoot(repoRoot, "S3"), "Generated", "S3Enumerations.cs");
+
     // A case-insensitive volume treats the old-cased entry of a renamed file as the written file; compare paths like it does.
     private readonly StringComparer _pathComparer = Directory.Exists(SdkTreeLayout.SdkRoot(repoRoot).ToUpperInvariant()) ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
 
@@ -109,6 +112,7 @@ public sealed class BatchGenerator(string repoRoot)
         {
             ServiceGenerator.WriteFile(Path.Combine(coreRoot, path), contents, format: false, ct);
         }
+        ServiceGenerator.WriteFile(_s3EnumerationsPath, new S3RegionWriter(partitions).Write(), format: false, ct);
         Log.Info($"Generated Core's files under '{Relative(coreRoot)}'.");
     }
 
@@ -309,6 +313,7 @@ public sealed class BatchGenerator(string repoRoot)
             }
 
             stale.ExceptWith(generator.WrittenFiles);
+            stale.Remove(_s3EnumerationsPath);
             RemoveStaleOutput(service.Name, sourceRoot, generatedTrees, stale);
         }
         catch (GeneratorException ex)

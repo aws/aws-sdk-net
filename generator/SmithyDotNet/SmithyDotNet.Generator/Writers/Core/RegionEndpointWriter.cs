@@ -25,8 +25,7 @@ public sealed class RegionEndpointWriter(IReadOnlyList<AwsPartition> partitions)
             {
                 foreach (var partition in partitions)
                 {
-                    // The SDK has never shipped constants for the partition-wide *-global pseudo-regions.
-                    foreach (var region in partition.Regions.Where(region => !region.Code.EndsWith("-global", StringComparison.OrdinalIgnoreCase)))
+                    foreach (var region in partition.Regions.Where(region => !IsGlobalPseudoRegion(region)))
                     {
                         // S3 still accepts the legacy us-east-1-regional name, so it keeps a private constant.
                         if (region.Code == "us-east-1")
@@ -58,11 +57,14 @@ public sealed class RegionEndpointWriter(IReadOnlyList<AwsPartition> partitions)
         writer.WriteLine($"""{modifier} static readonly RegionEndpoint {name} = GetRegionEndpoint({CodeWriter.Literal(region.Code)}, {CodeWriter.Literal(region.Description)}, {CodeWriter.Literal(partition.Id)}, {CodeWriter.Literal(partition.DnsSuffix)}, @"{partition.RegionRegex}", {CodeWriter.Literal(HostnameTemplate)});""");
     }
 
+    // The SDK has never shipped constants for the partition-wide *-global pseudo-regions.
+    internal static bool IsGlobalPseudoRegion(AwsRegion region) => region.Code.EndsWith("-global", StringComparison.OrdinalIgnoreCase);
+
     /// <summary>
     /// The constant's name: each dash-separated part upper-cased first, the first part entirely (<c>us-east-1</c> is
     /// <c>USEast1</c>). The <c>NorthWest</c> and <c>GovCloud</c> spellings keep the names the SDK has always shipped.
     /// </summary>
-    private static string ConstantName(string regionCode)
+    internal static string ConstantName(string regionCode)
     {
         var parts = regionCode.Split('-');
         return parts[0].ToUpperInvariant() + string.Concat(parts.Skip(1).Select(part => part switch

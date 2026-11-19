@@ -175,15 +175,16 @@ alone for its partitions and endpoints merges, so any change to them has to be m
   private `USEast1Regional` precedes `USEast1` for S3.
 - `Amazon.Runtime/Internal/Endpoints/StandardLibrary/Partition.generated.cs` (`PartitionWriter`): the endpoint
   rules' partition lookup tables, including the `*-global` regions.
+- S3's `Generated/S3Enumerations.cs` (`S3RegionWriter`): an `S3Region` constant per region, with the same names,
+  order and `*-global` skip as `RegionEndpoint`. Its values are the region codes, except S3's legacy `us-east-1`
+  (`""`) and `eu-west-1` (`"EU"`). S3's own run leaves it out of its stale-file cleanup.
 
 From `_sdk-versions.json` (`CoreVersionWriter`): Core's `Properties/AssemblyInfo.cs`,
 `Amazon.Util/Internal/InternalSDKUtils.generated.cs` and the git-ignored `AWSSDK.Core.nuspec`. `AssemblyInfo.cs`
 shares the services' `FileHeader.WriteAssemblyInfoBody`, and C2J's `CoreAssemblyInfo.tt` matches it. From
 `sdk-default-configuration.json` (`DefaultConfigurationModeWriter`): `Amazon.Runtime/DefaultConfigurationMode.generated.cs`.
 
-Core's files are written unformatted and, as C2J trims them, without a final newline. S3's `S3Enumerations.cs`,
-built from `partitions.json`, stays with C2J until S3 migrates: C2J deletes any file under an unmigrated service's
-`Generated/` folder that it didn't write in that run, and it runs after the Smithy generator.
+Core's files are written unformatted and, as C2J trims them, without a final newline.
 
 Each extension under `extensions/src` with a nuspec gets its `ExtensionVersions` entry stamped into the nuspec and
 `Properties/AssemblyInfo.cs` (`ExtensionVersionUpdater`). Those files are hand-written, so they're edited in place;

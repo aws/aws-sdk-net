@@ -12,7 +12,7 @@ public class PartitionsManifestTests
 
         // Neither list is alphabetical, so a sort would show.
         Assert.Equal(["aws", "aws-us-gov", "aws-cn"], partitions.Select(partition => partition.Id));
-        Assert.Equal(["us-east-1", "aws-global", "ap-southeast-1"], partitions[0].Regions.Select(region => region.Code));
+        Assert.Equal(["us-east-1", "aws-global", "ap-southeast-1", "eu-west-1"], partitions[0].Regions.Select(region => region.Code));
         Assert.Equal(new AwsRegion("cn-northwest-1", "China (Ningxia)"), Assert.Single(partitions[2].Regions));
     }
 

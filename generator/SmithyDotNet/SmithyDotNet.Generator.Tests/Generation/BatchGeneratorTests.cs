@@ -36,6 +36,7 @@ public class BatchGeneratorTests : IDisposable
         Assert.Contains("public static readonly RegionEndpoint USEast1 =", File.ReadAllText(Path.Combine(coreDir, "RegionEndpoint", "RegionEndpoint.generated.cs")));
         Assert.Contains("_defaultPartition = aws;", File.ReadAllText(Path.Combine(coreDir, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary", "Partition.generated.cs")));
         Assert.Contains("""CoreVersionNumber = "4.0.100.3";""", File.ReadAllText(Path.Combine(coreDir, "Amazon.Util", "Internal", "InternalSDKUtils.generated.cs")));
+        Assert.Contains("public static readonly S3Region USEast1 =", File.ReadAllText(Path.Combine(SdkTreeLayout.ServiceSourceRoot(_repoRoot, "S3"), "Generated", "S3Enumerations.cs")));
         Assert.True(File.Exists(Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "AWSSDK.NetStandard.sln")));
     }
 
@@ -127,6 +128,20 @@ public class BatchGeneratorTests : IDisposable
         Assert.False(File.Exists(Path.Combine(sourceRoot, "CloudTrailData.sln")));
         Assert.True(File.Exists(Path.Combine(sourceRoot, "CloudTrailData.slnx")));
         Assert.True(File.Exists(Path.Combine(sourceRoot, "Custom", "HandWritten.cs")));
+    }
+
+    // S3Enumerations.cs comes from partitions.json, not S3's model, so S3's own run mustn't delete it as stale.
+    [Fact]
+    public void S3RunKeepsS3Enumerations()
+    {
+        File.WriteAllText(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "metadata.json"), """{ "namespace": "Amazon.S3" }""");
+        SeedFile(SdkTreeLayout.VersionManifestPath(_repoRoot), JsonSerializer.Serialize(TestManifests.CloudTrailData("S3")));
+        WriteControlFile("S3");
+
+        var generated = new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
+
+        Assert.Equal(["S3"], generated);
+        Assert.True(File.Exists(Path.Combine(SdkTreeLayout.ServiceSourceRoot(_repoRoot, "S3"), "Generated", "S3Enumerations.cs")));
     }
 
     [Fact]

@@ -20,6 +20,9 @@
         },
         "ap-southeast-1": {
           "description": "Asia Pacific (Singapore)"
+        },
+        "eu-west-1": {
+          "description": "Europe (Ireland)"
         }
       }
     },
