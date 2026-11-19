@@ -185,6 +185,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationId. 
+        /// <para>
+        /// A filter that matches offers by the ID of the subsidiary authorization that they were
+        /// created from.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not all offers have a <c>SubsidiaryAuthorizationId</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public OfferSubsidiaryAuthorizationIdFilter SubsidiaryAuthorizationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationId property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationId() => this.SubsidiaryAuthorizationId != null;
+
+        /// <summary>
         /// Gets and sets the property TargetAgreementId. 
         /// <para>
         /// Allows filtering on the <c>TargetAgreementId</c> of an offer.

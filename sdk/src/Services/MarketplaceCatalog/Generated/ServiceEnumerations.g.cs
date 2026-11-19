@@ -328,6 +328,47 @@ namespace Amazon.MarketplaceCatalog
     }
 
     /// <summary>
+    /// Constants used for properties of type ContentRecommendationStatus.
+    /// </summary>
+    public class ContentRecommendationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant GENERATED for ContentRecommendationStatus
+        /// </summary>
+        public static readonly ContentRecommendationStatus GENERATED = new ContentRecommendationStatus("GENERATED");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_CONTEXT for ContentRecommendationStatus
+        /// </summary>
+        public static readonly ContentRecommendationStatus INSUFFICIENT_CONTEXT = new ContentRecommendationStatus("INSUFFICIENT_CONTEXT");
+
+        /// <summary>
+        /// Constructs a custom ContentRecommendationStatus for a value not among the defined constants.
+        /// </summary>
+        public ContentRecommendationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentRecommendationStatus FindValue(string value)
+        {
+            return FindValue<ContentRecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentRecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ControlAssessmentResult.
     /// </summary>
     public class ControlAssessmentResult : ConstantClass
@@ -660,6 +701,98 @@ namespace Amazon.MarketplaceCatalog
     }
 
     /// <summary>
+    /// Constants used for properties of type ListingFindingStatus.
+    /// </summary>
+    public class ListingFindingStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAIL for ListingFindingStatus
+        /// </summary>
+        public static readonly ListingFindingStatus FAIL = new ListingFindingStatus("FAIL");
+
+        /// <summary>
+        /// Constant PASS for ListingFindingStatus
+        /// </summary>
+        public static readonly ListingFindingStatus PASS = new ListingFindingStatus("PASS");
+
+        /// <summary>
+        /// Constructs a custom ListingFindingStatus for a value not among the defined constants.
+        /// </summary>
+        public ListingFindingStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListingFindingStatus FindValue(string value)
+        {
+            return FindValue<ListingFindingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListingFindingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ListingQualityTier.
+    /// </summary>
+    public class ListingQualityTier : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASIC for ListingQualityTier
+        /// </summary>
+        public static readonly ListingQualityTier BASIC = new ListingQualityTier("BASIC");
+
+        /// <summary>
+        /// Constant EXCELLENT for ListingQualityTier
+        /// </summary>
+        public static readonly ListingQualityTier EXCELLENT = new ListingQualityTier("EXCELLENT");
+
+        /// <summary>
+        /// Constant NEEDS_IMPROVEMENT for ListingQualityTier
+        /// </summary>
+        public static readonly ListingQualityTier NEEDS_IMPROVEMENT = new ListingQualityTier("NEEDS_IMPROVEMENT");
+
+        /// <summary>
+        /// Constant STRONG for ListingQualityTier
+        /// </summary>
+        public static readonly ListingQualityTier STRONG = new ListingQualityTier("STRONG");
+
+        /// <summary>
+        /// Constructs a custom ListingQualityTier for a value not among the defined constants.
+        /// </summary>
+        public ListingQualityTier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListingQualityTier FindValue(string value)
+        {
+            return FindValue<ListingQualityTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListingQualityTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type MachineLearningProductSortBy.
     /// </summary>
     public class MachineLearningProductSortBy : ConstantClass
@@ -965,6 +1098,11 @@ namespace Amazon.MarketplaceCatalog
         public static readonly OfferSortBy State = new OfferSortBy("State");
 
         /// <summary>
+        /// Constant SubsidiaryAuthorizationId for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy SubsidiaryAuthorizationId = new OfferSortBy("SubsidiaryAuthorizationId");
+
+        /// <summary>
         /// Constant TargetAgreementId for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy TargetAgreementId = new OfferSortBy("TargetAgreementId");
@@ -1169,6 +1307,144 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OwnershipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationSeverity.
+    /// </summary>
+    public class RecommendationSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADVISORY for RecommendationSeverity
+        /// </summary>
+        public static readonly RecommendationSeverity ADVISORY = new RecommendationSeverity("ADVISORY");
+
+        /// <summary>
+        /// Constant BLOCKING for RecommendationSeverity
+        /// </summary>
+        public static readonly RecommendationSeverity BLOCKING = new RecommendationSeverity("BLOCKING");
+
+        /// <summary>
+        /// Constructs a custom RecommendationSeverity for a value not among the defined constants.
+        /// </summary>
+        public RecommendationSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationSeverity FindValue(string value)
+        {
+            return FindValue<RecommendationSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendedFeatureId.
+    /// </summary>
+    public class RecommendedFeatureId : ConstantClass
+    {
+        /// <summary>
+        /// Constant FREE_TRIAL for RecommendedFeatureId
+        /// </summary>
+        public static readonly RecommendedFeatureId FREE_TRIAL = new RecommendedFeatureId("FREE_TRIAL");
+
+        /// <summary>
+        /// Constant PROMOTIONAL_MEDIA for RecommendedFeatureId
+        /// </summary>
+        public static readonly RecommendedFeatureId PROMOTIONAL_MEDIA = new RecommendedFeatureId("PROMOTIONAL_MEDIA");
+
+        /// <summary>
+        /// Constant QUICK_LAUNCH for RecommendedFeatureId
+        /// </summary>
+        public static readonly RecommendedFeatureId QUICK_LAUNCH = new RecommendedFeatureId("QUICK_LAUNCH");
+
+        /// <summary>
+        /// Constant REQUEST_A_DEMO for RecommendedFeatureId
+        /// </summary>
+        public static readonly RecommendedFeatureId REQUEST_A_DEMO = new RecommendedFeatureId("REQUEST_A_DEMO");
+
+        /// <summary>
+        /// Constant REQUEST_PRIVATE_OFFER for RecommendedFeatureId
+        /// </summary>
+        public static readonly RecommendedFeatureId REQUEST_PRIVATE_OFFER = new RecommendedFeatureId("REQUEST_PRIVATE_OFFER");
+
+        /// <summary>
+        /// Constructs a custom RecommendedFeatureId for a value not among the defined constants.
+        /// </summary>
+        public RecommendedFeatureId(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendedFeatureId FindValue(string value)
+        {
+            return FindValue<RecommendedFeatureId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendedFeatureId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendedFeatureStatus.
+    /// </summary>
+    public class RecommendedFeatureStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAIL for RecommendedFeatureStatus
+        /// </summary>
+        public static readonly RecommendedFeatureStatus FAIL = new RecommendedFeatureStatus("FAIL");
+
+        /// <summary>
+        /// Constant PASS for RecommendedFeatureStatus
+        /// </summary>
+        public static readonly RecommendedFeatureStatus PASS = new RecommendedFeatureStatus("PASS");
+
+        /// <summary>
+        /// Constructs a custom RecommendedFeatureStatus for a value not among the defined constants.
+        /// </summary>
+        public RecommendedFeatureStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendedFeatureStatus FindValue(string value)
+        {
+            return FindValue<RecommendedFeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendedFeatureStatus(string value)
         {
             return FindValue(value);
         }
@@ -1673,6 +1949,47 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VerificationSource.
+    /// </summary>
+    public class VerificationSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_VERIFIED for VerificationSource
+        /// </summary>
+        public static readonly VerificationSource AWS_VERIFIED = new VerificationSource("AWS_VERIFIED");
+
+        /// <summary>
+        /// Constant SELF_ATTESTED for VerificationSource
+        /// </summary>
+        public static readonly VerificationSource SELF_ATTESTED = new VerificationSource("SELF_ATTESTED");
+
+        /// <summary>
+        /// Constructs a custom VerificationSource for a value not among the defined constants.
+        /// </summary>
+        public VerificationSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationSource FindValue(string value)
+        {
+            return FindValue<VerificationSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationSource(string value)
         {
             return FindValue(value);
         }

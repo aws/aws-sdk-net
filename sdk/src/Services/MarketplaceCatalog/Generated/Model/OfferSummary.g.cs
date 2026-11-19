@@ -165,6 +165,21 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
+        /// Gets and sets the property SubsidiaryAuthorizationId. 
+        /// <para>
+        /// The ID of the subsidiary authorization that the offer was created from. The ID begins
+        /// with <c>subauthz-</c> followed by 13 alphanumeric characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 22)]
+        public string SubsidiaryAuthorizationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubsidiaryAuthorizationId property is set.
+        /// </summary>
+        internal bool IsSetSubsidiaryAuthorizationId() => this.SubsidiaryAuthorizationId != null;
+
+        /// <summary>
         /// Gets and sets the property TargetAgreementId. 
         /// <para>
         /// The target agreement ID of the offer.

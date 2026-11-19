@@ -66,6 +66,20 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerSecuritySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("ListingQualitySummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ListingQualitySummaryUnmarshaller.Instance;
+                    unmarshalledObject.ListingQualitySummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ListingRecommendationsSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = ListingRecommendationsSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ListingRecommendationsSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -116,6 +116,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("SubsidiaryAuthorizationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubsidiaryAuthorizationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("TargetAgreementId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -166,6 +166,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetSubsidiaryAuthorizationId())
+            {
+                context.Writer.WritePropertyName("SubsidiaryAuthorizationId");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OfferSubsidiaryAuthorizationIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubsidiaryAuthorizationId, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetTargetAgreementId())
             {
                 context.Writer.WritePropertyName("TargetAgreementId");

@@ -56,6 +56,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("EntityId");
                 context.Writer.WriteStringValue(requestObject.EntityId);
             }
+
+            if (requestObject.IsSetEntityIds())
+            {
+                context.Writer.WritePropertyName("EntityIds");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectEntityIdsListValue in requestObject.EntityIds)
+                {
+                    context.Writer.WriteStringValue(requestObjectEntityIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
         }
 
         /// <summary>

@@ -62,6 +62,19 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetControlId() => this.ControlId != null;
 
         /// <summary>
+        /// Gets and sets the property ControlSummary. 
+        /// <para>
+        /// A summary of what the control produced, such as recommendations for the listing.
+        /// </para>
+        /// </summary>
+        public ControlSummary ControlSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ControlSummary property is set.
+        /// </summary>
+        internal bool IsSetControlSummary() => this.ControlSummary != null;
+
+        /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
         /// An array of <c>ControlError</c> objects associated with the control evaluation.
@@ -79,5 +92,29 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the Errors property is set.
         /// </summary>
         internal bool IsSetErrors() => this.Errors != null && (this.Errors.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VerificationSource. 
+        /// <para>
+        /// Where the result of the control came from. This value doesn't say whether the control
+        /// passed. A control that you attested to can still have a result of <c>PASS</c>. Valid
+        /// values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS_VERIFIED</c> - AWS evaluated the control.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SELF_ATTESTED</c> - You attested to the result of the control.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VerificationSource VerificationSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VerificationSource property is set.
+        /// </summary>
+        internal bool IsSetVerificationSource() => this.VerificationSource != null;
     }
 }

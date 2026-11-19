@@ -62,5 +62,27 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the EntityId property is set.
         /// </summary>
         internal bool IsSetEntityId() => this.EntityId != null;
+
+        /// <summary>
+        /// Gets and sets the property EntityIds. 
+        /// <para>
+        /// A list of up to 50 entity IDs whose assessments you want to list. The response includes
+        /// only the latest published assessment of each entity. You must also specify <c>FrameworkId</c>
+        /// in the request, and you can't combine <c>EntityIds</c> with <c>EntityId</c> or <c>ChangeSetId</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public List<string> EntityIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the EntityIds property is set.
+        /// </summary>
+        internal bool IsSetEntityIds() => this.EntityIds != null && (this.EntityIds.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

@@ -4,7 +4,7 @@
     <property>Amazon.MarketplaceCatalog.Model.CancelChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.CancelChangeSetRequest.ChangeSetId</property>
@@ -40,7 +40,7 @@
     <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.MaxResults</property>
@@ -93,7 +93,7 @@
     <property>Amazon.MarketplaceCatalog.Model.DescribeChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DescribeChangeSetRequest.ChangeSetId</property>
@@ -141,7 +141,7 @@
     <property>Amazon.MarketplaceCatalog.Model.DescribeEntityRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DescribeEntityRequest.EntityId</property>
@@ -195,7 +195,7 @@
     <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.FrameworkId</property>
@@ -224,7 +224,7 @@
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsRequest.MaxResults</property>
@@ -247,7 +247,7 @@
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.EntityType</property>
@@ -297,10 +297,40 @@
     <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.StartAssessmentRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.StartAssessmentRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.StartAssessmentRequest.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.StartAssessmentRequest.FrameworkId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-@]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.StartAssessmentResponse.AssessmentId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(assessment-[a-zA-Z0-9]+|arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:[0-9]*:[a-zA-Z0-9-]+/Assessment/assessment-[a-zA-Z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.StartChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.StartChangeSetRequest.ChangeSetName</property>
@@ -349,6 +379,26 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AdditionalResource.Text</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AdditionalResource.Type</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AdditionalResource.Url</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AdditionalResourcesAlternative.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.AmiProductLastModifiedDateFilterDateRange.AfterValue</property>
@@ -439,6 +489,11 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.CaseStudiesAlternative.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Change.ChangeName</property>
@@ -560,6 +615,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ControlInput.ControlId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DataProductLastModifiedDateFilterDateRange.AfterValue</property>
     <min>20</min>
     <max>20</max>
@@ -623,7 +684,7 @@
     <property>Amazon.MarketplaceCatalog.Model.EntityRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>^(?![.-])(?!.*[.-]{2})(?![0-9]+\.[0-9.]+$)[a-zA-Z0-9.-]{1,47}(?&lt;![.-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.EntityRequest.EntityId</property>
@@ -696,10 +757,101 @@
     <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.FeatureRecommendation.Action</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.FeatureRecommendation.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Filter.Name</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.FollowUpQuestion.Justification</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.FollowUpQuestion.Question</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingCaseStudy.Id</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingCaseStudy.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingCaseStudy.Title</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingFinding.Action</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingFinding.Description</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingQualitySummary.EntityRevision</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingRecommendationsSummary.EntityRevision</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Group</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Id</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Rank</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.Subgroup</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListingUseCase.UseCaseDetails</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.MachineLearningProductLastModifiedDateFilterDateRange.AfterValue</property>
@@ -852,10 +1004,22 @@
     <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSummary.SubsidiaryAuthorizationId</property>
+    <min>1</min>
+    <max>22</max>
+    <pattern>^subauthz-[a-zA-Z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.OfferSummary.TargetAgreementId</property>
     <min>1</min>
     <max>64</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.RecommendationCitation.Url</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^https://\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ResaleAuthorizationAvailabilityEndDateFilterDateRange.AfterValue</property>
@@ -1116,6 +1280,26 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.TextAlternative.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.TextAlternative.Value</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.TextListAlternative.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.UseCasesAlternative.Rationale</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.ChangeType</property>

@@ -1303,6 +1303,139 @@ namespace Amazon.MarketplaceCatalog
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts an assessment of a product entity against a framework. An <i>assessment</i>
+        /// is the result of evaluating an entity against the controls of a framework. You choose
+        /// the controls to run and provide the input that each control needs.
+        /// 
+        ///  
+        /// <para>
+        /// The assessment runs asynchronously. This action returns the ID of the assessment immediately.
+        /// To get its status and the results of each control, use the <c>DescribeAssessment</c>
+        /// action. To find assessments that you started earlier, use the <c>ListAssessments</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssessment service method.</param>
+        /// <returns>The response from the StartAssessment service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceInUseException">
+        /// The resource is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 404
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ServiceQuotaExceededException">
+        /// The maximum number of open requests per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartAssessment">REST API Reference for StartAssessment Operation</seealso>
+        StartAssessmentResponse StartAssessment(StartAssessmentRequest request);
+#endif
+
+        /// <summary>
+        /// Starts an assessment of a product entity against a framework. An <i>assessment</i>
+        /// is the result of evaluating an entity against the controls of a framework. You choose
+        /// the controls to run and provide the input that each control needs.
+        /// 
+        ///  
+        /// <para>
+        /// The assessment runs asynchronously. This action returns the ID of the assessment immediately.
+        /// To get its status and the results of each control, use the <c>DescribeAssessment</c>
+        /// action. To find assessments that you started earlier, use the <c>ListAssessments</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartAssessment service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceInUseException">
+        /// The resource is currently in use.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 404
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ServiceQuotaExceededException">
+        /// The maximum number of open requests per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartAssessment">REST API Reference for StartAssessment Operation</seealso>
+        Task<StartAssessmentResponse> StartAssessmentAsync(StartAssessmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Allows you to request changes for your entities. Within a single <c>ChangeSet</c>,
         /// you can't start the same change type against the same entity multiple times. Additionally,
         /// when a <c>ChangeSet</c> is running, all the entities targeted by the different changes

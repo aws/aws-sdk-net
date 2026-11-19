@@ -87,7 +87,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Gets and sets the property FrameworkId. 
         /// <para>
         /// The unique identifier of a framework. When specified, only assessments performed against
-        /// this framework are returned. For example, <c>AMISecurity</c>.
+        /// this framework are returned. For example, <c>AMISecurity</c>. Required when you use
+        /// <c>EntityIds</c> in <c>AssessmentTargetFilter</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]

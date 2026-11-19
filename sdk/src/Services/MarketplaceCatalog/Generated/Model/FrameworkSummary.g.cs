@@ -60,5 +60,31 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Checks to see if the ContainerSecuritySummary property is set.
         /// </summary>
         internal bool IsSetContainerSecuritySummary() => this.ContainerSecuritySummary != null;
+
+        /// <summary>
+        /// Gets and sets the property ListingQualitySummary. 
+        /// <para>
+        /// The details of the resource assessed under the Listing Quality framework.
+        /// </para>
+        /// </summary>
+        public ListingQualitySummary ListingQualitySummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ListingQualitySummary property is set.
+        /// </summary>
+        internal bool IsSetListingQualitySummary() => this.ListingQualitySummary != null;
+
+        /// <summary>
+        /// Gets and sets the property ListingRecommendationsSummary. 
+        /// <para>
+        /// The details of the resource assessed under the Listing Recommendations framework.
+        /// </para>
+        /// </summary>
+        public ListingRecommendationsSummary ListingRecommendationsSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ListingRecommendationsSummary property is set.
+        /// </summary>
+        internal bool IsSetListingRecommendationsSummary() => this.ListingRecommendationsSummary != null;
     }
 }
