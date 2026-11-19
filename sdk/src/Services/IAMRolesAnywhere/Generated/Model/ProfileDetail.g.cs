@@ -287,6 +287,19 @@ namespace Amazon.IAMRolesAnywhere.Model
         internal bool IsSetSessionPolicy() => this.SessionPolicy != null;
 
         /// <summary>
+        /// Gets and sets the property TipConfiguration. 
+        /// <para>
+        /// The trusted identity propagation (TIP) settings of the profile.
+        /// </para>
+        /// </summary>
+        public TipConfiguration TipConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TipConfiguration property is set.
+        /// </summary>
+        internal bool IsSetTipConfiguration() => this.TipConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The ISO-8601 timestamp when the profile was last updated. 

@@ -165,6 +165,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("tipConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = TipConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TipConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

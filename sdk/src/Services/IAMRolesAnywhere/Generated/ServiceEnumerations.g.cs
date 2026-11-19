@@ -145,6 +145,129 @@ namespace Amazon.IAMRolesAnywhere
     }
 
     /// <summary>
+    /// Constants used for properties of type TipStatus.
+    /// </summary>
+    public class TipStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for TipStatus
+        /// </summary>
+        public static readonly TipStatus DISABLED = new TipStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for TipStatus
+        /// </summary>
+        public static readonly TipStatus ENABLED = new TipStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom TipStatus for a value not among the defined constants.
+        /// </summary>
+        public TipStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TipStatus FindValue(string value)
+        {
+            return FindValue<TipStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TipStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TipSubjectSource.
+    /// </summary>
+    public class TipSubjectSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant X509SANURI for TipSubjectSource
+        /// </summary>
+        public static readonly TipSubjectSource X509SANURI = new TipSubjectSource("x509SAN/URI");
+
+        /// <summary>
+        /// Constant X509SubjectCN for TipSubjectSource
+        /// </summary>
+        public static readonly TipSubjectSource X509SubjectCN = new TipSubjectSource("x509Subject/CN");
+
+        /// <summary>
+        /// Constructs a custom TipSubjectSource for a value not among the defined constants.
+        /// </summary>
+        public TipSubjectSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TipSubjectSource FindValue(string value)
+        {
+            return FindValue<TipSubjectSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TipSubjectSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TipSubjectType.
+    /// </summary>
+    public class TipSubjectType : ConstantClass
+    {
+        /// <summary>
+        /// Constant User for TipSubjectType
+        /// </summary>
+        public static readonly TipSubjectType User = new TipSubjectType("user");
+
+        /// <summary>
+        /// Constant Workload for TipSubjectType
+        /// </summary>
+        public static readonly TipSubjectType Workload = new TipSubjectType("workload");
+
+        /// <summary>
+        /// Constructs a custom TipSubjectType for a value not among the defined constants.
+        /// </summary>
+        public TipSubjectType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TipSubjectType FindValue(string value)
+        {
+            return FindValue<TipSubjectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TipSubjectType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type TrustAnchorType.
     /// </summary>
     public class TrustAnchorType : ConstantClass

@@ -138,6 +138,16 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetTipConfiguration())
+            {
+                context.Writer.WritePropertyName("tipConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TipConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TipConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
 
             writer.WriteEndObject();
             writer.Flush();

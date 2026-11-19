@@ -218,5 +218,24 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Checks to see if the Tags property is set.
         /// </summary>
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TipConfiguration. 
+        /// <para>
+        /// The trusted identity propagation (TIP) settings for the profile. When you enable TIP,
+        /// sessions from the profile include the identity from the certificate in <c>aws:OriginIdentity</c>
+        /// condition keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the profile doesn't use TIP.
+        /// </para>
+        /// </summary>
+        public TipConfiguration TipConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TipConfiguration property is set.
+        /// </summary>
+        internal bool IsSetTipConfiguration() => this.TipConfiguration != null;
     }
 }

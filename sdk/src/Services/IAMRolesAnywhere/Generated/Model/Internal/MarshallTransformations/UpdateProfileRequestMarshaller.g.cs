@@ -119,6 +119,16 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("sessionPolicy");
                 context.Writer.WriteStringValue(publicRequest.SessionPolicy);
             }
+            if (publicRequest.IsSetTipConfiguration())
+            {
+                context.Writer.WritePropertyName("tipConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TipConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TipConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
 
             writer.WriteEndObject();
             writer.Flush();
