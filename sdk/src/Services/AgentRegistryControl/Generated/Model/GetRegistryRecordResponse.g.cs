@@ -35,6 +35,25 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class GetRegistryRecordResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        /// The skill package of the record's latest revision, including a revision in <c>DRAFT</c>
+        /// or <c>PENDING_APPROVAL</c> status, as a download URL and a SHA-256 checksum. While
+        /// an update of the record is in progress or after it fails, this is the last package
+        /// that passed validation, unless the update switches between an uploaded package and
+        /// a synchronized one: then it is absent until the update succeeds. Absent while the
+        /// record is being created or after its creation fails, and when the record has no package,
+        /// for example when its content is inline or it synchronizes only SKILL.md.
+        /// </para>
+        /// </summary>
+        public RegistryRecordArtifactDownload Artifact { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Artifact property is set.
+        /// </summary>
+        internal bool IsSetArtifact() => this.Artifact != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp when the registry record was created.
@@ -124,7 +143,9 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Descriptors. 
         /// <para>
-        /// The typed descriptors that define the content of the registry record.
+        /// The typed descriptors that define the content of the registry record. For a skill
+        /// record with a skill package or a synchronized source, <c>skillMd.data</c> contains
+        /// the SKILL.md that the registry took from the package or the source.
         /// </para>
         /// </summary>
         public Descriptors Descriptors { get; set; }
@@ -281,6 +302,24 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the StatusReason property is set.
         /// </summary>
         internal bool IsSetStatusReason() => this.StatusReason != null;
+
+        /// <summary>
+        /// Gets and sets the property SynchronizedSource. 
+        /// <para>
+        /// The source that the registry last synchronized the record's skill content from, including
+        /// when the registry read the source and which version it read. Absent until the first
+        /// successful synchronization, and after an update replaces the synchronized content,
+        /// for example with an uploaded package. A failed synchronization leaves this member
+        /// unchanged. After you change the source, this member shows the previous source until
+        /// the registry successfully synchronizes from the new source.
+        /// </para>
+        /// </summary>
+        public RegistryRecordSynchronizedSource SynchronizedSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SynchronizedSource property is set.
+        /// </summary>
+        internal bool IsSetSynchronizedSource() => this.SynchronizedSource != null;
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. 

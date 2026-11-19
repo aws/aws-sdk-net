@@ -108,8 +108,12 @@ namespace Amazon.AgentRegistryControl
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a registry record within a registry. A registry record describes a discoverable
-        /// resource, such as an MCP server, an agent, an agent skill, or a custom resource. Creation
-        /// is asynchronous: the record is returned with the CREATING status while it is processed.
+        /// resource, such as an MCP server, an agent, an agent skill, or a custom resource. For
+        /// an agent skill, you can upload a skill package in <c>artifact</c>, or synchronize
+        /// the skill from an Amazon S3 or GitHub source. Creation is asynchronous: the operation
+        /// returns the record with the <c>CREATING</c> status while the registry processes it.
+        /// If a GitHub user must first authorize access to the source, the operation returns
+        /// the record with the <c>CREATE_PENDING_AUTH</c> status instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegistryRecord service method.</param>
         /// <returns>The response from the CreateRegistryRecord service method, as returned by AgentRegistryControl.</returns>
@@ -140,8 +144,12 @@ namespace Amazon.AgentRegistryControl
 
         /// <summary>
         /// Creates a registry record within a registry. A registry record describes a discoverable
-        /// resource, such as an MCP server, an agent, an agent skill, or a custom resource. Creation
-        /// is asynchronous: the record is returned with the CREATING status while it is processed.
+        /// resource, such as an MCP server, an agent, an agent skill, or a custom resource. For
+        /// an agent skill, you can upload a skill package in <c>artifact</c>, or synchronize
+        /// the skill from an Amazon S3 or GitHub source. Creation is asynchronous: the operation
+        /// returns the record with the <c>CREATING</c> status while the registry processes it.
+        /// If a GitHub user must first authorize access to the source, the operation returns
+        /// the record with the <c>CREATE_PENDING_AUTH</c> status instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegistryRecord service method.</param>
         /// <param name="cancellationToken">
@@ -341,7 +349,10 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Retrieves the details of a registry record
+        /// Retrieves the details of a registry record. The response describes the record's latest
+        /// revision, including a revision that isn't approved yet. For a skill record, the operation
+        /// also returns the skill package in <c>artifact</c> and the source that the registry
+        /// last synchronized the skill from in <c>synchronizedSource</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegistryRecord service method.</param>
         /// <returns>The response from the GetRegistryRecord service method, as returned by AgentRegistryControl.</returns>
@@ -368,7 +379,10 @@ namespace Amazon.AgentRegistryControl
 #endif
 
         /// <summary>
-        /// Retrieves the details of a registry record
+        /// Retrieves the details of a registry record. The response describes the record's latest
+        /// revision, including a revision that isn't approved yet. For a skill record, the operation
+        /// also returns the skill package in <c>artifact</c> and the source that the registry
+        /// last synchronized the skill from in <c>synchronizedSource</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegistryRecord service method.</param>
         /// <param name="cancellationToken">
@@ -805,9 +819,11 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates a registry record. The update is asynchronous: the record is returned with
-        /// the UPDATING status while it is processed. Fields that use update wrappers follow
-        /// PATCH semantics: omit the field to leave it unchanged.
+        /// Updates a registry record. The update is asynchronous: the operation returns the record
+        /// with the <c>UPDATING</c> status while the registry processes it. If a GitHub user
+        /// must first authorize access to the record's skill source, the operation returns the
+        /// record with the <c>UPDATE_PENDING_AUTH</c> status instead. Fields that use update
+        /// wrappers follow PATCH semantics: omit the field to leave it unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecord service method.</param>
         /// <returns>The response from the UpdateRegistryRecord service method, as returned by AgentRegistryControl.</returns>
@@ -834,9 +850,11 @@ namespace Amazon.AgentRegistryControl
 #endif
 
         /// <summary>
-        /// Updates a registry record. The update is asynchronous: the record is returned with
-        /// the UPDATING status while it is processed. Fields that use update wrappers follow
-        /// PATCH semantics: omit the field to leave it unchanged.
+        /// Updates a registry record. The update is asynchronous: the operation returns the record
+        /// with the <c>UPDATING</c> status while the registry processes it. If a GitHub user
+        /// must first authorize access to the record's skill source, the operation returns the
+        /// record with the <c>UPDATE_PENDING_AUTH</c> status instead. Fields that use update
+        /// wrappers follow PATCH semantics: omit the field to leave it unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecord service method.</param>
         /// <param name="cancellationToken">

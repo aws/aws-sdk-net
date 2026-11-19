@@ -31,7 +31,10 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRegistryRecord operation. Retrieves the details
-    /// of a registry record
+    /// of a registry record. The response describes the record's latest revision, including
+    /// a revision that isn't approved yet. For a skill record, the operation also returns
+    /// the skill package in <c>artifact</c> and the source that the registry last synchronized
+    /// the skill from in <c>synchronizedSource</c>.
     /// </summary>
     public partial class GetRegistryRecordRequest : AmazonAgentRegistryControlRequest
     {

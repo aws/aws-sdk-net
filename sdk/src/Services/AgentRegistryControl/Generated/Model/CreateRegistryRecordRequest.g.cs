@@ -32,11 +32,31 @@ namespace Amazon.AgentRegistryControl.Model
     /// <summary>
     /// Container for the parameters to the CreateRegistryRecord operation. Creates a registry
     /// record within a registry. A registry record describes a discoverable resource, such
-    /// as an MCP server, an agent, an agent skill, or a custom resource. Creation is asynchronous:
-    /// the record is returned with the CREATING status while it is processed.
+    /// as an MCP server, an agent, an agent skill, or a custom resource. For an agent skill,
+    /// you can upload a skill package in <c>artifact</c>, or synchronize the skill from an
+    /// Amazon S3 or GitHub source. Creation is asynchronous: the operation returns the record
+    /// with the <c>CREATING</c> status while the registry processes it. If a GitHub user
+    /// must first authorize access to the source, the operation returns the record with the
+    /// <c>CREATE_PENDING_AUTH</c> status instead.
     /// </summary>
     public partial class CreateRegistryRecordRequest : AmazonAgentRegistryControlRequest
     {
+        /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        /// The skill package to store with the record, for a record of type <c>SKILL</c> with
+        /// an <c>agentSkillsDefinition</c> descriptor. The registry validates the package after
+        /// the operation returns and sets <c>skillMd.data</c> from the package's SKILL.md. A
+        /// request that uploads a package can't also set a skill source or send new <c>skillMd.data</c>.
+        /// </para>
+        /// </summary>
+        public RegistryRecordArtifactUpload Artifact { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Artifact property is set.
+        /// </summary>
+        internal bool IsSetArtifact() => this.Artifact != null;
+
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>

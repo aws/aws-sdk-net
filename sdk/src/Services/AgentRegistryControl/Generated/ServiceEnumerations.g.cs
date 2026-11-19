@@ -109,6 +109,42 @@ namespace Amazon.AgentRegistryControl
     }
 
     /// <summary>
+    /// Constants used for properties of type AgentSkillsRepositoryProvider.
+    /// </summary>
+    public class AgentSkillsRepositoryProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant GITHUB for AgentSkillsRepositoryProvider
+        /// </summary>
+        public static readonly AgentSkillsRepositoryProvider GITHUB = new AgentSkillsRepositoryProvider("GITHUB");
+
+        /// <summary>
+        /// Constructs a custom AgentSkillsRepositoryProvider for a value not among the defined constants.
+        /// </summary>
+        public AgentSkillsRepositoryProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentSkillsRepositoryProvider FindValue(string value)
+        {
+            return FindValue<AgentSkillsRepositoryProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentSkillsRepositoryProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AutoApprovalRule.
     /// </summary>
     public class AutoApprovalRule : ConstantClass
@@ -657,6 +693,11 @@ namespace Amazon.AgentRegistryControl
     public class RegistryRecordOAuthGrantType : ConstantClass
     {
         /// <summary>
+        /// Constant AUTHORIZATION_CODE for RegistryRecordOAuthGrantType
+        /// </summary>
+        public static readonly RegistryRecordOAuthGrantType AUTHORIZATION_CODE = new RegistryRecordOAuthGrantType("AUTHORIZATION_CODE");
+
+        /// <summary>
         /// Constant CLIENT_CREDENTIALS for RegistryRecordOAuthGrantType
         /// </summary>
         public static readonly RegistryRecordOAuthGrantType CLIENT_CREDENTIALS = new RegistryRecordOAuthGrantType("CLIENT_CREDENTIALS");
@@ -703,6 +744,11 @@ namespace Amazon.AgentRegistryControl
         public static readonly RegistryRecordStatus CREATE_FAILED = new RegistryRecordStatus("CREATE_FAILED");
 
         /// <summary>
+        /// Constant CREATE_PENDING_AUTH for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus CREATE_PENDING_AUTH = new RegistryRecordStatus("CREATE_PENDING_AUTH");
+
+        /// <summary>
         /// Constant CREATING for RegistryRecordStatus
         /// </summary>
         public static readonly RegistryRecordStatus CREATING = new RegistryRecordStatus("CREATING");
@@ -731,6 +777,11 @@ namespace Amazon.AgentRegistryControl
         /// Constant UPDATE_FAILED for RegistryRecordStatus
         /// </summary>
         public static readonly RegistryRecordStatus UPDATE_FAILED = new RegistryRecordStatus("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATE_PENDING_AUTH for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus UPDATE_PENDING_AUTH = new RegistryRecordStatus("UPDATE_PENDING_AUTH");
 
         /// <summary>
         /// Constant UPDATING for RegistryRecordStatus
@@ -899,6 +950,11 @@ namespace Amazon.AgentRegistryControl
         /// Constant ResourceConflict for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ResourceConflict = new ValidationExceptionReason("ResourceConflict");
+
+        /// <summary>
+        /// Constant UnsupportedInRegion for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedInRegion = new ValidationExceptionReason("UnsupportedInRegion");
 
         /// <summary>
         /// Constructs a custom ValidationExceptionReason for a value not among the defined constants.

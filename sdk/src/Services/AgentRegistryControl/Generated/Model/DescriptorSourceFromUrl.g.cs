@@ -59,7 +59,11 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL from which the descriptor content is retrieved.
+        /// The URL from which the descriptor content is retrieved. For an agent skill source,
+        /// specify an <c>s3://</c> URL of an object in a bucket in the same Amazon Web Services
+        /// Region as the registry. For a GitHub skill source, specify a GitHub folder URL in
+        /// the form <c>https://host/owner/repo/tree/branch-or-tag/path</c>. Other descriptor
+        /// sources use <c>https://</c> URLs.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]

@@ -53,10 +53,31 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("repositoryProvider", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RepositoryProvider = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("skillMd", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentSkillsMdDescriptorUnmarshaller.Instance;
                     unmarshalledObject.SkillMd = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("skillPackage", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgentSkillsPackageDescriptorUnmarshaller.Instance;
+                    unmarshalledObject.SkillPackage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("sourceConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgentSkillsSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

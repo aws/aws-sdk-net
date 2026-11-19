@@ -80,6 +80,16 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetArtifact())
+            {
+                context.Writer.WritePropertyName("artifact");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedRegistryRecordArtifactMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Artifact, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetCustomMetadata())
             {
                 context.Writer.WritePropertyName("customMetadata");
@@ -119,6 +129,11 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.DisplayName, context);
 
                 context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetForceAuthentication())
+            {
+                context.Writer.WritePropertyName("forceAuthentication");
+                context.Writer.WriteBooleanValue(publicRequest.ForceAuthentication.Value);
             }
             if (publicRequest.IsSetName())
             {

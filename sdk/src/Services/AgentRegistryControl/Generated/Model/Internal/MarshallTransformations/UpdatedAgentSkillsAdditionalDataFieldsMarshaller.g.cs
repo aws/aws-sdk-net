@@ -45,6 +45,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetRepositoryProvider())
+            {
+                context.Writer.WritePropertyName("repositoryProvider");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedAgentSkillsRepositoryProviderMarshaller.Instance;
+                marshaller.Marshall(requestObject.RepositoryProvider, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSkillMd())
             {
                 context.Writer.WritePropertyName("skillMd");
@@ -52,6 +63,28 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 
                 var marshaller = UpdatedAgentSkillsMdDescriptorMarshaller.Instance;
                 marshaller.Marshall(requestObject.SkillMd, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSkillPackage())
+            {
+                context.Writer.WritePropertyName("skillPackage");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedAgentSkillsPackageDescriptorMarshaller.Instance;
+                marshaller.Marshall(requestObject.SkillPackage, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("sourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedAgentSkillsSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

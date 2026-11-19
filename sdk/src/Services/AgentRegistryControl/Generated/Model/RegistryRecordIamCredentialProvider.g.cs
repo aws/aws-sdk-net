@@ -31,7 +31,9 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// The configuration for an IAM role credential provider that signs requests to a registry
-    /// record's source with Amazon Web Services Signature Version 4 (SigV4).
+    /// record's source with Amazon Web Services Signature Version 4 (SigV4). For an Amazon
+    /// S3 skill source (an <c>s3://</c> URL), Amazon Web Services Agent Registry assumes
+    /// the role to read the object. The role must be in your Amazon Web Services account.
     /// </summary>
     public partial class RegistryRecordIamCredentialProvider
     {
@@ -40,6 +42,7 @@ namespace Amazon.AgentRegistryControl.Model
         /// <para>
         /// The Amazon Web Services Region to use for request signing. If not specified, the Region
         /// is derived from the source URL hostname, falling back to the Region of the registry.
+        /// For an Amazon S3 skill source, omit it or set it to the Region of the registry.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
@@ -67,7 +70,8 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The service name to use for request signing, such as execute-api.
+        /// The service name to use for request signing, such as execute-api. For an Amazon S3
+        /// skill source, omit it or set it to <c>s3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]

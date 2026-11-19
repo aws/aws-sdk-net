@@ -35,6 +35,19 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class UpdatedAgentSkillsAdditionalDataFields
     {
         /// <summary>
+        /// Gets and sets the property RepositoryProvider. 
+        /// <para>
+        /// The patch for the repository provider field.
+        /// </para>
+        /// </summary>
+        public UpdatedAgentSkillsRepositoryProvider RepositoryProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RepositoryProvider property is set.
+        /// </summary>
+        internal bool IsSetRepositoryProvider() => this.RepositoryProvider != null;
+
+        /// <summary>
         /// Gets and sets the property SkillMd. 
         /// <para>
         /// The patch for the agent skills markdown descriptor field.
@@ -46,5 +59,31 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the SkillMd property is set.
         /// </summary>
         internal bool IsSetSkillMd() => this.SkillMd != null;
+
+        /// <summary>
+        /// Gets and sets the property SkillPackage. 
+        /// <para>
+        /// The patch for the skill package source field.
+        /// </para>
+        /// </summary>
+        public UpdatedAgentSkillsPackageDescriptor SkillPackage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SkillPackage property is set.
+        /// </summary>
+        internal bool IsSetSkillPackage() => this.SkillPackage != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        /// The patch for the source configuration field.
+        /// </para>
+        /// </summary>
+        public UpdatedAgentSkillsSourceConfiguration SourceConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSourceConfiguration() => this.SourceConfiguration != null;
     }
 }

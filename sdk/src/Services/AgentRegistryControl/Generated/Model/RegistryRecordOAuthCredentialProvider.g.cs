@@ -47,6 +47,7 @@ namespace Amazon.AgentRegistryControl.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public Dictionary<string, string> CustomParameters { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -57,7 +58,14 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property GrantType. 
         /// <para>
-        /// The OAuth 2.0 grant type used to obtain access tokens.
+        /// The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires
+        /// <c>AUTHORIZATION_CODE</c>. Other sources, such as MCP server and A2A agent card sources,
+        /// use <c>CLIENT_CREDENTIALS</c>. A GitHub source takes exactly one OAuth credential
+        /// provider, in the registry's Amazon Web Services account and Region. Only an IAM role
+        /// or IAM user in the account that owns the registry can set, synchronize, or reauthorize
+        /// it, and the caller needs <c>bedrock-agentcore:GetWorkloadAccessTokenForUserId</c>
+        /// and <c>bedrock-agentcore:GetResourceOauth2Token</c> on the registry's workload identity,
+        /// <c>registry-</c> followed by the registry ID.
         /// </para>
         /// </summary>
         public RegistryRecordOAuthGrantType GrantType { get; set; }
@@ -81,6 +89,27 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the ProviderArn property is set.
         /// </summary>
         internal bool IsSetProviderArn() => this.ProviderArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ReturnUrl. 
+        /// <para>
+        /// The URL that the user's browser returns to after the user approves access on GitHub,
+        /// for the <c>AUTHORIZATION_CODE</c> grant. There, your application completes the authorization
+        /// by calling the Amazon Bedrock AgentCore Identity <c>CompleteResourceTokenAuth</c>
+        /// operation with the <c>userId</c> from <c>authorizationData</c>. If you omit it, the
+        /// user returns to the Amazon Web Services Agent Registry console, which completes the
+        /// authorization when the user is signed in as the IAM principal that made the request.
+        /// A request that joins an authorization already in progress uses the return URL of the
+        /// request that started it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ReturnUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReturnUrl property is set.
+        /// </summary>
+        internal bool IsSetReturnUrl() => this.ReturnUrl != null;
 
         /// <summary>
         /// Gets and sets the property Scopes. 

@@ -70,6 +70,12 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ProviderArn);
             }
 
+            if (requestObject.IsSetReturnUrl())
+            {
+                context.Writer.WritePropertyName("returnUrl");
+                context.Writer.WriteStringValue(requestObject.ReturnUrl);
+            }
+
             if (requestObject.IsSetScopes())
             {
                 context.Writer.WritePropertyName("scopes");

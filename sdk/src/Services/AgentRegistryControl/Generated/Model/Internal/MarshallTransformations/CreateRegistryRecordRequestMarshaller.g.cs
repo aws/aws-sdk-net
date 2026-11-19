@@ -74,6 +74,16 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetArtifact())
+            {
+                context.Writer.WritePropertyName("artifact");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegistryRecordArtifactUploadMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Artifact, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

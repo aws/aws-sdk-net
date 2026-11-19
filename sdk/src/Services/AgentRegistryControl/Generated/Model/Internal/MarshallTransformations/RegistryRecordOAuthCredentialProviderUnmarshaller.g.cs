@@ -74,6 +74,13 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("returnUrl", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReturnUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("scopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

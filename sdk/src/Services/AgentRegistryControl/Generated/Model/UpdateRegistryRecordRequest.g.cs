@@ -31,12 +31,32 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRegistryRecord operation. Updates a registry
-    /// record. The update is asynchronous: the record is returned with the UPDATING status
-    /// while it is processed. Fields that use update wrappers follow PATCH semantics: omit
-    /// the field to leave it unchanged.
+    /// record. The update is asynchronous: the operation returns the record with the <c>UPDATING</c>
+    /// status while the registry processes it. If a GitHub user must first authorize access
+    /// to the record's skill source, the operation returns the record with the <c>UPDATE_PENDING_AUTH</c>
+    /// status instead. Fields that use update wrappers follow PATCH semantics: omit the field
+    /// to leave it unchanged.
     /// </summary>
     public partial class UpdateRegistryRecordRequest : AmazonAgentRegistryControlRequest
     {
+        /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        /// The change to the record's uploaded skill package. Omit it to keep the current package,
+        /// specify an empty object to remove an uploaded package, or specify <c>optionalValue</c>
+        /// to upload a new package. An empty object doesn't remove a package that the record
+        /// synchronizes from a source. To stop that synchronization, remove <c>skillPackage</c>.
+        /// A request that changes <c>skillMd.data</c> replaces the record's package with that
+        /// text, even if you omit this member.
+        /// </para>
+        /// </summary>
+        public UpdatedRegistryRecordArtifact Artifact { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Artifact property is set.
+        /// </summary>
+        internal bool IsSetArtifact() => this.Artifact != null;
+
         /// <summary>
         /// Gets and sets the property CustomMetadata. 
         /// <para>
@@ -94,6 +114,24 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the DisplayName property is set.
         /// </summary>
         internal bool IsSetDisplayName() => this.DisplayName != null;
+
+        /// <summary>
+        /// Gets and sets the property ForceAuthentication. 
+        /// <para>
+        /// Specifies whether to ask a GitHub user to authorize access again, even when the current
+        /// authorization still works, for example to use a different GitHub account. You can
+        /// use it only together with <c>triggerSynchronization</c>, for a GitHub source whose
+        /// credential provider uses the <c>AUTHORIZATION_CODE</c> grant. The new authorization
+        /// also replaces the one that the same IAM principal's other records in the registry
+        /// use for the same host, credential provider, scopes, and custom parameters.
+        /// </para>
+        /// </summary>
+        public bool? ForceAuthentication { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForceAuthentication property is set.
+        /// </summary>
+        internal bool IsSetForceAuthentication() => this.ForceAuthentication.HasValue;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -190,7 +228,11 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property TriggerSynchronization. 
         /// <para>
-        /// Whether to trigger synchronization of the record's descriptor content from its source
+        /// Specifies whether to synchronize the record's descriptor content from its source.
+        /// For a skill record, the registry reads the stored <c>skillMd.source</c> or <c>skillPackage.source</c>
+        /// again, because it doesn't watch the source for changes. For a GitHub source, the operation
+        /// also returns a new authorization link when one is needed. An update that sets a different
+        /// skill source starts a synchronization even if you omit this member.
         /// </para>
         /// </summary>
         public bool? TriggerSynchronization { get; set; }

@@ -65,7 +65,11 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The optional source configuration used to synchronize the agent skills markdown content.
+        /// The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md
+        /// from this source into <c>data</c>. Specify an <c>s3://</c> URL of a SKILL.md object,
+        /// or a GitHub folder URL together with <c>repositoryProvider</c> set to <c>GITHUB</c>.
+        /// The registry rejects a new <c>https://</c> URL without <c>repositoryProvider</c>,
+        /// and you can't set both this source and <c>skillPackage.source</c>.
         /// </para>
         /// </summary>
         public DescriptorSource Source { get; set; }

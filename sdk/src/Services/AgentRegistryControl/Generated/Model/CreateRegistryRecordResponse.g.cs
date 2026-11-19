@@ -35,6 +35,22 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class CreateRegistryRecordResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property AuthorizationData. 
+        /// <para>
+        /// The authorization that a GitHub user must complete before the record's synchronization
+        /// starts. Present only in this response, and only while the status is <c>CREATE_PENDING_AUTH</c>.
+        /// If the status is <c>CREATE_PENDING_AUTH</c> but this member is absent, call <c>UpdateRegistryRecord</c>
+        /// with <c>triggerSynchronization</c> to get a new authorization link.
+        /// </para>
+        /// </summary>
+        public AuthorizationData AuthorizationData { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthorizationData property is set.
+        /// </summary>
+        internal bool IsSetAuthorizationData() => this.AuthorizationData != null;
+
+        /// <summary>
         /// Gets and sets the property RecordArn. 
         /// <para>
         /// The ARN of the created registry record
@@ -51,8 +67,10 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the registry record, set to CREATING while the asynchronous workflow
-        /// is in progress
+        /// The status of the registry record. <c>CREATING</c> means that the asynchronous workflow
+        /// is in progress. <c>CREATE_PENDING_AUTH</c> means that the record waits for a GitHub
+        /// user to authorize access before it synchronizes from its GitHub source. For the authorization
+        /// link, see <c>authorizationData</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

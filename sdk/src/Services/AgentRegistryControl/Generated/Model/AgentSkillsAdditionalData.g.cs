@@ -30,10 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Additional data associated with an agent skills definition descriptor.
+    /// Additional data associated with an agent skills definition descriptor: the skill's
+    /// SKILL.md and the source that the registry synchronizes the skill from. A record synchronizes
+    /// from one source at most, either <c>skillMd.source</c> for SKILL.md only or <c>skillPackage.source</c>
+    /// for the full skill package. When the record has a skill package or a synchronized
+    /// source, the registry sets <c>skillMd.data</c> from the SKILL.md in that package or
+    /// source.
     /// </summary>
     public partial class AgentSkillsAdditionalData
     {
+        /// <summary>
+        /// Gets and sets the property RepositoryProvider. 
+        /// <para>
+        /// The repository provider of the record's skill source. Set it to <c>GITHUB</c> when
+        /// <c>skillMd.source</c> or <c>skillPackage.source</c> is a GitHub folder URL. The registry
+        /// treats an <c>https://</c> source as a GitHub source only when this member is set.
+        /// Don't set it for an Amazon S3 source.
+        /// </para>
+        /// </summary>
+        public AgentSkillsRepositoryProvider RepositoryProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RepositoryProvider property is set.
+        /// </summary>
+        internal bool IsSetRepositoryProvider() => this.RepositoryProvider != null;
+
         /// <summary>
         /// Gets and sets the property SkillMd. 
         /// <para>
@@ -46,5 +67,35 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the SkillMd property is set.
         /// </summary>
         internal bool IsSetSkillMd() => this.SkillMd != null;
+
+        /// <summary>
+        /// Gets and sets the property SkillPackage. 
+        /// <para>
+        /// The source that the registry synchronizes the full skill package from. The registry
+        /// validates and stores the package, sets <c>skillMd.data</c> from its SKILL.md, and
+        /// returns the package in the <c>artifact</c> member of <c>GetRegistryRecord</c>. You
+        /// can't set both this source and <c>skillMd.source</c>.
+        /// </para>
+        /// </summary>
+        public AgentSkillsPackageDescriptor SkillPackage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SkillPackage property is set.
+        /// </summary>
+        internal bool IsSetSkillPackage() => this.SkillPackage != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        /// The provider-specific settings of the record's skill source. For an Amazon S3 source,
+        /// <c>s3.bucketOwnerAccountId</c> specifies the account that owns the source bucket.
+        /// </para>
+        /// </summary>
+        public AgentSkillsSourceConfiguration SourceConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSourceConfiguration() => this.SourceConfiguration != null;
     }
 }
