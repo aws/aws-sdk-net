@@ -74,6 +74,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("jobSubmitPlugins", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<JobSubmitPlugin, JobSubmitPluginUnmarshaller>(JobSubmitPluginUnmarshaller.Instance);
+                    unmarshalledObject.JobSubmitPlugins = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("jwtAuth", targetDepth, ref reader))
                 {
                     var unmarshaller = JwtAuthUnmarshaller.Instance;

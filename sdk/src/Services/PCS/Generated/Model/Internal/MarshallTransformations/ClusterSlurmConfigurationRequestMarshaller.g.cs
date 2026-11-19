@@ -72,6 +72,22 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if (requestObject.IsSetJobSubmitPlugins())
+            {
+                context.Writer.WritePropertyName("jobSubmitPlugins");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectJobSubmitPluginsListValue in requestObject.JobSubmitPlugins)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = JobSubmitPluginMarshaller.Instance;
+                    marshaller.Marshall(requestObjectJobSubmitPluginsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetScaleDownIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");

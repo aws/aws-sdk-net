@@ -317,6 +317,42 @@ namespace Amazon.PCS
     }
 
     /// <summary>
+    /// Constants used for properties of type JobSubmitPluginType.
+    /// </summary>
+    public class JobSubmitPluginType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STARLARK for JobSubmitPluginType
+        /// </summary>
+        public static readonly JobSubmitPluginType STARLARK = new JobSubmitPluginType("STARLARK");
+
+        /// <summary>
+        /// Constructs a custom JobSubmitPluginType for a value not among the defined constants.
+        /// </summary>
+        public JobSubmitPluginType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobSubmitPluginType FindValue(string value)
+        {
+            return FindValue<JobSubmitPluginType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobSubmitPluginType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type LaunchTemplateMode.
     /// </summary>
     public class LaunchTemplateMode : ConstantClass

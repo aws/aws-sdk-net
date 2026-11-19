@@ -80,6 +80,29 @@ namespace Amazon.PCS.Model
         internal bool IsSetCgroupCustomSettings() => this.CgroupCustomSettings != null && (this.CgroupCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property JobSubmitPlugins. 
+        /// <para>
+        /// The job submit plugins to run on the cluster controller. Use job submit plugins to
+        /// execute custom scripts during job submission and job modification to validate or modify
+        /// the job's configuration. Custom scripts can accept or reject jobs based on their configuration
+        /// or modify the configuration before job execution.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public List<JobSubmitPlugin> JobSubmitPlugins { get; set; } = AWSConfigs.InitializeCollections ? new List<JobSubmitPlugin>() : null;
+
+        /// <summary>
+        /// Checks to see if the JobSubmitPlugins property is set.
+        /// </summary>
+        internal bool IsSetJobSubmitPlugins() => this.JobSubmitPlugins != null && (this.JobSubmitPlugins.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property JwtAuth. 
         /// <para>
         /// The JWT authentication configuration for Slurm REST API access.
