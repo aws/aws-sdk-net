@@ -32,7 +32,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the CreateTrustStore operation. Creates a trust store.
     /// <para> For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html">Mutual
-    /// TLS for Application Load Balancers</a>. </para>
+    /// TLS for Application Load Balancers</a> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/mutual-authentication.html">Mutual
+    /// TLS for Network Load Balancers</a>. </para>
     /// </summary>
     public partial class CreateTrustStoreRequest : AmazonElasticLoadBalancingV2Request
     {

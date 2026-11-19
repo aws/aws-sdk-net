@@ -308,6 +308,134 @@ namespace Amazon.ElasticLoadBalancingV2
     }
 
     /// <summary>
+    /// Constants used for properties of type ClientCertificateIdentityFilterAction.
+    /// </summary>
+    public class ClientCertificateIdentityFilterAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant Accept for ClientCertificateIdentityFilterAction
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterAction Accept = new ClientCertificateIdentityFilterAction("accept");
+
+        /// <summary>
+        /// Constructs a custom ClientCertificateIdentityFilterAction for a value not among the defined constants.
+        /// </summary>
+        public ClientCertificateIdentityFilterAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientCertificateIdentityFilterAction FindValue(string value)
+        {
+            return FindValue<ClientCertificateIdentityFilterAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientCertificateIdentityFilterAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClientCertificateIdentityFilterField.
+    /// </summary>
+    public class ClientCertificateIdentityFilterField : ConstantClass
+    {
+        /// <summary>
+        /// Constant SanDns for ClientCertificateIdentityFilterField
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterField SanDns = new ClientCertificateIdentityFilterField("san-dns");
+
+        /// <summary>
+        /// Constant SanUri for ClientCertificateIdentityFilterField
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterField SanUri = new ClientCertificateIdentityFilterField("san-uri");
+
+        /// <summary>
+        /// Constant SubjectCn for ClientCertificateIdentityFilterField
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterField SubjectCn = new ClientCertificateIdentityFilterField("subject-cn");
+
+        /// <summary>
+        /// Constant SubjectOu for ClientCertificateIdentityFilterField
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterField SubjectOu = new ClientCertificateIdentityFilterField("subject-ou");
+
+        /// <summary>
+        /// Constructs a custom ClientCertificateIdentityFilterField for a value not among the defined constants.
+        /// </summary>
+        public ClientCertificateIdentityFilterField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientCertificateIdentityFilterField FindValue(string value)
+        {
+            return FindValue<ClientCertificateIdentityFilterField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientCertificateIdentityFilterField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClientCertificateIdentityFilterMatchType.
+    /// </summary>
+    public class ClientCertificateIdentityFilterMatchType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Exact for ClientCertificateIdentityFilterMatchType
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterMatchType Exact = new ClientCertificateIdentityFilterMatchType("exact");
+
+        /// <summary>
+        /// Constant Prefix for ClientCertificateIdentityFilterMatchType
+        /// </summary>
+        public static readonly ClientCertificateIdentityFilterMatchType Prefix = new ClientCertificateIdentityFilterMatchType("prefix");
+
+        /// <summary>
+        /// Constructs a custom ClientCertificateIdentityFilterMatchType for a value not among the defined constants.
+        /// </summary>
+        public ClientCertificateIdentityFilterMatchType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientCertificateIdentityFilterMatchType FindValue(string value)
+        {
+            return FindValue<ClientCertificateIdentityFilterMatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientCertificateIdentityFilterMatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DescribeTargetHealthInputIncludeEnum.
     /// </summary>
     public class DescribeTargetHealthInputIncludeEnum : ConstantClass

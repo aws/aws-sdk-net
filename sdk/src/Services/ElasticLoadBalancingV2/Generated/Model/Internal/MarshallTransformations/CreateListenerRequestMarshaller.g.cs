@@ -356,6 +356,37 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MutualAuthentication" + ".AdvertiseTrustStoreCaNames", StringUtils.FromString(publicRequest.MutualAuthentication.AdvertiseTrustStoreCaNames));
                 }
+                if (publicRequest.MutualAuthentication.IsSetClientCertificateIdentityFilters())
+                {
+                    if (publicRequest.MutualAuthentication.ClientCertificateIdentityFilters.Count == 0)
+                    {
+                        request.Parameters.Add("MutualAuthentication" + ".ClientCertificateIdentityFilters", "");
+                    }
+                    else
+                    {
+                        int index1 = 1;
+                        foreach (var item1 in publicRequest.MutualAuthentication.ClientCertificateIdentityFilters)
+                        {
+                            if (item1.IsSetAction())
+                            {
+                                request.Parameters.Add("MutualAuthentication" + ".ClientCertificateIdentityFilters" + ".member" + "." + index1 + ".Action", StringUtils.FromString(item1.Action));
+                            }
+                            if (item1.IsSetField())
+                            {
+                                request.Parameters.Add("MutualAuthentication" + ".ClientCertificateIdentityFilters" + ".member" + "." + index1 + ".Field", StringUtils.FromString(item1.Field));
+                            }
+                            if (item1.IsSetMatchType())
+                            {
+                                request.Parameters.Add("MutualAuthentication" + ".ClientCertificateIdentityFilters" + ".member" + "." + index1 + ".MatchType", StringUtils.FromString(item1.MatchType));
+                            }
+                            if (item1.IsSetValue())
+                            {
+                                request.Parameters.Add("MutualAuthentication" + ".ClientCertificateIdentityFilters" + ".member" + "." + index1 + ".Value", StringUtils.FromString(item1.Value));
+                            }
+                            index1++;
+                        }
+                    }
+                }
                 if (publicRequest.MutualAuthentication.IsSetIgnoreClientCertificateExpiry())
                 {
                     request.Parameters.Add("MutualAuthentication" + ".IgnoreClientCertificateExpiry", StringUtils.FromBool(publicRequest.MutualAuthentication.IgnoreClientCertificateExpiry.Value));

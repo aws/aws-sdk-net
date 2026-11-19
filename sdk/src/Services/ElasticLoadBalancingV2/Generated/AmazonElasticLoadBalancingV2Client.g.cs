@@ -1233,7 +1233,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html">Mutual
-        /// TLS for Application Load Balancers</a>.
+        /// TLS for Application Load Balancers</a> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/mutual-authentication.html">Mutual
+        /// TLS for Network Load Balancers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
@@ -1283,7 +1284,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/mutual-authentication.html">Mutual
-        /// TLS for Application Load Balancers</a>.
+        /// TLS for Application Load Balancers</a> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/mutual-authentication.html">Mutual
+        /// TLS for Network Load Balancers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>

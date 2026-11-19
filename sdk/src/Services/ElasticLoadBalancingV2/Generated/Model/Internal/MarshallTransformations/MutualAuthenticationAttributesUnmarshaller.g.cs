@@ -62,6 +62,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("ClientCertificateIdentityFilters/member", targetDepth))
+                    {
+                        if (unmarshalledObject.ClientCertificateIdentityFilters == null)
+                        {
+                            unmarshalledObject.ClientCertificateIdentityFilters = new List<ClientCertificateIdentityFilter>();
+                        }
+                        var unmarshaller = ClientCertificateIdentityFilterUnmarshaller.Instance;
+                        unmarshalledObject.ClientCertificateIdentityFilters.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("IgnoreClientCertificateExpiry", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

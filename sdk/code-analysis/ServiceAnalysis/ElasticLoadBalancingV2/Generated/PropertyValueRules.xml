@@ -147,6 +147,11 @@
     <max>50000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.ClientCertificateIdentityFilter.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.FixedResponseActionConfig.ContentType</property>
     <min>0</min>
     <max>32</max>

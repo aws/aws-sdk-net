@@ -48,6 +48,34 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAdvertiseTrustStoreCaNames() => this.AdvertiseTrustStoreCaNames != null;
 
         /// <summary>
+        /// Gets and sets the property ClientCertificateIdentityFilters. 
+        /// <para>
+        /// [Network Load Balancers] The client certificate identity filters. The load balancer
+        /// admits a connection only if the client certificate matches at least one filter. If
+        /// you don't specify any filters, the load balancer admits every client certificate that
+        /// passes trust store validation and revocation checks.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify filters only when the mode is <c>verify</c>. You can specify up to
+        /// 100 filters per listener.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<ClientCertificateIdentityFilter> ClientCertificateIdentityFilters { get; set; } = AWSConfigs.InitializeCollections ? new List<ClientCertificateIdentityFilter>() : null;
+
+        /// <summary>
+        /// Checks to see if the ClientCertificateIdentityFilters property is set.
+        /// </summary>
+        internal bool IsSetClientCertificateIdentityFilters() => this.ClientCertificateIdentityFilters != null && (this.ClientCertificateIdentityFilters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property IgnoreClientCertificateExpiry. 
         /// <para>
         /// Indicates whether expired client certificates are ignored.
@@ -63,8 +91,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The client certificate handling method. Options are <c>off</c>, <c>passthrough</c>
-        /// or <c>verify</c>. The default value is <c>off</c>.
+        /// The client certificate handling method. The default value is <c>off</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers] The possible values are <c>off</c>, <c>passthrough</c>,
+        /// and <c>verify</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers] The possible values are <c>off</c> and <c>verify</c>.
         /// </para>
         /// </summary>
         public string Mode { get; set; }
