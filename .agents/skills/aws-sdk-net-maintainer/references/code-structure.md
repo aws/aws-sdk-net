@@ -25,9 +25,10 @@
 The README shown on nuget.org is packed from a different file depending on the package:
 
 - Service packages: the generator writes `sdk/src/Services/<Service>/nuget-readme.md` from the service
-  documentation in the model. It is git-ignored. To add hand-written content, create
+  documentation in the model, followed by a getting started example that creates the client and calls
+  one operation. It is git-ignored. To add hand-written content, create
   `sdk/src/Services/<Service>/Custom/nuget-readme.md` and commit it; the generator puts its content
-  ahead of the service documentation.
+  after the example.
 - Core and extension packages: commit a hand-written `README.md` next to the nuspec and reference it
   with `<readme>README.md</readme>` under `<metadata>` and `<file src="README.md" target="README.md" />`
   under `<files>`. Extension nuspecs are committed, so edit them directly. Core's nuspec is generated;

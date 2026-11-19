@@ -1,6 +1,4 @@
-# AWSSDK.DynamoDBv2
-
-The AWS SDK for .NET client for Amazon DynamoDB. The package offers three ways to work with a table, from the most convenient to the most direct.
+Besides the low-level client shown above, the package offers two higher-level ways to work with a table.
 
 ## Object persistence model
 
@@ -44,22 +42,6 @@ var table = new TableBuilder(client, "Books")
 
 await table.PutItemAsync(new Document { ["Id"] = "1", ["Title"] = "Dune" });
 var document = await table.GetItemAsync("1");
-```
-
-## Low-level client
-
-`AmazonDynamoDBClient` exposes every DynamoDB API operation with its request and response types.
-
-```csharp
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-
-var client = new AmazonDynamoDBClient();
-var response = await client.GetItemAsync(new GetItemRequest
-{
-    TableName = "Books",
-    Key = new Dictionary<string, AttributeValue> { ["Id"] = new AttributeValue { S = "1" } }
-});
 ```
 
 ## Resources

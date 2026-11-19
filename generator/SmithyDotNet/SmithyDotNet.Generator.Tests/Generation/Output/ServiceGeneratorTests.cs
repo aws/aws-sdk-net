@@ -225,12 +225,19 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
-    public void ReadmePutsCustomContentAheadOfServiceDocumentation()
+    public void ReadmePutsCustomContentAfterServiceDocumentation()
     {
         var readme = File.ReadAllText(Path.Combine(_outputDir, "nuget-readme.md"));
-        Assert.StartsWith("Hand-written content.", readme);
+        Assert.StartsWith("The CloudTrail Data Service", readme);
         Assert.Contains("---", readme);
-        Assert.Contains("The CloudTrail Data Service", readme);
+        Assert.EndsWith("Hand-written content.", readme);
+    }
+
+    [Fact]
+    public void ReadmeHasAGettingStartedExample()
+    {
+        var readme = File.ReadAllText(Path.Combine(_outputDir, "nuget-readme.md"));
+        Assert.Contains("var response = await client.PutAuditEventsAsync(new PutAuditEventsRequest", readme);
     }
 
     [Fact]

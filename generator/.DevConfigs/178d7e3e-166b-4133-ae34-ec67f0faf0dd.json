@@ -11,7 +11,7 @@
       "serviceName": "DynamoDBv2",
       "type": "patch",
       "changeLogMessages": [
-        "The NuGet package README now starts with an overview of the object persistence model, the document model and the low-level client."
+        "The NuGet package README now includes an overview of the object persistence model and the document model."
       ]
     }
   ],

@@ -258,21 +258,41 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 readme = context.Metadata?.Synopsis ?? string.Empty;
             }
 
-            // A hand-written Custom/nuget-readme.md goes ahead of the service documentation, with a
-            // horizontal rule between the two.
+            var readmeWriter = new CodeWriter();
+            readmeWriter.WriteLine(readme);
+
+            // The getting started example calls the service's first operation. The request is left for
+            // the reader to fill in.
+            if (context.GeneratedOperations.Count > 0)
+            {
+                var exampleOperation = context.GeneratedOperations[0];
+
+                readmeWriter.WriteLine();
+                readmeWriter.WriteLine("## Getting started");
+                readmeWriter.WriteLine();
+                readmeWriter.WriteLine("```csharp");
+                readmeWriter.WriteLine($"using {context.Namespace};");
+                readmeWriter.WriteLine($"using {context.Namespace}.Model;");
+                readmeWriter.WriteLine();
+                readmeWriter.WriteLine($"var client = new {clientName}Client();");
+                readmeWriter.WriteLine($"var response = await client.{exampleOperation.Name}Async(new {exampleOperation.Name}Request");
+                readmeWriter.WriteLine("{");
+                readmeWriter.WriteLine("    // request parameters");
+                readmeWriter.WriteLine("});");
+                readmeWriter.WriteLine("```");
+            }
+
+            // A hand-written Custom/nuget-readme.md goes last, after a horizontal rule.
             var customReadmePath = Path.Combine(outputPath, "Custom", "nuget-readme.md");
             if (File.Exists(customReadmePath))
             {
-                var readmeWriter = new CodeWriter();
-                readmeWriter.WriteLine(File.ReadAllText(customReadmePath).TrimEnd());
                 readmeWriter.WriteLine();
                 readmeWriter.WriteLine("---");
                 readmeWriter.WriteLine();
-                readmeWriter.WriteLine(readme);
-                readme = readmeWriter.ToRawString().TrimEnd();
+                readmeWriter.WriteLine(File.ReadAllText(customReadmePath).TrimEnd());
             }
 
-            Emit("nuget-readme.md", readme);
+            Emit("nuget-readme.md", readmeWriter.ToRawString().Trim());
         }
 
         if (standalone is not null)
