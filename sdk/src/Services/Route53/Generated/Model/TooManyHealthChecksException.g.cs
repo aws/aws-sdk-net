@@ -31,7 +31,9 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// This health check can't be created because the current account has reached the limit
-    /// on the number of active health checks.
+    /// on the number of active health checks, or because the health check source for a private
+    /// health check has reached its limit on active health checks. In the second case, specify
+    /// a different health check source.
     /// 
     ///  
     /// <para>

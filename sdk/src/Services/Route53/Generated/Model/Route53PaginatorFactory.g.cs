@@ -57,11 +57,27 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Paginator for ListHealthCheckSources operation
+        /// </summary>
+        public IListHealthCheckSourcesPaginator ListHealthCheckSources(ListHealthCheckSourcesRequest request)
+        {
+            return new ListHealthCheckSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHealthChecks operation
         /// </summary>
         public IListHealthChecksPaginator ListHealthChecks(ListHealthChecksRequest request)
         {
             return new ListHealthChecksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHealthChecksBySource operation
+        /// </summary>
+        public IListHealthChecksBySourcePaginator ListHealthChecksBySource(ListHealthChecksBySourceRequest request)
+        {
+            return new ListHealthChecksBySourcePaginator(this.client, request);
         }
 
         /// <summary>

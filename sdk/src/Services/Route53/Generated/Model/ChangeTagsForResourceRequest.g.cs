@@ -31,8 +31,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ChangeTagsForResource operation. Adds, edits,
-    /// or deletes tags for a health check or a hosted zone. <para> For information about
-    /// using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+    /// or deletes tags for a health check, a health check source, or a hosted zone. <para>
+    /// For information about using tags for cost allocation, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
     /// Cost Allocation Tags</a> in the <i>Billing and Cost Management User Guide</i>. </para>
     /// </summary>
     public partial class ChangeTagsForResourceRequest : AmazonRoute53Request
@@ -45,6 +45,10 @@ namespace Amazon.Route53.Model
         ///  <ul> <li> 
         /// <para>
         /// The resource type for health checks is <c>healthcheck</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The resource type for health check sources is <c>healthchecksource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,7 +86,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// You can add a maximum of 10 tags to a health check or a hosted zone.
+        /// You can add a maximum of 10 tags to a health check, a health check source, or a hosted
+        /// zone.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

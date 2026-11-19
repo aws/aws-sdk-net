@@ -53,6 +53,11 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources
+        /// that you can create using the current account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can
         /// create using the current account.
         /// </para>

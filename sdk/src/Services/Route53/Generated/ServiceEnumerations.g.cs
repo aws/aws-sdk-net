@@ -103,6 +103,11 @@ namespace Amazon.Route53
         public static readonly AccountLimitType MAX_HEALTH_CHECKS_BY_OWNER = new AccountLimitType("MAX_HEALTH_CHECKS_BY_OWNER");
 
         /// <summary>
+        /// Constant MAX_HEALTH_CHECK_SOURCES_BY_OWNER for AccountLimitType
+        /// </summary>
+        public static readonly AccountLimitType MAX_HEALTH_CHECK_SOURCES_BY_OWNER = new AccountLimitType("MAX_HEALTH_CHECK_SOURCES_BY_OWNER");
+
+        /// <summary>
         /// Constant MAX_HOSTED_ZONES_BY_OWNER for AccountLimitType
         /// </summary>
         public static readonly AccountLimitType MAX_HOSTED_ZONES_BY_OWNER = new AccountLimitType("MAX_HOSTED_ZONES_BY_OWNER");
@@ -589,6 +594,47 @@ namespace Amazon.Route53
     }
 
     /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIVATE for EndpointType
+        /// </summary>
+        public static readonly EndpointType PRIVATE = new EndpointType("PRIVATE");
+
+        /// <summary>
+        /// Constant PUBLIC for EndpointType
+        /// </summary>
+        public static readonly EndpointType PUBLIC = new EndpointType("PUBLIC");
+
+        /// <summary>
+        /// Constructs a custom EndpointType for a value not among the defined constants.
+        /// </summary>
+        public EndpointType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HealthCheckRegion.
     /// </summary>
     public class HealthCheckRegion : ConstantClass
@@ -654,6 +700,143 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HealthCheckRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HealthCheckSourceStatus.
+    /// </summary>
+    public class HealthCheckSourceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATE_COMPLETED for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus CREATE_COMPLETED = new HealthCheckSourceStatus("CREATE_COMPLETED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus CREATE_FAILED = new HealthCheckSourceStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus CREATE_IN_PROGRESS = new HealthCheckSourceStatus("CREATE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant CREATE_PENDING for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus CREATE_PENDING = new HealthCheckSourceStatus("CREATE_PENDING");
+
+        /// <summary>
+        /// Constant DELETE_COMPLETED for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus DELETE_COMPLETED = new HealthCheckSourceStatus("DELETE_COMPLETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus DELETE_FAILED = new HealthCheckSourceStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus DELETE_IN_PROGRESS = new HealthCheckSourceStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant DELETE_PENDING for HealthCheckSourceStatus
+        /// </summary>
+        public static readonly HealthCheckSourceStatus DELETE_PENDING = new HealthCheckSourceStatus("DELETE_PENDING");
+
+        /// <summary>
+        /// Constructs a custom HealthCheckSourceStatus for a value not among the defined constants.
+        /// </summary>
+        public HealthCheckSourceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthCheckSourceStatus FindValue(string value)
+        {
+            return FindValue<HealthCheckSourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthCheckSourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HealthCheckSourceStatusReasonCode.
+    /// </summary>
+    public class HealthCheckSourceStatusReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EC2_LIMIT_EXCEEDED for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode EC2_LIMIT_EXCEEDED = new HealthCheckSourceStatusReasonCode("EC2_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_SUBNET_IPS for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode INSUFFICIENT_SUBNET_IPS = new HealthCheckSourceStatusReasonCode("INSUFFICIENT_SUBNET_IPS");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode INTERNAL_ERROR = new HealthCheckSourceStatusReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_CONFIGURATION for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode INVALID_CONFIGURATION = new HealthCheckSourceStatusReasonCode("INVALID_CONFIGURATION");
+
+        /// <summary>
+        /// Constant INVALID_SECURITY_GROUP for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode INVALID_SECURITY_GROUP = new HealthCheckSourceStatusReasonCode("INVALID_SECURITY_GROUP");
+
+        /// <summary>
+        /// Constant INVALID_SUBNET for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode INVALID_SUBNET = new HealthCheckSourceStatusReasonCode("INVALID_SUBNET");
+
+        /// <summary>
+        /// Constant SLR_MISSING_OR_NOT_ASSUMABLE for HealthCheckSourceStatusReasonCode
+        /// </summary>
+        public static readonly HealthCheckSourceStatusReasonCode SLR_MISSING_OR_NOT_ASSUMABLE = new HealthCheckSourceStatusReasonCode("SLR_MISSING_OR_NOT_ASSUMABLE");
+
+        /// <summary>
+        /// Constructs a custom HealthCheckSourceStatusReasonCode for a value not among the defined constants.
+        /// </summary>
+        public HealthCheckSourceStatusReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthCheckSourceStatusReasonCode FindValue(string value)
+        {
+            return FindValue<HealthCheckSourceStatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthCheckSourceStatusReasonCode(string value)
         {
             return FindValue(value);
         }
@@ -1388,6 +1571,11 @@ namespace Amazon.Route53
         /// Constant Healthcheck for TagResourceType
         /// </summary>
         public static readonly TagResourceType Healthcheck = new TagResourceType("healthcheck");
+
+        /// <summary>
+        /// Constant Healthchecksource for TagResourceType
+        /// </summary>
+        public static readonly TagResourceType Healthchecksource = new TagResourceType("healthchecksource");
 
         /// <summary>
         /// Constant Hostedzone for TagResourceType

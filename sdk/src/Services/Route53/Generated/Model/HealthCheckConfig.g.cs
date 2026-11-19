@@ -60,9 +60,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
-        /// associate it with your EC2 instance, and specify the Elastic IP address for <c>IPAddress</c>.
-        /// This ensures that the IP address of your instance will never change.
+        /// For a public health check, if the endpoint is an EC2 instance, we recommend that you
+        /// create an Elastic IP address, associate it with your EC2 instance, and specify the
+        /// Elastic IP address for <c>IPAddress</c>. This ensures that the IP address of your
+        /// instance will never change.
         /// </para>
         ///  
         /// <para>
@@ -71,9 +72,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Route 53 can't check the health of endpoints for which the IP address
-        /// is in local, private, non-routable, or multicast ranges. For more information about
-        /// IP addresses for which you can't create health checks, see the following documents:
+        /// Constraints: For a public health check (<c>EndpointType</c> of <c>PUBLIC</c>, the
+        /// default), Route 53 can't check the health of endpoints for which the IP address is
+        /// in local, private, non-routable, or multicast ranges. For more information about IP
+        /// addresses for which you can't create public health checks, see the following documents:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -91,6 +93,12 @@ namespace Amazon.Route53.Model
         /// 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For a private endpoint health check (<c>EndpointType</c> of <c>PRIVATE</c>), if you
+        /// specify <c>IPAddress</c>, it must be a private IPv4 or IPv6 address. Route 53 sends
+        /// health checks to it from the health check source that you specify in <c>HealthCheckSourceId</c>.
+        /// </para>
+        ///  
         /// <para>
         /// When the value of <c>Type</c> is <c>CALCULATED</c> or <c>CLOUDWATCH_METRIC</c>, omit
         /// <c>IPAddress</c>.
@@ -666,5 +674,61 @@ namespace Amazon.Route53.Model
         /// Checks to see if the RoutingControlArn property is set.
         /// </summary>
         internal bool IsSetRoutingControlArn() => this.RoutingControlArn != null;
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// Specifies whether the health check targets a public endpoint or a private endpoint
+        /// in a virtual private cloud (VPC). Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PUBLIC</c>: The health check targets an endpoint that is reachable over the internet.
+        /// This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PRIVATE</c>: The health check targets a private endpoint in your virtual private
+        /// cloud. You must also specify <c>HealthCheckSourceId</c>. <c>PRIVATE</c> isn't supported
+        /// for health checks with a <c>Type</c> of <c>CALCULATED</c>, <c>CLOUDWATCH_METRIC</c>,
+        /// or <c>RECOVERY_CONTROL</c>.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You can't change the value of <c>EndpointType</c> after you create a health check.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public EndpointType EndpointType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointType property is set.
+        /// </summary>
+        internal bool IsSetEndpointType() => this.EndpointType != null;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckSourceId. 
+        /// <para>
+        /// The ID of the health check source that Route 53 uses to send health checks to a private
+        /// endpoint. Required when <c>EndpointType</c> is <c>PRIVATE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can change <c>HealthCheckSourceId</c> on an existing private health check. You
+        /// can't add it to a public health check.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each health check source supports a limited number of active health checks. If you
+        /// reach that limit, specify a different health check source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string HealthCheckSourceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HealthCheckSourceId property is set.
+        /// </summary>
+        internal bool IsSetHealthCheckSourceId() => this.HealthCheckSourceId != null;
     }
 }

@@ -73,6 +73,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     {
                         return NoSuchHealthCheckExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHealthCheckSource"))
+                    {
+                        return NoSuchHealthCheckSourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
                     {
                         return NoSuchHostedZoneExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

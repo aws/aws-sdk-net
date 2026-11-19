@@ -40,10 +40,13 @@ namespace Amazon.Route53.Model
     /// a load balancer, you configure settings for an ELB health check, which performs a
     /// similar function to a Route 53 health check. </para> <para> <b>Private Hosted Zones</b>
     /// </para> <para> You can associate health checks with failover resource record sets
-    /// in a private hosted zone. Note the following: </para> <ul> <li> <para> Route 53 health
-    /// checkers are outside the VPC. To check the health of an endpoint within a VPC by IP
-    /// address, you must assign a public IP address to the instance in the VPC. </para> </li>
-    /// <li> <para> You can configure a health checker to check the health of an external
+    /// in a private hosted zone. Note the following: </para> <ul> <li> <para> For a public
+    /// health check, Route 53 health checkers are outside the VPC. To check the health of
+    /// an endpoint within a VPC by IP address, you must assign a public IP address to the
+    /// instance in the VPC. </para> </li> <li> <para> To check the health of an endpoint
+    /// within a VPC by using a private IP address, use a private endpoint health check (<c>EndpointType</c>
+    /// of <c>PRIVATE</c>). For more information, see <c>CreateHealthCheckSource</c>. </para>
+    /// </li> <li> <para> You can configure a health checker to check the health of an external
     /// resource that the instance relies on, such as a database server. </para> </li> <li>
     /// <para> You can create a CloudWatch metric, associate an alarm with the metric, and
     /// then create a health check that is based on the state of the alarm. For example, you

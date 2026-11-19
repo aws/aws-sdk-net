@@ -164,6 +164,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     context.Writer.WriteEndElement();
                 }
+                if (publicRequest.IsSetHealthCheckSourceId())
+                {
+                    context.Writer.WriteElementString("HealthCheckSourceId", StringUtils.FromString(publicRequest.HealthCheckSourceId));
+                }
                 context.Writer.WriteEndElement();
             }
             try

@@ -114,10 +114,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
-        /// associate it with your EC2 instance, and specify the Elastic IP address for <c>IPAddress</c>.
-        /// This ensures that the IP address of your instance never changes. For more information,
-        /// see the applicable documentation:
+        /// For a public health check, if the endpoint is an EC2 instance, we recommend that you
+        /// create an Elastic IP address, associate it with your EC2 instance, and specify the
+        /// Elastic IP address for <c>IPAddress</c>. This ensures that the IP address of your
+        /// instance never changes. For more information, see the applicable documentation:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -142,9 +142,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Route 53 can't check the health of endpoints for which the IP address
-        /// is in local, private, non-routable, or multicast ranges. For more information about
-        /// IP addresses for which you can't create health checks, see the following documents:
+        /// Constraints: For a public health check (<c>EndpointType</c> of <c>PUBLIC</c>, the
+        /// default), Route 53 can't check the health of endpoints for which the IP address is
+        /// in local, private, non-routable, or multicast ranges. For more information about IP
+        /// addresses for which you can't create public health checks, see the following documents:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -161,7 +162,12 @@ namespace Amazon.Route53.Model
         ///  <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a private endpoint health check (<c>EndpointType</c> of <c>PRIVATE</c>), if you
+        /// specify <c>IPAddress</c>, it must be a private IPv4 or IPv6 address. Route 53 sends
+        /// health checks to it from the health check source that you specify in <c>HealthCheckSourceId</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 45)]
         public string IPAddress { get; set; }
@@ -613,5 +619,26 @@ namespace Amazon.Route53.Model
         /// Checks to see if the ResetElements property is set.
         /// </summary>
         internal bool IsSetResetElements() => this.ResetElements != null && (this.ResetElements.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckSourceId. 
+        /// <para>
+        /// The ID of the health check source from which Route 53 sends requests to the endpoint.
+        /// Applies only to health checks that have an <c>EndpointType</c> of <c>PRIVATE</c>.
+        /// The health check source must be in the same account and have a status of <c>CREATE_COMPLETED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each health check source supports a limited number of active health checks. If you
+        /// reach that limit, specify a different health check source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string HealthCheckSourceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HealthCheckSourceId property is set.
+        /// </summary>
+        internal bool IsSetHealthCheckSourceId() => this.HealthCheckSourceId != null;
     }
 }

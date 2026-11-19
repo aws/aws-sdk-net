@@ -51,10 +51,22 @@ namespace Amazon.Route53.Model
         IListCidrLocationsPaginator ListCidrLocations(ListCidrLocationsRequest request);
 
         /// <summary>
+        /// Paginator for ListHealthCheckSources operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListHealthCheckSourcesPaginator ListHealthCheckSources(ListHealthCheckSourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListHealthChecks operation
         /// </summary>
         [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]
         IListHealthChecksPaginator ListHealthChecks(ListHealthChecksRequest request);
+
+        /// <summary>
+        /// Paginator for ListHealthChecksBySource operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]
+        IListHealthChecksBySourcePaginator ListHealthChecksBySource(ListHealthChecksBySourceRequest request);
 
         /// <summary>
         /// Paginator for ListHostedZones operation

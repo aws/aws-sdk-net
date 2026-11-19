@@ -65,6 +65,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateHealthCheckSourceRequest.CallerReference</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateHealthCheckSourceResponse.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateHealthCheckSourceResponse.Location</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.CreateHostedZoneRequest.CallerReference</property>
     <min>1</min>
     <max>128</max>
@@ -239,6 +254,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteHealthCheckSourceRequest.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteHealthCheckSourceResponse.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHostedZoneRequest.Id</property>
     <min>0</min>
     <max>32</max>
@@ -340,6 +365,11 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.GetHealthCheckLastFailureReasonRequest.HealthCheckId</property>
     <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetHealthCheckSourceRequest.HealthCheckSourceId</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -470,6 +500,16 @@
     <max>3</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthCheckSourcesRequest.NextToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthCheckSourcesResponse.NextToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListHealthChecksRequest.Marker</property>
     <min>0</min>
     <max>64</max>
@@ -481,6 +521,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListHealthChecksResponse.NextMarker</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthChecksBySourceRequest.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthChecksBySourceRequest.Marker</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthChecksBySourceResponse.Marker</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHealthChecksBySourceResponse.NextMarker</property>
     <min>0</min>
     <max>64</max>
   </property-value-rule>
@@ -794,6 +854,11 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthCheckId</property>
     <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHealthCheckRequest.HealthCheckSourceId</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -1128,6 +1193,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckConfig.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckConfig.HealthThreshold</property>
     <min>0</min>
     <max>256</max>
@@ -1173,6 +1243,16 @@
     <property>Amazon.Route53.Model.HealthCheckObservation.Region</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckSource.HealthCheckSourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckSourceConfig.VpcId</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZone.CallerReference</property>
@@ -1337,6 +1417,16 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.ReusableDelegationSetLimit.Value</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.SubnetConfiguration.AvailabilityZoneId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.SubnetConfiguration.SubnetId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.Tag.Key</property>

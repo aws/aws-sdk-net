@@ -1123,7 +1123,8 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Adds, edits, or deletes tags for a health check or a hosted zone.
+        /// Adds, edits, or deletes tags for a health check, a health check source, or a hosted
+        /// zone.
         /// 
         ///  
         /// <para>
@@ -1138,6 +1139,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1173,7 +1178,8 @@ namespace Amazon.Route53
 #endif
 
         /// <summary>
-        /// Adds, edits, or deletes tags for a health check or a hosted zone.
+        /// Adds, edits, or deletes tags for a health check, a health check source, or a hosted
+        /// zone.
         /// 
         ///  
         /// <para>
@@ -1191,6 +1197,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1323,8 +1333,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Route 53 health checkers are outside the VPC. To check the health of an endpoint within
-        /// a VPC by IP address, you must assign a public IP address to the instance in the VPC.
+        /// For a public health check, Route 53 health checkers are outside the VPC. To check
+        /// the health of an endpoint within a VPC by IP address, you must assign a public IP
+        /// address to the instance in the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To check the health of an endpoint within a VPC by using a private IP address, use
+        /// a private endpoint health check (<c>EndpointType</c> of <c>PRIVATE</c>). For more
+        /// information, see <c>CreateHealthCheckSource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1366,7 +1383,9 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
         /// This health check can't be created because the current account has reached the limit
-        /// on the number of active health checks.
+        /// on the number of active health checks, or because the health check source for a private
+        /// health check has reached its limit on active health checks. In the second case, specify
+        /// a different health check source.
         /// 
         ///  
         /// <para>
@@ -1437,8 +1456,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Route 53 health checkers are outside the VPC. To check the health of an endpoint within
-        /// a VPC by IP address, you must assign a public IP address to the instance in the VPC.
+        /// For a public health check, Route 53 health checkers are outside the VPC. To check
+        /// the health of an endpoint within a VPC by IP address, you must assign a public IP
+        /// address to the instance in the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To check the health of an endpoint within a VPC by using a private IP address, use
+        /// a private endpoint health check (<c>EndpointType</c> of <c>PRIVATE</c>). For more
+        /// information, see <c>CreateHealthCheckSource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1483,7 +1509,9 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
         /// This health check can't be created because the current account has reached the limit
-        /// on the number of active health checks.
+        /// on the number of active health checks, or because the health check source for a private
+        /// health check has reached its limit on active health checks. In the second case, specify
+        /// a different health check source.
         /// 
         ///  
         /// <para>
@@ -1511,6 +1539,162 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateHealthCheckResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a health check source, which defines the virtual private cloud (VPC), subnets,
+        /// and security groups from which Route 53 sends private endpoint health check requests.
+        /// To use this operation, you must have the <c>route53:CreateHealthCheckSource</c> permission.
+        /// You must also have permission to create a service-linked role.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a VPC, one subnet in each Availability Zone that Route 53 uses for private
+        /// endpoint health checks in the Amazon Web Services Region, and one or more security
+        /// groups for each subnet. The security groups must allow outbound traffic to the endpoints
+        /// that you want to check.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route 53 creates a health check source asynchronously, and the initial <c>HealthCheckSourceStatus</c>
+        /// is <c>CREATE_PENDING</c>. Call <c>GetHealthCheckSource</c> until the status is <c>CREATE_COMPLETED</c>
+        /// before you create health checks that use the source. You can't change the configuration
+        /// of a health check source after you create it.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Identity and Access Management (IAM) is still deleting the Route 53 service-linked
+        /// role for your account, the request fails with <c>InvalidInput</c>. Retry after the
+        /// deletion completes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheckSource service method.</param>
+        /// <returns>The response from the CreateHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.HealthCheckSourceAlreadyExistsException">
+        /// The health check source that you're attempting to create already exists. Route 53
+        /// returns this error when you submit a request that has the same value for <c>CallerReference</c>
+        /// as an existing health check source and one or more values that differ from the existing
+        /// health check source. To create another health check source, specify a new value for
+        /// <c>CallerReference</c>. To find the existing health check source, call <c>ListHealthCheckSources</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyHealthCheckSourcesException">
+        /// You can't create this health check source because the current account has reached
+        /// its maximum number of health check sources. The maximum includes every health check
+        /// source that hasn't reached <c>DELETE_COMPLETED</c> status, including a health check
+        /// source with a status of <c>CREATE_FAILED</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheckSource">REST API Reference for CreateHealthCheckSource Operation</seealso>
+        public virtual CreateHealthCheckSourceResponse CreateHealthCheckSource(CreateHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHealthCheckSourceResponse>(request, options);
+        }
+#else
+        internal virtual CreateHealthCheckSourceResponse CreateHealthCheckSource(CreateHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHealthCheckSourceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a health check source, which defines the virtual private cloud (VPC), subnets,
+        /// and security groups from which Route 53 sends private endpoint health check requests.
+        /// To use this operation, you must have the <c>route53:CreateHealthCheckSource</c> permission.
+        /// You must also have permission to create a service-linked role.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a VPC, one subnet in each Availability Zone that Route 53 uses for private
+        /// endpoint health checks in the Amazon Web Services Region, and one or more security
+        /// groups for each subnet. The security groups must allow outbound traffic to the endpoints
+        /// that you want to check.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route 53 creates a health check source asynchronously, and the initial <c>HealthCheckSourceStatus</c>
+        /// is <c>CREATE_PENDING</c>. Call <c>GetHealthCheckSource</c> until the status is <c>CREATE_COMPLETED</c>
+        /// before you create health checks that use the source. You can't change the configuration
+        /// of a health check source after you create it.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Identity and Access Management (IAM) is still deleting the Route 53 service-linked
+        /// role for your account, the request fails with <c>InvalidInput</c>. Retry after the
+        /// deletion completes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheckSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.HealthCheckSourceAlreadyExistsException">
+        /// The health check source that you're attempting to create already exists. Route 53
+        /// returns this error when you submit a request that has the same value for <c>CallerReference</c>
+        /// as an existing health check source and one or more values that differ from the existing
+        /// health check source. To create another health check source, specify a new value for
+        /// <c>CallerReference</c>. To find the existing health check source, call <c>ListHealthCheckSources</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyHealthCheckSourcesException">
+        /// You can't create this health check source because the current account has reached
+        /// its maximum number of health check sources. The maximum includes every health check
+        /// source that hasn't reached <c>DELETE_COMPLETED</c> status, including a health check
+        /// source with a status of <c>CREATE_FAILED</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
+        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheckSource">REST API Reference for CreateHealthCheckSource Operation</seealso>
+        public virtual Task<CreateHealthCheckSourceResponse> CreateHealthCheckSourceAsync(CreateHealthCheckSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHealthCheckSourceResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3625,6 +3809,116 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a health check source. Before you delete a health check source, delete or
+        /// update any health checks that reference it. Otherwise, the request fails with <c>InvalidInput</c>.
+        /// The request also fails with <c>InvalidInput</c> if the status of the health check
+        /// source is <c>CREATE_PENDING</c> or <c>CREATE_IN_PROGRESS</c>. Wait until the status
+        /// is <c>CREATE_COMPLETED</c> or <c>CREATE_FAILED</c>, and then try again.
+        /// 
+        ///  
+        /// <para>
+        /// Route 53 deletes a health check source asynchronously, and the initial <c>HealthCheckSourceStatus</c>
+        /// is <c>DELETE_PENDING</c>. Call <c>GetHealthCheckSource</c> to track progress. After
+        /// the deletion completes, <c>GetHealthCheckSource</c> returns <c>NoSuchHealthCheckSource</c>
+        /// and the health check source no longer appears in the results of <c>ListHealthCheckSources</c>.
+        /// If you delete a health check source that is already deleted, the request fails with
+        /// <c>NoSuchHealthCheckSource</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>route53:DeleteHealthCheckSource</c> permission.
+        /// You must also have permission to create a service-linked role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheckSource service method.</param>
+        /// <returns>The response from the DeleteHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheckSource">REST API Reference for DeleteHealthCheckSource Operation</seealso>
+        public virtual DeleteHealthCheckSourceResponse DeleteHealthCheckSource(DeleteHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHealthCheckSourceResponse>(request, options);
+        }
+#else
+        internal virtual DeleteHealthCheckSourceResponse DeleteHealthCheckSource(DeleteHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHealthCheckSourceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a health check source. Before you delete a health check source, delete or
+        /// update any health checks that reference it. Otherwise, the request fails with <c>InvalidInput</c>.
+        /// The request also fails with <c>InvalidInput</c> if the status of the health check
+        /// source is <c>CREATE_PENDING</c> or <c>CREATE_IN_PROGRESS</c>. Wait until the status
+        /// is <c>CREATE_COMPLETED</c> or <c>CREATE_FAILED</c>, and then try again.
+        /// 
+        ///  
+        /// <para>
+        /// Route 53 deletes a health check source asynchronously, and the initial <c>HealthCheckSourceStatus</c>
+        /// is <c>DELETE_PENDING</c>. Call <c>GetHealthCheckSource</c> to track progress. After
+        /// the deletion completes, <c>GetHealthCheckSource</c> returns <c>NoSuchHealthCheckSource</c>
+        /// and the health check source no longer appears in the results of <c>ListHealthCheckSources</c>.
+        /// If you delete a health check source that is already deleted, the request fails with
+        /// <c>NoSuchHealthCheckSource</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>route53:DeleteHealthCheckSource</c> permission.
+        /// You must also have permission to create a service-linked role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheckSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheckSource">REST API Reference for DeleteHealthCheckSource Operation</seealso>
+        public virtual Task<DeleteHealthCheckSourceResponse> DeleteHealthCheckSourceAsync(DeleteHealthCheckSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteHealthCheckSourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a hosted zone.
         /// 
         ///  
@@ -5503,6 +5797,66 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Gets information about a specified health check source, including its status and the
+        /// virtual private cloud (VPC), subnets, and security groups that it uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckSource service method.</param>
+        /// <returns>The response from the GetHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckSource">REST API Reference for GetHealthCheckSource Operation</seealso>
+        public virtual GetHealthCheckSourceResponse GetHealthCheckSource(GetHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckSourceResponse>(request, options);
+        }
+#else
+        internal virtual GetHealthCheckSourceResponse GetHealthCheckSource(GetHealthCheckSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetHealthCheckSourceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets information about a specified health check source, including its status and the
+        /// virtual private cloud (VPC), subnets, and security groups that it uses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetHealthCheckSource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckSource">REST API Reference for GetHealthCheckSource Operation</seealso>
+        public virtual Task<GetHealthCheckSourceResponse> GetHealthCheckSourceAsync(GetHealthCheckSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHealthCheckSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHealthCheckSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHealthCheckSourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets status of a specified health check. 
         /// 
         ///  <important> 
@@ -6549,6 +6903,70 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves a list of the health check sources that are associated with the current
+        /// Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. To get more results, specify the <c>NextToken</c> value from
+        /// the previous response for <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthCheckSources service method.</param>
+        /// <returns>The response from the ListHealthCheckSources service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthCheckSources">REST API Reference for ListHealthCheckSources Operation</seealso>
+        public virtual ListHealthCheckSourcesResponse ListHealthCheckSources(ListHealthCheckSourcesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthCheckSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthCheckSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHealthCheckSourcesResponse>(request, options);
+        }
+#else
+        internal virtual ListHealthCheckSourcesResponse ListHealthCheckSources(ListHealthCheckSourcesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthCheckSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthCheckSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHealthCheckSourcesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a list of the health check sources that are associated with the current
+        /// Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. To get more results, specify the <c>NextToken</c> value from
+        /// the previous response for <c>NextToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthCheckSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListHealthCheckSources service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthCheckSources">REST API Reference for ListHealthCheckSources Operation</seealso>
+        public virtual Task<ListHealthCheckSourcesResponse> ListHealthCheckSourcesAsync(ListHealthCheckSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthCheckSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthCheckSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHealthCheckSourcesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieve a list of the health checks that are associated with the current Amazon Web
         /// Services account.
         /// </summary>
@@ -6647,6 +7065,76 @@ namespace Amazon.Route53
         public virtual Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListHealthChecksAsync(new ListHealthChecksRequest(), cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a list of the health checks that use a specified health check source.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. If <c>IsTruncated</c> is <c>true</c>, specify the <c>NextMarker</c>
+        /// value for <c>marker</c> to get more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthChecksBySource service method.</param>
+        /// <returns>The response from the ListHealthChecksBySource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecksBySource">REST API Reference for ListHealthChecksBySource Operation</seealso>
+        public virtual ListHealthChecksBySourceResponse ListHealthChecksBySource(ListHealthChecksBySourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthChecksBySourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthChecksBySourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListHealthChecksBySourceResponse>(request, options);
+        }
+#else
+        internal virtual ListHealthChecksBySourceResponse ListHealthChecksBySource(ListHealthChecksBySourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthChecksBySourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthChecksBySourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListHealthChecksBySourceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a list of the health checks that use a specified health check source.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. If <c>IsTruncated</c> is <c>true</c>, specify the <c>NextMarker</c>
+        /// value for <c>marker</c> to get more results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthChecksBySource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListHealthChecksBySource service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecksBySource">REST API Reference for ListHealthChecksBySource Operation</seealso>
+        public virtual Task<ListHealthChecksBySourceResponse> ListHealthChecksBySourceAsync(ListHealthChecksBySourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHealthChecksBySourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHealthChecksBySourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHealthChecksBySourceResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -7673,6 +8161,10 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
@@ -7726,6 +8218,10 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
@@ -7766,6 +8262,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -7819,6 +8319,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
         /// No health check exists with the specified ID.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckSourceException">
+        /// No health check source exists with the specified ID. Verify that the ID is correct
+        /// and that the health check source hasn't been deleted.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.

@@ -45,6 +45,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The resource type for health check sources is <c>healthchecksource</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The resource type for hosted zones is <c>hostedzone</c>.
         /// </para>
         ///  </li> </ul>

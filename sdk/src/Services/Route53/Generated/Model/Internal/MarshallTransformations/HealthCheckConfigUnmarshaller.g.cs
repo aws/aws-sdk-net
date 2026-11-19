@@ -188,6 +188,20 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.RoutingControlArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("EndpointType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("HealthCheckSourceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HealthCheckSourceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -134,6 +134,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 context.Writer.WriteElementString("RoutingControlArn", StringUtils.FromString(requestObject.RoutingControlArn));
             }
+            if (requestObject.IsSetEndpointType())
+            {
+                context.Writer.WriteElementString("EndpointType", StringUtils.FromString(requestObject.EndpointType));
+            }
+            if (requestObject.IsSetHealthCheckSourceId())
+            {
+                context.Writer.WriteElementString("HealthCheckSourceId", StringUtils.FromString(requestObject.HealthCheckSourceId));
+            }
         }
 
         /// <summary>
