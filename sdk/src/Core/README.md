@@ -14,9 +14,13 @@ Install a service package and create its client. The client finds credentials an
 
 ```csharp
 using Amazon.S3;
+using Amazon.S3.Model;
 
 using var client = new AmazonS3Client();
-var response = await client.ListBucketsAsync();
+var response = await client.ListObjectsV2Async(new ListObjectsV2Request
+{
+    BucketName = "amzn-s3-demo-bucket"
+});
 ```
 
 To set the region or other client settings explicitly, pass a config object:
