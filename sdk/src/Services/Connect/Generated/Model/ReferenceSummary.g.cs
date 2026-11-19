@@ -172,5 +172,61 @@ namespace Amazon.Connect.Model
         /// Checks to see if the Url property is set.
         /// </summary>
         internal bool IsSetUrl() => this.Url != null;
+
+        /// <summary>
+        /// Gets and sets the property VoicemailAnalysis. 
+        /// <para>
+        /// Information about the reference when the <c>referenceType</c> is <c>VOICEMAIL_ANALYSIS</c>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public VoicemailAnalysisReference VoicemailAnalysis { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VoicemailAnalysis property is set.
+        /// </summary>
+        internal bool IsSetVoicemailAnalysis() => this.VoicemailAnalysis != null;
+
+        /// <summary>
+        /// Gets and sets the property VoicemailAnalysisRedacted. 
+        /// <para>
+        /// Information about the reference when the <c>referenceType</c> is <c>VOICEMAIL_ANALYSIS_REDACTED</c>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public VoicemailAnalysisReference VoicemailAnalysisRedacted { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VoicemailAnalysisRedacted property is set.
+        /// </summary>
+        internal bool IsSetVoicemailAnalysisRedacted() => this.VoicemailAnalysisRedacted != null;
+
+        /// <summary>
+        /// Gets and sets the property VoicemailRecording. 
+        /// <para>
+        /// Information about the reference when the <c>referenceType</c> is <c>VOICEMAIL_RECORDING</c>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public VoicemailRecordingReference VoicemailRecording { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VoicemailRecording property is set.
+        /// </summary>
+        internal bool IsSetVoicemailRecording() => this.VoicemailRecording != null;
+
+        /// <summary>
+        /// Gets and sets the property VoicemailRecordingRedacted. 
+        /// <para>
+        /// Information about the reference when the <c>referenceType</c> is <c>VOICEMAIL_RECORDING_REDACTED</c>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public VoicemailRecordingReference VoicemailRecordingRedacted { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VoicemailRecordingRedacted property is set.
+        /// </summary>
+        internal bool IsSetVoicemailRecordingRedacted() => this.VoicemailRecordingRedacted != null;
     }
 }

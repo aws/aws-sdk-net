@@ -5111,6 +5111,26 @@ namespace Amazon.Connect
         public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
 
         /// <summary>
+        /// Constant VOICEMAIL_ANALYSIS for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICEMAIL_ANALYSIS = new FileUseCaseType("VOICEMAIL_ANALYSIS");
+
+        /// <summary>
+        /// Constant VOICEMAIL_ANALYSIS_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICEMAIL_ANALYSIS_REDACTED = new FileUseCaseType("VOICEMAIL_ANALYSIS_REDACTED");
+
+        /// <summary>
+        /// Constant VOICEMAIL_RECORDING for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICEMAIL_RECORDING = new FileUseCaseType("VOICEMAIL_RECORDING");
+
+        /// <summary>
+        /// Constant VOICEMAIL_RECORDING_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType VOICEMAIL_RECORDING_REDACTED = new FileUseCaseType("VOICEMAIL_RECORDING_REDACTED");
+
+        /// <summary>
         /// Constant VOICE_RECORDING for FileUseCaseType
         /// </summary>
         public static readonly FileUseCaseType VOICE_RECORDING = new FileUseCaseType("VOICE_RECORDING");
@@ -10347,6 +10367,26 @@ namespace Amazon.Connect
         /// Constant URL for ReferenceType
         /// </summary>
         public static readonly ReferenceType URL = new ReferenceType("URL");
+
+        /// <summary>
+        /// Constant VOICEMAIL_ANALYSIS for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType VOICEMAIL_ANALYSIS = new ReferenceType("VOICEMAIL_ANALYSIS");
+
+        /// <summary>
+        /// Constant VOICEMAIL_ANALYSIS_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType VOICEMAIL_ANALYSIS_REDACTED = new ReferenceType("VOICEMAIL_ANALYSIS_REDACTED");
+
+        /// <summary>
+        /// Constant VOICEMAIL_RECORDING for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType VOICEMAIL_RECORDING = new ReferenceType("VOICEMAIL_RECORDING");
+
+        /// <summary>
+        /// Constant VOICEMAIL_RECORDING_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType VOICEMAIL_RECORDING_REDACTED = new ReferenceType("VOICEMAIL_RECORDING_REDACTED");
 
         /// <summary>
         /// Constructs a custom ReferenceType for a value not among the defined constants.

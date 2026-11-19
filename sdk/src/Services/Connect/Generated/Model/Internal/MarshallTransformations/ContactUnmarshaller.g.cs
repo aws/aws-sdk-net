@@ -396,6 +396,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("VoicemailInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoicemailInfoUnmarshaller.Instance;
+                    unmarshalledObject.VoicemailInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("WisdomInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = WisdomInfoUnmarshaller.Instance;

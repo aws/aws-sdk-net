@@ -764,6 +764,20 @@ namespace Amazon.Connect.Model
         internal bool IsSetTotalPauseDurationInSeconds() => this.TotalPauseDurationInSeconds.HasValue;
 
         /// <summary>
+        /// Gets and sets the property VoicemailInfo. 
+        /// <para>
+        /// If one or more voicemails were recorded for the contact, this contains information
+        /// about the voicemails.
+        /// </para>
+        /// </summary>
+        public VoicemailInfo VoicemailInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VoicemailInfo property is set.
+        /// </summary>
+        internal bool IsSetVoicemailInfo() => this.VoicemailInfo != null;
+
+        /// <summary>
         /// Gets and sets the property WisdomInfo. 
         /// <para>
         /// Information about Connect Customer Wisdom.

@@ -129,6 +129,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("VoicemailAnalysis", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoicemailAnalysisReferenceUnmarshaller.Instance;
+                    unmarshalledObject.VoicemailAnalysis = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VoicemailAnalysisRedacted", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoicemailAnalysisReferenceUnmarshaller.Instance;
+                    unmarshalledObject.VoicemailAnalysisRedacted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VoicemailRecording", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoicemailRecordingReferenceUnmarshaller.Instance;
+                    unmarshalledObject.VoicemailRecording = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VoicemailRecordingRedacted", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoicemailRecordingReferenceUnmarshaller.Instance;
+                    unmarshalledObject.VoicemailRecordingRedacted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -8883,6 +8883,31 @@
     <pattern>^\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.VoicemailAnalysisReference.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VoicemailAnalysisReference.Value</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VoicemailInfo.NumberOfVoicemails</property>
+    <min>1</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VoicemailRecordingReference.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VoicemailRecordingReference.Value</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.WebNotificationContent.ViewArn</property>
     <min>1</min>
     <max>500</max>
