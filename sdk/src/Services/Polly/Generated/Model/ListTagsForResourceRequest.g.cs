@@ -38,8 +38,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the only supported resource is an Amazon Polly lexicon.
+        /// The Amazon Resource Name (ARN) of the resource to list the tags for. You can tag Amazon
+        /// Polly lexicons and custom voices.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]

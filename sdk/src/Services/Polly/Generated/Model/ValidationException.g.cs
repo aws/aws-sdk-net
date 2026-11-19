@@ -94,8 +94,20 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason the request failed validation.
+        /// The reason the request failed validation. If Amazon Polly can't use the Amazon Web
+        /// Services KMS key that you specified in <c>CreateVoice</c>, <c>fields</c> names <c>CustomerManagedEncryption.KmsKeyArn</c>
+        /// and the reason is one of the following:
         /// </para>
+        ///  <dl> <dt>kmsKeyNotFound</dt> <dd> 
+        /// <para>
+        /// No key with the specified ARN exists.
+        /// </para>
+        ///  </dd> <dt>kmsKeyUnusable</dt> <dd> 
+        /// <para>
+        /// The key is disabled, scheduled for deletion, or missing its key material, or it isn't
+        /// a symmetric encryption key.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public ValidationExceptionReason Reason { get; set; }

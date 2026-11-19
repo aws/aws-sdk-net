@@ -30,15 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Polly.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartSpeechSynthesisTask operation. Allows the
-    /// creation of an asynchronous synthesis task, by starting a new <c>SpeechSynthesisTask</c>.
-    /// This operation requires all the standard information needed for speech synthesis,
-    /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
-    /// task and two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>).
-    /// Once the synthesis task is created, this operation will return a <c>SpeechSynthesisTask</c>
-    /// object, which will include an identifier of this task as well as the current status.
-    /// The <c>SpeechSynthesisTask</c> object is available for 72 hours after starting the
-    /// asynchronous synthesis task.
+    /// Container for the parameters to the StartSpeechSynthesisTask operation. Starts an
+    /// asynchronous synthesis task by creating a new <c>SpeechSynthesisTask</c>. This operation
+    /// requires all the standard information needed for speech synthesis, plus the name of
+    /// an Amazon S3 bucket for the service to store the output of the synthesis task and
+    /// two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>). After Amazon
+    /// Polly creates the synthesis task, the operation returns a <c>SpeechSynthesisTask</c>
+    /// object that includes an identifier for the task and its current status. The <c>SpeechSynthesisTask</c>
+    /// object is available for 72 hours after you start the asynchronous synthesis task.
+    /// <para> To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be
+    /// in <c>active</c> status. If the voice is in <c>pending</c> or <c>failed</c> status,
+    /// the request fails with <c>ConflictException</c>. If no custom voice with the specified
+    /// ID exists in your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+    /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+    /// on the key. If you disable the key or schedule it for deletion before the task runs,
+    /// the task fails and <c>TaskStatusReason</c> describes the cause. </para>
     /// </summary>
     public partial class StartSpeechSynthesisTaskRequest : AmazonPollyRequest
     {
@@ -243,7 +249,9 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property VoiceId. 
         /// <para>
-        /// Voice ID to use for the synthesis. 
+        /// The voice ID to use for the synthesis. To use a custom voice, specify the voice ID
+        /// that <c>CreateVoice</c> returned, for example, <c>vc-9a8fa85dd3</c>. You can't specify
+        /// the ARN of a voice.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -261,6 +261,140 @@ namespace Amazon.Polly
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a custom voice from recordings of a speaker and returns it in <c>pending</c>
+        /// status. Use <c>GetVoice</c> to check the status. When the status is <c>active</c>,
+        /// you can use the voice ID in <c>SynthesizeSpeech</c>, <c>StartSpeechSynthesisTask</c>,
+        /// and <c>StartSpeechSynthesisStream</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>custom-voice-max-count</c> service quota limits the number of custom voices
+        /// in your account in each Region. If you reach the quota, the request fails with <c>ServiceQuotaExceededException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <c>polly:CreateVoice</c> action.
+        /// You also need <c>s3:GetObject</c> permission on each recording that you specify by
+        /// <c>S3Url</c>. If you specify a customer managed key, you also need <c>kms:DescribeKey</c>,
+        /// <c>kms:GenerateDataKey</c>, and <c>kms:Decrypt</c> permissions on the key. If you
+        /// specify <c>Tags</c>, you also need the <c>polly:TagResource</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoice service method.</param>
+        /// <returns>The response from the CreateVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action. For a custom voice that
+        /// uses a customer managed key, Amazon Polly also returns this exception if you don't
+        /// have the required Amazon Web Services KMS permissions on the key.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/CreateVoice">REST API Reference for CreateVoice Operation</seealso>
+        public virtual CreateVoiceResponse CreateVoice(CreateVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceResponse>(request, options);
+        }
+#else
+        internal virtual CreateVoiceResponse CreateVoice(CreateVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVoiceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a custom voice from recordings of a speaker and returns it in <c>pending</c>
+        /// status. Use <c>GetVoice</c> to check the status. When the status is <c>active</c>,
+        /// you can use the voice ID in <c>SynthesizeSpeech</c>, <c>StartSpeechSynthesisTask</c>,
+        /// and <c>StartSpeechSynthesisStream</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>custom-voice-max-count</c> service quota limits the number of custom voices
+        /// in your account in each Region. If you reach the quota, the request fails with <c>ServiceQuotaExceededException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <c>polly:CreateVoice</c> action.
+        /// You also need <c>s3:GetObject</c> permission on each recording that you specify by
+        /// <c>S3Url</c>. If you specify a customer managed key, you also need <c>kms:DescribeKey</c>,
+        /// <c>kms:GenerateDataKey</c>, and <c>kms:Decrypt</c> permissions on the key. If you
+        /// specify <c>Tags</c>, you also need the <c>polly:TagResource</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action. For a custom voice that
+        /// uses a customer managed key, Amazon Polly also returns this exception if you don't
+        /// have the required Amazon Web Services KMS permissions on the key.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidTagParameterException">
+        /// The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported
+        /// resource in the Amazon Web Services account and Region of the request. Tag keys can
+        /// have a maximum length of 128 characters, and tag values can have a maximum length
+        /// of 256 characters. Correct the ARN or the tags, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TooManyTagsException">
+        /// The list of tags on the resource is over the limit. The maximum number of tags that
+        /// can be applied to a resource is 50. Remove unused tags or reduce the number of tags
+        /// in the request, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/CreateVoice">REST API Reference for CreateVoice Operation</seealso>
+        public virtual Task<CreateVoiceResponse> CreateVoiceAsync(CreateVoiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVoiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVoiceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the specified pronunciation lexicon stored in an Amazon Web Services Region.
         /// A lexicon which has been deleted is not available for speech synthesis, nor is it
         /// possible to retrieve it using either the <c>GetLexicon</c> or <c>ListLexicon</c> APIs.
@@ -349,26 +483,156 @@ namespace Amazon.Polly
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the list of voices that are available for use when requesting speech synthesis.
-        /// Each voice speaks a specified language, is either male or female, and is identified
-        /// by an ID, which is the ASCII version of the voice name. 
+        /// Deletes a custom voice. <c>DescribeVoices</c> and <c>GetVoice</c> stop returning the
+        /// voice immediately. You can't restore a deleted voice.
         /// 
         ///  
         /// <para>
-        /// When synthesizing speech ( <c>SynthesizeSpeech</c> ), you provide the voice ID for
-        /// the voice you want from the list of voices returned by <c>DescribeVoices</c>.
+        /// You can delete a voice in <c>active</c> or <c>failed</c> status. If the voice is in
+        /// <c>pending</c> status, the request fails with <c>ConflictException</c>. If no custom
+        /// voice with the specified ID exists in your account and Region, the request fails with
+        /// <c>ResourceNotFoundException</c>. You can delete the voice even if you disabled its
+        /// Amazon Web Services KMS key or scheduled it for deletion.
         /// </para>
         ///  
         /// <para>
-        /// For example, you want your news reader application to read news in a specific language,
-        /// but giving a user the option to choose the voice. Using the <c>DescribeVoices</c>
-        /// operation you can provide the user with a list of available voices to select from.
+        /// This operation requires permissions to perform the <c>polly:DeleteVoice</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoice service method.</param>
+        /// <returns>The response from the DeleteVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteVoice">REST API Reference for DeleteVoice Operation</seealso>
+        public virtual DeleteVoiceResponse DeleteVoice(DeleteVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceResponse>(request, options);
+        }
+#else
+        internal virtual DeleteVoiceResponse DeleteVoice(DeleteVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a custom voice. <c>DescribeVoices</c> and <c>GetVoice</c> stop returning the
+        /// voice immediately. You can't restore a deleted voice.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete a voice in <c>active</c> or <c>failed</c> status. If the voice is in
+        /// <c>pending</c> status, the request fails with <c>ConflictException</c>. If no custom
+        /// voice with the specified ID exists in your account and Region, the request fails with
+        /// <c>ResourceNotFoundException</c>. You can delete the voice even if you disabled its
+        /// Amazon Web Services KMS key or scheduled it for deletion.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <c>polly:DeleteVoice</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteVoice">REST API Reference for DeleteVoice Operation</seealso>
+        public virtual Task<DeleteVoiceResponse> DeleteVoiceAsync(DeleteVoiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVoiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVoiceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the list of voices: the voices that Amazon Polly provides and the custom voices
+        /// in your account. Each voice speaks a specified language and is identified by an ID.
+        /// A voice that Amazon Polly provides is either male or female, and its ID is the ASCII
+        /// version of the voice name.
+        /// 
+        ///  
+        /// <para>
+        /// When synthesizing speech (<c>SynthesizeSpeech</c>), you provide the voice ID for the
+        /// voice you want from the list of voices returned by <c>DescribeVoices</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, your news reader application reads news in a specific language, and you
+        /// want to give users the option to choose the voice. With the <c>DescribeVoices</c>
+        /// operation, you can provide a list of available voices for users to choose from.
         /// </para>
         ///  
         /// <para>
         ///  You can optionally specify a language code to filter the available voices. For example,
         /// if you specify <c>en-US</c>, the operation returns a list of all available US English
         /// voices. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The list includes custom voices in every status. For each voice, <c>Origin</c> indicates
+        /// whether Amazon Polly provides the voice or you created it. You can use a custom voice
+        /// for synthesis only when its status is <c>active</c>. A voice in <c>failed</c> status
+        /// stays in the list until you delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a custom voice, <c>DescribeVoices</c> returns <c>Origin</c>, <c>Id</c>, <c>Name</c>,
+        /// <c>Status</c>, <c>LanguageCode</c>, <c>LanguageName</c>, <c>SupportedEngines</c>,
+        /// and <c>CreationTime</c>. To get <c>Arn</c>, <c>StatusReason</c>, <c>VoiceCreationData</c>,
+        /// and <c>CustomerManagedEncryption</c>, use <c>GetVoice</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>LanguageCode</c> and <c>Engine</c> filters apply to custom voices in the same
+        /// way as to voices that Amazon Polly provides.
         /// </para>
         ///  
         /// <para>
@@ -404,26 +668,46 @@ namespace Amazon.Polly
 #endif
 
         /// <summary>
-        /// Returns the list of voices that are available for use when requesting speech synthesis.
-        /// Each voice speaks a specified language, is either male or female, and is identified
-        /// by an ID, which is the ASCII version of the voice name. 
+        /// Returns the list of voices: the voices that Amazon Polly provides and the custom voices
+        /// in your account. Each voice speaks a specified language and is identified by an ID.
+        /// A voice that Amazon Polly provides is either male or female, and its ID is the ASCII
+        /// version of the voice name.
         /// 
         ///  
         /// <para>
-        /// When synthesizing speech ( <c>SynthesizeSpeech</c> ), you provide the voice ID for
-        /// the voice you want from the list of voices returned by <c>DescribeVoices</c>.
+        /// When synthesizing speech (<c>SynthesizeSpeech</c>), you provide the voice ID for the
+        /// voice you want from the list of voices returned by <c>DescribeVoices</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, you want your news reader application to read news in a specific language,
-        /// but giving a user the option to choose the voice. Using the <c>DescribeVoices</c>
-        /// operation you can provide the user with a list of available voices to select from.
+        /// For example, your news reader application reads news in a specific language, and you
+        /// want to give users the option to choose the voice. With the <c>DescribeVoices</c>
+        /// operation, you can provide a list of available voices for users to choose from.
         /// </para>
         ///  
         /// <para>
         ///  You can optionally specify a language code to filter the available voices. For example,
         /// if you specify <c>en-US</c>, the operation returns a list of all available US English
         /// voices. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The list includes custom voices in every status. For each voice, <c>Origin</c> indicates
+        /// whether Amazon Polly provides the voice or you created it. You can use a custom voice
+        /// for synthesis only when its status is <c>active</c>. A voice in <c>failed</c> status
+        /// stays in the list until you delete it.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a custom voice, <c>DescribeVoices</c> returns <c>Origin</c>, <c>Id</c>, <c>Name</c>,
+        /// <c>Status</c>, <c>LanguageCode</c>, <c>LanguageName</c>, <c>SupportedEngines</c>,
+        /// and <c>CreationTime</c>. To get <c>Arn</c>, <c>StatusReason</c>, <c>VoiceCreationData</c>,
+        /// and <c>CustomerManagedEncryption</c>, use <c>GetVoice</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>LanguageCode</c> and <c>Engine</c> filters apply to custom voices in the same
+        /// way as to voices that Amazon Polly provides.
         /// </para>
         ///  
         /// <para>
@@ -595,6 +879,96 @@ namespace Amazon.Polly
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the status and properties of a custom voice. Use this operation after <c>CreateVoice</c>
+        /// to check whether the status of the voice is <c>active</c> or <c>failed</c>. Unlike
+        /// <c>DescribeVoices</c>, <c>GetVoice</c> also returns <c>Arn</c>, <c>VoiceCreationData</c>,
+        /// <c>CustomerManagedEncryption</c>, and <c>StatusReason</c>. If no custom voice with
+        /// the specified ID exists in your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <c>polly:GetVoice</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoice service method.</param>
+        /// <returns>The response from the GetVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetVoice">REST API Reference for GetVoice Operation</seealso>
+        public virtual GetVoiceResponse GetVoice(GetVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceResponse>(request, options);
+        }
+#else
+        internal virtual GetVoiceResponse GetVoice(GetVoiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the status and properties of a custom voice. Use this operation after <c>CreateVoice</c>
+        /// to check whether the status of the voice is <c>active</c> or <c>failed</c>. Unlike
+        /// <c>DescribeVoices</c>, <c>GetVoice</c> also returns <c>Arn</c>, <c>VoiceCreationData</c>,
+        /// <c>CustomerManagedEncryption</c>, and <c>StatusReason</c>. If no custom voice with
+        /// the specified ID exists in your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <c>polly:GetVoice</c> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetVoice service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetVoice">REST API Reference for GetVoice Operation</seealso>
+        public virtual Task<GetVoiceResponse> GetVoiceAsync(GetVoiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVoiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVoiceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVoiceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a list of pronunciation lexicons stored in an Amazon Web Services Region.
         /// For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
         /// Lexicons</a>.
@@ -727,8 +1101,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -775,8 +1149,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -971,10 +1345,31 @@ namespace Amazon.Polly
         ///  <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disabled the key or scheduled it for deletion, the request fails
+        /// with <c>ValidationException</c>. If you don't have permission to use the key, the
+        /// request fails with <c>AccessDeniedException</c>. If Amazon Web Services KMS throttles
+        /// Amazon Polly's request to use the key, the request fails with <c>ThrottlingException</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisStream service method.</param>
         /// <returns>The response from the StartSpeechSynthesisStream service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
@@ -1021,13 +1416,34 @@ namespace Amazon.Polly
         ///  <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disabled the key or scheduled it for deletion, the request fails
+        /// with <c>ValidationException</c>. If you don't have permission to use the key, the
+        /// request fails with <c>AccessDeniedException</c>. If Amazon Web Services KMS throttles
+        /// Amazon Polly's request to use the key, the request fails with <c>ThrottlingException</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisStream service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the StartSpeechSynthesisStream service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
@@ -1053,17 +1469,32 @@ namespace Amazon.Polly
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Allows the creation of an asynchronous synthesis task, by starting a new <c>SpeechSynthesisTask</c>.
+        /// Starts an asynchronous synthesis task by creating a new <c>SpeechSynthesisTask</c>.
         /// This operation requires all the standard information needed for speech synthesis,
         /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
         /// task and two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>).
-        /// Once the synthesis task is created, this operation will return a <c>SpeechSynthesisTask</c>
-        /// object, which will include an identifier of this task as well as the current status.
-        /// The <c>SpeechSynthesisTask</c> object is available for 72 hours after starting the
-        /// asynchronous synthesis task.
+        /// After Amazon Polly creates the synthesis task, the operation returns a <c>SpeechSynthesisTask</c>
+        /// object that includes an identifier for the task and its current status. The <c>SpeechSynthesisTask</c>
+        /// object is available for 72 hours after you start the asynchronous synthesis task.
+        /// 
+        ///  
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disable the key or schedule it for deletion before the task runs,
+        /// the task fails and <c>TaskStatusReason</c> describes the cause.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask service method.</param>
         /// <returns>The response from the StartSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
         /// This engine is not compatible with the voice that you have designated. Choose a new
         /// voice that is compatible with the engine or change the engine and restart the operation.
@@ -1104,6 +1535,11 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
         /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
         /// are only available for content in <c>json</c> format.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1139,20 +1575,35 @@ namespace Amazon.Polly
 #endif
 
         /// <summary>
-        /// Allows the creation of an asynchronous synthesis task, by starting a new <c>SpeechSynthesisTask</c>.
+        /// Starts an asynchronous synthesis task by creating a new <c>SpeechSynthesisTask</c>.
         /// This operation requires all the standard information needed for speech synthesis,
         /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
         /// task and two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>).
-        /// Once the synthesis task is created, this operation will return a <c>SpeechSynthesisTask</c>
-        /// object, which will include an identifier of this task as well as the current status.
-        /// The <c>SpeechSynthesisTask</c> object is available for 72 hours after starting the
-        /// asynchronous synthesis task.
+        /// After Amazon Polly creates the synthesis task, the operation returns a <c>SpeechSynthesisTask</c>
+        /// object that includes an identifier for the task and its current status. The <c>SpeechSynthesisTask</c>
+        /// object is available for 72 hours after you start the asynchronous synthesis task.
+        /// 
+        ///  
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disable the key or schedule it for deletion before the task runs,
+        /// the task fails and <c>TaskStatusReason</c> describes the cause.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the StartSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
         /// This engine is not compatible with the voice that you have designated. Choose a new
         /// voice that is compatible with the engine or change the engine and restart the operation.
@@ -1194,6 +1645,11 @@ namespace Amazon.Polly
         /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
         /// are only available for content in <c>json</c> format.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
@@ -1224,9 +1680,30 @@ namespace Amazon.Polly
         /// (for example, Cyrillic might not be read at all by English voices) unless phoneme
         /// mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
         /// it Works</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disabled the key or scheduled it for deletion, the request fails
+        /// with <c>ValidationException</c>. If you don't have permission to use the key, the
+        /// request fails with <c>AccessDeniedException</c>. If Amazon Web Services KMS throttles
+        /// Amazon Polly's request to use the key, the request fails with <c>ThrottlingException</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynthesizeSpeech service method.</param>
         /// <returns>The response from the SynthesizeSpeech service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
         /// This engine is not compatible with the voice that you have designated. Choose a new
         /// voice that is compatible with the engine or change the engine and restart the operation.
@@ -1255,6 +1732,11 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
         /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
         /// are only available for content in <c>json</c> format.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1295,12 +1777,33 @@ namespace Amazon.Polly
         /// (for example, Cyrillic might not be read at all by English voices) unless phoneme
         /// mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
         /// it Works</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To use a custom voice, specify its ID in <c>VoiceId</c>. The voice must be in <c>active</c>
+        /// status. If the voice is in <c>pending</c> or <c>failed</c> status, the request fails
+        /// with <c>ConflictException</c>. If no custom voice with the specified ID exists in
+        /// your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+        /// on the key. If you disabled the key or scheduled it for deletion, the request fails
+        /// with <c>ValidationException</c>. If you don't have permission to use the key, the
+        /// request fails with <c>AccessDeniedException</c>. If Amazon Web Services KMS throttles
+        /// Amazon Polly's request to use the key, the request fails with <c>ThrottlingException</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynthesizeSpeech service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the SynthesizeSpeech service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. For a custom voice,
+        /// the voice isn't in the status that the operation requires. Check the status with <c>GetVoice</c>,
+        /// and then try again.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.EngineNotSupportedException">
         /// This engine is not compatible with the voice that you have designated. Choose a new
         /// voice that is compatible with the engine or change the engine and restart the operation.
@@ -1329,6 +1832,11 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
         /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
         /// are only available for content in <c>json</c> format.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
+        /// Amazon Polly can't find the specified resource. Verify that the resource exists in
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1370,8 +1878,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1426,8 +1934,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1467,8 +1975,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -1515,8 +2023,8 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ResourceNotFoundException">
         /// Amazon Polly can't find the specified resource. Verify that the resource exists in
-        /// the Amazon Web Services account and Region of the request and that its ARN is spelled
-        /// correctly, and then try again.
+        /// the Amazon Web Services account and Region of the request and that its ARN or ID is
+        /// spelled correctly, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.

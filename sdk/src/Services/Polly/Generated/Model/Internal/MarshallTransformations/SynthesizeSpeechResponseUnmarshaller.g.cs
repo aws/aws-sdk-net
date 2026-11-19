@@ -77,6 +77,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
                     var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                    {
+                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("EngineNotSupportedException"))
                     {
                         return EngineNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -100,6 +104,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("MarksNotSupportedForFormatException"))
                     {
                         return MarksNotSupportedForFormatExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailureException"))
                     {

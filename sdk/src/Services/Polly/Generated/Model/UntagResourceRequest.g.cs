@@ -38,8 +38,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently,
-        /// the only supported resource is an Amazon Polly lexicon.
+        /// The Amazon Resource Name (ARN) of the resource to remove tags from. You can tag Amazon
+        /// Polly lexicons and custom voices.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]

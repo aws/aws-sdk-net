@@ -22,6 +22,123 @@ using Amazon.Runtime;
 namespace Amazon.Polly
 {
     /// <summary>
+    /// Constants used for properties of type AudioFormat.
+    /// </summary>
+    public class AudioFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant Flac for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Flac = new AudioFormat("flac");
+
+        /// <summary>
+        /// Constant Mp3 for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Mp3 = new AudioFormat("mp3");
+
+        /// <summary>
+        /// Constant Ogg_vorbis for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Ogg_vorbis = new AudioFormat("ogg_vorbis");
+
+        /// <summary>
+        /// Constant Wav for AudioFormat
+        /// </summary>
+        public static readonly AudioFormat Wav = new AudioFormat("wav");
+
+        /// <summary>
+        /// Constructs a custom AudioFormat for a value not among the defined constants.
+        /// </summary>
+        public AudioFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioFormat FindValue(string value)
+        {
+            return FindValue<AudioFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CustomVoiceLanguageCode.
+    /// </summary>
+    public class CustomVoiceLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeDE for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode DeDE = new CustomVoiceLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant EnUS for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode EnUS = new CustomVoiceLanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EsUS for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode EsUS = new CustomVoiceLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant FrFR for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode FrFR = new CustomVoiceLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant HiIN for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode HiIN = new CustomVoiceLanguageCode("hi-IN");
+
+        /// <summary>
+        /// Constant ItIT for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode ItIT = new CustomVoiceLanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant PtBR for CustomVoiceLanguageCode
+        /// </summary>
+        public static readonly CustomVoiceLanguageCode PtBR = new CustomVoiceLanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constructs a custom CustomVoiceLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public CustomVoiceLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomVoiceLanguageCode FindValue(string value)
+        {
+            return FindValue<CustomVoiceLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomVoiceLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type Engine.
     /// </summary>
     public class Engine : ConstantClass
@@ -426,6 +543,11 @@ namespace Amazon.Polly
     public class QuotaCode : ConstantClass
     {
         /// <summary>
+        /// Constant CustomVoiceMaxCount for QuotaCode
+        /// </summary>
+        public static readonly QuotaCode CustomVoiceMaxCount = new QuotaCode("custom-voice-max-count");
+
+        /// <summary>
         /// Constant InputStreamInboundEventTimeout for QuotaCode
         /// </summary>
         public static readonly QuotaCode InputStreamInboundEventTimeout = new QuotaCode("input-stream-inbound-event-timeout");
@@ -470,6 +592,11 @@ namespace Amazon.Polly
         /// Constant Lexicon for ResourceType
         /// </summary>
         public static readonly ResourceType Lexicon = new ResourceType("lexicon");
+
+        /// <summary>
+        /// Constant Voice for ResourceType
+        /// </summary>
+        public static readonly ResourceType Voice = new ResourceType("voice");
 
         /// <summary>
         /// Constructs a custom ResourceType for a value not among the defined constants.
@@ -690,6 +817,16 @@ namespace Amazon.Polly
         /// Constant InvalidInboundEvent for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason InvalidInboundEvent = new ValidationExceptionReason("invalidInboundEvent");
+
+        /// <summary>
+        /// Constant KmsKeyNotFound for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KmsKeyNotFound = new ValidationExceptionReason("kmsKeyNotFound");
+
+        /// <summary>
+        /// Constant KmsKeyUnusable for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KmsKeyUnusable = new ValidationExceptionReason("kmsKeyUnusable");
 
         /// <summary>
         /// Constant Other for ValidationExceptionReason
@@ -1333,6 +1470,93 @@ namespace Amazon.Polly
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VoiceId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VoiceOrigin.
+    /// </summary>
+    public class VoiceOrigin : ConstantClass
+    {
+        /// <summary>
+        /// Constant Aws for VoiceOrigin
+        /// </summary>
+        public static readonly VoiceOrigin Aws = new VoiceOrigin("aws");
+
+        /// <summary>
+        /// Constant Customer for VoiceOrigin
+        /// </summary>
+        public static readonly VoiceOrigin Customer = new VoiceOrigin("customer");
+
+        /// <summary>
+        /// Constructs a custom VoiceOrigin for a value not among the defined constants.
+        /// </summary>
+        public VoiceOrigin(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceOrigin FindValue(string value)
+        {
+            return FindValue<VoiceOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VoiceStatus.
+    /// </summary>
+    public class VoiceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for VoiceStatus
+        /// </summary>
+        public static readonly VoiceStatus Active = new VoiceStatus("active");
+
+        /// <summary>
+        /// Constant Failed for VoiceStatus
+        /// </summary>
+        public static readonly VoiceStatus Failed = new VoiceStatus("failed");
+
+        /// <summary>
+        /// Constant Pending for VoiceStatus
+        /// </summary>
+        public static readonly VoiceStatus Pending = new VoiceStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom VoiceStatus for a value not among the defined constants.
+        /// </summary>
+        public VoiceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceStatus FindValue(string value)
+        {
+            return FindValue<VoiceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceStatus(string value)
         {
             return FindValue(value);
         }

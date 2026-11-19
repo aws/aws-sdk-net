@@ -36,7 +36,16 @@ namespace Amazon.Polly.Model
     /// stream, and receive synthesized audio as it becomes available. <para> This operation
     /// serves as a bidirectional counterpart to <c>SynthesizeSpeech</c>: </para> <ul> <li>
     /// <para> <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
-    /// </para> </li> </ul>
+    /// </para> </li> </ul> <para> To use a custom voice, specify its ID in <c>VoiceId</c>.
+    /// The voice must be in <c>active</c> status. If the voice is in <c>pending</c> or <c>failed</c>
+    /// status, the request fails with <c>ConflictException</c>. If no custom voice with the
+    /// specified ID exists in your account and Region, the request fails with <c>ResourceNotFoundException</c>.
+    /// If the custom voice uses a customer managed key, you need <c>kms:Decrypt</c> permission
+    /// on the key. If you disabled the key or scheduled it for deletion, the request fails
+    /// with <c>ValidationException</c>. If you don't have permission to use the key, the
+    /// request fails with <c>AccessDeniedException</c>. If Amazon Web Services KMS throttles
+    /// Amazon Polly's request to use the key, the request fails with <c>ThrottlingException</c>.
+    /// </para>
     /// </summary>
     public partial class StartSpeechSynthesisStreamRequest : AmazonPollyRequest
     {
@@ -143,8 +152,10 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property VoiceId. 
         /// <para>
-        /// The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
-        /// operation.
+        /// The voice ID to use for the synthesis. To get a list of available voice IDs, use the
+        /// <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+        /// operation. To use a custom voice, specify the voice ID that <c>CreateVoice</c> returned,
+        /// for example, <c>vc-9a8fa85dd3</c>. You can't specify the ARN of a voice.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

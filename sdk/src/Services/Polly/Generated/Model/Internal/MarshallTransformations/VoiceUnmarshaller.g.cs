@@ -60,6 +60,27 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Arn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CustomerManagedEncryption", targetDepth, ref reader))
+                {
+                    var unmarshaller = CustomerManagedEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.CustomerManagedEncryption = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Gender", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -95,10 +116,38 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Origin", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StatusReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("SupportedEngines", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedEngines = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VoiceCreationData", targetDepth, ref reader))
+                {
+                    var unmarshaller = VoiceCreationDataUnmarshaller.Instance;
+                    unmarshalledObject.VoiceCreationData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
