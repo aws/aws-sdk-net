@@ -265,7 +265,7 @@
     "com.example#BucketLifecycleConfiguration": {
       "type": "structure",
       "members": {
-        "Rules": { "target": "com.example#LifecycleRules", "traits": { "smithy.api#required": {}, "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Rule" } }
+        "Rules": { "target": "com.example#LifecycleRules", "traits": { "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Rule" } }
       }
     },
     "com.example#LifecycleRules": {

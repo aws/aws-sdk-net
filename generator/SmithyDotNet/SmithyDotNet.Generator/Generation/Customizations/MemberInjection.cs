@@ -85,18 +85,16 @@ internal static class MemberInjection
             {
                 throw new GeneratorException($"{context} copies outsideOriginalMember '{path}', which is not a 'ShapeName,MemberName' of a structure.");
             }
-            // C2J copies the member's own JSON, never reading `shape`; checking it against the copy's emitted type name
-            // (after renameShape: S3's BucketLifecycleConfiguration is LifecycleConfiguration) catches a stale entry.
-            var emittedTarget = model.Shapes.Values.OfType<ServiceShape>().SingleOrDefault()?.Rename.GetValueOrDefault(outsideMember.Target.AbsoluteName) ?? outsideMember.Target.Name;
-            if (emittedTarget != injector.Shape)
+            // C2J copies the member's own JSON, never reading `shape`; checking it against the copy's target catches a
+            // stale entry.
+            if (FindSingleShapeId(model, injector.Shape, context) != outsideMember.Target)
             {
-                throw new GeneratorException($"{context} names shape '{injector.Shape}', but outsideOriginalMember '{path}' targets '{emittedTarget}'.");
+                throw new GeneratorException($"{context} names shape '{injector.Shape}', but outsideOriginalMember '{path}' targets '{outsideMember.Target.Name}'.");
             }
 
-            // The payload and required list belong to the containing shape in C2J.
+            // The payload belongs to the containing shape in C2J.
             var copy = outsideMember with { Traits = new(outsideMember.Traits) };
             copy.Traits.Remove("smithy.api#httpPayload");
-            copy.Traits.Remove("smithy.api#required");
             return copy;
         }
 
@@ -105,14 +103,15 @@ internal static class MemberInjection
         {
             if (!modeledMembers.TryGetValue(originalName, out var original))
             {
-                throw new GeneratorException($"{context} with originalMember '{originalName}', which the shape does not have.");
+                throw new GeneratorException($"{context} with originalMember '{originalName}', which the shape does not exclude.");
             }
-            foreach (var trait in (string[])["smithy.api#xmlName", "smithy.rules#contextParam", "smithy.api#httpPayload"])
+            if (original.GetXmlName() is { } xmlName)
             {
-                if (original.Traits.TryGetValue(trait, out var value))
-                {
-                    injected.Traits[trait] = value;
-                }
+                injected.SetXmlName(xmlName);
+            }
+            if (original.Traits.TryGetValue("smithy.rules#contextParam", out var contextParam))
+            {
+                injected.Traits["smithy.rules#contextParam"] = contextParam;
             }
         }
         return injected;

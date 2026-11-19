@@ -698,8 +698,8 @@ public sealed record PropertyInjector
     public string? Location { get; init; }
 
     /// <summary>
-    /// A member of the same shape as modeled, usually excluded, that the injected one replaces: it takes the original's
-    /// XML name, <c>@contextParam</c> and <c>@httpPayload</c>, which is all C2J reads from it (S3's
+    /// An excluded member of the same shape that the injected one replaces: it takes the original's XML name and
+    /// <c>@contextParam</c>, which is all C2J reads from it (S3's
     /// CopyObjectRequest.DestinationKey keeps Key's endpoint parameter).
     /// </summary>
     [JsonPropertyName("originalMember")]
@@ -707,7 +707,7 @@ public sealed record PropertyInjector
 
     /// <summary>
     /// Set with <see cref="OutsideOriginalMember"/>: the injected member is a copy of another shape's member, target
-    /// included, as in C2J (S3's GetBucketLifecycleConfigurationOutput.Configuration); <see cref="Shape"/> must be the copy's emitted type name.
+    /// included, as in C2J (S3's GetBucketLifecycleConfigurationOutput.Configuration); <see cref="Shape"/> must be the copy's target as modeled.
     /// </summary>
     [JsonPropertyName("originalMemberIsOutsideContainingShape")]
     public bool OriginalMemberIsOutsideContainingShape { get; init; }

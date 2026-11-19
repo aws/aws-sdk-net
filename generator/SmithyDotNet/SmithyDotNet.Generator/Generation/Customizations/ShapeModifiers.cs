@@ -27,17 +27,18 @@ internal static class ShapeModifiers
                 shape.SetDeprecatedMessage(shapeMessage);
             }
 
-            // An inject's originalMember names a member as modeled, which exclude usually drops.
-            var modeledMembers = shape is StructureShape modeledShape ? new Dictionary<string, MemberShape>(modeledShape.Members) : [];
+            // An inject's originalMember names a member as modeled, which exclude drops.
+            var modeledMembers = new Dictionary<string, MemberShape>();
 
             // TODO: S3's excludeFromMarshalling and excludeFromUnmarshalling keep the member on the class but off the
             // wire, so they need a marshalling-level flag rather than this removal.
             foreach (var memberName in modifier.Exclude)
             {
-                if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName))
+                if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName, out var removed))
                 {
                     throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}', which the shape does not have.");
                 }
+                modeledMembers[memberName] = removed;
             }
 
             foreach (var (memberName, injector) in modifier.Inject.SelectMany(entry => entry))
