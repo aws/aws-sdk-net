@@ -314,9 +314,57 @@
     <value>
       <example>
         <para>
+          The following example creates an Aurora PostgreSQL DB cluster without VPC networking. The cluster uses internet-based connectivity through an internet access gateway. IAM database authentication is required for this configuration.
+        </para>
+        <code title="To create an Aurora PostgreSQL cluster without VPC networking" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="CreateDBCluster-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates an Aurora PostgreSQL DB cluster with express configuration and without VPC networking. Express configuration automatically sets default values and creates a writer instance. Express configuration creates the cluster without VPC networking by default, so you don't need to specify EnableVPCNetworking or EnableInternetAccessGateway. The cluster uses internet-based connectivity through an internet access gateway.
+        </para>
+        <code title="To create an Aurora DB cluster with express configuration without VPC networking" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="CreateDBCluster-5" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates an Aurora PostgreSQL DB cluster with express configuration in the VPC of the DB subnet group named mysubnetgroup. Express configuration uses an internet access gateway by default, so the example turns on VPC networking and turns off the internet access gateway. Aurora creates the DB cluster with an internet access gateway and then moves it into the VPC, so the response shows the VPC networking change under PendingModifiedValues. Call DescribeDBClusters to check when VPCNetworkingEnabled is true.
+        </para>
+        <code title="To create an Aurora DB cluster with express configuration with VPC networking" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="CreateDBCluster-6" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
           The following example creates an Aurora PostgreSQL-compatible DB cluster and associates an IAM role for Amazon S3 import in a single call.
         </para>
-        <code title="To create an Aurora DB cluster with an associated IAM role for Amazon S3 import" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="CreateDBCluster-4" />
+        <code title="To create an Aurora DB cluster with an associated IAM role for Amazon S3 import" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="CreateDBCluster-7" />
       </example>
     </value>
   </doc>
@@ -1581,6 +1629,54 @@
           The following example changes the master user password for the DB cluster named cluster-2 and sets the backup retention period to 14 days. The ApplyImmediately parameter causes the changes to be made immediately, instead of waiting until the next maintenance window.
         </para>
         <code title="To modify a DB cluster" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="ModifyDBCluster-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example modifies an Aurora PostgreSQL DB cluster to disable VPC networking and connect through an internet access gateway instead. The example also turns on IAM database authentication, which a cluster without VPC networking requires. Because Aurora applies the change asynchronously, the response still shows the current networking settings, and PendingModifiedValues shows the new ones. Call DescribeDBClusters to check when VPCNetworkingEnabled is false.
+        </para>
+        <code title="To modify a DB cluster to disable VPC networking" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="ModifyDBCluster-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example modifies an Aurora PostgreSQL DB cluster that uses an internet access gateway so that it uses VPC networking instead. Aurora moves the DB cluster into the DB subnet group named default, with one security group and the IPV4 network type. Because Aurora applies the change asynchronously, the response still shows the current networking settings, and PendingModifiedValues shows the new ones. Call DescribeDBClusters to check when VPCNetworkingEnabled is true.
+        </para>
+        <code title="To modify a DB cluster to re-enable VPC networking" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="ModifyDBCluster-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.ModifyDBCluster(Amazon.RDS.Model.ModifyDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.ModifyDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example moves an Aurora PostgreSQL DB cluster that uses VPC networking to a different VPC. The DB subnet group and the security group belong to the new VPC. EnableVPCNetworking isn't set because the DB cluster already uses VPC networking. Because Aurora applies the move asynchronously, the response still shows the current DB subnet group and security group, and PendingModifiedValues shows the pending networking change. Call DescribeDBClusters to check whether the move has completed.
+        </para>
+        <code title="To move a DB cluster to a different VPC" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="ModifyDBCluster-4" />
       </example>
     </value>
   </doc>

@@ -323,6 +323,53 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             #endregion
         }
 
+        public void RTBFabricGetAvailableModule()
+        {
+            #region GetAvailableModule-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.GetAvailableModule(new GetAvailableModuleRequest
+            {
+                ModuleId = "module-8kq2p9wx3fnv1c5htj7bd0ral"
+            });
+
+            DateTime? createdAt = response.CreatedAt;
+            string description = response.Description;
+            string marketplaceProductId = response.MarketplaceProductId;
+            string moduleArn = response.ModuleArn;
+            string moduleId = response.ModuleId;
+            string moduleName = response.ModuleName;
+            SubscriptionStatus subscriptionStatus = response.SubscriptionStatus;
+            SubscriptionType subscriptionType = response.SubscriptionType;
+
+            #endregion
+        }
+
+        public void RTBFabricGetAvailableModuleVersion()
+        {
+            #region GetAvailableModuleVersion-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.GetAvailableModuleVersion(new GetAvailableModuleVersionRequest
+            {
+                ModuleId = "module-8kq2p9wx3fnv1c5htj7bd0ral",
+                Version = "1.2.0"
+            });
+
+            List<string> configurableActions = response.ConfigurableActions;
+            string configurationSchema = response.ConfigurationSchema;
+            DateTime? createdAt = response.CreatedAt;
+            string moduleId = response.ModuleId;
+            string moduleVersionArn = response.ModuleVersionArn;
+            List<string> permissions = response.Permissions;
+            string releaseNotes = response.ReleaseNotes;
+            ModuleVersionStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
+            string version = response.Version;
+
+            #endregion
+        }
+
         public void RTBFabricGetCertificateAssociation()
         {
             #region GetCertificateAssociation-1
@@ -482,6 +529,55 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             #endregion
         }
 
+        public void RTBFabricGetUpdate()
+        {
+            #region GetUpdate-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.GetUpdate(new GetUpdateRequest
+            {
+                GatewayId = "rtb-gw-12345678",
+                UpdateId = "update-1a2b3c4d5e6f"
+            });
+
+            Update update = response.Update;
+
+            #endregion
+        }
+
+        public void RTBFabricListAvailableModules()
+        {
+            #region ListAvailableModules-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.ListAvailableModules(new ListAvailableModulesRequest
+            {
+                MaxResults = 10,
+                SubscriptionType = "MARKETPLACE"
+            });
+
+            List<AvailableModuleSummary> modules = response.Modules;
+
+            #endregion
+        }
+
+        public void RTBFabricListAvailableModuleVersions()
+        {
+            #region ListAvailableModuleVersions-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.ListAvailableModuleVersions(new ListAvailableModuleVersionsRequest
+            {
+                MaxResults = 10,
+                ModuleId = "module-8kq2p9wx3fnv1c5htj7bd0ral"
+            });
+
+            string moduleId = response.ModuleId;
+            List<AvailableModuleVersionSummary> versions = response.Versions;
+
+            #endregion
+        }
+
         public void RTBFabricListCertificateAssociations()
         {
             #region ListCertificateAssociations-1
@@ -612,6 +708,130 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             #endregion
         }
 
+        public void RTBFabricListUpdates()
+        {
+            #region ListUpdates-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.ListUpdates(new ListUpdatesRequest
+            {
+                GatewayId = "rtb-gw-12345678",
+                LinkId = "link-87654321",
+                MaxResults = 10
+            });
+
+            List<UpdateSummary> updates = response.Updates;
+
+            #endregion
+        }
+
+        public void RTBFabricPutLinkFlows()
+        {
+            #region PutLinkFlows-1
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.PutLinkFlows(new PutLinkFlowsRequest
+            {
+                ClientToken = "3f1c2a7e-0b5d-4c1e-9a8f-2d6b7e9c0a14",
+                Flows = new List<Flow> {
+                    new Flow {
+                        Name = "main",
+                        Pipeline = new FlowPipeline { Sequential = new SequentialPipeline { Modules = new List<FlowModule> {
+                            new FlowModule {
+                                ModuleVersionArn = "arn:aws:rtbfabric:us-east-1::modules/module-a1b2c3d4e5f6g7h8i9j0k1l2m/versions/1.2.0",
+                                Name = "domain-filter",
+                                SelectedActions = new List<string> {
+                                    "FILTER"
+                                }
+                            }
+                        } } }
+                    }
+                },
+                GatewayId = "rtb-gw-a1b2c3d4e5",
+                LinkId = "link-f6g7h8i9j0",
+                LockToken = "c2VxPTQy"
+            });
+
+            string gatewayId = response.GatewayId;
+            string linkId = response.LinkId;
+            LinkStatus status = response.Status;
+            string updateId = response.UpdateId;
+
+            #endregion
+        }
+
+        public void RTBFabricPutLinkFlows()
+        {
+            #region PutLinkFlows-2
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.PutLinkFlows(new PutLinkFlowsRequest
+            {
+                ClientToken = "6b1d84f2-0a97-4e53-b8c1-3d5f7a2e9048",
+                Flows = new List<Flow> {
+                    new Flow {
+                        Name = "default",
+                        Pipeline = new FlowPipeline { Phased = new PhasedPipeline { Phases = new List<FlowPhase> {
+                            new FlowPhase { Modules = new List<FlowModule> {
+                                new FlowModule {
+                                    ConfigurationValues = "{\"filterType\":\"INCLUDE\",\"filterConfiguration\":[{\"criteria\":[{\"path\":\"$.device.geo.country\",\"values\":[\"USA\"]}]}]}",
+                                    FailureMode = "CLOSED",
+                                    ModuleVersionArn = "arn:aws:rtbfabric:us-east-1::modules/module-openrtbAttributeFilter/versions/2.0.0",
+                                    Name = "GeoFilter"
+                                }
+                            } },
+                            new FlowPhase { Modules = new List<FlowModule> {
+                                new FlowModule {
+                                    ConfigurationValues = "{\"threshold\":0.7}",
+                                    FailureMode = "OPEN",
+                                    ModuleVersionArn = "arn:aws:rtbfabric:us-east-1::modules/module-0a1b2c3d4e5f/versions/1.0.0",
+                                    Name = "IVTDetection"
+                                },
+                                new FlowModule {
+                                    FailureMode = "OPEN",
+                                    ModuleVersionArn = "arn:aws:rtbfabric:us-east-1::modules/module-9f8e7d6c5b4a/versions/1.0.0",
+                                    Name = "Viewability"
+                                }
+                            } }
+                        } } }
+                    }
+                },
+                GatewayId = "rtb-gw-12345678",
+                LinkId = "link-87654321",
+                LockToken = "lt-7f3a9c2e1b"
+            });
+
+            string gatewayId = response.GatewayId;
+            string linkId = response.LinkId;
+            LinkStatus status = response.Status;
+            string updateId = response.UpdateId;
+
+            #endregion
+        }
+
+        public void RTBFabricPutLinkFlows()
+        {
+            #region PutLinkFlows-3
+
+            var client = new AmazonRTBFabricClient();
+            var response = client.PutLinkFlows(new PutLinkFlowsRequest
+            {
+                ClientToken = "9c4e2a71-5d38-4b0f-8e62-7f1a4c9d3b05",
+                Flows = new List<Flow> {
+                },
+                GatewayId = "rtb-gw-12345678",
+                LinkId = "link-87654321",
+                LockToken = "lt-7f3a9c2e1b"
+            });
+
+            string gatewayId = response.GatewayId;
+            string linkId = response.LinkId;
+            LinkStatus status = response.Status;
+            string updateId = response.UpdateId;
+
+            #endregion
+        }
+
         public void RTBFabricRejectLink()
         {
             #region RejectLink-1
@@ -686,6 +906,7 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string linkId = response.LinkId;
             LinkStatus status = response.Status;
+            string updateId = response.UpdateId;
 
             #endregion
         }
@@ -718,6 +939,7 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             LinkStatus status = response.Status;
+            string updateId = response.UpdateId;
 
             #endregion
         }
@@ -741,6 +963,7 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string ruleId = response.RuleId;
             RuleStatus status = response.Status;
+            string updateId = response.UpdateId;
             DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
@@ -780,6 +1003,7 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string gatewayId = response.GatewayId;
             ResponderGatewayStatus status = response.Status;
+            string updateId = response.UpdateId;
 
             #endregion
         }

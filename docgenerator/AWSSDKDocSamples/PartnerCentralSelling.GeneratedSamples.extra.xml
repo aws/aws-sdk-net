@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralSelling.IAmazonPartnerCentralSelling.ListEngagementGroups(Amazon.PartnerCentralSelling.Model.ListEngagementGroupsRequest)" />
+      <member name="M:Amazon.PartnerCentralSelling.AmazonPartnerCentralSellingClient.ListEngagementGroups(Amazon.PartnerCentralSelling.Model.ListEngagementGroupsRequest)" />
+      <member name="T:Amazon.PartnerCentralSelling.Model.ListEngagementGroupsRequest" />
+      <member name="T:Amazon.PartnerCentralSelling.Model.ListEngagementGroupsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns the sales-ready engagement groups available in the AWS catalog, largest first.
+        </para>
+        <code title="List sales-ready engagement groups" source=".\AWSSDKDocSamples\PartnerCentralSelling\PartnerCentralSelling.GeneratedSamples.cs" region="ListEngagementGroups-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralSelling.IAmazonPartnerCentralSelling.SearchEngagements(Amazon.PartnerCentralSelling.Model.SearchEngagementsRequest)" />
+      <member name="M:Amazon.PartnerCentralSelling.AmazonPartnerCentralSellingClient.SearchEngagements(Amazon.PartnerCentralSelling.Model.SearchEngagementsRequest)" />
+      <member name="T:Amazon.PartnerCentralSelling.Model.SearchEngagementsRequest" />
+      <member name="T:Amazon.PartnerCentralSelling.Model.SearchEngagementsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns AWS catalog engagements whose text matches the keyword and whose prospected customer is in the United States, newest first.
+        </para>
+        <code title="Search engagements by keyword and customer country" source=".\AWSSDKDocSamples\PartnerCentralSelling\PartnerCentralSelling.GeneratedSamples.cs" region="SearchEngagements-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

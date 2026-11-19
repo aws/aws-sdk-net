@@ -146,6 +146,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetScopedCredentials(Amazon.SecurityToken.Model.GetScopedCredentialsRequest)" />
+      <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetScopedCredentials(Amazon.SecurityToken.Model.GetScopedCredentialsRequest)" />
+      <member name="T:Amazon.SecurityToken.Model.GetScopedCredentialsRequest" />
+      <member name="T:Amazon.SecurityToken.Model.GetScopedCredentialsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="To scope down existing temporary credentials" source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs" region="GetScopedCredentials-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetSessionToken(Amazon.SecurityToken.Model.GetSessionTokenRequest)" />
       <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetSessionToken(Amazon.SecurityToken.Model.GetSessionTokenRequest)" />
       <member name="T:Amazon.SecurityToken.Model.GetSessionTokenRequest" />

@@ -210,6 +210,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             #endregion
         }
 
+        public void SecurityTokenServiceGetScopedCredentials()
+        {
+            #region GetScopedCredentials-1
+
+            var client = new AmazonSecurityTokenServiceClient();
+            var response = client.GetScopedCredentials(new GetScopedCredentialsRequest
+            {
+                DurationSeconds = 3600,
+                Policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::example-bucket/*\"}]}"
+            });
+
+            Credentials credentials = response.Credentials;
+            int? scopedPoliciesCount = response.ScopedPoliciesCount;
+            ScopedSession sessionInfo = response.SessionInfo;
+            string sourceIdentity = response.SourceIdentity;
+
+            #endregion
+        }
+
         public void SecurityTokenServiceGetSessionToken()
         {
             #region GetSessionToken-1

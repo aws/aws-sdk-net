@@ -363,6 +363,69 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             var client = new AmazonRDSClient();
             var response = client.CreateDBCluster(new CreateDBClusterRequest
             {
+                DBClusterIdentifier = "sample-cluster",
+                EnableIAMDatabaseAuthentication = true,
+                EnableInternetAccessGateway = true,
+                EnableVPCNetworking = false,
+                Engine = "aurora-postgresql",
+                EngineVersion = "17.7",
+                MasterUserAuthenticationType = "iam-db-auth",
+                MasterUsername = "postgres"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSCreateDBCluster()
+        {
+            #region CreateDBCluster-5
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
+            {
+                DBClusterIdentifier = "sample-express-cluster",
+                Engine = "aurora-postgresql",
+                WithExpressConfiguration = true
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSCreateDBCluster()
+        {
+            #region CreateDBCluster-6
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
+            {
+                DBClusterIdentifier = "sample-express-cluster",
+                DBSubnetGroupName = "mysubnetgroup",
+                EnableInternetAccessGateway = false,
+                EnableVPCNetworking = true,
+                Engine = "aurora-postgresql",
+                NetworkType = "IPV4",
+                VpcSecurityGroupIds = new List<string> {
+                    "sg-0b91305example"
+                },
+                WithExpressConfiguration = true
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSCreateDBCluster()
+        {
+            #region CreateDBCluster-7
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCluster(new CreateDBClusterRequest
+            {
                 AssociatedRoles = new List<DBClusterAssociatedRole> {
                     new DBClusterAssociatedRole {
                         FeatureName = "s3Import",
@@ -1642,6 +1705,69 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
                 BackupRetentionPeriod = 14,
                 DBClusterIdentifier = "cluster-2",
                 MasterUserPassword = "newpassword99"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSModifyDBCluster()
+        {
+            #region ModifyDBCluster-2
+
+            var client = new AmazonRDSClient();
+            var response = client.ModifyDBCluster(new ModifyDBClusterRequest
+            {
+                ApplyImmediately = true,
+                DBClusterIdentifier = "sample-cluster",
+                EnableIAMDatabaseAuthentication = true,
+                EnableInternetAccessGateway = true,
+                EnableVPCNetworking = false,
+                MasterUserAuthenticationType = "iam-db-auth"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSModifyDBCluster()
+        {
+            #region ModifyDBCluster-3
+
+            var client = new AmazonRDSClient();
+            var response = client.ModifyDBCluster(new ModifyDBClusterRequest
+            {
+                ApplyImmediately = true,
+                DBClusterIdentifier = "sample-cluster",
+                DBSubnetGroupName = "default",
+                EnableInternetAccessGateway = false,
+                EnableVPCNetworking = true,
+                NetworkType = "IPV4",
+                VpcSecurityGroupIds = new List<string> {
+                    "sg-0b91305example"
+                }
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSModifyDBCluster()
+        {
+            #region ModifyDBCluster-4
+
+            var client = new AmazonRDSClient();
+            var response = client.ModifyDBCluster(new ModifyDBClusterRequest
+            {
+                ApplyImmediately = true,
+                DBClusterIdentifier = "sample-cluster",
+                DBSubnetGroupName = "mysubnetgroup-vpc2",
+                VpcSecurityGroupIds = new List<string> {
+                    "sg-0d7e4a2example"
+                }
             });
 
             DBCluster dbCluster = response.DBCluster;

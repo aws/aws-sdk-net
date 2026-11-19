@@ -210,6 +210,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.UpdateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest)" />
+      <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.UpdateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest)" />
+      <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest" />
+      <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for UpdateMarketplaceRevenueShare" source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs" region="UpdateMarketplaceRevenueShare-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.UpdateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest)" />
+      <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.UpdateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest)" />
+      <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest" />
+      <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for closing a marketplace revenue share" source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs" region="UpdateMarketplaceRevenueShare-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.UpdateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest)" />
       <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.UpdateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest)" />
       <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest" />

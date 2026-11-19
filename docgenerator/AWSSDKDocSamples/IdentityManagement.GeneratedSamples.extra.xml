@@ -210,6 +210,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateOpenIDConnectProvider(Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateOpenIDConnectProvider(Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates an OIDC provider with a context provider that uses the sub claim as the subject and maps the department claim to a trusted context key. It also associates an IAM Identity Center instance with the provider.
+        </para>
+        <code title="To create an OIDC provider with trusted identity propagation" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="CreateOpenIDConnectProvider-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateRole(Amazon.IdentityManagement.Model.CreateRoleRequest)" />
       <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateRole(Amazon.IdentityManagement.Model.CreateRoleRequest)" />
       <member name="T:Amazon.IdentityManagement.Model.CreateRoleRequest" />
@@ -221,6 +237,38 @@
           The following command creates a role named Test-Role and attaches a trust policy that you must convert from JSON to a string. Upon success, the response includes the same policy as a URL-encoded JSON string.
         </para>
         <code title="To create an IAM role" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="CreateRole-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateSAMLProvider(Amazon.IdentityManagement.Model.CreateSAMLProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateSAMLProvider(Amazon.IdentityManagement.Model.CreateSAMLProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateSAMLProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateSAMLProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a SAML provider named MyUniversity from a SAML metadata document.
+        </para>
+        <code title="To create a SAML provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="CreateSAMLProvider-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateSAMLProvider(Amazon.IdentityManagement.Model.CreateSAMLProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateSAMLProvider(Amazon.IdentityManagement.Model.CreateSAMLProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateSAMLProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.CreateSAMLProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a SAML provider with a context provider that uses the email attribute as the subject and maps the department attribute to a trusted context key. It also associates an IAM Identity Center instance with the provider.
+        </para>
+        <code title="To create a SAML provider with trusted identity propagation" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="CreateSAMLProvider-2" />
       </example>
     </value>
   </doc>
@@ -594,6 +642,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetOpenIDConnectProvider(Amazon.IdentityManagement.Model.GetOpenIDConnectProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetOpenIDConnectProvider(Amazon.IdentityManagement.Model.GetOpenIDConnectProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.GetOpenIDConnectProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.GetOpenIDConnectProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns the configuration of an OIDC provider, including its trusted identity propagation context provider and the associated IAM Identity Center instance.
+        </para>
+        <code title="To get information about an OIDC provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="GetOpenIDConnectProvider-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetOrganizationsAccessReport(Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest)" />
       <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetOrganizationsAccessReport(Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest)" />
       <member name="T:Amazon.IdentityManagement.Model.GetOrganizationsAccessReportRequest" />
@@ -621,6 +685,22 @@
           The following command gets information about the role named Test-Role.
         </para>
         <code title="To get information about an IAM role" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="GetRole-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetSAMLProvider(Amazon.IdentityManagement.Model.GetSAMLProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetSAMLProvider(Amazon.IdentityManagement.Model.GetSAMLProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.GetSAMLProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.GetSAMLProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns the configuration of a SAML provider, including its trusted identity propagation context provider, the issuer key hashes, and the associated IAM Identity Center instance.
+        </para>
+        <code title="To get information about a SAML provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="GetSAMLProvider-1" />
       </example>
     </value>
   </doc>
@@ -754,6 +834,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListOpenIDConnectProviders(Amazon.IdentityManagement.Model.ListOpenIDConnectProvidersRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListOpenIDConnectProviders(Amazon.IdentityManagement.Model.ListOpenIDConnectProvidersRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.ListOpenIDConnectProvidersRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.ListOpenIDConnectProvidersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the OIDC providers in the current account and shows whether trusted identity propagation is enabled for each provider.
+        </para>
+        <code title="To list the OIDC providers in an account" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="ListOpenIDConnectProviders-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListOrganizationsFeatures(Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest)" />
       <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListOrganizationsFeatures(Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest)" />
       <member name="T:Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest" />
@@ -797,6 +893,22 @@
           The following example shows how to list the tags attached to a role.
         </para>
         <code title="To list the tags attached to an IAM role" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="ListRoleTags-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListSAMLProviders(Amazon.IdentityManagement.Model.ListSAMLProvidersRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListSAMLProviders(Amazon.IdentityManagement.Model.ListSAMLProvidersRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.ListSAMLProvidersRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.ListSAMLProvidersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the SAML providers in the current account and shows whether trusted identity propagation is enabled for each provider.
+        </para>
+        <code title="To list the SAML providers in an account" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="ListSAMLProviders-1" />
       </example>
     </value>
   </doc>
@@ -1101,6 +1213,70 @@
           The following command creates or changes the password for the IAM user named Bob.
         </para>
         <code title="To change the password for an IAM user" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="UpdateLoginProfile-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateOpenIDConnectProvider(Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateOpenIDConnectProvider(Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sets a trusted identity propagation context provider on an existing OIDC provider. The context provider uses the sub claim as the subject and maps the department claim to a trusted context key.
+        </para>
+        <code title="To set the context provider for an OIDC provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="UpdateOpenIDConnectProvider-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateOpenIDConnectProvider(Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateOpenIDConnectProvider(Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example associates an IAM Identity Center instance with an existing OIDC provider.
+        </para>
+        <code title="To associate an IAM Identity Center instance with an OIDC provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="UpdateOpenIDConnectProvider-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateSAMLProvider(Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateSAMLProvider(Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateSAMLProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sets a trusted identity propagation context provider on an existing SAML provider. The context provider uses the email attribute as the subject and maps the department attribute to a trusted context key.
+        </para>
+        <code title="To set the context provider for a SAML provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="UpdateSAMLProvider-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateSAMLProvider(Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest)" />
+      <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateSAMLProvider(Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest)" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest" />
+      <member name="T:Amazon.IdentityManagement.Model.UpdateSAMLProviderResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example associates an IAM Identity Center instance with an existing SAML provider.
+        </para>
+        <code title="To associate an IAM Identity Center instance with a SAML provider" source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs" region="UpdateSAMLProvider-2" />
       </example>
     </value>
   </doc>

@@ -242,6 +242,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetAvailableModule(Amazon.RTBFabric.Model.GetAvailableModuleRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetAvailableModule(Amazon.RTBFabric.Model.GetAvailableModuleRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.GetAvailableModuleRequest" />
+      <member name="T:Amazon.RTBFabric.Model.GetAvailableModuleResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Gets a Marketplace module that you can attach.
+        </para>
+        <code title="Get a module" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="GetAvailableModule-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetAvailableModuleVersion(Amazon.RTBFabric.Model.GetAvailableModuleVersionRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetAvailableModuleVersion(Amazon.RTBFabric.Model.GetAvailableModuleVersionRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.GetAvailableModuleVersionRequest" />
+      <member name="T:Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Gets a version of a module that you can attach, with what it can do and the parameters it accepts.
+        </para>
+        <code title="Get a module version" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="GetAvailableModuleVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetCertificateAssociation(Amazon.RTBFabric.Model.GetCertificateAssociationRequest)" />
       <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetCertificateAssociation(Amazon.RTBFabric.Model.GetCertificateAssociationRequest)" />
       <member name="T:Amazon.RTBFabric.Model.GetCertificateAssociationRequest" />
@@ -349,6 +381,54 @@
           Get responder gateway
         </para>
         <code title="Get responder gateway details" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="GetResponderGateway-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.GetUpdate(Amazon.RTBFabric.Model.GetUpdateRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.GetUpdate(Amazon.RTBFabric.Model.GetUpdateRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.GetUpdateRequest" />
+      <member name="T:Amazon.RTBFabric.Model.GetUpdateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Get one routing rule update on a responder gateway
+        </para>
+        <code title="Get an update" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="GetUpdate-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.ListAvailableModules(Amazon.RTBFabric.Model.ListAvailableModulesRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.ListAvailableModules(Amazon.RTBFabric.Model.ListAvailableModulesRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.ListAvailableModulesRequest" />
+      <member name="T:Amazon.RTBFabric.Model.ListAvailableModulesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the Marketplace modules that you can attach.
+        </para>
+        <code title="List the modules you subscribe to through AWS Marketplace" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="ListAvailableModules-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.ListAvailableModuleVersions(Amazon.RTBFabric.Model.ListAvailableModuleVersionsRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.ListAvailableModuleVersions(Amazon.RTBFabric.Model.ListAvailableModuleVersionsRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.ListAvailableModuleVersionsRequest" />
+      <member name="T:Amazon.RTBFabric.Model.ListAvailableModuleVersionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the versions of a module that you can attach, highest version first.
+        </para>
+        <code title="List a module's versions" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="ListAvailableModuleVersions-1" />
       </example>
     </value>
   </doc>
@@ -477,6 +557,70 @@
           Lists tags for a resource
         </para>
         <code title="List tags for a resource" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.ListUpdates(Amazon.RTBFabric.Model.ListUpdatesRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.ListUpdates(Amazon.RTBFabric.Model.ListUpdatesRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.ListUpdatesRequest" />
+      <member name="T:Amazon.RTBFabric.Model.ListUpdatesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          List the updates that targeted one link on a responder gateway
+        </para>
+        <code title="List a link's updates" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="ListUpdates-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsRequest" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Attach a filter module in one sequential flow" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="PutLinkFlows-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsRequest" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Filters first, then runs two enrichment modules at the same time. The second phase costs the slower of the two modules rather than their sum. Both enrichment modules fail open, so a slow vendor drops its enrichment instead of losing the bid.
+        </para>
+        <code title="Run enrichment modules concurrently in a phased flow" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="PutLinkFlows-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.RTBFabric.IAmazonRTBFabric.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="M:Amazon.RTBFabric.AmazonRTBFabricClient.PutLinkFlows(Amazon.RTBFabric.Model.PutLinkFlowsRequest)" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsRequest" />
+      <member name="T:Amazon.RTBFabric.Model.PutLinkFlowsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Puts an empty set of flows. There is no separate detach operation: removal is expressed by putting the flows the caller wants to keep, and keeping none removes all of them.
+        </para>
+        <code title="Detach every module from a link" source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs" region="PutLinkFlows-3" />
       </example>
     </value>
   </doc>

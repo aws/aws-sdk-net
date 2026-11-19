@@ -2,6 +2,182 @@
 <docs>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns only the current active configuration for the owning seller or an entitled buyer.
+        </para>
+        <code title="Get the active deployment configuration" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the product and delivery option have no active deployment configuration, the operation returns a ResourceNotFoundException.
+        </para>
+        <code title="Get active configuration fails when none exists" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfiguration-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfiguration(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the caller is neither the seller of the product nor a buyer entitled to it, the operation returns an AccessDeniedException.
+        </para>
+        <code title="Get active configuration fails for an unauthorized caller" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfiguration-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          A succeeded job includes endedAt and the ARN of the deployment configuration that it published.
+        </para>
+        <code title="Get a succeeded job" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfigurationJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          A failed job includes errorCode, message, and endedAt.
+        </para>
+        <code title="Get a failed job" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfigurationJob-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the job doesn't exist, or doesn't belong to the product and delivery option in the request path, the operation returns a ResourceNotFoundException.
+        </para>
+        <code title="Get job fails when the job isn't found" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfigurationJob-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the job exists but the caller isn't the seller that started it, the operation returns an AccessDeniedException.
+        </para>
+        <code title="Get job fails for a caller that didn't start the job" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfigurationJob-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.GetDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          When the job does not exist and the caller is not authorized for the product, the result is AccessDeniedException.
+        </para>
+        <code title="Get job fails for a caller not authorized for the product" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="GetDeploymentConfigurationJob-5" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns the caller's jobs ordered by newest createdAt first, with an optional nextToken when more pages exist.
+        </para>
+        <code title="List jobs, newest first" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="ListDeploymentConfigurationJobs-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          When the caller is authorized for the product and has not started any jobs, the result is an empty jobs list with no nextToken.
+        </para>
+        <code title="List jobs returns an empty list when an authorized seller has no jobs" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="ListDeploymentConfigurationJobs-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.ListDeploymentConfigurationJobs(Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the caller isn't authorized for the product, the operation returns an AccessDeniedException.
+        </para>
+        <code title="List jobs fails for a caller not authorized for the product" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="ListDeploymentConfigurationJobs-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.ListTagsForResource(Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest)" />
       <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.ListTagsForResource(Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest)" />
       <member name="T:Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest" />
@@ -45,6 +221,54 @@
           The following example demonstrates creating a simple deployment parameter named "ExampleSimpleDeploymentParameterName". If multiple secrets are not required, the `secretString` may be provided in String format. The provided tags are only applied on resource creation and will be ignored if the operation results in an update. The API response includes the tags present on the resource after completion of the operation.
         </para>
         <code title="Creating a simple deployment parameter, with tags and expiration." source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="PutDeploymentParameter-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Starts a job that publishes a Data-as-a-Service deployment configuration. The job starts in the IN_PROGRESS status. Call GetDeploymentConfigurationJob to check when it reaches SUCCEEDED or FAILED.
+        </para>
+        <code title="Start a Data-as-a-Service deployment configuration job" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="StartDeploymentConfigurationJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the product or catalog doesn't exist, the operation returns a ResourceNotFoundException.
+        </para>
+        <code title="Start fails when the product or catalog doesn't exist" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="StartDeploymentConfigurationJob-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.StartDeploymentConfigurationJob(Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          If the caller isn't the seller of the product, the operation returns an AccessDeniedException.
+        </para>
+        <code title="Start fails when the caller is not the product seller" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="StartDeploymentConfigurationJob-3" />
       </example>
     </value>
   </doc>

@@ -214,6 +214,38 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceCreateOpenIDConnectProvider()
+        {
+            #region CreateOpenIDConnectProvider-2
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.CreateOpenIDConnectProvider(new CreateOpenIDConnectProviderRequest
+            {
+                ClientIDList = new List<string> {
+                    "my-application-id"
+                },
+                ContextProvider = new ContextProvider {
+                    KeyDefinitionList = new List<ContextProviderKeyDefinition> {
+                        new ContextProviderKeyDefinition {
+                            SourceKey = "department",
+                            TargetKey = "department"
+                        }
+                    },
+                    SubjectSourceKey = "sub",
+                    SubjectTypeValue = "user"
+                },
+                IdentityCenterInstanceArn = "arn:aws:sso:::instance/ssoins-1234567890abcdef",
+                ThumbprintList = new List<string> {
+                    "3768084dfb3d2b68b7897bf5f565da8efEXAMPLE"
+                },
+                Url = "https://server.example.com"
+            });
+
+            string openIDConnectProviderArn = response.OpenIDConnectProviderArn;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceCreateRole()
         {
             #region CreateRole-1
@@ -227,6 +259,49 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             Role role = response.Role;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceCreateSAMLProvider()
+        {
+            #region CreateSAMLProvider-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.CreateSAMLProvider(new CreateSAMLProviderRequest
+            {
+                Name = "MyUniversity",
+                SAMLMetadataDocument = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><md:EntityDescriptor xmlns:md=\"urn:oasis:names:tc:SAML:2.0:metadata\" entityID=\"https://idp.example.com/saml\"><md:IDPSSODescriptor WantAuthnRequestsSigned=\"false\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><md:KeyDescriptor use=\"signing\"><ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\"><ds:X509Data><ds:X509Certificate>MIIDdzCCAl+gAwIBAgIEbySuqTANBgkqhkiG9w0BAQsFADBsMRAwDgYDVQQGEwdVbmtub3duMRAwDgYDVQQIEwdVbmtub3duMRAwDgYDVQQHEwdVbmtub3duMRAwDgYDVQQKEwdVbmtub3duMRAwDgYDVQQLEwdVbmtub3duMRAwDgYDVQQDEwdFWEFNUExFMB4XDTI2MTEwMTAwMDAwMFoXDTM2MTEwMTAwMDAwMFowbDEQMA4GA1UEBhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQMA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEQMA4GA1UEAxMHRVhBTVBMRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAEXAMPLE</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://idp.example.com/saml/sso\"/></md:IDPSSODescriptor></md:EntityDescriptor>"
+            });
+
+            string samlProviderArn = response.SAMLProviderArn;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceCreateSAMLProvider()
+        {
+            #region CreateSAMLProvider-2
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.CreateSAMLProvider(new CreateSAMLProviderRequest
+            {
+                ContextProvider = new ContextProvider {
+                    KeyDefinitionList = new List<ContextProviderKeyDefinition> {
+                        new ContextProviderKeyDefinition {
+                            SourceKey = "department",
+                            TargetKey = "department"
+                        }
+                    },
+                    SubjectSourceKey = "email",
+                    SubjectTypeValue = "user"
+                },
+                IdentityCenterInstanceArn = "arn:aws:sso:::instance/ssoins-1234567890abcdef",
+                Name = "MyUniversity",
+                SAMLMetadataDocument = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><md:EntityDescriptor xmlns:md=\"urn:oasis:names:tc:SAML:2.0:metadata\" entityID=\"https://idp.example.com/saml\"><md:IDPSSODescriptor WantAuthnRequestsSigned=\"false\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><md:KeyDescriptor use=\"signing\"><ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\"><ds:X509Data><ds:X509Certificate>MIIDdzCCAl+gAwIBAgIEbySuqTANBgkqhkiG9w0BAQsFADBsMRAwDgYDVQQGEwdVbmtub3duMRAwDgYDVQQIEwdVbmtub3duMRAwDgYDVQQHEwdVbmtub3duMRAwDgYDVQQKEwdVbmtub3duMRAwDgYDVQQLEwdVbmtub3duMRAwDgYDVQQDEwdFWEFNUExFMB4XDTI2MTEwMTAwMDAwMFoXDTM2MTEwMTAwMDAwMFowbDEQMA4GA1UEBhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQMA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEQMA4GA1UEAxMHRVhBTVBMRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAEXAMPLE</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://idp.example.com/saml/sso\"/></md:IDPSSODescriptor></md:EntityDescriptor>"
+            });
+
+            string samlProviderArn = response.SAMLProviderArn;
 
             #endregion
         }
@@ -566,6 +641,28 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceGetOpenIDConnectProvider()
+        {
+            #region GetOpenIDConnectProvider-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.GetOpenIDConnectProvider(new GetOpenIDConnectProviderRequest
+            {
+                OpenIDConnectProviderArn = "arn:aws:iam::123456789012:oidc-provider/server.example.com"
+            });
+
+            List<string> clientIDList = response.ClientIDList;
+            ContextProvider contextProvider = response.ContextProvider;
+            DateTime? createDate = response.CreateDate;
+            string identityCenterInstanceArn = response.IdentityCenterInstanceArn;
+            string identityStoreArn = response.IdentityStoreArn;
+            List<Tag> tags = response.Tags;
+            List<string> thumbprintList = response.ThumbprintList;
+            string url = response.Url;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceGetOrganizationsAccessReport()
         {
             #region GetOrganizationsAccessReport-1
@@ -598,6 +695,29 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             Role role = response.Role;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceGetSAMLProvider()
+        {
+            #region GetSAMLProvider-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.GetSAMLProvider(new GetSAMLProviderRequest
+            {
+                SAMLProviderArn = "arn:aws:iam::123456789012:saml-provider/MyUniversity"
+            });
+
+            AssertionEncryptionModeType assertionEncryptionMode = response.AssertionEncryptionMode;
+            ContextProvider contextProvider = response.ContextProvider;
+            DateTime? createDate = response.CreateDate;
+            string identityCenterInstanceArn = response.IdentityCenterInstanceArn;
+            string identityStoreArn = response.IdentityStoreArn;
+            List<SAMLKeyHashEntry> samlKeyHashes = response.SAMLKeyHashes;
+            string samlProviderUUID = response.SAMLProviderUUID;
+            List<Tag> tags = response.Tags;
+            DateTime? validUntil = response.ValidUntil;
 
             #endregion
         }
@@ -729,6 +849,20 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceListOpenIDConnectProviders()
+        {
+            #region ListOpenIDConnectProviders-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.ListOpenIDConnectProviders(new ListOpenIDConnectProvidersRequest
+            {
+            });
+
+            List<OpenIDConnectProviderListEntry> openIDConnectProviderList = response.OpenIDConnectProviderList;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceListOrganizationsFeatures()
         {
             #region ListOrganizationsFeatures-1
@@ -776,6 +910,20 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
 
             bool? isTruncated = response.IsTruncated;
             List<Tag> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceListSAMLProviders()
+        {
+            #region ListSAMLProviders-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.ListSAMLProviders(new ListSAMLProvidersRequest
+            {
+            });
+
+            List<SAMLProviderListEntry> samlProviderList = response.SAMLProviderList;
 
             #endregion
         }
@@ -1085,6 +1233,86 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
                 UserName = "Bob"
             });
 
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUpdateOpenIDConnectProvider()
+        {
+            #region UpdateOpenIDConnectProvider-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.UpdateOpenIDConnectProvider(new UpdateOpenIDConnectProviderRequest
+            {
+                ContextProvider = new ContextProvider {
+                    KeyDefinitionList = new List<ContextProviderKeyDefinition> {
+                        new ContextProviderKeyDefinition {
+                            SourceKey = "department",
+                            TargetKey = "department"
+                        }
+                    },
+                    SubjectSourceKey = "sub",
+                    SubjectTypeValue = "user"
+                },
+                OpenIDConnectProviderArn = "arn:aws:iam::123456789012:oidc-provider/server.example.com"
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUpdateOpenIDConnectProvider()
+        {
+            #region UpdateOpenIDConnectProvider-2
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.UpdateOpenIDConnectProvider(new UpdateOpenIDConnectProviderRequest
+            {
+                IdentityCenterInstanceArn = "arn:aws:sso:::instance/ssoins-1234567890abcdef",
+                OpenIDConnectProviderArn = "arn:aws:iam::123456789012:oidc-provider/server.example.com"
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUpdateSAMLProvider()
+        {
+            #region UpdateSAMLProvider-1
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.UpdateSAMLProvider(new UpdateSAMLProviderRequest
+            {
+                ContextProvider = new ContextProvider {
+                    KeyDefinitionList = new List<ContextProviderKeyDefinition> {
+                        new ContextProviderKeyDefinition {
+                            SourceKey = "department",
+                            TargetKey = "department"
+                        }
+                    },
+                    SubjectSourceKey = "email",
+                    SubjectTypeValue = "user"
+                },
+                SAMLProviderArn = "arn:aws:iam::123456789012:saml-provider/MyUniversity"
+            });
+
+            string samlProviderArn = response.SAMLProviderArn;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUpdateSAMLProvider()
+        {
+            #region UpdateSAMLProvider-2
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.UpdateSAMLProvider(new UpdateSAMLProviderRequest
+            {
+                IdentityCenterInstanceArn = "arn:aws:sso:::instance/ssoins-1234567890abcdef",
+                SAMLProviderArn = "arn:aws:iam::123456789012:saml-provider/MyUniversity"
+            });
+
+            string samlProviderArn = response.SAMLProviderArn;
 
             #endregion
         }

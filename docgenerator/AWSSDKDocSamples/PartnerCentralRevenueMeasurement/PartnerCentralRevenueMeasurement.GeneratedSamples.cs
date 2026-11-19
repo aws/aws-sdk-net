@@ -20,11 +20,28 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             var response = client.CreateMarketplaceRevenueShare(new CreateMarketplaceRevenueShareRequest
             {
                 Catalog = "AWS",
-                ProductId = "prod-abc123def4567"
+                Products = new List<MarketplaceRevenueShareProductEntry> {
+                    new MarketplaceRevenueShareProductEntry {
+                        Accounts = new List<RevenueShareProductAccountEntry> {
+                            new RevenueShareProductAccountEntry {
+                                AccountIds = new List<string> {
+                                    "111122223333"
+                                },
+                                AccountType = "DEPLOYMENT"
+                            }
+                        },
+                        ProductId = "prod-abc123def4567"
+                    }
+                }
             });
 
             string arn = response.Arn;
-            string productId = response.ProductId;
+            CatalogName catalog = response.Catalog;
+            DateTime? createdDate = response.CreatedDate;
+            string id = response.Id;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
+            List<MarketplaceRevenueShareProductSummary> products = response.Products;
+            string revision = response.Revision;
 
             #endregion
         }
@@ -38,14 +55,20 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             {
                 Catalog = "AWS",
                 EffectiveFrom = "2026-07-01",
-                ProductId = "prod-abc123def4567",
+                EffectiveUntil = "2026-12-31",
+                MarketplaceRevenueShareIdentifier = "mrs-abc123def4567",
+                MarketplaceRevenueShareRevision = "1",
                 RevenueSharePercent = "15.50"
             });
 
-            string arn = response.Arn;
+            DateTime? createdDate = response.CreatedDate;
             string effectiveFrom = response.EffectiveFrom;
+            string effectiveUntil = response.EffectiveUntil;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
-            string productId = response.ProductId;
+            string marketplaceRevenueShareIdentifier = response.MarketplaceRevenueShareIdentifier;
+            string marketplaceRevenueShareLatestRevision = response.MarketplaceRevenueShareLatestRevision;
+            string marketplaceRevenueShareRevision = response.MarketplaceRevenueShareRevision;
             string revenueSharePercent = response.RevenueSharePercent;
             AllocationStatus status = response.Status;
 
@@ -79,12 +102,21 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             var response = client.GetMarketplaceRevenueShare(new GetMarketplaceRevenueShareRequest
             {
                 Catalog = "AWS",
-                ProductId = "prod-abc123def4567"
+                Identifier = "mrs-abc123def4567"
             });
 
             string arn = response.Arn;
             CatalogName catalog = response.Catalog;
-            string productId = response.ProductId;
+            DateTime? createdDate = response.CreatedDate;
+            string effectiveFrom = response.EffectiveFrom;
+            string effectiveUntil = response.EffectiveUntil;
+            string id = response.Id;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
+            string latestRevision = response.LatestRevision;
+            List<MarketplaceRevenueShareProductDetail> products = response.Products;
+            string revision = response.Revision;
+            int? totalActiveMarketplaceRevenueShareAllocationCount = response.TotalActiveMarketplaceRevenueShareAllocationCount;
+            int? totalMarketplaceRevenueShareAllocationCount = response.TotalMarketplaceRevenueShareAllocationCount;
 
             #endregion
         }
@@ -98,13 +130,17 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             {
                 Catalog = "AWS",
                 MarketplaceRevenueShareAllocationId = "mrsa-abc123def4567",
-                ProductId = "prod-abc123def4567"
+                MarketplaceRevenueShareIdentifier = "mrs-abc123def4567"
             });
 
-            string arn = response.Arn;
+            DateTime? createdDate = response.CreatedDate;
             string effectiveFrom = response.EffectiveFrom;
+            string effectiveUntil = response.EffectiveUntil;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
-            string productId = response.ProductId;
+            string marketplaceRevenueShareIdentifier = response.MarketplaceRevenueShareIdentifier;
+            string marketplaceRevenueShareLatestRevision = response.MarketplaceRevenueShareLatestRevision;
+            string marketplaceRevenueShareRevision = response.MarketplaceRevenueShareRevision;
             string revenueSharePercent = response.RevenueSharePercent;
             AllocationStatus status = response.Status;
 
@@ -188,7 +224,8 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             var response = client.ListMarketplaceRevenueShareAllocations(new ListMarketplaceRevenueShareAllocationsRequest
             {
                 Catalog = "AWS",
-                ProductId = "prod-abc123def4567"
+                MarketplaceRevenueShareIdentifier = "mrs-abc123def4567",
+                StatusFilter = "ACTIVE"
             });
 
             List<MarketplaceRevenueShareAllocationSummary> marketplaceRevenueShareAllocationSummaries = response.MarketplaceRevenueShareAllocationSummaries;
@@ -277,6 +314,63 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             #endregion
         }
 
+        public void PartnerCentralRevenueMeasurementUpdateMarketplaceRevenueShare()
+        {
+            #region UpdateMarketplaceRevenueShare-1
+
+            var client = new AmazonPartnerCentralRevenueMeasurementClient();
+            var response = client.UpdateMarketplaceRevenueShare(new UpdateMarketplaceRevenueShareRequest
+            {
+                Catalog = "AWS",
+                Identifier = "mrs-abc123def4567",
+                Products = new List<MarketplaceRevenueShareProductEntry> {
+                    new MarketplaceRevenueShareProductEntry {
+                        Accounts = new List<RevenueShareProductAccountEntry> {
+                            new RevenueShareProductAccountEntry {
+                                AccountIds = new List<string> {
+                                    "111122223333"
+                                },
+                                AccountType = "DEPLOYMENT"
+                            }
+                        },
+                        ProductId = "prod-abc123def4567"
+                    }
+                },
+                Revision = "1"
+            });
+
+            string arn = response.Arn;
+            string id = response.Id;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
+            string latestRevision = response.LatestRevision;
+            List<MarketplaceRevenueShareProductSummary> products = response.Products;
+
+            #endregion
+        }
+
+        public void PartnerCentralRevenueMeasurementUpdateMarketplaceRevenueShare()
+        {
+            #region UpdateMarketplaceRevenueShare-2
+
+            var client = new AmazonPartnerCentralRevenueMeasurementClient();
+            var response = client.UpdateMarketplaceRevenueShare(new UpdateMarketplaceRevenueShareRequest
+            {
+                Catalog = "AWS",
+                Identifier = "mrs-abc123def4567",
+                Products = new List<MarketplaceRevenueShareProductEntry> {
+                },
+                Revision = "2"
+            });
+
+            string arn = response.Arn;
+            string id = response.Id;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
+            string latestRevision = response.LatestRevision;
+            List<MarketplaceRevenueShareProductSummary> products = response.Products;
+
+            #endregion
+        }
+
         public void PartnerCentralRevenueMeasurementUpdateMarketplaceRevenueShareAllocation()
         {
             #region UpdateMarketplaceRevenueShareAllocation-1
@@ -286,15 +380,19 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralRevenueMeasurement.Generated
             {
                 Catalog = "AWS",
                 MarketplaceRevenueShareAllocationId = "mrsa-abc123def4567",
-                MarketplaceRevenueShareRevision = "1",
-                ProductId = "prod-abc123def4567",
+                MarketplaceRevenueShareIdentifier = "mrs-abc123def4567",
+                MarketplaceRevenueShareRevision = "2",
                 RevenueSharePercent = "20.00"
             });
 
-            string arn = response.Arn;
+            DateTime? createdDate = response.CreatedDate;
             string effectiveFrom = response.EffectiveFrom;
+            string effectiveUntil = response.EffectiveUntil;
+            DateTime? lastModifiedDate = response.LastModifiedDate;
             string marketplaceRevenueShareAllocationId = response.MarketplaceRevenueShareAllocationId;
-            string productId = response.ProductId;
+            string marketplaceRevenueShareIdentifier = response.MarketplaceRevenueShareIdentifier;
+            string marketplaceRevenueShareLatestRevision = response.MarketplaceRevenueShareLatestRevision;
+            string marketplaceRevenueShareRevision = response.MarketplaceRevenueShareRevision;
             string revenueSharePercent = response.RevenueSharePercent;
             AllocationStatus status = response.Status;
 

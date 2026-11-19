@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.BatchCreateCampaignAsset(Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.BatchCreateCampaignAsset(Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Instantiate two of the kit's blueprints" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="BatchCreateCampaignAsset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.BatchCreateCampaignAsset(Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.BatchCreateCampaignAsset(Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.BatchCreateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="A partial batch: one entry names a blueprint the campaign's template does not carry" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="BatchCreateCampaignAsset-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.CreateCampaign(Amazon.PartnerCentralMarketing.Model.CreateCampaignRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.CreateCampaign(Amazon.PartnerCentralMarketing.Model.CreateCampaignRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.CreateCampaignRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.CreateCampaignResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Create a campaign" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="CreateCampaign-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.DeleteCampaign(Amazon.PartnerCentralMarketing.Model.DeleteCampaignRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.DeleteCampaign(Amazon.PartnerCentralMarketing.Model.DeleteCampaignRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.DeleteCampaignRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.DeleteCampaignResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Delete a campaign" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="DeleteCampaign-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.DeleteCampaignAsset(Amazon.PartnerCentralMarketing.Model.DeleteCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.DeleteCampaignAsset(Amazon.PartnerCentralMarketing.Model.DeleteCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.DeleteCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.DeleteCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Delete an asset" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="DeleteCampaignAsset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.GetCampaign(Amazon.PartnerCentralMarketing.Model.GetCampaignRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.GetCampaign(Amazon.PartnerCentralMarketing.Model.GetCampaignRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get a campaign" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="GetCampaign-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.GetCampaignAsset(Amazon.PartnerCentralMarketing.Model.GetCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.GetCampaignAsset(Amazon.PartnerCentralMarketing.Model.GetCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get an asset" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="GetCampaignAsset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.GetCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.GetCampaignAssetActivationTaskRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.GetCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.GetCampaignAssetActivationTaskRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignAssetActivationTaskRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignAssetActivationTaskResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Read a finished task where one asset failed" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="GetCampaignAssetActivationTask-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.GetCampaignTemplate(Amazon.PartnerCentralMarketing.Model.GetCampaignTemplateRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.GetCampaignTemplate(Amazon.PartnerCentralMarketing.Model.GetCampaignTemplateRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignTemplateRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.GetCampaignTemplateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get a campaign template" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="GetCampaignTemplate-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.ListCampaignAssets(Amazon.PartnerCentralMarketing.Model.ListCampaignAssetsRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.ListCampaignAssets(Amazon.PartnerCentralMarketing.Model.ListCampaignAssetsRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignAssetsRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignAssetsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List assets for a campaign" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="ListCampaignAssets-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List campaigns" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="ListCampaigns-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Name the campaigns a page links to" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="ListCampaigns-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.ListCampaigns(Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.ListCampaignsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Search active campaigns by name, by launch date" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="ListCampaigns-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Browse the whole catalog" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="SearchCampaignTemplates-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Search with a facet filter" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="SearchCampaignTemplates-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.SearchCampaignTemplates(Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.SearchCampaignTemplatesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Browse the Build with AI collection in one language" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="SearchCampaignTemplates-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Activate a whole campaign kit" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="StartCampaignAssetActivationTask-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Some assets refused, the rest started anyway" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="StartCampaignAssetActivationTask-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.StartCampaignAssetActivationTask(Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.StartCampaignAssetActivationTaskResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Every asset refused, so the task is FAILED at once" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="StartCampaignAssetActivationTask-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaign(Amazon.PartnerCentralMarketing.Model.UpdateCampaignRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaign(Amazon.PartnerCentralMarketing.Model.UpdateCampaignRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Rename a campaign and raise its budget" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaign-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Update asset content" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaignAsset-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Reschedule a sendable asset" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaignAsset-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The image already stored on another of your assets is copied into this field. It is checked
+against this field's constraints and not scanned again. The call also needs
+partnercentral:GetCampaignAsset on the source campaign.
+        </para>
+        <code title="Copy an image from a previous campaign's asset" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaignAsset-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The URL Build with AI returned for a suggested image is sent unchanged as imageReference. The
+image is copied into this asset and not scanned. Any other URL is refused.
+        </para>
+        <code title="Use a suggested image from Build with AI" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaignAsset-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralMarketing.IAmazonPartnerCentralMarketing.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="M:Amazon.PartnerCentralMarketing.AmazonPartnerCentralMarketingClient.UpdateCampaignAsset(Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest)" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetRequest" />
+      <member name="T:Amazon.PartnerCentralMarketing.Model.UpdateCampaignAssetResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Every failed field is reported in one refusal, and nothing applies — a declined image and an
+over-long headline arrive together in `fieldList`, each with its own `code`. This replaced a
+read-path `fileDetails[]` report (DG-040 Decision 11), so a partner handles image and text
+failures the same way.
+        </para>
+        <code title="An update refused for two fields at once" source=".\AWSSDKDocSamples\PartnerCentralMarketing\PartnerCentralMarketing.GeneratedSamples.cs" region="UpdateCampaignAsset-5" />
+      </example>
+    </value>
+  </doc>
+</docs>
