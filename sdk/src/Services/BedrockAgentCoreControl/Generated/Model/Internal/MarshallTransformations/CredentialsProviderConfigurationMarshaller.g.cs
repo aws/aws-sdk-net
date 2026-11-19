@@ -45,6 +45,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAwsBilling())
+            {
+                context.Writer.WritePropertyName("awsBilling");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AwsBillingConnectorConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsBilling, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCoinbaseCDP())
             {
                 context.Writer.WritePropertyName("coinbaseCDP");

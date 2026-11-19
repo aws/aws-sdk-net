@@ -4395,6 +4395,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.AwsBillingConnectorConfiguration.IamRoleArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.BatchPutLimitEntry.Description</property>
     <min>0</min>
     <max>512</max>

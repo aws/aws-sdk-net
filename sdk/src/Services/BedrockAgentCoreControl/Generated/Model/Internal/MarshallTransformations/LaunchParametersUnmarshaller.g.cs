@@ -60,6 +60,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("cpuOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = CpuOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ephemeralVolumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EphemeralBlockDeviceMapping, EphemeralBlockDeviceMappingUnmarshaller>(EphemeralBlockDeviceMappingUnmarshaller.Instance);

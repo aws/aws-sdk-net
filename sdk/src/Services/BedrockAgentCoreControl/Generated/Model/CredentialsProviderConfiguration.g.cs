@@ -30,11 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The credential provider configuration for a payment connector. Specifies the payment
-    /// provider type and its associated credential provider.
+    /// The configuration for a payment connector. Specifies the payment provider type and
+    /// either its associated credential provider or, for an AWS Billing payment connector,
+    /// its billing configuration.
     /// </summary>
     public partial class CredentialsProviderConfiguration
     {
+        /// <summary>
+        /// Gets and sets the property AwsBilling. 
+        /// <para>
+        /// The configuration for an AWS Billing payment connector. The service sets this configuration
+        /// when it creates the connector and returns it in responses. Don't specify it when you
+        /// create an AWS Billing payment connector.
+        /// </para>
+        /// </summary>
+        public AwsBillingConnectorConfiguration AwsBilling { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsBilling property is set.
+        /// </summary>
+        internal bool IsSetAwsBilling() => this.AwsBilling != null;
+
         /// <summary>
         /// Gets and sets the property CoinbaseCDP. 
         /// <para>

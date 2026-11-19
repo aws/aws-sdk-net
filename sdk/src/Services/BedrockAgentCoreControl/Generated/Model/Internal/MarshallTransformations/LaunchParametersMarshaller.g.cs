@@ -56,6 +56,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCpuOptions())
+            {
+                context.Writer.WritePropertyName("cpuOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CpuOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CpuOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetEphemeralVolumes())
             {
                 context.Writer.WritePropertyName("ephemeralVolumes");

@@ -3674,6 +3674,47 @@ namespace Amazon.BedrockAgentCoreControl
     }
 
     /// <summary>
+    /// Constants used for properties of type NestedVirtualization.
+    /// </summary>
+    public class NestedVirtualization : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for NestedVirtualization
+        /// </summary>
+        public static readonly NestedVirtualization DISABLED = new NestedVirtualization("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for NestedVirtualization
+        /// </summary>
+        public static readonly NestedVirtualization ENABLED = new NestedVirtualization("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom NestedVirtualization for a value not among the defined constants.
+        /// </summary>
+        public NestedVirtualization(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NestedVirtualization FindValue(string value)
+        {
+            return FindValue<NestedVirtualization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NestedVirtualization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type NetworkMode.
     /// </summary>
     public class NetworkMode : ConstantClass
@@ -4229,6 +4270,11 @@ namespace Amazon.BedrockAgentCoreControl
     /// </summary>
     public class PaymentConnectorType : ConstantClass
     {
+        /// <summary>
+        /// Constant AwsBilling for PaymentConnectorType
+        /// </summary>
+        public static readonly PaymentConnectorType AwsBilling = new PaymentConnectorType("AwsBilling");
+
         /// <summary>
         /// Constant CoinbaseCDP for PaymentConnectorType
         /// </summary>

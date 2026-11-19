@@ -60,6 +60,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The credential provider configurations for the payment connector. These configurations
         /// specify how the connector authenticates with the payment provider.
         /// </para>
+        ///  
+        /// <para>
+        /// For an <c>AwsBilling</c> payment connector, omit this parameter or specify an empty
+        /// list. The service uses the AWS Marketplace service-linked role in your account, which
+        /// must exist before you create the connector, and you must have permission to call <c>iam:GetRole</c>
+        /// on it.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -67,7 +74,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 1)]
+        [AWSProperty(Min = 0, Max = 1)]
         public List<CredentialsProviderConfiguration> CredentialProviderConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<CredentialsProviderConfiguration>() : null;
 
         /// <summary>

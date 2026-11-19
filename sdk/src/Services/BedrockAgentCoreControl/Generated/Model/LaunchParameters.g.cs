@@ -48,6 +48,20 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCapacityReservationSpecification() => this.CapacityReservationSpecification != null;
 
         /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The central processing unit (CPU) options for the instances that the capacity provider
+        /// launches.
+        /// </para>
+        /// </summary>
+        public CpuOptions CpuOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CpuOptions property is set.
+        /// </summary>
+        internal bool IsSetCpuOptions() => this.CpuOptions != null;
+
+        /// <summary>
         /// Gets and sets the property EphemeralVolumes. 
         /// <para>
         /// The block device mappings for instance store (ephemeral) volumes. You can specify
