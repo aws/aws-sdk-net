@@ -93,6 +93,10 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
+                    {
+                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                     {
                         return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -104,6 +108,10 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceUnavailableException"))
                     {
                         return ResourceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedProviderTypeException"))
+                    {
+                        return UnsupportedProviderTypeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

@@ -120,6 +120,22 @@ namespace Amazon.CodeConnections.Model
         internal bool IsSetOwnerAccountId() => this.OwnerAccountId != null;
 
         /// <summary>
+        /// Gets and sets the property ProviderEndpoint. 
+        /// <para>
+        /// The endpoint of the ghe.com tenant where your organization resides. This value is
+        /// populated only for a connection with a <c>ProviderType</c> of <c>GitHubEnterpriseCloudDataResidency</c>.
+        /// It is empty for all other provider types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string ProviderEndpoint { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProviderEndpoint property is set.
+        /// </summary>
+        internal bool IsSetProviderEndpoint() => this.ProviderEndpoint != null;
+
+        /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
         /// The name of the external provider where your third-party code repository is configured.

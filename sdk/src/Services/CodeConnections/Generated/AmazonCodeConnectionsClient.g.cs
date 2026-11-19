@@ -348,6 +348,9 @@ namespace Amazon.CodeConnections
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method.</param>
         /// <returns>The response from the CreateConnection service method, as returned by CodeConnections.</returns>
+        /// <exception cref="Amazon.CodeConnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.LimitExceededException">
         /// Exceeded the maximum limit for connections.
         /// </exception>
@@ -356,6 +359,9 @@ namespace Amazon.CodeConnections
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ResourceUnavailableException">
         /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.UnsupportedProviderTypeException">
+        /// The specified provider type is not supported for connections.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeconnections-2023-12-01/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
@@ -388,6 +394,9 @@ namespace Amazon.CodeConnections
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the CreateConnection service method, as returned by CodeConnections.</returns>
+        /// <exception cref="Amazon.CodeConnections.Model.InvalidInputException">
+        /// The input is not valid. Verify that the action is typed correctly.
+        /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.LimitExceededException">
         /// Exceeded the maximum limit for connections.
         /// </exception>
@@ -396,6 +405,9 @@ namespace Amazon.CodeConnections
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ResourceUnavailableException">
         /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.UnsupportedProviderTypeException">
+        /// The specified provider type is not supported for connections.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeconnections-2023-12-01/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -503,6 +515,9 @@ namespace Amazon.CodeConnections
         /// <exception cref="Amazon.CodeConnections.Model.ResourceAlreadyExistsException">
         /// Unable to create resource. Resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -554,6 +569,9 @@ namespace Amazon.CodeConnections
         /// <exception cref="Amazon.CodeConnections.Model.ResourceAlreadyExistsException">
         /// Unable to create resource. Resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -593,6 +611,9 @@ namespace Amazon.CodeConnections
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ResourceAlreadyExistsException">
         /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -645,6 +666,9 @@ namespace Amazon.CodeConnections
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ResourceAlreadyExistsException">
         /// Unable to create resource. Resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CodeConnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
         /// </exception>
         /// <exception cref="Amazon.CodeConnections.Model.ThrottlingException">
         /// The request was denied due to request throttling.

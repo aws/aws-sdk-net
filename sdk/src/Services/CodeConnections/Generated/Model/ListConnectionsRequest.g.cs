@@ -71,7 +71,7 @@ namespace Amazon.CodeConnections.Model
         /// be used to return the next set of connections in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1024)]
+        [AWSProperty(Min = 1, Max = 2048)]
         public string NextToken { get; set; }
 
         /// <summary>

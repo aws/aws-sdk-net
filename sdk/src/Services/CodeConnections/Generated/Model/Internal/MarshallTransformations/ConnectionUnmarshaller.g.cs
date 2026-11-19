@@ -92,6 +92,12 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "ProviderEndpoint":
+                        context.AddPathSegment("ProviderEndpoint");
+                        unmarshalledObject.ProviderEndpoint = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "ProviderType":
                         context.AddPathSegment("ProviderType");
                         unmarshalledObject.ProviderType = CborStringUnmarshaller.Instance.Unmarshall(context);

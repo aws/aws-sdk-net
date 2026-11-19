@@ -77,6 +77,11 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("HostArn");
                     context.Writer.WriteTextString(publicRequest.HostArn);
                 }
+                if (publicRequest.IsSetProviderEndpoint())
+                {
+                    context.Writer.WriteTextString("ProviderEndpoint");
+                    context.Writer.WriteTextString(publicRequest.ProviderEndpoint);
+                }
                 if (publicRequest.IsSetProviderType())
                 {
                     context.Writer.WriteTextString("ProviderType");

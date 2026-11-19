@@ -57,7 +57,7 @@ namespace Amazon.CodeConnections.Model
         /// used to return the next set of hosts in the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1024)]
+        [AWSProperty(Min = 1, Max = 2048)]
         public string NextToken { get; set; }
 
         /// <summary>

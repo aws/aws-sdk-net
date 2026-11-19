@@ -165,6 +165,11 @@ namespace Amazon.CodeConnections
         public static readonly ProviderType GitHub = new ProviderType("GitHub");
 
         /// <summary>
+        /// Constant GitHubEnterpriseCloudDataResidency for ProviderType
+        /// </summary>
+        public static readonly ProviderType GitHubEnterpriseCloudDataResidency = new ProviderType("GitHubEnterpriseCloudDataResidency");
+
+        /// <summary>
         /// Constant GitHubEnterpriseServer for ProviderType
         /// </summary>
         public static readonly ProviderType GitHubEnterpriseServer = new ProviderType("GitHubEnterpriseServer");
