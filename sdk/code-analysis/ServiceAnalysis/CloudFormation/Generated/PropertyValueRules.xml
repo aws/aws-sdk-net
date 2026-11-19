@@ -187,6 +187,15 @@
     <pattern>^[a-zA-Z_0-9+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.ExecutionRoleTemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.ExecutionRoleTemplateUrl</property>
+    <min>1</min>
+    <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackSetRequest.TemplateBody</property>
     <min>1</min>
   </property-value-rule>
@@ -1473,6 +1482,15 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z_0-9+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.ExecutionRoleTemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.ExecutionRoleTemplateUrl</property>
+    <min>1</min>
+    <max>5120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.OperationId</property>

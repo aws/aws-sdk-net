@@ -120,6 +120,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
             }
+            if (publicRequest.IsSetExecutionRoleTemplateBody())
+            {
+                request.Parameters.Add("ExecutionRoleTemplateBody", StringUtils.FromString(publicRequest.ExecutionRoleTemplateBody));
+            }
+            if (publicRequest.IsSetExecutionRoleTemplateUrl())
+            {
+                request.Parameters.Add("ExecutionRoleTemplateUrl", StringUtils.FromString(publicRequest.ExecutionRoleTemplateUrl));
+            }
             if (publicRequest.IsSetManagedExecution())
             {
                 if (publicRequest.ManagedExecution.IsSetActive())
@@ -169,6 +177,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStackSetName())
             {
                 request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
+            }
+            if (publicRequest.IsSetStackSetOutputBucket())
+            {
+                request.Parameters.Add("StackSetOutputBucket", StringUtils.FromString(publicRequest.StackSetOutputBucket));
             }
             if (publicRequest.IsSetTags())
             {

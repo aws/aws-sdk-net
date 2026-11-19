@@ -169,6 +169,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("StackSetOutputBucketPath", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StackSetOutputBucketPath = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

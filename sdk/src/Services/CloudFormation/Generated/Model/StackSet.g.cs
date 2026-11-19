@@ -288,6 +288,21 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackSetName() => this.StackSetName != null;
 
         /// <summary>
+        /// Gets and sets the property StackSetOutputBucketPath. 
+        /// <para>
+        /// The Amazon S3 bucket path where CloudFormation stores the execution role stack template
+        /// body. CloudFormation uses this bucket only when you specify a custom execution role
+        /// template.
+        /// </para>
+        /// </summary>
+        public string StackSetOutputBucketPath { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StackSetOutputBucketPath property is set.
+        /// </summary>
+        internal bool IsSetStackSetOutputBucketPath() => this.StackSetOutputBucketPath != null;
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the StackSet.

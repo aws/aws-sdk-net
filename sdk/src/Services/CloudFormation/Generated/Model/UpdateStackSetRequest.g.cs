@@ -259,12 +259,19 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// StackSets with service-managed permissions do not currently support the use of macros
-        /// in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
+        /// With service-managed permissions, CloudFormation can process macros, nested stacks,
+        /// and transforms in your StackSet template only when you provide a custom execution
+        /// role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
-        /// for a StackSet with service-managed permissions, if you reference a macro in your
-        /// template the StackSet operation will fail.
+        /// transforms, which are macros hosted by CloudFormation.) The default service-managed
+        /// execution role can't provision them: if you reference a macro in your template, the
+        /// StackSet operation fails even when you specify this capability.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use macros, nested stacks, or transforms with service-managed permissions, specify
+        /// a custom execution role template in <c>ExecutionRoleTemplateBody</c> or <c>ExecutionRoleTemplateUrl</c>,
+        /// and specify both <c>CAPABILITY_NAMED_IAM</c> and <c>CAPABILITY_AUTO_EXPAND</c>.
         /// </para>
         ///  </important> </li> </ul>
         /// <para />
@@ -327,14 +334,16 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// [Self-managed permissions] The name of the IAM execution role to use to update the
-        /// stack set. If you do not specify an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
-        /// role for the StackSet operation.
+        /// The name of the IAM execution role that CloudFormation uses for StackSet operations
+        /// in your target accounts.
         /// </para>
         ///  
         /// <para>
-        /// Specify an IAM role only if you are using customized execution roles to control which
-        /// stack resources users and groups can include in their StackSets.
+        /// [Self-managed permissions] The name of the IAM execution role to use to update the
+        /// stack set. If you do not specify an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
+        /// role for the StackSet operation. Specify an IAM role only if you are using customized
+        /// execution roles to control which stack resources users and groups can include in their
+        /// StackSets.
         /// </para>
         ///  
         /// <para>
@@ -342,6 +351,14 @@ namespace Amazon.CloudFormation.Model
         /// the stack. If you do not specify a customized execution role, CloudFormation performs
         /// the update using the role previously associated with the StackSet, so long as you
         /// have permissions to perform operations on the StackSet.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Service-managed permissions] Set this name when you use custom execution roles. The
+        /// role that your custom execution role template provisions in your target accounts must
+        /// have this same name, and the name must begin with <c>stacksets-exec-custom-</c>. You
+        /// don't need to specify this parameter if an execution role name is already configured
+        /// for the StackSet and you aren't changing it.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
@@ -351,6 +368,49 @@ namespace Amazon.CloudFormation.Model
         /// Checks to see if the ExecutionRoleName property is set.
         /// </summary>
         internal bool IsSetExecutionRoleName() => this.ExecutionRoleName != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleTemplateBody. 
+        /// <para>
+        /// The body of the template that creates or updates a custom execution role in target
+        /// accounts. This parameter applies only when the permissions model is <c>SERVICE_MANAGED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: Specify either <c>ExecutionRoleTemplateBody</c> or <c>ExecutionRoleTemplateUrl</c>,
+        /// but not both. If you don't specify either, CloudFormation uses the default service-managed
+        /// execution role in target accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public string ExecutionRoleTemplateBody { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionRoleTemplateBody property is set.
+        /// </summary>
+        internal bool IsSetExecutionRoleTemplateBody() => this.ExecutionRoleTemplateBody != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleTemplateUrl. 
+        /// <para>
+        /// The URL of an Amazon S3 object that contains the template that creates or updates
+        /// a custom execution role in target accounts. This parameter applies only when the permissions
+        /// model is <c>SERVICE_MANAGED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: Specify either <c>ExecutionRoleTemplateBody</c> or <c>ExecutionRoleTemplateUrl</c>,
+        /// but not both. If you don't specify either, CloudFormation uses the default service-managed
+        /// execution role in target accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5120)]
+        public string ExecutionRoleTemplateUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionRoleTemplateUrl property is set.
+        /// </summary>
+        internal bool IsSetExecutionRoleTemplateUrl() => this.ExecutionRoleTemplateUrl != null;
 
         /// <summary>
         /// Gets and sets the property ManagedExecution. 
@@ -507,6 +567,20 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackSetName() => this.StackSetName != null;
 
         /// <summary>
+        /// Gets and sets the property StackSetOutputBucket. 
+        /// <para>
+        /// The name of the Amazon S3 bucket that stores the execution role stack template body.
+        /// CloudFormation uses this bucket only when you specify a custom execution role template.
+        /// </para>
+        /// </summary>
+        public string StackSetOutputBucket { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StackSetOutputBucket property is set.
+        /// </summary>
+        internal bool IsSetStackSetOutputBucket() => this.StackSetOutputBucket != null;
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value pairs to associate with this StackSet and the stacks created from it.
@@ -600,6 +674,22 @@ namespace Amazon.CloudFormation.Model
         /// Checks to see if the TemplateURL property is set.
         /// </summary>
         internal bool IsSetTemplateURL() => this.TemplateURL != null;
+
+        /// <summary>
+        /// Gets and sets the property UseAdminExecutionRole. 
+        /// <para>
+        /// Specifies whether CloudFormation uses the default service-managed execution role instead
+        /// of a custom execution role in target accounts. If you set this to <c>true</c>, CloudFormation
+        /// ignores any custom execution role template specified in <c>ExecutionRoleTemplateBody</c>
+        /// or <c>ExecutionRoleTemplateUrl</c>.
+        /// </para>
+        /// </summary>
+        public bool? UseAdminExecutionRole { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseAdminExecutionRole property is set.
+        /// </summary>
+        internal bool IsSetUseAdminExecutionRole() => this.UseAdminExecutionRole.HasValue;
 
         /// <summary>
         /// Gets and sets the property UsePreviousTemplate. 
