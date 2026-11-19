@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  Detailed message describing the failure and possible recovery steps. 
+        /// Detailed message describing the failure and possible recovery steps.
         /// </para>
         /// </summary>
         public string Message { get; set; }
@@ -77,7 +77,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        ///  A code pointing to the specific reason for the failure. 
+        /// A code pointing to the specific reason for the failure.
         /// </para>
         /// </summary>
         public ReasonCode ReasonCode { get; set; }
@@ -90,7 +90,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobId. 
         /// <para>
-        ///  Unique identifier of the resource snapshot job that was created. 
+        /// Unique identifier of the resource snapshot job that was created.
         /// </para>
         /// </summary>
         public string ResourceSnapshotJobId { get; set; }
@@ -103,7 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  Task start timestamp. 
+        /// Task start timestamp.
         /// </para>
         /// </summary>
         public DateTime? StartTime { get; set; }
@@ -116,7 +116,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that uniquely identifies the task. 
+        /// The Amazon Resource Name (ARN) that uniquely identifies the task.
         /// </para>
         /// </summary>
         public string TaskArn { get; set; }
@@ -129,7 +129,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        ///  Unique identifier of the task. 
+        /// Unique identifier of the task.
         /// </para>
         /// </summary>
         public string TaskId { get; set; }
@@ -142,7 +142,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskStatus. 
         /// <para>
-        ///  Status of the task. 
+        /// Status of the task.
         /// </para>
         /// </summary>
         public TaskStatus TaskStatus { get; set; }

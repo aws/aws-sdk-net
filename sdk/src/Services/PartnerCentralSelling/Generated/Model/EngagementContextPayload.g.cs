@@ -36,6 +36,20 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class EngagementContextPayload
     {
         /// <summary>
+        /// Gets and sets the property CustomerAccount. 
+        /// <para>
+        /// The customer account context for account planning. This field appears only when the
+        /// context type is <c>CustomerAccount</c>.
+        /// </para>
+        /// </summary>
+        public CustomerAccountContext CustomerAccount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomerAccount property is set.
+        /// </summary>
+        internal bool IsSetCustomerAccount() => this.CustomerAccount != null;
+
+        /// <summary>
         /// Gets and sets the property CustomerProject. 
         /// <para>
         /// Contains detailed information about a customer project when the context type is "CustomerProject".

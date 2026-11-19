@@ -30,16 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// The Invitation structure represents an invitation exchanged between partners and
-    /// AWS. It includes a message, receiver information, and a payload providing context
-    /// for the invitation.
+    /// The Invitation structure represents an invitation exchanged between partners and AWS.
+    /// It includes a message, receiver information, and a payload providing context for the
+    /// invitation.
     /// </summary>
     public partial class Invitation
     {
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  A message accompanying the invitation. 
+        /// A message accompanying the invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
@@ -51,7 +51,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetMessage() => this.Message != null;
 
         /// <summary>
-        /// Gets and sets the property Payload.
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// Contains the details that the invitation carries, such as the opportunity or the account
+        /// planning details that the partner receives.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public Payload Payload { get; set; }
@@ -62,7 +66,10 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetPayload() => this.Payload != null;
 
         /// <summary>
-        /// Gets and sets the property Receiver.
+        /// Gets and sets the property Receiver. 
+        /// <para>
+        /// Specifies the partner that receives the invitation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public Receiver Receiver { get; set; }

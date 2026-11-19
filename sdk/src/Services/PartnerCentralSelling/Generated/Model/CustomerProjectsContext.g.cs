@@ -47,7 +47,10 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class CustomerProjectsContext
     {
         /// <summary>
-        /// Gets and sets the property Customer.
+        /// Gets and sets the property Customer. 
+        /// <para>
+        /// Contains details about the customer that the customer project belongs to.
+        /// </para>
         /// </summary>
         public EngagementCustomer Customer { get; set; }
 

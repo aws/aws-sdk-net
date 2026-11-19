@@ -45,6 +45,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCustomerAccount())
+            {
+                context.Writer.WritePropertyName("CustomerAccount");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomerAccountContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomerAccount, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCustomerProject())
             {
                 context.Writer.WritePropertyName("CustomerProject");

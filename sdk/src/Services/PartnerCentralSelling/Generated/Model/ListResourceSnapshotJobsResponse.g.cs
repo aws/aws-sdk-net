@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to retrieve the next set of results. If there are no additional results,
+        /// The token to retrieve the next set of results. If there are no additional results,
         /// this value is null. 
         /// </para>
         /// </summary>

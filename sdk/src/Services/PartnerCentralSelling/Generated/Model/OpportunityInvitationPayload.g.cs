@@ -51,6 +51,37 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCustomer() => this.Customer != null;
 
         /// <summary>
+        /// Gets and sets the property OpportunityType. 
+        /// <para>
+        /// The type of the opportunity being shared. The sender of the invitation sets it. Valid
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Net New Business</c>: A new business opportunity with a potential customer that's
+        /// not previously engaged with your solutions or services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Flat Renewal</c>: An opportunity to renew an existing contract or subscription
+        /// with a current customer, ensuring continuity of service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Expansion</c>: An opportunity to expand the scope of an existing contract or subscription,
+        /// either by adding new services or increasing the volume of existing services for a
+        /// current customer.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OpportunityType OpportunityType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OpportunityType property is set.
+        /// </summary>
+        internal bool IsSetOpportunityType() => this.OpportunityType != null;
+
+        /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
         /// Describes the project details associated with the opportunity, including the customer’s

@@ -31,15 +31,15 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEngagementFromOpportunityTasks operation.
-    /// Lists all in-progress, completed, or failed <c>EngagementFromOpportunity</c> tasks
-    /// that were initiated by the caller's account.
+    /// Lists all in-progress, completed, or failed EngagementFromOpportunity tasks that were
+    /// initiated by the caller's account.
     /// </summary>
     public partial class ListEngagementFromOpportunityTasksRequest : AmazonPartnerCentralSellingRequest
     {
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the request. Valid values are: 
+        /// Specifies the catalog related to the request. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -63,8 +63,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  Filters tasks by the identifiers of the engagements they created or are associated
-        /// with. 
+        /// Filters tasks by the identifiers of the engagements they created or are associated
+        /// with.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Specifies the maximum number of results to return in a single page of the response.Use
+        /// Specifies the maximum number of results to return in a single page of the response.Use
         /// this parameter to control the number of items returned in each request, which can
         /// be useful for performance tuning and managing large result sets. 
         /// </para>
@@ -100,7 +100,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token for requesting the next page of results. This value is obtained from the
+        /// The token for requesting the next page of results. This value is obtained from the
         /// NextToken field in the response of a previous call to this API. Use this parameter
         /// for pagination when the result set spans multiple pages. 
         /// </para>
@@ -149,7 +149,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskIdentifier. 
         /// <para>
-        ///  Filters tasks by their unique identifiers. Use this when you want to retrieve information
+        /// Filters tasks by their unique identifiers. Use this when you want to retrieve information
         /// about specific tasks. 
         /// </para>
         /// <para />

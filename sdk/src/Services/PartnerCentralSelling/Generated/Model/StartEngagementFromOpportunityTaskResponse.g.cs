@@ -105,7 +105,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property ResourceSnapshotJobId. 
         /// <para>
         /// The identifier of the resource snapshot job created to add the opportunity resource
-        /// snapshot to the Engagement. Only populated if TaskStatus is COMPLETE
+        /// snapshot to the Engagement. Only populated if TaskStatus is COMPLETE 
         /// </para>
         /// </summary>
         public string ResourceSnapshotJobId { get; set; }

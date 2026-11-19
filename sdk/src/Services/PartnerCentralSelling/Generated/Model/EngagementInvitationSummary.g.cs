@@ -69,8 +69,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementId. 
         /// <para>
-        ///  The identifier of the Engagement associated with this invitation. This links the
-        /// invitation to its parent Engagement. 
+        /// The identifier of the Engagement associated with this invitation. This links the invitation
+        /// to its parent Engagement. 
         /// </para>
         /// </summary>
         public string EngagementId { get; set; }

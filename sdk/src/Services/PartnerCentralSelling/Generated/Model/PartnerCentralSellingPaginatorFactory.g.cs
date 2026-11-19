@@ -33,6 +33,22 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomerAccountBulkJobResults operation
+        /// </summary>
+        public IListCustomerAccountBulkJobResultsPaginator ListCustomerAccountBulkJobResults(ListCustomerAccountBulkJobResultsRequest request)
+        {
+            return new ListCustomerAccountBulkJobResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomerAccountBulkJobs operation
+        /// </summary>
+        public IListCustomerAccountBulkJobsPaginator ListCustomerAccountBulkJobs(ListCustomerAccountBulkJobsRequest request)
+        {
+            return new ListCustomerAccountBulkJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEngagementByAcceptingInvitationTasks operation
         /// </summary>
         public IListEngagementByAcceptingInvitationTasksPaginator ListEngagementByAcceptingInvitationTasks(ListEngagementByAcceptingInvitationTasksRequest request)
@@ -46,6 +62,14 @@ namespace Amazon.PartnerCentralSelling.Model
         public IListEngagementFromOpportunityTasksPaginator ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request)
         {
             return new ListEngagementFromOpportunityTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEngagementGroups operation
+        /// </summary>
+        public IListEngagementGroupsPaginator ListEngagementGroups(ListEngagementGroupsRequest request)
+        {
+            return new ListEngagementGroupsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -89,6 +113,22 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Paginator for ListOpportunityBulkJobResults operation
+        /// </summary>
+        public IListOpportunityBulkJobResultsPaginator ListOpportunityBulkJobResults(ListOpportunityBulkJobResultsRequest request)
+        {
+            return new ListOpportunityBulkJobResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOpportunityBulkJobs operation
+        /// </summary>
+        public IListOpportunityBulkJobsPaginator ListOpportunityBulkJobs(ListOpportunityBulkJobsRequest request)
+        {
+            return new ListOpportunityBulkJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOpportunityFromEngagementTasks operation
         /// </summary>
         public IListOpportunityFromEngagementTasksPaginator ListOpportunityFromEngagementTasks(ListOpportunityFromEngagementTasksRequest request)
@@ -126,6 +166,30 @@ namespace Amazon.PartnerCentralSelling.Model
         public IListSolutionsPaginator ListSolutions(ListSolutionsRequest request)
         {
             return new ListSolutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchCustomerAccounts operation
+        /// </summary>
+        public ISearchCustomerAccountsPaginator SearchCustomerAccounts(SearchCustomerAccountsRequest request)
+        {
+            return new SearchCustomerAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchEngagements operation
+        /// </summary>
+        public ISearchEngagementsPaginator SearchEngagements(SearchEngagementsRequest request)
+        {
+            return new SearchEngagementsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchOpportunities operation
+        /// </summary>
+        public ISearchOpportunitiesPaginator SearchOpportunities(SearchOpportunitiesRequest request)
+        {
+            return new SearchOpportunitiesPaginator(this.client, request);
         }
     }
 }

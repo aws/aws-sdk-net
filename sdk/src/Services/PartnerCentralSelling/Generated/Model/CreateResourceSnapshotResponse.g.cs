@@ -37,8 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  Specifies the Amazon Resource Name (ARN) that uniquely identifies the snapshot created.
-        /// 
+        /// Specifies the Amazon Resource Name (ARN) that uniquely identifies the snapshot created.
         /// </para>
         /// </summary>
         public string Arn { get; set; }
@@ -51,9 +50,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        ///  Specifies the revision number of the created snapshot. This field provides important
+        /// Specifies the revision number of the created snapshot. This field provides important
         /// information about the snapshot's place in the sequence of snapshots for the given
-        /// resource. 
+        /// resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]

@@ -60,6 +60,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CosellMotionReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CosellMotionReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Customer", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsOpportunityCustomerUnmarshaller.Instance;

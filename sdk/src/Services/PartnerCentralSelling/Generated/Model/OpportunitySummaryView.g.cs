@@ -36,7 +36,10 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class OpportunitySummaryView
     {
         /// <summary>
-        /// Gets and sets the property Customer.
+        /// Gets and sets the property Customer. 
+        /// <para>
+        /// Contains details about the customer that the opportunity belongs to.
+        /// </para>
         /// </summary>
         public Customer Customer { get; set; }
 
@@ -48,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        ///  Contains information about the opportunity's lifecycle, including its current stage,
+        /// Contains information about the opportunity's lifecycle, including its current stage,
         /// status, and important dates such as creation and last modification times. 
         /// </para>
         /// </summary>
@@ -115,7 +118,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
-        ///  Contains summary information about the project associated with the opportunity, including
+        /// Contains summary information about the project associated with the opportunity, including
         /// project name, description, timeline, and other relevant details. 
         /// </para>
         /// </summary>
@@ -127,7 +130,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetProject() => this.Project != null;
 
         /// <summary>
-        /// Gets and sets the property RelatedEntityIdentifiers.
+        /// Gets and sets the property RelatedEntityIdentifiers. 
+        /// <para>
+        /// Lists the identifiers of entities that relate to the opportunity, such as AWS products,
+        /// partner solutions, and AWS Marketplace offers.
+        /// </para>
         /// </summary>
         public RelatedEntityIdentifiers RelatedEntityIdentifiers { get; set; }
 

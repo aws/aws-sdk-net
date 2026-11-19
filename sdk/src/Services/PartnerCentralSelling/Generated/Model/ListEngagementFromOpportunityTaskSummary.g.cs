@@ -81,7 +81,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunityId. 
         /// <para>
-        ///  The unique identifier of the original Opportunity from which the Engagement is being
+        /// The unique identifier of the original Opportunity from which the Engagement is being
         /// created. This field helps track the source of the Engagement creation task. 
         /// </para>
         /// </summary>
@@ -95,7 +95,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        ///  A code indicating the specific reason for a task failure. This field is populated
+        /// A code indicating the specific reason for a task failure. This field is populated
         /// when the task status is FAILED and provides a categorized reason for the failure.
         /// 
         /// </para>
@@ -110,7 +110,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobId. 
         /// <para>
-        ///  The identifier of the resource snapshot job associated with this task, if a snapshot
+        /// The identifier of the resource snapshot job associated with this task, if a snapshot
         /// was created as part of the Engagement creation process. 
         /// </para>
         /// </summary>
@@ -124,8 +124,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The timestamp indicating when the task was initiated, in RFC 3339 5.6 date-time format.
-        /// 
+        /// The timestamp indicating when the task was initiated, in RFC 3339 5.6 date-time format.
         /// </para>
         /// </summary>
         public DateTime? StartTime { get; set; }
@@ -138,7 +137,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) uniquely identifying this task within AWS. This ARN
+        /// The Amazon Resource Name (ARN) uniquely identifying this task within AWS. This ARN
         /// can be used for referencing the task in other AWS services or APIs. 
         /// </para>
         /// </summary>
@@ -152,7 +151,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        ///  A unique identifier for a specific task. 
+        /// A unique identifier for a specific task.
         /// </para>
         /// </summary>
         public string TaskId { get; set; }

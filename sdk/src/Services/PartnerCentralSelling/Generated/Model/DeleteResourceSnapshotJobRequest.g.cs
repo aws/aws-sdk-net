@@ -39,8 +39,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog from which to delete the snapshot job. Valid values are <c>AWS</c>
-        /// and <c>Sandbox</c>. 
+        /// Specifies the catalog from which to delete the snapshot job. Valid values are <c>AWS</c>
+        /// and <c>Sandbox</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -54,7 +54,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobIdentifier. 
         /// <para>
-        ///  The unique identifier of the resource snapshot job to be deleted. 
+        /// The unique identifier of the resource snapshot job to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

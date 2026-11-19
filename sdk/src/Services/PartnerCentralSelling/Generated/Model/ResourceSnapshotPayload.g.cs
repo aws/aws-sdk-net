@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunitySummary. 
         /// <para>
-        ///  An object that contains an <c>opportunity</c>'s subset of fields. 
+        /// An object that contains an <c>opportunity</c>'s subset of fields. 
         /// </para>
         /// </summary>
         public OpportunitySummaryView OpportunitySummary { get; set; }

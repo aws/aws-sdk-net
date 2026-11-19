@@ -186,7 +186,10 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property Sort.
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// Specifies how to sort the returned engagements.
+        /// </para>
         /// </summary>
         public EngagementSort Sort { get; set; }
 

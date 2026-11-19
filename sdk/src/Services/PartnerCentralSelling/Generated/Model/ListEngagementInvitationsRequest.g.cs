@@ -55,7 +55,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  Retrieves a list of engagement invitation summaries based on specified filters. The
+        /// Retrieves a list of engagement invitation summaries based on specified filters. The
         /// ListEngagementInvitations operation allows you to view all invitations that you have
         /// sent or received. You must specify the ParticipantType to filter invitations where
         /// you are either the SENDER or the RECEIVER. Invitations will automatically expire if
@@ -144,7 +144,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SenderAwsAccountId. 
         /// <para>
-        ///  List of sender AWS account IDs to filter the invitations. 
+        /// List of sender AWS account IDs to filter the invitations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

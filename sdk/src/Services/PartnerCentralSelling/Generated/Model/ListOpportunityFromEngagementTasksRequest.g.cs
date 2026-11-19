@@ -149,7 +149,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetOpportunityIdentifier() => this.OpportunityIdentifier != null && (this.OpportunityIdentifier.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Sort.
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// Specifies how to sort the returned tasks. You can sort by the time that the tasks
+        /// started.
+        /// </para>
         /// </summary>
         public ListTasksSortBase Sort { get; set; }
 

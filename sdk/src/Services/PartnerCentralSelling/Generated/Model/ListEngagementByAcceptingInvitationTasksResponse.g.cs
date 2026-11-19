@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token used for pagination to retrieve the next page of results.If there are more
+        /// A token used for pagination to retrieve the next page of results.If there are more
         /// results available, this field will contain a token that can be used in a subsequent
         /// API call to retrieve the next page. If there are no more results, this field will
         /// be null or an empty string. 

@@ -39,7 +39,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the request. Valid values are: 
+        /// Specifies the catalog related to the request. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -63,8 +63,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementInvitationIdentifier. 
         /// <para>
-        ///  Filters tasks by the identifiers of the engagement invitations they are processing.
-        /// 
+        /// Filters tasks by the identifiers of the engagement invitations they are processing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -84,7 +83,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Use this parameter to control the number of items returned in each request, which
+        /// Use this parameter to control the number of items returned in each request, which
         /// can be useful for performance tuning and managing large result sets. 
         /// </para>
         /// </summary>
@@ -99,9 +98,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Use this parameter for pagination when the result set spans multiple pages. This
-        /// value is obtained from the NextToken field in the response of a previous call to this
-        /// API. 
+        /// Use this parameter for pagination when the result set spans multiple pages. This value
+        /// is obtained from the NextToken field in the response of a previous call to this API.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken { get; set; }
@@ -114,8 +113,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunityIdentifier. 
         /// <para>
-        ///  Filters tasks by the identifiers of the opportunities they created or are associated
-        /// with. 
+        /// Filters tasks by the identifiers of the opportunities they created or are associated
+        /// with.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -149,7 +148,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskIdentifier. 
         /// <para>
-        ///  Filters tasks by their unique identifiers. Use this when you want to retrieve information
+        /// Filters tasks by their unique identifiers. Use this when you want to retrieve information
         /// about specific tasks. 
         /// </para>
         /// <para />

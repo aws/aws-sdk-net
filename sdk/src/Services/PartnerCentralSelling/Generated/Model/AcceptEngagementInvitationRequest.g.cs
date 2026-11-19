@@ -56,9 +56,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  The <c>Identifier</c> parameter in the <c>AcceptEngagementInvitationRequest</c> specifies
+        /// The <c>Identifier</c> parameter in the <c>AcceptEngagementInvitationRequest</c> specifies
         /// the unique identifier of the <c>EngagementInvitation</c> to be accepted. Providing
-        /// the correct identifier ensures that the intended invitation is accepted. 
+        /// the correct identifier ensures that the intended invitation is accepted.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

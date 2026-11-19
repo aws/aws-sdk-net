@@ -37,6 +37,20 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class Payload
     {
         /// <summary>
+        /// Gets and sets the property AccountPlanningInvitation. 
+        /// <para>
+        /// The content of an account-planning invitation. This field is present when the invitation
+        /// is for account planning.
+        /// </para>
+        /// </summary>
+        public AccountPlanningInvitationPayload AccountPlanningInvitation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccountPlanningInvitation property is set.
+        /// </summary>
+        internal bool IsSetAccountPlanningInvitation() => this.AccountPlanningInvitation != null;
+
+        /// <summary>
         /// Gets and sets the property LeadInvitation. 
         /// <para>
         /// Specifies the details of the lead invitation within the Engagement Invitation payload.

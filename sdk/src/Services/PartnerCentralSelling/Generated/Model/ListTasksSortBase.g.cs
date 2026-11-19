@@ -38,7 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  Specifies the field by which the task list should be sorted. 
+        /// Specifies the field by which the task list should be sorted.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        ///  Determines the order in which the sorted results are presented. 
+        /// Determines the order in which the sorted results are presented.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

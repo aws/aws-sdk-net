@@ -56,6 +56,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetOpportunityType())
+            {
+                context.Writer.WritePropertyName("OpportunityType");
+                context.Writer.WriteStringValue(requestObject.OpportunityType);
+            }
+
             if (requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("Project");

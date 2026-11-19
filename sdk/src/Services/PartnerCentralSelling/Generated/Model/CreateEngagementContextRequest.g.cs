@@ -88,7 +88,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementIdentifier() => this.EngagementIdentifier != null;
 
         /// <summary>
-        /// Gets and sets the property Payload.
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// Contains the contextual information to add to the engagement. The structure of this
+        /// payload depends on the context type in the <c>Type</c> field.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public EngagementContextPayload Payload { get; set; }

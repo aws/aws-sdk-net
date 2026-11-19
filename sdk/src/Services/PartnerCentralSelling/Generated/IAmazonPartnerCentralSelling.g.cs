@@ -593,6 +593,165 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Use <c>CreateCustomerAccount</c> to map a customer account from your records to an
+        /// AWS customer. Provide details about the customer, such as the company name and website.
+        /// AWS then matches the account to a customer and adds enrichment information about it.
+        /// 
+        ///  
+        /// <para>
+        /// Matching runs asynchronously. The response returns the new customer account with a
+        /// status of <c>PENDING</c>. Use <c>GetCustomerAccount</c> to check the result and read
+        /// the enrichment information.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomerAccount service method.</param>
+        /// <returns>The response from the CreateCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateCustomerAccount">REST API Reference for CreateCustomerAccount Operation</seealso>
+        CreateCustomerAccountResponse CreateCustomerAccount(CreateCustomerAccountRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>CreateCustomerAccount</c> to map a customer account from your records to an
+        /// AWS customer. Provide details about the customer, such as the company name and website.
+        /// AWS then matches the account to a customer and adds enrichment information about it.
+        /// 
+        ///  
+        /// <para>
+        /// Matching runs asynchronously. The response returns the new customer account with a
+        /// status of <c>PENDING</c>. Use <c>GetCustomerAccount</c> to check the result and read
+        /// the enrichment information.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomerAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateCustomerAccount">REST API Reference for CreateCustomerAccount Operation</seealso>
+        Task<CreateCustomerAccountResponse> CreateCustomerAccountAsync(CreateCustomerAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// The <c>CreateEngagement</c> action allows you to create an <c>Engagement</c>, which
         /// serves as a collaborative space between different parties such as AWS Partners and
         /// AWS Sellers. This action automatically adds the caller's AWS account as an active
@@ -1617,6 +1776,107 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Use <c>DeleteCustomerAccount</c> to delete a customer account. This operation is idempotent.
+        /// Deleting a customer account that was already deleted succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerAccount service method.</param>
+        /// <returns>The response from the DeleteCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteCustomerAccount">REST API Reference for DeleteCustomerAccount Operation</seealso>
+        DeleteCustomerAccountResponse DeleteCustomerAccount(DeleteCustomerAccountRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>DeleteCustomerAccount</c> to delete a customer account. This operation is idempotent.
+        /// Deleting a customer account that was already deleted succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteCustomerAccount">REST API Reference for DeleteCustomerAccount Operation</seealso>
+        Task<DeleteCustomerAccountResponse> DeleteCustomerAccountAsync(DeleteCustomerAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Use this action to deletes a previously created resource snapshot job. The job must
         /// be in a stopped state before it can be deleted.
         /// </summary>
@@ -2026,6 +2286,510 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Use <c>GetCustomerAccount</c> to retrieve the details of a customer account, including
+        /// the customer information that you provided, the enrichment status, and the enrichment
+        /// information that AWS provides when the status is <c>ENRICHED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccount service method.</param>
+        /// <returns>The response from the GetCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccount">REST API Reference for GetCustomerAccount Operation</seealso>
+        GetCustomerAccountResponse GetCustomerAccount(GetCustomerAccountRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>GetCustomerAccount</c> to retrieve the details of a customer account, including
+        /// the customer information that you provided, the enrichment status, and the enrichment
+        /// information that AWS provides when the status is <c>ENRICHED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccount">REST API Reference for GetCustomerAccount Operation</seealso>
+        Task<GetCustomerAccountResponse> GetCustomerAccountAsync(GetCustomerAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>GetCustomerAccountBulkJob</c> to retrieve the status and record counts of a
+        /// bulk job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountBulkJob service method.</param>
+        /// <returns>The response from the GetCustomerAccountBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJob">REST API Reference for GetCustomerAccountBulkJob Operation</seealso>
+        GetCustomerAccountBulkJobResponse GetCustomerAccountBulkJob(GetCustomerAccountBulkJobRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>GetCustomerAccountBulkJob</c> to retrieve the status and record counts of a
+        /// bulk job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountBulkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCustomerAccountBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJob">REST API Reference for GetCustomerAccountBulkJob Operation</seealso>
+        Task<GetCustomerAccountBulkJobResponse> GetCustomerAccountBulkJobAsync(GetCustomerAccountBulkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>GetCustomerAccountBulkJobReportUrl</c> to get a temporary URL for downloading
+        /// the report of a bulk job, such as the list of records that failed. A report is available
+        /// only after the job is <c>COMPLETED</c> or <c>FAILED</c>. For a job that is still running,
+        /// the request fails with a <c>ConflictException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The report is generated on request. If <c>ReportStatus</c> is not <c>AVAILABLE</c>,
+        /// call the operation again later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountBulkJobReportUrl service method.</param>
+        /// <returns>The response from the GetCustomerAccountBulkJobReportUrl service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJobReportUrl">REST API Reference for GetCustomerAccountBulkJobReportUrl Operation</seealso>
+        GetCustomerAccountBulkJobReportUrlResponse GetCustomerAccountBulkJobReportUrl(GetCustomerAccountBulkJobReportUrlRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>GetCustomerAccountBulkJobReportUrl</c> to get a temporary URL for downloading
+        /// the report of a bulk job, such as the list of records that failed. A report is available
+        /// only after the job is <c>COMPLETED</c> or <c>FAILED</c>. For a job that is still running,
+        /// the request fails with a <c>ConflictException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The report is generated on request. If <c>ReportStatus</c> is not <c>AVAILABLE</c>,
+        /// call the operation again later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountBulkJobReportUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCustomerAccountBulkJobReportUrl service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountBulkJobReportUrl">REST API Reference for GetCustomerAccountBulkJobReportUrl Operation</seealso>
+        Task<GetCustomerAccountBulkJobReportUrlResponse> GetCustomerAccountBulkJobReportUrlAsync(GetCustomerAccountBulkJobReportUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>GetCustomerAccountStatistics</c> to count your customer accounts and group
+        /// them by fields such as industry, geography, or enrichment status. You can use the
+        /// same filters as <c>SearchCustomerAccounts</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountStatistics service method.</param>
+        /// <returns>The response from the GetCustomerAccountStatistics service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountStatistics">REST API Reference for GetCustomerAccountStatistics Operation</seealso>
+        GetCustomerAccountStatisticsResponse GetCustomerAccountStatistics(GetCustomerAccountStatisticsRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>GetCustomerAccountStatistics</c> to count your customer accounts and group
+        /// them by fields such as industry, geography, or enrichment status. You can use the
+        /// same filters as <c>SearchCustomerAccounts</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomerAccountStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCustomerAccountStatistics service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetCustomerAccountStatistics">REST API Reference for GetCustomerAccountStatistics Operation</seealso>
+        Task<GetCustomerAccountStatisticsResponse> GetCustomerAccountStatisticsAsync(GetCustomerAccountStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Use this action to retrieve the engagement record for a given <c>EngagementIdentifier</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEngagement service method.</param>
@@ -2398,6 +3162,159 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">REST API Reference for GetOpportunity Operation</seealso>
         Task<GetOpportunityResponse> GetOpportunityAsync(GetOpportunityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the status of the failed-records report for a finished opportunity bulk job and,
+        /// when the report is ready, a temporary URL to download it.
+        /// 
+        ///  
+        /// <para>
+        /// A report is available only after the job is <c>COMPLETED</c> or <c>FAILED</c>. The
+        /// URL expires after 15 minutes, and the report expires after about 7 days.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpportunityBulkJobReportUrl service method.</param>
+        /// <returns>The response from the GetOpportunityBulkJobReportUrl service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunityBulkJobReportUrl">REST API Reference for GetOpportunityBulkJobReportUrl Operation</seealso>
+        GetOpportunityBulkJobReportUrlResponse GetOpportunityBulkJobReportUrl(GetOpportunityBulkJobReportUrlRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the status of the failed-records report for a finished opportunity bulk job and,
+        /// when the report is ready, a temporary URL to download it.
+        /// 
+        ///  
+        /// <para>
+        /// A report is available only after the job is <c>COMPLETED</c> or <c>FAILED</c>. The
+        /// URL expires after 15 minutes, and the report expires after about 7 days.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpportunityBulkJobReportUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOpportunityBulkJobReportUrl service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunityBulkJobReportUrl">REST API Reference for GetOpportunityBulkJobReportUrl Operation</seealso>
+        Task<GetOpportunityBulkJobReportUrlResponse> GetOpportunityBulkJobReportUrlAsync(GetOpportunityBulkJobReportUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2883,6 +3800,250 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Use <c>ListCustomerAccountBulkJobResults</c> to list the outcome of each record in
+        /// a bulk job. You can filter the results to records that succeeded or failed. A job
+        /// that failed before it processed any records returns an empty list.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAccountBulkJobResults service method.</param>
+        /// <returns>The response from the ListCustomerAccountBulkJobResults service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobResults">REST API Reference for ListCustomerAccountBulkJobResults Operation</seealso>
+        ListCustomerAccountBulkJobResultsResponse ListCustomerAccountBulkJobResults(ListCustomerAccountBulkJobResultsRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>ListCustomerAccountBulkJobResults</c> to list the outcome of each record in
+        /// a bulk job. You can filter the results to records that succeeded or failed. A job
+        /// that failed before it processed any records returns an empty list.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAccountBulkJobResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCustomerAccountBulkJobResults service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobResults">REST API Reference for ListCustomerAccountBulkJobResults Operation</seealso>
+        Task<ListCustomerAccountBulkJobResultsResponse> ListCustomerAccountBulkJobResultsAsync(ListCustomerAccountBulkJobResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>ListCustomerAccountBulkJobs</c> to list the bulk jobs in the specified catalog.
+        /// You can filter the results by job identifier or status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAccountBulkJobs service method.</param>
+        /// <returns>The response from the ListCustomerAccountBulkJobs service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobs">REST API Reference for ListCustomerAccountBulkJobs Operation</seealso>
+        ListCustomerAccountBulkJobsResponse ListCustomerAccountBulkJobs(ListCustomerAccountBulkJobsRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>ListCustomerAccountBulkJobs</c> to list the bulk jobs in the specified catalog.
+        /// You can filter the results by job identifier or status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAccountBulkJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCustomerAccountBulkJobs service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListCustomerAccountBulkJobs">REST API Reference for ListCustomerAccountBulkJobs Operation</seealso>
+        Task<ListCustomerAccountBulkJobsResponse> ListCustomerAccountBulkJobsAsync(ListCustomerAccountBulkJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all in-progress, completed, or failed StartEngagementByAcceptingInvitationTask
         /// tasks that were initiated by the caller's account.
         /// </summary>
@@ -3004,8 +4165,8 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists all in-progress, completed, or failed <c>EngagementFromOpportunity</c> tasks
-        /// that were initiated by the caller's account.
+        /// Lists all in-progress, completed, or failed EngagementFromOpportunity tasks that were
+        /// initiated by the caller's account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEngagementFromOpportunityTasks service method.</param>
         /// <returns>The response from the ListEngagementFromOpportunityTasks service method, as returned by PartnerCentralSelling.</returns>
@@ -3063,8 +4224,8 @@ namespace Amazon.PartnerCentralSelling
 #endif
 
         /// <summary>
-        /// Lists all in-progress, completed, or failed <c>EngagementFromOpportunity</c> tasks
-        /// that were initiated by the caller's account.
+        /// Lists all in-progress, completed, or failed EngagementFromOpportunity tasks that were
+        /// initiated by the caller's account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEngagementFromOpportunityTasks service method.</param>
         /// <param name="cancellationToken">
@@ -3122,6 +4283,113 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">REST API Reference for ListEngagementFromOpportunityTasks Operation</seealso>
         Task<ListEngagementFromOpportunityTasksResponse> ListEngagementFromOpportunityTasksAsync(ListEngagementFromOpportunityTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the active, fully curated AWS Partner Central engagement groups that are available
+        /// to you in the specified catalog. An engagement group is a curated set of engagements
+        /// that share common characteristics, such as customer geography, industry, or solution
+        /// category. To retrieve the engagements in a group, pass the group <c>Id</c> to <c>SearchEngagements</c>
+        /// as <c>GroupId</c>, and use <c>NextToken</c> to retrieve additional pages of groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEngagementGroups service method.</param>
+        /// <returns>The response from the ListEngagementGroups service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementGroups">REST API Reference for ListEngagementGroups Operation</seealso>
+        ListEngagementGroupsResponse ListEngagementGroups(ListEngagementGroupsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the active, fully curated AWS Partner Central engagement groups that are available
+        /// to you in the specified catalog. An engagement group is a curated set of engagements
+        /// that share common characteristics, such as customer geography, industry, or solution
+        /// category. To retrieve the engagements in a group, pass the group <c>Id</c> to <c>SearchEngagements</c>
+        /// as <c>GroupId</c>, and use <c>NextToken</c> to retrieve additional pages of groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEngagementGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListEngagementGroups service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementGroups">REST API Reference for ListEngagementGroups Operation</seealso>
+        Task<ListEngagementGroupsResponse> ListEngagementGroupsAsync(ListEngagementGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3793,6 +5061,268 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">REST API Reference for ListOpportunities Operation</seealso>
         Task<ListOpportunitiesResponse> ListOpportunitiesAsync(ListOpportunitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the outcome of each record in an opportunity bulk job. You can filter the results
+        /// by record status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityBulkJobResults service method.</param>
+        /// <returns>The response from the ListOpportunityBulkJobResults service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobResults">REST API Reference for ListOpportunityBulkJobResults Operation</seealso>
+        ListOpportunityBulkJobResultsResponse ListOpportunityBulkJobResults(ListOpportunityBulkJobResultsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the outcome of each record in an opportunity bulk job. You can filter the results
+        /// by record status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityBulkJobResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOpportunityBulkJobResults service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobResults">REST API Reference for ListOpportunityBulkJobResults Operation</seealso>
+        Task<ListOpportunityBulkJobResultsResponse> ListOpportunityBulkJobResultsAsync(ListOpportunityBulkJobResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the opportunity bulk jobs in the specified catalog, newest first. You can filter
+        /// the results by job identifier or status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityBulkJobs service method.</param>
+        /// <returns>The response from the ListOpportunityBulkJobs service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobs">REST API Reference for ListOpportunityBulkJobs Operation</seealso>
+        ListOpportunityBulkJobsResponse ListOpportunityBulkJobs(ListOpportunityBulkJobsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the opportunity bulk jobs in the specified catalog, newest first. You can filter
+        /// the results by job identifier or status.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityBulkJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOpportunityBulkJobs service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityBulkJobs">REST API Reference for ListOpportunityBulkJobs Operation</seealso>
+        Task<ListOpportunityBulkJobsResponse> ListOpportunityBulkJobsAsync(ListOpportunityBulkJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4816,6 +6346,530 @@ namespace Amazon.PartnerCentralSelling
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Use <c>SearchCustomerAccounts</c> to find customer accounts in the specified catalog.
+        /// You can filter the results by fields such as enrichment status, industry, geography,
+        /// and creation date, and sort them by company name, date, or score.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchCustomerAccounts service method.</param>
+        /// <returns>The response from the SearchCustomerAccounts service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchCustomerAccounts">REST API Reference for SearchCustomerAccounts Operation</seealso>
+        SearchCustomerAccountsResponse SearchCustomerAccounts(SearchCustomerAccountsRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>SearchCustomerAccounts</c> to find customer accounts in the specified catalog.
+        /// You can filter the results by fields such as enrichment status, industry, geography,
+        /// and creation date, and sort them by company name, date, or score.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>NextToken</c> to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchCustomerAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SearchCustomerAccounts service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchCustomerAccounts">REST API Reference for SearchCustomerAccounts Operation</seealso>
+        Task<SearchCustomerAccountsResponse> SearchCustomerAccountsAsync(SearchCustomerAccountsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Searches the engagements in AWS Partner Central that match your criteria, such as
+        /// customer industry or geography. You can combine a free-text <c>Keyword</c>, a structured
+        /// <c>Filter</c> tree, an engagement group (<c>GroupId</c>), and <c>Sort</c> options,
+        /// and each search criterion that you specify narrows the results. Results are paginated,
+        /// so use <c>NextToken</c> to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEngagements service method.</param>
+        /// <returns>The response from the SearchEngagements service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchEngagements">REST API Reference for SearchEngagements Operation</seealso>
+        SearchEngagementsResponse SearchEngagements(SearchEngagementsRequest request);
+#endif
+
+        /// <summary>
+        /// Searches the engagements in AWS Partner Central that match your criteria, such as
+        /// customer industry or geography. You can combine a free-text <c>Keyword</c>, a structured
+        /// <c>Filter</c> tree, an engagement group (<c>GroupId</c>), and <c>Sort</c> options,
+        /// and each search criterion that you specify narrows the results. Results are paginated,
+        /// so use <c>NextToken</c> to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEngagements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SearchEngagements service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchEngagements">REST API Reference for SearchEngagements Operation</seealso>
+        Task<SearchEngagementsResponse> SearchEngagementsAsync(SearchEngagementsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// The <c>SearchOpportunities</c> operation in the AWS Partner Central Selling API searches
+        /// and filters the opportunities available to you in AWS Partner Central.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally provide a free-text <c>Keyword</c>, a structured <c>Filter</c>
+        /// tree, and <c>Sort</c> options. The operation returns a curated summary view of each
+        /// matching opportunity. If you supply both <c>Keyword</c> and <c>Filter</c>, the operation
+        /// combines them with a logical AND, so each one narrows the result set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. Use the <c>NextToken</c> parameter to retrieve additional pages
+        /// of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchOpportunities service method.</param>
+        /// <returns>The response from the SearchOpportunities service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchOpportunities">REST API Reference for SearchOpportunities Operation</seealso>
+        SearchOpportunitiesResponse SearchOpportunities(SearchOpportunitiesRequest request);
+#endif
+
+        /// <summary>
+        /// The <c>SearchOpportunities</c> operation in the AWS Partner Central Selling API searches
+        /// and filters the opportunities available to you in AWS Partner Central.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally provide a free-text <c>Keyword</c>, a structured <c>Filter</c>
+        /// tree, and <c>Sort</c> options. The operation returns a curated summary view of each
+        /// matching opportunity. If you supply both <c>Keyword</c> and <c>Filter</c>, the operation
+        /// combines them with a logical AND, so each one narrows the result set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. Use the <c>NextToken</c> parameter to retrieve additional pages
+        /// of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchOpportunities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SearchOpportunities service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SearchOpportunities">REST API Reference for SearchOpportunities Operation</seealso>
+        Task<SearchOpportunitiesResponse> SearchOpportunitiesAsync(SearchOpportunitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>StartCustomerAccountBulkJob</c> to create many customer accounts from a single
+        /// file. The job starts processing as soon as it is created.
+        /// 
+        ///  
+        /// <para>
+        /// Use <c>GetCustomerAccountBulkJob</c> to track progress, <c>ListCustomerAccountBulkJobResults</c>
+        /// to review the outcome of each record, and <c>GetCustomerAccountBulkJobReportUrl</c>
+        /// to download a report when the job finishes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCustomerAccountBulkJob service method.</param>
+        /// <returns>The response from the StartCustomerAccountBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartCustomerAccountBulkJob">REST API Reference for StartCustomerAccountBulkJob Operation</seealso>
+        StartCustomerAccountBulkJobResponse StartCustomerAccountBulkJob(StartCustomerAccountBulkJobRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>StartCustomerAccountBulkJob</c> to create many customer accounts from a single
+        /// file. The job starts processing as soon as it is created.
+        /// 
+        ///  
+        /// <para>
+        /// Use <c>GetCustomerAccountBulkJob</c> to track progress, <c>ListCustomerAccountBulkJobResults</c>
+        /// to review the outcome of each record, and <c>GetCustomerAccountBulkJobReportUrl</c>
+        /// to download a report when the job finishes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCustomerAccountBulkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartCustomerAccountBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartCustomerAccountBulkJob">REST API Reference for StartCustomerAccountBulkJob Operation</seealso>
+        Task<StartCustomerAccountBulkJobResponse> StartCustomerAccountBulkJobAsync(StartCustomerAccountBulkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// This action starts the engagement by accepting an <c>EngagementInvitation</c>. The
         /// task is asynchronous and involves the following steps: accepting the invitation, creating
         /// an opportunity in the partner’s account from the AWS opportunity, and copying details
@@ -5155,6 +7209,165 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">REST API Reference for StartEngagementFromOpportunityTask Operation</seealso>
         Task<StartEngagementFromOpportunityTaskResponse> StartEngagementFromOpportunityTaskAsync(StartEngagementFromOpportunityTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// The <c>StartOpportunityBulkJob</c> operation creates or updates many opportunities
+        /// in AWS Partner Central (Partner Central) from a single CSV file. The column headers
+        /// in the file determine whether the job creates or updates opportunities.
+        /// 
+        ///  
+        /// <para>
+        /// Returns a <c>JobId</c> for the job. Use <c>ListOpportunityBulkJobs</c> to track the
+        /// job, <c>ListOpportunityBulkJobResults</c> to review each record, and <c>GetOpportunityBulkJobReportUrl</c>
+        /// to download a report of the failed records.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityBulkJob service method.</param>
+        /// <returns>The response from the StartOpportunityBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityBulkJob">REST API Reference for StartOpportunityBulkJob Operation</seealso>
+        StartOpportunityBulkJobResponse StartOpportunityBulkJob(StartOpportunityBulkJobRequest request);
+#endif
+
+        /// <summary>
+        /// The <c>StartOpportunityBulkJob</c> operation creates or updates many opportunities
+        /// in AWS Partner Central (Partner Central) from a single CSV file. The column headers
+        /// in the file determine whether the job creates or updates opportunities.
+        /// 
+        ///  
+        /// <para>
+        /// Returns a <c>JobId</c> for the job. Use <c>ListOpportunityBulkJobs</c> to track the
+        /// job, <c>ListOpportunityBulkJobResults</c> to review each record, and <c>GetOpportunityBulkJobReportUrl</c>
+        /// to download a report of the failed records.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityBulkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartOpportunityBulkJob service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityBulkJob">REST API Reference for StartOpportunityBulkJob Operation</seealso>
+        Task<StartOpportunityBulkJobResponse> StartOpportunityBulkJobAsync(StartOpportunityBulkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -6104,6 +8317,161 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Use <c>UpdateCustomerAccount</c> to replace the customer information on an existing
+        /// customer account. AWS matches the account again with the updated information.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent concurrent changes from overwriting each other, specify the <c>LastModifiedDate</c>
+        /// value that you last read for the account. If the account changed since then, the request
+        /// fails with a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomerAccount service method.</param>
+        /// <returns>The response from the UpdateCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateCustomerAccount">REST API Reference for UpdateCustomerAccount Operation</seealso>
+        UpdateCustomerAccountResponse UpdateCustomerAccount(UpdateCustomerAccountRequest request);
+#endif
+
+        /// <summary>
+        /// Use <c>UpdateCustomerAccount</c> to replace the customer information on an existing
+        /// customer account. AWS matches the account again with the updated information.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent concurrent changes from overwriting each other, specify the <c>LastModifiedDate</c>
+        /// value that you last read for the account. If the account changed since then, the request
+        /// fails with a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomerAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCustomerAccount service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateCustomerAccount">REST API Reference for UpdateCustomerAccount Operation</seealso>
+        Task<UpdateCustomerAccountResponse> UpdateCustomerAccountAsync(UpdateCustomerAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

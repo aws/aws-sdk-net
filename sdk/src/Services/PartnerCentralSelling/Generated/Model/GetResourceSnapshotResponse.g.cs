@@ -106,7 +106,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementId() => this.EngagementId != null;
 
         /// <summary>
-        /// Gets and sets the property Payload.
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// Contains the data of the resource snapshot. The structure of this payload depends
+        /// on the resource type and the snapshot template.
+        /// </para>
         /// </summary>
         public ResourceSnapshotPayload Payload { get; set; }
 

@@ -40,8 +40,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog where the snapshot is created. Valid values are <c>AWS</c>
-        /// and <c>Sandbox</c>. 
+        /// Specifies the catalog where the snapshot is created. Valid values are <c>AWS</c> and
+        /// <c>Sandbox</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -55,8 +55,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  Specifies a unique, client-generated UUID to ensure that the request is handled exactly
-        /// once. This token helps prevent duplicate snapshot creations. 
+        /// Specifies a unique, client-generated UUID to ensure that the request is handled exactly
+        /// once. This token helps prevent duplicate snapshot creations.
         /// </para>
         /// </summary>
         public string ClientToken { get; set; }
@@ -69,8 +69,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  The unique identifier of the engagement associated with this snapshot. This field
-        /// links the snapshot to a specific engagement context. 
+        /// The unique identifier of the engagement associated with this snapshot. This field
+        /// links the snapshot to a specific engagement context.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -84,9 +84,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        ///  The unique identifier of the specific resource to be snapshotted. The format and
-        /// constraints of this identifier depend on the <c>ResourceType</c> specified. For example:
-        /// For <c>Opportunity</c> type, it will be an opportunity ID. 
+        /// The unique identifier of the specific resource to be snapshotted. The format and constraints
+        /// of this identifier depend on the <c>ResourceType</c> specified. For example: For <c>Opportunity</c>
+        /// type, it will be an opportunity ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -100,10 +100,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotTemplateIdentifier. 
         /// <para>
-        ///  The name of the template that defines the schema for the snapshot. This template
-        /// determines which subset of the resource data will be included in the snapshot. Must
-        /// correspond to an existing and valid template for the specified <c>ResourceType</c>.
-        /// 
+        /// The name of the template that defines the schema for the snapshot. This template determines
+        /// which subset of the resource data will be included in the snapshot. Must correspond
+        /// to an existing and valid template for the specified <c>ResourceType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -117,9 +116,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  Specifies the type of resource for which the snapshot is being created. This field
+        /// Specifies the type of resource for which the snapshot is being created. This field
         /// determines the structure and content of the snapshot. Must be one of the supported
-        /// resource types, such as: <c>Opportunity</c>. 
+        /// resource types, such as: <c>Opportunity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -33,6 +33,18 @@ namespace Amazon.PartnerCentralSelling.Model
     public interface IPartnerCentralSellingPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListCustomerAccountBulkJobResults operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCustomerAccountBulkJobResultsPaginator ListCustomerAccountBulkJobResults(ListCustomerAccountBulkJobResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomerAccountBulkJobs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCustomerAccountBulkJobsPaginator ListCustomerAccountBulkJobs(ListCustomerAccountBulkJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListEngagementByAcceptingInvitationTasks operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -43,6 +55,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListEngagementFromOpportunityTasksPaginator ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListEngagementGroups operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListEngagementGroupsPaginator ListEngagementGroups(ListEngagementGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListEngagementInvitations operation
@@ -75,6 +93,18 @@ namespace Amazon.PartnerCentralSelling.Model
         IListOpportunitiesPaginator ListOpportunities(ListOpportunitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListOpportunityBulkJobResults operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListOpportunityBulkJobResultsPaginator ListOpportunityBulkJobResults(ListOpportunityBulkJobResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOpportunityBulkJobs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListOpportunityBulkJobsPaginator ListOpportunityBulkJobs(ListOpportunityBulkJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListOpportunityFromEngagementTasks operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -103,5 +133,23 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListSolutionsPaginator ListSolutions(ListSolutionsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchCustomerAccounts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        ISearchCustomerAccountsPaginator SearchCustomerAccounts(SearchCustomerAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchEngagements operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        ISearchEngagementsPaginator SearchEngagements(SearchEngagementsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchOpportunities operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        ISearchOpportunitiesPaginator SearchOpportunities(SearchOpportunitiesRequest request);
     }
 }

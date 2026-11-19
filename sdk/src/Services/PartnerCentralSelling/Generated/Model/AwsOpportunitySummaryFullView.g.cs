@@ -49,7 +49,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCosellMotion() => this.CosellMotion != null;
 
         /// <summary>
-        /// Gets and sets the property Customer.
+        /// Gets and sets the property CosellMotionReason. 
+        /// <para>
+        /// The plain-language reason for the current <c>CosellMotion</c> value. Read-only. Null
+        /// when <c>CosellMotion</c> is null.
+        /// </para>
+        /// </summary>
+        public string CosellMotionReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CosellMotionReason property is set.
+        /// </summary>
+        internal bool IsSetCosellMotionReason() => this.CosellMotionReason != null;
+
+        /// <summary>
+        /// Gets and sets the property Customer. 
+        /// <para>
+        /// Contains details about the customer that the AWS opportunity belongs to.
+        /// </para>
         /// </summary>
         public AwsOpportunityCustomer Customer { get; set; }
 
@@ -59,7 +76,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCustomer() => this.Customer != null;
 
         /// <summary>
-        /// Gets and sets the property Insights.
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// Contains the insights that AWS provides for the opportunity, such as the engagement
+        /// score and the recommended next actions.
+        /// </para>
         /// </summary>
         public AwsOpportunityInsights Insights { get; set; }
 
@@ -95,7 +116,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetInvolvementTypeChangeReason() => this.InvolvementTypeChangeReason != null;
 
         /// <summary>
-        /// Gets and sets the property LifeCycle.
+        /// Gets and sets the property LifeCycle. 
+        /// <para>
+        /// Contains lifecycle details of the AWS opportunity, such as its stage, review status,
+        /// and target close date.
+        /// </para>
         /// </summary>
         public AwsOpportunityLifeCycle LifeCycle { get; set; }
 
@@ -137,7 +162,10 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetOrigin() => this.Origin != null;
 
         /// <summary>
-        /// Gets and sets the property Project.
+        /// Gets and sets the property Project. 
+        /// <para>
+        /// Contains details about the project that the AWS opportunity covers.
+        /// </para>
         /// </summary>
         public AwsOpportunityProject Project { get; set; }
 
@@ -147,7 +175,11 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetProject() => this.Project != null;
 
         /// <summary>
-        /// Gets and sets the property RelatedEntityIds.
+        /// Gets and sets the property RelatedEntityIds. 
+        /// <para>
+        /// Lists the identifiers of entities that relate to the AWS opportunity, such as AWS
+        /// products and partner solutions.
+        /// </para>
         /// </summary>
         public AwsOpportunityRelatedEntities RelatedEntityIds { get; set; }
 

@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CustomerUseCase. 
         /// <para>
-        ///  Specifies the proposed solution focus or type of workload for the project. 
+        /// Specifies the proposed solution focus or type of workload for the project.
         /// </para>
         /// </summary>
         public string CustomerUseCase { get; set; }
@@ -50,7 +50,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property DeliveryModels. 
         /// <para>
-        ///  Describes the deployment or consumption model for the partner solution or offering.
+        /// Describes the deployment or consumption model for the partner solution or offering.
         /// This field indicates how the project's solution will be delivered or implemented for
         /// the customer. 
         /// </para>
@@ -85,7 +85,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ExpectedCustomerSpend. 
         /// <para>
-        ///  Provides information about the anticipated customer spend related to this project.
+        /// Provides information about the anticipated customer spend related to this project.
         /// This may include details such as amount, frequency, and currency of expected expenditure.
         /// 
         /// </para>
@@ -107,7 +107,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OtherSolutionDescription. 
         /// <para>
-        ///  Offers a description of other solutions if the standard solutions do not adequately
+        /// Offers a description of other solutions if the standard solutions do not adequately
         /// cover the project's scope. 
         /// </para>
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SalesActivities. 
         /// <para>
-        ///  Lists the pre-sales activities that have occurred with the end-customer related to
+        /// Lists the pre-sales activities that have occurred with the end-customer related to
         /// the opportunity. This field is conditionally mandatory when the project is qualified
         /// for Co-Sell and helps drive assignment priority on the AWS side. It provides insight
         /// into the engagement level with the customer. 

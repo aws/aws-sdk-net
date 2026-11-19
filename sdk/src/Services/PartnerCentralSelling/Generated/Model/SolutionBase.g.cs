@@ -38,7 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The SolutionBase structure provides essential information about a solution. 
+        /// The SolutionBase structure provides essential information about a solution.
         /// </para>
         /// </summary>
         public string Arn { get; set; }

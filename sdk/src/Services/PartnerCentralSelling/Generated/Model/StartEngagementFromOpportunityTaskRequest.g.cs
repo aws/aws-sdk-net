@@ -42,7 +42,11 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class StartEngagementFromOpportunityTaskRequest : AmazonPartnerCentralSellingRequest
     {
         /// <summary>
-        /// Gets and sets the property AwsSubmission.
+        /// Gets and sets the property AwsSubmission. 
+        /// <para>
+        /// Specifies the level of AWS involvement for the opportunity. The value includes the
+        /// involvement type and the visibility of that involvement.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public AwsSubmission AwsSubmission { get; set; }

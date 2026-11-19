@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the resource snapshot job. 
+        /// The Amazon Resource Name (ARN) for the resource snapshot job.
         /// </para>
         /// </summary>
         public string Arn { get; set; }
@@ -63,7 +63,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier for the resource snapshot job within the AWS Partner Central
+        /// The unique identifier for the resource snapshot job within the AWS Partner Central
         /// system. This ID is used for direct references to the job within the service. 
         /// </para>
         /// </summary>

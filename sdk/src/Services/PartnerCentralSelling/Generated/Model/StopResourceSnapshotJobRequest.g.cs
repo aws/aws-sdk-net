@@ -42,12 +42,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS: Stops the request from the production AWS environment.
+        ///  AWS: Stops the request from the production AWS environment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sandbox: Stops the request from a sandbox environment used for testing or development
-        /// purposes.
+        ///  Sandbox: Stops the request from a sandbox environment used for testing or development
+        /// purposes. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

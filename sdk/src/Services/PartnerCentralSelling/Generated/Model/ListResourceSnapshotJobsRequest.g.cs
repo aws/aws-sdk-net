@@ -54,7 +54,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  The identifier of the engagement to filter the response. 
+        /// The identifier of the engagement to filter the response.
         /// </para>
         /// </summary>
         public string EngagementIdentifier { get; set; }
@@ -67,8 +67,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results to return in a single call. If omitted, defaults to
-        /// 50. 
+        /// The maximum number of results to return in a single call. If omitted, defaults to
+        /// 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1000)]
@@ -82,7 +82,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token for the next set of results. 
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken { get; set; }
@@ -95,7 +95,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        ///  Configures the sorting of the response. If omitted, results are sorted by <c>CreatedDate</c>
+        /// Configures the sorting of the response. If omitted, results are sorted by CreatedDate
         /// in descending order. 
         /// </para>
         /// </summary>

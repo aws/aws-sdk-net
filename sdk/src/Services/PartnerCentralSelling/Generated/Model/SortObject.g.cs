@@ -38,7 +38,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  Specifies the field by which to sort the resource snapshot jobs. 
+        /// Specifies the field by which to sort the resource snapshot jobs.
         /// </para>
         /// </summary>
         public SortBy SortBy { get; set; }
@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        ///  Determines the order in which the sorted results are presented. 
+        /// Determines the order in which the sorted results are presented.
         /// </para>
         /// </summary>
         public SortOrder SortOrder { get; set; }

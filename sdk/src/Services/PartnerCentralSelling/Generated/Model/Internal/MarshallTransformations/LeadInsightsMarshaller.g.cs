@@ -45,6 +45,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetChannelRecommendation())
+            {
+                context.Writer.WritePropertyName("ChannelRecommendation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChannelRecommendationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ChannelRecommendation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetLeadReadinessScore())
             {
                 context.Writer.WritePropertyName("LeadReadinessScore");

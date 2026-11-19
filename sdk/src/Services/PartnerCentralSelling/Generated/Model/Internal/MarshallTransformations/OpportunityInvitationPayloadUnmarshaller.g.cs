@@ -60,6 +60,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("OpportunityType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OpportunityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Project", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectDetailsUnmarshaller.Instance;

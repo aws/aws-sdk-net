@@ -38,9 +38,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the engagement. Accepted values are <c>AWS</c> and
+        /// Specifies the catalog related to the engagement. Accepted values are <c>AWS</c> and
         /// <c>Sandbox</c>, which determine the environment in which the engagement is managed.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -54,8 +53,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  Specifies a unique, client-generated UUID to ensure that the request is handled exactly
-        /// once. This token helps prevent duplicate invitation creations. 
+        /// Specifies a unique, client-generated UUID to ensure that the request is handled exactly
+        /// once. This token helps prevent duplicate invitation creations.
         /// </para>
         /// </summary>
         public string ClientToken { get; set; }
@@ -68,9 +67,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  The unique identifier of the <c>Engagement</c> associated with the invitation. This
+        /// The unique identifier of the <c>Engagement</c> associated with the invitation. This
         /// parameter ensures the invitation is created within the correct <c>Engagement</c> context.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -84,12 +82,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Invitation. 
         /// <para>
-        ///  The <c>Invitation</c> object all information necessary to initiate an engagement
-        /// invitation to a partner. It contains a personalized message from the sender, the invitation's
+        /// The <c>Invitation</c> object all information necessary to initiate an engagement invitation
+        /// to a partner. It contains a personalized message from the sender, the invitation's
         /// receiver, and a payload. The <c>Payload</c> can be the <c>OpportunityInvitation</c>,
         /// which includes detailed structures for sender contacts, partner responsibilities,
         /// customer information, and project details, or <c>LeadInvitation</c>, which includes
-        /// structures for customer information and interaction details. 
+        /// structures for customer information and interaction details.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

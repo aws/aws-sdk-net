@@ -37,8 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// Deal quality score based on opportunity content completeness and sales methodology
-        /// criteria. Values range from 0 to 100.
+        /// Deal quality score assigned to the opportunity. Values range from 0 to 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]

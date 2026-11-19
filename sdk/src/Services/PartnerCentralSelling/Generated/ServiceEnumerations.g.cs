@@ -32,6 +32,21 @@ namespace Amazon.PartnerCentralSelling
         public static readonly AccessDeniedExceptionErrorCode INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE = new AccessDeniedExceptionErrorCode("INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE");
 
         /// <summary>
+        /// Constant OPPORTUNITY_BULK_JOB_NOT_ENABLED for AccessDeniedExceptionErrorCode
+        /// </summary>
+        public static readonly AccessDeniedExceptionErrorCode OPPORTUNITY_BULK_JOB_NOT_ENABLED = new AccessDeniedExceptionErrorCode("OPPORTUNITY_BULK_JOB_NOT_ENABLED");
+
+        /// <summary>
+        /// Constant SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB for AccessDeniedExceptionErrorCode
+        /// </summary>
+        public static readonly AccessDeniedExceptionErrorCode SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB = new AccessDeniedExceptionErrorCode("SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB");
+
+        /// <summary>
+        /// Constant SEARCH_OPPORTUNITIES_NOT_ENABLED for AccessDeniedExceptionErrorCode
+        /// </summary>
+        public static readonly AccessDeniedExceptionErrorCode SEARCH_OPPORTUNITIES_NOT_ENABLED = new AccessDeniedExceptionErrorCode("SEARCH_OPPORTUNITIES_NOT_ENABLED");
+
+        /// <summary>
         /// Constructs a custom AccessDeniedExceptionErrorCode for a value not among the defined constants.
         /// </summary>
         public AccessDeniedExceptionErrorCode(string value) : base(value) { }
@@ -52,6 +67,92 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AccessDeniedExceptionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AggregatableField.
+    /// </summary>
+    public class AggregatableField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT_PLANNING_QUALIFICATION for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField ACCOUNT_PLANNING_QUALIFICATION = new AggregatableField("ACCOUNT_PLANNING_QUALIFICATION");
+
+        /// <summary>
+        /// Constant AWS_INDUSTRY for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField AWS_INDUSTRY = new AggregatableField("AWS_INDUSTRY");
+
+        /// <summary>
+        /// Constant COUNTRY for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField COUNTRY = new AggregatableField("COUNTRY");
+
+        /// <summary>
+        /// Constant ENRICHMENT_STATUS for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField ENRICHMENT_STATUS = new AggregatableField("ENRICHMENT_STATUS");
+
+        /// <summary>
+        /// Constant GEO for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField GEO = new AggregatableField("GEO");
+
+        /// <summary>
+        /// Constant MARKETPLACE_ENGAGEMENT_SCORE for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField MARKETPLACE_ENGAGEMENT_SCORE = new AggregatableField("MARKETPLACE_ENGAGEMENT_SCORE");
+
+        /// <summary>
+        /// Constant PROGRAM_ELIGIBILITY for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField PROGRAM_ELIGIBILITY = new AggregatableField("PROGRAM_ELIGIBILITY");
+
+        /// <summary>
+        /// Constant REGION for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField REGION = new AggregatableField("REGION");
+
+        /// <summary>
+        /// Constant SEGMENT for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField SEGMENT = new AggregatableField("SEGMENT");
+
+        /// <summary>
+        /// Constant SOLUTION_CATEGORY for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField SOLUTION_CATEGORY = new AggregatableField("SOLUTION_CATEGORY");
+
+        /// <summary>
+        /// Constant SOLUTION_SCORE for AggregatableField
+        /// </summary>
+        public static readonly AggregatableField SOLUTION_SCORE = new AggregatableField("SOLUTION_SCORE");
+
+        /// <summary>
+        /// Constructs a custom AggregatableField for a value not among the defined constants.
+        /// </summary>
+        public AggregatableField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatableField FindValue(string value)
+        {
+            return FindValue<AggregatableField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatableField(string value)
         {
             return FindValue(value);
         }
@@ -623,6 +724,272 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type BulkFileFormat.
+    /// </summary>
+    public class BulkFileFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant CSV for BulkFileFormat
+        /// </summary>
+        public static readonly BulkFileFormat CSV = new BulkFileFormat("CSV");
+
+        /// <summary>
+        /// Constructs a custom BulkFileFormat for a value not among the defined constants.
+        /// </summary>
+        public BulkFileFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkFileFormat FindValue(string value)
+        {
+            return FindValue<BulkFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkJobStatus.
+    /// </summary>
+    public class BulkJobStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for BulkJobStatus
+        /// </summary>
+        public static readonly BulkJobStatus COMPLETED = new BulkJobStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for BulkJobStatus
+        /// </summary>
+        public static readonly BulkJobStatus FAILED = new BulkJobStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for BulkJobStatus
+        /// </summary>
+        public static readonly BulkJobStatus IN_PROGRESS = new BulkJobStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUBMITTED for BulkJobStatus
+        /// </summary>
+        public static readonly BulkJobStatus SUBMITTED = new BulkJobStatus("SUBMITTED");
+
+        /// <summary>
+        /// Constructs a custom BulkJobStatus for a value not among the defined constants.
+        /// </summary>
+        public BulkJobStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkJobStatus FindValue(string value)
+        {
+            return FindValue<BulkJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkOperationType.
+    /// </summary>
+    public class BulkOperationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BULK_CREATE for BulkOperationType
+        /// </summary>
+        public static readonly BulkOperationType BULK_CREATE = new BulkOperationType("BULK_CREATE");
+
+        /// <summary>
+        /// Constant BULK_UPDATE for BulkOperationType
+        /// </summary>
+        public static readonly BulkOperationType BULK_UPDATE = new BulkOperationType("BULK_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom BulkOperationType for a value not among the defined constants.
+        /// </summary>
+        public BulkOperationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkOperationType FindValue(string value)
+        {
+            return FindValue<BulkOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkRecordStatus.
+    /// </summary>
+    public class BulkRecordStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for BulkRecordStatus
+        /// </summary>
+        public static readonly BulkRecordStatus FAILED = new BulkRecordStatus("FAILED");
+
+        /// <summary>
+        /// Constant SUCCEEDED for BulkRecordStatus
+        /// </summary>
+        public static readonly BulkRecordStatus SUCCEEDED = new BulkRecordStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom BulkRecordStatus for a value not among the defined constants.
+        /// </summary>
+        public BulkRecordStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkRecordStatus FindValue(string value)
+        {
+            return FindValue<BulkRecordStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkRecordStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkReportStatus.
+    /// </summary>
+    public class BulkReportStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for BulkReportStatus
+        /// </summary>
+        public static readonly BulkReportStatus AVAILABLE = new BulkReportStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant EXPIRED for BulkReportStatus
+        /// </summary>
+        public static readonly BulkReportStatus EXPIRED = new BulkReportStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant FAILED for BulkReportStatus
+        /// </summary>
+        public static readonly BulkReportStatus FAILED = new BulkReportStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for BulkReportStatus
+        /// </summary>
+        public static readonly BulkReportStatus IN_PROGRESS = new BulkReportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant NOT_STARTED for BulkReportStatus
+        /// </summary>
+        public static readonly BulkReportStatus NOT_STARTED = new BulkReportStatus("NOT_STARTED");
+
+        /// <summary>
+        /// Constructs a custom BulkReportStatus for a value not among the defined constants.
+        /// </summary>
+        public BulkReportStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkReportStatus FindValue(string value)
+        {
+            return FindValue<BulkReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BulkReportType.
+    /// </summary>
+    public class BulkReportType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL_RECORDS for BulkReportType
+        /// </summary>
+        public static readonly BulkReportType ALL_RECORDS = new BulkReportType("ALL_RECORDS");
+
+        /// <summary>
+        /// Constant FAILED_RECORDS for BulkReportType
+        /// </summary>
+        public static readonly BulkReportType FAILED_RECORDS = new BulkReportType("FAILED_RECORDS");
+
+        /// <summary>
+        /// Constructs a custom BulkReportType for a value not among the defined constants.
+        /// </summary>
+        public BulkReportType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkReportType FindValue(string value)
+        {
+            return FindValue<BulkReportType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkReportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type Channel.
     /// </summary>
     public class Channel : ConstantClass
@@ -925,6 +1292,52 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CompetitorName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactWindow.
+    /// </summary>
+    public class ContactWindow : ConstantClass
+    {
+        /// <summary>
+        /// Constant AFTERNOON for ContactWindow
+        /// </summary>
+        public static readonly ContactWindow AFTERNOON = new ContactWindow("AFTERNOON");
+
+        /// <summary>
+        /// Constant EVENING for ContactWindow
+        /// </summary>
+        public static readonly ContactWindow EVENING = new ContactWindow("EVENING");
+
+        /// <summary>
+        /// Constant MORNING for ContactWindow
+        /// </summary>
+        public static readonly ContactWindow MORNING = new ContactWindow("MORNING");
+
+        /// <summary>
+        /// Constructs a custom ContactWindow for a value not among the defined constants.
+        /// </summary>
+        public ContactWindow(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactWindow FindValue(string value)
+        {
+            return FindValue<ContactWindow>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactWindow(string value)
         {
             return FindValue(value);
         }
@@ -3078,6 +3491,113 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type CustomerAccountFailureReason.
+    /// </summary>
+    public class CustomerAccountFailureReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant DUPLICATE_CUSTOMER_MATCH for CustomerAccountFailureReason
+        /// </summary>
+        public static readonly CustomerAccountFailureReason DUPLICATE_CUSTOMER_MATCH = new CustomerAccountFailureReason("DUPLICATE_CUSTOMER_MATCH");
+
+        /// <summary>
+        /// Constant PROCESSING_ERROR for CustomerAccountFailureReason
+        /// </summary>
+        public static readonly CustomerAccountFailureReason PROCESSING_ERROR = new CustomerAccountFailureReason("PROCESSING_ERROR");
+
+        /// <summary>
+        /// Constructs a custom CustomerAccountFailureReason for a value not among the defined constants.
+        /// </summary>
+        public CustomerAccountFailureReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerAccountFailureReason FindValue(string value)
+        {
+            return FindValue<CustomerAccountFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerAccountFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRIDAY = new DayOfWeek("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MONDAY = new DayOfWeek("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SATURDAY = new DayOfWeek("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUNDAY = new DayOfWeek("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THURSDAY = new DayOfWeek("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUESDAY = new DayOfWeek("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WEDNESDAY = new DayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom DayOfWeek for a value not among the defined constants.
+        /// </summary>
+        public DayOfWeek(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DeliveryModel.
     /// </summary>
     public class DeliveryModel : ConstantClass
@@ -3144,6 +3664,11 @@ namespace Amazon.PartnerCentralSelling
     public class EngagementContextType : ConstantClass
     {
         /// <summary>
+        /// Constant CustomerAccount for EngagementContextType
+        /// </summary>
+        public static readonly EngagementContextType CustomerAccount = new EngagementContextType("CustomerAccount");
+
+        /// <summary>
         /// Constant CustomerProject for EngagementContextType
         /// </summary>
         public static readonly EngagementContextType CustomerProject = new EngagementContextType("CustomerProject");
@@ -3185,10 +3710,56 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type EngagementGroupSortName.
+    /// </summary>
+    public class EngagementGroupSortName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Count for EngagementGroupSortName
+        /// </summary>
+        public static readonly EngagementGroupSortName Count = new EngagementGroupSortName("Count");
+
+        /// <summary>
+        /// Constant UpdatedAt for EngagementGroupSortName
+        /// </summary>
+        public static readonly EngagementGroupSortName UpdatedAt = new EngagementGroupSortName("UpdatedAt");
+
+        /// <summary>
+        /// Constructs a custom EngagementGroupSortName for a value not among the defined constants.
+        /// </summary>
+        public EngagementGroupSortName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementGroupSortName FindValue(string value)
+        {
+            return FindValue<EngagementGroupSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementGroupSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EngagementInvitationPayloadType.
     /// </summary>
     public class EngagementInvitationPayloadType : ConstantClass
     {
+        /// <summary>
+        /// Constant AccountPlanningInvitation for EngagementInvitationPayloadType
+        /// </summary>
+        public static readonly EngagementInvitationPayloadType AccountPlanningInvitation = new EngagementInvitationPayloadType("AccountPlanningInvitation");
+
         /// <summary>
         /// Constant LeadInvitation for EngagementInvitationPayloadType
         /// </summary>
@@ -3272,6 +3843,343 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type EngagementSearchFilterName.
+    /// </summary>
+    public class EngagementSearchFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ContextType for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ContextType = new EngagementSearchFilterName("ContextType");
+
+        /// <summary>
+        /// Constant CreatedAt for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName CreatedAt = new EngagementSearchFilterName("CreatedAt");
+
+        /// <summary>
+        /// Constant EngagementId for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName EngagementId = new EngagementSearchFilterName("EngagementId");
+
+        /// <summary>
+        /// Constant LastModifiedAt for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LastModifiedAt = new EngagementSearchFilterName("LastModifiedAt");
+
+        /// <summary>
+        /// Constant LeadCustomerAwsMaturity for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadCustomerAwsMaturity = new EngagementSearchFilterName("LeadCustomerAwsMaturity");
+
+        /// <summary>
+        /// Constant LeadCustomerCompanyName for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadCustomerCompanyName = new EngagementSearchFilterName("LeadCustomerCompanyName");
+
+        /// <summary>
+        /// Constant LeadCustomerCountryCode for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadCustomerCountryCode = new EngagementSearchFilterName("LeadCustomerCountryCode");
+
+        /// <summary>
+        /// Constant LeadCustomerIndustry for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadCustomerIndustry = new EngagementSearchFilterName("LeadCustomerIndustry");
+
+        /// <summary>
+        /// Constant LeadCustomerMarketSegment for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadCustomerMarketSegment = new EngagementSearchFilterName("LeadCustomerMarketSegment");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactBusinessTitle for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsContactBusinessTitle = new EngagementSearchFilterName("LeadInteractionsContactBusinessTitle");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactFirstName for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsContactFirstName = new EngagementSearchFilterName("LeadInteractionsContactFirstName");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactLastName for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsContactLastName = new EngagementSearchFilterName("LeadInteractionsContactLastName");
+
+        /// <summary>
+        /// Constant LeadInteractionsSourceName for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsSourceName = new EngagementSearchFilterName("LeadInteractionsSourceName");
+
+        /// <summary>
+        /// Constant LeadInteractionsSourceType for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsSourceType = new EngagementSearchFilterName("LeadInteractionsSourceType");
+
+        /// <summary>
+        /// Constant LeadInteractionsUsecase for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadInteractionsUsecase = new EngagementSearchFilterName("LeadInteractionsUsecase");
+
+        /// <summary>
+        /// Constant LeadQualificationStatus for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadQualificationStatus = new EngagementSearchFilterName("LeadQualificationStatus");
+
+        /// <summary>
+        /// Constant LeadReadinessScore for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName LeadReadinessScore = new EngagementSearchFilterName("LeadReadinessScore");
+
+        /// <summary>
+        /// Constant MemberCount for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName MemberCount = new EngagementSearchFilterName("MemberCount");
+
+        /// <summary>
+        /// Constant PartnerId for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName PartnerId = new EngagementSearchFilterName("PartnerId");
+
+        /// <summary>
+        /// Constant ProspectingCustomerCompanySize for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerCompanySize = new EngagementSearchFilterName("ProspectingCustomerCompanySize");
+
+        /// <summary>
+        /// Constant ProspectingCustomerCountry for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerCountry = new EngagementSearchFilterName("ProspectingCustomerCountry");
+
+        /// <summary>
+        /// Constant ProspectingCustomerGeo for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerGeo = new EngagementSearchFilterName("ProspectingCustomerGeo");
+
+        /// <summary>
+        /// Constant ProspectingCustomerIndustry for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerIndustry = new EngagementSearchFilterName("ProspectingCustomerIndustry");
+
+        /// <summary>
+        /// Constant ProspectingCustomerRegion for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerRegion = new EngagementSearchFilterName("ProspectingCustomerRegion");
+
+        /// <summary>
+        /// Constant ProspectingCustomerSegment for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingCustomerSegment = new EngagementSearchFilterName("ProspectingCustomerSegment");
+
+        /// <summary>
+        /// Constant ProspectingInsightsMarketplaceEngagementScore for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingInsightsMarketplaceEngagementScore = new EngagementSearchFilterName("ProspectingInsightsMarketplaceEngagementScore");
+
+        /// <summary>
+        /// Constant ProspectingInsightsSolutionCategory for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingInsightsSolutionCategory = new EngagementSearchFilterName("ProspectingInsightsSolutionCategory");
+
+        /// <summary>
+        /// Constant ProspectingInsightsSolutionSubCategory for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName ProspectingInsightsSolutionSubCategory = new EngagementSearchFilterName("ProspectingInsightsSolutionSubCategory");
+
+        /// <summary>
+        /// Constant Title for EngagementSearchFilterName
+        /// </summary>
+        public static readonly EngagementSearchFilterName Title = new EngagementSearchFilterName("Title");
+
+        /// <summary>
+        /// Constructs a custom EngagementSearchFilterName for a value not among the defined constants.
+        /// </summary>
+        public EngagementSearchFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementSearchFilterName FindValue(string value)
+        {
+            return FindValue<EngagementSearchFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementSearchFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EngagementSearchSortName.
+    /// </summary>
+    public class EngagementSearchSortName : ConstantClass
+    {
+        /// <summary>
+        /// Constant CreatedAt for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName CreatedAt = new EngagementSearchSortName("CreatedAt");
+
+        /// <summary>
+        /// Constant EngagementId for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName EngagementId = new EngagementSearchSortName("EngagementId");
+
+        /// <summary>
+        /// Constant LastModifiedAt for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LastModifiedAt = new EngagementSearchSortName("LastModifiedAt");
+
+        /// <summary>
+        /// Constant LeadCustomerAwsMaturity for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadCustomerAwsMaturity = new EngagementSearchSortName("LeadCustomerAwsMaturity");
+
+        /// <summary>
+        /// Constant LeadCustomerCompanyName for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadCustomerCompanyName = new EngagementSearchSortName("LeadCustomerCompanyName");
+
+        /// <summary>
+        /// Constant LeadCustomerCountryCode for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadCustomerCountryCode = new EngagementSearchSortName("LeadCustomerCountryCode");
+
+        /// <summary>
+        /// Constant LeadCustomerIndustry for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadCustomerIndustry = new EngagementSearchSortName("LeadCustomerIndustry");
+
+        /// <summary>
+        /// Constant LeadCustomerMarketSegment for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadCustomerMarketSegment = new EngagementSearchSortName("LeadCustomerMarketSegment");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactBusinessTitle for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadInteractionsContactBusinessTitle = new EngagementSearchSortName("LeadInteractionsContactBusinessTitle");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactFirstName for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadInteractionsContactFirstName = new EngagementSearchSortName("LeadInteractionsContactFirstName");
+
+        /// <summary>
+        /// Constant LeadInteractionsContactLastName for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadInteractionsContactLastName = new EngagementSearchSortName("LeadInteractionsContactLastName");
+
+        /// <summary>
+        /// Constant LeadInteractionsUsecase for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadInteractionsUsecase = new EngagementSearchSortName("LeadInteractionsUsecase");
+
+        /// <summary>
+        /// Constant LeadQualificationStatus for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadQualificationStatus = new EngagementSearchSortName("LeadQualificationStatus");
+
+        /// <summary>
+        /// Constant LeadReadinessScore for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName LeadReadinessScore = new EngagementSearchSortName("LeadReadinessScore");
+
+        /// <summary>
+        /// Constant MemberCount for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName MemberCount = new EngagementSearchSortName("MemberCount");
+
+        /// <summary>
+        /// Constant PartnerId for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName PartnerId = new EngagementSearchSortName("PartnerId");
+
+        /// <summary>
+        /// Constant ProspectingCustomerCompanySize for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerCompanySize = new EngagementSearchSortName("ProspectingCustomerCompanySize");
+
+        /// <summary>
+        /// Constant ProspectingCustomerCountry for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerCountry = new EngagementSearchSortName("ProspectingCustomerCountry");
+
+        /// <summary>
+        /// Constant ProspectingCustomerGeo for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerGeo = new EngagementSearchSortName("ProspectingCustomerGeo");
+
+        /// <summary>
+        /// Constant ProspectingCustomerIndustry for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerIndustry = new EngagementSearchSortName("ProspectingCustomerIndustry");
+
+        /// <summary>
+        /// Constant ProspectingCustomerRegion for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerRegion = new EngagementSearchSortName("ProspectingCustomerRegion");
+
+        /// <summary>
+        /// Constant ProspectingCustomerSegment for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingCustomerSegment = new EngagementSearchSortName("ProspectingCustomerSegment");
+
+        /// <summary>
+        /// Constant ProspectingInsightsMarketplaceEngagementScore for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingInsightsMarketplaceEngagementScore = new EngagementSearchSortName("ProspectingInsightsMarketplaceEngagementScore");
+
+        /// <summary>
+        /// Constant ProspectingInsightsSolutionCategory for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingInsightsSolutionCategory = new EngagementSearchSortName("ProspectingInsightsSolutionCategory");
+
+        /// <summary>
+        /// Constant ProspectingInsightsSolutionSubCategory for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName ProspectingInsightsSolutionSubCategory = new EngagementSearchSortName("ProspectingInsightsSolutionSubCategory");
+
+        /// <summary>
+        /// Constant Title for EngagementSearchSortName
+        /// </summary>
+        public static readonly EngagementSearchSortName Title = new EngagementSearchSortName("Title");
+
+        /// <summary>
+        /// Constructs a custom EngagementSearchSortName for a value not among the defined constants.
+        /// </summary>
+        public EngagementSearchSortName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngagementSearchSortName FindValue(string value)
+        {
+            return FindValue<EngagementSearchSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngagementSearchSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EngagementSortName.
     /// </summary>
     public class EngagementSortName : ConstantClass
@@ -3308,6 +4216,57 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type EnrichmentStatus.
+    /// </summary>
+    public class EnrichmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTION_REQUIRED for EnrichmentStatus
+        /// </summary>
+        public static readonly EnrichmentStatus ACTION_REQUIRED = new EnrichmentStatus("ACTION_REQUIRED");
+
+        /// <summary>
+        /// Constant ENRICHED for EnrichmentStatus
+        /// </summary>
+        public static readonly EnrichmentStatus ENRICHED = new EnrichmentStatus("ENRICHED");
+
+        /// <summary>
+        /// Constant NO_MATCH_FOUND for EnrichmentStatus
+        /// </summary>
+        public static readonly EnrichmentStatus NO_MATCH_FOUND = new EnrichmentStatus("NO_MATCH_FOUND");
+
+        /// <summary>
+        /// Constant PENDING for EnrichmentStatus
+        /// </summary>
+        public static readonly EnrichmentStatus PENDING = new EnrichmentStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom EnrichmentStatus for a value not among the defined constants.
+        /// </summary>
+        public EnrichmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnrichmentStatus FindValue(string value)
+        {
+            return FindValue<EnrichmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnrichmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ExpectedContractDurationTerm.
     /// </summary>
     public class ExpectedContractDurationTerm : ConstantClass
@@ -3338,6 +4297,107 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExpectedContractDurationTerm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FilterableField.
+    /// </summary>
+    public class FilterableField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT_PLANNING_QUALIFICATION for FilterableField
+        /// </summary>
+        public static readonly FilterableField ACCOUNT_PLANNING_QUALIFICATION = new FilterableField("ACCOUNT_PLANNING_QUALIFICATION");
+
+        /// <summary>
+        /// Constant AWS_INDUSTRY for FilterableField
+        /// </summary>
+        public static readonly FilterableField AWS_INDUSTRY = new FilterableField("AWS_INDUSTRY");
+
+        /// <summary>
+        /// Constant COMPANY_NAME for FilterableField
+        /// </summary>
+        public static readonly FilterableField COMPANY_NAME = new FilterableField("COMPANY_NAME");
+
+        /// <summary>
+        /// Constant COUNTRY for FilterableField
+        /// </summary>
+        public static readonly FilterableField COUNTRY = new FilterableField("COUNTRY");
+
+        /// <summary>
+        /// Constant CREATED_DATE for FilterableField
+        /// </summary>
+        public static readonly FilterableField CREATED_DATE = new FilterableField("CREATED_DATE");
+
+        /// <summary>
+        /// Constant ENRICHMENT_STATUS for FilterableField
+        /// </summary>
+        public static readonly FilterableField ENRICHMENT_STATUS = new FilterableField("ENRICHMENT_STATUS");
+
+        /// <summary>
+        /// Constant GEO for FilterableField
+        /// </summary>
+        public static readonly FilterableField GEO = new FilterableField("GEO");
+
+        /// <summary>
+        /// Constant IMPORT_ID for FilterableField
+        /// </summary>
+        public static readonly FilterableField IMPORT_ID = new FilterableField("IMPORT_ID");
+
+        /// <summary>
+        /// Constant LAST_MODIFIED_DATE for FilterableField
+        /// </summary>
+        public static readonly FilterableField LAST_MODIFIED_DATE = new FilterableField("LAST_MODIFIED_DATE");
+
+        /// <summary>
+        /// Constant MARKETPLACE_ENGAGEMENT_SCORE for FilterableField
+        /// </summary>
+        public static readonly FilterableField MARKETPLACE_ENGAGEMENT_SCORE = new FilterableField("MARKETPLACE_ENGAGEMENT_SCORE");
+
+        /// <summary>
+        /// Constant PROGRAM_ELIGIBILITY for FilterableField
+        /// </summary>
+        public static readonly FilterableField PROGRAM_ELIGIBILITY = new FilterableField("PROGRAM_ELIGIBILITY");
+
+        /// <summary>
+        /// Constant SEGMENT for FilterableField
+        /// </summary>
+        public static readonly FilterableField SEGMENT = new FilterableField("SEGMENT");
+
+        /// <summary>
+        /// Constant SOLUTION_CATEGORY for FilterableField
+        /// </summary>
+        public static readonly FilterableField SOLUTION_CATEGORY = new FilterableField("SOLUTION_CATEGORY");
+
+        /// <summary>
+        /// Constant SOLUTION_SCORE for FilterableField
+        /// </summary>
+        public static readonly FilterableField SOLUTION_SCORE = new FilterableField("SOLUTION_SCORE");
+
+        /// <summary>
+        /// Constructs a custom FilterableField for a value not among the defined constants.
+        /// </summary>
+        public FilterableField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterableField FindValue(string value)
+        {
+            return FindValue<FilterableField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterableField(string value)
         {
             return FindValue(value);
         }
@@ -3817,6 +4877,303 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type OpportunitySearchFilterName.
+    /// </summary>
+    public class OpportunitySearchFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ApnPrograms for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName ApnPrograms = new OpportunitySearchFilterName("ApnPrograms");
+
+        /// <summary>
+        /// Constant AwsAccountId for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName AwsAccountId = new OpportunitySearchFilterName("AwsAccountId");
+
+        /// <summary>
+        /// Constant AwsMarketplaceSolution for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName AwsMarketplaceSolution = new OpportunitySearchFilterName("AwsMarketplaceSolution");
+
+        /// <summary>
+        /// Constant CosellMotion for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName CosellMotion = new OpportunitySearchFilterName("CosellMotion");
+
+        /// <summary>
+        /// Constant CountryCode for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName CountryCode = new OpportunitySearchFilterName("CountryCode");
+
+        /// <summary>
+        /// Constant CreatedDate for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName CreatedDate = new OpportunitySearchFilterName("CreatedDate");
+
+        /// <summary>
+        /// Constant CustomerCompanyName for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName CustomerCompanyName = new OpportunitySearchFilterName("CustomerCompanyName");
+
+        /// <summary>
+        /// Constant EngagementScore for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName EngagementScore = new OpportunitySearchFilterName("EngagementScore");
+
+        /// <summary>
+        /// Constant EstimatedMrr for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName EstimatedMrr = new OpportunitySearchFilterName("EstimatedMrr");
+
+        /// <summary>
+        /// Constant Industry for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName Industry = new OpportunitySearchFilterName("Industry");
+
+        /// <summary>
+        /// Constant LastModifiedDate for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName LastModifiedDate = new OpportunitySearchFilterName("LastModifiedDate");
+
+        /// <summary>
+        /// Constant NextStep for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName NextStep = new OpportunitySearchFilterName("NextStep");
+
+        /// <summary>
+        /// Constant OfferId for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName OfferId = new OpportunitySearchFilterName("OfferId");
+
+        /// <summary>
+        /// Constant OfferSetId for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName OfferSetId = new OpportunitySearchFilterName("OfferSetId");
+
+        /// <summary>
+        /// Constant OpportunityId for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName OpportunityId = new OpportunitySearchFilterName("OpportunityId");
+
+        /// <summary>
+        /// Constant OpportunityOwner for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName OpportunityOwner = new OpportunitySearchFilterName("OpportunityOwner");
+
+        /// <summary>
+        /// Constant OpportunityType for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName OpportunityType = new OpportunitySearchFilterName("OpportunityType");
+
+        /// <summary>
+        /// Constant Origin for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName Origin = new OpportunitySearchFilterName("Origin");
+
+        /// <summary>
+        /// Constant PartnerOpportunityIdentifier for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName PartnerOpportunityIdentifier = new OpportunitySearchFilterName("PartnerOpportunityIdentifier");
+
+        /// <summary>
+        /// Constant PartnerProjectTitle for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName PartnerProjectTitle = new OpportunitySearchFilterName("PartnerProjectTitle");
+
+        /// <summary>
+        /// Constant ReviewStatus for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName ReviewStatus = new OpportunitySearchFilterName("ReviewStatus");
+
+        /// <summary>
+        /// Constant Stage for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName Stage = new OpportunitySearchFilterName("Stage");
+
+        /// <summary>
+        /// Constant Tags for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName Tags = new OpportunitySearchFilterName("Tags");
+
+        /// <summary>
+        /// Constant TargetCloseDate for OpportunitySearchFilterName
+        /// </summary>
+        public static readonly OpportunitySearchFilterName TargetCloseDate = new OpportunitySearchFilterName("TargetCloseDate");
+
+        /// <summary>
+        /// Constructs a custom OpportunitySearchFilterName for a value not among the defined constants.
+        /// </summary>
+        public OpportunitySearchFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpportunitySearchFilterName FindValue(string value)
+        {
+            return FindValue<OpportunitySearchFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpportunitySearchFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OpportunitySearchSortName.
+    /// </summary>
+    public class OpportunitySearchSortName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ApnPrograms for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName ApnPrograms = new OpportunitySearchSortName("ApnPrograms");
+
+        /// <summary>
+        /// Constant AwsAccountId for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName AwsAccountId = new OpportunitySearchSortName("AwsAccountId");
+
+        /// <summary>
+        /// Constant CosellMotion for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName CosellMotion = new OpportunitySearchSortName("CosellMotion");
+
+        /// <summary>
+        /// Constant CountryCode for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName CountryCode = new OpportunitySearchSortName("CountryCode");
+
+        /// <summary>
+        /// Constant CreatedDate for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName CreatedDate = new OpportunitySearchSortName("CreatedDate");
+
+        /// <summary>
+        /// Constant CustomerCompanyName for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName CustomerCompanyName = new OpportunitySearchSortName("CustomerCompanyName");
+
+        /// <summary>
+        /// Constant EngagementScore for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName EngagementScore = new OpportunitySearchSortName("EngagementScore");
+
+        /// <summary>
+        /// Constant EstimatedMrr for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName EstimatedMrr = new OpportunitySearchSortName("EstimatedMrr");
+
+        /// <summary>
+        /// Constant Industry for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName Industry = new OpportunitySearchSortName("Industry");
+
+        /// <summary>
+        /// Constant LastModifiedDate for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName LastModifiedDate = new OpportunitySearchSortName("LastModifiedDate");
+
+        /// <summary>
+        /// Constant NextStep for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName NextStep = new OpportunitySearchSortName("NextStep");
+
+        /// <summary>
+        /// Constant OfferId for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName OfferId = new OpportunitySearchSortName("OfferId");
+
+        /// <summary>
+        /// Constant OfferSetId for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName OfferSetId = new OpportunitySearchSortName("OfferSetId");
+
+        /// <summary>
+        /// Constant OpportunityId for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName OpportunityId = new OpportunitySearchSortName("OpportunityId");
+
+        /// <summary>
+        /// Constant OpportunityOwner for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName OpportunityOwner = new OpportunitySearchSortName("OpportunityOwner");
+
+        /// <summary>
+        /// Constant OpportunityType for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName OpportunityType = new OpportunitySearchSortName("OpportunityType");
+
+        /// <summary>
+        /// Constant Origin for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName Origin = new OpportunitySearchSortName("Origin");
+
+        /// <summary>
+        /// Constant PartnerOpportunityIdentifier for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName PartnerOpportunityIdentifier = new OpportunitySearchSortName("PartnerOpportunityIdentifier");
+
+        /// <summary>
+        /// Constant PartnerProjectTitle for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName PartnerProjectTitle = new OpportunitySearchSortName("PartnerProjectTitle");
+
+        /// <summary>
+        /// Constant ReviewStatus for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName ReviewStatus = new OpportunitySearchSortName("ReviewStatus");
+
+        /// <summary>
+        /// Constant Stage for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName Stage = new OpportunitySearchSortName("Stage");
+
+        /// <summary>
+        /// Constant Tags for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName Tags = new OpportunitySearchSortName("Tags");
+
+        /// <summary>
+        /// Constant TargetCloseDate for OpportunitySearchSortName
+        /// </summary>
+        public static readonly OpportunitySearchSortName TargetCloseDate = new OpportunitySearchSortName("TargetCloseDate");
+
+        /// <summary>
+        /// Constructs a custom OpportunitySearchSortName for a value not among the defined constants.
+        /// </summary>
+        public OpportunitySearchSortName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpportunitySearchSortName FindValue(string value)
+        {
+            return FindValue<OpportunitySearchSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpportunitySearchSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OpportunitySortName.
     /// </summary>
     public class OpportunitySortName : ConstantClass
@@ -4158,6 +5515,52 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProspectingTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReadinessLevel.
+    /// </summary>
+    public class ReadinessLevel : ConstantClass
+    {
+        /// <summary>
+        /// Constant LowPotential for ReadinessLevel
+        /// </summary>
+        public static readonly ReadinessLevel LowPotential = new ReadinessLevel("LowPotential");
+
+        /// <summary>
+        /// Constant MarketingReady for ReadinessLevel
+        /// </summary>
+        public static readonly ReadinessLevel MarketingReady = new ReadinessLevel("MarketingReady");
+
+        /// <summary>
+        /// Constant SalesReady for ReadinessLevel
+        /// </summary>
+        public static readonly ReadinessLevel SalesReady = new ReadinessLevel("SalesReady");
+
+        /// <summary>
+        /// Constructs a custom ReadinessLevel for a value not among the defined constants.
+        /// </summary>
+        public ReadinessLevel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReadinessLevel FindValue(string value)
+        {
+            return FindValue<ReadinessLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReadinessLevel(string value)
         {
             return FindValue(value);
         }
@@ -4738,6 +6141,52 @@ namespace Amazon.PartnerCentralSelling
     }
 
     /// <summary>
+    /// Constants used for properties of type SearchEngagementScore.
+    /// </summary>
+    public class SearchEngagementScore : ConstantClass
+    {
+        /// <summary>
+        /// Constant High for SearchEngagementScore
+        /// </summary>
+        public static readonly SearchEngagementScore High = new SearchEngagementScore("High");
+
+        /// <summary>
+        /// Constant Low for SearchEngagementScore
+        /// </summary>
+        public static readonly SearchEngagementScore Low = new SearchEngagementScore("Low");
+
+        /// <summary>
+        /// Constant Medium for SearchEngagementScore
+        /// </summary>
+        public static readonly SearchEngagementScore Medium = new SearchEngagementScore("Medium");
+
+        /// <summary>
+        /// Constructs a custom SearchEngagementScore for a value not among the defined constants.
+        /// </summary>
+        public SearchEngagementScore(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchEngagementScore FindValue(string value)
+        {
+            return FindValue<SearchEngagementScore>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchEngagementScore(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SolutionSortName.
     /// </summary>
     public class SolutionSortName : ConstantClass
@@ -4911,6 +6360,62 @@ namespace Amazon.PartnerCentralSelling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SortableField.
+    /// </summary>
+    public class SortableField : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPANY_NAME for SortableField
+        /// </summary>
+        public static readonly SortableField COMPANY_NAME = new SortableField("COMPANY_NAME");
+
+        /// <summary>
+        /// Constant CREATED_DATE for SortableField
+        /// </summary>
+        public static readonly SortableField CREATED_DATE = new SortableField("CREATED_DATE");
+
+        /// <summary>
+        /// Constant LAST_MODIFIED_DATE for SortableField
+        /// </summary>
+        public static readonly SortableField LAST_MODIFIED_DATE = new SortableField("LAST_MODIFIED_DATE");
+
+        /// <summary>
+        /// Constant MARKETPLACE_ENGAGEMENT_SCORE for SortableField
+        /// </summary>
+        public static readonly SortableField MARKETPLACE_ENGAGEMENT_SCORE = new SortableField("MARKETPLACE_ENGAGEMENT_SCORE");
+
+        /// <summary>
+        /// Constant SOLUTION_SCORE for SortableField
+        /// </summary>
+        public static readonly SortableField SOLUTION_SCORE = new SortableField("SOLUTION_SCORE");
+
+        /// <summary>
+        /// Constructs a custom SortableField for a value not among the defined constants.
+        /// </summary>
+        public SortableField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortableField FindValue(string value)
+        {
+            return FindValue<SortableField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortableField(string value)
         {
             return FindValue(value);
         }

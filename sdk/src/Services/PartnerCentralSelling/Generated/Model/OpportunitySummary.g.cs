@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier
+        /// The Amazon Resource Name (ARN) for the opportunity. This globally unique identifier
         /// can be used for IAM policies and cross-service references. 
         /// </para>
         /// </summary>

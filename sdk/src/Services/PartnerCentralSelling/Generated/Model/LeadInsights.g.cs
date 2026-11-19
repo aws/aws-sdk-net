@@ -36,6 +36,23 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class LeadInsights
     {
         /// <summary>
+        /// Gets and sets the property ChannelRecommendation. 
+        /// <para>
+        /// The outreach channel most commonly recommended for leads that share this lead's country,
+        /// geography, region, and company segment. It includes the days and the Coordinated Universal
+        /// Time (UTC) hours when that channel is best used. This is guidance for the group of
+        /// similar leads. It doesn't describe this lead's own contact history. Present only when
+        /// a recommendation is available for the lead.
+        /// </para>
+        /// </summary>
+        public ChannelRecommendation ChannelRecommendation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ChannelRecommendation property is set.
+        /// </summary>
+        internal bool IsSetChannelRecommendation() => this.ChannelRecommendation != null;
+
+        /// <summary>
         /// Gets and sets the property LeadReadinessScore. 
         /// <para>
         /// A score that indicates the lead's readiness for engagement. Valid values are <c>Low</c>,

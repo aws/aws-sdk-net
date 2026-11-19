@@ -64,6 +64,20 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCosellMotion() => this.CosellMotion != null;
 
         /// <summary>
+        /// Gets and sets the property CosellMotionReason. 
+        /// <para>
+        /// The plain-language reason for the current <c>CosellMotion</c> value. Read-only. Null
+        /// when <c>CosellMotion</c> is null.
+        /// </para>
+        /// </summary>
+        public string CosellMotionReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CosellMotionReason property is set.
+        /// </summary>
+        internal bool IsSetCosellMotionReason() => this.CosellMotionReason != null;
+
+        /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
         /// Provides details about the customer associated with the AWS Opportunity, including

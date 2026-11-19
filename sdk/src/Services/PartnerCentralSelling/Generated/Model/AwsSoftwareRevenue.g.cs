@@ -76,7 +76,10 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetExpirationDate() => this.ExpirationDate != null;
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The committed value and currency for the procurement terms.
+        /// </para>
         /// </summary>
         public MonetaryValue Value { get; set; }
 

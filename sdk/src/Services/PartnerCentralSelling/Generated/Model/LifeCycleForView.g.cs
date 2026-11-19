@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextSteps. 
         /// <para>
-        ///  Describes the next steps for the opportunity shared through a snapshot. 
+        /// Describes the next steps for the opportunity shared through a snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewStatus. 
         /// <para>
-        ///  Defines the approval status of the opportunity shared through a snapshot. 
+        /// Defines the approval status of the opportunity shared through a snapshot.
         /// </para>
         /// </summary>
         public ReviewStatus ReviewStatus { get; set; }
@@ -64,7 +64,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        ///  Defines the current stage of the opportunity shared through a snapshot. 
+        /// Defines the current stage of the opportunity shared through a snapshot.
         /// </para>
         /// </summary>
         public Stage Stage { get; set; }
@@ -77,7 +77,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TargetCloseDate. 
         /// <para>
-        ///  The projected launch date of the opportunity shared through a snapshot. 
+        /// The projected launch date of the opportunity shared through a snapshot.
         /// </para>
         /// </summary>
         public string TargetCloseDate { get; set; }

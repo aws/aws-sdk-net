@@ -36,7 +36,10 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class UpdateEngagementContextPayload
     {
         /// <summary>
-        /// Gets and sets the property CustomerProject.
+        /// Gets and sets the property CustomerProject. 
+        /// <para>
+        /// Contains the updated details of a customer project when the context type is <c>CustomerProject</c>.
+        /// </para>
         /// </summary>
         public CustomerProjectsContext CustomerProject { get; set; }
 
