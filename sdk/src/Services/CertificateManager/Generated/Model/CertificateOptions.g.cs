@@ -35,8 +35,8 @@ namespace Amazon.CertificateManager.Model
     /// 
     ///  
     /// <para>
-    /// All public certificates are recorded in a certificate transparency log. For general
-    /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+    /// ACM records all public certificates other than Amazon N2 certificates in a certificate
+    /// transparency log. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
     /// Transparency Logging</a>.
     /// </para>
     ///  
@@ -52,8 +52,8 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property CertificateTransparencyLoggingPreference. 
         /// <para>
         /// This parameter has been deprecated. Certificate transparency logging opt-out is no
-        /// longer available. All public certificates are recorded in a certificate transparency
-        /// log.
+        /// longer available. ACM records all public certificates other than Amazon N2 certificates
+        /// in a certificate transparency log.
         /// </para>
         /// </summary>
         [Obsolete("Certificate transparency logging opt-out is no longer available.")]

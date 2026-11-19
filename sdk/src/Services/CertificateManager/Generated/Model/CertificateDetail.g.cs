@@ -113,6 +113,21 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateKeyPairOrigin() => this.CertificateKeyPairOrigin != null;
 
         /// <summary>
+        /// Gets and sets the property CertificateUsage. 
+        /// <para>
+        /// The Extended Key Usage profile of the certificate. This value exists only for Amazon
+        /// N2 certificates. If <c>CertificateUsage</c> was omitted from the request, this value
+        /// is <c>CLIENT_AND_SERVER_AUTH</c>.
+        /// </para>
+        /// </summary>
+        public CertificateUsage CertificateUsage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateUsage property is set.
+        /// </summary>
+        internal bool IsSetCertificateUsage() => this.CertificateUsage != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The time at which the certificate was requested.
@@ -336,7 +351,8 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property Options. 
         /// <para>
         /// Contains the certificate options. Certificate transparency logging opt-out is no longer
-        /// available. All public certificates are recorded in a certificate transparency log.
+        /// available. ACM records all public certificates other than Amazon N2 certificates in
+        /// a certificate transparency log.
         /// </para>
         /// </summary>
         public CertificateOptions Options { get; set; }
@@ -402,6 +418,20 @@ namespace Amazon.CertificateManager.Model
         /// Checks to see if the RevokedAt property is set.
         /// </summary>
         internal bool IsSetRevokedAt() => this.RevokedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RootHierarchyType. 
+        /// <para>
+        /// The root hierarchy from which the certificate was issued. This value exists only for
+        /// Amazon N2 certificates, which have a <c>Type</c> of <c>AMAZON_ISSUED</c>.
+        /// </para>
+        /// </summary>
+        public RootHierarchyType RootHierarchyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RootHierarchyType property is set.
+        /// </summary>
+        internal bool IsSetRootHierarchyType() => this.RootHierarchyType != null;
 
         /// <summary>
         /// Gets and sets the property Serial. 

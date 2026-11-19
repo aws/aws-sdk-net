@@ -93,6 +93,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RenewalStatus);
             }
 
+            if (requestObject.IsSetRootHierarchyType())
+            {
+                context.Writer.WritePropertyName("RootHierarchyType");
+                context.Writer.WriteStringValue(requestObject.RootHierarchyType);
+            }
+
             if (requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

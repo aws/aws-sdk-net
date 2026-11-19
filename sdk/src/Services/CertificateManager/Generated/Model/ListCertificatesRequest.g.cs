@@ -37,6 +37,10 @@ namespace Amazon.CertificateManager.Model
     /// see <a>Filters</a>. <note> <para> By default, this action does not return certificates
     /// with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>. To include ACME certificates,
     /// specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c> filter. </para> </note>
+    /// <note> <para> By default, this action does not return certificates with a <c>RootHierarchyType</c>
+    /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+    /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
+    /// filter. </para> </note>
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
@@ -126,6 +130,30 @@ namespace Amazon.CertificateManager.Model
         /// Checks to see if the NextToken property is set.
         /// </summary>
         internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property RootHierarchyTypes. 
+        /// <para>
+        /// Filter the certificate list by root hierarchy type. Specify one or more <c>RootHierarchyType</c>
+        /// values. By default, this action does not return certificates with a <c>RootHierarchyType</c>
+        /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+        /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
+        /// filter.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5)]
+        public List<string> RootHierarchyTypes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the RootHierarchyTypes property is set.
+        /// </summary>
+        internal bool IsSetRootHierarchyTypes() => this.RootHierarchyTypes != null && (this.RootHierarchyTypes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property SortBy. 

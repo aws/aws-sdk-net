@@ -1936,6 +1936,13 @@ namespace Amazon.CertificateManager
         /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
         /// filter.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>RootHierarchyType</c>
+        /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+        /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
+        /// filter.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
@@ -1960,6 +1967,13 @@ namespace Amazon.CertificateManager
         /// <para>
         /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
         /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>RootHierarchyType</c>
+        /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+        /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
         /// filter.
         /// </para>
         ///  </note>
@@ -1991,6 +2005,13 @@ namespace Amazon.CertificateManager
         /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
         /// filter.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>RootHierarchyType</c>
+        /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+        /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
+        /// filter.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -2014,6 +2035,13 @@ namespace Amazon.CertificateManager
         /// <para>
         /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
         /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+        /// filter.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// By default, this action does not return certificates with a <c>RootHierarchyType</c>
+        /// of <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>. To list only Amazon
+        /// N2 certificates, specify one or both of these values in the <c>RootHierarchyTypes</c>
         /// filter.
         /// </para>
         ///  </note>

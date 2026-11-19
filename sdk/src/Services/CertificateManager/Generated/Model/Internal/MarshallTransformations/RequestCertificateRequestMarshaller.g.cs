@@ -75,6 +75,11 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CertificateAuthorityArn");
                 context.Writer.WriteStringValue(publicRequest.CertificateAuthorityArn);
             }
+            if (publicRequest.IsSetCertificateUsage())
+            {
+                context.Writer.WritePropertyName("CertificateUsage");
+                context.Writer.WriteStringValue(publicRequest.CertificateUsage);
+            }
             if (publicRequest.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
@@ -119,6 +124,11 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.Options, context);
 
                 context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetRootHierarchyType())
+            {
+                context.Writer.WritePropertyName("RootHierarchyType");
+                context.Writer.WriteStringValue(publicRequest.RootHierarchyType);
             }
             if (publicRequest.IsSetSubjectAlternativeNames())
             {

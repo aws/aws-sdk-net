@@ -110,6 +110,16 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NextToken");
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
+            if (publicRequest.IsSetRootHierarchyTypes())
+            {
+                context.Writer.WritePropertyName("RootHierarchyTypes");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestRootHierarchyTypesListValue in publicRequest.RootHierarchyTypes)
+                {
+                    context.Writer.WriteStringValue(publicRequestRootHierarchyTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("SortBy");

@@ -73,6 +73,35 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateAuthorityArn() => this.CertificateAuthorityArn != null;
 
         /// <summary>
+        /// Gets and sets the property CertificateUsage. 
+        /// <para>
+        /// The Extended Key Usage profile of the certificate. You can specify this parameter
+        /// only when <c>RootHierarchyType</c> is <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>.
+        /// If you specify <c>CertificateUsage</c> with any other root hierarchy type, or without
+        /// <c>RootHierarchyType</c>, the request fails with a <c>ValidationException</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CLIENT_AND_SERVER_AUTH</c> authenticates both the client and the server. Valid
+        /// for both N2 root hierarchy types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLIENT_AUTH_ONLY</c> authenticates only the client. Valid only for <c>N2_AMAZON_MANAGED</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: CLIENT_AND_SERVER_AUTH
+        /// </para>
+        /// </summary>
+        public CertificateUsage CertificateUsage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateUsage property is set.
+        /// </summary>
+        internal bool IsSetCertificateUsage() => this.CertificateUsage != null;
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// Fully qualified domain name (FQDN), such as www.example.com, that you want to secure
@@ -209,8 +238,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Certificate transparency logging opt-out is no longer available. All public certificates
-        /// are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+        /// Certificate transparency logging opt-out is no longer available. ACM records all public
+        /// certificates other than Amazon N2 certificates in a certificate transparency log.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
         /// Transparency Logging</a>.
         /// </para>
         ///  
@@ -226,6 +256,67 @@ namespace Amazon.CertificateManager.Model
         /// Checks to see if the Options property is set.
         /// </summary>
         internal bool IsSetOptions() => this.Options != null;
+
+        /// <summary>
+        /// Gets and sets the property RootHierarchyType. 
+        /// <para>
+        /// The root hierarchy from which ACM issues the certificate. Specify one of the following
+        /// values to request an Amazon N2 certificate:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>N2_AMAZON_MANAGED</c> – An Amazon N2 certificate that chains to an Amazon N2 root.
+        /// The maximum validity period, which is also the default, is 395 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>N2_SFG2_AMAZON_MANAGED</c> – An Amazon N2 certificate that chains to an Amazon
+        /// N2 root cross-signed by Starfield G2. The maximum validity period, which is also the
+        /// default, is 98 days.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You cannot specify <c>RootHierarchyType</c> together with <c>CertificateAuthorityArn</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, ACM issues a standard public certificate. A request that
+        /// specifies any value other than <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>
+        /// fails with a <c>ValidationException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An Amazon N2 certificate request must specify a <c>ValidationMethod</c> of <c>DNS</c>.
+        /// Amazon N2 certificates are not recorded in a certificate transparency log.
+        /// </para>
+        ///  
+        /// <para>
+        /// A request for a validity period longer than the maximum fails with a <c>ValidationException</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Algorithms supported for an N2 certificate request include: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RSA_2048</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EC_prime256v1</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EC_secp384r1</c> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public RootHierarchyType RootHierarchyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RootHierarchyType property is set.
+        /// </summary>
+        internal bool IsSetRootHierarchyType() => this.RootHierarchyType != null;
 
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 

@@ -599,6 +599,47 @@ namespace Amazon.CertificateManager
     }
 
     /// <summary>
+    /// Constants used for properties of type CertificateUsage.
+    /// </summary>
+    public class CertificateUsage : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLIENT_AND_SERVER_AUTH for CertificateUsage
+        /// </summary>
+        public static readonly CertificateUsage CLIENT_AND_SERVER_AUTH = new CertificateUsage("CLIENT_AND_SERVER_AUTH");
+
+        /// <summary>
+        /// Constant CLIENT_AUTH_ONLY for CertificateUsage
+        /// </summary>
+        public static readonly CertificateUsage CLIENT_AUTH_ONLY = new CertificateUsage("CLIENT_AUTH_ONLY");
+
+        /// <summary>
+        /// Constructs a custom CertificateUsage for a value not among the defined constants.
+        /// </summary>
+        public CertificateUsage(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateUsage FindValue(string value)
+        {
+            return FindValue<CertificateUsage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -1376,6 +1417,47 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RevocationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RootHierarchyType.
+    /// </summary>
+    public class RootHierarchyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant N2_AMAZON_MANAGED for RootHierarchyType
+        /// </summary>
+        public static readonly RootHierarchyType N2_AMAZON_MANAGED = new RootHierarchyType("N2_AMAZON_MANAGED");
+
+        /// <summary>
+        /// Constant N2_SFG2_AMAZON_MANAGED for RootHierarchyType
+        /// </summary>
+        public static readonly RootHierarchyType N2_SFG2_AMAZON_MANAGED = new RootHierarchyType("N2_SFG2_AMAZON_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom RootHierarchyType for a value not among the defined constants.
+        /// </summary>
+        public RootHierarchyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RootHierarchyType FindValue(string value)
+        {
+            return FindValue<RootHierarchyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RootHierarchyType(string value)
         {
             return FindValue(value);
         }

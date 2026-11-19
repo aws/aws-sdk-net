@@ -74,6 +74,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CertificateUsage", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateUsage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -141,6 +148,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RevokedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RootHierarchyType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RootHierarchyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

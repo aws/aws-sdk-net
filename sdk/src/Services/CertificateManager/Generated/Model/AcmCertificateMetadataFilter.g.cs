@@ -141,6 +141,20 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetRenewalStatus() => this.RenewalStatus != null;
 
         /// <summary>
+        /// Gets and sets the property RootHierarchyType. 
+        /// <para>
+        /// Filter by root hierarchy type. Specify <c>N2_AMAZON_MANAGED</c> or <c>N2_SFG2_AMAZON_MANAGED</c>
+        /// to return Amazon N2 certificates.
+        /// </para>
+        /// </summary>
+        public RootHierarchyType RootHierarchyType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RootHierarchyType property is set.
+        /// </summary>
+        internal bool IsSetRootHierarchyType() => this.RootHierarchyType != null;
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// Filter by certificate status.
