@@ -96,7 +96,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        [AWSProperty(Required = true, Min = 1, Max = 1000)]
         public List<TargetResource> Targets { get; set; } = AWSConfigs.InitializeCollections ? new List<TargetResource>() : null;
 
         /// <summary>

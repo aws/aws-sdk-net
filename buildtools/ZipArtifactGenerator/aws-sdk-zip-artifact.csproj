@@ -17,15 +17,33 @@
             ZIP artifact must contain the newer version (that's used in the Nuspec files).
         -->
         <SystemTextJsonVersion>8.0.6</SystemTextJsonVersion>
+
+        <!--
+            The last target framework in the publish set, derived from the TFM list rather than
+            hardcoded. The list is $(SdkNetFrameworkTargets);$(SdkNetTargets), so the last entry is
+            the newest modern .NET target (e.g. net11.0) rather than the old .NET Framework target.
+            Used by VerifyKnownExtensions to run that TFM-invariant check exactly once (on a single
+            inner build) without pinning to a specific TFM that could be dropped during an annual
+            target change. The pipeline publishes each TFM individually with an explicit -f <tfm>
+            (see Copy-Dependencies-V2.ps1), so there is no outer build to hook; selecting the last
+            TFM guarantees a single, stable inner build runs the check.
+        -->
+        <_TfmList>$(TargetFrameworks)</_TfmList>
+        <_LastTfmIndex>$([MSBuild]::Subtract($([System.String]::Copy('$(_TfmList)').Split(';').Length), 1))</_LastTfmIndex>
+        <_LastTfm>$([System.String]::Copy('$(_TfmList)').Split(';')[$(_LastTfmIndex)])</_LastTfm>
     </PropertyGroup>
 
-    <Target Name="VerifyKnownExtensions" BeforeTargets="Publish" Condition="'$(BuildType)' != 'PREVIEW' and '$(TargetFramework)' == 'net8.0'">
+    <Target Name="VerifyKnownExtensions" BeforeTargets="Publish" Condition="'$(BuildType)' != 'PREVIEW' and '$(TargetFramework)' == '$(_LastTfm)'">
         <!--
             Ensures every extension folder that contains a .nuspec file is referenced somewhere in this project.
             XmlPeek reads all ExtensionProjectReference attributes directly from the XML, bypassing condition evaluation and ignoring XML comments.
 
             Hooked to Publish because the pipeline publishes with "no-build".
-            The net8.0 check is arbitrary so that the target only runs once.
+            The check reads only TFM-invariant inputs (the .nuspec files on disk and the project's
+            ExtensionProjectReference includes), so it only needs to run once. Gating on the last
+            TFM in the list ($(_LastTfm), the newest modern .NET target) runs it on exactly one
+            inner build without hardcoding a TFM name, so it survives annual target add/drop changes
+            with no edit here.
         -->
         <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="//ExtensionProjectReference/@Include">
             <Output TaskParameter="Result" ItemName="_ExtRefInclude" />

@@ -30,29 +30,28 @@ public record OperationEndpointContext(
 /// </summary>
 public static class EndpointContextResolver
 {
-    // C2J drops these for S3 and S3 Control: their config properties are hand-written under Custom\, and
-    // the rule set feeds the same parameters through builtIns, so generating them would collide.
-    private static readonly IReadOnlyDictionary<string, IReadOnlySet<string>> SkippedClientParameters =
-        new Dictionary<string, IReadOnlySet<string>>
-        {
-            ["S3"] = new HashSet<string> { "UseArnRegion", "DisableMultiRegionAccessPoints", "DisableS3ExpressSessionAuth", "Accelerate", "ForcePathStyle" },
-            ["S3 Control"] = new HashSet<string> { "UseArnRegion", "DisableMultiRegionAccessPoints", "DisableS3ExpressSessionAuth", "Accelerate", "ForcePathStyle" },
-        };
-
     /// <summary>The service's <c>clientContextParams</c> as config properties, in model order.</summary>
-    public static List<ClientContextParameter> ResolveClientParameters(ServiceIndex index, string sdkId)
+    public static List<ClientContextParameter> ResolveClientParameters(ServiceIndex index, CustomizationsModel customizations)
     {
         var resolved = new List<ClientContextParameter>();
         var declared = index.Service.GetClientContextParams();
+        var skipped = customizations.Service?.SkipClientContextParams ?? [];
+        foreach (var name in skipped)
+        {
+            if (name is null || declared is null || !declared.ContainsKey(name))
+            {
+                throw new GeneratorException($"service.skipClientContextParams lists '{name}', which clientContextParams does not declare.");
+            }
+        }
+
         if (declared is null)
         {
             return resolved;
         }
 
-        var skipped = SkippedClientParameters.GetValueOrDefault(sdkId);
         foreach (var (name, parameter) in declared)
         {
-            if (skipped?.Contains(name) == true)
+            if (skipped.Contains(name))
             {
                 continue;
             }

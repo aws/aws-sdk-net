@@ -30,24 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// Container for the parameters to the QueryVectors operation. Performs an approximate
-    /// nearest neighbor search query in a vector index using a query vector. By default,
-    /// it returns the keys of approximate nearest neighbors. You can optionally include the
-    /// computed distance (between the query vector and each vector in the response) and metadata
-    /// of each vector in the response. <para> To specify the vector index, you can either
-    /// use both the vector bucket name and the vector index name, or use the vector index
-    /// Amazon Resource Name (ARN). </para> <dl> <dt>Permissions</dt> <dd> <para> You must
-    /// have the <c>s3vectors:QueryVectors</c> permission to use this operation. Additional
+    /// Container for the parameters to the QueryVectors operation. Returns matching vector
+    /// keys from a vector index ranked by vector similarity, full-text relevance, or both.
+    /// Specify <c>queryVector</c> to perform a vector search, specify <c>queryTexts</c> to
+    /// perform a full-text search, or specify both to perform a hybrid search. Full-text
+    /// search ranks results using BM25. Hybrid search combines the vector and full-text rankings
+    /// using Reciprocal Rank Fusion (RRF). <para> Amazon S3 Vectors ranks results by distance
+    /// for a vector-only search, by BM25 score for a full-text-only search, and by RRF score
+    /// for a hybrid search. You can optionally include computed distances, relevance scores,
+    /// and vector metadata in the response. Full-text and hybrid searches require a vector
+    /// index in <c>ENHANCED</c> mode. </para> <para> To specify the vector index, you can
+    /// either use both the vector bucket name and the vector index name, or use the vector
+    /// index Amazon Resource Name (ARN). </para> <dl> <dt>Permissions</dt> <dd> <para> You
+    /// must have the <c>s3vectors:QueryVectors</c> permission to use this operation. Additional
     /// permissions are required based on the request parameters you specify: </para> <ul>
     /// <li> <para> With only <c>s3vectors:QueryVectors</c> permission, you can retrieve vector
     /// keys of approximate nearest neighbors and computed distances between these vectors.
-    /// This permission is sufficient only when you don't set any metadata filters and don't
-    /// request metadata (by keeping the <c>returnMetadata</c> parameter set to <c>false</c>
-    /// or not specified). </para> </li> <li> <para> If you specify a metadata filter or set
-    /// <c>returnMetadata</c> to true, you must have both <c>s3vectors:QueryVectors</c> and
-    /// <c>s3vectors:GetVectors</c> permissions. The request fails with a <c>403 Forbidden
-    /// error</c> if you request metadata filtering or metadata without the <c>s3vectors:GetVectors</c>
-    /// permission. </para> </li> </ul> </dd> </dl>
+    /// This permission is sufficient only when you don't set <c>queryTexts</c>, don't set
+    /// any metadata filters, and don't request metadata (by keeping the <c>returnMetadata</c>
+    /// parameter set to <c>false</c> or not specified). </para> </li> <li> <para> To use
+    /// <c>queryTexts</c>, a metadata filter, or <c>returnMetadata</c> set to <c>true</c>
+    /// with this operation, you must have both the <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c>
+    /// permissions. If you use any of these options without the <c>s3vectors:GetVectors</c>
+    /// permission, Amazon S3 Vectors returns an <c>AccessDeniedException</c>. </para> </li>
+    /// </ul> </dd> </dl>
     /// </summary>
     public partial class QueryVectorsRequest : AmazonS3VectorsRequest
     {
@@ -137,14 +143,37 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetQueryMode() => this.QueryMode != null;
 
         /// <summary>
+        /// Gets and sets the property QueryTexts. 
+        /// <para>
+        /// Full-text queries for searchable metadata keys. Omit <c>queryVector</c> to run a full-text-only
+        /// search, or provide both fields to run a hybrid search. Each entry must target a distinct
+        /// searchable metadata key.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<QueryText> QueryTexts { get; set; } = AWSConfigs.InitializeCollections ? new List<QueryText>() : null;
+
+        /// <summary>
+        /// Checks to see if the QueryTexts property is set.
+        /// </summary>
+        internal bool IsSetQueryTexts() => this.QueryTexts != null && (this.QueryTexts.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property QueryVector. 
         /// <para>
-        /// The query vector. Ensure that the query vector has the same dimension as the dimension
-        /// of the vector index that's being queried. For example, if your vector index contains
-        /// vectors with 384 dimensions, your query vector must also have 384 dimensions. 
+        /// The query vector for vector similarity search. The query vector must have the same
+        /// dimension as the vector index. For example, if the vector index has 384 dimensions,
+        /// the query vector must also have 384 dimensions. You can omit this parameter when you
+        /// supply <c>queryTexts</c> to perform a full-text-only search. A request must include
+        /// <c>queryVector</c>, <c>queryTexts</c>, or both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public VectorData QueryVector { get; set; }
 
         /// <summary>
@@ -178,6 +207,22 @@ namespace Amazon.S3Vectors.Model
         /// Checks to see if the ReturnMetadata property is set.
         /// </summary>
         internal bool IsSetReturnMetadata() => this.ReturnMetadata.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ReturnScores. 
+        /// <para>
+        /// Indicates whether to include relevance scores in the response. Full-text-only results
+        /// can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion
+        /// (RRF) score and vector distance. This setting doesn't add scores to vector-only requests.
+        /// The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? ReturnScores { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReturnScores property is set.
+        /// </summary>
+        internal bool IsSetReturnScores() => this.ReturnScores.HasValue;
 
         /// <summary>
         /// Gets and sets the property TopK. 

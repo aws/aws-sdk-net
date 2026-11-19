@@ -166,6 +166,12 @@ public class GenerationContext
     /// </summary>
     public IReadOnlyDictionary<ShapeId, bool> DiscoveredOperations { get; }
 
+    /// <summary>
+    /// The operations whose request/response classes and marshallers are generated: all but the
+    /// <c>operationModifiers</c> <c>clientMethodOnly</c> ones, which get only their client methods.
+    /// </summary>
+    public IReadOnlyList<Operation> GeneratedOperations { get; }
+
     /// <summary>Operations carrying <c>@paginated</c> or a <c>paginators</c> customization, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
     public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
 
@@ -272,7 +278,16 @@ public class GenerationContext
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
-        ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, SdkId);
+        if (Customizations.Service?.EndpointResolverPartial == true && !HasEndpointRuleSet)
+        {
+            throw new GeneratorException("service.endpointResolverPartial needs an endpoint rule set; the service has no endpoint resolver to make partial.");
+        }
+
+        if (Customizations.Service?.ClientDisposeMethod is { } disposeMethod && string.IsNullOrWhiteSpace(disposeMethod))
+        {
+            throw new GeneratorException("service.clientDisposeMethod is empty; name the method Dispose(bool) should call.");
+        }
+        ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, Customizations);
 
         EndpointTests = index.Service.GetEndpointTests();
         HasEndpointTests = EndpointTests is not null;
@@ -287,6 +302,12 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         UsesHttpBindings = Protocol is AWSProtocol.RestJson1 or AWSProtocol.RestXml;
 
+        // flattenShapes is XML-specific: the flattened members are written under the restXml body's root element.
+        if (Protocol is not AWSProtocol.RestXml && Customizations.FlattenShapes.Keys.FirstOrDefault() is { } flattenedShape)
+        {
+            throw new GeneratorException($"flattenShapes['{flattenedShape}'] flattens a payload, which is only supported for restXml.");
+        }
+
         // The wrapped output is read as the whole response body, which only awsJson's, rpcv2Cbor's and ec2Query's responses are.
         var supportsWrappedOutput = Protocol is AWSProtocol.AwsJson1_0 or AWSProtocol.AwsJson1_1 or AWSProtocol.RpcV2Cbor or AWSProtocol.Ec2Query;
         foreach (var (operationName, modifier) in Customizations.OperationModifiers)
@@ -295,31 +316,83 @@ public class GenerationContext
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] wraps the output, which is only supported for awsJson, rpcv2Cbor and ec2Query.");
             }
-        }
-        // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
-        // other protocol it would generate silently without the guard, where C2J throws.
-        if (Protocol is not AWSProtocol.RestXml
-            && Customizations.OperationModifiers.FirstOrDefault(entry => entry.Value.AllowEmptyResult).Key is { } emptyResult)
-        {
-            throw new GeneratorException($"operationModifiers['{emptyResult}'] allows an empty result, which is only supported for restXml.");
+
+            // allowEmptyResult only drives the restXml response unmarshaller's empty-body early-return; on any
+            // other protocol it would generate silently without the guard, where C2J throws.
+            if (modifier.AllowEmptyResult && Protocol is not AWSProtocol.RestXml)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] allows an empty result, which is only supported for restXml.");
+            }
+
+            // A rename only changes the C# name; protocols that put the operation name on the wire (X-Amz-Target,
+            // Action, the rpcv2Cbor path) would also need the marshaller to keep the modeled name, which no writer does.
+            if (modifier.Name is not null && !UsesHttpBindings)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] renames the operation, which is only supported for restXml and restJson1.");
+            }
         }
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
-        Operations = OperationResolver.Resolve(index, Protocol);
+        Operations = OperationResolver.Resolve(index, Protocol, Customizations);
         EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
         DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
-        ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
+
+        // A SigV2 service (sdb) models no auth trait; C2J still resolved it to SigV4 so the handler resolves AWS credentials.
+        ServiceAuthSchemes = Metadata?.SignatureVersion == SignatureVersion.V2 ? [AuthSchemeIds.SigV4] : ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
-        RequestEventStreams = EventStreamResolver.ResolveRequestStreams(Operations, index);
-        ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(Operations, index);
+        GeneratedOperations = Operations.Where(operation => !Customizations.IsClientMethodOnly(operation.Shape.Id.Name)).ToList();
+
+        if (Customizations.Service?.EndpointResolvedLabel is { } endpointResolvedLabel)
+        {
+            var isInAUri = false;
+            foreach (var operation in GeneratedOperations)
+            {
+                var uri = operation.Shape.GetHttp()?.Uri;
+                if (uri is not null && uri.Contains("/{" + endpointResolvedLabel + "}"))
+                {
+                    isInAUri = true;
+                }
+            }
+            if (!isInAUri)
+            {
+                throw new GeneratorException($"service.endpointResolvedLabel is '{endpointResolvedLabel}', which no generated operation's URI has.");
+            }
+        }
+
+        // Only the restXml marshaller reads it; on any other protocol it would be silently ignored.
+        if (Customizations.Service?.RequiredLabelServiceExceptionOperations is not null && Protocol is not AWSProtocol.RestXml)
+        {
+            throw new GeneratorException("service.requiredLabelServiceExceptionOperations is only supported for restXml.");
+        }
+
+        foreach (var operationName in Customizations.Service?.RequiredLabelServiceExceptionOperations ?? [])
+        {
+            var isGenerated = false;
+            foreach (var operation in GeneratedOperations)
+            {
+                if (operation.Name == operationName)
+                {
+                    isGenerated = true;
+                }
+            }
+            if (!isGenerated)
+            {
+                throw new GeneratorException($"service.requiredLabelServiceExceptionOperations lists '{operationName}', which is not a generated operation.");
+            }
+        }
+
+        RequestEventStreams = EventStreamResolver.ResolveRequestStreams(GeneratedOperations, index);
+        ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(GeneratedOperations, index);
         OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index, Customizations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
+        // The shapes only a clientMethodOnly operation reaches are hand-written too.
+        var generatedShapes = index.ShapesReachableFrom(GeneratedOperations.Select(operation => operation.Shape));
 
-        foreach (var (shapeId, shape) in index.Shapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
+        foreach (var (shapeId, shape) in generatedShapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
         {
             if (shape is not StructureShape structure)
             {
@@ -330,10 +403,23 @@ public class GenerationContext
             {
                 errors[shapeId] = structure;
             }
-            else if (!structure.IsInput() && !structure.IsOutput())
+            else
             {
-                structures[shapeId] = structure;
+                // An emitFromMember wrapper is never emitted: members typed as it expose its value (TypeMapper.ResolveType).
+                // An excludeShapes structure is hand-written.
+                var isHandWritten = Customizations.EmittedValueMember(shapeId.Name) is not null
+                    || Customizations.IsExcludedShape(shapeId.Name);
+                if (!structure.IsInput() && !structure.IsOutput() && !isHandWritten)
+                {
+                    structures[shapeId] = structure;
+                }
             }
+        }
+
+        // Nothing reaches a flattened payload's target any more, but its class is still part of the API (S3's Delete).
+        foreach (var target in Customizations.FlattenedTargets.Where(target => !Customizations.IsExcludedShape(target.Id.Name)))
+        {
+            structures.TryAdd(target.Id, target);
         }
 
         // monitoring models LimitExceededFault next to LimitExceededException, and ResourceNotFound next to
@@ -354,7 +440,7 @@ public class GenerationContext
         // PortSpecification.AllPorts). Prelude shapes never appear in index.Shapes, so the loop
         // above cannot collect it. Operation input/output references to Unit don't count — those
         // emit empty Request/Response classes instead (see ResolveStructure).
-        if (index.Shapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
+        if (generatedShapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
         {
             structures[ShapeId.Unit] = new StructureShape { Id = ShapeId.Unit };
         }
@@ -369,6 +455,7 @@ public class GenerationContext
         // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
         // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
         Enums = index.AllEnums
+            .Where(e => !Customizations.IsExcludedShape(e.Id.Name))
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
 

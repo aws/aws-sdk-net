@@ -59,6 +59,13 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     unmarshalledObject.NonFilterableMetadataKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("textSearchConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TextSearchConfiguration, TextSearchConfigurationUnmarshaller>(TextSearchConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.TextSearchConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

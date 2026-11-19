@@ -56,5 +56,169 @@
                 }            
             ]
         }        
+    },
+    "dataTypeSwap": {
+        "ListCachePoliciesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListCloudFrontOriginAccessIdentitiesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListContinuousDeploymentPoliciesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByAnycastIpListIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByCachePolicyIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByKeyGroupRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByOriginRequestPolicyIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByOwnedResourceRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByRealtimeLogConfigRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByResponseHeadersPolicyIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByTrustStoreRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByVpcOriginIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsByWebACLIdRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListDistributionsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListFieldLevelEncryptionConfigsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListFieldLevelEncryptionProfilesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListFunctionsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListInvalidationsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListKeyGroupsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListKeyValueStoresRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListOriginAccessControlsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListOriginRequestPoliciesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListPublicKeysRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListRealtimeLogConfigsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListResponseHeadersPoliciesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListStreamingDistributionsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListVpcOriginsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        }
     }
 }

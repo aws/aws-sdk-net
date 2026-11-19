@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.DataSync.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -54,128 +55,134 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateLocationSmbRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataSync");
-            string target = "FmrsService.UpdateLocationSmb";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-09";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/FmrsService/operation/UpdateLocationSmb";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAgentArns())
+                {
+                    context.Writer.WriteTextString("AgentArns");
+                    context.Writer.WriteStartArray(publicRequest.AgentArns.Count);
+                    foreach (var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    {
+                        context.Writer.WriteTextString(publicRequestAgentArnsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WriteTextString("AuthenticationType");
+                    context.Writer.WriteTextString(publicRequest.AuthenticationType);
+                }
+                if (publicRequest.IsSetCmkSecretConfig())
+                {
+                    context.Writer.WriteTextString("CmkSecretConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CmkSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmkSecretConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetCustomSecretConfig())
+                {
+                    context.Writer.WriteTextString("CustomSecretConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CustomSecretConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomSecretConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDnsIpAddresses())
+                {
+                    context.Writer.WriteTextString("DnsIpAddresses");
+                    context.Writer.WriteStartArray(publicRequest.DnsIpAddresses.Count);
+                    foreach (var publicRequestDnsIpAddressesListValue in publicRequest.DnsIpAddresses)
+                    {
+                        context.Writer.WriteTextString(publicRequestDnsIpAddressesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDomain())
+                {
+                    context.Writer.WriteTextString("Domain");
+                    context.Writer.WriteTextString(publicRequest.Domain);
+                }
+                if (publicRequest.IsSetKerberosKeytab())
+                {
+                    context.Writer.WriteTextString("KerberosKeytab");
+                    context.Writer.WriteByteString(publicRequest.KerberosKeytab);
+                }
+                if (publicRequest.IsSetKerberosKrb5Conf())
+                {
+                    context.Writer.WriteTextString("KerberosKrb5Conf");
+                    context.Writer.WriteByteString(publicRequest.KerberosKrb5Conf);
+                }
+                if (publicRequest.IsSetKerberosPrincipal())
+                {
+                    context.Writer.WriteTextString("KerberosPrincipal");
+                    context.Writer.WriteTextString(publicRequest.KerberosPrincipal);
+                }
+                if (publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WriteTextString("LocationArn");
+                    context.Writer.WriteTextString(publicRequest.LocationArn);
+                }
+                if (publicRequest.IsSetMountOptions())
+                {
+                    context.Writer.WriteTextString("MountOptions");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = SmbMountOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MountOptions, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPassword())
+                {
+                    context.Writer.WriteTextString("Password");
+                    context.Writer.WriteTextString(publicRequest.Password);
+                }
+                if (publicRequest.IsSetServerHostname())
+                {
+                    context.Writer.WriteTextString("ServerHostname");
+                    context.Writer.WriteTextString(publicRequest.ServerHostname);
+                }
+                if (publicRequest.IsSetSubdirectory())
+                {
+                    context.Writer.WriteTextString("Subdirectory");
+                    context.Writer.WriteTextString(publicRequest.Subdirectory);
+                }
+                if (publicRequest.IsSetUser())
+                {
+                    context.Writer.WriteTextString("User");
+                    context.Writer.WriteTextString(publicRequest.User);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAgentArns())
-            {
-                context.Writer.WritePropertyName("AgentArns");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestAgentArnsListValue in publicRequest.AgentArns)
-                {
-                    context.Writer.WriteStringValue(publicRequestAgentArnsListValue);
-                }
-                context.Writer.WriteEndArray();
             }
-            if (publicRequest.IsSetAuthenticationType())
+            finally
             {
-                context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.WriteStringValue(publicRequest.AuthenticationType);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetCmkSecretConfig())
-            {
-                context.Writer.WritePropertyName("CmkSecretConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CmkSecretConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CmkSecretConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetCustomSecretConfig())
-            {
-                context.Writer.WritePropertyName("CustomSecretConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CustomSecretConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CustomSecretConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDnsIpAddresses())
-            {
-                context.Writer.WritePropertyName("DnsIpAddresses");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestDnsIpAddressesListValue in publicRequest.DnsIpAddresses)
-                {
-                    context.Writer.WriteStringValue(publicRequestDnsIpAddressesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetDomain())
-            {
-                context.Writer.WritePropertyName("Domain");
-                context.Writer.WriteStringValue(publicRequest.Domain);
-            }
-            if (publicRequest.IsSetKerberosKeytab())
-            {
-                context.Writer.WritePropertyName("KerberosKeytab");
-                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.KerberosKeytab);
-            }
-            if (publicRequest.IsSetKerberosKrb5Conf())
-            {
-                context.Writer.WritePropertyName("KerberosKrb5Conf");
-                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.KerberosKrb5Conf);
-            }
-            if (publicRequest.IsSetKerberosPrincipal())
-            {
-                context.Writer.WritePropertyName("KerberosPrincipal");
-                context.Writer.WriteStringValue(publicRequest.KerberosPrincipal);
-            }
-            if (publicRequest.IsSetLocationArn())
-            {
-                context.Writer.WritePropertyName("LocationArn");
-                context.Writer.WriteStringValue(publicRequest.LocationArn);
-            }
-            if (publicRequest.IsSetMountOptions())
-            {
-                context.Writer.WritePropertyName("MountOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SmbMountOptionsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MountOptions, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetPassword())
-            {
-                context.Writer.WritePropertyName("Password");
-                context.Writer.WriteStringValue(publicRequest.Password);
-            }
-            if (publicRequest.IsSetServerHostname())
-            {
-                context.Writer.WritePropertyName("ServerHostname");
-                context.Writer.WriteStringValue(publicRequest.ServerHostname);
-            }
-            if (publicRequest.IsSetSubdirectory())
-            {
-                context.Writer.WritePropertyName("Subdirectory");
-                context.Writer.WriteStringValue(publicRequest.Subdirectory);
-            }
-            if (publicRequest.IsSetUser())
-            {
-                context.Writer.WritePropertyName("User");
-                context.Writer.WriteStringValue(publicRequest.User);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

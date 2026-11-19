@@ -37,6 +37,20 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSection
     {
         /// <summary>
+        /// Gets and sets the property Enablement. 
+        /// <para>
+        /// The conditional enablement configuration of the section. Sections use the same enablement
+        /// model as questions.
+        /// </para>
+        /// </summary>
+        public EvaluationFormItemEnablementConfiguration Enablement { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Enablement property is set.
+        /// </summary>
+        internal bool IsSetEnablement() => this.Enablement != null;
+
+        /// <summary>
         /// Gets and sets the property Instructions. 
         /// <para>
         /// The instructions of the section.

@@ -81,6 +81,13 @@ namespace Amazon.Athena.Model
         /// the <c>Classifications</c> should be <c>athena-query-engine-properties</c>, with the
         /// only allowed properties as <c>max-dpu-count</c> and <c>min-dpu-count</c>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> When using StartQueryExecution, only the Classifications field applies.
+        /// Do not specify the other fields (AdditionalConfigs, CoordinatorDpuSize, DefaultExecutorDpuSize,
+        /// MaxConcurrentDpus, and SparkProperties), as these are used only with StartSession
+        /// to configure Apache Spark-based sessions.
+        /// </para>
         /// </summary>
         public EngineConfiguration EngineConfiguration { get; set; }
 

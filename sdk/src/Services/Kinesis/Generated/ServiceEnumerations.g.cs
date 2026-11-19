@@ -436,6 +436,103 @@ namespace Amazon.Kinesis
     }
 
     /// <summary>
+    /// Constants used for properties of type QueueStartingPositionType.
+    /// </summary>
+    public class QueueStartingPositionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AT_TIMESTAMP for QueueStartingPositionType
+        /// </summary>
+        public static readonly QueueStartingPositionType AT_TIMESTAMP = new QueueStartingPositionType("AT_TIMESTAMP");
+
+        /// <summary>
+        /// Constant LATEST for QueueStartingPositionType
+        /// </summary>
+        public static readonly QueueStartingPositionType LATEST = new QueueStartingPositionType("LATEST");
+
+        /// <summary>
+        /// Constant TRIM_HORIZON for QueueStartingPositionType
+        /// </summary>
+        public static readonly QueueStartingPositionType TRIM_HORIZON = new QueueStartingPositionType("TRIM_HORIZON");
+
+        /// <summary>
+        /// Constructs a custom QueueStartingPositionType for a value not among the defined constants.
+        /// </summary>
+        public QueueStartingPositionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueStartingPositionType FindValue(string value)
+        {
+            return FindValue<QueueStartingPositionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueStartingPositionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QueueStatus.
+    /// </summary>
+    public class QueueStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus ACTIVE = new QueueStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus CREATING = new QueueStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus DELETING = new QueueStatus("DELETING");
+
+        /// <summary>
+        /// Constant UPDATING for QueueStatus
+        /// </summary>
+        public static readonly QueueStatus UPDATING = new QueueStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom QueueStatus for a value not among the defined constants.
+        /// </summary>
+        public QueueStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueStatus FindValue(string value)
+        {
+            return FindValue<QueueStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RecordDistributionStrategy.
     /// </summary>
     public class RecordDistributionStrategy : ConstantClass
@@ -905,6 +1002,47 @@ namespace Amazon.Kinesis
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BUILT_IN for TargetType
+        /// </summary>
+        public static readonly TargetType BUILT_IN = new TargetType("BUILT_IN");
+
+        /// <summary>
+        /// Constant NONE for TargetType
+        /// </summary>
+        public static readonly TargetType NONE = new TargetType("NONE");
+
+        /// <summary>
+        /// Constructs a custom TargetType for a value not among the defined constants.
+        /// </summary>
+        public TargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
         {
             return FindValue(value);
         }

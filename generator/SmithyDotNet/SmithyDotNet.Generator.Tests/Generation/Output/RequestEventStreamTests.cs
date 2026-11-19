@@ -51,7 +51,7 @@ public class RequestEventStreamTests : IDisposable
 
         Assert.Equal("IChatStreamEvent", stream.InterfaceName);
         Assert.Equal(["Talk", "TalkWithInitialRequest"], stream.Operations.Select(o => o.Name));
-        Assert.Equal(["AudioEvent", "ExplicitPayloadEvent", "ImplicitPayloadEvent", "TextEvent"], stream.Events.Select(e => e.Name));
+        Assert.Equal(["AudioEvent", "EndEvent", "ExplicitPayloadEvent", "HeadersOnlyEvent", "ImplicitPayloadEvent", "TextEvent"], stream.Events.Select(e => e.Name));
     }
 
     [Fact]

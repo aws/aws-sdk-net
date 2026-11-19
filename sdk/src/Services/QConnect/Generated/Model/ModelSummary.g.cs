@@ -79,6 +79,19 @@ namespace Amazon.QConnect.Model
         internal bool IsSetEndOfLifeTimestamp() => this.EndOfLifeTimestamp.HasValue;
 
         /// <summary>
+        /// Gets and sets the property GlobalResiliencyStatus. Whether this model is published
+        /// in every Region of the caller's Amazon Connect Global Resiliency replication group,
+        /// and so can be referenced by an AI Prompt that replicates. Present only for callers
+        /// to which global resiliency applies.
+        /// </summary>
+        public GlobalResiliencyStatus GlobalResiliencyStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GlobalResiliencyStatus property is set.
+        /// </summary>
+        internal bool IsSetGlobalResiliencyStatus() => this.GlobalResiliencyStatus != null;
+
+        /// <summary>
         /// Gets and sets the property LegacyTimestamp. 
         /// <para>
         /// The timestamp when the model lifecycle will transition from <c>ACTIVE</c> to <c>LEGACY</c>.

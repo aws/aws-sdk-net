@@ -55,8 +55,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used
-        /// to encrypt the SharePoint certificate credentials. This field is required.
+        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt
+        /// the SharePoint certificate credentials. This field is required.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 2048)]

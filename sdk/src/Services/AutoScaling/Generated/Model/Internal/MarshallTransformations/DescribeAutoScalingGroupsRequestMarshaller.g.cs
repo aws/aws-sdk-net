@@ -108,6 +108,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("IncludeInstances", StringUtils.FromBool(publicRequest.IncludeInstances.Value));
             }
+            if (publicRequest.IsSetIncludeManagedResources())
+            {
+                request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources.Value));
+            }
             if (publicRequest.IsSetMaxRecords())
             {
                 request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords.Value));

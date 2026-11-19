@@ -43,7 +43,7 @@ public static class PaginationResolver
         foreach (var operation in operations)
         {
             var trait = operation.Shape.GetPaginated();
-            customizations.Paginators.TryGetValue(operation.Name, out var customization);
+            customizations.Paginators.TryGetValue(operation.Shape.Id.Name, out var customization);
             if (trait is null && customization is null)
             {
                 continue;
@@ -78,7 +78,7 @@ public static class PaginationResolver
             }
 
             // A wrapped output's members sit under its one wrapper member.
-            customizations.OperationModifiers.TryGetValue(operation.Name, out var modifier);
+            customizations.OperationModifiers.TryGetValue(operation.Shape.Id.Name, out var modifier);
             var outputPrefix = modifier is { UseWrappingResult: true } ? $"{modifier.WrappedResultMember}." : "";
 
             var inputTokenProperties = new List<string>();

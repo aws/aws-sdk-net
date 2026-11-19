@@ -33,6 +33,11 @@ namespace Amazon.NetworkFirewall.Model
     /// Container for the parameters to the DisassociateSubnets operation. Removes the specified
     /// subnet associations from the firewall. This removes the firewall endpoints from the
     /// subnets and removes any network filtering protections that the endpoints were providing.
+    /// <para> For a proxy mode firewall, this also removes the firewall's proxy DNS record
+    /// in the Availability Zone and detaches the Availability Zone's NAT gateway from the
+    /// firewall. Network Firewall keeps the NAT gateway. You can't remove the firewall's
+    /// last Availability Zone. To do that, delete the firewall. If a VPC endpoint association
+    /// exists in the Availability Zone, delete it first. </para>
     /// </summary>
     public partial class DisassociateSubnetsRequest : AmazonNetworkFirewallRequest
     {

@@ -157,6 +157,22 @@ namespace Amazon.DataSync.Model
         internal bool IsSetCustomSecretConfig() => this.CustomSecretConfig != null;
 
         /// <summary>
+        /// Gets and sets the property FederatedIdentity. 
+        /// <para>
+        /// Specifies the federated identity configuration that allows DataSync to access your
+        /// object storage using an OpenID Connect (OIDC) token instead of a long-term access
+        /// key and secret key. Provide either <c>FederatedIdentity</c> or the <c>AccessKey</c>/<c>SecretKey</c>
+        /// credentials, but not both.
+        /// </para>
+        /// </summary>
+        public ObjectStorageFederatedIdentityConfig FederatedIdentity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FederatedIdentity property is set.
+        /// </summary>
+        internal bool IsSetFederatedIdentity() => this.FederatedIdentity != null;
+
+        /// <summary>
         /// Gets and sets the property SecretKey. 
         /// <para>
         /// Specifies the secret key (for example, a password) if credentials are required to

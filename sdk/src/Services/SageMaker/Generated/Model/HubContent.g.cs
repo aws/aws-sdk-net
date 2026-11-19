@@ -36,6 +36,19 @@ namespace Amazon.SageMaker.Model
     public partial class HubContent
     {
         /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// Information about the user who created the hub content.
+        /// </para>
+        /// </summary>
+        public UserContext CreatedBy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedBy property is set.
+        /// </summary>
+        internal bool IsSetCreatedBy() => this.CreatedBy != null;
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The date and time that hub content was created.
@@ -273,6 +286,19 @@ namespace Amazon.SageMaker.Model
         /// Checks to see if the HubName property is set.
         /// </summary>
         internal bool IsSetHubName() => this.HubName != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedBy. 
+        /// <para>
+        /// Information about the user who last modified the hub content.
+        /// </para>
+        /// </summary>
+        public UserContext LastModifiedBy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedBy property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedBy() => this.LastModifiedBy != null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 

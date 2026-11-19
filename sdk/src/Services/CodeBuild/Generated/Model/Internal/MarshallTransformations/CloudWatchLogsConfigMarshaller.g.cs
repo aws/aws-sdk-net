@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// CloudWatchLogsConfig Marshaller
     /// </summary>
-    public partial class CloudWatchLogsConfigMarshaller : IRequestMarshaller<CloudWatchLogsConfig, JsonMarshallerContext>
+    public partial class CloudWatchLogsConfigMarshaller : IRequestMarshaller<CloudWatchLogsConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CloudWatchLogsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(CloudWatchLogsConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGroupName())
             {
-                context.Writer.WritePropertyName("groupName");
-                context.Writer.WriteStringValue(requestObject.GroupName);
+                context.Writer.WriteTextString("groupName");
+                context.Writer.WriteTextString(requestObject.GroupName);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
 
             if (requestObject.IsSetStreamName())
             {
-                context.Writer.WritePropertyName("streamName");
-                context.Writer.WriteStringValue(requestObject.StreamName);
+                context.Writer.WriteTextString("streamName");
+                context.Writer.WriteTextString(requestObject.StreamName);
             }
         }
 

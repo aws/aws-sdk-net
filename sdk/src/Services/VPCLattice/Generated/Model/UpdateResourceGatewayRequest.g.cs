@@ -36,6 +36,32 @@ namespace Amazon.VPCLattice.Model
     public partial class UpdateResourceGatewayRequest : AmazonVPCLatticeRequest
     {
         /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// Indicates how DNS is resolved for resource configurations associated with this resource
+        /// gateway.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IN_VPC</c> - DNS resolution occurs privately within the resource gateway's VPC.
+        /// Use this when your resource domain names are hosted in private Route 53 hosted zones
+        /// or on-premises DNS servers reachable from the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PUBLIC</c> - DNS resolution occurs against public DNS resolvers. Use this when
+        /// your resource domain names are publicly resolvable.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceConfigDnsResolution property is set.
+        /// </summary>
+        internal bool IsSetResourceConfigDnsResolution() => this.ResourceConfigDnsResolution != null;
+
+        /// <summary>
         /// Gets and sets the property ResourceGatewayIdentifier. 
         /// <para>
         /// The ID or ARN of the resource gateway.

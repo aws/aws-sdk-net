@@ -366,6 +366,13 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("ServerlessV2PlatformVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2PlatformVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("ServerlessV2ScalingConfiguration", targetDepth))
                     {
                         var unmarshaller = ServerlessV2ScalingConfigurationInfoUnmarshaller.Instance;

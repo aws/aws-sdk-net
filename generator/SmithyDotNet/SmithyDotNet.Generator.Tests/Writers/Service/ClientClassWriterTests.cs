@@ -46,6 +46,23 @@ public class ClientClassWriterTests
         Assert.DoesNotContain("This operation is deprecated.", output);
     }
 
+    // The doc link points at the API reference page, which keeps the modeled name.
+    [Fact]
+    public void RenamedOperation_RenamesMethodsClassesAndMarshallers()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { Name = "FetchThing" };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var output = new ClientClassWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
+        Assert.Contains("public virtual FetchThingResponse FetchThing(FetchThingRequest request)", output);
+        Assert.Contains("public virtual Task<FetchThingResponse> FetchThingAsync(FetchThingRequest request", output);
+        Assert.Contains("options.RequestMarshaller = FetchThingRequestMarshaller.Instance;", output);
+        Assert.Contains("options.ResponseUnmarshaller = FetchThingResponseUnmarshaller.Instance;", output);
+        Assert.Contains("""/GetThing">REST API Reference for FetchThing Operation</seealso>""", output);
+        Assert.DoesNotContain("GetThingRequest", output);
+    }
+
     [Fact]
     public void EmitsClassDeclarationInServiceNamespace()
     {
@@ -237,6 +254,23 @@ public class ClientClassWriterTests
     {
         Assert.Contains("protected override void Dispose(bool disposing)", _output);
         Assert.Contains("base.Dispose(disposing);", _output);
+        Assert.DoesNotContain("if (disposing)", _output);
+    }
+
+    [Fact]
+    public void Dispose_WithCustomization_CallsMethodInsideDisposingGuard()
+    {
+        var service = new ServiceCustomizations { ClientDisposeMethod = "DisposeS3ExpressCredentialProvider" };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, new CustomizationsModel { Service = service });
+
+        var output = new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+
+        // Inside the guard, so a finalizer's Dispose(false) skips it; the base call stays outside.
+        var guard = output.IndexOf("if (disposing)");
+        var guardEnd = output.IndexOf("}", guard);
+        var call = output.IndexOf("DisposeS3ExpressCredentialProvider();");
+        Assert.True(guard >= 0 && call > guard && call < guardEnd);
+        Assert.True(output.IndexOf("base.Dispose(disposing);") > guardEnd);
     }
 
     [Fact]

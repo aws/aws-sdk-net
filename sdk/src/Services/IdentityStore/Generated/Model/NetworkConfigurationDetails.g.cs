@@ -63,7 +63,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property ApiRestrictSourceVpcs. 
         /// <para>
-        /// A list of virtual private cloud (VPC) IDs that are allowed to access the identity
+        /// A list of virtual private cloud (VPC) ARNs that are allowed to access the identity
         /// store API operations. A request is denied unless it originates from a VPC in this
         /// list, or from an IP address in <c>ApiAllowSourceIps</c> if one is configured. If this
         /// field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement

@@ -88,20 +88,6 @@ public final class ProtocolTestCustomizations {
             // Adding that validation would be a breaking change: responses that unmarshall today (with the member left
             // null) would start throwing, for every service whose responses omit a member its model marks @required.
             "MissingRequiredInitialResponseOutput",
-            "DuplexMissingRequiredInitialResponseOutput",
-            // The protocol test model (https://github.com/smithy-lang/smithy/blob/f9d0f0fde5d28b76aa99024bff0baeacaf40acaf/smithy-aws-protocol-tests/model/restJson1/event-stream.smithy#L31)
-            // defines these event headers as byte and short, but the RestJson test service model (smithy.json) has them as Integer.
-            // So the client sends them as Int32 (the input tests expect SByte/Int16) and reads them with AsInt32(), which can't
-            // unbox the SByte/Int16 values the output tests send. Fixing the model alone isn't enough: SmithyDotNet doesn't
-            // support byte/short shapes yet (TypeMapper throws), so it also needs a C# type for them and the matching
-            // event header setters/getters. Skipping until both are fixed.
-            "ByteHeaderInput",
-            "ShortHeaderInput",
-            "DuplexByteHeaderInput",
-            "DuplexShortHeaderInput",
-            "ByteHeaderOutput",
-            "ShortHeaderOutput",
-            "DuplexByteHeaderOutput",
-            "DuplexShortHeaderOutput"
+            "DuplexMissingRequiredInitialResponseOutput"
     );
 }

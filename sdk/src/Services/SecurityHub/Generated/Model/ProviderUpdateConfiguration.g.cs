@@ -48,6 +48,20 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAzure() => this.Azure != null;
 
         /// <summary>
+        /// Gets and sets the property GCP. 
+        /// <para>
+        /// The parameters required to update the configuration for a Google Cloud Platform (GCP)
+        /// CSPM integration.
+        /// </para>
+        /// </summary>
+        public GcpUpdateConfiguration GCP { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GCP property is set.
+        /// </summary>
+        internal bool IsSetGCP() => this.GCP != null;
+
+        /// <summary>
         /// Gets and sets the property JiraCloud. 
         /// <para>
         /// The parameters required to update the configuration for a Jira Cloud integration.

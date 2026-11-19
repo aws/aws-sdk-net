@@ -74,6 +74,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DestinationProfilesConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DestinationProfilesConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DestinationProfilesConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,44 +39,44 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// StatefulRule Marshaller
     /// </summary>
-    public partial class StatefulRuleMarshaller : IRequestMarshaller<StatefulRule, JsonMarshallerContext>
+    public partial class StatefulRuleMarshaller : IRequestMarshaller<StatefulRule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StatefulRule requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulRule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetHeader())
             {
-                context.Writer.WritePropertyName("Header");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Header");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = HeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.Header, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRuleOptions())
             {
-                context.Writer.WritePropertyName("RuleOptions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("RuleOptions");
+                context.Writer.WriteStartArray(requestObject.RuleOptions.Count);
                 foreach (var requestObjectRuleOptionsListValue in requestObject.RuleOptions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuleOptionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

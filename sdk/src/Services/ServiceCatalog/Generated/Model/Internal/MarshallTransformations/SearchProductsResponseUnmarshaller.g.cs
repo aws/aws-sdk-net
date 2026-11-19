@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -38,41 +38,48 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SearchProducts operation.
     /// </summary>
-    public partial class SearchProductsResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class SearchProductsResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new SearchProductsResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("SearchProducts");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NextPageToken":
+                        context.AddPathSegment("NextPageToken");
+                        unmarshalledObject.NextPageToken = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProductViewAggregations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ProductViewAggregationValue>, StringUnmarshaller, JsonListUnmarshaller<ProductViewAggregationValue, ProductViewAggregationValueUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ProductViewAggregationValue, ProductViewAggregationValueUnmarshaller>(ProductViewAggregationValueUnmarshaller.Instance));
-                    unmarshalledObject.ProductViewAggregations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProductViewAggregations":
+                        context.AddPathSegment("ProductViewAggregations");
+                        unmarshalledObject.ProductViewAggregations = new CborDictionaryUnmarshaller<string, List<ProductViewAggregationValue>, CborStringUnmarshaller, CborListUnmarshaller<ProductViewAggregationValue, ProductViewAggregationValueUnmarshaller>>(CborStringUnmarshaller.Instance, new CborListUnmarshaller<ProductViewAggregationValue, ProductViewAggregationValueUnmarshaller>(ProductViewAggregationValueUnmarshaller.Instance)).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProductViewSummaries", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProductViewSummary, ProductViewSummaryUnmarshaller>(ProductViewSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ProductViewSummaries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ProductViewSummaries":
+                        context.AddPathSegment("ProductViewSummaries");
+                        unmarshalledObject.ProductViewSummaries = new CborListUnmarshaller<ProductViewSummary, ProductViewSummaryUnmarshaller>(ProductViewSummaryUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -80,11 +87,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -92,12 +97,11 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParametersException"))
                     {
-                        return InvalidParametersExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidParametersExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// LatestInPipelineExecutionFilter Marshaller
     /// </summary>
-    public partial class LatestInPipelineExecutionFilterMarshaller : IRequestMarshaller<LatestInPipelineExecutionFilter, JsonMarshallerContext>
+    public partial class LatestInPipelineExecutionFilterMarshaller : IRequestMarshaller<LatestInPipelineExecutionFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LatestInPipelineExecutionFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(LatestInPipelineExecutionFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPipelineExecutionId())
             {
-                context.Writer.WritePropertyName("pipelineExecutionId");
-                context.Writer.WriteStringValue(requestObject.PipelineExecutionId);
+                context.Writer.WriteTextString("pipelineExecutionId");
+                context.Writer.WriteTextString(requestObject.PipelineExecutionId);
             }
 
             if (requestObject.IsSetStartTimeRange())
             {
-                context.Writer.WritePropertyName("startTimeRange");
-                context.Writer.WriteStringValue(requestObject.StartTimeRange);
+                context.Writer.WriteTextString("startTimeRange");
+                context.Writer.WriteTextString(requestObject.StartTimeRange);
             }
         }
 

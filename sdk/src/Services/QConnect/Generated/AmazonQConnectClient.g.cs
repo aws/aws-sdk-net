@@ -5885,12 +5885,196 @@ namespace Amazon.QConnect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Registers a replica Region KMS key for an Amazon Q in Connect assistant. To use this
+        /// operation, you must have <c>kms:GenerateDataKey</c> permission on the replica key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAssistantReplicaKey service method.</param>
+        /// <returns>The response from the RegisterAssistantReplicaKey service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterAssistantReplicaKey">REST API Reference for RegisterAssistantReplicaKey Operation</seealso>
+        public virtual RegisterAssistantReplicaKeyResponse RegisterAssistantReplicaKey(RegisterAssistantReplicaKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterAssistantReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterAssistantReplicaKeyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterAssistantReplicaKeyResponse>(request, options);
+        }
+#else
+        internal virtual RegisterAssistantReplicaKeyResponse RegisterAssistantReplicaKey(RegisterAssistantReplicaKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterAssistantReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterAssistantReplicaKeyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterAssistantReplicaKeyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Registers a replica Region KMS key for an Amazon Q in Connect assistant. To use this
+        /// operation, you must have <c>kms:GenerateDataKey</c> permission on the replica key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAssistantReplicaKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RegisterAssistantReplicaKey service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterAssistantReplicaKey">REST API Reference for RegisterAssistantReplicaKey Operation</seealso>
+        public virtual Task<RegisterAssistantReplicaKeyResponse> RegisterAssistantReplicaKeyAsync(RegisterAssistantReplicaKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterAssistantReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterAssistantReplicaKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterAssistantReplicaKeyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Registers a replica Region KMS key for an Amazon Q in Connect knowledge base. To use
+        /// this operation, you must have <c>kms:GenerateDataKey</c> permission on the replica
+        /// key. You must also have <c>kms:CreateGrant</c> permission on the primary key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterKnowledgeBaseReplicaKey service method.</param>
+        /// <returns>The response from the RegisterKnowledgeBaseReplicaKey service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterKnowledgeBaseReplicaKey">REST API Reference for RegisterKnowledgeBaseReplicaKey Operation</seealso>
+        public virtual RegisterKnowledgeBaseReplicaKeyResponse RegisterKnowledgeBaseReplicaKey(RegisterKnowledgeBaseReplicaKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterKnowledgeBaseReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterKnowledgeBaseReplicaKeyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterKnowledgeBaseReplicaKeyResponse>(request, options);
+        }
+#else
+        internal virtual RegisterKnowledgeBaseReplicaKeyResponse RegisterKnowledgeBaseReplicaKey(RegisterKnowledgeBaseReplicaKeyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterKnowledgeBaseReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterKnowledgeBaseReplicaKeyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterKnowledgeBaseReplicaKeyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Registers a replica Region KMS key for an Amazon Q in Connect knowledge base. To use
+        /// this operation, you must have <c>kms:GenerateDataKey</c> permission on the replica
+        /// key. You must also have <c>kms:CreateGrant</c> permission on the primary key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterKnowledgeBaseReplicaKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RegisterKnowledgeBaseReplicaKey service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterKnowledgeBaseReplicaKey">REST API Reference for RegisterKnowledgeBaseReplicaKey Operation</seealso>
+        public virtual Task<RegisterKnowledgeBaseReplicaKeyResponse> RegisterKnowledgeBaseReplicaKeyAsync(RegisterKnowledgeBaseReplicaKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterKnowledgeBaseReplicaKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterKnowledgeBaseReplicaKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterKnowledgeBaseReplicaKeyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAssistantAIAgent service method.</param>
         /// <returns>The response from the RemoveAssistantAIAgent service method, as returned by QConnect.</returns>
         /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -5931,6 +6115,12 @@ namespace Amazon.QConnect
         /// <returns>The response from the RemoveAssistantAIAgent service method, as returned by QConnect.</returns>
         /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -7150,6 +7340,12 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -7189,6 +7385,12 @@ namespace Amazon.QConnect
         /// <returns>The response from the UpdateAssistantAIAgent service method, as returned by QConnect.</returns>
         /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

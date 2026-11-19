@@ -51,10 +51,12 @@ namespace Amazon.DynamoDBStreams.Internal
         {
             var config = (AmazonDynamoDBStreamsConfig)requestContext.ClientConfig;
             var result = new DynamoDBStreamsEndpointParameters();
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
+            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null;
+            result.AccountIdEndpointMode = config.AccountIdEndpointMode.ToString().ToLower();
 
             // The region needs to be determined from the ServiceURL if not set.
             var regionEndpoint = config.RegionEndpoint;
@@ -82,6 +84,26 @@ namespace Amazon.DynamoDBStreams.Internal
             if (requestContext.Request.AlternateEndpoint != null)
             {
                 result.Region = requestContext.Request.AlternateEndpoint.SystemName;
+            }
+
+            // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "DescribeStreamRequest")
+            {
+                var request = (DescribeStreamRequest)requestContext.OriginalRequest;
+                result.StreamArn = request.StreamArn;
+                return result;
+            }
+            if (requestContext.RequestName == "GetRecordsRequest")
+            {
+                var request = (GetRecordsRequest)requestContext.OriginalRequest;
+                result.ShardIterator = request.ShardIterator;
+                return result;
+            }
+            if (requestContext.RequestName == "GetShardIteratorRequest")
+            {
+                var request = (GetShardIteratorRequest)requestContext.OriginalRequest;
+                result.StreamArn = request.StreamArn;
+                return result;
             }
 
             return result;

@@ -22,6 +22,42 @@ using Amazon.Runtime;
 namespace Amazon.LakeFormation
 {
     /// <summary>
+    /// Constants used for properties of type AnyResourceSupportedTypes.
+    /// </summary>
+    public class AnyResourceSupportedTypes : ConstantClass
+    {
+        /// <summary>
+        /// Constant TABLE for AnyResourceSupportedTypes
+        /// </summary>
+        public static readonly AnyResourceSupportedTypes TABLE = new AnyResourceSupportedTypes("TABLE");
+
+        /// <summary>
+        /// Constructs a custom AnyResourceSupportedTypes for a value not among the defined constants.
+        /// </summary>
+        public AnyResourceSupportedTypes(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnyResourceSupportedTypes FindValue(string value)
+        {
+            return FindValue<AnyResourceSupportedTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnyResourceSupportedTypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ApplicationStatus.
     /// </summary>
     public class ApplicationStatus : ConstantClass
@@ -195,6 +231,11 @@ namespace Amazon.LakeFormation
     public class DataLakeResourceType : ConstantClass
     {
         /// <summary>
+        /// Constant ANY_RESOURCE for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType ANY_RESOURCE = new DataLakeResourceType("ANY_RESOURCE");
+
+        /// <summary>
         /// Constant CATALOG for DataLakeResourceType
         /// </summary>
         public static readonly DataLakeResourceType CATALOG = new DataLakeResourceType("CATALOG");
@@ -238,6 +279,11 @@ namespace Amazon.LakeFormation
         /// Constant TABLE for DataLakeResourceType
         /// </summary>
         public static readonly DataLakeResourceType TABLE = new DataLakeResourceType("TABLE");
+
+        /// <summary>
+        /// Constant USER_DEFINED_FUNCTION for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType USER_DEFINED_FUNCTION = new DataLakeResourceType("USER_DEFINED_FUNCTION");
 
         /// <summary>
         /// Constructs a custom DataLakeResourceType for a value not among the defined constants.
@@ -462,6 +508,11 @@ namespace Amazon.LakeFormation
         /// Constant DROP for Permission
         /// </summary>
         public static readonly Permission DROP = new Permission("DROP");
+
+        /// <summary>
+        /// Constant EXECUTE for Permission
+        /// </summary>
+        public static readonly Permission EXECUTE = new Permission("EXECUTE");
 
         /// <summary>
         /// Constant GRANT_WITH_LF_TAG_EXPRESSION for Permission

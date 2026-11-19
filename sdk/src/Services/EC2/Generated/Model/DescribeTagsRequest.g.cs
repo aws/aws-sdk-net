@@ -1,0 +1,144 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeTags operation. Describes the specified
+    /// tags for your EC2 resources. <para> For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
+    /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para> <important> <para> We strongly recommend using only paginated requests. Unpaginated
+    /// requests are susceptible to throttling and timeouts. </para> </important> <note> <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para> </note>
+    /// </summary>
+    public partial class DescribeTagsRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public DescribeTagsRequest() { }
+
+        /// <summary>
+        /// Instantiates DescribeTagsRequest with the parameterized properties
+        /// </summary>
+        /// <param name="filters">The filters.   <ul>   <li>         <c>key</c> - The tag key.   </li>   <li>         <c>resource-id</c> - The ID of the resource.   </li>   <li>         <c>resource-type</c> - The resource type. For a list of possible values, see    <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.   </li>   <li>         <c>tag</c>:<key> - The key/value combination of the tag. For example,    specify "tag:Owner" for the filter name and "TeamA" for the filter value to find    resources with the tag "Owner=TeamA".   </li>   <li>         <c>value</c> - The tag value.   </li>   </ul></param>
+        public DescribeTagsRequest(List<Filter> filters)
+        {
+            this.Filters = filters;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>key</c> - The tag key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource-id</c> - The ID of the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource-type</c> - The resource type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag</c>:&lt;key&gt; - The key/value combination of the tag. For example, specify
+        /// "tag:Owner" for the filter name and "TeamA" for the filter value to find resources
+        /// with the tag "Owner=TeamA".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>value</c> - The tag value.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Filter> Filters { get; set; } = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+
+        /// <summary>
+        /// Checks to see if the Filters property is set.
+        /// </summary>
+        internal bool IsSetFilters() => this.Filters != null && (this.Filters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this request. This value can be between
+        /// 5 and 1000. To get the next page of items, make another request with the token returned
+        /// in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        /// </summary>
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+    }
+}

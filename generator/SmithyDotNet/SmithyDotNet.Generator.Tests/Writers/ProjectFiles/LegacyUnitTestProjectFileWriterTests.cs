@@ -21,16 +21,6 @@ public class LegacyUnitTestProjectFileWriterTests
         Assert.Contains($"""<ProjectReference Include="../../src/Services/*/*.{variant}.csproj"/>""", output);
     }
 
-    // MobileAnalytics ships only for .NET Framework.
-    [Fact]
-    public void ExcludesMobileAnalyticsTestsFromNetStandardOnly()
-    {
-        const string mobileAnalytics = """<Compile Remove="../Services/MobileAnalytics/UnitTests/**/*.cs"/>""";
-
-        Assert.Contains(mobileAnalytics, Writer.Write(ServiceProjectConfigurations.NetStandard));
-        Assert.DoesNotContain(mobileAnalytics, Writer.Write(ServiceProjectConfigurations.NetFramework));
-    }
-
     // The fixture manifest's Moq version and NoWarn code are made up, so they show the manifest is read.
     [Fact]
     public void TakesItsSettingsFromTheManifest()

@@ -1,0 +1,214 @@
+{
+    "smithy": "2.0",
+    "shapes": {
+        "aws.protocoltests.numerictypesjson#BigDecimalList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#BigDecimal"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BigDecimalMap": {
+            "type": "map",
+            "key": {
+                "target": "smithy.api#String"
+            },
+            "value": {
+                "target": "smithy.api#BigDecimal"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BigIntegerList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#BigInteger"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BigIntegerMap": {
+            "type": "map",
+            "key": {
+                "target": "smithy.api#String"
+            },
+            "value": {
+                "target": "smithy.api#BigInteger"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BodyNumbers": {
+            "type": "operation",
+            "input": {
+                "target": "aws.protocoltests.numerictypesjson#BodyNumbersRequest"
+            },
+            "output": {
+                "target": "aws.protocoltests.numerictypesjson#BodyNumbersResponse"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Sends and receives every numeric type in the request and response bodies.</p>"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BodyNumbersRequest": {
+            "type": "structure",
+            "members": {
+                "ByteValue": {
+                    "target": "smithy.api#Byte"
+                },
+                "ByteList": {
+                    "target": "aws.protocoltests.numerictypesjson#ByteList"
+                },
+                "ByteMap": {
+                    "target": "aws.protocoltests.numerictypesjson#ByteMap"
+                },
+                "ShortValue": {
+                    "target": "smithy.api#Short"
+                },
+                "ShortList": {
+                    "target": "aws.protocoltests.numerictypesjson#ShortList"
+                },
+                "ShortMap": {
+                    "target": "aws.protocoltests.numerictypesjson#ShortMap"
+                },
+                "BigIntegerValue": {
+                    "target": "smithy.api#BigInteger"
+                },
+                "BigIntegerList": {
+                    "target": "aws.protocoltests.numerictypesjson#BigIntegerList"
+                },
+                "BigIntegerMap": {
+                    "target": "aws.protocoltests.numerictypesjson#BigIntegerMap"
+                },
+                "BigDecimalValue": {
+                    "target": "smithy.api#BigDecimal"
+                },
+                "BigDecimalList": {
+                    "target": "aws.protocoltests.numerictypesjson#BigDecimalList"
+                },
+                "BigDecimalMap": {
+                    "target": "aws.protocoltests.numerictypesjson#BigDecimalMap"
+                },
+                "Nested": {
+                    "target": "aws.protocoltests.numerictypesjson#NestedNumbers"
+                },
+                "NestedList": {
+                    "target": "aws.protocoltests.numerictypesjson#NestedNumbersList"
+                }
+            }
+        },
+        "aws.protocoltests.numerictypesjson#BodyNumbersResponse": {
+            "type": "structure",
+            "members": {
+                "ByteValue": {
+                    "target": "smithy.api#Byte"
+                },
+                "ByteList": {
+                    "target": "aws.protocoltests.numerictypesjson#ByteList"
+                },
+                "ByteMap": {
+                    "target": "aws.protocoltests.numerictypesjson#ByteMap"
+                },
+                "ShortValue": {
+                    "target": "smithy.api#Short"
+                },
+                "ShortList": {
+                    "target": "aws.protocoltests.numerictypesjson#ShortList"
+                },
+                "ShortMap": {
+                    "target": "aws.protocoltests.numerictypesjson#ShortMap"
+                },
+                "BigIntegerValue": {
+                    "target": "smithy.api#BigInteger"
+                },
+                "BigIntegerList": {
+                    "target": "aws.protocoltests.numerictypesjson#BigIntegerList"
+                },
+                "BigIntegerMap": {
+                    "target": "aws.protocoltests.numerictypesjson#BigIntegerMap"
+                },
+                "BigDecimalValue": {
+                    "target": "smithy.api#BigDecimal"
+                },
+                "BigDecimalList": {
+                    "target": "aws.protocoltests.numerictypesjson#BigDecimalList"
+                },
+                "BigDecimalMap": {
+                    "target": "aws.protocoltests.numerictypesjson#BigDecimalMap"
+                },
+                "Nested": {
+                    "target": "aws.protocoltests.numerictypesjson#NestedNumbers"
+                },
+                "NestedList": {
+                    "target": "aws.protocoltests.numerictypesjson#NestedNumbersList"
+                }
+            }
+        },
+        "aws.protocoltests.numerictypesjson#ByteList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#Byte"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#ByteMap": {
+            "type": "map",
+            "key": {
+                "target": "smithy.api#String"
+            },
+            "value": {
+                "target": "smithy.api#Byte"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#NestedNumbers": {
+            "type": "structure",
+            "members": {
+                "ByteValue": {
+                    "target": "smithy.api#Byte"
+                },
+                "ShortValue": {
+                    "target": "smithy.api#Short"
+                },
+                "BigIntegerValue": {
+                    "target": "smithy.api#BigInteger"
+                },
+                "BigDecimalValue": {
+                    "target": "smithy.api#BigDecimal"
+                }
+            }
+        },
+        "aws.protocoltests.numerictypesjson#NestedNumbersList": {
+            "type": "list",
+            "member": {
+                "target": "aws.protocoltests.numerictypesjson#NestedNumbers"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#NumericTypesJson": {
+            "type": "service",
+            "version": "2026-10-26",
+            "operations": [
+                {
+                    "target": "aws.protocoltests.numerictypesjson#BodyNumbers"
+                }
+            ],
+            "traits": {
+                "aws.api#service": {
+                    "sdkId": "Numeric Types Json",
+                    "endpointPrefix": "numerictypesjson"
+                },
+                "aws.auth#sigv4": {
+                    "name": "numerictypesjson"
+                },
+                "aws.protocols#awsJson1_1": {},
+                "smithy.api#title": "Sample Numeric Types Json Service"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#ShortList": {
+            "type": "list",
+            "member": {
+                "target": "smithy.api#Short"
+            }
+        },
+        "aws.protocoltests.numerictypesjson#ShortMap": {
+            "type": "map",
+            "key": {
+                "target": "smithy.api#String"
+            },
+            "value": {
+                "target": "smithy.api#Short"
+            }
+        }
+    }
+}

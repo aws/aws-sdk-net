@@ -95,7 +95,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The number of days after which memory events will expire.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 365)]
+        [AWSProperty(Required = true, Min = 1, Max = 3650)]
         public int? EventExpiryDuration { get; set; }
 
         /// <summary>

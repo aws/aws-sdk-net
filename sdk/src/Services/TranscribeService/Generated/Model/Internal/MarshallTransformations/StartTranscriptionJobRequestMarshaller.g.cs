@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.TranscribeService.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -54,202 +55,208 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartTranscriptionJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.StartTranscriptionJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/Transcribe/operation/StartTranscriptionJob";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetContentRedaction())
+                {
+                    context.Writer.WriteTextString("ContentRedaction");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ContentRedactionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContentRedaction, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetIdentifyLanguage())
+                {
+                    context.Writer.WriteTextString("IdentifyLanguage");
+                    context.Writer.WriteBoolean(publicRequest.IdentifyLanguage.Value);
+                }
+                if (publicRequest.IsSetIdentifyMultipleLanguages())
+                {
+                    context.Writer.WriteTextString("IdentifyMultipleLanguages");
+                    context.Writer.WriteBoolean(publicRequest.IdentifyMultipleLanguages.Value);
+                }
+                if (publicRequest.IsSetJobExecutionSettings())
+                {
+                    context.Writer.WriteTextString("JobExecutionSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = JobExecutionSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobExecutionSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetKMSEncryptionContext())
+                {
+                    context.Writer.WriteTextString("KMSEncryptionContext");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
+                    {
+                        context.Writer.WriteTextString(publicRequestKMSEncryptionContextKvp.Key);
+                        var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
+                        context.Writer.WriteTextString(publicRequestKMSEncryptionContextValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WriteTextString("LanguageCode");
+                    context.Writer.WriteTextString(publicRequest.LanguageCode);
+                }
+                if (publicRequest.IsSetLanguageIdSettings())
+                {
+                    context.Writer.WriteTextString("LanguageIdSettings");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestLanguageIdSettingsKvp in publicRequest.LanguageIdSettings)
+                    {
+                        context.Writer.WriteTextString(publicRequestLanguageIdSettingsKvp.Key);
+                        var publicRequestLanguageIdSettingsValue = publicRequestLanguageIdSettingsKvp.Value;
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = LanguageIdSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLanguageIdSettingsValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetLanguageOptions())
+                {
+                    context.Writer.WriteTextString("LanguageOptions");
+                    context.Writer.WriteStartArray(publicRequest.LanguageOptions.Count);
+                    foreach (var publicRequestLanguageOptionsListValue in publicRequest.LanguageOptions)
+                    {
+                        context.Writer.WriteTextString(publicRequestLanguageOptionsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetMedia())
+                {
+                    context.Writer.WriteTextString("Media");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = MediaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Media, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetMediaFormat())
+                {
+                    context.Writer.WriteTextString("MediaFormat");
+                    context.Writer.WriteTextString(publicRequest.MediaFormat);
+                }
+                if (publicRequest.IsSetMediaSampleRateHertz())
+                {
+                    context.Writer.WriteTextString("MediaSampleRateHertz");
+                    context.Writer.WriteInt32(publicRequest.MediaSampleRateHertz.Value);
+                }
+                if (publicRequest.IsSetModelSettings())
+                {
+                    context.Writer.WriteTextString("ModelSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ModelSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetOutputBucketName())
+                {
+                    context.Writer.WriteTextString("OutputBucketName");
+                    context.Writer.WriteTextString(publicRequest.OutputBucketName);
+                }
+                if (publicRequest.IsSetOutputEncryptionKMSKeyId())
+                {
+                    context.Writer.WriteTextString("OutputEncryptionKMSKeyId");
+                    context.Writer.WriteTextString(publicRequest.OutputEncryptionKMSKeyId);
+                }
+                if (publicRequest.IsSetOutputKey())
+                {
+                    context.Writer.WriteTextString("OutputKey");
+                    context.Writer.WriteTextString(publicRequest.OutputKey);
+                }
+                if (publicRequest.IsSetSettings())
+                {
+                    context.Writer.WriteTextString("Settings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = SettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSubtitles())
+                {
+                    context.Writer.WriteTextString("Subtitles");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = SubtitlesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Subtitles, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetToxicityDetection())
+                {
+                    context.Writer.WriteTextString("ToxicityDetection");
+                    context.Writer.WriteStartArray(publicRequest.ToxicityDetection.Count);
+                    foreach (var publicRequestToxicityDetectionListValue in publicRequest.ToxicityDetection)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ToxicityDetectionSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestToxicityDetectionListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTranscriptionJobName())
+                {
+                    context.Writer.WriteTextString("TranscriptionJobName");
+                    context.Writer.WriteTextString(publicRequest.TranscriptionJobName);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetContentRedaction())
-            {
-                context.Writer.WritePropertyName("ContentRedaction");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ContentRedactionMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ContentRedaction, context);
-
-                context.Writer.WriteEndObject();
             }
-            if (publicRequest.IsSetIdentifyLanguage())
+            finally
             {
-                context.Writer.WritePropertyName("IdentifyLanguage");
-                context.Writer.WriteBooleanValue(publicRequest.IdentifyLanguage.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetIdentifyMultipleLanguages())
-            {
-                context.Writer.WritePropertyName("IdentifyMultipleLanguages");
-                context.Writer.WriteBooleanValue(publicRequest.IdentifyMultipleLanguages.Value);
-            }
-            if (publicRequest.IsSetJobExecutionSettings())
-            {
-                context.Writer.WritePropertyName("JobExecutionSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = JobExecutionSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.JobExecutionSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetKMSEncryptionContext())
-            {
-                context.Writer.WritePropertyName("KMSEncryptionContext");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
-                {
-                    context.Writer.WritePropertyName(publicRequestKMSEncryptionContextKvp.Key);
-                    var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
-                    context.Writer.WriteStringValue(publicRequestKMSEncryptionContextValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetLanguageCode())
-            {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-            if (publicRequest.IsSetLanguageIdSettings())
-            {
-                context.Writer.WritePropertyName("LanguageIdSettings");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestLanguageIdSettingsKvp in publicRequest.LanguageIdSettings)
-                {
-                    context.Writer.WritePropertyName(publicRequestLanguageIdSettingsKvp.Key);
-                    var publicRequestLanguageIdSettingsValue = publicRequestLanguageIdSettingsKvp.Value;
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = LanguageIdSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequestLanguageIdSettingsValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetLanguageOptions())
-            {
-                context.Writer.WritePropertyName("LanguageOptions");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestLanguageOptionsListValue in publicRequest.LanguageOptions)
-                {
-                    context.Writer.WriteStringValue(publicRequestLanguageOptionsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetMedia())
-            {
-                context.Writer.WritePropertyName("Media");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MediaMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Media, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetMediaFormat())
-            {
-                context.Writer.WritePropertyName("MediaFormat");
-                context.Writer.WriteStringValue(publicRequest.MediaFormat);
-            }
-            if (publicRequest.IsSetMediaSampleRateHertz())
-            {
-                context.Writer.WritePropertyName("MediaSampleRateHertz");
-                context.Writer.WriteNumberValue(publicRequest.MediaSampleRateHertz.Value);
-            }
-            if (publicRequest.IsSetModelSettings())
-            {
-                context.Writer.WritePropertyName("ModelSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModelSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ModelSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetOutputBucketName())
-            {
-                context.Writer.WritePropertyName("OutputBucketName");
-                context.Writer.WriteStringValue(publicRequest.OutputBucketName);
-            }
-            if (publicRequest.IsSetOutputEncryptionKMSKeyId())
-            {
-                context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
-                context.Writer.WriteStringValue(publicRequest.OutputEncryptionKMSKeyId);
-            }
-            if (publicRequest.IsSetOutputKey())
-            {
-                context.Writer.WritePropertyName("OutputKey");
-                context.Writer.WriteStringValue(publicRequest.OutputKey);
-            }
-            if (publicRequest.IsSetSettings())
-            {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Settings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSubtitles())
-            {
-                context.Writer.WritePropertyName("Subtitles");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SubtitlesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Subtitles, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetToxicityDetection())
-            {
-                context.Writer.WritePropertyName("ToxicityDetection");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestToxicityDetectionListValue in publicRequest.ToxicityDetection)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ToxicityDetectionSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequestToxicityDetectionListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetTranscriptionJobName())
-            {
-                context.Writer.WritePropertyName("TranscriptionJobName");
-                context.Writer.WriteStringValue(publicRequest.TranscriptionJobName);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

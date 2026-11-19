@@ -86,6 +86,33 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetKnowledgeBaseId() => this.KnowledgeBaseId != null;
 
         /// <summary>
+        /// Gets and sets the property MetadataConfigurations. 
+        /// <para>
+        /// Specifies up to 30 custom metadata field configurations for a managed knowledge base.
+        /// </para>
+        ///  
+        /// <para>
+        /// The list that you specify replaces the existing configurations. The update removes
+        /// any configuration that you leave out, and its field is no longer searchable. An empty
+        /// list removes all configurations. If you don't specify a list, the existing configurations
+        /// don't change.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 30)]
+        public List<MetadataConfiguration> MetadataConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<MetadataConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the MetadataConfigurations property is set.
+        /// </summary>
+        internal bool IsSetMetadataConfigurations() => this.MetadataConfigurations != null && (this.MetadataConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// Specifies a new name for the knowledge base.

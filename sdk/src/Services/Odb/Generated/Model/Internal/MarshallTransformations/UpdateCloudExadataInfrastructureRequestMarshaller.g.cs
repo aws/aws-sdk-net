@@ -75,6 +75,16 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("cloudExadataInfrastructureId");
                 context.Writer.WriteStringValue(publicRequest.CloudExadataInfrastructureId);
             }
+            if (publicRequest.IsSetComputeCount())
+            {
+                context.Writer.WritePropertyName("computeCount");
+                context.Writer.WriteNumberValue(publicRequest.ComputeCount.Value);
+            }
+            if (publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
             if (publicRequest.IsSetMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("maintenanceWindow");
@@ -84,6 +94,11 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.MaintenanceWindow, context);
 
                 context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetStorageCount())
+            {
+                context.Writer.WritePropertyName("storageCount");
+                context.Writer.WriteNumberValue(publicRequest.StorageCount.Value);
             }
 
             writer.WriteEndObject();

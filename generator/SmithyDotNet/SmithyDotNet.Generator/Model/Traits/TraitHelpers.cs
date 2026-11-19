@@ -25,4 +25,8 @@ internal static class TraitHelpers
         shape.Traits.TryGetValue(traitId, out var value)
             ? value.Deserialize<T>()
             : null;
+
+    /// <summary>Sets a string-valued trait, replacing any existing value.</summary>
+    internal static void SetStringTrait(Shape shape, string traitId, string value) =>
+        shape.Traits[traitId] = JsonSerializer.SerializeToElement(value);
 }

@@ -1288,6 +1288,17 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAllEntitySessionsRequest.EntityId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAllEntitySessionsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteAttachedFileRequest.FileId</property>
     <min>1</min>
     <max>256</max>
@@ -6983,6 +6994,21 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormItemEnablementSource.ContactAttributeKey</property>
+    <min>1</min>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormItemEnablementSource.SegmentAttributeKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormItemEnablementSourceValue.StringValue</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormMetricConfiguration.MetricName</property>
     <min>1</min>
     <max>256</max>
@@ -7348,6 +7374,10 @@
     <property>Amazon.Connect.Model.IntegrationAssociationSummary.IntegrationAssociationId</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.IntegrationAssociationSummary.LastModifiedRegion</property>
+    <pattern>^[a-z]{2}(-[a-z]+){1,2}(-[0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.IntegrationAssociationSummary.SourceApplicationName</property>

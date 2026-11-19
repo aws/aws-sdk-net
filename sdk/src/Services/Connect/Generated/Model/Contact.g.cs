@@ -225,6 +225,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactEvaluations() => this.ContactEvaluations != null && (this.ContactEvaluations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ContactLens. 
+        /// <para>
+        /// Information about the conversational analytics configuration applied to the contact.
+        /// This field is present only for contacts where conversational analytics is enabled
+        /// in the contact flow.
+        /// </para>
+        /// </summary>
+        public ContactLens ContactLens { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContactLens property is set.
+        /// </summary>
+        internal bool IsSetContactLens() => this.ContactLens != null;
+
+        /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
         /// Information about the Customer on the contact.

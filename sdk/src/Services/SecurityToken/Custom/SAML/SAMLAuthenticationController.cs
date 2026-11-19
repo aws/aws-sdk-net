@@ -42,7 +42,7 @@ namespace Amazon.SecurityToken.SAML
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The raw response data from the authentication request.</returns>
         string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType,
-#if NETSTANDARD
+#if !NETFRAMEWORK
             IWebProxy proxySettings);
 #else
             WebProxy proxySettings);
@@ -62,7 +62,7 @@ namespace Amazon.SecurityToken.SAML
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The raw response data from the authentication request.</returns>
         Task<string> AuthenticateAsync(Uri identityProvider, ICredentials credentials, string authenticationType,
-#if NETSTANDARD
+#if !NETFRAMEWORK
             IWebProxy proxySettings);
 #else
             WebProxy proxySettings);
@@ -110,7 +110,7 @@ namespace Amazon.SecurityToken.SAML
         /// <summary>
         /// Proxy details if required for communication with the authentication endpoint.
         /// </summary>
-#if NETSTANDARD
+#if !NETFRAMEWORK
         public IWebProxy ProxySettings { get; private set; }
 #else
         public WebProxy ProxySettings { get; private set; }
@@ -130,7 +130,7 @@ namespace Amazon.SecurityToken.SAML
         /// classes to authenticate and parse the responses. The supplied proxy settings will
         /// be used in the HTTPS calls to the authentication endpoint.
         /// </summary>
-#if NETSTANDARD
+#if !NETFRAMEWORK
         public SAMLAuthenticationController(IWebProxy proxySettings)
 #else
         public SAMLAuthenticationController(WebProxy proxySettings)
@@ -154,7 +154,7 @@ namespace Amazon.SecurityToken.SAML
         /// </param>
         public SAMLAuthenticationController(IAuthenticationController authenticationController, 
                                             IAuthenticationResponseParser responseParser,
-#if NETSTANDARD
+#if !NETFRAMEWORK
                                             IWebProxy proxySettings)
 #else
                                             WebProxy proxySettings)

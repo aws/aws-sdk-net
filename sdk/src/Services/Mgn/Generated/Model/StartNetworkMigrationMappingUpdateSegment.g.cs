@@ -35,6 +35,19 @@ namespace Amazon.Mgn.Model
     public partial class StartNetworkMigrationMappingUpdateSegment
     {
         /// <summary>
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// The operation to perform on the segment.
+        /// </para>
+        /// </summary>
+        public SegmentOperation Operation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Operation property is set.
+        /// </summary>
+        internal bool IsSetOperation() => this.Operation != null;
+
+        /// <summary>
         /// Gets and sets the property ScopeTags. 
         /// <para>
         /// The updated scope tags for the segment.
@@ -60,13 +73,28 @@ namespace Amazon.Mgn.Model
         /// The ID of the segment to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Min = 36, Max = 36)]
         public string SegmentID { get; set; }
 
         /// <summary>
         /// Checks to see if the SegmentID property is set.
         /// </summary>
         internal bool IsSetSegmentID() => this.SegmentID != null;
+
+        /// <summary>
+        /// Gets and sets the property SegmentLogicalID. 
+        /// <para>
+        /// An identifier that you choose for a segment created by this request. You can use it
+        /// in other constructs in the same request to refer to the new segment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max = 64)]
+        public string SegmentLogicalID { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SegmentLogicalID property is set.
+        /// </summary>
+        internal bool IsSetSegmentLogicalID() => this.SegmentLogicalID != null;
 
         /// <summary>
         /// Gets and sets the property TargetAccount. 

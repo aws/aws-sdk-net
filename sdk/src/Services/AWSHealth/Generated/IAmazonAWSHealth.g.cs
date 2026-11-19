@@ -38,10 +38,14 @@ namespace Amazon.AWSHealth
     /// </para>
     ///  
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
-    /// Web Services Support</a> to use the Health API. If you call the Health API from an
-    /// Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
-    /// Support plan, you receive a <c>SubscriptionRequiredException</c> error.
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// Web Services Support</a> to use the Health API. If you're in an Amazon Web Services
+    /// Region that doesn't offer one of these Amazon Web Services Support plans, or if you
+    /// haven't transitioned to one of these plans, you can use the Health API with a Business,
+    /// Enterprise On-Ramp, or Enterprise Support plan. If you call the Health API from an
+    /// Amazon Web Services account that isn't enrolled in one of these plans, then you receive
+    /// a <c>SubscriptionRequiredException</c> error.
     /// </para>
     ///  
     /// <para>
@@ -103,6 +107,56 @@ namespace Amazon.AWSHealth
         /// Paginators for the service
         /// </summary>
         IAWSHealthPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Configures which resource tag keys are tracked by Health for your account. This operation
+        /// replaces the existing configuration with the specified tag keys. Only configured tag
+        /// keys will appear in Health event data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureTags service method.</param>
+        /// <returns>The response from the ConfigureTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTags">REST API Reference for ConfigureTags Operation</seealso>
+        ConfigureTagsResponse ConfigureTags(ConfigureTagsRequest request);
+#endif
+
+        /// <summary>
+        /// Configures which resource tag keys are tracked by Health for your account. This operation
+        /// replaces the existing configuration with the specified tag keys. Only configured tag
+        /// keys will appear in Health event data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ConfigureTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTags">REST API Reference for ConfigureTags Operation</seealso>
+        Task<ConfigureTagsResponse> ConfigureTagsAsync(ConfigureTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Configures which tag keys are tracked by Health for all accounts in your organization.
+        /// This operation replaces the existing configuration with the specified tag keys. Only
+        /// configured tag keys will appear in Health event data across the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureTagsForOrganization service method.</param>
+        /// <returns>The response from the ConfigureTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTagsForOrganization">REST API Reference for ConfigureTagsForOrganization Operation</seealso>
+        ConfigureTagsForOrganizationResponse ConfigureTagsForOrganization(ConfigureTagsForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Configures which tag keys are tracked by Health for all accounts in your organization.
+        /// This operation replaces the existing configuration with the specified tag keys. Only
+        /// configured tag keys will appear in Health event data across the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureTagsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ConfigureTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/ConfigureTagsForOrganization">REST API Reference for ConfigureTagsForOrganization Operation</seealso>
+        Task<ConfigureTagsForOrganizationResponse> ConfigureTagsForOrganizationAsync(ConfigureTagsForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -913,6 +967,148 @@ namespace Amazon.AWSHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the list of resource tag keys configured for Health event tracking in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagKeys service method.</param>
+        /// <returns>The response from the DescribeTagKeys service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeys">REST API Reference for DescribeTagKeys Operation</seealso>
+        DescribeTagKeysResponse DescribeTagKeys(DescribeTagKeysRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the list of resource tag keys configured for Health event tracking in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTagKeys service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeys">REST API Reference for DescribeTagKeys Operation</seealso>
+        Task<DescribeTagKeysResponse> DescribeTagKeysAsync(DescribeTagKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the list of tag keys configured for Health event tracking across your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagKeysForOrganization service method.</param>
+        /// <returns>The response from the DescribeTagKeysForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeysForOrganization">REST API Reference for DescribeTagKeysForOrganization Operation</seealso>
+        DescribeTagKeysForOrganizationResponse DescribeTagKeysForOrganization(DescribeTagKeysForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the list of tag keys configured for Health event tracking across your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagKeysForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTagKeysForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagKeysForOrganization">REST API Reference for DescribeTagKeysForOrganization Operation</seealso>
+        Task<DescribeTagKeysForOrganizationResponse> DescribeTagKeysForOrganizationAsync(DescribeTagKeysForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the resource tags associated with Health events for your account. Use this
+        /// operation to retrieve the actual tag key-value pairs attached to affected entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// <returns>The response from the DescribeTags service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<c>nextToken</c>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the resource tags associated with Health events for your account. Use this
+        /// operation to retrieve the actual tag key-value pairs attached to affected entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTags service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<c>nextToken</c>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the tags associated with Health events across all accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsForOrganization service method.</param>
+        /// <returns>The response from the DescribeTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<c>nextToken</c>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsForOrganization">REST API Reference for DescribeTagsForOrganization Operation</seealso>
+        DescribeTagsForOrganizationResponse DescribeTagsForOrganization(DescribeTagsForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the tags associated with Health events across all accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
+        /// The specified pagination token (<c>nextToken</c>) is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsForOrganization">REST API Reference for DescribeTagsForOrganization Operation</seealso>
+        Task<DescribeTagsForOrganizationResponse> DescribeTagsForOrganizationAsync(DescribeTagsForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the current onboarding status of the Health tags feature for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsOnboardingStatus service method.</param>
+        /// <returns>The response from the DescribeTagsOnboardingStatus service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatus">REST API Reference for DescribeTagsOnboardingStatus Operation</seealso>
+        DescribeTagsOnboardingStatusResponse DescribeTagsOnboardingStatus(DescribeTagsOnboardingStatusRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the current onboarding status of the Health tags feature for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsOnboardingStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTagsOnboardingStatus service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatus">REST API Reference for DescribeTagsOnboardingStatus Operation</seealso>
+        Task<DescribeTagsOnboardingStatusResponse> DescribeTagsOnboardingStatusAsync(DescribeTagsOnboardingStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the current onboarding status of the Health tags feature for your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsOnboardingStatusForOrganization service method.</param>
+        /// <returns>The response from the DescribeTagsOnboardingStatusForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatusForOrganization">REST API Reference for DescribeTagsOnboardingStatusForOrganization Operation</seealso>
+        DescribeTagsOnboardingStatusForOrganizationResponse DescribeTagsOnboardingStatusForOrganization(DescribeTagsOnboardingStatusForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the current onboarding status of the Health tags feature for your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTagsOnboardingStatusForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTagsOnboardingStatusForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeTagsOnboardingStatusForOrganization">REST API Reference for DescribeTagsOnboardingStatusForOrganization Operation</seealso>
+        Task<DescribeTagsOnboardingStatusForOrganizationResponse> DescribeTagsOnboardingStatusForOrganizationAsync(DescribeTagsOnboardingStatusForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Disables Health from working with Organizations. To call this operation, you must
         /// sign in to the organization's management account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
         /// Health events</a> in the <i>Health User Guide</i>.
@@ -984,6 +1180,52 @@ namespace Amazon.AWSHealth
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disables the Health tags feature for your account. After disabling, Health events
+        /// will no longer include resource tag information. Previously configured tag keys are
+        /// discarded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTags service method.</param>
+        /// <returns>The response from the DisableTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTags">REST API Reference for DisableTags Operation</seealso>
+        DisableTagsResponse DisableTags(DisableTagsRequest request);
+#endif
+
+        /// <summary>
+        /// Disables the Health tags feature for your account. After disabling, Health events
+        /// will no longer include resource tag information. Previously configured tag keys are
+        /// discarded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisableTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTags">REST API Reference for DisableTags Operation</seealso>
+        Task<DisableTagsResponse> DisableTagsAsync(DisableTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disables the Health tags feature for all accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTagsForOrganization service method.</param>
+        /// <returns>The response from the DisableTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTagsForOrganization">REST API Reference for DisableTagsForOrganization Operation</seealso>
+        DisableTagsForOrganizationResponse DisableTagsForOrganization(DisableTagsForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Disables the Health tags feature for all accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTagsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisableTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableTagsForOrganization">REST API Reference for DisableTagsForOrganization Operation</seealso>
+        Task<DisableTagsForOrganizationResponse> DisableTagsForOrganizationAsync(DisableTagsForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Enables Health to work with Organizations. You can use the organizational view feature
         /// to aggregate events from all Amazon Web Services accounts in your organization in
         /// a centralized location. 
@@ -999,10 +1241,12 @@ namespace Amazon.AWSHealth
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// You must have a Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a> to use the Health API. If you call the Health API from an
-        /// Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
-        /// Support plan, you receive a <c>SubscriptionRequiredException</c> error.
+        /// Amazon Web Services account that doesn't have a Amazon Web Services Business Support+,
+        /// Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations
+        /// plan, you receive a <c>SubscriptionRequiredException</c> error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1045,10 +1289,12 @@ namespace Amazon.AWSHealth
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// You must have a Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a> to use the Health API. If you call the Health API from an
-        /// Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
-        /// Support plan, you receive a <c>SubscriptionRequiredException</c> error.
+        /// Amazon Web Services account that doesn't have a Amazon Web Services Business Support+,
+        /// Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations
+        /// plan, you receive a <c>SubscriptionRequiredException</c> error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1076,6 +1322,56 @@ namespace Amazon.AWSHealth
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">REST API Reference for EnableHealthServiceAccessForOrganization Operation</seealso>
         Task<EnableHealthServiceAccessForOrganizationResponse> EnableHealthServiceAccessForOrganizationAsync(EnableHealthServiceAccessForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables the Health tags feature for your account. Once enabled, Health events will
+        /// include resource tag information for affected entities. If the feature is already
+        /// enabled, this operation has no effect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTags service method.</param>
+        /// <returns>The response from the EnableTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTags">REST API Reference for EnableTags Operation</seealso>
+        EnableTagsResponse EnableTags(EnableTagsRequest request);
+#endif
+
+        /// <summary>
+        /// Enables the Health tags feature for your account. Once enabled, Health events will
+        /// include resource tag information for affected entities. If the feature is already
+        /// enabled, this operation has no effect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the EnableTags service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTags">REST API Reference for EnableTags Operation</seealso>
+        Task<EnableTagsResponse> EnableTagsAsync(EnableTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables the Health tags feature for all accounts in your organization. Once enabled,
+        /// Health events will include resource tag information for affected entities across your
+        /// organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTagsForOrganization service method.</param>
+        /// <returns>The response from the EnableTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTagsForOrganization">REST API Reference for EnableTagsForOrganization Operation</seealso>
+        EnableTagsForOrganizationResponse EnableTagsForOrganization(EnableTagsForOrganizationRequest request);
+#endif
+
+        /// <summary>
+        /// Enables the Health tags feature for all accounts in your organization. Once enabled,
+        /// Health events will include resource tag information for affected entities across your
+        /// organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTagsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the EnableTagsForOrganization service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableTagsForOrganization">REST API Reference for EnableTagsForOrganization Operation</seealso>
+        Task<EnableTagsForOrganizationResponse> EnableTagsForOrganizationAsync(EnableTagsForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.

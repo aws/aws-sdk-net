@@ -47,7 +47,7 @@ namespace Amazon.Util.Internal
     {
         public bool Exists(string path) => Directory.Exists(path);
 
-        public DirectoryInfo CreateDirectory(string path) => Directory.CreateDirectory(path);
+        public DirectoryInfo CreateDirectory(string path) => FilePermissionHelper.CreateDirectory(path);
 
         public string[] GetFiles(string path, string searchPattern) => Directory.GetFiles(path, searchPattern);
 

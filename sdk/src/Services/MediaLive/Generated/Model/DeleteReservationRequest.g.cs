@@ -31,7 +31,11 @@ namespace Amazon.MediaLive.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReservation operation. Delete an expired
-    /// reservation.
+    /// reservation, or cancel an active reservation during the calendar month (UTC) in which
+    /// you purchased it. You can't cancel an active reservation that you purchased in an
+    /// earlier month, including one that renewed automatically. You also can't cancel an
+    /// active reservation during the last hour of the month, from 23:00 UTC on the last day
+    /// of the month.
     /// </summary>
     public partial class DeleteReservationRequest : AmazonMediaLiveRequest
     {

@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,58 +55,64 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeSnapshotsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.DescribeSnapshots";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AmazonMemoryDB/operation/DescribeSnapshots";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClusterName())
+                {
+                    context.Writer.WriteTextString("ClusterName");
+                    context.Writer.WriteTextString(publicRequest.ClusterName);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetShowDetail())
+                {
+                    context.Writer.WriteTextString("ShowDetail");
+                    context.Writer.WriteBoolean(publicRequest.ShowDetail.Value);
+                }
+                if (publicRequest.IsSetSnapshotName())
+                {
+                    context.Writer.WriteTextString("SnapshotName");
+                    context.Writer.WriteTextString(publicRequest.SnapshotName);
+                }
+                if (publicRequest.IsSetSource())
+                {
+                    context.Writer.WriteTextString("Source");
+                    context.Writer.WriteTextString(publicRequest.Source);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetClusterName())
-            {
-                context.Writer.WritePropertyName("ClusterName");
-                context.Writer.WriteStringValue(publicRequest.ClusterName);
             }
-            if (publicRequest.IsSetMaxResults())
+            finally
             {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetShowDetail())
-            {
-                context.Writer.WritePropertyName("ShowDetail");
-                context.Writer.WriteBooleanValue(publicRequest.ShowDetail.Value);
-            }
-            if (publicRequest.IsSetSnapshotName())
-            {
-                context.Writer.WritePropertyName("SnapshotName");
-                context.Writer.WriteStringValue(publicRequest.SnapshotName);
-            }
-            if (publicRequest.IsSetSource())
-            {
-                context.Writer.WritePropertyName("Source");
-                context.Writer.WriteStringValue(publicRequest.Source);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

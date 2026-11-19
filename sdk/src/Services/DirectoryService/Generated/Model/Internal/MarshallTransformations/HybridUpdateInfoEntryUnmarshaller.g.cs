@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HybridUpdateInfoEntry Object
     /// </summary>
-    public partial class HybridUpdateInfoEntryUnmarshaller : IJsonUnmarshaller<HybridUpdateInfoEntry, JsonUnmarshallerContext>
+    public partial class HybridUpdateInfoEntryUnmarshaller : ICborUnmarshaller<HybridUpdateInfoEntry, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public HybridUpdateInfoEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HybridUpdateInfoEntry Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new HybridUpdateInfoEntry();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AssessmentId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssessmentId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("InitiatedBy", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InitiatedBy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AssessmentId":
+                        context.AddPathSegment("AssessmentId");
+                        unmarshalledObject.AssessmentId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastUpdatedDateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InitiatedBy":
+                        context.AddPathSegment("InitiatedBy");
+                        unmarshalledObject.InitiatedBy = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NewValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = HybridUpdateValueUnmarshaller.Instance;
-                    unmarshalledObject.NewValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastUpdatedDateTime":
+                        context.AddPathSegment("LastUpdatedDateTime");
+                        unmarshalledObject.LastUpdatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PreviousValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = HybridUpdateValueUnmarshaller.Instance;
-                    unmarshalledObject.PreviousValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NewValue":
+                        context.AddPathSegment("NewValue");
+                        unmarshalledObject.NewValue = HybridUpdateValueUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PreviousValue":
+                        context.AddPathSegment("PreviousValue");
+                        unmarshalledObject.PreviousValue = HybridUpdateValueUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StartTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatusReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "StatusReason":
+                        context.AddPathSegment("StatusReason");
+                        unmarshalledObject.StatusReason = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

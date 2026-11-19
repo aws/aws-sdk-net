@@ -31,7 +31,8 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation. Adds or updates tags for
-    /// a resource. Supports telemetry rule resources and telemetry pipeline resources.
+    /// a resource. Supports telemetry rule resources, telemetry pipeline resources, and third-party
+    /// telemetry enrichment resources.
     /// </summary>
     public partial class TagResourceRequest : AmazonObservabilityAdminRequest
     {

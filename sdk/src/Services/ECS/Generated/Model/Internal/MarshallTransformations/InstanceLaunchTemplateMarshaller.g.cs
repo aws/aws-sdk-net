@@ -119,6 +119,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetNitroEnclavesEnabled())
+            {
+                context.Writer.WritePropertyName("nitroEnclavesEnabled");
+                context.Writer.WriteBooleanValue(requestObject.NitroEnclavesEnabled.Value);
+            }
+
             if (requestObject.IsSetStorageConfiguration())
             {
                 context.Writer.WritePropertyName("storageConfiguration");

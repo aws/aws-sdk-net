@@ -73,7 +73,9 @@ namespace Amazon.EMRContainers.Model
         /// Gets and sets the property SchedulerConfiguration. 
         /// <para>
         /// The scheduler configuration to apply to the virtual cluster. The new configuration
-        /// fully replaces the existing one. If you omit a field, the corresponding limit is removed.
+        /// fully replaces the existing one. If you omit <c>maxInQueueJobRuns</c>, the service
+        /// removes the queue-depth limit. If you omit <c>maxConcurrentJobRuns</c>, the service
+        /// applies the default limit of 1,000 concurrent job runs.
         /// </para>
         /// </summary>
         public SchedulerConfiguration SchedulerConfiguration { get; set; }

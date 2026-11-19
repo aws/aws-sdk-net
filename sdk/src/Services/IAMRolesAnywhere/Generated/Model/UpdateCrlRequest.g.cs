@@ -39,6 +39,55 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class UpdateCrlRequest : AmazonIAMRolesAnywhereRequest
     {
         /// <summary>
+        /// Gets and sets the property AliasName. 
+        /// <para>
+        /// The alias for the certificate revocation list (CRL).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter in the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To set or change the alias, specify the new alias name. After the change, the previous
+        /// alias ARN no longer identifies the resource. You can then assign the previous alias
+        /// to another resource of the same type. A change can take a short time to take effect
+        /// for requests that use an alias ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To remove the alias, specify an empty string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To keep the current alias, omit this parameter.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z).
+        /// It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens
+        /// (-), and forward slashes (/). A forward slash can appear only between two other characters,
+        /// so an alias name can't end with a forward slash or contain two in a row. Alias names
+        /// that begin with <c>aws/</c>, in any combination of uppercase and lowercase letters,
+        /// are reserved. Alias names are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// The alias name must be unique among resources of the same type in your account and
+        /// Region. If another resource of the same type already has the alias, the request fails
+        /// with a <c>ValidationException</c>. An invalid or reserved alias name also causes a
+        /// <c>ValidationException</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string AliasName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AliasName property is set.
+        /// </summary>
+        internal bool IsSetAliasName() => this.AliasName != null;
+
+        /// <summary>
         /// Gets and sets the property CrlData. 
         /// <para>
         /// The x509 v3 specified certificate revocation list (CRL).
@@ -55,10 +104,26 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property CrlId. 
         /// <para>
-        /// The unique identifier of the certificate revocation list (CRL).
+        /// The certificate revocation list (CRL) to act on. You can specify one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The CRL ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The CRL ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alias ARN of the CRL.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// An ARN must be for a CRL in your account and Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string CrlId { get; set; }
 
         /// <summary>

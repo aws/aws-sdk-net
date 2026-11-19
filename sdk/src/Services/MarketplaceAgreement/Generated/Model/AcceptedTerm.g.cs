@@ -80,7 +80,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property FreeTrialPricingTerm. 
         /// <para>
-        /// Defines a short-term free pricing model where the buyers aren’t charged anything within
+        /// Defines a short-term free pricing model where the buyers aren't charged anything within
         /// a specified limit.
         /// </para>
         /// </summary>

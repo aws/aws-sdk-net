@@ -115,7 +115,7 @@ public class EventStreamOutputCodegenTests
         var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
         var source = new EventStreamOutputWriter(context, ModelFileName).Write(context.Structures[context.ResponseEventStreams.Single().Id], TestContext.Current.CancellationToken);
 
-        Assert.Contains("var context = new CborUnmarshallerContext(stream, false, null);", source);
+        Assert.Contains("var context = new CborUnmarshallerContext(stream, false, EventStreamUtils.ConvertMessageToResponseData(payload));", source);
         Assert.Contains("return new MetadataEventUnmarshaller().Unmarshall(context);", source);
         Assert.Contains("new BrokenExceptionUnmarshaller().Unmarshall(context));", source);
     }

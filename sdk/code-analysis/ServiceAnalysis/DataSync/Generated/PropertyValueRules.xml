@@ -1216,6 +1216,24 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.AzureFederatedIdentityConfig.AwsIamRole</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.AzureOidcConfig.ClientId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.AzureOidcConfig.TenantId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.CmkSecretConfig.KmsKeyArn</property>
     <min>0</min>
     <max>2048</max>
@@ -1294,6 +1312,30 @@
     <pattern>^[^\x22\x5B\x5D/\\:;|=,+*?\x3C\x3E]{1,104}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.GoogleOidcConfig.IdentityPoolName</property>
+    <min>4</min>
+    <max>32</max>
+    <pattern>^(?!gcp-)[a-z][a-z0-9-]{2,30}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.GoogleOidcConfig.IdentityProviderName</property>
+    <min>4</min>
+    <max>32</max>
+    <pattern>^(?!gcp-)[a-z][a-z0-9-]{2,30}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.GoogleOidcConfig.ProjectName</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^[a-z][a-z0-9-]{4,28}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.GoogleOidcConfig.ProjectNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.HdfsNameNode.Hostname</property>
     <min>1</min>
     <max>255</max>
@@ -1321,6 +1363,12 @@
     <min>0</min>
     <max>2048</max>
     <pattern>^(arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):secretsmanager:[a-z\-0-9]+:[0-9]{12}:secret:.*|)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.ObjectStorageFederatedIdentityConfig.AwsIamRole</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-eusc|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Options.BytesPerSecond</property>

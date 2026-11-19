@@ -49,7 +49,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 99)]
+        [AWSProperty(Min = 1, Max = 1000)]
         public List<TargetResource> ResourcesToAdd { get; set; } = AWSConfigs.InitializeCollections ? new List<TargetResource>() : null;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 99)]
+        [AWSProperty(Min = 1, Max = 1000)]
         public List<TargetResource> ResourcesToDelete { get; set; } = AWSConfigs.InitializeCollections ? new List<TargetResource>() : null;
 
         /// <summary>

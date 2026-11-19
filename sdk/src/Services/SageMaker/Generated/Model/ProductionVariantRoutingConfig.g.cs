@@ -72,6 +72,17 @@ namespace Amazon.SageMaker.Model
         /// routes the request to another copy on that instance or to another instance. The endpoint
         /// applies prefix-aware routing only when two or more instances can serve the request.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KV_AWARE</c>: The endpoint routes each request to an instance that already holds
+        /// the start of the request's prompt in its key-value (KV) cache, and weighs the length
+        /// of that match against how busy each instance is. On an endpoint with inference components,
+        /// the endpoint chooses among the copies of the invoked inference component in the same
+        /// way. When the endpoint can't find an instance or copy that holds the start of the
+        /// prompt and isn't too busy, it chooses an instance as it does with <c>LEAST_OUTSTANDING_REQUESTS</c>.
+        /// <c>KV_AWARE</c> works only with supported containers, such as the SageMaker AI vLLM
+        /// Deep Learning Container.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]

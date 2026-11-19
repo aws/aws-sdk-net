@@ -29,6 +29,17 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class MetricsHandler : PipelineHandler
     {
+        private static TraceSpan CreateCallSpan(IRequestContext requestContext)
+        {
+            // Skip building the span name when tracing is disabled.
+            if (TracingUtilities.IsNoOp(requestContext.ClientConfig))
+                return TracingUtilities.NoOpSpan;
+
+            var operationName = AWSSDKUtils.ExtractOperationName(requestContext.RequestName);
+            var spanName = $"{requestContext.ServiceMetaData.ServiceId}.{operationName}";
+            return TracingUtilities.CreateSpan(requestContext, spanName, null, SpanKind.CLIENT);
+        }
+
         /// <summary>
         /// Captures the overall execution time and logs final metrics.
         /// </summary>
@@ -36,17 +47,18 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
-            executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, false);
+            var metrics = executionContext.RequestContext.Metrics;
+            // Guarded to avoid boxing the value when metrics are disabled.
+            if (metrics.IsEnabled)
+                metrics.AddProperty(Metric.AsyncCall, false);
 
-            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
-            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
-            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
+            var span = CreateCallSpan(executionContext.RequestContext);
             IDisposable callDurationMetricsMeasurer = null;
 
             try
             {
                 callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
-                executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
+                metrics.StartEvent(Metric.ClientExecuteTime);
                 base.InvokeSync(executionContext);
 
                 var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
@@ -61,7 +73,9 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
+                // Guarded to avoid allocating an empty Timing when metrics are disabled.
+                if (metrics.IsEnabled)
+                    metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
                 callDurationMetricsMeasurer?.Dispose();
                 span.Dispose();
@@ -78,17 +92,18 @@ namespace Amazon.Runtime.Internal
         /// <returns>A task that represents the asynchronous operation.</returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, true);
-            
-            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
-            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
-            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
+            var metrics = executionContext.RequestContext.Metrics;
+            // Guarded to avoid boxing the value when metrics are disabled.
+            if (metrics.IsEnabled)
+                metrics.AddProperty(Metric.AsyncCall, true);
+
+            var span = CreateCallSpan(executionContext.RequestContext);
             IDisposable callDurationMetricsMeasurer = null;
 
             try
             {
                 callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
-                executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
+                metrics.StartEvent(Metric.ClientExecuteTime);
                 var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
 
                 var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
@@ -105,7 +120,9 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
+                // Guarded to avoid allocating an empty Timing when metrics are disabled.
+                if (metrics.IsEnabled)
+                    metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
                 callDurationMetricsMeasurer?.Dispose();
                 span.Dispose();

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,42 +39,42 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectCache Marshaller
     /// </summary>
-    public partial class ProjectCacheMarshaller : IRequestMarshaller<ProjectCache, JsonMarshallerContext>
+    public partial class ProjectCacheMarshaller : IRequestMarshaller<ProjectCache, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectCache requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectCache requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCacheNamespace())
             {
-                context.Writer.WritePropertyName("cacheNamespace");
-                context.Writer.WriteStringValue(requestObject.CacheNamespace);
+                context.Writer.WriteTextString("cacheNamespace");
+                context.Writer.WriteTextString(requestObject.CacheNamespace);
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetModes())
             {
-                context.Writer.WritePropertyName("modes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("modes");
+                context.Writer.WriteStartArray(requestObject.Modes.Count);
                 foreach (var requestObjectModesListValue in requestObject.Modes)
                 {
-                    context.Writer.WriteStringValue(requestObjectModesListValue);
+                    context.Writer.WriteTextString(requestObjectModesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

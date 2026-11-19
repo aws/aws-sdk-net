@@ -4095,6 +4095,72 @@ namespace Amazon.CloudFormation
     }
 
     /// <summary>
+    /// Constants used for properties of type StageStatus.
+    /// </summary>
+    public class StageStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for StageStatus
+        /// </summary>
+        public static readonly StageStatus FAILED = new StageStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for StageStatus
+        /// </summary>
+        public static readonly StageStatus IN_PROGRESS = new StageStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant NOT_APPLICABLE for StageStatus
+        /// </summary>
+        public static readonly StageStatus NOT_APPLICABLE = new StageStatus("NOT_APPLICABLE");
+
+        /// <summary>
+        /// Constant NOT_STARTED for StageStatus
+        /// </summary>
+        public static readonly StageStatus NOT_STARTED = new StageStatus("NOT_STARTED");
+
+        /// <summary>
+        /// Constant PARTIAL_SUCCESS for StageStatus
+        /// </summary>
+        public static readonly StageStatus PARTIAL_SUCCESS = new StageStatus("PARTIAL_SUCCESS");
+
+        /// <summary>
+        /// Constant PENDING for StageStatus
+        /// </summary>
+        public static readonly StageStatus PENDING = new StageStatus("PENDING");
+
+        /// <summary>
+        /// Constant SUCCEEDED for StageStatus
+        /// </summary>
+        public static readonly StageStatus SUCCEEDED = new StageStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom StageStatus for a value not among the defined constants.
+        /// </summary>
+        public StageStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StageStatus FindValue(string value)
+        {
+            return FindValue<StageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type TemplateFormat.
     /// </summary>
     public class TemplateFormat : ConstantClass

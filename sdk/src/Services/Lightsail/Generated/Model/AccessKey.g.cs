@@ -110,6 +110,7 @@ namespace Amazon.Lightsail.Model
         /// the access key if the secret access key is compromised.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string SecretAccessKey { get; set; }
 
         /// <summary>

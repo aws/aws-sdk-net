@@ -50,7 +50,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property ConnectCase. 
         /// <para>
-        /// Represents the Amazon Connect case to be created as a related item.
+        /// Represents the Connect Customer case to be created as a related item.
         /// </para>
         /// </summary>
         public ConnectCaseContent ConnectCase { get; set; }

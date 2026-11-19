@@ -700,6 +700,277 @@ namespace Amazon.KinesisAnalyticsV2
     }
 
     /// <summary>
+    /// Constants used for properties of type SnapshotFormat.
+    /// </summary>
+    public class SnapshotFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANONICAL for SnapshotFormat
+        /// </summary>
+        public static readonly SnapshotFormat CANONICAL = new SnapshotFormat("CANONICAL");
+
+        /// <summary>
+        /// Constructs a custom SnapshotFormat for a value not among the defined constants.
+        /// </summary>
+        public SnapshotFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotFormat FindValue(string value)
+        {
+            return FindValue<SnapshotFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotInitiator.
+    /// </summary>
+    public class SnapshotInitiator : ConstantClass
+    {
+        /// <summary>
+        /// Constant SYSTEM for SnapshotInitiator
+        /// </summary>
+        public static readonly SnapshotInitiator SYSTEM = new SnapshotInitiator("SYSTEM");
+
+        /// <summary>
+        /// Constant USER for SnapshotInitiator
+        /// </summary>
+        public static readonly SnapshotInitiator USER = new SnapshotInitiator("USER");
+
+        /// <summary>
+        /// Constructs a custom SnapshotInitiator for a value not among the defined constants.
+        /// </summary>
+        public SnapshotInitiator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotInitiator FindValue(string value)
+        {
+            return FindValue<SnapshotInitiator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotInitiator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotInitiatorOperation.
+    /// </summary>
+    public class SnapshotInitiatorOperation : ConstantClass
+    {
+        /// <summary>
+        /// Constant CreateSnapshot for SnapshotInitiatorOperation
+        /// </summary>
+        public static readonly SnapshotInitiatorOperation CreateSnapshot = new SnapshotInitiatorOperation("CreateSnapshot");
+
+        /// <summary>
+        /// Constant ImportSnapshot for SnapshotInitiatorOperation
+        /// </summary>
+        public static readonly SnapshotInitiatorOperation ImportSnapshot = new SnapshotInitiatorOperation("ImportSnapshot");
+
+        /// <summary>
+        /// Constant SystemCreateSnapshot for SnapshotInitiatorOperation
+        /// </summary>
+        public static readonly SnapshotInitiatorOperation SystemCreateSnapshot = new SnapshotInitiatorOperation("SystemCreateSnapshot");
+
+        /// <summary>
+        /// Constructs a custom SnapshotInitiatorOperation for a value not among the defined constants.
+        /// </summary>
+        public SnapshotInitiatorOperation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotInitiatorOperation FindValue(string value)
+        {
+            return FindValue<SnapshotInitiatorOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotInitiatorOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotMode.
+    /// </summary>
+    public class SnapshotMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPLICATION_SNAPSHOTS_LEGACY for SnapshotMode
+        /// </summary>
+        public static readonly SnapshotMode APPLICATION_SNAPSHOTS_LEGACY = new SnapshotMode("APPLICATION_SNAPSHOTS_LEGACY");
+
+        /// <summary>
+        /// Constant ENHANCED_SNAPSHOTS for SnapshotMode
+        /// </summary>
+        public static readonly SnapshotMode ENHANCED_SNAPSHOTS = new SnapshotMode("ENHANCED_SNAPSHOTS");
+
+        /// <summary>
+        /// Constructs a custom SnapshotMode for a value not among the defined constants.
+        /// </summary>
+        public SnapshotMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotMode FindValue(string value)
+        {
+            return FindValue<SnapshotMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotOperation.
+    /// </summary>
+    public class SnapshotOperation : ConstantClass
+    {
+        /// <summary>
+        /// Constant CreateSnapshot for SnapshotOperation
+        /// </summary>
+        public static readonly SnapshotOperation CreateSnapshot = new SnapshotOperation("CreateSnapshot");
+
+        /// <summary>
+        /// Constant DeleteSnapshot for SnapshotOperation
+        /// </summary>
+        public static readonly SnapshotOperation DeleteSnapshot = new SnapshotOperation("DeleteSnapshot");
+
+        /// <summary>
+        /// Constant ExportSnapshot for SnapshotOperation
+        /// </summary>
+        public static readonly SnapshotOperation ExportSnapshot = new SnapshotOperation("ExportSnapshot");
+
+        /// <summary>
+        /// Constant ImportSnapshot for SnapshotOperation
+        /// </summary>
+        public static readonly SnapshotOperation ImportSnapshot = new SnapshotOperation("ImportSnapshot");
+
+        /// <summary>
+        /// Constant SystemCreateSnapshot for SnapshotOperation
+        /// </summary>
+        public static readonly SnapshotOperation SystemCreateSnapshot = new SnapshotOperation("SystemCreateSnapshot");
+
+        /// <summary>
+        /// Constructs a custom SnapshotOperation for a value not among the defined constants.
+        /// </summary>
+        public SnapshotOperation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotOperation FindValue(string value)
+        {
+            return FindValue<SnapshotOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotOperationStatus.
+    /// </summary>
+    public class SnapshotOperationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for SnapshotOperationStatus
+        /// </summary>
+        public static readonly SnapshotOperationStatus CANCELLED = new SnapshotOperationStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant FAILED for SnapshotOperationStatus
+        /// </summary>
+        public static readonly SnapshotOperationStatus FAILED = new SnapshotOperationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for SnapshotOperationStatus
+        /// </summary>
+        public static readonly SnapshotOperationStatus IN_PROGRESS = new SnapshotOperationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCESSFUL for SnapshotOperationStatus
+        /// </summary>
+        public static readonly SnapshotOperationStatus SUCCESSFUL = new SnapshotOperationStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// Constructs a custom SnapshotOperationStatus for a value not among the defined constants.
+        /// </summary>
+        public SnapshotOperationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotOperationStatus FindValue(string value)
+        {
+            return FindValue<SnapshotOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SnapshotStatus.
     /// </summary>
     public class SnapshotStatus : ConstantClass
@@ -745,6 +1016,42 @@ namespace Amazon.KinesisAnalyticsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnapshotStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageLocationType.
+    /// </summary>
+    public class StorageLocationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant S3 for StorageLocationType
+        /// </summary>
+        public static readonly StorageLocationType S3 = new StorageLocationType("S3");
+
+        /// <summary>
+        /// Constructs a custom StorageLocationType for a value not among the defined constants.
+        /// </summary>
+        public StorageLocationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageLocationType FindValue(string value)
+        {
+            return FindValue<StorageLocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageLocationType(string value)
         {
             return FindValue(value);
         }

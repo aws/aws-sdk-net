@@ -56,6 +56,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetGCP())
+            {
+                context.Writer.WritePropertyName("GCP");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GcpUpdateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GCP, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetJiraCloud())
             {
                 context.Writer.WritePropertyName("JiraCloud");

@@ -95,5 +95,21 @@ namespace Amazon.AWSHealth.Model
         {
             return new DescribeServiceLifecyclePaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        /// </summary>
+        public IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request)
+        {
+            return new DescribeTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTagsForOrganization operation
+        /// </summary>
+        public IDescribeTagsForOrganizationPaginator DescribeTagsForOrganization(DescribeTagsForOrganizationRequest request)
+        {
+            return new DescribeTagsForOrganizationPaginator(this.client, request);
+        }
     }
 }

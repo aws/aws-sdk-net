@@ -149,6 +149,11 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  <c>LicenseArn</c> – The Amazon Resource Name (ARN) of the AWS License Manager license
         /// associated with an entitlement granted by the agreement.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IncludesContactOfType</c> – The type of contact information on file for the agreement.
+        /// Supported value includes <c>ACCEPTOR</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// A proposer can use any combination of the preceding filters along with <c>AgreementType</c>,

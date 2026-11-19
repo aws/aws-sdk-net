@@ -55,6 +55,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetGcp())
+            {
+                context.Writer.WritePropertyName("gcp");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GcpConnectorConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Gcp, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

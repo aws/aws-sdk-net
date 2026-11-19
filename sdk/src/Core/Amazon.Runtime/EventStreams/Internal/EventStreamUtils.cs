@@ -33,12 +33,7 @@ namespace Amazon.Runtime.EventStreams.Utils
         /// <returns>The XmlUnmarshallerContext</returns>
         public static XmlUnmarshallerContext ConvertMessageToXmlContext(IEventStreamMessage message)
         {
-            var stream = new MemoryStream(message.Payload);
-#if NETFRAMEWORK
-            return new XmlUnmarshallerContext(stream, false, new HttpWebRequestResponseData(message.Headers));
-#else
-            return new XmlUnmarshallerContext(stream, false, new HttpClientResponseData(message.Headers));  
-#endif
+            return new XmlUnmarshallerContext(new MemoryStream(message.Payload), false, ConvertMessageToResponseData(message));
         }
 
         /// <summary>
@@ -48,14 +43,22 @@ namespace Amazon.Runtime.EventStreams.Utils
         /// <returns>The JsonUnmarshallerContext</returns>
         public static JsonUnmarshallerContext ConvertMessageToJsonContext(IEventStreamMessage message)
         {
-            var stream = new MemoryStream(message.Payload);
-            // here you have to create the context that is aware of the headers
-#if NETFRAMEWORK
-            return new JsonUnmarshallerContext(stream, false, new HttpWebRequestResponseData(message.Headers));
-#else
-            return new JsonUnmarshallerContext(stream, false, new HttpClientResponseData(message.Headers)); 
-#endif
+            return new JsonUnmarshallerContext(new MemoryStream(message.Payload), false, ConvertMessageToResponseData(message));
+        }
 
+        /// <summary>
+        /// Wraps the headers of an <seealso cref="EventStreamMessage"/> as <seealso cref="IWebResponseData"/>, so an
+        /// unmarshaller context built over the message payload can read the event's headers.
+        /// </summary>
+        /// <param name="message">The event stream message</param>
+        /// <returns>The response data exposing the message headers</returns>
+        public static IWebResponseData ConvertMessageToResponseData(IEventStreamMessage message)
+        {
+#if NETFRAMEWORK
+            return new HttpWebRequestResponseData(message.Headers);
+#else
+            return new HttpClientResponseData(message.Headers);
+#endif
         }
 
         /// <summary>

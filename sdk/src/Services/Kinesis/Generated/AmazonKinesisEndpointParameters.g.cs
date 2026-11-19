@@ -40,6 +40,7 @@ namespace Amazon.Kinesis.Endpoints
         {
             UseDualStack = false;
             UseFIPS = false;
+            ResourceType = "";
         }
 
         /// <summary>
@@ -130,6 +131,24 @@ namespace Amazon.Kinesis.Endpoints
         {
             get => (string)this["ChannelARN"];
             set => this["ChannelARN"] = value;
+        }
+
+        /// <summary>
+        /// The ARN of the Kinesis queue
+        /// </summary>
+        public string QueueARN
+        {
+            get => (string)this["QueueARN"];
+            set => this["QueueARN"] = value;
+        }
+
+        /// <summary>
+        /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+        /// </summary>
+        public string ResourceType
+        {
+            get => (string)this["ResourceType"];
+            set => this["ResourceType"] = value;
         }
 
         /// <summary>

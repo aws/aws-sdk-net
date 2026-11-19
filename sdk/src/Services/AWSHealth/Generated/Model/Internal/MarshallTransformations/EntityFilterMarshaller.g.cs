@@ -111,19 +111,19 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if (requestObject.IsSetTags())
             {
                 context.Writer.WriteTextString("tags");
-                context.Writer.WriteStartArray(requestObject.Tags.Count);
-                foreach (var requestObjectTagsListValue in requestObject.Tags)
+                context.Writer.WriteStartMap(null);
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
-                    context.Writer.WriteStartMap(null);
-                    foreach (var requestObjectTagsListValueKvp in requestObjectTagsListValue)
+                    context.Writer.WriteTextString(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+                    context.Writer.WriteStartArray(requestObjectTagsValue.Count);
+                    foreach (var requestObjectTagsValueListValue in requestObjectTagsValue)
                     {
-                        context.Writer.WriteTextString(requestObjectTagsListValueKvp.Key);
-                        var requestObjectTagsListValueValue = requestObjectTagsListValueKvp.Value;
-                        context.Writer.WriteTextString(requestObjectTagsListValueValue);
+                        context.Writer.WriteTextString(requestObjectTagsValueListValue);
                     }
-                    context.Writer.WriteEndMap();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
+                context.Writer.WriteEndMap();
             }
         }
 

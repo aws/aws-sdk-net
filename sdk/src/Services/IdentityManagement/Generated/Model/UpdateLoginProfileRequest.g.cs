@@ -31,9 +31,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation. Changes the password
-    /// for the specified IAM user. You can use the CLI, the Amazon Web Services API, or the
-    /// <b>Users</b> page in the IAM console to change the password for any IAM user. Use
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+    /// or the maximum sign-in session duration for the specified IAM user. You can use the
+    /// CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to change
+    /// the password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
     /// to change your own password in the <b>My Security Credentials</b> page in the Amazon
     /// Web Services Management Console. <para> For more information about modifying passwords,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
@@ -54,6 +54,40 @@ namespace Amazon.IdentityManagement.Model
         {
             this.UserName = userName;
         }
+
+        /// <summary>
+        /// Gets and sets the property MaxSigninSessionDuration. 
+        /// <para>
+        /// The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the
+        /// specified IAM user. This setting can have a value from 1 hour (3600 seconds) to 90
+        /// days (7776000 seconds), inclusive, and replaces any value currently configured for
+        /// the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit both this parameter and <c>ResetMaxSigninSessionDuration</c>, the current
+        /// setting is unchanged. You cannot specify this parameter and set <c>ResetMaxSigninSessionDuration</c>
+        /// to <c>true</c> in the same request. If you update only the sign-in session duration,
+        /// the user's password and <c>PasswordResetRequired</c> setting do not change.
+        /// </para>
+        ///  
+        /// <para>
+        /// Changes to this setting apply to new sign-in sessions. Sessions that are already established
+        /// are not affected.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is not supported for the root user.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 7776000)]
+        public int? MaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetMaxSigninSessionDuration() => this.MaxSigninSessionDuration.HasValue;
 
         /// <summary>
         /// Gets and sets the property Password. 
@@ -108,6 +142,28 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the PasswordResetRequired property is set.
         /// </summary>
         internal bool IsSetPasswordResetRequired() => this.PasswordResetRequired.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ResetMaxSigninSessionDuration. 
+        /// <para>
+        /// Specifies whether to clear the maximum sign-in session duration for the specified
+        /// IAM user. Set this value to <c>true</c> to return the setting to its unset state,
+        /// so that the existing sign-in session behavior applies. When the setting is unset,
+        /// the user's <c>MaxSigninSessionDuration</c> is omitted from responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this value to <c>false</c> or omit it, the current setting is not cleared.
+        /// You cannot set this value to <c>true</c> and specify <c>MaxSigninSessionDuration</c>
+        /// in the same request. Clearing a setting that is already unset has no effect.
+        /// </para>
+        /// </summary>
+        public bool? ResetMaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResetMaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetResetMaxSigninSessionDuration() => this.ResetMaxSigninSessionDuration.HasValue;
 
         /// <summary>
         /// Gets and sets the property UserName. 

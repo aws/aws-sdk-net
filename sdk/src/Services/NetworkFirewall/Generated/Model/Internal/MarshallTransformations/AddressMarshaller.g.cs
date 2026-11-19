@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Address Marshaller
     /// </summary>
-    public partial class AddressMarshaller : IRequestMarshaller<Address, JsonMarshallerContext>
+    public partial class AddressMarshaller : IRequestMarshaller<Address, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Address requestObject, JsonMarshallerContext context)
+        public void Marshall(Address requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAddressDefinition())
             {
-                context.Writer.WritePropertyName("AddressDefinition");
-                context.Writer.WriteStringValue(requestObject.AddressDefinition);
+                context.Writer.WriteTextString("AddressDefinition");
+                context.Writer.WriteTextString(requestObject.AddressDefinition);
             }
         }
 

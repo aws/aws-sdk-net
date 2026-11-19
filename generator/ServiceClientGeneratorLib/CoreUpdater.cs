@@ -33,6 +33,27 @@ namespace ServiceClientGenerator
             };
 
             session["NuGetPreviewFlag"] = manifest.DefaultToPreview ? manifest.PreviewLabel : "";
+            session["NumericsVersionRange"] = GetExtensionVersionRange(manifest, NumericsExtensionName);
+        }
+
+        // AWSSDK.Core depends on this extension because it provides the BigDecimal type used by the bigDecimal Smithy shape.
+        private const string NumericsExtensionName = "Extensions.Numerics";
+
+        /// <summary>
+        /// Returns the NuGet version range for an extension that Core depends on, using the same
+        /// "[version, nextMajor.0)" format that service packages use for their AWSSDK dependencies.
+        /// </summary>
+        private static string GetExtensionVersionRange(GenerationManifest manifest, string extensionName)
+        {
+            var extension = manifest.ExtensionConfigurations.FirstOrDefault(x => string.Equals(x.Name, extensionName, StringComparison.Ordinal));
+            if (extension == null || string.IsNullOrEmpty(extension.FileVersion))
+            {
+                throw new InvalidOperationException($"AWSSDK.Core depends on AWSSDK.{extensionName}, but no version for it was found in the ExtensionVersions section of _sdk-versions.json.");
+            }
+
+            var previewFlag = extension.InPreview ? manifest.PreviewLabel : string.Empty;
+            var majorVersion = int.Parse(extension.FileVersion.Split('.')[0], System.Globalization.CultureInfo.InvariantCulture);
+            return $"[{extension.FileVersion}{previewFlag}, {majorVersion + 1}.0{previewFlag})";
         }
 
         public void Execute()

@@ -15,6 +15,14 @@ public sealed record SdkExtension(string Name, IReadOnlyList<ExtensionProject> P
         new(Project("CborProtocol", "AWSSDK.Extensions.CborProtocol.NetStandard.csproj"), "NetStandard"),
     ]);
 
+    public static readonly SdkExtension Numerics = new("Numerics",
+    [
+        new(Project("Numerics", "AWSSDK.Extensions.Numerics.csproj"), null),
+    ]);
+
+    /// <summary>The extensions AWSSDK.Core itself depends on (Numerics provides BigDecimal), on every target framework.</summary>
+    public static readonly IReadOnlyList<SdkExtension> CoreDependencies = [Numerics];
+
     private static string Project(string name, string fileName) =>
         Utils.PathCombineAlt(SdkTreeLayout.ExtensionsRootFromServiceSource, $"AWSSDK.Extensions.{name}", fileName);
 }

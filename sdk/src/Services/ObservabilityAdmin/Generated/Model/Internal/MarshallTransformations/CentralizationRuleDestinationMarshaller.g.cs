@@ -73,6 +73,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetDestinationProfilesConfiguration())
+            {
+                context.Writer.WritePropertyName("DestinationProfilesConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DestinationProfilesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DestinationProfilesConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");

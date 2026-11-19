@@ -89,6 +89,21 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetConfigurationSyncStateSummary() => this.ConfigurationSyncStateSummary != null;
 
         /// <summary>
+        /// Gets and sets the property ContextStoreSyncState. 
+        /// <para>
+        /// The synchronization state of the context sets in the firewall's rule groups with the
+        /// firewall's context store. This field is only present when the firewall has a context
+        /// store and its rule groups reference context sets.
+        /// </para>
+        /// </summary>
+        public ContextStoreSyncState ContextStoreSyncState { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextStoreSyncState property is set.
+        /// </summary>
+        internal bool IsSetContextStoreSyncState() => this.ContextStoreSyncState != null;
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The readiness of the configured firewall to handle network traffic across all of the

@@ -30,14 +30,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// An enablement expression source value.
+    /// An enablement expression source value. Provide only the value member that matches
+    /// the specified <c>Type</c>.
     /// </summary>
     public partial class EvaluationFormItemEnablementSourceValue
     {
         /// <summary>
+        /// Gets and sets the property BooleanValue. 
+        /// <para>
+        /// A Boolean value to compare against the source. Use when <c>Type</c> is <c>BOOLEAN_VALUE</c>.
+        /// </para>
+        /// </summary>
+        public bool? BooleanValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BooleanValue property is set.
+        /// </summary>
+        internal bool IsSetBooleanValue() => this.BooleanValue.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DateTimeValue. 
+        /// <para>
+        /// A date and time value to compare against the source. Use when <c>Type</c> is <c>DATETIME_VALUE</c>.
+        /// </para>
+        /// </summary>
+        public DateTime? DateTimeValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DateTimeValue property is set.
+        /// </summary>
+        internal bool IsSetDateTimeValue() => this.DateTimeValue.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NumericValue. 
+        /// <para>
+        /// A numeric value to compare against the source. Use when <c>Type</c> is <c>NUMERIC_VALUE</c>.
+        /// </para>
+        /// </summary>
+        public double? NumericValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NumericValue property is set.
+        /// </summary>
+        internal bool IsSetNumericValue() => this.NumericValue.HasValue;
+
+        /// <summary>
         /// Gets and sets the property RefId. 
         /// <para>
-        /// A referenceId of the source value.
+        /// A referenceId of the source value. Use when <c>Type</c> is <c>OPTION_REF_ID</c>.
         /// </para>
         /// </summary>
         public string RefId { get; set; }
@@ -48,9 +88,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetRefId() => this.RefId != null;
 
         /// <summary>
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// A string value to compare against the source. Use when <c>Type</c> is <c>STRING_VALUE</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 512)]
+        public string StringValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StringValue property is set.
+        /// </summary>
+        internal bool IsSetStringValue() => this.StringValue != null;
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A type of source item value. 
+        /// A type of source item value. Valid values: <c>OPTION_REF_ID</c> | <c>STRING_VALUE</c>
+        /// | <c>NUMERIC_VALUE</c> | <c>BOOLEAN_VALUE</c> | <c>DATETIME_VALUE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

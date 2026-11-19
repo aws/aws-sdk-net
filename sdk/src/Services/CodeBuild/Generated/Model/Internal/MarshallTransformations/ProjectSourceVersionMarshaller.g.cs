@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectSourceVersion Marshaller
     /// </summary>
-    public partial class ProjectSourceVersionMarshaller : IRequestMarshaller<ProjectSourceVersion, JsonMarshallerContext>
+    public partial class ProjectSourceVersionMarshaller : IRequestMarshaller<ProjectSourceVersion, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectSourceVersion requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectSourceVersion requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSourceIdentifier())
             {
-                context.Writer.WritePropertyName("sourceIdentifier");
-                context.Writer.WriteStringValue(requestObject.SourceIdentifier);
+                context.Writer.WriteTextString("sourceIdentifier");
+                context.Writer.WriteTextString(requestObject.SourceIdentifier);
             }
 
             if (requestObject.IsSetSourceVersion())
             {
-                context.Writer.WritePropertyName("sourceVersion");
-                context.Writer.WriteStringValue(requestObject.SourceVersion);
+                context.Writer.WriteTextString("sourceVersion");
+                context.Writer.WriteTextString(requestObject.SourceVersion);
             }
         }
 

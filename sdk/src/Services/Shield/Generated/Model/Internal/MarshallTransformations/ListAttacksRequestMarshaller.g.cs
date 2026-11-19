@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Shield.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -54,68 +55,74 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAttacksRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Shield");
-            string target = "AWSShield_20160616.ListAttacks";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetEndTime())
+            request.ResourcePath = "service/AWSShield_20160616/operation/ListAttacks";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("EndTime");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TimeRangeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EndTime, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetResourceArns())
-            {
-                context.Writer.WritePropertyName("ResourceArns");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
                 {
-                    context.Writer.WriteStringValue(publicRequestResourceArnsListValue);
+                    context.Writer.WriteTextString("EndTime");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TimeRangeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndTime, context);
+
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetResourceArns())
+                {
+                    context.Writer.WriteTextString("ResourceArns");
+                    context.Writer.WriteStartArray(publicRequest.ResourceArns.Count);
+                    foreach (var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                    {
+                        context.Writer.WriteTextString(publicRequestResourceArnsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WriteTextString("StartTime");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = TimeRangeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.StartTime, context);
+                    var marshaller = TimeRangeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StartTime, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

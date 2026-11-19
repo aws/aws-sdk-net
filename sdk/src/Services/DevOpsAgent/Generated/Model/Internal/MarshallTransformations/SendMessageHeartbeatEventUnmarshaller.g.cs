@@ -47,6 +47,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             var unmarshalledObject = new SendMessageHeartbeatEvent();
             if (context.IsEmptyResponse) return null;
 
+            if (context.Stream is MemoryStream { Length: 0 }) return unmarshalledObject;
             context.Read(ref reader);
             if (context.CurrentTokenType == JsonTokenType.Null) return null;
 

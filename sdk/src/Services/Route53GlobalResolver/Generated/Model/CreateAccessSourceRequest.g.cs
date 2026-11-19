@@ -48,7 +48,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// Resolver.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 43)]
+        [AWSProperty(Min = 0, Max = 43)]
         public string Cidr { get; set; }
 
         /// <summary>
@@ -71,6 +71,20 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
+        /// Gets and sets the property CoreNetworkEndpointId. 
+        /// <para>
+        /// The ID of the core network endpoint to associate with this access source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string CoreNetworkEndpointId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CoreNetworkEndpointId property is set.
+        /// </summary>
+        internal bool IsSetCoreNetworkEndpointId() => this.CoreNetworkEndpointId != null;
+
+        /// <summary>
         /// Gets and sets the property DnsViewId. 
         /// <para>
         /// The ID of the DNS view to associate with this access source.
@@ -87,8 +101,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type for this access source. Valid values are IPv4 and IPv6 (if the
-        /// Route 53 Global Resolver supports dual-stack).
+        /// The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.
+        /// If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType { get; set; }
@@ -126,6 +140,20 @@ namespace Amazon.Route53GlobalResolver.Model
         /// Checks to see if the Protocol property is set.
         /// </summary>
         internal bool IsSetProtocol() => this.Protocol != null;
+
+        /// <summary>
+        /// Gets and sets the property Segment. 
+        /// <para>
+        /// The name of the segment to associate with this access source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string Segment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Segment property is set.
+        /// </summary>
+        internal bool IsSetSegment() => this.Segment != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

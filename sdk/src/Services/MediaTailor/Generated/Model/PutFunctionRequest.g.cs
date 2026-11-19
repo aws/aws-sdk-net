@@ -130,6 +130,11 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>HLS_TAG_PROCESSOR</c> – Reads and changes HLS tags in the origin manifest at the
+        /// <c>POST_ORIGIN_RESPONSE</c> lifecycle hook.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>VAST_REQUEST</c> – Calls a VAST endpoint, parses the response as VAST, and makes
         /// the parsed ads available to output expressions.
         /// </para>
@@ -156,6 +161,21 @@ namespace Amazon.MediaTailor.Model
         /// Checks to see if the FunctionType property is set.
         /// </summary>
         internal bool IsSetFunctionType() => this.FunctionType != null;
+
+        /// <summary>
+        /// Gets and sets the property HlsTagProcessorConfiguration. 
+        /// <para>
+        /// The configuration for an <c>HLS_TAG_PROCESSOR</c> function. Specifies the runtime,
+        /// tag filter, optional run condition, and output expressions. Required when <c>FunctionType</c>
+        /// is <c>HLS_TAG_PROCESSOR</c>.
+        /// </para>
+        /// </summary>
+        public HlsTagProcessorConfiguration HlsTagProcessorConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HlsTagProcessorConfiguration property is set.
+        /// </summary>
+        internal bool IsSetHlsTagProcessorConfiguration() => this.HlsTagProcessorConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property HttpRequestConfiguration. 

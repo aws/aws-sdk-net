@@ -37,7 +37,10 @@ namespace Amazon.Kinesis.Model
     /// capacity, you can unlock the warm throughput feature for on-demand data streams by
     /// enabling <c>MinimumThroughputBillingCommitment</c> for your account. Once your account
     /// has <c>MinimumThroughputBillingCommitment</c> enabled, you can specify the warm throughput
-    /// in MiB per second that your stream can support in writes. </para>
+    /// in MiB per second that your stream can support in writes. </para> <para> You can't
+    /// switch a data stream from on-demand to provisioned capacity mode while the stream
+    /// has one or more queues. Delete the queues with <a>DeleteQueue</a> before you change
+    /// the capacity mode. </para>
     /// </summary>
     public partial class UpdateStreamModeRequest : AmazonKinesisRequest
     {

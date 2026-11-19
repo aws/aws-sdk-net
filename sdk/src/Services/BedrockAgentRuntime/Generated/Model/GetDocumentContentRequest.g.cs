@@ -31,8 +31,9 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDocumentContent operation. Retrieves the content
-    /// of an ingested document from a knowledge base. Returns a pre-signed URL for secure
-    /// document access.
+    /// of an ingested document from a knowledge base, or of an image embedded in the document.
+    /// Returns a pre-signed URL for downloading the content. Use this operation to display
+    /// the source of a <c>Retrieve</c> result.
     /// </summary>
     public partial class GetDocumentContentRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -79,10 +80,40 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetKnowledgeBaseId() => this.KnowledgeBaseId != null;
 
         /// <summary>
+        /// Gets and sets the property MediaId. 
+        /// <para>
+        /// The unique identifier (in UUID format) of an image embedded in the specified document.
+        /// Set this parameter to the <c>_media_id</c> value in the metadata of the corresponding
+        /// <c>Retrieve</c> result. If you specify this parameter, the response contains a pre-signed
+        /// URL for the image instead of the document, and you must omit <c>outputFormat</c> or
+        /// set it to <c>RAW</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 36, Max = 36)]
+        public string MediaId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MediaId property is set.
+        /// </summary>
+        internal bool IsSetMediaId() => this.MediaId != null;
+
+        /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format for the document content. <c>RAW</c> returns the original file.
-        /// <c>EXTRACTED</c> returns parsed text as JSON. Defaults to <c>RAW</c>.
+        /// The output format for the content. You can specify one of the following values:
+        /// </para>
+        ///  <dl> <dt>RAW</dt> <dd> 
+        /// <para>
+        /// Returns the original document, or the selected image if you specify <c>mediaId</c>.
+        /// </para>
+        ///  </dd> <dt>EXTRACTED</dt> <dd> 
+        /// <para>
+        /// Returns parsed document text as JSON.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// If you omit this parameter, the default is <c>RAW</c>. You can't use <c>EXTRACTED</c>
+        /// with <c>mediaId</c>.
         /// </para>
         /// </summary>
         public DocumentOutputFormat OutputFormat { get; set; }

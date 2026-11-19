@@ -50,6 +50,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("recoveryLatencyMode");
                 context.Writer.WriteStringValue(requestObject.RecoveryLatencyMode);
             }
+
+            if (requestObject.IsSetSwitchingConfiguration())
+            {
+                context.Writer.WritePropertyName("switchingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FabricSwitchingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SwitchingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSwitchingMode())
+            {
+                context.Writer.WritePropertyName("switchingMode");
+                context.Writer.WriteStringValue(requestObject.SwitchingMode);
+            }
         }
 
         /// <summary>

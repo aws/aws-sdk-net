@@ -1058,6 +1058,11 @@ namespace Amazon.ECR
         public static readonly ScanStatus IMAGE_ARCHIVED = new ScanStatus("IMAGE_ARCHIVED");
 
         /// <summary>
+        /// Constant IMAGE_SIZE_EXCEEDED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus IMAGE_SIZE_EXCEEDED = new ScanStatus("IMAGE_SIZE_EXCEEDED");
+
+        /// <summary>
         /// Constant IN_PROGRESS for ScanStatus
         /// </summary>
         public static readonly ScanStatus IN_PROGRESS = new ScanStatus("IN_PROGRESS");

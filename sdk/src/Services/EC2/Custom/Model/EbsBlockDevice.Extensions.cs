@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         internal void ClearEncryptedFlag()
         {
-            this._encrypted = null;
+            this.Encrypted = null;
         }
     }
 }

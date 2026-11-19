@@ -53,6 +53,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AutomationRule", targetDepth, ref reader))
+                {
+                    var unmarshaller = SingleSelectQuestionAutomationRuleUnmarshaller.Instance;
+                    unmarshalledObject.AutomationRule = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("RuleCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = SingleSelectQuestionRuleCategoryAutomationUnmarshaller.Instance;

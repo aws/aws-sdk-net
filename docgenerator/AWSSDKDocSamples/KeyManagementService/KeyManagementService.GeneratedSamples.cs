@@ -602,6 +602,23 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceGetKeyPolicy()
+        {
+            #region GetKeyPolicy-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetKeyPolicy(new GetKeyPolicyRequest
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab",
+                PolicyName = "AWS_RAM"
+            });
+
+            string policy = response.Policy;
+            string policyName = response.PolicyName;
+
+            #endregion
+        }
+
         public void KeyManagementServiceGetPublicKey()
         {
             #region GetPublicKey-1
@@ -671,6 +688,22 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceListKeyPolicies()
+        {
+            #region ListKeyPolicies-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ListKeyPolicies(new ListKeyPoliciesRequest
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
+            });
+
+            List<string> policyNames = response.PolicyNames;
+            bool? truncated = response.Truncated;
+
+            #endregion
+        }
+
         public void KeyManagementServiceListKeys()
         {
             #region ListKeys-1
@@ -678,6 +711,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.ListKeys(new ListKeysRequest
             {
+            });
+
+            List<KeyListEntry> keys = response.Keys;
+            bool? truncated = response.Truncated;
+
+            #endregion
+        }
+
+        public void KeyManagementServiceListKeys()
+        {
+            #region ListKeys-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ListKeys(new ListKeysRequest
+            {
+                ResourceOwners = new List<string> {
+                    "OTHER_ACCOUNTS_VIA_RAM"
+                }
             });
 
             List<KeyListEntry> keys = response.Keys;

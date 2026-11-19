@@ -385,6 +385,47 @@ namespace Amazon.MediaPackageV2
     }
 
     /// <summary>
+    /// Constants used for properties of type DashBandwidthReportingMode.
+    /// </summary>
+    public class DashBandwidthReportingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVERAGE for DashBandwidthReportingMode
+        /// </summary>
+        public static readonly DashBandwidthReportingMode AVERAGE = new DashBandwidthReportingMode("AVERAGE");
+
+        /// <summary>
+        /// Constant MAX for DashBandwidthReportingMode
+        /// </summary>
+        public static readonly DashBandwidthReportingMode MAX = new DashBandwidthReportingMode("MAX");
+
+        /// <summary>
+        /// Constructs a custom DashBandwidthReportingMode for a value not among the defined constants.
+        /// </summary>
+        public DashBandwidthReportingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashBandwidthReportingMode FindValue(string value)
+        {
+            return FindValue<DashBandwidthReportingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashBandwidthReportingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DashCompactness.
     /// </summary>
     public class DashCompactness : ConstantClass

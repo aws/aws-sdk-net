@@ -36,6 +36,20 @@ namespace Amazon.Mgn.Model
     public partial class OperationUnion
     {
         /// <summary>
+        /// Gets and sets the property Create. 
+        /// <para>
+        /// A create operation that adds a new construct to the segment, identified by the constructLogicalID
+        /// on the parent construct entry.
+        /// </para>
+        /// </summary>
+        public CreateOperation Create { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Create property is set.
+        /// </summary>
+        internal bool IsSetCreate() => this.Create != null;
+
+        /// <summary>
         /// Gets and sets the property Delete. 
         /// <para>
         /// A delete operation to remove a construct from the mapping.
@@ -87,5 +101,19 @@ namespace Amazon.Mgn.Model
         /// Checks to see if the Update property is set.
         /// </summary>
         internal bool IsSetUpdate() => this.Update != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateV2. 
+        /// <para>
+        /// An update operation that modifies a construct using native property value types and
+        /// behavioral configuration, with partial updates and property removal.
+        /// </para>
+        /// </summary>
+        public UpdateOperationV2 UpdateV2 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateV2 property is set.
+        /// </summary>
+        internal bool IsSetUpdateV2() => this.UpdateV2 != null;
     }
 }

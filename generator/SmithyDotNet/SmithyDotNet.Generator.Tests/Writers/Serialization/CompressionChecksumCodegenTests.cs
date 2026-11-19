@@ -1,12 +1,15 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.Serialization;
 
 /// <summary>
-/// Drives <see cref="JsonRequestMarshallerWriter"/> against <c>@requestCompression</c> and the legacy
-/// <c>@httpChecksumRequired</c>, pinning both calls and their placement against C2J's
-/// <c>PutWithContentEncoding</c> and <c>HttpChecksumRequired</c> marshallers in RestJsonProtocol.
+/// Drives <see cref="JsonRequestMarshallerWriter"/> against <c>@requestCompression</c>, the legacy
+/// <c>@httpChecksumRequired</c> and <c>aws.protocols#httpChecksum</c>, pinning the calls and their placement against
+/// C2J's <c>PutWithContentEncoding</c> and <c>HttpChecksumRequired</c> marshallers in RestJsonProtocol and S3's
+/// <c>PutBucketTagging</c>.
 /// </summary>
 public class CompressionChecksumCodegenTests
 {
@@ -15,9 +18,10 @@ public class CompressionChecksumCodegenTests
     private const string CompressionCall = "CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.gzip);";
     private const string ChecksumCall = "ChecksumUtils.SetChecksumData(request);";
 
-    private static string Marshaller(string operationName)
+    private static string Marshaller(string operationName) => Marshaller(TestModels.Context("Codegen/compression-checksum-model.json"), operationName);
+
+    private static string Marshaller(GenerationContext context, string operationName)
     {
-        var context = TestModels.Context("Codegen/compression-checksum-model.json");
         var operation = context.Operations.Single(o => o.Name == operationName);
         return new JsonRequestMarshallerWriter(context, ModelFileName)
             .Write(operation, TestContext.Current.CancellationToken);
@@ -42,6 +46,51 @@ public class CompressionChecksumCodegenTests
 
         Assert.Contains(ChecksumCall, m);
         Assert.True(IndexOf(m, "writer.Flush();") < IndexOf(m, ChecksumCall));
+    }
+
+    [Fact]
+    public void HttpChecksum_AlgorithmMember_EmitsSelectableCallAfterBodySerialization()
+    {
+        var m = Marshaller("DoFlexibleChecksum");
+
+        Assert.Contains("ChecksumUtils.SetChecksumData(", m);
+        Assert.Contains("publicRequest.ChecksumAlgorithm,", m);
+        Assert.Contains("isRequestChecksumRequired: true,", m);
+        Assert.Contains("""
+            headerName: "x-amz-sdk-checksum-algorithm"
+            """, m);
+        Assert.True(IndexOf(m, "writer.Flush();") < IndexOf(m, "ChecksumUtils.SetChecksumData("));
+    }
+
+    [Fact]
+    public void HttpChecksum_RequiredWithoutAlgorithmMember_EmitsDefaultAlgorithmCall()
+    {
+        var m = Marshaller("DoRequiredChecksum");
+
+        Assert.Contains("ChecksumUtils.SetChecksumData(request, checksumAlgorithm: null, fallbackToMD5: false, isRequestChecksumRequired: true);", m);
+    }
+
+    [Fact]
+    public void HttpChecksum_ResponseValidationOnly_EmitsNoCall()
+    {
+        Assert.DoesNotContain("ChecksumUtils", Marshaller("DoValidatedChecksum"));
+    }
+
+    [Fact]
+    public void HttpChecksum_AlgorithmMemberMissing_Throws()
+    {
+        var exception = Assert.Throws<GeneratorException>(() => Marshaller("DoDanglingAlgorithmMember"));
+        Assert.Contains("'missing'", exception.Message);
+    }
+
+    [Fact]
+    public void SkipChecksumDuringMarshalling_EmitsNoCall()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["DoFlexibleChecksum"] = new OperationModifier { SkipChecksumDuringMarshalling = true };
+        var context = TestModels.Context(TestModels.Load("Codegen/compression-checksum-model.json"), customizations);
+
+        Assert.DoesNotContain("ChecksumUtils", Marshaller(context, "DoFlexibleChecksum"));
     }
 
     [Fact]

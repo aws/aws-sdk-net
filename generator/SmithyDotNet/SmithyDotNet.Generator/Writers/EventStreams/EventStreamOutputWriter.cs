@@ -25,8 +25,8 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     // stream SEP). `HandlerName` is that name upper-cased for the C# `{HandlerName}Received` member.
     private readonly record struct Entry(string WireName, string HandlerName, string TypeName, string Unmarshaller);
 
-    // JSON gets a header-aware context from Core; CBOR builds one over the raw payload with no response data,
-    // as C2J does (Core's header-aware constructor is internal to it), so a CBOR event cannot read @eventHeader members.
+    // Both contexts carry the message headers as response data, so an event's @eventHeader members are readable.
+    // Core has no CBOR context helper (the CBOR context lives in the CborProtocol extension), so it is built here.
     // TODO: the JSON reader fills its buffer from context.Stream before the event unmarshaller runs, so a blob
     // @eventPayload comes back as a MemoryStream positioned past the first 4 KB (ToArray() still returns everything,
     // Read/CopyTo do not) and a string payload reads empty. V3 built no reader here and was correct; C2J emits the
@@ -40,7 +40,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     private static readonly string[] CborContextLines =
     [
         "var stream = EventStreamUtils.ConvertMessageToStream(payload);",
-        "var context = new CborUnmarshallerContext(stream, false, null);",
+        "var context = new CborUnmarshallerContext(stream, false, EventStreamUtils.ConvertMessageToResponseData(payload));",
     ];
 
     private bool Cbor => context.Protocol == AWSProtocol.RpcV2Cbor;

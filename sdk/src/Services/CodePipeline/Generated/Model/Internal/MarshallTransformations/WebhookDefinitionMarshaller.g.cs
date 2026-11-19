@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,64 +39,64 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// WebhookDefinition Marshaller
     /// </summary>
-    public partial class WebhookDefinitionMarshaller : IRequestMarshaller<WebhookDefinition, JsonMarshallerContext>
+    public partial class WebhookDefinitionMarshaller : IRequestMarshaller<WebhookDefinition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WebhookDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(WebhookDefinition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAuthentication())
             {
-                context.Writer.WritePropertyName("authentication");
-                context.Writer.WriteStringValue(requestObject.Authentication);
+                context.Writer.WriteTextString("authentication");
+                context.Writer.WriteTextString(requestObject.Authentication);
             }
 
             if (requestObject.IsSetAuthenticationConfiguration())
             {
-                context.Writer.WritePropertyName("authenticationConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("authenticationConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = WebhookAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetFilters())
             {
-                context.Writer.WritePropertyName("filters");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("filters");
+                context.Writer.WriteStartArray(requestObject.Filters.Count);
                 foreach (var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = WebhookFilterRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectFiltersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetTargetAction())
             {
-                context.Writer.WritePropertyName("targetAction");
-                context.Writer.WriteStringValue(requestObject.TargetAction);
+                context.Writer.WriteTextString("targetAction");
+                context.Writer.WriteTextString(requestObject.TargetAction);
             }
 
             if (requestObject.IsSetTargetPipeline())
             {
-                context.Writer.WritePropertyName("targetPipeline");
-                context.Writer.WriteStringValue(requestObject.TargetPipeline);
+                context.Writer.WriteTextString("targetPipeline");
+                context.Writer.WriteTextString(requestObject.TargetPipeline);
             }
         }
 

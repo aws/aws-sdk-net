@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,63 +39,63 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// AssessmentConfiguration Marshaller
     /// </summary>
-    public partial class AssessmentConfigurationMarshaller : IRequestMarshaller<AssessmentConfiguration, JsonMarshallerContext>
+    public partial class AssessmentConfigurationMarshaller : IRequestMarshaller<AssessmentConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AssessmentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AssessmentConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCustomerDnsIps())
             {
-                context.Writer.WritePropertyName("CustomerDnsIps");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomerDnsIps");
+                context.Writer.WriteStartArray(requestObject.CustomerDnsIps.Count);
                 foreach (var requestObjectCustomerDnsIpsListValue in requestObject.CustomerDnsIps)
                 {
-                    context.Writer.WriteStringValue(requestObjectCustomerDnsIpsListValue);
+                    context.Writer.WriteTextString(requestObjectCustomerDnsIpsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDnsName())
             {
-                context.Writer.WritePropertyName("DnsName");
-                context.Writer.WriteStringValue(requestObject.DnsName);
+                context.Writer.WriteTextString("DnsName");
+                context.Writer.WriteTextString(requestObject.DnsName);
             }
 
             if (requestObject.IsSetInstanceIds())
             {
-                context.Writer.WritePropertyName("InstanceIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("InstanceIds");
+                context.Writer.WriteStartArray(requestObject.InstanceIds.Count);
                 foreach (var requestObjectInstanceIdsListValue in requestObject.InstanceIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectInstanceIdsListValue);
+                    context.Writer.WriteTextString(requestObjectInstanceIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SecurityGroupIds");
+                context.Writer.WriteStartArray(requestObject.SecurityGroupIds.Count);
                 foreach (var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                    context.Writer.WriteTextString(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVpcSettings())
             {
-                context.Writer.WritePropertyName("VpcSettings");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("VpcSettings");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DirectoryVpcSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcSettings, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

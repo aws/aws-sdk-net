@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// ContainerMonitoringConfiguration Marshaller
     /// </summary>
-    public partial class ContainerMonitoringConfigurationMarshaller : IRequestMarshaller<ContainerMonitoringConfiguration, JsonMarshallerContext>
+    public partial class ContainerMonitoringConfigurationMarshaller : IRequestMarshaller<ContainerMonitoringConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ContainerMonitoringConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ContainerMonitoringConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAttributeFilters())
             {
-                context.Writer.WritePropertyName("AttributeFilters");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AttributeFilters");
+                context.Writer.WriteStartArray(requestObject.AttributeFilters.Count);
                 foreach (var requestObjectAttributeFiltersListValue in requestObject.AttributeFilters)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ContainerAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributeFiltersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetClusterArn())
             {
-                context.Writer.WritePropertyName("ClusterArn");
-                context.Writer.WriteStringValue(requestObject.ClusterArn);
+                context.Writer.WriteTextString("ClusterArn");
+                context.Writer.WriteTextString(requestObject.ClusterArn);
             }
         }
 

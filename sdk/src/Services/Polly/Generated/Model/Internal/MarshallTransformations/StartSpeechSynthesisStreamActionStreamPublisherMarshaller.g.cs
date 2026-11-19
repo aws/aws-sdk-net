@@ -63,15 +63,13 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             {
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
                 CloseStreamEventMarshaller.Instance.Marshall((CloseStreamEvent)evnt, context);
                 eventHeaders = context.Request.EventHeaders;
-                context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
                 eventType = "CloseStreamEvent";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                contentType = null;
+                eventPayload = Array.Empty<byte>();
             }
             else if (evnt is TextEvent)
             {

@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to be used to be applied to operands if more than one provided. 
+        /// The operator to apply to the operands when more than one operand is provided.
         /// </para>
         /// </summary>
         public EvaluationFormItemEnablementOperator Operator { get; set; }

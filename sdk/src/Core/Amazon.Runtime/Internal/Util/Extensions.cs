@@ -32,6 +32,16 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Returns the DateTime ticks elapsed since <paramref name="startTimestamp"/>, a value from
+        /// <see cref="Stopwatch.GetTimestamp"/>, without allocating a <see cref="Stopwatch"/>.
+        /// </summary>
+        internal static long GetElapsedDateTimeTicks(long startTimestamp)
+        {
+            double stopwatchTicks = Stopwatch.GetTimestamp() - startTimestamp;
+            return (long)(stopwatchTicks * TickFrequency);
+        }
+
+        /// <summary>
         /// Returns true if the Content is set or there are
         /// query parameters.
         /// </summary>

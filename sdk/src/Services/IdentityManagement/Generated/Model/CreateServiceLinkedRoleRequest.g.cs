@@ -68,11 +68,7 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAWSServiceName() => this.AWSServiceName != null;
 
         /// <summary>
-        /// Gets and sets the property CustomSuffix. 
-        /// <para>
-        /// 
-        /// </para>
-        ///  
+        /// Gets and sets the property CustomSuffix.  
         /// <para>
         /// A string that you provide, which is combined with the service-provided prefix to form
         /// the complete role name. If you make multiple requests for the same service, then you

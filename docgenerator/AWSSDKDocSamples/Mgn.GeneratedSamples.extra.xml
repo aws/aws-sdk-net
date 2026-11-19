@@ -210,6 +210,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationInsights(Amazon.Mgn.Model.ListNetworkMigrationInsightsRequest)" />
+      <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationInsights(Amazon.Mgn.Model.ListNetworkMigrationInsightsRequest)" />
+      <member name="T:Amazon.Mgn.Model.ListNetworkMigrationInsightsRequest" />
+      <member name="T:Amazon.Mgn.Model.ListNetworkMigrationInsightsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List the WARNING insights a mapping job recorded for one construct" source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs" region="ListNetworkMigrationInsights-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
       <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
       <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest" />

@@ -150,7 +150,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property GenerationId. 
         /// <para>
-        /// The identifier of the generation process that produced this recommendation.
+        /// The identifier of the generation that produced this recommendation.
         /// </para>
         /// </summary>
         public string GenerationId { get; set; }
@@ -217,7 +217,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Pillar. 
         /// <para>
-        /// The Well-Architected Tool Framework pillar that the recommendation addresses.
+        /// The Amazon Web Services Well-Architected Framework pillar that the recommendation
+        /// addresses.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

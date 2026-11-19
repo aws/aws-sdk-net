@@ -21,6 +21,19 @@ public class JsonRequestMarshallerWriterTests
         _putAuditEventsRequestMarshaller = writer.Write(operation, TestContext.Current.CancellationToken);
     }
 
+    // excludeMembers drops only the property: the hand-written one is still sent. Listed by emitted name.
+    [Fact]
+    public void ExcludedMember_IsStillMarshalled()
+    {
+        var customizations = TestCustomizations.Rename("DoScalarsRequest", "count", "Total");
+        customizations.ExcludeMembers["DoScalarsRequest"] = ["Total"];
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var source = new JsonRequestMarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);
+        Assert.Contains("publicRequest.Total", source);
+    }
+
     [Fact]
     public void EmitsExpectedNamespaceAndUsings()
     {

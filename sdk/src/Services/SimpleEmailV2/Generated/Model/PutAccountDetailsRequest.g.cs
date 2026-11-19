@@ -59,7 +59,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ContactLanguage. 
         /// <para>
-        /// The language you would prefer to be contacted with.
+        /// The language you would prefer to be contacted with. The contact language can be one
+        /// of <c>EN</c> or <c>JA</c>.
         /// </para>
         /// </summary>
         public ContactLanguage ContactLanguage { get; set; }

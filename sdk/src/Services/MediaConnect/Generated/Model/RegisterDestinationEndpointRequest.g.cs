@@ -71,7 +71,7 @@ namespace Amazon.MediaConnect.Model
         /// A description to help you identify the destination endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1000)]
+        [AWSProperty(Min = 0, Max = 1000)]
         public string Description { get; set; }
 
         /// <summary>

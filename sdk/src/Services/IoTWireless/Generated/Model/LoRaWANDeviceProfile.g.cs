@@ -116,7 +116,7 @@ namespace Amazon.IoTWireless.Model
         /// The MaxEIRP value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 0, Max = 15)]
+        [AWSProperty(Min = 0, Max = 36)]
         public int? MaxEirp { get; set; }
 
         /// <summary>

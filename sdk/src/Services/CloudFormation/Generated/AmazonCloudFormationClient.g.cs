@@ -594,7 +594,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
-        /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+        /// see the <c>ForceRollback</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -646,7 +646,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         ///  <c>ForceRollback</c> and <c>ResourcesToSkip</c> are mutually exclusive. For details,
-        /// see <a>ContinueUpdateRollbackInput$ForceRollback</a>.
+        /// see the <c>ForceRollback</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -2993,6 +2993,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description of the specified StackSet operation.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// A breakdown for each Amazon Web Services Region is available in <c>RegionalStatusDetails</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>strongly consistent</i> reads meaning it will always return the
@@ -3031,6 +3036,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description of the specified StackSet operation.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// A breakdown for each Amazon Web Services Region is available in <c>RegionalStatusDetails</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>strongly consistent</i> reads meaning it will always return the
@@ -5185,6 +5195,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about operations performed on a StackSet.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// The breakdown for each Amazon Web Services Region is available only from <a>DescribeStackSetOperation</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>eventually consistent</i> reads meaning it may take some time
@@ -5220,6 +5235,11 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns summary information about operations performed on a StackSet.
         /// 
+        ///  
+        /// <para>
+        /// Reports role provisioning and stack instances deployment progress in <c>StatusDetails.Stages</c>.
+        /// The breakdown for each Amazon Web Services Region is available only from <a>DescribeStackSetOperation</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This API provides <i>eventually consistent</i> reads meaning it may take some time
@@ -5939,6 +5959,52 @@ namespace Amazon.CloudFormation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Removes an alias from a stack. After the alias is removed successfully, it can no
+        /// longer be used to reference the stack in API calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAlias service method.</param>
+        /// <returns>The response from the RemoveAlias service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RemoveAlias">REST API Reference for RemoveAlias Operation</seealso>
+        public virtual RemoveAliasResponse RemoveAlias(RemoveAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAliasResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAliasResponse>(request, options);
+        }
+#else
+        internal virtual RemoveAliasResponse RemoveAlias(RemoveAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAliasResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAliasResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes an alias from a stack. After the alias is removed successfully, it can no
+        /// longer be used to reference the stack in API calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RemoveAlias service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RemoveAlias">REST API Reference for RemoveAlias Operation</seealso>
+        public virtual Task<RemoveAliasResponse> RemoveAliasAsync(RemoveAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAliasResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// When specifying <c>RollbackStack</c>, you preserve the state of previously provisioned
         /// resources when an operation fails. You can check the status of the stack through the
         /// <a>DescribeStacks</a> operation.
@@ -6055,6 +6121,106 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = RollbackStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<RollbackStackResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Assigns an alias to an existing stack. An alias is an alternative name for a stack
+        /// that can be used in place of the stack name in any CloudFormation API call that accepts
+        /// the <c>StackName</c> parameter. This enables you to effectively rename a stack without
+        /// recreating it.
+        /// 
+        ///  
+        /// <para>
+        /// After setting an alias, both the original stack name and the alias resolve to the
+        /// same stack. Setting an alias does not change the stack's ARN, physical resource IDs,
+        /// or any deployed resources.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each stack can have at most one alias. To change a stack's alias, first remove the
+        /// existing alias using <a>RemoveAlias</a>, then set a new one.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetAlias service method.</param>
+        /// <returns>The response from the SetAlias service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetAlias">REST API Reference for SetAlias Operation</seealso>
+        public virtual SetAliasResponse SetAlias(SetAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetAliasResponseUnmarshaller.Instance;
+
+            return Invoke<SetAliasResponse>(request, options);
+        }
+#else
+        internal virtual SetAliasResponse SetAlias(SetAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetAliasResponseUnmarshaller.Instance;
+
+            return Invoke<SetAliasResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Assigns an alias to an existing stack. An alias is an alternative name for a stack
+        /// that can be used in place of the stack name in any CloudFormation API call that accepts
+        /// the <c>StackName</c> parameter. This enables you to effectively rename a stack without
+        /// recreating it.
+        /// 
+        ///  
+        /// <para>
+        /// After setting an alias, both the original stack name and the alias resolve to the
+        /// same stack. Setting an alias does not change the stack's ARN, physical resource IDs,
+        /// or any deployed resources.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each stack can have at most one alias. To change a stack's alias, first remove the
+        /// existing alias using <a>RemoveAlias</a>, then set a new one.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SetAlias service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetAlias">REST API Reference for SetAlias Operation</seealso>
+        public virtual Task<SetAliasResponse> SetAliasAsync(SetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SetAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetAliasResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

@@ -637,6 +637,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskRoleArn() => this.TaskRoleArn != null;
 
         /// <summary>
+        /// Gets and sets the property TrustedExecutionConfiguration. 
+        /// <para>
+        /// The trusted execution configuration for tasks that use this task definition, including
+        /// the isolation mode and, if configured, an attestation policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Trusted execution is supported only for Amazon ECS Managed Instances.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TrustedExecutionConfiguration TrustedExecutionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedExecutionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetTrustedExecutionConfiguration() => this.TrustedExecutionConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
         /// The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using

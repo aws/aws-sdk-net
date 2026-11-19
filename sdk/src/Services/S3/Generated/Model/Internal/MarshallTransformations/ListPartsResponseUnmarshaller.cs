@@ -53,6 +53,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.AbortRuleId = context.ResponseData.GetHeaderValue("x-amz-abort-rule-id");
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
+            if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
+                response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
             PostUnmarshallCustomization(context, response);
             return response;

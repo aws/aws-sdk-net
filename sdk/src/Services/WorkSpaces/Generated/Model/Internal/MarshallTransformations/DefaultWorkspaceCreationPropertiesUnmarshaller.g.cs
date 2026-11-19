@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DefaultWorkspaceCreationProperties Object
     /// </summary>
-    public partial class DefaultWorkspaceCreationPropertiesUnmarshaller : IJsonUnmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext>
+    public partial class DefaultWorkspaceCreationPropertiesUnmarshaller : ICborUnmarshaller<DefaultWorkspaceCreationProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DefaultWorkspaceCreationProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DefaultWorkspaceCreationProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DefaultWorkspaceCreationProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CustomSecurityGroupId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomSecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DefaultOu", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOu = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CustomSecurityGroupId":
+                        context.AddPathSegment("CustomSecurityGroupId");
+                        unmarshalledObject.CustomSecurityGroupId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EnableInternetAccess", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableInternetAccess = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DefaultOu":
+                        context.AddPathSegment("DefaultOu");
+                        unmarshalledObject.DefaultOu = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EnableMaintenanceMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EnableInternetAccess":
+                        context.AddPathSegment("EnableInternetAccess");
+                        unmarshalledObject.EnableInternetAccess = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("InstanceIamRoleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceIamRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EnableMaintenanceMode":
+                        context.AddPathSegment("EnableMaintenanceMode");
+                        unmarshalledObject.EnableMaintenanceMode = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UserEnabledAsLocalAdministrator", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UserEnabledAsLocalAdministrator = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "InstanceIamRoleArn":
+                        context.AddPathSegment("InstanceIamRoleArn");
+                        unmarshalledObject.InstanceIamRoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "UserEnabledAsLocalAdministrator":
+                        context.AddPathSegment("UserEnabledAsLocalAdministrator");
+                        unmarshalledObject.UserEnabledAsLocalAdministrator = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

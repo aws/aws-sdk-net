@@ -175,6 +175,20 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExampleCount() => this.ExampleCount.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ExampleCountByField. 
+        /// <para>
+        ///  The number of examples that have each field, for the resolved version. Absent when
+        /// the counts are unknown. 
+        /// </para>
+        /// </summary>
+        public ExampleCountByField ExampleCountByField { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExampleCountByField property is set.
+        /// </summary>
+        internal bool IsSetExampleCountByField() => this.ExampleCountByField != null;
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         ///  Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED. Describes
@@ -209,7 +223,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The schema type declared at create time. Immutable after creation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public DatasetSchemaType SchemaType { get; set; }
 
         /// <summary>

@@ -59,7 +59,8 @@ namespace Amazon.Imagebuilder.Model
         ///  
         /// <para>
         /// To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning
-        /// in your account. The Image Builder <c>ListImageScanFindings</c> operation returns
+        /// in the account and Amazon Web Services Region where the build runs. Amazon Inspector
+        /// activation is Regional. The Image Builder <c>ListImageScanFindings</c> operation returns
         /// the findings of these scans.
         /// </para>
         /// </summary>
@@ -81,8 +82,8 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// With <c>TEST_INSTANCE_CVE</c>, Amazon Inspector scans the test instance during image
         /// tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning
-        /// in your account. The Image Builder <c>ListImageScanFindings</c> operation returns
-        /// the findings.
+        /// in the account and Amazon Web Services Region where the build runs. The Image Builder
+        /// <c>ListImageScanFindings</c> operation returns the findings.
         /// </para>
         ///  </li> <li> 
         /// <para>

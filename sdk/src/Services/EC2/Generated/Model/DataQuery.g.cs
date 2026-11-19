@@ -1,0 +1,122 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// A query used for retrieving network health data.
+    /// </summary>
+    public partial class DataQuery
+    {
+        /// <summary>
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The Region or Availability Zone that's the target for the data query. For example,
+        /// <c>eu-north-1</c>.
+        /// </para>
+        /// </summary>
+        public string Destination { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Destination property is set.
+        /// </summary>
+        internal bool IsSetDestination() => this.Destination != null;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A user-defined ID associated with a data query that's returned in the <c>dataResponse</c>
+        /// identifying the query. For example, if you set the Id to <c>MyQuery01</c>in the query,
+        /// the <c>dataResponse</c> identifies the query as <c>MyQuery01</c>.
+        /// </para>
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
+        /// Gets and sets the property Metric. 
+        /// <para>
+        /// The metric used for the network performance request.
+        /// </para>
+        /// </summary>
+        public MetricType Metric { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Metric property is set.
+        /// </summary>
+        internal bool IsSetMetric() => this.Metric != null;
+
+        /// <summary>
+        /// Gets and sets the property Period. 
+        /// <para>
+        /// The aggregation period used for the data query.
+        /// </para>
+        /// </summary>
+        public PeriodType Period { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Period property is set.
+        /// </summary>
+        internal bool IsSetPeriod() => this.Period != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The Region or Availability Zone that's the source for the data query. For example,
+        /// <c>us-east-1</c>.
+        /// </para>
+        /// </summary>
+        public string Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
+
+        /// <summary>
+        /// Gets and sets the property Statistic. 
+        /// <para>
+        /// The metric data aggregation period, <c>p50</c>, between the specified <c>startDate</c>
+        /// and <c>endDate</c>. For example, a metric of <c>five_minutes</c> is the median of
+        /// all the data points gathered within those five minutes. <c>p50</c> is the only supported
+        /// metric.
+        /// </para>
+        /// </summary>
+        public StatisticType Statistic { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Statistic property is set.
+        /// </summary>
+        internal bool IsSetStatistic() => this.Statistic != null;
+    }
+}

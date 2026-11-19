@@ -39,10 +39,28 @@ namespace Amazon.MarketplaceAgreement.Model
         IGetAgreementEntitlementsPaginator GetAgreementEntitlements(GetAgreementEntitlementsRequest request);
 
         /// <summary>
+        /// Paginator for GetAgreementRequestApprovalPlans operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetAgreementRequestApprovalPlansPaginator GetAgreementRequestApprovalPlans(GetAgreementRequestApprovalPlansRequest request);
+
+        /// <summary>
+        /// Paginator for GetAgreementRequestTerms operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetAgreementRequestTermsPaginator GetAgreementRequestTerms(GetAgreementRequestTermsRequest request);
+
+        /// <summary>
         /// Paginator for GetAgreementTerms operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementApprovals operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgreementApprovalsPaginator ListAgreementApprovals(ListAgreementApprovalsRequest request);
 
         /// <summary>
         /// Paginator for ListAgreementCancellationRequests operation
@@ -67,6 +85,12 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementRequests operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgreementRequestsPaginator ListAgreementRequests(ListAgreementRequestsRequest request);
 
         /// <summary>
         /// Paginator for ListBillingAdjustmentRequests operation

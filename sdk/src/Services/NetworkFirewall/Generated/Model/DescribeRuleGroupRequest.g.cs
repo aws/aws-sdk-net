@@ -88,12 +88,56 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRuleGroupName() => this.RuleGroupName != null;
 
         /// <summary>
+        /// Gets and sets the property RuleOutputFormat. 
+        /// <para>
+        /// For a firewall engine rule group, the format in which to return the rules. Specify
+        /// one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FIREWALL_RULES</c> - Returns the rules as structured <c>FirewallRule</c> objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RULES_STRING</c> - Returns the rules as a Suricata-compatible firewall-mode rule
+        /// string.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a format, Network Firewall returns the rules in the format you
+        /// provided them in. This setting applies only to <c>FIREWALL</c> and <c>IPS</c> rule
+        /// groups; IPS engine rule groups support only <c>RULES_STRING</c>.
+        /// </para>
+        /// </summary>
+        public RuleOutputFormat RuleOutputFormat { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuleOutputFormat property is set.
+        /// </summary>
+        internal bool IsSetRuleOutputFormat() => this.RuleOutputFormat != null;
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
-        /// it contains stateless rules. If it is stateful, it contains stateful rules. 
+        /// Indicates the type of the rule group. Valid values are:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STATELESS</c> - Stateless rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STATEFUL</c> - Stateful rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FIREWALL</c> - Firewall engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPS</c> - IPS engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// This setting is required for requests that do not include the <c>RuleGroupARN</c>.
         /// </para>

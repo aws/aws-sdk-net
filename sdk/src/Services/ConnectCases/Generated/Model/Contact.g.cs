@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// An object that represents an Amazon Connect contact object.
+    /// An object that represents an Connect Customer contact object.
     /// </summary>
     public partial class Contact
     {
         /// <summary>
         /// Gets and sets the property ContactArn. 
         /// <para>
-        /// A unique identifier of a contact in Amazon Connect.
+        /// A unique identifier of a contact in Connect Customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 500)]

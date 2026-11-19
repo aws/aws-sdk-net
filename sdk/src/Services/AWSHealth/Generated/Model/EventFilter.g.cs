@@ -328,13 +328,10 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of entity tags attached to the affected entity.
+        /// A map of tag keys to lists of tag values. A tag matches when its key is in the map
+        /// and its value is one of the values listed for that key. The filter matches when at
+        /// least one key in the map matches.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently, the <c>tags</c> property isn't supported.
-        /// </para>
-        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -342,8 +339,8 @@ namespace Amazon.AWSHealth.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 50)]
-        public List<Dictionary<string, string>> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
+        [AWSProperty(Min = 0, Max = 10)]
+        public Dictionary<string, List<string>> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Checks to see if the Tags property is set.

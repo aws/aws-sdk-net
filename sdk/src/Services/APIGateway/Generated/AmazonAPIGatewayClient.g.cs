@@ -48,7 +48,7 @@ namespace Amazon.APIGateway
     /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
     /// web application back ends. API Gateway allows developers to securely connect mobile
     /// and web applications to APIs that run on Lambda, Amazon EC2, or other publicly addressable
-    /// web services that are hosted outside of AWS.
+    /// web services that are hosted outside of Amazon Web Services.
     /// </para>
     /// </summary>
     public partial class AmazonAPIGatewayClient : AmazonServiceClient, IAmazonAPIGateway
@@ -2179,9 +2179,10 @@ namespace Amazon.APIGateway
         /// 
         ///  
         /// <para>
-        /// Only the AWS account that created the DomainNameAccessAssociation resource can delete
-        /// it. To stop an access association source in another AWS account from accessing your
-        /// private custom domain name, use the RejectDomainNameAccessAssociation operation.
+        /// Only the Amazon Web Services account that created the DomainNameAccessAssociation
+        /// resource can delete it. To stop an access association source in another Amazon Web
+        /// Services account from accessing your private custom domain name, use the RejectDomainNameAccessAssociation
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainNameAccessAssociation service method.</param>
@@ -2227,9 +2228,10 @@ namespace Amazon.APIGateway
         /// 
         ///  
         /// <para>
-        /// Only the AWS account that created the DomainNameAccessAssociation resource can delete
-        /// it. To stop an access association source in another AWS account from accessing your
-        /// private custom domain name, use the RejectDomainNameAccessAssociation operation.
+        /// Only the Amazon Web Services account that created the DomainNameAccessAssociation
+        /// resource can delete it. To stop an access association source in another Amazon Web
+        /// Services account from accessing your private custom domain name, use the RejectDomainNameAccessAssociation
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainNameAccessAssociation service method.</param>
@@ -7578,8 +7580,8 @@ namespace Amazon.APIGateway
         ///  
         /// <para>
         /// To reject a domain name access association with an access association source in another
-        /// AWS account, use this operation. To remove a domain name access association with an
-        /// access association source in your own account, use the DeleteDomainNameAccessAssociation
+        /// Amazon Web Services account, use this operation. To remove a domain name access association
+        /// with an access association source in your own account, use the DeleteDomainNameAccessAssociation
         /// operation.
         /// </para>
         /// </summary>
@@ -7627,8 +7629,8 @@ namespace Amazon.APIGateway
         ///  
         /// <para>
         /// To reject a domain name access association with an access association source in another
-        /// AWS account, use this operation. To remove a domain name access association with an
-        /// access association source in your own account, use the DeleteDomainNameAccessAssociation
+        /// Amazon Web Services account, use this operation. To remove a domain name access association
+        /// with an access association source in your own account, use the DeleteDomainNameAccessAssociation
         /// operation.
         /// </para>
         /// </summary>
@@ -8137,7 +8139,12 @@ namespace Amazon.APIGateway
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates an existing Authorizer resource.
+        /// Updates an existing Authorizer resource. For a <c>JWT</c> authorizer, the only JWT
+        /// patch operation is <c>replace</c> on the path <c>/jwtConfiguration</c>. Its value
+        /// is the complete configuration as a JSON string in the <c>JwtConfigurationInput</c>
+        /// shape. This replaces the entire configuration; nothing from the previous configuration
+        /// is retained. A <c>replace</c> operation on the path <c>/type</c> is supported in both
+        /// directions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <returns>The response from the UpdateAuthorizer service method, as returned by APIGateway.</returns>
@@ -8181,7 +8188,12 @@ namespace Amazon.APIGateway
 #endif
 
         /// <summary>
-        /// Updates an existing Authorizer resource.
+        /// Updates an existing Authorizer resource. For a <c>JWT</c> authorizer, the only JWT
+        /// patch operation is <c>replace</c> on the path <c>/jwtConfiguration</c>. Its value
+        /// is the complete configuration as a JSON string in the <c>JwtConfigurationInput</c>
+        /// shape. This replaces the entire configuration; nothing from the previous configuration
+        /// is retained. A <c>replace</c> operation on the path <c>/type</c> is supported in both
+        /// directions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <param name="cancellationToken">

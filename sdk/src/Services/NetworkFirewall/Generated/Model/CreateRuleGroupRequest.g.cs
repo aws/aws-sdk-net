@@ -182,6 +182,34 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property FirewallRuleGroup. 
+        /// <para>
+        /// An object that defines the rules in a firewall engine rule group, for use in a Next
+        /// Generation policy.
+        /// </para>
+        /// </summary>
+        public FirewallRuleGroup FirewallRuleGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallRuleGroup property is set.
+        /// </summary>
+        internal bool IsSetFirewallRuleGroup() => this.FirewallRuleGroup != null;
+
+        /// <summary>
+        /// Gets and sets the property IpsRuleGroup. 
+        /// <para>
+        /// An object that defines the rules in an IPS engine rule group, for use in a Next Generation
+        /// policy.
+        /// </para>
+        /// </summary>
+        public IpsRuleGroup IpsRuleGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IpsRuleGroup property is set.
+        /// </summary>
+        internal bool IsSetIpsRuleGroup() => this.IpsRuleGroup != null;
+
+        /// <summary>
         /// Gets and sets the property RuleGroup. 
         /// <para>
         /// An object that defines the rule group rules. 
@@ -308,9 +336,25 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
-        /// it contains stateless rules. If it is stateful, it contains stateful rules. 
+        /// Indicates the type of the rule group. Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STATELESS</c> - Stateless rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STATEFUL</c> - Stateful rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FIREWALL</c> - Firewall engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPS</c> - IPS engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public RuleGroupType Type { get; set; }

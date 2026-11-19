@@ -126,6 +126,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
             EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
 
+            var deprecatedTargetFrameworkAnalyzerWriter = new DeprecatedTargetFrameworkAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "DeprecatedTargetFrameworkAnalyzer.g.cs"), deprecatedTargetFrameworkAnalyzerWriter.Write(cancellationToken));
+
             var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
             EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
 
@@ -196,7 +199,19 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
-        Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
+        // Custom error handling pairs with a hand-written service exception that takes the extra ids.
+        if (context.Customizations.Service?.CustomErrorHandling is null)
+        {
+            Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
+        }
+
+        if (context.Customizations.Service?.RetryPolicyRequestList == true)
+        {
+            // Sits at the top of Generated/ rather than Generated/Internal/ despite its namespace,
+            // because that is where the shipped file lives.
+            var retryPolicyWriter = new RetryPolicyWriter(context, modelFileName);
+            Emit(Path.Combine(generated, $"{clientName}RetryPolicy.g.cs"), retryPolicyWriter.Write(cancellationToken));
+        }
 
         if (context.ResponseEventStreams.Count > 0)
         {
@@ -283,7 +298,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
         }
 
-        foreach (var operation in context.Operations)
+        foreach (var operation in context.GeneratedOperations)
         {
             // smithy.api#Unit as an operation input/output means "no value" — it is not a model
             // structure, and adding it here would suppress the plain Unit model class that union
@@ -437,7 +452,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // no standalone class), which also avoids colliding with {Op}Request/{Op}Response file
         // names for shapes named like their wrapper.
         var memberReferencedOperationShapes = new HashSet<ShapeId>();
-        var referenceSources = context.Operations.SelectMany(o => new[] { o.Input, o.Output })
+        var referenceSources = context.GeneratedOperations.SelectMany(o => new[] { o.Input, o.Output })
             .Concat(context.Structures.Values)
             .Concat(context.Errors.Values);
         foreach (var source in referenceSources)
@@ -540,14 +555,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             if (context.Resolve(structureId) is StructureShape structure)
             {
-                if (structure.IsError())
+                if (structure.IsError() || context.Customizations.EmittedValueMember(structureId.Name) is not null)
                 {
                     continue;
                 }
 
                 // A request event stream's @streaming union is not a wire structure: its events still need
-                // their own marshallers, so recurse into them, but the union itself gets none.
-                if (context.RequestEventStreams.Any(stream => stream.Id == structureId))
+                // their own marshallers, so recurse into them, but the union itself gets none. An excludeShapes
+                // structure's (un)marshaller is hand-written, but the structures it holds may not be (S3's
+                // NotificationConfiguration holds the generated TopicConfiguration).
+                if (context.RequestEventStreams.Any(stream => stream.Id == structureId) || context.Customizations.IsExcludedShape(structureId.Name))
                 {
                     foreach (var nested in ReferencedStructuresRecursive(structure, visited))
                     {

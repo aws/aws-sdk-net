@@ -54,6 +54,14 @@ public class UnsupportedTraitValidatorTests
     }
 
     [Fact]
+    public void Validate_HttpChecksum_DoesNotThrow()
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/compression-checksum-model.json"));
+
+        UnsupportedTraitValidator.Validate(index, AWSProtocol.RestJson1);
+    }
+
+    [Fact]
     public void Validate_DocumentOnRestJson1Service_DoesNotThrow()
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/document-model.json"));

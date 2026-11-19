@@ -31,8 +31,8 @@ namespace Amazon.LambdaCore.Model
 {
     /// <summary>
     /// The request could not be completed due to a conflict with the current state of the
-    /// resource. For example, attempting to update a connector that is not in <c>ACTIVE</c>
-    /// state.
+    /// resource. For example, attempting to modify a resource that is not in a state that
+    /// permits the operation.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

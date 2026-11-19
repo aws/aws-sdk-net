@@ -290,14 +290,56 @@ def ts(v):  # epoch seconds -> DateTime
     return f"new DateTime(1970,1,1,0,0,0,DateTimeKind.Utc).AddSeconds({v})"
 
 
+# CRC-64/NVME (poly 0xad93d23594c93659, init/xorout all-ones, reflected in/out). This is the
+# algorithm the SDK validates x-amz-checksum-crc64nvme against; the table below is its reflected
+# form (reflection of the polynomial).
+_CRC64NVME_POLY_REF = 0x9a6c9329ac4bc9b5
+_CRC64NVME_TABLE = None
+
+
+def _crc64nvme_table():
+    global _CRC64NVME_TABLE
+    if _CRC64NVME_TABLE is None:
+        tbl = []
+        for n in range(256):
+            crc = n
+            for _ in range(8):
+                crc = (crc >> 1) ^ _CRC64NVME_POLY_REF if (crc & 1) else (crc >> 1)
+            tbl.append(crc)
+        _CRC64NVME_TABLE = tbl
+    return _CRC64NVME_TABLE
+
+
+def crc64nvme_base64(data):
+    """Base64 of the big-endian CRC-64/NVME of data (matches how AWS emits the header value)."""
+    tbl = _crc64nvme_table()
+    crc = 0xFFFFFFFFFFFFFFFF
+    for b in data:
+        crc = (crc >> 8) ^ tbl[(crc ^ b) & 0xFF]
+    crc ^= 0xFFFFFFFFFFFFFFFF
+    return base64.b64encode(crc.to_bytes(8, "big")).decode("ascii")
+
+
+# x-amz-checksum-<algo> header name -> function computing the correct header value over the body.
+_CHECKSUM_HEADER_FNS = {
+    "x-amz-checksum-crc64nvme": crc64nvme_base64,
+}
+
+
+def getobject_body(m):
+    """Decoded bytes of a GetObject response body (all-zero, size-only; see resp_bytes)."""
+    body = m.get("body_inline", "")
+    raw = base64.b64decode(body) if body else b""
+    return bytes(len(raw))  # opaque S3 object body: only the size matters, content is zeros
+
+
 def resp_bytes(m):
     """C# byte[] expression for a response (output) case body."""
     proto = m["protocol"]
     op = m["op"]
     body = m.get("body_inline", "")
     if op == "GetObject":
-        raw = base64.b64decode(body) if body else b""
-        return f"new byte[{len(raw)}]"  # opaque S3 object body: only the size matters
+        return f"new byte[{len(getobject_body(m))}]"  # opaque S3 object body: only the size matters
     if proto == "rpcv2Cbor" and op == "GetItem":
         # The inline body is base64 text of the CBOR response bytes.
         return f"Convert.FromBase64String({cs_str(body.strip())})"
@@ -313,6 +355,16 @@ def headers_expr(m):
     base = PROTO[m["protocol"]]["rh"]
     if not h:
         return base
+    h = dict(h)
+    # GetObject emits a size-only, all-zero body (see resp_bytes), so any x-amz-checksum-* header
+    # carried over from the model was computed for the model's original payload and would no longer
+    # match. Recompute it over the body we actually emit so the SDK's response-checksum validation
+    # (which does run end-to-end here) passes against real data instead of a stale value.
+    if m["op"] == "GetObject":
+        actual = getobject_body(m)
+        for name, fn in _CHECKSUM_HEADER_FNS.items():
+            if name in h:
+                h[name] = fn(actual)
     parts = ",".join(f"[{cs_str(k)}]={cs_str(v)}" for k, v in h.items())
     if m["protocol"] == "rpcv2Cbor":
         parts = '["smithy-protocol"]="rpc-v2-cbor",' + parts
@@ -455,7 +507,7 @@ def input_response(m):
 def emit_protocol(proto, cases):
     P = PROTO[proto]
     lines = [
-        f"    private static async Task<List<CpuTimeRunner.CpuTimeResult>> {RUN_METHOD[proto]}()",
+        f"    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> {RUN_METHOD[proto]}()",
         "    {",
         f"        {P['client']} CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)",
         "        {",
@@ -463,7 +515,7 @@ def emit_protocol(proto, cases):
         f"            var config = new {P['cfg']} {{ RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) }};",
         f"            return new {P['client']}(new BasicAWSCredentials(\"AKID\",\"SECRET\"), config);",
         "        }",
-        "        var results = new List<CpuTimeRunner.CpuTimeResult>();",
+        "        var results = new List<CpuTimeRunner.CpuTimeResult?>();",
     ]
     fx = f"ModelFixtures.{FIXTURE_CLASS[proto]}"
     for m in cases:
@@ -641,9 +693,9 @@ namespace AWSSDK.Benchmarks.Serde;
 /// <summary>71 canonical serde-benchmark cases, payloads sourced byte-for-byte from the model.</summary>
 public static class CpuTimeBenchmarks
 {
-    public static async Task<List<CpuTimeRunner.CpuTimeResult>> RunAll()
+    public static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunAll()
     {
-        var all = new List<CpuTimeRunner.CpuTimeResult>();
+        var all = new List<CpuTimeRunner.CpuTimeResult?>();
         all.AddRange(await RunAwsJson10());
         all.AddRange(await RunRpcV2Cbor());
         all.AddRange(await RunAwsQuery());

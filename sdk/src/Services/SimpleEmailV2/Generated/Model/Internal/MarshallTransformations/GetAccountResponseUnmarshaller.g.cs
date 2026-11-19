@@ -59,6 +59,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("DeliveryAttributes", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeliveryAttributesUnmarshaller.Instance;
+                    unmarshalledObject.DeliveryAttributes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Details", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountDetailsUnmarshaller.Instance;

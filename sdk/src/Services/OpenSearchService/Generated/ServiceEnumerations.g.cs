@@ -563,6 +563,47 @@ namespace Amazon.OpenSearchService
     }
 
     /// <summary>
+    /// Constants used for properties of type ClonedBlueGreenScheduledActionType.
+    /// </summary>
+    public class ClonedBlueGreenScheduledActionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AutomaticCutoverToPrimaryCluster for ClonedBlueGreenScheduledActionType
+        /// </summary>
+        public static readonly ClonedBlueGreenScheduledActionType AutomaticCutoverToPrimaryCluster = new ClonedBlueGreenScheduledActionType("AutomaticCutoverToPrimaryCluster");
+
+        /// <summary>
+        /// Constant DeletePrimaryCluster for ClonedBlueGreenScheduledActionType
+        /// </summary>
+        public static readonly ClonedBlueGreenScheduledActionType DeletePrimaryCluster = new ClonedBlueGreenScheduledActionType("DeletePrimaryCluster");
+
+        /// <summary>
+        /// Constructs a custom ClonedBlueGreenScheduledActionType for a value not among the defined constants.
+        /// </summary>
+        public ClonedBlueGreenScheduledActionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClonedBlueGreenScheduledActionType FindValue(string value)
+        {
+            return FindValue<ClonedBlueGreenScheduledActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClonedBlueGreenScheduledActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ConfigChangeStatus.
     /// </summary>
     public class ConfigChangeStatus : ConstantClass
@@ -669,6 +710,93 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CutoverStatus.
+    /// </summary>
+    public class CutoverStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Completed for CutoverStatus
+        /// </summary>
+        public static readonly CutoverStatus Completed = new CutoverStatus("Completed");
+
+        /// <summary>
+        /// Constant Failed for CutoverStatus
+        /// </summary>
+        public static readonly CutoverStatus Failed = new CutoverStatus("Failed");
+
+        /// <summary>
+        /// Constant InProgress for CutoverStatus
+        /// </summary>
+        public static readonly CutoverStatus InProgress = new CutoverStatus("InProgress");
+
+        /// <summary>
+        /// Constructs a custom CutoverStatus for a value not among the defined constants.
+        /// </summary>
+        public CutoverStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CutoverStatus FindValue(string value)
+        {
+            return FindValue<CutoverStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CutoverStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CutoverTarget.
+    /// </summary>
+    public class CutoverTarget : ConstantClass
+    {
+        /// <summary>
+        /// Constant ClonedCluster for CutoverTarget
+        /// </summary>
+        public static readonly CutoverTarget ClonedCluster = new CutoverTarget("ClonedCluster");
+
+        /// <summary>
+        /// Constant PrimaryCluster for CutoverTarget
+        /// </summary>
+        public static readonly CutoverTarget PrimaryCluster = new CutoverTarget("PrimaryCluster");
+
+        /// <summary>
+        /// Constructs a custom CutoverTarget for a value not among the defined constants.
+        /// </summary>
+        public CutoverTarget(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CutoverTarget FindValue(string value)
+        {
+            return FindValue<CutoverTarget>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CutoverTarget(string value)
         {
             return FindValue(value);
         }
@@ -853,6 +981,42 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentStrategyOverride.
+    /// </summary>
+    public class DeploymentStrategyOverride : ConstantClass
+    {
+        /// <summary>
+        /// Constant ClonedBlueGreen for DeploymentStrategyOverride
+        /// </summary>
+        public static readonly DeploymentStrategyOverride ClonedBlueGreen = new DeploymentStrategyOverride("ClonedBlueGreen");
+
+        /// <summary>
+        /// Constructs a custom DeploymentStrategyOverride for a value not among the defined constants.
+        /// </summary>
+        public DeploymentStrategyOverride(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentStrategyOverride FindValue(string value)
+        {
+            return FindValue<DeploymentStrategyOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentStrategyOverride(string value)
         {
             return FindValue(value);
         }
@@ -3718,6 +3882,47 @@ namespace Amazon.OpenSearchService
     }
 
     /// <summary>
+    /// Constants used for properties of type RetentionAction.
+    /// </summary>
+    public class RetentionAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeletePrimaryCluster for RetentionAction
+        /// </summary>
+        public static readonly RetentionAction DeletePrimaryCluster = new RetentionAction("DeletePrimaryCluster");
+
+        /// <summary>
+        /// Constant RollbackToPrimaryCluster for RetentionAction
+        /// </summary>
+        public static readonly RetentionAction RollbackToPrimaryCluster = new RetentionAction("RollbackToPrimaryCluster");
+
+        /// <summary>
+        /// Constructs a custom RetentionAction for a value not among the defined constants.
+        /// </summary>
+        public RetentionAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetentionAction FindValue(string value)
+        {
+            return FindValue<RetentionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetentionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RolesKeyIdCOption.
     /// </summary>
     public class RolesKeyIdCOption : ConstantClass
@@ -4147,6 +4352,88 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrafficSplitStatus.
+    /// </summary>
+    public class TrafficSplitStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Completed for TrafficSplitStatus
+        /// </summary>
+        public static readonly TrafficSplitStatus Completed = new TrafficSplitStatus("Completed");
+
+        /// <summary>
+        /// Constant Failed for TrafficSplitStatus
+        /// </summary>
+        public static readonly TrafficSplitStatus Failed = new TrafficSplitStatus("Failed");
+
+        /// <summary>
+        /// Constant InProgress for TrafficSplitStatus
+        /// </summary>
+        public static readonly TrafficSplitStatus InProgress = new TrafficSplitStatus("InProgress");
+
+        /// <summary>
+        /// Constructs a custom TrafficSplitStatus for a value not among the defined constants.
+        /// </summary>
+        public TrafficSplitStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficSplitStatus FindValue(string value)
+        {
+            return FindValue<TrafficSplitStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficSplitStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrafficStrategy.
+    /// </summary>
+    public class TrafficStrategy : ConstantClass
+    {
+        /// <summary>
+        /// Constant ShiftReadTrafficPercent for TrafficStrategy
+        /// </summary>
+        public static readonly TrafficStrategy ShiftReadTrafficPercent = new TrafficStrategy("ShiftReadTrafficPercent");
+
+        /// <summary>
+        /// Constructs a custom TrafficStrategy for a value not among the defined constants.
+        /// </summary>
+        public TrafficStrategy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficStrategy FindValue(string value)
+        {
+            return FindValue<TrafficStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficStrategy(string value)
         {
             return FindValue(value);
         }

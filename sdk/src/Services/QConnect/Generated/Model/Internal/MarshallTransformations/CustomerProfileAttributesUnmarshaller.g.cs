@@ -193,6 +193,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("calculatedAttributes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.CalculatedAttributes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("city", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -379,6 +386,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Province = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("recommendations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ProfileRecommendation, ProfileRecommendationUnmarshaller>(ProfileRecommendationUnmarshaller.Instance);
+                    unmarshalledObject.Recommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

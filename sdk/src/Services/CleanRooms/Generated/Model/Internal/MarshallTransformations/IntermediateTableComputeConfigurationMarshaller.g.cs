@@ -45,6 +45,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetJobComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("jobComputeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProtectedJobComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.JobComputeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetQueryComputeConfiguration())
             {
                 context.Writer.WritePropertyName("queryComputeConfiguration");

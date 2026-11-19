@@ -165,6 +165,20 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ExecutionPausedDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExecutionPausedDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionPausedDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ExecutionResumedDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExecutionResumedDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionResumedDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ExecutionStartedDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStartedDetailsUnmarshaller.Instance;

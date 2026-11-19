@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// DirectorySizeUpdateSettings Marshaller
     /// </summary>
-    public partial class DirectorySizeUpdateSettingsMarshaller : IRequestMarshaller<DirectorySizeUpdateSettings, JsonMarshallerContext>
+    public partial class DirectorySizeUpdateSettingsMarshaller : IRequestMarshaller<DirectorySizeUpdateSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DirectorySizeUpdateSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(DirectorySizeUpdateSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDirectorySize())
             {
-                context.Writer.WritePropertyName("DirectorySize");
-                context.Writer.WriteStringValue(requestObject.DirectorySize);
+                context.Writer.WriteTextString("DirectorySize");
+                context.Writer.WriteTextString(requestObject.DirectorySize);
             }
         }
 

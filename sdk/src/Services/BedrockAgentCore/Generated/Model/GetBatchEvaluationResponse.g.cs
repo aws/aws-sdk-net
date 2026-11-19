@@ -104,6 +104,22 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetDataSourceConfig() => this.DataSourceConfig != null;
 
         /// <summary>
+        /// Gets and sets the property DatasetExecutionDetails. 
+        /// <para>
+        /// The details of the dataset and agent that the batch evaluation ran, including the
+        /// dataset version and agent runtime version that the service resolved when the batch
+        /// evaluation started. This field is present only if the batch evaluation was started
+        /// with a <c>datasetExecutionConfig</c>.
+        /// </para>
+        /// </summary>
+        public DatasetExecutionDetails DatasetExecutionDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DatasetExecutionDetails property is set.
+        /// </summary>
+        internal bool IsSetDatasetExecutionDetails() => this.DatasetExecutionDetails != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the batch evaluation.

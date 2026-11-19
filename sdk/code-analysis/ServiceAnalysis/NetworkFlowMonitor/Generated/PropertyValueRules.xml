@@ -31,6 +31,36 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreatePerformanceMonitorRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreatePerformanceMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreatePerformanceMonitorRequest.ScopeArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreatePerformanceMonitorResponse.MonitorArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreatePerformanceMonitorResponse.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.CreateScopeRequest.ClientToken</property>
     <min>36</min>
     <max>36</max>
@@ -44,6 +74,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.DeleteMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.DeletePerformanceMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
@@ -67,13 +103,59 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetMonitorScopeSuggestionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetMonitorScopeSuggestionsRequest.MonitorArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetPerformanceMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetPerformanceMonitorResponse.MonitorArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetPerformanceMonitorResponse.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.GetQueryResultsMonitorTopContributorsRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetQueryResultsPerformanceMonitorRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetQueryResultsPerformanceMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.GetQueryStatusMonitorTopContributorsRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.GetQueryStatusPerformanceMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
@@ -90,6 +172,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.ListMonitorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.ListPerformanceMonitorsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
   </property-value-rule>
@@ -116,12 +203,29 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.StartQueryPerformanceMonitorRequest.Limit</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.StartQueryPerformanceMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.StartQueryWorkloadInsightsTopContributorsRequest.Limit</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.StopQueryMonitorTopContributorsRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.StopQueryPerformanceMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
@@ -163,10 +267,40 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.UpdatePerformanceMonitorRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.UpdatePerformanceMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.UpdatePerformanceMonitorResponse.MonitorArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.UpdatePerformanceMonitorResponse.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.UpdateScopeResponse.ScopeArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.AccountToAdd.AccountId</property>
+    <min>1</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.MonitorSummary.MonitorArn</property>
@@ -203,6 +337,24 @@
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.MonitorTopContributorsRow.RemoteVpcId</property>
     <pattern>^vpc-[a-zA-Z0-9]{8,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.PerformanceMonitorSummary.MonitorArn</property>
+    <min>20</min>
+    <max>512</max>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.PerformanceMonitorSummary.MonitorName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.PerformanceMonitorTarget.Identifier</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.ScopeSummary.ScopeArn</property>

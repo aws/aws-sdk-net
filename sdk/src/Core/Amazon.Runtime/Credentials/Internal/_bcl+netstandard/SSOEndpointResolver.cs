@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
 using System;
 using System.Net.Http;
 using System.Text.RegularExpressions;
@@ -230,6 +231,27 @@ namespace Amazon.Runtime.Credentials.Internal
         }
 
         /// <summary>
+        /// Creates the handler for redirect lookups: redirects are returned rather than followed, and the
+        /// AWS_CA_BUNDLE bundle, if set, is trusted. An invalid bundle throws AmazonClientException, which isn't
+        /// treated as a non-fatal network error.
+        /// </summary>
+        private static HttpClientHandler CreateRedirectHandler()
+        {
+            var handler = new HttpClientHandler { AllowAutoRedirect = false };
+            try
+            {
+                CABundle.ApplyFromEnvironment(handler);
+            }
+            catch
+            {
+                handler.Dispose();
+                throw;
+            }
+
+            return handler;
+        }
+
+        /// <summary>
         /// Sends an HTTP request with auto-redirect disabled and returns the Location header
         /// value if the response is a redirect (301, 302, 303, 307, or 308).
         /// Returns null for non-redirect responses.
@@ -237,7 +259,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         private static async Task<string> TrySendRequestAsync(string url, HttpMethod method)
         {
-            using (var handler = new HttpClientHandler { AllowAutoRedirect = false })
+            using (var handler = CreateRedirectHandler())
             using (var client = new HttpClient(handler) { Timeout = HttpTimeout })
             using (var request = new HttpRequestMessage(method, url))
             using (var response = await client.SendAsync(request).ConfigureAwait(false))

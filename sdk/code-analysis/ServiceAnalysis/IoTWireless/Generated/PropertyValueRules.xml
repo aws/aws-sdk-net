@@ -1761,7 +1761,7 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANDeviceProfile.MaxEirp</property>
     <min>0</min>
-    <max>15</max>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANDeviceProfile.PingSlotDr</property>

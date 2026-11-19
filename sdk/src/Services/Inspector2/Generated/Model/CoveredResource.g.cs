@@ -64,8 +64,21 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The cloud provider of the covered resource.
+        /// The cloud provider of the covered resource. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – Microsoft Azure resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Google Cloud Platform (GCP) resources.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Provider Provider { get; set; }
 
@@ -77,10 +90,24 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ProviderAccountId. 
         /// <para>
-        /// The cloud provider account ID of the covered resource.
+        /// The cloud provider account ID of the covered resource. The value format depends on
+        /// the cloud provider:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services account ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure subscription ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Google Cloud Platform (GCP) project ID, such as <c>my-project</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string ProviderAccountId { get; set; }
 
         /// <summary>
@@ -91,10 +118,24 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ProviderOrgId. 
         /// <para>
-        /// The cloud provider organization ID of the covered resource.
+        /// The cloud provider organization ID of the covered resource. The value format depends
+        /// on the cloud provider:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Organizations organization ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure tenant ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A numeric Google Cloud Platform (GCP) organization ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string ProviderOrgId { get; set; }
 
         /// <summary>
@@ -119,8 +160,23 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ProviderRegion. 
         /// <para>
-        /// The cloud provider region of the covered resource.
+        /// The cloud provider region of the covered resource. The value format depends on the
+        /// cloud provider:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Region, such as <c>us-east-1</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure region, such as <c>eastus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Google Cloud Platform (GCP) location, such as the region <c>us-central1</c> or the
+        /// zone <c>us-central1-a</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ProviderRegion { get; set; }
@@ -160,8 +216,25 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the covered resource.
+        /// The type of the covered resource. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services – <c>AWS_EC2_INSTANCE</c>, <c>AWS_LAMBDA_FUNCTION</c>, <c>AWS_ECR_CONTAINER_IMAGE</c>,
+        /// <c>AWS_ECR_REPOSITORY</c>, <c>MACHINE_IMAGE</c>, <c>CODE_REPOSITORY</c>, or <c>AWS_ACCOUNT</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Azure – <c>Microsoft.Compute/virtualMachines</c>, <c>Microsoft.ContainerRegistry/registries</c>,
+        /// <c>Microsoft.ContainerRegistry/registry/containerRepository</c>, <c>Microsoft.ContainerRegistry/registry/containerImage</c>,
+        /// or <c>Microsoft.Web/sites</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Google Cloud Platform (GCP) – <c>compute.googleapis.com/Instance</c>, <c>cloudfunctions.googleapis.com/Function</c>,
+        /// <c>artifactregistry.googleapis.com/Repository</c>, or <c>artifactregistry.googleapis.com/DockerImage</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public CoverageResourceType ResourceType { get; set; }

@@ -2022,6 +2022,115 @@ namespace Amazon.Route53Domains
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Restores a domain that has expired, or was deleted, before it becomes available for
+        /// others to register. The cost of restoring your domain is billed to your Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Not every TLD registry supports restoring domains, and the period during which a domain
+        /// can be restored varies by TLD. To find out whether your domain can be restored and
+        /// the period during which you can restore it, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that you can register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Restoring a domain typically costs more, and sometimes much more, than registering
+        /// or renewing a domain. To get the restoration price for a domain before you restore
+        /// it, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainPrices.html">GetDomainPrices</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Restoration is asynchronous. The response includes an operation ID that you can use
+        /// with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to track the progress of the request. When the restoration succeeds, the domain reappears
+        /// in the response to <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html">ListDomains</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-restore-expired.html">Restoring
+        /// an expired or deleted domain</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDomain service method.</param>
+        /// <returns>The response from the RestoreDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
+        /// be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RestoreDomain">REST API Reference for RestoreDomain Operation</seealso>
+        RestoreDomainResponse RestoreDomain(RestoreDomainRequest request);
+#endif
+
+        /// <summary>
+        /// Restores a domain that has expired, or was deleted, before it becomes available for
+        /// others to register. The cost of restoring your domain is billed to your Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// Not every TLD registry supports restoring domains, and the period during which a domain
+        /// can be restored varies by TLD. To find out whether your domain can be restored and
+        /// the period during which you can restore it, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that you can register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Restoring a domain typically costs more, and sometimes much more, than registering
+        /// or renewing a domain. To get the restoration price for a domain before you restore
+        /// it, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainPrices.html">GetDomainPrices</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Restoration is asynchronous. The response includes an operation ID that you can use
+        /// with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+        /// to track the progress of the request. When the restoration succeeds, the domain reappears
+        /// in the response to <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html">ListDomains</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-restore-expired.html">Restoring
+        /// an expired or deleted domain</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RestoreDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for APIs that accept a domain name,
+        /// the request might specify a domain name that doesn't belong to the account that submitted
+        /// the request. For <c>AcceptDomainTransferFromAnotherAwsAccount</c>, the password might
+        /// be invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain (TLD).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RestoreDomain">REST API Reference for RestoreDomain Operation</seealso>
+        Task<RestoreDomainResponse> RestoreDomainAsync(RestoreDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// This operation returns the authorization code for the domain. To transfer a domain
         /// to another registrar, you provide this value to the new registrar.
         /// </summary>

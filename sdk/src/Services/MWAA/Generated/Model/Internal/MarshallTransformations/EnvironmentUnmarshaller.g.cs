@@ -123,6 +123,13 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("KmsKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -260,6 +267,13 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Teams", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, TeamConfig, StringUnmarshaller, TeamConfigUnmarshaller>(StringUnmarshaller.Instance, TeamConfigUnmarshaller.Instance);
+                    unmarshalledObject.Teams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

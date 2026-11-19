@@ -41,7 +41,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Defines the duration after which a payment request is automatically approved if no
         /// further action is taken. This only applies when the payment request approval strategy
         /// is set to <c>AUTO_APPROVE_ON_EXPIRATION</c>. The duration is represented in the ISO_8601
-        /// format (e.g., P10D for 10 days).
+        /// format (for example, P10D for 10 days).
         /// </para>
         /// </summary>
         public string ExpirationDuration { get; set; }

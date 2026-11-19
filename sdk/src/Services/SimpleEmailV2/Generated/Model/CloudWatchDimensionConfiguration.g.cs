@@ -91,9 +91,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The location where the Amazon SES API v2 finds the value of a dimension to publish
         /// to Amazon CloudWatch. To use the message tags that you specify using an <c>X-SES-MESSAGE-TAGS</c>
-        /// header or a parameter to the <c>SendEmail</c> or <c>SendRawEmail</c> API, choose <c>messageTag</c>.
-        /// To use your own email headers, choose <c>emailHeader</c>. To use link tags, choose
-        /// <c>linkTags</c>.
+        /// header or a parameter to the <c>SendEmail</c> or <c>SendBulkEmail</c> operation, choose
+        /// <c>MESSAGE_TAG</c>. To use your own email headers, choose <c>EMAIL_HEADER</c>. To
+        /// use link tags, choose <c>LINK_TAG</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

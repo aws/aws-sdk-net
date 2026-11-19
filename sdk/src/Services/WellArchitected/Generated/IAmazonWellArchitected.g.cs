@@ -32,25 +32,49 @@ namespace Amazon.WellArchitected
     ///
     /// Amazon Web Services Well-Architected 
     /// <para>
-    /// Amazon Web Services Well-Architected helps you evaluate your architectures against
-    /// Amazon Web Services best practices across operational excellence, security, reliability,
-    /// performance efficiency, cost optimization, and sustainability. The service includes
-    /// the Amazon Web Services Well-Architected Agent for AI-powered recommendations tailored
-    /// to your specific environment, and the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected
-    /// Tool</a> for conducting reviews and tracking improvements.
+    /// This is the <i>Amazon Web Services Well-Architected API Reference</i>. Amazon Web
+    /// Services Well-Architected helps you evaluate your architectures against Amazon Web
+    /// Services best practices across operational excellence, security, reliability, performance
+    /// efficiency, cost optimization, and sustainability.
     /// </para>
     ///  
     /// <para>
-    /// This is the <i>Amazon Web Services Well-Architected API Reference</i>. Through this
-    /// API, you can programmatically access personalized recommendations and automation scripts
-    /// from the Amazon Web Services Well-Architected Agent, and create and manage workloads,
-    /// conduct lens reviews, track milestones, manage custom lenses, share workloads across
-    /// accounts, and manage profiles with the Well-Architected Tool.
+    /// To view API actions organized by service, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/wa-api-actions.html">API
+    /// actions</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about the service, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Amazon
-    /// Web Services Well-Architected User Guide</a>.
+    ///  <b>Amazon Web Services Well-Architected Agent (preview)</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Describes the API operations for managing optimization profiles, goals, application
+    /// context, and recommendations in the Amazon Web Services Well-Architected Agent. Through
+    /// this API, you can create and configure agent profiles that define the scope of your
+    /// Amazon Web Services environment to analyze, set optimization goals across cost, security,
+    /// performance, and resilience pillars, start recommendation generation, retrieve prioritized
+    /// recommendations with ready-to-deploy remediation scripts, and provide feedback to
+    /// improve future recommendations.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent.html">What
+    /// is Amazon Web Services Well-Architected Agent?</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Well-Architected Tool</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Describes the API operations for creating and managing workloads, conducting lens
+    /// reviews, tracking milestones, managing custom lenses, sharing workloads across accounts,
+    /// and managing profiles with the Well-Architected Tool.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/tool.html">What
+    /// is Well-Architected Tool?</a> 
     /// </para>
     /// </summary>
     public partial interface IAmazonWellArchitected : IAmazonService, IDisposable
@@ -212,6 +236,69 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a Basic profile for the calling account. No configuration input is required
+        /// because the account and region are inferred from the caller. The profile uses the
+        /// reserved name <c>basic</c>. This operation is idempotent. Calling it twice returns
+        /// the same ARN. Each account can have at most one Basic profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentBasicProfile service method.</param>
+        /// <returns>The response from the CreateAgentBasicProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentBasicProfile">REST API Reference for CreateAgentBasicProfile Operation</seealso>
+        CreateAgentBasicProfileResponse CreateAgentBasicProfile(CreateAgentBasicProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a Basic profile for the calling account. No configuration input is required
+        /// because the account and region are inferred from the caller. The profile uses the
+        /// reserved name <c>basic</c>. This operation is idempotent. Calling it twice returns
+        /// the same ARN. Each account can have at most one Basic profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentBasicProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAgentBasicProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentBasicProfile">REST API Reference for CreateAgentBasicProfile Operation</seealso>
+        Task<CreateAgentBasicProfileResponse> CreateAgentBasicProfileAsync(CreateAgentBasicProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a context associated with an optimization profile. Contexts provide application
         /// and environment information used during recommendation generation.
         /// </summary>
@@ -339,6 +426,142 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentGoal">REST API Reference for CreateAgentGoal Operation</seealso>
         Task<CreateAgentGoalResponse> CreateAgentGoalAsync(CreateAgentGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an Organizational Profile for use with AWS Organizations integration. Organizational
+        /// Profiles are scoped to an AWS Organization and do not require an execution role or
+        /// aggregation configuration. The organization is inferred from the caller's identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentOrganizationalProfile service method.</param>
+        /// <returns>The response from the CreateAgentOrganizationalProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalProfile">REST API Reference for CreateAgentOrganizationalProfile Operation</seealso>
+        CreateAgentOrganizationalProfileResponse CreateAgentOrganizationalProfile(CreateAgentOrganizationalProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an Organizational Profile for use with AWS Organizations integration. Organizational
+        /// Profiles are scoped to an AWS Organization and do not require an execution role or
+        /// aggregation configuration. The organization is inferred from the caller's identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentOrganizationalProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAgentOrganizationalProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalProfile">REST API Reference for CreateAgentOrganizationalProfile Operation</seealso>
+        Task<CreateAgentOrganizationalProfileResponse> CreateAgentOrganizationalProfileAsync(CreateAgentOrganizationalProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an Organizational Report, which is an asynchronously-materialized, point-in-time
+        /// snapshot of recommendations across all Agent Profiles within the caller's AWS Organization.
+        /// You can optionally narrow the scope with filters. The operation is idempotent on the
+        /// caller-supplied clientToken. The AWS Organization the report belongs to is inferred
+        /// from the caller's authorization context. Reports are retained for 90 days from creation,
+        /// after which they are automatically deleted. Use DeleteAgentOrganizationalReport to
+        /// delete a report earlier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentOrganizationalReport service method.</param>
+        /// <returns>The response from the CreateAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalReport">REST API Reference for CreateAgentOrganizationalReport Operation</seealso>
+        CreateAgentOrganizationalReportResponse CreateAgentOrganizationalReport(CreateAgentOrganizationalReportRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an Organizational Report, which is an asynchronously-materialized, point-in-time
+        /// snapshot of recommendations across all Agent Profiles within the caller's AWS Organization.
+        /// You can optionally narrow the scope with filters. The operation is idempotent on the
+        /// caller-supplied clientToken. The AWS Organization the report belongs to is inferred
+        /// from the caller's authorization context. Reports are retained for 90 days from creation,
+        /// after which they are automatically deleted. Use DeleteAgentOrganizationalReport to
+        /// delete a report earlier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentOrganizationalReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentOrganizationalReport">REST API Reference for CreateAgentOrganizationalReport Operation</seealso>
+        Task<CreateAgentOrganizationalReportResponse> CreateAgentOrganizationalReportAsync(CreateAgentOrganizationalReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1366,6 +1589,59 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes an Organizational Report and its associated artifacts. The operation is idempotent,
+        /// so repeated calls for a report that has already been deleted return success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentOrganizationalReport service method.</param>
+        /// <returns>The response from the DeleteAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentOrganizationalReport">REST API Reference for DeleteAgentOrganizationalReport Operation</seealso>
+        DeleteAgentOrganizationalReportResponse DeleteAgentOrganizationalReport(DeleteAgentOrganizationalReportRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Organizational Report and its associated artifacts. The operation is idempotent,
+        /// so repeated calls for a report that has already been deleted return success.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentOrganizationalReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentOrganizationalReport">REST API Reference for DeleteAgentOrganizationalReport Operation</seealso>
+        Task<DeleteAgentOrganizationalReportResponse> DeleteAgentOrganizationalReportAsync(DeleteAgentOrganizationalReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an optimization profile and its associated configuration. This action cannot
         /// be undone.
         /// </summary>
@@ -1422,6 +1698,114 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfile">REST API Reference for DeleteAgentProfile Operation</seealso>
         Task<DeleteAgentProfileResponse> DeleteAgentProfileAsync(DeleteAgentProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the resource-based policy from an Agent Profile. This revokes all cross-account
+        /// access previously granted by the policy. Only the profile owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentProfilePolicy service method.</param>
+        /// <returns>The response from the DeleteAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfilePolicy">REST API Reference for DeleteAgentProfilePolicy Operation</seealso>
+        DeleteAgentProfilePolicyResponse DeleteAgentProfilePolicy(DeleteAgentProfilePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Removes the resource-based policy from an Agent Profile. This revokes all cross-account
+        /// access previously granted by the policy. Only the profile owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentProfilePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfilePolicy">REST API Reference for DeleteAgentProfilePolicy Operation</seealso>
+        Task<DeleteAgentProfilePolicyResponse> DeleteAgentProfilePolicyAsync(DeleteAgentProfilePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes the resource-based policy from an individual Agent Recommendation. This revokes
+        /// all cross-account access previously granted by the policy. The recommendation owner
+        /// or any principal with profile write access on the parent profile can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRecommendationPolicy service method.</param>
+        /// <returns>The response from the DeleteAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentRecommendationPolicy">REST API Reference for DeleteAgentRecommendationPolicy Operation</seealso>
+        DeleteAgentRecommendationPolicyResponse DeleteAgentRecommendationPolicy(DeleteAgentRecommendationPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Removes the resource-based policy from an individual Agent Recommendation. This revokes
+        /// all cross-account access previously granted by the policy. The recommendation owner
+        /// or any principal with profile write access on the parent profile can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRecommendationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentRecommendationPolicy">REST API Reference for DeleteAgentRecommendationPolicy Operation</seealso>
+        Task<DeleteAgentRecommendationPolicyResponse> DeleteAgentRecommendationPolicyAsync(DeleteAgentRecommendationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2364,6 +2748,165 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves metadata and current state for a single Organizational Report. The coverageSummary
+        /// is populated once the report reaches COMPLETED and is absent for reports still in
+        /// progress or in a failed state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentOrganizationalReport service method.</param>
+        /// <returns>The response from the GetAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReport">REST API Reference for GetAgentOrganizationalReport Operation</seealso>
+        GetAgentOrganizationalReportResponse GetAgentOrganizationalReport(GetAgentOrganizationalReportRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves metadata and current state for a single Organizational Report. The coverageSummary
+        /// is populated once the report reaches COMPLETED and is absent for reports still in
+        /// progress or in a failed state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentOrganizationalReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentOrganizationalReport service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReport">REST API Reference for GetAgentOrganizationalReport Operation</seealso>
+        Task<GetAgentOrganizationalReportResponse> GetAgentOrganizationalReportAsync(GetAgentOrganizationalReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the data artifact for a completed Organizational Report as a short-lived
+        /// presigned S3 URL. The response contains the URL in downloadUrl and its expiration
+        /// in expiresAt. To have the service write the artifact directly into a caller-owned
+        /// bucket instead, use SendAgentOrganizationalReportDataToS3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentOrganizationalReportData service method.</param>
+        /// <returns>The response from the GetAgentOrganizationalReportData service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReportData">REST API Reference for GetAgentOrganizationalReportData Operation</seealso>
+        GetAgentOrganizationalReportDataResponse GetAgentOrganizationalReportData(GetAgentOrganizationalReportDataRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the data artifact for a completed Organizational Report as a short-lived
+        /// presigned S3 URL. The response contains the URL in downloadUrl and its expiration
+        /// in expiresAt. To have the service write the artifact directly into a caller-owned
+        /// bucket instead, use SendAgentOrganizationalReportDataToS3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentOrganizationalReportData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentOrganizationalReportData service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentOrganizationalReportData">REST API Reference for GetAgentOrganizationalReportData Operation</seealso>
+        Task<GetAgentOrganizationalReportDataResponse> GetAgentOrganizationalReportDataAsync(GetAgentOrganizationalReportDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the caller's complete set of Well-Architected Agent preferences with their
+        /// current states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentPreferences service method.</param>
+        /// <returns>The response from the GetAgentPreferences service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentPreferences">REST API Reference for GetAgentPreferences Operation</seealso>
+        GetAgentPreferencesResponse GetAgentPreferences(GetAgentPreferencesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the caller's complete set of Well-Architected Agent preferences with their
+        /// current states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentPreferences service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentPreferences">REST API Reference for GetAgentPreferences Operation</seealso>
+        Task<GetAgentPreferencesResponse> GetAgentPreferencesAsync(GetAgentPreferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves detailed information about an optimization profile, including its configuration
         /// and metadata.
         /// </summary>
@@ -2417,8 +2960,71 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the resource-based policy attached to an Agent Profile. Only the profile
+        /// owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentProfilePolicy service method.</param>
+        /// <returns>The response from the GetAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfilePolicy">REST API Reference for GetAgentProfilePolicy Operation</seealso>
+        GetAgentProfilePolicyResponse GetAgentProfilePolicy(GetAgentProfilePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to an Agent Profile. Only the profile
+        /// owner can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentProfilePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfilePolicy">REST API Reference for GetAgentProfilePolicy Operation</seealso>
+        Task<GetAgentProfilePolicyResponse> GetAgentProfilePolicyAsync(GetAgentProfilePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves detailed information about a specific optimization recommendation, including
         /// its impact analysis, content, and implementation guidance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendation service method.</param>
         /// <returns>The response from the GetAgentRecommendation service method, as returned by WellArchitected.</returns>
@@ -2442,8 +3048,18 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves detailed information about a specific optimization recommendation, including
         /// its impact analysis, content, and implementation guidance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -2470,10 +3086,20 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves information about a recommendation generation process, including its status,
         /// progress, and results. Recommendation generation is asynchronous: poll this operation
         /// until status reaches a terminal value of COMPLETED (results are ready) or ERROR (see
         /// errorDetails). Intermediate values are QUEUED and IN_PROGRESS.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationGeneration service method.</param>
         /// <returns>The response from the GetAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
@@ -2497,10 +3123,20 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves information about a recommendation generation process, including its status,
         /// progress, and results. Recommendation generation is asynchronous: poll this operation
         /// until status reaches a terminal value of COMPLETED (results are ready) or ERROR (see
         /// errorDetails). Intermediate values are QUEUED and IN_PROGRESS.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationGeneration service method.</param>
         /// <param name="cancellationToken">
@@ -2524,6 +3160,61 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationGeneration">REST API Reference for GetAgentRecommendationGeneration Operation</seealso>
         Task<GetAgentRecommendationGenerationResponse> GetAgentRecommendationGenerationAsync(GetAgentRecommendationGenerationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the resource-based policy attached to an individual Agent Recommendation.
+        /// The recommendation owner or any principal with profile write access on the parent
+        /// profile can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationPolicy service method.</param>
+        /// <returns>The response from the GetAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationPolicy">REST API Reference for GetAgentRecommendationPolicy Operation</seealso>
+        GetAgentRecommendationPolicyResponse GetAgentRecommendationPolicy(GetAgentRecommendationPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to an individual Agent Recommendation.
+        /// The recommendation owner or any principal with profile write access on the parent
+        /// profile can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationPolicy">REST API Reference for GetAgentRecommendationPolicy Operation</seealso>
+        Task<GetAgentRecommendationPolicyResponse> GetAgentRecommendationPolicyAsync(GetAgentRecommendationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3470,6 +4161,55 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists Organizational Reports owned by the caller's account within the caller's AWS
+        /// Organization, ordered by most recently created first. Supports pagination and an optional
+        /// state filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentOrganizationalReports service method.</param>
+        /// <returns>The response from the ListAgentOrganizationalReports service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentOrganizationalReports">REST API Reference for ListAgentOrganizationalReports Operation</seealso>
+        ListAgentOrganizationalReportsResponse ListAgentOrganizationalReports(ListAgentOrganizationalReportsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists Organizational Reports owned by the caller's account within the caller's AWS
+        /// Organization, ordered by most recently created first. Supports pagination and an optional
+        /// state filter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentOrganizationalReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAgentOrganizationalReports service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentOrganizationalReports">REST API Reference for ListAgentOrganizationalReports Operation</seealso>
+        Task<ListAgentOrganizationalReportsResponse> ListAgentOrganizationalReportsAsync(ListAgentOrganizationalReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists optimization profiles in your account. Profiles define the scope and configuration
         /// for generating optimization recommendations.
         /// </summary>
@@ -3517,7 +4257,17 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists recommendation generation processes for a specified profile.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationGenerations service method.</param>
         /// <returns>The response from the ListAgentRecommendationGenerations service method, as returned by WellArchitected.</returns>
@@ -3541,7 +4291,17 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists recommendation generation processes for a specified profile.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationGenerations service method.</param>
         /// <param name="cancellationToken">
@@ -3568,8 +4328,18 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists recommendation items for a specific recommendation. Recommendation items provide
         /// detailed information about individual optimization opportunities.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationItems service method.</param>
         /// <returns>The response from the ListAgentRecommendationItems service method, as returned by WellArchitected.</returns>
@@ -3593,8 +4363,18 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists recommendation items for a specific recommendation. Recommendation items provide
         /// detailed information about individual optimization opportunities.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationItems service method.</param>
         /// <param name="cancellationToken">
@@ -3621,8 +4401,18 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists active optimization recommendations for a specified profile with optional filtering
         /// by state.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendations service method.</param>
         /// <returns>The response from the ListAgentRecommendations service method, as returned by WellArchitected.</returns>
@@ -3646,8 +4436,18 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Application-level recommendations are a new recommendation format currently in beta.
+        /// We are actively seeking customer feedback to improve their quality and relevance.
+        /// As with any AI-generated content, please thoroughly review each recommendation before
+        /// taking any action based on it.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists active optimization recommendations for a specified profile with optional filtering
         /// by state.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -4609,6 +5409,126 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates or replaces the caller's Well-Architected Agent preferences. Each supplied
+        /// update sets the desired state of one preference. Preferences not named in the request
+        /// are left unchanged. Enabling or disabling is performed synchronously, so a failure
+        /// to reach the requested state is returned as a modeled exception rather than a FAILED
+        /// status. On success the operation returns an empty response. Call GetAgentPreferences
+        /// to read the resulting state. The account the preferences belong to is inferred from
+        /// the caller's authorization context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentPreferences service method.</param>
+        /// <returns>The response from the PutAgentPreferences service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentPreferences">REST API Reference for PutAgentPreferences Operation</seealso>
+        PutAgentPreferencesResponse PutAgentPreferences(PutAgentPreferencesRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or replaces the caller's Well-Architected Agent preferences. Each supplied
+        /// update sets the desired state of one preference. Preferences not named in the request
+        /// are left unchanged. Enabling or disabling is performed synchronously, so a failure
+        /// to reach the requested state is returned as a modeled exception rather than a FAILED
+        /// status. On success the operation returns an empty response. Call GetAgentPreferences
+        /// to read the resulting state. The account the preferences belong to is inferred from
+        /// the caller's authorization context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutAgentPreferences service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentPreferences">REST API Reference for PutAgentPreferences Operation</seealso>
+        Task<PutAgentPreferencesResponse> PutAgentPreferencesAsync(PutAgentPreferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on an Agent Profile. The policy controls
+        /// cross-account access to the profile and its child resources such as recommendations,
+        /// goals, and contexts. Only the profile owner can call this operation. The policy must
+        /// be valid IAM JSON with Allow-only statements and no negation condition operators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentProfilePolicy service method.</param>
+        /// <returns>The response from the PutAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentProfilePolicy">REST API Reference for PutAgentProfilePolicy Operation</seealso>
+        PutAgentProfilePolicyResponse PutAgentProfilePolicy(PutAgentProfilePolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on an Agent Profile. The policy controls
+        /// cross-account access to the profile and its child resources such as recommendations,
+        /// goals, and contexts. Only the profile owner can call this operation. The policy must
+        /// be valid IAM JSON with Allow-only statements and no negation condition operators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentProfilePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutAgentProfilePolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentProfilePolicy">REST API Reference for PutAgentProfilePolicy Operation</seealso>
+        Task<PutAgentProfilePolicyResponse> PutAgentProfilePolicyAsync(PutAgentProfilePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Submits user feedback on a recommendation to help improve future optimization suggestions
         /// and track implementation outcomes.
         /// </summary>
@@ -4662,10 +5582,147 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Initiates a new recommendation generation process for the specified optimization profile.
-        /// This asynchronous operation analyzes your Amazon Web Services resources and generates
-        /// optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration
-        /// to check status.
+        /// Attaches or replaces a resource-based policy on an individual Agent Recommendation.
+        /// The policy controls cross-account access to the recommendation and its child resources
+        /// such as items and remediations. The recommendation owner or any principal with profile
+        /// write access on the parent profile can call this operation. The policy must be valid
+        /// IAM JSON with Allow-only statements and no negation condition operators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentRecommendationPolicy service method.</param>
+        /// <returns>The response from the PutAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationPolicy">REST API Reference for PutAgentRecommendationPolicy Operation</seealso>
+        PutAgentRecommendationPolicyResponse PutAgentRecommendationPolicy(PutAgentRecommendationPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on an individual Agent Recommendation.
+        /// The policy controls cross-account access to the recommendation and its child resources
+        /// such as items and remediations. The recommendation owner or any principal with profile
+        /// write access on the parent profile can call this operation. The policy must be valid
+        /// IAM JSON with Allow-only statements and no negation condition operators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentRecommendationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutAgentRecommendationPolicy service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationPolicy">REST API Reference for PutAgentRecommendationPolicy Operation</seealso>
+        Task<PutAgentRecommendationPolicyResponse> PutAgentRecommendationPolicyAsync(PutAgentRecommendationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Writes the data artifact for a completed Organizational Report directly into a caller-owned
+        /// S3 bucket. The artifact is written in the requested format to the supplied bucketArn
+        /// and objectKey, and the resulting S3 location is returned in deliveredTo. This operation
+        /// creates an S3 object and should not be retried indiscriminately. To download the artifact
+        /// through a short-lived presigned URL instead, use GetAgentOrganizationalReportData.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAgentOrganizationalReportDataToS3 service method.</param>
+        /// <returns>The response from the SendAgentOrganizationalReportDataToS3 service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/SendAgentOrganizationalReportDataToS3">REST API Reference for SendAgentOrganizationalReportDataToS3 Operation</seealso>
+        SendAgentOrganizationalReportDataToS3Response SendAgentOrganizationalReportDataToS3(SendAgentOrganizationalReportDataToS3Request request);
+#endif
+
+        /// <summary>
+        /// Writes the data artifact for a completed Organizational Report directly into a caller-owned
+        /// S3 bucket. The artifact is written in the requested format to the supplied bucketArn
+        /// and objectKey, and the resulting S3 location is returned in deliveredTo. This operation
+        /// creates an S3 object and should not be retried indiscriminately. To download the artifact
+        /// through a short-lived presigned URL instead, use GetAgentOrganizationalReportData.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAgentOrganizationalReportDataToS3 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SendAgentOrganizationalReportDataToS3 service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/SendAgentOrganizationalReportDataToS3">REST API Reference for SendAgentOrganizationalReportDataToS3 Operation</seealso>
+        Task<SendAgentOrganizationalReportDataToS3Response> SendAgentOrganizationalReportDataToS3Async(SendAgentOrganizationalReportDataToS3Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts a recommendation generation process for the specified agent profile. This asynchronous
+        /// operation returns immediately. Use <c>GetAgentRecommendationGeneration</c> to check
+        /// the status of the generation.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, only the <c>ARCHITECTURE</c> recommendation type is supported. <c>RESOURCE</c>
+        /// and <c>APPLICATION</c> recommendations are generated only by the scheduled generation
+        /// cycle and cannot be started with this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>ARCHITECTURE</c> type, the generation analyzes the infrastructure as code
+        /// (IaC) template that you specify in <c>additionalContext</c>, and returns updated templates
+        /// with best practice fixes applied. You must specify <c>scope</c> and <c>additionalContext</c>.
+        /// You can optionally specify <c>name</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Architecture review generations are subject to a daily quota for each profile. For
+        /// more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-quotas.html">Quotas
+        /// and limits</a> in the Amazon Web Services Well-Architected User Guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAgentRecommendationGeneration service method.</param>
         /// <returns>The response from the StartAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
@@ -4692,10 +5749,29 @@ namespace Amazon.WellArchitected
 #endif
 
         /// <summary>
-        /// Initiates a new recommendation generation process for the specified optimization profile.
-        /// This asynchronous operation analyzes your Amazon Web Services resources and generates
-        /// optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration
-        /// to check status.
+        /// Starts a recommendation generation process for the specified agent profile. This asynchronous
+        /// operation returns immediately. Use <c>GetAgentRecommendationGeneration</c> to check
+        /// the status of the generation.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, only the <c>ARCHITECTURE</c> recommendation type is supported. <c>RESOURCE</c>
+        /// and <c>APPLICATION</c> recommendations are generated only by the scheduled generation
+        /// cycle and cannot be started with this operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>ARCHITECTURE</c> type, the generation analyzes the infrastructure as code
+        /// (IaC) template that you specify in <c>additionalContext</c>, and returns updated templates
+        /// with best practice fixes applied. You must specify <c>scope</c> and <c>additionalContext</c>.
+        /// You can optionally specify <c>name</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Architecture review generations are subject to a daily quota for each profile. For
+        /// more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-quotas.html">Quotas
+        /// and limits</a> in the Amazon Web Services Well-Architected User Guide.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAgentRecommendationGeneration service method.</param>
         /// <param name="cancellationToken">
@@ -4935,11 +6011,31 @@ namespace Amazon.WellArchitected
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates an existing optimization profile's configuration, including its pillars, execution
-        /// role, and aggregation settings.
+        /// Updates an Organizational Profile. Organizational Profiles are specific to Profiles
+        /// created using AWS Organizations integration. Include only the fields you want to change;
+        /// any field you omit from the request keeps its current value.
+        /// 
+        ///  
+        /// <para>
+        /// To clear an optional text field, supply an empty string for it; the field is then
+        /// unset, and a subsequent read omits it rather than returning an empty string. Omitting
+        /// the field from the request leaves the stored value in place. <c>description</c> and
+        /// <c>businessOverview</c> can be cleared this way. <c>displayName</c> cannot be cleared
+        /// because a display name is required, though you can change it. <c>pillars</c> cannot
+        /// be cleared because a profile must target at least one pillar.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>organizationalAggregationConfiguration</c> behaves differently because it is a
+        /// structure rather than a text field. Supplying it with both its <c>organizationalUnits</c>
+        /// and <c>accounts</c> lists empty removes every monitored organizational unit and account,
+        /// but the field itself remains set: a subsequent read returns the structure with two
+        /// empty lists rather than omitting it. Omitting the field from the request keeps the
+        /// stored boundary.
+        /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentProfile service method.</param>
-        /// <returns>The response from the UpdateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentOrganizationalProfile service method.</param>
+        /// <returns>The response from the UpdateAgentOrganizationalProfile service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
         /// User does not have sufficient access to perform this action.
         /// </exception>
@@ -4955,13 +6051,127 @@ namespace Amazon.WellArchitected
         /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
         /// The user input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentOrganizationalProfile">REST API Reference for UpdateAgentOrganizationalProfile Operation</seealso>
+        UpdateAgentOrganizationalProfileResponse UpdateAgentOrganizationalProfile(UpdateAgentOrganizationalProfileRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Organizational Profile. Organizational Profiles are specific to Profiles
+        /// created using AWS Organizations integration. Include only the fields you want to change;
+        /// any field you omit from the request keeps its current value.
+        /// 
+        ///  
+        /// <para>
+        /// To clear an optional text field, supply an empty string for it; the field is then
+        /// unset, and a subsequent read omits it rather than returning an empty string. Omitting
+        /// the field from the request leaves the stored value in place. <c>description</c> and
+        /// <c>businessOverview</c> can be cleared this way. <c>displayName</c> cannot be cleared
+        /// because a display name is required, though you can change it. <c>pillars</c> cannot
+        /// be cleared because a profile must target at least one pillar.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>organizationalAggregationConfiguration</c> behaves differently because it is a
+        /// structure rather than a text field. Supplying it with both its <c>organizationalUnits</c>
+        /// and <c>accounts</c> lists empty removes every monitored organizational unit and account,
+        /// but the field itself remains set: a subsequent read returns the structure with two
+        /// empty lists rather than omitting it. Omitting the field from the request keeps the
+        /// stored boundary.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentOrganizationalProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAgentOrganizationalProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentOrganizationalProfile">REST API Reference for UpdateAgentOrganizationalProfile Operation</seealso>
+        Task<UpdateAgentOrganizationalProfileResponse> UpdateAgentOrganizationalProfileAsync(UpdateAgentOrganizationalProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an existing optimization profile's configuration, including its pillars, execution
+        /// role, and aggregation settings. Include only the fields you want to change. Any field
+        /// you omit from the request keeps its current value, so you do not need to retrieve
+        /// the profile first and resend the fields you are not changing.
+        /// 
+        ///  
+        /// <para>
+        /// To clear an optional text field, supply an empty string for it; the field is then
+        /// unset, and a subsequent read omits it rather than returning an empty string. Omitting
+        /// the field from the request leaves the stored value in place. <c>description</c> and
+        /// <c>businessOverview</c> can be cleared this way. <c>displayName</c> cannot be cleared
+        /// because a display name is required, though you can change it. <c>pillars</c> cannot
+        /// be cleared because a profile must target at least one pillar.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>aggregationConfiguration</c> behaves differently because it is a list of per-account
+        /// configurations rather than a text field. Supplying an empty list removes every account
+        /// entry, but the field itself remains set: a subsequent read returns an empty list rather
+        /// than omitting the field. Omitting it from the request keeps the stored entries.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentProfile service method.</param>
+        /// <returns>The response from the UpdateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentProfile">REST API Reference for UpdateAgentProfile Operation</seealso>
         UpdateAgentProfileResponse UpdateAgentProfile(UpdateAgentProfileRequest request);
 #endif
 
         /// <summary>
         /// Updates an existing optimization profile's configuration, including its pillars, execution
-        /// role, and aggregation settings.
+        /// role, and aggregation settings. Include only the fields you want to change. Any field
+        /// you omit from the request keeps its current value, so you do not need to retrieve
+        /// the profile first and resend the fields you are not changing.
+        /// 
+        ///  
+        /// <para>
+        /// To clear an optional text field, supply an empty string for it; the field is then
+        /// unset, and a subsequent read omits it rather than returning an empty string. Omitting
+        /// the field from the request leaves the stored value in place. <c>description</c> and
+        /// <c>businessOverview</c> can be cleared this way. <c>displayName</c> cannot be cleared
+        /// because a display name is required, though you can change it. <c>pillars</c> cannot
+        /// be cleared because a profile must target at least one pillar.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>aggregationConfiguration</c> behaves differently because it is a list of per-account
+        /// configurations rather than a text field. Supplying an empty list removes every account
+        /// entry, but the field itself remains set: a subsequent read returns an empty list rather
+        /// than omitting the field. Omitting it from the request keeps the stored entries.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentProfile service method.</param>
         /// <param name="cancellationToken">
@@ -4976,6 +6186,9 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.

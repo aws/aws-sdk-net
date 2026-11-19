@@ -57,7 +57,19 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-02-17";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetMaxResults())
+            {
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));
+            }
+
+            if (publicRequest.IsSetNextToken())
+            {
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            }
+
             request.ResourcePath = "/v2/list-test-templates";
+
+            request.UseQueryString = true;
 
             return request;
         }

@@ -59,6 +59,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClinicalNoteGenerationResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("medicalCodeGenerationResult", targetDepth, ref reader))
+                {
+                    var unmarshaller = MedicalCodeGenerationResultUnmarshaller.Instance;
+                    unmarshalledObject.MedicalCodeGenerationResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

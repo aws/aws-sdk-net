@@ -45,6 +45,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetArtifactLocation())
+            {
+                context.Writer.WritePropertyName("ArtifactLocation");
+                context.Writer.WriteStringValue(requestObject.ArtifactLocation);
+            }
+
             if (requestObject.IsSetClassName())
             {
                 context.Writer.WritePropertyName("ClassName");
@@ -61,6 +67,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("FunctionType");
                 context.Writer.WriteStringValue(requestObject.FunctionType);
+            }
+
+            if (requestObject.IsSetGovernanceMode())
+            {
+                context.Writer.WritePropertyName("GovernanceMode");
+                context.Writer.WriteStringValue(requestObject.GovernanceMode);
             }
 
             if (requestObject.IsSetOwnerName())

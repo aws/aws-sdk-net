@@ -180,7 +180,7 @@
       "type": "operation",
       "input": { "target": "com.example#DoScalarsRequest" },
       "output": { "target": "com.example#DoScalarsResponse" },
-      "traits": { "smithy.api#http": { "uri": "/scalars/{id}/{seq}/{when}", "method": "POST" } }
+      "traits": { "smithy.api#http": { "uri": "/scalars/{id}/{seq}/{when}/{labelShort}", "method": "POST" } }
     },
     "com.example#DoScalarsRequest": {
       "type": "structure",
@@ -204,7 +204,18 @@
         "sealedAt":   { "target": "com.example#HttpDateTimestamp" },
         "details":    { "target": "com.example#DetailList" },
         "attributes": { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-attributes" } },
-        "policy":     { "target": "com.example#JsonString" }
+        "policy":     { "target": "com.example#JsonString" },
+        "byteValue":       { "target": "smithy.api#Byte" },
+        "shortValue":      { "target": "smithy.api#Short" },
+        "bigIntegerValue": { "target": "smithy.api#BigInteger" },
+        "bigDecimalValue": { "target": "smithy.api#BigDecimal" },
+        "bigDecimalList":  { "target": "com.example#BigDecimalList" },
+        "bigIntegerMap":   { "target": "com.example#BigIntegerMap" },
+        "shortMap":        { "target": "com.example#ShortMap" },
+        "sparseBigIntegerList": { "target": "com.example#SparseBigIntegerList" },
+        "labelShort":      { "target": "smithy.api#Short", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "queryByte":       { "target": "smithy.api#Byte", "traits": { "smithy.api#httpQuery": "byte" } },
+        "headerBigInteger": { "target": "smithy.api#BigInteger", "traits": { "smithy.api#httpHeader": "x-big-integer" } }
       }
     },
     "com.example#HttpDateTimestamp": {
@@ -243,7 +254,16 @@
         "headerHttpDate": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-httpdate" } },
         "headerDateTime": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-datetime", "smithy.api#timestampFormat": "date-time" } },
         "headerEpoch":    { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-epoch", "smithy.api#timestampFormat": "epoch-seconds" } },
-        "headerJson":     { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-json" } }
+        "headerJson":     { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-json" } },
+        "byteValue":       { "target": "smithy.api#Byte" },
+        "shortValue":      { "target": "smithy.api#Short" },
+        "bigIntegerValue": { "target": "smithy.api#BigInteger" },
+        "bigDecimalValue": { "target": "smithy.api#BigDecimal" },
+        "bigDecimalList":  { "target": "com.example#BigDecimalList" },
+        "byteMap":         { "target": "com.example#ByteMap" },
+        "sparseBigIntegerList": { "target": "com.example#SparseBigIntegerList" },
+        "headerByte":       { "target": "smithy.api#Byte", "traits": { "smithy.api#httpHeader": "x-byte" } },
+        "headerBigDecimal": { "target": "smithy.api#BigDecimal", "traits": { "smithy.api#httpHeader": "x-big-decimal" } }
       }
     },
     "com.example#Nested": {
@@ -268,7 +288,9 @@
         "stamps":       { "target": "com.example#TimestampList", "traits": { "smithy.api#httpQuery": "stamps" } },
         "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } },
         "amounts":      { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-amounts" } },
-        "when":         { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-when" } }
+        "when":         { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-when" } },
+        "bigDecimals":  { "target": "com.example#BigDecimalList", "traits": { "smithy.api#httpQuery": "bigDecimals" } },
+        "shorts":       { "target": "com.example#ShortList", "traits": { "smithy.api#httpHeader": "x-shorts" } }
       }
     },
     "com.example#DoListsResponse": {
@@ -276,7 +298,8 @@
       "members": {
         "stringHeader":    { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-strs" } },
         "intHeader":       { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-ints" } },
-        "timestampHeader": { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-stamps" } }
+        "timestampHeader": { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-stamps" } },
+        "bigIntegerHeader": { "target": "com.example#BigIntegerList", "traits": { "smithy.api#httpHeader": "x-big-integers" } }
       }
     },
     "com.example#StringList": {
@@ -290,6 +313,38 @@
     "com.example#TimestampList": {
       "type": "list",
       "member": { "target": "smithy.api#Timestamp" }
+    },
+    "com.example#ShortList": {
+      "type": "list",
+      "member": { "target": "smithy.api#Short" }
+    },
+    "com.example#BigIntegerList": {
+      "type": "list",
+      "member": { "target": "smithy.api#BigInteger" }
+    },
+    "com.example#BigDecimalList": {
+      "type": "list",
+      "member": { "target": "smithy.api#BigDecimal" }
+    },
+    "com.example#SparseBigIntegerList": {
+      "type": "list",
+      "member": { "target": "smithy.api#BigInteger" },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.example#ByteMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#Byte" }
+    },
+    "com.example#ShortMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#Short" }
+    },
+    "com.example#BigIntegerMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#BigInteger" }
     },
     "com.example#DoShadow": {
       "type": "operation",

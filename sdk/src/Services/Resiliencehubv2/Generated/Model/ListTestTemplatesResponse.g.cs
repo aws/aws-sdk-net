@@ -35,6 +35,17 @@ namespace Amazon.Resiliencehubv2.Model
     public partial class ListTestTemplatesResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property NextToken.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2000)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
         /// Gets and sets the property TestTemplates. 
         /// <para>
         /// The list of test template summaries.

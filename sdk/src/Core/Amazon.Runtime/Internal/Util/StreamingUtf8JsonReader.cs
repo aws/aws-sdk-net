@@ -120,6 +120,22 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Tries to parse the current JSON token value as an <see cref="sbyte"/>.
+        /// </summary>
+        public bool TryGetSByte(out sbyte value)
+        {
+            return _reader.TryGetSByte(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="short"/>.
+        /// </summary>
+        public bool TryGetInt16(out short value)
+        {
+            return _reader.TryGetInt16(out value);
+        }
+
+        /// <summary>
         /// Tries to decode the current JSON string token value from Base64.
         /// </summary>
         public bool TryGetBytesFromBase64(out byte[] value)

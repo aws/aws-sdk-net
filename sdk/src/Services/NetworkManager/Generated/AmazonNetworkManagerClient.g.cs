@@ -448,6 +448,104 @@ namespace Amazon.NetworkManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Associates a transit gateway with a context store. The transit gateway must be registered
+        /// with the global network of the context store, and can't be associated with more than
+        /// one context store. The context store must be in the <c>AVAILABLE</c> state.
+        /// 
+        ///  
+        /// <para>
+        /// The association is in the <c>ASSOCIATING</c> state when it's created, and changes
+        /// to <c>ASSOCIATED</c> when it's complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContextStore service method.</param>
+        /// <returns>The response from the AssociateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateContextStore">REST API Reference for AssociateContextStore Operation</seealso>
+        public virtual AssociateContextStoreResponse AssociateContextStore(AssociateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual AssociateContextStoreResponse AssociateContextStore(AssociateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Associates a transit gateway with a context store. The transit gateway must be registered
+        /// with the global network of the context store, and can't be associated with more than
+        /// one context store. The context store must be in the <c>AVAILABLE</c> state.
+        /// 
+        ///  
+        /// <para>
+        /// The association is in the <c>ASSOCIATING</c> state when it's created, and changes
+        /// to <c>ASSOCIATED</c> when it's complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateContextStore">REST API Reference for AssociateContextStore Operation</seealso>
+        public virtual Task<AssociateContextStoreResponse> AssociateContextStoreAsync(AssociateContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateContextStoreResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Associates a customer gateway with a device and optionally, with a link. If you specify
         /// a link, it must be associated with the specified device. 
         /// 
@@ -1036,6 +1134,110 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a context store in a global network. A context store maintains context entries,
+        /// such as security groups, subnets, and attachments, for the resources connected to
+        /// the transit gateways that you associate with it.
+        /// 
+        ///  
+        /// <para>
+        /// The context store is in the <c>PENDING</c> state when it's created, and changes to
+        /// <c>AVAILABLE</c> when it's ready to use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContextStore service method.</param>
+        /// <returns>The response from the CreateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateContextStore">REST API Reference for CreateContextStore Operation</seealso>
+        public virtual CreateContextStoreResponse CreateContextStore(CreateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual CreateContextStoreResponse CreateContextStore(CreateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a context store in a global network. A context store maintains context entries,
+        /// such as security groups, subnets, and attachments, for the resources connected to
+        /// the transit gateways that you associate with it.
+        /// 
+        ///  
+        /// <para>
+        /// The context store is in the <c>PENDING</c> state when it's created, and changes to
+        /// <c>AVAILABLE</c> when it's ready to use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateContextStore">REST API Reference for CreateContextStore Operation</seealso>
+        public virtual Task<CreateContextStoreResponse> CreateContextStoreAsync(CreateContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContextStoreResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2224,6 +2426,92 @@ namespace Amazon.NetworkManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a context store. The context store must be in the <c>AVAILABLE</c> state.
+        /// You must disassociate all transit gateways from the context store before you can delete
+        /// it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContextStore service method.</param>
+        /// <returns>The response from the DeleteContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteContextStore">REST API Reference for DeleteContextStore Operation</seealso>
+        public virtual DeleteContextStoreResponse DeleteContextStore(DeleteContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual DeleteContextStoreResponse DeleteContextStore(DeleteContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a context store. The context store must be in the <c>AVAILABLE</c> state.
+        /// You must disassociate all transit gateways from the context store before you can delete
+        /// it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteContextStore">REST API Reference for DeleteContextStore Operation</seealso>
+        public virtual Task<DeleteContextStoreResponse> DeleteContextStoreAsync(DeleteContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContextStoreResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a core network along with all core network policies. This can only be done
         /// if there are no attachments on a core network.
         /// </summary>
@@ -3220,6 +3508,92 @@ namespace Amazon.NetworkManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Disassociates a transit gateway from a context store. The association must be in the
+        /// <c>ASSOCIATED</c> or <c>FAILED</c> state. The association stays in the <c>DISASSOCIATING</c>
+        /// state until the disassociation completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContextStore service method.</param>
+        /// <returns>The response from the DisassociateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateContextStore">REST API Reference for DisassociateContextStore Operation</seealso>
+        public virtual DisassociateContextStoreResponse DisassociateContextStore(DisassociateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual DisassociateContextStoreResponse DisassociateContextStore(DisassociateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Disassociates a transit gateway from a context store. The association must be in the
+        /// <c>ASSOCIATED</c> or <c>FAILED</c> state. The association stays in the <c>DISASSOCIATING</c>
+        /// state until the disassociation completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateContextStore">REST API Reference for DisassociateContextStore Operation</seealso>
+        public virtual Task<DisassociateContextStoreResponse> DisassociateContextStoreAsync(DisassociateContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateContextStoreResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Disassociates a customer gateway from a device and a link.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateCustomerGateway service method.</param>
@@ -3852,6 +4226,230 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConnectionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about a context store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextStore service method.</param>
+        /// <returns>The response from the GetContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStore">REST API Reference for GetContextStore Operation</seealso>
+        public virtual GetContextStoreResponse GetContextStore(GetContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual GetContextStoreResponse GetContextStore(GetContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns information about a context store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStore">REST API Reference for GetContextStore Operation</seealso>
+        public virtual Task<GetContextStoreResponse> GetContextStoreAsync(GetContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextStoreResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about the association between a context store and a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextStoreAssociation service method.</param>
+        /// <returns>The response from the GetContextStoreAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStoreAssociation">REST API Reference for GetContextStoreAssociation Operation</seealso>
+        public virtual GetContextStoreAssociationResponse GetContextStoreAssociation(GetContextStoreAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextStoreAssociationResponse>(request, options);
+        }
+#else
+        internal virtual GetContextStoreAssociationResponse GetContextStoreAssociation(GetContextStoreAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextStoreAssociationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns information about the association between a context store and a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextStoreAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContextStoreAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextStoreAssociation">REST API Reference for GetContextStoreAssociation Operation</seealso>
+        public virtual Task<GetContextStoreAssociationResponse> GetContextStoreAssociationAsync(GetContextStoreAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextStoreAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextStoreAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextStoreAssociationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the current version of the context entries of a context store. The context
+        /// store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextVersion service method.</param>
+        /// <returns>The response from the GetContextVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextVersion">REST API Reference for GetContextVersion Operation</seealso>
+        public virtual GetContextVersionResponse GetContextVersion(GetContextVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextVersionResponse>(request, options);
+        }
+#else
+        internal virtual GetContextVersionResponse GetContextVersion(GetContextVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetContextVersionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the current version of the context entries of a context store. The context
+        /// store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContextVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetContextVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetContextVersion">REST API Reference for GetContextVersion Operation</seealso>
+        public virtual Task<GetContextVersionResponse> GetContextVersionAsync(GetContextVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetContextVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContextVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContextVersionResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -5880,6 +6478,312 @@ namespace Amazon.NetworkManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the context entries that were added to or removed from a context store after
+        /// the specified version. The context store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextChanges service method.</param>
+        /// <returns>The response from the ListContextChanges service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextChanges">REST API Reference for ListContextChanges Operation</seealso>
+        public virtual ListContextChangesResponse ListContextChanges(ListContextChangesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextChangesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextChangesResponse>(request, options);
+        }
+#else
+        internal virtual ListContextChangesResponse ListContextChanges(ListContextChangesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextChangesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextChangesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the context entries that were added to or removed from a context store after
+        /// the specified version. The context store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextChanges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContextChanges service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextChanges">REST API Reference for ListContextChanges Operation</seealso>
+        public virtual Task<ListContextChangesResponse> ListContextChangesAsync(ListContextChangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextChangesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextChangesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the transit gateway associations of a context store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStoreAssociations service method.</param>
+        /// <returns>The response from the ListContextStoreAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStoreAssociations">REST API Reference for ListContextStoreAssociations Operation</seealso>
+        public virtual ListContextStoreAssociationsResponse ListContextStoreAssociations(ListContextStoreAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoreAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoreAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoreAssociationsResponse>(request, options);
+        }
+#else
+        internal virtual ListContextStoreAssociationsResponse ListContextStoreAssociations(ListContextStoreAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoreAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoreAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoreAssociationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the transit gateway associations of a context store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStoreAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContextStoreAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStoreAssociations">REST API Reference for ListContextStoreAssociations Operation</seealso>
+        public virtual Task<ListContextStoreAssociationsResponse> ListContextStoreAssociationsAsync(ListContextStoreAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoreAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoreAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextStoreAssociationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the context stores in your account. You can optionally return only the context
+        /// stores in a specific global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStores service method.</param>
+        /// <returns>The response from the ListContextStores service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStores">REST API Reference for ListContextStores Operation</seealso>
+        public virtual ListContextStoresResponse ListContextStores(ListContextStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoresResponse>(request, options);
+        }
+#else
+        internal virtual ListContextStoresResponse ListContextStores(ListContextStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextStoresResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the context stores in your account. You can optionally return only the context
+        /// stores in a specific global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContextStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContextStores service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContextStores">REST API Reference for ListContextStores Operation</seealso>
+        public virtual Task<ListContextStoresResponse> ListContextStoresAsync(ListContextStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextStoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextStoresResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the context entries of a context store, and the version of the context entries.
+        /// To get the context entries that were added or removed after this version, specify
+        /// the returned <c>VersionId</c> in a <c>ListContextChanges</c> request. The context
+        /// store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContexts service method.</param>
+        /// <returns>The response from the ListContexts service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContexts">REST API Reference for ListContexts Operation</seealso>
+        public virtual ListContextsResponse ListContexts(ListContextsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextsResponse>(request, options);
+        }
+#else
+        internal virtual ListContextsResponse ListContexts(ListContextsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the context entries of a context store, and the version of the context entries.
+        /// To get the context entries that were added or removed after this version, specify
+        /// the returned <c>VersionId</c> in a <c>ListContextChanges</c> request. The context
+        /// store must be in the <c>AVAILABLE</c> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContexts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListContexts service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListContexts">REST API Reference for ListContexts Operation</seealso>
+        public virtual Task<ListContextsResponse> ListContextsAsync(ListContextsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContextsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a list of core network policy versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions service method.</param>
@@ -7500,6 +8404,90 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the description of a context store. The context store must be in the <c>AVAILABLE</c>
+        /// state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContextStore service method.</param>
+        /// <returns>The response from the UpdateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateContextStore">REST API Reference for UpdateContextStore Operation</seealso>
+        public virtual UpdateContextStoreResponse UpdateContextStore(UpdateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContextStoreResponse>(request, options);
+        }
+#else
+        internal virtual UpdateContextStoreResponse UpdateContextStore(UpdateContextStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContextStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContextStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the description of a context store. The context store must be in the <c>AVAILABLE</c>
+        /// state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContextStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateContextStore service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateContextStore">REST API Reference for UpdateContextStore Operation</seealso>
+        public virtual Task<UpdateContextStoreResponse> UpdateContextStoreAsync(UpdateContextStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContextStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContextStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContextStoreResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

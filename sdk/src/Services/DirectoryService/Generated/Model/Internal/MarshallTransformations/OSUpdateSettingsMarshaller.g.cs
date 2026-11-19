@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// OSUpdateSettings Marshaller
     /// </summary>
-    public partial class OSUpdateSettingsMarshaller : IRequestMarshaller<OSUpdateSettings, JsonMarshallerContext>
+    public partial class OSUpdateSettingsMarshaller : IRequestMarshaller<OSUpdateSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(OSUpdateSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(OSUpdateSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetOSVersion())
             {
-                context.Writer.WritePropertyName("OSVersion");
-                context.Writer.WriteStringValue(requestObject.OSVersion);
+                context.Writer.WriteTextString("OSVersion");
+                context.Writer.WriteTextString(requestObject.OSVersion);
             }
         }
 

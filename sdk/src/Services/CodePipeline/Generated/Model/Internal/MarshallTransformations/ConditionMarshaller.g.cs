@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Condition Marshaller
     /// </summary>
-    public partial class ConditionMarshaller : IRequestMarshaller<Condition, JsonMarshallerContext>
+    public partial class ConditionMarshaller : IRequestMarshaller<Condition, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Condition requestObject, JsonMarshallerContext context)
+        public void Marshall(Condition requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetResult())
             {
-                context.Writer.WritePropertyName("result");
-                context.Writer.WriteStringValue(requestObject.Result);
+                context.Writer.WriteTextString("result");
+                context.Writer.WriteTextString(requestObject.Result);
             }
 
             if (requestObject.IsSetRules())
             {
-                context.Writer.WritePropertyName("rules");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("rules");
+                context.Writer.WriteStartArray(requestObject.Rules.Count);
                 foreach (var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = RuleDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

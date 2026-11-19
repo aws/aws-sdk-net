@@ -92,10 +92,6 @@
         "Blob": {
             "emitAsShape": "String"
         },
-        "BlobAttributeValue": {
-            "emitAsShape": "String",
-            "emitFromMember": "Value"
-        },
         "NewDhcpConfiguration": {
             "emitAsShape": "DhcpConfiguration"
         },
@@ -126,13 +122,6 @@
         }
 	},
     "shapeModifiers": {
-        "AttachVolumeResponse": {
-            "modify": [
-                {
-                    "VolumeAttachment": { "emitPropertyName": "Attachment" }
-                }
-            ]
-        },
         "AuthorizeSecurityGroupEgressRequest": {
             "exclude": [
                 "SourceSecurityGroupName",
@@ -164,16 +153,6 @@
             "modify": [
                 {
                     "PresignedUrl": { "accessModifier": "internal" }
-                }
-            ]
-        },
-        "DeleteVpcPeeringConnectionResponse": {
-            "exclude": [ "Return" ]
-        },
-        "DetachVolumeResponse": {
-            "modify": [
-                {
-                    "VolumeAttachment": { "emitPropertyName": "Attachment" }
                 }
             ]
         },
@@ -320,9 +299,6 @@
         }
     },
     "operationModifiers": {
-        "ActivateLicense": {
-            "exclude": true
-        },
         "AttachVolume": {
             "useWrappingResult": true,
             "wrappedResultShape": "VolumeAttachment",
@@ -352,9 +328,6 @@
             "wrappedResultShape": "Volume",
             "wrappedResultMember": "Volume"
         },
-        "DeactivateLicense": {
-            "exclude": true
-        },
         "DescribeImageAttribute": {
             "useWrappingResult": true,
             "wrappedResultShape": "ImageAttribute",
@@ -364,9 +337,6 @@
             "useWrappingResult": true,
             "wrappedResultShape": "InstanceAttribute",
             "wrappedResultMember": "InstanceAttribute"
-        },
-        "DescribeLicenses": {
-            "exclude": true
         },
         "DetachVolume": {
             "useWrappingResult": true,

@@ -196,6 +196,11 @@ namespace Amazon.APIGateway
         public static readonly AuthorizerType COGNITO_USER_POOLS = new AuthorizerType("COGNITO_USER_POOLS");
 
         /// <summary>
+        /// Constant JWT for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType JWT = new AuthorizerType("JWT");
+
+        /// <summary>
         /// Constant REQUEST for AuthorizerType
         /// </summary>
         public static readonly AuthorizerType REQUEST = new AuthorizerType("REQUEST");
@@ -907,6 +912,103 @@ namespace Amazon.APIGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type JwtClaimFormat.
+    /// </summary>
+    public class JwtClaimFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant SINGLE_STRING for JwtClaimFormat
+        /// </summary>
+        public static readonly JwtClaimFormat SINGLE_STRING = new JwtClaimFormat("SINGLE_STRING");
+
+        /// <summary>
+        /// Constructs a custom JwtClaimFormat for a value not among the defined constants.
+        /// </summary>
+        public JwtClaimFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwtClaimFormat FindValue(string value)
+        {
+            return FindValue<JwtClaimFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwtClaimFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type JwtSigningAlgorithm.
+    /// </summary>
+    public class JwtSigningAlgorithm : ConstantClass
+    {
+        /// <summary>
+        /// Constant ES256 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm ES256 = new JwtSigningAlgorithm("ES256");
+
+        /// <summary>
+        /// Constant ES384 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm ES384 = new JwtSigningAlgorithm("ES384");
+
+        /// <summary>
+        /// Constant ES512 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm ES512 = new JwtSigningAlgorithm("ES512");
+
+        /// <summary>
+        /// Constant RS256 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm RS256 = new JwtSigningAlgorithm("RS256");
+
+        /// <summary>
+        /// Constant RS384 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm RS384 = new JwtSigningAlgorithm("RS384");
+
+        /// <summary>
+        /// Constant RS512 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm RS512 = new JwtSigningAlgorithm("RS512");
+
+        /// <summary>
+        /// Constructs a custom JwtSigningAlgorithm for a value not among the defined constants.
+        /// </summary>
+        public JwtSigningAlgorithm(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwtSigningAlgorithm FindValue(string value)
+        {
+            return FindValue<JwtSigningAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwtSigningAlgorithm(string value)
         {
             return FindValue(value);
         }

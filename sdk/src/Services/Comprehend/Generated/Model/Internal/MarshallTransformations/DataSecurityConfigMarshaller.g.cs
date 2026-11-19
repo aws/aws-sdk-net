@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,42 +39,42 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DataSecurityConfig Marshaller
     /// </summary>
-    public partial class DataSecurityConfigMarshaller : IRequestMarshaller<DataSecurityConfig, JsonMarshallerContext>
+    public partial class DataSecurityConfigMarshaller : IRequestMarshaller<DataSecurityConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DataSecurityConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DataSecurityConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDataLakeKmsKeyId())
             {
-                context.Writer.WritePropertyName("DataLakeKmsKeyId");
-                context.Writer.WriteStringValue(requestObject.DataLakeKmsKeyId);
+                context.Writer.WriteTextString("DataLakeKmsKeyId");
+                context.Writer.WriteTextString(requestObject.DataLakeKmsKeyId);
             }
 
             if (requestObject.IsSetModelKmsKeyId())
             {
-                context.Writer.WritePropertyName("ModelKmsKeyId");
-                context.Writer.WriteStringValue(requestObject.ModelKmsKeyId);
+                context.Writer.WriteTextString("ModelKmsKeyId");
+                context.Writer.WriteTextString(requestObject.ModelKmsKeyId);
             }
 
             if (requestObject.IsSetVolumeKmsKeyId())
             {
-                context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
+                context.Writer.WriteTextString("VolumeKmsKeyId");
+                context.Writer.WriteTextString(requestObject.VolumeKmsKeyId);
             }
 
             if (requestObject.IsSetVpcConfig())
             {
-                context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("VpcConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = VpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

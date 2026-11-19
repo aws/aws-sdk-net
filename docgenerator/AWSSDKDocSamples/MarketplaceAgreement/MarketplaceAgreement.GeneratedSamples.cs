@@ -12,6 +12,29 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
 {
     class MarketplaceAgreementSamples : ISample
     {
+        public void MarketplaceAgreementAcceptAgreementApproval()
+        {
+            #region AcceptAgreementApproval-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.AcceptAgreementApproval(new AcceptAgreementApprovalRequest
+            {
+                BuyerAgreementApprovalApproverInput = new BuyerAgreementApprovalApproverInput {
+                    AgreementApprovalId = "apr-EXAMPLE9s0t1u2v3w4x",
+                    Note = "Approved. Budget confirmed for this fiscal year.",
+                    PurchaseOrders = new List<AgreementApprovalPurchaseOrder> {
+                        new AgreementApprovalPurchaseOrder {
+                            ChargeId = "ch-EXAMPLE4b4296145c3EXAMPLE56",
+                            PurchaseOrderReference = "PO-123"
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
         public void MarketplaceAgreementBatchCreateBillingAdjustmentRequest()
         {
             #region BatchCreateBillingAdjustmentRequest-1
@@ -62,6 +85,35 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             #endregion
         }
 
+        public void MarketplaceAgreementCancelAgreementRequest()
+        {
+            #region CancelAgreementRequest-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.CancelAgreementRequest(new CancelAgreementRequestRequest
+            {
+                AgreementRequestId = "ar-EXAMPLE4a539b123d4EXAMPLE78"
+            });
+
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementGetAgreementApproval()
+        {
+            #region GetAgreementApproval-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.GetAgreementApproval(new GetAgreementApprovalRequest
+            {
+                AgreementApprovalId = "apr-EXAMPLE9s0t1u2v3w4x"
+            });
+
+            BuyerAgreementApproval buyerAgreementApproval = response.BuyerAgreementApproval;
+
+            #endregion
+        }
+
         public void MarketplaceAgreementGetAgreementCancellationRequest()
         {
             #region GetAgreementCancellationRequest-1
@@ -81,6 +133,74 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             AgreementCancellationRequestStatus status = response.Status;
             string statusMessage = response.StatusMessage;
             DateTime? updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementGetAgreementContacts()
+        {
+            #region GetAgreementContacts-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.GetAgreementContacts(new GetAgreementContactsRequest
+            {
+                AgreementId = "agmt-xxxxxxx"
+            });
+
+            AcceptorContact acceptorContact = response.AcceptorContact;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementGetAgreementRequest()
+        {
+            #region GetAgreementRequest-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.GetAgreementRequest(new GetAgreementRequestRequest
+            {
+                AgreementRequestId = "ar-EXAMPLE4a539b123d4EXAMPLE78"
+            });
+
+            string agreementRequestId = response.AgreementRequestId;
+            string agreementType = response.AgreementType;
+            ApprovalRequirement approvalRequirement = response.ApprovalRequirement;
+            ChargeSummary chargeSummary = response.ChargeSummary;
+            DateTime? createdAt = response.CreatedAt;
+            Intent intent = response.Intent;
+            ProposalSummary proposalSummary = response.ProposalSummary;
+            Proposer proposer = response.Proposer;
+            AgreementRequestStatus status = response.Status;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementGetAgreementRequestApprovalPlans()
+        {
+            #region GetAgreementRequestApprovalPlans-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.GetAgreementRequestApprovalPlans(new GetAgreementRequestApprovalPlansRequest
+            {
+                AgreementRequestId = "ar-EXAMPLE4a539b123d4EXAMPLE78"
+            });
+
+            List<AgreementApprovalPlan> items = response.Items;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementGetAgreementRequestTerms()
+        {
+            #region GetAgreementRequestTerms-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.GetAgreementRequestTerms(new GetAgreementRequestTermsRequest
+            {
+                AgreementRequestId = "ar-EXAMPLE4a539b123d4EXAMPLE78"
+            });
+
+            List<AgreementRequestTerm> terms = response.Terms;
 
             #endregion
         }
@@ -106,6 +226,23 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             string originalInvoiceId = response.OriginalInvoiceId;
             BillingAdjustmentStatus status = response.Status;
             DateTime? updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementListAgreementApprovals()
+        {
+            #region ListAgreementApprovals-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.ListAgreementApprovals(new ListAgreementApprovalsRequest
+            {
+                MaxResults = 10,
+                PartyType = "REQUESTER",
+                Status = "PENDING_APPROVAL"
+            });
+
+            List<AgreementApprovalSummary> items = response.Items;
 
             #endregion
         }
@@ -142,6 +279,22 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             #endregion
         }
 
+        public void MarketplaceAgreementListAgreementRequests()
+        {
+            #region ListAgreementRequests-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.ListAgreementRequests(new ListAgreementRequestsRequest
+            {
+                MaxResults = 10,
+                Status = "PENDING_APPROVAL"
+            });
+
+            List<AgreementRequestSummary> items = response.Items;
+
+            #endregion
+        }
+
         public void MarketplaceAgreementListBillingAdjustmentRequests()
         {
             #region ListBillingAdjustmentRequests-1
@@ -153,6 +306,23 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             });
 
             List<BillingAdjustmentSummary> items = response.Items;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementRejectAgreementApproval()
+        {
+            #region RejectAgreementApproval-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.RejectAgreementApproval(new RejectAgreementApprovalRequest
+            {
+                BuyerAgreementApprovalRejectionInput = new BuyerAgreementApprovalRejectionInput {
+                    AgreementApprovalId = "apr-EXAMPLE9s0t1u2v3w4x",
+                    Note = "Rejected. This purchase isn't in the approved budget."
+                }
+            });
+
 
             #endregion
         }
@@ -177,6 +347,33 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceAgreement.Generated
             AgreementCancellationRequestReasonCode reasonCode = response.ReasonCode;
             AgreementCancellationRequestStatus status = response.Status;
             DateTime? updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void MarketplaceAgreementStartAgreementApprovals()
+        {
+            #region StartAgreementApprovals-1
+
+            var client = new AmazonMarketplaceAgreementClient();
+            var response = client.StartAgreementApprovals(new StartAgreementApprovalsRequest
+            {
+                AgreementRequestId = "ar-EXAMPLE4a539b123d4EXAMPLE78",
+                PlanInputs = new List<AgreementApprovalPlanInput> {
+                    new AgreementApprovalPlanInput { BuyerAgreementApprovalPlanInput = new BuyerAgreementApprovalPlanInput {
+                        PlanReference = "aplan-EXAMPLE7g8h9i0j1k2l",
+                        RequesterNote = "Annual subscription for the data platform team."
+                    } }
+                },
+                PurchaseOrders = new List<AgreementApprovalPurchaseOrder> {
+                    new AgreementApprovalPurchaseOrder {
+                        ChargeId = "ch-EXAMPLE4b4296145c3EXAMPLE56",
+                        PurchaseOrderReference = "PO-123"
+                    }
+                }
+            });
+
+            List<AgreementApprovalSummary> approvalSummaries = response.ApprovalSummaries;
 
             #endregion
         }

@@ -48,7 +48,7 @@ namespace Amazon.SecurityToken.SAML
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The response data from a successful authentication request.</returns>
         public string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType,
-#if NETSTANDARD
+#if !NETFRAMEWORK
             IWebProxy proxySettings)
 #else
             WebProxy proxySettings)
@@ -82,7 +82,7 @@ namespace Amazon.SecurityToken.SAML
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The response data from a successful authentication request.</returns>
         public async Task<string> AuthenticateAsync(Uri identityProvider, ICredentials credentials, string authenticationType,
-#if NETSTANDARD
+#if !NETFRAMEWORK
             IWebProxy proxySettings)
 #else
             WebProxy proxySettings)
@@ -275,7 +275,7 @@ namespace Amazon.SecurityToken.SAML
     /// Custom exception thrown when authentication failure is detected against
     /// a configured AD FS endpoint.
     /// </summary>
-#if !NETSTANDARD
+#if NETFRAMEWORK
     [Serializable]
 #endif
     public class AdfsAuthenticationControllerException : Exception
@@ -308,7 +308,7 @@ namespace Amazon.SecurityToken.SAML
         {
         }
 
-#if !NETSTANDARD
+#if NETFRAMEWORK
         /// <summary>
         /// Constructs a new instance of the AdfsAuthenticationControllerException class with serialized data.
         /// </summary>

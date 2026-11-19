@@ -59,6 +59,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.CapacityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("operatingSystemConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = OperatingSystemConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OperatingSystemConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

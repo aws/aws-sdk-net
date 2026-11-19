@@ -299,7 +299,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Telemetry.
+        /// Gets and sets the property Telemetry. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public DataQualityTelemetry Telemetry { get; set; }
 

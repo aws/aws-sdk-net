@@ -165,6 +165,12 @@ namespace Amazon.Resiliencehubv2.Model
         IListTestSourcesPaginator ListTestSources(ListTestSourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListTestTemplates operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListTestTemplatesPaginator ListTestTemplates(ListTestTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListTests operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

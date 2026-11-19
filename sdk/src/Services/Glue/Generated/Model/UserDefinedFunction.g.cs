@@ -35,6 +35,22 @@ namespace Amazon.Glue.Model
     public partial class UserDefinedFunction
     {
         /// <summary>
+        /// Gets and sets the property ArtifactLocation. 
+        /// <para>
+        /// The Amazon S3 location that contains the function's artifacts. This location must
+        /// be registered with Lake Formation. Glue returns this field only for functions whose
+        /// <c>GovernanceMode</c> is <c>LAKE_FORMATION</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string ArtifactLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArtifactLocation property is set.
+        /// </summary>
+        internal bool IsSetArtifactLocation() => this.ArtifactLocation != null;
+
+        /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
         /// The ID of the Data Catalog in which the function resides.
@@ -115,6 +131,22 @@ namespace Amazon.Glue.Model
         /// Checks to see if the FunctionType property is set.
         /// </summary>
         internal bool IsSetFunctionType() => this.FunctionType != null;
+
+        /// <summary>
+        /// Gets and sets the property GovernanceMode. 
+        /// <para>
+        /// How access to the function is governed. <c>IAM_ONLY</c> means access is controlled
+        /// by IAM permissions only. <c>LAKE_FORMATION</c> means Lake Formation permissions (<c>EXECUTE</c>,
+        /// <c>DESCRIBE</c>, <c>ALTER</c>, and <c>DROP</c>) also control who can run, describe,
+        /// update, and delete the function.
+        /// </para>
+        /// </summary>
+        public GovernanceMode GovernanceMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GovernanceMode property is set.
+        /// </summary>
+        internal bool IsSetGovernanceMode() => this.GovernanceMode != null;
 
         /// <summary>
         /// Gets and sets the property OwnerName. 

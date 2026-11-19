@@ -158,6 +158,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("organizationalAggregationConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = OrganizationalAggregationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OrganizationalAggregationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("pillars", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -165,10 +172,10 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
 
-                if (context.TestExpression("tags", targetDepth, ref reader))
+                if (context.TestExpression("profileType", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

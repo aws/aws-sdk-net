@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NonTalkTimeFilter Object
     /// </summary>
-    public partial class NonTalkTimeFilterUnmarshaller : IJsonUnmarshaller<NonTalkTimeFilter, JsonUnmarshallerContext>
+    public partial class NonTalkTimeFilterUnmarshaller : ICborUnmarshaller<NonTalkTimeFilter, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public NonTalkTimeFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public NonTalkTimeFilter Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new NonTalkTimeFilter();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AbsoluteTimeRange", targetDepth, ref reader))
-                {
-                    var unmarshaller = AbsoluteTimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.AbsoluteTimeRange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Negate", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Negate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AbsoluteTimeRange":
+                        context.AddPathSegment("AbsoluteTimeRange");
+                        unmarshalledObject.AbsoluteTimeRange = AbsoluteTimeRangeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RelativeTimeRange", targetDepth, ref reader))
-                {
-                    var unmarshaller = RelativeTimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.RelativeTimeRange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Negate":
+                        context.AddPathSegment("Negate");
+                        unmarshalledObject.Negate = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Threshold", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RelativeTimeRange":
+                        context.AddPathSegment("RelativeTimeRange");
+                        unmarshalledObject.RelativeTimeRange = RelativeTimeRangeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Threshold":
+                        context.AddPathSegment("Threshold");
+                        unmarshalledObject.Threshold = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

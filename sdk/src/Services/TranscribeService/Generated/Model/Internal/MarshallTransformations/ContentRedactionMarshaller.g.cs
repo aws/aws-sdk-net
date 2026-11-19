@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ContentRedaction Marshaller
     /// </summary>
-    public partial class ContentRedactionMarshaller : IRequestMarshaller<ContentRedaction, JsonMarshallerContext>
+    public partial class ContentRedactionMarshaller : IRequestMarshaller<ContentRedaction, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ContentRedaction requestObject, JsonMarshallerContext context)
+        public void Marshall(ContentRedaction requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPiiEntityTypes())
             {
-                context.Writer.WritePropertyName("PiiEntityTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PiiEntityTypes");
+                context.Writer.WriteStartArray(requestObject.PiiEntityTypes.Count);
                 foreach (var requestObjectPiiEntityTypesListValue in requestObject.PiiEntityTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectPiiEntityTypesListValue);
+                    context.Writer.WriteTextString(requestObjectPiiEntityTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetRedactionOutput())
             {
-                context.Writer.WritePropertyName("RedactionOutput");
-                context.Writer.WriteStringValue(requestObject.RedactionOutput);
+                context.Writer.WriteTextString("RedactionOutput");
+                context.Writer.WriteTextString(requestObject.RedactionOutput);
             }
 
             if (requestObject.IsSetRedactionType())
             {
-                context.Writer.WritePropertyName("RedactionType");
-                context.Writer.WriteStringValue(requestObject.RedactionType);
+                context.Writer.WriteTextString("RedactionType");
+                context.Writer.WriteTextString(requestObject.RedactionType);
             }
         }
 

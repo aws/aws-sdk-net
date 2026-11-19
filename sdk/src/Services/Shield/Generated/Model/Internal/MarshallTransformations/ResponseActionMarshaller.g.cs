@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// ResponseAction Marshaller
     /// </summary>
-    public partial class ResponseActionMarshaller : IRequestMarshaller<ResponseAction, JsonMarshallerContext>
+    public partial class ResponseActionMarshaller : IRequestMarshaller<ResponseAction, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ResponseAction requestObject, JsonMarshallerContext context)
+        public void Marshall(ResponseAction requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBlock())
             {
-                context.Writer.WritePropertyName("Block");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Block");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BlockActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Block, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetCount())
             {
-                context.Writer.WritePropertyName("Count");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Count");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CountActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Count, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

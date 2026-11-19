@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PipelineDeclaration Object
     /// </summary>
-    public partial class PipelineDeclarationUnmarshaller : IJsonUnmarshaller<PipelineDeclaration, JsonUnmarshallerContext>
+    public partial class PipelineDeclarationUnmarshaller : ICborUnmarshaller<PipelineDeclaration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public PipelineDeclaration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PipelineDeclaration Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new PipelineDeclaration();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("artifactStore", targetDepth, ref reader))
-                {
-                    var unmarshaller = ArtifactStoreUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactStore = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("artifactStores", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ArtifactStore, StringUnmarshaller, ArtifactStoreUnmarshaller>(StringUnmarshaller.Instance, ArtifactStoreUnmarshaller.Instance);
-                    unmarshalledObject.ArtifactStores = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "artifactStore":
+                        context.AddPathSegment("ArtifactStore");
+                        unmarshalledObject.ArtifactStore = ArtifactStoreUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("executionMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "artifactStores":
+                        context.AddPathSegment("ArtifactStores");
+                        unmarshalledObject.ArtifactStores = new CborDictionaryUnmarshaller<string, ArtifactStore, CborStringUnmarshaller, ArtifactStoreUnmarshaller>(CborStringUnmarshaller.Instance, ArtifactStoreUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "executionMode":
+                        context.AddPathSegment("ExecutionMode");
+                        unmarshalledObject.ExecutionMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("pipelineType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("roleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "pipelineType":
+                        context.AddPathSegment("PipelineType");
+                        unmarshalledObject.PipelineType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("stages", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StageDeclaration, StageDeclarationUnmarshaller>(StageDeclarationUnmarshaller.Instance);
-                    unmarshalledObject.Stages = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "roleArn":
+                        context.AddPathSegment("RoleArn");
+                        unmarshalledObject.RoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("triggers", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PipelineTriggerDeclaration, PipelineTriggerDeclarationUnmarshaller>(PipelineTriggerDeclarationUnmarshaller.Instance);
-                    unmarshalledObject.Triggers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "stages":
+                        context.AddPathSegment("Stages");
+                        unmarshalledObject.Stages = new CborListUnmarshaller<StageDeclaration, StageDeclarationUnmarshaller>(StageDeclarationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("variables", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PipelineVariableDeclaration, PipelineVariableDeclarationUnmarshaller>(PipelineVariableDeclarationUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "triggers":
+                        context.AddPathSegment("Triggers");
+                        unmarshalledObject.Triggers = new CborListUnmarshaller<PipelineTriggerDeclaration, PipelineTriggerDeclarationUnmarshaller>(PipelineTriggerDeclarationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("version", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "variables":
+                        context.AddPathSegment("Variables");
+                        unmarshalledObject.Variables = new CborListUnmarshaller<PipelineVariableDeclaration, PipelineVariableDeclarationUnmarshaller>(PipelineVariableDeclarationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "version":
+                        context.AddPathSegment("Version");
+                        unmarshalledObject.Version = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

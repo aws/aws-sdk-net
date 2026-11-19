@@ -72,6 +72,16 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("eventArn");
                     context.Writer.WriteTextString(publicRequest.EventArn);
                 }
+                if (publicRequest.IsSetFilter())
+                {
+                    context.Writer.WriteTextString("filter");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = AffectedAccountFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WriteTextString("maxResults");

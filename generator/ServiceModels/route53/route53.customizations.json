@@ -13,6 +13,14 @@
             }
         ]
     },
+    "paginators": {
+        "ListResourceRecordSets": {
+            "inputToken": [ "StartRecordName", "StartRecordType", "StartRecordIdentifier" ],
+            "outputToken": [ "NextRecordName", "NextRecordType", "NextRecordIdentifier" ],
+            "pageSize": "MaxItems",
+            "items": [ "ResourceRecordSets" ]
+        }
+    },
     "noArgOverloads": [
         "ListHealthChecks",
         "ListHostedZones",
@@ -24,6 +32,182 @@
     "shapeModifiers": {
         "HealthCheckInUse": {
             "deprecatedMessage": "This error code is not in use"
+        }
+    },
+    "dataTypeSwap": {
+        "ListCidrBlocksRequest": {
+            "MaxResults": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListCidrCollectionsRequest": {
+            "MaxResults": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListCidrLocationsRequest": {
+            "MaxResults": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListGeoLocationsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListGeoLocationsResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListHealthChecksRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListHealthChecksResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListHostedZonesByNameRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListHostedZonesByNameResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListHostedZonesByVPCRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListHostedZonesByVPCResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListHostedZonesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListHostedZonesResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListQueryLoggingConfigsRequest": {
+            "MaxResults": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListResourceRecordSetsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListResourceRecordSetsResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListReusableDelegationSetsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListReusableDelegationSetsResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListTrafficPoliciesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListTrafficPoliciesResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListTrafficPolicyInstancesByHostedZoneRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListTrafficPolicyInstancesByHostedZoneResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListTrafficPolicyInstancesByPolicyRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListTrafficPolicyInstancesByPolicyResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListTrafficPolicyInstancesRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListTrafficPolicyInstancesResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListTrafficPolicyVersionsRequest": {
+            "MaxItems": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
+        },
+        "ListTrafficPolicyVersionsResponse": {
+            "MaxItems": {
+                "Type": "string",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListVPCAssociationAuthorizationsRequest": {
+            "MaxResults": {
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString"
+            }
         }
     }
 }

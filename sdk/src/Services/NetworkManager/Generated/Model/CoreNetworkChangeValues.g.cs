@@ -141,6 +141,19 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetInsideCidrBlocks() => this.InsideCidrBlocks != null && (this.InsideCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property MultipathResilience. 
+        /// <para>
+        /// The change in multipath resilience configuration in the core network change values.
+        /// </para>
+        /// </summary>
+        public MultipathResilienceChangeValues MultipathResilience { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultipathResilience property is set.
+        /// </summary>
+        internal bool IsSetMultipathResilience() => this.MultipathResilience != null;
+
+        /// <summary>
         /// Gets and sets the property NetworkFunctionGroupName. 
         /// <para>
         /// The network function group name if the change event is associated with a network function

@@ -110,7 +110,7 @@ namespace Amazon.SecurityToken.SAML
                 DurationSeconds = (int)duration.TotalSeconds
             };
 
-#if NETSTANDARD
+#if !NETFRAMEWORK
             //In the NetStandard SDK flavor the sync operations are internal only.
             var response = ((AmazonSecurityTokenServiceClient)stsClient).AssumeRoleWithSAML(assumeSamlRequest);
 #else

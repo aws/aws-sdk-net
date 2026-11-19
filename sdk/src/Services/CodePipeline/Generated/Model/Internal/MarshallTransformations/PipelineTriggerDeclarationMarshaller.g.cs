@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// PipelineTriggerDeclaration Marshaller
     /// </summary>
-    public partial class PipelineTriggerDeclarationMarshaller : IRequestMarshaller<PipelineTriggerDeclaration, JsonMarshallerContext>
+    public partial class PipelineTriggerDeclarationMarshaller : IRequestMarshaller<PipelineTriggerDeclaration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PipelineTriggerDeclaration requestObject, JsonMarshallerContext context)
+        public void Marshall(PipelineTriggerDeclaration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGitConfiguration())
             {
-                context.Writer.WritePropertyName("gitConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("gitConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GitConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetProviderType())
             {
-                context.Writer.WritePropertyName("providerType");
-                context.Writer.WriteStringValue(requestObject.ProviderType);
+                context.Writer.WriteTextString("providerType");
+                context.Writer.WriteTextString(requestObject.ProviderType);
             }
         }
 

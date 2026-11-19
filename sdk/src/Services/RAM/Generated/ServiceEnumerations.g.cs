@@ -88,6 +88,11 @@ namespace Amazon.RAM
         public static readonly PermissionStatus DELETING = new PermissionStatus("DELETING");
 
         /// <summary>
+        /// Constant DEPRECATED for PermissionStatus
+        /// </summary>
+        public static readonly PermissionStatus DEPRECATED = new PermissionStatus("DEPRECATED");
+
+        /// <summary>
         /// Constant UNATTACHABLE for PermissionStatus
         /// </summary>
         public static readonly PermissionStatus UNATTACHABLE = new PermissionStatus("UNATTACHABLE");
@@ -113,6 +118,47 @@ namespace Amazon.RAM
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PermissionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PermissionTemplateParameterType.
+    /// </summary>
+    public class PermissionTemplateParameterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STRING for PermissionTemplateParameterType
+        /// </summary>
+        public static readonly PermissionTemplateParameterType STRING = new PermissionTemplateParameterType("STRING");
+
+        /// <summary>
+        /// Constant STRING_LIST for PermissionTemplateParameterType
+        /// </summary>
+        public static readonly PermissionTemplateParameterType STRING_LIST = new PermissionTemplateParameterType("STRING_LIST");
+
+        /// <summary>
+        /// Constructs a custom PermissionTemplateParameterType for a value not among the defined constants.
+        /// </summary>
+        public PermissionTemplateParameterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionTemplateParameterType FindValue(string value)
+        {
+            return FindValue<PermissionTemplateParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionTemplateParameterType(string value)
         {
             return FindValue(value);
         }
@@ -700,6 +746,47 @@ namespace Amazon.RAM
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdatePermissionStatus.
+    /// </summary>
+    public class UpdatePermissionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ATTACHABLE for UpdatePermissionStatus
+        /// </summary>
+        public static readonly UpdatePermissionStatus ATTACHABLE = new UpdatePermissionStatus("ATTACHABLE");
+
+        /// <summary>
+        /// Constant DEPRECATED for UpdatePermissionStatus
+        /// </summary>
+        public static readonly UpdatePermissionStatus DEPRECATED = new UpdatePermissionStatus("DEPRECATED");
+
+        /// <summary>
+        /// Constructs a custom UpdatePermissionStatus for a value not among the defined constants.
+        /// </summary>
+        public UpdatePermissionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdatePermissionStatus FindValue(string value)
+        {
+            return FindValue<UpdatePermissionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdatePermissionStatus(string value)
         {
             return FindValue(value);
         }

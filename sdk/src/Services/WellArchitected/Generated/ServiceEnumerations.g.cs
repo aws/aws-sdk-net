@@ -819,6 +819,52 @@ namespace Amazon.WellArchitected
     }
 
     /// <summary>
+    /// Constants used for properties of type GenerationType.
+    /// </summary>
+    public class GenerationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASIC for GenerationType
+        /// </summary>
+        public static readonly GenerationType BASIC = new GenerationType("BASIC");
+
+        /// <summary>
+        /// Constant ONDEMAND for GenerationType
+        /// </summary>
+        public static readonly GenerationType ONDEMAND = new GenerationType("ONDEMAND");
+
+        /// <summary>
+        /// Constant SCHEDULED for GenerationType
+        /// </summary>
+        public static readonly GenerationType SCHEDULED = new GenerationType("SCHEDULED");
+
+        /// <summary>
+        /// Constructs a custom GenerationType for a value not among the defined constants.
+        /// </summary>
+        public GenerationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenerationType FindValue(string value)
+        {
+            return FindValue<GenerationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenerationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ImpactCategory.
     /// </summary>
     public class ImpactCategory : ConstantClass
@@ -1331,6 +1377,118 @@ namespace Amazon.WellArchitected
     }
 
     /// <summary>
+    /// Constants used for properties of type OrganizationalReportFormat.
+    /// </summary>
+    public class OrganizationalReportFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant CSV for OrganizationalReportFormat
+        /// </summary>
+        public static readonly OrganizationalReportFormat CSV = new OrganizationalReportFormat("CSV");
+
+        /// <summary>
+        /// Constant JSON for OrganizationalReportFormat
+        /// </summary>
+        public static readonly OrganizationalReportFormat JSON = new OrganizationalReportFormat("JSON");
+
+        /// <summary>
+        /// Constant PARQUET for OrganizationalReportFormat
+        /// </summary>
+        public static readonly OrganizationalReportFormat PARQUET = new OrganizationalReportFormat("PARQUET");
+
+        /// <summary>
+        /// Constructs a custom OrganizationalReportFormat for a value not among the defined constants.
+        /// </summary>
+        public OrganizationalReportFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationalReportFormat FindValue(string value)
+        {
+            return FindValue<OrganizationalReportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationalReportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationalReportState.
+    /// </summary>
+    public class OrganizationalReportState : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGGREGATING for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState AGGREGATING = new OrganizationalReportState("AGGREGATING");
+
+        /// <summary>
+        /// Constant COMPLETED for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState COMPLETED = new OrganizationalReportState("COMPLETED");
+
+        /// <summary>
+        /// Constant COMPRESSING for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState COMPRESSING = new OrganizationalReportState("COMPRESSING");
+
+        /// <summary>
+        /// Constant DELETING for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState DELETING = new OrganizationalReportState("DELETING");
+
+        /// <summary>
+        /// Constant DISCOVERING for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState DISCOVERING = new OrganizationalReportState("DISCOVERING");
+
+        /// <summary>
+        /// Constant FAILED for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState FAILED = new OrganizationalReportState("FAILED");
+
+        /// <summary>
+        /// Constant SNAPSHOTTING for OrganizationalReportState
+        /// </summary>
+        public static readonly OrganizationalReportState SNAPSHOTTING = new OrganizationalReportState("SNAPSHOTTING");
+
+        /// <summary>
+        /// Constructs a custom OrganizationalReportState for a value not among the defined constants.
+        /// </summary>
+        public OrganizationalReportState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationalReportState FindValue(string value)
+        {
+            return FindValue<OrganizationalReportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationalReportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PermissionType.
     /// </summary>
     public class PermissionType : ConstantClass
@@ -1422,6 +1580,129 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Pillar(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreferenceKey.
+    /// </summary>
+    public class PreferenceKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant ORG_INTEGRATION for PreferenceKey
+        /// </summary>
+        public static readonly PreferenceKey ORG_INTEGRATION = new PreferenceKey("ORG_INTEGRATION");
+
+        /// <summary>
+        /// Constructs a custom PreferenceKey for a value not among the defined constants.
+        /// </summary>
+        public PreferenceKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferenceKey FindValue(string value)
+        {
+            return FindValue<PreferenceKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferenceKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreferenceState.
+    /// </summary>
+    public class PreferenceState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for PreferenceState
+        /// </summary>
+        public static readonly PreferenceState DISABLED = new PreferenceState("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for PreferenceState
+        /// </summary>
+        public static readonly PreferenceState ENABLED = new PreferenceState("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom PreferenceState for a value not among the defined constants.
+        /// </summary>
+        public PreferenceState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferenceState FindValue(string value)
+        {
+            return FindValue<PreferenceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferenceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PreferenceStatus.
+    /// </summary>
+    public class PreferenceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for PreferenceStatus
+        /// </summary>
+        public static readonly PreferenceStatus DISABLED = new PreferenceStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for PreferenceStatus
+        /// </summary>
+        public static readonly PreferenceStatus ENABLED = new PreferenceStatus("ENABLED");
+
+        /// <summary>
+        /// Constant FAILED for PreferenceStatus
+        /// </summary>
+        public static readonly PreferenceStatus FAILED = new PreferenceStatus("FAILED");
+
+        /// <summary>
+        /// Constructs a custom PreferenceStatus for a value not among the defined constants.
+        /// </summary>
+        public PreferenceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferenceStatus FindValue(string value)
+        {
+            return FindValue<PreferenceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferenceStatus(string value)
         {
             return FindValue(value);
         }
@@ -1550,6 +1831,52 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProfileOwnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProfileType.
+    /// </summary>
+    public class ProfileType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASIC for ProfileType
+        /// </summary>
+        public static readonly ProfileType BASIC = new ProfileType("BASIC");
+
+        /// <summary>
+        /// Constant ORGANIZATIONAL for ProfileType
+        /// </summary>
+        public static readonly ProfileType ORGANIZATIONAL = new ProfileType("ORGANIZATIONAL");
+
+        /// <summary>
+        /// Constant STANDARD for ProfileType
+        /// </summary>
+        public static readonly ProfileType STANDARD = new ProfileType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom ProfileType for a value not among the defined constants.
+        /// </summary>
+        public ProfileType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileType FindValue(string value)
+        {
+            return FindValue<ProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileType(string value)
         {
             return FindValue(value);
         }

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.CreateRuntime(Amazon.LambdaCore.Model.CreateRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.CreateRuntime(Amazon.LambdaCore.Model.CreateRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates a customer-managed runtime resource.
+        </para>
+        <code title="Create a runtime" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="CreateRuntime-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.CreateRuntimeAlias(Amazon.LambdaCore.Model.CreateRuntimeAliasRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.CreateRuntimeAlias(Amazon.LambdaCore.Model.CreateRuntimeAliasRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeAliasRequest" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates an alias that points at a published runtime version.
+        </para>
+        <code title="Create a runtime alias" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="CreateRuntimeAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.CreateRuntimeVersion(Amazon.LambdaCore.Model.CreateRuntimeVersionRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.CreateRuntimeVersion(Amazon.LambdaCore.Model.CreateRuntimeVersionRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeVersionRequest" />
+      <member name="T:Amazon.LambdaCore.Model.CreateRuntimeVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Creates a new runtime version from a container image.
+        </para>
+        <code title="Create a runtime version" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="CreateRuntimeVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.DeleteRuntime(Amazon.LambdaCore.Model.DeleteRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.DeleteRuntime(Amazon.LambdaCore.Model.DeleteRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Schedules a customer-managed runtime to be deleted.
+        </para>
+        <code title="Delete a runtime" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="DeleteRuntime-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.DeleteRuntimeAlias(Amazon.LambdaCore.Model.DeleteRuntimeAliasRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.DeleteRuntimeAlias(Amazon.LambdaCore.Model.DeleteRuntimeAliasRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeAliasRequest" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Schedules a runtime alias to be deleted.
+        </para>
+        <code title="Delete a runtime alias" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="DeleteRuntimeAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.DeleteRuntimeVersion(Amazon.LambdaCore.Model.DeleteRuntimeVersionRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.DeleteRuntimeVersion(Amazon.LambdaCore.Model.DeleteRuntimeVersionRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeVersionRequest" />
+      <member name="T:Amazon.LambdaCore.Model.DeleteRuntimeVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Schedules a runtime version to be deleted.
+        </para>
+        <code title="Delete a runtime version" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="DeleteRuntimeVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.GetRuntime(Amazon.LambdaCore.Model.GetRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.GetRuntime(Amazon.LambdaCore.Model.GetRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves the metadata for a runtime by name.
+        </para>
+        <code title="Get a runtime" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="GetRuntime-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.GetRuntimeAlias(Amazon.LambdaCore.Model.GetRuntimeAliasRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.GetRuntimeAlias(Amazon.LambdaCore.Model.GetRuntimeAliasRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeAliasRequest" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves an alias, including the version it currently points at and its compatibility matrix.
+        </para>
+        <code title="Get a runtime alias" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="GetRuntimeAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.GetRuntimeVersion(Amazon.LambdaCore.Model.GetRuntimeVersionRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.GetRuntimeVersion(Amazon.LambdaCore.Model.GetRuntimeVersionRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeVersionRequest" />
+      <member name="T:Amazon.LambdaCore.Model.GetRuntimeVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Retrieves a runtime version, including its resolved image URI, per-architecture platforms, and compatibility matrix.
+        </para>
+        <code title="Get a runtime version" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="GetRuntimeVersion-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.ListRuntimeAliases(Amazon.LambdaCore.Model.ListRuntimeAliasesRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.ListRuntimeAliases(Amazon.LambdaCore.Model.ListRuntimeAliasesRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimeAliasesRequest" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimeAliasesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the aliases defined on a runtime.
+        </para>
+        <code title="List runtime aliases" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="ListRuntimeAliases-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.ListRuntimes(Amazon.LambdaCore.Model.ListRuntimesRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.ListRuntimes(Amazon.LambdaCore.Model.ListRuntimesRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimesRequest" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the runtimes in the account and region.
+        </para>
+        <code title="List runtimes" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="ListRuntimes-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.ListRuntimeVersions(Amazon.LambdaCore.Model.ListRuntimeVersionsRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.ListRuntimeVersions(Amazon.LambdaCore.Model.ListRuntimeVersionsRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimeVersionsRequest" />
+      <member name="T:Amazon.LambdaCore.Model.ListRuntimeVersionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the versions published for a runtime.
+        </para>
+        <code title="List runtime versions" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="ListRuntimeVersions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.RestoreRuntime(Amazon.LambdaCore.Model.RestoreRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.RestoreRuntime(Amazon.LambdaCore.Model.RestoreRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.RestoreRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.RestoreRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Cancels a pending deletion for an alias, returning it to ACTIVE.
+        </para>
+        <code title="Restore a runtime alias that is scheduled for deletion" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="RestoreRuntime-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.RestoreRuntime(Amazon.LambdaCore.Model.RestoreRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.RestoreRuntime(Amazon.LambdaCore.Model.RestoreRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.RestoreRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.RestoreRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Cancels a pending deletion for the runtime, returning it to ACTIVE.
+        </para>
+        <code title="Restore a customer-managed runtime that is scheduled for deletion" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="RestoreRuntime-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.UpdateRuntime(Amazon.LambdaCore.Model.UpdateRuntimeRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.UpdateRuntime(Amazon.LambdaCore.Model.UpdateRuntimeRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeRequest" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Updates a runtime's description and declares it generally available.
+        </para>
+        <code title="Update a runtime" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="UpdateRuntime-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.UpdateRuntimeAlias(Amazon.LambdaCore.Model.UpdateRuntimeAliasRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.UpdateRuntimeAlias(Amazon.LambdaCore.Model.UpdateRuntimeAliasRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeAliasRequest" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Repoints an alias at a different runtime version.
+        </para>
+        <code title="Update a runtime alias" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="UpdateRuntimeAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.LambdaCore.IAmazonLambdaCore.UpdateRuntimeVersion(Amazon.LambdaCore.Model.UpdateRuntimeVersionRequest)" />
+      <member name="M:Amazon.LambdaCore.AmazonLambdaCoreClient.UpdateRuntimeVersion(Amazon.LambdaCore.Model.UpdateRuntimeVersionRequest)" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeVersionRequest" />
+      <member name="T:Amazon.LambdaCore.Model.UpdateRuntimeVersionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Updates the release notes of an ACTIVE runtime version.
+        </para>
+        <code title="Update a runtime version's release notes" source=".\AWSSDKDocSamples\LambdaCore\LambdaCore.GeneratedSamples.cs" region="UpdateRuntimeVersion-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

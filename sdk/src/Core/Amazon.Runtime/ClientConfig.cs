@@ -557,8 +557,10 @@ namespace Amazon.Runtime
         /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2.
         /// <para />
-        /// <b>Note</b>: For the <c>DynamoDBv2</c> and <c>DynamoDBStreams</c> service packages, the default 
-        /// value is 10.
+        /// <b>Note</b>: The <c>DynamoDBv2</c> and <c>DynamoDBStreams</c> clients make 3 retries (4 attempts)
+        /// unless MaxErrorRetry, the AWS_MAX_ATTEMPTS environment variable or max_attempts in the shared
+        /// configuration file is set. This property returns the generic value; the DynamoDB default is
+        /// applied by the retry policy.
         /// <para />
         /// In addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment

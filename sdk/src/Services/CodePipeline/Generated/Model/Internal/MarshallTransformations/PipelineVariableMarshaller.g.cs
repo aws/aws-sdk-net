@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// PipelineVariable Marshaller
     /// </summary>
-    public partial class PipelineVariableMarshaller : IRequestMarshaller<PipelineVariable, JsonMarshallerContext>
+    public partial class PipelineVariableMarshaller : IRequestMarshaller<PipelineVariable, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PipelineVariable requestObject, JsonMarshallerContext context)
+        public void Marshall(PipelineVariable requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("value");
+                context.Writer.WriteTextString(requestObject.Value);
             }
         }
 

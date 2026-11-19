@@ -108,6 +108,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.Transcript.LanguageCode</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectContactLens.Model.Transcript.ParticipantId</property>
     <min>1</min>
     <max>256</max>

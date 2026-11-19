@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// A reference to a private certificate authority (CA) certificate that the gateway uses
-    /// to verify TLS connections to the target endpoint. Use this when the target presents
-    /// a certificate issued by a private CA that is not trusted by default. Specify exactly
-    /// one certificate source. The configuration is a reference only and never contains the
-    /// certificate content.
+    /// A reference to a private certificate authority (CA) certificate that AgentCore uses
+    /// to verify TLS connections to an endpoint, such as a gateway target or an identity
+    /// provider, that presents a certificate issued by a private CA that is not trusted by
+    /// default. Specify exactly one certificate source. The configuration is a reference
+    /// only and never contains the certificate content.
     /// </summary>
     public partial class CertificateConfiguration
     {

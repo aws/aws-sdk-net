@@ -90,8 +90,8 @@ namespace Amazon.DeviceFarm.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>appium:version</c>: The major version of the Appium server to use for the session
-        /// (for example, 2 or 3). The service may reject the selected version if it is not available
-        /// for the selected device.
+        /// (for example, 2 or 3). The service might reject the selected version if it is not
+        /// available for the selected device.
         /// </para>
         ///  </li> </ul>
         /// <para />

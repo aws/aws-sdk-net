@@ -538,6 +538,21 @@ namespace Amazon.ConfigService
         public static readonly ConformancePackState DELETE_IN_PROGRESS = new ConformancePackState("DELETE_IN_PROGRESS");
 
         /// <summary>
+        /// Constant UPDATE_COMPLETE for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState UPDATE_COMPLETE = new ConformancePackState("UPDATE_COMPLETE");
+
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState UPDATE_FAILED = new ConformancePackState("UPDATE_FAILED");
+
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ConformancePackState
+        /// </summary>
+        public static readonly ConformancePackState UPDATE_IN_PROGRESS = new ConformancePackState("UPDATE_IN_PROGRESS");
+
+        /// <summary>
         /// Constructs a custom ConformancePackState for a value not among the defined constants.
         /// </summary>
         public ConformancePackState(string value) : base(value) { }
@@ -558,6 +573,47 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConformancePackState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConformancePackType.
+    /// </summary>
+    public class ConformancePackType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOM for ConformancePackType
+        /// </summary>
+        public static readonly ConformancePackType CUSTOM = new ConformancePackType("CUSTOM");
+
+        /// <summary>
+        /// Constant MANAGED for ConformancePackType
+        /// </summary>
+        public static readonly ConformancePackType MANAGED = new ConformancePackType("MANAGED");
+
+        /// <summary>
+        /// Constructs a custom ConformancePackType for a value not among the defined constants.
+        /// </summary>
+        public ConformancePackType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConformancePackType FindValue(string value)
+        {
+            return FindValue<ConformancePackType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConformancePackType(string value)
         {
             return FindValue(value);
         }
@@ -1275,6 +1331,11 @@ namespace Amazon.ConfigService
         /// Constant AZURE for Provider
         /// </summary>
         public static readonly Provider AZURE = new Provider("AZURE");
+
+        /// <summary>
+        /// Constant GCP for Provider
+        /// </summary>
+        public static readonly Provider GCP = new Provider("GCP");
 
         /// <summary>
         /// Constructs a custom Provider for a value not among the defined constants.

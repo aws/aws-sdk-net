@@ -45,6 +45,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetOperation())
+            {
+                context.Writer.WritePropertyName("operation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SegmentOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Operation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetScopeTags())
             {
                 context.Writer.WritePropertyName("scopeTags");
@@ -62,6 +73,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("segmentID");
                 context.Writer.WriteStringValue(requestObject.SegmentID);
+            }
+
+            if (requestObject.IsSetSegmentLogicalID())
+            {
+                context.Writer.WritePropertyName("segmentLogicalID");
+                context.Writer.WriteStringValue(requestObject.SegmentLogicalID);
             }
 
             if (requestObject.IsSetTargetAccount())

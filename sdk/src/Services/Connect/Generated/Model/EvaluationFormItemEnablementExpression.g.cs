@@ -37,7 +37,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Comparator. 
         /// <para>
-        /// A comparator to be used against list of values. 
+        /// A comparator to be used against a list of values. <c>IN</c>, <c>NOT_IN</c>, <c>ALL_IN</c>,
+        /// and <c>EXACT</c> compare sets of values. <c>GREATER_THAN</c>, <c>LESS_THAN</c>, <c>GREATER_THAN_OR_EQUAL_TO</c>,
+        /// and <c>LESS_THAN_OR_EQUAL_TO</c> compare a single numeric or date and time value.
+        /// <c>EQUAL_TO</c> and <c>NOT_EQUAL_TO</c> compare a single value.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

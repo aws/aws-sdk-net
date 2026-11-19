@@ -877,8 +877,9 @@ namespace Amazon.BedrockAgentRuntime
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Retrieves the content of an ingested document from a knowledge base. Returns a pre-signed
-        /// URL for secure document access.
+        /// Retrieves the content of an ingested document from a knowledge base, or of an image
+        /// embedded in the document. Returns a pre-signed URL for downloading the content. Use
+        /// this operation to display the source of a <c>Retrieve</c> result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
         /// <returns>The response from the GetDocumentContent service method, as returned by BedrockAgentRuntime.</returns>
@@ -904,8 +905,9 @@ namespace Amazon.BedrockAgentRuntime
 #endif
 
         /// <summary>
-        /// Retrieves the content of an ingested document from a knowledge base. Returns a pre-signed
-        /// URL for secure document access.
+        /// Retrieves the content of an ingested document from a knowledge base, or of an image
+        /// embedded in the document. Returns a pre-signed URL for downloading the content. Use
+        /// this operation to display the source of a <c>Retrieve</c> result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
         /// <param name="cancellationToken">

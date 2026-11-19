@@ -100,6 +100,23 @@ namespace Amazon.Connect.Model
         internal bool IsSetCreateCaseAction() => this.CreateCaseAction != null;
 
         /// <summary>
+        /// Gets and sets the property EndAssociatedEmailsAction. 
+        /// <para>
+        /// Information about the end associated emails action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnCaseUpdate</c>.
+        /// </para>
+        /// </summary>
+        public EndAssociatedEmailsActionDefinition EndAssociatedEmailsAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndAssociatedEmailsAction property is set.
+        /// </summary>
+        internal bool IsSetEndAssociatedEmailsAction() => this.EndAssociatedEmailsAction != null;
+
+        /// <summary>
         /// Gets and sets the property EndAssociatedTasksAction. 
         /// <para>
         /// Information about the end associated tasks action.

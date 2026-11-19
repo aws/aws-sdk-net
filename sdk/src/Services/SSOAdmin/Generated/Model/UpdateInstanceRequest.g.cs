@@ -36,10 +36,12 @@ namespace Amazon.SSOAdmin.Model
     /// following operations: </para> <ul> <li> <para> Update the encryption configuration
     /// of the instance by specifying <c>EncryptionConfiguration</c>. </para> </li> <li> <para>
     /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
-    /// </para> </li> </ul> <para> If you specify both <c>EncryptionConfiguration</c> and
-    /// <c>PermissionSetsEnabled</c> in a request, the request returns a <c>ValidationException</c>.
-    /// To perform both operations, call <c>UpdateInstance</c> separately for each. You can
-    /// make the two calls in parallel. </para>
+    /// </para> </li> <li> <para> Update the network configuration of the instance by specifying
+    /// <c>NetworkConfiguration</c>. </para> </li> </ul> <para> A request that specifies more
+    /// than one of <c>EncryptionConfiguration</c>, <c>PermissionSetsEnabled</c>, and <c>NetworkConfiguration</c>
+    /// returns a <c>ValidationException</c>. To perform more than one of these operations,
+    /// call <c>UpdateInstance</c> separately for each. The calls can be made in parallel.
+    /// </para>
     /// </summary>
     public partial class UpdateInstanceRequest : AmazonSSOAdminRequest
     {
@@ -50,6 +52,14 @@ namespace Amazon.SSOAdmin.Model
         /// can use this to configure customer managed KMS keys or Amazon Web Services owned KMS
         /// keys for encrypting your instance data.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't set more than one of <c>EncryptionConfiguration</c>, <c>PermissionSetsEnabled</c>,
+        /// and <c>NetworkConfiguration</c> in the same request. To configure more than one of
+        /// them, make a separate <c>UpdateInstance</c> call for each. These calls can be made
+        /// in parallel.
+        /// </para>
+        ///  </note>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
@@ -90,18 +100,35 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Specifies the network access controls for your Identity Center instance. Use this
+        /// to require that access to your instance and to applications originates from VPC endpoints,
+        /// and to optionally restrict which VPCs are permitted, allow specific IP address ranges
+        /// that bypass the VPC endpoint requirement, or exempt specific applications from the
+        /// controls.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit <c>NetworkConfiguration</c>, the stored network configuration is preserved.
+        /// If you specify <c>NetworkConfiguration</c>, it replaces the stored network configuration
+        /// in its entirety. Any list that you omit from the object, or include as an empty list,
+        /// is cleared.
+        /// </para>
+        /// </summary>
+        public NetworkConfigurationInfo NetworkConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetworkConfiguration property is set.
+        /// </summary>
+        internal bool IsSetNetworkConfiguration() => this.NetworkConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property PermissionSetsEnabled. 
         /// <para>
         /// Enables permission sets for this Identity Center instance. The only accepted value
         /// is <c>true </c>. After permission sets are enabled, they cannot be disabled.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You can't set <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c> in the
-        /// same request. To configure both, make two separate <c>UpdateInstance</c> calls. You
-        /// can make these calls in parallel.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool? PermissionSetsEnabled { get; set; }
 

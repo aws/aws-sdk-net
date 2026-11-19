@@ -66,6 +66,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CrossRegionTrafficConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = CrossRegionTrafficConfigUnmarshaller.Instance;
+                    unmarshalledObject.CrossRegionTrafficConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DataCaptureConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCaptureConfigSummaryUnmarshaller.Instance;

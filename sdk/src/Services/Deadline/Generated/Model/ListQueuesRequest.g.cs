@@ -88,15 +88,15 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACTIVE</c>–The queues are active.
+        ///  <c>ACTIVE</c> - The queues are active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SCHEDULING</c>–The queues are scheduling.
+        ///  <c>SCHEDULING</c> - The queues are scheduling.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SCHEDULING_BLOCKED</c>–The queue scheduling is blocked for these queues.
+        ///  <c>SCHEDULING_BLOCKED</c> - The queue scheduling is blocked for these queues.
         /// </para>
         ///  </li> </ul>
         /// </summary>

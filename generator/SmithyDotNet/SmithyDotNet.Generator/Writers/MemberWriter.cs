@@ -14,10 +14,11 @@ public static class MemberWriter
         "SDK behavior set the AWSConfigs.InitializeCollections static property to true.";
 
     /// <summary>
-    /// Writes each member with a blank line between them.
+    /// Writes each member, except hand-written ones, with a blank line between them.
     /// </summary>
-    public static void WriteMembers(CodeWriter writer, IReadOnlyList<Member> members)
+    public static void WriteMembers(CodeWriter writer, IReadOnlyList<Member> allMembers)
     {
+        var members = allMembers.Where(member => !member.IsPropertyExcluded).ToList();
         for (var i = 0; i < members.Count; i++)
         {
             if (i > 0)
@@ -77,18 +78,19 @@ public static class MemberWriter
             return;
         }
 
+        var declaration = $"{(member.IsInternal ? "internal" : "public")} {modifier}{member.Type.DotNetType} {member.PropertyName}";
         if (field is not null)
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get => this.{field}; set => this.{field} = value; }}");
+            writer.WriteLine($"{declaration} {{ get => this.{field}; set => this.{field} = value; }}");
             WriteIsSetFlag(writer, member, field);
         }
         else if (member.Type.IsCollection)
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
+            writer.WriteLine($"{declaration} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
         }
         else
         {
-            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }}");
+            writer.WriteLine($"{declaration} {{ get; set; }}");
         }
 
         writer.WriteLine();

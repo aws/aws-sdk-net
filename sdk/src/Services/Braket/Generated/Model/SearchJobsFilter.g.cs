@@ -30,15 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// A filter used to search for Amazon Braket hybrid jobs.
+    /// A filter used to search for Amazon Braket hybrid jobs. You can combine multiple filters
+    /// in a single request, except that <c>jobArn</c> cannot be combined with any other filter.
     /// </summary>
     public partial class SearchJobsFilter
     {
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the hybrid job parameter to filter based on. Filter name can be either
-        /// <c>jobArn</c> or <c>createdAt</c>. 
+        /// The name of the hybrid job parameter to filter based on. Supported filter names:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>jobArn</c> — Filter by the job ARN. Supports the <c>EQUAL</c> operator only. Cannot
+        /// be combined with other filters.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>jobName</c> — Filter by the job name. Supports the <c>EQUAL</c> operator for exact
+        /// match, or the <c>CONTAINS</c> operator for substring match. For example, use <c>CONTAINS</c>
+        /// with a value of <c>my-experiment</c> to find all jobs whose name includes "my-experiment".
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>deviceArn</c> — Filter by the target device. Supports the <c>EQUAL</c> operator
+        /// only. The value can be a device ARN (for example, <c>arn:aws:braket:us-east-1::device/qpu/ionq/Aria-1</c>)
+        /// or a local simulator identifier (for example, <c>local:braket/default</c>).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>createdAt</c> — Filter by the job creation time. Supports the <c>EQUAL</c>, <c>GT</c>,
+        /// <c>GTE</c>, <c>LT</c>, <c>LTE</c>, and <c>BETWEEN</c> operators. Values must be in
+        /// RFC 3339 date-time format.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 64)]
@@ -52,7 +75,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// An operator to use for the filter.
+        /// An operator to use for the filter. The supported operators depend on the filter name.
+        /// See the <c>name</c> parameter for details.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -66,7 +90,9 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values used to filter hybrid jobs based on the filter name and operator.
+        /// The values used to filter hybrid jobs based on the filter name and operator. Each
+        /// filter accepts an array of values. Most filters accept a single value, except <c>createdAt</c>
+        /// with the <c>BETWEEN</c> operator, which requires exactly two values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

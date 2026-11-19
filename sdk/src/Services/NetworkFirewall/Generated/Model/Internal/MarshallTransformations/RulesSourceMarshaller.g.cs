@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,57 +39,57 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RulesSource Marshaller
     /// </summary>
-    public partial class RulesSourceMarshaller : IRequestMarshaller<RulesSource, JsonMarshallerContext>
+    public partial class RulesSourceMarshaller : IRequestMarshaller<RulesSource, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RulesSource requestObject, JsonMarshallerContext context)
+        public void Marshall(RulesSource requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRulesSourceList())
             {
-                context.Writer.WritePropertyName("RulesSourceList");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RulesSourceList");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RulesSourceListMarshaller.Instance;
                 marshaller.Marshall(requestObject.RulesSourceList, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRulesString())
             {
-                context.Writer.WritePropertyName("RulesString");
-                context.Writer.WriteStringValue(requestObject.RulesString);
+                context.Writer.WriteTextString("RulesString");
+                context.Writer.WriteTextString(requestObject.RulesString);
             }
 
             if (requestObject.IsSetStatefulRules())
             {
-                context.Writer.WritePropertyName("StatefulRules");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("StatefulRules");
+                context.Writer.WriteStartArray(requestObject.StatefulRules.Count);
                 foreach (var requestObjectStatefulRulesListValue in requestObject.StatefulRules)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StatefulRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectStatefulRulesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetStatelessRulesAndCustomActions())
             {
-                context.Writer.WritePropertyName("StatelessRulesAndCustomActions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("StatelessRulesAndCustomActions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = StatelessRulesAndCustomActionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatelessRulesAndCustomActions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

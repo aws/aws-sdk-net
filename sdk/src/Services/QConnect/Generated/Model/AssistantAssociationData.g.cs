@@ -119,6 +119,33 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAssociationType() => this.AssociationType != null;
 
         /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the assistant association was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8, Max = 31)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when the assistant association was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags used to organize, track, or control access for this resource.

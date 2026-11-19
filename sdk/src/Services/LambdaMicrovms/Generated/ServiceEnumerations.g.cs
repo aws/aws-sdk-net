@@ -32,6 +32,11 @@ namespace Amazon.LambdaMicrovms
         public static readonly Architecture ARM_64 = new Architecture("ARM_64");
 
         /// <summary>
+        /// Constant X86_64 for Architecture
+        /// </summary>
+        public static readonly Architecture X86_64 = new Architecture("X86_64");
+
+        /// <summary>
         /// Constructs a custom Architecture for a value not among the defined constants.
         /// </summary>
         public Architecture(string value) : base(value) { }
@@ -155,6 +160,11 @@ namespace Amazon.LambdaMicrovms
         public static readonly Chipset GRAVITON = new Chipset("GRAVITON");
 
         /// <summary>
+        /// Constant INTEL for Chipset
+        /// </summary>
+        public static readonly Chipset INTEL = new Chipset("INTEL");
+
+        /// <summary>
         /// Constructs a custom Chipset for a value not among the defined constants.
         /// </summary>
         public Chipset(string value) : base(value) { }
@@ -235,6 +245,11 @@ namespace Amazon.LambdaMicrovms
         /// Constant DEPRECATED for ManagedMicrovmImageVersionStatus
         /// </summary>
         public static readonly ManagedMicrovmImageVersionStatus DEPRECATED = new ManagedMicrovmImageVersionStatus("DEPRECATED");
+
+        /// <summary>
+        /// Constant RECALLED for ManagedMicrovmImageVersionStatus
+        /// </summary>
+        public static readonly ManagedMicrovmImageVersionStatus RECALLED = new ManagedMicrovmImageVersionStatus("RECALLED");
 
         /// <summary>
         /// Constructs a custom ManagedMicrovmImageVersionStatus for a value not among the defined constants.

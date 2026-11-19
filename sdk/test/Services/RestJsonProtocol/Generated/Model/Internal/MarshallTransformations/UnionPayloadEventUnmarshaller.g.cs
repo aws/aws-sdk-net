@@ -47,7 +47,10 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             var unmarshalledObject = new UnionPayloadEvent();
             if (context.IsEmptyResponse) return null;
 
-            unmarshalledObject.Payload = PayloadUnionUnmarshaller.Instance.Unmarshall(context, ref reader);
+            if (!(context.Stream is MemoryStream { Length: 0 }))
+            {
+                unmarshalledObject.Payload = PayloadUnionUnmarshaller.Instance.Unmarshall(context, ref reader);
+            }
             return unmarshalledObject;
         }
 

@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// An origin request policy configuration.
+    /// 
+    ///  
+    /// <para>
+    /// This configuration determines the values that CloudFront includes in requests that
+    /// it sends to the origin. Each request that CloudFront sends to the origin includes
+    /// the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The request body and the URL path (without the domain name) from the viewer request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The headers that CloudFront automatically includes in every origin request, including
+    /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All HTTP headers, cookies, and URL query strings that are specified in the cache policy
+    /// or the origin request policy. These can include items from the viewer request and,
+    /// in the case of headers, additional ones that are added by CloudFront.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// CloudFront sends a request when it can't find an object in its cache that matches
+    /// the request. If you want to send values to the origin and also include them in the
+    /// cache key, use <c>CachePolicy</c>.
+    /// </para>
+    /// </summary>
+    public partial class OriginRequestPolicyConfig
+    {
+        /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// A comment to describe the origin request policy. The comment cannot be longer than
+        /// 128 characters.
+        /// </para>
+        /// </summary>
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Comment property is set.
+        /// </summary>
+        internal bool IsSetComment() => this.Comment != null;
+
+        /// <summary>
+        /// Gets and sets the property CookiesConfig. 
+        /// <para>
+        /// The cookies from viewer requests to include in origin requests.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public OriginRequestPolicyCookiesConfig CookiesConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CookiesConfig property is set.
+        /// </summary>
+        internal bool IsSetCookiesConfig() => this.CookiesConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property HeadersConfig. 
+        /// <para>
+        /// The HTTP headers to include in origin requests. These can include headers from viewer
+        /// requests and additional headers added by CloudFront.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public OriginRequestPolicyHeadersConfig HeadersConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HeadersConfig property is set.
+        /// </summary>
+        internal bool IsSetHeadersConfig() => this.HeadersConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A unique name to identify the origin request policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property QueryStringsConfig. 
+        /// <para>
+        /// The URL query strings from viewer requests to include in origin requests.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public OriginRequestPolicyQueryStringsConfig QueryStringsConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QueryStringsConfig property is set.
+        /// </summary>
+        internal bool IsSetQueryStringsConfig() => this.QueryStringsConfig != null;
+    }
+}

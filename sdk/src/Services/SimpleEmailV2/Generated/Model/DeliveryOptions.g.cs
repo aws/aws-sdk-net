@@ -64,11 +64,47 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSendingPoolName() => this.SendingPoolName != null;
 
         /// <summary>
+        /// Gets and sets the property SharedPoolDeliveryMode. 
+        /// <para>
+        /// The shared pool delivery mode for email that you send with the configuration set from
+        /// shared IP addresses. This setting overrides the shared pool delivery mode of your
+        /// account. Can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GLOBAL</c> – Amazon SES delivers from your sending Region first and, when it improves
+        /// your deliverability, also uses Amazon SES shared IP addresses with established sending
+        /// history in other Amazon Web Services Regions within the same Amazon Web Services partition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REGIONAL</c> – Amazon SES delivers your email only from shared IP addresses in
+        /// your sending Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACCOUNT</c> – The configuration set uses the shared pool delivery mode of your
+        /// account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, the configuration set uses the shared pool delivery
+        /// mode of your account.
+        /// </para>
+        /// </summary>
+        public SharedPoolDeliveryMode SharedPoolDeliveryMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SharedPoolDeliveryMode property is set.
+        /// </summary>
+        internal bool IsSetSharedPoolDeliveryMode() => this.SharedPoolDeliveryMode != null;
+
+        /// <summary>
         /// Gets and sets the property TlsPolicy. 
         /// <para>
         /// Specifies whether messages that use the configuration set are required to use Transport
-        /// Layer Security (TLS). If the value is <c>Require</c>, messages are only delivered
-        /// if a TLS connection can be established. If the value is <c>Optional</c>, messages
+        /// Layer Security (TLS). If the value is <c>REQUIRE</c>, messages are only delivered
+        /// if a TLS connection can be established. If the value is <c>OPTIONAL</c>, messages
         /// can be delivered in plain text if a TLS connection can't be established.
         /// </para>
         /// </summary>

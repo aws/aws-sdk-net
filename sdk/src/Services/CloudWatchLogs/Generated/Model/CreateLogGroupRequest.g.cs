@@ -101,7 +101,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupClass. 
         /// <para>
-        /// Use this parameter to specify the log group class for this log group. There are three
+        /// Use this parameter to specify the log group class for this log group. There are four
         /// classes:
         /// </para>
         ///  <ul> <li> 
@@ -112,6 +112,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The <c>Infrequent Access</c> log class supports a subset of CloudWatch Logs features
         /// and incurs lower costs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Essentials</c> log class supports a subset of CloudWatch Logs features and
+        /// incurs lower costs.
         /// </para>
         ///  </li> <li> 
         /// <para>

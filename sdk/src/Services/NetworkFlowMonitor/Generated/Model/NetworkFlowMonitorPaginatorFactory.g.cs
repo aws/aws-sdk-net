@@ -33,11 +33,27 @@ namespace Amazon.NetworkFlowMonitor.Model
         }
 
         /// <summary>
+        /// Paginator for GetMonitorScopeSuggestions operation
+        /// </summary>
+        public IGetMonitorScopeSuggestionsPaginator GetMonitorScopeSuggestions(GetMonitorScopeSuggestionsRequest request)
+        {
+            return new GetMonitorScopeSuggestionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetQueryResultsMonitorTopContributors operation
         /// </summary>
         public IGetQueryResultsMonitorTopContributorsPaginator GetQueryResultsMonitorTopContributors(GetQueryResultsMonitorTopContributorsRequest request)
         {
             return new GetQueryResultsMonitorTopContributorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetQueryResultsPerformanceMonitor operation
+        /// </summary>
+        public IGetQueryResultsPerformanceMonitorPaginator GetQueryResultsPerformanceMonitor(GetQueryResultsPerformanceMonitorRequest request)
+        {
+            return new GetQueryResultsPerformanceMonitorPaginator(this.client, request);
         }
 
         /// <summary>
@@ -62,6 +78,14 @@ namespace Amazon.NetworkFlowMonitor.Model
         public IListMonitorsPaginator ListMonitors(ListMonitorsRequest request)
         {
             return new ListMonitorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPerformanceMonitors operation
+        /// </summary>
+        public IListPerformanceMonitorsPaginator ListPerformanceMonitors(ListPerformanceMonitorsRequest request)
+        {
+            return new ListPerformanceMonitorsPaginator(this.client, request);
         }
 
         /// <summary>

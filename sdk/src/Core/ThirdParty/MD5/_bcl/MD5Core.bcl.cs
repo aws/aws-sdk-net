@@ -136,9 +136,23 @@ namespace ThirdParty.MD5
         //    C = 0x98badcfe;
         //    D = 0x10325476;
         */
+        // GetHashBlock runs to completion without re-entering itself, so one scratch array per thread is safe.
+        [ThreadStatic]
+        private static uint[] t_blockWords;
+
         internal static void GetHashBlock(byte[] input, ref ABCDStruct ABCDValue, int ibStart)
         {
-            uint[] temp = Converter(input, ibStart);
+            // The 16 little-endian words of the block go into a reused per-thread array: allocating them per
+            // 64-byte block (88 bytes of garbage per 64 bytes hashed) dominated allocations when validating
+            // downloads. On .NET Framework a plain array loop is faster than Span/BinaryPrimitives here.
+            if (null == input)
+                throw new System.ArgumentNullException("input", "Unable convert null array to array of uInts");
+            uint[] temp = t_blockWords ?? (t_blockWords = new uint[16]);
+            for (int i = 0; i < 16; i++)
+            {
+                int o = ibStart + i * 4;
+                temp[i] = (uint)input[o] | (uint)input[o + 1] << 8 | (uint)input[o + 2] << 16 | (uint)input[o + 3] << 24;
+            }
             uint a = ABCDValue.A;
             uint b = ABCDValue.B;
             uint c = ABCDValue.C;
@@ -254,25 +268,6 @@ namespace ThirdParty.MD5
         private static uint LSR(uint i, int s)
         {
             return ((i << s) | (i >> (32 - s)));
-        }
-
-        //Convert input array into array of UInts
-        private static uint[] Converter(byte[] input, int ibStart)
-        {
-            if (null == input)
-                throw new System.ArgumentNullException("input", "Unable convert null array to array of uInts");
-
-            uint[] result = new uint[16];
-
-            for (int i = 0; i < 16; i++)
-            {
-                result[i] = (uint)input[ibStart + i * 4];
-                result[i] += (uint)input[ibStart + i * 4 + 1] << 8;
-                result[i] += (uint)input[ibStart + i * 4 + 2] << 16;
-                result[i] += (uint)input[ibStart + i * 4 + 3] << 24;
-            }
-
-            return result;
         }
     }
 }

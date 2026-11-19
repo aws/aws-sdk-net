@@ -58,6 +58,7 @@ namespace Amazon.Resiliencehubv2.Model
         ///  </li> <li> 
         /// <para>
         /// AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.
+        /// Resilience Hub doesn't currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

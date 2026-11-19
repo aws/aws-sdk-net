@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// FsxUpdateProtocol Marshaller
     /// </summary>
-    public partial class FsxUpdateProtocolMarshaller : IRequestMarshaller<FsxUpdateProtocol, JsonMarshallerContext>
+    public partial class FsxUpdateProtocolMarshaller : IRequestMarshaller<FsxUpdateProtocol, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FsxUpdateProtocol requestObject, JsonMarshallerContext context)
+        public void Marshall(FsxUpdateProtocol requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetNFS())
             {
-                context.Writer.WritePropertyName("NFS");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NFS");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = FsxProtocolNfsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFS, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetSMB())
             {
-                context.Writer.WritePropertyName("SMB");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SMB");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = FsxUpdateProtocolSmbMarshaller.Instance;
                 marshaller.Marshall(requestObject.SMB, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

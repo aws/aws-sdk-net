@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteField operation. Deletes a field from a
-    /// cases template. <para> After a field is deleted: </para> <ul> <li> <para> You can
+    /// Cases template. <para> After a field is deleted: </para> <ul> <li> <para> You can
     /// still retrieve the field by calling <c>BatchGetField</c>. </para> </li> <li> <para>
     /// You cannot update a deleted field by calling <c>UpdateField</c>; it throws a <c>ValidationException</c>.
     /// </para> </li> <li> <para> Deleted fields are not included in the <c>ListFields</c>

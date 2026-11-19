@@ -528,6 +528,99 @@ namespace Amazon.Route53GlobalResolver
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a core network endpoint, which enables DNS resolution for Amazon Web Services
+        /// Cloud WAN core network segments. The endpoint connects a Route 53 Global Resolver
+        /// to an Amazon Web Services Cloud WAN core network so that resources attached to the
+        /// core network can send DNS queries to the resolver.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkEndpoint service method.</param>
+        /// <returns>The response from the CreateCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateCoreNetworkEndpoint">REST API Reference for CreateCoreNetworkEndpoint Operation</seealso>
+        CreateCoreNetworkEndpointResponse CreateCoreNetworkEndpoint(CreateCoreNetworkEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a core network endpoint, which enables DNS resolution for Amazon Web Services
+        /// Cloud WAN core network segments. The endpoint connects a Route 53 Global Resolver
+        /// to an Amazon Web Services Cloud WAN core network so that resources attached to the
+        /// core network can send DNS queries to the resolver.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateCoreNetworkEndpoint">REST API Reference for CreateCoreNetworkEndpoint Operation</seealso>
+        Task<CreateCoreNetworkEndpointResponse> CreateCoreNetworkEndpointAsync(CreateCoreNetworkEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a DNS view within a Route 53 Global Resolver. A DNS view models end users,
         /// user groups, networks, and devices, and serves as a parent resource that holds configurations
         /// controlling access, authorization, DNS firewall rules, and forwarding rules.
@@ -1041,6 +1134,85 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteAccessToken">REST API Reference for DeleteAccessToken Operation</seealso>
         Task<DeleteAccessTokenResponse> DeleteAccessTokenAsync(DeleteAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a core network endpoint. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkEndpoint service method.</param>
+        /// <returns>The response from the DeleteCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteCoreNetworkEndpoint">REST API Reference for DeleteCoreNetworkEndpoint Operation</seealso>
+        DeleteCoreNetworkEndpointResponse DeleteCoreNetworkEndpoint(DeleteCoreNetworkEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a core network endpoint. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteCoreNetworkEndpoint">REST API Reference for DeleteCoreNetworkEndpoint Operation</seealso>
+        Task<DeleteCoreNetworkEndpointResponse> DeleteCoreNetworkEndpointAsync(DeleteCoreNetworkEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1757,6 +1929,77 @@ namespace Amazon.Route53GlobalResolver
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves information about a core network endpoint.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkEndpoint service method.</param>
+        /// <returns>The response from the GetCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetCoreNetworkEndpoint">REST API Reference for GetCoreNetworkEndpoint Operation</seealso>
+        GetCoreNetworkEndpointResponse GetCoreNetworkEndpoint(GetCoreNetworkEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a core network endpoint.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetCoreNetworkEndpoint">REST API Reference for GetCoreNetworkEndpoint Operation</seealso>
+        Task<GetCoreNetworkEndpointResponse> GetCoreNetworkEndpointAsync(GetCoreNetworkEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information about a DNS view.
         /// 
         ///  <important> 
@@ -2412,6 +2655,73 @@ namespace Amazon.Route53GlobalResolver
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the core network endpoints in your Amazon Web Services account, with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkEndpoints service method.</param>
+        /// <returns>The response from the ListCoreNetworkEndpoints service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListCoreNetworkEndpoints">REST API Reference for ListCoreNetworkEndpoints Operation</seealso>
+        ListCoreNetworkEndpointsResponse ListCoreNetworkEndpoints(ListCoreNetworkEndpointsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the core network endpoints in your Amazon Web Services account, with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCoreNetworkEndpoints service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListCoreNetworkEndpoints">REST API Reference for ListCoreNetworkEndpoints Operation</seealso>
+        Task<ListCoreNetworkEndpointsResponse> ListCoreNetworkEndpointsAsync(ListCoreNetworkEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all DNS views for a Route 53 Global Resolver with pagination support.
         /// 
         ///  <important> 
@@ -2987,8 +3297,18 @@ namespace Amazon.Route53GlobalResolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -3011,8 +3331,18 @@ namespace Amazon.Route53GlobalResolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3033,12 +3363,22 @@ namespace Amazon.Route53GlobalResolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
         /// The request would exceed one or more service quotas. Check your current usage and
         /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
         /// The input parameters are invalid. Check the parameter values and try again.
@@ -3065,12 +3405,22 @@ namespace Amazon.Route53GlobalResolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the TagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
         /// The request would exceed one or more service quotas. Check your current usage and
         /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
         /// The input parameters are invalid. Check the parameter values and try again.
@@ -3093,8 +3443,18 @@ namespace Amazon.Route53GlobalResolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
         /// The input parameters are invalid. Check the parameter values and try again.
@@ -3120,8 +3480,18 @@ namespace Amazon.Route53GlobalResolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the UntagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
         /// The input parameters are invalid. Check the parameter values and try again.
@@ -3302,6 +3672,95 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateAccessToken">REST API Reference for UpdateAccessToken Operation</seealso>
         Task<UpdateAccessTokenResponse> UpdateAccessTokenAsync(UpdateAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a core network endpoint. You can change the name and
+        /// modify the IP addresses that the endpoint uses for DNS resolution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetworkEndpoint service method.</param>
+        /// <returns>The response from the UpdateCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateCoreNetworkEndpoint">REST API Reference for UpdateCoreNetworkEndpoint Operation</seealso>
+        UpdateCoreNetworkEndpointResponse UpdateCoreNetworkEndpoint(UpdateCoreNetworkEndpointRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a core network endpoint. You can change the name and
+        /// modify the IP addresses that the endpoint uses for DNS resolution.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions, but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetworkEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCoreNetworkEndpoint service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateCoreNetworkEndpoint">REST API Reference for UpdateCoreNetworkEndpoint Operation</seealso>
+        Task<UpdateCoreNetworkEndpointResponse> UpdateCoreNetworkEndpointAsync(UpdateCoreNetworkEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

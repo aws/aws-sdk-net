@@ -226,15 +226,15 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACTIVE</c>–The queue is active.
+        ///  <c>ACTIVE</c> - The queue is active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SCHEDULING</c>–The queue is scheduling.
+        ///  <c>SCHEDULING</c> - The queue is scheduling.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SCHEDULING_BLOCKED</c>–The queue scheduling is blocked. See the provided reason.
+        ///  <c>SCHEDULING_BLOCKED</c> - The queue scheduling is blocked. See the provided reason.
         /// </para>
         ///  </li> </ul>
         /// </summary>

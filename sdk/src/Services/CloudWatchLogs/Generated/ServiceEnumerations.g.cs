@@ -1104,6 +1104,11 @@ namespace Amazon.CloudWatchLogs
         public static readonly LogGroupClass DELIVERY = new LogGroupClass("DELIVERY");
 
         /// <summary>
+        /// Constant ESSENTIALS for LogGroupClass
+        /// </summary>
+        public static readonly LogGroupClass ESSENTIALS = new LogGroupClass("ESSENTIALS");
+
+        /// <summary>
         /// Constant INFREQUENT_ACCESS for LogGroupClass
         /// </summary>
         public static readonly LogGroupClass INFREQUENT_ACCESS = new LogGroupClass("INFREQUENT_ACCESS");

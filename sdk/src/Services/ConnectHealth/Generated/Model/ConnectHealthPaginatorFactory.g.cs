@@ -33,6 +33,14 @@ namespace Amazon.ConnectHealth.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        /// </summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request)
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomains operation
         /// </summary>
         public IListDomainsPaginator ListDomains(ListDomainsRequest request)

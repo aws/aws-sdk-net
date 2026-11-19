@@ -32,7 +32,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteParameters operation. Delete a list of parameters.
     /// After deleting a parameter, wait for at least 30 seconds to create a parameter with
-    /// the same name.
+    /// the same name. <important> <para> This operation is authorized against the <c>ssm:DeleteParameters</c>
+    /// action, not against <c>ssm:DeleteParameter</c>. Denying <c>ssm:DeleteParameter</c>
+    /// for a parameter doesn't prevent a principal from deleting that parameter with this
+    /// operation. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+    /// access to specific parameters and paths</a> in the <i>Amazon Web Services Systems
+    /// Manager User Guide</i>. </para> </important>
     /// </summary>
     public partial class DeleteParametersRequest : AmazonSimpleSystemsManagementRequest
     {

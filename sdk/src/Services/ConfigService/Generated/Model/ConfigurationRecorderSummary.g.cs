@@ -67,9 +67,17 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Provider. 
         /// <para>
         /// For service-linked configuration recorders that record resources from a third-party
-        /// cloud service provider, indicates the cloud service provider. Currently, <c>AZURE</c>
-        /// is supported.
+        /// cloud service provider, indicates the cloud service provider. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – The recorder records resources from Microsoft Azure
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – The recorder records resources from Google Cloud
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Provider Provider { get; set; }
 

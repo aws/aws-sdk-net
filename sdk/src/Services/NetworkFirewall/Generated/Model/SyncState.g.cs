@@ -97,9 +97,14 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property NatGatewayAttachments. 
         /// <para>
-        /// The status of the NAT gateway attachments for a proxy mode firewall in the Availability
-        /// Zone. This reflects the attachment of the firewall to each NAT gateway that proxies
-        /// its traffic. 
+        /// The NAT gateway that's attached to a proxy mode firewall in the Availability Zone,
+        /// and the status of the attachment. To get NAT gateway details, such as IP addresses,
+        /// use the Amazon EC2 <c>DescribeNatGateways</c> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// A proxy mode firewall is <c>READY</c> when at least one Availability Zone's firewall
+        /// endpoint and NAT gateway attachment are <c>READY</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

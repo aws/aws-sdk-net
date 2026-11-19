@@ -68,6 +68,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "AgentAccessConfig":
+                        context.AddPathSegment("AgentAccessConfig");
+                        unmarshalledObject.AgentAccessConfig = ImageBuilderAgentAccessConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "AppstreamAgentVersion":
                         context.AddPathSegment("AppstreamAgentVersion");
                         unmarshalledObject.AppstreamAgentVersion = CborStringUnmarshaller.Instance.Unmarshall(context);

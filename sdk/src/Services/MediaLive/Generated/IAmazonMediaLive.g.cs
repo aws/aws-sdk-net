@@ -2511,7 +2511,11 @@ namespace Amazon.MediaLive
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Delete an expired reservation.
+        /// Delete an expired reservation, or cancel an active reservation during the calendar
+        /// month (UTC) in which you purchased it. You can't cancel an active reservation that
+        /// you purchased in an earlier month, including one that renewed automatically. You also
+        /// can't cancel an active reservation during the last hour of the month, from 23:00 UTC
+        /// on the last day of the month.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReservation service method.</param>
         /// <returns>The response from the DeleteReservation service method, as returned by MediaLive.</returns>
@@ -2544,7 +2548,11 @@ namespace Amazon.MediaLive
 #endif
 
         /// <summary>
-        /// Delete an expired reservation.
+        /// Delete an expired reservation, or cancel an active reservation during the calendar
+        /// month (UTC) in which you purchased it. You can't cancel an active reservation that
+        /// you purchased in an earlier month, including one that renewed automatically. You also
+        /// can't cancel an active reservation during the last hour of the month, from 23:00 UTC
+        /// on the last day of the month.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReservation service method.</param>
         /// <param name="cancellationToken">

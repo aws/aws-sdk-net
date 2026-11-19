@@ -203,10 +203,6 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>HTTP Status Code: 409 Conflict</i> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>SOAP Fault Code Prefix: Client</i> 
-    /// </para>
     ///  </li> </ul> </li> <li> <ul> <li> 
     /// <para>
     ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -220,10 +216,6 @@ namespace Amazon.S3.Model
     ///  </li> <li> 
     /// <para>
     ///  <i>HTTP Status Code: 503</i> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>SOAP Fault Code Prefix: N/A</i> 
     /// </para>
     ///  </li> </ul> </li> </ul> </dd> </dl> 
     /// <para>

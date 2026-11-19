@@ -76,6 +76,19 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetDestinationMetricsConfiguration() => this.DestinationMetricsConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property DestinationProfilesConfiguration. 
+        /// <para>
+        /// Profile-specific configuration for centralization destination profiles.
+        /// </para>
+        /// </summary>
+        public DestinationProfilesConfiguration DestinationProfilesConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DestinationProfilesConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDestinationProfilesConfiguration() => this.DestinationProfilesConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The primary destination region to which telemetry data should be centralized.

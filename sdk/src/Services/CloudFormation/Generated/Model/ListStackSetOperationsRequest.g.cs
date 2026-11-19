@@ -31,9 +31,12 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackSetOperations operation. Returns summary
-    /// information about operations performed on a StackSet. <note> <para> This API provides
-    /// <i>eventually consistent</i> reads meaning it may take some time but will eventually
-    /// return the most up-to-date data. </para> </note>
+    /// information about operations performed on a StackSet. <para> Reports role provisioning
+    /// and stack instances deployment progress in <c>StatusDetails.Stages</c>. The breakdown
+    /// for each Amazon Web Services Region is available only from <a>DescribeStackSetOperation</a>.
+    /// </para> <note> <para> This API provides <i>eventually consistent</i> reads meaning
+    /// it may take some time but will eventually return the most up-to-date data. </para>
+    /// </note>
     /// </summary>
     public partial class ListStackSetOperationsRequest : AmazonCloudFormationRequest
     {

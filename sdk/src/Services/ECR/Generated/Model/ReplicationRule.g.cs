@@ -36,6 +36,23 @@ namespace Amazon.ECR.Model
     public partial class ReplicationRule
     {
         /// <summary>
+        /// Gets and sets the property DeleteReplication. 
+        /// <para>
+        /// The delete replication settings for the replication rule. When delete replication
+        /// is enabled, the service replicates image deletions and image tag removals from the
+        /// source registry to the replication destinations. If you do not specify this parameter,
+        /// the service does not replicate image deletions or image tag removals for the replication
+        /// rule.
+        /// </para>
+        /// </summary>
+        public DeleteReplication DeleteReplication { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeleteReplication property is set.
+        /// </summary>
+        internal bool IsSetDeleteReplication() => this.DeleteReplication != null;
+
+        /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
         /// An array of objects representing the destination for a replication rule.

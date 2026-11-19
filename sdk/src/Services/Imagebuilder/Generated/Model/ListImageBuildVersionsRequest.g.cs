@@ -84,6 +84,11 @@ namespace Amazon.Imagebuilder.Model
         /// - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image
         /// Builder returns build versions for all of the images in your account.
         /// </para>
+        ///  
+        /// <para>
+        /// If the ARN that you specify doesn't exist, Image Builder returns an empty list rather
+        /// than a <c>ResourceNotFoundException</c> error.
+        /// </para>
         /// </summary>
         public string ImageVersionArn { get; set; }
 
@@ -95,10 +100,13 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in a single request.
+        /// The maximum number of items to return in a single request. If you don't specify a
+        /// value, Image Builder returns up to 25 items. The largest page size that you can request
+        /// is 100 items. A page can contain fewer items than the maximum, with a <c>nextToken</c>
+        /// to continue paging.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 25)]
+        [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
 
         /// <summary>

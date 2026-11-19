@@ -50,6 +50,19 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineArn() => this.PipelineArn != null;
 
         /// <summary>
+        /// Gets and sets the property PipelineVersionAliasOperations. 
+        /// <para>
+        /// The aliases to add to or remove from the pipeline version.
+        /// </para>
+        /// </summary>
+        public AliasOperations PipelineVersionAliasOperations { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PipelineVersionAliasOperations property is set.
+        /// </summary>
+        internal bool IsSetPipelineVersionAliasOperations() => this.PipelineVersionAliasOperations != null;
+
+        /// <summary>
         /// Gets and sets the property PipelineVersionDescription. 
         /// <para>
         /// The description of the pipeline version.

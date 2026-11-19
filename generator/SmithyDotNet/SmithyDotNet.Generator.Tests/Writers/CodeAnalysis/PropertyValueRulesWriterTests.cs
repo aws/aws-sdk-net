@@ -1,5 +1,6 @@
-using Xunit;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
+using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.CodeAnalysis;
 
@@ -106,5 +107,17 @@ public class PropertyValueRulesWriterTests
         var rules = new PropertyValueRulesWriter(context).Write(TestContext.Current.CancellationToken);
         Assert.Contains("<property>Amazon.Example.Model.DoEnumsRequest.Group</property>", rules);
         Assert.DoesNotContain("DoEnumsRequest.Category<", rules);
+    }
+
+    [Fact]
+    public void CustomPropertyValueRules_EmitsEmptyRoot()
+    {
+        var service = new ServiceCustomizations { CustomPropertyValueRules = true };
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), new CustomizationsModel { Service = service });
+
+        var rules = new PropertyValueRulesWriter(context).Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains("<property-value-rules />", rules);
+        Assert.DoesNotContain("<property>", rules);
     }
 }

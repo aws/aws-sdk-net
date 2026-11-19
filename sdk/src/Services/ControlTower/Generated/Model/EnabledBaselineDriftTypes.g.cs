@@ -75,5 +75,19 @@ namespace Amazon.ControlTower.Model
         /// Checks to see if the Inheritance property is set.
         /// </summary>
         internal bool IsSetInheritance() => this.Inheritance != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// Source drift occurs when an enabled baseline no longer matches the landing zone's
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public EnabledBaselineSourceDrift Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
     }
 }

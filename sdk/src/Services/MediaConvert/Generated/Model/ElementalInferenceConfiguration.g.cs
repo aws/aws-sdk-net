@@ -52,8 +52,8 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFeatures() => this.Features != null && (this.Features.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Feeds. A list of Elemental Inference feeds used by this
-        /// job.
+        /// Gets and sets the property Feeds. A list of Elemental Inference feeds created during
+        /// this job.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

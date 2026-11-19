@@ -34,7 +34,8 @@ namespace Amazon.Imagebuilder.Model
     /// a distribution configuration. Distribution configurations define and configure the
     /// outputs for your images, including the target Regions, accounts, and settings for
     /// each Region. <note> <para> This operation doesn't support selective updates. The request
-    /// replaces the stored configuration, so include every setting that you want to keep.
+    /// replaces the entire distribution configuration, so include every setting that you
+    /// want to keep. Any optional property that you omit is removed or reset to its default.
     /// </para> </note>
     /// </summary>
     public partial class UpdateDistributionConfigurationRequest : AmazonImagebuilderRequest

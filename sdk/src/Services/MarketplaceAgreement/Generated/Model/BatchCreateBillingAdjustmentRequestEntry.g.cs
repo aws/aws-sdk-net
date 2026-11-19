@@ -128,7 +128,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// The identifier of the original invoice to adjust.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        [AWSProperty(Required = true, Min = 0, Max = 1024)]
         public string OriginalInvoiceId { get; set; }
 
         /// <summary>

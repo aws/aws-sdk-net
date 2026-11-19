@@ -45,6 +45,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAutoIncludeFields())
+            {
+                context.Writer.WritePropertyName("autoIncludeFields");
+                context.Writer.WriteStringValue(requestObject.AutoIncludeFields);
+            }
+
             if (requestObject.IsSetFields())
             {
                 context.Writer.WritePropertyName("fields");

@@ -53,6 +53,13 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("additionalFlowInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdditionalFlowInfoUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalFlowInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("destinationCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

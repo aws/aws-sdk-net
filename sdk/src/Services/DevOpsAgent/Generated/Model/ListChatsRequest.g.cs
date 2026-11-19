@@ -50,6 +50,20 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetAgentSpaceId() => this.AgentSpaceId != null;
 
         /// <summary>
+        /// Gets and sets the property ArchiveStatus. 
+        /// <para>
+        /// The archive status to filter by. Use this parameter to list only archived chat executions
+        /// or only active ones.
+        /// </para>
+        /// </summary>
+        public ChatArchiveStatus ArchiveStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArchiveStatus property is set.
+        /// </summary>
+        internal bool IsSetArchiveStatus() => this.ArchiveStatus != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Maximum number of results to return

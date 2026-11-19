@@ -172,4 +172,19 @@ public class StructureWriterTests
         var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
         Assert.Contains("public override DateTime? Created ", structure);
     }
+
+    // S3's GetBucketWebsiteOutput lists IndexDocument by its emitted name, IndexDocumentSuffix; hand-written partials declare the property.
+    [Fact]
+    public void ExcludedMember_ListedByEmittedName_EmitsNoPropertyOrIsSet()
+    {
+        var customizations = TestCustomizations.Rename("DoScalarsRequest", "count", "Total");
+        customizations.ExcludeMembers["DoScalarsRequest"] = ["Total"];
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+        Assert.DoesNotContain(" Total", structure);
+        Assert.DoesNotContain("IsSetTotal", structure);
+        Assert.Contains("public DateTime? Created ", structure);
+    }
 }

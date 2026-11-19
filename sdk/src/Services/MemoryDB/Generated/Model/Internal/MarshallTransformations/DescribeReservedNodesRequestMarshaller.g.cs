@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,63 +55,69 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeReservedNodesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.DescribeReservedNodes";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AmazonMemoryDB/operation/DescribeReservedNodes";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDuration())
+                {
+                    context.Writer.WriteTextString("Duration");
+                    context.Writer.WriteTextString(publicRequest.Duration);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WriteTextString("NodeType");
+                    context.Writer.WriteTextString(publicRequest.NodeType);
+                }
+                if (publicRequest.IsSetOfferingType())
+                {
+                    context.Writer.WriteTextString("OfferingType");
+                    context.Writer.WriteTextString(publicRequest.OfferingType);
+                }
+                if (publicRequest.IsSetReservationId())
+                {
+                    context.Writer.WriteTextString("ReservationId");
+                    context.Writer.WriteTextString(publicRequest.ReservationId);
+                }
+                if (publicRequest.IsSetReservedNodesOfferingId())
+                {
+                    context.Writer.WriteTextString("ReservedNodesOfferingId");
+                    context.Writer.WriteTextString(publicRequest.ReservedNodesOfferingId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDuration())
-            {
-                context.Writer.WritePropertyName("Duration");
-                context.Writer.WriteStringValue(publicRequest.Duration);
             }
-            if (publicRequest.IsSetMaxResults())
+            finally
             {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetNodeType())
-            {
-                context.Writer.WritePropertyName("NodeType");
-                context.Writer.WriteStringValue(publicRequest.NodeType);
-            }
-            if (publicRequest.IsSetOfferingType())
-            {
-                context.Writer.WritePropertyName("OfferingType");
-                context.Writer.WriteStringValue(publicRequest.OfferingType);
-            }
-            if (publicRequest.IsSetReservationId())
-            {
-                context.Writer.WritePropertyName("ReservationId");
-                context.Writer.WriteStringValue(publicRequest.ReservationId);
-            }
-            if (publicRequest.IsSetReservedNodesOfferingId())
-            {
-                context.Writer.WritePropertyName("ReservedNodesOfferingId");
-                context.Writer.WriteStringValue(publicRequest.ReservedNodesOfferingId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

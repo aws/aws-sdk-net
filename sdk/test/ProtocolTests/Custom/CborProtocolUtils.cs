@@ -27,9 +27,14 @@ namespace AWSSDK.ProtocolTests.Utils
     {
         public static void AssertBody(IRequest actualRequest, string expectedBody)
         {
+            AssertBody(actualRequest.Content, expectedBody);
+        }
+
+        public static void AssertBody(byte[] actualBody, string expectedBody)
+        {
             var expectedCbor = Convert.FromBase64String(expectedBody);
             var expectedObj = CborToNativeObject(expectedCbor);
-            var actualObj = CborToNativeObject(actualRequest.Content);
+            var actualObj = CborToNativeObject(actualBody);
 
             AssertObjectsEqual(expectedObj, actualObj);
         }

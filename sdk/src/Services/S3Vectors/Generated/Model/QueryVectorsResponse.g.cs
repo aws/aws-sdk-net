@@ -67,7 +67,9 @@ namespace Amazon.S3Vectors.Model
         /// <summary>
         /// Gets and sets the property Vectors. 
         /// <para>
-        /// The vectors in the approximate nearest neighbor search.
+        /// The matching vector results in ranked order. Results are ranked by vector distance
+        /// for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF
+        /// score for a hybrid search.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

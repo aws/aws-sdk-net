@@ -49,6 +49,19 @@ namespace Amazon.Mgn.Model
         internal bool IsSetArn() => this.Arn != null;
 
         /// <summary>
+        /// Gets and sets the property DefinitionType. 
+        /// <para>
+        /// The type of the network migration definition.
+        /// </para>
+        /// </summary>
+        public DefinitionType DefinitionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefinitionType property is set.
+        /// </summary>
+        internal bool IsSetDefinitionType() => this.DefinitionType != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the network migration definition.

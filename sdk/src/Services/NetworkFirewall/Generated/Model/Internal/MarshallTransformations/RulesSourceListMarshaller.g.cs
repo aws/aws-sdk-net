@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,39 +39,39 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RulesSourceList Marshaller
     /// </summary>
-    public partial class RulesSourceListMarshaller : IRequestMarshaller<RulesSourceList, JsonMarshallerContext>
+    public partial class RulesSourceListMarshaller : IRequestMarshaller<RulesSourceList, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RulesSourceList requestObject, JsonMarshallerContext context)
+        public void Marshall(RulesSourceList requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGeneratedRulesType())
             {
-                context.Writer.WritePropertyName("GeneratedRulesType");
-                context.Writer.WriteStringValue(requestObject.GeneratedRulesType);
+                context.Writer.WriteTextString("GeneratedRulesType");
+                context.Writer.WriteTextString(requestObject.GeneratedRulesType);
             }
 
             if (requestObject.IsSetTargetTypes())
             {
-                context.Writer.WritePropertyName("TargetTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("TargetTypes");
+                context.Writer.WriteStartArray(requestObject.TargetTypes.Count);
                 foreach (var requestObjectTargetTypesListValue in requestObject.TargetTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectTargetTypesListValue);
+                    context.Writer.WriteTextString(requestObjectTargetTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTargets())
             {
-                context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Targets");
+                context.Writer.WriteStartArray(requestObject.Targets.Count);
                 foreach (var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                    context.Writer.WriteStringValue(requestObjectTargetsListValue);
+                    context.Writer.WriteTextString(requestObjectTargetsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

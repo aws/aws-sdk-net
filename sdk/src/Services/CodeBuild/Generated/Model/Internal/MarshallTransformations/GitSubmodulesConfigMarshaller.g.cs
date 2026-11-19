@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// GitSubmodulesConfig Marshaller
     /// </summary>
-    public partial class GitSubmodulesConfigMarshaller : IRequestMarshaller<GitSubmodulesConfig, JsonMarshallerContext>
+    public partial class GitSubmodulesConfigMarshaller : IRequestMarshaller<GitSubmodulesConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitSubmodulesConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GitSubmodulesConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFetchSubmodules())
             {
-                context.Writer.WritePropertyName("fetchSubmodules");
-                context.Writer.WriteBooleanValue(requestObject.FetchSubmodules.Value);
+                context.Writer.WriteTextString("fetchSubmodules");
+                context.Writer.WriteBoolean(requestObject.FetchSubmodules.Value);
             }
         }
 

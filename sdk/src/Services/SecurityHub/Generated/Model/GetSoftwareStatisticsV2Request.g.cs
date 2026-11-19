@@ -36,11 +36,11 @@ namespace Amazon.SecurityHub.Model
     /// with the most installed packages. <para> Each count is the number of package-to-resource
     /// pairs that match the grouping value. A package installed on three resources contributes
     /// three to the count. </para> <para> You can use the <c>Scopes</c> parameter to define
-    /// the data boundary for the query. Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>,
-    /// which lets you aggregate software from your entire organization or from specific organizational
-    /// units. Only the delegated administrator account can use <c>Scopes</c>. </para> <para>
-    /// This operation doesn't paginate. Use <c>MaxStatisticResults</c> to control how many
-    /// grouping values are returned. </para>
+    /// the data boundary for the query. Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>.
+    /// With <c>AwsOrganizations</c>, you can aggregate software from your entire organization
+    /// or from specific organizational units. Only the delegated administrator account can
+    /// use <c>Scopes</c>. </para> <para> This operation doesn't paginate. Use <c>MaxStatisticResults</c>
+    /// to control how many grouping values are returned. </para>
     /// </summary>
     public partial class GetSoftwareStatisticsV2Request : AmazonSecurityHubRequest
     {

@@ -39,7 +39,7 @@ namespace Amazon.Signin.Model
         /// Gets and sets the property Token. The refresh token to revoke. Must be a refresh token
         /// issued by AWS Sign-In. Access tokens are not accepted for revocation.
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 12288)]
         public string Token { get; set; }
 
         /// <summary>

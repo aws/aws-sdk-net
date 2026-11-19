@@ -418,8 +418,8 @@ namespace Amazon
         internal const string RestrictFilePermissionsEnvVar = "AWS_RESTRICT_FILE_PERMISSIONS";
 
         /// <summary>
-        /// Controls file and directory permissions for cache files written by the SDK on Unix and macOS platforms.
-        /// This applies to SSO token cache and Login token cache files.
+        /// Controls file and directory permissions for files written by the SDK on Unix and macOS platforms.
+        /// This applies to SSO token cache and Login token cache files and to the shared credentials and config files.
         /// <para />
         /// When set to <see cref="Amazon.FilePermission.USER_READ_WRITE"/> (the default), the SDK sets file 
         /// permissions to owner read/write only (0600) and directory permissions to owner only (0700) when 

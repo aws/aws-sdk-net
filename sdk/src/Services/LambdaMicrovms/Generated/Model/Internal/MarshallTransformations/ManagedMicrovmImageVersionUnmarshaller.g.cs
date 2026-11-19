@@ -81,6 +81,13 @@ namespace Amazon.LambdaMicrovms.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("supportedCpuConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CpuConfiguration, CpuConfigurationUnmarshaller>(CpuConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.SupportedCpuConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

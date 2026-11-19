@@ -74,8 +74,9 @@ namespace Amazon.AWSHealth.Model
         ///  </li> <li> 
         /// <para>
         /// Your Amazon Web Services account doesn't include the Amazon Web Services Support plan
-        /// required to use the Health API. You must have either a Business, Enterprise On-Ramp,
-        /// or Enterprise Support plan.
+        /// required to use the Health API. You must have either a Amazon Web Services Business
+        /// Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations
+        /// plan.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -75,6 +75,19 @@ namespace Amazon.ElementalInference.Model
         internal bool IsSetCropping() => this.Cropping != null;
 
         /// <summary>
+        /// Gets and sets the property Function. 
+        /// <para>
+        /// The output config type that applies to a function.
+        /// </para>
+        /// </summary>
+        public FunctionConfig Function { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Function property is set.
+        /// </summary>
+        internal bool IsSetFunction() => this.Function != null;
+
+        /// <summary>
         /// Gets and sets the property Subtitling. 
         /// <para>
         /// The output config type that applies to the smart subtitling feature.

@@ -49,6 +49,14 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListCoreNetworkEndpoints operation
+        /// </summary>
+        public IListCoreNetworkEndpointsPaginator ListCoreNetworkEndpoints(ListCoreNetworkEndpointsRequest request)
+        {
+            return new ListCoreNetworkEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDNSViews operation
         /// </summary>
         public IListDNSViewsPaginator ListDNSViews(ListDNSViewsRequest request)

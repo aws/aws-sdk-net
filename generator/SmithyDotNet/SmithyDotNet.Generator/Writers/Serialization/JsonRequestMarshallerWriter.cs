@@ -74,7 +74,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         string? compressionEncoding)
     {
         var unsignedPayload = operation.Shape.HasUnsignedPayload();
-        var requiresChecksum = operation.Shape.RequiresHttpChecksum();
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -162,13 +161,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 writer.WriteLine("request.Content = System.Text.Encoding.UTF8.GetBytes(content);");
             }
 
-            // The checksum covers the body, so it has to follow serialization (same spot as C2J).
-            // TODO: flexible checksums (aws.protocols#httpChecksum, rejected by UnsupportedTraitValidator for now) need the
-            // algorithm member / header name / isRequestChecksumRequired handling from BaseMarshaller.tt GenerateRequestChecksumHandling;
-            // Once more protocols support it, the logic should be extracted to helper used by the request marshaller writers.
-            if (requiresChecksum)
+            // Also covers blob and string payloads, which C2J's JSON template skips: the trait is over the request
+            // payload whatever its kind (C2J restXml does the same for S3), and no JSON model ever exercised that gap.
+            if (partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0 || !context.UsesHttpBindings)
             {
-                writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
+                MarshallerCommon.WriteRequestChecksum(writer, context, operation);
             }
 
             // @unsignedPayload disables SigV4 body signing regardless of body kind (matches C2J).
@@ -251,11 +248,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
     // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
-    // On awsJson the stream's siblings are serialized as the initial-request payload.
-    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload, List<Member> initialRequestMembers)
+    // On awsJson the stream's siblings are serialized as the initial-request payload, an empty object when
+    // there are none. restJson1 binds them to the HTTP request and sends no initial-request.
+    private void WriteEventStreamPublisher(CodeWriter writer, Member payload, List<Member> initialRequestMembers)
     {
         writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
-        if (initialRequestMembers.Count == 0)
+        if (context.UsesHttpBindings)
         {
             writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
             return;

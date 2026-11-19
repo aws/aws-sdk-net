@@ -41,6 +41,7 @@ public class MockHttpHandler : HttpMessageHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
+        PipelineBreakdown.MarkMockEnter();
         // Drain the request content to simulate the serialization cost.
         // In production, HttpClient calls content.SerializeToStreamAsync(networkStream) which
         // for ReadOnlyMemoryContent writes the span directly without allocating a byte[] copy.
@@ -63,6 +64,7 @@ public class MockHttpHandler : HttpMessageHandler
         if (!response.Headers.Contains("x-amzn-RequestId"))
             response.Headers.TryAddWithoutValidation("x-amzn-RequestId", "benchmark-request-id");
 
+        PipelineBreakdown.MarkMockExit();
         return response;
     }
 

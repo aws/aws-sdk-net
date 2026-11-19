@@ -31,8 +31,8 @@ namespace Amazon.IAMToolbox.Model
 {
     /// <summary>
     /// Contains details about a policy evaluated during authorization. Details include the
-    /// policy type, whether it is inline or managed, a URI that identifies it, and the entities
-    /// it is attached to.
+    /// policy type, whether it is inline or managed, a URI that identifies it, the entities
+    /// it is attached to, and its source, if present.
     /// </summary>
     public partial class PolicyInfo
     {
@@ -71,6 +71,44 @@ namespace Amazon.IAMToolbox.Model
         internal bool IsSetInline() => this.Inline.HasValue;
 
         /// <summary>
+        /// Gets and sets the property PolicySource. 
+        /// <para>
+        /// What the policy was built from, such as a KMS key policy or grant. Absent for other
+        /// policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>type</c> and <c>typeName</c> keys are always present. <c>type</c> identifies
+        /// the policy-source kind. <c>typeName</c> is its readable name. Compare <c>type</c>,
+        /// not <c>typeName</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A policy source can include additional keys that depend on its type. For example,
+        /// a KMS grant includes a <c>grantId</c> key that identifies the grant. A grant has no
+        /// ARN. Use the grant ID with the KMS key ARN in <c>attachedTo</c> to find the grant
+        /// with the AWS KMS <c>ListGrants</c> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// New types and keys can be added, so clients should ignore types and keys they don't
+        /// recognize.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> PolicySource { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the PolicySource property is set.
+        /// </summary>
+        internal bool IsSetPolicySource() => this.PolicySource != null && (this.PolicySource.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of policy. Valid values:
@@ -86,7 +124,9 @@ namespace Amazon.IAMToolbox.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>RESOURCE_BASED_POLICY</c> - A resource-based policy attached to a resource.
+        ///  <c>RESOURCE_BASED_POLICY</c> - A resource-based policy attached to a resource. An
+        /// AWS service can evaluate and report a policy kind it defines, such as a KMS grant,
+        /// as <c>RESOURCE_BASED_POLICY</c>. <c>policySource</c> identifies the kind.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -117,7 +157,9 @@ namespace Amazon.IAMToolbox.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// A URI that identifies the policy. Use this URI to cross-reference the policy with
-        /// the matching policies in each evaluation. The value depends on the policy type:
+        /// the matching policies in each evaluation. To retrieve the policy document, pass this
+        /// URI as the <c>policyUri</c> parameter of <c>GetRequestAuthorizationPolicy</c>, together
+        /// with the same authorization ID. The value depends on the policy type:
         /// </para>
         ///  <ul> <li> 
         /// <para>

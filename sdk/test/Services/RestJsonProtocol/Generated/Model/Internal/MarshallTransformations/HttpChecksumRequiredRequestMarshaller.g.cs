@@ -79,6 +79,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 #if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
+
             ChecksumUtils.SetChecksumData(request);
 
             return request;

@@ -41,6 +41,14 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        /// </summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request)
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatasetIntegrations operation
         /// </summary>
         public IListDatasetIntegrationsPaginator ListDatasetIntegrations(ListDatasetIntegrationsRequest request)
@@ -94,6 +102,14 @@ namespace Amazon.ObservabilityAdmin.Model
         public IListTelemetryRulesForOrganizationPaginator ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request)
         {
             return new ListTelemetryRulesForOrganizationPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThirdPartyTelemetryEnrichments operation
+        /// </summary>
+        public IListThirdPartyTelemetryEnrichmentsPaginator ListThirdPartyTelemetryEnrichments(ListThirdPartyTelemetryEnrichmentsRequest request)
+        {
+            return new ListThirdPartyTelemetryEnrichmentsPaginator(this.client, request);
         }
     }
 }

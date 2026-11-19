@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StandbyWorkspacesProperties Object
     /// </summary>
-    public partial class StandbyWorkspacesPropertiesUnmarshaller : IJsonUnmarshaller<StandbyWorkspacesProperties, JsonUnmarshallerContext>
+    public partial class StandbyWorkspacesPropertiesUnmarshaller : ICborUnmarshaller<StandbyWorkspacesProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public StandbyWorkspacesProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StandbyWorkspacesProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new StandbyWorkspacesProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DataReplication", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataReplication = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("RecoverySnapshotTime", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RecoverySnapshotTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DataReplication":
+                        context.AddPathSegment("DataReplication");
+                        unmarshalledObject.DataReplication = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StandbyWorkspaceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StandbyWorkspaceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RecoverySnapshotTime":
+                        context.AddPathSegment("RecoverySnapshotTime");
+                        unmarshalledObject.RecoverySnapshotTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "StandbyWorkspaceId":
+                        context.AddPathSegment("StandbyWorkspaceId");
+                        unmarshalledObject.StandbyWorkspaceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

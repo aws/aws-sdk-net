@@ -37,7 +37,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property AccessSources. 
         /// <para>
-        /// An array containing information about the access sources, such as the ID, CIDR etc.
+        /// An array containing information about the access sources, such as the ID and CIDR.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

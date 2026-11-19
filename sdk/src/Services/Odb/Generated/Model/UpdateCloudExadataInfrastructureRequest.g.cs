@@ -50,7 +50,42 @@ namespace Amazon.Odb.Model
         internal bool IsSetCloudExadataInfrastructureId() => this.CloudExadataInfrastructureId != null;
 
         /// <summary>
-        /// Gets and sets the property MaintenanceWindow.
+        /// Gets and sets the property ComputeCount. 
+        /// <para>
+        /// The number of database servers for the Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        public int? ComputeCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeCount property is set.
+        /// </summary>
+        internal bool IsSetComputeCount() => this.ComputeCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// A new user-friendly name for the Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DisplayName property is set.
+        /// </summary>
+        internal bool IsSetDisplayName() => this.DisplayName != null;
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceWindow. 
+        /// <para>
+        /// The maintenance window configuration for the Exadata Cloud infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// This allows you to define when maintenance operations such as patching and updates
+        /// can be performed on the infrastructure.
+        /// </para>
         /// </summary>
         public MaintenanceWindow MaintenanceWindow { get; set; }
 
@@ -58,5 +93,18 @@ namespace Amazon.Odb.Model
         /// Checks to see if the MaintenanceWindow property is set.
         /// </summary>
         internal bool IsSetMaintenanceWindow() => this.MaintenanceWindow != null;
+
+        /// <summary>
+        /// Gets and sets the property StorageCount. 
+        /// <para>
+        /// The number of storage servers to activate for the Exadata infrastructure.
+        /// </para>
+        /// </summary>
+        public int? StorageCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StorageCount property is set.
+        /// </summary>
+        internal bool IsSetStorageCount() => this.StorageCount.HasValue;
     }
 }

@@ -66,6 +66,28 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSrtCaller())
+            {
+                context.Writer.WritePropertyName("srtCaller");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SrtCallerRouterInputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SrtCaller, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSrtListener())
+            {
+                context.Writer.WritePropertyName("srtListener");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SrtListenerRouterInputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SrtListener, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

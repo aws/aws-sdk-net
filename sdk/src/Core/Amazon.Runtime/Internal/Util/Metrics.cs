@@ -30,10 +30,14 @@ namespace Amazon.Runtime.Internal.Util
         #region Private members
 
         private object metricsLock = new object();
-        private Stopwatch stopWatch;
+        private readonly long startTimestamp;
+        // Created on the first StartEvent, so a disabled request that never times CSM attempt latency doesn't allocate it.
         private Dictionary<Metric, Timing> inFlightTimings;
         private List<MetricError> errors = new List<MetricError>();
-        private long CurrentTime { get { return stopWatch.GetElapsedDateTimeTicks(); } }
+        private Dictionary<Metric, List<object>> properties;
+        private Dictionary<Metric, List<IMetricsTiming>> timings;
+        private Dictionary<Metric, long> counters;
+        private long CurrentTime { get { return Extensions.GetElapsedDateTimeTicks(startTimestamp); } }
         private void LogError_Locked(Metric metric, string messageFormat, params object[] args)
         {
             errors.Add(new MetricError(metric, messageFormat, args));
@@ -83,17 +87,29 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Collection of properties being tracked
         /// </summary>
-        public Dictionary<Metric, List<object>> Properties { get; set; }
+        public Dictionary<Metric, List<object>> Properties
+        {
+            get { return properties ??= new Dictionary<Metric, List<object>>(); }
+            set { properties = value; }
+        }
 
         /// <summary>
         /// Timings for metrics being tracked
         /// </summary>
-        public Dictionary<Metric, List<IMetricsTiming>> Timings { get; set; }
+        public Dictionary<Metric, List<IMetricsTiming>> Timings
+        {
+            get { return timings ??= new Dictionary<Metric, List<IMetricsTiming>>(); }
+            set { timings = value; }
+        }
 
         /// <summary>
         /// Counters being tracked
         /// </summary>
-        public Dictionary<Metric, long> Counters { get; set; }
+        public Dictionary<Metric, long> Counters
+        {
+            get { return counters ??= new Dictionary<Metric, long>(); }
+            set { counters = value; }
+        }
 
         /// <summary>
         /// Whether metrics are enabled for the request
@@ -109,12 +125,7 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         public RequestMetrics()
         {
-            stopWatch = Stopwatch.StartNew();
-            Properties = new Dictionary<Metric, List<object>>();
-            Timings = new Dictionary<Metric, List<IMetricsTiming>>();
-            Counters = new Dictionary<Metric, long>();
-            inFlightTimings = new Dictionary<Metric, Timing>();
-            IsEnabled = false;
+            startTimestamp = Stopwatch.GetTimestamp();
         }
 
         #endregion
@@ -124,14 +135,21 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Starts timing an event. Logs an exception if an event
         /// of the same type was started but not stopped.
+        /// When metrics are disabled, only <see cref="Metric.CSMAttemptLatency"/> is timed
+        /// and other metrics return a shared no-op event.
         /// </summary>
         /// <param name="metric"></param>
         /// <returns></returns>
         public TimingEvent StartEvent(Metric metric)
         {
+            if (!IsEnabled && metric != Metric.CSMAttemptLatency)
+                return TimingEvent.NoOp;
+
             lock (metricsLock)
             {
-                if (inFlightTimings.ContainsKey(metric))
+                if (inFlightTimings == null)
+                    inFlightTimings = new Dictionary<Metric, Timing>();
+                else if (inFlightTimings.ContainsKey(metric))
                     LogError_Locked(metric, "Starting multiple events for the same metric");
                 inFlightTimings[metric] = new Timing(CurrentTime);
             }
@@ -145,10 +163,13 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns></returns>
         public Timing StopEvent(Metric metric)
         {
+            if (!IsEnabled && metric != Metric.CSMAttemptLatency)
+                return new Timing();
+
             Timing timing;
             lock (metricsLock)
             {
-                if (!inFlightTimings.TryGetValue(metric, out timing))
+                if (inFlightTimings == null || !inFlightTimings.TryGetValue(metric, out timing))
                 {
                     LogError_Locked(metric, "Trying to stop event that has not been started");
                     return new Timing();
@@ -241,7 +262,7 @@ namespace Amazon.Runtime.Internal.Util
             {
                 lock (metricsLock)
                 {
-                    if (inFlightTimings.Count > 0)
+                    if (inFlightTimings != null && inFlightTimings.Count > 0)
                     {
                         string inFlightTimingsValue = string.Join(", ", inFlightTimings.Keys.Select(k => k.ToString()).ToArray());
                         writer.Write("Timings are still in flight: {0}.", inFlightTimingsValue);
@@ -476,6 +497,11 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class TimingEvent : IDisposable
     {
+        /// <summary>
+        /// Shared event returned when metrics are disabled; disposing it does nothing.
+        /// </summary>
+        internal static readonly TimingEvent NoOp = new TimingEvent(null, default(Metric));
+
         private Metric metric;
         private RequestMetrics metrics;
         private bool disposed;
@@ -495,6 +521,9 @@ namespace Amazon.Runtime.Internal.Util
         /// or garbage collected.</param>
         protected virtual void Dispose(bool disposing)
         {
+            if (metrics == null)
+                return;
+
             if (!this.disposed)
             {
                 if (disposing)

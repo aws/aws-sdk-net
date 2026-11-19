@@ -66,6 +66,20 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CrossAccountPrimary", targetDepth, ref reader))
+                {
+                    var unmarshaller = CrossAccountPrimaryTypeUnmarshaller.Instance;
+                    unmarshalledObject.CrossAccountPrimary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CrossAccountReplicas", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CrossAccountReplicaEntry, CrossAccountReplicaEntryUnmarshaller>(CrossAccountReplicaEntryUnmarshaller.Instance);
+                    unmarshalledObject.CrossAccountReplicas = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DeletedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

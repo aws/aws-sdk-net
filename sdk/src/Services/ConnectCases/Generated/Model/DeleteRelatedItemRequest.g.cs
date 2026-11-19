@@ -33,7 +33,9 @@ namespace Amazon.ConnectCases.Model
     /// Container for the parameters to the DeleteRelatedItem operation. Deletes the related
     /// item resource under a case. <note> <para> This API cannot be used on a FILE type related
     /// attachment. To delete this type of file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
-    /// API </para> </note>
+    /// API </para> </note> <para> If the case is the secondary case of a merge that is running,
+    /// the request fails with a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteRelatedItemRequest : AmazonConnectCasesRequest
     {

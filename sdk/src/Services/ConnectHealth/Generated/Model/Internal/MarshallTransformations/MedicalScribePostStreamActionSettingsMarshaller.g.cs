@@ -56,6 +56,17 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetMedicalCodeGenerationSettings())
+            {
+                context.Writer.WritePropertyName("medicalCodeGenerationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MedicalCodeGenerationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MedicalCodeGenerationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetOutputS3Uri())
             {
                 context.Writer.WritePropertyName("outputS3Uri");

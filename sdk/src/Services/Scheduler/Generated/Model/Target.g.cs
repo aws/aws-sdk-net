@@ -96,12 +96,41 @@ namespace Amazon.Scheduler.Model
         internal bool IsSetEventBridgeParameters() => this.EventBridgeParameters != null;
 
         /// <summary>
+        /// Gets and sets the property EventBridgePutEventsV2Parameters. 
+        /// <para>
+        /// The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html">
+        /// <c>PutEvents</c> </a> API operation.
+        /// </para>
+        /// </summary>
+        public EventBridgePutEventsV2Parameters EventBridgePutEventsV2Parameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EventBridgePutEventsV2Parameters property is set.
+        /// </summary>
+        internal bool IsSetEventBridgePutEventsV2Parameters() => this.EventBridgePutEventsV2Parameters != null;
+
+        /// <summary>
+        /// Gets and sets the property EventBridgePutRawEventsParameters. 
+        /// <para>
+        /// The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html">
+        /// <c>PutRawEvents</c> </a> API operation.
+        /// </para>
+        /// </summary>
+        public EventBridgePutRawEventsParameters EventBridgePutRawEventsParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EventBridgePutRawEventsParameters property is set.
+        /// </summary>
+        internal bool IsSetEventBridgePutRawEventsParameters() => this.EventBridgePutRawEventsParameters != null;
+
+        /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
         /// The text, or well-formed JSON, passed to the target. If you are configuring a templated
-        /// Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed
-        /// JSON. For all other target types, a JSON is not required. If you do not specify anything
-        /// for this field, EventBridge Scheduler delivers a default notification to the target.
+        /// Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input
+        /// must be a well-formed JSON. For all other target types, a JSON is not required. If
+        /// you do not specify anything for this field, EventBridge Scheduler delivers a default
+        /// notification to the target. The maximum size of the <c>Input</c> field is 256 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
@@ -115,7 +144,7 @@ namespace Amazon.Scheduler.Model
         /// <summary>
         /// Gets and sets the property KinesisParameters. 
         /// <para>
-        /// The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html">
+        /// The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html">
         /// <c>PutRecord</c> </a> API operation.
         /// </para>
         /// </summary>

@@ -22,6 +22,57 @@ using Amazon.Runtime;
 namespace Amazon.NetworkFirewall
 {
     /// <summary>
+    /// Constants used for properties of type ActionScope.
+    /// </summary>
+    public class ActionScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant FLOW for ActionScope
+        /// </summary>
+        public static readonly ActionScope FLOW = new ActionScope("FLOW");
+
+        /// <summary>
+        /// Constant HOOK for ActionScope
+        /// </summary>
+        public static readonly ActionScope HOOK = new ActionScope("HOOK");
+
+        /// <summary>
+        /// Constant PACKET for ActionScope
+        /// </summary>
+        public static readonly ActionScope PACKET = new ActionScope("PACKET");
+
+        /// <summary>
+        /// Constant TX for ActionScope
+        /// </summary>
+        public static readonly ActionScope TX = new ActionScope("TX");
+
+        /// <summary>
+        /// Constructs a custom ActionScope for a value not among the defined constants.
+        /// </summary>
+        public ActionScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionScope FindValue(string value)
+        {
+            return FindValue<ActionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AttachmentStatus.
     /// </summary>
     public class AttachmentStatus : ConstantClass
@@ -221,6 +272,113 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type ContextStoreSyncStatus.
+    /// </summary>
+    public class ContextStoreSyncStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FULLY_RESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus FULLY_RESOLVED = new ContextStoreSyncStatus("FULLY_RESOLVED");
+
+        /// <summary>
+        /// Constant PARTIALLY_RESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus PARTIALLY_RESOLVED = new ContextStoreSyncStatus("PARTIALLY_RESOLVED");
+
+        /// <summary>
+        /// Constant SYNCING for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus SYNCING = new ContextStoreSyncStatus("SYNCING");
+
+        /// <summary>
+        /// Constant SYNC_FAILED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus SYNC_FAILED = new ContextStoreSyncStatus("SYNC_FAILED");
+
+        /// <summary>
+        /// Constant UNRESOLVED for ContextStoreSyncStatus
+        /// </summary>
+        public static readonly ContextStoreSyncStatus UNRESOLVED = new ContextStoreSyncStatus("UNRESOLVED");
+
+        /// <summary>
+        /// Constructs a custom ContextStoreSyncStatus for a value not among the defined constants.
+        /// </summary>
+        public ContextStoreSyncStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextStoreSyncStatus FindValue(string value)
+        {
+            return FindValue<ContextStoreSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextStoreSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextType.
+    /// </summary>
+    public class ContextType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Attachment for ContextType
+        /// </summary>
+        public static readonly ContextType Attachment = new ContextType("Attachment");
+
+        /// <summary>
+        /// Constant ResourceId for ContextType
+        /// </summary>
+        public static readonly ContextType ResourceId = new ContextType("ResourceId");
+
+        /// <summary>
+        /// Constant SegmentId for ContextType
+        /// </summary>
+        public static readonly ContextType SegmentId = new ContextType("SegmentId");
+
+        /// <summary>
+        /// Constant Subnet for ContextType
+        /// </summary>
+        public static readonly ContextType Subnet = new ContextType("Subnet");
+
+        /// <summary>
+        /// Constructs a custom ContextType for a value not among the defined constants.
+        /// </summary>
+        public ContextType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextType FindValue(string value)
+        {
+            return FindValue<ContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DNSExpiryExceptionPolicy.
     /// </summary>
     public class DNSExpiryExceptionPolicy : ConstantClass
@@ -261,6 +419,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DNSExpiryExceptionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DecryptionAction.
+    /// </summary>
+    public class DecryptionAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant BYPASS for DecryptionAction
+        /// </summary>
+        public static readonly DecryptionAction BYPASS = new DecryptionAction("BYPASS");
+
+        /// <summary>
+        /// Constant DECRYPT for DecryptionAction
+        /// </summary>
+        public static readonly DecryptionAction DECRYPT = new DecryptionAction("DECRYPT");
+
+        /// <summary>
+        /// Constructs a custom DecryptionAction for a value not among the defined constants.
+        /// </summary>
+        public DecryptionAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecryptionAction FindValue(string value)
+        {
+            return FindValue<DecryptionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecryptionAction(string value)
         {
             return FindValue(value);
         }
@@ -384,6 +583,293 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FirewallPolicyErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleAction.
+    /// </summary>
+    public class FirewallRuleAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPT for FirewallRuleAction
+        /// </summary>
+        public static readonly FirewallRuleAction ACCEPT = new FirewallRuleAction("ACCEPT");
+
+        /// <summary>
+        /// Constant DROP for FirewallRuleAction
+        /// </summary>
+        public static readonly FirewallRuleAction DROP = new FirewallRuleAction("DROP");
+
+        /// <summary>
+        /// Constant REJECT for FirewallRuleAction
+        /// </summary>
+        public static readonly FirewallRuleAction REJECT = new FirewallRuleAction("REJECT");
+
+        /// <summary>
+        /// Constant REJECT_BOTH for FirewallRuleAction
+        /// </summary>
+        public static readonly FirewallRuleAction REJECT_BOTH = new FirewallRuleAction("REJECT_BOTH");
+
+        /// <summary>
+        /// Constant REJECT_DST for FirewallRuleAction
+        /// </summary>
+        public static readonly FirewallRuleAction REJECT_DST = new FirewallRuleAction("REJECT_DST");
+
+        /// <summary>
+        /// Constructs a custom FirewallRuleAction for a value not among the defined constants.
+        /// </summary>
+        public FirewallRuleAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleAction FindValue(string value)
+        {
+            return FindValue<FirewallRuleAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleProtocol.
+    /// </summary>
+    public class FirewallRuleProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant BITTORRENT_DHT for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol BITTORRENT_DHT = new FirewallRuleProtocol("BITTORRENT_DHT");
+
+        /// <summary>
+        /// Constant DCERPC for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol DCERPC = new FirewallRuleProtocol("DCERPC");
+
+        /// <summary>
+        /// Constant DHCP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol DHCP = new FirewallRuleProtocol("DHCP");
+
+        /// <summary>
+        /// Constant DNP3 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol DNP3 = new FirewallRuleProtocol("DNP3");
+
+        /// <summary>
+        /// Constant DNS for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol DNS = new FirewallRuleProtocol("DNS");
+
+        /// <summary>
+        /// Constant DOH2 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol DOH2 = new FirewallRuleProtocol("DOH2");
+
+        /// <summary>
+        /// Constant FTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol FTP = new FirewallRuleProtocol("FTP");
+
+        /// <summary>
+        /// Constant FTP_DATA for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol FTP_DATA = new FirewallRuleProtocol("FTP_DATA");
+
+        /// <summary>
+        /// Constant HTTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol HTTP = new FirewallRuleProtocol("HTTP");
+
+        /// <summary>
+        /// Constant HTTP2 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol HTTP2 = new FirewallRuleProtocol("HTTP2");
+
+        /// <summary>
+        /// Constant ICMP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol ICMP = new FirewallRuleProtocol("ICMP");
+
+        /// <summary>
+        /// Constant ICMPV4 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol ICMPV4 = new FirewallRuleProtocol("ICMPV4");
+
+        /// <summary>
+        /// Constant ICMPV6 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol ICMPV6 = new FirewallRuleProtocol("ICMPV6");
+
+        /// <summary>
+        /// Constant IKEV2 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol IKEV2 = new FirewallRuleProtocol("IKEV2");
+
+        /// <summary>
+        /// Constant IP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol IP = new FirewallRuleProtocol("IP");
+
+        /// <summary>
+        /// Constant IPV4 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol IPV4 = new FirewallRuleProtocol("IPV4");
+
+        /// <summary>
+        /// Constant IPV6 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol IPV6 = new FirewallRuleProtocol("IPV6");
+
+        /// <summary>
+        /// Constant KRB5 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol KRB5 = new FirewallRuleProtocol("KRB5");
+
+        /// <summary>
+        /// Constant LDAP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol LDAP = new FirewallRuleProtocol("LDAP");
+
+        /// <summary>
+        /// Constant MDNS for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol MDNS = new FirewallRuleProtocol("MDNS");
+
+        /// <summary>
+        /// Constant MQTT for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol MQTT = new FirewallRuleProtocol("MQTT");
+
+        /// <summary>
+        /// Constant MSN for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol MSN = new FirewallRuleProtocol("MSN");
+
+        /// <summary>
+        /// Constant NFS for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol NFS = new FirewallRuleProtocol("NFS");
+
+        /// <summary>
+        /// Constant NTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol NTP = new FirewallRuleProtocol("NTP");
+
+        /// <summary>
+        /// Constant PGSQL for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol PGSQL = new FirewallRuleProtocol("PGSQL");
+
+        /// <summary>
+        /// Constant POP3 for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol POP3 = new FirewallRuleProtocol("POP3");
+
+        /// <summary>
+        /// Constant QUIC for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol QUIC = new FirewallRuleProtocol("QUIC");
+
+        /// <summary>
+        /// Constant RDP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol RDP = new FirewallRuleProtocol("RDP");
+
+        /// <summary>
+        /// Constant RFB for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol RFB = new FirewallRuleProtocol("RFB");
+
+        /// <summary>
+        /// Constant SCTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol SCTP = new FirewallRuleProtocol("SCTP");
+
+        /// <summary>
+        /// Constant SMB for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol SMB = new FirewallRuleProtocol("SMB");
+
+        /// <summary>
+        /// Constant SMTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol SMTP = new FirewallRuleProtocol("SMTP");
+
+        /// <summary>
+        /// Constant SNMP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol SNMP = new FirewallRuleProtocol("SNMP");
+
+        /// <summary>
+        /// Constant SSH for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol SSH = new FirewallRuleProtocol("SSH");
+
+        /// <summary>
+        /// Constant TCP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol TCP = new FirewallRuleProtocol("TCP");
+
+        /// <summary>
+        /// Constant TELNET for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol TELNET = new FirewallRuleProtocol("TELNET");
+
+        /// <summary>
+        /// Constant TFTP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol TFTP = new FirewallRuleProtocol("TFTP");
+
+        /// <summary>
+        /// Constant TLS for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol TLS = new FirewallRuleProtocol("TLS");
+
+        /// <summary>
+        /// Constant UDP for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol UDP = new FirewallRuleProtocol("UDP");
+
+        /// <summary>
+        /// Constant WEBSOCKET for FirewallRuleProtocol
+        /// </summary>
+        public static readonly FirewallRuleProtocol WEBSOCKET = new FirewallRuleProtocol("WEBSOCKET");
+
+        /// <summary>
+        /// Constructs a custom FirewallRuleProtocol for a value not among the defined constants.
+        /// </summary>
+        public FirewallRuleProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleProtocol FindValue(string value)
+        {
+            return FindValue<FirewallRuleProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleProtocol(string value)
         {
             return FindValue(value);
         }
@@ -578,6 +1064,1017 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GeneratedRulesType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HookKey.
+    /// </summary>
+    public class HookKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant BITTORRENT_DHT_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey BITTORRENT_DHT_REQUEST_COMPLETE = new HookKey("BITTORRENT_DHT_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant BITTORRENT_DHT_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey BITTORRENT_DHT_REQUEST_STARTED = new HookKey("BITTORRENT_DHT_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant BITTORRENT_DHT_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey BITTORRENT_DHT_RESPONSE_COMPLETE = new HookKey("BITTORRENT_DHT_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant BITTORRENT_DHT_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey BITTORRENT_DHT_RESPONSE_STARTED = new HookKey("BITTORRENT_DHT_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DCERPC_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DCERPC_REQUEST_COMPLETE = new HookKey("DCERPC_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DCERPC_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DCERPC_REQUEST_STARTED = new HookKey("DCERPC_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DCERPC_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DCERPC_RESPONSE_COMPLETE = new HookKey("DCERPC_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DCERPC_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DCERPC_RESPONSE_STARTED = new HookKey("DCERPC_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DHCP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DHCP_REQUEST_COMPLETE = new HookKey("DHCP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DHCP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DHCP_REQUEST_STARTED = new HookKey("DHCP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DHCP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DHCP_RESPONSE_COMPLETE = new HookKey("DHCP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DHCP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DHCP_RESPONSE_STARTED = new HookKey("DHCP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DNP3_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DNP3_REQUEST_COMPLETE = new HookKey("DNP3_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DNP3_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DNP3_REQUEST_STARTED = new HookKey("DNP3_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DNP3_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DNP3_RESPONSE_COMPLETE = new HookKey("DNP3_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DNP3_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DNP3_RESPONSE_STARTED = new HookKey("DNP3_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DNS_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DNS_REQUEST_COMPLETE = new HookKey("DNS_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DNS_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DNS_REQUEST_STARTED = new HookKey("DNS_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DNS_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DNS_RESPONSE_COMPLETE = new HookKey("DNS_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DNS_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DNS_RESPONSE_STARTED = new HookKey("DNS_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DOH2_GLOBAL_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_GLOBAL_REQUEST_COMPLETE = new HookKey("DOH2_GLOBAL_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DOH2_GLOBAL_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_GLOBAL_REQUEST_STARTED = new HookKey("DOH2_GLOBAL_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DOH2_GLOBAL_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_GLOBAL_RESPONSE_COMPLETE = new HookKey("DOH2_GLOBAL_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DOH2_GLOBAL_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_GLOBAL_RESPONSE_STARTED = new HookKey("DOH2_GLOBAL_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_REQUEST_CLOSED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_REQUEST_CLOSED = new HookKey("DOH2_STREAM_REQUEST_CLOSED");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_REQUEST_COMPLETE = new HookKey("DOH2_STREAM_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_REQUEST_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_REQUEST_DATA = new HookKey("DOH2_STREAM_REQUEST_DATA");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_REQUEST_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_REQUEST_HEADERS = new HookKey("DOH2_STREAM_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_REQUEST_STARTED = new HookKey("DOH2_STREAM_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_RESPONSE_CLOSED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_RESPONSE_CLOSED = new HookKey("DOH2_STREAM_RESPONSE_CLOSED");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_RESPONSE_COMPLETE = new HookKey("DOH2_STREAM_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_RESPONSE_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_RESPONSE_DATA = new HookKey("DOH2_STREAM_RESPONSE_DATA");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_RESPONSE_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_RESPONSE_HEADERS = new HookKey("DOH2_STREAM_RESPONSE_HEADERS");
+
+        /// <summary>
+        /// Constant DOH2_STREAM_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey DOH2_STREAM_RESPONSE_STARTED = new HookKey("DOH2_STREAM_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant FTP_DATA_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_DATA_REQUEST_COMPLETE = new HookKey("FTP_DATA_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant FTP_DATA_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_DATA_REQUEST_STARTED = new HookKey("FTP_DATA_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant FTP_DATA_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_DATA_RESPONSE_COMPLETE = new HookKey("FTP_DATA_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant FTP_DATA_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_DATA_RESPONSE_STARTED = new HookKey("FTP_DATA_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant FTP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_REQUEST_COMPLETE = new HookKey("FTP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant FTP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_REQUEST_STARTED = new HookKey("FTP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant FTP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_RESPONSE_COMPLETE = new HookKey("FTP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant FTP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey FTP_RESPONSE_STARTED = new HookKey("FTP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_BODY for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_BODY = new HookKey("HTTP1_REQUEST_BODY");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_COMPLETE = new HookKey("HTTP1_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_HEADERS = new HookKey("HTTP1_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_LINE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_LINE = new HookKey("HTTP1_REQUEST_LINE");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_STARTED = new HookKey("HTTP1_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant HTTP1_REQUEST_TRAILER for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_REQUEST_TRAILER = new HookKey("HTTP1_REQUEST_TRAILER");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_BODY for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_BODY = new HookKey("HTTP1_RESPONSE_BODY");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_COMPLETE = new HookKey("HTTP1_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_HEADERS = new HookKey("HTTP1_RESPONSE_HEADERS");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_LINE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_LINE = new HookKey("HTTP1_RESPONSE_LINE");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_STARTED = new HookKey("HTTP1_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant HTTP1_RESPONSE_TRAILER for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP1_RESPONSE_TRAILER = new HookKey("HTTP1_RESPONSE_TRAILER");
+
+        /// <summary>
+        /// Constant HTTP2_GLOBAL_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_GLOBAL_REQUEST_COMPLETE = new HookKey("HTTP2_GLOBAL_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP2_GLOBAL_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_GLOBAL_REQUEST_STARTED = new HookKey("HTTP2_GLOBAL_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant HTTP2_GLOBAL_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_GLOBAL_RESPONSE_COMPLETE = new HookKey("HTTP2_GLOBAL_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP2_GLOBAL_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_GLOBAL_RESPONSE_STARTED = new HookKey("HTTP2_GLOBAL_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_REQUEST_CLOSED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_REQUEST_CLOSED = new HookKey("HTTP2_STREAM_REQUEST_CLOSED");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_REQUEST_COMPLETE = new HookKey("HTTP2_STREAM_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_REQUEST_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_REQUEST_DATA = new HookKey("HTTP2_STREAM_REQUEST_DATA");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_REQUEST_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_REQUEST_HEADERS = new HookKey("HTTP2_STREAM_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_REQUEST_STARTED = new HookKey("HTTP2_STREAM_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_RESPONSE_CLOSED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_RESPONSE_CLOSED = new HookKey("HTTP2_STREAM_RESPONSE_CLOSED");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_RESPONSE_COMPLETE = new HookKey("HTTP2_STREAM_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_RESPONSE_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_RESPONSE_DATA = new HookKey("HTTP2_STREAM_RESPONSE_DATA");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_RESPONSE_HEADERS for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_RESPONSE_HEADERS = new HookKey("HTTP2_STREAM_RESPONSE_HEADERS");
+
+        /// <summary>
+        /// Constant HTTP2_STREAM_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey HTTP2_STREAM_RESPONSE_STARTED = new HookKey("HTTP2_STREAM_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant ICMPV4_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV4_ALL = new HookKey("ICMPV4_ALL");
+
+        /// <summary>
+        /// Constant ICMPV4_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV4_FLOW_START = new HookKey("ICMPV4_FLOW_START");
+
+        /// <summary>
+        /// Constant ICMPV4_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV4_PRE_FLOW = new HookKey("ICMPV4_PRE_FLOW");
+
+        /// <summary>
+        /// Constant ICMPV4_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV4_PRE_STREAM = new HookKey("ICMPV4_PRE_STREAM");
+
+        /// <summary>
+        /// Constant ICMPV6_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV6_ALL = new HookKey("ICMPV6_ALL");
+
+        /// <summary>
+        /// Constant ICMPV6_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV6_FLOW_START = new HookKey("ICMPV6_FLOW_START");
+
+        /// <summary>
+        /// Constant ICMPV6_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV6_PRE_FLOW = new HookKey("ICMPV6_PRE_FLOW");
+
+        /// <summary>
+        /// Constant ICMPV6_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey ICMPV6_PRE_STREAM = new HookKey("ICMPV6_PRE_STREAM");
+
+        /// <summary>
+        /// Constant ICMP_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey ICMP_ALL = new HookKey("ICMP_ALL");
+
+        /// <summary>
+        /// Constant ICMP_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey ICMP_FLOW_START = new HookKey("ICMP_FLOW_START");
+
+        /// <summary>
+        /// Constant ICMP_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey ICMP_PRE_FLOW = new HookKey("ICMP_PRE_FLOW");
+
+        /// <summary>
+        /// Constant ICMP_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey ICMP_PRE_STREAM = new HookKey("ICMP_PRE_STREAM");
+
+        /// <summary>
+        /// Constant IKE_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey IKE_REQUEST_COMPLETE = new HookKey("IKE_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant IKE_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey IKE_REQUEST_STARTED = new HookKey("IKE_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant IKE_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey IKE_RESPONSE_COMPLETE = new HookKey("IKE_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant IKE_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey IKE_RESPONSE_STARTED = new HookKey("IKE_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant IPV4_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey IPV4_ALL = new HookKey("IPV4_ALL");
+
+        /// <summary>
+        /// Constant IPV4_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey IPV4_FLOW_START = new HookKey("IPV4_FLOW_START");
+
+        /// <summary>
+        /// Constant IPV4_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey IPV4_PRE_FLOW = new HookKey("IPV4_PRE_FLOW");
+
+        /// <summary>
+        /// Constant IPV4_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey IPV4_PRE_STREAM = new HookKey("IPV4_PRE_STREAM");
+
+        /// <summary>
+        /// Constant IPV6_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey IPV6_ALL = new HookKey("IPV6_ALL");
+
+        /// <summary>
+        /// Constant IPV6_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey IPV6_FLOW_START = new HookKey("IPV6_FLOW_START");
+
+        /// <summary>
+        /// Constant IPV6_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey IPV6_PRE_FLOW = new HookKey("IPV6_PRE_FLOW");
+
+        /// <summary>
+        /// Constant IPV6_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey IPV6_PRE_STREAM = new HookKey("IPV6_PRE_STREAM");
+
+        /// <summary>
+        /// Constant IP_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey IP_ALL = new HookKey("IP_ALL");
+
+        /// <summary>
+        /// Constant IP_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey IP_FLOW_START = new HookKey("IP_FLOW_START");
+
+        /// <summary>
+        /// Constant IP_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey IP_PRE_FLOW = new HookKey("IP_PRE_FLOW");
+
+        /// <summary>
+        /// Constant IP_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey IP_PRE_STREAM = new HookKey("IP_PRE_STREAM");
+
+        /// <summary>
+        /// Constant KRB5_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey KRB5_REQUEST_COMPLETE = new HookKey("KRB5_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant KRB5_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey KRB5_REQUEST_STARTED = new HookKey("KRB5_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant KRB5_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey KRB5_RESPONSE_COMPLETE = new HookKey("KRB5_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant KRB5_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey KRB5_RESPONSE_STARTED = new HookKey("KRB5_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant LDAP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey LDAP_REQUEST_COMPLETE = new HookKey("LDAP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant LDAP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey LDAP_REQUEST_STARTED = new HookKey("LDAP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant LDAP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey LDAP_RESPONSE_COMPLETE = new HookKey("LDAP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant LDAP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey LDAP_RESPONSE_STARTED = new HookKey("LDAP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant MDNS_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey MDNS_REQUEST_COMPLETE = new HookKey("MDNS_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant MDNS_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey MDNS_REQUEST_STARTED = new HookKey("MDNS_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant MDNS_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey MDNS_RESPONSE_COMPLETE = new HookKey("MDNS_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant MDNS_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey MDNS_RESPONSE_STARTED = new HookKey("MDNS_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant MQTT_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey MQTT_REQUEST_COMPLETE = new HookKey("MQTT_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant MQTT_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey MQTT_REQUEST_STARTED = new HookKey("MQTT_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant MQTT_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey MQTT_RESPONSE_COMPLETE = new HookKey("MQTT_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant MQTT_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey MQTT_RESPONSE_STARTED = new HookKey("MQTT_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant NFS_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey NFS_REQUEST_COMPLETE = new HookKey("NFS_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant NFS_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey NFS_REQUEST_STARTED = new HookKey("NFS_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant NFS_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey NFS_RESPONSE_COMPLETE = new HookKey("NFS_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant NFS_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey NFS_RESPONSE_STARTED = new HookKey("NFS_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant NTP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey NTP_REQUEST_COMPLETE = new HookKey("NTP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant NTP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey NTP_REQUEST_STARTED = new HookKey("NTP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant NTP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey NTP_RESPONSE_COMPLETE = new HookKey("NTP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant NTP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey NTP_RESPONSE_STARTED = new HookKey("NTP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant PGSQL_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey PGSQL_REQUEST_COMPLETE = new HookKey("PGSQL_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant PGSQL_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey PGSQL_REQUEST_STARTED = new HookKey("PGSQL_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant PGSQL_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey PGSQL_RESPONSE_COMPLETE = new HookKey("PGSQL_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant PGSQL_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey PGSQL_RESPONSE_STARTED = new HookKey("PGSQL_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant POP3_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey POP3_REQUEST_COMPLETE = new HookKey("POP3_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant POP3_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey POP3_REQUEST_STARTED = new HookKey("POP3_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant POP3_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey POP3_RESPONSE_COMPLETE = new HookKey("POP3_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant POP3_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey POP3_RESPONSE_STARTED = new HookKey("POP3_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant QUIC_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey QUIC_REQUEST_COMPLETE = new HookKey("QUIC_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant QUIC_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey QUIC_REQUEST_STARTED = new HookKey("QUIC_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant QUIC_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey QUIC_RESPONSE_COMPLETE = new HookKey("QUIC_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant QUIC_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey QUIC_RESPONSE_STARTED = new HookKey("QUIC_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant RDP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey RDP_REQUEST_COMPLETE = new HookKey("RDP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant RDP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey RDP_REQUEST_STARTED = new HookKey("RDP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant RDP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey RDP_RESPONSE_COMPLETE = new HookKey("RDP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant RDP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey RDP_RESPONSE_STARTED = new HookKey("RDP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant RFB_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey RFB_REQUEST_COMPLETE = new HookKey("RFB_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant RFB_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey RFB_REQUEST_STARTED = new HookKey("RFB_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant RFB_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey RFB_RESPONSE_COMPLETE = new HookKey("RFB_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant RFB_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey RFB_RESPONSE_STARTED = new HookKey("RFB_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant SCTP_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey SCTP_ALL = new HookKey("SCTP_ALL");
+
+        /// <summary>
+        /// Constant SCTP_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey SCTP_FLOW_START = new HookKey("SCTP_FLOW_START");
+
+        /// <summary>
+        /// Constant SCTP_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey SCTP_PRE_FLOW = new HookKey("SCTP_PRE_FLOW");
+
+        /// <summary>
+        /// Constant SCTP_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey SCTP_PRE_STREAM = new HookKey("SCTP_PRE_STREAM");
+
+        /// <summary>
+        /// Constant SMB_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SMB_REQUEST_COMPLETE = new HookKey("SMB_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant SMB_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SMB_REQUEST_STARTED = new HookKey("SMB_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant SMB_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SMB_RESPONSE_COMPLETE = new HookKey("SMB_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant SMB_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SMB_RESPONSE_STARTED = new HookKey("SMB_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant SMTP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_REQUEST_COMPLETE = new HookKey("SMTP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant SMTP_REQUEST_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_REQUEST_DATA = new HookKey("SMTP_REQUEST_DATA");
+
+        /// <summary>
+        /// Constant SMTP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_REQUEST_STARTED = new HookKey("SMTP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant SMTP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_RESPONSE_COMPLETE = new HookKey("SMTP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant SMTP_RESPONSE_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_RESPONSE_DATA = new HookKey("SMTP_RESPONSE_DATA");
+
+        /// <summary>
+        /// Constant SMTP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SMTP_RESPONSE_STARTED = new HookKey("SMTP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant SNMP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SNMP_REQUEST_COMPLETE = new HookKey("SNMP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant SNMP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SNMP_REQUEST_STARTED = new HookKey("SNMP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant SNMP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey SNMP_RESPONSE_COMPLETE = new HookKey("SNMP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant SNMP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey SNMP_RESPONSE_STARTED = new HookKey("SNMP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant SSH_REQUEST_BANNER_DONE for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_REQUEST_BANNER_DONE = new HookKey("SSH_REQUEST_BANNER_DONE");
+
+        /// <summary>
+        /// Constant SSH_REQUEST_BANNER_WAIT_EOL for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_REQUEST_BANNER_WAIT_EOL = new HookKey("SSH_REQUEST_BANNER_WAIT_EOL");
+
+        /// <summary>
+        /// Constant SSH_REQUEST_FINISHED for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_REQUEST_FINISHED = new HookKey("SSH_REQUEST_FINISHED");
+
+        /// <summary>
+        /// Constant SSH_REQUEST_IN_PROGRESS for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_REQUEST_IN_PROGRESS = new HookKey("SSH_REQUEST_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SSH_RESPONSE_BANNER_DONE for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_RESPONSE_BANNER_DONE = new HookKey("SSH_RESPONSE_BANNER_DONE");
+
+        /// <summary>
+        /// Constant SSH_RESPONSE_BANNER_WAIT_EOL for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_RESPONSE_BANNER_WAIT_EOL = new HookKey("SSH_RESPONSE_BANNER_WAIT_EOL");
+
+        /// <summary>
+        /// Constant SSH_RESPONSE_FINISHED for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_RESPONSE_FINISHED = new HookKey("SSH_RESPONSE_FINISHED");
+
+        /// <summary>
+        /// Constant SSH_RESPONSE_IN_PROGRESS for HookKey
+        /// </summary>
+        public static readonly HookKey SSH_RESPONSE_IN_PROGRESS = new HookKey("SSH_RESPONSE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant TCP_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey TCP_ALL = new HookKey("TCP_ALL");
+
+        /// <summary>
+        /// Constant TCP_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey TCP_FLOW_START = new HookKey("TCP_FLOW_START");
+
+        /// <summary>
+        /// Constant TCP_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey TCP_PRE_FLOW = new HookKey("TCP_PRE_FLOW");
+
+        /// <summary>
+        /// Constant TCP_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey TCP_PRE_STREAM = new HookKey("TCP_PRE_STREAM");
+
+        /// <summary>
+        /// Constant TELNET_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey TELNET_REQUEST_COMPLETE = new HookKey("TELNET_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant TELNET_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TELNET_REQUEST_STARTED = new HookKey("TELNET_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant TELNET_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey TELNET_RESPONSE_COMPLETE = new HookKey("TELNET_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant TELNET_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TELNET_RESPONSE_STARTED = new HookKey("TELNET_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant TFTP_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey TFTP_REQUEST_COMPLETE = new HookKey("TFTP_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant TFTP_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TFTP_REQUEST_STARTED = new HookKey("TFTP_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant TFTP_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey TFTP_RESPONSE_COMPLETE = new HookKey("TFTP_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant TFTP_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TFTP_RESPONSE_STARTED = new HookKey("TFTP_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constant TLS_CLIENT_CERT for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_CLIENT_CERT = new HookKey("TLS_CLIENT_CERT");
+
+        /// <summary>
+        /// Constant TLS_CLIENT_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_CLIENT_DATA = new HookKey("TLS_CLIENT_DATA");
+
+        /// <summary>
+        /// Constant TLS_CLIENT_FINISHED for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_CLIENT_FINISHED = new HookKey("TLS_CLIENT_FINISHED");
+
+        /// <summary>
+        /// Constant TLS_CLIENT_HELLO for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_CLIENT_HELLO = new HookKey("TLS_CLIENT_HELLO");
+
+        /// <summary>
+        /// Constant TLS_CLIENT_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_CLIENT_STARTED = new HookKey("TLS_CLIENT_STARTED");
+
+        /// <summary>
+        /// Constant TLS_SERVER_CERT for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_SERVER_CERT = new HookKey("TLS_SERVER_CERT");
+
+        /// <summary>
+        /// Constant TLS_SERVER_DATA for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_SERVER_DATA = new HookKey("TLS_SERVER_DATA");
+
+        /// <summary>
+        /// Constant TLS_SERVER_FINISHED for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_SERVER_FINISHED = new HookKey("TLS_SERVER_FINISHED");
+
+        /// <summary>
+        /// Constant TLS_SERVER_HELLO for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_SERVER_HELLO = new HookKey("TLS_SERVER_HELLO");
+
+        /// <summary>
+        /// Constant TLS_SERVER_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey TLS_SERVER_STARTED = new HookKey("TLS_SERVER_STARTED");
+
+        /// <summary>
+        /// Constant UDP_ALL for HookKey
+        /// </summary>
+        public static readonly HookKey UDP_ALL = new HookKey("UDP_ALL");
+
+        /// <summary>
+        /// Constant UDP_FLOW_START for HookKey
+        /// </summary>
+        public static readonly HookKey UDP_FLOW_START = new HookKey("UDP_FLOW_START");
+
+        /// <summary>
+        /// Constant UDP_PRE_FLOW for HookKey
+        /// </summary>
+        public static readonly HookKey UDP_PRE_FLOW = new HookKey("UDP_PRE_FLOW");
+
+        /// <summary>
+        /// Constant UDP_PRE_STREAM for HookKey
+        /// </summary>
+        public static readonly HookKey UDP_PRE_STREAM = new HookKey("UDP_PRE_STREAM");
+
+        /// <summary>
+        /// Constant WEBSOCKET_REQUEST_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey WEBSOCKET_REQUEST_COMPLETE = new HookKey("WEBSOCKET_REQUEST_COMPLETE");
+
+        /// <summary>
+        /// Constant WEBSOCKET_REQUEST_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey WEBSOCKET_REQUEST_STARTED = new HookKey("WEBSOCKET_REQUEST_STARTED");
+
+        /// <summary>
+        /// Constant WEBSOCKET_RESPONSE_COMPLETE for HookKey
+        /// </summary>
+        public static readonly HookKey WEBSOCKET_RESPONSE_COMPLETE = new HookKey("WEBSOCKET_RESPONSE_COMPLETE");
+
+        /// <summary>
+        /// Constant WEBSOCKET_RESPONSE_STARTED for HookKey
+        /// </summary>
+        public static readonly HookKey WEBSOCKET_RESPONSE_STARTED = new HookKey("WEBSOCKET_RESPONSE_STARTED");
+
+        /// <summary>
+        /// Constructs a custom HookKey for a value not among the defined constants.
+        /// </summary>
+        public HookKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HookKey FindValue(string value)
+        {
+            return FindValue<HookKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HookKey(string value)
         {
             return FindValue(value);
         }
@@ -952,6 +2449,98 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type PolicyDefaultAction.
+    /// </summary>
+    public class PolicyDefaultAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPT for PolicyDefaultAction
+        /// </summary>
+        public static readonly PolicyDefaultAction ACCEPT = new PolicyDefaultAction("ACCEPT");
+
+        /// <summary>
+        /// Constant ALERT for PolicyDefaultAction
+        /// </summary>
+        public static readonly PolicyDefaultAction ALERT = new PolicyDefaultAction("ALERT");
+
+        /// <summary>
+        /// Constant DROP for PolicyDefaultAction
+        /// </summary>
+        public static readonly PolicyDefaultAction DROP = new PolicyDefaultAction("DROP");
+
+        /// <summary>
+        /// Constant REJECT for PolicyDefaultAction
+        /// </summary>
+        public static readonly PolicyDefaultAction REJECT = new PolicyDefaultAction("REJECT");
+
+        /// <summary>
+        /// Constructs a custom PolicyDefaultAction for a value not among the defined constants.
+        /// </summary>
+        public PolicyDefaultAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyDefaultAction FindValue(string value)
+        {
+            return FindValue<PolicyDefaultAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyDefaultAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PolicyMode.
+    /// </summary>
+    public class PolicyMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENFORCE for PolicyMode
+        /// </summary>
+        public static readonly PolicyMode ENFORCE = new PolicyMode("ENFORCE");
+
+        /// <summary>
+        /// Constant MONITOR for PolicyMode
+        /// </summary>
+        public static readonly PolicyMode MONITOR = new PolicyMode("MONITOR");
+
+        /// <summary>
+        /// Constructs a custom PolicyMode for a value not among the defined constants.
+        /// </summary>
+        public PolicyMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyMode FindValue(string value)
+        {
+            return FindValue<PolicyMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ProxyModifyState.
     /// </summary>
     public class ProxyModifyState : ConstantClass
@@ -992,52 +2581,6 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProxyModifyState(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-    /// <summary>
-    /// Constants used for properties of type ProxyRulePhaseAction.
-    /// </summary>
-    public class ProxyRulePhaseAction : ConstantClass
-    {
-        /// <summary>
-        /// Constant ALERT for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction ALERT = new ProxyRulePhaseAction("ALERT");
-
-        /// <summary>
-        /// Constant ALLOW for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction ALLOW = new ProxyRulePhaseAction("ALLOW");
-
-        /// <summary>
-        /// Constant DENY for ProxyRulePhaseAction
-        /// </summary>
-        public static readonly ProxyRulePhaseAction DENY = new ProxyRulePhaseAction("DENY");
-
-        /// <summary>
-        /// Constructs a custom ProxyRulePhaseAction for a value not among the defined constants.
-        /// </summary>
-        public ProxyRulePhaseAction(string value) : base(value) { }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static ProxyRulePhaseAction FindValue(string value)
-        {
-            return FindValue<ProxyRulePhaseAction>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator ProxyRulePhaseAction(string value)
         {
             return FindValue(value);
         }
@@ -1248,6 +2791,57 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SecurityGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecurityGroup = new ResourceType("SecurityGroup");
+
+        /// <summary>
+        /// Constant Subnet for ResourceType
+        /// </summary>
+        public static readonly ResourceType Subnet = new ResourceType("Subnet");
+
+        /// <summary>
+        /// Constant TGWAttachment for ResourceType
+        /// </summary>
+        public static readonly ResourceType TGWAttachment = new ResourceType("TGWAttachment");
+
+        /// <summary>
+        /// Constant VPC for ResourceType
+        /// </summary>
+        public static readonly ResourceType VPC = new ResourceType("VPC");
+
+        /// <summary>
+        /// Constructs a custom ResourceType for a value not among the defined constants.
+        /// </summary>
+        public ResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RevocationCheckAction.
     /// </summary>
     public class RevocationCheckAction : ConstantClass
@@ -1340,56 +2934,20 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
-    /// Constants used for properties of type RuleGroupRequestPhase.
-    /// </summary>
-    public class RuleGroupRequestPhase : ConstantClass
-    {
-        /// <summary>
-        /// Constant POST_RES for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase POST_RES = new RuleGroupRequestPhase("POST_RES");
-
-        /// <summary>
-        /// Constant PRE_DNS for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase PRE_DNS = new RuleGroupRequestPhase("PRE_DNS");
-
-        /// <summary>
-        /// Constant PRE_REQ for RuleGroupRequestPhase
-        /// </summary>
-        public static readonly RuleGroupRequestPhase PRE_REQ = new RuleGroupRequestPhase("PRE_REQ");
-
-        /// <summary>
-        /// Constructs a custom RuleGroupRequestPhase for a value not among the defined constants.
-        /// </summary>
-        public RuleGroupRequestPhase(string value) : base(value) { }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static RuleGroupRequestPhase FindValue(string value)
-        {
-            return FindValue<RuleGroupRequestPhase>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator RuleGroupRequestPhase(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-    /// <summary>
     /// Constants used for properties of type RuleGroupType.
     /// </summary>
     public class RuleGroupType : ConstantClass
     {
+        /// <summary>
+        /// Constant FIREWALL for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType FIREWALL = new RuleGroupType("FIREWALL");
+
+        /// <summary>
+        /// Constant IPS for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType IPS = new RuleGroupType("IPS");
+
         /// <summary>
         /// Constant STATEFUL for RuleGroupType
         /// </summary>
@@ -1467,6 +3025,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleOutputFormat.
+    /// </summary>
+    public class RuleOutputFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant FIREWALL_RULES for RuleOutputFormat
+        /// </summary>
+        public static readonly RuleOutputFormat FIREWALL_RULES = new RuleOutputFormat("FIREWALL_RULES");
+
+        /// <summary>
+        /// Constant RULES_STRING for RuleOutputFormat
+        /// </summary>
+        public static readonly RuleOutputFormat RULES_STRING = new RuleOutputFormat("RULES_STRING");
+
+        /// <summary>
+        /// Constructs a custom RuleOutputFormat for a value not among the defined constants.
+        /// </summary>
+        public RuleOutputFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleOutputFormat FindValue(string value)
+        {
+            return FindValue<RuleOutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleOutputFormat(string value)
         {
             return FindValue(value);
         }
@@ -1747,6 +3346,47 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type StreamExceptionPolicyV2.
+    /// </summary>
+    public class StreamExceptionPolicyV2 : ConstantClass
+    {
+        /// <summary>
+        /// Constant DROP for StreamExceptionPolicyV2
+        /// </summary>
+        public static readonly StreamExceptionPolicyV2 DROP = new StreamExceptionPolicyV2("DROP");
+
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicyV2
+        /// </summary>
+        public static readonly StreamExceptionPolicyV2 REJECT = new StreamExceptionPolicyV2("REJECT");
+
+        /// <summary>
+        /// Constructs a custom StreamExceptionPolicyV2 for a value not among the defined constants.
+        /// </summary>
+        public StreamExceptionPolicyV2(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamExceptionPolicyV2 FindValue(string value)
+        {
+            return FindValue<StreamExceptionPolicyV2>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamExceptionPolicyV2(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SubscriptionStatus.
     /// </summary>
     public class SubscriptionStatus : ConstantClass
@@ -1899,6 +3539,52 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TCPFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TLSInspectionScopeDeploymentMode.
+    /// </summary>
+    public class TLSInspectionScopeDeploymentMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode ALL = new TLSInspectionScopeDeploymentMode("ALL");
+
+        /// <summary>
+        /// Constant EXPLICIT_PROXY_ONLY for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode EXPLICIT_PROXY_ONLY = new TLSInspectionScopeDeploymentMode("EXPLICIT_PROXY_ONLY");
+
+        /// <summary>
+        /// Constant TRANSPARENT_FIREWALL_ONLY for TLSInspectionScopeDeploymentMode
+        /// </summary>
+        public static readonly TLSInspectionScopeDeploymentMode TRANSPARENT_FIREWALL_ONLY = new TLSInspectionScopeDeploymentMode("TRANSPARENT_FIREWALL_ONLY");
+
+        /// <summary>
+        /// Constructs a custom TLSInspectionScopeDeploymentMode for a value not among the defined constants.
+        /// </summary>
+        public TLSInspectionScopeDeploymentMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TLSInspectionScopeDeploymentMode FindValue(string value)
+        {
+            return FindValue<TLSInspectionScopeDeploymentMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TLSInspectionScopeDeploymentMode(string value)
         {
             return FindValue(value);
         }
@@ -2062,6 +3748,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TransparentFilteringNatScope.
+    /// </summary>
+    public class TransparentFilteringNatScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant NAT_ALL for TransparentFilteringNatScope
+        /// </summary>
+        public static readonly TransparentFilteringNatScope NAT_ALL = new TransparentFilteringNatScope("NAT_ALL");
+
+        /// <summary>
+        /// Constant NAT_NONE for TransparentFilteringNatScope
+        /// </summary>
+        public static readonly TransparentFilteringNatScope NAT_NONE = new TransparentFilteringNatScope("NAT_NONE");
+
+        /// <summary>
+        /// Constructs a custom TransparentFilteringNatScope for a value not among the defined constants.
+        /// </summary>
+        public TransparentFilteringNatScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransparentFilteringNatScope FindValue(string value)
+        {
+            return FindValue<TransparentFilteringNatScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransparentFilteringNatScope(string value)
         {
             return FindValue(value);
         }

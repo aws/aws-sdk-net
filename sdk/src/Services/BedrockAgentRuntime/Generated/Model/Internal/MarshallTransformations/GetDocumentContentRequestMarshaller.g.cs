@@ -86,6 +86,11 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetMediaId())
+            {
+                context.Writer.WritePropertyName("mediaId");
+                context.Writer.WriteStringValue(publicRequest.MediaId);
+            }
             if (publicRequest.IsSetOutputFormat())
             {
                 context.Writer.WritePropertyName("outputFormat");

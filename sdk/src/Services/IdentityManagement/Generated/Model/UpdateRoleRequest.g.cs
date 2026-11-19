@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRole operation. Updates the description
-    /// or maximum session duration setting of a role.
+    /// Container for the parameters to the UpdateRole operation. Updates the description,
+    /// maximum session duration, or maximum sign-in session duration of a role. You cannot
+    /// change the maximum sign-in session duration of a service-linked role.
     /// </summary>
     public partial class UpdateRoleRequest : AmazonIdentityManagementServiceRequest
     {
@@ -82,6 +83,66 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the MaxSessionDuration property is set.
         /// </summary>
         internal bool IsSetMaxSessionDuration() => this.MaxSessionDuration.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxSigninSessionDuration. 
+        /// <para>
+        /// The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users
+        /// who sign in with the specified role. This setting can have a value from 1 hour (3600
+        /// seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently
+        /// configured for the role. This setting is independent of <c>MaxSessionDuration</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit both this parameter and <c>ResetMaxSigninSessionDuration</c>, the current
+        /// setting is unchanged. You cannot specify this parameter and set <c>ResetMaxSigninSessionDuration</c>
+        /// to <c>true</c> in the same request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Changes to this setting apply to new sign-in sessions. Sessions that are already established
+        /// are not affected.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot set this value on a service-linked role.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 7776000)]
+        public int? MaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetMaxSigninSessionDuration() => this.MaxSigninSessionDuration.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ResetMaxSigninSessionDuration. 
+        /// <para>
+        /// Specifies whether to clear the role's maximum sign-in session duration. Set this value
+        /// to <c>true</c> to return the setting to its unset state, so that the existing sign-in
+        /// session behavior applies. When the setting is unset, the role's <c>MaxSigninSessionDuration</c>
+        /// is omitted from responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this value to <c>false</c> or omit it, the current setting is not cleared.
+        /// You cannot set this value to <c>true</c> and specify <c>MaxSigninSessionDuration</c>
+        /// in the same request. Clearing a setting that is already unset has no effect.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot reset this value on a service-linked role.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? ResetMaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResetMaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetResetMaxSigninSessionDuration() => this.ResetMaxSigninSessionDuration.HasValue;
 
         /// <summary>
         /// Gets and sets the property RoleName. 

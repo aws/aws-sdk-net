@@ -33,11 +33,11 @@ namespace Amazon.Billing.Model
     /// Container for the parameters to the UpdateBillingPreferences operation. Updates billing
     /// preferences for the specified feature. Each feature targets a distinct billing capability
     /// and has its own set of supported keys. The action sets the value for each provided
-    /// key; keys not present in the request are unchanged. <para> Sharing keys (<c>RI_SHARING</c>,
-    /// <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>, and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>)
-    /// may only be set by the management account of a consolidated billing family. The <c>credit/{creditId}/status</c>
-    /// key may be set by member accounts for credits they own, or by the management account
-    /// for any credit in the family. </para>
+    /// key; keys not present in the request are unchanged. <para> To set sharing keys (<c>RI_SHARING</c>,
+    /// <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>, <c>BENEFIT_LEVEL_SHARING</c>,
+    /// and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>), you must use the management
+    /// account of a consolidated billing family. To set the <c>credit/{creditId}/status</c>
+    /// key, you must own the credit or use the management account of its family. </para>
     /// </summary>
     public partial class UpdateBillingPreferencesRequest : AmazonBillingRequest
     {
@@ -47,6 +47,63 @@ namespace Amazon.Billing.Model
         /// Key/value pairs to apply. All keys in a single request must be valid for the specified
         /// <c>feature</c> and must not be duplicated. For <c>CREDIT_PREFERENCE_OPTIONS</c>, all
         /// keys must reference the same <c>creditId</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>BENEFIT_LEVEL_SHARING</c>, all keys must reference the same Reserved Instance
+        /// or Savings Plan. To share it with the accounts in one Cost Category rule, send these
+        /// three keys with the value <c>ENABLED</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// With <c>prioritized</c>, any benefit that the rule's accounts don't use goes to the
+        /// rest of your consolidated billing family, following your family sharing settings.
+        /// With <c>restricted</c>, only the owner and the rule's accounts receive it. The Cost
+        /// Category must belong to your account. To stop sharing, send the same three keys with
+        /// the value <c>DISABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>RI_SHARING</c> and <c>CREDIT_SHARING</c>, you can share benefits by account
+        /// group. Each rule in a Cost Category is one group. Send exactly one of these group
+        /// keys with the value <c>ENABLED</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>open-sharing</c> - Share across the whole consolidated billing family, with no
+        /// groups.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>costcategory-prioritized/{costCategoryArn}</c> - Share within each group first,
+        /// then with the rest of the family.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>costcategory-restricted/{costCategoryArn}</c> - An account in a group shares only
+        /// with accounts in the same group.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <c>RI_SHARING</c>, the <c>costcategory-</c> keys use a Cost Category that supports
+        /// the <c>billing:rispgroupsharing</c> resource type. To use a Cost Category that supports
+        /// the <c>billing:benefitgroupsharing</c> resource type, use the <c>benefitgroup-prioritized/</c>
+        /// or <c>benefitgroup-restricted/</c> prefix instead. For <c>CREDIT_SHARING</c>, the
+        /// Cost Category must support the <c>billing:benefitgroupsharing</c> resource type. The
+        /// Cost Category must belong to your account. <c>GetBillingPreferences</c> returns the
+        /// group key that is in effect.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -67,9 +124,9 @@ namespace Amazon.Billing.Model
         /// Gets and sets the property Feature. 
         /// <para>
         /// The feature to update. Valid values: <c>BILLING_ALERTS</c>, <c>RI_SHARING</c>, <c>CREDIT_SHARING</c>,
-        /// <c>CREDIT_LEVEL_SHARING</c>, <c>CREDIT_PREFERENCE_OPTIONS</c>. The history features
-        /// (<c>RI_SHARING_HISTORY</c> and <c>CREDIT_SHARING_HISTORY</c>) are read-only and cannot
-        /// be updated.
+        /// <c>CREDIT_LEVEL_SHARING</c>, <c>CREDIT_PREFERENCE_OPTIONS</c>, <c>BENEFIT_LEVEL_SHARING</c>.
+        /// The history features (<c>RI_SHARING_HISTORY</c> and <c>CREDIT_SHARING_HISTORY</c>)
+        /// are read-only and cannot be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

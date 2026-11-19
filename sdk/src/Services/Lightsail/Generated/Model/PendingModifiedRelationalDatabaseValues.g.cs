@@ -66,6 +66,7 @@ namespace Amazon.Lightsail.Model
         /// The password for the master user of the database.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string MasterUserPassword { get; set; }
 
         /// <summary>

@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -71,11 +72,10 @@ namespace Amazon.Runtime.Internal.Util
         {
             var newContents = ToString();
             var path = Path.GetDirectoryName(FilePath);
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
+            FilePermissionHelper.CreateDirectory(path);
 
             // open the file with exclusive access
-            using (var fileStream = new FileStream(FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
+            using (var fileStream = FilePermissionHelper.OpenFile(FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
             {
                 // get a current copy of the file
                 string currentContents = null;

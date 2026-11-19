@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,68 +55,74 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateMultiRegionClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.UpdateMultiRegionCluster";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/AmazonMemoryDB/operation/UpdateMultiRegionCluster";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WriteTextString("EngineVersion");
+                    context.Writer.WriteTextString(publicRequest.EngineVersion);
+                }
+                if (publicRequest.IsSetMultiRegionClusterName())
+                {
+                    context.Writer.WriteTextString("MultiRegionClusterName");
+                    context.Writer.WriteTextString(publicRequest.MultiRegionClusterName);
+                }
+                if (publicRequest.IsSetMultiRegionParameterGroupName())
+                {
+                    context.Writer.WriteTextString("MultiRegionParameterGroupName");
+                    context.Writer.WriteTextString(publicRequest.MultiRegionParameterGroupName);
+                }
+                if (publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WriteTextString("NodeType");
+                    context.Writer.WriteTextString(publicRequest.NodeType);
+                }
+                if (publicRequest.IsSetShardConfiguration())
+                {
+                    context.Writer.WriteTextString("ShardConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ShardConfigurationRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ShardConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetUpdateStrategy())
+                {
+                    context.Writer.WriteTextString("UpdateStrategy");
+                    context.Writer.WriteTextString(publicRequest.UpdateStrategy);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
             }
-            if (publicRequest.IsSetEngineVersion())
+            finally
             {
-                context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.WriteStringValue(publicRequest.EngineVersion);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetMultiRegionClusterName())
-            {
-                context.Writer.WritePropertyName("MultiRegionClusterName");
-                context.Writer.WriteStringValue(publicRequest.MultiRegionClusterName);
-            }
-            if (publicRequest.IsSetMultiRegionParameterGroupName())
-            {
-                context.Writer.WritePropertyName("MultiRegionParameterGroupName");
-                context.Writer.WriteStringValue(publicRequest.MultiRegionParameterGroupName);
-            }
-            if (publicRequest.IsSetNodeType())
-            {
-                context.Writer.WritePropertyName("NodeType");
-                context.Writer.WriteStringValue(publicRequest.NodeType);
-            }
-            if (publicRequest.IsSetShardConfiguration())
-            {
-                context.Writer.WritePropertyName("ShardConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ShardConfigurationRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ShardConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetUpdateStrategy())
-            {
-                context.Writer.WritePropertyName("UpdateStrategy");
-                context.Writer.WriteStringValue(publicRequest.UpdateStrategy);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

@@ -1381,6 +1381,47 @@ namespace Amazon.BedrockAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type FieldType.
+    /// </summary>
+    public class FieldType : ConstantClass
+    {
+        /// <summary>
+        /// Constant STRING for FieldType
+        /// </summary>
+        public static readonly FieldType STRING = new FieldType("STRING");
+
+        /// <summary>
+        /// Constant STRING_LIST for FieldType
+        /// </summary>
+        public static readonly FieldType STRING_LIST = new FieldType("STRING_LIST");
+
+        /// <summary>
+        /// Constructs a custom FieldType for a value not among the defined constants.
+        /// </summary>
+        public FieldType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldType FindValue(string value)
+        {
+            return FindValue<FieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FlowConnectionType.
     /// </summary>
     public class FlowConnectionType : ConstantClass
@@ -3492,6 +3533,47 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SalesforceAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchableStatus.
+    /// </summary>
+    public class SearchableStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for SearchableStatus
+        /// </summary>
+        public static readonly SearchableStatus DISABLED = new SearchableStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for SearchableStatus
+        /// </summary>
+        public static readonly SearchableStatus ENABLED = new SearchableStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom SearchableStatus for a value not among the defined constants.
+        /// </summary>
+        public SearchableStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchableStatus FindValue(string value)
+        {
+            return FindValue<SearchableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchableStatus(string value)
         {
             return FindValue(value);
         }

@@ -80,6 +80,16 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Marker");
                 context.Writer.WriteStringValue(publicRequest.Marker);
             }
+            if (publicRequest.IsSetResourceOwners())
+            {
+                context.Writer.WritePropertyName("ResourceOwners");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestResourceOwnersListValue in publicRequest.ResourceOwners)
+                {
+                    context.Writer.WriteStringValue(publicRequestResourceOwnersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
 
             writer.WriteEndObject();
             writer.Flush();

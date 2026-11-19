@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReplicaConfigurationRequest Marshaller
     /// </summary>
-    public partial class ReplicaConfigurationRequestMarshaller : IRequestMarshaller<ReplicaConfigurationRequest, JsonMarshallerContext>
+    public partial class ReplicaConfigurationRequestMarshaller : IRequestMarshaller<ReplicaConfigurationRequest, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ReplicaConfigurationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ReplicaConfigurationRequest requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetReplicaCount())
             {
-                context.Writer.WritePropertyName("ReplicaCount");
-                context.Writer.WriteNumberValue(requestObject.ReplicaCount.Value);
+                context.Writer.WriteTextString("ReplicaCount");
+                context.Writer.WriteInt32(requestObject.ReplicaCount.Value);
             }
         }
 

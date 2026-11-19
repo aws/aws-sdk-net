@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// TCPFlagField Marshaller
     /// </summary>
-    public partial class TCPFlagFieldMarshaller : IRequestMarshaller<TCPFlagField, JsonMarshallerContext>
+    public partial class TCPFlagFieldMarshaller : IRequestMarshaller<TCPFlagField, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TCPFlagField requestObject, JsonMarshallerContext context)
+        public void Marshall(TCPFlagField requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFlags())
             {
-                context.Writer.WritePropertyName("Flags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Flags");
+                context.Writer.WriteStartArray(requestObject.Flags.Count);
                 foreach (var requestObjectFlagsListValue in requestObject.Flags)
                 {
-                    context.Writer.WriteStringValue(requestObjectFlagsListValue);
+                    context.Writer.WriteTextString(requestObjectFlagsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetMasks())
             {
-                context.Writer.WritePropertyName("Masks");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Masks");
+                context.Writer.WriteStartArray(requestObject.Masks.Count);
                 foreach (var requestObjectMasksListValue in requestObject.Masks)
                 {
-                    context.Writer.WriteStringValue(requestObjectMasksListValue);
+                    context.Writer.WriteTextString(requestObjectMasksListValue);
                 }
                 context.Writer.WriteEndArray();
             }

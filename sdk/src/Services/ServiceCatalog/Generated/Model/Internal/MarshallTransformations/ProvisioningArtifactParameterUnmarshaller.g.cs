@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProvisioningArtifactParameter Object
     /// </summary>
-    public partial class ProvisioningArtifactParameterUnmarshaller : IJsonUnmarshaller<ProvisioningArtifactParameter, JsonUnmarshallerContext>
+    public partial class ProvisioningArtifactParameterUnmarshaller : ICborUnmarshaller<ProvisioningArtifactParameter, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProvisioningArtifactParameter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProvisioningArtifactParameter Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ProvisioningArtifactParameter();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DefaultValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DefaultValue":
+                        context.AddPathSegment("DefaultValue");
+                        unmarshalledObject.DefaultValue = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("IsNoEcho", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNoEcho = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ParameterConstraints", targetDepth, ref reader))
-                {
-                    var unmarshaller = ParameterConstraintsUnmarshaller.Instance;
-                    unmarshalledObject.ParameterConstraints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IsNoEcho":
+                        context.AddPathSegment("IsNoEcho");
+                        unmarshalledObject.IsNoEcho = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ParameterKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParameterKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ParameterConstraints":
+                        context.AddPathSegment("ParameterConstraints");
+                        unmarshalledObject.ParameterConstraints = ParameterConstraintsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ParameterType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParameterType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ParameterKey":
+                        context.AddPathSegment("ParameterKey");
+                        unmarshalledObject.ParameterKey = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ParameterType":
+                        context.AddPathSegment("ParameterType");
+                        unmarshalledObject.ParameterType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

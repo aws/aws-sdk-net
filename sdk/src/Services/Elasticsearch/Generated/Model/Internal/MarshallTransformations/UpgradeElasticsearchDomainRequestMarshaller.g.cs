@@ -68,6 +68,16 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetDeploymentStrategyOptions())
+            {
+                context.Writer.WritePropertyName("DeploymentStrategyOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentStrategyOverrideOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentStrategyOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

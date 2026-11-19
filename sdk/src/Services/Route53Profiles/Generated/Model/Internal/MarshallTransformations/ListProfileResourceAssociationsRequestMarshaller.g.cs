@@ -67,6 +67,11 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             }
 
+            if (publicRequest.IsSetResourceArn())
+            {
+                request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
+            }
+
             if (publicRequest.IsSetResourceType())
             {
                 request.Parameters.Add("resourceType", StringUtils.FromString(publicRequest.ResourceType));

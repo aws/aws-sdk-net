@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActionTypePermissions Marshaller
     /// </summary>
-    public partial class ActionTypePermissionsMarshaller : IRequestMarshaller<ActionTypePermissions, JsonMarshallerContext>
+    public partial class ActionTypePermissionsMarshaller : IRequestMarshaller<ActionTypePermissions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActionTypePermissions requestObject, JsonMarshallerContext context)
+        public void Marshall(ActionTypePermissions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAllowedAccounts())
             {
-                context.Writer.WritePropertyName("allowedAccounts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("allowedAccounts");
+                context.Writer.WriteStartArray(requestObject.AllowedAccounts.Count);
                 foreach (var requestObjectAllowedAccountsListValue in requestObject.AllowedAccounts)
                 {
-                    context.Writer.WriteStringValue(requestObjectAllowedAccountsListValue);
+                    context.Writer.WriteTextString(requestObjectAllowedAccountsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

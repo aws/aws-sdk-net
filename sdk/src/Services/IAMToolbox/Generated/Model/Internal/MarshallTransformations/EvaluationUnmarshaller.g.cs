@@ -60,6 +60,13 @@ namespace Amazon.IAMToolbox.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("checks", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Check, CheckUnmarshaller>(CheckUnmarshaller.Instance);
+                    unmarshalledObject.Checks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("context", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);

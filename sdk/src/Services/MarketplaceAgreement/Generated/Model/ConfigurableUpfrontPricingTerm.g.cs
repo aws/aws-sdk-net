@@ -98,7 +98,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Category of selector.
+        /// Category of the term.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]

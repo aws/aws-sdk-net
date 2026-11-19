@@ -83,6 +83,11 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetCoreNetworkEndpointId())
+            {
+                context.Writer.WritePropertyName("coreNetworkEndpointId");
+                context.Writer.WriteStringValue(publicRequest.CoreNetworkEndpointId);
+            }
             if (publicRequest.IsSetDnsViewId())
             {
                 context.Writer.WritePropertyName("dnsViewId");
@@ -102,6 +107,11 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("protocol");
                 context.Writer.WriteStringValue(publicRequest.Protocol);
+            }
+            if (publicRequest.IsSetSegment())
+            {
+                context.Writer.WritePropertyName("segment");
+                context.Writer.WriteStringValue(publicRequest.Segment);
             }
             if (publicRequest.IsSetTags())
             {

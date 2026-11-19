@@ -148,6 +148,35 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAutoVerifiedAttributes() => this.AutoVerifiedAttributes != null && (this.AutoVerifiedAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property DcrConfiguration. 
+        /// <para>
+        /// The dynamic client registration configuration for the user pool. With dynamic client
+        /// registration, applications can register their own app clients at runtime through the
+        /// registration endpoint of your user pool domain. To activate this setting, your user
+        /// pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, Amazon Cognito keeps the existing configuration. If you
+        /// include it, Amazon Cognito replaces the existing configuration with the one that you
+        /// provide. Members that you omit revert to their default values, and an omitted <c>EnableStatus</c>
+        /// turns dynamic client registration on.
+        /// </para>
+        ///  
+        /// <para>
+        /// To change the feature plan of the user pool to Lite, you must also set <c>EnableStatus</c>
+        /// to <c>Disabled</c>.
+        /// </para>
+        /// </summary>
+        public DcrConfigurationType DcrConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DcrConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDcrConfiguration() => this.DcrConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// When active, <c>DeletionProtection</c> prevents accidental deletion of your user pool.

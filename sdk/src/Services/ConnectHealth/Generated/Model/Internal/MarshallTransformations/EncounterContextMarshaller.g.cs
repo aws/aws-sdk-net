@@ -45,6 +45,17 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetMedicalCodingContext())
+            {
+                context.Writer.WritePropertyName("medicalCodingContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MedicalCodingContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.MedicalCodingContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetUnstructuredContext())
             {
                 context.Writer.WritePropertyName("unstructuredContext");

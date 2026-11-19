@@ -1573,7 +1573,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             {
                 new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue.", exception.Message);
         }
 
         [TestMethod]
@@ -1944,7 +1944,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             {
                 new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue.", exception.Message);
         }
 
         [TestMethod]
@@ -2202,7 +2202,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             {
                 new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue.", exception.Message);
         }
 
         [TestMethod]
@@ -3355,6 +3355,62 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         }
 
         [TestMethod]
+        [Description("ResourceARN with queue type: basic control endpoint")]
+        public void ResourceARN_with_queue_type_basic_control_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type: FIPS")]
+        public void ResourceARN_with_queue_type_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type: DualStack")]
+        public void ResourceARN_with_queue_type_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with channel type: basic control endpoint")]
+        public void ResourceARN_with_channel_type_basic_control_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
         [Description("Account Id with account id endpoint mode disabled")]
         public void Account_Id_with_account_id_endpoint_mode_disabled_Test()
         {
@@ -3975,6 +4031,931 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: basic endpoint resolution with control operation type")]
+        public void QueueARN_basic_endpoint_resolution_with_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: endpoint with FIPS")]
+        public void QueueARN_endpoint_with_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: endpoint with DualStack")]
+        public void QueueARN_endpoint_with_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: endpoint with FIPS and DualStack")]
+        public void QueueARN_endpoint_with_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: data operation type")]
+        public void QueueARN_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123def456.data-kinesis-queues.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: data operation type with FIPS")]
+        public void QueueARN_data_operation_type_with_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/abc123def456";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123def456.data-kinesis-queues-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: data operation type with DualStack")]
+        public void QueueARN_data_operation_type_with_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "data";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123def456.data-kinesis-queues.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: VPCE endpoint override is respected as-is")]
+        public void QueueARN_VPCE_endpoint_override_is_respected_asis_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            parameters["Endpoint"] = "https://my-vpce-xyz.vpce.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my-vpce-xyz.vpce.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Invalid QueueARN: wrong arn type")]
+        public void Invalid_QueueARN_wrong_arn_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:stream/test-stream";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: QueueARN only supports `queue` ARN types, found: `stream`.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("Invalid QueueARN: missing queue id")]
+        public void Invalid_QueueARN_missing_queue_id_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing queue id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("Invalid QueueARN: non-kinesis service")]
+        public void Invalid_QueueARN_nonkinesis_service_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:sqs:us-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: sqs.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: basic endpoint with AccountId")]
+        public void Queue_AccountId_basic_endpoint_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-queues.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: endpoint with FIPS")]
+        public void Queue_AccountId_endpoint_with_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-queues-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: endpoint with DualStack")]
+        public void Queue_AccountId_endpoint_with_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-queues.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: endpoint with FIPS and DualStack")]
+        public void Queue_AccountId_endpoint_with_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-queues-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: regular endpoint override is respected as-is")]
+        public void QueueARN_regular_endpoint_override_is_respected_asis_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            parameters["Endpoint"] = "https://kinesis-queues.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: disabled mode falls back to regional queue endpoint")]
+        public void Queue_AccountId_disabled_mode_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: disabled mode with FIPS falls back to regional queue FIPS endpoint")]
+        public void Queue_AccountId_disabled_mode_with_FIPS_falls_back_to_regional_queue_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: disabled mode with DualStack falls back to regional queue DualStack endpoint")]
+        public void Queue_AccountId_disabled_mode_with_DualStack_falls_back_to_regional_queue_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: disabled mode with FIPS and DualStack falls back to regional queue FIPS DualStack endpoint")]
+        public void Queue_AccountId_disabled_mode_with_FIPS_and_DualStack_falls_back_to_regional_queue_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type: missing queue id errors")]
+        public void ResourceARN_with_queue_type_missing_queue_id_errors_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing queue id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with channel type: missing channel id errors")]
+        public void ResourceARN_with_channel_type_missing_channel_id_errors_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:channel";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with unsupported type: consumer type is rejected")]
+        public void ResourceARN_with_unsupported_type_consumer_type_is_rejected_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:consumer/test-consumer";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `consumer`. Expected: stream, channel, or queue.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("QueueARN and StreamARN both set: StreamARN wins by rule ordering today (ResourceType is not yet authoritative on the stream path; revisit if a both-ARN API is introduced)")]
+        public void QueueARN_and_StreamARN_both_set_StreamARN_wins_by_rule_ordering_today_ResourceType_is_not_yet_authoritative_on_the_stream_path_revisit_if_a_bothARN_API_is_introduced_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN set but ResourceType absent: errors instead of misrouting to the default kinesis endpoint")]
+        public void QueueARN_set_but_ResourceType_absent_errors_instead_of_misrouting_to_the_default_kinesis_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: ResourceType must be ""queue"" when QueueARN is set.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("QueueARN set but ResourceType is not queue:  errors instead of misrouting to the default kinesis endpoint")]
+        public void QueueARN_set_but_ResourceType_is_not_queue_errors_instead_of_misrouting_to_the_default_kinesis_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "stream";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: ResourceType must be ""queue"" when QueueARN is set.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("AccountId without ResourceType: non-queue account endpoint is unchanged (no -queues suffix)")]
+        public void AccountId_without_ResourceType_nonqueue_account_endpoint_is_unchanged_no_queues_suffix_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId: required mode with no AccountId errors")]
+        public void Queue_AccountId_required_mode_with_no_AccountId_errors_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "required";
+            parameters["ResourceType"] = "queue";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: OperationType not set errors")]
+        public void QueueARN_OperationType_not_set_errors_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: aws-iso region falls back to regional queue endpoint")]
+        public void QueueARN_awsiso_region_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: aws-iso-b region falls back to regional queue endpoint")]
+        public void QueueARN_awsisob_region_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-iso-b:kinesis:us-isob-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId in aws-iso: disabled mode falls back to regional queue endpoint")]
+        public void Queue_AccountId_in_awsiso_disabled_mode_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type in aws-iso: falls back to regional queue endpoint")]
+        public void ResourceARN_with_queue_type_in_awsiso_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type in aws-iso-b: falls back to regional queue endpoint")]
+        public void ResourceARN_with_queue_type_in_awsisob_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso-b:kinesis:us-isob-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId in aws-iso: preferred mode falls back to regional queue endpoint")]
+        public void Queue_AccountId_in_awsiso_preferred_mode_falls_back_to_regional_queue_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: aws-iso region with FIPS falls back to regional queue FIPS endpoint")]
+        public void QueueARN_awsiso_region_with_FIPS_falls_back_to_regional_queue_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type in aws-iso with FIPS: falls back to regional queue FIPS endpoint")]
+        public void ResourceARN_with_queue_type_in_awsiso_with_FIPS_falls_back_to_regional_queue_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: aws-iso region with DualStack falls back to regional queue DualStack endpoint")]
+        public void QueueARN_awsiso_region_with_DualStack_falls_back_to_regional_queue_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: aws-iso region with FIPS and DualStack falls back to regional queue FIPS DualStack endpoint")]
+        public void QueueARN_awsiso_region_with_FIPS_and_DualStack_falls_back_to_regional_queue_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type in aws-iso with DualStack: falls back to regional queue DualStack endpoint")]
+        public void ResourceARN_with_queue_type_in_awsiso_with_DualStack_falls_back_to_regional_queue_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type in aws-iso with FIPS and DualStack: falls back to regional queue FIPS DualStack endpoint")]
+        public void ResourceARN_with_queue_type_in_awsiso_with_FIPS_and_DualStack_falls_back_to_regional_queue_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId in aws-iso: preferred mode with FIPS falls back to regional queue FIPS endpoint")]
+        public void Queue_AccountId_in_awsiso_preferred_mode_with_FIPS_falls_back_to_regional_queue_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("Queue AccountId in aws-iso: disabled mode with FIPS falls back to regional queue FIPS endpoint")]
+        public void Queue_AccountId_in_awsiso_disabled_mode_with_FIPS_falls_back_to_regional_queue_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            parameters["ResourceType"] = "queue";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with channel type in aws-iso: falls back to default kinesis endpoint")]
+        public void ResourceARN_with_channel_type_in_awsiso_falls_back_to_default_kinesis_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with channel type in aws-iso with FIPS: falls back to default kinesis FIPS endpoint")]
+        public void ResourceARN_with_channel_type_in_awsiso_with_FIPS_falls_back_to_default_kinesis_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ChannelARN in aws-iso: falls back to default kinesis endpoint")]
+        public void ChannelARN_in_awsiso_falls_back_to_default_kinesis_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ChannelARN in aws-iso with FIPS: falls back to default kinesis FIPS endpoint")]
+        public void ChannelARN_in_awsiso_with_FIPS_falls_back_to_default_kinesis_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: non-kinesis service should error")]
+        public void ResourceARN_queue_in_awsiso_nonkinesis_service_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:sqs:us-iso-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: sqs.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: partition mismatch should error")]
+        public void ResourceARN_queue_in_awsiso_partition_mismatch_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-iso.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: missing queue id should error")]
+        public void ResourceARN_queue_in_awsiso_missing_queue_id_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing queue id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: invalid account id should error")]
+        public void ResourceARN_queue_in_awsiso_invalid_account_id_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:invalid..account:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: OperationType not set should error")]
+        public void ResourceARN_queue_in_awsiso_OperationType_not_set_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN queue in aws-iso: invalid queue id should error")]
+        public void ResourceARN_queue_in_awsiso_invalid_queue_id_should_error_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/invalid.queue.id";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid queue id.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("StreamARN in aws-iso with DualStack: falls back to default kinesis DualStack endpoint")]
+        public void StreamARN_in_awsiso_with_DualStack_falls_back_to_default_kinesis_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("StreamARN in aws-iso with FIPS and DualStack: falls back to default kinesis FIPS DualStack endpoint")]
+        public void StreamARN_in_awsiso_with_FIPS_and_DualStack_falls_back_to_default_kinesis_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("StreamARN in aws-iso: missing ARN type falls back to default kinesis endpoint")]
+        public void StreamARN_in_awsiso_missing_ARN_type_falls_back_to_default_kinesis_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws-iso:kinesis:us-iso-east-1:123456789012:";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("QueueARN: partition mismatch errors")]
+        public void QueueARN_partition_mismatch_errors_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceType"] = "queue";
+            parameters["QueueARN"] = "arn:aws-cn:kinesis:cn-north-1:123456789012:queue/myQueueId";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
+            {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws-cn from ARN doesn't match with partition name: aws.", exception.Message);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type: FIPS and DualStack")]
+        public void ResourceARN_with_queue_type_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [Description("ResourceARN with queue type: data operation type")]
+        public void ResourceARN_with_queue_type_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:123456789012:queue/myQueueId";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://myQueueId.data-kinesis-queues.us-west-2.amazonaws.com", endpoint.URL);
         }
     }
 }

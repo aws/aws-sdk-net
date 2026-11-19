@@ -45,8 +45,8 @@ namespace Amazon.Kinesis
     ///
     /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>
-    /// Amazon Kinesis Data Streams is a managed service that scales elastically for real-time
-    /// processing of streaming big data.
+    /// Amazon Kinesis Data Streams is a serverless data streaming service that ingests data
+    /// once and fans it out to multiple consumer applications for real-time processing.
     /// </para>
     /// </summary>
     public partial class AmazonKinesisClient : AmazonServiceClient, IAmazonKinesis
@@ -252,6 +252,228 @@ namespace Amazon.Kinesis
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Acknowledges up to 10 dead-letter records in the specified queue, so the queue doesn't
+        /// return them again. The result for each entry is reported individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Acknowledging a record does not affect the record in the data stream. That record
+        /// remains available to stream consumers and to other queues on the same stream for the
+        /// rest of its retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeDeadLetterQueueRecords service method.</param>
+        /// <returns>The response from the AcknowledgeDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeDeadLetterQueueRecords">REST API Reference for AcknowledgeDeadLetterQueueRecords Operation</seealso>
+        public virtual AcknowledgeDeadLetterQueueRecordsResponse AcknowledgeDeadLetterQueueRecords(AcknowledgeDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<AcknowledgeDeadLetterQueueRecordsResponse>(request, options);
+        }
+#else
+        internal virtual AcknowledgeDeadLetterQueueRecordsResponse AcknowledgeDeadLetterQueueRecords(AcknowledgeDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<AcknowledgeDeadLetterQueueRecordsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Acknowledges up to 10 dead-letter records in the specified queue, so the queue doesn't
+        /// return them again. The result for each entry is reported individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Acknowledging a record does not affect the record in the data stream. That record
+        /// remains available to stream consumers and to other queues on the same stream for the
+        /// rest of its retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeDeadLetterQueueRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AcknowledgeDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeDeadLetterQueueRecords">REST API Reference for AcknowledgeDeadLetterQueueRecords Operation</seealso>
+        public virtual Task<AcknowledgeDeadLetterQueueRecordsResponse> AcknowledgeDeadLetterQueueRecordsAsync(AcknowledgeDeadLetterQueueRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcknowledgeDeadLetterQueueRecordsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Acknowledges up to 10 records from the specified queue. After a record is acknowledged,
+        /// the queue does not deliver it again. The result for each entry is reported individually
+        /// in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Acknowledging a record does not affect the record in the data stream. That record
+        /// remains available to stream consumers and to other queues on the same stream for the
+        /// rest of its retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// On rare occasions, you can receive a record again after you acknowledge it. Design
+        /// your queue consumer to be idempotent, so that processing the same record more than
+        /// once is safe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeQueueRecords service method.</param>
+        /// <returns>The response from the AcknowledgeQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeQueueRecords">REST API Reference for AcknowledgeQueueRecords Operation</seealso>
+        public virtual AcknowledgeQueueRecordsResponse AcknowledgeQueueRecords(AcknowledgeQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<AcknowledgeQueueRecordsResponse>(request, options);
+        }
+#else
+        internal virtual AcknowledgeQueueRecordsResponse AcknowledgeQueueRecords(AcknowledgeQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<AcknowledgeQueueRecordsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Acknowledges up to 10 records from the specified queue. After a record is acknowledged,
+        /// the queue does not deliver it again. The result for each entry is reported individually
+        /// in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Acknowledging a record does not affect the record in the data stream. That record
+        /// remains available to stream consumers and to other queues on the same stream for the
+        /// rest of its retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// On rare occasions, you can receive a record again after you acknowledge it. Design
+        /// your queue consumer to be idempotent, so that processing the same record more than
+        /// once is safe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcknowledgeQueueRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AcknowledgeQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AcknowledgeQueueRecords">REST API Reference for AcknowledgeQueueRecords Operation</seealso>
+        public virtual Task<AcknowledgeQueueRecordsResponse> AcknowledgeQueueRecordsAsync(AcknowledgeQueueRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcknowledgeQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcknowledgeQueueRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcknowledgeQueueRecordsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
         /// tags to a data stream.
         /// 
@@ -411,7 +633,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -442,8 +664,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
@@ -514,7 +737,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -545,8 +768,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -556,6 +780,208 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateChannelResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a queue on the specified data stream. A queue delivers records from the stream
+        /// to a queue consumer, tracks the delivery state of each record, and redelivers any
+        /// record that is not acknowledged before its visibility timeout expires.
+        /// 
+        ///  
+        /// <para>
+        /// A queue does not extend how long the stream keeps a record. When a record reaches
+        /// the end of the data stream's retention period, the queue stops delivering it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your queue consumer calls <a>ReceiveQueueRecords</a> to receive up to 10 records at
+        /// a time. After it processes records, it calls <a>AcknowledgeQueueRecords</a> so the
+        /// queue does not deliver them again.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queues are supported only on data streams in on-demand capacity mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creating a queue does not change how producers write to the stream, and it does not
+        /// change how existing stream consumers read from it. A queue counts as a registered
+        /// consumer on the stream and shares the stream's registered consumer limit with enhanced
+        /// fan-out consumers: 20 on On-demand Standard and 50 on On-demand Advantage.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>StartingPosition</c> to set the position in the stream where delivery begins.
+        /// The default is <c>LATEST</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>CreateQueue</c> is an asynchronous operation. Upon receiving a <c>CreateQueue</c>
+        /// request, Amazon Kinesis Data Streams immediately returns a queue description with
+        /// a <c>QueueStatus</c> of <c>CREATING</c>. After the queue is created, Kinesis Data
+        /// Streams sets the <c>QueueStatus</c> to <c>ACTIVE</c>. You can begin receiving records
+        /// after the queue is <c>ACTIVE</c>. Use <a>DescribeQueue</a> to check the status of
+        /// the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each queue has built-in dead-letter handling. When a record has been received <c>MaxReceiveCount</c>
+        /// times without being acknowledged, it becomes a dead-letter record, and <a>ReceiveQueueRecords</a>
+        /// no longer returns it. You work with dead-letter records through a separate set of
+        /// operations that use the same queue ARN: <a>ReceiveDeadLetterQueueRecords</a>, <a>AcknowledgeDeadLetterQueueRecords</a>,
+        /// <a>UpdateDeadLetterQueueRecordsVisibility</a>, and <a>RestoreDeadLetterQueueRecords</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Dead-letter handling is enabled by default, with a <c>MaxReceiveCount</c> of 6. To
+        /// use a different value, or to turn dead-letter handling off, specify <c>DeadLetterConfiguration</c>
+        /// in <c>QueueAttributes</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
+        /// <returns>The response from the CreateQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
+        public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQueueResponse>(request, options);
+        }
+#else
+        internal virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQueueResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a queue on the specified data stream. A queue delivers records from the stream
+        /// to a queue consumer, tracks the delivery state of each record, and redelivers any
+        /// record that is not acknowledged before its visibility timeout expires.
+        /// 
+        ///  
+        /// <para>
+        /// A queue does not extend how long the stream keeps a record. When a record reaches
+        /// the end of the data stream's retention period, the queue stops delivering it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your queue consumer calls <a>ReceiveQueueRecords</a> to receive up to 10 records at
+        /// a time. After it processes records, it calls <a>AcknowledgeQueueRecords</a> so the
+        /// queue does not deliver them again.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queues are supported only on data streams in on-demand capacity mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creating a queue does not change how producers write to the stream, and it does not
+        /// change how existing stream consumers read from it. A queue counts as a registered
+        /// consumer on the stream and shares the stream's registered consumer limit with enhanced
+        /// fan-out consumers: 20 on On-demand Standard and 50 on On-demand Advantage.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>StartingPosition</c> to set the position in the stream where delivery begins.
+        /// The default is <c>LATEST</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>CreateQueue</c> is an asynchronous operation. Upon receiving a <c>CreateQueue</c>
+        /// request, Amazon Kinesis Data Streams immediately returns a queue description with
+        /// a <c>QueueStatus</c> of <c>CREATING</c>. After the queue is created, Kinesis Data
+        /// Streams sets the <c>QueueStatus</c> to <c>ACTIVE</c>. You can begin receiving records
+        /// after the queue is <c>ACTIVE</c>. Use <a>DescribeQueue</a> to check the status of
+        /// the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each queue has built-in dead-letter handling. When a record has been received <c>MaxReceiveCount</c>
+        /// times without being acknowledged, it becomes a dead-letter record, and <a>ReceiveQueueRecords</a>
+        /// no longer returns it. You work with dead-letter records through a separate set of
+        /// operations that use the same queue ARN: <a>ReceiveDeadLetterQueueRecords</a>, <a>AcknowledgeDeadLetterQueueRecords</a>,
+        /// <a>UpdateDeadLetterQueueRecordsVisibility</a>, and <a>RestoreDeadLetterQueueRecords</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Dead-letter handling is enabled by default, with a <c>MaxReceiveCount</c> of 6. To
+        /// use a different value, or to turn dead-letter handling off, specify <c>DeadLetterConfiguration</c>
+        /// in <c>QueueAttributes</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
+        public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateQueueResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -659,8 +1085,9 @@ namespace Amazon.Kinesis
         /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
@@ -785,8 +1212,9 @@ namespace Amazon.Kinesis
         /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1042,8 +1470,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
@@ -1100,8 +1529,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1115,8 +1545,136 @@ namespace Amazon.Kinesis
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Delete a policy for the specified data stream or consumer. Request patterns can be
-        /// one of the following:
+        /// Deletes the specified queue. Records that are in flight when you delete the queue
+        /// are not delivered again, and receipt handles issued by the queue stop being valid.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a queue does not delete the data stream the queue was created on, and does
+        /// not delete any records in that stream. Those records remain available to stream consumers
+        /// and to other queues on the same stream for the rest of their retention period.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DeleteQueue</c> is an asynchronous operation. Upon receiving a <c>DeleteQueue</c>
+        /// request, Amazon Kinesis Data Streams sets the <c>QueueStatus</c> to <c>DELETING</c>.
+        /// The queue is deleted when the operation completes. A queue in the <c>DELETING</c>
+        /// state does not deliver records.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must delete every queue on a data stream before you can delete the stream, or
+        /// switch it from on-demand to provisioned capacity mode.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
+        /// <returns>The response from the DeleteQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueueResponse>(request, options);
+        }
+#else
+        internal virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQueueResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes the specified queue. Records that are in flight when you delete the queue
+        /// are not delivered again, and receipt handles issued by the queue stop being valid.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a queue does not delete the data stream the queue was created on, and does
+        /// not delete any records in that stream. Those records remain available to stream consumers
+        /// and to other queues on the same stream for the rest of their retention period.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DeleteQueue</c> is an asynchronous operation. Upon receiving a <c>DeleteQueue</c>
+        /// request, Amazon Kinesis Data Streams sets the <c>QueueStatus</c> to <c>DELETING</c>.
+        /// The queue is deleted when the operation completes. A queue in the <c>DELETING</c>
+        /// state does not deliver records.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must delete every queue on a data stream before you can delete the stream, or
+        /// switch it from on-demand to provisioned capacity mode.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
+        public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteQueueResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Delete a policy for the specified data stream, consumer, or queue. Request patterns
+        /// can be one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1127,12 +1685,19 @@ namespace Amazon.Kinesis
         /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -1148,6 +1713,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
@@ -1170,8 +1740,8 @@ namespace Amazon.Kinesis
 #endif
 
         /// <summary>
-        /// Delete a policy for the specified data stream or consumer. Request patterns can be
-        /// one of the following:
+        /// Delete a policy for the specified data stream, consumer, or queue. Request patterns
+        /// can be one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1182,6 +1752,10 @@ namespace Amazon.Kinesis
         /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
@@ -1191,6 +1765,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -1206,6 +1783,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1245,6 +1827,11 @@ namespace Amazon.Kinesis
         /// <para>
         /// When you delete a stream, any shards in that stream are also deleted, and any tags
         /// are dissociated from the stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can delete a data stream that has queues, you must delete every queue on
+        /// the stream with <a>DeleteQueue</a>.
         /// </para>
         ///  
         /// <para>
@@ -1323,6 +1910,11 @@ namespace Amazon.Kinesis
         /// <para>
         /// When you delete a stream, any shards in that stream are also deleted, and any tags
         /// are dissociated from the stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can delete a data stream that has queues, you must delete every queue on
+        /// the stream with <a>DeleteQueue</a>.
         /// </para>
         ///  
         /// <para>
@@ -1555,8 +2147,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
@@ -1612,8 +2205,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1693,6 +2287,96 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLimitsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a description of the specified queue, including its status, the data stream
+        /// it delivers records from, and its configuration attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
+        /// <returns>The response from the DescribeQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
+        public virtual DescribeQueueResponse DescribeQueue(DescribeQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQueueResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQueueResponse>(request, options);
+        }
+#else
+        internal virtual DescribeQueueResponse DescribeQueue(DescribeQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQueueResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQueueResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a description of the specified queue, including its status, the data stream
+        /// it delivers records from, and its configuration attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
+        public virtual Task<DescribeQueueResponse> DescribeQueueAsync(DescribeQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQueueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeQueueResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2350,7 +3034,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -2507,7 +3191,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -2549,8 +3233,8 @@ namespace Amazon.Kinesis
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns a policy attached to the specified data stream or consumer. Request patterns
-        /// can be one of the following:
+        /// Returns a policy attached to the specified data stream, consumer, or queue. Request
+        /// patterns can be one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -2561,12 +3245,19 @@ namespace Amazon.Kinesis
         ///  Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <returns>The response from the GetResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -2582,6 +3273,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
@@ -2604,8 +3300,8 @@ namespace Amazon.Kinesis
 #endif
 
         /// <summary>
-        /// Returns a policy attached to the specified data stream or consumer. Request patterns
-        /// can be one of the following:
+        /// Returns a policy attached to the specified data stream, consumer, or queue. Request
+        /// patterns can be one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -2616,6 +3312,10 @@ namespace Amazon.Kinesis
         ///  Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
@@ -2625,6 +3325,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the GetResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -2640,6 +3343,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3110,8 +3818,9 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
@@ -3169,8 +3878,9 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3180,6 +3890,110 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a summary of each queue in the Amazon Web Services account and Region used
+        /// by the request. Use <c>StreamFilter</c> to list only the queues on a particular data
+        /// stream.
+        /// 
+        ///  
+        /// <para>
+        /// If the response contains a <c>NextToken</c>, more queues are available. Call <c>ListQueues</c>
+        /// again with that value to retrieve the next page.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
+        /// <returns>The response from the ListQueues service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListQueues">REST API Reference for ListQueues Operation</seealso>
+        public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueuesResponse>(request, options);
+        }
+#else
+        internal virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueuesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a summary of each queue in the Amazon Web Services account and Region used
+        /// by the request. Use <c>StreamFilter</c> to list only the queues on a particular data
+        /// stream.
+        /// 
+        ///  
+        /// <para>
+        /// If the response contains a <c>NextToken</c>, more queues are available. Call <c>ListQueues</c>
+        /// again with that value to retrieve the next page.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListQueues service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListQueues">REST API Reference for ListQueues Operation</seealso>
+        public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQueuesResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3618,6 +4432,10 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about tagging Kinesis resources, see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag
         /// your Amazon Kinesis Data Streams resources</a>.
         /// </para>
@@ -3626,6 +4444,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the ListTagsForResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -3641,6 +4462,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3669,6 +4495,10 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about tagging Kinesis resources, see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag
         /// your Amazon Kinesis Data Streams resources</a>.
         /// </para>
@@ -3680,6 +4510,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the ListTagsForResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -3695,6 +4528,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3879,8 +4717,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public virtual MergeShardsResponse MergeShards(MergeShardsRequest request)
@@ -3987,8 +4826,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public virtual Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4090,7 +4930,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -4232,7 +5072,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -4388,7 +5228,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -4556,7 +5396,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -4598,14 +5438,14 @@ namespace Amazon.Kinesis
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Attaches a resource-based policy to a data stream or registered consumer. If you are
-        /// using an identity other than the root user of the Amazon Web Services account that
-        /// owns the resource, the calling identity must have the <c>PutResourcePolicy</c> permissions
-        /// on the specified Kinesis Data Streams resource and belong to the owner's account in
-        /// order to use this operation. If you don't have <c>PutResourcePolicy</c> permissions,
-        /// Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>. If you receive
-        /// a <c>ResourceNotFoundException</c>, check to see if you passed a valid stream or consumer
-        /// resource. 
+        /// Attaches a resource-based policy to a data stream, a queue, or an enhanced fan-out
+        /// consumer. If you are using an identity other than the root user of the Amazon Web
+        /// Services account that owns the resource, the calling identity must have the <c>PutResourcePolicy</c>
+        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
+        /// account in order to use this operation. If you don't have <c>PutResourcePolicy</c>
+        /// permissions, Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>.
+        /// If you receive a <c>ResourceNotFoundException</c>, check to see if you passed a valid
+        /// stream or consumer resource. 
         /// 
         ///  
         /// <para>
@@ -4620,6 +5460,10 @@ namespace Amazon.Kinesis
         /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
@@ -4630,6 +5474,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the PutResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -4645,6 +5492,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
@@ -4667,14 +5519,14 @@ namespace Amazon.Kinesis
 #endif
 
         /// <summary>
-        /// Attaches a resource-based policy to a data stream or registered consumer. If you are
-        /// using an identity other than the root user of the Amazon Web Services account that
-        /// owns the resource, the calling identity must have the <c>PutResourcePolicy</c> permissions
-        /// on the specified Kinesis Data Streams resource and belong to the owner's account in
-        /// order to use this operation. If you don't have <c>PutResourcePolicy</c> permissions,
-        /// Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>. If you receive
-        /// a <c>ResourceNotFoundException</c>, check to see if you passed a valid stream or consumer
-        /// resource. 
+        /// Attaches a resource-based policy to a data stream, a queue, or an enhanced fan-out
+        /// consumer. If you are using an identity other than the root user of the Amazon Web
+        /// Services account that owns the resource, the calling identity must have the <c>PutResourcePolicy</c>
+        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
+        /// account in order to use this operation. If you don't have <c>PutResourcePolicy</c>
+        /// permissions, Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>.
+        /// If you receive a <c>ResourceNotFoundException</c>, check to see if you passed a valid
+        /// stream or consumer resource. 
         /// 
         ///  
         /// <para>
@@ -4689,6 +5541,10 @@ namespace Amazon.Kinesis
         /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queue pattern: <c>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
@@ -4702,6 +5558,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the PutResourcePolicy service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -4718,6 +5577,11 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4726,6 +5590,364 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Receives up to 10 dead-letter records from the specified queue. Each queue has built-in
+        /// dead-letter handling: when a record has been received <c>MaxReceiveCount</c> times
+        /// without being acknowledged, it becomes a dead-letter record, which usually means your
+        /// queue consumer could not process it. The dead-letter record stays in the same queue,
+        /// and <a>ReceiveQueueRecords</a> no longer returns it.
+        /// 
+        ///  
+        /// <para>
+        /// Dead-letter records carry the same data and partition key as when they were first
+        /// delivered, and are returned with a receipt handle. Use the receipt handle to acknowledge
+        /// the record with <a>AcknowledgeDeadLetterQueueRecords</a>, which discards it, to change
+        /// its visibility with <a>UpdateDeadLetterQueueRecordsVisibility</a>, or to restore it
+        /// with <a>RestoreDeadLetterQueueRecords</a>, which returns it to the normal receive
+        /// path so that <a>ReceiveQueueRecords</a> can return it again.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to inspect the records your queue consumer could not process, so
+        /// you can correct the cause and then either acknowledge or restore them.
+        /// </para>
+        ///  
+        /// <para>
+        /// A queue delivers dead-letter records while it is in the <c>ACTIVE</c> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReceiveDeadLetterQueueRecords service method.</param>
+        /// <returns>The response from the ReceiveDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified KMS key isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveDeadLetterQueueRecords">REST API Reference for ReceiveDeadLetterQueueRecords Operation</seealso>
+        public virtual ReceiveDeadLetterQueueRecordsResponse ReceiveDeadLetterQueueRecords(ReceiveDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ReceiveDeadLetterQueueRecordsResponse>(request, options);
+        }
+#else
+        internal virtual ReceiveDeadLetterQueueRecordsResponse ReceiveDeadLetterQueueRecords(ReceiveDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ReceiveDeadLetterQueueRecordsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Receives up to 10 dead-letter records from the specified queue. Each queue has built-in
+        /// dead-letter handling: when a record has been received <c>MaxReceiveCount</c> times
+        /// without being acknowledged, it becomes a dead-letter record, which usually means your
+        /// queue consumer could not process it. The dead-letter record stays in the same queue,
+        /// and <a>ReceiveQueueRecords</a> no longer returns it.
+        /// 
+        ///  
+        /// <para>
+        /// Dead-letter records carry the same data and partition key as when they were first
+        /// delivered, and are returned with a receipt handle. Use the receipt handle to acknowledge
+        /// the record with <a>AcknowledgeDeadLetterQueueRecords</a>, which discards it, to change
+        /// its visibility with <a>UpdateDeadLetterQueueRecordsVisibility</a>, or to restore it
+        /// with <a>RestoreDeadLetterQueueRecords</a>, which returns it to the normal receive
+        /// path so that <a>ReceiveQueueRecords</a> can return it again.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to inspect the records your queue consumer could not process, so
+        /// you can correct the cause and then either acknowledge or restore them.
+        /// </para>
+        ///  
+        /// <para>
+        /// A queue delivers dead-letter records while it is in the <c>ACTIVE</c> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReceiveDeadLetterQueueRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ReceiveDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified KMS key isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveDeadLetterQueueRecords">REST API Reference for ReceiveDeadLetterQueueRecords Operation</seealso>
+        public virtual Task<ReceiveDeadLetterQueueRecordsResponse> ReceiveDeadLetterQueueRecordsAsync(ReceiveDeadLetterQueueRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReceiveDeadLetterQueueRecordsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Receives up to 10 records from the specified queue. Each record is returned with a
+        /// receipt handle, which is the identifier you use to acknowledge the record or change
+        /// its visibility.
+        /// 
+        ///  
+        /// <para>
+        /// A record returned by <c>ReceiveQueueRecords</c> becomes in flight: it is not visible
+        /// to any consumer instance for the duration of its visibility timeout, so subsequent
+        /// receive requests do not return it while your queue consumer processes it. Acknowledge
+        /// the record with <a>AcknowledgeQueueRecords</a> when you finish processing it. A record
+        /// that is not acknowledged before its visibility timeout expires becomes visible in
+        /// the queue again and can be received by any consumer instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>WaitTimeSeconds</c> to control how long the call waits for a record to become
+        /// visible before returning. If a record becomes visible sooner, the call returns sooner.
+        /// If the wait time expires and no records are visible, the call returns an empty list
+        /// of records.
+        /// </para>
+        ///  
+        /// <para>
+        /// Records are not necessarily received in the order they were written to the data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// A queue delivers records while it is in the <c>ACTIVE</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// On rare occasions, a queue can deliver a record more than once. Design your queue
+        /// consumer to be idempotent, so that processing the same record more than once is safe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReceiveQueueRecords service method.</param>
+        /// <returns>The response from the ReceiveQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified KMS key isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveQueueRecords">REST API Reference for ReceiveQueueRecords Operation</seealso>
+        public virtual ReceiveQueueRecordsResponse ReceiveQueueRecords(ReceiveQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ReceiveQueueRecordsResponse>(request, options);
+        }
+#else
+        internal virtual ReceiveQueueRecordsResponse ReceiveQueueRecords(ReceiveQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ReceiveQueueRecordsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Receives up to 10 records from the specified queue. Each record is returned with a
+        /// receipt handle, which is the identifier you use to acknowledge the record or change
+        /// its visibility.
+        /// 
+        ///  
+        /// <para>
+        /// A record returned by <c>ReceiveQueueRecords</c> becomes in flight: it is not visible
+        /// to any consumer instance for the duration of its visibility timeout, so subsequent
+        /// receive requests do not return it while your queue consumer processes it. Acknowledge
+        /// the record with <a>AcknowledgeQueueRecords</a> when you finish processing it. A record
+        /// that is not acknowledged before its visibility timeout expires becomes visible in
+        /// the queue again and can be received by any consumer instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>WaitTimeSeconds</c> to control how long the call waits for a record to become
+        /// visible before returning. If a record becomes visible sooner, the call returns sooner.
+        /// If the wait time expires and no records are visible, the call returns an empty list
+        /// of records.
+        /// </para>
+        ///  
+        /// <para>
+        /// Records are not necessarily received in the order they were written to the data stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// A queue delivers records while it is in the <c>ACTIVE</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// On rare occasions, a queue can deliver a record more than once. Design your queue
+        /// consumer to be idempotent, so that processing the same record more than once is safe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReceiveQueueRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ReceiveQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified KMS key isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ReceiveQueueRecords">REST API Reference for ReceiveQueueRecords Operation</seealso>
+        public virtual Task<ReceiveQueueRecordsResponse> ReceiveQueueRecordsAsync(ReceiveQueueRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReceiveQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReceiveQueueRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReceiveQueueRecordsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -4747,14 +5969,15 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// With On-demand Advantage streams, you can register up to 50 consumers per stream to
-        /// use Enhanced Fan-out. With On-demand Standard and Provisioned streams, you can register
-        /// up to 20 consumers per stream to use Enhanced Fan-out. A given consumer can only be
-        /// registered with one stream at a time.
+        /// use enhanced fan-out. With On-demand Standard and Provisioned streams, you can register
+        /// up to 20 consumers per stream to use enhanced fan-out. Queues share this limit with
+        /// enhanced fan-out consumers: both count as registered consumers on the stream. A given
+        /// consumer can only be registered with one stream at a time.
         /// </para>
         ///  
         /// <para>
-        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+        /// enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.
         /// </para>
         ///  
         /// <para>
@@ -4819,14 +6042,15 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// With On-demand Advantage streams, you can register up to 50 consumers per stream to
-        /// use Enhanced Fan-out. With On-demand Standard and Provisioned streams, you can register
-        /// up to 20 consumers per stream to use Enhanced Fan-out. A given consumer can only be
-        /// registered with one stream at a time.
+        /// use enhanced fan-out. With On-demand Standard and Provisioned streams, you can register
+        /// up to 20 consumers per stream to use enhanced fan-out. Queues share this limit with
+        /// enhanced fan-out consumers: both count as registered consumers on the stream. A given
+        /// consumer can only be registered with one stream at a time.
         /// </para>
         ///  
         /// <para>
-        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+        /// enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.
         /// </para>
         ///  
         /// <para>
@@ -4980,6 +6204,112 @@ namespace Amazon.Kinesis
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Restores up to 10 dead-letter records in the specified queue. Restoring a record clears
+        /// its dead-letter state and resets its receive count, so <a>ReceiveQueueRecords</a>
+        /// can return it again, up to <c>MaxReceiveCount</c> times before it becomes a dead-letter
+        /// record again. The result for each entry is reported individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Restore records after you have corrected the condition that prevented your queue consumer
+        /// from processing them.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDeadLetterQueueRecords service method.</param>
+        /// <returns>The response from the RestoreDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RestoreDeadLetterQueueRecords">REST API Reference for RestoreDeadLetterQueueRecords Operation</seealso>
+        public virtual RestoreDeadLetterQueueRecordsResponse RestoreDeadLetterQueueRecords(RestoreDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDeadLetterQueueRecordsResponse>(request, options);
+        }
+#else
+        internal virtual RestoreDeadLetterQueueRecordsResponse RestoreDeadLetterQueueRecords(RestoreDeadLetterQueueRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDeadLetterQueueRecordsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Restores up to 10 dead-letter records in the specified queue. Restoring a record clears
+        /// its dead-letter state and resets its receive count, so <a>ReceiveQueueRecords</a>
+        /// can return it again, up to <c>MaxReceiveCount</c> times before it becomes a dead-letter
+        /// record again. The result for each entry is reported individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Restore records after you have corrected the condition that prevented your queue consumer
+        /// from processing them.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDeadLetterQueueRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RestoreDeadLetterQueueRecords service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RestoreDeadLetterQueueRecords">REST API Reference for RestoreDeadLetterQueueRecords Operation</seealso>
+        public virtual Task<RestoreDeadLetterQueueRecordsResponse> RestoreDeadLetterQueueRecordsAsync(RestoreDeadLetterQueueRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreDeadLetterQueueRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDeadLetterQueueRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreDeadLetterQueueRecordsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
         /// capacity to ingest and transport data. <c>SplitShard</c> is called when there is a
         /// need to increase the overall capacity of a stream because of an expected increase
@@ -5073,8 +6403,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public virtual SplitShardResponse SplitShard(SplitShardRequest request)
@@ -5193,8 +6524,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public virtual Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5253,7 +6585,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -5352,7 +6684,7 @@ namespace Amazon.Kinesis
         /// The ciphertext references a key that doesn't exist or that you don't have access to.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
-        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// The request was rejected because the specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
@@ -5564,8 +6896,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+        /// enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubscribeToShard service method.</param>
@@ -5643,8 +6975,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
-        /// Fan-Out Using the Kinesis Data Streams API</a>.
+        /// For an example of how to use this operation, see <a href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Develop
+        /// enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubscribeToShard service method.</param>
@@ -5689,11 +7021,19 @@ namespace Amazon.Kinesis
         /// Adds or updates tags for the specified Kinesis resource. Each tag is a label consisting
         /// of a user-defined key and value. Tags can help you manage, identify, organize, search
         /// for, and filter resources. You can assign up to 50 tags to a Kinesis resource.
+        /// 
+        ///  
+        /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -5709,6 +7049,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -5734,6 +7079,11 @@ namespace Amazon.Kinesis
         /// Adds or updates tags for the specified Kinesis resource. Each tag is a label consisting
         /// of a user-defined key and value. Tags can help you manage, identify, organize, search
         /// for, and filter resources. You can assign up to 50 tags to a Kinesis resource.
+        /// 
+        ///  
+        /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -5742,6 +7092,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the TagResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -5757,6 +7110,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5772,11 +7130,19 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Removes tags from the specified Kinesis resource. Removed tags are deleted and can't
         /// be recovered after this operation completes successfully.
+        /// 
+        ///  
+        /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -5792,6 +7158,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -5816,6 +7187,11 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Removes tags from the specified Kinesis resource. Removed tags are deleted and can't
         /// be recovered after this operation completes successfully.
+        /// 
+        ///  
+        /// <para>
+        /// The Kinesis resource can be a data stream, a queue, or an enhanced fan-out consumer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -5824,6 +7200,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the UntagResource service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -5839,6 +7218,11 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5887,8 +7271,9 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
@@ -5949,8 +7334,9 @@ namespace Amazon.Kinesis
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6003,8 +7389,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
@@ -6069,8 +7456,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6080,6 +7468,100 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Changes the visibility timeout of up to 10 dead-letter records that you have received
+        /// from the specified queue but not yet acknowledged. The result for each entry is reported
+        /// individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeadLetterQueueRecordsVisibility service method.</param>
+        /// <returns>The response from the UpdateDeadLetterQueueRecordsVisibility service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateDeadLetterQueueRecordsVisibility">REST API Reference for UpdateDeadLetterQueueRecordsVisibility Operation</seealso>
+        public virtual UpdateDeadLetterQueueRecordsVisibilityResponse UpdateDeadLetterQueueRecordsVisibility(UpdateDeadLetterQueueRecordsVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDeadLetterQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeadLetterQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeadLetterQueueRecordsVisibilityResponse>(request, options);
+        }
+#else
+        internal virtual UpdateDeadLetterQueueRecordsVisibilityResponse UpdateDeadLetterQueueRecordsVisibility(UpdateDeadLetterQueueRecordsVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDeadLetterQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeadLetterQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeadLetterQueueRecordsVisibilityResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Changes the visibility timeout of up to 10 dead-letter records that you have received
+        /// from the specified queue but not yet acknowledged. The result for each entry is reported
+        /// individually in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeadLetterQueueRecordsVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDeadLetterQueueRecordsVisibility service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateDeadLetterQueueRecordsVisibility">REST API Reference for UpdateDeadLetterQueueRecordsVisibility Operation</seealso>
+        public virtual Task<UpdateDeadLetterQueueRecordsVisibilityResponse> UpdateDeadLetterQueueRecordsVisibilityAsync(UpdateDeadLetterQueueRecordsVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDeadLetterQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeadLetterQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDeadLetterQueueRecordsVisibilityResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -6109,8 +7591,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">REST API Reference for UpdateMaxRecordSize Operation</seealso>
         public virtual UpdateMaxRecordSizeResponse UpdateMaxRecordSize(UpdateMaxRecordSizeRequest request)
@@ -6161,8 +7644,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateMaxRecordSize">REST API Reference for UpdateMaxRecordSize Operation</seealso>
         public virtual Task<UpdateMaxRecordSizeResponse> UpdateMaxRecordSizeAsync(UpdateMaxRecordSizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6172,6 +7656,252 @@ namespace Amazon.Kinesis
             options.ResponseUnmarshaller = UpdateMaxRecordSizeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMaxRecordSizeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration attributes of the specified queue. You can change the queue's
+        /// visibility timeout, its dead-letter handling configuration, or both.
+        /// 
+        ///  
+        /// <para>
+        /// A new visibility timeout applies to records received after the update completes. Records
+        /// that are already in flight keep the visibility timeout they were received with. To
+        /// change the visibility timeout of a record that is already in flight, use <a>UpdateQueueRecordsVisibility</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>UpdateQueue</c> is an asynchronous operation. Upon receiving an <c>UpdateQueue</c>
+        /// request, Amazon Kinesis Data Streams sets the <c>QueueStatus</c> to <c>UPDATING</c>,
+        /// and sets it back to <c>ACTIVE</c> when the update is complete. You can continue to
+        /// receive and acknowledge records while the queue is <c>UPDATING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change the data stream or the starting position of a queue after you create
+        /// it. To read from a different stream or position, create a new queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueue service method.</param>
+        /// <returns>The response from the UpdateQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
+        public virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueueResponse>(request, options);
+        }
+#else
+        internal virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueueResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the configuration attributes of the specified queue. You can change the queue's
+        /// visibility timeout, its dead-letter handling configuration, or both.
+        /// 
+        ///  
+        /// <para>
+        /// A new visibility timeout applies to records received after the update completes. Records
+        /// that are already in flight keep the visibility timeout they were received with. To
+        /// change the visibility timeout of a record that is already in flight, use <a>UpdateQueueRecordsVisibility</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>UpdateQueue</c> is an asynchronous operation. Upon receiving an <c>UpdateQueue</c>
+        /// request, Amazon Kinesis Data Streams sets the <c>QueueStatus</c> to <c>UPDATING</c>,
+        /// and sets it back to <c>ACTIVE</c> when the update is complete. You can continue to
+        /// receive and acknowledge records while the queue is <c>UPDATING</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change the data stream or the starting position of a queue after you create
+        /// it. To read from a different stream or position, create a new queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateQueue service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
+        public virtual Task<UpdateQueueResponse> UpdateQueueAsync(UpdateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQueueResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Changes the visibility timeout of up to 10 records that you have received from the
+        /// specified queue but not yet acknowledged. The result for each entry is reported individually
+        /// in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Extend the visibility timeout of a record when your queue consumer needs more time
+        /// to finish processing it, so the record does not become visible and get redelivered
+        /// while it is still being processed. Set the visibility timeout to <c>0</c> to make
+        /// a record visible in the queue immediately, so that it can be received again without
+        /// waiting for its current timeout to expire.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueRecordsVisibility service method.</param>
+        /// <returns>The response from the UpdateQueueRecordsVisibility service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueueRecordsVisibility">REST API Reference for UpdateQueueRecordsVisibility Operation</seealso>
+        public virtual UpdateQueueRecordsVisibilityResponse UpdateQueueRecordsVisibility(UpdateQueueRecordsVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueueRecordsVisibilityResponse>(request, options);
+        }
+#else
+        internal virtual UpdateQueueRecordsVisibilityResponse UpdateQueueRecordsVisibility(UpdateQueueRecordsVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueueRecordsVisibilityResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Changes the visibility timeout of up to 10 records that you have received from the
+        /// specified queue but not yet acknowledged. The result for each entry is reported individually
+        /// in the response.
+        /// 
+        ///  
+        /// <para>
+        /// Extend the visibility timeout of a record when your queue consumer needs more time
+        /// to finish processing it, so the record does not become visible and get redelivered
+        /// while it is still being processed. Set the visibility timeout to <c>0</c> to make
+        /// a record visible in the queue immediately, so that it can be received again without
+        /// waiting for its current timeout to expire.
+        /// </para>
+        ///  
+        /// <para>
+        /// Because the request can result in a combination of successful and unsuccessful entries,
+        /// check the <c>Failed</c> list even when the call returns an HTTP status code of <c>200</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueRecordsVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateQueueRecordsVisibility service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
+        /// The processing of the request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ThrottlingException">
+        /// The request was denied because the request rate is too high. Reduce the frequency
+        /// of your requests, and retry them with exponential backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateQueueRecordsVisibility">REST API Reference for UpdateQueueRecordsVisibility Operation</seealso>
+        public virtual Task<UpdateQueueRecordsVisibilityResponse> UpdateQueueRecordsVisibilityAsync(UpdateQueueRecordsVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQueueRecordsVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueRecordsVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQueueRecordsVisibilityResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -6271,8 +8001,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public virtual UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request)
@@ -6393,8 +8124,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public virtual Task<UpdateShardCountResponse> UpdateShardCountAsync(UpdateShardCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6420,6 +8152,12 @@ namespace Amazon.Kinesis
         /// enabled, you can specify the warm throughput in MiB per second that your stream can
         /// support in writes.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't switch a data stream from on-demand to provisioned capacity mode while the
+        /// stream has one or more queues. Delete the queues with <a>DeleteQueue</a> before you
+        /// change the capacity mode.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode service method.</param>
         /// <returns>The response from the UpdateStreamMode service method, as returned by Kinesis.</returns>
@@ -6439,8 +8177,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         public virtual UpdateStreamModeResponse UpdateStreamMode(UpdateStreamModeRequest request)
@@ -6475,6 +8214,12 @@ namespace Amazon.Kinesis
         /// enabled, you can specify the warm throughput in MiB per second that your stream can
         /// support in writes.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't switch a data stream from on-demand to provisioned capacity mode while the
+        /// stream has one or more queues. Delete the queues with <a>DeleteQueue</a> before you
+        /// change the capacity mode.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode service method.</param>
         /// <param name="cancellationToken">
@@ -6497,8 +8242,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         public virtual Task<UpdateStreamModeResponse> UpdateStreamModeAsync(UpdateStreamModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6572,8 +8318,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamRecordDistributionStrategy">REST API Reference for UpdateStreamRecordDistributionStrategy Operation</seealso>
         public virtual UpdateStreamRecordDistributionStrategyResponse UpdateStreamRecordDistributionStrategy(UpdateStreamRecordDistributionStrategyRequest request)
@@ -6659,8 +8406,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamRecordDistributionStrategy">REST API Reference for UpdateStreamRecordDistributionStrategy Operation</seealso>
         public virtual Task<UpdateStreamRecordDistributionStrategyResponse> UpdateStreamRecordDistributionStrategyAsync(UpdateStreamRecordDistributionStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6749,8 +8497,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamWarmThroughput">REST API Reference for UpdateStreamWarmThroughput Operation</seealso>
         public virtual UpdateStreamWarmThroughputResponse UpdateStreamWarmThroughput(UpdateStreamWarmThroughputRequest request)
@@ -6851,8 +8600,9 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ValidationException">
-        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
-        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// The request failed validation. For example, a parameter value is not valid, a combination
+        /// of parameters is not supported, or the operation is not supported for the stream's
+        /// capacity mode. The error message describes the specific reason.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamWarmThroughput">REST API Reference for UpdateStreamWarmThroughput Operation</seealso>
         public virtual Task<UpdateStreamWarmThroughputResponse> UpdateStreamWarmThroughputAsync(UpdateStreamWarmThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -47,8 +47,8 @@ namespace Amazon.ConnectCases.Model
     /// API for each returned case ID. </para> </li> <li> <para> This API searches across
     /// related items content, not case fields. Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a>
     /// API to search within case field values. </para> </li> </ul> <para> <b>Endpoints</b>:
-    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>. </para>
+    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>. </para>
     /// </summary>
     public partial class SearchAllRelatedItemsRequest : AmazonConnectCasesRequest
     {

@@ -125,6 +125,11 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetLaunchTemplateMode())
+            {
+                context.Writer.WritePropertyName("launchTemplateMode");
+                context.Writer.WriteStringValue(publicRequest.LaunchTemplateMode);
+            }
             if (publicRequest.IsSetNodeLifecycleActions())
             {
                 context.Writer.WritePropertyName("nodeLifecycleActions");
@@ -150,6 +155,16 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                    context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetSlurmConfiguration())
             {
                 context.Writer.WritePropertyName("slurmConfiguration");
@@ -169,6 +184,11 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.SpotOptions, context);
 
                 context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSshKeyName())
+            {
+                context.Writer.WritePropertyName("sshKeyName");
+                context.Writer.WriteStringValue(publicRequest.SshKeyName);
             }
             if (publicRequest.IsSetSubnetIds())
             {

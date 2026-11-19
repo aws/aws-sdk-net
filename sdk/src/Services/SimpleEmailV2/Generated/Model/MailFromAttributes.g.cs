@@ -40,13 +40,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// The action to take if the required MX record can't be found when you send an email.
         /// When you set this value to <c>USE_DEFAULT_VALUE</c>, the mail is sent using <i>amazonses.com</i>
         /// as the MAIL FROM domain. When you set this value to <c>REJECT_MESSAGE</c>, the Amazon
-        /// SES API v2 returns a <c>MailFromDomainNotVerified</c> error, and doesn't attempt to
-        /// deliver the email.
+        /// SES API v2 returns a <c>MailFromDomainNotVerifiedException</c> error, and doesn't
+        /// attempt to deliver the email.
         /// </para>
         ///  
         /// <para>
         /// These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <c>Pending</c>, <c>Failed</c>, and <c>TemporaryFailure</c> states.
+        /// <c>PENDING</c>, <c>FAILED</c>, and <c>TEMPORARY_FAILURE</c> states.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

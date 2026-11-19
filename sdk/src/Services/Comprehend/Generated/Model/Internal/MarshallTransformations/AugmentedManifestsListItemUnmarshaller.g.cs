@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AugmentedManifestsListItem Object
     /// </summary>
-    public partial class AugmentedManifestsListItemUnmarshaller : IJsonUnmarshaller<AugmentedManifestsListItem, JsonUnmarshallerContext>
+    public partial class AugmentedManifestsListItemUnmarshaller : ICborUnmarshaller<AugmentedManifestsListItem, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AugmentedManifestsListItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AugmentedManifestsListItem Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new AugmentedManifestsListItem();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AnnotationDataS3Uri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnnotationDataS3Uri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AttributeNames", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AttributeNames = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AnnotationDataS3Uri":
+                        context.AddPathSegment("AnnotationDataS3Uri");
+                        unmarshalledObject.AnnotationDataS3Uri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DocumentType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttributeNames":
+                        context.AddPathSegment("AttributeNames");
+                        unmarshalledObject.AttributeNames = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("S3Uri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DocumentType":
+                        context.AddPathSegment("DocumentType");
+                        unmarshalledObject.DocumentType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceDocumentsS3Uri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceDocumentsS3Uri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "S3Uri":
+                        context.AddPathSegment("S3Uri");
+                        unmarshalledObject.S3Uri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Split", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Split = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SourceDocumentsS3Uri":
+                        context.AddPathSegment("SourceDocumentsS3Uri");
+                        unmarshalledObject.SourceDocumentsS3Uri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Split":
+                        context.AddPathSegment("Split");
+                        unmarshalledObject.Split = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

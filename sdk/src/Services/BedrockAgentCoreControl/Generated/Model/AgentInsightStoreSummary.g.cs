@@ -1,0 +1,154 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// Contains summary information about an Agent Insight Store.
+    /// </summary>
+    public partial class AgentInsightStoreSummary
+    {
+        /// <summary>
+        /// Gets and sets the property AgentInsightStoreArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Agent Insight Store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string AgentInsightStoreArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AgentInsightStoreArn property is set.
+        /// </summary>
+        internal bool IsSetAgentInsightStoreArn() => this.AgentInsightStoreArn != null;
+
+        /// <summary>
+        /// Gets and sets the property AgentInsightStoreId. 
+        /// <para>
+        /// The unique identifier of the Agent Insight Store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        public string AgentInsightStoreId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AgentInsightStoreId property is set.
+        /// </summary>
+        internal bool IsSetAgentInsightStoreId() => this.AgentInsightStoreId != null;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time when the Agent Insight Store was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedAt property is set.
+        /// </summary>
+        internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// Specifies whether the Agent Insight Store accepts new Agent Insights. The default
+        /// value is enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AgentInsightStoreEnablementStatus EnablementStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnablementStatus property is set.
+        /// </summary>
+        internal bool IsSetEnablementStatus() => this.EnablementStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the encryption mode and key configuration that encrypts new Agent Insights
+        /// and protects the data at rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AgentInsightStoreEncryptionConfiguration EncryptionConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EncryptionConfiguration property is set.
+        /// </summary>
+        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current lifecycle status of the Agent Insight Store. Valid values:
+        /// </para>
+        ///  <dl> <dt>ACTIVE</dt> <dd> 
+        /// <para>
+        /// The store is available.
+        /// </para>
+        ///  </dd> <dt>UPDATING</dt> <dd> 
+        /// <para>
+        /// The service is applying a requested change.
+        /// </para>
+        ///  </dd> <dt>INACTIVE</dt> <dd> 
+        /// <para>
+        /// The store does not accept new Agent Insights.
+        /// </para>
+        ///  </dd> <dt>ERROR</dt> <dd> 
+        /// <para>
+        /// The store requires intervention.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AgentInsightStoreStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time when the Agent Insight Store was last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatedAt property is set.
+        /// </summary>
+        internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
+    }
+}

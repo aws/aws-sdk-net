@@ -83,7 +83,7 @@ namespace Amazon.NetworkFirewall.Model
         /// stateful rule group. Use this option to specify simple Suricata rules with protocol,
         /// source and destination, ports, direction, and rule options. For information about
         /// the Suricata <c>Rules</c> format, see <a href="https://suricata.readthedocs.io/en/suricata-8.0.3/rules/intro.html">Rules
-        /// Format</a>. 
+        /// Format</a> on the Suricata website. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

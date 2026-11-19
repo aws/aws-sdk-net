@@ -97,5 +97,11 @@ namespace Amazon.Route53Profiles.Model
             base.GetObjectData(info, context);
         }
 #endif
+
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable { get; } = new RetryableDetails(true);
     }
 }

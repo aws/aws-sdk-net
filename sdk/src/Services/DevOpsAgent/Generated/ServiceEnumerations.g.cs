@@ -206,6 +206,16 @@ namespace Amazon.DevOpsAgent
     public class CapabilityType : ConstantClass
     {
         /// <summary>
+        /// Constant CODE_CHANGE_RISK_ANALYSIS for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType CODE_CHANGE_RISK_ANALYSIS = new CapabilityType("CODE_CHANGE_RISK_ANALYSIS");
+
+        /// <summary>
+        /// Constant CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING for CapabilityType
+        /// </summary>
+        public static readonly CapabilityType CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING = new CapabilityType("CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING");
+
+        /// <summary>
         /// Constant RELEASE_READINESS_REVIEW for CapabilityType
         /// </summary>
         public static readonly CapabilityType RELEASE_READINESS_REVIEW = new CapabilityType("RELEASE_READINESS_REVIEW");
@@ -236,6 +246,83 @@ namespace Amazon.DevOpsAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapabilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChatArchiveStatus.
+    /// </summary>
+    public class ChatArchiveStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ChatArchiveStatus
+        /// </summary>
+        public static readonly ChatArchiveStatus ACTIVE = new ChatArchiveStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant ARCHIVED for ChatArchiveStatus
+        /// </summary>
+        public static readonly ChatArchiveStatus ARCHIVED = new ChatArchiveStatus("ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom ChatArchiveStatus for a value not among the defined constants.
+        /// </summary>
+        public ChatArchiveStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChatArchiveStatus FindValue(string value)
+        {
+            return FindValue<ChatArchiveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChatArchiveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConflictExceptionReason.
+    /// </summary>
+    public class ConflictExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHAT_ARCHIVED for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason CHAT_ARCHIVED = new ConflictExceptionReason("CHAT_ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom ConflictExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public ConflictExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictExceptionReason FindValue(string value)
+        {
+            return FindValue<ConflictExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictExceptionReason(string value)
         {
             return FindValue(value);
         }
@@ -1663,6 +1750,11 @@ namespace Amazon.DevOpsAgent
     /// </summary>
     public class TaskType : ConstantClass
     {
+        /// <summary>
+        /// Constant CODE_CHANGE_RISK_ANALYSIS for TaskType
+        /// </summary>
+        public static readonly TaskType CODE_CHANGE_RISK_ANALYSIS = new TaskType("CODE_CHANGE_RISK_ANALYSIS");
+
         /// <summary>
         /// Constant EVALUATION for TaskType
         /// </summary>

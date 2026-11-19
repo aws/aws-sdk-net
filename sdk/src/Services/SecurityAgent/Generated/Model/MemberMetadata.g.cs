@@ -36,6 +36,19 @@ namespace Amazon.SecurityAgent.Model
     public partial class MemberMetadata
     {
         /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The group metadata for the member.
+        /// </para>
+        /// </summary>
+        public GroupMetadata Group { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Group property is set.
+        /// </summary>
+        internal bool IsSetGroup() => this.Group != null;
+
+        /// <summary>
         /// Gets and sets the property User. 
         /// <para>
         /// The user metadata for the member.

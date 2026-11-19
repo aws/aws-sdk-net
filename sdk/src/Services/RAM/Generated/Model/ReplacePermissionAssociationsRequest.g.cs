@@ -104,6 +104,28 @@ namespace Amazon.RAM.Model
         internal bool IsSetFromPermissionVersion() => this.FromPermissionVersion.HasValue;
 
         /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// Specifies the template parameter values to apply when replacing the permission. You
+        /// must provide values for all parameters declared in the target permission template.
+        /// This parameter is required only if the target permission (<c>toPermissionArn</c>)
+        /// has template parameters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PermissionTemplateParameterInput> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameterInput>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property ToPermissionArn. 
         /// <para>
         /// Specifies the ARN of the managed permission that you want to associate with resource

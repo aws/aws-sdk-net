@@ -39,8 +39,9 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can use this choice only with a string match <c>ByteMatchStatement</c> with the
-    /// <c>PositionalConstraint</c> set to <c>EXACTLY</c>. 
+    /// You can use this choice with a <c>ByteMatchStatement</c>, <c>RegexMatchStatement</c>,
+    /// <c>RegexPatternSetReferenceStatement</c>, or <c>SizeConstraintStatement</c>. You can't
+    /// use it with <c>SqliMatchStatement</c> or <c>XssMatchStatement</c>. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -52,7 +53,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// Provide the JA4 fingerprint string from the logs in your string match statement specification,
-    /// to match with any future requests that have the same TLS configuration.
+    /// to match with any future requests that have the same TLS configuration. To match a
+    /// group of TLS configurations with a single pattern, use a regex statement.
     /// </para>
     /// </summary>
     public partial class JA4Fingerprint

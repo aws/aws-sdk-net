@@ -43,7 +43,7 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
             {
                 WriteSingleArgUnmarshallMethod(writer, exceptionName, context.Protocol);
                 writer.WriteLine("");
-                WriteMainUnmarshallMethod(writer, exceptionName, structure, bindings, context.Protocol);
+                WriteMainUnmarshallMethod(writer, exceptionName, structure, bindings);
                 writer.WriteLine("");
                 MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
@@ -75,23 +75,28 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
         });
     }
 
-    private static void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, StructureShape structure, JsonResponseUnmarshallerWriter.PartitionedMembers bindings, AWSProtocol protocol)
+    private void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, StructureShape structure, JsonResponseUnmarshallerWriter.PartitionedMembers bindings)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller error response to exception.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {exceptionName} Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)", () =>
         {
-            writer.WriteLine($"{exceptionName} unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
+            var arguments = "errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode";
+            if (context.Customizations.Service?.CustomErrorHandling?.ErrorResponseType is { } errorResponseType)
+            {
+                arguments += $", (errorResponse as {errorResponseType})?.Id2, (errorResponse as {errorResponseType})?.AmzCfId";
+            }
+            writer.WriteLine($"{exceptionName} unmarshalledObject = new {exceptionName}({arguments});");
 
             // Extra modeled error members are read from the body. The two C2J templates differ and each is
             // kept: restXml matches on the element suffix at any depth (RestXmlExceptionUnmarshaller.tt),
             // awsQuery pins the match to the member depth (AWSQueryExceptionUnmarshaller.tt) so an envelope
             // element at another depth — <RequestId> at 2, <Type>/<Code> at 3 — can't be read into a member
             // that happens to share its name.
-            if (protocol is AWSProtocol.AwsQuery or AWSProtocol.Ec2Query)
+            if (context.Protocol is AWSProtocol.AwsQuery or AWSProtocol.Ec2Query)
             {
-                WriteDepthQualifiedBodyLoop(writer, structure, bindings.BodyMembers, protocol);
+                WriteDepthQualifiedBodyLoop(writer, structure, bindings.BodyMembers, context.Protocol);
             }
             else
             {
@@ -101,7 +106,7 @@ public sealed class XmlExceptionUnmarshallerWriter(GenerationContext context, st
                     {
                         if (bindings.BodyMembers.Count > 0)
                         {
-                            XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, bindings.BodyMembers, depthExpr: null, protocol);
+                            XmlBodyMemberUnmarshaller.WriteMemberBlocks(writer, structure, bindings.BodyMembers, depthExpr: null, context.Protocol);
                         }
                     });
                 });

@@ -50,7 +50,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type to aggregate on.
+        /// The resource type to aggregate on. For Google Cloud Platform (GCP) resources, the
+        /// resource type is <c>compute.googleapis.com/Instance</c>, <c>cloudfunctions.googleapis.com/Function</c>,
+        /// or <c>artifactregistry.googleapis.com/DockerImage</c>.
         /// </para>
         /// </summary>
         public AggregationResourceType ResourceType { get; set; }

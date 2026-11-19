@@ -114,6 +114,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.RemoveAlias(Amazon.CloudFormation.Model.RemoveAliasRequest)" />
+      <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.RemoveAlias(Amazon.CloudFormation.Model.RemoveAliasRequest)" />
+      <member name="T:Amazon.CloudFormation.Model.RemoveAliasRequest" />
+      <member name="T:Amazon.CloudFormation.Model.RemoveAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example removes the alias MyAlias from your stack:
+        </para>
+        <code title="Example – Remove an alias from a stack" source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs" region="RemoveAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.SetAlias(Amazon.CloudFormation.Model.SetAliasRequest)" />
+      <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.SetAlias(Amazon.CloudFormation.Model.SetAliasRequest)" />
+      <member name="T:Amazon.CloudFormation.Model.SetAliasRequest" />
+      <member name="T:Amazon.CloudFormation.Model.SetAliasResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example assigns the alias MyAlias to the stack MyStack:
+        </para>
+        <code title="Example – Set an alias for a stack" source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs" region="SetAlias-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.StartResourceScan(Amazon.CloudFormation.Model.StartResourceScanRequest)" />
       <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.StartResourceScan(Amazon.CloudFormation.Model.StartResourceScanRequest)" />
       <member name="T:Amazon.CloudFormation.Model.StartResourceScanRequest" />

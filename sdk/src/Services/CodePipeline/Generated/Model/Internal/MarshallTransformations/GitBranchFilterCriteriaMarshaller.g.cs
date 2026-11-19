@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// GitBranchFilterCriteria Marshaller
     /// </summary>
-    public partial class GitBranchFilterCriteriaMarshaller : IRequestMarshaller<GitBranchFilterCriteria, JsonMarshallerContext>
+    public partial class GitBranchFilterCriteriaMarshaller : IRequestMarshaller<GitBranchFilterCriteria, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitBranchFilterCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(GitBranchFilterCriteria requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetExcludes())
             {
-                context.Writer.WritePropertyName("excludes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("excludes");
+                context.Writer.WriteStartArray(requestObject.Excludes.Count);
                 foreach (var requestObjectExcludesListValue in requestObject.Excludes)
                 {
-                    context.Writer.WriteStringValue(requestObjectExcludesListValue);
+                    context.Writer.WriteTextString(requestObjectExcludesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetIncludes())
             {
-                context.Writer.WritePropertyName("includes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("includes");
+                context.Writer.WriteStartArray(requestObject.Includes.Count);
                 foreach (var requestObjectIncludesListValue in requestObject.Includes)
                 {
-                    context.Writer.WriteStringValue(requestObjectIncludesListValue);
+                    context.Writer.WriteTextString(requestObjectIncludesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

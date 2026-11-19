@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,78 +39,78 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// WorkspaceAccessProperties Marshaller
     /// </summary>
-    public partial class WorkspaceAccessPropertiesMarshaller : IRequestMarshaller<WorkspaceAccessProperties, JsonMarshallerContext>
+    public partial class WorkspaceAccessPropertiesMarshaller : IRequestMarshaller<WorkspaceAccessProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(WorkspaceAccessProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkspaceAccessProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAccessEndpointConfig())
             {
-                context.Writer.WritePropertyName("AccessEndpointConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AccessEndpointConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AccessEndpointConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessEndpointConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetDeviceTypeAndroid())
             {
-                context.Writer.WritePropertyName("DeviceTypeAndroid");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeAndroid);
+                context.Writer.WriteTextString("DeviceTypeAndroid");
+                context.Writer.WriteTextString(requestObject.DeviceTypeAndroid);
             }
 
             if (requestObject.IsSetDeviceTypeChromeOs())
             {
-                context.Writer.WritePropertyName("DeviceTypeChromeOs");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeChromeOs);
+                context.Writer.WriteTextString("DeviceTypeChromeOs");
+                context.Writer.WriteTextString(requestObject.DeviceTypeChromeOs);
             }
 
             if (requestObject.IsSetDeviceTypeIos())
             {
-                context.Writer.WritePropertyName("DeviceTypeIos");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeIos);
+                context.Writer.WriteTextString("DeviceTypeIos");
+                context.Writer.WriteTextString(requestObject.DeviceTypeIos);
             }
 
             if (requestObject.IsSetDeviceTypeLinux())
             {
-                context.Writer.WritePropertyName("DeviceTypeLinux");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeLinux);
+                context.Writer.WriteTextString("DeviceTypeLinux");
+                context.Writer.WriteTextString(requestObject.DeviceTypeLinux);
             }
 
             if (requestObject.IsSetDeviceTypeOsx())
             {
-                context.Writer.WritePropertyName("DeviceTypeOsx");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeOsx);
+                context.Writer.WriteTextString("DeviceTypeOsx");
+                context.Writer.WriteTextString(requestObject.DeviceTypeOsx);
             }
 
             if (requestObject.IsSetDeviceTypeWeb())
             {
-                context.Writer.WritePropertyName("DeviceTypeWeb");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeWeb);
+                context.Writer.WriteTextString("DeviceTypeWeb");
+                context.Writer.WriteTextString(requestObject.DeviceTypeWeb);
             }
 
             if (requestObject.IsSetDeviceTypeWindows())
             {
-                context.Writer.WritePropertyName("DeviceTypeWindows");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeWindows);
+                context.Writer.WriteTextString("DeviceTypeWindows");
+                context.Writer.WriteTextString(requestObject.DeviceTypeWindows);
             }
 
             if (requestObject.IsSetDeviceTypeWorkSpacesThinClient())
             {
-                context.Writer.WritePropertyName("DeviceTypeWorkSpacesThinClient");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeWorkSpacesThinClient);
+                context.Writer.WriteTextString("DeviceTypeWorkSpacesThinClient");
+                context.Writer.WriteTextString(requestObject.DeviceTypeWorkSpacesThinClient);
             }
 
             if (requestObject.IsSetDeviceTypeZeroClient())
             {
-                context.Writer.WritePropertyName("DeviceTypeZeroClient");
-                context.Writer.WriteStringValue(requestObject.DeviceTypeZeroClient);
+                context.Writer.WriteTextString("DeviceTypeZeroClient");
+                context.Writer.WriteTextString(requestObject.DeviceTypeZeroClient);
             }
         }
 

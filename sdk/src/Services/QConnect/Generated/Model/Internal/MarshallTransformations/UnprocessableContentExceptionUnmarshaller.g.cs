@@ -55,6 +55,21 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             var unmarshalledObject = new UnprocessableContentException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+                int targetDepth = context.CurrentDepth;
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                    if (context.TestExpression("reason", targetDepth, ref reader))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                }
+            }
+
             return unmarshalledObject;
         }
 

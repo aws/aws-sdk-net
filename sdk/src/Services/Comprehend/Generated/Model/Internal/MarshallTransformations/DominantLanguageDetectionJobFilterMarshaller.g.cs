@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DominantLanguageDetectionJobFilter Marshaller
     /// </summary>
-    public partial class DominantLanguageDetectionJobFilterMarshaller : IRequestMarshaller<DominantLanguageDetectionJobFilter, JsonMarshallerContext>
+    public partial class DominantLanguageDetectionJobFilterMarshaller : IRequestMarshaller<DominantLanguageDetectionJobFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DominantLanguageDetectionJobFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(DominantLanguageDetectionJobFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetJobName())
             {
-                context.Writer.WritePropertyName("JobName");
-                context.Writer.WriteStringValue(requestObject.JobName);
+                context.Writer.WriteTextString("JobName");
+                context.Writer.WriteTextString(requestObject.JobName);
             }
 
             if (requestObject.IsSetJobStatus())
             {
-                context.Writer.WritePropertyName("JobStatus");
-                context.Writer.WriteStringValue(requestObject.JobStatus);
+                context.Writer.WriteTextString("JobStatus");
+                context.Writer.WriteTextString(requestObject.JobStatus);
             }
 
             if (requestObject.IsSetSubmitTimeAfter())
             {
-                context.Writer.WritePropertyName("SubmitTimeAfter");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.SubmitTimeAfter.Value));
+                context.Writer.WriteTextString("SubmitTimeAfter");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeAfter.Value);
             }
 
             if (requestObject.IsSetSubmitTimeBefore())
             {
-                context.Writer.WritePropertyName("SubmitTimeBefore");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.SubmitTimeBefore.Value));
+                context.Writer.WriteTextString("SubmitTimeBefore");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeBefore.Value);
             }
         }
 

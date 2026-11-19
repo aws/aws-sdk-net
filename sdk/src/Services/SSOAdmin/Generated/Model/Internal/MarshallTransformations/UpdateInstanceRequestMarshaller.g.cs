@@ -90,6 +90,16 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("NetworkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkConfigurationInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetPermissionSetsEnabled())
             {
                 context.Writer.WritePropertyName("PermissionSetsEnabled");

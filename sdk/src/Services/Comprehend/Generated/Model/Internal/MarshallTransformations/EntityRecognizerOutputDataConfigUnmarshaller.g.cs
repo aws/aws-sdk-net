@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,30 +38,42 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntityRecognizerOutputDataConfig Object
     /// </summary>
-    public partial class EntityRecognizerOutputDataConfigUnmarshaller : IJsonUnmarshaller<EntityRecognizerOutputDataConfig, JsonUnmarshallerContext>
+    public partial class EntityRecognizerOutputDataConfigUnmarshaller : ICborUnmarshaller<EntityRecognizerOutputDataConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public EntityRecognizerOutputDataConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EntityRecognizerOutputDataConfig Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new EntityRecognizerOutputDataConfig();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("FlywheelStatsS3Prefix", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlywheelStatsS3Prefix = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "FlywheelStatsS3Prefix":
+                        context.AddPathSegment("FlywheelStatsS3Prefix");
+                        unmarshalledObject.FlywheelStatsS3Prefix = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

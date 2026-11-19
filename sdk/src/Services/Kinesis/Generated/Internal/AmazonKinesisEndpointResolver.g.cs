@@ -87,6 +87,22 @@ namespace Amazon.Kinesis.Internal
             }
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "AcknowledgeDeadLetterQueueRecordsRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (AcknowledgeDeadLetterQueueRecordsRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
+            if (requestContext.RequestName == "AcknowledgeQueueRecordsRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (AcknowledgeQueueRecordsRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
             if (requestContext.RequestName == "AddTagsToStreamRequest")
             {
                 result.OperationType = "control";
@@ -97,6 +113,12 @@ namespace Amazon.Kinesis.Internal
             }
             if (requestContext.RequestName == "CreateChannelRequest")
             {
+                result.OperationType = "control";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateQueueRequest")
+            {
+                result.ResourceType = "queue";
                 result.OperationType = "control";
                 return result;
             }
@@ -118,6 +140,14 @@ namespace Amazon.Kinesis.Internal
                 result.OperationType = "control";
                 var request = (DeleteChannelRequest)requestContext.OriginalRequest;
                 result.ChannelARN = request.ChannelARN;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteQueueRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "control";
+                var request = (DeleteQueueRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
                 return result;
             }
             if (requestContext.RequestName == "DeleteResourcePolicyRequest")
@@ -160,6 +190,14 @@ namespace Amazon.Kinesis.Internal
             if (requestContext.RequestName == "DescribeLimitsRequest")
             {
                 result.OperationType = "control";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeQueueRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "control";
+                var request = (DescribeQueueRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
                 return result;
             }
             if (requestContext.RequestName == "DescribeStreamRequest")
@@ -240,6 +278,12 @@ namespace Amazon.Kinesis.Internal
                 result.OperationType = "control";
                 return result;
             }
+            if (requestContext.RequestName == "ListQueuesRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "control";
+                return result;
+            }
             if (requestContext.RequestName == "ListShardsRequest")
             {
                 result.OperationType = "control";
@@ -309,6 +353,22 @@ namespace Amazon.Kinesis.Internal
                 result.StreamId = request.StreamId;
                 return result;
             }
+            if (requestContext.RequestName == "ReceiveDeadLetterQueueRecordsRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (ReceiveDeadLetterQueueRecordsRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
+            if (requestContext.RequestName == "ReceiveQueueRecordsRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (ReceiveQueueRecordsRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
             if (requestContext.RequestName == "RegisterStreamConsumerRequest")
             {
                 result.OperationType = "control";
@@ -323,6 +383,14 @@ namespace Amazon.Kinesis.Internal
                 var request = (RemoveTagsFromStreamRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "RestoreDeadLetterQueueRecordsRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (RestoreDeadLetterQueueRecordsRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
                 return result;
             }
             if (requestContext.RequestName == "SplitShardRequest")
@@ -385,12 +453,36 @@ namespace Amazon.Kinesis.Internal
                 result.ChannelARN = request.ChannelARN;
                 return result;
             }
+            if (requestContext.RequestName == "UpdateDeadLetterQueueRecordsVisibilityRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (UpdateDeadLetterQueueRecordsVisibilityRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
             if (requestContext.RequestName == "UpdateMaxRecordSizeRequest")
             {
                 result.OperationType = "control";
                 var request = (UpdateMaxRecordSizeRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateQueueRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "control";
+                var request = (UpdateQueueRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateQueueRecordsVisibilityRequest")
+            {
+                result.ResourceType = "queue";
+                result.OperationType = "data";
+                var request = (UpdateQueueRecordsVisibilityRequest)requestContext.OriginalRequest;
+                result.QueueARN = request.QueueARN;
                 return result;
             }
             if (requestContext.RequestName == "UpdateShardCountRequest")

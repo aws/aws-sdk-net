@@ -773,6 +773,88 @@ namespace Amazon.CloudWatchOmni
     }
 
     /// <summary>
+    /// Constants used for properties of type MetricAggregationTemporality.
+    /// </summary>
+    public class MetricAggregationTemporality : ConstantClass
+    {
+        /// <summary>
+        /// Constant Cumulative for MetricAggregationTemporality
+        /// </summary>
+        public static readonly MetricAggregationTemporality Cumulative = new MetricAggregationTemporality("cumulative");
+
+        /// <summary>
+        /// Constant Delta for MetricAggregationTemporality
+        /// </summary>
+        public static readonly MetricAggregationTemporality Delta = new MetricAggregationTemporality("delta");
+
+        /// <summary>
+        /// Constructs a custom MetricAggregationTemporality for a value not among the defined constants.
+        /// </summary>
+        public MetricAggregationTemporality(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricAggregationTemporality FindValue(string value)
+        {
+            return FindValue<MetricAggregationTemporality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricAggregationTemporality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MetricMonotonicity.
+    /// </summary>
+    public class MetricMonotonicity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Monotonic for MetricMonotonicity
+        /// </summary>
+        public static readonly MetricMonotonicity Monotonic = new MetricMonotonicity("monotonic");
+
+        /// <summary>
+        /// Constant Non_monotonic for MetricMonotonicity
+        /// </summary>
+        public static readonly MetricMonotonicity Non_monotonic = new MetricMonotonicity("non_monotonic");
+
+        /// <summary>
+        /// Constructs a custom MetricMonotonicity for a value not among the defined constants.
+        /// </summary>
+        public MetricMonotonicity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricMonotonicity FindValue(string value)
+        {
+            return FindValue<MetricMonotonicity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricMonotonicity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type NodeCategory.
     /// </summary>
     public class NodeCategory : ConstantClass

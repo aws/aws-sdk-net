@@ -130,6 +130,13 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("publicIpStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicIpStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("regions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

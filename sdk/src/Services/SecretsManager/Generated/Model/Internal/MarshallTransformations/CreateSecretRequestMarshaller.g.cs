@@ -95,6 +95,11 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetCrossAccountPrimaryARN())
+            {
+                context.Writer.WritePropertyName("CrossAccountPrimaryARN");
+                context.Writer.WriteStringValue(publicRequest.CrossAccountPrimaryARN);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDurableExecution operation. Stops a running
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+    /// or paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
     /// execution</a>. The execution transitions to STOPPED status and cannot be resumed.
     /// Any in-progress operations are terminated.
     /// </summary>

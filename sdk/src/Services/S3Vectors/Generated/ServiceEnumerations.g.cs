@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.S3Vectors
 {
     /// <summary>
+    /// Constants used for properties of type AnalyzerStatus.
+    /// </summary>
+    public class AnalyzerStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus ACTIVE = new AnalyzerStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant BUILDING for AnalyzerStatus
+        /// </summary>
+        public static readonly AnalyzerStatus BUILDING = new AnalyzerStatus("BUILDING");
+
+        /// <summary>
+        /// Constructs a custom AnalyzerStatus for a value not among the defined constants.
+        /// </summary>
+        public AnalyzerStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyzerStatus FindValue(string value)
+        {
+            return FindValue<AnalyzerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyzerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DataType.
     /// </summary>
     public class DataType : ConstantClass
@@ -134,6 +175,87 @@ namespace Amazon.S3Vectors
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IndexMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant De for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode De = new LanguageCode("de");
+
+        /// <summary>
+        /// Constant En for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode En = new LanguageCode("en");
+
+        /// <summary>
+        /// Constant Es for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Es = new LanguageCode("es");
+
+        /// <summary>
+        /// Constant Fr for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Fr = new LanguageCode("fr");
+
+        /// <summary>
+        /// Constant It for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode It = new LanguageCode("it");
+
+        /// <summary>
+        /// Constant Ja for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Ja = new LanguageCode("ja");
+
+        /// <summary>
+        /// Constant Ko for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Ko = new LanguageCode("ko");
+
+        /// <summary>
+        /// Constant Nl for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Nl = new LanguageCode("nl");
+
+        /// <summary>
+        /// Constant Pt for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Pt = new LanguageCode("pt");
+
+        /// <summary>
+        /// Constant Zh for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Zh = new LanguageCode("zh");
+
+        /// <summary>
+        /// Constructs a custom LanguageCode for a value not among the defined constants.
+        /// </summary>
+        public LanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
         {
             return FindValue(value);
         }

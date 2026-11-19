@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActionTypeSettings Marshaller
     /// </summary>
-    public partial class ActionTypeSettingsMarshaller : IRequestMarshaller<ActionTypeSettings, JsonMarshallerContext>
+    public partial class ActionTypeSettingsMarshaller : IRequestMarshaller<ActionTypeSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActionTypeSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ActionTypeSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEntityUrlTemplate())
             {
-                context.Writer.WritePropertyName("entityUrlTemplate");
-                context.Writer.WriteStringValue(requestObject.EntityUrlTemplate);
+                context.Writer.WriteTextString("entityUrlTemplate");
+                context.Writer.WriteTextString(requestObject.EntityUrlTemplate);
             }
 
             if (requestObject.IsSetExecutionUrlTemplate())
             {
-                context.Writer.WritePropertyName("executionUrlTemplate");
-                context.Writer.WriteStringValue(requestObject.ExecutionUrlTemplate);
+                context.Writer.WriteTextString("executionUrlTemplate");
+                context.Writer.WriteTextString(requestObject.ExecutionUrlTemplate);
             }
 
             if (requestObject.IsSetRevisionUrlTemplate())
             {
-                context.Writer.WritePropertyName("revisionUrlTemplate");
-                context.Writer.WriteStringValue(requestObject.RevisionUrlTemplate);
+                context.Writer.WriteTextString("revisionUrlTemplate");
+                context.Writer.WriteTextString(requestObject.RevisionUrlTemplate);
             }
 
             if (requestObject.IsSetThirdPartyConfigurationUrl())
             {
-                context.Writer.WritePropertyName("thirdPartyConfigurationUrl");
-                context.Writer.WriteStringValue(requestObject.ThirdPartyConfigurationUrl);
+                context.Writer.WriteTextString("thirdPartyConfigurationUrl");
+                context.Writer.WriteTextString(requestObject.ThirdPartyConfigurationUrl);
             }
         }
 

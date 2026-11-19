@@ -119,6 +119,11 @@ namespace Amazon.Connect
         public static readonly ActionType CREATE_TASK = new ActionType("CREATE_TASK");
 
         /// <summary>
+        /// Constant END_ASSOCIATED_EMAILS for ActionType
+        /// </summary>
+        public static readonly ActionType END_ASSOCIATED_EMAILS = new ActionType("END_ASSOCIATED_EMAILS");
+
+        /// <summary>
         /// Constant END_ASSOCIATED_TASKS for ActionType
         /// </summary>
         public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
@@ -2829,6 +2834,47 @@ namespace Amazon.Connect
     }
 
     /// <summary>
+    /// Constants used for properties of type EvaluationEnablementStatus.
+    /// </summary>
+    public class EvaluationEnablementStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for EvaluationEnablementStatus
+        /// </summary>
+        public static readonly EvaluationEnablementStatus DISABLED = new EvaluationEnablementStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for EvaluationEnablementStatus
+        /// </summary>
+        public static readonly EvaluationEnablementStatus ENABLED = new EvaluationEnablementStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom EvaluationEnablementStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationEnablementStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationEnablementStatus FindValue(string value)
+        {
+            return FindValue<EvaluationEnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationEnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EvaluationFormAIVersionStatus.
     /// </summary>
     public class EvaluationFormAIVersionStatus : ConstantClass
@@ -2874,6 +2920,259 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EvaluationFormAIVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormAiMetricsField.
+    /// </summary>
+    public class EvaluationFormAiMetricsField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AI_AGENT_MAX_PROMPT_LATENCY for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_AGENT_MAX_PROMPT_LATENCY = new EvaluationFormAiMetricsField("AI_AGENT_MAX_PROMPT_LATENCY");
+
+        /// <summary>
+        /// Constant AI_SESSION_COMPLETENESS_SCORE for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_SESSION_COMPLETENESS_SCORE = new EvaluationFormAiMetricsField("AI_SESSION_COMPLETENESS_SCORE");
+
+        /// <summary>
+        /// Constant AI_SESSION_FAITHFULNESS_SCORE for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_SESSION_FAITHFULNESS_SCORE = new EvaluationFormAiMetricsField("AI_SESSION_FAITHFULNESS_SCORE");
+
+        /// <summary>
+        /// Constant AI_SESSION_GOAL_SUCCESS_RATE for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_SESSION_GOAL_SUCCESS_RATE = new EvaluationFormAiMetricsField("AI_SESSION_GOAL_SUCCESS_RATE");
+
+        /// <summary>
+        /// Constant AI_SESSION_IS_HANDED_OFF for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_SESSION_IS_HANDED_OFF = new EvaluationFormAiMetricsField("AI_SESSION_IS_HANDED_OFF");
+
+        /// <summary>
+        /// Constant AI_SESSION_SELF_SERVICE_DURATION for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_SESSION_SELF_SERVICE_DURATION = new EvaluationFormAiMetricsField("AI_SESSION_SELF_SERVICE_DURATION");
+
+        /// <summary>
+        /// Constant AI_TOOL_MAX_LATENCY for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_TOOL_MAX_LATENCY = new EvaluationFormAiMetricsField("AI_TOOL_MAX_LATENCY");
+
+        /// <summary>
+        /// Constant AI_TOOL_PARAMETER_ACCURACY for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_TOOL_PARAMETER_ACCURACY = new EvaluationFormAiMetricsField("AI_TOOL_PARAMETER_ACCURACY");
+
+        /// <summary>
+        /// Constant AI_TOOL_SELECTION_ACCURACY for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_TOOL_SELECTION_ACCURACY = new EvaluationFormAiMetricsField("AI_TOOL_SELECTION_ACCURACY");
+
+        /// <summary>
+        /// Constant AI_TOOL_UTILIZATION_ACCURACY for EvaluationFormAiMetricsField
+        /// </summary>
+        public static readonly EvaluationFormAiMetricsField AI_TOOL_UTILIZATION_ACCURACY = new EvaluationFormAiMetricsField("AI_TOOL_UTILIZATION_ACCURACY");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormAiMetricsField for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormAiMetricsField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormAiMetricsField FindValue(string value)
+        {
+            return FindValue<EvaluationFormAiMetricsField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormAiMetricsField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormContactField.
+    /// </summary>
+    public class EvaluationFormContactField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT_ARN for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField AGENT_ARN = new EvaluationFormContactField("AGENT_ARN");
+
+        /// <summary>
+        /// Constant AGENT_INTERACTION_AND_HOLD_DURATION for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField AGENT_INTERACTION_AND_HOLD_DURATION = new EvaluationFormContactField("AGENT_INTERACTION_AND_HOLD_DURATION");
+
+        /// <summary>
+        /// Constant AGENT_INTERACTION_DURATION for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField AGENT_INTERACTION_DURATION = new EvaluationFormContactField("AGENT_INTERACTION_DURATION");
+
+        /// <summary>
+        /// Constant CATEGORIES for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CATEGORIES = new EvaluationFormContactField("CATEGORIES");
+
+        /// <summary>
+        /// Constant CHANNEL for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CHANNEL = new EvaluationFormContactField("CHANNEL");
+
+        /// <summary>
+        /// Constant CONTACT_DURATION for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CONTACT_DURATION = new EvaluationFormContactField("CONTACT_DURATION");
+
+        /// <summary>
+        /// Constant CUSTOMER_HOLD_TIME for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CUSTOMER_HOLD_TIME = new EvaluationFormContactField("CUSTOMER_HOLD_TIME");
+
+        /// <summary>
+        /// Constant CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT = new EvaluationFormContactField("CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER_SENTIMENT_SCORE_WITH_AGENT for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField CUSTOMER_SENTIMENT_SCORE_WITH_AGENT = new EvaluationFormContactField("CUSTOMER_SENTIMENT_SCORE_WITH_AGENT");
+
+        /// <summary>
+        /// Constant INITIATION_METHOD for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField INITIATION_METHOD = new EvaluationFormContactField("INITIATION_METHOD");
+
+        /// <summary>
+        /// Constant IS_QUEUED for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField IS_QUEUED = new EvaluationFormContactField("IS_QUEUED");
+
+        /// <summary>
+        /// Constant LONGEST_HOLD_DURATION for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField LONGEST_HOLD_DURATION = new EvaluationFormContactField("LONGEST_HOLD_DURATION");
+
+        /// <summary>
+        /// Constant NON_TALK_TIME for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField NON_TALK_TIME = new EvaluationFormContactField("NON_TALK_TIME");
+
+        /// <summary>
+        /// Constant NON_TALK_TIME_PERCENTAGE for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField NON_TALK_TIME_PERCENTAGE = new EvaluationFormContactField("NON_TALK_TIME_PERCENTAGE");
+
+        /// <summary>
+        /// Constant NUMBER_OF_HOLDS for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField NUMBER_OF_HOLDS = new EvaluationFormContactField("NUMBER_OF_HOLDS");
+
+        /// <summary>
+        /// Constant NUMBER_OF_INTERRUPTIONS for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField NUMBER_OF_INTERRUPTIONS = new EvaluationFormContactField("NUMBER_OF_INTERRUPTIONS");
+
+        /// <summary>
+        /// Constant OVERALL_AGENT_SENTIMENT_SCORE for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField OVERALL_AGENT_SENTIMENT_SCORE = new EvaluationFormContactField("OVERALL_AGENT_SENTIMENT_SCORE");
+
+        /// <summary>
+        /// Constant OVERALL_CUSTOMER_SENTIMENT_SCORE for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField OVERALL_CUSTOMER_SENTIMENT_SCORE = new EvaluationFormContactField("OVERALL_CUSTOMER_SENTIMENT_SCORE");
+
+        /// <summary>
+        /// Constant QUEUE_ARN for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField QUEUE_ARN = new EvaluationFormContactField("QUEUE_ARN");
+
+        /// <summary>
+        /// Constant RECORDING_MEDIA_STREAM_TYPES for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField RECORDING_MEDIA_STREAM_TYPES = new EvaluationFormContactField("RECORDING_MEDIA_STREAM_TYPES");
+
+        /// <summary>
+        /// Constant ROUTING_PROFILE_ARN for EvaluationFormContactField
+        /// </summary>
+        public static readonly EvaluationFormContactField ROUTING_PROFILE_ARN = new EvaluationFormContactField("ROUTING_PROFILE_ARN");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormContactField for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormContactField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormContactField FindValue(string value)
+        {
+            return FindValue<EvaluationFormContactField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormContactField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormEvaluationMetadataField.
+    /// </summary>
+    public class EvaluationFormEvaluationMetadataField : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVALUATION_TYPE for EvaluationFormEvaluationMetadataField
+        /// </summary>
+        public static readonly EvaluationFormEvaluationMetadataField EVALUATION_TYPE = new EvaluationFormEvaluationMetadataField("EVALUATION_TYPE");
+
+        /// <summary>
+        /// Constructs a custom EvaluationFormEvaluationMetadataField for a value not among the defined constants.
+        /// </summary>
+        public EvaluationFormEvaluationMetadataField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormEvaluationMetadataField FindValue(string value)
+        {
+            return FindValue<EvaluationFormEvaluationMetadataField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormEvaluationMetadataField(string value)
         {
             return FindValue(value);
         }
@@ -2967,6 +3266,26 @@ namespace Amazon.Connect
     public class EvaluationFormItemEnablementSourceType : ConstantClass
     {
         /// <summary>
+        /// Constant AI_METRICS for EvaluationFormItemEnablementSourceType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceType AI_METRICS = new EvaluationFormItemEnablementSourceType("AI_METRICS");
+
+        /// <summary>
+        /// Constant CONTACT for EvaluationFormItemEnablementSourceType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceType CONTACT = new EvaluationFormItemEnablementSourceType("CONTACT");
+
+        /// <summary>
+        /// Constant EVALUATION_METADATA for EvaluationFormItemEnablementSourceType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceType EVALUATION_METADATA = new EvaluationFormItemEnablementSourceType("EVALUATION_METADATA");
+
+        /// <summary>
+        /// Constant FORM_METADATA for EvaluationFormItemEnablementSourceType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceType FORM_METADATA = new EvaluationFormItemEnablementSourceType("FORM_METADATA");
+
+        /// <summary>
         /// Constant QUESTION_REF_ID for EvaluationFormItemEnablementSourceType
         /// </summary>
         public static readonly EvaluationFormItemEnablementSourceType QUESTION_REF_ID = new EvaluationFormItemEnablementSourceType("QUESTION_REF_ID");
@@ -3003,9 +3322,29 @@ namespace Amazon.Connect
     public class EvaluationFormItemEnablementSourceValueType : ConstantClass
     {
         /// <summary>
+        /// Constant BOOLEAN_VALUE for EvaluationFormItemEnablementSourceValueType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceValueType BOOLEAN_VALUE = new EvaluationFormItemEnablementSourceValueType("BOOLEAN_VALUE");
+
+        /// <summary>
+        /// Constant DATETIME_VALUE for EvaluationFormItemEnablementSourceValueType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceValueType DATETIME_VALUE = new EvaluationFormItemEnablementSourceValueType("DATETIME_VALUE");
+
+        /// <summary>
+        /// Constant NUMERIC_VALUE for EvaluationFormItemEnablementSourceValueType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceValueType NUMERIC_VALUE = new EvaluationFormItemEnablementSourceValueType("NUMERIC_VALUE");
+
+        /// <summary>
         /// Constant OPTION_REF_ID for EvaluationFormItemEnablementSourceValueType
         /// </summary>
         public static readonly EvaluationFormItemEnablementSourceValueType OPTION_REF_ID = new EvaluationFormItemEnablementSourceValueType("OPTION_REF_ID");
+
+        /// <summary>
+        /// Constant STRING_VALUE for EvaluationFormItemEnablementSourceValueType
+        /// </summary>
+        public static readonly EvaluationFormItemEnablementSourceValueType STRING_VALUE = new EvaluationFormItemEnablementSourceValueType("STRING_VALUE");
 
         /// <summary>
         /// Constructs a custom EvaluationFormItemEnablementSourceValueType for a value not among the defined constants.
@@ -3044,14 +3383,44 @@ namespace Amazon.Connect
         public static readonly EvaluationFormItemSourceValuesComparator ALL_IN = new EvaluationFormItemSourceValuesComparator("ALL_IN");
 
         /// <summary>
+        /// Constant EQUAL_TO for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator EQUAL_TO = new EvaluationFormItemSourceValuesComparator("EQUAL_TO");
+
+        /// <summary>
         /// Constant EXACT for EvaluationFormItemSourceValuesComparator
         /// </summary>
         public static readonly EvaluationFormItemSourceValuesComparator EXACT = new EvaluationFormItemSourceValuesComparator("EXACT");
 
         /// <summary>
+        /// Constant GREATER_THAN for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator GREATER_THAN = new EvaluationFormItemSourceValuesComparator("GREATER_THAN");
+
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator GREATER_THAN_OR_EQUAL_TO = new EvaluationFormItemSourceValuesComparator("GREATER_THAN_OR_EQUAL_TO");
+
+        /// <summary>
         /// Constant IN for EvaluationFormItemSourceValuesComparator
         /// </summary>
         public static readonly EvaluationFormItemSourceValuesComparator IN = new EvaluationFormItemSourceValuesComparator("IN");
+
+        /// <summary>
+        /// Constant LESS_THAN for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator LESS_THAN = new EvaluationFormItemSourceValuesComparator("LESS_THAN");
+
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator LESS_THAN_OR_EQUAL_TO = new EvaluationFormItemSourceValuesComparator("LESS_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// Constant NOT_EQUAL_TO for EvaluationFormItemSourceValuesComparator
+        /// </summary>
+        public static readonly EvaluationFormItemSourceValuesComparator NOT_EQUAL_TO = new EvaluationFormItemSourceValuesComparator("NOT_EQUAL_TO");
 
         /// <summary>
         /// Constant NOT_IN for EvaluationFormItemSourceValuesComparator
@@ -3090,9 +3459,129 @@ namespace Amazon.Connect
     public class EvaluationFormLanguageCode : ConstantClass
     {
         /// <summary>
+        /// Constant AfZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode AfZA = new EvaluationFormLanguageCode("af-ZA");
+
+        /// <summary>
+        /// Constant AmET for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode AmET = new EvaluationFormLanguageCode("am-ET");
+
+        /// <summary>
+        /// Constant ArAE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ArAE = new EvaluationFormLanguageCode("ar-AE");
+
+        /// <summary>
+        /// Constant ArSA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ArSA = new EvaluationFormLanguageCode("ar-SA");
+
+        /// <summary>
+        /// Constant BeBY for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BeBY = new EvaluationFormLanguageCode("be-BY");
+
+        /// <summary>
+        /// Constant BgBG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BgBG = new EvaluationFormLanguageCode("bg-BG");
+
+        /// <summary>
+        /// Constant BnBD for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BnBD = new EvaluationFormLanguageCode("bn-BD");
+
+        /// <summary>
+        /// Constant BsBA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode BsBA = new EvaluationFormLanguageCode("bs-BA");
+
+        /// <summary>
+        /// Constant CaES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CaES = new EvaluationFormLanguageCode("ca-ES");
+
+        /// <summary>
+        /// Constant CkbIQ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CkbIQ = new EvaluationFormLanguageCode("ckb-IQ");
+
+        /// <summary>
+        /// Constant CkbIR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CkbIR = new EvaluationFormLanguageCode("ckb-IR");
+
+        /// <summary>
+        /// Constant CsCZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CsCZ = new EvaluationFormLanguageCode("cs-CZ");
+
+        /// <summary>
+        /// Constant CyGB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode CyGB = new EvaluationFormLanguageCode("cy-GB");
+
+        /// <summary>
+        /// Constant DaDK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DaDK = new EvaluationFormLanguageCode("da-DK");
+
+        /// <summary>
+        /// Constant DeAT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DeAT = new EvaluationFormLanguageCode("de-AT");
+
+        /// <summary>
+        /// Constant DeCH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode DeCH = new EvaluationFormLanguageCode("de-CH");
+
+        /// <summary>
         /// Constant DeDE for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode DeDE = new EvaluationFormLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant ElGR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ElGR = new EvaluationFormLanguageCode("el-GR");
+
+        /// <summary>
+        /// Constant EnAB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnAB = new EvaluationFormLanguageCode("en-AB");
+
+        /// <summary>
+        /// Constant EnAU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnAU = new EvaluationFormLanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnGB = new EvaluationFormLanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnIE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnIE = new EvaluationFormLanguageCode("en-IE");
+
+        /// <summary>
+        /// Constant EnIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnIN = new EvaluationFormLanguageCode("en-IN");
+
+        /// <summary>
+        /// Constant EnNZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnNZ = new EvaluationFormLanguageCode("en-NZ");
+
+        /// <summary>
+        /// Constant EnSG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnSG = new EvaluationFormLanguageCode("en-SG");
 
         /// <summary>
         /// Constant EnUS for EvaluationFormLanguageCode
@@ -3100,14 +3589,129 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode EnUS = new EvaluationFormLanguageCode("en-US");
 
         /// <summary>
+        /// Constant EnWL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnWL = new EvaluationFormLanguageCode("en-WL");
+
+        /// <summary>
+        /// Constant EnZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EnZA = new EvaluationFormLanguageCode("en-ZA");
+
+        /// <summary>
         /// Constant EsES for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode EsES = new EvaluationFormLanguageCode("es-ES");
 
         /// <summary>
+        /// Constant EsMX for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EsMX = new EvaluationFormLanguageCode("es-MX");
+
+        /// <summary>
+        /// Constant EsUS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EsUS = new EvaluationFormLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant EtEE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EtEE = new EvaluationFormLanguageCode("et-EE");
+
+        /// <summary>
+        /// Constant EuES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode EuES = new EvaluationFormLanguageCode("eu-ES");
+
+        /// <summary>
+        /// Constant FaAF for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FaAF = new EvaluationFormLanguageCode("fa-AF");
+
+        /// <summary>
+        /// Constant FaIR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FaIR = new EvaluationFormLanguageCode("fa-IR");
+
+        /// <summary>
+        /// Constant FiFI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FiFI = new EvaluationFormLanguageCode("fi-FI");
+
+        /// <summary>
+        /// Constant FrBE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FrBE = new EvaluationFormLanguageCode("fr-BE");
+
+        /// <summary>
+        /// Constant FrCA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode FrCA = new EvaluationFormLanguageCode("fr-CA");
+
+        /// <summary>
         /// Constant FrFR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode FrFR = new EvaluationFormLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant GaIE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GaIE = new EvaluationFormLanguageCode("ga-IE");
+
+        /// <summary>
+        /// Constant GlES for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GlES = new EvaluationFormLanguageCode("gl-ES");
+
+        /// <summary>
+        /// Constant GuIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode GuIN = new EvaluationFormLanguageCode("gu-IN");
+
+        /// <summary>
+        /// Constant HeIL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HeIL = new EvaluationFormLanguageCode("he-IL");
+
+        /// <summary>
+        /// Constant HiIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HiIN = new EvaluationFormLanguageCode("hi-IN");
+
+        /// <summary>
+        /// Constant Hmn for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode Hmn = new EvaluationFormLanguageCode("hmn");
+
+        /// <summary>
+        /// Constant HrHR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HrHR = new EvaluationFormLanguageCode("hr-HR");
+
+        /// <summary>
+        /// Constant HtHT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HtHT = new EvaluationFormLanguageCode("ht-HT");
+
+        /// <summary>
+        /// Constant HuHU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HuHU = new EvaluationFormLanguageCode("hu-HU");
+
+        /// <summary>
+        /// Constant HyAM for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode HyAM = new EvaluationFormLanguageCode("hy-AM");
+
+        /// <summary>
+        /// Constant IdID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode IdID = new EvaluationFormLanguageCode("id-ID");
+
+        /// <summary>
+        /// Constant IsIS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode IsIS = new EvaluationFormLanguageCode("is-IS");
 
         /// <summary>
         /// Constant ItIT for EvaluationFormLanguageCode
@@ -3120,9 +3724,69 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
 
         /// <summary>
+        /// Constant JvID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JvID = new EvaluationFormLanguageCode("jv-ID");
+
+        /// <summary>
+        /// Constant KaGE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KaGE = new EvaluationFormLanguageCode("ka-GE");
+
+        /// <summary>
+        /// Constant KkKZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KkKZ = new EvaluationFormLanguageCode("kk-KZ");
+
+        /// <summary>
+        /// Constant KmKH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KmKH = new EvaluationFormLanguageCode("km-KH");
+
+        /// <summary>
+        /// Constant KnIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KnIN = new EvaluationFormLanguageCode("kn-IN");
+
+        /// <summary>
         /// Constant KoKR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant LgUG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LgUG = new EvaluationFormLanguageCode("lg-UG");
+
+        /// <summary>
+        /// Constant LoLA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LoLA = new EvaluationFormLanguageCode("lo-LA");
+
+        /// <summary>
+        /// Constant LtLT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LtLT = new EvaluationFormLanguageCode("lt-LT");
+
+        /// <summary>
+        /// Constant LvLV for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode LvLV = new EvaluationFormLanguageCode("lv-LV");
+
+        /// <summary>
+        /// Constant MkMK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MkMK = new EvaluationFormLanguageCode("mk-MK");
+
+        /// <summary>
+        /// Constant MlIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MlIN = new EvaluationFormLanguageCode("ml-IN");
+
+        /// <summary>
+        /// Constant MrIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MrIN = new EvaluationFormLanguageCode("mr-IN");
 
         /// <summary>
         /// Constant MsMY for EvaluationFormLanguageCode
@@ -3130,14 +3794,199 @@ namespace Amazon.Connect
         public static readonly EvaluationFormLanguageCode MsMY = new EvaluationFormLanguageCode("ms-MY");
 
         /// <summary>
+        /// Constant MyMM for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MyMM = new EvaluationFormLanguageCode("my-MM");
+
+        /// <summary>
+        /// Constant NeNP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NeNP = new EvaluationFormLanguageCode("ne-NP");
+
+        /// <summary>
+        /// Constant NlBE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NlBE = new EvaluationFormLanguageCode("nl-BE");
+
+        /// <summary>
+        /// Constant NlNL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NlNL = new EvaluationFormLanguageCode("nl-NL");
+
+        /// <summary>
+        /// Constant NoNO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode NoNO = new EvaluationFormLanguageCode("no-NO");
+
+        /// <summary>
+        /// Constant OrIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode OrIN = new EvaluationFormLanguageCode("or-IN");
+
+        /// <summary>
+        /// Constant PaIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PaIN = new EvaluationFormLanguageCode("pa-IN");
+
+        /// <summary>
+        /// Constant PlPL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PlPL = new EvaluationFormLanguageCode("pl-PL");
+
+        /// <summary>
+        /// Constant PsAF for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PsAF = new EvaluationFormLanguageCode("ps-AF");
+
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
 
         /// <summary>
+        /// Constant PtPT for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode PtPT = new EvaluationFormLanguageCode("pt-PT");
+
+        /// <summary>
+        /// Constant RoRO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode RoRO = new EvaluationFormLanguageCode("ro-RO");
+
+        /// <summary>
+        /// Constant RuRU for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode RuRU = new EvaluationFormLanguageCode("ru-RU");
+
+        /// <summary>
+        /// Constant SiLK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SiLK = new EvaluationFormLanguageCode("si-LK");
+
+        /// <summary>
+        /// Constant SkSK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SkSK = new EvaluationFormLanguageCode("sk-SK");
+
+        /// <summary>
+        /// Constant SlSI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SlSI = new EvaluationFormLanguageCode("sl-SI");
+
+        /// <summary>
+        /// Constant SoSO for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SoSO = new EvaluationFormLanguageCode("so-SO");
+
+        /// <summary>
+        /// Constant SqAL for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SqAL = new EvaluationFormLanguageCode("sq-AL");
+
+        /// <summary>
+        /// Constant SrRS for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SrRS = new EvaluationFormLanguageCode("sr-RS");
+
+        /// <summary>
+        /// Constant SuID for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SuID = new EvaluationFormLanguageCode("su-ID");
+
+        /// <summary>
+        /// Constant SvSE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SvSE = new EvaluationFormLanguageCode("sv-SE");
+
+        /// <summary>
+        /// Constant SwBI for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwBI = new EvaluationFormLanguageCode("sw-BI");
+
+        /// <summary>
+        /// Constant SwKE for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwKE = new EvaluationFormLanguageCode("sw-KE");
+
+        /// <summary>
+        /// Constant SwRW for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwRW = new EvaluationFormLanguageCode("sw-RW");
+
+        /// <summary>
+        /// Constant SwTZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwTZ = new EvaluationFormLanguageCode("sw-TZ");
+
+        /// <summary>
+        /// Constant SwUG for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode SwUG = new EvaluationFormLanguageCode("sw-UG");
+
+        /// <summary>
+        /// Constant TaIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TaIN = new EvaluationFormLanguageCode("ta-IN");
+
+        /// <summary>
+        /// Constant TeIN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TeIN = new EvaluationFormLanguageCode("te-IN");
+
+        /// <summary>
+        /// Constant ThTH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ThTH = new EvaluationFormLanguageCode("th-TH");
+
+        /// <summary>
+        /// Constant TlPH for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TlPH = new EvaluationFormLanguageCode("tl-PH");
+
+        /// <summary>
+        /// Constant TrTR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode TrTR = new EvaluationFormLanguageCode("tr-TR");
+
+        /// <summary>
+        /// Constant UkUA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode UkUA = new EvaluationFormLanguageCode("uk-UA");
+
+        /// <summary>
+        /// Constant UzUZ for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode UzUZ = new EvaluationFormLanguageCode("uz-UZ");
+
+        /// <summary>
+        /// Constant ViVN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ViVN = new EvaluationFormLanguageCode("vi-VN");
+
+        /// <summary>
+        /// Constant XhZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode XhZA = new EvaluationFormLanguageCode("xh-ZA");
+
+        /// <summary>
+        /// Constant YueHK for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode YueHK = new EvaluationFormLanguageCode("yue-HK");
+
+        /// <summary>
         /// Constant ZhCN for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constant ZhTW for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhTW = new EvaluationFormLanguageCode("zh-TW");
+
+        /// <summary>
+        /// Constant ZuZA for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZuZA = new EvaluationFormLanguageCode("zu-ZA");
 
         /// <summary>
         /// Constructs a custom EvaluationFormLanguageCode for a value not among the defined constants.
@@ -3247,6 +4096,11 @@ namespace Amazon.Connect
     /// </summary>
     public class EvaluationFormQuestionAutomationAnswerSourceType : ConstantClass
     {
+        /// <summary>
+        /// Constant CONDITION for EvaluationFormQuestionAutomationAnswerSourceType
+        /// </summary>
+        public static readonly EvaluationFormQuestionAutomationAnswerSourceType CONDITION = new EvaluationFormQuestionAutomationAnswerSourceType("CONDITION");
+
         /// <summary>
         /// Constant CONTACT_LENS_DATA for EvaluationFormQuestionAutomationAnswerSourceType
         /// </summary>
@@ -3596,10 +4450,61 @@ namespace Amazon.Connect
     }
 
     /// <summary>
+    /// Constants used for properties of type EvaluationItemResolutionStatus.
+    /// </summary>
+    public class EvaluationItemResolutionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for EvaluationItemResolutionStatus
+        /// </summary>
+        public static readonly EvaluationItemResolutionStatus FAILED = new EvaluationItemResolutionStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for EvaluationItemResolutionStatus
+        /// </summary>
+        public static readonly EvaluationItemResolutionStatus PENDING = new EvaluationItemResolutionStatus("PENDING");
+
+        /// <summary>
+        /// Constant RESOLVED for EvaluationItemResolutionStatus
+        /// </summary>
+        public static readonly EvaluationItemResolutionStatus RESOLVED = new EvaluationItemResolutionStatus("RESOLVED");
+
+        /// <summary>
+        /// Constructs a custom EvaluationItemResolutionStatus for a value not among the defined constants.
+        /// </summary>
+        public EvaluationItemResolutionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationItemResolutionStatus FindValue(string value)
+        {
+            return FindValue<EvaluationItemResolutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationItemResolutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EvaluationQuestionAnswerAnalysisType.
     /// </summary>
     public class EvaluationQuestionAnswerAnalysisType : ConstantClass
     {
+        /// <summary>
+        /// Constant CONDITION for EvaluationQuestionAnswerAnalysisType
+        /// </summary>
+        public static readonly EvaluationQuestionAnswerAnalysisType CONDITION = new EvaluationQuestionAnswerAnalysisType("CONDITION");
+
         /// <summary>
         /// Constant CONTACT_LENS_DATA for EvaluationQuestionAnswerAnalysisType
         /// </summary>
@@ -6431,6 +7336,51 @@ namespace Amazon.Connect
         /// Constant AGENT_INTERACTION_DURATION for NumericQuestionPropertyAutomationLabel
         /// </summary>
         public static readonly NumericQuestionPropertyAutomationLabel AGENT_INTERACTION_DURATION = new NumericQuestionPropertyAutomationLabel("AGENT_INTERACTION_DURATION");
+
+        /// <summary>
+        /// Constant AI_AGENT_MAX_PROMPT_LATENCY for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_AGENT_MAX_PROMPT_LATENCY = new NumericQuestionPropertyAutomationLabel("AI_AGENT_MAX_PROMPT_LATENCY");
+
+        /// <summary>
+        /// Constant AI_SESSION_COMPLETENESS_SCORE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_SESSION_COMPLETENESS_SCORE = new NumericQuestionPropertyAutomationLabel("AI_SESSION_COMPLETENESS_SCORE");
+
+        /// <summary>
+        /// Constant AI_SESSION_FAITHFULNESS_SCORE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_SESSION_FAITHFULNESS_SCORE = new NumericQuestionPropertyAutomationLabel("AI_SESSION_FAITHFULNESS_SCORE");
+
+        /// <summary>
+        /// Constant AI_SESSION_GOAL_SUCCESS_RATE for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_SESSION_GOAL_SUCCESS_RATE = new NumericQuestionPropertyAutomationLabel("AI_SESSION_GOAL_SUCCESS_RATE");
+
+        /// <summary>
+        /// Constant AI_SESSION_SELF_SERVICE_DURATION for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_SESSION_SELF_SERVICE_DURATION = new NumericQuestionPropertyAutomationLabel("AI_SESSION_SELF_SERVICE_DURATION");
+
+        /// <summary>
+        /// Constant AI_TOOL_MAX_LATENCY for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_TOOL_MAX_LATENCY = new NumericQuestionPropertyAutomationLabel("AI_TOOL_MAX_LATENCY");
+
+        /// <summary>
+        /// Constant AI_TOOL_PARAMETER_ACCURACY for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_TOOL_PARAMETER_ACCURACY = new NumericQuestionPropertyAutomationLabel("AI_TOOL_PARAMETER_ACCURACY");
+
+        /// <summary>
+        /// Constant AI_TOOL_SELECTION_ACCURACY for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_TOOL_SELECTION_ACCURACY = new NumericQuestionPropertyAutomationLabel("AI_TOOL_SELECTION_ACCURACY");
+
+        /// <summary>
+        /// Constant AI_TOOL_UTILIZATION_ACCURACY for NumericQuestionPropertyAutomationLabel
+        /// </summary>
+        public static readonly NumericQuestionPropertyAutomationLabel AI_TOOL_UTILIZATION_ACCURACY = new NumericQuestionPropertyAutomationLabel("AI_TOOL_UTILIZATION_ACCURACY");
 
         /// <summary>
         /// Constant CONTACT_DURATION for NumericQuestionPropertyAutomationLabel
@@ -9956,6 +10906,42 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SessionEntityType.
+    /// </summary>
+    public class SessionEntityType : ConstantClass
+    {
+        /// <summary>
+        /// Constant USER for SessionEntityType
+        /// </summary>
+        public static readonly SessionEntityType USER = new SessionEntityType("USER");
+
+        /// <summary>
+        /// Constructs a custom SessionEntityType for a value not among the defined constants.
+        /// </summary>
+        public SessionEntityType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionEntityType FindValue(string value)
+        {
+            return FindValue<SessionEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionEntityType(string value)
         {
             return FindValue(value);
         }

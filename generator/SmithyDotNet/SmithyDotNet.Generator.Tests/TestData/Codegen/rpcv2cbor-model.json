@@ -9,7 +9,8 @@
         { "target": "com.example#Put" },
         { "target": "com.example#Ping" },
         { "target": "com.example#Converse" },
-        { "target": "com.example#Chat" }
+        { "target": "com.example#Chat" },
+        { "target": "com.example#Listen" }
       ],
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
@@ -50,6 +51,10 @@
         "name": { "target": "smithy.api#String", "traits": { "smithy.api#jsonName": "Name" } },
         "count": { "target": "smithy.api#Integer" },
         "big": { "target": "smithy.api#Long" },
+        "tiny": { "target": "smithy.api#Byte" },
+        "small": { "target": "smithy.api#Short" },
+        "huge": { "target": "smithy.api#BigInteger" },
+        "precise": { "target": "smithy.api#BigDecimal" },
         "flag": { "target": "smithy.api#Boolean" },
         "when": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#timestampFormat": "date-time" } },
         "data": { "target": "smithy.api#Blob" },
@@ -67,6 +72,10 @@
       "members": {
         "count": { "target": "smithy.api#Integer" },
         "big": { "target": "smithy.api#Long" },
+        "tiny": { "target": "smithy.api#Byte" },
+        "small": { "target": "smithy.api#Short" },
+        "huge": { "target": "smithy.api#BigInteger" },
+        "precise": { "target": "smithy.api#BigDecimal" },
         "name": { "target": "smithy.api#String" },
         "color": { "target": "com.example#Color" },
         "when": { "target": "smithy.api#Timestamp" },
@@ -137,14 +146,30 @@
       "members": {
         "output": { "target": "com.example#OutputStream" },
         "sessionId": { "target": "smithy.api#String", "traits": { "smithy.api#required": {} } },
-        "sequenceNumber": { "target": "smithy.api#Integer", "traits": { "smithy.api#required": {} } }
+        "sequenceNumber": { "target": "smithy.api#Integer", "traits": { "smithy.api#required": {} } },
+        "bag": { "target": "com.example#HeaderBag" }
       }
+    },
+    "com.example#Listen": {
+      "type": "operation",
+      "input": { "target": "com.example#ListenRequest" },
+      "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#ListenRequest": {
+      "type": "structure",
+      "members": { "audio": { "target": "com.example#AudioStream" } }
+    },
+    "com.example#AudioStream": {
+      "type": "union",
+      "members": { "audio": { "target": "com.example#AudioEvent" } },
+      "traits": { "smithy.api#streaming": {} }
     },
     "com.example#InputStream": {
       "type": "union",
       "members": {
         "audio": { "target": "com.example#AudioEvent" },
-        "metadata": { "target": "com.example#MetadataEvent" }
+        "metadata": { "target": "com.example#MetadataEvent" },
+        "ping": { "target": "com.example#PingEvent" }
       },
       "traits": { "smithy.api#streaming": {} }
     },
@@ -153,9 +178,42 @@
       "members": {
         "metadata": { "target": "com.example#MetadataEvent" },
         "audio": { "target": "com.example#AudioEvent" },
+        "ping": { "target": "com.example#PingEvent" },
+        "progress": { "target": "com.example#ProgressEvent" },
+        "summary": { "target": "com.example#SummaryEvent" },
+        "done": { "target": "com.example#DoneEvent" },
         "broken": { "target": "com.example#Broken" }
       },
       "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#PingEvent": {
+      "type": "structure",
+      "members": {
+        "sentAt": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#eventHeader": {} } }
+      }
+    },
+    "com.example#ProgressEvent": {
+      "type": "structure",
+      "members": {
+        "requestId": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "percent": { "target": "smithy.api#Integer" }
+      }
+    },
+    "com.example#DoneEvent": {
+      "type": "structure",
+      "members": {}
+    },
+    "com.example#HeaderBag": {
+      "type": "structure",
+      "members": {
+        "tag": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } }
+      }
+    },
+    "com.example#SummaryEvent": {
+      "type": "structure",
+      "members": {
+        "item": { "target": "com.example#Item", "traits": { "smithy.api#eventPayload": {} } }
+      }
     },
     "com.example#AudioEvent": {
       "type": "structure",

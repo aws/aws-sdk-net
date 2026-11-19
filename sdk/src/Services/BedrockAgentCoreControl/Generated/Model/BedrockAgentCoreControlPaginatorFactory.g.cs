@@ -33,6 +33,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentInsightStores operation
+        /// </summary>
+        public IListAgentInsightStoresPaginator ListAgentInsightStores(ListAgentInsightStoresRequest request)
+        {
+            return new ListAgentInsightStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentRuntimeEndpoints operation
         /// </summary>
         public IListAgentRuntimeEndpointsPaginator ListAgentRuntimeEndpoints(ListAgentRuntimeEndpointsRequest request)

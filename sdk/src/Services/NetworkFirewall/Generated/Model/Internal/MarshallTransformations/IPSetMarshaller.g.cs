@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// IPSet Marshaller
     /// </summary>
-    public partial class IPSetMarshaller : IRequestMarshaller<IPSet, JsonMarshallerContext>
+    public partial class IPSetMarshaller : IRequestMarshaller<IPSet, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(IPSet requestObject, JsonMarshallerContext context)
+        public void Marshall(IPSet requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDefinition())
             {
-                context.Writer.WritePropertyName("Definition");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Definition");
+                context.Writer.WriteStartArray(requestObject.Definition.Count);
                 foreach (var requestObjectDefinitionListValue in requestObject.Definition)
                 {
-                    context.Writer.WriteStringValue(requestObjectDefinitionListValue);
+                    context.Writer.WriteTextString(requestObjectDefinitionListValue);
                 }
                 context.Writer.WriteEndArray();
             }

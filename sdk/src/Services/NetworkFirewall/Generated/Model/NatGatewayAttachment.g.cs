@@ -30,16 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The definition and status of the attachment between a proxy mode firewall and a NAT
-    /// gateway that proxies its traffic.
+    /// The NAT gateway that's attached to a proxy mode firewall in an Availability Zone,
+    /// and the status of the attachment. Traffic that the firewall allows in the Availability
+    /// Zone leaves through this NAT gateway.
     /// </summary>
     public partial class NatGatewayAttachment
     {
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name that resolves to the firewall's proxy for traffic sent through this NAT
-        /// gateway attachment. 
+        /// The proxy DNS name of the firewall in this Availability Zone. This is the same as
+        /// the <c>DnsName</c> of the firewall's <c>Attachment</c>.
         /// </para>
         /// </summary>
         public string DnsName { get; set; }
@@ -52,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// A unique identifier for the NAT gateway to use with proxy resources.
+        /// The ID of the NAT gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1)]
@@ -66,12 +67,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the NAT gateway attachment. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When this value is <c>READY</c>, the attachment is available to proxy traffic. Otherwise,
-        /// this value reflects its state, for example <c>CREATING</c> or <c>DELETING</c>.
+        /// The status of the NAT gateway attachment. <c>READY</c> means that the NAT gateway
+        /// is attached and the firewall can send traffic through it. Other values are <c>CREATING</c>,
+        /// <c>UPDATING</c>, <c>DELETING</c>, and <c>FAILED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -85,8 +83,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// If Network Firewall encounters an issue with the NAT gateway attachment, it populates
-        /// this with an explanation of the problem. 
+        /// The reason that Network Firewall couldn't create or attach the NAT gateway, if it
+        /// couldn't.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]

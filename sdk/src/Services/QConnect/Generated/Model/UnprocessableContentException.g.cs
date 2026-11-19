@@ -72,6 +72,16 @@ namespace Amazon.QConnect.Model
         /// </summary>
         public UnprocessableContentException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
+        /// <summary>
+        /// Gets and sets the property Reason. The reason the content could not be processed.
+        /// </summary>
+        public UnprocessableContentReason Reason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Reason property is set.
+        /// </summary>
+        internal bool IsSetReason() => this.Reason != null;
+
 #if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the UnprocessableContentException class with serialized data.
@@ -83,6 +93,7 @@ namespace Amazon.QConnect.Model
         protected UnprocessableContentException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (UnprocessableContentReason)info.GetValue("Reason", typeof(UnprocessableContentReason));
         }
 
         /// <summary>
@@ -95,6 +106,7 @@ namespace Amazon.QConnect.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
     }

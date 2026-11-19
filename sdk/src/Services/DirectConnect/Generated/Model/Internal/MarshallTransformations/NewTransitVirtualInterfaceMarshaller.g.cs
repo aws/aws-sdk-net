@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,113 +39,113 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// NewTransitVirtualInterface Marshaller
     /// </summary>
-    public partial class NewTransitVirtualInterfaceMarshaller : IRequestMarshaller<NewTransitVirtualInterface, JsonMarshallerContext>
+    public partial class NewTransitVirtualInterfaceMarshaller : IRequestMarshaller<NewTransitVirtualInterface, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(NewTransitVirtualInterface requestObject, JsonMarshallerContext context)
+        public void Marshall(NewTransitVirtualInterface requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAddressFamily())
             {
-                context.Writer.WritePropertyName("addressFamily");
-                context.Writer.WriteStringValue(requestObject.AddressFamily);
+                context.Writer.WriteTextString("addressFamily");
+                context.Writer.WriteTextString(requestObject.AddressFamily);
             }
 
             if (requestObject.IsSetAmazonAddress())
             {
-                context.Writer.WritePropertyName("amazonAddress");
-                context.Writer.WriteStringValue(requestObject.AmazonAddress);
+                context.Writer.WriteTextString("amazonAddress");
+                context.Writer.WriteTextString(requestObject.AmazonAddress);
             }
 
             if (requestObject.IsSetAsn())
             {
-                context.Writer.WritePropertyName("asn");
-                context.Writer.WriteNumberValue(requestObject.Asn.Value);
+                context.Writer.WriteTextString("asn");
+                context.Writer.WriteInt32(requestObject.Asn.Value);
             }
 
             if (requestObject.IsSetAsnLong())
             {
-                context.Writer.WritePropertyName("asnLong");
-                context.Writer.WriteNumberValue(requestObject.AsnLong.Value);
+                context.Writer.WriteTextString("asnLong");
+                context.Writer.WriteInt64(requestObject.AsnLong.Value);
             }
 
             if (requestObject.IsSetAuthKey())
             {
-                context.Writer.WritePropertyName("authKey");
-                context.Writer.WriteStringValue(requestObject.AuthKey);
+                context.Writer.WriteTextString("authKey");
+                context.Writer.WriteTextString(requestObject.AuthKey);
             }
 
             if (requestObject.IsSetCustomerAddress())
             {
-                context.Writer.WritePropertyName("customerAddress");
-                context.Writer.WriteStringValue(requestObject.CustomerAddress);
+                context.Writer.WriteTextString("customerAddress");
+                context.Writer.WriteTextString(requestObject.CustomerAddress);
             }
 
             if (requestObject.IsSetDirectConnectGatewayId())
             {
-                context.Writer.WritePropertyName("directConnectGatewayId");
-                context.Writer.WriteStringValue(requestObject.DirectConnectGatewayId);
+                context.Writer.WriteTextString("directConnectGatewayId");
+                context.Writer.WriteTextString(requestObject.DirectConnectGatewayId);
             }
 
             if (requestObject.IsSetEnableSiteLink())
             {
-                context.Writer.WritePropertyName("enableSiteLink");
-                context.Writer.WriteBooleanValue(requestObject.EnableSiteLink.Value);
+                context.Writer.WriteTextString("enableSiteLink");
+                context.Writer.WriteBoolean(requestObject.EnableSiteLink.Value);
             }
 
             if (requestObject.IsSetMtu())
             {
-                context.Writer.WritePropertyName("mtu");
-                context.Writer.WriteNumberValue(requestObject.Mtu.Value);
+                context.Writer.WriteTextString("mtu");
+                context.Writer.WriteInt32(requestObject.Mtu.Value);
             }
 
             if (requestObject.IsSetPrefixPoolAllocatedCountIpv4())
             {
-                context.Writer.WritePropertyName("prefixPoolAllocatedCountIpv4");
-                context.Writer.WriteNumberValue(requestObject.PrefixPoolAllocatedCountIpv4.Value);
+                context.Writer.WriteTextString("prefixPoolAllocatedCountIpv4");
+                context.Writer.WriteInt32(requestObject.PrefixPoolAllocatedCountIpv4.Value);
             }
 
             if (requestObject.IsSetPrefixPoolAllocatedCountIpv6())
             {
-                context.Writer.WritePropertyName("prefixPoolAllocatedCountIpv6");
-                context.Writer.WriteNumberValue(requestObject.PrefixPoolAllocatedCountIpv6.Value);
+                context.Writer.WriteTextString("prefixPoolAllocatedCountIpv6");
+                context.Writer.WriteInt32(requestObject.PrefixPoolAllocatedCountIpv6.Value);
             }
 
             if (requestObject.IsSetRateLimit())
             {
-                context.Writer.WritePropertyName("rateLimit");
-                context.Writer.WriteStringValue(requestObject.RateLimit);
+                context.Writer.WriteTextString("rateLimit");
+                context.Writer.WriteTextString(requestObject.RateLimit);
             }
 
             if (requestObject.IsSetTags())
             {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("tags");
+                context.Writer.WriteStartArray(requestObject.Tags.Count);
                 foreach (var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVirtualInterfaceName())
             {
-                context.Writer.WritePropertyName("virtualInterfaceName");
-                context.Writer.WriteStringValue(requestObject.VirtualInterfaceName);
+                context.Writer.WriteTextString("virtualInterfaceName");
+                context.Writer.WriteTextString(requestObject.VirtualInterfaceName);
             }
 
             if (requestObject.IsSetVlan())
             {
-                context.Writer.WritePropertyName("vlan");
-                context.Writer.WriteNumberValue(requestObject.Vlan.Value);
+                context.Writer.WriteTextString("vlan");
+                context.Writer.WriteInt32(requestObject.Vlan.Value);
             }
         }
 

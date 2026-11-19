@@ -47,5 +47,52 @@ namespace Amazon.CloudFormation.Model
         /// Checks to see if the FailedStackInstancesCount property is set.
         /// </summary>
         internal bool IsSetFailedStackInstancesCount() => this.FailedStackInstancesCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Stages. 
+        /// <para>
+        /// The detailed progress information for the individual stages of the StackSet operation:
+        /// the role provisioning stage and the stack instances deployment stage.
+        /// </para>
+        /// </summary>
+        public Stages Stages { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Stages property is set.
+        /// </summary>
+        internal bool IsSetStages() => this.Stages != null;
+
+        /// <summary>
+        /// Gets and sets the property TotalAccountsCount. 
+        /// <para>
+        /// The total number of accounts targeted by this StackSet operation. Self-managed operations
+        /// and service-managed operations that do not provision roles also report this value
+        /// when it is known. CloudFormation populates this value after it resolves the target
+        /// accounts. Until then, this field is not present.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0)]
+        public int? TotalAccountsCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TotalAccountsCount property is set.
+        /// </summary>
+        internal bool IsSetTotalAccountsCount() => this.TotalAccountsCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TotalStackInstancesCount. 
+        /// <para>
+        /// The total number of stack instances targeted by this StackSet operation. CloudFormation
+        /// populates this value after it resolves the target stack instances. Until then, this
+        /// field is not present.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0)]
+        public int? TotalStackInstancesCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TotalStackInstancesCount property is set.
+        /// </summary>
+        internal bool IsSetTotalStackInstancesCount() => this.TotalStackInstancesCount.HasValue;
     }
 }

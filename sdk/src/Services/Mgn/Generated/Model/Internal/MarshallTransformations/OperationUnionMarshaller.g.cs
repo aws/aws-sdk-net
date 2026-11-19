@@ -45,6 +45,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCreate())
+            {
+                context.Writer.WritePropertyName("create");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Create, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetDelete())
             {
                 context.Writer.WritePropertyName("delete");
@@ -85,6 +96,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
                 var marshaller = UpdateOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Update, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetUpdateV2())
+            {
+                context.Writer.WritePropertyName("updateV2");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateOperationV2Marshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateV2, context);
 
                 context.Writer.WriteEndObject();
             }

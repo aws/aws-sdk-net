@@ -118,6 +118,11 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetOutpostSnapshotLocation())
+            {
+                context.Writer.WritePropertyName("outpostSnapshotLocation");
+                context.Writer.WriteStringValue(publicRequest.OutpostSnapshotLocation);
+            }
             if (publicRequest.IsSetReplicatedDisks())
             {
                 context.Writer.WritePropertyName("replicatedDisks");

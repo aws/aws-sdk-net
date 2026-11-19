@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Signin.Model.BatchRevokeSessionsRequest.PrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root)|(iam::[0-9]{12}:[*]))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.BatchRevokeSessionsRequest.Reason</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.DurationSeconds</property>
+    <min>300</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.GrantType</property>
+    <pattern>^client_credentials$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenRequest.Resource</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.AccessToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.ExpiresIn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateBearerTokenResponse.TokenType</property>
+    <pattern>^Bearer$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithIAMRequest.GrantType</property>
     <pattern>^client_credentials$</pattern>
   </property-value-rule>
@@ -24,8 +61,18 @@
     <pattern>^Bearer$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Assertion</property>
+    <min>4</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.ClientId</property>
+    <min>1</min>
+    <max>212</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.GrantType</property>
-    <pattern>^urn:ietf:params:oauth:grant-type:token-exchange$</pattern>
+    <pattern>^urn:ietf:params:oauth:grant-type:(token-exchange|jwt-bearer)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeRequest.Resource</property>
@@ -59,6 +106,16 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.IssuedTokenType</property>
     <pattern>^urn:ietf:params:oauth:token-type:access_token$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.Resource</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.Scope</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenWithTokenExchangeResponse.TokenType</property>
@@ -99,9 +156,42 @@
     <pattern>^(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionRequest.PrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root)|(iam::[0-9]{12}:[*]))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionRequest.SessionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionResponse.OriginSessionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionResponse.PrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionResponse.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetSessionResponse.SessionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.IntrospectOAuth2TokenWithIAMRequest.Token</property>
     <min>1</min>
-    <max>4096</max>
+    <max>12288</max>
     <pattern>^ASO[AR][A-Za-z0-9+/=_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -141,6 +231,29 @@
     <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Signin.Model.ListSessionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListSessionsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListSessionsRequest.PrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root)|(iam::[0-9]{12}:[*]))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListSessionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[-a-zA-Z0-9+=/_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.PutConsoleAuthorizationConfigurationRequest.TargetId</property>
     <min>12</min>
     <max>32</max>
@@ -166,7 +279,7 @@
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ExcludedPrincipal</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
+    <pattern>^arn:aws(-[a-z]+)*:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.RequestedRegion</property>
@@ -187,8 +300,13 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.RevokeOAuth2TokenWithIAMRequest.Token</property>
     <min>1</min>
-    <max>4096</max>
+    <max>12288</max>
     <pattern>^ASOR[A-Za-z0-9+/=_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.BatchRevokeSessionError.SessionArn</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.ClientId</property>
@@ -217,7 +335,7 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.RefreshToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>12288</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenResponseBody.ExpiresIn</property>
@@ -232,7 +350,7 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenResponseBody.RefreshToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>12288</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenResponseBody.TokenType</property>
@@ -241,5 +359,27 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.PermissionStatementSummary.Sid</property>
     <pattern>^[A-Za-z0-9+/]{64}=?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.RevokedSession.SessionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.Session.PrincipalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.Session.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.Session.SessionArn</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

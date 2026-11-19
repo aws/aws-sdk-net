@@ -116,6 +116,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("nitroEnclavesEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.NitroEnclavesEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("storageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedInstancesStorageConfigurationUnmarshaller.Instance;

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// GitHubLocation Marshaller
     /// </summary>
-    public partial class GitHubLocationMarshaller : IRequestMarshaller<GitHubLocation, JsonMarshallerContext>
+    public partial class GitHubLocationMarshaller : IRequestMarshaller<GitHubLocation, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitHubLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(GitHubLocation requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCommitId())
             {
-                context.Writer.WritePropertyName("commitId");
-                context.Writer.WriteStringValue(requestObject.CommitId);
+                context.Writer.WriteTextString("commitId");
+                context.Writer.WriteTextString(requestObject.CommitId);
             }
 
             if (requestObject.IsSetRepository())
             {
-                context.Writer.WritePropertyName("repository");
-                context.Writer.WriteStringValue(requestObject.Repository);
+                context.Writer.WriteTextString("repository");
+                context.Writer.WriteTextString(requestObject.Repository);
             }
         }
 

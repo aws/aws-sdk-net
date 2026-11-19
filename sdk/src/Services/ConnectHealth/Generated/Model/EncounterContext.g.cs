@@ -35,6 +35,19 @@ namespace Amazon.ConnectHealth.Model
     public partial class EncounterContext
     {
         /// <summary>
+        /// Gets and sets the property MedicalCodingContext. 
+        /// <para>
+        /// Structured patient and encounter context for medical code generation.
+        /// </para>
+        /// </summary>
+        public MedicalCodingContext MedicalCodingContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MedicalCodingContext property is set.
+        /// </summary>
+        internal bool IsSetMedicalCodingContext() => this.MedicalCodingContext != null;
+
+        /// <summary>
         /// Gets and sets the property UnstructuredContext. 
         /// <para>
         /// Unstructured context information in markdown format

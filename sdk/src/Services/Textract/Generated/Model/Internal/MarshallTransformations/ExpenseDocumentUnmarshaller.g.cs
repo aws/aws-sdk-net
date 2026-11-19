@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExpenseDocument Object
     /// </summary>
-    public partial class ExpenseDocumentUnmarshaller : IJsonUnmarshaller<ExpenseDocument, JsonUnmarshallerContext>
+    public partial class ExpenseDocumentUnmarshaller : ICborUnmarshaller<ExpenseDocument, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ExpenseDocument Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ExpenseDocument Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ExpenseDocument();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Blocks", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
-                    unmarshalledObject.Blocks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ExpenseIndex", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ExpenseIndex = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Blocks":
+                        context.AddPathSegment("Blocks");
+                        unmarshalledObject.Blocks = new CborListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LineItemGroups", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LineItemGroup, LineItemGroupUnmarshaller>(LineItemGroupUnmarshaller.Instance);
-                    unmarshalledObject.LineItemGroups = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ExpenseIndex":
+                        context.AddPathSegment("ExpenseIndex");
+                        unmarshalledObject.ExpenseIndex = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SummaryFields", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance);
-                    unmarshalledObject.SummaryFields = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "LineItemGroups":
+                        context.AddPathSegment("LineItemGroups");
+                        unmarshalledObject.LineItemGroups = new CborListUnmarshaller<LineItemGroup, LineItemGroupUnmarshaller>(LineItemGroupUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SummaryFields":
+                        context.AddPathSegment("SummaryFields");
+                        unmarshalledObject.SummaryFields = new CborListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

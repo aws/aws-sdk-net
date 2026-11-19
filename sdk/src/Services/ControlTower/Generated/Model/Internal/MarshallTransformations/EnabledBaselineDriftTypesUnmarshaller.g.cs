@@ -59,6 +59,13 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                     unmarshalledObject.Inheritance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("source", targetDepth, ref reader))
+                {
+                    var unmarshaller = EnabledBaselineSourceDriftUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

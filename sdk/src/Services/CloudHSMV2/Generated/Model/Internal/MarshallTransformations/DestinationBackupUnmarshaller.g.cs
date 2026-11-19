@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CloudHSMV2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DestinationBackup Object
     /// </summary>
-    public partial class DestinationBackupUnmarshaller : IJsonUnmarshaller<DestinationBackup, JsonUnmarshallerContext>
+    public partial class DestinationBackupUnmarshaller : ICborUnmarshaller<DestinationBackup, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DestinationBackup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DestinationBackup Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DestinationBackup();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreateTimestamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("SourceBackup", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceBackup = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreateTimestamp":
+                        context.AddPathSegment("CreateTimestamp");
+                        unmarshalledObject.CreateTimestamp = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceCluster", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceCluster = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SourceBackup":
+                        context.AddPathSegment("SourceBackup");
+                        unmarshalledObject.SourceBackup = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceRegion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SourceCluster":
+                        context.AddPathSegment("SourceCluster");
+                        unmarshalledObject.SourceCluster = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SourceRegion":
+                        context.AddPathSegment("SourceRegion");
+                        unmarshalledObject.SourceRegion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

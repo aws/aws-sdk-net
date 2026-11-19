@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.RAM.IAmazonRAM.UpdatePermission(Amazon.RAM.Model.UpdatePermissionRequest)" />
+      <member name="M:Amazon.RAM.AmazonRAMClient.UpdatePermission(Amazon.RAM.Model.UpdatePermissionRequest)" />
+      <member name="T:Amazon.RAM.Model.UpdatePermissionRequest" />
+      <member name="T:Amazon.RAM.Model.UpdatePermissionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Deprecates a customer managed permission so it can no longer be associated with new resource shares.
+        </para>
+        <code title="Deprecate a managed permission" source=".\AWSSDKDocSamples\RAM\RAM.GeneratedSamples.cs" region="UpdatePermission-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

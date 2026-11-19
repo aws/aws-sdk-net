@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,42 +39,42 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActionTypeExecutor Marshaller
     /// </summary>
-    public partial class ActionTypeExecutorMarshaller : IRequestMarshaller<ActionTypeExecutor, JsonMarshallerContext>
+    public partial class ActionTypeExecutorMarshaller : IRequestMarshaller<ActionTypeExecutor, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActionTypeExecutor requestObject, JsonMarshallerContext context)
+        public void Marshall(ActionTypeExecutor requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetConfiguration())
             {
-                context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("configuration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ExecutorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Configuration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetJobTimeout())
             {
-                context.Writer.WritePropertyName("jobTimeout");
-                context.Writer.WriteNumberValue(requestObject.JobTimeout.Value);
+                context.Writer.WriteTextString("jobTimeout");
+                context.Writer.WriteInt32(requestObject.JobTimeout.Value);
             }
 
             if (requestObject.IsSetPolicyStatementsTemplate())
             {
-                context.Writer.WritePropertyName("policyStatementsTemplate");
-                context.Writer.WriteStringValue(requestObject.PolicyStatementsTemplate);
+                context.Writer.WriteTextString("policyStatementsTemplate");
+                context.Writer.WriteTextString(requestObject.PolicyStatementsTemplate);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

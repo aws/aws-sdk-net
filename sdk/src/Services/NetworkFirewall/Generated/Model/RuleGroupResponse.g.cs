@@ -289,9 +289,25 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
-        /// it contains stateless rules. If it is stateful, it contains stateful rules. 
+        /// Indicates the type of the rule group. Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STATELESS</c> - Stateless rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STATEFUL</c> - Stateful rules, for use in a Classic Network Firewall policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FIREWALL</c> - Firewall engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPS</c> - IPS engine rules, for use in a Next Generation policy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RuleGroupType Type { get; set; }
 

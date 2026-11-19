@@ -81,7 +81,7 @@ namespace Amazon.Inspector2.Model
         /// The cloud account ID for the AMI aggregation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string CloudAccountId { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Inspector2.Model
         /// The cloud organization ID for the AMI aggregation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string CloudOrgId { get; set; }
 
         /// <summary>
@@ -148,6 +148,10 @@ namespace Amazon.Inspector2.Model
         /// <para>
         ///  <c>AZURE</c> – Findings from Microsoft Azure resources.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Findings from Google Cloud Platform (GCP) resources.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Provider CloudProvider { get; set; }
@@ -170,6 +174,11 @@ namespace Amazon.Inspector2.Model
         ///  </li> <li> 
         /// <para>
         /// An Azure region, such as <c>eastus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Google Cloud Platform (GCP) location, such as the region <c>us-central1</c> or the
+        /// zone <c>us-central1-a</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

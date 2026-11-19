@@ -83,6 +83,11 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetDefinitionType())
+            {
+                context.Writer.WritePropertyName("definitionType");
+                context.Writer.WriteStringValue(publicRequest.DefinitionType);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -36,6 +36,7 @@
         "items":   { "target": "com.example#ItemList" },
         "aliases": { "target": "com.example#AliasList", "traits": { "smithy.api#xmlFlattened": {}, "smithy.api#xmlName": "Alias" } },
         "structs": { "target": "com.example#StructList" },
+        "tree":    { "target": "com.example#TreeNode" },
         "tags":    { "target": "com.example#TagMap" },
         "flatTags": { "target": "com.example#TagMap", "traits": { "smithy.api#xmlFlattened": {} } },
         "scores":  { "target": "com.example#ScoreMap" },
@@ -84,6 +85,17 @@
         "value": { "target": "smithy.api#String" },
         "names": { "target": "com.example#StringList" }
       }
+    },
+    "com.example#TreeNode": {
+      "type": "structure",
+      "members": {
+        "label":    { "target": "smithy.api#String" },
+        "children": { "target": "com.example#TreeNodeList" }
+      }
+    },
+    "com.example#TreeNodeList": {
+      "type": "list",
+      "member": { "target": "com.example#TreeNode" }
     },
     "com.example#ItemList": {
       "type": "list",

@@ -56,6 +56,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCaseAttributes())
+            {
+                context.Writer.WritePropertyName("caseAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectCaseAttributesKvp in requestObject.CaseAttributes)
+                {
+                    context.Writer.WritePropertyName(requestObjectCaseAttributesKvp.Key);
+                    var requestObjectCaseAttributesValue = requestObjectCaseAttributesKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectCaseAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCustomAttributes())
             {
                 context.Writer.WritePropertyName("customAttributes");

@@ -51,6 +51,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.AllocatedUsageQuantity.Value);
             }
 
+            if (requestObject.IsSetAllocatedUsageQuantityAsDecimal())
+            {
+                context.Writer.WritePropertyName("AllocatedUsageQuantityAsDecimal");
+                context.Writer.WriteStringValue(requestObject.AllocatedUsageQuantityAsDecimal);
+            }
+
             if (requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,58 +39,58 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// RouteFilters Marshaller
     /// </summary>
-    public partial class RouteFiltersMarshaller : IRequestMarshaller<RouteFilters, JsonMarshallerContext>
+    public partial class RouteFiltersMarshaller : IRequestMarshaller<RouteFilters, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RouteFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(RouteFilters requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAddressFamily())
             {
-                context.Writer.WritePropertyName("addressFamily");
-                context.Writer.WriteStringValue(requestObject.AddressFamily);
+                context.Writer.WriteTextString("addressFamily");
+                context.Writer.WriteTextString(requestObject.AddressFamily);
             }
 
             if (requestObject.IsSetAsPath())
             {
-                context.Writer.WritePropertyName("asPath");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("asPath");
+                context.Writer.WriteStartArray(requestObject.AsPath.Count);
                 foreach (var requestObjectAsPathListValue in requestObject.AsPath)
                 {
-                    context.Writer.WriteNumberValue(requestObjectAsPathListValue);
+                    context.Writer.WriteInt64(requestObjectAsPathListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetCidrs())
             {
-                context.Writer.WritePropertyName("cidrs");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("cidrs");
+                context.Writer.WriteStartArray(requestObject.Cidrs.Count);
                 foreach (var requestObjectCidrsListValue in requestObject.Cidrs)
                 {
-                    context.Writer.WriteStringValue(requestObjectCidrsListValue);
+                    context.Writer.WriteTextString(requestObjectCidrsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetCommunities())
             {
-                context.Writer.WritePropertyName("communities");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("communities");
+                context.Writer.WriteStartArray(requestObject.Communities.Count);
                 foreach (var requestObjectCommunitiesListValue in requestObject.Communities)
                 {
-                    context.Writer.WriteStringValue(requestObjectCommunitiesListValue);
+                    context.Writer.WriteTextString(requestObjectCommunitiesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetRouteDirection())
             {
-                context.Writer.WritePropertyName("routeDirection");
-                context.Writer.WriteStringValue(requestObject.RouteDirection);
+                context.Writer.WriteTextString("routeDirection");
+                context.Writer.WriteTextString(requestObject.RouteDirection);
             }
         }
 

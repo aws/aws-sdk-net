@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,38 +39,38 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// AccessEndpointConfig Marshaller
     /// </summary>
-    public partial class AccessEndpointConfigMarshaller : IRequestMarshaller<AccessEndpointConfig, JsonMarshallerContext>
+    public partial class AccessEndpointConfigMarshaller : IRequestMarshaller<AccessEndpointConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AccessEndpointConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AccessEndpointConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAccessEndpoints())
             {
-                context.Writer.WritePropertyName("AccessEndpoints");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AccessEndpoints");
+                context.Writer.WriteStartArray(requestObject.AccessEndpoints.Count);
                 foreach (var requestObjectAccessEndpointsListValue in requestObject.AccessEndpoints)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AccessEndpointMarshaller.Instance;
                     marshaller.Marshall(requestObjectAccessEndpointsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetInternetFallbackProtocols())
             {
-                context.Writer.WritePropertyName("InternetFallbackProtocols");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("InternetFallbackProtocols");
+                context.Writer.WriteStartArray(requestObject.InternetFallbackProtocols.Count);
                 foreach (var requestObjectInternetFallbackProtocolsListValue in requestObject.InternetFallbackProtocols)
                 {
-                    context.Writer.WriteStringValue(requestObjectInternetFallbackProtocolsListValue);
+                    context.Writer.WriteTextString(requestObjectInternetFallbackProtocolsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

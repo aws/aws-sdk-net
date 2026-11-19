@@ -82,6 +82,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetNdiInfo() => this.NdiInfo != null;
 
         /// <summary>
+        /// Gets and sets the property RtmpInfo. 
+        /// <para>
+        /// The RTMP (Real-Time Messaging Protocol) specific information about the flow's source.
+        /// This includes the application name, the stream name, and the associated audio and
+        /// video streams.
+        /// </para>
+        /// </summary>
+        public RtmpSourceMetadataInfo RtmpInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpInfo property is set.
+        /// </summary>
+        internal bool IsSetRtmpInfo() => this.RtmpInfo != null;
+
+        /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
         ///  The timestamp of the most recent change in metadata for this flow’s source.

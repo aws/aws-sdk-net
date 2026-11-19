@@ -34,11 +34,13 @@ namespace Amazon.SecurityHub.Model
     /// of resources that contain a specific software package. You identify the package with
     /// <c>PackageName</c> and <c>PackageType</c>. To narrow the results to one version of
     /// the package, include <c>PackageVersion</c>. <para> You can use the <c>Scopes</c> parameter
-    /// to define the data boundary for the query. Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>,
-    /// which lets you retrieve resources from your entire organization or from specific organizational
-    /// units. Only the delegated administrator account can use <c>Scopes</c>. </para> <para>
-    /// You can use the <c>Filters</c> parameter to further refine results based on resource
-    /// attributes, such as <c>ResourceType</c> or <c>Region</c>. </para>
+    /// to define the data boundary for the query. Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>.
+    /// With <c>AwsOrganizations</c>, you can retrieve resources from your entire organization
+    /// or from specific organizational units. Only the delegated administrator account can
+    /// use <c>Scopes</c>. </para> <para> You can use the <c>Filters</c> parameter to further
+    /// refine results based on resource attributes, such as <c>ResourceType</c> or <c>Region</c>.
+    /// </para> <para> This operation returns paginated results. To retrieve additional results,
+    /// use the <c>NextToken</c> value from the previous response. </para>
     /// </summary>
     public partial class GetSoftwareResourcesV2Request : AmazonSecurityHubRequest
     {

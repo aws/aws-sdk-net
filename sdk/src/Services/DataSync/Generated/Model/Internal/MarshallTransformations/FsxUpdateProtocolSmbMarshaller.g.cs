@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,64 +39,64 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// FsxUpdateProtocolSmb Marshaller
     /// </summary>
-    public partial class FsxUpdateProtocolSmbMarshaller : IRequestMarshaller<FsxUpdateProtocolSmb, JsonMarshallerContext>
+    public partial class FsxUpdateProtocolSmbMarshaller : IRequestMarshaller<FsxUpdateProtocolSmb, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FsxUpdateProtocolSmb requestObject, JsonMarshallerContext context)
+        public void Marshall(FsxUpdateProtocolSmb requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCmkSecretConfig())
             {
-                context.Writer.WritePropertyName("CmkSecretConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CmkSecretConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CmkSecretConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CmkSecretConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetCustomSecretConfig())
             {
-                context.Writer.WritePropertyName("CustomSecretConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CustomSecretConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CustomSecretConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomSecretConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("Domain");
-                context.Writer.WriteStringValue(requestObject.Domain);
+                context.Writer.WriteTextString("Domain");
+                context.Writer.WriteTextString(requestObject.Domain);
             }
 
             if (requestObject.IsSetMountOptions())
             {
-                context.Writer.WritePropertyName("MountOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MountOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SmbMountOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MountOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetPassword())
             {
-                context.Writer.WritePropertyName("Password");
-                context.Writer.WriteStringValue(requestObject.Password);
+                context.Writer.WriteTextString("Password");
+                context.Writer.WriteTextString(requestObject.Password);
             }
 
             if (requestObject.IsSetUser())
             {
-                context.Writer.WritePropertyName("User");
-                context.Writer.WriteStringValue(requestObject.User);
+                context.Writer.WriteTextString("User");
+                context.Writer.WriteTextString(requestObject.User);
             }
         }
 

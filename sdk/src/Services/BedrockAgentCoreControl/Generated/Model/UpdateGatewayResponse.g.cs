@@ -104,6 +104,20 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
+        /// Gets and sets the property DomainOverride. 
+        /// <para>
+        /// The public domain names that the gateway advertises in its OAuth discovery URLs instead
+        /// of the inbound Host header.
+        /// </para>
+        /// </summary>
+        public DomainOverride DomainOverride { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainOverride property is set.
+        /// </summary>
+        internal bool IsSetDomainOverride() => this.DomainOverride != null;
+
+        /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
         /// The level of detail in error messages returned when invoking the gateway.
