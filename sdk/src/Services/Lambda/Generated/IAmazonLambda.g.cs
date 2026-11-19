@@ -3584,7 +3584,8 @@ namespace Amazon.Lambda
         /// For functions with a long timeout, your client might disconnect during synchronous
         /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
         /// proxy, or operating system to allow for long connections with timeout or keep-alive
-        /// settings.
+        /// settings. Synchronous invocations can run for up to 30 minutes. Set the read timeout
+        /// of your client higher than the function timeout, and turn on TCP keep-alive.
         /// </para>
         ///  
         /// <para>
@@ -3835,7 +3836,8 @@ namespace Amazon.Lambda
         /// For functions with a long timeout, your client might disconnect during synchronous
         /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
         /// proxy, or operating system to allow for long connections with timeout or keep-alive
-        /// settings.
+        /// settings. Synchronous invocations can run for up to 30 minutes. Set the read timeout
+        /// of your client higher than the function timeout, and turn on TCP keep-alive.
         /// </para>
         ///  
         /// <para>

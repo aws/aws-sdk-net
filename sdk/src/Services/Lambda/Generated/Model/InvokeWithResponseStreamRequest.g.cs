@@ -47,6 +47,10 @@ namespace Amazon.Lambda.Model
         /// Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the
         /// function in the context object.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>ClientContext</c> is logged to CloudTrail if you turn on data events.
+        /// </para>
         /// </summary>
         public string ClientContext { get; set; }
 
