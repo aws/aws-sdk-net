@@ -32,7 +32,7 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteBillScenarioCommitmentModification
     /// operation. Delete commitment that you have created in a Bill Scenario. You can only
-    /// delete a commitment that you had added and cannot model deletion (or removal) of a
+    /// delete a commitment that you had added and can't model deletion (or removal) of a
     /// existing commitment. If you want model deletion of an existing commitment, see the
     /// negate <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BillScenarioCommitmentModificationAction.html">
     /// BillScenarioCommitmentModificationAction</a> of <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchCreateBillScenarioUsageModification.html">

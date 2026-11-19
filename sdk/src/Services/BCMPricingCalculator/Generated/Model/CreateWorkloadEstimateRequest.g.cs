@@ -66,7 +66,9 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property RateType. 
         /// <para>
-        ///  The type of pricing rates to use for the estimate. 
+        ///  The type of pricing rates for the estimate. You can only use a rate type that your
+        /// Pricing Calculator rate preferences allow. If you use billing transfer as a bill source
+        /// account, you can only use BEFORE_DISCOUNTS. 
         /// </para>
         /// </summary>
         public WorkloadEstimateRateType RateType { get; set; }

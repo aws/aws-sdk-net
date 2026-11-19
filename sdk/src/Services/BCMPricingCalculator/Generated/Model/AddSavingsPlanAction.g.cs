@@ -38,7 +38,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// Gets and sets the property Commitment. 
         /// <para>
         ///  The hourly commitment, in the same currency of the <c>savingsPlanOfferingId</c>.
-        /// This is a value between 0.001 and 1 million. You cannot specify more than five digits
+        /// This is a value between 0.001 and 1 million. You can't specify more than five digits
         /// after the decimal point. 
         /// </para>
         /// </summary>

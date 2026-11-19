@@ -103,7 +103,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property GroupSharingPreference. 
         /// <para>
-        /// The setting for the reserved instance and savings plan group sharing used in this
+        /// The setting for the reserved instance and savings plans group sharing used in this
         /// estimate.
         /// </para>
         /// </summary>

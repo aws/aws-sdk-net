@@ -32,7 +32,7 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteBillScenarioUsageModification operation.
     /// Delete usage that you have created in a Bill Scenario. You can only delete usage that
-    /// you had added and cannot model deletion (or removal) of a existing usage. If you want
+    /// you had added and can't model deletion (or removal) of a existing usage. If you want
     /// model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateBillScenarioUsageModification.html">
     /// BatchUpdateBillScenarioUsageModification</a>. <note> <para> The <c>BatchDeleteBillScenarioUsageModification</c>
     /// operation doesn't have its own IAM permission. To authorize this operation for Amazon

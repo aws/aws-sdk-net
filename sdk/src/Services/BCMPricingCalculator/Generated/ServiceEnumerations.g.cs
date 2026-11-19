@@ -497,6 +497,57 @@ namespace Amazon.BCMPricingCalculator
     }
 
     /// <summary>
+    /// Constants used for properties of type GetUsageLinesEstimatedCostErrorCode.
+    /// </summary>
+    public class GetUsageLinesEstimatedCostErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant BAD_REQUEST for GetUsageLinesEstimatedCostErrorCode
+        /// </summary>
+        public static readonly GetUsageLinesEstimatedCostErrorCode BAD_REQUEST = new GetUsageLinesEstimatedCostErrorCode("BAD_REQUEST");
+
+        /// <summary>
+        /// Constant CONFLICT for GetUsageLinesEstimatedCostErrorCode
+        /// </summary>
+        public static readonly GetUsageLinesEstimatedCostErrorCode CONFLICT = new GetUsageLinesEstimatedCostErrorCode("CONFLICT");
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for GetUsageLinesEstimatedCostErrorCode
+        /// </summary>
+        public static readonly GetUsageLinesEstimatedCostErrorCode INTERNAL_SERVER_ERROR = new GetUsageLinesEstimatedCostErrorCode("INTERNAL_SERVER_ERROR");
+
+        /// <summary>
+        /// Constant NOT_FOUND for GetUsageLinesEstimatedCostErrorCode
+        /// </summary>
+        public static readonly GetUsageLinesEstimatedCostErrorCode NOT_FOUND = new GetUsageLinesEstimatedCostErrorCode("NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom GetUsageLinesEstimatedCostErrorCode for a value not among the defined constants.
+        /// </summary>
+        public GetUsageLinesEstimatedCostErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GetUsageLinesEstimatedCostErrorCode FindValue(string value)
+        {
+            return FindValue<GetUsageLinesEstimatedCostErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GetUsageLinesEstimatedCostErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type GroupSharingPreferenceEnum.
     /// </summary>
     public class GroupSharingPreferenceEnum : ConstantClass

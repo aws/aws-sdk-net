@@ -38,7 +38,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  Returns the list of errors reason and the commitment item keys that cannot be created
+        ///  Returns the list of errors reason and the commitment item keys that can't be created
         /// in the Bill Scenario. 
         /// </para>
         /// <para />

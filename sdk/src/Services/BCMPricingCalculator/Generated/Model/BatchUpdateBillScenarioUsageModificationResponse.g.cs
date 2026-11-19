@@ -37,7 +37,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  Returns the list of error reasons and usage line item IDs that could not be updated
+        ///  Returns the list of error reasons and usage line item IDs that couldn't be updated
         /// for the Bill Scenario. 
         /// </para>
         /// <para />

@@ -37,8 +37,8 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  Returns the list of errors reason and the usage item keys that cannot be deleted
-        /// from the Workload estimate. 
+        ///  Returns the list of errors reason and the usage item keys that can't be deleted from
+        /// the Workload estimate. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

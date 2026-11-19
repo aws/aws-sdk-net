@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMPricingCalculator.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// The request is denied because you don't have sufficient permissions to perform this
+    /// operation. Verify that you have the required permissions and try again.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

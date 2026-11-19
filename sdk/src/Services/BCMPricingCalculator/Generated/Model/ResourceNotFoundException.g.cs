@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMPricingCalculator.Model
 {
     /// <summary>
-    /// The specified resource was not found.
+    /// The specified resource wasn't found.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -75,7 +75,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The identifier of the resource that was not found. 
+        ///  The identifier of the resource that wasn't found. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -89,7 +89,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of the resource that was not found. 
+        ///  The type of the resource that wasn't found. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

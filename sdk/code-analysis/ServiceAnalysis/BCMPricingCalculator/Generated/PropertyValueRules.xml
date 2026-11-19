@@ -1077,6 +1077,79 @@
     <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostError.Key</property>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostError.Operation</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostError.ServiceCode</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostError.UsageType</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostInput.Amount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostInput.Key</property>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostInput.Operation</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostInput.ServiceCode</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostInput.UsageType</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostLineItem.Key</property>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostLineItem.Operation</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostLineItem.ServiceCode</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BCMPricingCalculator.Model.GetUsageLinesEstimatedCostLineItem.UsageType</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[-a-zA-Z0-9\.\-_:, \/()]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.HistoricalUsageEntity.Operation</property>
     <min>0</min>
     <max>32</max>

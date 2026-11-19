@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMPricingCalculator.Model
 {
     /// <summary>
-    /// The request could not be processed because of conflict in the current state of the
-    /// resource.
+    /// The request couldn't be processed because the resource is in a conflicting state.
+    /// Verify the resource's current state and retry the request.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -76,7 +76,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The identifier of the resource that was not found. 
+        ///  The identifier of the resource that is in a conflicting state. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -90,7 +90,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of the resource that was not found. 
+        ///  The type of the resource that is in a conflicting state. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
