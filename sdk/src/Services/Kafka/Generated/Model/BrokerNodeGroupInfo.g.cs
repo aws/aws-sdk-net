@@ -98,7 +98,7 @@ namespace Amazon.Kafka.Model
         /// kafka.m5.12xlarge, and kafka.m5.24xlarge.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 5, Max = 32)]
+        [AWSProperty(Required = true, Min = 5, Max = 64)]
         public string InstanceType { get; set; }
 
         /// <summary>

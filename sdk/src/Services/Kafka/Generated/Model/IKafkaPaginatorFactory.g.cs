@@ -39,6 +39,18 @@ namespace Amazon.Kafka.Model
         IDescribeTopicPartitionsPaginator DescribeTopicPartitions(DescribeTopicPartitionsRequest request);
 
         /// <summary>
+        /// Paginator for ListAssessmentFindings operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAssessmentFindingsPaginator ListAssessmentFindings(ListAssessmentFindingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssessments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListClientVpcConnections operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -103,6 +115,12 @@ namespace Amazon.Kafka.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTopicReassignments operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListTopicReassignmentsPaginator ListTopicReassignments(ListTopicReassignmentsRequest request);
 
         /// <summary>
         /// Paginator for ListTopics operation

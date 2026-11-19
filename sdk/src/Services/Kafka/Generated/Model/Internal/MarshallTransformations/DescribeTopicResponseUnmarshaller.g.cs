@@ -66,6 +66,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("replicaIds", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.ReplicaIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("replicationFactor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

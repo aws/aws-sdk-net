@@ -1,0 +1,175 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Kafka.Model
+{
+    /// <summary>
+    /// This is the response object from the DescribeAssessment operation.
+    /// </summary>
+    public partial class DescribeAssessmentResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property AssessmentArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the assessment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string AssessmentArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssessmentArn property is set.
+        /// </summary>
+        internal bool IsSetAssessmentArn() => this.AssessmentArn != null;
+
+        /// <summary>
+        /// Gets and sets the property AssessmentParameters. 
+        /// <para>
+        /// The parameters that were provided when creating the assessment.
+        /// </para>
+        /// </summary>
+        public AssessmentParameters AssessmentParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssessmentParameters property is set.
+        /// </summary>
+        internal bool IsSetAssessmentParameters() => this.AssessmentParameters != null;
+
+        /// <summary>
+        /// Gets and sets the property AssessmentType. 
+        /// <para>
+        /// The type of assessment.
+        /// </para>
+        /// </summary>
+        public AssessmentType AssessmentType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssessmentType property is set.
+        /// </summary>
+        internal bool IsSetAssessmentType() => this.AssessmentType != null;
+
+        /// <summary>
+        /// Gets and sets the property ClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cluster that was assessed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string ClusterArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClusterArn property is set.
+        /// </summary>
+        internal bool IsSetClusterArn() => this.ClusterArn != null;
+
+        /// <summary>
+        /// Gets and sets the property CompletionTime. 
+        /// <para>
+        /// The time when the assessment completed. Present only when status is COMPLETE or FAILED.
+        /// </para>
+        /// </summary>
+        public DateTime? CompletionTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CompletionTime property is set.
+        /// </summary>
+        internal bool IsSetCompletionTime() => this.CompletionTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time when the assessment was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreationTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreationTime property is set.
+        /// </summary>
+        internal bool IsSetCreationTime() => this.CreationTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the assessment.
+        /// </para>
+        /// </summary>
+        public AssessmentStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// Additional information about the current status. Present when status is FAILED.
+        /// </para>
+        /// </summary>
+        public string StatusMessage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusMessage property is set.
+        /// </summary>
+        internal bool IsSetStatusMessage() => this.StatusMessage != null;
+
+        /// <summary>
+        /// Gets and sets the property Summary. 
+        /// <para>
+        /// Summary of findings by category and severity. Present only when status is COMPLETE.
+        /// </para>
+        /// </summary>
+        public AssessmentSummary Summary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Summary property is set.
+        /// </summary>
+        internal bool IsSetSummary() => this.Summary != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags attached to the assessment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

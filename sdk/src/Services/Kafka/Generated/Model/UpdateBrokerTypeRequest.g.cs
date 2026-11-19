@@ -67,7 +67,9 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property TargetInstanceType. 
         /// <para>
-        /// The Amazon MSK broker type that you want all of the brokers in this cluster to be.
+        /// The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to
+        /// Express, use the composite format to initiate mixed mode, the Express instance type
+        /// to complete the upgrade, or the Standard instance type to rollback.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -77,5 +79,22 @@ namespace Amazon.Kafka.Model
         /// Checks to see if the TargetInstanceType property is set.
         /// </summary>
         internal bool IsSetTargetInstanceType() => this.TargetInstanceType != null;
+
+        /// <summary>
+        /// Gets and sets the property TopicReassignment. 
+        /// <para>
+        /// Controls automatic topic reassignment when entering mixed broker mode. When set to
+        /// AUTO, MSK automatically reassigns all topics to the target broker type after adding
+        /// new brokers. When set to MANUAL (default), customers manage topic reassignment using
+        /// the StartTopicReassignment API. Only valid when targetInstanceType is a composite
+        /// mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.
+        /// </para>
+        /// </summary>
+        public TopicReassignment TopicReassignment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TopicReassignment property is set.
+        /// </summary>
+        internal bool IsSetTopicReassignment() => this.TopicReassignment != null;
     }
 }

@@ -41,6 +41,22 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssessmentFindings operation
+        /// </summary>
+        public IListAssessmentFindingsPaginator ListAssessmentFindings(ListAssessmentFindingsRequest request)
+        {
+            return new ListAssessmentFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssessments operation
+        /// </summary>
+        public IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request)
+        {
+            return new ListAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClientVpcConnections operation
         /// </summary>
         public IListClientVpcConnectionsPaginator ListClientVpcConnections(ListClientVpcConnectionsRequest request)
@@ -126,6 +142,14 @@ namespace Amazon.Kafka.Model
         public IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request)
         {
             return new ListScramSecretsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTopicReassignments operation
+        /// </summary>
+        public IListTopicReassignmentsPaginator ListTopicReassignments(ListTopicReassignmentsRequest request)
+        {
+            return new ListTopicReassignmentsPaginator(this.client, request);
         }
 
         /// <summary>

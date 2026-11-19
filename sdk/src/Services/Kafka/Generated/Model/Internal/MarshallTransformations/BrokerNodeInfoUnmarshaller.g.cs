@@ -67,6 +67,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("brokerNodeType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BrokerNodeType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("clientSubnet", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

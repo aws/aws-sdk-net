@@ -61,6 +61,21 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBrokerId() => this.BrokerId.HasValue;
 
         /// <summary>
+        /// Gets and sets the property BrokerNodeType. 
+        /// <para>
+        /// Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType
+        /// operation upgrades a cluster in place from Standard brokers to Express brokers, the
+        /// cluster contains brokers of both types and this field tells them apart.
+        /// </para>
+        /// </summary>
+        public BrokerNodeType BrokerNodeType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BrokerNodeType property is set.
+        /// </summary>
+        internal bool IsSetBrokerNodeType() => this.BrokerNodeType != null;
+
+        /// <summary>
         /// Gets and sets the property ClientSubnet. 
         /// <para>
         /// The client subnet to which this broker node belongs.

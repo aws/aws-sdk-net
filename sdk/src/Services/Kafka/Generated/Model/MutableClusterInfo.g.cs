@@ -138,7 +138,6 @@ namespace Amazon.Kafka.Model
         /// Information about the Amazon MSK broker type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 5, Max = 32)]
         public string InstanceType { get; set; }
 
         /// <summary>

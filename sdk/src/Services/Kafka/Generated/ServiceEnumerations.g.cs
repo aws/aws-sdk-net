@@ -22,6 +22,93 @@ using Amazon.Runtime;
 namespace Amazon.Kafka
 {
     /// <summary>
+    /// Constants used for properties of type AssessmentStatus.
+    /// </summary>
+    public class AssessmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for AssessmentStatus
+        /// </summary>
+        public static readonly AssessmentStatus COMPLETE = new AssessmentStatus("COMPLETE");
+
+        /// <summary>
+        /// Constant DELETING for AssessmentStatus
+        /// </summary>
+        public static readonly AssessmentStatus DELETING = new AssessmentStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for AssessmentStatus
+        /// </summary>
+        public static readonly AssessmentStatus FAILED = new AssessmentStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for AssessmentStatus
+        /// </summary>
+        public static readonly AssessmentStatus IN_PROGRESS = new AssessmentStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom AssessmentStatus for a value not among the defined constants.
+        /// </summary>
+        public AssessmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssessmentStatus FindValue(string value)
+        {
+            return FindValue<AssessmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssessmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AssessmentType.
+    /// </summary>
+    public class AssessmentType : ConstantClass
+    {
+        /// <summary>
+        /// Constant UPDATE_BROKER_TYPE for AssessmentType
+        /// </summary>
+        public static readonly AssessmentType UPDATE_BROKER_TYPE = new AssessmentType("UPDATE_BROKER_TYPE");
+
+        /// <summary>
+        /// Constructs a custom AssessmentType for a value not among the defined constants.
+        /// </summary>
+        public AssessmentType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssessmentType FindValue(string value)
+        {
+            return FindValue<AssessmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssessmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type BrokerAZDistribution.
     /// </summary>
     public class BrokerAZDistribution : ConstantClass
@@ -52,6 +139,47 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BrokerAZDistribution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BrokerNodeType.
+    /// </summary>
+    public class BrokerNodeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXPRESS for BrokerNodeType
+        /// </summary>
+        public static readonly BrokerNodeType EXPRESS = new BrokerNodeType("EXPRESS");
+
+        /// <summary>
+        /// Constant STANDARD for BrokerNodeType
+        /// </summary>
+        public static readonly BrokerNodeType STANDARD = new BrokerNodeType("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom BrokerNodeType for a value not among the defined constants.
+        /// </summary>
+        public BrokerNodeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrokerNodeType FindValue(string value)
+        {
+            return FindValue<BrokerNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrokerNodeType(string value)
         {
             return FindValue(value);
         }
@@ -501,6 +629,108 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnhancedMonitoring(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingCategory.
+    /// </summary>
+    public class FindingCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant BROKER_CONFIGURATION for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory BROKER_CONFIGURATION = new FindingCategory("BROKER_CONFIGURATION");
+
+        /// <summary>
+        /// Constant CAPACITY for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory CAPACITY = new FindingCategory("CAPACITY");
+
+        /// <summary>
+        /// Constant HEALTH for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory HEALTH = new FindingCategory("HEALTH");
+
+        /// <summary>
+        /// Constant INFRASTRUCTURE for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory INFRASTRUCTURE = new FindingCategory("INFRASTRUCTURE");
+
+        /// <summary>
+        /// Constant TOPIC_CONFIGURATION for FindingCategory
+        /// </summary>
+        public static readonly FindingCategory TOPIC_CONFIGURATION = new FindingCategory("TOPIC_CONFIGURATION");
+
+        /// <summary>
+        /// Constructs a custom FindingCategory for a value not among the defined constants.
+        /// </summary>
+        public FindingCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingCategory FindValue(string value)
+        {
+            return FindValue<FindingCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingSeverity.
+    /// </summary>
+    public class FindingSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant ERROR for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity ERROR = new FindingSeverity("ERROR");
+
+        /// <summary>
+        /// Constant INFO for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity INFO = new FindingSeverity("INFO");
+
+        /// <summary>
+        /// Constant WARNING for FindingSeverity
+        /// </summary>
+        public static readonly FindingSeverity WARNING = new FindingSeverity("WARNING");
+
+        /// <summary>
+        /// Constructs a custom FindingSeverity for a value not among the defined constants.
+        /// </summary>
+        public FindingSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingSeverity FindValue(string value)
+        {
+            return FindValue<FindingSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingSeverity(string value)
         {
             return FindValue(value);
         }
@@ -1228,6 +1458,149 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TokenEndpointAuthenticationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TopicReassignment.
+    /// </summary>
+    public class TopicReassignment : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for TopicReassignment
+        /// </summary>
+        public static readonly TopicReassignment AUTO = new TopicReassignment("AUTO");
+
+        /// <summary>
+        /// Constant MANUAL for TopicReassignment
+        /// </summary>
+        public static readonly TopicReassignment MANUAL = new TopicReassignment("MANUAL");
+
+        /// <summary>
+        /// Constructs a custom TopicReassignment for a value not among the defined constants.
+        /// </summary>
+        public TopicReassignment(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicReassignment FindValue(string value)
+        {
+            return FindValue<TopicReassignment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicReassignment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TopicReassignmentMode.
+    /// </summary>
+    public class TopicReassignmentMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for TopicReassignmentMode
+        /// </summary>
+        public static readonly TopicReassignmentMode AUTO = new TopicReassignmentMode("AUTO");
+
+        /// <summary>
+        /// Constant MANUAL for TopicReassignmentMode
+        /// </summary>
+        public static readonly TopicReassignmentMode MANUAL = new TopicReassignmentMode("MANUAL");
+
+        /// <summary>
+        /// Constructs a custom TopicReassignmentMode for a value not among the defined constants.
+        /// </summary>
+        public TopicReassignmentMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicReassignmentMode FindValue(string value)
+        {
+            return FindValue<TopicReassignmentMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicReassignmentMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TopicReassignmentStatus.
+    /// </summary>
+    public class TopicReassignmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus COMPLETE = new TopicReassignmentStatus("COMPLETE");
+
+        /// <summary>
+        /// Constant FAILED for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus FAILED = new TopicReassignmentStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus IN_PROGRESS = new TopicReassignmentStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PENDING for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus PENDING = new TopicReassignmentStatus("PENDING");
+
+        /// <summary>
+        /// Constant STOPPED for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus STOPPED = new TopicReassignmentStatus("STOPPED");
+
+        /// <summary>
+        /// Constant STOPPING for TopicReassignmentStatus
+        /// </summary>
+        public static readonly TopicReassignmentStatus STOPPING = new TopicReassignmentStatus("STOPPING");
+
+        /// <summary>
+        /// Constructs a custom TopicReassignmentStatus for a value not among the defined constants.
+        /// </summary>
+        public TopicReassignmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicReassignmentStatus FindValue(string value)
+        {
+            return FindValue<TopicReassignmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicReassignmentStatus(string value)
         {
             return FindValue(value);
         }

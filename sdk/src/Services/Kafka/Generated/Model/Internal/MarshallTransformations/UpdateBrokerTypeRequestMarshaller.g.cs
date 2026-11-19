@@ -84,6 +84,11 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("targetInstanceType");
                 context.Writer.WriteStringValue(publicRequest.TargetInstanceType);
             }
+            if (publicRequest.IsSetTopicReassignment())
+            {
+                context.Writer.WritePropertyName("topicReassignment");
+                context.Writer.WriteStringValue(publicRequest.TopicReassignment);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

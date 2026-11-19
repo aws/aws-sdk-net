@@ -35,6 +35,20 @@ namespace Amazon.Kafka.Model
     public partial class ClusterOperationInfo
     {
         /// <summary>
+        /// Gets and sets the property BrokerTypeUpgradeInfo. 
+        /// <para>
+        /// Topic reassignment details of the UpdateBrokerType operation that started an upgrade
+        /// from Standard brokers to Express brokers.
+        /// </para>
+        /// </summary>
+        public BrokerTypeUpgradeInfo BrokerTypeUpgradeInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BrokerTypeUpgradeInfo property is set.
+        /// </summary>
+        internal bool IsSetBrokerTypeUpgradeInfo() => this.BrokerTypeUpgradeInfo != null;
+
+        /// <summary>
         /// Gets and sets the property ClientRequestId. 
         /// <para>
         /// The ID of the API request that triggered this operation.

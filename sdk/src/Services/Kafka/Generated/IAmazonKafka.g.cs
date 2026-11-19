@@ -167,6 +167,75 @@ namespace Amazon.Kafka
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a new assessment for the specified cluster. Kicks off an asynchronous scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessment service method.</param>
+        /// <returns>The response from the CreateAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateAssessment">REST API Reference for CreateAssessment Operation</seealso>
+        CreateAssessmentResponse CreateAssessment(CreateAssessmentRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new assessment for the specified cluster. Kicks off an asynchronous scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateAssessment">REST API Reference for CreateAssessment Operation</seealso>
+        Task<CreateAssessmentResponse> CreateAssessmentAsync(CreateAssessmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a Channel that streams records from an Amazon MSK Express cluster topic to
         /// Amazon S3 or Apache Iceberg.
         /// </summary>
@@ -670,6 +739,77 @@ namespace Amazon.Kafka
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes an assessment and its findings. Frees one slot against the cluster's assessment
+        /// quota.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment service method.</param>
+        /// <returns>The response from the DeleteAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteAssessment">REST API Reference for DeleteAssessment Operation</seealso>
+        DeleteAssessmentResponse DeleteAssessment(DeleteAssessmentRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an assessment and its findings. Frees one slot against the cluster's assessment
+        /// quota.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteAssessment">REST API Reference for DeleteAssessment Operation</seealso>
+        Task<DeleteAssessmentResponse> DeleteAssessmentAsync(DeleteAssessmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes the channel specified by channelArn from the cluster specified by clusterArn.
         /// The channel transitions through DELETING and is removed when the asynchronous delete
         /// completes.
@@ -1072,6 +1212,69 @@ namespace Amazon.Kafka
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
         Task<DeleteVpcConnectionResponse> DeleteVpcConnectionAsync(DeleteVpcConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the status and summary of an assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessment service method.</param>
+        /// <returns>The response from the DescribeAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeAssessment">REST API Reference for DescribeAssessment Operation</seealso>
+        DescribeAssessmentResponse DescribeAssessment(DescribeAssessmentRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the status and summary of an assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeAssessment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeAssessment">REST API Reference for DescribeAssessment Operation</seealso>
+        Task<DescribeAssessmentResponse> DescribeAssessmentAsync(DescribeAssessmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1637,6 +1840,69 @@ namespace Amazon.Kafka
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the status and progress of a topic reassignment operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicReassignment service method.</param>
+        /// <returns>The response from the DescribeTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicReassignment">REST API Reference for DescribeTopicReassignment Operation</seealso>
+        DescribeTopicReassignmentResponse DescribeTopicReassignment(DescribeTopicReassignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the status and progress of a topic reassignment operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicReassignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeTopicReassignment">REST API Reference for DescribeTopicReassignment Operation</seealso>
+        Task<DescribeTopicReassignmentResponse> DescribeTopicReassignmentAsync(DescribeTopicReassignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a description of this MSK VPC connection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnection service method.</param>
@@ -1858,6 +2124,140 @@ namespace Amazon.Kafka
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
         Task<GetCompatibleKafkaVersionsResponse> GetCompatibleKafkaVersionsAsync(GetCompatibleKafkaVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the findings for a completed assessment. Paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFindings service method.</param>
+        /// <returns>The response from the ListAssessmentFindings service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessmentFindings">REST API Reference for ListAssessmentFindings Operation</seealso>
+        ListAssessmentFindingsResponse ListAssessmentFindings(ListAssessmentFindingsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the findings for a completed assessment. Paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAssessmentFindings service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessmentFindings">REST API Reference for ListAssessmentFindings Operation</seealso>
+        Task<ListAssessmentFindingsResponse> ListAssessmentFindingsAsync(ListAssessmentFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a list of assessments for the specified cluster. Optionally filterable by
+        /// assessment type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
+        /// <returns>The response from the ListAssessments service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
+        ListAssessmentsResponse ListAssessments(ListAssessmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a list of assessments for the specified cluster. Optionally filterable by
+        /// assessment type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAssessments service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
+        Task<ListAssessmentsResponse> ListAssessmentsAsync(ListAssessmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2540,6 +2940,69 @@ namespace Amazon.Kafka
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists topic reassignment operations for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicReassignments service method.</param>
+        /// <returns>The response from the ListTopicReassignments service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopicReassignments">REST API Reference for ListTopicReassignments Operation</seealso>
+        ListTopicReassignmentsResponse ListTopicReassignments(ListTopicReassignmentsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists topic reassignment operations for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicReassignments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTopicReassignments service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTopicReassignments">REST API Reference for ListTopicReassignments Operation</seealso>
+        Task<ListTopicReassignmentsResponse> ListTopicReassignmentsAsync(ListTopicReassignmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// List topics in a MSK cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTopics service method.</param>
@@ -2794,6 +3257,138 @@ namespace Amazon.Kafka
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
         Task<RejectClientVpcConnectionResponse> RejectClientVpcConnectionAsync(RejectClientVpcConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Initiates topic partition reassignment between broker types in a mixed-mode cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTopicReassignment service method.</param>
+        /// <returns>The response from the StartTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StartTopicReassignment">REST API Reference for StartTopicReassignment Operation</seealso>
+        StartTopicReassignmentResponse StartTopicReassignment(StartTopicReassignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Initiates topic partition reassignment between broker types in a mixed-mode cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTopicReassignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StartTopicReassignment">REST API Reference for StartTopicReassignment Operation</seealso>
+        Task<StartTopicReassignmentResponse> StartTopicReassignmentAsync(StartTopicReassignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Stops an active topic reassignment operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTopicReassignment service method.</param>
+        /// <returns>The response from the StopTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StopTopicReassignment">REST API Reference for StopTopicReassignment Operation</seealso>
+        StopTopicReassignmentResponse StopTopicReassignment(StopTopicReassignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Stops an active topic reassignment operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTopicReassignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StopTopicReassignment service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StopTopicReassignment">REST API Reference for StopTopicReassignment Operation</seealso>
+        Task<StopTopicReassignmentResponse> StopTopicReassignmentAsync(StopTopicReassignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
