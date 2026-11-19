@@ -35,6 +35,20 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class PaymentInput
     {
         /// <summary>
+        /// Gets and sets the property AwsBillingX402. 
+        /// <para>
+        /// Input for an AWS Billing x402 payment, which pays an AWS Marketplace seller's quote
+        /// and charges it to the AWS account that owns the payment manager.
+        /// </para>
+        /// </summary>
+        public AwsBillingX402PaymentInput AwsBillingX402 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsBillingX402 property is set.
+        /// </summary>
+        internal bool IsSetAwsBillingX402() => this.AwsBillingX402 != null;
+
+        /// <summary>
         /// Gets and sets the property CryptoX402. 
         /// <para>
         /// Input for a crypto X402 payment.

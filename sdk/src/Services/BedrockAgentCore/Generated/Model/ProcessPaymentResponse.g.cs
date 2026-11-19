@@ -51,10 +51,11 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentInstrumentId. 
         /// <para>
-        /// The ID of the payment instrument used.
+        /// The ID of the payment instrument used. For the <c>AWS_BILLING_X402</c> payment type,
+        /// this is the service-managed instrument ID <c>aws.agentcorepayments.awsbilling.v1</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 34, Max = 34)]
+        [AWSProperty(Required = true, Min = 34, Max = 35)]
         public string PaymentInstrumentId { get; set; }
 
         /// <summary>

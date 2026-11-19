@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The ID of the payment instrument.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 34, Max = 34)]
+        [AWSProperty(Required = true, Min = 34, Max = 35)]
         public string PaymentInstrumentId { get; set; }
 
         /// <summary>

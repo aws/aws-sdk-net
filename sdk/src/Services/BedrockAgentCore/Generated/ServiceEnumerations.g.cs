@@ -1979,6 +1979,88 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type JwkEllipticCurve.
+    /// </summary>
+    public class JwkEllipticCurve : ConstantClass
+    {
+        /// <summary>
+        /// Constant P256 for JwkEllipticCurve
+        /// </summary>
+        public static readonly JwkEllipticCurve P256 = new JwkEllipticCurve("P-256");
+
+        /// <summary>
+        /// Constant P384 for JwkEllipticCurve
+        /// </summary>
+        public static readonly JwkEllipticCurve P384 = new JwkEllipticCurve("P-384");
+
+        /// <summary>
+        /// Constant P521 for JwkEllipticCurve
+        /// </summary>
+        public static readonly JwkEllipticCurve P521 = new JwkEllipticCurve("P-521");
+
+        /// <summary>
+        /// Constructs a custom JwkEllipticCurve for a value not among the defined constants.
+        /// </summary>
+        public JwkEllipticCurve(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwkEllipticCurve FindValue(string value)
+        {
+            return FindValue<JwkEllipticCurve>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwkEllipticCurve(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type JwkKeyType.
+    /// </summary>
+    public class JwkKeyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EC for JwkKeyType
+        /// </summary>
+        public static readonly JwkKeyType EC = new JwkKeyType("EC");
+
+        /// <summary>
+        /// Constructs a custom JwkKeyType for a value not among the defined constants.
+        /// </summary>
+        public JwkKeyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwkKeyType FindValue(string value)
+        {
+            return FindValue<JwkKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwkKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type LanguageRuntime.
     /// </summary>
     public class LanguageRuntime : ConstantClass
@@ -2565,6 +2647,11 @@ namespace Amazon.BedrockAgentCore
     /// </summary>
     public class PaymentType : ConstantClass
     {
+        /// <summary>
+        /// Constant AWS_BILLING_X402 for PaymentType
+        /// </summary>
+        public static readonly PaymentType AWS_BILLING_X402 = new PaymentType("AWS_BILLING_X402");
+
         /// <summary>
         /// Constant CRYPTO_X402 for PaymentType
         /// </summary>

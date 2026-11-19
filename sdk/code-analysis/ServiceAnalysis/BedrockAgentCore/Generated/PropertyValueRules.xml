@@ -237,8 +237,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.PaymentManagerArn</property>
@@ -495,8 +495,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.PaymentManagerArn</property>
@@ -521,8 +521,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.PaymentManagerArn</property>
@@ -537,8 +537,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceResponse.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentSessionRequest.AgentName</property>
@@ -1177,8 +1177,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.PaymentManagerArn</property>
@@ -1199,8 +1199,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.PaymentManagerArn</property>
@@ -1694,6 +1694,23 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.AwsBillingX402PaymentInput.Version</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.AwsBillingX402PaymentOutput.PaymentToken</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.AwsBillingX402PaymentOutput.Version</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BasicAuth.SecretArn</property>
     <pattern>^arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
@@ -1877,6 +1894,16 @@
     <min>1</min>
     <max>19</max>
     <pattern>^(DRAFT|[0-9]{1,19})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DpopJwk.X</property>
+    <min>43</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DpopJwk.Y</property>
+    <min>43</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EfsConfiguration.AccessPointArn</property>
@@ -2541,8 +2568,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.PaymentManagerArn</property>
@@ -2563,8 +2590,8 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.PaymentInstrumentId</property>
     <min>34</min>
-    <max>34</max>
-    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
+    <max>35</max>
+    <pattern>^(payment-instrument-[0-9a-zA-Z-]{15}|aws\.agentcorepayments\.awsbilling\.v1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.PaymentManagerArn</property>

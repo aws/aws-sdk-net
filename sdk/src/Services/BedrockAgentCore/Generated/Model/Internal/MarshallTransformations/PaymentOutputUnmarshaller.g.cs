@@ -53,6 +53,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("awsBillingX402", targetDepth, ref reader))
+                {
+                    var unmarshaller = AwsBillingX402PaymentOutputUnmarshaller.Instance;
+                    unmarshalledObject.AwsBillingX402 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("cryptoX402", targetDepth, ref reader))
                 {
                     var unmarshaller = CryptoX402PaymentOutputUnmarshaller.Instance;

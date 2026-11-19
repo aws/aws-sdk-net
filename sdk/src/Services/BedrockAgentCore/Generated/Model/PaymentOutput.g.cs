@@ -35,6 +35,19 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class PaymentOutput
     {
         /// <summary>
+        /// Gets and sets the property AwsBillingX402. 
+        /// <para>
+        /// Output from an AWS Billing x402 payment.
+        /// </para>
+        /// </summary>
+        public AwsBillingX402PaymentOutput AwsBillingX402 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsBillingX402 property is set.
+        /// </summary>
+        internal bool IsSetAwsBillingX402() => this.AwsBillingX402 != null;
+
+        /// <summary>
         /// Gets and sets the property CryptoX402. 
         /// <para>
         /// Output from a crypto X402 payment.

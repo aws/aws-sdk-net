@@ -45,6 +45,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAwsBillingX402())
+            {
+                context.Writer.WritePropertyName("awsBillingX402");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AwsBillingX402PaymentInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsBillingX402, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCryptoX402())
             {
                 context.Writer.WritePropertyName("cryptoX402");
