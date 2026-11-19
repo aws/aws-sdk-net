@@ -143,6 +143,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("jpegXsInputSpecification", targetDepth, ref reader))
+                {
+                    var unmarshaller = JpegXsInputSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.JpegXsInputSpecification = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("linkedChannelSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeLinkedChannelSettingsUnmarshaller.Instance;

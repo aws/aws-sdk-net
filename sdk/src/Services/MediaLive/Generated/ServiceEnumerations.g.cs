@@ -9340,6 +9340,11 @@ namespace Amazon.MediaLive
         public static readonly InputCodec HEVC = new InputCodec("HEVC");
 
         /// <summary>
+        /// Constant JPEGXS for InputCodec
+        /// </summary>
+        public static readonly InputCodec JPEGXS = new InputCodec("JPEGXS");
+
+        /// <summary>
         /// Constant MPEG2 for InputCodec
         /// </summary>
         public static readonly InputCodec MPEG2 = new InputCodec("MPEG2");
@@ -10780,6 +10785,78 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type JpegXsInputMaximumBitrate.
+    /// </summary>
+    public class JpegXsInputMaximumBitrate : ConstantClass
+    {
+        /// <summary>
+        /// Constant MAX_500_MBPS for JpegXsInputMaximumBitrate
+        /// </summary>
+        public static readonly JpegXsInputMaximumBitrate MAX_500_MBPS = new JpegXsInputMaximumBitrate("MAX_500_MBPS");
+
+        /// <summary>
+        /// Constructs a custom JpegXsInputMaximumBitrate for a value not among the defined constants.
+        /// </summary>
+        public JpegXsInputMaximumBitrate(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JpegXsInputMaximumBitrate FindValue(string value)
+        {
+            return FindValue<JpegXsInputMaximumBitrate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JpegXsInputMaximumBitrate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type JpegXsInputResolution.
+    /// </summary>
+    public class JpegXsInputResolution : ConstantClass
+    {
+        /// <summary>
+        /// Constant HD for JpegXsInputResolution
+        /// </summary>
+        public static readonly JpegXsInputResolution HD = new JpegXsInputResolution("HD");
+
+        /// <summary>
+        /// Constructs a custom JpegXsInputResolution for a value not among the defined constants.
+        /// </summary>
+        public JpegXsInputResolution(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JpegXsInputResolution FindValue(string value)
+        {
+            return FindValue<JpegXsInputResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JpegXsInputResolution(string value)
         {
             return FindValue(value);
         }
@@ -13598,6 +13675,11 @@ namespace Amazon.MediaLive
         public static readonly ReservationCodec HEVC = new ReservationCodec("HEVC");
 
         /// <summary>
+        /// Constant JPEGXS for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec JPEGXS = new ReservationCodec("JPEGXS");
+
+        /// <summary>
         /// Constant LINK for ReservationCodec
         /// </summary>
         public static readonly ReservationCodec LINK = new ReservationCodec("LINK");
@@ -13647,6 +13729,11 @@ namespace Amazon.MediaLive
         /// Constant MAX_20_MBPS for ReservationMaximumBitrate
         /// </summary>
         public static readonly ReservationMaximumBitrate MAX_20_MBPS = new ReservationMaximumBitrate("MAX_20_MBPS");
+
+        /// <summary>
+        /// Constant MAX_500_MBPS for ReservationMaximumBitrate
+        /// </summary>
+        public static readonly ReservationMaximumBitrate MAX_500_MBPS = new ReservationMaximumBitrate("MAX_500_MBPS");
 
         /// <summary>
         /// Constant MAX_50_MBPS for ReservationMaximumBitrate

@@ -170,6 +170,17 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSpecification() => this.InputSpecification != null;
 
         /// <summary>
+        /// Gets and sets the property JpegXsInputSpecification. Specification of JPEG XS inputs
+        /// for this channel
+        /// </summary>
+        public JpegXsInputSpecification JpegXsInputSpecification { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JpegXsInputSpecification property is set.
+        /// </summary>
+        internal bool IsSetJpegXsInputSpecification() => this.JpegXsInputSpecification != null;
+
+        /// <summary>
         /// Gets and sets the property LinkedChannelSettings. The linked channel settings for
         /// the channel.
         /// </summary>

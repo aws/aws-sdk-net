@@ -179,6 +179,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetJpegXsInputSpecification())
+            {
+                context.Writer.WritePropertyName("jpegXsInputSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JpegXsInputSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JpegXsInputSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLinkedChannelSettings())
             {
                 context.Writer.WritePropertyName("linkedChannelSettings");
