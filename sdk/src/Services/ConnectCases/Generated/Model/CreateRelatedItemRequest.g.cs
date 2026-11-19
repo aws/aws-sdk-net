@@ -33,6 +33,8 @@ namespace Amazon.ConnectCases.Model
     /// Container for the parameters to the CreateRelatedItem operation. Creates a related
     /// item (comments, tasks, and contacts) and associates it with a case. <para> There's
     /// a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+    /// Customer Cases quotas</a>. </para> <para> There's a quota for the number of SLAs that
+    /// can be attached to a case. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
     /// Customer Cases quotas</a>. </para> <para> <b>Use cases</b> </para> <para> Following
     /// are examples of related items that you may want to associate with a case: </para>
     /// <ul> <li> <para> Related contacts, such as calls, chats, emails tasks </para> </li>

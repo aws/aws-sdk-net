@@ -1513,6 +1513,11 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
+        /// There's a quota for the number of SLAs that can be attached to a case. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Use cases</b> 
         /// </para>
         ///  
@@ -1632,6 +1637,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// There's a quota for the number of fields allowed in a Custom type related item. See
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// There's a quota for the number of SLAs that can be attached to a case. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
         /// Customer Cases quotas</a>.
         /// </para>
         ///  
@@ -5443,6 +5453,13 @@ namespace Amazon.ConnectCases
         /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
         /// Customer Cases quotas</a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Sla</b> - Update the target duration (<c>targetSlaMinutes</c>) of an SLA. The
+        /// new deadline is counted from when the SLA was created. The SLA status is recalculated
+        /// against the new deadline: an open SLA becomes Active or Overdue, and a completed SLA
+        /// becomes Met or NotMet.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Important things to know</b> 
@@ -5536,6 +5553,13 @@ namespace Amazon.ConnectCases
         /// and remove fields from a custom related item. There's a quota for the number of fields
         /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
         /// Customer Cases quotas</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Sla</b> - Update the target duration (<c>targetSlaMinutes</c>) of an SLA. The
+        /// new deadline is counted from when the SLA was created. The SLA status is recalculated
+        /// against the new deadline: an open SLA becomes Active or Overdue, and a completed SLA
+        /// becomes Met or NotMet.
         /// </para>
         ///  </li> </ul> 
         /// <para>

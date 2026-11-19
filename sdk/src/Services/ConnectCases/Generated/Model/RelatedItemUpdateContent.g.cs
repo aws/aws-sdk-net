@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Represents the content of a related item to be updated. This is a union type that
-    /// can contain either comment content or custom content.
+    /// can contain comment content, custom content, or SLA content.
     /// </summary>
     public partial class RelatedItemUpdateContent
     {
@@ -54,5 +54,18 @@ namespace Amazon.ConnectCases.Model
         /// Checks to see if the Custom property is set.
         /// </summary>
         internal bool IsSetCustom() => this.Custom != null;
+
+        /// <summary>
+        /// Gets and sets the property Sla. 
+        /// <para>
+        /// Represents the content of an SLA to be updated.
+        /// </para>
+        /// </summary>
+        public SlaUpdateContent Sla { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Sla property is set.
+        /// </summary>
+        internal bool IsSetSla() => this.Sla != null;
     }
 }

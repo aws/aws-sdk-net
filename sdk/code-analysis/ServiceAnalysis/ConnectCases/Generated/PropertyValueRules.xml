@@ -1224,6 +1224,11 @@
     <max>1051200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.SlaUpdateConfiguration.TargetSlaMinutes</property>
+    <min>1</min>
+    <max>1051200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.Sort.FieldId</property>
     <min>1</min>
     <max>500</max>

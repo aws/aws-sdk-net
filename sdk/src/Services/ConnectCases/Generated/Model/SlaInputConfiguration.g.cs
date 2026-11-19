@@ -37,7 +37,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property FieldId. 
         /// <para>
-        /// Unique identifier of a field.
+        /// Unique identifier of the case field that the SLA tracks. The field must be a single-select
+        /// field, such as the system <c>status</c> field or a custom single-select field.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 500)]
