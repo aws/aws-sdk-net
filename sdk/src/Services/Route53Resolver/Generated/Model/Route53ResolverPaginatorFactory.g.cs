@@ -57,6 +57,14 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListFirewallRuleDomains operation
+        /// </summary>
+        public IListFirewallRuleDomainsPaginator ListFirewallRuleDomains(ListFirewallRuleDomainsRequest request)
+        {
+            return new ListFirewallRuleDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewallRuleGroupAssociations operation
         /// </summary>
         public IListFirewallRuleGroupAssociationsPaginator ListFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request)

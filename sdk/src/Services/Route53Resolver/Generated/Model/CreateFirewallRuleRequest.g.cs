@@ -37,14 +37,17 @@ namespace Amazon.Route53Resolver.Model
     /// — match a customer-managed or Amazon Web Services-managed domain list. </para> </li>
     /// <li> <para> <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat
     /// detector (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>). </para> </li>
-    /// <li> <para> <c>FirewallRuleType</c> — match one of the rule-type variants returned
-    /// by <a>ListFirewallRuleTypes</a>: <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>,
-    /// <c>DnsThreatProtection</c>, or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c>
-    /// variant requires an active Amazon Web Services Marketplace subscription to the named
-    /// partner product. </para> </li> </ul> <para> For rules that require asynchronous provisioning
-    /// (today, the <c>PartnerThreatProtection</c> rule type), the rule's <c>Status</c> begins
-    /// at <c>CREATING</c> and transitions to <c>COMPLETE</c> once the rule is provisioned
-    /// and the marketplace entitlement is verified. If provisioning fails, <c>Status</c>
+    /// <li> <para> <c>FirewallRuleType</c> — match one of the rule-type variants: <c>FirewallAdvancedContentCategory</c>,
+    /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, <c>PartnerThreatProtection</c>,
+    /// or <c>AutoAllowlist</c>. <a>ListFirewallRuleTypes</a> returns the first four. The
+    /// <c>PartnerThreatProtection</c> variant requires an active Amazon Web Services Marketplace
+    /// subscription to the named partner product. </para> </li> </ul> <para> For rules that
+    /// require asynchronous provisioning (the <c>PartnerThreatProtection</c> and <c>AutoAllowlist</c>
+    /// rule types), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
+    /// <c>COMPLETE</c> once the rule is provisioned: for <c>PartnerThreatProtection</c>,
+    /// when the marketplace entitlement is verified, and for <c>AutoAllowlist</c>, when DNS
+    /// Firewall has read the look-back window of every VPC that uses the rule group, which
+    /// can take hours for a rule group that many VPCs use. If provisioning fails, <c>Status</c>
     /// becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c> contains a human-readable
     /// reason; the rule is then immutable and must be removed with <a>DeleteFirewallRule</a>.
     /// </para>
@@ -282,6 +285,11 @@ namespace Amazon.Route53Resolver.Model
         /// chain. You don't need to add the subsequent domains in the domain in the redirection
         /// list to the domain list.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't set this value on an AutoAllowlist rule, which always inspects the redirection
+        /// chain.
+        /// </para>
         /// </summary>
         public FirewallDomainRedirectionAction FirewallDomainRedirectionAction { get; set; }
 
@@ -333,9 +341,15 @@ namespace Amazon.Route53Resolver.Model
         /// Amazon Web Services Marketplace. The selected partner must be an active subscription
         /// on the calling account.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AutoAllowlist</c> — automatically observe the domains that the VPCs associated
+        /// with the rule group resolve, and allow the ones that you approve. See <a>AutoAllowlistConfig</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
+        /// It doesn't return <c>AutoAllowlist</c>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType { get; set; }
@@ -446,7 +460,11 @@ namespace Amazon.Route53Resolver.Model
         /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
         /// of DNS record types</a>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't set <c>Qtype</c> on an AutoAllowlist rule, because the rule applies to all
+        /// query types.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 16)]
         public string Qtype { get; set; }

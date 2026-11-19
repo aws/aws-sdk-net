@@ -293,6 +293,11 @@ namespace Amazon.Route53Resolver
     public class DomainListType : ConstantClass
     {
         /// <summary>
+        /// Constant AUTOALLOWLIST for DomainListType
+        /// </summary>
+        public static readonly DomainListType AUTOALLOWLIST = new DomainListType("AUTOALLOWLIST");
+
+        /// <summary>
         /// Constant CONTENT for DomainListType
         /// </summary>
         public static readonly DomainListType CONTENT = new DomainListType("CONTENT");
@@ -462,6 +467,103 @@ namespace Amazon.Route53Resolver
     }
 
     /// <summary>
+    /// Constants used for properties of type FirewallDomainStatus.
+    /// </summary>
+    public class FirewallDomainStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALLOWED for FirewallDomainStatus
+        /// </summary>
+        public static readonly FirewallDomainStatus ALLOWED = new FirewallDomainStatus("ALLOWED");
+
+        /// <summary>
+        /// Constant DENIED for FirewallDomainStatus
+        /// </summary>
+        public static readonly FirewallDomainStatus DENIED = new FirewallDomainStatus("DENIED");
+
+        /// <summary>
+        /// Constant OBSERVED for FirewallDomainStatus
+        /// </summary>
+        public static readonly FirewallDomainStatus OBSERVED = new FirewallDomainStatus("OBSERVED");
+
+        /// <summary>
+        /// Constant UNKNOWN for FirewallDomainStatus
+        /// </summary>
+        public static readonly FirewallDomainStatus UNKNOWN = new FirewallDomainStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom FirewallDomainStatus for a value not among the defined constants.
+        /// </summary>
+        public FirewallDomainStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainStatus FindValue(string value)
+        {
+            return FindValue<FirewallDomainStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallDomainStatusFilter.
+    /// </summary>
+    public class FirewallDomainStatusFilter : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALLOWED for FirewallDomainStatusFilter
+        /// </summary>
+        public static readonly FirewallDomainStatusFilter ALLOWED = new FirewallDomainStatusFilter("ALLOWED");
+
+        /// <summary>
+        /// Constant DENIED for FirewallDomainStatusFilter
+        /// </summary>
+        public static readonly FirewallDomainStatusFilter DENIED = new FirewallDomainStatusFilter("DENIED");
+
+        /// <summary>
+        /// Constant OBSERVED for FirewallDomainStatusFilter
+        /// </summary>
+        public static readonly FirewallDomainStatusFilter OBSERVED = new FirewallDomainStatusFilter("OBSERVED");
+
+        /// <summary>
+        /// Constructs a custom FirewallDomainStatusFilter for a value not among the defined constants.
+        /// </summary>
+        public FirewallDomainStatusFilter(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainStatusFilter FindValue(string value)
+        {
+            return FindValue<FirewallDomainStatusFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainStatusFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FirewallDomainUpdateOperation.
     /// </summary>
     public class FirewallDomainUpdateOperation : ConstantClass
@@ -470,6 +572,11 @@ namespace Amazon.Route53Resolver
         /// Constant ADD for FirewallDomainUpdateOperation
         /// </summary>
         public static readonly FirewallDomainUpdateOperation ADD = new FirewallDomainUpdateOperation("ADD");
+
+        /// <summary>
+        /// Constant DENY for FirewallDomainUpdateOperation
+        /// </summary>
+        public static readonly FirewallDomainUpdateOperation DENY = new FirewallDomainUpdateOperation("DENY");
 
         /// <summary>
         /// Constant REMOVE for FirewallDomainUpdateOperation
@@ -548,6 +655,93 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FirewallFailOpenStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleDomainSortBy.
+    /// </summary>
+    public class FirewallRuleDomainSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAILY_TOTAL for FirewallRuleDomainSortBy
+        /// </summary>
+        public static readonly FirewallRuleDomainSortBy DAILY_TOTAL = new FirewallRuleDomainSortBy("DAILY_TOTAL");
+
+        /// <summary>
+        /// Constant TIME_ADDED for FirewallRuleDomainSortBy
+        /// </summary>
+        public static readonly FirewallRuleDomainSortBy TIME_ADDED = new FirewallRuleDomainSortBy("TIME_ADDED");
+
+        /// <summary>
+        /// Constant TOTAL_REQUESTS for FirewallRuleDomainSortBy
+        /// </summary>
+        public static readonly FirewallRuleDomainSortBy TOTAL_REQUESTS = new FirewallRuleDomainSortBy("TOTAL_REQUESTS");
+
+        /// <summary>
+        /// Constructs a custom FirewallRuleDomainSortBy for a value not among the defined constants.
+        /// </summary>
+        public FirewallRuleDomainSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleDomainSortBy FindValue(string value)
+        {
+            return FindValue<FirewallRuleDomainSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleDomainSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallRuleDomainSortOrder.
+    /// </summary>
+    public class FirewallRuleDomainSortOrder : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASC for FirewallRuleDomainSortOrder
+        /// </summary>
+        public static readonly FirewallRuleDomainSortOrder ASC = new FirewallRuleDomainSortOrder("ASC");
+
+        /// <summary>
+        /// Constant DESC for FirewallRuleDomainSortOrder
+        /// </summary>
+        public static readonly FirewallRuleDomainSortOrder DESC = new FirewallRuleDomainSortOrder("DESC");
+
+        /// <summary>
+        /// Constructs a custom FirewallRuleDomainSortOrder for a value not among the defined constants.
+        /// </summary>
+        public FirewallRuleDomainSortOrder(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallRuleDomainSortOrder FindValue(string value)
+        {
+            return FindValue<FirewallRuleDomainSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallRuleDomainSortOrder(string value)
         {
             return FindValue(value);
         }

@@ -51,6 +51,12 @@ namespace Amazon.Route53Resolver.Model
         IListFirewallDomainsPaginator ListFirewallDomains(ListFirewallDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListFirewallRuleDomains operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFirewallRuleDomainsPaginator ListFirewallRuleDomains(ListFirewallRuleDomainsRequest request);
+
+        /// <summary>
         /// Paginator for ListFirewallRuleGroupAssociations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

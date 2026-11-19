@@ -35,8 +35,8 @@ namespace Amazon.Route53Resolver.Model
     /// the rules in a rule group to filter DNS network traffic for a VPC. <para> A single
     /// call might return only a partial list of the rules. For information, see <c>MaxResults</c>.
     /// </para> <para> For rules that require asynchronous provisioning, the response includes
-    /// <c>Status</c> (see <a>FirewallRuleStatus</a>) and, on failure, <c>StatusMessage</c>
-    /// with the reason. </para>
+    /// <c>Status</c> (see <a>FirewallRule</a>) and, on failure, <c>StatusMessage</c> with
+    /// the reason. </para>
     /// </summary>
     public partial class ListFirewallRulesRequest : AmazonRoute53ResolverRequest
     {

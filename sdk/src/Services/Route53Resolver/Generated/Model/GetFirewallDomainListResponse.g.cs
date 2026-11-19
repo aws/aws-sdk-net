@@ -46,5 +46,38 @@ namespace Amazon.Route53Resolver.Model
         /// Checks to see if the FirewallDomainList property is set.
         /// </summary>
         internal bool IsSetFirewallDomainList() => this.FirewallDomainList != null;
+
+        /// <summary>
+        /// Gets and sets the property FirewallRuleGroupId. 
+        /// <para>
+        /// For an AutoAllowlist domain list, the ID of the firewall rule group that contains
+        /// the AutoAllowlist rule that owns this domain list. Present only when <c>ManagedListType</c>
+        /// is <c>AUTOALLOWLIST</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string FirewallRuleGroupId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallRuleGroupId property is set.
+        /// </summary>
+        internal bool IsSetFirewallRuleGroupId() => this.FirewallRuleGroupId != null;
+
+        /// <summary>
+        /// Gets and sets the property FirewallThreatProtectionId. 
+        /// <para>
+        /// For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule
+        /// that owns this domain list. Provide it to <a>ListFirewallRuleDomains</a> to review
+        /// the observed, allowed, and denied domains. Present only when <c>ManagedListType</c>
+        /// is <c>AUTOALLOWLIST</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string FirewallThreatProtectionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallThreatProtectionId property is set.
+        /// </summary>
+        internal bool IsSetFirewallThreatProtectionId() => this.FirewallThreatProtectionId != null;
     }
 }

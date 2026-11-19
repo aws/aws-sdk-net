@@ -304,9 +304,15 @@ namespace Amazon.Route53Resolver.Model
         /// Amazon Web Services Marketplace. The selected partner must be an active subscription
         /// on the calling account.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AutoAllowlist</c> — automatically observe the domains that the VPCs associated
+        /// with the rule group resolve, and allow the ones that you approve. See <a>AutoAllowlistConfig</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
+        /// It doesn't return <c>AutoAllowlist</c>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType { get; set; }

@@ -39,11 +39,27 @@ namespace Amazon.Route53Resolver.Model
     ///  
     /// <para>
     /// Call <a>ListFirewallRuleTypes</a> to discover which rule-type variants and which values
-    /// within each variant are available in your account and Region.
+    /// within each variant are available in your account and Region. It doesn't return the
+    /// <c>AutoAllowlist</c> variant.
     /// </para>
     /// </summary>
     public partial class FirewallRuleType
     {
+        /// <summary>
+        /// Gets and sets the property AutoAllowlist. 
+        /// <para>
+        /// Configures the rule as an AutoAllowlist rule, which observes the DNS traffic of the
+        /// VPCs that use the rule group, through a rule group association or a Route 53 Profile,
+        /// so that you can review the domains and allow them. See <a>AutoAllowlistConfig</a>.
+        /// </para>
+        /// </summary>
+        public AutoAllowlistConfig AutoAllowlist { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoAllowlist property is set.
+        /// </summary>
+        internal bool IsSetAutoAllowlist() => this.AutoAllowlist != null;
+
         /// <summary>
         /// Gets and sets the property DnsThreatProtection. 
         /// <para>

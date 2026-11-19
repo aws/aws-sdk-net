@@ -290,6 +290,14 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> </ul> 
         /// <para>
         /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
+        /// It doesn't return <c>AutoAllowlist</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify <c>FirewallRuleType</c> when you update an AutoAllowlist rule, even
+        /// with its current values. <c>InitialDataTimeframeHours</c> and <c>ImportFromFirewallDomainListId</c>
+        /// can't be changed. To change them, delete the rule and create a new one. Deleting an
+        /// AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType { get; set; }

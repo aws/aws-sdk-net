@@ -236,6 +236,11 @@ namespace Amazon.Route53Resolver.Model
         /// chain. You don't need to add the subsequent domains in the domain in the redirection
         /// list to the domain list.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't set this value on an AutoAllowlist rule, which always inspects the redirection
+        /// chain.
+        /// </para>
         /// </summary>
         public FirewallDomainRedirectionAction FirewallDomainRedirectionAction { get; set; }
 
@@ -289,6 +294,14 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> </ul> 
         /// <para>
         /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
+        /// It doesn't return <c>AutoAllowlist</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify <c>FirewallRuleType</c> when you update an AutoAllowlist rule, even
+        /// with its current values. <c>InitialDataTimeframeHours</c> and <c>ImportFromFirewallDomainListId</c>
+        /// can't be changed. To change them, delete the rule and create a new one. Deleting an
+        /// AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType { get; set; }
@@ -418,7 +431,11 @@ namespace Amazon.Route53Resolver.Model
         /// this action will not be applied to synthetic IPv6 addresses generated when DNS64 is
         /// enabled. 
         /// </para>
-        ///  </note> </li> </ul>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// You can't set <c>Qtype</c> on an AutoAllowlist rule, because the rule applies to all
+        /// query types.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 16)]
         public string Qtype { get; set; }

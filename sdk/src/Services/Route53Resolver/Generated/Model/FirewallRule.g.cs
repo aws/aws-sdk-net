@@ -309,9 +309,15 @@ namespace Amazon.Route53Resolver.Model
         ///  <c>PartnerThreatProtection</c> — a third-party threat feed delivered through Amazon
         /// Web Services Marketplace.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AutoAllowlist</c> — an AutoAllowlist rule, which allows the domains on its managed
+        /// domain list. See <a>AutoAllowlistConfig</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
+        /// It doesn't return <c>AutoAllowlist</c>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType { get; set; }
@@ -462,7 +468,9 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         ///  <c>CREATING</c> — DNS Firewall is provisioning the rule. Rules created with the <c>PartnerThreatProtection</c>
         /// rule type begin in this state while DNS Firewall verifies the calling account's Amazon
-        /// Web Services Marketplace entitlement.
+        /// Web Services Marketplace entitlement. Rules created with the <c>AutoAllowlist</c>
+        /// rule type begin in this state while DNS Firewall reads the look-back window of each
+        /// VPC that uses the rule group.
         /// </para>
         ///  </li> <li> 
         /// <para>

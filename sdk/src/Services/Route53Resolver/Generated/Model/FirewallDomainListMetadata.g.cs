@@ -86,6 +86,39 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetCreatorRequestId() => this.CreatorRequestId != null;
 
         /// <summary>
+        /// Gets and sets the property FirewallRuleGroupId. 
+        /// <para>
+        /// For an AutoAllowlist domain list, the ID of the firewall rule group that contains
+        /// the auto-allowlist rule that owns this domain list. Use it to navigate to the rule
+        /// group and its VPC associations. Present only when <c>ManagedListType</c> is <c>AUTOALLOWLIST</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string FirewallRuleGroupId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallRuleGroupId property is set.
+        /// </summary>
+        internal bool IsSetFirewallRuleGroupId() => this.FirewallRuleGroupId != null;
+
+        /// <summary>
+        /// Gets and sets the property FirewallThreatProtectionId. 
+        /// <para>
+        /// For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule
+        /// that owns this domain list. Provide it to <a>ListFirewallRuleDomains</a> to review
+        /// the observed, allowed, and denied domains. Present only when <c>ManagedListType</c>
+        /// is <c>AUTOALLOWLIST</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string FirewallThreatProtectionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallThreatProtectionId property is set.
+        /// </summary>
+        internal bool IsSetFirewallThreatProtectionId() => this.FirewallThreatProtectionId != null;
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the domain list. 
@@ -141,5 +174,25 @@ namespace Amazon.Route53Resolver.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// For an AutoAllowlist domain list, the status of the list: <c>IMPORTING</c> while domains
+        /// are being copied from the source domain list specified at rule creation, <c>COMPLETE_IMPORT_FAILED</c>
+        /// if that copy failed, <c>UPDATING</c> while a change made with <a>UpdateFirewallDomains</a>
+        /// is being applied, <c>COMPLETE</c> otherwise, and <c>DELETING</c> while the owning
+        /// rule is being deleted. The first change that you make after a failed copy replaces
+        /// <c>COMPLETE_IMPORT_FAILED</c> with <c>UPDATING</c> and then <c>COMPLETE</c>. Present
+        /// only when <c>ManagedListType</c> is <c>AUTOALLOWLIST</c>. Use <a>GetFirewallDomainList</a>
+        /// for the status of other domain lists.
+        /// </para>
+        /// </summary>
+        public FirewallDomainListStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
     }
 }

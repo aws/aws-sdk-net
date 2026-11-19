@@ -45,6 +45,17 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAutoAllowlist())
+            {
+                context.Writer.WritePropertyName("AutoAllowlist");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoAllowlistConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoAllowlist, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetDnsThreatProtection())
             {
                 context.Writer.WritePropertyName("DnsThreatProtection");

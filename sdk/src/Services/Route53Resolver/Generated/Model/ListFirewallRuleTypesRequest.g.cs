@@ -41,7 +41,9 @@ namespace Amazon.Route53Resolver.Model
     /// only <c>PartnerThreatProtection</c>), the response also includes a <a>SubscriptionInfo</a>
     /// identifying the Amazon Web Services Marketplace product that backs it; absence of
     /// <c>SubscriptionInfo</c> means the variant is fully managed by Amazon Web Services
-    /// and requires no separate subscription. </para>
+    /// and requires no separate subscription. </para> <para> This operation doesn't return
+    /// the <c>AutoAllowlist</c> variant. Configure an AutoAllowlist rule with <a>AutoAllowlistConfig</a>.
+    /// </para>
     /// </summary>
     public partial class ListFirewallRuleTypesRequest : AmazonRoute53ResolverRequest
     {

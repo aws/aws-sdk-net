@@ -32,7 +32,9 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the ImportFirewallDomains operation. Imports domain
     /// names from a file into a domain list, for use in a DNS firewall rule group. <para>
-    /// Each domain specification in your domain list must satisfy the following requirements:
+    /// You can't import into an AutoAllowlist rule's managed domain list. To seed such a
+    /// list, specify <c>ImportFromFirewallDomainListId</c> when you create the rule. </para>
+    /// <para> Each domain specification in your domain list must satisfy the following requirements:
     /// </para> <ul> <li> <para> It can optionally start with <c>*</c> (asterisk). </para>
     /// </li> <li> <para> With the exception of the optional starting asterisk, it must only
     /// contain the following characters: <c>A-Z</c>, <c>a-z</c>, <c>0-9</c>, <c>-</c> (hyphen).

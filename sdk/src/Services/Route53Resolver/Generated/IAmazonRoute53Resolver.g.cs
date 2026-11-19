@@ -200,6 +200,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResolverEndpointIpAddress service method.</param>
         /// <returns>The response from the AssociateResolverEndpointIpAddress service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -241,6 +251,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the AssociateResolverEndpointIpAddress service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -385,6 +405,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResolverRule service method.</param>
         /// <returns>The response from the AssociateResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -424,6 +454,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the AssociateResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -741,19 +781,22 @@ namespace Amazon.Route53Resolver
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
-        /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
-        /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
-        /// an active Amazon Web Services Marketplace subscription to the named partner product.
+        ///  <c>FirewallRuleType</c> — match one of the rule-type variants: <c>FirewallAdvancedContentCategory</c>,
+        /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, <c>PartnerThreatProtection</c>,
+        /// or <c>AutoAllowlist</c>. <a>ListFirewallRuleTypes</a> returns the first four. The
+        /// <c>PartnerThreatProtection</c> variant requires an active Amazon Web Services Marketplace
+        /// subscription to the named partner product.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For rules that require asynchronous provisioning (today, the <c>PartnerThreatProtection</c>
-        /// rule type), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
-        /// <c>COMPLETE</c> once the rule is provisioned and the marketplace entitlement is verified.
-        /// If provisioning fails, <c>Status</c> becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c>
-        /// contains a human-readable reason; the rule is then immutable and must be removed with
-        /// <a>DeleteFirewallRule</a>.
+        /// For rules that require asynchronous provisioning (the <c>PartnerThreatProtection</c>
+        /// and <c>AutoAllowlist</c> rule types), the rule's <c>Status</c> begins at <c>CREATING</c>
+        /// and transitions to <c>COMPLETE</c> once the rule is provisioned: for <c>PartnerThreatProtection</c>,
+        /// when the marketplace entitlement is verified, and for <c>AutoAllowlist</c>, when DNS
+        /// Firewall has read the look-back window of every VPC that uses the rule group, which
+        /// can take hours for a rule group that many VPCs use. If provisioning fails, <c>Status</c>
+        /// becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c> contains a human-readable
+        /// reason; the rule is then immutable and must be removed with <a>DeleteFirewallRule</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
@@ -805,19 +848,22 @@ namespace Amazon.Route53Resolver
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
-        /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
-        /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
-        /// an active Amazon Web Services Marketplace subscription to the named partner product.
+        ///  <c>FirewallRuleType</c> — match one of the rule-type variants: <c>FirewallAdvancedContentCategory</c>,
+        /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, <c>PartnerThreatProtection</c>,
+        /// or <c>AutoAllowlist</c>. <a>ListFirewallRuleTypes</a> returns the first four. The
+        /// <c>PartnerThreatProtection</c> variant requires an active Amazon Web Services Marketplace
+        /// subscription to the named partner product.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For rules that require asynchronous provisioning (today, the <c>PartnerThreatProtection</c>
-        /// rule type), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
-        /// <c>COMPLETE</c> once the rule is provisioned and the marketplace entitlement is verified.
-        /// If provisioning fails, <c>Status</c> becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c>
-        /// contains a human-readable reason; the rule is then immutable and must be removed with
-        /// <a>DeleteFirewallRule</a>.
+        /// For rules that require asynchronous provisioning (the <c>PartnerThreatProtection</c>
+        /// and <c>AutoAllowlist</c> rule types), the rule's <c>Status</c> begins at <c>CREATING</c>
+        /// and transitions to <c>COMPLETE</c> once the rule is provisioned: for <c>PartnerThreatProtection</c>,
+        /// when the marketplace entitlement is verified, and for <c>AutoAllowlist</c>, when DNS
+        /// Firewall has read the look-back window of every VPC that uses the rule group, which
+        /// can take hours for a rule group that many VPCs use. If provisioning fails, <c>Status</c>
+        /// becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c> contains a human-readable
+        /// reason; the rule is then immutable and must be removed with <a>DeleteFirewallRule</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
@@ -1671,6 +1717,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResolverEndpoint service method.</param>
         /// <returns>The response from the DeleteResolverEndpoint service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -1710,6 +1766,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DeleteResolverEndpoint service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -1841,6 +1907,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResolverRule service method.</param>
         /// <returns>The response from the DeleteResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -1873,6 +1949,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DeleteResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -1987,6 +2073,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResolverEndpointIpAddress service method.</param>
         /// <returns>The response from the DisassociateResolverEndpointIpAddress service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -2025,6 +2121,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DisassociateResolverEndpointIpAddress service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -2166,6 +2272,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResolverRule service method.</param>
         /// <returns>The response from the DisassociateResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -2200,6 +2316,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DisassociateResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -2761,6 +2887,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverEndpoint service method.</param>
         /// <returns>The response from the GetResolverEndpoint service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -2786,6 +2922,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the GetResolverEndpoint service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -3028,6 +3174,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverRule service method.</param>
         /// <returns>The response from the GetResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -3054,6 +3210,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the GetResolverRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -3076,6 +3242,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverRuleAssociation service method.</param>
         /// <returns>The response from the GetResolverRuleAssociation service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -3101,6 +3277,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the GetResolverRuleAssociation service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -3188,6 +3374,11 @@ namespace Amazon.Route53Resolver
         /// 
         ///  
         /// <para>
+        /// You can't import into an AutoAllowlist rule's managed domain list. To seed such a
+        /// list, specify <c>ImportFromFirewallDomainListId</c> when you create the rule.
+        /// </para>
+        ///  
+        /// <para>
         /// Each domain specification in your domain list must satisfy the following requirements:
         /// 
         /// </para>
@@ -3247,6 +3438,11 @@ namespace Amazon.Route53Resolver
         /// Imports domain names from a file into a domain list, for use in a DNS firewall rule
         /// group. 
         /// 
+        ///  
+        /// <para>
+        /// You can't import into an AutoAllowlist rule's managed domain list. To seed such a
+        /// list, specify <c>ImportFromFirewallDomainListId</c> when you create the rule.
+        /// </para>
         ///  
         /// <para>
         /// Each domain specification in your domain list must satisfy the following requirements:
@@ -3541,6 +3737,105 @@ namespace Amazon.Route53Resolver
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the domains of an AutoAllowlist firewall rule. Only the owner of the rule
+        /// group can call this operation. Results are paginated. Use <c>MaxResults</c> and <c>NextToken</c>
+        /// to retrieve additional domains.
+        /// 
+        ///  
+        /// <para>
+        /// Identify the rule by <c>FirewallThreatProtectionId</c> to get the domains that DNS
+        /// Firewall observed in the VPCs that use the rule group, through a rule group association
+        /// or through a Route 53 Profile that includes the rule group, including VPCs in other
+        /// accounts. Each domain is returned with its <c>DomainStatus</c> and request counts.
+        /// Use <c>QueryOptions</c> to filter and sort the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Identify the rule's managed domain list by <c>FirewallDomainListId</c> to get the
+        /// domains that the rule currently allows. For any other domain list, use <a>ListFirewallDomains</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleDomains service method.</param>
+        /// <returns>The response from the ListFirewallRuleDomains service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleDomains">REST API Reference for ListFirewallRuleDomains Operation</seealso>
+        ListFirewallRuleDomainsResponse ListFirewallRuleDomains(ListFirewallRuleDomainsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the domains of an AutoAllowlist firewall rule. Only the owner of the rule
+        /// group can call this operation. Results are paginated. Use <c>MaxResults</c> and <c>NextToken</c>
+        /// to retrieve additional domains.
+        /// 
+        ///  
+        /// <para>
+        /// Identify the rule by <c>FirewallThreatProtectionId</c> to get the domains that DNS
+        /// Firewall observed in the VPCs that use the rule group, through a rule group association
+        /// or through a Route 53 Profile that includes the rule group, including VPCs in other
+        /// accounts. Each domain is returned with its <c>DomainStatus</c> and request counts.
+        /// Use <c>QueryOptions</c> to filter and sort the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Identify the rule's managed domain list by <c>FirewallDomainListId</c> to get the
+        /// domains that the rule currently allows. For any other domain list, use <a>ListFirewallDomains</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFirewallRuleDomains service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleDomains">REST API Reference for ListFirewallRuleDomains Operation</seealso>
+        Task<ListFirewallRuleDomainsResponse> ListFirewallRuleDomainsAsync(ListFirewallRuleDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the firewall rule group associations that you have defined. Each association
         /// enables DNS filtering for a VPC with one rule group. 
         /// 
@@ -3707,6 +4002,11 @@ namespace Amazon.Route53Resolver
         /// <c>SubscriptionInfo</c> means the variant is fully managed by Amazon Web Services
         /// and requires no separate subscription.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation doesn't return the <c>AutoAllowlist</c> variant. Configure an AutoAllowlist
+        /// rule with <a>AutoAllowlistConfig</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
         /// <returns>The response from the ListFirewallRuleTypes service method, as returned by Route53Resolver.</returns>
@@ -3751,6 +4051,11 @@ namespace Amazon.Route53Resolver
         /// <c>SubscriptionInfo</c> means the variant is fully managed by Amazon Web Services
         /// and requires no separate subscription.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation doesn't return the <c>AutoAllowlist</c> variant. Configure an AutoAllowlist
+        /// rule with <a>AutoAllowlistConfig</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
         /// <param name="cancellationToken">
@@ -3794,7 +4099,7 @@ namespace Amazon.Route53Resolver
         ///  
         /// <para>
         /// For rules that require asynchronous provisioning, the response includes <c>Status</c>
-        /// (see <a>FirewallRuleStatus</a>) and, on failure, <c>StatusMessage</c> with the reason.
+        /// (see <a>FirewallRule</a>) and, on failure, <c>StatusMessage</c> with the reason.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
@@ -3839,7 +4144,7 @@ namespace Amazon.Route53Resolver
         ///  
         /// <para>
         /// For rules that require asynchronous provisioning, the response includes <c>Status</c>
-        /// (see <a>FirewallRuleStatus</a>) and, on failure, <c>StatusMessage</c> with the reason.
+        /// (see <a>FirewallRule</a>) and, on failure, <c>StatusMessage</c> with the reason.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
@@ -4102,6 +4407,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverEndpointIpAddresses service method.</param>
         /// <returns>The response from the ListResolverEndpointIpAddresses service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4129,6 +4444,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListResolverEndpointIpAddresses service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4154,6 +4479,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverEndpoints service method.</param>
         /// <returns>The response from the ListResolverEndpoints service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4182,6 +4517,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListResolverEndpoints service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4353,6 +4698,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverRuleAssociations service method.</param>
         /// <returns>The response from the ListResolverRuleAssociations service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4381,6 +4736,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListResolverRuleAssociations service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4405,6 +4770,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResolverRules service method.</param>
         /// <returns>The response from the ListResolverRules service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4432,6 +4807,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListResolverRules service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4456,6 +4841,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4486,6 +4881,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4728,6 +5133,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4761,6 +5176,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the TagResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4791,6 +5216,16 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4818,6 +5253,16 @@ namespace Amazon.Route53Resolver
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the UntagResource service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
         /// We encountered an unknown error. Try again in a few minutes.
         /// </exception>
@@ -4907,7 +5352,31 @@ namespace Amazon.Route53Resolver
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the firewall domain list from an array of domain specifications.
+        /// Updates the firewall domain list from an array of domain specifications. 
+        /// 
+        ///  
+        /// <para>
+        /// For an AutoAllowlist rule's managed domain list, use <c>ADD</c> to approve observed
+        /// domains, <c>REMOVE</c> to stop allowing domains, unless a wildcard entry that's still
+        /// on the list matches them, and <c>DENY</c> to dismiss observed domains. <c>REPLACE</c>
+        /// and <a>ImportFirewallDomains</a> aren't supported for these lists.
+        /// </para>
+        ///  
+        /// <para>
+        /// DNS Firewall throttles <c>UpdateFirewallDomains</c> requests based on both the request
+        /// rate and the total number of domains across your requests.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Best Practice for Updating Domain Lists</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you only need to modify a subset of domains, use the <c>ADD</c> or <c>REMOVE</c>
+        /// operations instead of <c>REPLACE</c>. With <c>REPLACE</c>, you send the complete list
+        /// you want to end up with, and throttling counts every domain in that request, including
+        /// domains that aren't changing, which can use up your available throttling capacity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
         /// <returns>The response from the UpdateFirewallDomains service method, as returned by Route53Resolver.</returns>
@@ -4947,7 +5416,31 @@ namespace Amazon.Route53Resolver
 #endif
 
         /// <summary>
-        /// Updates the firewall domain list from an array of domain specifications.
+        /// Updates the firewall domain list from an array of domain specifications. 
+        /// 
+        ///  
+        /// <para>
+        /// For an AutoAllowlist rule's managed domain list, use <c>ADD</c> to approve observed
+        /// domains, <c>REMOVE</c> to stop allowing domains, unless a wildcard entry that's still
+        /// on the list matches them, and <c>DENY</c> to dismiss observed domains. <c>REPLACE</c>
+        /// and <a>ImportFirewallDomains</a> aren't supported for these lists.
+        /// </para>
+        ///  
+        /// <para>
+        /// DNS Firewall throttles <c>UpdateFirewallDomains</c> requests based on both the request
+        /// rate and the total number of domains across your requests.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Best Practice for Updating Domain Lists</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you only need to modify a subset of domains, use the <c>ADD</c> or <c>REMOVE</c>
+        /// operations instead of <c>REPLACE</c>. With <c>REPLACE</c>, you send the complete list
+        /// you want to end up with, and throttling counts every domain in that request, including
+        /// domains that aren't changing, which can use up your available throttling capacity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
         /// <param name="cancellationToken">
