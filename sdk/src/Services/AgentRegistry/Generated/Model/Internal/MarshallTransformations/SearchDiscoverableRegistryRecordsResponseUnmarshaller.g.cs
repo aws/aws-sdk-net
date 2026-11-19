@@ -52,10 +52,24 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("registryRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegistryRecordSummary, RegistryRecordSummaryUnmarshaller>(RegistryRecordSummaryUnmarshaller.Instance);
                     unmarshalledObject.RegistryRecords = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("searchType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SearchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,9 +35,26 @@ namespace Amazon.AgentRegistry.Model
     public partial class SearchDiscoverableRegistryRecordsResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  The pagination token to pass to a subsequent request to retrieve the next page of
+        /// results. This field is absent when there are no more results, or when the search has
+        /// returned the maximum number of results for its search type.
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
         /// Gets and sets the property RegistryRecords. 
         /// <para>
-        ///  The registry records that match the search query, ordered by relevance.
+        ///  The registry records that match the search query, ordered by relevance. A page can
+        /// contain fewer than <c>maxResults</c> records, or none, even when the response includes
+        /// a <c>nextToken</c>. To retrieve every result, continue until the response has no <c>nextToken</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -53,5 +70,21 @@ namespace Amazon.AgentRegistry.Model
         /// Checks to see if the RegistryRecords property is set.
         /// </summary>
         internal bool IsSetRegistryRecords() => this.RegistryRecords != null && (this.RegistryRecords.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SearchType. 
+        /// <para>
+        ///  Specifies the search type that the service used to rank the returned records. If
+        /// you omitted <c>searchType</c> in the request, this is the default for the Amazon Web
+        /// Services Region: <c>HYBRID</c> where semantic search is supported, and <c>KEYWORD</c>
+        /// elsewhere.
+        /// </para>
+        /// </summary>
+        public SearchType SearchType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchType property is set.
+        /// </summary>
+        internal bool IsSetSearchType() => this.SearchType != null;
     }
 }

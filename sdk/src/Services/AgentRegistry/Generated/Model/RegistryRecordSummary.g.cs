@@ -35,6 +35,22 @@ namespace Amazon.AgentRegistry.Model
     public partial class RegistryRecordSummary
     {
         /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        ///  The skill package of the record's latest approved revision, as the package's SHA-256
+        /// checksum and a download URL that is valid for up to 5 minutes. Only <c>BatchGetDiscoverableRegistryRecord</c>
+        /// returns this member, not <c>SearchDiscoverableRegistryRecords</c>. Absent when the
+        /// record has no skill package.
+        /// </para>
+        /// </summary>
+        public RegistryRecordArtifactDownload Artifact { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Artifact property is set.
+        /// </summary>
+        internal bool IsSetArtifact() => this.Artifact != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         ///  The timestamp when the registry record was created.

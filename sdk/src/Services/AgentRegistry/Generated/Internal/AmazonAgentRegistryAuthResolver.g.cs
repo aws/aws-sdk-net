@@ -69,7 +69,11 @@ namespace Amazon.AgentRegistry.Internal
             authParameters.Operation switch
             {
                 // Default for the service, applies to all remaining operations.
-                _ => AuthSchemeOption.DEFAULT_SIGV4,
+                _ => new List<IAuthSchemeOption>
+                {
+                    new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+                    new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" },
+                },
             };
     }
 }

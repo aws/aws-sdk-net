@@ -33,7 +33,10 @@ namespace Amazon.AgentRegistry.Model
     /// Container for the parameters to the BatchGetDiscoverableRegistryRecord operation.
     /// Retrieves multiple discoverable registry records by ID from a single registry. Records
     /// that cannot be retrieved are reported individually in the <c>errors</c> list rather
-    /// than failing the entire request.
+    /// than failing the entire request. For each skill record that has a skill package, the
+    /// operation also returns <c>artifact</c>. It contains a short-lived download URL and
+    /// a SHA-256 checksum for the package of the record's latest approved revision. If the
+    /// registry can't create a download URL for a package, the whole request fails.
     /// </summary>
     public partial class BatchGetDiscoverableRegistryRecordRequest : AmazonAgentRegistryRequest
     {

@@ -38,7 +38,9 @@ namespace Amazon.AgentRegistry.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        ///  The URL from which the descriptor content is retrieved.
+        ///  The URL from which the descriptor content is retrieved. For an agent skill that synchronizes
+        /// its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return
+        /// Amazon S3 (<c>s3://</c>) source URLs.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]

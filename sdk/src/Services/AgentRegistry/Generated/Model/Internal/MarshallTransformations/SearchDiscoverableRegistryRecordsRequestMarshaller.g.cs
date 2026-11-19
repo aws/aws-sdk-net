@@ -78,6 +78,11 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("maxResults");
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
+            if (publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
             if (publicRequest.IsSetRegistryIds())
             {
                 context.Writer.WritePropertyName("registryIds");
@@ -92,6 +97,11 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("searchQuery");
                 context.Writer.WriteStringValue(publicRequest.SearchQuery);
+            }
+            if (publicRequest.IsSetSearchType())
+            {
+                context.Writer.WritePropertyName("searchType");
+                context.Writer.WriteStringValue(publicRequest.SearchType);
             }
 
             writer.WriteEndObject();

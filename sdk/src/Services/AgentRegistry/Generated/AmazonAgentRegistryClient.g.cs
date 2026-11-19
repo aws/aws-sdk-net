@@ -251,7 +251,10 @@ namespace Amazon.AgentRegistry
         /// <summary>
         /// Retrieves multiple discoverable registry records by ID from a single registry. Records
         /// that cannot be retrieved are reported individually in the <c>errors</c> list rather
-        /// than failing the entire request.
+        /// than failing the entire request. For each skill record that has a skill package, the
+        /// operation also returns <c>artifact</c>. It contains a short-lived download URL and
+        /// a SHA-256 checksum for the package of the record's latest approved revision. If the
+        /// registry can't create a download URL for a package, the whole request fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDiscoverableRegistryRecord service method.</param>
         /// <returns>The response from the BatchGetDiscoverableRegistryRecord service method, as returned by AgentRegistry.</returns>
@@ -296,7 +299,10 @@ namespace Amazon.AgentRegistry
         /// <summary>
         /// Retrieves multiple discoverable registry records by ID from a single registry. Records
         /// that cannot be retrieved are reported individually in the <c>errors</c> list rather
-        /// than failing the entire request.
+        /// than failing the entire request. For each skill record that has a skill package, the
+        /// operation also returns <c>artifact</c>. It contains a short-lived download URL and
+        /// a SHA-256 checksum for the package of the record's latest approved revision. If the
+        /// registry can't create a download URL for a package, the whole request fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDiscoverableRegistryRecord service method.</param>
         /// <param name="cancellationToken">
@@ -417,6 +423,14 @@ namespace Amazon.AgentRegistry
         /// <summary>
         /// Searches the discoverable registry records in a registry using a natural language
         /// query. Returns metadata for the matching records ordered by relevance.
+        /// 
+        ///  
+        /// <para>
+        ///  Returns at most 1000 results across all pages when <c>searchType</c> is <c>KEYWORD</c>,
+        /// and at most 20 results when it is <c>HYBRID</c> or <c>SEMANTIC</c>. To retrieve more
+        /// records, refine the query or filters, or use <c>ListDiscoverableRegistryRecords</c>
+        /// to list every record.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDiscoverableRegistryRecords service method.</param>
         /// <returns>The response from the SearchDiscoverableRegistryRecords service method, as returned by AgentRegistry.</returns>
@@ -461,6 +475,14 @@ namespace Amazon.AgentRegistry
         /// <summary>
         /// Searches the discoverable registry records in a registry using a natural language
         /// query. Returns metadata for the matching records ordered by relevance.
+        /// 
+        ///  
+        /// <para>
+        ///  Returns at most 1000 results across all pages when <c>searchType</c> is <c>KEYWORD</c>,
+        /// and at most 20 results when it is <c>HYBRID</c> or <c>SEMANTIC</c>. To retrieve more
+        /// records, refine the query or filters, or use <c>ListDiscoverableRegistryRecords</c>
+        /// to list every record.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDiscoverableRegistryRecords service method.</param>
         /// <param name="cancellationToken">

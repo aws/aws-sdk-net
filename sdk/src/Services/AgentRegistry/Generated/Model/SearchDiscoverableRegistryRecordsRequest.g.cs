@@ -32,7 +32,11 @@ namespace Amazon.AgentRegistry.Model
     /// <summary>
     /// Container for the parameters to the SearchDiscoverableRegistryRecords operation. Searches
     /// the discoverable registry records in a registry using a natural language query. Returns
-    /// metadata for the matching records ordered by relevance.
+    /// metadata for the matching records ordered by relevance. <para> Returns at most 1000
+    /// results across all pages when <c>searchType</c> is <c>KEYWORD</c>, and at most 20
+    /// results when it is <c>HYBRID</c> or <c>SEMANTIC</c>. To retrieve more records, refine
+    /// the query or filters, or use <c>ListDiscoverableRegistryRecords</c> to list every
+    /// record. </para>
     /// </summary>
     public partial class SearchDiscoverableRegistryRecordsRequest : AmazonAgentRegistryRequest
     {
@@ -62,17 +66,36 @@ namespace Amazon.AgentRegistry.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results to return. Valid values are 1 through 20. The default
-        /// value is 10.
+        ///  The maximum number of results to return in one page. Valid values are 1 through 50
+        /// when <c>searchType</c> is <c>KEYWORD</c>, and 1 through 20 when it is <c>HYBRID</c>
+        /// or <c>SEMANTIC</c>. The default value is 10.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 20)]
+        [AWSProperty(Min = 1, Max = 50)]
         public int? MaxResults { get; set; }
 
         /// <summary>
         /// Checks to see if the MaxResults property is set.
         /// </summary>
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  The pagination token from a previous response. Use it to retrieve the next page of
+        /// results, and send the same <c>searchQuery</c>, <c>registryIds</c>, <c>filters</c>,
+        /// and <c>searchType</c> that you used for the first page. If any of them differ, the
+        /// request fails with a <c>ValidationException</c>. A pagination token expires 15 minutes
+        /// after the service returns the first page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 4096)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
         /// Gets and sets the property RegistryIds. 
@@ -99,7 +122,9 @@ namespace Amazon.AgentRegistry.Model
         /// <summary>
         /// Gets and sets the property SearchQuery. 
         /// <para>
-        ///  The natural language query to search for matching registry records.
+        ///  The natural language query to search for matching registry records. If you specify
+        /// an empty string, the operation returns the records that match the <c>filters</c>,
+        /// most recently updated first, up to the result limit for the <c>searchType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 0, Max = 256)]
@@ -109,5 +134,43 @@ namespace Amazon.AgentRegistry.Model
         /// Checks to see if the SearchQuery property is set.
         /// </summary>
         internal bool IsSetSearchQuery() => this.SearchQuery != null;
+
+        /// <summary>
+        /// Gets and sets the property SearchType. 
+        /// <para>
+        ///  Specifies how the service ranks registry records against the search query. If you
+        /// omit this parameter, the service uses <c>HYBRID</c> in Amazon Web Services Regions
+        /// that support semantic search and <c>KEYWORD</c> in Regions that do not. The response
+        /// reports the search type that the service used. Valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>KEYWORD</c> – Ranks records by keyword match between the query terms and the record
+        /// name, description, descriptors, and custom metadata text values. Available in every
+        /// Amazon Web Services Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SEMANTIC</c> – Ranks records by semantic similarity to the query and returns the
+        /// most similar records, up to <c>maxResults</c>, even when none of them closely matches
+        /// the query.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HYBRID</c> – Combines keyword ranking and semantic ranking.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>HYBRID</c> and <c>SEMANTIC</c> are available in a limited number of Regions. If
+        /// you specify either one in a Region that does not support semantic search, the request
+        /// fails with a <c>ValidationException</c> that has the reason <c>UnsupportedInRegion</c>.
+        /// </para>
+        /// </summary>
+        public SearchType SearchType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SearchType property is set.
+        /// </summary>
+        internal bool IsSetSearchType() => this.SearchType != null;
     }
 }

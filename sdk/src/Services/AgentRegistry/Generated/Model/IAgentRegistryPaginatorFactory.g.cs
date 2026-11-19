@@ -37,5 +37,11 @@ namespace Amazon.AgentRegistry.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListDiscoverableRegistryRecordsPaginator ListDiscoverableRegistryRecords(ListDiscoverableRegistryRecordsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDiscoverableRegistryRecords operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        ISearchDiscoverableRegistryRecordsPaginator SearchDiscoverableRegistryRecords(SearchDiscoverableRegistryRecordsRequest request);
     }
 }

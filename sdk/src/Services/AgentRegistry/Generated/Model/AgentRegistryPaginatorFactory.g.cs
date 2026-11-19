@@ -39,5 +39,13 @@ namespace Amazon.AgentRegistry.Model
         {
             return new ListDiscoverableRegistryRecordsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchDiscoverableRegistryRecords operation
+        /// </summary>
+        public ISearchDiscoverableRegistryRecordsPaginator SearchDiscoverableRegistryRecords(SearchDiscoverableRegistryRecordsRequest request)
+        {
+            return new SearchDiscoverableRegistryRecordsPaginator(this.client, request);
+        }
     }
 }

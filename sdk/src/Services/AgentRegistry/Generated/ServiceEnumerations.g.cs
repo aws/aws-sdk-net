@@ -180,6 +180,11 @@ namespace Amazon.AgentRegistry
         public static readonly RegistryRecordStatus CREATE_FAILED = new RegistryRecordStatus("CREATE_FAILED");
 
         /// <summary>
+        /// Constant CREATE_PENDING_AUTH for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus CREATE_PENDING_AUTH = new RegistryRecordStatus("CREATE_PENDING_AUTH");
+
+        /// <summary>
         /// Constant CREATING for RegistryRecordStatus
         /// </summary>
         public static readonly RegistryRecordStatus CREATING = new RegistryRecordStatus("CREATING");
@@ -210,6 +215,11 @@ namespace Amazon.AgentRegistry
         public static readonly RegistryRecordStatus UPDATE_FAILED = new RegistryRecordStatus("UPDATE_FAILED");
 
         /// <summary>
+        /// Constant UPDATE_PENDING_AUTH for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus UPDATE_PENDING_AUTH = new RegistryRecordStatus("UPDATE_PENDING_AUTH");
+
+        /// <summary>
         /// Constant UPDATING for RegistryRecordStatus
         /// </summary>
         public static readonly RegistryRecordStatus UPDATING = new RegistryRecordStatus("UPDATING");
@@ -235,6 +245,52 @@ namespace Amazon.AgentRegistry
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegistryRecordStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SearchType.
+    /// </summary>
+    public class SearchType : ConstantClass
+    {
+        /// <summary>
+        /// Constant HYBRID for SearchType
+        /// </summary>
+        public static readonly SearchType HYBRID = new SearchType("HYBRID");
+
+        /// <summary>
+        /// Constant KEYWORD for SearchType
+        /// </summary>
+        public static readonly SearchType KEYWORD = new SearchType("KEYWORD");
+
+        /// <summary>
+        /// Constant SEMANTIC for SearchType
+        /// </summary>
+        public static readonly SearchType SEMANTIC = new SearchType("SEMANTIC");
+
+        /// <summary>
+        /// Constructs a custom SearchType for a value not among the defined constants.
+        /// </summary>
+        public SearchType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchType FindValue(string value)
+        {
+            return FindValue<SearchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchType(string value)
         {
             return FindValue(value);
         }
@@ -269,6 +325,11 @@ namespace Amazon.AgentRegistry
         /// Constant ResourceConflict for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ResourceConflict = new ValidationExceptionReason("ResourceConflict");
+
+        /// <summary>
+        /// Constant UnsupportedInRegion for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedInRegion = new ValidationExceptionReason("UnsupportedInRegion");
 
         /// <summary>
         /// Constructs a custom ValidationExceptionReason for a value not among the defined constants.

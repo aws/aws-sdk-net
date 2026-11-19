@@ -53,6 +53,13 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("artifact", targetDepth, ref reader))
+                {
+                    var unmarshaller = RegistryRecordArtifactDownloadUnmarshaller.Instance;
+                    unmarshalledObject.Artifact = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
