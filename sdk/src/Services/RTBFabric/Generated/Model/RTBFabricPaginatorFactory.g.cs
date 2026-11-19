@@ -33,6 +33,22 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
+        /// Paginator for ListAvailableModuleVersions operation
+        /// </summary>
+        public IListAvailableModuleVersionsPaginator ListAvailableModuleVersions(ListAvailableModuleVersionsRequest request)
+        {
+            return new ListAvailableModuleVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAvailableModules operation
+        /// </summary>
+        public IListAvailableModulesPaginator ListAvailableModules(ListAvailableModulesRequest request)
+        {
+            return new ListAvailableModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCertificateAssociations operation
         /// </summary>
         public IListCertificateAssociationsPaginator ListCertificateAssociations(ListCertificateAssociationsRequest request)
@@ -70,6 +86,14 @@ namespace Amazon.RTBFabric.Model
         public IListResponderGatewaysPaginator ListResponderGateways(ListResponderGatewaysRequest request)
         {
             return new ListResponderGatewaysPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUpdates operation
+        /// </summary>
+        public IListUpdatesPaginator ListUpdates(ListUpdatesRequest request)
+        {
+            return new ListUpdatesPaginator(this.client, request);
         }
     }
 }

@@ -66,6 +66,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("updateId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

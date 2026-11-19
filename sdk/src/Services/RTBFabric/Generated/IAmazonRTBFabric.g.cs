@@ -1119,6 +1119,126 @@ namespace Amazon.RTBFabric
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a module that you can attach. If you can't attach the module, the operation
+        /// returns ResourceNotFoundException, the same as for a missing one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAvailableModule service method.</param>
+        /// <returns>The response from the GetAvailableModule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModule">REST API Reference for GetAvailableModule Operation</seealso>
+        GetAvailableModuleResponse GetAvailableModule(GetAvailableModuleRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a module that you can attach. If you can't attach the module, the operation
+        /// returns ResourceNotFoundException, the same as for a missing one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAvailableModule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAvailableModule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModule">REST API Reference for GetAvailableModule Operation</seealso>
+        Task<GetAvailableModuleResponse> GetAvailableModuleAsync(GetAvailableModuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns an ACTIVE or DEPRECATED version of a module that you can attach. If you can't
+        /// attach the module, or the version is in another status, the operation returns ResourceNotFoundException,
+        /// the same as for a missing one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAvailableModuleVersion service method.</param>
+        /// <returns>The response from the GetAvailableModuleVersion service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModuleVersion">REST API Reference for GetAvailableModuleVersion Operation</seealso>
+        GetAvailableModuleVersionResponse GetAvailableModuleVersion(GetAvailableModuleVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Returns an ACTIVE or DEPRECATED version of a module that you can attach. If you can't
+        /// attach the module, or the version is in another status, the operation returns ResourceNotFoundException,
+        /// the same as for a missing one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAvailableModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAvailableModuleVersion service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetAvailableModuleVersion">REST API Reference for GetAvailableModuleVersion Operation</seealso>
+        Task<GetAvailableModuleVersionResponse> GetAvailableModuleVersionAsync(GetAvailableModuleVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the details of a certificate association with a responder gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificateAssociation service method.</param>
@@ -1538,6 +1658,187 @@ namespace Amazon.RTBFabric
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns ResourceNotFoundException for an updateId past the 90-day retention window,
+        /// indistinguishable in the response from an id that never existed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpdate service method.</param>
+        /// <returns>The response from the GetUpdate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetUpdate">REST API Reference for GetUpdate Operation</seealso>
+        GetUpdateResponse GetUpdate(GetUpdateRequest request);
+#endif
+
+        /// <summary>
+        /// Returns ResourceNotFoundException for an updateId past the 90-day retention window,
+        /// indistinguishable in the response from an id that never existed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetUpdate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetUpdate">REST API Reference for GetUpdate Operation</seealso>
+        Task<GetUpdateResponse> GetUpdateAsync(GetUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the ACTIVE and DEPRECATED versions of a module that you can attach, highest
+        /// version first (numerically by MAJOR, then MINOR, then PATCH). If you can't attach
+        /// the module, the operation returns ResourceNotFoundException, the same as for a missing
+        /// one. If the module has no ACTIVE or DEPRECATED versions, the operation returns an
+        /// empty list. The operation lists DEPRECATED versions so that you can inspect one that
+        /// you've attached, but you can't attach them. Results are paginated. Use <c>nextToken</c>
+        /// to get the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableModuleVersions service method.</param>
+        /// <returns>The response from the ListAvailableModuleVersions service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModuleVersions">REST API Reference for ListAvailableModuleVersions Operation</seealso>
+        ListAvailableModuleVersionsResponse ListAvailableModuleVersions(ListAvailableModuleVersionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the ACTIVE and DEPRECATED versions of a module that you can attach, highest
+        /// version first (numerically by MAJOR, then MINOR, then PATCH). If you can't attach
+        /// the module, the operation returns ResourceNotFoundException, the same as for a missing
+        /// one. If the module has no ACTIVE or DEPRECATED versions, the operation returns an
+        /// empty list. The operation lists DEPRECATED versions so that you can inspect one that
+        /// you've attached, but you can't attach them. Results are paginated. Use <c>nextToken</c>
+        /// to get the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableModuleVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAvailableModuleVersions service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModuleVersions">REST API Reference for ListAvailableModuleVersions Operation</seealso>
+        Task<ListAvailableModuleVersionsResponse> ListAvailableModuleVersionsAsync(ListAvailableModuleVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the modules that you can attach, newest first by <c>createdAt</c>. Results are
+        /// paginated. Use <c>nextToken</c> to get the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableModules service method.</param>
+        /// <returns>The response from the ListAvailableModules service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModules">REST API Reference for ListAvailableModules Operation</seealso>
+        ListAvailableModulesResponse ListAvailableModules(ListAvailableModulesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the modules that you can attach, newest first by <c>createdAt</c>. Results are
+        /// paginated. Use <c>nextToken</c> to get the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableModules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAvailableModules service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListAvailableModules">REST API Reference for ListAvailableModules Operation</seealso>
+        Task<ListAvailableModulesResponse> ListAvailableModulesAsync(ListAvailableModulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the certificate associations for a responder gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificateAssociations service method.</param>
@@ -1849,6 +2150,144 @@ namespace Amazon.RTBFabric
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the updates on a gateway. Results are paginated. Use <c>nextToken</c> to get
+        /// the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
+        /// <returns>The response from the ListUpdates service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        ListUpdatesResponse ListUpdates(ListUpdatesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the updates on a gateway. Results are paginated. Use <c>nextToken</c> to get
+        /// the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListUpdates service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        Task<ListUpdatesResponse> ListUpdatesAsync(ListUpdatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Replaces a link's flow configuration. The change applies asynchronously. The call
+        /// returns once the change is accepted, and the link serves its prior flows until the
+        /// update commits atomically. RTB Fabric validates the request before accepting it, and
+        /// a request that fails validation changes nothing. After the call, use GetLink. Once
+        /// the change completes, the link's status is ACTIVE again and its flows show the change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLinkFlows service method.</param>
+        /// <returns>The response from the PutLinkFlows service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/PutLinkFlows">REST API Reference for PutLinkFlows Operation</seealso>
+        PutLinkFlowsResponse PutLinkFlows(PutLinkFlowsRequest request);
+#endif
+
+        /// <summary>
+        /// Replaces a link's flow configuration. The change applies asynchronously. The call
+        /// returns once the change is accepted, and the link serves its prior flows until the
+        /// update commits atomically. RTB Fabric validates the request before accepting it, and
+        /// a request that fails validation changes nothing. After the call, use GetLink. Once
+        /// the change completes, the link's status is ACTIVE again and its flows show the change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLinkFlows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutLinkFlows service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/PutLinkFlows">REST API Reference for PutLinkFlows Operation</seealso>
+        Task<PutLinkFlowsResponse> PutLinkFlowsAsync(PutLinkFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

@@ -101,6 +101,27 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetDirection() => this.Direction != null;
 
         /// <summary>
+        /// Gets and sets the property ErrorDetails. 
+        /// <para>
+        /// The causes of the failure, such as a deleted subnet. Present only when the resource
+        /// has failed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 10)]
+        public List<ErrorDetail> ErrorDetails { get; set; } = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
+
+        /// <summary>
+        /// Checks to see if the ErrorDetails property is set.
+        /// </summary>
+        internal bool IsSetErrorDetails() => this.ErrorDetails != null && (this.ErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property FlowModules. 
         /// <para>
         /// The configuration of flow modules.

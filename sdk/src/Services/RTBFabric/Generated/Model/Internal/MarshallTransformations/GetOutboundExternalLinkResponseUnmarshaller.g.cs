@@ -73,10 +73,24 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("errorDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("flowModules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
                     unmarshalledObject.FlowModules = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("flows", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Flow, FlowUnmarshaller>(FlowUnmarshaller.Instance);
+                    unmarshalledObject.Flows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -91,6 +105,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LinkId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("lockToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

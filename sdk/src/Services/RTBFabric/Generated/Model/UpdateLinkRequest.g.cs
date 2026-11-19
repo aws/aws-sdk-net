@@ -37,6 +37,21 @@ namespace Amazon.RTBFabric.Model
     public partial class UpdateLinkRequest : AmazonRTBFabricRequest
     {
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier for the request. The SDK generates one when you
+        /// don't.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
         /// The unique identifier of the gateway.

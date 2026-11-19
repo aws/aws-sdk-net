@@ -119,6 +119,57 @@ namespace Amazon.RTBFabric
     }
 
     /// <summary>
+    /// Constants used for properties of type ConfigurableAction.
+    /// </summary>
+    public class ConfigurableAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENRICH_REQUEST_EXT for ConfigurableAction
+        /// </summary>
+        public static readonly ConfigurableAction ENRICH_REQUEST_EXT = new ConfigurableAction("ENRICH_REQUEST_EXT");
+
+        /// <summary>
+        /// Constant ENRICH_REQUEST_HEADERS for ConfigurableAction
+        /// </summary>
+        public static readonly ConfigurableAction ENRICH_REQUEST_HEADERS = new ConfigurableAction("ENRICH_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constant FILTER for ConfigurableAction
+        /// </summary>
+        public static readonly ConfigurableAction FILTER = new ConfigurableAction("FILTER");
+
+        /// <summary>
+        /// Constant OBSERVE for ConfigurableAction
+        /// </summary>
+        public static readonly ConfigurableAction OBSERVE = new ConfigurableAction("OBSERVE");
+
+        /// <summary>
+        /// Constructs a custom ConfigurableAction for a value not among the defined constants.
+        /// </summary>
+        public ConfigurableAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurableAction FindValue(string value)
+        {
+            return FindValue<ConfigurableAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurableAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ConnectivityType.
     /// </summary>
     public class ConnectivityType : ConstantClass
@@ -164,6 +215,108 @@ namespace Amazon.RTBFabric
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectivityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EC2_SECURITY_GROUP_NOT_FOUND for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SECURITY_GROUP_NOT_FOUND = new ErrorCode("EC2_SECURITY_GROUP_NOT_FOUND");
+
+        /// <summary>
+        /// Constant EC2_SUBNET_IP_EXHAUSTION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SUBNET_IP_EXHAUSTION = new ErrorCode("EC2_SUBNET_IP_EXHAUSTION");
+
+        /// <summary>
+        /// Constant EC2_SUBNET_NOT_FOUND for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SUBNET_NOT_FOUND = new ErrorCode("EC2_SUBNET_NOT_FOUND");
+
+        /// <summary>
+        /// Constant IAM_ASSUME_ROLE_ACCESS_DENIED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode IAM_ASSUME_ROLE_ACCESS_DENIED = new ErrorCode("IAM_ASSUME_ROLE_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant VPC_NOT_FOUND for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode VPC_NOT_FOUND = new ErrorCode("VPC_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom ErrorCode for a value not among the defined constants.
+        /// </summary>
+        public ErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FailureMode.
+    /// </summary>
+    public class FailureMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLOSED for FailureMode
+        /// </summary>
+        public static readonly FailureMode CLOSED = new FailureMode("CLOSED");
+
+        /// <summary>
+        /// Constant OPEN for FailureMode
+        /// </summary>
+        public static readonly FailureMode OPEN = new FailureMode("OPEN");
+
+        /// <summary>
+        /// Constructs a custom FailureMode for a value not among the defined constants.
+        /// </summary>
+        public FailureMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureMode FindValue(string value)
+        {
+            return FindValue<FailureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureMode(string value)
         {
             return FindValue(value);
         }
@@ -308,9 +461,19 @@ namespace Amazon.RTBFabric
         public static readonly LinkStatus ACTIVE = new LinkStatus("ACTIVE");
 
         /// <summary>
+        /// Constant CREATE_FAILED for LinkStatus
+        /// </summary>
+        public static readonly LinkStatus CREATE_FAILED = new LinkStatus("CREATE_FAILED");
+
+        /// <summary>
         /// Constant DELETED for LinkStatus
         /// </summary>
         public static readonly LinkStatus DELETED = new LinkStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for LinkStatus
+        /// </summary>
+        public static readonly LinkStatus DELETE_FAILED = new LinkStatus("DELETE_FAILED");
 
         /// <summary>
         /// Constant FAILED for LinkStatus
@@ -389,6 +552,118 @@ namespace Amazon.RTBFabric
     }
 
     /// <summary>
+    /// Constants used for properties of type ModulePermission.
+    /// </summary>
+    public class ModulePermission : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENRICH_REQUEST_EXT for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission ENRICH_REQUEST_EXT = new ModulePermission("ENRICH_REQUEST_EXT");
+
+        /// <summary>
+        /// Constant ENRICH_REQUEST_HEADERS for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission ENRICH_REQUEST_HEADERS = new ModulePermission("ENRICH_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constant FILTER for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission FILTER = new ModulePermission("FILTER");
+
+        /// <summary>
+        /// Constant MUTATE_REQUEST_BODY for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission MUTATE_REQUEST_BODY = new ModulePermission("MUTATE_REQUEST_BODY");
+
+        /// <summary>
+        /// Constant READ_REQUEST_BODY for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission READ_REQUEST_BODY = new ModulePermission("READ_REQUEST_BODY");
+
+        /// <summary>
+        /// Constant READ_REQUEST_HEADERS for ModulePermission
+        /// </summary>
+        public static readonly ModulePermission READ_REQUEST_HEADERS = new ModulePermission("READ_REQUEST_HEADERS");
+
+        /// <summary>
+        /// Constructs a custom ModulePermission for a value not among the defined constants.
+        /// </summary>
+        public ModulePermission(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModulePermission FindValue(string value)
+        {
+            return FindValue<ModulePermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModulePermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ModuleVersionStatus.
+    /// </summary>
+    public class ModuleVersionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ModuleVersionStatus
+        /// </summary>
+        public static readonly ModuleVersionStatus ACTIVE = new ModuleVersionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ModuleVersionStatus
+        /// </summary>
+        public static readonly ModuleVersionStatus CREATE_FAILED = new ModuleVersionStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for ModuleVersionStatus
+        /// </summary>
+        public static readonly ModuleVersionStatus CREATING = new ModuleVersionStatus("CREATING");
+
+        /// <summary>
+        /// Constant DEPRECATED for ModuleVersionStatus
+        /// </summary>
+        public static readonly ModuleVersionStatus DEPRECATED = new ModuleVersionStatus("DEPRECATED");
+
+        /// <summary>
+        /// Constructs a custom ModuleVersionStatus for a value not among the defined constants.
+        /// </summary>
+        public ModuleVersionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModuleVersionStatus FindValue(string value)
+        {
+            return FindValue<ModuleVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModuleVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type Protocol.
     /// </summary>
     public class Protocol : ConstantClass
@@ -440,9 +715,19 @@ namespace Amazon.RTBFabric
         public static readonly RequesterGatewayStatus ACTIVE = new RequesterGatewayStatus("ACTIVE");
 
         /// <summary>
+        /// Constant CREATE_FAILED for RequesterGatewayStatus
+        /// </summary>
+        public static readonly RequesterGatewayStatus CREATE_FAILED = new RequesterGatewayStatus("CREATE_FAILED");
+
+        /// <summary>
         /// Constant DELETED for RequesterGatewayStatus
         /// </summary>
         public static readonly RequesterGatewayStatus DELETED = new RequesterGatewayStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for RequesterGatewayStatus
+        /// </summary>
+        public static readonly RequesterGatewayStatus DELETE_FAILED = new RequesterGatewayStatus("DELETE_FAILED");
 
         /// <summary>
         /// Constant ERROR for RequesterGatewayStatus
@@ -603,9 +888,19 @@ namespace Amazon.RTBFabric
         public static readonly ResponderGatewayStatus ACTIVE = new ResponderGatewayStatus("ACTIVE");
 
         /// <summary>
+        /// Constant CREATE_FAILED for ResponderGatewayStatus
+        /// </summary>
+        public static readonly ResponderGatewayStatus CREATE_FAILED = new ResponderGatewayStatus("CREATE_FAILED");
+
+        /// <summary>
         /// Constant DELETED for ResponderGatewayStatus
         /// </summary>
         public static readonly ResponderGatewayStatus DELETED = new ResponderGatewayStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for ResponderGatewayStatus
+        /// </summary>
+        public static readonly ResponderGatewayStatus DELETE_FAILED = new ResponderGatewayStatus("DELETE_FAILED");
 
         /// <summary>
         /// Constant ERROR for ResponderGatewayStatus
@@ -679,6 +974,11 @@ namespace Amazon.RTBFabric
         public static readonly RuleStatus ACTIVE = new RuleStatus("ACTIVE");
 
         /// <summary>
+        /// Constant CREATE_FAILED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus CREATE_FAILED = new RuleStatus("CREATE_FAILED");
+
+        /// <summary>
         /// Constant CREATION_IN_PROGRESS for RuleStatus
         /// </summary>
         public static readonly RuleStatus CREATION_IN_PROGRESS = new RuleStatus("CREATION_IN_PROGRESS");
@@ -687,6 +987,11 @@ namespace Amazon.RTBFabric
         /// Constant DELETED for RuleStatus
         /// </summary>
         public static readonly RuleStatus DELETED = new RuleStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus DELETE_FAILED = new RuleStatus("DELETE_FAILED");
 
         /// <summary>
         /// Constant DELETION_IN_PROGRESS for RuleStatus
@@ -724,6 +1029,190 @@ namespace Amazon.RTBFabric
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionStatus.
+    /// </summary>
+    public class SubscriptionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus ACTIVE = new SubscriptionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant EXPIRED for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus EXPIRED = new SubscriptionStatus("EXPIRED");
+
+        /// <summary>
+        /// Constructs a custom SubscriptionStatus for a value not among the defined constants.
+        /// </summary>
+        public SubscriptionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionStatus FindValue(string value)
+        {
+            return FindValue<SubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionType.
+    /// </summary>
+    public class SubscriptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_BUILT_IN for SubscriptionType
+        /// </summary>
+        public static readonly SubscriptionType AWS_BUILT_IN = new SubscriptionType("AWS_BUILT_IN");
+
+        /// <summary>
+        /// Constant MARKETPLACE for SubscriptionType
+        /// </summary>
+        public static readonly SubscriptionType MARKETPLACE = new SubscriptionType("MARKETPLACE");
+
+        /// <summary>
+        /// Constant PRIVATE for SubscriptionType
+        /// </summary>
+        public static readonly SubscriptionType PRIVATE = new SubscriptionType("PRIVATE");
+
+        /// <summary>
+        /// Constructs a custom SubscriptionType for a value not among the defined constants.
+        /// </summary>
+        public SubscriptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionType FindValue(string value)
+        {
+            return FindValue<SubscriptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStatus.
+    /// </summary>
+    public class UpdateStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus FAILED = new UpdateStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus IN_PROGRESS = new UpdateStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCESSFUL for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus SUCCESSFUL = new UpdateStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// Constructs a custom UpdateStatus for a value not among the defined constants.
+        /// </summary>
+        public UpdateStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStatus FindValue(string value)
+        {
+            return FindValue<UpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdateType.
+    /// </summary>
+    public class UpdateType : ConstantClass
+    {
+        /// <summary>
+        /// Constant GATEWAY_CONFIG_UPDATE for UpdateType
+        /// </summary>
+        public static readonly UpdateType GATEWAY_CONFIG_UPDATE = new UpdateType("GATEWAY_CONFIG_UPDATE");
+
+        /// <summary>
+        /// Constant LINK_CONFIG_UPDATE for UpdateType
+        /// </summary>
+        public static readonly UpdateType LINK_CONFIG_UPDATE = new UpdateType("LINK_CONFIG_UPDATE");
+
+        /// <summary>
+        /// Constant LINK_FLOW_UPDATE for UpdateType
+        /// </summary>
+        public static readonly UpdateType LINK_FLOW_UPDATE = new UpdateType("LINK_FLOW_UPDATE");
+
+        /// <summary>
+        /// Constant ROUTING_RULE_UPDATE for UpdateType
+        /// </summary>
+        public static readonly UpdateType ROUTING_RULE_UPDATE = new UpdateType("ROUTING_RULE_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom UpdateType for a value not among the defined constants.
+        /// </summary>
+        public UpdateType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateType FindValue(string value)
+        {
+            return FindValue<UpdateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateType(string value)
         {
             return FindValue(value);
         }

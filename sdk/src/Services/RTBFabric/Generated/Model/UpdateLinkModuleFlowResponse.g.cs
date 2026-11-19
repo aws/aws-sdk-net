@@ -75,5 +75,19 @@ namespace Amazon.RTBFabric.Model
         /// Checks to see if the Status property is set.
         /// </summary>
         internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateId. 
+        /// <para>
+        /// The ID of the update this call started.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 8, Max = 64)]
+        public string UpdateId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateId property is set.
+        /// </summary>
+        internal bool IsSetUpdateId() => this.UpdateId != null;
     }
 }

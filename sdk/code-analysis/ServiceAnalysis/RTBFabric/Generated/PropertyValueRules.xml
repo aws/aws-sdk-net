@@ -355,6 +355,60 @@
     <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleRequest.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleResponse.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleResponse.ModuleArn</property>
+    <max>1011</max>
+    <pattern>^arn:aws[a-zA-Z-]*:rtbfabric:[a-z0-9-]+::modules/module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleResponse.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleResponse.ModuleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionRequest.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionRequest.Version</property>
+    <max>64</max>
+    <pattern>^(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse.ConfigurationSchema</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse.ModuleVersionArn</property>
+    <max>1011</max>
+    <pattern>^arn:aws[a-zA-Z-]*:rtbfabric:[a-z0-9-]+::modules/module-[a-zA-Z0-9]{1,25}/versions/(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse.ReleaseNotes</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetAvailableModuleVersionResponse.Version</property>
+    <max>64</max>
+    <pattern>^(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetCertificateAssociationRequest.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
@@ -409,6 +463,11 @@
     <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetInboundExternalLinkResponse.LockToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
@@ -431,6 +490,11 @@
     <min>6</min>
     <max>30</max>
     <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetLinkResponse.LockToken</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkResponse.PeerGatewayId</property>
@@ -509,6 +573,11 @@
     <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkResponse.LockToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkResponse.PublicEndpoint</property>
     <min>0</min>
     <max>255</max>
@@ -582,6 +651,36 @@
     <pattern>^vpc-[a-f0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetUpdateRequest.GatewayId</property>
+    <min>8</min>
+    <max>32</max>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.GetUpdateRequest.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListAvailableModuleVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListAvailableModuleVersionsRequest.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListAvailableModuleVersionsResponse.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListAvailableModulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListCertificateAssociationsRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
@@ -632,6 +731,78 @@
     <pattern>^arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesRequest.GatewayId</property>
+    <min>8</min>
+    <max>32</max>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesRequest.LinkId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesRequest.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesRequest.RuleId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ListUpdatesResponse.NextToken</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsRequest.GatewayId</property>
+    <min>8</min>
+    <max>32</max>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsRequest.LinkId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsRequest.LockToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsResponse.GatewayId</property>
+    <min>8</min>
+    <max>32</max>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsResponse.LinkId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.PutLinkFlowsResponse.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
@@ -674,6 +845,12 @@
     <pattern>^arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateLinkRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
@@ -695,6 +872,12 @@
     <min>6</min>
     <max>30</max>
     <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateLinkResponse.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowRequest.GatewayId</property>
@@ -719,6 +902,18 @@
     <min>6</min>
     <max>30</max>
     <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowResponse.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.GatewayId</property>
@@ -748,6 +943,12 @@
     <min>6</min>
     <max>30</max>
     <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleResponse.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateRequesterGatewayRequest.Description</property>
@@ -793,8 +994,39 @@
     <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateResponderGatewayResponse.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.AutoScalingGroupsConfiguration.RoleArn</property>
     <pattern>^arn:aws:iam::[0-9]{12}:role/.{1,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.AvailableModuleSummary.ModuleArn</property>
+    <max>1011</max>
+    <pattern>^arn:aws[a-zA-Z-]*:rtbfabric:[a-z0-9-]+::modules/module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.AvailableModuleSummary.ModuleId</property>
+    <pattern>^module-[a-zA-Z0-9]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.AvailableModuleSummary.ModuleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.AvailableModuleVersionSummary.ModuleVersionArn</property>
+    <max>1011</max>
+    <pattern>^arn:aws[a-zA-Z-]*:rtbfabric:[a-z0-9-]+::modules/module-[a-zA-Z0-9]{1,25}/versions/(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.AvailableModuleVersionSummary.Version</property>
+    <max>64</max>
+    <pattern>^(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CertificateAssociationSummary.AcmCertificateArn</property>
@@ -834,6 +1066,37 @@
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.RoleArn</property>
     <pattern>^arn:aws:iam::[0-9]{12}:role/.{1,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ErrorDetail.Message</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.Flow.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.FlowModule.ActivationPercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.FlowModule.ConfigurationValues</property>
+    <min>1</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.FlowModule.ModuleVersionArn</property>
+    <max>1011</max>
+    <pattern>^arn:aws[a-zA-Z-]*:rtbfabric:[a-z0-9-]+::modules/module-[a-zA-Z0-9]{1,25}/versions/(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})\.(0|[1-9]\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.FlowModule.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.HealthCheckConfig.HealthyThresholdCount</property>
@@ -888,6 +1151,11 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.LinkConfigParameters.TimeoutInMillis</property>
+    <min>100</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.LinkRoutingRuleSummary.Priority</property>
     <min>1</min>
     <max>1000</max>
@@ -897,6 +1165,12 @@
     <min>6</min>
     <max>30</max>
     <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.LinkTarget.LinkId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinksResponseStructure.GatewayId</property>
@@ -983,6 +1257,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.ResponderGatewayConfigParameters.DomainName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.RoutingRuleParameters.Priority</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.RoutingRuleTarget.LinkId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.RoutingRuleTarget.RuleId</property>
+    <min>6</min>
+    <max>30</max>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.RuleCondition.HostHeader</property>
     <min>1</min>
     <max>255</max>
@@ -1011,5 +1308,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[A-Za-z0-9._~-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.Update.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.UpdateSummary.UpdateId</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>^update-[a-z0-9]{1,57}$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -67,6 +67,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("errorDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

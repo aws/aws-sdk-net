@@ -33,6 +33,18 @@ namespace Amazon.RTBFabric.Model
     public interface IRTBFabricPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListAvailableModuleVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAvailableModuleVersionsPaginator ListAvailableModuleVersions(ListAvailableModuleVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAvailableModules operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAvailableModulesPaginator ListAvailableModules(ListAvailableModulesRequest request);
+
+        /// <summary>
         /// Paginator for ListCertificateAssociations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -61,5 +73,11 @@ namespace Amazon.RTBFabric.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListResponderGatewaysPaginator ListResponderGateways(ListResponderGatewaysRequest request);
+
+        /// <summary>
+        /// Paginator for ListUpdates operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListUpdatesPaginator ListUpdates(ListUpdatesRequest request);
     }
 }
