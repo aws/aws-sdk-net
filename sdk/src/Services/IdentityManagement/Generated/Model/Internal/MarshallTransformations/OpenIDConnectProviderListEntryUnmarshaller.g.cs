@@ -61,6 +61,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("IsTrustedIdentityPropagationEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.IsTrustedIdentityPropagationEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

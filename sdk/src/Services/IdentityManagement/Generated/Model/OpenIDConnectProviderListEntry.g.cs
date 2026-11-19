@@ -44,5 +44,20 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the Arn property is set.
         /// </summary>
         internal bool IsSetArn() => this.Arn != null;
+
+        /// <summary>
+        /// Gets and sets the property IsTrustedIdentityPropagationEnabled. 
+        /// <para>
+        /// Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC)
+        /// provider. This is <c>true</c> when an IAM Identity Center instance is associated with
+        /// the provider.
+        /// </para>
+        /// </summary>
+        public bool? IsTrustedIdentityPropagationEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsTrustedIdentityPropagationEnabled property is set.
+        /// </summary>
+        internal bool IsSetIsTrustedIdentityPropagationEnabled() => this.IsTrustedIdentityPropagationEnabled.HasValue;
     }
 }

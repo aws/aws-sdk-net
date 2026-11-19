@@ -47,16 +47,30 @@ namespace Amazon.IdentityManagement.Model
     /// or applications allowed to authenticate using the OIDC provider </para> </li> <li>
     /// <para> A list of tags that are attached to the specified IAM OIDC provider </para>
     /// </li> <li> <para> A list of thumbprints of one or more server certificates that the
-    /// IdP uses </para> </li> </ul> <para> You get all of this information from the OIDC
-    /// IdP you want to use to access Amazon Web Services. </para> <note> <para> Amazon Web
-    /// Services secures communication with OIDC identity providers (IdPs) using our library
-    /// of trusted root certificate authorities (CAs) to verify the JSON Web Key Set (JWKS)
-    /// endpoint's TLS certificate. If your OIDC IdP relies on a certificate that is not signed
-    /// by one of these trusted CAs, only then we secure communication using the thumbprints
-    /// set in the IdP's configuration. </para> </note> <note> <para> The trust for the OIDC
-    /// provider is derived from the IAM provider that this operation creates. Therefore,
-    /// it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
-    /// operation to highly privileged users. </para> </note>
+    /// IdP uses </para> </li> <li> <para> A trusted identity propagation context provider
+    /// that defines how the subject is derived and how keys from the provider's token are
+    /// mapped into trusted context keys. Specifying a context provider enables trusted identity
+    /// propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+    /// </para> </li> <li> <para> The ARN of an IAM Identity Center instance to associate
+    /// with the OIDC provider. If you specify an IAM Identity Center instance, you must also
+    /// specify a context provider. </para> </li> </ul> <para> You get the URL, client IDs,
+    /// and thumbprints from the OIDC IdP you want to use to access Amazon Web Services. </para>
+    /// <note> <para> Amazon Web Services secures communication with OIDC identity providers
+    /// (IdPs) using our library of trusted root certificate authorities (CAs) to verify the
+    /// JSON Web Key Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate
+    /// that is not signed by one of these trusted CAs, only then we secure communication
+    /// using the thumbprints set in the IdP's configuration. </para> </note> <note> <para>
+    /// The trust for the OIDC provider is derived from the IAM provider that this operation
+    /// creates. Therefore, it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
+    /// operation to highly privileged users. </para> </note> <para> To control who can configure
+    /// trusted identity propagation on an OIDC provider, use the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+    /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+    /// request. The <c>Resource</c> keys contain the values stored on the provider. </para>
     /// </summary>
     public partial class CreateOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {
@@ -91,6 +105,44 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the ClientIDList property is set.
         /// </summary>
         internal bool IsSetClientIDList() => this.ClientIDList != null && (this.ClientIDList.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ContextProvider. 
+        /// <para>
+        /// The trusted identity propagation context provider configuration to associate with
+        /// the OpenID Connect (OIDC) provider. The context provider defines how the subject is
+        /// derived and how keys from the provider's token are mapped into trusted context keys.
+        /// Specifying a context provider enables trusted identity propagation for the provider.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        /// </summary>
+        public ContextProvider ContextProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextProvider property is set.
+        /// </summary>
+        internal bool IsSetContextProvider() => this.ContextProvider != null;
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with
+        /// the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify
+        /// <c>ContextProvider</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1224)]
+        public string IdentityCenterInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

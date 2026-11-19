@@ -101,6 +101,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModification"))
+                    {
+                        return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
                     {
                         return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

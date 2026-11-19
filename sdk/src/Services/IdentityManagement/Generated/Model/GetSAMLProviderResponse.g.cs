@@ -48,6 +48,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAssertionEncryptionMode() => this.AssertionEncryptionMode != null;
 
         /// <summary>
+        /// Gets and sets the property ContextProvider. 
+        /// <para>
+        /// The trusted identity propagation context provider configuration associated with the
+        /// SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when a trusted identity propagation context provider
+        /// is configured for the SAML provider.
+        /// </para>
+        /// </summary>
+        public ContextProvider ContextProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextProvider property is set.
+        /// </summary>
+        internal bool IsSetContextProvider() => this.ContextProvider != null;
+
+        /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date and time when the SAML provider was created.
@@ -59,6 +78,56 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the CreateDate property is set.
         /// </summary>
         internal bool IsSetCreateDate() => this.CreateDate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with
+        /// the SAML provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when an IAM Identity Center instance is associated with
+        /// the SAML provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1224)]
+        public string IdentityCenterInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity store that is resolved from the associated
+        /// IAM Identity Center instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when an IAM Identity Center instance is associated with
+        /// the SAML provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string IdentityStoreArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityStoreArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityStoreArn() => this.IdentityStoreArn != null;
 
         /// <summary>
         /// Gets and sets the property PrivateKeyList. 
@@ -79,6 +148,26 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the PrivateKeyList property is set.
         /// </summary>
         internal bool IsSetPrivateKeyList() => this.PrivateKeyList != null && (this.PrivateKeyList.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SAMLKeyHashes. 
+        /// <para>
+        /// The key hashes associated with the SAML provider, grouped by identity provider issuer.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<SAMLKeyHashEntry> SAMLKeyHashes { get; set; } = AWSConfigs.InitializeCollections ? new List<SAMLKeyHashEntry>() : null;
+
+        /// <summary>
+        /// Checks to see if the SAMLKeyHashes property is set.
+        /// </summary>
+        internal bool IsSetSAMLKeyHashes() => this.SAMLKeyHashes != null && (this.SAMLKeyHashes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property SAMLMetadataDocument. 

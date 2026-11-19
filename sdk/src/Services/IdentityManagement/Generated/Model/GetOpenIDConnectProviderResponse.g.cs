@@ -55,6 +55,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetClientIDList() => this.ClientIDList != null && (this.ClientIDList.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ContextProvider. 
+        /// <para>
+        /// The trusted identity propagation context provider configuration associated with the
+        /// IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when a trusted identity propagation context provider
+        /// is configured for the OIDC provider.
+        /// </para>
+        /// </summary>
+        public ContextProvider ContextProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextProvider property is set.
+        /// </summary>
+        internal bool IsSetContextProvider() => this.ContextProvider != null;
+
+        /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date and time when the IAM OIDC provider resource object was created in the Amazon
@@ -67,6 +86,56 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the CreateDate property is set.
         /// </summary>
         internal bool IsSetCreateDate() => this.CreateDate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with
+        /// the IAM OIDC provider resource object.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when an IAM Identity Center instance is associated with
+        /// the OIDC provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1224)]
+        public string IdentityCenterInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity store that is resolved from the associated
+        /// IAM Identity Center instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is returned only when an IAM Identity Center instance is associated with
+        /// the OIDC provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string IdentityStoreArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityStoreArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityStoreArn() => this.IdentityStoreArn != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

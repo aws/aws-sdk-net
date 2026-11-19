@@ -45,7 +45,15 @@ namespace Amazon.IdentityManagement.Model
     /// Version 4</a>. </para> </note> <para> For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
     /// SAML 2.0 federated users to access the Amazon Web Services Management Console</a>
     /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-    /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>. </para>
+    /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>. </para> <para> To control
+    /// who can configure trusted identity propagation on a SAML provider, use the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+    /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+    /// request. The <c>Resource</c> keys contain the values stored on the provider. </para>
     /// </summary>
     public partial class CreateSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
@@ -76,6 +84,43 @@ namespace Amazon.IdentityManagement.Model
         /// Checks to see if the AssertionEncryptionMode property is set.
         /// </summary>
         internal bool IsSetAssertionEncryptionMode() => this.AssertionEncryptionMode != null;
+
+        /// <summary>
+        /// Gets and sets the property ContextProvider. 
+        /// <para>
+        /// The trusted identity propagation context provider configuration to associate with
+        /// the SAML provider. The context provider defines how the subject is derived and how
+        /// keys from the provider's SAML assertion are mapped into trusted context keys. Specifying
+        /// a context provider enables trusted identity propagation for the provider. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        /// </summary>
+        public ContextProvider ContextProvider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextProvider property is set.
+        /// </summary>
+        internal bool IsSetContextProvider() => this.ContextProvider != null;
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with
+        /// the SAML provider. If you specify this parameter, you must also specify <c>ContextProvider</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a>
+        /// in the <i>IAM Identity Center API Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1224)]
+        public string IdentityCenterInstanceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdentityCenterInstanceArn property is set.
+        /// </summary>
+        internal bool IsSetIdentityCenterInstanceArn() => this.IdentityCenterInstanceArn != null;
 
         /// <summary>
         /// Gets and sets the property Name. 

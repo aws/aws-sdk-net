@@ -61,6 +61,48 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("AssertionEncryptionMode", StringUtils.FromString(publicRequest.AssertionEncryptionMode));
             }
+            if (publicRequest.IsSetContextProvider())
+            {
+                if (publicRequest.ContextProvider.IsSetKeyDefinitionList())
+                {
+                    if (publicRequest.ContextProvider.KeyDefinitionList.Count == 0)
+                    {
+                        request.Parameters.Add("ContextProvider" + ".KeyDefinitionList", "");
+                    }
+                    else
+                    {
+                        int index1 = 1;
+                        foreach (var item1 in publicRequest.ContextProvider.KeyDefinitionList)
+                        {
+                            if (item1.IsSetSourceKey())
+                            {
+                                request.Parameters.Add("ContextProvider" + ".KeyDefinitionList" + ".member" + "." + index1 + ".SourceKey", StringUtils.FromString(item1.SourceKey));
+                            }
+                            if (item1.IsSetTargetKey())
+                            {
+                                request.Parameters.Add("ContextProvider" + ".KeyDefinitionList" + ".member" + "." + index1 + ".TargetKey", StringUtils.FromString(item1.TargetKey));
+                            }
+                            index1++;
+                        }
+                    }
+                }
+                if (publicRequest.ContextProvider.IsSetSubjectSourceKey())
+                {
+                    request.Parameters.Add("ContextProvider" + ".SubjectSourceKey", StringUtils.FromString(publicRequest.ContextProvider.SubjectSourceKey));
+                }
+                if (publicRequest.ContextProvider.IsSetSubjectTypeSourceKey())
+                {
+                    request.Parameters.Add("ContextProvider" + ".SubjectTypeSourceKey", StringUtils.FromString(publicRequest.ContextProvider.SubjectTypeSourceKey));
+                }
+                if (publicRequest.ContextProvider.IsSetSubjectTypeValue())
+                {
+                    request.Parameters.Add("ContextProvider" + ".SubjectTypeValue", StringUtils.FromString(publicRequest.ContextProvider.SubjectTypeValue));
+                }
+            }
+            if (publicRequest.IsSetIdentityCenterInstanceArn())
+            {
+                request.Parameters.Add("IdentityCenterInstanceArn", StringUtils.FromString(publicRequest.IdentityCenterInstanceArn));
+            }
             if (publicRequest.IsSetName())
             {
                 request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

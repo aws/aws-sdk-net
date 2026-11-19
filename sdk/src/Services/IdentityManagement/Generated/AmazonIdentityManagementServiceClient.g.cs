@@ -2191,10 +2191,22 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A list of thumbprints of one or more server certificates that the IdP uses
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A trusted identity propagation context provider that defines how the subject is derived
+        /// and how keys from the provider's token are mapped into trusted context keys. Specifying
+        /// a context provider enables trusted identity propagation for the provider. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an IAM Identity Center instance to associate with the OIDC provider. If
+        /// you specify an IAM Identity Center instance, you must also specify a context provider.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You get all of this information from the OIDC IdP you want to use to access Amazon
-        /// Web Services.
+        /// You get the URL, client IDs, and thumbprints from the OIDC IdP you want to use to
+        /// access Amazon Web Services.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2210,7 +2222,18 @@ namespace Amazon.IdentityManagement
         /// creates. Therefore, it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
         /// operation to highly privileged users.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// To control who can configure trusted identity propagation on an OIDC provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
         /// <returns>The response from the CreateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
@@ -2296,10 +2319,22 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A list of thumbprints of one or more server certificates that the IdP uses
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A trusted identity propagation context provider that defines how the subject is derived
+        /// and how keys from the provider's token are mapped into trusted context keys. Specifying
+        /// a context provider enables trusted identity propagation for the provider. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an IAM Identity Center instance to associate with the OIDC provider. If
+        /// you specify an IAM Identity Center instance, you must also specify a context provider.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You get all of this information from the OIDC IdP you want to use to access Amazon
-        /// Web Services.
+        /// You get the URL, client IDs, and thumbprints from the OIDC IdP you want to use to
+        /// access Amazon Web Services.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2315,7 +2350,18 @@ namespace Amazon.IdentityManagement
         /// creates. Therefore, it is best to limit access to the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html">CreateOpenIDConnectProvider</a>
         /// operation to highly privileged users.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// To control who can configure trusted identity propagation on an OIDC provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpenIDConnectProvider service method.</param>
         /// <param name="cancellationToken">
@@ -2727,6 +2773,18 @@ namespace Amazon.IdentityManagement
         /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
         /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on a SAML provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider service method.</param>
         /// <returns>The response from the CreateSAMLProvider service method, as returned by IdentityManagementService.</returns>
@@ -2799,6 +2857,18 @@ namespace Amazon.IdentityManagement
         /// SAML 2.0 federated users to access the Amazon Web Services Management Console</a>
         /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
         /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on a SAML provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSAMLProvider service method.</param>
@@ -4044,7 +4114,9 @@ namespace Amazon.IdentityManagement
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
+        /// Deletes an OpenID Connect identity provider (IdP) resource object in IAM. Deleting
+        /// the provider also deletes its trusted identity propagation context provider and removes
+        /// any IAM Identity Center instance association.
         /// 
         ///  
         /// <para>
@@ -4052,14 +4124,13 @@ namespace Amazon.IdentityManagement
         /// provider as a principal in their trust policies. Any attempt to assume a role that
         /// references a deleted provider fails.
         /// </para>
-        ///  
-        /// <para>
-        /// This operation is idempotent; it does not fail or return an error if you call the
-        /// operation for a provider that does not exist.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider service method.</param>
         /// <returns>The response from the DeleteOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -4092,7 +4163,9 @@ namespace Amazon.IdentityManagement
 #endif
 
         /// <summary>
-        /// Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
+        /// Deletes an OpenID Connect identity provider (IdP) resource object in IAM. Deleting
+        /// the provider also deletes its trusted identity propagation context provider and removes
+        /// any IAM Identity Center instance association.
         /// 
         ///  
         /// <para>
@@ -4100,17 +4173,16 @@ namespace Amazon.IdentityManagement
         /// provider as a principal in their trust policies. Any attempt to assume a role that
         /// references a deleted provider fails.
         /// </para>
-        ///  
-        /// <para>
-        /// This operation is idempotent; it does not fail or return an error if you call the
-        /// operation for a provider that does not exist.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOpenIDConnectProvider service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DeleteOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -4753,6 +4825,10 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSAMLProvider service method.</param>
         /// <returns>The response from the DeleteSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -4809,6 +4885,10 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the DeleteSAMLProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
@@ -18857,6 +18937,152 @@ namespace Amazon.IdentityManagement
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates the configuration of an existing IAM OpenID Connect (OIDC) identity provider
+        /// resource object. Use this operation to set, change, or remove the trusted identity
+        /// propagation context provider, and to associate or disassociate an IAM Identity Center
+        /// instance with the provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation does not update the OIDC provider's server certificate thumbprints.
+        /// Thumbprints are managed only by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html">UpdateOpenIDConnectProviderThumbprint</a>
+        /// operation. To change a provider's thumbprints, call that operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To remove a configuration rather than replace it, use the <c>RemoveContextProvider</c>
+        /// and <c>RemoveIdentityCenterInstance</c> parameters. For each configuration, provide
+        /// either the new value or the corresponding <c>Remove</c> flag in a single request,
+        /// but not both. For example, specifying both <c>ContextProvider</c> and <c>RemoveContextProvider</c>
+        /// in the same request is not allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single request can change either the context provider or the IAM Identity Center
+        /// association, but not both. To change both, make separate <c>UpdateOpenIDConnectProvider</c>
+        /// requests. To remove the context provider, first remove the IAM Identity Center association
+        /// in a separate request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on an OIDC provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProvider service method.</param>
+        /// <returns>The response from the UpdateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProvider">REST API Reference for UpdateOpenIDConnectProvider Operation</seealso>
+        public virtual UpdateOpenIDConnectProviderResponse UpdateOpenIDConnectProvider(UpdateOpenIDConnectProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOpenIDConnectProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOpenIDConnectProviderResponse>(request, options);
+        }
+#else
+        internal virtual UpdateOpenIDConnectProviderResponse UpdateOpenIDConnectProvider(UpdateOpenIDConnectProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOpenIDConnectProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOpenIDConnectProviderResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the configuration of an existing IAM OpenID Connect (OIDC) identity provider
+        /// resource object. Use this operation to set, change, or remove the trusted identity
+        /// propagation context provider, and to associate or disassociate an IAM Identity Center
+        /// instance with the provider.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation does not update the OIDC provider's server certificate thumbprints.
+        /// Thumbprints are managed only by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html">UpdateOpenIDConnectProviderThumbprint</a>
+        /// operation. To change a provider's thumbprints, call that operation instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To remove a configuration rather than replace it, use the <c>RemoveContextProvider</c>
+        /// and <c>RemoveIdentityCenterInstance</c> parameters. For each configuration, provide
+        /// either the new value or the corresponding <c>Remove</c> flag in a single request,
+        /// but not both. For example, specifying both <c>ContextProvider</c> and <c>RemoveContextProvider</c>
+        /// in the same request is not allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single request can change either the context provider or the IAM Identity Center
+        /// association, but not both. To change both, make separate <c>UpdateOpenIDConnectProvider</c>
+        /// requests. To remove the context provider, first remove the IAM Identity Center association
+        /// in a separate request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on an OIDC provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpenIDConnectProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateOpenIDConnectProvider service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProvider">REST API Reference for UpdateOpenIDConnectProvider Operation</seealso>
+        public virtual Task<UpdateOpenIDConnectProviderResponse> UpdateOpenIDConnectProviderAsync(UpdateOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOpenIDConnectProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOpenIDConnectProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOpenIDConnectProviderResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Replaces the existing list of server certificate thumbprints associated with an OpenID
         /// Connect (OIDC) provider resource object with a new list of thumbprints.
         /// 
@@ -19162,6 +19388,36 @@ namespace Amazon.IdentityManagement
         /// Updates the metadata document, SAML encryption settings, and private keys for an existing
         /// SAML provider. To rotate private keys, add your new private key and then remove the
         /// old key in a separate request.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this operation to set, change, or remove the trusted identity propagation
+        /// context provider, and to associate or disassociate an IAM Identity Center instance
+        /// with the provider. To remove a configuration rather than replace it, use the <c>RemoveContextProvider</c>
+        /// and <c>RemoveIdentityCenterInstance</c> parameters. For each configuration, provide
+        /// either the new value or the corresponding <c>Remove</c> flag in a single request,
+        /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single request can change either the context provider or the provider metadata,
+        /// but not both. Provider metadata includes the SAML metadata document, assertion encryption
+        /// mode, private keys, and IAM Identity Center association. To change both, make separate
+        /// <c>UpdateSAMLProvider</c> requests. To remove the context provider, first remove the
+        /// IAM Identity Center association in a separate request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on a SAML provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// <returns>The response from the UpdateSAMLProvider service method, as returned by IdentityManagementService.</returns>
@@ -19208,6 +19464,36 @@ namespace Amazon.IdentityManagement
         /// Updates the metadata document, SAML encryption settings, and private keys for an existing
         /// SAML provider. To rotate private keys, add your new private key and then remove the
         /// old key in a separate request.
+        /// 
+        ///  
+        /// <para>
+        /// You can also use this operation to set, change, or remove the trusted identity propagation
+        /// context provider, and to associate or disassociate an IAM Identity Center instance
+        /// with the provider. To remove a configuration rather than replace it, use the <c>RemoveContextProvider</c>
+        /// and <c>RemoveIdentityCenterInstance</c> parameters. For each configuration, provide
+        /// either the new value or the corresponding <c>Remove</c> flag in a single request,
+        /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single request can change either the context provider or the provider metadata,
+        /// but not both. Provider metadata includes the SAML metadata document, assertion encryption
+        /// mode, private keys, and IAM Identity Center association. To change both, make separate
+        /// <c>UpdateSAMLProvider</c> requests. To remove the context provider, first remove the
+        /// IAM Identity Center association in a separate request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To control who can configure trusted identity propagation on a SAML provider, use
+        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>,
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>,
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a>
+        /// condition keys in IAM policies. The <c>Request</c> keys contain the values in the
+        /// request. The <c>Resource</c> keys contain the values stored on the provider.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// <param name="cancellationToken">

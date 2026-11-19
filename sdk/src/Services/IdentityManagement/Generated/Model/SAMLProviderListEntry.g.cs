@@ -62,6 +62,20 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate() => this.CreateDate.HasValue;
 
         /// <summary>
+        /// Gets and sets the property IsTrustedIdentityPropagationEnabled. 
+        /// <para>
+        /// Specifies whether trusted identity propagation is enabled for the SAML provider. This
+        /// is <c>true</c> when an IAM Identity Center instance is associated with the provider.
+        /// </para>
+        /// </summary>
+        public bool? IsTrustedIdentityPropagationEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsTrustedIdentityPropagationEnabled property is set.
+        /// </summary>
+        internal bool IsSetIsTrustedIdentityPropagationEnabled() => this.IsTrustedIdentityPropagationEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The expiration date and time for the SAML provider.

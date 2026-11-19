@@ -31,12 +31,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOpenIDConnectProvider operation. Deletes
-    /// an OpenID Connect identity provider (IdP) resource object in IAM. <para> Deleting
-    /// an IAM OIDC provider resource does not update any roles that reference the provider
-    /// as a principal in their trust policies. Any attempt to assume a role that references
-    /// a deleted provider fails. </para> <para> This operation is idempotent; it does not
-    /// fail or return an error if you call the operation for a provider that does not exist.
-    /// </para>
+    /// an OpenID Connect identity provider (IdP) resource object in IAM. Deleting the provider
+    /// also deletes its trusted identity propagation context provider and removes any IAM
+    /// Identity Center instance association. <para> Deleting an IAM OIDC provider resource
+    /// does not update any roles that reference the provider as a principal in their trust
+    /// policies. Any attempt to assume a role that references a deleted provider fails. </para>
     /// </summary>
     public partial class DeleteOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {

@@ -90,10 +90,31 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("ContextProvider", targetDepth))
+                    {
+                        var unmarshaller = ContextProviderUnmarshaller.Instance;
+                        unmarshalledObject.ContextProvider = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("IdentityStoreArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityStoreArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
 

@@ -86,10 +86,31 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("ContextProvider", targetDepth))
+                    {
+                        var unmarshaller = ContextProviderUnmarshaller.Instance;
+                        unmarshalledObject.ContextProvider = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("IdentityStoreArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityStoreArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -101,6 +122,17 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         }
                         var unmarshaller = SAMLPrivateKeyUnmarshaller.Instance;
                         unmarshalledObject.PrivateKeyList.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("SAMLKeyHashes/member", targetDepth))
+                    {
+                        if (unmarshalledObject.SAMLKeyHashes == null)
+                        {
+                            unmarshalledObject.SAMLKeyHashes = new List<SAMLKeyHashEntry>();
+                        }
+                        var unmarshaller = SAMLKeyHashEntryUnmarshaller.Instance;
+                        unmarshalledObject.SAMLKeyHashes.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
 

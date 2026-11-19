@@ -200,6 +200,11 @@
     <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest.Url</property>
     <min>1</min>
     <max>255</max>
@@ -287,6 +292,11 @@
     <min>1</min>
     <max>16384</max>
     <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateSAMLProviderRequest.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateSAMLProviderRequest.Name</property>
@@ -801,6 +811,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderResponse.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderResponse.IdentityStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetOpenIDConnectProviderResponse.Url</property>
     <min>1</min>
     <max>255</max>
@@ -884,6 +904,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetSAMLProviderRequest.SAMLProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetSAMLProviderResponse.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetSAMLProviderResponse.IdentityStoreArn</property>
     <min>20</min>
     <max>2048</max>
   </property-value-rule>
@@ -1988,6 +2018,16 @@
     <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderRequest.OpenIDConnectProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateOpenIDConnectProviderThumbprintRequest.OpenIDConnectProviderArn</property>
     <min>20</min>
     <max>2048</max>
@@ -2031,6 +2071,11 @@
     <min>1</min>
     <max>16384</max>
     <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest.IdentityCenterInstanceArn</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateSAMLProviderRequest.RemovePrivateKey</property>
@@ -2235,6 +2280,31 @@
     <property>Amazon.IdentityManagement.Model.ContextEntry.ContextKeyName</property>
     <min>5</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ContextProvider.SubjectSourceKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ContextProvider.SubjectTypeSourceKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ContextProvider.SubjectTypeValue</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ContextProviderKeyDefinition.SourceKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ContextProviderKeyDefinition.TargetKey</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DelegationPermission.PolicyTemplateArn</property>
@@ -2800,6 +2870,11 @@
     <property>Amazon.IdentityManagement.Model.RoleUsageType.Region</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.SAMLKeyHashEntry.IssuerURL</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.SAMLPrivateKey.KeyId</property>
