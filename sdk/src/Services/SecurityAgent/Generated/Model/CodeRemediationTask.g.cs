@@ -37,7 +37,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the code remediation task.
+        /// The current status of the overall code remediation task.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +51,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for the current status of the code remediation task.
+        /// The reason for the current status of the overall code remediation task.
         /// </para>
         /// </summary>
         public string StatusReason { get; set; }
@@ -64,8 +64,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TaskDetails. 
         /// <para>
-        /// The list of details for the code remediation task, including repository name, code
-        /// diff link, and pull request link.
+        /// The list of details for a code remediation task, including repository names, status
+        /// of code remediation for each associated repository, and generated code diff or pull
+        /// request links.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

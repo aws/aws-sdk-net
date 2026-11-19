@@ -231,6 +231,62 @@ namespace Amazon.SecurityAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type CodeRemediationJobStatus.
+    /// </summary>
+    public class CodeRemediationJobStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for CodeRemediationJobStatus
+        /// </summary>
+        public static readonly CodeRemediationJobStatus COMPLETED = new CodeRemediationJobStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for CodeRemediationJobStatus
+        /// </summary>
+        public static readonly CodeRemediationJobStatus FAILED = new CodeRemediationJobStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for CodeRemediationJobStatus
+        /// </summary>
+        public static readonly CodeRemediationJobStatus IN_PROGRESS = new CodeRemediationJobStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant NO_CHANGE_REQUIRED for CodeRemediationJobStatus
+        /// </summary>
+        public static readonly CodeRemediationJobStatus NO_CHANGE_REQUIRED = new CodeRemediationJobStatus("NO_CHANGE_REQUIRED");
+
+        /// <summary>
+        /// Constant UNKNOWN for CodeRemediationJobStatus
+        /// </summary>
+        public static readonly CodeRemediationJobStatus UNKNOWN = new CodeRemediationJobStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom CodeRemediationJobStatus for a value not among the defined constants.
+        /// </summary>
+        public CodeRemediationJobStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodeRemediationJobStatus FindValue(string value)
+        {
+            return FindValue<CodeRemediationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodeRemediationJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CodeRemediationStrategy.
     /// </summary>
     public class CodeRemediationStrategy : ConstantClass

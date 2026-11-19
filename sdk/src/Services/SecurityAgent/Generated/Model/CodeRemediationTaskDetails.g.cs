@@ -64,7 +64,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RepoName. 
         /// <para>
-        /// The name of the repository where the remediation was applied.
+        /// The name of an associated repository where the remediation was applied.
         /// </para>
         /// </summary>
         public string RepoName { get; set; }
@@ -73,5 +73,44 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the RepoName property is set.
         /// </summary>
         internal bool IsSetRepoName() => this.RepoName != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the code remediation task for the particular repository.
+        /// </para>
+        /// </summary>
+        public CodeRemediationJobStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        /// A category classifier if a repository's code remediation fails.
+        /// </para>
+        /// </summary>
+        public string StatusCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusCode property is set.
+        /// </summary>
+        internal bool IsSetStatusCode() => this.StatusCode != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// A descriptive reason when a repository's code remediation fails.
+        /// </para>
+        /// </summary>
+        public string StatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusReason property is set.
+        /// </summary>
+        internal bool IsSetStatusReason() => this.StatusReason != null;
     }
 }
