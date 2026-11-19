@@ -253,7 +253,26 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 throw new GeneratorException("The service has no @documentation to write nuget-readme.md from.");
             }
 
-            Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
+            if (readme.Length == 0)
+            {
+                readme = context.Metadata?.Synopsis ?? string.Empty;
+            }
+
+            // A hand-written Custom/nuget-readme.md goes ahead of the service documentation, with a
+            // horizontal rule between the two.
+            var customReadmePath = Path.Combine(outputPath, "Custom", "nuget-readme.md");
+            if (File.Exists(customReadmePath))
+            {
+                var readmeWriter = new CodeWriter();
+                readmeWriter.WriteLine(File.ReadAllText(customReadmePath).TrimEnd());
+                readmeWriter.WriteLine();
+                readmeWriter.WriteLine("---");
+                readmeWriter.WriteLine();
+                readmeWriter.WriteLine(readme);
+                readme = readmeWriter.ToRawString().TrimEnd();
+            }
+
+            Emit("nuget-readme.md", readme);
         }
 
         if (standalone is not null)
