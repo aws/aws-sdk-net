@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// PullRequestBuildPolicy Marshaller
     /// </summary>
-    public partial class PullRequestBuildPolicyMarshaller : IRequestMarshaller<PullRequestBuildPolicy, JsonMarshallerContext>
+    public partial class PullRequestBuildPolicyMarshaller : IRequestMarshaller<PullRequestBuildPolicy, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PullRequestBuildPolicy requestObject, JsonMarshallerContext context)
+        public void Marshall(PullRequestBuildPolicy requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetApproverRoles())
             {
-                context.Writer.WritePropertyName("approverRoles");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("approverRoles");
+                context.Writer.WriteStartArray(requestObject.ApproverRoles.Count);
                 foreach (var requestObjectApproverRolesListValue in requestObject.ApproverRoles)
                 {
-                    context.Writer.WriteStringValue(requestObjectApproverRolesListValue);
+                    context.Writer.WriteTextString(requestObjectApproverRolesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetRequiresCommentApproval())
             {
-                context.Writer.WritePropertyName("requiresCommentApproval");
-                context.Writer.WriteStringValue(requestObject.RequiresCommentApproval);
+                context.Writer.WriteTextString("requiresCommentApproval");
+                context.Writer.WriteTextString(requestObject.RequiresCommentApproval);
             }
         }
 

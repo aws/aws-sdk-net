@@ -109,6 +109,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("scope", targetDepth, ref reader))
+                {
+                    var unmarshaller = InvestigationScopeUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -127,6 +134,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("summaryData", targetDepth, ref reader))
+                {
+                    var unmarshaller = InvestigationSummaryDataUnmarshaller.Instance;
+                    unmarshalledObject.SummaryData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

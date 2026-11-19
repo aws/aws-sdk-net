@@ -50,6 +50,7 @@ namespace Amazon.S3.Model
         private RequestCharged _requestCharged;
         private string _storageClass;
         private string _uploadId;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property AbortDate. 
@@ -390,6 +391,34 @@ namespace Amazon.S3.Model
         internal bool IsSetUploadId()
         {
             return this._uploadId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// Version ID of the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns the Version ID of the object for the listed parts, if bucket versioning is
+        /// enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

@@ -37,6 +37,9 @@ namespace Amazon.Runtime.Internal
         // for the life of the execution environment, so it's read once instead of on every request.
         private static bool _isRunningInLambda = IsLambdaFunctionNameSet();
 
+        // AWS_LAMBDA_MAX_CONCURRENCY is likewise fixed for the life of the execution environment.
+        private static bool _isLambdaMaxConcurrencySet = IsLambdaMaxConcurrencySet();
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler
         /// in the pipeline.
@@ -143,7 +146,7 @@ namespace Amazon.Runtime.Internal
                 if (_isRunningInLambda)
                 {
                     string amznTraceId;
-                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
+                    if (_isLambdaMaxConcurrencySet)
                     {
                         amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
                                             Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
@@ -162,12 +165,18 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Re-reads the AWS_LAMBDA_FUNCTION_NAME environment variable so that the next request picks up
-        /// a change to it. Used by tests that set the variable at runtime.
+        /// Resets cached Lambda environment state so that the next request re-reads the environment variables.
+        /// Used by tests that set the variables at runtime.
         /// </summary>
-        internal static void ResetIsRunningInLambda()
+        internal static void ResetLambdaEnvironmentCache()
         {
             _isRunningInLambda = IsLambdaFunctionNameSet();
+            _isLambdaMaxConcurrencySet = IsLambdaMaxConcurrencySet();
+        }
+
+        private static bool IsLambdaMaxConcurrencySet()
+        {
+            return !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY));
         }
 
         private static bool IsLambdaFunctionNameSet()

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// RawString Marshaller
     /// </summary>
-    public partial class RawStringMarshaller : IRequestMarshaller<RawString, JsonMarshallerContext>
+    public partial class RawStringMarshaller : IRequestMarshaller<RawString, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RawString requestObject, JsonMarshallerContext context)
+        public void Marshall(RawString requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetContent())
             {
-                context.Writer.WritePropertyName("content");
-                context.Writer.WriteStringValue(requestObject.Content);
+                context.Writer.WriteTextString("content");
+                context.Writer.WriteTextString(requestObject.Content);
             }
 
             if (requestObject.IsSetSha256())
             {
-                context.Writer.WritePropertyName("sha256");
-                context.Writer.WriteStringValue(requestObject.Sha256);
+                context.Writer.WriteTextString("sha256");
+                context.Writer.WriteTextString(requestObject.Sha256);
             }
         }
 

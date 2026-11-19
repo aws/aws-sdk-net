@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// NetworkUpdateSettings Marshaller
     /// </summary>
-    public partial class NetworkUpdateSettingsMarshaller : IRequestMarshaller<NetworkUpdateSettings, JsonMarshallerContext>
+    public partial class NetworkUpdateSettingsMarshaller : IRequestMarshaller<NetworkUpdateSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(NetworkUpdateSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkUpdateSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCustomerDnsIpsV6())
             {
-                context.Writer.WritePropertyName("CustomerDnsIpsV6");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomerDnsIpsV6");
+                context.Writer.WriteStartArray(requestObject.CustomerDnsIpsV6.Count);
                 foreach (var requestObjectCustomerDnsIpsV6ListValue in requestObject.CustomerDnsIpsV6)
                 {
-                    context.Writer.WriteStringValue(requestObjectCustomerDnsIpsV6ListValue);
+                    context.Writer.WriteTextString(requestObjectCustomerDnsIpsV6ListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetNetworkType())
             {
-                context.Writer.WritePropertyName("NetworkType");
-                context.Writer.WriteStringValue(requestObject.NetworkType);
+                context.Writer.WriteTextString("NetworkType");
+                context.Writer.WriteTextString(requestObject.NetworkType);
             }
         }
 

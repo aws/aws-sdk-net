@@ -55,6 +55,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetGcpConfiguration())
+            {
+                context.Writer.WritePropertyName("GcpConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GcpConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GcpConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

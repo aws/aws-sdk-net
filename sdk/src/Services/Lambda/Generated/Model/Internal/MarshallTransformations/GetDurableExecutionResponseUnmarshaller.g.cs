@@ -94,6 +94,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ExpectedExecutionTimeoutTimestamp", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpectedExecutionTimeoutTimestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("FunctionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -105,6 +112,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputPayload = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PauseDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = PauseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PauseDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

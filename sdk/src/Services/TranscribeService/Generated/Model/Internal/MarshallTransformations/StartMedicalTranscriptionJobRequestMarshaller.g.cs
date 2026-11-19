@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.TranscribeService.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -54,125 +55,131 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartMedicalTranscriptionJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.StartMedicalTranscriptionJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/Transcribe/operation/StartMedicalTranscriptionJob";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetContentIdentificationType())
+                {
+                    context.Writer.WriteTextString("ContentIdentificationType");
+                    context.Writer.WriteTextString(publicRequest.ContentIdentificationType);
+                }
+                if (publicRequest.IsSetKMSEncryptionContext())
+                {
+                    context.Writer.WriteTextString("KMSEncryptionContext");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
+                    {
+                        context.Writer.WriteTextString(publicRequestKMSEncryptionContextKvp.Key);
+                        var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
+                        context.Writer.WriteTextString(publicRequestKMSEncryptionContextValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WriteTextString("LanguageCode");
+                    context.Writer.WriteTextString(publicRequest.LanguageCode);
+                }
+                if (publicRequest.IsSetMedia())
+                {
+                    context.Writer.WriteTextString("Media");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = MediaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Media, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetMediaFormat())
+                {
+                    context.Writer.WriteTextString("MediaFormat");
+                    context.Writer.WriteTextString(publicRequest.MediaFormat);
+                }
+                if (publicRequest.IsSetMediaSampleRateHertz())
+                {
+                    context.Writer.WriteTextString("MediaSampleRateHertz");
+                    context.Writer.WriteInt32(publicRequest.MediaSampleRateHertz.Value);
+                }
+                if (publicRequest.IsSetMedicalTranscriptionJobName())
+                {
+                    context.Writer.WriteTextString("MedicalTranscriptionJobName");
+                    context.Writer.WriteTextString(publicRequest.MedicalTranscriptionJobName);
+                }
+                if (publicRequest.IsSetOutputBucketName())
+                {
+                    context.Writer.WriteTextString("OutputBucketName");
+                    context.Writer.WriteTextString(publicRequest.OutputBucketName);
+                }
+                if (publicRequest.IsSetOutputEncryptionKMSKeyId())
+                {
+                    context.Writer.WriteTextString("OutputEncryptionKMSKeyId");
+                    context.Writer.WriteTextString(publicRequest.OutputEncryptionKMSKeyId);
+                }
+                if (publicRequest.IsSetOutputKey())
+                {
+                    context.Writer.WriteTextString("OutputKey");
+                    context.Writer.WriteTextString(publicRequest.OutputKey);
+                }
+                if (publicRequest.IsSetSettings())
+                {
+                    context.Writer.WriteTextString("Settings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = MedicalTranscriptionSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSpecialty())
+                {
+                    context.Writer.WriteTextString("Specialty");
+                    context.Writer.WriteTextString(publicRequest.Specialty);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetType())
+                {
+                    context.Writer.WriteTextString("Type");
+                    context.Writer.WriteTextString(publicRequest.Type);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetContentIdentificationType())
-            {
-                context.Writer.WritePropertyName("ContentIdentificationType");
-                context.Writer.WriteStringValue(publicRequest.ContentIdentificationType);
             }
-            if (publicRequest.IsSetKMSEncryptionContext())
+            finally
             {
-                context.Writer.WritePropertyName("KMSEncryptionContext");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
-                {
-                    context.Writer.WritePropertyName(publicRequestKMSEncryptionContextKvp.Key);
-                    var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
-                    context.Writer.WriteStringValue(publicRequestKMSEncryptionContextValue);
-                }
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetLanguageCode())
-            {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-            if (publicRequest.IsSetMedia())
-            {
-                context.Writer.WritePropertyName("Media");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MediaMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Media, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetMediaFormat())
-            {
-                context.Writer.WritePropertyName("MediaFormat");
-                context.Writer.WriteStringValue(publicRequest.MediaFormat);
-            }
-            if (publicRequest.IsSetMediaSampleRateHertz())
-            {
-                context.Writer.WritePropertyName("MediaSampleRateHertz");
-                context.Writer.WriteNumberValue(publicRequest.MediaSampleRateHertz.Value);
-            }
-            if (publicRequest.IsSetMedicalTranscriptionJobName())
-            {
-                context.Writer.WritePropertyName("MedicalTranscriptionJobName");
-                context.Writer.WriteStringValue(publicRequest.MedicalTranscriptionJobName);
-            }
-            if (publicRequest.IsSetOutputBucketName())
-            {
-                context.Writer.WritePropertyName("OutputBucketName");
-                context.Writer.WriteStringValue(publicRequest.OutputBucketName);
-            }
-            if (publicRequest.IsSetOutputEncryptionKMSKeyId())
-            {
-                context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
-                context.Writer.WriteStringValue(publicRequest.OutputEncryptionKMSKeyId);
-            }
-            if (publicRequest.IsSetOutputKey())
-            {
-                context.Writer.WritePropertyName("OutputKey");
-                context.Writer.WriteStringValue(publicRequest.OutputKey);
-            }
-            if (publicRequest.IsSetSettings())
-            {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MedicalTranscriptionSettingMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Settings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetSpecialty())
-            {
-                context.Writer.WritePropertyName("Specialty");
-                context.Writer.WriteStringValue(publicRequest.Specialty);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

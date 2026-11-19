@@ -78,6 +78,139 @@ namespace Amazon.MarketplaceAgreement
     }
 
     /// <summary>
+    /// Constants used for properties of type AgreementApprovalPartyType.
+    /// </summary>
+    public class AgreementApprovalPartyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_ORGANIZATION_ADMIN for AgreementApprovalPartyType
+        /// </summary>
+        public static readonly AgreementApprovalPartyType AWS_ORGANIZATION_ADMIN = new AgreementApprovalPartyType("AWS_ORGANIZATION_ADMIN");
+
+        /// <summary>
+        /// Constant REQUESTER for AgreementApprovalPartyType
+        /// </summary>
+        public static readonly AgreementApprovalPartyType REQUESTER = new AgreementApprovalPartyType("REQUESTER");
+
+        /// <summary>
+        /// Constructs a custom AgreementApprovalPartyType for a value not among the defined constants.
+        /// </summary>
+        public AgreementApprovalPartyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementApprovalPartyType FindValue(string value)
+        {
+            return FindValue<AgreementApprovalPartyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementApprovalPartyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgreementApprovalStatus.
+    /// </summary>
+    public class AgreementApprovalStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for AgreementApprovalStatus
+        /// </summary>
+        public static readonly AgreementApprovalStatus APPROVED = new AgreementApprovalStatus("APPROVED");
+
+        /// <summary>
+        /// Constant CANCELLED for AgreementApprovalStatus
+        /// </summary>
+        public static readonly AgreementApprovalStatus CANCELLED = new AgreementApprovalStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant EXPIRED for AgreementApprovalStatus
+        /// </summary>
+        public static readonly AgreementApprovalStatus EXPIRED = new AgreementApprovalStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant PENDING_APPROVAL for AgreementApprovalStatus
+        /// </summary>
+        public static readonly AgreementApprovalStatus PENDING_APPROVAL = new AgreementApprovalStatus("PENDING_APPROVAL");
+
+        /// <summary>
+        /// Constant REJECTED for AgreementApprovalStatus
+        /// </summary>
+        public static readonly AgreementApprovalStatus REJECTED = new AgreementApprovalStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom AgreementApprovalStatus for a value not among the defined constants.
+        /// </summary>
+        public AgreementApprovalStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementApprovalStatus FindValue(string value)
+        {
+            return FindValue<AgreementApprovalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementApprovalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgreementApprovalType.
+    /// </summary>
+    public class AgreementApprovalType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BUYER_AGREEMENT_APPROVAL for AgreementApprovalType
+        /// </summary>
+        public static readonly AgreementApprovalType BUYER_AGREEMENT_APPROVAL = new AgreementApprovalType("BUYER_AGREEMENT_APPROVAL");
+
+        /// <summary>
+        /// Constructs a custom AgreementApprovalType for a value not among the defined constants.
+        /// </summary>
+        public AgreementApprovalType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementApprovalType FindValue(string value)
+        {
+            return FindValue<AgreementApprovalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementApprovalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AgreementCancellationRequestReasonCode.
     /// </summary>
     public class AgreementCancellationRequestReasonCode : ConstantClass
@@ -337,6 +470,67 @@ namespace Amazon.MarketplaceAgreement
     }
 
     /// <summary>
+    /// Constants used for properties of type AgreementRequestStatus.
+    /// </summary>
+    public class AgreementRequestStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPTED for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus ACCEPTED = new AgreementRequestStatus("ACCEPTED");
+
+        /// <summary>
+        /// Constant APPROVED for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus APPROVED = new AgreementRequestStatus("APPROVED");
+
+        /// <summary>
+        /// Constant CANCELLED for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus CANCELLED = new AgreementRequestStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant DRAFT for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus DRAFT = new AgreementRequestStatus("DRAFT");
+
+        /// <summary>
+        /// Constant PENDING_APPROVAL for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus PENDING_APPROVAL = new AgreementRequestStatus("PENDING_APPROVAL");
+
+        /// <summary>
+        /// Constant REJECTED for AgreementRequestStatus
+        /// </summary>
+        public static readonly AgreementRequestStatus REJECTED = new AgreementRequestStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom AgreementRequestStatus for a value not among the defined constants.
+        /// </summary>
+        public AgreementRequestStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementRequestStatus FindValue(string value)
+        {
+            return FindValue<AgreementRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AgreementStatus.
     /// </summary>
     public class AgreementStatus : ConstantClass
@@ -407,6 +601,108 @@ namespace Amazon.MarketplaceAgreement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AgreementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ApprovalRequirement.
+    /// </summary>
+    public class ApprovalRequirement : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_REQUIRED for ApprovalRequirement
+        /// </summary>
+        public static readonly ApprovalRequirement NOT_REQUIRED = new ApprovalRequirement("NOT_REQUIRED");
+
+        /// <summary>
+        /// Constant REQUIRED for ApprovalRequirement
+        /// </summary>
+        public static readonly ApprovalRequirement REQUIRED = new ApprovalRequirement("REQUIRED");
+
+        /// <summary>
+        /// Constructs a custom ApprovalRequirement for a value not among the defined constants.
+        /// </summary>
+        public ApprovalRequirement(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalRequirement FindValue(string value)
+        {
+            return FindValue<ApprovalRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ApproverOutcomeStatus.
+    /// </summary>
+    public class ApproverOutcomeStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus APPROVED = new ApproverOutcomeStatus("APPROVED");
+
+        /// <summary>
+        /// Constant EXPIRED for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus EXPIRED = new ApproverOutcomeStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant PENDING_APPROVAL for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus PENDING_APPROVAL = new ApproverOutcomeStatus("PENDING_APPROVAL");
+
+        /// <summary>
+        /// Constant QUEUED for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus QUEUED = new ApproverOutcomeStatus("QUEUED");
+
+        /// <summary>
+        /// Constant REJECTED for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus REJECTED = new ApproverOutcomeStatus("REJECTED");
+
+        /// <summary>
+        /// Constant SKIPPED for ApproverOutcomeStatus
+        /// </summary>
+        public static readonly ApproverOutcomeStatus SKIPPED = new ApproverOutcomeStatus("SKIPPED");
+
+        /// <summary>
+        /// Constructs a custom ApproverOutcomeStatus for a value not among the defined constants.
+        /// </summary>
+        public ApproverOutcomeStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApproverOutcomeStatus FindValue(string value)
+        {
+            return FindValue<ApproverOutcomeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApproverOutcomeStatus(string value)
         {
             return FindValue(value);
         }
@@ -570,6 +866,42 @@ namespace Amazon.MarketplaceAgreement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BillingAdjustmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactType.
+    /// </summary>
+    public class ContactType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPTOR for ContactType
+        /// </summary>
+        public static readonly ContactType ACCEPTOR = new ContactType("ACCEPTOR");
+
+        /// <summary>
+        /// Constructs a custom ContactType for a value not among the defined constants.
+        /// </summary>
+        public ContactType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactType FindValue(string value)
+        {
+            return FindValue<ContactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactType(string value)
         {
             return FindValue(value);
         }
@@ -796,6 +1128,47 @@ namespace Amazon.MarketplaceAgreement
     }
 
     /// <summary>
+    /// Constants used for properties of type OfferVisibilityScope.
+    /// </summary>
+    public class OfferVisibilityScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIVATE for OfferVisibilityScope
+        /// </summary>
+        public static readonly OfferVisibilityScope PRIVATE = new OfferVisibilityScope("PRIVATE");
+
+        /// <summary>
+        /// Constant PUBLIC for OfferVisibilityScope
+        /// </summary>
+        public static readonly OfferVisibilityScope PUBLIC = new OfferVisibilityScope("PUBLIC");
+
+        /// <summary>
+        /// Constructs a custom OfferVisibilityScope for a value not among the defined constants.
+        /// </summary>
+        public OfferVisibilityScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferVisibilityScope FindValue(string value)
+        {
+            return FindValue<OfferVisibilityScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferVisibilityScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PaymentRequestApprovalStrategy.
     /// </summary>
     public class PaymentRequestApprovalStrategy : ConstantClass
@@ -908,6 +1281,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ResourceType Agreement = new ResourceType("Agreement");
 
         /// <summary>
+        /// Constant AgreementApproval for ResourceType
+        /// </summary>
+        public static readonly ResourceType AgreementApproval = new ResourceType("AgreementApproval");
+
+        /// <summary>
         /// Constant AgreementCancellationRequest for ResourceType
         /// </summary>
         public static readonly ResourceType AgreementCancellationRequest = new ResourceType("AgreementCancellationRequest");
@@ -921,6 +1299,11 @@ namespace Amazon.MarketplaceAgreement
         /// Constant AgreementRequest for ResourceType
         /// </summary>
         public static readonly ResourceType AgreementRequest = new ResourceType("AgreementRequest");
+
+        /// <summary>
+        /// Constant AgreementRequestApprovalPlan for ResourceType
+        /// </summary>
+        public static readonly ResourceType AgreementRequestApprovalPlan = new ResourceType("AgreementRequestApprovalPlan");
 
         /// <summary>
         /// Constant BillingAdjustmentRequest for ResourceType
@@ -1061,6 +1444,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly Timing BILLING_PERIOD = new Timing("BILLING_PERIOD");
 
         /// <summary>
+        /// Constant NOT_APPLICABLE for Timing
+        /// </summary>
+        public static readonly Timing NOT_APPLICABLE = new Timing("NOT_APPLICABLE");
+
+        /// <summary>
         /// Constant ON_ACCEPTANCE for Timing
         /// </summary>
         public static readonly Timing ON_ACCEPTANCE = new Timing("ON_ACCEPTANCE");
@@ -1107,6 +1495,16 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason BILLING_ADJUSTMENTS_LIMIT_EXCEEDED = new ValidationExceptionReason("BILLING_ADJUSTMENTS_LIMIT_EXCEEDED");
 
         /// <summary>
+        /// Constant CLOSED_AGREEMENT_APPROVAL for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CLOSED_AGREEMENT_APPROVAL = new ValidationExceptionReason("CLOSED_AGREEMENT_APPROVAL");
+
+        /// <summary>
+        /// Constant CLOSED_AGREEMENT_REQUEST for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CLOSED_AGREEMENT_REQUEST = new ValidationExceptionReason("CLOSED_AGREEMENT_REQUEST");
+
+        /// <summary>
         /// Constant DUPLICATE_AGREEMENT_IN_ORGANIZATION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason DUPLICATE_AGREEMENT_IN_ORGANIZATION = new ValidationExceptionReason("DUPLICATE_AGREEMENT_IN_ORGANIZATION");
@@ -1115,6 +1513,11 @@ namespace Amazon.MarketplaceAgreement
         /// Constant DUPLICATE_CHARGES for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason DUPLICATE_CHARGES = new ValidationExceptionReason("DUPLICATE_CHARGES");
+
+        /// <summary>
+        /// Constant DUPLICATE_PLAN_REFERENCE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason DUPLICATE_PLAN_REFERENCE = new ValidationExceptionReason("DUPLICATE_PLAN_REFERENCE");
 
         /// <summary>
         /// Constant EXCEEDED_MAXIMUM_ADJUSTMENT_AMOUNT for ValidationExceptionReason
@@ -1132,14 +1535,29 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason INACTIVE_AGREEMENT = new ValidationExceptionReason("INACTIVE_AGREEMENT");
 
         /// <summary>
+        /// Constant INCOMPATIBLE_AGREEMENT_REQUEST for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INCOMPATIBLE_AGREEMENT_REQUEST = new ValidationExceptionReason("INCOMPATIBLE_AGREEMENT_REQUEST");
+
+        /// <summary>
         /// Constant INCOMPATIBLE_TERMS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INCOMPATIBLE_TERMS = new ValidationExceptionReason("INCOMPATIBLE_TERMS");
 
         /// <summary>
+        /// Constant INVALID_ACCEPTOR_CONTACT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_ACCEPTOR_CONTACT = new ValidationExceptionReason("INVALID_ACCEPTOR_CONTACT");
+
+        /// <summary>
         /// Constant INVALID_ADJUSTMENT_AMOUNT for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_ADJUSTMENT_AMOUNT = new ValidationExceptionReason("INVALID_ADJUSTMENT_AMOUNT");
+
+        /// <summary>
+        /// Constant INVALID_AGREEMENT_APPROVAL_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_AGREEMENT_APPROVAL_ID = new ValidationExceptionReason("INVALID_AGREEMENT_APPROVAL_ID");
 
         /// <summary>
         /// Constant INVALID_AGREEMENT_CANCELLATION_REQUEST_ID for ValidationExceptionReason
@@ -1165,6 +1583,16 @@ namespace Amazon.MarketplaceAgreement
         /// Constant INVALID_AGREEMENT_TYPE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_AGREEMENT_TYPE = new ValidationExceptionReason("INVALID_AGREEMENT_TYPE");
+
+        /// <summary>
+        /// Constant INVALID_APPROVAL_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_APPROVAL_TYPE = new ValidationExceptionReason("INVALID_APPROVAL_TYPE");
+
+        /// <summary>
+        /// Constant INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE = new ValidationExceptionReason("INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE");
 
         /// <summary>
         /// Constant INVALID_CATALOG for ValidationExceptionReason
@@ -1247,6 +1675,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason INVALID_NEXT_TOKEN = new ValidationExceptionReason("INVALID_NEXT_TOKEN");
 
         /// <summary>
+        /// Constant INVALID_NOTE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_NOTE = new ValidationExceptionReason("INVALID_NOTE");
+
+        /// <summary>
         /// Constant INVALID_PARTY_TYPE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_PARTY_TYPE = new ValidationExceptionReason("INVALID_PARTY_TYPE");
@@ -1260,6 +1693,11 @@ namespace Amazon.MarketplaceAgreement
         /// Constant INVALID_PAYMENT_REQUEST_STATUS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_PAYMENT_REQUEST_STATUS = new ValidationExceptionReason("INVALID_PAYMENT_REQUEST_STATUS");
+
+        /// <summary>
+        /// Constant INVALID_PLAN_INPUTS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_PLAN_INPUTS = new ValidationExceptionReason("INVALID_PLAN_INPUTS");
 
         /// <summary>
         /// Constant INVALID_PURCHASE_ORDERS for ValidationExceptionReason
@@ -1302,6 +1740,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason INVALID_REQUESTED_TERM_ID = new ValidationExceptionReason("INVALID_REQUESTED_TERM_ID");
 
         /// <summary>
+        /// Constant INVALID_RESOURCE_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_RESOURCE_ID = new ValidationExceptionReason("INVALID_RESOURCE_ID");
+
+        /// <summary>
         /// Constant INVALID_SORT_BY for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_SORT_BY = new ValidationExceptionReason("INVALID_SORT_BY");
@@ -1337,6 +1780,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason MISSING_ADJUSTMENT_AMOUNT = new ValidationExceptionReason("MISSING_ADJUSTMENT_AMOUNT");
 
         /// <summary>
+        /// Constant MISSING_AGREEMENT_APPROVAL_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_AGREEMENT_APPROVAL_ID = new ValidationExceptionReason("MISSING_AGREEMENT_APPROVAL_ID");
+
+        /// <summary>
         /// Constant MISSING_AGREEMENT_CANCELLATION_REQUEST_ID for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_AGREEMENT_CANCELLATION_REQUEST_ID = new ValidationExceptionReason("MISSING_AGREEMENT_CANCELLATION_REQUEST_ID");
@@ -1355,6 +1803,11 @@ namespace Amazon.MarketplaceAgreement
         /// Constant MISSING_AGREEMENT_REQUEST_ID for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_AGREEMENT_REQUEST_ID = new ValidationExceptionReason("MISSING_AGREEMENT_REQUEST_ID");
+
+        /// <summary>
+        /// Constant MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR = new ValidationExceptionReason("MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR");
 
         /// <summary>
         /// Constant MISSING_BILLING_ADJUSTMENTS for ValidationExceptionReason
@@ -1422,6 +1875,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason MISSING_NAME = new ValidationExceptionReason("MISSING_NAME");
 
         /// <summary>
+        /// Constant MISSING_NOTE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_NOTE = new ValidationExceptionReason("MISSING_NOTE");
+
+        /// <summary>
         /// Constant MISSING_PARTY_TYPE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_PARTY_TYPE = new ValidationExceptionReason("MISSING_PARTY_TYPE");
@@ -1430,6 +1888,11 @@ namespace Amazon.MarketplaceAgreement
         /// Constant MISSING_PAYMENT_REQUEST_ID for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_PAYMENT_REQUEST_ID = new ValidationExceptionReason("MISSING_PAYMENT_REQUEST_ID");
+
+        /// <summary>
+        /// Constant MISSING_PLAN_INPUTS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_PLAN_INPUTS = new ValidationExceptionReason("MISSING_PLAN_INPUTS");
 
         /// <summary>
         /// Constant MISSING_PURCHASE_ORDERS for ValidationExceptionReason
@@ -1467,6 +1930,11 @@ namespace Amazon.MarketplaceAgreement
         public static readonly ValidationExceptionReason MISSING_REQUESTED_TERM_ID = new ValidationExceptionReason("MISSING_REQUESTED_TERM_ID");
 
         /// <summary>
+        /// Constant MISSING_SORT_BY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_SORT_BY = new ValidationExceptionReason("MISSING_SORT_BY");
+
+        /// <summary>
         /// Constant MISSING_SOURCE_AGREEMENT_IDENTIFIER for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_SOURCE_AGREEMENT_IDENTIFIER = new ValidationExceptionReason("MISSING_SOURCE_AGREEMENT_IDENTIFIER");
@@ -1490,6 +1958,21 @@ namespace Amazon.MarketplaceAgreement
         /// Constant OTHER for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason OTHER = new ValidationExceptionReason("OTHER");
+
+        /// <summary>
+        /// Constant PENDING_APPROVAL_AGREEMENT_REQUEST for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason PENDING_APPROVAL_AGREEMENT_REQUEST = new ValidationExceptionReason("PENDING_APPROVAL_AGREEMENT_REQUEST");
+
+        /// <summary>
+        /// Constant QUEUED_AGREEMENT_APPROVAL for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason QUEUED_AGREEMENT_APPROVAL = new ValidationExceptionReason("QUEUED_AGREEMENT_APPROVAL");
+
+        /// <summary>
+        /// Constant REJECTED_BY_AGREEMENT_APPROVAL_POLICY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason REJECTED_BY_AGREEMENT_APPROVAL_POLICY = new ValidationExceptionReason("REJECTED_BY_AGREEMENT_APPROVAL_POLICY");
 
         /// <summary>
         /// Constant SUPERSEDED_AGREEMENT_PROPOSAL for ValidationExceptionReason

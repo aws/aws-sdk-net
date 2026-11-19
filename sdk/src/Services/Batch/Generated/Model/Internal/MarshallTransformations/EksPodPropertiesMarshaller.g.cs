@@ -116,6 +116,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetSecurityContext())
+            {
+                context.Writer.WritePropertyName("securityContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksPodSecurityContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.SecurityContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetServiceAccountName())
             {
                 context.Writer.WritePropertyName("serviceAccountName");

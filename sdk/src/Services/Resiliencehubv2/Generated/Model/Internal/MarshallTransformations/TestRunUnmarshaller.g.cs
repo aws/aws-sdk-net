@@ -67,6 +67,13 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("effectivePolicyValues", targetDepth, ref reader))
+                {
+                    var unmarshaller = TestRunEffectivePolicyValuesUnmarshaller.Instance;
+                    unmarshalledObject.EffectivePolicyValues = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("endedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

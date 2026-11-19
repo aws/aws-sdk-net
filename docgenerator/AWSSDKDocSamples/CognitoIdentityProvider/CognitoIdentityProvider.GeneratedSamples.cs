@@ -47,6 +47,39 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderAdminListUserSessions()
+        {
+            #region AdminListUserSessions-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.AdminListUserSessions(new AdminListUserSessionsRequest
+            {
+                UserPoolId = "us-east-1_EXAMPLE",
+                Username = "testuser"
+            });
+
+            List<SessionDescriptionType> sessions = response.Sessions;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderAdminRevokeUserSession()
+        {
+            #region AdminRevokeUserSession-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.AdminRevokeUserSession(new AdminRevokeUserSessionRequest
+            {
+                RevokeAssociatedSessions = "LINKED",
+                SessionId = "tknm5k9p2q7r4s8t1v6w3x0y5z2b",
+                UserPoolId = "us-east-1_EXAMPLE",
+                Username = "testuser"
+            });
+
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderCreateUserPool()
         {
             #region CreateUserPool-1
@@ -286,6 +319,34 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderGetDerivedToken()
+        {
+            #region GetDerivedToken-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetDerivedToken(new GetDerivedTokenRequest
+            {
+                Audiences = new List<string> {
+                    "solar-system-data"
+                },
+                ClientId = "1example23456789",
+                ClientSecret = "13ka4h7u28d9oo44tqpq9djqsfvhvu8rk4d2ighvpu0k8fj1c2r9",
+                Scopes = new List<string> {
+                    "solar-system-data/asteroids.read"
+                },
+                SubjectToken = "eyJra456defEXAMPLE",
+                SubjectTokenType = "ACCESS_TOKEN"
+            });
+
+            int? expiresIn = response.ExpiresIn;
+            string issuedToken = response.IssuedToken;
+            IssuedTokenTypeIdentifierType issuedTokenType = response.IssuedTokenType;
+            List<string> scopes = response.Scopes;
+            OAuthTokenTypeType tokenType = response.TokenType;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderGetProvisionedLimit()
         {
             #region GetProvisionedLimit-1
@@ -302,6 +363,41 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             });
 
             LimitType limit = response.Limit;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderGetUserPoolClientSessionConfiguration()
+        {
+            #region GetUserPoolClientSessionConfiguration-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetUserPoolClientSessionConfiguration(new GetUserPoolClientSessionConfigurationRequest
+            {
+                ClientId = "1example23456789",
+                UserPoolId = "us-east-1_EXAMPLE"
+            });
+
+            string clientId = response.ClientId;
+            ClientSSOSessionConfigType ssoSession = response.SSOSession;
+            string userPoolId = response.UserPoolId;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderGetUserPoolSessionConfiguration()
+        {
+            #region GetUserPoolSessionConfiguration-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetUserPoolSessionConfiguration(new GetUserPoolSessionConfigurationRequest
+            {
+                UserPoolId = "us-east-1_EXAMPLE"
+            });
+
+            UserPoolTokenSessionConfigType tokenSession = response.TokenSession;
+            string userPoolId = response.UserPoolId;
+            UserSessionTrackingType userSessionTracking = response.UserSessionTracking;
 
             #endregion
         }
@@ -371,6 +467,75 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
             string paginationToken = response.PaginationToken;
             List<UserType> users = response.Users;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderListUserSessions()
+        {
+            #region ListUserSessions-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.ListUserSessions(new ListUserSessionsRequest
+            {
+                AccessToken = "eyJra456defEXAMPLE"
+            });
+
+            List<SessionDescriptionType> sessions = response.Sessions;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderRevokeUserSession()
+        {
+            #region RevokeUserSession-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.RevokeUserSession(new RevokeUserSessionRequest
+            {
+                AccessToken = "eyJra456defEXAMPLE",
+                RevokeAssociatedSessions = "NONE",
+                SessionId = "tknm5k9p2q7r4s8t1v6w3x0y5z2b"
+            });
+
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderSetUserPoolClientSessionConfiguration()
+        {
+            #region SetUserPoolClientSessionConfiguration-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.SetUserPoolClientSessionConfiguration(new SetUserPoolClientSessionConfigurationRequest
+            {
+                ClientId = "1example23456789",
+                SSOSession = new ClientSSOSessionConfigType { MaxValidityMinutes = 43200 },
+                UserPoolId = "us-east-1_EXAMPLE"
+            });
+
+            string clientId = response.ClientId;
+            ClientSSOSessionConfigType ssoSession = response.SSOSession;
+            string userPoolId = response.UserPoolId;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderSetUserPoolSessionConfiguration()
+        {
+            #region SetUserPoolSessionConfiguration-1
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.SetUserPoolSessionConfiguration(new SetUserPoolSessionConfigurationRequest
+            {
+                TokenSession = new UserPoolTokenSessionConfigType { MaxPerUser = 20 },
+                UserPoolId = "us-east-1_EXAMPLE",
+                UserSessionTracking = "ENABLED"
+            });
+
+            UserPoolTokenSessionConfigType tokenSession = response.TokenSession;
+            string userPoolId = response.UserPoolId;
+            UserSessionTrackingType userSessionTracking = response.UserSessionTracking;
 
             #endregion
         }

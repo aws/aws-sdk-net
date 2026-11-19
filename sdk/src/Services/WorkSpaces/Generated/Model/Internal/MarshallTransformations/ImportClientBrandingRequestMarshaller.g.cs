@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,93 +55,99 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(ImportClientBrandingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.ImportClientBranding";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/WorkspacesService/operation/ImportClientBranding";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDeviceTypeAndroid())
+                {
+                    context.Writer.WriteTextString("DeviceTypeAndroid");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeAndroid, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDeviceTypeIos())
+                {
+                    context.Writer.WriteTextString("DeviceTypeIos");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = IosImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeIos, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDeviceTypeLinux())
+                {
+                    context.Writer.WriteTextString("DeviceTypeLinux");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeLinux, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDeviceTypeOsx())
+                {
+                    context.Writer.WriteTextString("DeviceTypeOsx");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeOsx, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDeviceTypeWeb())
+                {
+                    context.Writer.WriteTextString("DeviceTypeWeb");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeWeb, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDeviceTypeWindows())
+                {
+                    context.Writer.WriteTextString("DeviceTypeWindows");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceTypeWindows, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetResourceId())
+                {
+                    context.Writer.WriteTextString("ResourceId");
+                    context.Writer.WriteTextString(publicRequest.ResourceId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDeviceTypeAndroid())
-            {
-                context.Writer.WritePropertyName("DeviceTypeAndroid");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeAndroid, context);
-
-                context.Writer.WriteEndObject();
             }
-            if (publicRequest.IsSetDeviceTypeIos())
+            finally
             {
-                context.Writer.WritePropertyName("DeviceTypeIos");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IosImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeIos, context);
-
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDeviceTypeLinux())
-            {
-                context.Writer.WritePropertyName("DeviceTypeLinux");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeLinux, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDeviceTypeOsx())
-            {
-                context.Writer.WritePropertyName("DeviceTypeOsx");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeOsx, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDeviceTypeWeb())
-            {
-                context.Writer.WritePropertyName("DeviceTypeWeb");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeWeb, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDeviceTypeWindows())
-            {
-                context.Writer.WritePropertyName("DeviceTypeWindows");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultImportClientBrandingAttributesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceTypeWindows, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetResourceId())
-            {
-                context.Writer.WritePropertyName("ResourceId");
-                context.Writer.WriteStringValue(publicRequest.ResourceId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

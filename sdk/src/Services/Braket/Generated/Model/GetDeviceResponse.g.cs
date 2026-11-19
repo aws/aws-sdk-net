@@ -110,6 +110,20 @@ namespace Amazon.Braket.Model
         internal bool IsSetDeviceStatus() => this.DeviceStatus != null;
 
         /// <summary>
+        /// Gets and sets the property DeviceStatusReason. 
+        /// <para>
+        /// The reason for the current status of the device, including status reason codes and
+        /// timestamps.
+        /// </para>
+        /// </summary>
+        public DeviceStatusReason DeviceStatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeviceStatusReason property is set.
+        /// </summary>
+        internal bool IsSetDeviceStatusReason() => this.DeviceStatusReason != null;
+
+        /// <summary>
         /// Gets and sets the property DeviceType. 
         /// <para>
         /// The type of the device.

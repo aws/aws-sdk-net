@@ -57,6 +57,11 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-01-01";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetArchiveStatus())
+            {
+                request.Parameters.Add("archiveStatus", StringUtils.FromString(publicRequest.ArchiveStatus));
+            }
+
             if (publicRequest.IsSetMaxResults())
             {
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));

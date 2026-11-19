@@ -43,10 +43,11 @@ namespace Amazon.Kinesis.Model
     /// and write operations, such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>,
     /// on a stream in the <c>DELETING</c> state until the stream deletion is complete. </para>
     /// <para> When you delete a stream, any shards in that stream are also deleted, and any
-    /// tags are dissociated from the stream. </para> <para> You can use the <a>DescribeStreamSummary</a>
-    /// operation to check the state of the stream, which is returned in <c>StreamStatus</c>.
-    /// </para> <para> <a>DeleteStream</a> has a limit of five transactions per second per
-    /// account. </para>
+    /// tags are dissociated from the stream. </para> <para> Before you can delete a data
+    /// stream that has queues, you must delete every queue on the stream with <a>DeleteQueue</a>.
+    /// </para> <para> You can use the <a>DescribeStreamSummary</a> operation to check the
+    /// state of the stream, which is returned in <c>StreamStatus</c>. </para> <para> <a>DeleteStream</a>
+    /// has a limit of five transactions per second per account. </para>
     /// </summary>
     public partial class DeleteStreamRequest : AmazonKinesisRequest
     {
@@ -54,8 +55,19 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property EnforceConsumerDeletion. 
         /// <para>
         /// If this parameter is unset (<c>null</c>) or if you set it to <c>false</c>, and the
-        /// stream has registered consumers, the call to <c>DeleteStream</c> fails with a <c>ResourceInUseException</c>.
-        /// 
+        /// stream has registered enhanced fan-out consumers, the call to <c>DeleteStream</c>
+        /// fails with a <c>ResourceInUseException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set it to <c>true</c>, <c>DeleteStream</c> deletes the stream and every consumer
+        /// registered with it.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter does not apply to queues. A stream that has queues cannot be deleted
+        /// until every queue on it is deleted with <a>DeleteQueue</a>, whatever this parameter
+        /// is set to.
         /// </para>
         /// </summary>
         public bool? EnforceConsumerDeletion { get; set; }

@@ -35,6 +35,7 @@ namespace Amazon.S3.Model
     public partial class AbortMultipartUploadResponse : AmazonWebServiceResponse
     {
         private RequestCharged _requestCharged;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property RequestCharged.
@@ -49,6 +50,34 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return this._requestCharged != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// Version ID of the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns the Version ID of the object for the aborted multipart upload, if bucket versioning
+        /// is enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

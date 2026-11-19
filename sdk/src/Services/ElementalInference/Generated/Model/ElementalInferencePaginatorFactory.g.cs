@@ -49,6 +49,30 @@ namespace Amazon.ElementalInference.Model
         }
 
         /// <summary>
+        /// Paginator for ListFunctions operation
+        /// </summary>
+        public IListFunctionsPaginator ListFunctions(ListFunctionsRequest request)
+        {
+            return new ListFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQuestionSetVersions operation
+        /// </summary>
+        public IListQuestionSetVersionsPaginator ListQuestionSetVersions(ListQuestionSetVersionsRequest request)
+        {
+            return new ListQuestionSetVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQuestionSets operation
+        /// </summary>
+        public IListQuestionSetsPaginator ListQuestionSets(ListQuestionSetsRequest request)
+        {
+            return new ListQuestionSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListScheduleActions operation
         /// </summary>
         public IListScheduleActionsPaginator ListScheduleActions(ListScheduleActionsRequest request)

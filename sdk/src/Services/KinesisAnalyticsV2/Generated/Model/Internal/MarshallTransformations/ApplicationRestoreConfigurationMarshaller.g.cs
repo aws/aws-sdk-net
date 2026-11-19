@@ -51,6 +51,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ApplicationRestoreType);
             }
 
+            if (requestObject.IsSetSnapshotArn())
+            {
+                context.Writer.WritePropertyName("SnapshotArn");
+                context.Writer.WriteStringValue(requestObject.SnapshotArn);
+            }
+
             if (requestObject.IsSetSnapshotName())
             {
                 context.Writer.WritePropertyName("SnapshotName");

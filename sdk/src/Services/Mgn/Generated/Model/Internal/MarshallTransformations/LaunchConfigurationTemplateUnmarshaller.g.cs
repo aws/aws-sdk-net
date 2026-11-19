@@ -137,6 +137,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("mapAutoTaggingKey", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MapAutoTaggingKey = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("mapAutoTaggingMpeID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

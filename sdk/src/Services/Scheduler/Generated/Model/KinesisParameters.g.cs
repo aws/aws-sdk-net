@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Scheduler.Model
 {
     /// <summary>
-    /// The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html">
+    /// The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html">
     /// <c>PutRecord</c> </a> API operation.
     /// </summary>
     public partial class KinesisParameters

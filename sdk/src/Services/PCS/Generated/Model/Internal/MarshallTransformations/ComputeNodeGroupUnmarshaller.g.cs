@@ -116,6 +116,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("launchTemplateMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LaunchTemplateMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("modifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -151,6 +158,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("securityGroupIds", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("slurmConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeNodeGroupSlurmConfigurationUnmarshaller.Instance;
@@ -162,6 +176,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SpotOptionsUnmarshaller.Instance;
                     unmarshalledObject.SpotOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("sshKeyName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SshKeyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

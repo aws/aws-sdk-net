@@ -309,7 +309,10 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Workflows. 
         /// <para>
         /// The array of workflow configuration objects for builds that this pipeline starts.
-        /// You must also specify <c>executionRole</c> when you provide workflows.
+        /// If you specify workflows, they replace the default workflows that Image Builder otherwise
+        /// runs for the pipeline's builds. For example, if your list doesn't include a test workflow,
+        /// the pipeline's builds don't run one. You must also specify <c>executionRole</c> when
+        /// you provide workflows.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

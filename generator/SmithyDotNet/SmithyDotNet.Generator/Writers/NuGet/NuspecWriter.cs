@@ -118,8 +118,8 @@ public sealed class NuspecWriter(GenerationContext context)
 
             WriteLibFiles(writer, TargetPlatforms.FrameworkPlatforms, first: true);
 
-            // The netstandard-family targets are emitted only when the service supports netstandard
-            // (currently false only for MobileAnalytics). Defaults to true when no metadata is present.
+            // The netstandard-family targets are emitted only when the service supports netstandard.
+            // Defaults to true when no metadata is present.
             if (context.Metadata?.NetStandardSupport ?? true)
             {
                 WriteLibFiles(writer, TargetPlatforms.NetPlatforms, first: false);

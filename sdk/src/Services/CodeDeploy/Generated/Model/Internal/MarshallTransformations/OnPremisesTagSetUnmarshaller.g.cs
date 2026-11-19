@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,30 +38,42 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OnPremisesTagSet Object
     /// </summary>
-    public partial class OnPremisesTagSetUnmarshaller : IJsonUnmarshaller<OnPremisesTagSet, JsonUnmarshallerContext>
+    public partial class OnPremisesTagSetUnmarshaller : ICborUnmarshaller<OnPremisesTagSet, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OnPremisesTagSet Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new OnPremisesTagSet();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("onPremisesTagSetList", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<List<TagFilter>, JsonListUnmarshaller<TagFilter, TagFilterUnmarshaller>>(new JsonListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance));
-                    unmarshalledObject.OnPremisesTagSetList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "onPremisesTagSetList":
+                        context.AddPathSegment("OnPremisesTagSetList");
+                        unmarshalledObject.OnPremisesTagSetList = new CborListUnmarshaller<List<TagFilter>, CborListUnmarshaller<TagFilter, TagFilterUnmarshaller>>(new CborListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance)).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

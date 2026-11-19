@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "endpoint-resolves-auth": true
 }

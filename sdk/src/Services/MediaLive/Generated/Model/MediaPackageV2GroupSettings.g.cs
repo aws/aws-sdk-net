@@ -69,6 +69,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptionLanguageMappings() => this.CaptionLanguageMappings != null && (this.CaptionLanguageMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property CaptionLanguageSetting. Applies only to 608 Embedded output
+        /// captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into
+        /// the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty,
+        /// the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel.
+        /// If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line.
+        /// none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag,
+        /// which signals to players that the stream has no closed captions, so they stop offering
+        /// a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+        /// </summary>
+        public MediaPackageV2CaptionLanguageSetting CaptionLanguageSetting { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CaptionLanguageSetting property is set.
+        /// </summary>
+        internal bool IsSetCaptionLanguageSetting() => this.CaptionLanguageSetting != null;
+
+        /// <summary>
         /// Gets and sets the property Id3Behavior. Set to ENABLED to enable ID3 metadata insertion.
         /// To include metadata, you configure other parameters in the output group, or you add
         /// an ID3 action to the channel schedule.

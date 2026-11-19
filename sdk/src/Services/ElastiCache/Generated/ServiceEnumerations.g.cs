@@ -636,6 +636,98 @@ namespace Amazon.ElastiCache
     }
 
     /// <summary>
+    /// Constants used for properties of type IntegrationStatus.
+    /// </summary>
+    public class IntegrationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Disabled = new IntegrationStatus("disabled");
+
+        /// <summary>
+        /// Constant Disabling for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Disabling = new IntegrationStatus("disabling");
+
+        /// <summary>
+        /// Constant Enabled for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Enabled = new IntegrationStatus("enabled");
+
+        /// <summary>
+        /// Constant Enabling for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Enabling = new IntegrationStatus("enabling");
+
+        /// <summary>
+        /// Constant Failed for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus Failed = new IntegrationStatus("failed");
+
+        /// <summary>
+        /// Constructs a custom IntegrationStatus for a value not among the defined constants.
+        /// </summary>
+        public IntegrationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatus FindValue(string value)
+        {
+            return FindValue<IntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Dynamodb for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType Dynamodb = new IntegrationType("dynamodb");
+
+        /// <summary>
+        /// Constructs a custom IntegrationType for a value not among the defined constants.
+        /// </summary>
+        public IntegrationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IpDiscovery.
     /// </summary>
     public class IpDiscovery : ConstantClass

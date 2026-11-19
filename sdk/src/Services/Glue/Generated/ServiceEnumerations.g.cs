@@ -215,6 +215,42 @@ namespace Amazon.Glue
     }
 
     /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO_UPGRADE for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType AUTO_UPGRADE = new AnalysisType("AUTO_UPGRADE");
+
+        /// <summary>
+        /// Constructs a custom AnalysisType for a value not among the defined constants.
+        /// </summary>
+        public AnalysisType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -260,6 +296,67 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AutoUpgradeStatus.
+    /// </summary>
+    public class AutoUpgradeStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant OBSERVING for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus OBSERVING = new AutoUpgradeStatus("OBSERVING");
+
+        /// <summary>
+        /// Constant STOPPED for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus STOPPED = new AutoUpgradeStatus("STOPPED");
+
+        /// <summary>
+        /// Constant UPGRADE_FAILED for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus UPGRADE_FAILED = new AutoUpgradeStatus("UPGRADE_FAILED");
+
+        /// <summary>
+        /// Constant UPGRADE_SUCCEEDED for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus UPGRADE_SUCCEEDED = new AutoUpgradeStatus("UPGRADE_SUCCEEDED");
+
+        /// <summary>
+        /// Constant UPGRADING for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus UPGRADING = new AutoUpgradeStatus("UPGRADING");
+
+        /// <summary>
+        /// Constant WAITING_FOR_CONSENT for AutoUpgradeStatus
+        /// </summary>
+        public static readonly AutoUpgradeStatus WAITING_FOR_CONSENT = new AutoUpgradeStatus("WAITING_FOR_CONSENT");
+
+        /// <summary>
+        /// Constructs a custom AutoUpgradeStatus for a value not among the defined constants.
+        /// </summary>
+        public AutoUpgradeStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoUpgradeStatus FindValue(string value)
+        {
+            return FindValue<AutoUpgradeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoUpgradeStatus(string value)
         {
             return FindValue(value);
         }
@@ -2458,6 +2555,180 @@ namespace Amazon.Glue
     }
 
     /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigLevel.
+    /// </summary>
+    public class DataQualityEvaluationConfigLevel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CATALOG for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel CATALOG = new DataQualityEvaluationConfigLevel("CATALOG");
+
+        /// <summary>
+        /// Constant DATABASE for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel DATABASE = new DataQualityEvaluationConfigLevel("DATABASE");
+
+        /// <summary>
+        /// Constant TABLE for DataQualityEvaluationConfigLevel
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigLevel TABLE = new DataQualityEvaluationConfigLevel("TABLE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigLevel for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigLevel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigLevel FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigManagedRuleset.
+    /// </summary>
+    public class DataQualityEvaluationConfigManagedRuleset : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADVANCED for DataQualityEvaluationConfigManagedRuleset
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigManagedRuleset ADVANCED = new DataQualityEvaluationConfigManagedRuleset("ADVANCED");
+
+        /// <summary>
+        /// Constant SIMPLE for DataQualityEvaluationConfigManagedRuleset
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigManagedRuleset SIMPLE = new DataQualityEvaluationConfigManagedRuleset("SIMPLE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigManagedRuleset for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigManagedRuleset(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigManagedRuleset FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigManagedRuleset>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigManagedRuleset(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationConfigTrigger.
+    /// </summary>
+    public class DataQualityEvaluationConfigTrigger : ConstantClass
+    {
+        /// <summary>
+        /// Constant METADATA_CHANGE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger METADATA_CHANGE = new DataQualityEvaluationConfigTrigger("METADATA_CHANGE");
+
+        /// <summary>
+        /// Constant ONCE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger ONCE = new DataQualityEvaluationConfigTrigger("ONCE");
+
+        /// <summary>
+        /// Constant SCHEDULE for DataQualityEvaluationConfigTrigger
+        /// </summary>
+        public static readonly DataQualityEvaluationConfigTrigger SCHEDULE = new DataQualityEvaluationConfigTrigger("SCHEDULE");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationConfigTrigger for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationConfigTrigger(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationConfigTrigger FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationConfigTrigger>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationConfigTrigger(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataQualityEvaluationRunMode.
+    /// </summary>
+    public class DataQualityEvaluationRunMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVALUATION_CONFIG for DataQualityEvaluationRunMode
+        /// </summary>
+        public static readonly DataQualityEvaluationRunMode EVALUATION_CONFIG = new DataQualityEvaluationRunMode("EVALUATION_CONFIG");
+
+        /// <summary>
+        /// Constant ON_DEMAND for DataQualityEvaluationRunMode
+        /// </summary>
+        public static readonly DataQualityEvaluationRunMode ON_DEMAND = new DataQualityEvaluationRunMode("ON_DEMAND");
+
+        /// <summary>
+        /// Constructs a custom DataQualityEvaluationRunMode for a value not among the defined constants.
+        /// </summary>
+        public DataQualityEvaluationRunMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityEvaluationRunMode FindValue(string value)
+        {
+            return FindValue<DataQualityEvaluationRunMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityEvaluationRunMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DataQualityModelStatus.
     /// </summary>
     public class DataQualityModelStatus : ConstantClass
@@ -3731,6 +4002,47 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GlueResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GovernanceMode.
+    /// </summary>
+    public class GovernanceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IAM_ONLY for GovernanceMode
+        /// </summary>
+        public static readonly GovernanceMode IAM_ONLY = new GovernanceMode("IAM_ONLY");
+
+        /// <summary>
+        /// Constant LAKE_FORMATION for GovernanceMode
+        /// </summary>
+        public static readonly GovernanceMode LAKE_FORMATION = new GovernanceMode("LAKE_FORMATION");
+
+        /// <summary>
+        /// Constructs a custom GovernanceMode for a value not among the defined constants.
+        /// </summary>
+        public GovernanceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernanceMode FindValue(string value)
+        {
+            return FindValue<GovernanceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernanceMode(string value)
         {
             return FindValue(value);
         }
@@ -7256,6 +7568,72 @@ namespace Amazon.Glue
     }
 
     /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for Status
+        /// </summary>
+        public static readonly Status FAILED = new Status("FAILED");
+
+        /// <summary>
+        /// Constant OBSERVING for Status
+        /// </summary>
+        public static readonly Status OBSERVING = new Status("OBSERVING");
+
+        /// <summary>
+        /// Constant STOPPED for Status
+        /// </summary>
+        public static readonly Status STOPPED = new Status("STOPPED");
+
+        /// <summary>
+        /// Constant SUCCEEDED for Status
+        /// </summary>
+        public static readonly Status SUCCEEDED = new Status("SUCCEEDED");
+
+        /// <summary>
+        /// Constant TIMEOUT for Status
+        /// </summary>
+        public static readonly Status TIMEOUT = new Status("TIMEOUT");
+
+        /// <summary>
+        /// Constant UPGRADING for Status
+        /// </summary>
+        public static readonly Status UPGRADING = new Status("UPGRADING");
+
+        /// <summary>
+        /// Constant WAITING_FOR_CONSENT for Status
+        /// </summary>
+        public static readonly Status WAITING_FOR_CONSENT = new Status("WAITING_FOR_CONSENT");
+
+        /// <summary>
+        /// Constructs a custom Status for a value not among the defined constants.
+        /// </summary>
+        public Status(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SubObjectSourceType.
     /// </summary>
     public class SubObjectSourceType : ConstantClass
@@ -8178,6 +8556,47 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UpdateCatalogBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpgradeConsent.
+    /// </summary>
+    public class UpgradeConsent : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVE for UpgradeConsent
+        /// </summary>
+        public static readonly UpgradeConsent APPROVE = new UpgradeConsent("APPROVE");
+
+        /// <summary>
+        /// Constant DECLINE for UpgradeConsent
+        /// </summary>
+        public static readonly UpgradeConsent DECLINE = new UpgradeConsent("DECLINE");
+
+        /// <summary>
+        /// Constructs a custom UpgradeConsent for a value not among the defined constants.
+        /// </summary>
+        public UpgradeConsent(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpgradeConsent FindValue(string value)
+        {
+            return FindValue<UpgradeConsent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpgradeConsent(string value)
         {
             return FindValue(value);
         }

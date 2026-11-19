@@ -46,7 +46,7 @@ namespace Amazon.WellArchitected.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 100)]
+        [AWSProperty(Required = true, Min = 0, Max = 1000)]
         public List<AggregationConfiguration> AggregationConfiguration { get; set; } = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
 
         /// <summary>
@@ -255,7 +255,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Pillars. 
         /// <para>
-        /// The Well-Architected Tool Framework pillars associated with the updated profile.
+        /// The Amazon Web Services Well-Architected Framework pillars associated with the updated
+        /// profile.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -271,24 +272,5 @@ namespace Amazon.WellArchitected.Model
         /// Checks to see if the Pillars property is set.
         /// </summary>
         internal bool IsSetPillars() => this.Pillars != null && (this.Pillars.Count > 0 || !AWSConfigs.InitializeCollections);
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags associated with the updated profile.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data
-        /// for this property is returned from the service the property will also be null. This
-        /// was changed to improve performance and allow the SDK and caller to distinguish between
-        /// a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-
-        /// <summary>
-        /// Checks to see if the Tags property is set.
-        /// </summary>
-        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

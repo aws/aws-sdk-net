@@ -2,6 +2,8 @@ using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
+using SmithyDotNet.Generator.Writers.Service;
+using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.Serialization;
@@ -14,9 +16,39 @@ public class Ec2QueryCodegenTests
 
     private static readonly GenerationContext Context = TestModels.Context("Codegen/ec2-model.json");
 
-    private static string RequestMarshaller(string operationName) =>
-        new QueryRequestMarshallerWriter(Context, ModelFileName)
-            .Write(Context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+    // The EC2-only hooks, each set up the way ec2.customizations.json uses it.
+    private static readonly GenerationContext HooksContext = CreateHooksContext();
+
+    private static GenerationContext CreateHooksContext()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Value", ListMemberSuffixExclusions = ["PutThing"] };
+        customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
+
+        var spec = TestCustomizations.RenameMember("Groups", "AllGroups");
+        TestCustomizations.Inject("Groups", new PropertyInjector { Shape = "NameList", LocationName = "group", Documentation = "The group names." }, spec);
+        customizations.ShapeModifiers["Spec"] = spec;
+
+        // Applies only while DoThing's SpotSpec member is marshalled as a Spec.
+        var spotSpec = TestCustomizations.Modify("Groups", new PropertyModifier { EmitPropertyName = "AllGroups", CustomMarshall = true });
+        TestCustomizations.Modify("Kind", new PropertyModifier { LocationName = "type" }, spotSpec);
+        TestCustomizations.Inject("Groups", new PropertyInjector { Shape = "NameList", CustomMarshall = true }, spotSpec);
+        customizations.ShapeModifiers["SpotSpec"] = spotSpec;
+
+        var values = new Dictionary<string, MarshallNameOverride>();
+        values["Values"] = new MarshallNameOverride { MarshallName = "value" };
+        var overrides = new Dictionary<string, Dictionary<string, MarshallNameOverride>>();
+        overrides["PutThingRequest"] = values;
+        customizations.OperationModifiers["PutThing"] = new OperationModifier { MarshallNameOverrides = [overrides] };
+
+        return TestModels.Context(TestModels.Load("Codegen/ec2-model.json"), customizations);
+    }
+
+    private static string RequestMarshaller(string operationName) => RequestMarshaller(Context, operationName);
+
+    private static string RequestMarshaller(GenerationContext context, string operationName) =>
+        new QueryRequestMarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
 
     private static string ResponseUnmarshaller(GenerationContext context, string operationName) =>
         new QueryResponseUnmarshallerWriter(context, ModelFileName)
@@ -107,5 +139,77 @@ public class Ec2QueryCodegenTests
 
         Assert.Contains("""if (context.TestExpression(".", targetDepth))""", source);
         Assert.Contains("unmarshalledObject.Attachment = AttachmentUnmarshaller.Instance.Unmarshall(context);", source);
+    }
+
+    // The wrapper itself is not emitted; a member or list of it is typed as its value.
+    [Fact]
+    public void RequestClass_UnwrappedValuesAreTheValueType()
+    {
+        var source = new OperationWriter(HooksContext, ModelFileName)
+            .WriteRequest(HooksContext.Operations.Single(o => o.Name == "DoThing"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public string Wrapped { get; set; }", source);
+        Assert.Contains("public List<string> Values { get; set; }", source);
+        Assert.DoesNotContain(ShapeId.Parse("com.example#AttributeValue"), HooksContext.Structures.Keys);
+    }
+
+    [Fact]
+    public void Request_UnwrappedValueKeepsItsWrapperElement()
+    {
+        var source = RequestMarshaller(HooksContext, "DoThing");
+
+        Assert.Contains("""request.Parameters.Add("Wrapped.Value", StringUtils.FromString(publicRequest.Wrapped));""", source);
+        Assert.Contains("""request.Parameters.Add("Values" + "." + index0 + ".Value", StringUtils.FromString(item0));""", source);
+    }
+
+    // PutThing both renames its Values (upper-cased, as C2J does) and drops the item suffix.
+    [Fact]
+    public void Request_OperationOverridesNameAndDropsListSuffix()
+    {
+        Assert.Contains("""request.Parameters.Add("Value" + "." + index0, StringUtils.FromString(item0));""", RequestMarshaller(HooksContext, "PutThing"));
+    }
+
+    [Fact]
+    public void Request_SubstitutedStructureUsesTheOldNamesModifiers()
+    {
+        var source = RequestMarshaller(HooksContext, "DoThing");
+
+        Assert.Contains("""request.Parameters.Add("Spec" + ".Type", StringUtils.FromString(publicRequest.Spec.Kind));""", source);
+        Assert.DoesNotContain("AllGroups", source);
+        Assert.DoesNotContain("publicRequest.Spec.Groups", source);
+    }
+
+    [Fact]
+    public void Response_UnwrappedValueIsReadInsideItsWrapperElement()
+    {
+        var source = ResponseUnmarshaller(HooksContext, "DoThing");
+
+        Assert.Contains("""if (context.TestExpression("wrapped/value", targetDepth))""", source);
+        Assert.Contains("""if (context.TestExpression("values/item/value", targetDepth))""", source);
+    }
+
+    // The injected Groups takes the name, so the modeled one moves to AllGroups and keeps its groups element.
+    [Fact]
+    public void StructureUnmarshaller_ReadsInjectedAndRenamedMembers()
+    {
+        var source = new XmlStructureUnmarshallerWriter(HooksContext, ModelFileName)
+            .Write(HooksContext.Structures[ShapeId.Parse("com.example#Spec")], TestContext.Current.CancellationToken);
+
+        Assert.Contains("""if (context.TestExpression("group/GroupName", targetDepth))""", source);
+        Assert.Contains("""if (context.TestExpression("groups/item", targetDepth))""", source);
+        Assert.Contains("unmarshalledObject.AllGroups.Add(", source);
+        // SpotSpec's locationName renames Kind in requests only.
+        Assert.Contains("""if (context.TestExpression("kind", targetDepth))""", source);
+    }
+
+    [Fact]
+    public void StructureClass_HasInjectedAndRenamedMembers()
+    {
+        var source = new StructureWriter(HooksContext, ModelFileName)
+            .Write(HooksContext.Structures[ShapeId.Parse("com.example#Spec")], TestContext.Current.CancellationToken);
+
+        Assert.Contains("Gets and sets the property Groups. The group names.", source);
+        Assert.Contains("public List<string> Groups { get; set; }", source);
+        Assert.Contains("public List<string> AllGroups { get; set; }", source);
     }
 }

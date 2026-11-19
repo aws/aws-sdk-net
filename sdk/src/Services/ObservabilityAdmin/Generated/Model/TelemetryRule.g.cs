@@ -171,7 +171,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property TelemetryType. 
         /// <para>
-        ///  The type of telemetry to collect (Logs, Metrics, or Traces). 
+        ///  The type of telemetry to collect (Logs, Metrics, Traces, or Insights). 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

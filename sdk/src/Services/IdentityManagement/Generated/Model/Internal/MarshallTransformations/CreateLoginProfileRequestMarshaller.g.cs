@@ -53,6 +53,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             request.Parameters.Add("Action", "CreateLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
 
+            if (publicRequest.IsSetMaxSigninSessionDuration())
+            {
+                request.Parameters.Add("MaxSigninSessionDuration", StringUtils.FromInt(publicRequest.MaxSigninSessionDuration.Value));
+            }
             if (publicRequest.IsSetPassword())
             {
                 request.Parameters.Add("Password", StringUtils.FromString(publicRequest.Password));

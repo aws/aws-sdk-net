@@ -156,7 +156,58 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property OutputS3KeyPrefix. 
         /// <para>
         /// The key prefix for the location in the S3 bucket to store quantum task results in.
+        /// For example, <c>results/</c>. Must not contain path traversal sequences such as <c>../</c>
+        /// or <c>./</c>. The following characters are not valid in the key prefix:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Braces (<c>{</c> or <c>}</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Brackets (<c>[</c> or <c>]</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Less than or greater than sign (<c>&lt;</c> or <c>&gt;</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Backslash (<c>\</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Vertical bar or pipe (<c>|</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Caret or circumflex (<c>^</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tilde (<c>~</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Grave accent or backtick (<c>`</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Percent character (<c>%</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pound sign (<c>#</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Quotation mark (<c>"</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Non-printable ASCII characters (128–255 decimal characters)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
         public string OutputS3KeyPrefix { get; set; }

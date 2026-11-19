@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// DnsRecord Marshaller
     /// </summary>
-    public partial class DnsRecordMarshaller : IRequestMarshaller<DnsRecord, JsonMarshallerContext>
+    public partial class DnsRecordMarshaller : IRequestMarshaller<DnsRecord, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DnsRecord requestObject, JsonMarshallerContext context)
+        public void Marshall(DnsRecord requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetTTL())
             {
-                context.Writer.WritePropertyName("TTL");
-                context.Writer.WriteNumberValue(requestObject.TTL.Value);
+                context.Writer.WriteTextString("TTL");
+                context.Writer.WriteInt64(requestObject.TTL.Value);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

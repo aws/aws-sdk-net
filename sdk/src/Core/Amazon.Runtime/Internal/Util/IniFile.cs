@@ -53,6 +53,10 @@ namespace Amazon.Runtime.Internal.Util
         private const string semiColonComment = ";";
         private const string hashComment = "#";
 
+        // A property name is written as "name=value" and read back by splitting on the first '=' and trimming.
+        // To read back unchanged it must not be empty, contain '=', start with '[', '#' or ';', or start or end with whitespace.
+        internal static readonly Regex propertyNameRegex = new Regex(@"^[^\s=\[#;]([^=]*[^=\s])?\z", RegexOptions.Compiled);
+
         private OptimisticLockedTextFile textFile;
 
         private Logger logger;
@@ -117,6 +121,8 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="force">if true and destination section already exists overwrite it</param>
         public void RenameSection(string oldSectionName, string newSectionName, bool force)
         {
+            ThrowIfLineBreak(newSectionName, nameof(newSectionName));
+
             int sectionLineNumber = 0;
             if (TrySeekSection(oldSectionName, ref sectionLineNumber))
             {
@@ -165,6 +171,16 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="force">if true and destination section already exists overwrite it</param>
         public void CopySection(string fromSectionName, string toSectionName, Dictionary<string, string> replaceProperties, bool force)
         {
+            ThrowIfLineBreak(toSectionName, nameof(toSectionName));
+            if (replaceProperties != null)
+            {
+                foreach (var pair in replaceProperties)
+                {
+                    ThrowIfLineBreak(pair.Key, nameof(replaceProperties));
+                    ThrowIfLineBreak(pair.Value, nameof(replaceProperties));
+                }
+            }
+
             int currentLineNumber = 0;
             if (TrySeekSection(fromSectionName, ref currentLineNumber))
             {
@@ -236,6 +252,18 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="properties">properties to add/update/delete</param>
         public virtual void EditSection(string sectionName, SortedDictionary<string, string> properties)
         {
+            foreach (var pair in properties)
+            {
+                ThrowIfLineBreak(pair.Key, nameof(properties));
+                ThrowIfLineBreak(pair.Value, nameof(properties));
+
+                // A null value deletes the property, so its name is never written.
+                if (pair.Value != null && !propertyNameRegex.IsMatch(pair.Key))
+                {
+                    throw new ArgumentException("Property name is not valid in an INI file.", nameof(properties));
+                }
+            }
+
             EnsureSectionExists(sectionName);
 
             // build dictionary from list
@@ -296,6 +324,8 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="sectionName">section to ensure exists</param>
         public void EnsureSectionExists(string sectionName)
         {
+            ThrowIfLineBreak(sectionName, nameof(sectionName));
+
             var lineNumber = 0;
             if (!TrySeekSection(sectionName, ref lineNumber))
             {
@@ -529,6 +559,14 @@ namespace Amazon.Runtime.Internal.Util
             for (int i = 0; i < Lines.Count; i++)
             {
                 var line = Lines[i];
+
+                // Each line keeps its own ending. Any other CR or LF would be written as a new line.
+                var content = line.TrimEnd('\r', '\n');
+                if (content.IndexOf('\r') >= 0 || content.IndexOf('\n') >= 0)
+                {
+                    throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture, "Line {0} in file {1} contains a line break.", i + 1, FilePath));
+                }
+
                 if (!IsProperty(line) && !IsSection(line) && !IsCommentOrBlank(line))
                 {
                     throw new InvalidDataException(GetErrorMessage(i));
@@ -717,6 +755,21 @@ namespace Amazon.Runtime.Internal.Util
             return false;
         }
 
+        // CR and LF, plus the characters other INI readers treat as line breaks.
+        private static readonly char[] lineBreakChars = { '\r', '\n', '\v', '\f', '\u0085', '\u2028', '\u2029' };
+
+        /// <summary>
+        /// A line break in a section name, property name or value would be written as the start of a new line,
+        /// which another process reads as a separate section or property.
+        /// </summary>
+        internal static void ThrowIfLineBreak(string value, string paramName)
+        {
+            if (value != null && value.IndexOfAny(lineBreakChars) >= 0)
+            {
+                throw new ArgumentException("Section names, property names and values must not contain line breaks.", paramName);
+            }
+        }
+
         private static string GetPropertyLine(string propertyName, string propertyValue)
         {
             return string.Concat(propertyName, keyValueSeparator, propertyValue);
@@ -730,6 +783,5 @@ namespace Amazon.Runtime.Internal.Util
         {
             return line.Length > 0 && char.IsWhiteSpace(line[0]);
         }
-
     }
 }

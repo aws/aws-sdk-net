@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// RegistryCredential Marshaller
     /// </summary>
-    public partial class RegistryCredentialMarshaller : IRequestMarshaller<RegistryCredential, JsonMarshallerContext>
+    public partial class RegistryCredentialMarshaller : IRequestMarshaller<RegistryCredential, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RegistryCredential requestObject, JsonMarshallerContext context)
+        public void Marshall(RegistryCredential requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCredential())
             {
-                context.Writer.WritePropertyName("credential");
-                context.Writer.WriteStringValue(requestObject.Credential);
+                context.Writer.WriteTextString("credential");
+                context.Writer.WriteTextString(requestObject.Credential);
             }
 
             if (requestObject.IsSetCredentialProvider())
             {
-                context.Writer.WritePropertyName("credentialProvider");
-                context.Writer.WriteStringValue(requestObject.CredentialProvider);
+                context.Writer.WriteTextString("credentialProvider");
+                context.Writer.WriteTextString(requestObject.CredentialProvider);
             }
         }
 

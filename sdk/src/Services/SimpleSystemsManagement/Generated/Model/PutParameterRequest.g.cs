@@ -66,8 +66,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type for a <c>String</c> parameter. Supported data types include plain text
-        /// and Amazon Machine Image (AMI) IDs.
+        /// The data type of the parameter value. Parameter Store validates the value against
+        /// the data type when you create or update the parameter. The default is <c>text</c>,
+        /// which performs no validation.
         /// </para>
         ///  
         /// <para>
@@ -85,7 +86,73 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <c>aws:ssm:integration</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws:region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws:account:id</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>boolean</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>integer</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>float</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>binary</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>hostname</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>email</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv4-address</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6-address</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>url</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>json</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>jsonc</c> 
+        /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// For more information about the supported data types, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-data-types.html">Working
+        /// with parameter data types in Parameter Store</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Regardless of a parameter's data type, the Parameter Store API operations that retrieve
+        /// parameters, such as <c>GetParameter</c>, <c>GetParameters</c>, and <c>GetParametersByPath</c>,
+        /// return the parameter value as a string. For example, if a parameter has the data type
+        /// <c>integer</c> and the value <c>443</c>, <c>GetParameter</c> returns the value as
+        /// the string <c>"443"</c>. Convert the value to the type your application needs after
+        /// you retrieve it.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you create a <c>String</c> parameter and specify <c>aws:ec2:image</c>, Amazon
         /// Web Services Systems Manager validates the parameter value is in the required format,
@@ -429,6 +496,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// The parameter uses a parameter policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The parameter uses the <c>url</c>, <c>json</c>, or <c>jsonc</c> data type.
         /// </para>
         ///  </li> <li> 
         /// <para>

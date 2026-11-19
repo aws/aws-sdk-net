@@ -69,6 +69,16 @@ namespace Amazon.Signin.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAssertion())
+            {
+                context.Writer.WritePropertyName("assertion");
+                context.Writer.WriteStringValue(publicRequest.Assertion);
+            }
+            if (publicRequest.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("client_id");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
+            }
             if (publicRequest.IsSetGrantType())
             {
                 context.Writer.WritePropertyName("grant_type");

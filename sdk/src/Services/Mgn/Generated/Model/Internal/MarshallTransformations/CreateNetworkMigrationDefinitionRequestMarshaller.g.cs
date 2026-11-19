@@ -93,6 +93,11 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetDefinitionType())
+            {
+                context.Writer.WritePropertyName("definitionType");
+                context.Writer.WriteStringValue(publicRequest.DefinitionType);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

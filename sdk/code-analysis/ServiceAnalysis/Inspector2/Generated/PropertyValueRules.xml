@@ -785,15 +785,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AmiAggregationResponse.CloudAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AmiAggregationResponse.CloudOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AmiAggregationResponse.CloudPartition</property>
@@ -805,7 +805,7 @@
     <property>Amazon.Inspector2.Model.AmiAggregationResponse.CloudRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.AmiTagFilter.Key</property>
@@ -1199,15 +1199,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ContainerImageAggregationResponse.CloudAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ContainerImageAggregationResponse.CloudOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ContainerImageAggregationResponse.CloudPartition</property>
@@ -1219,7 +1219,7 @@
     <property>Amazon.Inspector2.Model.ContainerImageAggregationResponse.CloudRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ContainerImageAggregationResponse.ResourceId</property>
@@ -1246,15 +1246,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CoveredResource.ProviderAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CoveredResource.ProviderOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CoveredResource.ProviderPartition</property>
@@ -1266,7 +1266,7 @@
     <property>Amazon.Inspector2.Model.CoveredResource.ProviderRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CoveredResource.ResourceId</property>
@@ -1484,6 +1484,12 @@
     <pattern>.*[0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GcpProviderDetailCreate.AwsConfigConnectorArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:([^:]+):config:([^:]+):([^:]+):connector/([^/]+)/([^/]+)/([^/:\s]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.Image.Architecture</property>
     <min>1</min>
   </property-value-rule>
@@ -1569,9 +1575,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.MachineImageDetails.OwnerAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.MachineImageDetails.Platform</property>
@@ -1717,15 +1723,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.RepositoryAggregationResponse.CloudAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.RepositoryAggregationResponse.CloudOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.RepositoryAggregationResponse.CloudPartition</property>
@@ -1737,7 +1743,7 @@
     <property>Amazon.Inspector2.Model.RepositoryAggregationResponse.CloudRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.RepositoryAggregationResponse.Repository</property>
@@ -1753,15 +1759,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Resource.ProviderAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Resource.ProviderOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Resource.Region</property>
@@ -1806,15 +1812,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ServerlessFunctionAggregationResponse.CloudAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ServerlessFunctionAggregationResponse.CloudOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ServerlessFunctionAggregationResponse.CloudPartition</property>
@@ -1826,7 +1832,7 @@
     <property>Amazon.Inspector2.Model.ServerlessFunctionAggregationResponse.CloudRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ServerlessFunctionAggregationResponse.ResourceId</property>
@@ -1996,15 +2002,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VmInstanceAggregationResponse.CloudAccountId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(\d{12}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[a-z][a-z0-9-]{4,28}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VmInstanceAggregationResponse.CloudOrgId</property>
-    <min>12</min>
+    <min>6</min>
     <max>36</max>
-    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})$</pattern>
+    <pattern>^(o-[a-z0-9]{10,32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9]{6,30})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VmInstanceAggregationResponse.CloudPartition</property>
@@ -2016,7 +2022,7 @@
     <property>Amazon.Inspector2.Model.VmInstanceAggregationResponse.CloudRegion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+)$</pattern>
+    <pattern>^([a-z]{2}(-[a-z]+)+-\d+|[a-z][a-z0-9]+|[a-z]+-[a-z]+[0-9]+(-[a-z])?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VmInstanceAggregationResponse.ResourceId</property>

@@ -63,6 +63,19 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime() => this.CreationTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CrossRegionTrafficConfig. 
+        /// <para>
+        /// The cross-Region traffic cap, if the endpoint configuration sets one.
+        /// </para>
+        /// </summary>
+        public CrossRegionTrafficConfig CrossRegionTrafficConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossRegionTrafficConfig property is set.
+        /// </summary>
+        internal bool IsSetCrossRegionTrafficConfig() => this.CrossRegionTrafficConfig != null;
+
+        /// <summary>
         /// Gets and sets the property DataCaptureConfig.
         /// </summary>
         public DataCaptureConfig DataCaptureConfig { get; set; }

@@ -72,6 +72,21 @@ namespace Amazon.DevOpsAgent.Model
         /// </summary>
         public ConflictException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// A machine-readable reason code that explains why the request conflicted with the current
+        /// state of the resource. For example, <c>CHAT_ARCHIVED</c> indicates that the request
+        /// acted on a chat that is archived. This field is absent when no specific reason applies.
+        /// </para>
+        /// </summary>
+        public ConflictExceptionReason Reason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Reason property is set.
+        /// </summary>
+        internal bool IsSetReason() => this.Reason != null;
+
 #if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the ConflictException class with serialized data.
@@ -83,6 +98,7 @@ namespace Amazon.DevOpsAgent.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ConflictExceptionReason)info.GetValue("Reason", typeof(ConflictExceptionReason));
         }
 
         /// <summary>
@@ -95,6 +111,7 @@ namespace Amazon.DevOpsAgent.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
     }

@@ -87,14 +87,6 @@
                     ]
                 ]
             },
-            "CustomOrigin"                                   : {
-                "constructorForms" : [
-                    [
-                        "DNSName",
-                        "OriginProtocolPolicy"
-                    ]
-                ]
-            },
             "CreateDistributionRequest"                      : {
                 "constructorForms" : [
                     [
@@ -233,10 +225,6 @@
                 ]
             },
             "StreamingDistributionList"                      : {
-                "constructorForms" : [
-                ]
-            },
-            "RequiredProtocols"                              : {
                 "constructorForms" : [
                 ]
             },

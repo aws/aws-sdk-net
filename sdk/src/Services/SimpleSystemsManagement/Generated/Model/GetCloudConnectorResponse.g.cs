@@ -52,6 +52,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ConfigConnectorArn. 
         /// <para>
         /// The ARN of the Amazon Web Services Config connector associated with this cloud connector.
+        /// This value is returned only if the cloud connector was created with an Amazon Web
+        /// Services Config connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 512)]

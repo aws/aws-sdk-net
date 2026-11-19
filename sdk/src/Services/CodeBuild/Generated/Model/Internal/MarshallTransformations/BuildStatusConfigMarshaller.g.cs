@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// BuildStatusConfig Marshaller
     /// </summary>
-    public partial class BuildStatusConfigMarshaller : IRequestMarshaller<BuildStatusConfig, JsonMarshallerContext>
+    public partial class BuildStatusConfigMarshaller : IRequestMarshaller<BuildStatusConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(BuildStatusConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(BuildStatusConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetContext())
             {
-                context.Writer.WritePropertyName("context");
-                context.Writer.WriteStringValue(requestObject.Context);
+                context.Writer.WriteTextString("context");
+                context.Writer.WriteTextString(requestObject.Context);
             }
 
             if (requestObject.IsSetTargetUrl())
             {
-                context.Writer.WritePropertyName("targetUrl");
-                context.Writer.WriteStringValue(requestObject.TargetUrl);
+                context.Writer.WriteTextString("targetUrl");
+                context.Writer.WriteTextString(requestObject.TargetUrl);
             }
         }
 

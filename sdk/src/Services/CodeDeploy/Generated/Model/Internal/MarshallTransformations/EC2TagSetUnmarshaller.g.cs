@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,30 +38,42 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EC2TagSet Object
     /// </summary>
-    public partial class EC2TagSetUnmarshaller : IJsonUnmarshaller<EC2TagSet, JsonUnmarshallerContext>
+    public partial class EC2TagSetUnmarshaller : ICborUnmarshaller<EC2TagSet, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public EC2TagSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EC2TagSet Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new EC2TagSet();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ec2TagSetList", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<List<EC2TagFilter>, JsonListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>>(new JsonListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance));
-                    unmarshalledObject.Ec2TagSetList = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ec2TagSetList":
+                        context.AddPathSegment("Ec2TagSetList");
+                        unmarshalledObject.Ec2TagSetList = new CborListUnmarshaller<List<EC2TagFilter>, CborListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>>(new CborListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance)).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// SummaryConfiguration Marshaller
     /// </summary>
-    public partial class SummaryConfigurationMarshaller : IRequestMarshaller<SummaryConfiguration, JsonMarshallerContext>
+    public partial class SummaryConfigurationMarshaller : IRequestMarshaller<SummaryConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SummaryConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SummaryConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetRuleOptions())
             {
-                context.Writer.WritePropertyName("RuleOptions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("RuleOptions");
+                context.Writer.WriteStartArray(requestObject.RuleOptions.Count);
                 foreach (var requestObjectRuleOptionsListValue in requestObject.RuleOptions)
                 {
-                    context.Writer.WriteStringValue(requestObjectRuleOptionsListValue);
+                    context.Writer.WriteTextString(requestObjectRuleOptionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

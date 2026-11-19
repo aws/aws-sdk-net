@@ -105,8 +105,8 @@ namespace Amazon.Scheduler.Model
         /// Specifies the launch type on which your task is running. The launch type that you
         /// specify here must match one of the launch type (compatibilities) of the target task.
         /// The <c>FARGATE</c> value is supported only in the Regions where Fargate with Amazon
-        /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS
-        /// Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon
+        /// Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public LaunchType LaunchType { get; set; }

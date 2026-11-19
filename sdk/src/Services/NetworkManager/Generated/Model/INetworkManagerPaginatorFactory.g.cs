@@ -159,6 +159,30 @@ namespace Amazon.NetworkManager.Model
         IListConnectPeersPaginator ListConnectPeers(ListConnectPeersRequest request);
 
         /// <summary>
+        /// Paginator for ListContextChanges operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextChangesPaginator ListContextChanges(ListContextChangesRequest request);
+
+        /// <summary>
+        /// Paginator for ListContextStoreAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextStoreAssociationsPaginator ListContextStoreAssociations(ListContextStoreAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextStoresPaginator ListContextStores(ListContextStoresRequest request);
+
+        /// <summary>
+        /// Paginator for ListContexts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextsPaginator ListContexts(ListContextsRequest request);
+
+        /// <summary>
         /// Paginator for ListCoreNetworkPolicyVersions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

@@ -36,5 +36,26 @@ namespace Amazon.Resiliencehubv2.Model
     /// </summary>
     public partial class ListTestTemplatesRequest : AmazonResiliencehubv2Request
     {
+        /// <summary>
+        /// Gets and sets the property MaxResults.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2000)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
     }
 }

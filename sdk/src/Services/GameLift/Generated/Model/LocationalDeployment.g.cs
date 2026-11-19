@@ -42,28 +42,35 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>IN_PROGRESS</c> -- The deployment is in progress.
+        ///  <c>IN_PROGRESS</c> -- The deployment is in progress in the location. This status
+        /// covers validation as well as the replacement of the location's containers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IMPAIRED</c> -- The deployment failed and the fleet has some impaired containers.
-        /// 
+        ///  <c>IMPAIRED</c> -- The deployment failed validation in the location, and the location
+        /// kept the containers that failed validation so that you can inspect them. A location
+        /// reaches this status when the deployment's impairment strategy is <c>MAINTAIN</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>COMPLETE</c> -- The deployment has completed successfully.
+        ///  <c>COMPLETE</c> -- The deployment has completed successfully in the location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ROLLBACK_IN_PROGRESS</c> -- The deployment failed and rollback has been initiated.
+        ///  <c>ROLLBACK_IN_PROGRESS</c> -- The deployment failed and rollback has been initiated
+        /// in the location. A location reaches this status when the deployment's impairment strategy
+        /// is <c>ROLLBACK</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ROLLBACK_IN_COMPLETE</c> -- The deployment failed and rollback has been completed.
+        ///  <c>ROLLBACK_COMPLETE</c> -- The deployment failed and rollback has been completed
+        /// in the location. The location is running the configuration from the last successful
+        /// deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CANCELLED</c> -- The deployment was cancelled.
+        ///  <c>CANCELLED</c> -- The deployment was cancelled because a new deployment started
+        /// for the same fleet.
         /// </para>
         ///  </li> </ul>
         /// </summary>

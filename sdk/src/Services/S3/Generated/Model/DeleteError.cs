@@ -68,10 +68,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> AccountProblem
@@ -86,10 +82,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> AllAccessDisabled
@@ -103,10 +95,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> AmbiguousGrantByEmailAddress
@@ -119,10 +107,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -152,10 +136,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> BucketAlreadyExists
@@ -168,10 +148,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 409 Conflict
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -189,10 +165,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region) 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> BucketNotEmpty
@@ -205,10 +177,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 409 Conflict
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> CredentialsNotSupported
@@ -220,10 +188,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -238,10 +202,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> EntityTooSmall
@@ -255,10 +215,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> EntityTooLarge
@@ -271,10 +227,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> ExpiredToken
@@ -286,10 +238,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -304,10 +252,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> IncompleteBody
@@ -321,10 +265,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> IncorrectNumberOfFilesInPostRequest
@@ -336,10 +276,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -353,10 +289,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InternalError
@@ -368,10 +300,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 500 Internal Server Error
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Server
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -386,10 +314,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidAddressingHeader
@@ -401,10 +325,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> N/A
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -418,10 +338,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidBucketName
@@ -433,10 +349,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -450,10 +362,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 409 Conflict
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidDigest
@@ -465,10 +373,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -482,10 +386,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -501,10 +401,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidObjectState
@@ -516,10 +412,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -535,10 +427,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidPartOrder
@@ -551,10 +439,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -569,10 +453,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidPolicyDocument
@@ -586,10 +466,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidRange
@@ -601,10 +477,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -621,22 +493,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>Code:</i> N/A
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code:</i> InvalidRequest
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Description:</i> SOAP requests must be made over an HTTPS connection.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -767,26 +623,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code:</i> InvalidSOAPRequest
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Description:</i> The SOAP request body is invalid.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidStorageClass
@@ -798,10 +634,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -816,10 +648,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> InvalidToken
@@ -831,10 +659,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -848,10 +672,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> KeyTooLongError
@@ -863,10 +683,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -881,10 +697,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> MalformedPOSTRequest 
@@ -896,10 +708,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -916,10 +724,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> MaxMessageLengthExceeded
@@ -931,10 +735,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -948,10 +748,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> MetadataTooLarge
@@ -963,10 +759,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -980,26 +772,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 405 Method Not Allowed
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code:</i> MissingAttachment
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Description:</i> A SOAP attachment was expected, but none were found.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>HTTP Status Code:</i> N/A
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> MissingContentLength
@@ -1011,10 +783,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 411 Length Required
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1029,26 +797,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
-        ///  </li> </ul> </li> <li> <ul> <li> 
-        /// <para>
-        ///  <i>Code:</i> MissingSecurityElement
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Description:</i> The SOAP 1.1 request is missing a security element.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> MissingSecurityHeader
@@ -1060,10 +808,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1078,10 +822,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> NoSuchBucket
@@ -1093,10 +833,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1110,10 +846,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> NoSuchKey
@@ -1126,10 +858,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> NoSuchLifecycleConfiguration
@@ -1141,10 +869,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1159,10 +883,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> NoSuchVersion 
@@ -1176,10 +896,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> NotImplemented
@@ -1191,10 +907,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 501 Not Implemented
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Server
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1210,10 +922,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> OperationAborted
@@ -1226,10 +934,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 409 Conflict
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1244,10 +948,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 301 Moved Permanently
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> PreconditionFailed
@@ -1259,10 +959,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 412 Precondition Failed
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1276,10 +972,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 307 Moved Temporarily
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> RestoreAlreadyInProgress
@@ -1292,10 +984,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 409 Conflict
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> RequestIsNotMultiPartContent
@@ -1307,10 +995,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1325,10 +1009,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> RequestTimeTooSkewed
@@ -1342,10 +1022,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> RequestTorrentOfBucketError
@@ -1358,10 +1034,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> SignatureDoesNotMatch
@@ -1371,16 +1043,11 @@ namespace Amazon.S3.Model
         ///  <i>Description:</i> The request signature we calculated does not match the signature
         /// you provided. Check your Amazon Web Services secret access key and signing method.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-        /// Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
         /// Authentication</a> for details.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 403 Forbidden
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1394,10 +1061,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 503 Service Unavailable
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Server
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> SlowDown
@@ -1409,10 +1072,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 503 Slow Down
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Server
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1426,10 +1085,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 307 Moved Temporarily
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> TokenRefreshRequired
@@ -1441,10 +1096,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1458,10 +1109,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> UnexpectedContent
@@ -1473,10 +1120,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
@@ -1491,10 +1134,6 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code:</i> UserKeyMustBeSpecified
@@ -1507,10 +1146,6 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code:</i> 400 Bad Request
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix:</i> Client
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

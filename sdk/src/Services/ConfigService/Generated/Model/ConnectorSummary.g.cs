@@ -63,6 +63,21 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetCreatedTime() => this.CreatedTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property GcpOrganizationId. 
+        /// <para>
+        /// The Google Cloud organization ID for the connector. Returned only for Google Cloud
+        /// connectors.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 20)]
+        public string GcpOrganizationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GcpOrganizationId property is set.
+        /// </summary>
+        internal bool IsSetGcpOrganizationId() => this.GcpOrganizationId != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the connector.
@@ -79,8 +94,17 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The third-party cloud service provider. Currently, <c>AZURE</c> is supported.
+        /// The third-party cloud service provider. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – The connector is for Microsoft Azure
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – The connector is for Google Cloud
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public Provider Provider { get; set; }
@@ -91,12 +115,27 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetProvider() => this.Provider != null;
 
         /// <summary>
-        /// Gets and sets the property TenantIdentifier. 
+        /// Gets and sets the property ServiceAccountEmail. 
         /// <para>
-        /// The Azure tenant identifier for the connector.
+        /// The email address of the Google Cloud service account for the connector. Returned
+        /// only for Google Cloud connectors.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        [AWSProperty(Min = 1, Max = 256)]
+        public string ServiceAccountEmail { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceAccountEmail property is set.
+        /// </summary>
+        internal bool IsSetServiceAccountEmail() => this.ServiceAccountEmail != null;
+
+        /// <summary>
+        /// Gets and sets the property TenantIdentifier. 
+        /// <para>
+        /// The Azure tenant identifier for the connector. Returned only for Azure connectors.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
         public string TenantIdentifier { get; set; }
 
         /// <summary>

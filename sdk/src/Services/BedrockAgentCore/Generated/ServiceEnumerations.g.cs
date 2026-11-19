@@ -144,6 +144,93 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type AgentInsightArchiveStatus.
+    /// </summary>
+    public class AgentInsightArchiveStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AgentInsightArchiveStatus
+        /// </summary>
+        public static readonly AgentInsightArchiveStatus ACTIVE = new AgentInsightArchiveStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant ARCHIVED for AgentInsightArchiveStatus
+        /// </summary>
+        public static readonly AgentInsightArchiveStatus ARCHIVED = new AgentInsightArchiveStatus("ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom AgentInsightArchiveStatus for a value not among the defined constants.
+        /// </summary>
+        public AgentInsightArchiveStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInsightArchiveStatus FindValue(string value)
+        {
+            return FindValue<AgentInsightArchiveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInsightArchiveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentInsightCustomerMetadataStatus.
+    /// </summary>
+    public class AgentInsightCustomerMetadataStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for AgentInsightCustomerMetadataStatus
+        /// </summary>
+        public static readonly AgentInsightCustomerMetadataStatus AVAILABLE = new AgentInsightCustomerMetadataStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant CUSTOMER_KEY_UNAVAILABLE for AgentInsightCustomerMetadataStatus
+        /// </summary>
+        public static readonly AgentInsightCustomerMetadataStatus CUSTOMER_KEY_UNAVAILABLE = new AgentInsightCustomerMetadataStatus("CUSTOMER_KEY_UNAVAILABLE");
+
+        /// <summary>
+        /// Constant UNAVAILABLE for AgentInsightCustomerMetadataStatus
+        /// </summary>
+        public static readonly AgentInsightCustomerMetadataStatus UNAVAILABLE = new AgentInsightCustomerMetadataStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// Constructs a custom AgentInsightCustomerMetadataStatus for a value not among the defined constants.
+        /// </summary>
+        public AgentInsightCustomerMetadataStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInsightCustomerMetadataStatus FindValue(string value)
+        {
+            return FindValue<AgentInsightCustomerMetadataStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInsightCustomerMetadataStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AutomationStreamStatus.
     /// </summary>
     public class AutomationStreamStatus : ConstantClass
@@ -777,6 +864,62 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type DatasetGenerationStatus.
+    /// </summary>
+    public class DatasetGenerationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for DatasetGenerationStatus
+        /// </summary>
+        public static readonly DatasetGenerationStatus COMPLETED = new DatasetGenerationStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for DatasetGenerationStatus
+        /// </summary>
+        public static readonly DatasetGenerationStatus COMPLETED_WITH_ERRORS = new DatasetGenerationStatus("COMPLETED_WITH_ERRORS");
+
+        /// <summary>
+        /// Constant DELETING for DatasetGenerationStatus
+        /// </summary>
+        public static readonly DatasetGenerationStatus DELETING = new DatasetGenerationStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for DatasetGenerationStatus
+        /// </summary>
+        public static readonly DatasetGenerationStatus FAILED = new DatasetGenerationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for DatasetGenerationStatus
+        /// </summary>
+        public static readonly DatasetGenerationStatus IN_PROGRESS = new DatasetGenerationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom DatasetGenerationStatus for a value not among the defined constants.
+        /// </summary>
+        public DatasetGenerationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetGenerationStatus FindValue(string value)
+        {
+            return FindValue<DatasetGenerationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetGenerationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DescriptorType.
     /// </summary>
     public class DescriptorType : ConstantClass
@@ -976,6 +1119,118 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GenerationFilterOperator.
+    /// </summary>
+    public class GenerationFilterOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant Contains for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator Contains = new GenerationFilterOperator("Contains");
+
+        /// <summary>
+        /// Constant Equals for GenerationFilterOperator
+        /// </summary>
+        public new static readonly GenerationFilterOperator Equals = new GenerationFilterOperator("Equals");
+
+        /// <summary>
+        /// Constant GreaterThan for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator GreaterThan = new GenerationFilterOperator("GreaterThan");
+
+        /// <summary>
+        /// Constant GreaterThanOrEqual for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator GreaterThanOrEqual = new GenerationFilterOperator("GreaterThanOrEqual");
+
+        /// <summary>
+        /// Constant LessThan for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator LessThan = new GenerationFilterOperator("LessThan");
+
+        /// <summary>
+        /// Constant LessThanOrEqual for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator LessThanOrEqual = new GenerationFilterOperator("LessThanOrEqual");
+
+        /// <summary>
+        /// Constant NotContains for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator NotContains = new GenerationFilterOperator("NotContains");
+
+        /// <summary>
+        /// Constant NotEquals for GenerationFilterOperator
+        /// </summary>
+        public static readonly GenerationFilterOperator NotEquals = new GenerationFilterOperator("NotEquals");
+
+        /// <summary>
+        /// Constructs a custom GenerationFilterOperator for a value not among the defined constants.
+        /// </summary>
+        public GenerationFilterOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GenerationFilterOperator FindValue(string value)
+        {
+            return FindValue<GenerationFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GenerationFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GroundTruthField.
+    /// </summary>
+    public class GroundTruthField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Expected_response for GroundTruthField
+        /// </summary>
+        public static readonly GroundTruthField Expected_response = new GroundTruthField("expected_response");
+
+        /// <summary>
+        /// Constant Expected_trajectory for GroundTruthField
+        /// </summary>
+        public static readonly GroundTruthField Expected_trajectory = new GroundTruthField("expected_trajectory");
+
+        /// <summary>
+        /// Constructs a custom GroundTruthField for a value not among the defined constants.
+        /// </summary>
+        public GroundTruthField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroundTruthField FindValue(string value)
+        {
+            return FindValue<GroundTruthField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroundTruthField(string value)
         {
             return FindValue(value);
         }
@@ -2526,6 +2781,537 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type RedactionIdentifier.
+    /// </summary>
+    public class RedactionIdentifier : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADDRESS for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier ADDRESS = new RedactionIdentifier("ADDRESS");
+
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier AWS_SECRET_KEY = new RedactionIdentifier("AWS_SECRET_KEY");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_DE = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_DE");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_ES = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_ES");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_FR = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_FR");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_GB = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_GB");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_IT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_IT = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_IT");
+
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier BANK_ACCOUNT_NUMBER_US = new RedactionIdentifier("BANK_ACCOUNT_NUMBER_US");
+
+        /// <summary>
+        /// Constant CEP_CODE_BR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CEP_CODE_BR = new RedactionIdentifier("CEP_CODE_BR");
+
+        /// <summary>
+        /// Constant CNPJ_BR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CNPJ_BR = new RedactionIdentifier("CNPJ_BR");
+
+        /// <summary>
+        /// Constant CPF_CODE_BR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CPF_CODE_BR = new RedactionIdentifier("CPF_CODE_BR");
+
+        /// <summary>
+        /// Constant CREDIT_CARD_EXPIRATION for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CREDIT_CARD_EXPIRATION = new RedactionIdentifier("CREDIT_CARD_EXPIRATION");
+
+        /// <summary>
+        /// Constant CREDIT_CARD_MAGNETIC_STRIPE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CREDIT_CARD_MAGNETIC_STRIPE = new RedactionIdentifier("CREDIT_CARD_MAGNETIC_STRIPE");
+
+        /// <summary>
+        /// Constant CREDIT_CARD_NUMBER for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CREDIT_CARD_NUMBER = new RedactionIdentifier("CREDIT_CARD_NUMBER");
+
+        /// <summary>
+        /// Constant CREDIT_CARD_SECURITY_CODE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier CREDIT_CARD_SECURITY_CODE = new RedactionIdentifier("CREDIT_CARD_SECURITY_CODE");
+
+        /// <summary>
+        /// Constant DATE_OF_BIRTH for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DATE_OF_BIRTH = new RedactionIdentifier("DATE_OF_BIRTH");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_AT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_AT = new RedactionIdentifier("DRIVERS_LICENSE_AT");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_AU for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_AU = new RedactionIdentifier("DRIVERS_LICENSE_AU");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_BE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_BE = new RedactionIdentifier("DRIVERS_LICENSE_BE");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_BG for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_BG = new RedactionIdentifier("DRIVERS_LICENSE_BG");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_CA = new RedactionIdentifier("DRIVERS_LICENSE_CA");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_CY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_CY = new RedactionIdentifier("DRIVERS_LICENSE_CY");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_CZ for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_CZ = new RedactionIdentifier("DRIVERS_LICENSE_CZ");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_DE = new RedactionIdentifier("DRIVERS_LICENSE_DE");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_DK for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_DK = new RedactionIdentifier("DRIVERS_LICENSE_DK");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_EE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_EE = new RedactionIdentifier("DRIVERS_LICENSE_EE");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_ES = new RedactionIdentifier("DRIVERS_LICENSE_ES");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_FI for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_FI = new RedactionIdentifier("DRIVERS_LICENSE_FI");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_FR = new RedactionIdentifier("DRIVERS_LICENSE_FR");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_GB = new RedactionIdentifier("DRIVERS_LICENSE_GB");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_GR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_GR = new RedactionIdentifier("DRIVERS_LICENSE_GR");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_HR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_HR = new RedactionIdentifier("DRIVERS_LICENSE_HR");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_HU for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_HU = new RedactionIdentifier("DRIVERS_LICENSE_HU");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_IE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_IE = new RedactionIdentifier("DRIVERS_LICENSE_IE");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_IT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_IT = new RedactionIdentifier("DRIVERS_LICENSE_IT");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_LT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_LT = new RedactionIdentifier("DRIVERS_LICENSE_LT");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_LU for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_LU = new RedactionIdentifier("DRIVERS_LICENSE_LU");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_LV for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_LV = new RedactionIdentifier("DRIVERS_LICENSE_LV");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_MT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_MT = new RedactionIdentifier("DRIVERS_LICENSE_MT");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_NL for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_NL = new RedactionIdentifier("DRIVERS_LICENSE_NL");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_PL for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_PL = new RedactionIdentifier("DRIVERS_LICENSE_PL");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_PT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_PT = new RedactionIdentifier("DRIVERS_LICENSE_PT");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_RO for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_RO = new RedactionIdentifier("DRIVERS_LICENSE_RO");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_SE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_SE = new RedactionIdentifier("DRIVERS_LICENSE_SE");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_SI for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_SI = new RedactionIdentifier("DRIVERS_LICENSE_SI");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_SK for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_SK = new RedactionIdentifier("DRIVERS_LICENSE_SK");
+
+        /// <summary>
+        /// Constant DRIVERS_LICENSE_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRIVERS_LICENSE_US = new RedactionIdentifier("DRIVERS_LICENSE_US");
+
+        /// <summary>
+        /// Constant DRUG_ENFORCEMENT_AGENCY_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier DRUG_ENFORCEMENT_AGENCY_NUMBER_US = new RedactionIdentifier("DRUG_ENFORCEMENT_AGENCY_NUMBER_US");
+
+        /// <summary>
+        /// Constant ELECTORAL_ROLL_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier ELECTORAL_ROLL_NUMBER_GB = new RedactionIdentifier("ELECTORAL_ROLL_NUMBER_GB");
+
+        /// <summary>
+        /// Constant EMAIL_ADDRESS for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier EMAIL_ADDRESS = new RedactionIdentifier("EMAIL_ADDRESS");
+
+        /// <summary>
+        /// Constant HEALTHCARE_PROCEDURE_CODE_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier HEALTHCARE_PROCEDURE_CODE_US = new RedactionIdentifier("HEALTHCARE_PROCEDURE_CODE_US");
+
+        /// <summary>
+        /// Constant HEALTH_INSURANCE_CARD_NUMBER_EU for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier HEALTH_INSURANCE_CARD_NUMBER_EU = new RedactionIdentifier("HEALTH_INSURANCE_CARD_NUMBER_EU");
+
+        /// <summary>
+        /// Constant HEALTH_INSURANCE_CLAIM_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier HEALTH_INSURANCE_CLAIM_NUMBER_US = new RedactionIdentifier("HEALTH_INSURANCE_CLAIM_NUMBER_US");
+
+        /// <summary>
+        /// Constant HEALTH_INSURANCE_NUMBER_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier HEALTH_INSURANCE_NUMBER_FR = new RedactionIdentifier("HEALTH_INSURANCE_NUMBER_FR");
+
+        /// <summary>
+        /// Constant INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_US = new RedactionIdentifier("INDIVIDUAL_TAX_IDENTIFICATION_NUMBER_US");
+
+        /// <summary>
+        /// Constant INSEE_CODE_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier INSEE_CODE_FR = new RedactionIdentifier("INSEE_CODE_FR");
+
+        /// <summary>
+        /// Constant IP_ADDRESS for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier IP_ADDRESS = new RedactionIdentifier("IP_ADDRESS");
+
+        /// <summary>
+        /// Constant LAT_LONG for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier LAT_LONG = new RedactionIdentifier("LAT_LONG");
+
+        /// <summary>
+        /// Constant MEDICARE_BENEFICIARY_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier MEDICARE_BENEFICIARY_NUMBER_US = new RedactionIdentifier("MEDICARE_BENEFICIARY_NUMBER_US");
+
+        /// <summary>
+        /// Constant NAME for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NAME = new RedactionIdentifier("NAME");
+
+        /// <summary>
+        /// Constant NATIONAL_DRUG_CODE_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_DRUG_CODE_US = new RedactionIdentifier("NATIONAL_DRUG_CODE_US");
+
+        /// <summary>
+        /// Constant NATIONAL_IDENTIFICATION_NUMBER_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_IDENTIFICATION_NUMBER_DE = new RedactionIdentifier("NATIONAL_IDENTIFICATION_NUMBER_DE");
+
+        /// <summary>
+        /// Constant NATIONAL_IDENTIFICATION_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_IDENTIFICATION_NUMBER_ES = new RedactionIdentifier("NATIONAL_IDENTIFICATION_NUMBER_ES");
+
+        /// <summary>
+        /// Constant NATIONAL_IDENTIFICATION_NUMBER_IT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_IDENTIFICATION_NUMBER_IT = new RedactionIdentifier("NATIONAL_IDENTIFICATION_NUMBER_IT");
+
+        /// <summary>
+        /// Constant NATIONAL_INSURANCE_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_INSURANCE_NUMBER_GB = new RedactionIdentifier("NATIONAL_INSURANCE_NUMBER_GB");
+
+        /// <summary>
+        /// Constant NATIONAL_PROVIDER_ID_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NATIONAL_PROVIDER_ID_US = new RedactionIdentifier("NATIONAL_PROVIDER_ID_US");
+
+        /// <summary>
+        /// Constant NHS_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NHS_NUMBER_GB = new RedactionIdentifier("NHS_NUMBER_GB");
+
+        /// <summary>
+        /// Constant NIE_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NIE_NUMBER_ES = new RedactionIdentifier("NIE_NUMBER_ES");
+
+        /// <summary>
+        /// Constant NIF_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier NIF_NUMBER_ES = new RedactionIdentifier("NIF_NUMBER_ES");
+
+        /// <summary>
+        /// Constant OPEN_SSH_PRIVATE_KEY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier OPEN_SSH_PRIVATE_KEY = new RedactionIdentifier("OPEN_SSH_PRIVATE_KEY");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_CA = new RedactionIdentifier("PASSPORT_NUMBER_CA");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_DE = new RedactionIdentifier("PASSPORT_NUMBER_DE");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_ES = new RedactionIdentifier("PASSPORT_NUMBER_ES");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_FR = new RedactionIdentifier("PASSPORT_NUMBER_FR");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_GB = new RedactionIdentifier("PASSPORT_NUMBER_GB");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_IT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_IT = new RedactionIdentifier("PASSPORT_NUMBER_IT");
+
+        /// <summary>
+        /// Constant PASSPORT_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PASSPORT_NUMBER_US = new RedactionIdentifier("PASSPORT_NUMBER_US");
+
+        /// <summary>
+        /// Constant PERMANENT_RESIDENCE_NUMBER_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PERMANENT_RESIDENCE_NUMBER_CA = new RedactionIdentifier("PERMANENT_RESIDENCE_NUMBER_CA");
+
+        /// <summary>
+        /// Constant PERSONAL_HEALTH_NUMBER_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PERSONAL_HEALTH_NUMBER_CA = new RedactionIdentifier("PERSONAL_HEALTH_NUMBER_CA");
+
+        /// <summary>
+        /// Constant PGP_PRIVATE_KEY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PGP_PRIVATE_KEY = new RedactionIdentifier("PGP_PRIVATE_KEY");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_BR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_BR = new RedactionIdentifier("PHONE_NUMBER_BR");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_DE = new RedactionIdentifier("PHONE_NUMBER_DE");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_ES = new RedactionIdentifier("PHONE_NUMBER_ES");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_FR = new RedactionIdentifier("PHONE_NUMBER_FR");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_GB = new RedactionIdentifier("PHONE_NUMBER_GB");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_IT for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_IT = new RedactionIdentifier("PHONE_NUMBER_IT");
+
+        /// <summary>
+        /// Constant PHONE_NUMBER_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PHONE_NUMBER_US = new RedactionIdentifier("PHONE_NUMBER_US");
+
+        /// <summary>
+        /// Constant PKCS_PRIVATE_KEY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PKCS_PRIVATE_KEY = new RedactionIdentifier("PKCS_PRIVATE_KEY");
+
+        /// <summary>
+        /// Constant POSTAL_CODE_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier POSTAL_CODE_CA = new RedactionIdentifier("POSTAL_CODE_CA");
+
+        /// <summary>
+        /// Constant PUTTY_PRIVATE_KEY for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier PUTTY_PRIVATE_KEY = new RedactionIdentifier("PUTTY_PRIVATE_KEY");
+
+        /// <summary>
+        /// Constant RG_NUMBER_BR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier RG_NUMBER_BR = new RedactionIdentifier("RG_NUMBER_BR");
+
+        /// <summary>
+        /// Constant SOCIAL_INSURANCE_NUMBER_CA for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier SOCIAL_INSURANCE_NUMBER_CA = new RedactionIdentifier("SOCIAL_INSURANCE_NUMBER_CA");
+
+        /// <summary>
+        /// Constant SSN_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier SSN_ES = new RedactionIdentifier("SSN_ES");
+
+        /// <summary>
+        /// Constant SSN_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier SSN_US = new RedactionIdentifier("SSN_US");
+
+        /// <summary>
+        /// Constant TAX_ID_DE for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier TAX_ID_DE = new RedactionIdentifier("TAX_ID_DE");
+
+        /// <summary>
+        /// Constant TAX_ID_ES for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier TAX_ID_ES = new RedactionIdentifier("TAX_ID_ES");
+
+        /// <summary>
+        /// Constant TAX_ID_FR for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier TAX_ID_FR = new RedactionIdentifier("TAX_ID_FR");
+
+        /// <summary>
+        /// Constant TAX_ID_GB for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier TAX_ID_GB = new RedactionIdentifier("TAX_ID_GB");
+
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier VEHICLE_IDENTIFICATION_NUMBER = new RedactionIdentifier("VEHICLE_IDENTIFICATION_NUMBER");
+
+        /// <summary>
+        /// Constant ZIP_CODE_US for RedactionIdentifier
+        /// </summary>
+        public static readonly RedactionIdentifier ZIP_CODE_US = new RedactionIdentifier("ZIP_CODE_US");
+
+        /// <summary>
+        /// Constructs a custom RedactionIdentifier for a value not among the defined constants.
+        /// </summary>
+        public RedactionIdentifier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedactionIdentifier FindValue(string value)
+        {
+            return FindValue<RedactionIdentifier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedactionIdentifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RegistryRecordStatus.
     /// </summary>
     public class RegistryRecordStatus : ConstantClass
@@ -2623,6 +3409,62 @@ namespace Amazon.BedrockAgentCore
     }
 
     /// <summary>
+    /// Constants used for properties of type ResultAggregation.
+    /// </summary>
+    public class ResultAggregation : ConstantClass
+    {
+        /// <summary>
+        /// Constant AllMatch for ResultAggregation
+        /// </summary>
+        public static readonly ResultAggregation AllMatch = new ResultAggregation("AllMatch");
+
+        /// <summary>
+        /// Constant AnyMatch for ResultAggregation
+        /// </summary>
+        public static readonly ResultAggregation AnyMatch = new ResultAggregation("AnyMatch");
+
+        /// <summary>
+        /// Constant Max for ResultAggregation
+        /// </summary>
+        public static readonly ResultAggregation Max = new ResultAggregation("Max");
+
+        /// <summary>
+        /// Constant Mean for ResultAggregation
+        /// </summary>
+        public static readonly ResultAggregation Mean = new ResultAggregation("Mean");
+
+        /// <summary>
+        /// Constant Min for ResultAggregation
+        /// </summary>
+        public static readonly ResultAggregation Min = new ResultAggregation("Min");
+
+        /// <summary>
+        /// Constructs a custom ResultAggregation for a value not among the defined constants.
+        /// </summary>
+        public ResultAggregation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResultAggregation FindValue(string value)
+        {
+            return FindValue<ResultAggregation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResultAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResultDestination.
     /// </summary>
     public class ResultDestination : ConstantClass
@@ -2709,6 +3551,47 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Role(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScenarioType.
+    /// </summary>
+    public class ScenarioType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DYNAMIC for ScenarioType
+        /// </summary>
+        public static readonly ScenarioType DYNAMIC = new ScenarioType("DYNAMIC");
+
+        /// <summary>
+        /// Constant FIXED for ScenarioType
+        /// </summary>
+        public static readonly ScenarioType FIXED = new ScenarioType("FIXED");
+
+        /// <summary>
+        /// Constructs a custom ScenarioType for a value not among the defined constants.
+        /// </summary>
+        public ScenarioType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScenarioType FindValue(string value)
+        {
+            return FindValue<ScenarioType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScenarioType(string value)
         {
             return FindValue(value);
         }

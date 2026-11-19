@@ -36,6 +36,26 @@ namespace Amazon.MediaConvert.Model
     public partial class CaptionDescription
     {
         /// <summary>
+        /// Gets and sets the property AudioSourceNames. Specifies the audio selector or audio
+        /// selector group that MediaConvert uses to generate Smart subtitles. The audio selector
+        /// you choose must exist in all inputs for the job. If MediaConvert can't detect speech
+        /// in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE;
+        /// not allowed otherwise.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AudioSourceNames { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AudioSourceNames property is set.
+        /// </summary>
+        internal bool IsSetAudioSourceNames() => this.AudioSourceNames != null && (this.AudioSourceNames.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CaptionSelectorName. Specifies which "Caption Selector":#inputs-caption_selector
         /// to use from each input when generating captions. The name should be of the format
         /// "Caption Selector &lt;N&gt;", which denotes that the Nth Caption Selector will be
@@ -106,5 +126,19 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the LanguageDescription property is set.
         /// </summary>
         internal bool IsSetLanguageDescription() => this.LanguageDescription != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. Specify the source of the captions for this caption
+        /// description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption
+        /// selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert
+        /// and Elemental Inference generate subtitles automatically from an audio source that
+        /// you specify.
+        /// </summary>
+        public CaptionSource Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
     }
 }

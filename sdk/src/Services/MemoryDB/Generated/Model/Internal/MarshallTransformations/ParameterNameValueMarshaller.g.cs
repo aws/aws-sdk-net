@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// ParameterNameValue Marshaller
     /// </summary>
-    public partial class ParameterNameValueMarshaller : IRequestMarshaller<ParameterNameValue, JsonMarshallerContext>
+    public partial class ParameterNameValueMarshaller : IRequestMarshaller<ParameterNameValue, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ParameterNameValue requestObject, JsonMarshallerContext context)
+        public void Marshall(ParameterNameValue requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetParameterName())
             {
-                context.Writer.WritePropertyName("ParameterName");
-                context.Writer.WriteStringValue(requestObject.ParameterName);
+                context.Writer.WriteTextString("ParameterName");
+                context.Writer.WriteTextString(requestObject.ParameterName);
             }
 
             if (requestObject.IsSetParameterValue())
             {
-                context.Writer.WritePropertyName("ParameterValue");
-                context.Writer.WriteStringValue(requestObject.ParameterValue);
+                context.Writer.WriteTextString("ParameterValue");
+                context.Writer.WriteTextString(requestObject.ParameterValue);
             }
         }
 

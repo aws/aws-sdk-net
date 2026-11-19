@@ -88,6 +88,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// Returns an enumerator that iterates through the collection.
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through the collection.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1031", Justification = "The failure is thrown after the events decoded before it are yielded; a yield cannot be inside a catch block.")]
         public IEnumerator<T> GetEnumerator()
         {
             if (IsProcessing)
@@ -126,21 +127,50 @@ namespace Amazon.Runtime.EventStreams.Internal
                 }
                 else
                 {
+                    Exception failure;
                     try
                     {
                         ReadFromStream(buffer);
+                        continue;
                     }
                     catch (Exception ex)
                     {
-                        IsProcessing = false;
                         if (IsDisposed)
+                        {
+                            IsProcessing = false;
                             yield break;
+                        }
 
-                        Dispose();
-
-                        // Wrap exceptions as needed to match event-driven behavior.
-                        throw WrapException(ex);
+                        failure = ex;
                     }
+
+                    // A failed async read clears IsProcessing; it stays set until the drain is over, so an
+                    // enumeration abandoned during the drain cannot be started again.
+                    IsProcessing = true;
+
+                    // One read can decode several messages. The events decoded before the failing message are
+                    // handed to the caller first, as the event-driven mode does, and then the failure is thrown.
+                    // A terminal event ends the events, and a caller that disposes the stream gets nothing more.
+                    while (events.Count > 0 && !IsDisposed)
+                    {
+                        var ev = events.Dequeue();
+                        yield return ev;
+                        if (ev is IEventStreamTerminalEvent)
+                        {
+                            break;
+                        }
+                    }
+
+                    IsProcessing = false;
+                    if (IsDisposed)
+                    {
+                        yield break;
+                    }
+
+                    Dispose();
+
+                    // Wrap exceptions as needed to match event-driven behavior.
+                    throw WrapException(failure);
                 }
             }
         }
@@ -149,6 +179,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// Returns an async enumerator that asynchronously iterates through the collection.
         /// </summary>
         /// <returns>An async enumerator that can be used to iterate through the collection.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1031", Justification = "The failure is thrown after the events decoded before it are yielded; a yield cannot be inside a catch block.")]
         public async IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken)
         {
             // This implementation of this method is identical to that of GetEnumerator, except that
@@ -190,21 +221,50 @@ namespace Amazon.Runtime.EventStreams.Internal
                 }
                 else
                 {
+                    Exception failure;
                     try
                     {
                         await ReadFromStreamAsync(buffer, cancellationToken).ConfigureAwait(false);
+                        continue;
                     }
                     catch (Exception ex)
                     {
-                        IsProcessing = false;
-                        if (IsDisposed) 
+                        if (IsDisposed)
+                        {
+                            IsProcessing = false;
                             yield break;
+                        }
 
-                        Dispose();
-
-                        // Wrap exceptions as needed to match event-driven behavior.
-                        throw WrapException(ex);
+                        failure = ex;
                     }
+
+                    // A failed async read clears IsProcessing; it stays set until the drain is over, so an
+                    // enumeration abandoned during the drain cannot be started again.
+                    IsProcessing = true;
+
+                    // One read can decode several messages. The events decoded before the failing message are
+                    // handed to the caller first, as the event-driven mode does, and then the failure is thrown.
+                    // A terminal event ends the events, and a caller that disposes the stream gets nothing more.
+                    while (events.Count > 0 && !IsDisposed)
+                    {
+                        var ev = events.Dequeue();
+                        yield return ev;
+                        if (ev is IEventStreamTerminalEvent)
+                        {
+                            break;
+                        }
+                    }
+
+                    IsProcessing = false;
+                    if (IsDisposed)
+                    {
+                        yield break;
+                    }
+
+                    Dispose();
+
+                    // Wrap exceptions as needed to match event-driven behavior.
+                    throw WrapException(failure);
                 }
             }
         }

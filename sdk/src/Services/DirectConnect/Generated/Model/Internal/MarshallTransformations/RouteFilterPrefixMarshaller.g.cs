@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// RouteFilterPrefix Marshaller
     /// </summary>
-    public partial class RouteFilterPrefixMarshaller : IRequestMarshaller<RouteFilterPrefix, JsonMarshallerContext>
+    public partial class RouteFilterPrefixMarshaller : IRequestMarshaller<RouteFilterPrefix, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RouteFilterPrefix requestObject, JsonMarshallerContext context)
+        public void Marshall(RouteFilterPrefix requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCidr())
             {
-                context.Writer.WritePropertyName("cidr");
-                context.Writer.WriteStringValue(requestObject.Cidr);
+                context.Writer.WriteTextString("cidr");
+                context.Writer.WriteTextString(requestObject.Cidr);
             }
         }
 

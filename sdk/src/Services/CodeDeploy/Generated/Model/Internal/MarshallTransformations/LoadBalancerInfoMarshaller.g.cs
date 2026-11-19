@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,59 +39,59 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// LoadBalancerInfo Marshaller
     /// </summary>
-    public partial class LoadBalancerInfoMarshaller : IRequestMarshaller<LoadBalancerInfo, JsonMarshallerContext>
+    public partial class LoadBalancerInfoMarshaller : IRequestMarshaller<LoadBalancerInfo, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LoadBalancerInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(LoadBalancerInfo requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetElbInfoList())
             {
-                context.Writer.WritePropertyName("elbInfoList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("elbInfoList");
+                context.Writer.WriteStartArray(requestObject.ElbInfoList.Count);
                 foreach (var requestObjectElbInfoListListValue in requestObject.ElbInfoList)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ELBInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectElbInfoListListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTargetGroupInfoList())
             {
-                context.Writer.WritePropertyName("targetGroupInfoList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("targetGroupInfoList");
+                context.Writer.WriteStartArray(requestObject.TargetGroupInfoList.Count);
                 foreach (var requestObjectTargetGroupInfoListListValue in requestObject.TargetGroupInfoList)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TargetGroupInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetGroupInfoListListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTargetGroupPairInfoList())
             {
-                context.Writer.WritePropertyName("targetGroupPairInfoList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("targetGroupPairInfoList");
+                context.Writer.WriteStartArray(requestObject.TargetGroupPairInfoList.Count);
                 foreach (var requestObjectTargetGroupPairInfoListListValue in requestObject.TargetGroupPairInfoList)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TargetGroupPairInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetGroupPairInfoListListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

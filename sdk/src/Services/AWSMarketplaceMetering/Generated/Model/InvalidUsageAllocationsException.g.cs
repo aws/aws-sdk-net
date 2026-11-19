@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// Sum of allocated usage quantities is not equal to the usage quantity.
+    /// Sum of allocated usage quantities is not equal to the usage quantity, or the allocations
+    /// don't use the same type of quantity (whole number or decimal) as the usage quantity.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

@@ -277,6 +277,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("testPackageArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestPackageArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("testSpecArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

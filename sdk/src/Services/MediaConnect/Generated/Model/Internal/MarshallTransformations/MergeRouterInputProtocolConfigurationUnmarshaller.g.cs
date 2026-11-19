@@ -66,6 +66,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Rtp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("srtCaller", targetDepth, ref reader))
+                {
+                    var unmarshaller = SrtCallerRouterInputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SrtCaller = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("srtListener", targetDepth, ref reader))
+                {
+                    var unmarshaller = SrtListenerRouterInputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SrtListener = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

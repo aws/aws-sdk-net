@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// AlarmConfiguration Marshaller
     /// </summary>
-    public partial class AlarmConfigurationMarshaller : IRequestMarshaller<AlarmConfiguration, JsonMarshallerContext>
+    public partial class AlarmConfigurationMarshaller : IRequestMarshaller<AlarmConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AlarmConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AlarmConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAlarms())
             {
-                context.Writer.WritePropertyName("alarms");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("alarms");
+                context.Writer.WriteStartArray(requestObject.Alarms.Count);
                 foreach (var requestObjectAlarmsListValue in requestObject.Alarms)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AlarmMarshaller.Instance;
                     marshaller.Marshall(requestObjectAlarmsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+                context.Writer.WriteTextString("enabled");
+                context.Writer.WriteBoolean(requestObject.Enabled.Value);
             }
 
             if (requestObject.IsSetIgnorePollAlarmFailure())
             {
-                context.Writer.WritePropertyName("ignorePollAlarmFailure");
-                context.Writer.WriteBooleanValue(requestObject.IgnorePollAlarmFailure.Value);
+                context.Writer.WriteTextString("ignorePollAlarmFailure");
+                context.Writer.WriteBoolean(requestObject.IgnorePollAlarmFailure.Value);
             }
         }
 

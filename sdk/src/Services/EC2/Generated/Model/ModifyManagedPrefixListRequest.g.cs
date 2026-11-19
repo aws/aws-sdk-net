@@ -1,0 +1,171 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ModifyManagedPrefixList operation. Modifies the
+    /// specified managed prefix list. <para> Adding or removing entries in a prefix list
+    /// creates a new version of the prefix list. Changing the name of the prefix list does
+    /// not affect the version. </para> <para> If you specify a current version number that
+    /// does not match the true current version number, the request fails. </para>
+    /// </summary>
+    public partial class ModifyManagedPrefixListRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Gets and sets the property AddEntries. 
+        /// <para>
+        /// One or more entries to add to the prefix list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<AddPrefixListEntry> AddEntries { get; set; } = AWSConfigs.InitializeCollections ? new List<AddPrefixListEntry>() : null;
+
+        /// <summary>
+        /// Checks to see if the AddEntries property is set.
+        /// </summary>
+        internal bool IsSetAddEntries() => this.AddEntries != null && (this.AddEntries.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property CurrentVersion. 
+        /// <para>
+        /// The current version of the prefix list.
+        /// </para>
+        /// </summary>
+        public long? CurrentVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CurrentVersion property is set.
+        /// </summary>
+        internal bool IsSetCurrentVersion() => this.CurrentVersion.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IpamPrefixListResolverSyncEnabled. 
+        /// <para>
+        /// Indicates whether synchronization with an IPAM prefix list resolver should be enabled
+        /// for this managed prefix list. When enabled, the prefix list CIDRs are automatically
+        /// updated based on the associated resolver's CIDR selection rules.
+        /// </para>
+        /// </summary>
+        public bool? IpamPrefixListResolverSyncEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IpamPrefixListResolverSyncEnabled property is set.
+        /// </summary>
+        internal bool IsSetIpamPrefixListResolverSyncEnabled() => this.IpamPrefixListResolverSyncEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MaxEntries. 
+        /// <para>
+        /// The maximum number of entries for the prefix list. You cannot modify the entries of
+        /// a prefix list and modify the size of a prefix list at the same time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If any of the resources that reference the prefix list cannot support the new maximum
+        /// size, the modify operation fails. Check the state message for the IDs of the first
+        /// ten resources that do not support the new maximum size.
+        /// </para>
+        /// </summary>
+        public int? MaxEntries { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxEntries property is set.
+        /// </summary>
+        internal bool IsSetMaxEntries() => this.MaxEntries.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PrefixListId. 
+        /// <para>
+        /// The ID of the prefix list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string PrefixListId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrefixListId property is set.
+        /// </summary>
+        internal bool IsSetPrefixListId() => this.PrefixListId != null;
+
+        /// <summary>
+        /// Gets and sets the property PrefixListName. 
+        /// <para>
+        /// A name for the prefix list.
+        /// </para>
+        /// </summary>
+        public string PrefixListName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PrefixListName property is set.
+        /// </summary>
+        internal bool IsSetPrefixListName() => this.PrefixListName != null;
+
+        /// <summary>
+        /// Gets and sets the property RemoveEntries. 
+        /// <para>
+        /// One or more entries to remove from the prefix list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<RemovePrefixListEntry> RemoveEntries { get; set; } = AWSConfigs.InitializeCollections ? new List<RemovePrefixListEntry>() : null;
+
+        /// <summary>
+        /// Checks to see if the RemoveEntries property is set.
+        /// </summary>
+        internal bool IsSetRemoveEntries() => this.RemoveEntries != null && (this.RemoveEntries.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

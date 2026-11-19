@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExpenseField Object
     /// </summary>
-    public partial class ExpenseFieldUnmarshaller : IJsonUnmarshaller<ExpenseField, JsonUnmarshallerContext>
+    public partial class ExpenseFieldUnmarshaller : ICborUnmarshaller<ExpenseField, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ExpenseField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ExpenseField Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ExpenseField();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Currency", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpenseCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("GroupProperties", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ExpenseGroupProperty, ExpenseGroupPropertyUnmarshaller>(ExpenseGroupPropertyUnmarshaller.Instance);
-                    unmarshalledObject.GroupProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Currency":
+                        context.AddPathSegment("Currency");
+                        unmarshalledObject.Currency = ExpenseCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LabelDetection", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpenseDetectionUnmarshaller.Instance;
-                    unmarshalledObject.LabelDetection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "GroupProperties":
+                        context.AddPathSegment("GroupProperties");
+                        unmarshalledObject.GroupProperties = new CborListUnmarshaller<ExpenseGroupProperty, ExpenseGroupPropertyUnmarshaller>(ExpenseGroupPropertyUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PageNumber", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LabelDetection":
+                        context.AddPathSegment("LabelDetection");
+                        unmarshalledObject.LabelDetection = ExpenseDetectionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpenseTypeUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PageNumber":
+                        context.AddPathSegment("PageNumber");
+                        unmarshalledObject.PageNumber = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ValueDetection", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpenseDetectionUnmarshaller.Instance;
-                    unmarshalledObject.ValueDetection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = ExpenseTypeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ValueDetection":
+                        context.AddPathSegment("ValueDetection");
+                        unmarshalledObject.ValueDetection = ExpenseDetectionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.AbuseSignal.IAmazonAbuseSignal.CreateAbuseReport(Amazon.AbuseSignal.Model.CreateAbuseReportRequest)" />
+      <member name="M:Amazon.AbuseSignal.AmazonAbuseSignalClient.CreateAbuseReport(Amazon.AbuseSignal.Model.CreateAbuseReportRequest)" />
+      <member name="T:Amazon.AbuseSignal.Model.CreateAbuseReportRequest" />
+      <member name="T:Amazon.AbuseSignal.Model.CreateAbuseReportResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Submit an abuse report in X-ARF format" source=".\AWSSDKDocSamples\AbuseSignal\AbuseSignal.GeneratedSamples.cs" region="CreateAbuseReport-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.AbuseSignal.IAmazonAbuseSignal.GetAbuseReportStatus(Amazon.AbuseSignal.Model.GetAbuseReportStatusRequest)" />
+      <member name="M:Amazon.AbuseSignal.AmazonAbuseSignalClient.GetAbuseReportStatus(Amazon.AbuseSignal.Model.GetAbuseReportStatusRequest)" />
+      <member name="T:Amazon.AbuseSignal.Model.GetAbuseReportStatusRequest" />
+      <member name="T:Amazon.AbuseSignal.Model.GetAbuseReportStatusResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get the status of a submitted report" source=".\AWSSDKDocSamples\AbuseSignal\AbuseSignal.GeneratedSamples.cs" region="GetAbuseReportStatus-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.AbuseSignal.IAmazonAbuseSignal.ListAbuseReportStatuses(Amazon.AbuseSignal.Model.ListAbuseReportStatusesRequest)" />
+      <member name="M:Amazon.AbuseSignal.AmazonAbuseSignalClient.ListAbuseReportStatuses(Amazon.AbuseSignal.Model.ListAbuseReportStatusesRequest)" />
+      <member name="T:Amazon.AbuseSignal.Model.ListAbuseReportStatusesRequest" />
+      <member name="T:Amazon.AbuseSignal.Model.ListAbuseReportStatusesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List abuse report statuses" source=".\AWSSDKDocSamples\AbuseSignal\AbuseSignal.GeneratedSamples.cs" region="ListAbuseReportStatuses-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

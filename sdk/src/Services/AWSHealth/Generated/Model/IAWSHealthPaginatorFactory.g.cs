@@ -79,5 +79,17 @@ namespace Amazon.AWSHealth.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IDescribeServiceLifecyclePaginator DescribeServiceLifecycle(DescribeServiceLifecycleRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTagsForOrganization operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeTagsForOrganizationPaginator DescribeTagsForOrganization(DescribeTagsForOrganizationRequest request);
     }
 }

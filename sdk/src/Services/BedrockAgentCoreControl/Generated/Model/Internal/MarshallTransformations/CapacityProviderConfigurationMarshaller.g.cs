@@ -50,6 +50,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("capacityProviderArn");
                 context.Writer.WriteStringValue(requestObject.CapacityProviderArn);
             }
+
+            if (requestObject.IsSetOperatingSystemConfiguration())
+            {
+                context.Writer.WritePropertyName("operatingSystemConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OperatingSystemConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OperatingSystemConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

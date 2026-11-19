@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// InputDataConfig Marshaller
     /// </summary>
-    public partial class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, JsonMarshallerContext>
+    public partial class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(InputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDataAccessRoleArn())
             {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
+                context.Writer.WriteTextString("DataAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.DataAccessRoleArn);
             }
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
 
             if (requestObject.IsSetTuningDataS3Uri())
             {
-                context.Writer.WritePropertyName("TuningDataS3Uri");
-                context.Writer.WriteStringValue(requestObject.TuningDataS3Uri);
+                context.Writer.WriteTextString("TuningDataS3Uri");
+                context.Writer.WriteTextString(requestObject.TuningDataS3Uri);
             }
         }
 

@@ -84,6 +84,11 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("SendingPoolName");
                 context.Writer.WriteStringValue(publicRequest.SendingPoolName);
             }
+            if (publicRequest.IsSetSharedPoolDeliveryMode())
+            {
+                context.Writer.WritePropertyName("SharedPoolDeliveryMode");
+                context.Writer.WriteStringValue(publicRequest.SharedPoolDeliveryMode);
+            }
             if (publicRequest.IsSetTlsPolicy())
             {
                 context.Writer.WritePropertyName("TlsPolicy");

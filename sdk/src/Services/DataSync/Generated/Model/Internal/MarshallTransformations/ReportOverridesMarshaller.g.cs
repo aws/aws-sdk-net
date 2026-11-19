@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,57 +39,57 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReportOverrides Marshaller
     /// </summary>
-    public partial class ReportOverridesMarshaller : IRequestMarshaller<ReportOverrides, JsonMarshallerContext>
+    public partial class ReportOverridesMarshaller : IRequestMarshaller<ReportOverrides, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ReportOverrides requestObject, JsonMarshallerContext context)
+        public void Marshall(ReportOverrides requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDeleted())
             {
-                context.Writer.WritePropertyName("Deleted");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Deleted");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReportOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Deleted, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetSkipped())
             {
-                context.Writer.WritePropertyName("Skipped");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Skipped");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReportOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Skipped, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTransferred())
             {
-                context.Writer.WritePropertyName("Transferred");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Transferred");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReportOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Transferred, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetVerified())
             {
-                context.Writer.WritePropertyName("Verified");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Verified");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ReportOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Verified, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

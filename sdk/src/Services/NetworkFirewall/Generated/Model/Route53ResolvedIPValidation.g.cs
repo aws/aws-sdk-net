@@ -39,6 +39,16 @@ namespace Amazon.NetworkFirewall.Model
     /// domain. To match specific domains, also configure stateful rule groups that use the
     /// <c>AWS_ROUTE_53_RESOLVED_DOMAIN</c> target type or the <c>aws_route_53_resolved_domain</c>
     /// rule keyword.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Enabling or disabling resolved IP validation, or changing <c>DNSFirewallRuleGroupId</c>,
+    /// may require a restart of the stateful engine in order to apply the change. When this
+    /// occurs, existing connections will be treated according to your stream exception policy
+    /// configuration. Changes to <c>Action</c>, <c>DNSExpiryExceptionPolicy</c>, <c>SourceIPRanges</c>,
+    /// and <c>BypassDestinationValidationIPRanges</c> don't require a restart.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class Route53ResolvedIPValidation
     {
@@ -158,7 +168,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Changing this value swaps the managed rule group association. Network Firewall processes
         /// the swap asynchronously. Each policy can have only one managed Route 53 Resolver DNS
         /// Firewall association. While a swap is in progress, Network Firewall rejects further
-        /// changes to this setting. Wait until the swap completes, then retry.
+        /// changes to this setting. Wait until the swap completes, then retry. The change may
+        /// also require a restart of the stateful engine. When this occurs, existing connections
+        /// will be treated according to your stream exception policy configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// CustomAction Marshaller
     /// </summary>
-    public partial class CustomActionMarshaller : IRequestMarshaller<CustomAction, JsonMarshallerContext>
+    public partial class CustomActionMarshaller : IRequestMarshaller<CustomAction, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CustomAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomAction requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetActionDefinition())
             {
-                context.Writer.WritePropertyName("ActionDefinition");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ActionDefinition");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActionDefinition, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetActionName())
             {
-                context.Writer.WritePropertyName("ActionName");
-                context.Writer.WriteStringValue(requestObject.ActionName);
+                context.Writer.WriteTextString("ActionName");
+                context.Writer.WriteTextString(requestObject.ActionName);
             }
         }
 

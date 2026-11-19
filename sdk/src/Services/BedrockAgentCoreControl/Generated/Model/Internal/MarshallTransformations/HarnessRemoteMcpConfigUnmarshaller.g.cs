@@ -60,6 +60,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("outboundAuth", targetDepth, ref reader))
+                {
+                    var unmarshaller = HarnessRemoteMcpOutboundAuthUnmarshaller.Instance;
+                    unmarshalledObject.OutboundAuth = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("url", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

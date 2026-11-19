@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StreamingProperties Object
     /// </summary>
-    public partial class StreamingPropertiesUnmarshaller : IJsonUnmarshaller<StreamingProperties, JsonUnmarshallerContext>
+    public partial class StreamingPropertiesUnmarshaller : ICborUnmarshaller<StreamingProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public StreamingProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public StreamingProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new StreamingProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("GlobalAccelerator", targetDepth, ref reader))
-                {
-                    var unmarshaller = GlobalAcceleratorForDirectoryUnmarshaller.Instance;
-                    unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("StorageConnectors", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
-                    unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "GlobalAccelerator":
+                        context.AddPathSegment("GlobalAccelerator");
+                        unmarshalledObject.GlobalAccelerator = GlobalAcceleratorForDirectoryUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StreamingExperiencePreferredProtocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamingExperiencePreferredProtocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StorageConnectors":
+                        context.AddPathSegment("StorageConnectors");
+                        unmarshalledObject.StorageConnectors = new CborListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UserSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
-                    unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StreamingExperiencePreferredProtocol":
+                        context.AddPathSegment("StreamingExperiencePreferredProtocol");
+                        unmarshalledObject.StreamingExperiencePreferredProtocol = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "UserSettings":
+                        context.AddPathSegment("UserSettings");
+                        unmarshalledObject.UserSettings = new CborListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

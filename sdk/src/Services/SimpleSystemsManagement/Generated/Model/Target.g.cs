@@ -82,7 +82,26 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <c>Key=InstanceIds,Values=*</c> 
     /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Automation only, to target Microsoft Azure or Google Cloud Platform (GCP) resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=CloudConnector,Values=cloud-connector-id</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=CloudConnector,Values={"CloudConnectorId":"cloud-connector-id","SsmManagedNodeFilter":"MANAGED","CloudProviderRegions":["eastus"]}</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Supported JSON keys: <c>CloudConnectorId</c> (required), <c>SsmManagedNodeFilter</c>,
+    /// <c>CloudProviderRegions</c>, and, for GCP, <c>IncludesLabels</c>, <c>ExcludesLabels</c>,
+    /// <c>OsPolicyComplianceFilter</c>, and <c>OsPolicyOrchestratorId</c>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>For Run Command and Maintenance Windows:</b> 
     /// </para>
@@ -127,7 +146,26 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <c>Key=InstanceIds,Values=*</c> 
     /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// For associations that run an Automation runbook, to target Microsoft Azure or Google
+    /// Cloud Platform (GCP) resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=CloudConnector,Values=cloud-connector-id</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=CloudConnector,Values={"CloudConnectorId":"cloud-connector-id","SsmManagedNodeFilter":"UNMANAGED"}</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Supported JSON keys: <c>CloudConnectorId</c> (required), <c>SsmManagedNodeFilter</c>,
+    /// and <c>CloudProviderRegions</c>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For more information about how to send commands that target managed nodes using <c>Key,Value</c>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting

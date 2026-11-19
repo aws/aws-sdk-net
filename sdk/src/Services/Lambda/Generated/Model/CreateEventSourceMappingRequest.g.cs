@@ -393,10 +393,10 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// For Kafka <c>Stream</c> consumption mode, the default is <c>-1</c> (infinite retries;
-        /// capped at 10 when an on-failure destination is configured). For Kafka <c>Queue</c>
-        /// consumption mode, the default is <c>0</c>, and if no on-failure destination is configured
-        /// the Kafka broker performs retries.
+        /// For Kafka event source mappings with <c>ConsumptionMode</c> set to <c>Queue</c>, the
+        /// value -1 (infinite retries) is not supported and the default is 0 (no retries). Lambda
+        /// releases failed records back to the broker, which redelivers them up to the share
+        /// group's <c>group.share.delivery.count.limit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = -1, Max = 10000)]

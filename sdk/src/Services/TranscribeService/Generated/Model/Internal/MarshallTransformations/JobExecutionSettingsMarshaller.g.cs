@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// JobExecutionSettings Marshaller
     /// </summary>
-    public partial class JobExecutionSettingsMarshaller : IRequestMarshaller<JobExecutionSettings, JsonMarshallerContext>
+    public partial class JobExecutionSettingsMarshaller : IRequestMarshaller<JobExecutionSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(JobExecutionSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(JobExecutionSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAllowDeferredExecution())
             {
-                context.Writer.WritePropertyName("AllowDeferredExecution");
-                context.Writer.WriteBooleanValue(requestObject.AllowDeferredExecution.Value);
+                context.Writer.WriteTextString("AllowDeferredExecution");
+                context.Writer.WriteBoolean(requestObject.AllowDeferredExecution.Value);
             }
 
             if (requestObject.IsSetDataAccessRoleArn())
             {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
+                context.Writer.WriteTextString("DataAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.DataAccessRoleArn);
             }
         }
 

@@ -38,8 +38,62 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that is enabled or disabled.
+        /// The action you want to enable or disable. Choose from the following:
         /// </para>
+        ///  <dl> <dt>AUTO_TIME_ZONE_REDIRECTION</dt> <dd> 
+        /// <para>
+        /// Controls whether the streaming session's time zone matches the time zone of your local
+        /// device.
+        /// </para>
+        ///  </dd> <dt>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</dt> <dd> 
+        /// <para>
+        /// Controls whether you can copy data from your local device and paste it into the streaming
+        /// session.
+        /// </para>
+        ///  </dd> <dt>CLIPBOARD_COPY_TO_LOCAL_DEVICE</dt> <dd> 
+        /// <para>
+        /// Controls whether you can copy data from the streaming session and paste it to your
+        /// local device.
+        /// </para>
+        ///  </dd> <dt>DOMAIN_PASSWORD_SIGNIN</dt> <dd> 
+        /// <para>
+        /// Controls whether you can sign in to a domain-joined streaming session by using your
+        /// password.
+        /// </para>
+        ///  </dd> <dt>DOMAIN_SMART_CARD_SIGNIN</dt> <dd> 
+        /// <para>
+        /// Controls whether you can sign in to a domain-joined streaming session by using a smart
+        /// card.
+        /// </para>
+        ///  </dd> <dt>FILE_DOWNLOAD</dt> <dd> 
+        /// <para>
+        /// Controls whether you can download files from the streaming session to your local device.
+        /// </para>
+        ///  </dd> <dt>FILE_UPLOAD</dt> <dd> 
+        /// <para>
+        /// Controls whether you can upload files from your local device to the streaming session.
+        /// </para>
+        ///  </dd> <dt>PRINTING_TO_LOCAL_DEVICE</dt> <dd> 
+        /// <para>
+        /// Controls whether you can print from the streaming session to a printer on your local
+        /// device.
+        /// </para>
+        ///  </dd> <dt>SMART_CARD_REDIRECTION</dt> <dd> 
+        /// <para>
+        /// Controls whether smart cards connected to your local device are redirected into the
+        /// streaming session. Applications in the session can access the local smart card for
+        /// use cases such as authentication, digital signing, and email encryption.
+        /// </para>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        /// Smart card redirection was on by default for existing streaming sessions that use
+        /// a Windows single-session fleet. To preserve that behavior, <c>SMART_CARD_REDIRECTION</c>
+        /// is <c>ENABLED</c> by default on existing stacks associated with Windows single-session
+        /// fleets. To turn it off, call <c>UpdateStack</c> with <c>SMART_CARD_REDIRECTION</c>
+        /// set to <c>DISABLED</c>, and use an image that includes the latest WorkSpaces Applications
+        /// agent version.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required = true)]
         public Action Action { get; set; }
@@ -80,7 +134,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Permission. 
         /// <para>
-        /// Indicates whether the action is enabled or disabled.
+        /// Specifies whether to turn the action on or off.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

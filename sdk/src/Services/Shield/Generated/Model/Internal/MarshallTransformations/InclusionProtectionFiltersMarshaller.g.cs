@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,44 +39,44 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// InclusionProtectionFilters Marshaller
     /// </summary>
-    public partial class InclusionProtectionFiltersMarshaller : IRequestMarshaller<InclusionProtectionFilters, JsonMarshallerContext>
+    public partial class InclusionProtectionFiltersMarshaller : IRequestMarshaller<InclusionProtectionFilters, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(InclusionProtectionFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(InclusionProtectionFilters requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetProtectionNames())
             {
-                context.Writer.WritePropertyName("ProtectionNames");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ProtectionNames");
+                context.Writer.WriteStartArray(requestObject.ProtectionNames.Count);
                 foreach (var requestObjectProtectionNamesListValue in requestObject.ProtectionNames)
                 {
-                    context.Writer.WriteStringValue(requestObjectProtectionNamesListValue);
+                    context.Writer.WriteTextString(requestObjectProtectionNamesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetResourceArns())
             {
-                context.Writer.WritePropertyName("ResourceArns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceArns");
+                context.Writer.WriteStartArray(requestObject.ResourceArns.Count);
                 foreach (var requestObjectResourceArnsListValue in requestObject.ResourceArns)
                 {
-                    context.Writer.WriteStringValue(requestObjectResourceArnsListValue);
+                    context.Writer.WriteTextString(requestObjectResourceArnsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetResourceTypes())
             {
-                context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceTypes");
+                context.Writer.WriteStartArray(requestObject.ResourceTypes.Count);
                 foreach (var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
+                    context.Writer.WriteTextString(requestObjectResourceTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

@@ -68,6 +68,19 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetChangeProgressStages() => this.ChangeProgressStages != null && (this.ChangeProgressStages.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ClonedBlueGreenUpgradeDetails. 
+        /// <para>
+        /// Details about a cloned blue/green upgrade, when the change is one.
+        /// </para>
+        /// </summary>
+        public ClonedBlueGreenUpgradeDetails ClonedBlueGreenUpgradeDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClonedBlueGreenUpgradeDetails property is set.
+        /// </summary>
+        internal bool IsSetClonedBlueGreenUpgradeDetails() => this.ClonedBlueGreenUpgradeDetails != null;
+
+        /// <summary>
         /// Gets and sets the property CompletedProperties. 
         /// <para>
         /// The list of properties involved in the domain configuration change that are completed.

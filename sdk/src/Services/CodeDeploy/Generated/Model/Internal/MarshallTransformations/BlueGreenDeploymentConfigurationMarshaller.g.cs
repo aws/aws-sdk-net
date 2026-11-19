@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,46 +39,46 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// BlueGreenDeploymentConfiguration Marshaller
     /// </summary>
-    public partial class BlueGreenDeploymentConfigurationMarshaller : IRequestMarshaller<BlueGreenDeploymentConfiguration, JsonMarshallerContext>
+    public partial class BlueGreenDeploymentConfigurationMarshaller : IRequestMarshaller<BlueGreenDeploymentConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(BlueGreenDeploymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(BlueGreenDeploymentConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDeploymentReadyOption())
             {
-                context.Writer.WritePropertyName("deploymentReadyOption");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("deploymentReadyOption");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DeploymentReadyOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeploymentReadyOption, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetGreenFleetProvisioningOption())
             {
-                context.Writer.WritePropertyName("greenFleetProvisioningOption");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("greenFleetProvisioningOption");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GreenFleetProvisioningOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreenFleetProvisioningOption, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTerminateBlueInstancesOnDeploymentSuccess())
             {
-                context.Writer.WritePropertyName("terminateBlueInstancesOnDeploymentSuccess");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("terminateBlueInstancesOnDeploymentSuccess");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BlueInstanceTerminationOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TerminateBlueInstancesOnDeploymentSuccess, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

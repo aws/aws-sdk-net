@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -7,7 +8,8 @@ namespace SmithyDotNet.Generator.Generation.Operations;
 
 /// <summary>
 /// An operation with its input, output, and error shapes pre-resolved so writers
-/// don't need to perform lookups themselves. <see cref="RequiresHttp2"/> pins the request to
+/// don't need to perform lookups themselves. <see cref="Name"/> is the C# name, which an <c>operationModifiers</c>
+/// <c>name</c> can change; the wire and the other operation-keyed hooks use the modeled <c>Shape.Id.Name</c>. <see cref="RequiresHttp2"/> pins the request to
 /// <c>HttpProtocolVersion.Version20</c> and excludes the operation below net8; input-only event
 /// streams follow C2J and are never pinned unless the whole service is h2-required.
 /// </summary>
@@ -26,7 +28,7 @@ public record Operation(
 /// </summary>
 public static class OperationResolver
 {
-    public static List<Operation> Resolve(ServiceIndex index, AWSProtocol protocol)
+    public static List<Operation> Resolve(ServiceIndex index, AWSProtocol protocol, CustomizationsModel customizations)
     {
         var protocolTrait = protocol switch
         {
@@ -72,7 +74,7 @@ public static class OperationResolver
                 _ => false,
             };
 
-            resolved.Add(new Operation(operation.Id.Name, operation, input, output, errors, requiresHttp2, hasOutputEventStream));
+            resolved.Add(new Operation(customizations.OperationName(operation.Id.Name), operation, input, output, errors, requiresHttp2, hasOutputEventStream));
         }
 
         return resolved;

@@ -124,6 +124,10 @@ namespace Amazon.Inspector2.Model
         /// <para>
         ///  <c>AZURE</c> – Findings from Microsoft Azure resources.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Findings from Google Cloud Platform (GCP) resources.
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -153,6 +157,11 @@ namespace Amazon.Inspector2.Model
         ///  </li> <li> 
         /// <para>
         /// An Azure region, such as <c>eastus</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Google Cloud Platform (GCP) location, such as the region <c>us-central1</c> or the
+        /// zone <c>us-central1-a</c>.
         /// </para>
         ///  </li> </ul>
         /// <para />

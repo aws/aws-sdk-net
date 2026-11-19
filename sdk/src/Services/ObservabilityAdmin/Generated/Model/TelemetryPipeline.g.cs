@@ -63,6 +63,19 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetConfiguration() => this.Configuration != null;
 
         /// <summary>
+        /// Gets and sets the property ConfigurationSummary. 
+        /// <para>
+        /// A summary of the pipeline configuration components.
+        /// </para>
+        /// </summary>
+        public ConfigurationSummary ConfigurationSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConfigurationSummary property is set.
+        /// </summary>
+        internal bool IsSetConfigurationSummary() => this.ConfigurationSummary != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedTimeStamp. 
         /// <para>
         /// The timestamp when the telemetry pipeline was created.
@@ -74,6 +87,20 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Checks to see if the CreatedTimeStamp property is set.
         /// </summary>
         internal bool IsSetCreatedTimeStamp() => this.CreatedTimeStamp.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property LastRefreshTimeStamp. 
+        /// <para>
+        /// The timestamp when the most recent refresh of the telemetry pipeline started. This
+        /// field is only present for external-cloud pipelines that you have refreshed.
+        /// </para>
+        /// </summary>
+        public long? LastRefreshTimeStamp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastRefreshTimeStamp property is set.
+        /// </summary>
+        internal bool IsSetLastRefreshTimeStamp() => this.LastRefreshTimeStamp.HasValue;
 
         /// <summary>
         /// Gets and sets the property LastUpdateTimeStamp. 
@@ -101,6 +128,20 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceProgress. 
+        /// <para>
+        /// The progress of source activation for the telemetry pipeline. This field is only present
+        /// for external-cloud pipelines.
+        /// </para>
+        /// </summary>
+        public SourceProgress SourceProgress { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceProgress property is set.
+        /// </summary>
+        internal bool IsSetSourceProgress() => this.SourceProgress != null;
 
         /// <summary>
         /// Gets and sets the property Status. 

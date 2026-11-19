@@ -49,6 +49,50 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Request_HttpChecksumValidationMode_EmitsResponseChecksumOverrides()
+    {
+        var context = TestModels.Context("Codegen/compression-checksum-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoValidatedChecksum");
+        var output = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("protected override CoreChecksumResponseBehavior CoreChecksumMode", output);
+        Assert.Contains("get => IsSetChecksumMode() ? (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.ChecksumMode) : CoreChecksumResponseBehavior.DISABLED;", output);
+        Assert.Contains("set => this.ChecksumMode = value.ToString();", output);
+        Assert.Contains("CoreChecksumAlgorithm.CRC64NVME, CoreChecksumAlgorithm.CRC32, CoreChecksumAlgorithm.SHA256", output);
+        Assert.DoesNotContain("XXHASH128", output);
+        Assert.Contains("protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _checksumResponseAlgorithms;", output);
+    }
+
+    [Fact]
+    public void Request_HttpChecksumValidationModeMemberMissing_Throws()
+    {
+        var context = TestModels.Context("Codegen/compression-checksum-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoDanglingModeMember");
+
+        var exception = Assert.Throws<GeneratorException>(() => new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken));
+        Assert.Contains("'missing'", exception.Message);
+    }
+
+    [Fact]
+    public void Request_NoHttpChecksum_EmitsNoChecksumOverrides()
+    {
+        Assert.DoesNotContain("CoreChecksumMode", _request);
+    }
+
+    [Fact]
+    public void Request_AccessModifier_AppliesToTheProperty()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["PutAuditEventsRequest"] = TestCustomizations.Modify("channelArn", new PropertyModifier { AccessModifier = "internal" });
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, customizations: customizations);
+        var operation = context.Operations.Single(o => o.Name == "PutAuditEvents");
+
+        var output = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("internal string ChannelArn { get; set; }", output);
+    }
+
+    [Fact]
     public void ServiceRequest_EmitsBaseClassInServiceNamespace()
     {
         Assert.Contains("namespace Amazon.CloudTrailData", _serviceRequest);
@@ -60,6 +104,18 @@ public class OperationWriterTests
     public void Request_EmitsClassWithCorrectBaseType()
     {
         Assert.Contains("public partial class PutAuditEventsRequest : AmazonCloudTrailDataRequest", _request);
+    }
+
+    [Fact]
+    public void Request_WithRequestBaseClass_DerivesFromIt()
+    {
+        var service = new ServiceCustomizations { RequestBaseClass = "AmazonWebServiceRequest" };
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), new CustomizationsModel { Service = service });
+        var operation = context.Operations.Single(o => o.Name == "GetStreamingBlobPayload");
+
+        var request = new OperationWriter(context, "example-2023-01-01.normal.json").WriteRequest(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class GetStreamingBlobPayloadRequest : AmazonWebServiceRequest", request);
     }
 
     [Fact]
@@ -130,6 +186,23 @@ public class OperationWriterTests
         Assert.Contains("protected virtual void Dispose(bool disposing)", response);
         Assert.Contains("this.Body?.Dispose();", response);
         Assert.Contains("this.Body = null;", response);
+    }
+
+    [Fact]
+    public void Response_WithStreamingResponseBaseClass_DerivesFromItWithoutTheStream()
+    {
+        var service = new ServiceCustomizations { StreamingResponseBaseClass = "StreamResponse" };
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), new CustomizationsModel { Service = service });
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+
+        var response = writer.WriteResponse(context.Operations.Single(o => o.Name == "GetStreamingBlobPayload"), TestContext.Current.CancellationToken);
+        var blobResponse = writer.WriteResponse(context.Operations.Single(o => o.Name == "GetBlobPayload"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class GetStreamingBlobPayloadResponse : StreamResponse", response);
+        Assert.Contains("public string Trace", response);
+        Assert.DoesNotContain("Body", response);
+        Assert.DoesNotContain("Dispose", response);
+        Assert.Contains("public partial class GetBlobPayloadResponse : AmazonWebServiceResponse", blobResponse);
     }
 
     [Fact]
@@ -208,6 +281,20 @@ public class OperationWriterTests
 
         var response = new OperationWriter(context, "example-2023-01-01.normal.json").WriteResponse(operation, TestContext.Current.CancellationToken);
         Assert.Contains("""[Obsolete("This type is deprecated.")]""", response);
+    }
+
+    // Most of S3's excludeMembers keys are outputs (GetObjectOutput, GetBucketWebsiteOutput).
+    [Fact]
+    public void Response_OmitsExcludedMember()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeMembers["DoScalarsResponse"] = ["updated"];
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "DoScalars");
+
+        var response = new OperationWriter(context, "example-2023-01-01.normal.json").WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.DoesNotContain(" Updated", response);
+        Assert.Contains("public long? Total ", response);
     }
 
     [Fact]

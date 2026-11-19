@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,78 +55,84 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeApplicationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.DescribeApplications";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/WorkspacesService/operation/DescribeApplications";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetApplicationIds())
+                {
+                    context.Writer.WriteTextString("ApplicationIds");
+                    context.Writer.WriteStartArray(publicRequest.ApplicationIds.Count);
+                    foreach (var publicRequestApplicationIdsListValue in publicRequest.ApplicationIds)
+                    {
+                        context.Writer.WriteTextString(publicRequestApplicationIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetComputeTypeNames())
+                {
+                    context.Writer.WriteTextString("ComputeTypeNames");
+                    context.Writer.WriteStartArray(publicRequest.ComputeTypeNames.Count);
+                    foreach (var publicRequestComputeTypeNamesListValue in publicRequest.ComputeTypeNames)
+                    {
+                        context.Writer.WriteTextString(publicRequestComputeTypeNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetLicenseType())
+                {
+                    context.Writer.WriteTextString("LicenseType");
+                    context.Writer.WriteTextString(publicRequest.LicenseType);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetOperatingSystemNames())
+                {
+                    context.Writer.WriteTextString("OperatingSystemNames");
+                    context.Writer.WriteStartArray(publicRequest.OperatingSystemNames.Count);
+                    foreach (var publicRequestOperatingSystemNamesListValue in publicRequest.OperatingSystemNames)
+                    {
+                        context.Writer.WriteTextString(publicRequestOperatingSystemNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetOwner())
+                {
+                    context.Writer.WriteTextString("Owner");
+                    context.Writer.WriteTextString(publicRequest.Owner);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetApplicationIds())
-            {
-                context.Writer.WritePropertyName("ApplicationIds");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestApplicationIdsListValue in publicRequest.ApplicationIds)
-                {
-                    context.Writer.WriteStringValue(publicRequestApplicationIdsListValue);
-                }
-                context.Writer.WriteEndArray();
             }
-            if (publicRequest.IsSetComputeTypeNames())
+            finally
             {
-                context.Writer.WritePropertyName("ComputeTypeNames");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestComputeTypeNamesListValue in publicRequest.ComputeTypeNames)
-                {
-                    context.Writer.WriteStringValue(publicRequestComputeTypeNamesListValue);
-                }
-                context.Writer.WriteEndArray();
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetLicenseType())
-            {
-                context.Writer.WritePropertyName("LicenseType");
-                context.Writer.WriteStringValue(publicRequest.LicenseType);
-            }
-            if (publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetOperatingSystemNames())
-            {
-                context.Writer.WritePropertyName("OperatingSystemNames");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestOperatingSystemNamesListValue in publicRequest.OperatingSystemNames)
-                {
-                    context.Writer.WriteStringValue(publicRequestOperatingSystemNamesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetOwner())
-            {
-                context.Writer.WritePropertyName("Owner");
-                context.Writer.WriteStringValue(publicRequest.Owner);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

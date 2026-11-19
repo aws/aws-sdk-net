@@ -104,7 +104,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public DatasetSchemaType SchemaType { get; set; }
 
         /// <summary>
@@ -119,7 +118,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to a JSONL file. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public DataSourceType Source { get; set; }
 
         /// <summary>

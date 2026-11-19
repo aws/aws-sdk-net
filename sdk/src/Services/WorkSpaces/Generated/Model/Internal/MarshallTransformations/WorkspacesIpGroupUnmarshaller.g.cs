@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WorkspacesIpGroup Object
     /// </summary>
-    public partial class WorkspacesIpGroupUnmarshaller : IJsonUnmarshaller<WorkspacesIpGroup, JsonUnmarshallerContext>
+    public partial class WorkspacesIpGroupUnmarshaller : ICborUnmarshaller<WorkspacesIpGroup, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public WorkspacesIpGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkspacesIpGroup Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new WorkspacesIpGroup();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("groupDesc", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupDesc = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("groupId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "groupDesc":
+                        context.AddPathSegment("GroupDesc");
+                        unmarshalledObject.GroupDesc = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("groupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "groupId":
+                        context.AddPathSegment("GroupId");
+                        unmarshalledObject.GroupId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("userRules", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IpRuleItem, IpRuleItemUnmarshaller>(IpRuleItemUnmarshaller.Instance);
-                    unmarshalledObject.UserRules = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "groupName":
+                        context.AddPathSegment("GroupName");
+                        unmarshalledObject.GroupName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "userRules":
+                        context.AddPathSegment("UserRules");
+                        unmarshalledObject.UserRules = new CborListUnmarshaller<IpRuleItem, IpRuleItemUnmarshaller>(IpRuleItemUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

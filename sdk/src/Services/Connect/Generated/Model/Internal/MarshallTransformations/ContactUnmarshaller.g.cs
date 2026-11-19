@@ -144,6 +144,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ContactLens", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContactLensUnmarshaller.Instance;
+                    unmarshalledObject.ContactLens = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Customer", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerUnmarshaller.Instance;

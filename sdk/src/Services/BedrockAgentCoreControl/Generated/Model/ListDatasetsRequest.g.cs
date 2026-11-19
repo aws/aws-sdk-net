@@ -36,6 +36,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class ListDatasetsRequest : AmazonBedrockAgentCoreControlRequest
     {
         /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        ///  A filter to apply to the datasets. 
+        /// </para>
+        /// </summary>
+        public ListDatasetsFilter Filter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filter property is set.
+        /// </summary>
+        internal bool IsSetFilter() => this.Filter != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of datasets to return per page. 

@@ -37,7 +37,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property ByteValue.
         /// </summary>
-        public int? ByteValue { get; set; }
+        public sbyte? ByteValue { get; set; }
 
         /// <summary>
         /// Checks to see if the ByteValue property is set.
@@ -107,7 +107,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property ShortValue.
         /// </summary>
-        public int? ShortValue { get; set; }
+        public short? ShortValue { get; set; }
 
         /// <summary>
         /// Checks to see if the ShortValue property is set.

@@ -37,7 +37,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property DocumentContentLength. 
         /// <para>
-        /// The size of the document content in bytes available at the pre-signed URL.
+        /// The size, in bytes, of the content available at the pre-signed URL.
         /// </para>
         /// </summary>
         public long? DocumentContentLength { get; set; }
@@ -50,9 +50,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property MimeType. 
         /// <para>
-        /// The MIME type of the document content. For <c>RAW</c> format, this is the original
-        /// file type (for example, <c>application/pdf</c>). For <c>EXTRACTED</c> format, this
-        /// is always <c>application/json</c>.
+        /// The MIME type of the returned content. For <c>RAW</c> format, this is the original
+        /// file type (for example, <c>application/pdf</c>), or the image type (for example, <c>image/png</c>)
+        /// if you specify <c>mediaId</c>. For <c>EXTRACTED</c> format, this is always <c>application/json</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -66,7 +66,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property PresignedUrl. 
         /// <para>
-        /// A pre-signed URL for downloading the document content. The URL expires after 5 minutes.
+        /// A pre-signed URL for downloading the document content, or the selected image if you
+        /// specify <c>mediaId</c>. The URL expires after 5 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]

@@ -2282,6 +2282,9 @@ namespace Amazon.Resiliencehubv2
         /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
         /// Resource not found.
         /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.
         /// </exception>
@@ -2322,6 +2325,9 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
         /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.
@@ -4143,6 +4149,9 @@ namespace Amazon.Resiliencehubv2
         /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
         /// Internal service error.
         /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.
         /// </exception>
@@ -4180,6 +4189,9 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
         /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
         /// Validation error — invalid input parameters.

@@ -54,7 +54,7 @@ namespace Amazon.WellArchitected.Model
         /// The URL of the external reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 10, Max = 500)]
+        [AWSProperty(Required = true, Min = 10, Max = 16384)]
         public string Url { get; set; }
 
         /// <summary>

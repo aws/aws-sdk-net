@@ -69,6 +69,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ServerSideEncryptionKeyManagementServiceKeyId = context.ResponseData.GetHeaderValue("x-amz-server-side-encryption-aws-kms-key-id");
             if (context.ResponseData.IsHeaderPresent("x-amz-server-side-encryption"))
                 response.ServerSideEncryptionMethod = context.ResponseData.GetHeaderValue("x-amz-server-side-encryption");
+            if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
+                response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
             PostUnmarshallCustomization(context, response);
             return response;

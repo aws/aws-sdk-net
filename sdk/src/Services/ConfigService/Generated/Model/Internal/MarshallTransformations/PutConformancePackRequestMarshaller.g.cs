@@ -100,6 +100,26 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DeliveryS3KeyPrefix");
                 context.Writer.WriteStringValue(publicRequest.DeliveryS3KeyPrefix);
             }
+            if (publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConformancePackScopeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scope, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSource())
+            {
+                context.Writer.WritePropertyName("Source");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConformancePackSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Source, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

@@ -30,10 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMToolbox.Model
 {
     /// <summary>
-    /// The requested authorization details do not exist in this region or have expired. Verify
-    /// that the authorization ID from the access denied error message is correct and the
-    /// call is made in the region where the denial occurred. Ensure that the calling principal
-    /// belongs to the same account or organization as the original denied request.
+    /// The requested policy or authorization details do not exist in this region or have
+    /// expired. Verify that the authorization ID from the access denied error message is
+    /// correct and the call is made in the region where the denial occurred. Ensure that
+    /// the calling principal belongs to the same account or organization as the original
+    /// denied request. If you specified a policy URI, verify that it is from the <c>policies</c>
+    /// list that <c>GetRequestAuthorizationDetails</c> returns for the same authorization
+    /// ID.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

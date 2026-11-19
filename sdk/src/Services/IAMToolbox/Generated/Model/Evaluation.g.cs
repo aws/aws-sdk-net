@@ -50,6 +50,47 @@ namespace Amazon.IAMToolbox.Model
         internal bool IsSetAction() => this.Action != null;
 
         /// <summary>
+        /// Gets and sets the property Checks. 
+        /// <para>
+        ///  <c>checks</c> contains the authorization checks that explain an evaluation result.
+        /// Each check is one authorization requirement and reports its result and policies from
+        /// the top-level <c>policies</c> list with matching statements. The output lists RCP
+        /// checks from the organization root to the account, then SCP checks from the organization
+        /// root to the account. It then lists VPC endpoint, resource, principal, permissions
+        /// boundary, and session checks. When <c>checks</c> is present, an <c>EXPLICIT_DENY</c>
+        /// evaluation includes an <c>EXPLICIT_DENY</c> check. When <c>checks</c> is present for
+        /// an <c>IMPLICIT_DENY</c> evaluation, it includes an <c>IMPLICIT_DENY</c> check and
+        /// no <c>EXPLICIT_DENY</c> check. For more information about how IAM evaluates policies,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy
+        /// evaluation logic</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>PRINCIPAL</c>, <c>PERMISSIONS_BOUNDARY</c>, and <c>SESSION</c> checks appear when
+        /// they apply to the principal that made the request, even if none of their policies
+        /// matched. A missing allow produces <c>IMPLICIT_DENY</c>, or <c>NO_IMPACT</c> when another
+        /// path already allowed the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returned when the caller is in the request principal's account or organization. The
+        /// absence of <c>checks</c> does not mean no authorization checks applied.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Check> Checks { get; set; } = AWSConfigs.InitializeCollections ? new List<Check>() : null;
+
+        /// <summary>
+        /// Checks to see if the Checks property is set.
+        /// </summary>
+        internal bool IsSetChecks() => this.Checks != null && (this.Checks.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Context. 
         /// <para>
         /// The context keys and values specific to this evaluation. These are applied on top
@@ -84,7 +125,8 @@ namespace Amazon.IAMToolbox.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IMPLICIT_DENY</c> - The action was denied because no policy allowed it.
+        ///  <c>IMPLICIT_DENY</c> - The action was denied because at least one required authorization
+        /// check had no matching allow statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,8 +140,8 @@ namespace Amazon.IAMToolbox.Model
         /// <summary>
         /// Gets and sets the property MatchedPolicies. 
         /// <para>
-        /// The policies that matched during evaluation of this action and resource. An implicit
-        /// denial produces no matched policies.
+        ///  <c>matchedPolicies</c> is deprecated. Use <c>checks</c> instead. This value contains
+        /// the policies that matched during evaluation of this action and resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -108,6 +150,7 @@ namespace Amazon.IAMToolbox.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Use checks, which group matched policies by the requirement they apply to.")]
         public List<MatchedPolicy> MatchedPolicies { get; set; } = AWSConfigs.InitializeCollections ? new List<MatchedPolicy>() : null;
 
         /// <summary>

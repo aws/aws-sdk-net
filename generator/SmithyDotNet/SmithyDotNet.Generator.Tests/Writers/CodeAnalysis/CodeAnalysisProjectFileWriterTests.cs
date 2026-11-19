@@ -1,4 +1,6 @@
-﻿using SmithyDotNet.Generator.Writers.CodeAnalysis;
+﻿using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.CodeAnalysis;
@@ -6,9 +8,11 @@ namespace SmithyDotNet.Generator.Tests.Writers.CodeAnalysis;
 [Collection(nameof(CloudTrailModelCollection))]
 public class CodeAnalysisProjectFileWriterTests
 {
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _codeAnalysisProjectFile;
     public CodeAnalysisProjectFileWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new CodeAnalysisProjectFileWriter(fixture.Context);
         // the writer's write method accepts a path to the csproj so that it doesn't generate a new guid 
         // if a guid exists. For the purposes of this test, just pass an empty string.
@@ -65,12 +69,27 @@ public class CodeAnalysisProjectFileWriterTests
         AssertHelper("""<EmbeddedResource Include="Generated/PropertyValueRules.xml">""");
         AssertHelper("<CopyToOutputDirectory>Always</CopyToOutputDirectory>");
         AssertHelper("</EmbeddedResource>");
+        Assert.DoesNotContain("Custom/PropertyValueRules.xml", _codeAnalysisProjectFile);
     }
 
     [Fact]
     public void ProjectReferenceCorrect()
     {
         AssertHelper("""<ProjectReference Include="../../SharedAnalysisCode/SharedAnalysisCode.csproj" />""");
+    }
+
+    [Fact]
+    public void CustomPropertyValueRules_EmbedsCustomFile()
+    {
+        var service = new ServiceCustomizations { CustomPropertyValueRules = true };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, new CustomizationsModel { Service = service });
+
+        var output = new CodeAnalysisProjectFileWriter(context).Write("");
+
+        // Both files are embedded, each copied to the output.
+        Assert.Contains("""<EmbeddedResource Include="Generated/PropertyValueRules.xml">""", output);
+        Assert.Contains("""<EmbeddedResource Include="Custom/PropertyValueRules.xml">""", output);
+        Assert.Equal(2, System.Text.RegularExpressions.Regex.Count(output, "<CopyToOutputDirectory>Always</CopyToOutputDirectory>"));
     }
 
     private void AssertHelper(string expected)

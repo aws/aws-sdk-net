@@ -3160,6 +3160,12 @@
     <pattern>^[a-z0-9_](([a-z0-9_ ]+-)*([a-z0-9_ ]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.PopulationAnalysisJobParameters.AnalysisTemplateArn</property>
+    <min>0</min>
+    <max>200</max>
+    <pattern>^arn:aws[-a-z]*:cleanrooms:[\w]{2}-[\w]{4,9}-[\d]:[\d]{12}:membership/[\d\w-]+/analysistemplate/[\d\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.PopulationAnalysisSqlParameters.AnalysisTemplateArn</property>
     <min>0</min>
     <max>200</max>

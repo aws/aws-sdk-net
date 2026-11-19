@@ -113,6 +113,11 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("internetProtocol");
                 context.Writer.WriteStringValue(publicRequest.InternetProtocol);
             }
+            if (publicRequest.IsSetOutpostSnapshotLocation())
+            {
+                context.Writer.WritePropertyName("outpostSnapshotLocation");
+                context.Writer.WriteStringValue(publicRequest.OutpostSnapshotLocation);
+            }
             if (publicRequest.IsSetReplicationConfigurationTemplateID())
             {
                 context.Writer.WritePropertyName("replicationConfigurationTemplateID");

@@ -81,6 +81,12 @@ namespace Amazon.CloudWatch.Model
         IListManagedInsightRulesPaginator ListManagedInsightRules(ListManagedInsightRulesRequest request);
 
         /// <summary>
+        /// Paginator for ListMetricDataQueryDefinitions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListMetricDataQueryDefinitionsPaginator ListMetricDataQueryDefinitions(ListMetricDataQueryDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListMetricStreams operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

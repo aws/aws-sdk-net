@@ -55,6 +55,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHeaders() => this.Headers != null && (this.Headers.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property OutboundAuth. 
+        /// <para>
+        /// How the harness authenticates to this MCP server. Defaults to no authentication.
+        /// </para>
+        /// </summary>
+        public HarnessRemoteMcpOutboundAuth OutboundAuth { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutboundAuth property is set.
+        /// </summary>
+        internal bool IsSetOutboundAuth() => this.OutboundAuth != null;
+
+        /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
         /// URL of the MCP endpoint.

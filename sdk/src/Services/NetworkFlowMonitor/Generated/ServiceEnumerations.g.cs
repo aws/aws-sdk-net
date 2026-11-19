@@ -37,6 +37,16 @@ namespace Amazon.NetworkFlowMonitor
         public static readonly DestinationCategory AMAZON_S3 = new DestinationCategory("AMAZON_S3");
 
         /// <summary>
+        /// Constant AWS_SERVICE for DestinationCategory
+        /// </summary>
+        public static readonly DestinationCategory AWS_SERVICE = new DestinationCategory("AWS_SERVICE");
+
+        /// <summary>
+        /// Constant INTERNET for DestinationCategory
+        /// </summary>
+        public static readonly DestinationCategory INTERNET = new DestinationCategory("INTERNET");
+
+        /// <summary>
         /// Constant INTER_AZ for DestinationCategory
         /// </summary>
         public static readonly DestinationCategory INTER_AZ = new DestinationCategory("INTER_AZ");
@@ -55,6 +65,16 @@ namespace Amazon.NetworkFlowMonitor
         /// Constant INTRA_AZ for DestinationCategory
         /// </summary>
         public static readonly DestinationCategory INTRA_AZ = new DestinationCategory("INTRA_AZ");
+
+        /// <summary>
+        /// Constant LOCAL_ZONE for DestinationCategory
+        /// </summary>
+        public static readonly DestinationCategory LOCAL_ZONE = new DestinationCategory("LOCAL_ZONE");
+
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY for DestinationCategory
+        /// </summary>
+        public static readonly DestinationCategory TRANSIT_GATEWAY = new DestinationCategory("TRANSIT_GATEWAY");
 
         /// <summary>
         /// Constant UNCLASSIFIED for DestinationCategory
@@ -82,6 +102,57 @@ namespace Amazon.NetworkFlowMonitor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DestinationCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FilterOperator.
+    /// </summary>
+    public class FilterOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTAINS for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator CONTAINS = new FilterOperator("CONTAINS");
+
+        /// <summary>
+        /// Constant EQUALS for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator EQUALS = new FilterOperator("EQUALS");
+
+        /// <summary>
+        /// Constant IN for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator IN = new FilterOperator("IN");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator NOT_EQUALS = new FilterOperator("NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom FilterOperator for a value not among the defined constants.
+        /// </summary>
+        public FilterOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterOperator FindValue(string value)
+        {
+            return FindValue<FilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterOperator(string value)
         {
             return FindValue(value);
         }
@@ -473,6 +544,160 @@ namespace Amazon.NetworkFlowMonitor
     }
 
     /// <summary>
+    /// Constants used for properties of type OrgMembershipStatus.
+    /// </summary>
+    public class OrgMembershipStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_ORG for OrgMembershipStatus
+        /// </summary>
+        public static readonly OrgMembershipStatus IN_ORG = new OrgMembershipStatus("IN_ORG");
+
+        /// <summary>
+        /// Constant NOT_IN_ORG for OrgMembershipStatus
+        /// </summary>
+        public static readonly OrgMembershipStatus NOT_IN_ORG = new OrgMembershipStatus("NOT_IN_ORG");
+
+        /// <summary>
+        /// Constant UNKNOWN for OrgMembershipStatus
+        /// </summary>
+        public static readonly OrgMembershipStatus UNKNOWN = new OrgMembershipStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom OrgMembershipStatus for a value not among the defined constants.
+        /// </summary>
+        public OrgMembershipStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrgMembershipStatus FindValue(string value)
+        {
+            return FindValue<OrgMembershipStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrgMembershipStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerformanceMonitorQueryType.
+    /// </summary>
+    public class PerformanceMonitorQueryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant TOP_PATHS for PerformanceMonitorQueryType
+        /// </summary>
+        public static readonly PerformanceMonitorQueryType TOP_PATHS = new PerformanceMonitorQueryType("TOP_PATHS");
+
+        /// <summary>
+        /// Constructs a custom PerformanceMonitorQueryType for a value not among the defined constants.
+        /// </summary>
+        public PerformanceMonitorQueryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceMonitorQueryType FindValue(string value)
+        {
+            return FindValue<PerformanceMonitorQueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceMonitorQueryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerformanceMonitorTargetType.
+    /// </summary>
+    public class PerformanceMonitorTargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWSEC2VPC for PerformanceMonitorTargetType
+        /// </summary>
+        public static readonly PerformanceMonitorTargetType AWSEC2VPC = new PerformanceMonitorTargetType("AWS::EC2::VPC");
+
+        /// <summary>
+        /// Constructs a custom PerformanceMonitorTargetType for a value not among the defined constants.
+        /// </summary>
+        public PerformanceMonitorTargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceMonitorTargetType FindValue(string value)
+        {
+            return FindValue<PerformanceMonitorTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceMonitorTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PerformanceMonitorType.
+    /// </summary>
+    public class PerformanceMonitorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant VPC for PerformanceMonitorType
+        /// </summary>
+        public static readonly PerformanceMonitorType VPC = new PerformanceMonitorType("VPC");
+
+        /// <summary>
+        /// Constructs a custom PerformanceMonitorType for a value not among the defined constants.
+        /// </summary>
+        public PerformanceMonitorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceMonitorType FindValue(string value)
+        {
+            return FindValue<PerformanceMonitorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceMonitorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type QueryStatus.
     /// </summary>
     public class QueryStatus : ConstantClass
@@ -523,6 +748,57 @@ namespace Amazon.NetworkFlowMonitor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScopeCoverageStatus.
+    /// </summary>
+    public class ScopeCoverageStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETE for ScopeCoverageStatus
+        /// </summary>
+        public static readonly ScopeCoverageStatus COMPLETE = new ScopeCoverageStatus("COMPLETE");
+
+        /// <summary>
+        /// Constant INCOMPLETE for ScopeCoverageStatus
+        /// </summary>
+        public static readonly ScopeCoverageStatus INCOMPLETE = new ScopeCoverageStatus("INCOMPLETE");
+
+        /// <summary>
+        /// Constant PENDING for ScopeCoverageStatus
+        /// </summary>
+        public static readonly ScopeCoverageStatus PENDING = new ScopeCoverageStatus("PENDING");
+
+        /// <summary>
+        /// Constant STALE for ScopeCoverageStatus
+        /// </summary>
+        public static readonly ScopeCoverageStatus STALE = new ScopeCoverageStatus("STALE");
+
+        /// <summary>
+        /// Constructs a custom ScopeCoverageStatus for a value not among the defined constants.
+        /// </summary>
+        public ScopeCoverageStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScopeCoverageStatus FindValue(string value)
+        {
+            return FindValue<ScopeCoverageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScopeCoverageStatus(string value)
         {
             return FindValue(value);
         }

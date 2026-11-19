@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.Shield.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -54,58 +55,64 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateProtectionGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Shield");
-            string target = "AWSShield_20160616.UpdateProtectionGroup";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-02";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAggregation())
+            request.ResourcePath = "service/AWSShield_20160616/operation/UpdateProtectionGroup";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Aggregation");
-                context.Writer.WriteStringValue(publicRequest.Aggregation);
-            }
-            if (publicRequest.IsSetMembers())
-            {
-                context.Writer.WritePropertyName("Members");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestMembersListValue in publicRequest.Members)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAggregation())
                 {
-                    context.Writer.WriteStringValue(publicRequestMembersListValue);
+                    context.Writer.WriteTextString("Aggregation");
+                    context.Writer.WriteTextString(publicRequest.Aggregation);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetPattern())
-            {
-                context.Writer.WritePropertyName("Pattern");
-                context.Writer.WriteStringValue(publicRequest.Pattern);
-            }
-            if (publicRequest.IsSetProtectionGroupId())
-            {
-                context.Writer.WritePropertyName("ProtectionGroupId");
-                context.Writer.WriteStringValue(publicRequest.ProtectionGroupId);
-            }
-            if (publicRequest.IsSetResourceType())
-            {
-                context.Writer.WritePropertyName("ResourceType");
-                context.Writer.WriteStringValue(publicRequest.ResourceType);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                if (publicRequest.IsSetMembers())
+                {
+                    context.Writer.WriteTextString("Members");
+                    context.Writer.WriteStartArray(publicRequest.Members.Count);
+                    foreach (var publicRequestMembersListValue in publicRequest.Members)
+                    {
+                        context.Writer.WriteTextString(publicRequestMembersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetPattern())
+                {
+                    context.Writer.WriteTextString("Pattern");
+                    context.Writer.WriteTextString(publicRequest.Pattern);
+                }
+                if (publicRequest.IsSetProtectionGroupId())
+                {
+                    context.Writer.WriteTextString("ProtectionGroupId");
+                    context.Writer.WriteTextString(publicRequest.ProtectionGroupId);
+                }
+                if (publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WriteTextString("ResourceType");
+                    context.Writer.WriteTextString(publicRequest.ResourceType);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

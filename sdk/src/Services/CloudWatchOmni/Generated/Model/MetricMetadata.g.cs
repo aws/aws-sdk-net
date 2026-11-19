@@ -30,20 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchOmni.Model
 {
     /// <summary>
-    /// A single metric observed on a context graph node.
+    /// A single metric observed on a context graph node or edge.
     /// </summary>
     public partial class MetricMetadata
     {
         /// <summary>
+        /// Gets and sets the property AggregationTemporality. Aggregation temporality for the
+        /// selected metric stream represented by this metadata entry. Present when known, including
+        /// cumulative for OTel Summary metrics. Absent for Gauge metrics or when the information
+        /// is unavailable.
+        /// </summary>
+        public MetricAggregationTemporality AggregationTemporality { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AggregationTemporality property is set.
+        /// </summary>
+        internal bool IsSetAggregationTemporality() => this.AggregationTemporality != null;
+
+        /// <summary>
         /// Gets and sets the property Attributes. Per-metric qualifying attributes used to query
         /// this metric's telemetry. Keys are the metric store's own label names, not bare OTel
         /// attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace",
-        /// and the instrumentation scope as "@instrumentation.@name", while span-derived metrics
-        /// label the service as a bare "service.name". Cloud provider, account and region are
-        /// not repeated per metric — read those from the node. Values are RAW, deliberately NOT
-        /// the node's normalized or merged identity, so a selector built from them matches the
-        /// emitted series. A merged node can carry different values per metric, which is why
-        /// these live here rather than on the node.
+        /// and the instrumentation scope as "@instrumentation.@name". Span-derived metrics can
+        /// additionally carry the service as a bare data point "service.name" label. Cloud provider,
+        /// account and region are not repeated per metric — read those from the node. Values
+        /// are RAW, deliberately NOT the node's merged identity, so a selector built from them
+        /// matches the emitted series. A merged node can carry different values per metric, which
+        /// is why these live here rather than on the node.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -70,6 +83,18 @@ namespace Amazon.CloudWatchOmni.Model
         /// Checks to see if the MetricType property is set.
         /// </summary>
         internal bool IsSetMetricType() => this.MetricType != null;
+
+        /// <summary>
+        /// Gets and sets the property Monotonicity. Whether the selected Sum metric stream represented
+        /// by this metadata entry is a non-negative accumulation. Absent for metrics other than
+        /// Sum or when the information is unavailable.
+        /// </summary>
+        public MetricMonotonicity Monotonicity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Monotonicity property is set.
+        /// </summary>
+        internal bool IsSetMonotonicity() => this.Monotonicity != null;
 
         /// <summary>
         /// Gets and sets the property Name. The metric name as emitted, such as "Duration".

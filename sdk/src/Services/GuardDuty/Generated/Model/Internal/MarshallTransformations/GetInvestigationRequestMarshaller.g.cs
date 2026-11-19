@@ -57,6 +57,11 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetSummaryFormat())
+            {
+                request.Parameters.Add("summaryFormat", StringUtils.FromString(publicRequest.SummaryFormat));
+            }
+
             if (!publicRequest.IsSetDetectorId())
             {
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
@@ -70,6 +75,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             request.AddPathResource("{InvestigationId}", StringUtils.FromString(publicRequest.InvestigationId));
 
             request.ResourcePath = "/detector/{DetectorId}/investigation/{InvestigationId}";
+
+            request.UseQueryString = true;
 
             return request;
         }

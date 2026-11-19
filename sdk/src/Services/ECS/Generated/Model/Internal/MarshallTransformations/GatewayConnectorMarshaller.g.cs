@@ -45,6 +45,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetDeregistrationDelay())
+            {
+                context.Writer.WritePropertyName("deregistrationDelay");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GatewayConnectorDeregistrationDelayMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeregistrationDelay, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");

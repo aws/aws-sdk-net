@@ -160,6 +160,11 @@ namespace Amazon.DataSync
         public static readonly AzureBlobAuthenticationType NONE = new AzureBlobAuthenticationType("NONE");
 
         /// <summary>
+        /// Constant OIDC for AzureBlobAuthenticationType
+        /// </summary>
+        public static readonly AzureBlobAuthenticationType OIDC = new AzureBlobAuthenticationType("OIDC");
+
+        /// <summary>
         /// Constant SAS for AzureBlobAuthenticationType
         /// </summary>
         public static readonly AzureBlobAuthenticationType SAS = new AzureBlobAuthenticationType("SAS");

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// GreenFleetProvisioningOption Marshaller
     /// </summary>
-    public partial class GreenFleetProvisioningOptionMarshaller : IRequestMarshaller<GreenFleetProvisioningOption, JsonMarshallerContext>
+    public partial class GreenFleetProvisioningOptionMarshaller : IRequestMarshaller<GreenFleetProvisioningOption, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GreenFleetProvisioningOption requestObject, JsonMarshallerContext context)
+        public void Marshall(GreenFleetProvisioningOption requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
         }
 

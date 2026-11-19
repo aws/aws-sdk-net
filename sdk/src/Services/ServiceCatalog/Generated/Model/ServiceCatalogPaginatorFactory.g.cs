@@ -121,11 +121,27 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Paginator for ListProvisionedProductPlans operation
+        /// </summary>
+        public IListProvisionedProductPlansPaginator ListProvisionedProductPlans(ListProvisionedProductPlansRequest request)
+        {
+            return new ListProvisionedProductPlansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProvisioningArtifactsForServiceAction operation
         /// </summary>
         public IListProvisioningArtifactsForServiceActionPaginator ListProvisioningArtifactsForServiceAction(ListProvisioningArtifactsForServiceActionRequest request)
         {
             return new ListProvisioningArtifactsForServiceActionPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecordHistory operation
+        /// </summary>
+        public IListRecordHistoryPaginator ListRecordHistory(ListRecordHistoryRequest request)
+        {
+            return new ListRecordHistoryPaginator(this.client, request);
         }
 
         /// <summary>
@@ -153,11 +169,27 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Paginator for ListStackInstancesForProvisionedProduct operation
+        /// </summary>
+        public IListStackInstancesForProvisionedProductPaginator ListStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request)
+        {
+            return new ListStackInstancesForProvisionedProductPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTagOptions operation
         /// </summary>
         public IListTagOptionsPaginator ListTagOptions(ListTagOptionsRequest request)
         {
             return new ListTagOptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ScanProvisionedProducts operation
+        /// </summary>
+        public IScanProvisionedProductsPaginator ScanProvisionedProducts(ScanProvisionedProductsRequest request)
+        {
+            return new ScanProvisionedProductsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -80,6 +80,11 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientSecret");
                 context.Writer.WriteStringValue(publicRequest.ClientSecret);
             }
+            if (publicRequest.IsSetRevokeAssociatedSessions())
+            {
+                context.Writer.WritePropertyName("RevokeAssociatedSessions");
+                context.Writer.WriteStringValue(publicRequest.RevokeAssociatedSessions);
+            }
             if (publicRequest.IsSetToken())
             {
                 context.Writer.WritePropertyName("Token");

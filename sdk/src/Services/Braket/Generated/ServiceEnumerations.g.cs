@@ -155,6 +155,11 @@ namespace Amazon.Braket
         public static readonly DeviceStatus ONLINE = new DeviceStatus("ONLINE");
 
         /// <summary>
+        /// Constant PAUSED for DeviceStatus
+        /// </summary>
+        public static readonly DeviceStatus PAUSED = new DeviceStatus("PAUSED");
+
+        /// <summary>
         /// Constant RETIRED for DeviceStatus
         /// </summary>
         public static readonly DeviceStatus RETIRED = new DeviceStatus("RETIRED");
@@ -180,6 +185,52 @@ namespace Amazon.Braket
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeviceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeviceStatusReasonCode.
+    /// </summary>
+    public class DeviceStatusReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant MAINTENANCE for DeviceStatusReasonCode
+        /// </summary>
+        public static readonly DeviceStatusReasonCode MAINTENANCE = new DeviceStatusReasonCode("MAINTENANCE");
+
+        /// <summary>
+        /// Constant OUTSIDE_AVAILABILITY_WINDOW for DeviceStatusReasonCode
+        /// </summary>
+        public static readonly DeviceStatusReasonCode OUTSIDE_AVAILABILITY_WINDOW = new DeviceStatusReasonCode("OUTSIDE_AVAILABILITY_WINDOW");
+
+        /// <summary>
+        /// Constant RESERVATION for DeviceStatusReasonCode
+        /// </summary>
+        public static readonly DeviceStatusReasonCode RESERVATION = new DeviceStatusReasonCode("RESERVATION");
+
+        /// <summary>
+        /// Constructs a custom DeviceStatusReasonCode for a value not among the defined constants.
+        /// </summary>
+        public DeviceStatusReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceStatusReasonCode FindValue(string value)
+        {
+            return FindValue<DeviceStatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceStatusReasonCode(string value)
         {
             return FindValue(value);
         }
@@ -542,41 +593,6 @@ namespace Amazon.Braket
         /// Constant MlM5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM5Xlarge = new InstanceType("ml.m5.xlarge");
-
-        /// <summary>
-        /// Constant MlP216xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP216xlarge = new InstanceType("ml.p2.16xlarge");
-
-        /// <summary>
-        /// Constant MlP28xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP28xlarge = new InstanceType("ml.p2.8xlarge");
-
-        /// <summary>
-        /// Constant MlP2Xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP2Xlarge = new InstanceType("ml.p2.xlarge");
-
-        /// <summary>
-        /// Constant MlP316xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP316xlarge = new InstanceType("ml.p3.16xlarge");
-
-        /// <summary>
-        /// Constant MlP32xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP32xlarge = new InstanceType("ml.p3.2xlarge");
-
-        /// <summary>
-        /// Constant MlP38xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP38xlarge = new InstanceType("ml.p3.8xlarge");
-
-        /// <summary>
-        /// Constant MlP3dn24xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType MlP3dn24xlarge = new InstanceType("ml.p3dn.24xlarge");
 
         /// <summary>
         /// Constant MlP4d24xlarge for InstanceType

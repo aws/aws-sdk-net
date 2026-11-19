@@ -109,6 +109,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("flexExecution", targetDepth, ref reader))
+                {
+                    var unmarshaller = FlexExecutionUnmarshaller.Instance;
+                    unmarshalledObject.FlexExecution = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -41,6 +41,26 @@ namespace Amazon.GameLift.Model
     public partial class UpdateGameSessionQueueRequest : AmazonGameLiftRequest
     {
         /// <summary>
+        /// Gets and sets the property AddLogDeliveryDestinations. 
+        /// <para>
+        /// Log delivery destinations to add to the queue's log configuration (<c>LogConfiguration</c>).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 3)]
+        public List<LogDeliveryDestination> AddLogDeliveryDestinations { get; set; } = AWSConfigs.InitializeCollections ? new List<LogDeliveryDestination>() : null;
+
+        /// <summary>
+        /// Checks to see if the AddLogDeliveryDestinations property is set.
+        /// </summary>
+        internal bool IsSetAddLogDeliveryDestinations() => this.AddLogDeliveryDestinations != null && (this.AddLogDeliveryDestinations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CustomEventData. 
         /// <para>
         /// Information to be added to all events that are related to this game session queue.
@@ -192,10 +212,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PriorityConfiguration. 
         /// <para>
         /// Custom settings to use when prioritizing destinations and locations for game session
-        /// placements. This configuration replaces the FleetIQ default prioritization process.
-        /// Priority types that are not explicitly named will be automatically applied at the
-        /// end of the prioritization process. To remove an existing priority configuration, pass
-        /// in an empty set.
+        /// placements. This configuration replaces the default prioritization process. Priority
+        /// types that are not explicitly named will be automatically applied at the end of the
+        /// prioritization process. To remove an existing priority configuration, pass in an empty
+        /// set.
         /// </para>
         /// </summary>
         public PriorityConfiguration PriorityConfiguration { get; set; }
@@ -204,6 +224,26 @@ namespace Amazon.GameLift.Model
         /// Checks to see if the PriorityConfiguration property is set.
         /// </summary>
         internal bool IsSetPriorityConfiguration() => this.PriorityConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property RemoveLogDeliveryDestinations. 
+        /// <para>
+        /// Log delivery destinations to remove from the queue's log configuration (<c>LogConfiguration</c>).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 3)]
+        public List<LogDeliveryDestination> RemoveLogDeliveryDestinations { get; set; } = AWSConfigs.InitializeCollections ? new List<LogDeliveryDestination>() : null;
+
+        /// <summary>
+        /// Checks to see if the RemoveLogDeliveryDestinations property is set.
+        /// </summary>
+        internal bool IsSetRemoveLogDeliveryDestinations() => this.RemoveLogDeliveryDestinations != null && (this.RemoveLogDeliveryDestinations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property TimeoutInSeconds. 

@@ -72,7 +72,6 @@
             ]
         },
         "Event": {
-            "renameClass": "EventType",
             "modify": [
                 {
                     "s3:ObjectCreated:*": {
@@ -135,11 +134,6 @@
                     }
                 },
                 {
-                    "s3:ObjectRestore:Delete": {
-                        "emitPropertyName": "S3ObjectRestoreDelete"
-                    }
-                },
-                {
                     "s3:Replication:*": {
                         "emitPropertyName": "ReplicationAll"
                     }
@@ -165,48 +159,13 @@
                     }
                 },
                 {
-                    "s3:IntelligentTiering": {
-                        "emitPropertyName": "S3IntelligentTiering"
-                    }
-                },
-                {
                     "s3:LifecycleExpiration:*": {
                         "emitPropertyName": "S3LifecycleExpirationAll"
                     }
                 },
                 {
-                    "s3:LifecycleExpiration:Delete": {
-                        "emitPropertyName": "S3LifecycleExpirationDelete"
-                    }
-                },
-                {
-                    "s3:LifecycleExpiration:DeleteMarkerCreated": {
-                        "emitPropertyName": "S3LifecycleExpirationDeleteMarkerCreated"
-                    }
-                },
-                {
-                    "s3:LifecycleTransition": {
-                        "emitPropertyName": "S3LifecycleTransition"
-                    }
-                },
-                {
-                    "s3:ObjectAcl:Put": {
-                        "emitPropertyName": "S3ObjectAclPut"
-                    }
-                },
-                {
                     "s3:ObjectTagging:*": {
                         "emitPropertyName": "S3ObjectTaggingAll"
-                    }
-                },
-                {
-                    "s3:ObjectTagging:Delete": {
-                        "emitPropertyName": "S3ObjectTaggingDelete"
-                    }
-                },
-                {
-                    "s3:ObjectTagging:Put": {
-                        "emitPropertyName": "S3ObjectTaggingPut"
                     }
                 }
             ]

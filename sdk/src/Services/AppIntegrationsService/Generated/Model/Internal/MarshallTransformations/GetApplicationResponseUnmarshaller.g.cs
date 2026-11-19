@@ -129,6 +129,13 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("LastModifiedRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

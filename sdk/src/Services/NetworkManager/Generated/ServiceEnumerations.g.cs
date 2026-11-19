@@ -845,6 +845,154 @@ namespace Amazon.NetworkManager
     }
 
     /// <summary>
+    /// Constants used for properties of type ContextChangeType.
+    /// </summary>
+    public class ContextChangeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADDED for ContextChangeType
+        /// </summary>
+        public static readonly ContextChangeType ADDED = new ContextChangeType("ADDED");
+
+        /// <summary>
+        /// Constant REMOVED for ContextChangeType
+        /// </summary>
+        public static readonly ContextChangeType REMOVED = new ContextChangeType("REMOVED");
+
+        /// <summary>
+        /// Constructs a custom ContextChangeType for a value not among the defined constants.
+        /// </summary>
+        public ContextChangeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextChangeType FindValue(string value)
+        {
+            return FindValue<ContextChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextStoreAssociationState.
+    /// </summary>
+    public class ContextStoreAssociationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASSOCIATED for ContextStoreAssociationState
+        /// </summary>
+        public static readonly ContextStoreAssociationState ASSOCIATED = new ContextStoreAssociationState("ASSOCIATED");
+
+        /// <summary>
+        /// Constant ASSOCIATING for ContextStoreAssociationState
+        /// </summary>
+        public static readonly ContextStoreAssociationState ASSOCIATING = new ContextStoreAssociationState("ASSOCIATING");
+
+        /// <summary>
+        /// Constant DISASSOCIATING for ContextStoreAssociationState
+        /// </summary>
+        public static readonly ContextStoreAssociationState DISASSOCIATING = new ContextStoreAssociationState("DISASSOCIATING");
+
+        /// <summary>
+        /// Constant FAILED for ContextStoreAssociationState
+        /// </summary>
+        public static readonly ContextStoreAssociationState FAILED = new ContextStoreAssociationState("FAILED");
+
+        /// <summary>
+        /// Constructs a custom ContextStoreAssociationState for a value not among the defined constants.
+        /// </summary>
+        public ContextStoreAssociationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextStoreAssociationState FindValue(string value)
+        {
+            return FindValue<ContextStoreAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextStoreAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextStoreState.
+    /// </summary>
+    public class ContextStoreState : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for ContextStoreState
+        /// </summary>
+        public static readonly ContextStoreState AVAILABLE = new ContextStoreState("AVAILABLE");
+
+        /// <summary>
+        /// Constant DELETED for ContextStoreState
+        /// </summary>
+        public static readonly ContextStoreState DELETED = new ContextStoreState("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for ContextStoreState
+        /// </summary>
+        public static readonly ContextStoreState DELETING = new ContextStoreState("DELETING");
+
+        /// <summary>
+        /// Constant PENDING for ContextStoreState
+        /// </summary>
+        public static readonly ContextStoreState PENDING = new ContextStoreState("PENDING");
+
+        /// <summary>
+        /// Constant UPDATING for ContextStoreState
+        /// </summary>
+        public static readonly ContextStoreState UPDATING = new ContextStoreState("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom ContextStoreState for a value not among the defined constants.
+        /// </summary>
+        public ContextStoreState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextStoreState FindValue(string value)
+        {
+            return FindValue<ContextStoreState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextStoreState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CoreNetworkPolicyAlias.
     /// </summary>
     public class CoreNetworkPolicyAlias : ConstantClass
@@ -1186,6 +1334,47 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LinkState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MultipathResilienceMode.
+    /// </summary>
+    public class MultipathResilienceMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant BestEffort for MultipathResilienceMode
+        /// </summary>
+        public static readonly MultipathResilienceMode BestEffort = new MultipathResilienceMode("best-effort");
+
+        /// <summary>
+        /// Constant Disabled for MultipathResilienceMode
+        /// </summary>
+        public static readonly MultipathResilienceMode Disabled = new MultipathResilienceMode("disabled");
+
+        /// <summary>
+        /// Constructs a custom MultipathResilienceMode for a value not among the defined constants.
+        /// </summary>
+        public MultipathResilienceMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultipathResilienceMode FindValue(string value)
+        {
+            return FindValue<MultipathResilienceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultipathResilienceMode(string value)
         {
             return FindValue(value);
         }

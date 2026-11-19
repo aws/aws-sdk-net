@@ -378,9 +378,9 @@
     <value>
       <example>
         <para>
-          The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.
+          The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.
         </para>
-        <code title="To get a provisioned concurrency configuration" source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs" region="GetProvisionedConcurrencyConfig-1" />
+        <code title="To view a provisioned concurrency configuration" source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs" region="GetProvisionedConcurrencyConfig-1" />
       </example>
     </value>
   </doc>
@@ -394,9 +394,9 @@
     <value>
       <example>
         <para>
-          The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.
+          The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.
         </para>
-        <code title="To view a provisioned concurrency configuration" source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs" region="GetProvisionedConcurrencyConfig-2" />
+        <code title="To get a provisioned concurrency configuration" source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs" region="GetProvisionedConcurrencyConfig-2" />
       </example>
     </value>
   </doc>

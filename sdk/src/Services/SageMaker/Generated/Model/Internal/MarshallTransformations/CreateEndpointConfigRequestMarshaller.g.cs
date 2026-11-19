@@ -80,6 +80,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetCrossRegionTrafficConfig())
+            {
+                context.Writer.WritePropertyName("CrossRegionTrafficConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CrossRegionTrafficConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CrossRegionTrafficConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDataCaptureConfig())
             {
                 context.Writer.WritePropertyName("DataCaptureConfig");

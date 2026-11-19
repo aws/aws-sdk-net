@@ -31,7 +31,11 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAuthorizer operation. Updates an existing
-    /// Authorizer resource.
+    /// Authorizer resource. For a <c>JWT</c> authorizer, the only JWT patch operation is
+    /// <c>replace</c> on the path <c>/jwtConfiguration</c>. Its value is the complete configuration
+    /// as a JSON string in the <c>JwtConfigurationInput</c> shape. This replaces the entire
+    /// configuration; nothing from the previous configuration is retained. A <c>replace</c>
+    /// operation on the path <c>/type</c> is supported in both directions.
     /// </summary>
     public partial class UpdateAuthorizerRequest : AmazonAPIGatewayRequest
     {

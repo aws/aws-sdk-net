@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,49 +39,49 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// MedicalTranscriptionSetting Marshaller
     /// </summary>
-    public partial class MedicalTranscriptionSettingMarshaller : IRequestMarshaller<MedicalTranscriptionSetting, JsonMarshallerContext>
+    public partial class MedicalTranscriptionSettingMarshaller : IRequestMarshaller<MedicalTranscriptionSetting, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MedicalTranscriptionSetting requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalTranscriptionSetting requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetChannelIdentification())
             {
-                context.Writer.WritePropertyName("ChannelIdentification");
-                context.Writer.WriteBooleanValue(requestObject.ChannelIdentification.Value);
+                context.Writer.WriteTextString("ChannelIdentification");
+                context.Writer.WriteBoolean(requestObject.ChannelIdentification.Value);
             }
 
             if (requestObject.IsSetMaxAlternatives())
             {
-                context.Writer.WritePropertyName("MaxAlternatives");
-                context.Writer.WriteNumberValue(requestObject.MaxAlternatives.Value);
+                context.Writer.WriteTextString("MaxAlternatives");
+                context.Writer.WriteInt32(requestObject.MaxAlternatives.Value);
             }
 
             if (requestObject.IsSetMaxSpeakerLabels())
             {
-                context.Writer.WritePropertyName("MaxSpeakerLabels");
-                context.Writer.WriteNumberValue(requestObject.MaxSpeakerLabels.Value);
+                context.Writer.WriteTextString("MaxSpeakerLabels");
+                context.Writer.WriteInt32(requestObject.MaxSpeakerLabels.Value);
             }
 
             if (requestObject.IsSetShowAlternatives())
             {
-                context.Writer.WritePropertyName("ShowAlternatives");
-                context.Writer.WriteBooleanValue(requestObject.ShowAlternatives.Value);
+                context.Writer.WriteTextString("ShowAlternatives");
+                context.Writer.WriteBoolean(requestObject.ShowAlternatives.Value);
             }
 
             if (requestObject.IsSetShowSpeakerLabels())
             {
-                context.Writer.WritePropertyName("ShowSpeakerLabels");
-                context.Writer.WriteBooleanValue(requestObject.ShowSpeakerLabels.Value);
+                context.Writer.WriteTextString("ShowSpeakerLabels");
+                context.Writer.WriteBoolean(requestObject.ShowSpeakerLabels.Value);
             }
 
             if (requestObject.IsSetVocabularyName())
             {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(requestObject.VocabularyName);
+                context.Writer.WriteTextString("VocabularyName");
+                context.Writer.WriteTextString(requestObject.VocabularyName);
             }
         }
 

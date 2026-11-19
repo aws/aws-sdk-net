@@ -75,6 +75,104 @@ namespace Amazon.Util.Internal
             }
         }
 
+        private static bool RestrictPermissions => AWSConfigs.RestrictFilePermissions == FilePermission.USER_READ_WRITE;
+
+        /// <summary>
+        /// <see cref="Directory.CreateDirectory(string)"/> that, on Unix/macOS, creates a new
+        /// directory with mode 0700 when <see cref="AWSConfigs.RestrictFilePermissions"/> is <see cref="FilePermission.USER_READ_WRITE"/>.
+        /// </summary>
+        public static DirectoryInfo CreateDirectory(string path)
+        {
+#if NET8_0_OR_GREATER
+            if (RestrictPermissions && !OperatingSystem.IsWindows())
+            {
+                return Directory.CreateDirectory(path, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute);
+            }
+#else
+            if (RestrictPermissions && !Directory.Exists(path))
+            {
+                var directory = Directory.CreateDirectory(path);
+                SetDirectoryOwnerOnly(path);
+                return directory;
+            }
+#endif
+            return Directory.CreateDirectory(path);
+        }
+
+        /// <summary>
+        /// <see cref="FileStream"/> constructor that, on Unix/macOS, creates a new file with
+        /// mode 0600 when <see cref="AWSConfigs.RestrictFilePermissions"/> is <see cref="FilePermission.USER_READ_WRITE"/>.
+        /// </summary>
+        public static FileStream OpenFile(string path, FileMode mode, FileAccess access, FileShare share)
+        {
+#if NET8_0_OR_GREATER
+            if (RestrictPermissions && !OperatingSystem.IsWindows())
+            {
+                var options = new FileStreamOptions { Mode = mode, Access = access, Share = share };
+                options.UnixCreateMode = UnixFileMode.UserRead | UnixFileMode.UserWrite;
+                return new FileStream(path, options);
+            }
+#else
+            var isUnix = RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+            if (RestrictPermissions && isUnix && !File.Exists(path))
+            {
+                CreateOwnerOnlyFile(path);
+            }
+#endif
+            return new FileStream(path, mode, access, share);
+        }
+
+#if !NET8_0_OR_GREATER
+        private const int EPERM = 1;
+        private const int EACCES = 13;
+        private const int EEXIST = 17;
+
+        /// <summary>
+        /// Creates an empty file with mode 0600 so it never exists with a wider mode.
+        /// creat() opens with O_TRUNC and would truncate a file another writer created in the meantime,
+        /// so the file is created under a unique sibling name and then hard-linked to <paramref name="path"/>.
+        /// link() fails with EEXIST instead of truncating when the file already exists.
+        /// </summary>
+        private static void CreateOwnerOnlyFile(string path)
+        {
+            var tempPath = path + "." + Guid.NewGuid().ToString("N") + ".tmp";
+            var fd = NativeMethods.Creat(tempPath, 0x180); // 0600 in octal
+            if (fd == -1)
+            {
+                throw CreateFileException(tempPath, Marshal.GetLastWin32Error());
+            }
+            _ = NativeMethods.Close(fd);
+            try
+            {
+                if (NativeMethods.Link(tempPath, path) != 0)
+                {
+                    var errno = Marshal.GetLastWin32Error();
+                    if (errno != EEXIST)
+                    {
+                        throw CreateFileException(path, errno);
+                    }
+                }
+            }
+            finally
+            {
+                _ = NativeMethods.Unlink(tempPath);
+            }
+        }
+
+        /// <summary>
+        /// Permission errors keep the exception type <see cref="FileStream"/> throws for them.
+        /// </summary>
+        private static Exception CreateFileException(string path, int errno)
+        {
+            var message = $"Failed to create file '{path}' with owner-only permissions. errno: {errno} ({new Win32Exception(errno).Message})";
+            if (errno == EACCES || errno == EPERM)
+            {
+                return new UnauthorizedAccessException(message);
+            }
+            return new IOException(message);
+        }
+#endif
+
         /// <summary>
         /// Sets owner-only permissions (0700) on a newly created directory. If permissions cannot be set,
         /// the directory is deleted to avoid leaving a world-readable directory containing credentials.

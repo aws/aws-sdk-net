@@ -60,6 +60,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("definitionType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefinitionType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

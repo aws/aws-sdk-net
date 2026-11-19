@@ -228,6 +228,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("trustedExecutionConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = TrustedExecutionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TrustedExecutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("volumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);

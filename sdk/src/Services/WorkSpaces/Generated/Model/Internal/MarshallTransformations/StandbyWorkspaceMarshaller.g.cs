@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,53 +39,53 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// StandbyWorkspace Marshaller
     /// </summary>
-    public partial class StandbyWorkspaceMarshaller : IRequestMarshaller<StandbyWorkspace, JsonMarshallerContext>
+    public partial class StandbyWorkspaceMarshaller : IRequestMarshaller<StandbyWorkspace, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StandbyWorkspace requestObject, JsonMarshallerContext context)
+        public void Marshall(StandbyWorkspace requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDataReplication())
             {
-                context.Writer.WritePropertyName("DataReplication");
-                context.Writer.WriteStringValue(requestObject.DataReplication);
+                context.Writer.WriteTextString("DataReplication");
+                context.Writer.WriteTextString(requestObject.DataReplication);
             }
 
             if (requestObject.IsSetDirectoryId())
             {
-                context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.WriteStringValue(requestObject.DirectoryId);
+                context.Writer.WriteTextString("DirectoryId");
+                context.Writer.WriteTextString(requestObject.DirectoryId);
             }
 
             if (requestObject.IsSetPrimaryWorkspaceId())
             {
-                context.Writer.WritePropertyName("PrimaryWorkspaceId");
-                context.Writer.WriteStringValue(requestObject.PrimaryWorkspaceId);
+                context.Writer.WriteTextString("PrimaryWorkspaceId");
+                context.Writer.WriteTextString(requestObject.PrimaryWorkspaceId);
             }
 
             if (requestObject.IsSetTags())
             {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Tags");
+                context.Writer.WriteStartArray(requestObject.Tags.Count);
                 foreach (var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVolumeEncryptionKey())
             {
-                context.Writer.WritePropertyName("VolumeEncryptionKey");
-                context.Writer.WriteStringValue(requestObject.VolumeEncryptionKey);
+                context.Writer.WriteTextString("VolumeEncryptionKey");
+                context.Writer.WriteTextString(requestObject.VolumeEncryptionKey);
             }
         }
 

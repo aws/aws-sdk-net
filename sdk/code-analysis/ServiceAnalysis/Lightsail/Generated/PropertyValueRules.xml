@@ -1400,4 +1400,16 @@
     <property>Amazon.Lightsail.Model.StaticIp.Name</property>
     <pattern>^\w[\w\-]*\w$</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Subdomain.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SubdomainAttachableResource.Arn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.SubdomainAttachableResource.Name</property>
+    <pattern>^\w[\w\-]*\w$</pattern>
+  </property-value-rule>
 </property-value-rules>

@@ -36,12 +36,14 @@ namespace Amazon.AWSHealth.Model
     /// a centralized location. <para> This operation also creates a service-linked role for
     /// the management account in the organization. </para> <note> <para> To call this operation,
     /// you must meet the following requirements: </para> <ul> <li> <para> You must have a
-    /// Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or
+    /// Amazon Web Services Unified Operations plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a> to use the Health API. If you call the Health API from an
-    /// Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
-    /// Support plan, you receive a <c>SubscriptionRequiredException</c> error. </para> </li>
-    /// <li> <para> You must have permission to call this operation from the organization's
-    /// management account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
+    /// Amazon Web Services account that doesn't have a Amazon Web Services Business Support+,
+    /// Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations
+    /// plan, you receive a <c>SubscriptionRequiredException</c> error. </para> </li> <li>
+    /// <para> You must have permission to call this operation from the organization's management
+    /// account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
     /// identity-based policy examples</a>. </para> </li> </ul> </note> <para> If you don't
     /// have the required support plan, you can instead use the Health console to enable the
     /// organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating

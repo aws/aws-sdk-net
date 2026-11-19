@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3Object Marshaller
     /// </summary>
-    public partial class S3ObjectMarshaller : IRequestMarshaller<S3Object, JsonMarshallerContext>
+    public partial class S3ObjectMarshaller : IRequestMarshaller<S3Object, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3Object requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Object requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("Bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
+                context.Writer.WriteTextString("Bucket");
+                context.Writer.WriteTextString(requestObject.Bucket);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("Version");
-                context.Writer.WriteStringValue(requestObject.Version);
+                context.Writer.WriteTextString("Version");
+                context.Writer.WriteTextString(requestObject.Version);
             }
         }
 

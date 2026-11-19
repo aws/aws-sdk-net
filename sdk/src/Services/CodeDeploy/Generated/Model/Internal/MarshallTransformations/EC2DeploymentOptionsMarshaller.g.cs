@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// EC2DeploymentOptions Marshaller
     /// </summary>
-    public partial class EC2DeploymentOptionsMarshaller : IRequestMarshaller<EC2DeploymentOptions, JsonMarshallerContext>
+    public partial class EC2DeploymentOptionsMarshaller : IRequestMarshaller<EC2DeploymentOptions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EC2DeploymentOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(EC2DeploymentOptions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAutoScalingGroupProcessesToSuspend())
             {
-                context.Writer.WritePropertyName("autoScalingGroupProcessesToSuspend");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("autoScalingGroupProcessesToSuspend");
+                context.Writer.WriteStartArray(requestObject.AutoScalingGroupProcessesToSuspend.Count);
                 foreach (var requestObjectAutoScalingGroupProcessesToSuspendListValue in requestObject.AutoScalingGroupProcessesToSuspend)
                 {
-                    context.Writer.WriteStringValue(requestObjectAutoScalingGroupProcessesToSuspendListValue);
+                    context.Writer.WriteTextString(requestObjectAutoScalingGroupProcessesToSuspendListValue);
                 }
                 context.Writer.WriteEndArray();
             }

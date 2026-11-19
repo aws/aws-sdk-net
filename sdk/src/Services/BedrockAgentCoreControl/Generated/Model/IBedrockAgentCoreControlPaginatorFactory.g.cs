@@ -33,6 +33,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public interface IBedrockAgentCoreControlPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListAgentInsightStores operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgentInsightStoresPaginator ListAgentInsightStores(ListAgentInsightStoresRequest request);
+
+        /// <summary>
         /// Paginator for ListAgentRuntimeEndpoints operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

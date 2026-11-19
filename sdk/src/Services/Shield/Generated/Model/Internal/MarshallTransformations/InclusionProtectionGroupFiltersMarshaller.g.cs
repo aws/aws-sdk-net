@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,55 +39,55 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// InclusionProtectionGroupFilters Marshaller
     /// </summary>
-    public partial class InclusionProtectionGroupFiltersMarshaller : IRequestMarshaller<InclusionProtectionGroupFilters, JsonMarshallerContext>
+    public partial class InclusionProtectionGroupFiltersMarshaller : IRequestMarshaller<InclusionProtectionGroupFilters, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(InclusionProtectionGroupFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(InclusionProtectionGroupFilters requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAggregations())
             {
-                context.Writer.WritePropertyName("Aggregations");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Aggregations");
+                context.Writer.WriteStartArray(requestObject.Aggregations.Count);
                 foreach (var requestObjectAggregationsListValue in requestObject.Aggregations)
                 {
-                    context.Writer.WriteStringValue(requestObjectAggregationsListValue);
+                    context.Writer.WriteTextString(requestObjectAggregationsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPatterns())
             {
-                context.Writer.WritePropertyName("Patterns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Patterns");
+                context.Writer.WriteStartArray(requestObject.Patterns.Count);
                 foreach (var requestObjectPatternsListValue in requestObject.Patterns)
                 {
-                    context.Writer.WriteStringValue(requestObjectPatternsListValue);
+                    context.Writer.WriteTextString(requestObjectPatternsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetProtectionGroupIds())
             {
-                context.Writer.WritePropertyName("ProtectionGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ProtectionGroupIds");
+                context.Writer.WriteStartArray(requestObject.ProtectionGroupIds.Count);
                 foreach (var requestObjectProtectionGroupIdsListValue in requestObject.ProtectionGroupIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectProtectionGroupIdsListValue);
+                    context.Writer.WriteTextString(requestObjectProtectionGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetResourceTypes())
             {
-                context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceTypes");
+                context.Writer.WriteStartArray(requestObject.ResourceTypes.Count);
                 foreach (var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                    context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
+                    context.Writer.WriteTextString(requestObjectResourceTypesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

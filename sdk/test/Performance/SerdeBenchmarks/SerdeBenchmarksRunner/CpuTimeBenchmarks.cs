@@ -15,9 +15,9 @@ namespace AWSSDK.Benchmarks.Serde;
 /// <summary>71 canonical serde-benchmark cases, payloads sourced byte-for-byte from the model.</summary>
 public static class CpuTimeBenchmarks
 {
-    public static async Task<List<CpuTimeRunner.CpuTimeResult>> RunAll()
+    public static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunAll()
     {
-        var all = new List<CpuTimeRunner.CpuTimeResult>();
+        var all = new List<CpuTimeRunner.CpuTimeResult?>();
         all.AddRange(await RunAwsJson10());
         all.AddRange(await RunRpcV2Cbor());
         all.AddRange(await RunAwsQuery());
@@ -26,7 +26,7 @@ public static class CpuTimeBenchmarks
         return all;
     }
 
-    private static async Task<List<CpuTimeRunner.CpuTimeResult>> RunAwsJson10()
+    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunAwsJson10()
     {
         AmazonJsonRpc10DataPlaneClient CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)
         {
@@ -34,7 +34,7 @@ public static class CpuTimeBenchmarks
             var config = new AmazonJsonRpc10DataPlaneConfig { RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) };
             return new AmazonJsonRpc10DataPlaneClient(new BasicAWSCredentials("AKID","SECRET"), config);
         }
-        var results = new List<CpuTimeRunner.CpuTimeResult>();
+        var results = new List<CpuTimeRunner.CpuTimeResult?>();
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("{}"), "application/x-amz-json-1.0", null); var r=ModelFixtures.AwsJson10.GetItemInput_Baseline(); results.Add(await CpuTimeRunner.MeasureAsync("awsJson1_0_GetItemInput_Baseline", ()=>c.GetItemAsync(r))); }
         { var c=CreateClient(ModelFixtures.AwsJson10.GetItemOutput_Baseline, "application/x-amz-json-1.0", ModelFixtures.AwsJson10.GetItemOutput_Baseline_Headers); var r=new Amazon.JsonRpc10DataPlane.Model.GetItemRequest{TableName="test-table",Key=new Dictionary<string,Amazon.JsonRpc10DataPlane.Model.AttributeValue>{["id"]=new Amazon.JsonRpc10DataPlane.Model.AttributeValue{S="test-id"}}}; results.Add(await CpuTimeRunner.MeasureAsync("awsJson1_0_GetItemOutput_Baseline", ()=>c.GetItemAsync(r))); }
         { var c=CreateClient(ModelFixtures.AwsJson10.GetItemOutput_S, "application/x-amz-json-1.0", ModelFixtures.AwsJson10.GetItemOutput_S_Headers); var r=new Amazon.JsonRpc10DataPlane.Model.GetItemRequest{TableName="test-table",Key=new Dictionary<string,Amazon.JsonRpc10DataPlane.Model.AttributeValue>{["id"]=new Amazon.JsonRpc10DataPlane.Model.AttributeValue{S="test-id"}}}; results.Add(await CpuTimeRunner.MeasureAsync("awsJson1_0_GetItemOutput_S", ()=>c.GetItemAsync(r))); }
@@ -60,7 +60,7 @@ public static class CpuTimeBenchmarks
         CpuTimeRunner.PrintResults(results, "awsJson1_0");
         return results;
     }
-    private static async Task<List<CpuTimeRunner.CpuTimeResult>> RunRpcV2Cbor()
+    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunRpcV2Cbor()
     {
         AmazonRpcCborDataPlaneClient CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)
         {
@@ -68,7 +68,7 @@ public static class CpuTimeBenchmarks
             var config = new AmazonRpcCborDataPlaneConfig { RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) };
             return new AmazonRpcCborDataPlaneClient(new BasicAWSCredentials("AKID","SECRET"), config);
         }
-        var results = new List<CpuTimeRunner.CpuTimeResult>();
+        var results = new List<CpuTimeRunner.CpuTimeResult?>();
         { var c=CreateClient(ModelFixtures.RpcV2Cbor.GetItemOutput_Baseline, "application/cbor", ModelFixtures.RpcV2Cbor.GetItemOutput_Baseline_Headers); var r=new Amazon.RpcCborDataPlane.Model.GetItemRequest{TableName="test-table",Key=new Dictionary<string,Amazon.RpcCborDataPlane.Model.AttributeValue>{["id"]=new Amazon.RpcCborDataPlane.Model.AttributeValue{S="test-id"}}}; results.Add(await CpuTimeRunner.MeasureAsync("rpcv2Cbor_GetItemOutput_Baseline", ()=>c.GetItemAsync(r))); }
         { var c=CreateClient(ModelFixtures.RpcV2Cbor.GetItemOutput_S, "application/cbor", ModelFixtures.RpcV2Cbor.GetItemOutput_S_Headers); var r=new Amazon.RpcCborDataPlane.Model.GetItemRequest{TableName="test-table",Key=new Dictionary<string,Amazon.RpcCborDataPlane.Model.AttributeValue>{["id"]=new Amazon.RpcCborDataPlane.Model.AttributeValue{S="test-id"}}}; results.Add(await CpuTimeRunner.MeasureAsync("rpcv2Cbor_GetItemOutput_S", ()=>c.GetItemAsync(r))); }
         { var c=CreateClient(ModelFixtures.RpcV2Cbor.GetItemOutput_M, "application/cbor", ModelFixtures.RpcV2Cbor.GetItemOutput_M_Headers); var r=new Amazon.RpcCborDataPlane.Model.GetItemRequest{TableName="test-table",Key=new Dictionary<string,Amazon.RpcCborDataPlane.Model.AttributeValue>{["id"]=new Amazon.RpcCborDataPlane.Model.AttributeValue{S="test-id"}}}; results.Add(await CpuTimeRunner.MeasureAsync("rpcv2Cbor_GetItemOutput_M", ()=>c.GetItemAsync(r))); }
@@ -91,7 +91,7 @@ public static class CpuTimeBenchmarks
         CpuTimeRunner.PrintResults(results, "rpcv2Cbor");
         return results;
     }
-    private static async Task<List<CpuTimeRunner.CpuTimeResult>> RunAwsQuery()
+    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunAwsQuery()
     {
         AmazonQueryDataPlaneClient CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)
         {
@@ -99,7 +99,7 @@ public static class CpuTimeBenchmarks
             var config = new AmazonQueryDataPlaneConfig { RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) };
             return new AmazonQueryDataPlaneClient(new BasicAWSCredentials("AKID","SECRET"), config);
         }
-        var results = new List<CpuTimeRunner.CpuTimeResult>();
+        var results = new List<CpuTimeRunner.CpuTimeResult?>();
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("<GetMetricDataResponse xmlns=\"https://awsquerydataplane.amazonaws.com\"><ResponseMetadata><RequestId>id</RequestId></ResponseMetadata></GetMetricDataResponse>"), "text/xml", null); var r=ModelFixtures.AwsQuery.GetMetricDataRequest_S(); results.Add(await CpuTimeRunner.MeasureAsync("awsQuery_GetMetricDataRequest_S", ()=>c.GetMetricDataAsync(r))); }
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("<GetMetricDataResponse xmlns=\"https://awsquerydataplane.amazonaws.com\"><ResponseMetadata><RequestId>id</RequestId></ResponseMetadata></GetMetricDataResponse>"), "text/xml", null); var r=ModelFixtures.AwsQuery.GetMetricDataRequest_M(); results.Add(await CpuTimeRunner.MeasureAsync("awsQuery_GetMetricDataRequest_M", ()=>c.GetMetricDataAsync(r))); }
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("<GetMetricDataResponse xmlns=\"https://awsquerydataplane.amazonaws.com\"><ResponseMetadata><RequestId>id</RequestId></ResponseMetadata></GetMetricDataResponse>"), "text/xml", null); var r=ModelFixtures.AwsQuery.GetMetricDataRequest_L(); results.Add(await CpuTimeRunner.MeasureAsync("awsQuery_GetMetricDataRequest_L", ()=>c.GetMetricDataAsync(r))); }
@@ -113,7 +113,7 @@ public static class CpuTimeBenchmarks
         CpuTimeRunner.PrintResults(results, "awsQuery");
         return results;
     }
-    private static async Task<List<CpuTimeRunner.CpuTimeResult>> RunRestJson1()
+    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunRestJson1()
     {
         AmazonRestJsonDataPlaneClient CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)
         {
@@ -121,7 +121,7 @@ public static class CpuTimeBenchmarks
             var config = new AmazonRestJsonDataPlaneConfig { RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) };
             return new AmazonRestJsonDataPlaneClient(new BasicAWSCredentials("AKID","SECRET"), config);
         }
-        var results = new List<CpuTimeRunner.CpuTimeResult>();
+        var results = new List<CpuTimeRunner.CpuTimeResult?>();
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("{}"), "application/json", null); var r=ModelFixtures.RestJson1.CopyObjectRequest_Baseline(); results.Add(await CpuTimeRunner.MeasureAsync("restJson1_CopyObjectRequest_Baseline", ()=>c.CopyObjectAsync(r))); }
         { var c=CreateClient(System.Text.Encoding.UTF8.GetBytes("{}"), "application/json", null); var r=ModelFixtures.RestJson1.CopyObjectRequest_M(); results.Add(await CpuTimeRunner.MeasureAsync("restJson1_CopyObjectRequest_M", ()=>c.CopyObjectAsync(r))); }
         { var c=CreateClient(ModelFixtures.RestJson1.CopyObjectOutput_Baseline, "application/json", ModelFixtures.RestJson1.CopyObjectOutput_Baseline_Headers); var r=new Amazon.RestJsonDataPlane.Model.CopyObjectRequest{Bucket="test-bucket",Key="test-key",CopySource="/source-bucket/source-key"}; results.Add(await CpuTimeRunner.MeasureAsync("restJson1_CopyObjectOutput_Baseline", ()=>c.CopyObjectAsync(r))); }
@@ -135,7 +135,7 @@ public static class CpuTimeBenchmarks
         CpuTimeRunner.PrintResults(results, "restJson1");
         return results;
     }
-    private static async Task<List<CpuTimeRunner.CpuTimeResult>> RunRestXml()
+    private static async Task<List<CpuTimeRunner.CpuTimeResult?>> RunRestXml()
     {
         AmazonRestXmlDataPlaneClient CreateClient(byte[] body, string ct, Dictionary<string,string>? rh)
         {
@@ -143,7 +143,7 @@ public static class CpuTimeBenchmarks
             var config = new AmazonRestXmlDataPlaneConfig { RegionEndpoint = Amazon.RegionEndpoint.USWest2, HttpClientFactory = new MockHttpClientFactory(handler) };
             return new AmazonRestXmlDataPlaneClient(new BasicAWSCredentials("AKID","SECRET"), config);
         }
-        var results = new List<CpuTimeRunner.CpuTimeResult>();
+        var results = new List<CpuTimeRunner.CpuTimeResult?>();
         { var c=CreateClient(Array.Empty<byte>(), "application/xml", null); var r=ModelFixtures.RestXml.CopyObjectRequest_Baseline(); results.Add(await CpuTimeRunner.MeasureAsync("restXml_CopyObjectRequest_Baseline", ()=>c.CopyObjectAsync(r))); }
         { var c=CreateClient(Array.Empty<byte>(), "application/xml", null); var r=ModelFixtures.RestXml.CopyObjectRequest_M(); results.Add(await CpuTimeRunner.MeasureAsync("restXml_CopyObjectRequest_M", ()=>c.CopyObjectAsync(r))); }
         { var c=CreateClient(ModelFixtures.RestXml.CopyObjectOutput_Baseline, "application/xml", ModelFixtures.RestXml.CopyObjectOutput_Baseline_Headers); var r=new Amazon.RestXmlDataPlane.Model.CopyObjectRequest{Bucket="test-bucket",Key="test-key",CopySource="/source-bucket/source-key"}; results.Add(await CpuTimeRunner.MeasureAsync("restXml_CopyObjectOutput_Baseline", ()=>c.CopyObjectAsync(r))); }

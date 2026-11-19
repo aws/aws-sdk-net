@@ -73,9 +73,25 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ScopeType. 
         /// <para>
-        /// The type of scope for the third-party cloud resources. Valid values include <c>tenant</c>
-        /// and <c>subscription</c>.
+        /// The type of scope for the third-party cloud resources. Valid values include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>tenant</c> – Applies to all resources in an Azure tenant
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>subscription</c> – Applies to resources in the Azure subscriptions you specify
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>organization</c> – Applies to all resources in a Google Cloud organization
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>project</c> – Applies to resources in the Google Cloud projects you specify
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string ScopeType { get; set; }
@@ -89,7 +105,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ScopeValues. 
         /// <para>
         /// The list of specific scope values for the third-party cloud resources. For example,
-        /// a list of Azure subscriptions or management groups.
+        /// a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify
+        /// <c>scopeValues</c> when <c>scopeType</c> is <c>tenant</c> or <c>organization</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

@@ -119,6 +119,18 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetId() => this.Id != null;
 
         /// <summary>
+        /// Gets and sets the property LastModifiedTime. The timestamp of the most recent modification
+        /// to the campaign or its configuration. Null for campaigns created before this field
+        /// was introduced.
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 127)]

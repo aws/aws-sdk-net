@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -36,128 +38,126 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TranscriptionJobSummary Object
     /// </summary>
-    public partial class TranscriptionJobSummaryUnmarshaller : IJsonUnmarshaller<TranscriptionJobSummary, JsonUnmarshallerContext>
+    public partial class TranscriptionJobSummaryUnmarshaller : ICborUnmarshaller<TranscriptionJobSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TranscriptionJobSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TranscriptionJobSummary Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TranscriptionJobSummary();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CompletionTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ContentRedaction", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ContentRedactionUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CompletionTime":
+                        context.AddPathSegment("CompletionTime");
+                        unmarshalledObject.CompletionTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CreationTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ContentRedaction":
+                        context.AddPathSegment("ContentRedaction");
+                        unmarshalledObject.ContentRedaction = ContentRedactionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FailureReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreationTime":
+                        context.AddPathSegment("CreationTime");
+                        unmarshalledObject.CreationTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("IdentifiedLanguageScore", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.IdentifiedLanguageScore = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FailureReason":
+                        context.AddPathSegment("FailureReason");
+                        unmarshalledObject.FailureReason = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("IdentifyLanguage", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IdentifiedLanguageScore":
+                        context.AddPathSegment("IdentifiedLanguageScore");
+                        unmarshalledObject.IdentifiedLanguageScore = CborNullableFloatUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("IdentifyMultipleLanguages", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IdentifyLanguage":
+                        context.AddPathSegment("IdentifyLanguage");
+                        unmarshalledObject.IdentifyLanguage = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "IdentifyMultipleLanguages":
+                        context.AddPathSegment("IdentifyMultipleLanguages");
+                        unmarshalledObject.IdentifyMultipleLanguages = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LanguageCodes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LanguageCodeItem, LanguageCodeItemUnmarshaller>(LanguageCodeItemUnmarshaller.Instance);
-                    unmarshalledObject.LanguageCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageCode":
+                        context.AddPathSegment("LanguageCode");
+                        unmarshalledObject.LanguageCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ModelSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = ModelSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ModelSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageCodes":
+                        context.AddPathSegment("LanguageCodes");
+                        unmarshalledObject.LanguageCodes = new CborListUnmarshaller<LanguageCodeItem, LanguageCodeItemUnmarshaller>(LanguageCodeItemUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OutputLocationType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputLocationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ModelSettings":
+                        context.AddPathSegment("ModelSettings");
+                        unmarshalledObject.ModelSettings = ModelSettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OutputLocationType":
+                        context.AddPathSegment("OutputLocationType");
+                        unmarshalledObject.OutputLocationType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ToxicityDetection", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ToxicityDetectionSettings, ToxicityDetectionSettingsUnmarshaller>(ToxicityDetectionSettingsUnmarshaller.Instance);
-                    unmarshalledObject.ToxicityDetection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StartTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TranscriptionJobName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptionJobName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ToxicityDetection":
+                        context.AddPathSegment("ToxicityDetection");
+                        unmarshalledObject.ToxicityDetection = new CborListUnmarshaller<ToxicityDetectionSettings, ToxicityDetectionSettingsUnmarshaller>(ToxicityDetectionSettingsUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TranscriptionJobStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptionJobStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "TranscriptionJobName":
+                        context.AddPathSegment("TranscriptionJobName");
+                        unmarshalledObject.TranscriptionJobName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TranscriptionJobStatus":
+                        context.AddPathSegment("TranscriptionJobStatus");
+                        unmarshalledObject.TranscriptionJobStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

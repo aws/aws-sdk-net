@@ -62,6 +62,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReplicaKmsKeyID = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("UseSourceMultiRegionKey", targetDepth))
+                    {
+                        var unmarshaller = UseSourceMultiRegionKeyUnmarshaller.Instance;
+                        unmarshalledObject.UseSourceMultiRegionKey = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

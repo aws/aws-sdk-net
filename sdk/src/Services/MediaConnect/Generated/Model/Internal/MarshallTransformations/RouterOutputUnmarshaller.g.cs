@@ -165,6 +165,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("processors", targetDepth, ref reader))
+                {
+                    var unmarshaller = RouterOutputProcessorsUnmarshaller.Instance;
+                    unmarshalledObject.Processors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("regionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

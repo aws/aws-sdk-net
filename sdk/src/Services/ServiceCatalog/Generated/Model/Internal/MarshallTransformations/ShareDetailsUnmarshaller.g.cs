@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ShareDetails Object
     /// </summary>
-    public partial class ShareDetailsUnmarshaller : IJsonUnmarshaller<ShareDetails, JsonUnmarshallerContext>
+    public partial class ShareDetailsUnmarshaller : ICborUnmarshaller<ShareDetails, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ShareDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ShareDetails Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ShareDetails();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ShareErrors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ShareError, ShareErrorUnmarshaller>(ShareErrorUnmarshaller.Instance);
-                    unmarshalledObject.ShareErrors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("SuccessfulShares", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SuccessfulShares = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ShareErrors":
+                        context.AddPathSegment("ShareErrors");
+                        unmarshalledObject.ShareErrors = new CborListUnmarshaller<ShareError, ShareErrorUnmarshaller>(ShareErrorUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SuccessfulShares":
+                        context.AddPathSegment("SuccessfulShares");
+                        unmarshalledObject.SuccessfulShares = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

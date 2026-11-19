@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WorkspaceProperties Object
     /// </summary>
-    public partial class WorkspacePropertiesUnmarshaller : IJsonUnmarshaller<WorkspaceProperties, JsonUnmarshallerContext>
+    public partial class WorkspacePropertiesUnmarshaller : ICborUnmarshaller<WorkspaceProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public WorkspaceProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkspaceProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new WorkspaceProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ComputeTypeName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputeTypeName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("GlobalAccelerator", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = GlobalAcceleratorForWorkSpaceUnmarshaller.Instance;
-                    unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ComputeTypeName":
+                        context.AddPathSegment("ComputeTypeName");
+                        unmarshalledObject.ComputeTypeName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NestedVirtualizationEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NestedVirtualizationEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "GlobalAccelerator":
+                        context.AddPathSegment("GlobalAccelerator");
+                        unmarshalledObject.GlobalAccelerator = GlobalAcceleratorForWorkSpaceUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OperatingSystemName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperatingSystemName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NestedVirtualizationEnabled":
+                        context.AddPathSegment("NestedVirtualizationEnabled");
+                        unmarshalledObject.NestedVirtualizationEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Protocols", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OperatingSystemName":
+                        context.AddPathSegment("OperatingSystemName");
+                        unmarshalledObject.OperatingSystemName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RootVolumeSizeGib", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RootVolumeSizeGib = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Protocols":
+                        context.AddPathSegment("Protocols");
+                        unmarshalledObject.Protocols = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RunningMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunningMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RootVolumeSizeGib":
+                        context.AddPathSegment("RootVolumeSizeGib");
+                        unmarshalledObject.RootVolumeSizeGib = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RunningModeAutoStopTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RunningMode":
+                        context.AddPathSegment("RunningMode");
+                        unmarshalledObject.RunningMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UserVolumeSizeGib", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UserVolumeSizeGib = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RunningModeAutoStopTimeoutInMinutes":
+                        context.AddPathSegment("RunningModeAutoStopTimeoutInMinutes");
+                        unmarshalledObject.RunningModeAutoStopTimeoutInMinutes = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "UserVolumeSizeGib":
+                        context.AddPathSegment("UserVolumeSizeGib");
+                        unmarshalledObject.UserVolumeSizeGib = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

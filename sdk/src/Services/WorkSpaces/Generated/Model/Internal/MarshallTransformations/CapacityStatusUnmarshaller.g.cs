@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityStatus Object
     /// </summary>
-    public partial class CapacityStatusUnmarshaller : IJsonUnmarshaller<CapacityStatus, JsonUnmarshallerContext>
+    public partial class CapacityStatusUnmarshaller : ICborUnmarshaller<CapacityStatus, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public CapacityStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CapacityStatus Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new CapacityStatus();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ActiveUserSessions", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveUserSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ActualUserSessions", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActualUserSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ActiveUserSessions":
+                        context.AddPathSegment("ActiveUserSessions");
+                        unmarshalledObject.ActiveUserSessions = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AvailableUserSessions", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailableUserSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ActualUserSessions":
+                        context.AddPathSegment("ActualUserSessions");
+                        unmarshalledObject.ActualUserSessions = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DesiredUserSessions", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredUserSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AvailableUserSessions":
+                        context.AddPathSegment("AvailableUserSessions");
+                        unmarshalledObject.AvailableUserSessions = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "DesiredUserSessions":
+                        context.AddPathSegment("DesiredUserSessions");
+                        unmarshalledObject.DesiredUserSessions = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

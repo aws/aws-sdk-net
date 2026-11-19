@@ -54,14 +54,14 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>StandardEula</c> – The Standard Contract for AWS Marketplace (SCMP). For more
-        /// information about SCMP, see the AWS Marketplace Seller Guide. You don’t provide a
-        /// URL for this type because it’s managed by AWS Marketplace.
+        /// information about SCMP, see the AWS Marketplace Seller Guide. You don't provide a
+        /// URL for this type because it's managed by AWS Marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>StandardDsa</c> – DSA for AWS Marketplace. For more information about the DSA,
-        /// see the AWS Data Exchange User Guide. You don’t provide a URL for this type because
-        /// it’s managed by AWS Marketplace.
+        /// see the AWS Data Exchange User Guide. You don't provide a URL for this type because
+        /// it's managed by AWS Marketplace.
         /// </para>
         ///  </li> </ul>
         /// </summary>

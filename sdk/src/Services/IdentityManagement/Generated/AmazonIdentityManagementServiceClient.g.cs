@@ -18743,9 +18743,9 @@ namespace Amazon.IdentityManagement
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
-        /// Services API, or the <b>Users</b> page in the IAM console to change the password for
-        /// any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+        /// Changes the password or the maximum sign-in session duration for the specified IAM
+        /// user. You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in
+        /// the IAM console to change the password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
         /// to change your own password in the <b>My Security Credentials</b> page in the Amazon
         /// Web Services Management Console.
         /// 
@@ -18762,6 +18762,10 @@ namespace Amazon.IdentityManagement
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -18799,9 +18803,9 @@ namespace Amazon.IdentityManagement
 #endif
 
         /// <summary>
-        /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
-        /// Services API, or the <b>Users</b> page in the IAM console to change the password for
-        /// any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
+        /// Changes the password or the maximum sign-in session duration for the specified IAM
+        /// user. You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in
+        /// the IAM console to change the password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a>
         /// to change your own password in the <b>My Security Credentials</b> page in the Amazon
         /// Web Services Management Console.
         /// 
@@ -18821,6 +18825,10 @@ namespace Amazon.IdentityManagement
         /// such as a user name that was deleted and then recreated. The error indicates that
         /// the request is likely to succeed if you try again after waiting several minutes. The
         /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
@@ -18981,10 +18989,16 @@ namespace Amazon.IdentityManagement
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the description or maximum session duration setting of a role.
+        /// Updates the description, maximum session duration, or maximum sign-in session duration
+        /// of a role. You cannot change the maximum sign-in session duration of a service-linked
+        /// role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRole service method.</param>
         /// <returns>The response from the UpdateRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
         /// The error message describes the resource.
@@ -19020,13 +19034,19 @@ namespace Amazon.IdentityManagement
 #endif
 
         /// <summary>
-        /// Updates the description or maximum session duration setting of a role.
+        /// Updates the description, maximum session duration, or maximum sign-in session duration
+        /// of a role. You cannot change the maximum sign-in session duration of a service-linked
+        /// role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRole service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the UpdateRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
         /// The request was rejected because it referenced a resource entity that does not exist.
         /// The error message describes the resource.

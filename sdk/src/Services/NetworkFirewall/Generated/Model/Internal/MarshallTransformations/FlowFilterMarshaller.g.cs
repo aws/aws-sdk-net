@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,58 +39,58 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// FlowFilter Marshaller
     /// </summary>
-    public partial class FlowFilterMarshaller : IRequestMarshaller<FlowFilter, JsonMarshallerContext>
+    public partial class FlowFilterMarshaller : IRequestMarshaller<FlowFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FlowFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(FlowFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDestinationAddress())
             {
-                context.Writer.WritePropertyName("DestinationAddress");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DestinationAddress");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationAddress, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetDestinationPort())
             {
-                context.Writer.WritePropertyName("DestinationPort");
-                context.Writer.WriteStringValue(requestObject.DestinationPort);
+                context.Writer.WriteTextString("DestinationPort");
+                context.Writer.WriteTextString(requestObject.DestinationPort);
             }
 
             if (requestObject.IsSetProtocols())
             {
-                context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Protocols");
+                context.Writer.WriteStartArray(requestObject.Protocols.Count);
                 foreach (var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                    context.Writer.WriteStringValue(requestObjectProtocolsListValue);
+                    context.Writer.WriteTextString(requestObjectProtocolsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetSourceAddress())
             {
-                context.Writer.WritePropertyName("SourceAddress");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SourceAddress");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceAddress, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetSourcePort())
             {
-                context.Writer.WritePropertyName("SourcePort");
-                context.Writer.WriteStringValue(requestObject.SourcePort);
+                context.Writer.WriteTextString("SourcePort");
+                context.Writer.WriteTextString(requestObject.SourcePort);
             }
         }
 

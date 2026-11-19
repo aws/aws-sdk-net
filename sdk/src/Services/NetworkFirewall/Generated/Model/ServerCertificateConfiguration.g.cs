@@ -105,6 +105,32 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetCheckCertificateRevocationStatus() => this.CheckCertificateRevocationStatus != null;
 
         /// <summary>
+        /// Gets and sets the property DefaultDecryptionBehavior. 
+        /// <para>
+        /// What the firewall does with SSL/TLS traffic that doesn't match any scope in this server
+        /// certificate configuration. This setting applies only to proxy mode firewalls. If you
+        /// don't specify a value, the firewall uses <c>BYPASS</c>. You can choose from the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BYPASS</c> - The firewall doesn't decrypt the traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DECRYPT</c> - The firewall decrypts the traffic for inspection. You can use <c>DECRYPT</c>
+        /// only if every scope in the configuration sets <c>DeploymentMode</c> to <c>EXPLICIT_PROXY_ONLY</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DecryptionAction DefaultDecryptionBehavior { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultDecryptionBehavior property is set.
+        /// </summary>
+        internal bool IsSetDefaultDecryptionBehavior() => this.DefaultDecryptionBehavior != null;
+
+        /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
         /// A list of scopes.

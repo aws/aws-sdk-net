@@ -1140,6 +1140,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetGcpResource())
+            {
+                context.Writer.WritePropertyName("GcpResource");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.GcpResource);
+            }
+
             if (requestObject.IsSetOther())
             {
                 context.Writer.WritePropertyName("Other");

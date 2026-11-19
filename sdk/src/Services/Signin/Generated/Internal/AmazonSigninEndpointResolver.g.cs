@@ -85,6 +85,16 @@ namespace Amazon.Signin.Internal
             }
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "BatchRevokeSessionsRequest")
+            {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateBearerTokenRequest")
+            {
+                result.IsOAuthEndpoint = true;
+                return result;
+            }
             if (requestContext.RequestName == "CreateOAuth2TokenRequest")
             {
                 result.IsControlPlane = false;
@@ -120,12 +130,22 @@ namespace Amazon.Signin.Internal
                 result.IsControlPlane = true;
                 return result;
             }
+            if (requestContext.RequestName == "GetSessionRequest")
+            {
+                result.IsControlPlane = true;
+                return result;
+            }
             if (requestContext.RequestName == "IntrospectOAuth2TokenWithIAMRequest")
             {
                 result.IsOAuthEndpoint = true;
                 return result;
             }
             if (requestContext.RequestName == "ListResourcePermissionStatementsRequest")
+            {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "ListSessionsRequest")
             {
                 result.IsControlPlane = true;
                 return result;

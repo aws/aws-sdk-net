@@ -98,6 +98,25 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
             }
+            if (publicRequest.IsSetIntegrations())
+            {
+                if (publicRequest.Integrations.Count == 0)
+                {
+                    request.Parameters.Add("Integrations", "");
+                }
+                else
+                {
+                    int index0 = 1;
+                    foreach (var item0 in publicRequest.Integrations)
+                    {
+                        if (item0.IsSetIntegrationType())
+                        {
+                            request.Parameters.Add("Integrations" + ".IntegrationRequest" + "." + index0 + ".IntegrationType", StringUtils.FromString(item0.IntegrationType));
+                        }
+                        index0++;
+                    }
+                }
+            }
             if (publicRequest.IsSetKmsKeyId())
             {
                 request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));

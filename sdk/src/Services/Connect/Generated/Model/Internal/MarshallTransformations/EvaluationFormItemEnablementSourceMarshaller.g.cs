@@ -45,10 +45,40 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAiMetricsField())
+            {
+                context.Writer.WritePropertyName("AiMetricsField");
+                context.Writer.WriteStringValue(requestObject.AiMetricsField);
+            }
+
+            if (requestObject.IsSetContactAttributeKey())
+            {
+                context.Writer.WritePropertyName("ContactAttributeKey");
+                context.Writer.WriteStringValue(requestObject.ContactAttributeKey);
+            }
+
+            if (requestObject.IsSetContactField())
+            {
+                context.Writer.WritePropertyName("ContactField");
+                context.Writer.WriteStringValue(requestObject.ContactField);
+            }
+
+            if (requestObject.IsSetEvaluationMetadataField())
+            {
+                context.Writer.WritePropertyName("EvaluationMetadataField");
+                context.Writer.WriteStringValue(requestObject.EvaluationMetadataField);
+            }
+
             if (requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
                 context.Writer.WriteStringValue(requestObject.RefId);
+            }
+
+            if (requestObject.IsSetSegmentAttributeKey())
+            {
+                context.Writer.WritePropertyName("SegmentAttributeKey");
+                context.Writer.WriteStringValue(requestObject.SegmentAttributeKey);
             }
 
             if (requestObject.IsSetType())

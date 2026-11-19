@@ -38,10 +38,10 @@ namespace Amazon.S3Vectors.Model
         /// Gets and sets the property NonFilterableMetadataKeys. 
         /// <para>
         /// Non-filterable metadata keys allow you to enrich vectors with additional context during
-        /// storage and retrieval. Unlike default metadata keys, these keys can’t be used as query
-        /// filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried,
-        /// or filtered. You can access non-filterable metadata keys of your vectors after finding
-        /// the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a>
+        /// storage and retrieval. You can't use these keys in metadata filters. You can still
+        /// make a non-filterable key full-text searchable by configuring it separately in <c>textSearchConfigurations</c>.
+        /// You can retrieve non-filterable metadata keys after finding the vectors. For more
+        /// information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations
         /// and restrictions</a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
@@ -52,12 +52,32 @@ namespace Amazon.S3Vectors.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 10)]
+        [AWSProperty(Min = 0, Max = 10)]
         public List<string> NonFilterableMetadataKeys { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Checks to see if the NonFilterableMetadataKeys property is set.
         /// </summary>
         internal bool IsSetNonFilterableMetadataKeys() => this.NonFilterableMetadataKeys != null && (this.NonFilterableMetadataKeys.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property TextSearchConfigurations. 
+        /// <para>
+        /// Full-text search configurations for searchable metadata keys.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public List<TextSearchConfiguration> TextSearchConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<TextSearchConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the TextSearchConfigurations property is set.
+        /// </summary>
+        internal bool IsSetTextSearchConfigurations() => this.TextSearchConfigurations != null && (this.TextSearchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

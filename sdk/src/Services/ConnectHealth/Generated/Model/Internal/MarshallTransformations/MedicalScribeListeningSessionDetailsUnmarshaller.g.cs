@@ -95,6 +95,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("medicalCodingContextProvided", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.MedicalCodingContextProvided = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("postStreamActionResult", targetDepth, ref reader))
                 {
                     var unmarshaller = MedicalScribePostStreamActionsResultUnmarshaller.Instance;

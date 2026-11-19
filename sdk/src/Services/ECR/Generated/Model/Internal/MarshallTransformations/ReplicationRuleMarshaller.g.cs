@@ -45,6 +45,17 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetDeleteReplication())
+            {
+                context.Writer.WritePropertyName("deleteReplication");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeleteReplicationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeleteReplication, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetDestinations())
             {
                 context.Writer.WritePropertyName("destinations");

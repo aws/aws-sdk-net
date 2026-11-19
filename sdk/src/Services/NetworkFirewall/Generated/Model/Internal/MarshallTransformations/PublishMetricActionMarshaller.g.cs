@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,27 +39,27 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// PublishMetricAction Marshaller
     /// </summary>
-    public partial class PublishMetricActionMarshaller : IRequestMarshaller<PublishMetricAction, JsonMarshallerContext>
+    public partial class PublishMetricActionMarshaller : IRequestMarshaller<PublishMetricAction, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PublishMetricAction requestObject, JsonMarshallerContext context)
+        public void Marshall(PublishMetricAction requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDimensions())
             {
-                context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Dimensions");
+                context.Writer.WriteStartArray(requestObject.Dimensions.Count);
                 foreach (var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = DimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }

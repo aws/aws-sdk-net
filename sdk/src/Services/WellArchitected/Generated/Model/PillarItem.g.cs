@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Item configuration for a specific Well-Architected Tool Framework pillar.
+    /// Item configuration for a specific Amazon Web Services Well-Architected Framework pillar.
     /// </summary>
     public partial class PillarItem
     {

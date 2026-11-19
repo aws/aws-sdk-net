@@ -48,6 +48,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAccountId() => this.AccountId != null;
 
         /// <summary>
+        /// Gets and sets the property AdminAccountId. 
+        /// <para>
+        /// For an <c>ORGANIZATION</c> investigation, the ID of the administrator account of the
+        /// organization that the investigation analyzed. GuardDuty sets this field when the investigation
+        /// completes.
+        /// </para>
+        /// </summary>
+        public string AdminAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdminAccountId property is set.
+        /// </summary>
+        internal bool IsSetAdminAccountId() => this.AdminAccountId != null;
+
+        /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
         /// The confidence level of the investigation's assessment.
@@ -75,6 +90,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEndTime() => this.EndTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property FindingId. 
+        /// <para>
+        /// For a <c>FINDING</c> investigation, the ID of the finding that the investigation analyzed.
+        /// GuardDuty sets this field when the investigation completes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 300)]
+        public string FindingId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FindingId property is set.
+        /// </summary>
+        internal bool IsSetFindingId() => this.FindingId != null;
+
+        /// <summary>
         /// Gets and sets the property InvestigationId. 
         /// <para>
         /// The unique identifier of the investigation.
@@ -87,6 +117,20 @@ namespace Amazon.GuardDuty.Model
         /// Checks to see if the InvestigationId property is set.
         /// </summary>
         internal bool IsSetInvestigationId() => this.InvestigationId != null;
+
+        /// <summary>
+        /// Gets and sets the property InvestigationType. 
+        /// <para>
+        /// The type of investigation. Possible values are <c>FINDING</c>, <c>ACCOUNT</c>, and
+        /// <c>ORGANIZATION</c>. GuardDuty sets this field when the investigation completes.
+        /// </para>
+        /// </summary>
+        public InvestigationType InvestigationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InvestigationType property is set.
+        /// </summary>
+        internal bool IsSetInvestigationType() => this.InvestigationType != null;
 
         /// <summary>
         /// Gets and sets the property RiskLevel. 

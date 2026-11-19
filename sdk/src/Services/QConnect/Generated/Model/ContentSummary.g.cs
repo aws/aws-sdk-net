@@ -77,6 +77,21 @@ namespace Amazon.QConnect.Model
         internal bool IsSetContentType() => this.ContentType != null;
 
         /// <summary>
+        /// Gets and sets the property FileHash. 
+        /// <para>
+        /// The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency
+        /// returns this field only for replicated content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 4096)]
+        public string FileHash { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FileHash property is set.
+        /// </summary>
+        internal bool IsSetFileHash() => this.FileHash != null;
+
+        /// <summary>
         /// Gets and sets the property KnowledgeBaseArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the knowledge base.
@@ -104,6 +119,33 @@ namespace Amazon.QConnect.Model
         /// Checks to see if the KnowledgeBaseId property is set.
         /// </summary>
         internal bool IsSetKnowledgeBaseId() => this.KnowledgeBaseId != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the content was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8, Max = 31)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when the content was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
 
         /// <summary>
         /// Gets and sets the property Metadata. 

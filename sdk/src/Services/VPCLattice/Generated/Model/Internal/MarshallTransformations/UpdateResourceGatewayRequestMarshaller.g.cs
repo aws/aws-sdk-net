@@ -74,6 +74,11 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetResourceConfigDnsResolution())
+            {
+                context.Writer.WritePropertyName("resourceConfigDnsResolution");
+                context.Writer.WriteStringValue(publicRequest.ResourceConfigDnsResolution);
+            }
             if (publicRequest.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

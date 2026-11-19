@@ -129,6 +129,71 @@ namespace Amazon.NetworkFlowMonitor
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Create a performance monitor to monitor the traffic of the Amazon Virtual Private
+        /// Clouds (VPCs) that you specify as targets, to determine whether the Amazon Web Services
+        /// network is causing issues for your workloads. With a performance monitor, you can
+        /// identify network degradation across paths between Availability Zones and across Amazon
+        /// Web Services Regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceMonitor service method.</param>
+        /// <returns>The response from the CreatePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreatePerformanceMonitor">REST API Reference for CreatePerformanceMonitor Operation</seealso>
+        CreatePerformanceMonitorResponse CreatePerformanceMonitor(CreatePerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Create a performance monitor to monitor the traffic of the Amazon Virtual Private
+        /// Clouds (VPCs) that you specify as targets, to determine whether the Amazon Web Services
+        /// network is causing issues for your workloads. With a performance monitor, you can
+        /// identify network degradation across paths between Availability Zones and across Amazon
+        /// Web Services Regions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreatePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreatePerformanceMonitor">REST API Reference for CreatePerformanceMonitor Operation</seealso>
+        Task<CreatePerformanceMonitorResponse> CreatePerformanceMonitorAsync(CreatePerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// In Network Flow Monitor, you specify a scope for the service to generate metrics for.
         /// By using the scope, Network Flow Monitor can generate a topology of all the resources
         /// to measure performance metrics for. When you create a scope, you enable permissions
@@ -305,6 +370,65 @@ namespace Amazon.NetworkFlowMonitor
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Delete a performance monitor. Network Flow Monitor stops tracking network performance
+        /// for the resources that the monitor included.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceMonitor service method.</param>
+        /// <returns>The response from the DeletePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeletePerformanceMonitor">REST API Reference for DeletePerformanceMonitor Operation</seealso>
+        DeletePerformanceMonitorResponse DeletePerformanceMonitor(DeletePerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Delete a performance monitor. Network Flow Monitor stops tracking network performance
+        /// for the resources that the monitor included.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeletePerformanceMonitor">REST API Reference for DeletePerformanceMonitor Operation</seealso>
+        Task<DeletePerformanceMonitorResponse> DeletePerformanceMonitorAsync(DeletePerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a scope that has been defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScope service method.</param>
@@ -423,6 +547,116 @@ namespace Amazon.NetworkFlowMonitor
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the accounts that are sending traffic to, or receiving traffic from, resources
+        /// in a monitor, but that aren't included in the monitoring scope for the monitor. By
+        /// adding the suggested accounts to your scope, you enable Network Flow Monitor to resolve
+        /// the network paths for that traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitorScopeSuggestions service method.</param>
+        /// <returns>The response from the GetMonitorScopeSuggestions service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetMonitorScopeSuggestions">REST API Reference for GetMonitorScopeSuggestions Operation</seealso>
+        GetMonitorScopeSuggestionsResponse GetMonitorScopeSuggestions(GetMonitorScopeSuggestionsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the accounts that are sending traffic to, or receiving traffic from, resources
+        /// in a monitor, but that aren't included in the monitoring scope for the monitor. By
+        /// adding the suggested accounts to your scope, you enable Network Flow Monitor to resolve
+        /// the network paths for that traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitorScopeSuggestions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMonitorScopeSuggestions service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetMonitorScopeSuggestions">REST API Reference for GetMonitorScopeSuggestions Operation</seealso>
+        Task<GetMonitorScopeSuggestionsResponse> GetMonitorScopeSuggestionsAsync(GetMonitorScopeSuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns information about a performance monitor, including the resources that it monitors,
+        /// its status, and the tags for the monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceMonitor service method.</param>
+        /// <returns>The response from the GetPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetPerformanceMonitor">REST API Reference for GetPerformanceMonitor Operation</seealso>
+        GetPerformanceMonitorResponse GetPerformanceMonitor(GetPerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Returns information about a performance monitor, including the resources that it monitors,
+        /// its status, and the tags for the monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetPerformanceMonitor">REST API Reference for GetPerformanceMonitor Operation</seealso>
+        Task<GetPerformanceMonitorResponse> GetPerformanceMonitorAsync(GetPerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Return the data for a query with the Network Flow Monitor query interface. You specify
         /// the query that you want to return results for by providing a query ID and a monitor
         /// name. This query returns the top contributors for a specific monitor.
@@ -509,6 +743,81 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsMonitorTopContributors">REST API Reference for GetQueryResultsMonitorTopContributors Operation</seealso>
         Task<GetQueryResultsMonitorTopContributorsResponse> GetQueryResultsMonitorTopContributorsAsync(GetQueryResultsMonitorTopContributorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the results of a query for the Network Flow Monitor query interface, for a
+        /// specified query ID and performance monitor. This call returns the top paths for a
+        /// performance monitor.
+        /// 
+        ///  
+        /// <para>
+        /// Create a query with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryPerformanceMonitor.html">
+        /// StartQueryPerformanceMonitor</a>, and then use the query ID with this call to return
+        /// the results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryResultsPerformanceMonitor service method.</param>
+        /// <returns>The response from the GetQueryResultsPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsPerformanceMonitor">REST API Reference for GetQueryResultsPerformanceMonitor Operation</seealso>
+        GetQueryResultsPerformanceMonitorResponse GetQueryResultsPerformanceMonitor(GetQueryResultsPerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the results of a query for the Network Flow Monitor query interface, for a
+        /// specified query ID and performance monitor. This call returns the top paths for a
+        /// performance monitor.
+        /// 
+        ///  
+        /// <para>
+        /// Create a query with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_StartQueryPerformanceMonitor.html">
+        /// StartQueryPerformanceMonitor</a>, and then use the query ID with this call to return
+        /// the results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryResultsPerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetQueryResultsPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsPerformanceMonitor">REST API Reference for GetQueryResultsPerformanceMonitor Operation</seealso>
+        Task<GetQueryResultsPerformanceMonitorResponse> GetQueryResultsPerformanceMonitorAsync(GetQueryResultsPerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -803,6 +1112,81 @@ namespace Amazon.NetworkFlowMonitor
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the current status of a query for the Network Flow Monitor query interface,
+        /// for a specified query ID and performance monitor. This call returns the query status
+        /// for the top paths for a performance monitor.
+        /// 
+        ///  
+        /// <para>
+        /// When you run a query, use this call to check the status of the query to make sure
+        /// that the query has <c>SUCCEEDED</c> before you review the results. Use the same query
+        /// ID that you used for the corresponding API call to start (create) the query, <c>StartQueryPerformanceMonitor</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryStatusPerformanceMonitor service method.</param>
+        /// <returns>The response from the GetQueryStatusPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusPerformanceMonitor">REST API Reference for GetQueryStatusPerformanceMonitor Operation</seealso>
+        GetQueryStatusPerformanceMonitorResponse GetQueryStatusPerformanceMonitor(GetQueryStatusPerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the current status of a query for the Network Flow Monitor query interface,
+        /// for a specified query ID and performance monitor. This call returns the query status
+        /// for the top paths for a performance monitor.
+        /// 
+        ///  
+        /// <para>
+        /// When you run a query, use this call to check the status of the query to make sure
+        /// that the query has <c>SUCCEEDED</c> before you review the results. Use the same query
+        /// ID that you used for the corresponding API call to start (create) the query, <c>StartQueryPerformanceMonitor</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryStatusPerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetQueryStatusPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusPerformanceMonitor">REST API Reference for GetQueryStatusPerformanceMonitor Operation</seealso>
+        Task<GetQueryStatusPerformanceMonitorResponse> GetQueryStatusPerformanceMonitorAsync(GetQueryStatusPerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Return the data for a query with the Network Flow Monitor query interface. Specify
         /// the query that you want to return results for by providing a query ID and a monitor
         /// name. This query returns the top contributors for workload insights.
@@ -1085,6 +1469,63 @@ namespace Amazon.NetworkFlowMonitor
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a list of the performance monitors in an account. You can optionally return
+        /// only the monitors that have a specific status or type.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use the <c>nextToken</c> parameter to return additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceMonitors service method.</param>
+        /// <returns>The response from the ListPerformanceMonitors service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListPerformanceMonitors">REST API Reference for ListPerformanceMonitors Operation</seealso>
+        ListPerformanceMonitorsResponse ListPerformanceMonitors(ListPerformanceMonitorsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a list of the performance monitors in an account. You can optionally return
+        /// only the monitors that have a specific status or type.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use the <c>nextToken</c> parameter to return additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceMonitors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPerformanceMonitors service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListPerformanceMonitors">REST API Reference for ListPerformanceMonitors Operation</seealso>
+        Task<ListPerformanceMonitorsResponse> ListPerformanceMonitorsAsync(ListPerformanceMonitorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// List all the scopes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScopes service method.</param>
@@ -1273,6 +1714,93 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryMonitorTopContributors">REST API Reference for StartQueryMonitorTopContributors Operation</seealso>
         Task<StartQueryMonitorTopContributorsResponse> StartQueryMonitorTopContributorsAsync(StartQueryMonitorTopContributorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a query that you can use with the Network Flow Monitor query interface to return
+        /// the top paths for a performance monitor. Specify the performance monitor that you
+        /// want to create the query for.
+        /// 
+        ///  
+        /// <para>
+        /// The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsPerformanceMonitor.html">
+        /// GetQueryResultsPerformanceMonitor</a> to return the results of the query.
+        /// </para>
+        ///  
+        /// <para>
+        /// Top paths in Network Flow Monitor are the network paths used by the traffic for the
+        /// resources that a performance monitor tracks, ranked by impact score and then by traffic
+        /// volume. Each path includes the traffic and round-trip time for the path, together
+        /// with a breakdown of the subnet pairs that the path includes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQueryPerformanceMonitor service method.</param>
+        /// <returns>The response from the StartQueryPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryPerformanceMonitor">REST API Reference for StartQueryPerformanceMonitor Operation</seealso>
+        StartQueryPerformanceMonitorResponse StartQueryPerformanceMonitor(StartQueryPerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Create a query that you can use with the Network Flow Monitor query interface to return
+        /// the top paths for a performance monitor. Specify the performance monitor that you
+        /// want to create the query for.
+        /// 
+        ///  
+        /// <para>
+        /// The call returns a query ID that you can use with <a href="https://docs.aws.amazon.com/networkflowmonitor/2.0/APIReference/API_GetQueryResultsPerformanceMonitor.html">
+        /// GetQueryResultsPerformanceMonitor</a> to return the results of the query.
+        /// </para>
+        ///  
+        /// <para>
+        /// Top paths in Network Flow Monitor are the network paths used by the traffic for the
+        /// resources that a performance monitor tracks, ranked by impact score and then by traffic
+        /// volume. Each path includes the traffic and round-trip time for the path, together
+        /// with a breakdown of the subnet pairs that the path includes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQueryPerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartQueryPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryPerformanceMonitor">REST API Reference for StartQueryPerformanceMonitor Operation</seealso>
+        Task<StartQueryPerformanceMonitorResponse> StartQueryPerformanceMonitorAsync(StartQueryPerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1508,6 +2036,67 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryMonitorTopContributors">REST API Reference for StopQueryMonitorTopContributors Operation</seealso>
         Task<StopQueryMonitorTopContributorsResponse> StopQueryMonitorTopContributorsAsync(StopQueryMonitorTopContributorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Stop a query for the Network Flow Monitor query interface, for a specified query ID
+        /// and performance monitor. Use the same query ID that you used for the corresponding
+        /// API call to start the query, <c>StartQueryPerformanceMonitor</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopQueryPerformanceMonitor service method.</param>
+        /// <returns>The response from the StopQueryPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryPerformanceMonitor">REST API Reference for StopQueryPerformanceMonitor Operation</seealso>
+        StopQueryPerformanceMonitorResponse StopQueryPerformanceMonitor(StopQueryPerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Stop a query for the Network Flow Monitor query interface, for a specified query ID
+        /// and performance monitor. Use the same query ID that you used for the corresponding
+        /// API call to start the query, <c>StartQueryPerformanceMonitor</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopQueryPerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StopQueryPerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryPerformanceMonitor">REST API Reference for StopQueryPerformanceMonitor Operation</seealso>
+        Task<StopQueryPerformanceMonitorResponse> StopQueryPerformanceMonitorAsync(StopQueryPerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1811,6 +2400,71 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         Task<UpdateMonitorResponse> UpdateMonitorAsync(UpdateMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update a performance monitor, to add or remove the resources that the monitor tracks
+        /// network performance for.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePerformanceMonitor service method.</param>
+        /// <returns>The response from the UpdatePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdatePerformanceMonitor">REST API Reference for UpdatePerformanceMonitor Operation</seealso>
+        UpdatePerformanceMonitorResponse UpdatePerformanceMonitor(UpdatePerformanceMonitorRequest request);
+#endif
+
+        /// <summary>
+        /// Update a performance monitor, to add or remove the resources that the monitor tracks
+        /// network performance for.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePerformanceMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePerformanceMonitor service method, as returned by NetworkFlowMonitor.</returns>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
+        /// The request exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdatePerformanceMonitor">REST API Reference for UpdatePerformanceMonitor Operation</seealso>
+        Task<UpdatePerformanceMonitorResponse> UpdatePerformanceMonitorAsync(UpdatePerformanceMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

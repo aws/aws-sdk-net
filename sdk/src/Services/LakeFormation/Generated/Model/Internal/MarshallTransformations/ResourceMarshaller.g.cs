@@ -45,6 +45,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAnyResource())
+            {
+                context.Writer.WritePropertyName("AnyResource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnyResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnyResource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");
@@ -151,6 +162,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
                 var marshaller = TableWithColumnsResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.TableWithColumns, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetUserDefinedFunction())
+            {
+                context.Writer.WritePropertyName("UserDefinedFunction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserDefinedFunctionResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.UserDefinedFunction, context);
 
                 context.Writer.WriteEndObject();
             }

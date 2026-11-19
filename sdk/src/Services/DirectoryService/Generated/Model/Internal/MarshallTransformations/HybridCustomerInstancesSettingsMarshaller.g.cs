@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// HybridCustomerInstancesSettings Marshaller
     /// </summary>
-    public partial class HybridCustomerInstancesSettingsMarshaller : IRequestMarshaller<HybridCustomerInstancesSettings, JsonMarshallerContext>
+    public partial class HybridCustomerInstancesSettingsMarshaller : IRequestMarshaller<HybridCustomerInstancesSettings, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(HybridCustomerInstancesSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(HybridCustomerInstancesSettings requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCustomerDnsIps())
             {
-                context.Writer.WritePropertyName("CustomerDnsIps");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("CustomerDnsIps");
+                context.Writer.WriteStartArray(requestObject.CustomerDnsIps.Count);
                 foreach (var requestObjectCustomerDnsIpsListValue in requestObject.CustomerDnsIps)
                 {
-                    context.Writer.WriteStringValue(requestObjectCustomerDnsIpsListValue);
+                    context.Writer.WriteTextString(requestObjectCustomerDnsIpsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetInstanceIds())
             {
-                context.Writer.WritePropertyName("InstanceIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("InstanceIds");
+                context.Writer.WriteStartArray(requestObject.InstanceIds.Count);
                 foreach (var requestObjectInstanceIdsListValue in requestObject.InstanceIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectInstanceIdsListValue);
+                    context.Writer.WriteTextString(requestObjectInstanceIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

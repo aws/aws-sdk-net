@@ -32,9 +32,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Container for the parameters to the RejectDomainNameAccessAssociation operation. Rejects
     /// a domain name access association with a private custom domain name. <para> To reject
-    /// a domain name access association with an access association source in another AWS
-    /// account, use this operation. To remove a domain name access association with an access
-    /// association source in your own account, use the DeleteDomainNameAccessAssociation
+    /// a domain name access association with an access association source in another Amazon
+    /// Web Services account, use this operation. To remove a domain name access association
+    /// with an access association source in your own account, use the DeleteDomainNameAccessAssociation
     /// operation. </para>
     /// </summary>
     public partial class RejectDomainNameAccessAssociationRequest : AmazonAPIGatewayRequest

@@ -1376,6 +1376,19 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetContainer() => this.Container != null;
 
         /// <summary>
+        /// Gets and sets the property GcpResource. 
+        /// <para>
+        /// Details about a GCP resource that is related to a finding.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document GcpResource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GcpResource property is set.
+        /// </summary>
+        internal bool IsSetGcpResource() => !this.GcpResource.IsNull();
+
+        /// <summary>
         /// Gets and sets the property Other. 
         /// <para>
         /// Details about a resource that are not available in a type-specific details object.

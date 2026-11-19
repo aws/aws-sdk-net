@@ -1,0 +1,83 @@
+{
+    "smithy": "2.0",
+    "shapes": {
+        "com.amazonaws.sdb#AmazonSimpleDB": {
+            "type": "service",
+            "version": "2009-04-15",
+            "operations": [
+                {
+                    "target": "com.amazonaws.sdb#DeleteDomain"
+                }
+            ],
+            "traits": {
+                "aws.api#service": {
+                    "sdkId": "SimpleDB",
+                    "arnNamespace": "sdb",
+                    "cloudFormationName": "SDB",
+                    "endpointPrefix": "sdb"
+                },
+                "aws.protocols#awsQuery": {},
+                "smithy.api#title": "Amazon SimpleDB",
+                "smithy.api#xmlNamespace": {
+                    "uri": "http://sdb.amazonaws.com/doc/2009-04-15/"
+                }
+            }
+        },
+        "com.amazonaws.sdb#DeleteDomain": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#DeleteDomainRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                }
+            ]
+        },
+        "com.amazonaws.sdb#DeleteDomainRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#MissingParameter": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "MissingParameter",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#Float": {
+            "type": "float",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.sdb#String": {
+            "type": "string"
+        }
+    }
+}

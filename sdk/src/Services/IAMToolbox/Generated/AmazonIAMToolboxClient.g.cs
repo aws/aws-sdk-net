@@ -260,6 +260,10 @@ namespace Amazon.IAMToolbox
         /// </para>
         ///  
         /// <para>
+        /// To retrieve the content for a policy in the <c>policies</c> list, call <c>GetRequestAuthorizationPolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Authorization details are available for at least 24 hours after the denial.
         /// </para>
         ///  
@@ -277,10 +281,13 @@ namespace Amazon.IAMToolbox
         /// An unexpected error occurred while processing the request. Try again.
         /// </exception>
         /// <exception cref="Amazon.IAMToolbox.Model.ResourceNotFoundException">
-        /// The requested authorization details do not exist in this region or have expired. Verify
-        /// that the authorization ID from the access denied error message is correct and the
-        /// call is made in the region where the denial occurred. Ensure that the calling principal
-        /// belongs to the same account or organization as the original denied request.
+        /// The requested policy or authorization details do not exist in this region or have
+        /// expired. Verify that the authorization ID from the access denied error message is
+        /// correct and the call is made in the region where the denial occurred. Ensure that
+        /// the calling principal belongs to the same account or organization as the original
+        /// denied request. If you specified a policy URI, verify that it is from the <c>policies</c>
+        /// list that <c>GetRequestAuthorizationDetails</c> returns for the same authorization
+        /// ID.
         /// </exception>
         /// <exception cref="Amazon.IAMToolbox.Model.ValidationException">
         /// The request is malformed or is missing one or more required parameters. Check the
@@ -319,6 +326,10 @@ namespace Amazon.IAMToolbox
         /// </para>
         ///  
         /// <para>
+        /// To retrieve the content for a policy in the <c>policies</c> list, call <c>GetRequestAuthorizationPolicy</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Authorization details are available for at least 24 hours after the denial.
         /// </para>
         ///  
@@ -339,10 +350,13 @@ namespace Amazon.IAMToolbox
         /// An unexpected error occurred while processing the request. Try again.
         /// </exception>
         /// <exception cref="Amazon.IAMToolbox.Model.ResourceNotFoundException">
-        /// The requested authorization details do not exist in this region or have expired. Verify
-        /// that the authorization ID from the access denied error message is correct and the
-        /// call is made in the region where the denial occurred. Ensure that the calling principal
-        /// belongs to the same account or organization as the original denied request.
+        /// The requested policy or authorization details do not exist in this region or have
+        /// expired. Verify that the authorization ID from the access denied error message is
+        /// correct and the call is made in the region where the denial occurred. Ensure that
+        /// the calling principal belongs to the same account or organization as the original
+        /// denied request. If you specified a policy URI, verify that it is from the <c>policies</c>
+        /// list that <c>GetRequestAuthorizationDetails</c> returns for the same authorization
+        /// ID.
         /// </exception>
         /// <exception cref="Amazon.IAMToolbox.Model.ValidationException">
         /// The request is malformed or is missing one or more required parameters. Check the
@@ -356,6 +370,140 @@ namespace Amazon.IAMToolbox
             options.ResponseUnmarshaller = GetRequestAuthorizationDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRequestAuthorizationDetailsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a policy that was evaluated for a specific access denied request. The operation
+        /// returns the structured JSON document of the policy that was captured with the original
+        /// authorization request. It doesn't retrieve the current version of the policy.
+        /// 
+        ///  
+        /// <para>
+        /// For some AWS services and policy types, the returned policy document includes all
+        /// actions relevant to the service that processed the denied request, but might omit
+        /// actions for other services.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the authorization ID from the access denied error message and the policy URI
+        /// returned by <c>GetRequestAuthorizationDetails</c> for the same authorization ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// Access depends on the account and organization recorded for the principal that made
+        /// the denied request. If an organization was recorded, the calling principal must belong
+        /// to that organization. Otherwise, the calling principal must belong to the recorded
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>iam:GetRequestAuthorizationPolicy</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestAuthorizationPolicy service method.</param>
+        /// <returns>The response from the GetRequestAuthorizationPolicy service method, as returned by IAMToolbox.</returns>
+        /// <exception cref="Amazon.IAMToolbox.Model.AccessDeniedException">
+        /// The caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.ResourceNotFoundException">
+        /// The requested policy or authorization details do not exist in this region or have
+        /// expired. Verify that the authorization ID from the access denied error message is
+        /// correct and the call is made in the region where the denial occurred. Ensure that
+        /// the calling principal belongs to the same account or organization as the original
+        /// denied request. If you specified a policy URI, verify that it is from the <c>policies</c>
+        /// list that <c>GetRequestAuthorizationDetails</c> returns for the same authorization
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.ValidationException">
+        /// The request is malformed or is missing one or more required parameters. Check the
+        /// request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-toolbox-2018-05-10/GetRequestAuthorizationPolicy">REST API Reference for GetRequestAuthorizationPolicy Operation</seealso>
+        public virtual GetRequestAuthorizationPolicyResponse GetRequestAuthorizationPolicy(GetRequestAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRequestAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRequestAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetRequestAuthorizationPolicyResponse>(request, options);
+        }
+#else
+        internal virtual GetRequestAuthorizationPolicyResponse GetRequestAuthorizationPolicy(GetRequestAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRequestAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRequestAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetRequestAuthorizationPolicyResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a policy that was evaluated for a specific access denied request. The operation
+        /// returns the structured JSON document of the policy that was captured with the original
+        /// authorization request. It doesn't retrieve the current version of the policy.
+        /// 
+        ///  
+        /// <para>
+        /// For some AWS services and policy types, the returned policy document includes all
+        /// actions relevant to the service that processed the denied request, but might omit
+        /// actions for other services.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the authorization ID from the access denied error message and the policy URI
+        /// returned by <c>GetRequestAuthorizationDetails</c> for the same authorization ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// Access depends on the account and organization recorded for the principal that made
+        /// the denied request. If an organization was recorded, the calling principal must belong
+        /// to that organization. Otherwise, the calling principal must belong to the recorded
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>iam:GetRequestAuthorizationPolicy</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRequestAuthorizationPolicy service method, as returned by IAMToolbox.</returns>
+        /// <exception cref="Amazon.IAMToolbox.Model.AccessDeniedException">
+        /// The caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.ResourceNotFoundException">
+        /// The requested policy or authorization details do not exist in this region or have
+        /// expired. Verify that the authorization ID from the access denied error message is
+        /// correct and the call is made in the region where the denial occurred. Ensure that
+        /// the calling principal belongs to the same account or organization as the original
+        /// denied request. If you specified a policy URI, verify that it is from the <c>policies</c>
+        /// list that <c>GetRequestAuthorizationDetails</c> returns for the same authorization
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.IAMToolbox.Model.ValidationException">
+        /// The request is malformed or is missing one or more required parameters. Check the
+        /// request parameters and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-toolbox-2018-05-10/GetRequestAuthorizationPolicy">REST API Reference for GetRequestAuthorizationPolicy Operation</seealso>
+        public virtual Task<GetRequestAuthorizationPolicyResponse> GetRequestAuthorizationPolicyAsync(GetRequestAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRequestAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRequestAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRequestAuthorizationPolicyResponse>(request, options, cancellationToken);
         }
 
         /// <summary>

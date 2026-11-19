@@ -60,6 +60,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("capabilities", targetDepth, ref reader))
+                {
+                    var unmarshaller = EksContainerLinuxCapabilitiesUnmarshaller.Instance;
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("privileged", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -92,6 +99,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RunAsUser = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("seccompProfile", targetDepth, ref reader))
+                {
+                    var unmarshaller = EksSeccompProfileUnmarshaller.Instance;
+                    unmarshalledObject.SeccompProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

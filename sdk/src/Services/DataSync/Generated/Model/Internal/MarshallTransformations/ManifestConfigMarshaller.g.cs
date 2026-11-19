@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// ManifestConfig Marshaller
     /// </summary>
-    public partial class ManifestConfigMarshaller : IRequestMarshaller<ManifestConfig, JsonMarshallerContext>
+    public partial class ManifestConfigMarshaller : IRequestMarshaller<ManifestConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ManifestConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ManifestConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
 
             if (requestObject.IsSetFormat())
             {
-                context.Writer.WritePropertyName("Format");
-                context.Writer.WriteStringValue(requestObject.Format);
+                context.Writer.WriteTextString("Format");
+                context.Writer.WriteTextString(requestObject.Format);
             }
 
             if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("Source");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Source");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SourceManifestConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

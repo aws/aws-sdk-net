@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.DirectoryService.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -54,83 +55,89 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public IRequest Marshall(ConnectDirectoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectoryService");
-            string target = "DirectoryService_20150416.ConnectDirectory";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-16";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetConnectSettings())
+            request.ResourcePath = "service/DirectoryService_20150416/operation/ConnectDirectory";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("ConnectSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DirectoryConnectSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ConnectSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-            if (publicRequest.IsSetNetworkType())
-            {
-                context.Writer.WritePropertyName("NetworkType");
-                context.Writer.WriteStringValue(publicRequest.NetworkType);
-            }
-            if (publicRequest.IsSetPassword())
-            {
-                context.Writer.WritePropertyName("Password");
-                context.Writer.WriteStringValue(publicRequest.Password);
-            }
-            if (publicRequest.IsSetShortName())
-            {
-                context.Writer.WritePropertyName("ShortName");
-                context.Writer.WriteStringValue(publicRequest.ShortName);
-            }
-            if (publicRequest.IsSetSize())
-            {
-                context.Writer.WritePropertyName("Size");
-                context.Writer.WriteStringValue(publicRequest.Size);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetConnectSettings())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("ConnectSettings");
+                    context.Writer.WriteStartMap(null);
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = DirectoryConnectSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConnectSettings, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WriteTextString("NetworkType");
+                    context.Writer.WriteTextString(publicRequest.NetworkType);
+                }
+                if (publicRequest.IsSetPassword())
+                {
+                    context.Writer.WriteTextString("Password");
+                    context.Writer.WriteTextString(publicRequest.Password);
+                }
+                if (publicRequest.IsSetShortName())
+                {
+                    context.Writer.WriteTextString("ShortName");
+                    context.Writer.WriteTextString(publicRequest.ShortName);
+                }
+                if (publicRequest.IsSetSize())
+                {
+                    context.Writer.WriteTextString("Size");
+                    context.Writer.WriteTextString(publicRequest.Size);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

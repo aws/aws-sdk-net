@@ -186,6 +186,32 @@ namespace Amazon.Runtime.Internal.Util
             return list.ConvertAll(item => (T)Convert.ChangeType(item.Trim(), typeof(T))).ToList();
         }
 
+        /// <summary>
+        /// Reads a header string which is optionally comma-delimited and converts each value to
+        /// type T with the given parse function.
+        /// </summary>
+        /// <typeparam name="T">A value type such as short or BigInteger.</typeparam>
+        /// <param name="header">The header string to parse which is optionally a comma-delimited list
+        /// of header values.</param>
+        /// <param name="parse">Converts a single trimmed header value to T.</param>
+        /// <returns>A list of type T representing the comma-delimited header values.</returns>
+        public static List<T> ToValueTypeList<T>(string header, Func<string, T> parse) where T : struct
+        {
+            if (parse == null)
+            {
+                throw new ArgumentNullException(nameof(parse));
+            }
+
+            var value = header?.Trim();
+            if (string.IsNullOrEmpty(value))
+            {
+                return new List<T>();
+            }
+
+            var list = value.Split(Delimiter).ToList();
+            return list.ConvertAll(item => parse(item.Trim()));
+        }
+
         private static Tuple<string, int> ReadValue(byte[] input, int startAtIndex)
         {
             for (int index = startAtIndex; index < input.Length; index++)

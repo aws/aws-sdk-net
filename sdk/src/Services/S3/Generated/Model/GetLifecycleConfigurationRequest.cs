@@ -108,10 +108,6 @@ namespace Amazon.S3.Model
     /// <para>
     /// HTTP Status Code: 404 Not Found
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// SOAP Fault Code Prefix: Client
-    /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// The following operations are related to <c>GetBucketLifecycleConfiguration</c>:

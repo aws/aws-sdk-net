@@ -31,7 +31,8 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDesignation operation. Gets the details of
-    /// a designation, including its Cedar policy.
+    /// a designation, including its Cedar permit policy. Returns the full designation record
+    /// for both system-managed and user-created designations.
     /// </summary>
     public partial class GetDesignationRequest : AmazonDataZoneRequest
     {

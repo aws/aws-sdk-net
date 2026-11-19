@@ -163,13 +163,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.Pillars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-
-                if (context.TestExpression("tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
 
             return unmarshalledObject;
@@ -204,6 +197,10 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                     {
                         return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                    {
+                        return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                     {

@@ -104,6 +104,16 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("identityValidationExpression");
                 context.Writer.WriteStringValue(publicRequest.IdentityValidationExpression);
             }
+            if (publicRequest.IsSetJwtConfiguration())
+            {
+                context.Writer.WritePropertyName("jwtConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JwtConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JwtConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

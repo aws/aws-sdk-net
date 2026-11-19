@@ -31,12 +31,13 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// A filter that identifies the subset of objects to which the replication rule applies.
-    /// A <c>Filter</c> must specify exactly one <c>Prefix</c>, <c>Tag</c>, or an <c>And</c>
-    /// child element.
+    /// A <c>Filter</c> must specify exactly one <c>Prefix</c>, <c>Tag</c>, <c>And</c>, or
+    /// <c>Not</c> child element.
     /// </summary>
     public partial class ReplicationRuleFilter
     {
         private ReplicationRuleAndOperator _and;
+        private ReplicationRuleNotOperator _not;
         private string _prefix;
         private Tag _tag;
 
@@ -69,6 +70,25 @@ namespace Amazon.S3.Model
         internal bool IsSetAnd()
         {
             return this._and != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Not. 
+        /// <para>
+        /// A container for specifying filters that exclude matching objects from the replication
+        /// rule.
+        /// </para>
+        /// </summary>
+        public ReplicationRuleNotOperator Not
+        {
+            get { return this._not; }
+            set { this._not = value; }
+        }
+
+        // Check to see if Not property is set
+        internal bool IsSetNot()
+        {
+            return this._not != null;
         }
 
         /// <summary>

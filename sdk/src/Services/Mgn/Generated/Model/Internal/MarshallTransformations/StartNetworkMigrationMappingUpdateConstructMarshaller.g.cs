@@ -51,6 +51,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConstructID);
             }
 
+            if (requestObject.IsSetConstructLogicalID())
+            {
+                context.Writer.WritePropertyName("constructLogicalID");
+                context.Writer.WriteStringValue(requestObject.ConstructLogicalID);
+            }
+
             if (requestObject.IsSetConstructType())
             {
                 context.Writer.WritePropertyName("constructType");
@@ -72,6 +78,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("segmentID");
                 context.Writer.WriteStringValue(requestObject.SegmentID);
+            }
+
+            if (requestObject.IsSetSegmentLogicalID())
+            {
+                context.Writer.WritePropertyName("segmentLogicalID");
+                context.Writer.WriteStringValue(requestObject.SegmentLogicalID);
             }
         }
 

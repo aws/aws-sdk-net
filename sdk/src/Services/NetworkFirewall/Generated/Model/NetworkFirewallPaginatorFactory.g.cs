@@ -57,11 +57,27 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        public IListContextStoresPaginator ListContextStores(ListContextStoresRequest request)
+        {
+            return new ListContextStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         /// </summary>
         public IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request)
         {
             return new ListFirewallPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFirewallPoliciesV2 operation
+        /// </summary>
+        public IListFirewallPoliciesV2Paginator ListFirewallPoliciesV2(ListFirewallPoliciesV2Request request)
+        {
+            return new ListFirewallPoliciesV2Paginator(this.client, request);
         }
 
         /// <summary>
@@ -89,27 +105,11 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
-        /// Paginator for ListProxies operation
+        /// Paginator for ListResourcesInContextStore operation
         /// </summary>
-        public IListProxiesPaginator ListProxies(ListProxiesRequest request)
+        public IListResourcesInContextStorePaginator ListResourcesInContextStore(ListResourcesInContextStoreRequest request)
         {
-            return new ListProxiesPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListProxyConfigurations operation
-        /// </summary>
-        public IListProxyConfigurationsPaginator ListProxyConfigurations(ListProxyConfigurationsRequest request)
-        {
-            return new ListProxyConfigurationsPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListProxyRuleGroups operation
-        /// </summary>
-        public IListProxyRuleGroupsPaginator ListProxyRuleGroups(ListProxyRuleGroupsRequest request)
-        {
-            return new ListProxyRuleGroupsPaginator(this.client, request);
+            return new ListResourcesInContextStorePaginator(this.client, request);
         }
 
         /// <summary>

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,88 +39,88 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectSource Marshaller
     /// </summary>
-    public partial class ProjectSourceMarshaller : IRequestMarshaller<ProjectSource, JsonMarshallerContext>
+    public partial class ProjectSourceMarshaller : IRequestMarshaller<ProjectSource, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectSource requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectSource requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAuth())
             {
-                context.Writer.WritePropertyName("auth");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("auth");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SourceAuthMarshaller.Instance;
                 marshaller.Marshall(requestObject.Auth, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetBuildStatusConfig())
             {
-                context.Writer.WritePropertyName("buildStatusConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("buildStatusConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = BuildStatusConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.BuildStatusConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetBuildspec())
             {
-                context.Writer.WritePropertyName("buildspec");
-                context.Writer.WriteStringValue(requestObject.Buildspec);
+                context.Writer.WriteTextString("buildspec");
+                context.Writer.WriteTextString(requestObject.Buildspec);
             }
 
             if (requestObject.IsSetGitCloneDepth())
             {
-                context.Writer.WritePropertyName("gitCloneDepth");
-                context.Writer.WriteNumberValue(requestObject.GitCloneDepth.Value);
+                context.Writer.WriteTextString("gitCloneDepth");
+                context.Writer.WriteInt32(requestObject.GitCloneDepth.Value);
             }
 
             if (requestObject.IsSetGitSubmodulesConfig())
             {
-                context.Writer.WritePropertyName("gitSubmodulesConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("gitSubmodulesConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GitSubmodulesConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitSubmodulesConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetInsecureSsl())
             {
-                context.Writer.WritePropertyName("insecureSsl");
-                context.Writer.WriteBooleanValue(requestObject.InsecureSsl.Value);
+                context.Writer.WriteTextString("insecureSsl");
+                context.Writer.WriteBoolean(requestObject.InsecureSsl.Value);
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetReportBuildStatus())
             {
-                context.Writer.WritePropertyName("reportBuildStatus");
-                context.Writer.WriteBooleanValue(requestObject.ReportBuildStatus.Value);
+                context.Writer.WriteTextString("reportBuildStatus");
+                context.Writer.WriteBoolean(requestObject.ReportBuildStatus.Value);
             }
 
             if (requestObject.IsSetSourceIdentifier())
             {
-                context.Writer.WritePropertyName("sourceIdentifier");
-                context.Writer.WriteStringValue(requestObject.SourceIdentifier);
+                context.Writer.WriteTextString("sourceIdentifier");
+                context.Writer.WriteTextString(requestObject.SourceIdentifier);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

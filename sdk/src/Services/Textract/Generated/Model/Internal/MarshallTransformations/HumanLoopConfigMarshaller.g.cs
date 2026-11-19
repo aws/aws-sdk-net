@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,36 +39,36 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// HumanLoopConfig Marshaller
     /// </summary>
-    public partial class HumanLoopConfigMarshaller : IRequestMarshaller<HumanLoopConfig, JsonMarshallerContext>
+    public partial class HumanLoopConfigMarshaller : IRequestMarshaller<HumanLoopConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(HumanLoopConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(HumanLoopConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDataAttributes())
             {
-                context.Writer.WritePropertyName("DataAttributes");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DataAttributes");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = HumanLoopDataAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataAttributes, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetFlowDefinitionArn())
             {
-                context.Writer.WritePropertyName("FlowDefinitionArn");
-                context.Writer.WriteStringValue(requestObject.FlowDefinitionArn);
+                context.Writer.WriteTextString("FlowDefinitionArn");
+                context.Writer.WriteTextString(requestObject.FlowDefinitionArn);
             }
 
             if (requestObject.IsSetHumanLoopName())
             {
-                context.Writer.WritePropertyName("HumanLoopName");
-                context.Writer.WriteStringValue(requestObject.HumanLoopName);
+                context.Writer.WriteTextString("HumanLoopName");
+                context.Writer.WriteTextString(requestObject.HumanLoopName);
             }
         }
 

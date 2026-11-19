@@ -36,7 +36,14 @@ namespace Amazon.NetworkFirewall.Model
     /// Firewall firewall endpoint in each of the subnets. To enable the firewall's protections,
     /// you must also modify the VPC's route tables for each subnet's Availability Zone, to
     /// redirect the traffic that's coming into and going out of the zone through the firewall
-    /// endpoint. </para>
+    /// endpoint. </para> <para> For a proxy mode firewall, use this operation to add Availability
+    /// Zones to the firewall. For each subnet, specify a NAT gateway in <c>NatGatewayCreateMappings</c>
+    /// in the same Availability Zone. You can't add an Availability Zone that the firewall
+    /// already uses. The firewall keeps working in its other Availability Zones while Network
+    /// Firewall sets up the new one. If Network Firewall can't set up the new Availability
+    /// Zone, it removes the Availability Zone from the firewall. It also deletes the NAT
+    /// gateway that it created there. The Availability Zone's <c>Attachment</c> status shows
+    /// the reason. You can then add the Availability Zone again. </para>
     /// </summary>
     public partial class AssociateSubnetsRequest : AmazonNetworkFirewallRequest
     {
@@ -76,6 +83,34 @@ namespace Amazon.NetworkFirewall.Model
         /// Checks to see if the FirewallName property is set.
         /// </summary>
         internal bool IsSetFirewallName() => this.FirewallName != null;
+
+        /// <summary>
+        /// Gets and sets the property NatGatewayCreateMappings. 
+        /// <para>
+        /// The NAT gateways that Network Firewall creates for the Availability Zones that you
+        /// add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping
+        /// for each Availability Zone in <c>SubnetMappings</c>, and no other Availability Zones.
+        /// Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall
+        /// endpoint subnets.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify this for a firewall that isn't a proxy mode firewall.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 20)]
+        public List<NatGatewayCreateMapping> NatGatewayCreateMappings { get; set; } = AWSConfigs.InitializeCollections ? new List<NatGatewayCreateMapping>() : null;
+
+        /// <summary>
+        /// Checks to see if the NatGatewayCreateMappings property is set.
+        /// </summary>
+        internal bool IsSetNatGatewayCreateMappings() => this.NatGatewayCreateMappings != null && (this.NatGatewayCreateMappings.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property SubnetMappings. 

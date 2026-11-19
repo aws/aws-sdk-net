@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// OutputConfig Marshaller
     /// </summary>
-    public partial class OutputConfigMarshaller : IRequestMarshaller<OutputConfig, JsonMarshallerContext>
+    public partial class OutputConfigMarshaller : IRequestMarshaller<OutputConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OutputConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetS3Bucket())
             {
-                context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.WriteStringValue(requestObject.S3Bucket);
+                context.Writer.WriteTextString("S3Bucket");
+                context.Writer.WriteTextString(requestObject.S3Bucket);
             }
 
             if (requestObject.IsSetS3Prefix())
             {
-                context.Writer.WritePropertyName("S3Prefix");
-                context.Writer.WriteStringValue(requestObject.S3Prefix);
+                context.Writer.WriteTextString("S3Prefix");
+                context.Writer.WriteTextString(requestObject.S3Prefix);
             }
         }
 

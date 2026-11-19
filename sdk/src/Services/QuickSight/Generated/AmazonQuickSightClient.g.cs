@@ -13402,6 +13402,98 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes the service role configuration for your Amazon Quick Sight account.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Amazon Web Services Region where your Amazon Quick Sight
+        /// account is registered (the home Region).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePermissions service method.</param>
+        /// <returns>The response from the DescribeResourcePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
+        public virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePermissionsResponse>(request, options);
+        }
+#else
+        internal virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePermissionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Describes the service role configuration for your Amazon Quick Sight account.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Amazon Web Services Region where your Amazon Quick Sight
+        /// account is registered (the home Region).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeResourcePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
+        public virtual Task<DescribeResourcePermissionsResponse> DescribeResourcePermissionsAsync(DescribeResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourcePermissionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes all custom permissions that are mapped to a role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRoleCustomPermission service method.</param>
@@ -27902,6 +27994,108 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateRefreshScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the service role configuration that Amazon Quick Sight uses to access resources
+        /// in your Amazon Web Services account. To use this operation, you must have the <c>quicksight:UpdateResourcePermissions</c>
+        /// and <c>iam:PassRole</c> permissions.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Amazon Web Services Region where your Amazon Quick Sight
+        /// account is registered (the home Region). You can switch from a role managed by Amazon
+        /// Quick Sight to a customer-managed role, or replace one customer-managed role with
+        /// another. You can't use this operation to switch back to a role managed by Amazon Quick
+        /// Sight.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePermissions service method.</param>
+        /// <returns>The response from the UpdateResourcePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateResourcePermissions">REST API Reference for UpdateResourcePermissions Operation</seealso>
+        public virtual UpdateResourcePermissionsResponse UpdateResourcePermissions(UpdateResourcePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourcePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourcePermissionsResponse>(request, options);
+        }
+#else
+        internal virtual UpdateResourcePermissionsResponse UpdateResourcePermissions(UpdateResourcePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourcePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourcePermissionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the service role configuration that Amazon Quick Sight uses to access resources
+        /// in your Amazon Web Services account. To use this operation, you must have the <c>quicksight:UpdateResourcePermissions</c>
+        /// and <c>iam:PassRole</c> permissions.
+        /// 
+        ///  
+        /// <para>
+        /// Call this operation in the Amazon Web Services Region where your Amazon Quick Sight
+        /// account is registered (the home Region). You can switch from a role managed by Amazon
+        /// Quick Sight to a customer-managed role, or replace one customer-managed role with
+        /// another. You can't use this operation to switch back to a role managed by Amazon Quick
+        /// Sight.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateResourcePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateResourcePermissions">REST API Reference for UpdateResourcePermissions Operation</seealso>
+        public virtual Task<UpdateResourcePermissionsResponse> UpdateResourcePermissionsAsync(UpdateResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResourcePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourcePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResourcePermissionsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

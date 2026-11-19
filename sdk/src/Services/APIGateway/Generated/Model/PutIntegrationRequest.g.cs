@@ -162,7 +162,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IntegrationTarget. 
         /// <para>
-        ///  The ALB or NLB listener to send the request to. 
+        ///  The ALB or NLB ARN to send the request to. 
         /// </para>
         /// </summary>
         public string IntegrationTarget { get; set; }

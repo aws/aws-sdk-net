@@ -199,6 +199,14 @@
           "packageVersion": "0.0.1"
         }
       }
+    },
+    "RpcV2CborCorpus": {
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "smithy.protocoltests.corpus#RpcV2CborCorpusTests",
+          "packageVersion": "0.0.1"
+        }
+      }
     }
   }
 }

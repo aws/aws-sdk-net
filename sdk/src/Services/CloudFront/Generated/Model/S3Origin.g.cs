@@ -1,0 +1,114 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// A complex type that contains information about the Amazon S3 bucket from which you
+    /// want CloudFront to get your media files for distribution.
+    /// </summary>
+    public partial class S3Origin
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public S3Origin() { }
+
+        /// <summary>
+        /// Instantiates S3Origin with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The DNS name of the Amazon S3 origin.</param>
+        public S3Origin(string domainName)
+        {
+            this.DomainName = domainName;
+        }
+
+        /// <summary>
+        /// Instantiates S3Origin with the parameterized properties
+        /// </summary>
+        /// <param name="domainName">The DNS name of the Amazon S3 origin.</param>
+        /// <param name="originAccessIdentity">The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <c>OriginAccessIdentity</c> element. To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <c>OriginAccessIdentity</c> element. To replace the origin access identity, update the distribution configuration and specify the new origin access identity. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</param>
+        public S3Origin(string domainName, string originAccessIdentity)
+        {
+            this.DomainName = domainName;
+            this.OriginAccessIdentity = originAccessIdentity;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The DNS name of the Amazon S3 origin.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainName property is set.
+        /// </summary>
+        internal bool IsSetDomainName() => this.DomainName != null;
+
+        /// <summary>
+        /// Gets and sets the property OriginAccessIdentity. 
+        /// <para>
+        /// The CloudFront origin access identity to associate with the distribution. Use an origin
+        /// access identity to configure the distribution so that end users can only access objects
+        /// in an Amazon S3 bucket through CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want end users to be able to access objects using either the CloudFront URL
+        /// or the Amazon S3 URL, specify an empty <c>OriginAccessIdentity</c> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete the origin access identity from an existing distribution, update the distribution
+        /// configuration and include an empty <c>OriginAccessIdentity</c> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To replace the origin access identity, update the distribution configuration and specify
+        /// the new origin access identity.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+        /// an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the
+        /// <i> Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string OriginAccessIdentity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OriginAccessIdentity property is set.
+        /// </summary>
+        internal bool IsSetOriginAccessIdentity() => this.OriginAccessIdentity != null;
+    }
+}

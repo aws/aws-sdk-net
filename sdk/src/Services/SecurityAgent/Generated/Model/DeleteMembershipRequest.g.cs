@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMembership operation. Deletes a membership,
-    /// revoking a user's access to an agent space.
+    /// revoking a user's or group's access to an agent space.
     /// </summary>
     public partial class DeleteMembershipRequest : AmazonSecurityAgentRequest
     {

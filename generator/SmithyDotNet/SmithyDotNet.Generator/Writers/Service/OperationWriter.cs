@@ -38,7 +38,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     public string WriteRequest(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var baseClass = $"Amazon{context.BaseName}Request";
+        var baseClass = context.Customizations.Service?.RequestBaseClass ?? $"Amazon{context.BaseName}Request";
 
         // Cleanup the operation doc on its own first so its leading <p> wrapper is stripped,
         // then prepend the request preface so it reads as a single paragraph.
@@ -46,8 +46,9 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var doc = $"Container for the parameters to the {operation.Name} operation. {cleanedOperationDoc}";
 
         var members = ApplyEventStreamPublisher(operation, TypeMapper.ResolveMembers(operation.Input, context));
-        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Input));
-        return WriteClass(record, cancellationToken);
+        var obsolete = TypeMapper.BuildObsolete(operation.Input);
+        var checksum = operation.Shape.GetHttpChecksum();
+        return WriteClass(new OperationRecord(className, baseClass, doc, members, obsolete, HttpChecksum: checksum), cancellationToken);
     }
 
     // A request event-stream member (target is a @streaming union) is emitted as a Func publisher property
@@ -87,6 +88,13 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // AmazonWebServiceResponse already declares it, and the unmarshaller assigns the inherited property.
         members.RemoveAll(m => m.PropertyName == "ContentLength");
 
+        var baseClass = "AmazonWebServiceResponse";
+        if (context.Customizations.Service?.StreamingResponseBaseClass is { } streamingBase && members.Any(m => m.Type.IsStreaming))
+        {
+            members.RemoveAll(m => m.Type.IsStreaming);
+            baseClass = streamingBase;
+        }
+
         // A @streaming output member (raw blob stream or event stream) hands back a stream the caller
         // must dispose. The trait lives on the target shape, so detect it via the resolved member type.
         var streamingMembers = members.Where(m => m.Type.IsStreaming || m.Type.IsEventStream).ToList();
@@ -94,7 +102,6 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // The response of an operation that sends an event stream owns the request handle Core gives it
         // (C2J: `Operation.IsEventStreamInput`); an output-only stream doesn't.
         var hasRequestEventStream = context.RequestEventStreams.Any(stream => stream.Operations.Contains(operation));
-        var baseClass = "AmazonWebServiceResponse";
 
         if (hasRequestEventStream)
         {
@@ -124,7 +131,11 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         List<Member> Members,
         string? Obsolete = null,
         List<Member>? StreamingMembers = null,
-        bool HasRequestEventStream = false);
+        bool HasRequestEventStream = false,
+        HttpChecksumTrait? HttpChecksum = null);
+
+    // Core cannot validate the other modeled algorithms (ChecksumUtils.UnsupportedChecksumAlgorithms), so they are left out, as C2J does.
+    private static readonly HashSet<string> ValidatableResponseAlgorithms = ["CRC32C", "CRC32", "SHA256", "SHA1", "CRC64NVME", "SHA512"];
 
     private string WriteClass(OperationRecord opRecord, CancellationToken cancellationToken)
     {
@@ -145,6 +156,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             {
                 SimpleConstructorWriter.Write(writer, context, opRecord.ClassName, opRecord.Members);
                 MemberWriter.WriteMembers(writer, opRecord.Members);
+                if (opRecord.HttpChecksum?.RequestValidationModeMember is { } modeMember)
+                {
+                    WriteResponseChecksumOverrides(writer, opRecord.Members, modeMember, opRecord.HttpChecksum.ResponseAlgorithms);
+                }
                 if (opRecord.HasRequestEventStream)
                 {
                     WriteEventInputStreamContextOwner(writer);
@@ -160,6 +175,33 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         });
 
         return writer.ToFormattedString(cancellationToken);
+    }
+
+    // The caller opts into response checksum validation through the modeled mode member; the runtime reads it and the
+    // algorithms it may validate through these AmazonWebServiceRequest overrides.
+    private static void WriteResponseChecksumOverrides(CodeWriter writer, List<Member> members, string modeMemberName, IReadOnlyList<string> responseAlgorithms)
+    {
+        var mode = members.FirstOrDefault(member => member.ModeledName == modeMemberName)?.PropertyName
+            ?? throw new GeneratorException($"httpChecksum requestValidationModeMember '{modeMemberName}' is not a member of the input.");
+        var algorithms = responseAlgorithms.Where(ValidatableResponseAlgorithms.Contains).Select(algorithm => $"CoreChecksumAlgorithm.{algorithm}");
+
+        writer.WriteLine();
+        writer.WriteLine("#region Flexible checksum properties");
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.OpenBlock("protected override CoreChecksumResponseBehavior CoreChecksumMode", () =>
+        {
+            writer.WriteLine($"get => IsSet{mode}() ? (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.{mode}) : CoreChecksumResponseBehavior.DISABLED;");
+            writer.WriteLine($"set => this.{mode} = value.ToString();");
+        });
+        writer.WriteLine();
+        writer.WriteLine("private static readonly System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> _checksumResponseAlgorithms =");
+        writer.Indent(() => writer.WriteLine($"new List<CoreChecksumAlgorithm> {{ {string.Join(", ", algorithms)} }}.AsReadOnly();"));
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.WriteLine("protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _checksumResponseAlgorithms;");
+        writer.WriteLine();
+        writer.WriteLine("#endregion");
     }
 
     // Explicit interface implementation, so CA1033 (make it accessible to derived types) is suppressed like C2J does.

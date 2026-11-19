@@ -117,6 +117,27 @@ namespace Amazon.DSQL.Model
         internal bool IsSetIdentifier() => this.Identifier != null;
 
         /// <summary>
+        /// Gets and sets the property MetricGroups. 
+        /// <para>
+        /// The metric groups that you enabled for advanced monitoring on the cluster. If you
+        /// haven't enabled any metric groups, the list is empty.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 20)]
+        public List<MetricGroupResponse> MetricGroups { get; set; } = AWSConfigs.InitializeCollections ? new List<MetricGroupResponse>() : null;
+
+        /// <summary>
+        /// Checks to see if the MetricGroups property is set.
+        /// </summary>
+        internal bool IsSetMetricGroups() => this.MetricGroups != null && (this.MetricGroups.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property MultiRegionProperties. 
         /// <para>
         /// Returns the current multi-Region cluster configuration, including witness region and

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// ImageSourceIdentifier Marshaller
     /// </summary>
-    public partial class ImageSourceIdentifierMarshaller : IRequestMarshaller<ImageSourceIdentifier, JsonMarshallerContext>
+    public partial class ImageSourceIdentifierMarshaller : IRequestMarshaller<ImageSourceIdentifier, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ImageSourceIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(ImageSourceIdentifier requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEc2ImageId())
             {
-                context.Writer.WritePropertyName("Ec2ImageId");
-                context.Writer.WriteStringValue(requestObject.Ec2ImageId);
+                context.Writer.WriteTextString("Ec2ImageId");
+                context.Writer.WriteTextString(requestObject.Ec2ImageId);
             }
 
             if (requestObject.IsSetEc2ImportTaskId())
             {
-                context.Writer.WritePropertyName("Ec2ImportTaskId");
-                context.Writer.WriteStringValue(requestObject.Ec2ImportTaskId);
+                context.Writer.WriteTextString("Ec2ImportTaskId");
+                context.Writer.WriteTextString(requestObject.Ec2ImportTaskId);
             }
 
             if (requestObject.IsSetImageBuildVersionArn())
             {
-                context.Writer.WritePropertyName("ImageBuildVersionArn");
-                context.Writer.WriteStringValue(requestObject.ImageBuildVersionArn);
+                context.Writer.WriteTextString("ImageBuildVersionArn");
+                context.Writer.WriteTextString(requestObject.ImageBuildVersionArn);
             }
         }
 

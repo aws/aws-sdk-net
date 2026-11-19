@@ -53,6 +53,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Enablement", targetDepth, ref reader))
+                {
+                    var unmarshaller = EvaluationFormItemEnablementConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Enablement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Instructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

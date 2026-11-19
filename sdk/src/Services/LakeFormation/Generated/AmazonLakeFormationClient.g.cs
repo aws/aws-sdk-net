@@ -2753,6 +2753,106 @@ namespace Amazon.LakeFormation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a session context for one or more user-defined functions that an integrated
+        /// analytics engine runs together in a job. You must have the <c>EXECUTE</c> permission
+        /// on every function in the list.
+        /// 
+        ///  
+        /// <para>
+        /// While the session context is in use, if you don't have full <c>SELECT</c> permission
+        /// on a table, the job can read the table only if every function in the session has the
+        /// <c>SELECT</c> permission on it. Lake Formation enforces this check.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>lakeformation:GetDataAccess</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueFunctionSessionContext service method.</param>
+        /// <returns>The response from the GetGlueFunctionSessionContext service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetGlueFunctionSessionContext">REST API Reference for GetGlueFunctionSessionContext Operation</seealso>
+        public virtual GetGlueFunctionSessionContextResponse GetGlueFunctionSessionContext(GetGlueFunctionSessionContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlueFunctionSessionContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueFunctionSessionContextResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlueFunctionSessionContextResponse>(request, options);
+        }
+#else
+        internal virtual GetGlueFunctionSessionContextResponse GetGlueFunctionSessionContext(GetGlueFunctionSessionContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlueFunctionSessionContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueFunctionSessionContextResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlueFunctionSessionContextResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a session context for one or more user-defined functions that an integrated
+        /// analytics engine runs together in a job. You must have the <c>EXECUTE</c> permission
+        /// on every function in the list.
+        /// 
+        ///  
+        /// <para>
+        /// While the session context is in use, if you don't have full <c>SELECT</c> permission
+        /// on a table, the job can read the table only if every function in the session has the
+        /// <c>SELECT</c> permission on it. Lake Formation enforces this check.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>lakeformation:GetDataAccess</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueFunctionSessionContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetGlueFunctionSessionContext service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetGlueFunctionSessionContext">REST API Reference for GetGlueFunctionSessionContext Operation</seealso>
+        public virtual Task<GetGlueFunctionSessionContextResponse> GetGlueFunctionSessionContextAsync(GetGlueFunctionSessionContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlueFunctionSessionContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueFunctionSessionContextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGlueFunctionSessionContextResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns an LF-tag definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLFTag service method.</param>
@@ -3457,6 +3557,102 @@ namespace Amazon.LakeFormation
             options.ResponseUnmarshaller = GetTemporaryDataLocationCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTemporaryDataLocationCredentialsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns temporary credentials that you can use to download the artifacts of a user-defined
+        /// function whose <c>GovernanceMode</c> is <c>LAKE_FORMATION</c>. Lake Formation assumes
+        /// the role that you registered for the function's <c>ArtifactLocation</c>. The credentials
+        /// have read-only access to that location in Amazon S3.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>EXECUTE</c> permission on the function.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueFunctionCredentials service method.</param>
+        /// <returns>The response from the GetTemporaryGlueFunctionCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueFunctionCredentials">REST API Reference for GetTemporaryGlueFunctionCredentials Operation</seealso>
+        public virtual GetTemporaryGlueFunctionCredentialsResponse GetTemporaryGlueFunctionCredentials(GetTemporaryGlueFunctionCredentialsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGlueFunctionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGlueFunctionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemporaryGlueFunctionCredentialsResponse>(request, options);
+        }
+#else
+        internal virtual GetTemporaryGlueFunctionCredentialsResponse GetTemporaryGlueFunctionCredentials(GetTemporaryGlueFunctionCredentialsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGlueFunctionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGlueFunctionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTemporaryGlueFunctionCredentialsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns temporary credentials that you can use to download the artifacts of a user-defined
+        /// function whose <c>GovernanceMode</c> is <c>LAKE_FORMATION</c>. Lake Formation assumes
+        /// the role that you registered for the function's <c>ArtifactLocation</c>. The credentials
+        /// have read-only access to that location in Amazon S3.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>EXECUTE</c> permission on the function.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueFunctionCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTemporaryGlueFunctionCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueFunctionCredentials">REST API Reference for GetTemporaryGlueFunctionCredentials Operation</seealso>
+        public virtual Task<GetTemporaryGlueFunctionCredentialsResponse> GetTemporaryGlueFunctionCredentialsAsync(GetTemporaryGlueFunctionCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTemporaryGlueFunctionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTemporaryGlueFunctionCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTemporaryGlueFunctionCredentialsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

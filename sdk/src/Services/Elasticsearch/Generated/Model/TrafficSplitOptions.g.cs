@@ -1,0 +1,79 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Elasticsearch.Model
+{
+    /// <summary>
+    /// The traffic split and status for a cloned blue/green upgrade.
+    /// </summary>
+    public partial class TrafficSplitOptions
+    {
+        /// <summary>
+        /// Gets and sets the property Current. 
+        /// <para>
+        /// The traffic split currently in effect.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public TrafficPercents Current { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Current property is set.
+        /// </summary>
+        internal bool IsSetCurrent() => this.Current != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the traffic shift.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public TrafficSplitStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// The requested traffic split.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public TrafficPercents Target { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Target property is set.
+        /// </summary>
+        internal bool IsSetTarget() => this.Target != null;
+    }
+}

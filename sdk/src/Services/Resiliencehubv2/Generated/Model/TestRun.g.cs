@@ -64,6 +64,20 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetDevOpsAgentInvestigation() => this.DevOpsAgentInvestigation != null;
 
         /// <summary>
+        /// Gets and sets the property EffectivePolicyValues. 
+        /// <para>
+        /// The effective resilience policy values snapshotted from the service when the run was
+        /// started. The test run is evaluated against these values.
+        /// </para>
+        /// </summary>
+        public TestRunEffectivePolicyValues EffectivePolicyValues { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EffectivePolicyValues property is set.
+        /// </summary>
+        internal bool IsSetEffectivePolicyValues() => this.EffectivePolicyValues != null;
+
+        /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
         /// The timestamp when the test run ended.

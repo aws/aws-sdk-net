@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OwnerDirectoryDescription Object
     /// </summary>
-    public partial class OwnerDirectoryDescriptionUnmarshaller : IJsonUnmarshaller<OwnerDirectoryDescription, JsonUnmarshallerContext>
+    public partial class OwnerDirectoryDescriptionUnmarshaller : ICborUnmarshaller<OwnerDirectoryDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public OwnerDirectoryDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OwnerDirectoryDescription Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new OwnerDirectoryDescription();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AccountId":
+                        context.AddPathSegment("AccountId");
+                        unmarshalledObject.AccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnsIpAddrs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DirectoryId":
+                        context.AddPathSegment("DirectoryId");
+                        unmarshalledObject.DirectoryId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnsIpv6Addrs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpv6Addrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpAddrs":
+                        context.AddPathSegment("DnsIpAddrs");
+                        unmarshalledObject.DnsIpAddrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NetworkType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpv6Addrs":
+                        context.AddPathSegment("DnsIpv6Addrs");
+                        unmarshalledObject.DnsIpv6Addrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = RadiusSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RadiusSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NetworkType":
+                        context.AddPathSegment("NetworkType");
+                        unmarshalledObject.NetworkType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusSettings":
+                        context.AddPathSegment("RadiusSettings");
+                        unmarshalledObject.RadiusSettings = RadiusSettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = DirectoryVpcSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.VpcSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RadiusStatus":
+                        context.AddPathSegment("RadiusStatus");
+                        unmarshalledObject.RadiusStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcSettings":
+                        context.AddPathSegment("VpcSettings");
+                        unmarshalledObject.VpcSettings = DirectoryVpcSettingsDescriptionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

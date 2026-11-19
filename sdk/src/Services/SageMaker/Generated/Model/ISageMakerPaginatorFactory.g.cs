@@ -123,10 +123,28 @@ namespace Amazon.SageMaker.Model
         IListClusterEventsPaginator ListClusterEvents(ListClusterEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterExtensionVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClusterExtensionVersionsPaginator ListClusterExtensionVersions(ListClusterExtensionVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusterExtensions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClusterExtensionsPaginator ListClusterExtensions(ListClusterExtensionsRequest request);
+
+        /// <summary>
         /// Paginator for ListClusterNodes operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListClusterNodesPaginator ListClusterNodes(ListClusterNodesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusterOperations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListClusterOperationsPaginator ListClusterOperations(ListClusterOperationsRequest request);
 
         /// <summary>
         /// Paginator for ListClusterSchedulerConfigs operation
@@ -277,6 +295,12 @@ namespace Amazon.SageMaker.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInferenceRouters operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInferenceRoutersPaginator ListInferenceRouters(ListInferenceRoutersRequest request);
 
         /// <summary>
         /// Paginator for ListJobSchemaVersions operation

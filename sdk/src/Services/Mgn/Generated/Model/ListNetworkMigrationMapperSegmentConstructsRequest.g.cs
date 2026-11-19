@@ -50,6 +50,32 @@ namespace Amazon.Mgn.Model
         internal bool IsSetFilters() => this.Filters != null;
 
         /// <summary>
+        /// Gets and sets the property IncludeConfiguration. 
+        /// <para>
+        /// Whether to return construct-type-specific behavioral configuration.
+        /// </para>
+        /// </summary>
+        public bool? IncludeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetIncludeConfiguration() => this.IncludeConfiguration.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IncludeEnrichedProperties. 
+        /// <para>
+        /// Whether to return construct properties using their native value types.
+        /// </para>
+        /// </summary>
+        public bool? IncludeEnrichedProperties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeEnrichedProperties property is set.
+        /// </summary>
+        internal bool IsSetIncludeEnrichedProperties() => this.IncludeEnrichedProperties.HasValue;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call.

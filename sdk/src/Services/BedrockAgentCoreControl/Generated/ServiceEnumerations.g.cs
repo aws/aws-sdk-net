@@ -68,6 +68,139 @@ namespace Amazon.BedrockAgentCoreControl
     }
 
     /// <summary>
+    /// Constants used for properties of type AgentInsightStoreEnablementStatus.
+    /// </summary>
+    public class AgentInsightStoreEnablementStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AgentInsightStoreEnablementStatus
+        /// </summary>
+        public static readonly AgentInsightStoreEnablementStatus DISABLED = new AgentInsightStoreEnablementStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AgentInsightStoreEnablementStatus
+        /// </summary>
+        public static readonly AgentInsightStoreEnablementStatus ENABLED = new AgentInsightStoreEnablementStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AgentInsightStoreEnablementStatus for a value not among the defined constants.
+        /// </summary>
+        public AgentInsightStoreEnablementStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInsightStoreEnablementStatus FindValue(string value)
+        {
+            return FindValue<AgentInsightStoreEnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInsightStoreEnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentInsightStoreEncryptionMode.
+    /// </summary>
+    public class AgentInsightStoreEncryptionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for AgentInsightStoreEncryptionMode
+        /// </summary>
+        public static readonly AgentInsightStoreEncryptionMode AWS_OWNED_KMS_KEY = new AgentInsightStoreEncryptionMode("AWS_OWNED_KMS_KEY");
+
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KMS for AgentInsightStoreEncryptionMode
+        /// </summary>
+        public static readonly AgentInsightStoreEncryptionMode CUSTOMER_MANAGED_KMS = new AgentInsightStoreEncryptionMode("CUSTOMER_MANAGED_KMS");
+
+        /// <summary>
+        /// Constructs a custom AgentInsightStoreEncryptionMode for a value not among the defined constants.
+        /// </summary>
+        public AgentInsightStoreEncryptionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInsightStoreEncryptionMode FindValue(string value)
+        {
+            return FindValue<AgentInsightStoreEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInsightStoreEncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AgentInsightStoreStatus.
+    /// </summary>
+    public class AgentInsightStoreStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AgentInsightStoreStatus
+        /// </summary>
+        public static readonly AgentInsightStoreStatus ACTIVE = new AgentInsightStoreStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant ERROR for AgentInsightStoreStatus
+        /// </summary>
+        public static readonly AgentInsightStoreStatus ERROR = new AgentInsightStoreStatus("ERROR");
+
+        /// <summary>
+        /// Constant INACTIVE for AgentInsightStoreStatus
+        /// </summary>
+        public static readonly AgentInsightStoreStatus INACTIVE = new AgentInsightStoreStatus("INACTIVE");
+
+        /// <summary>
+        /// Constant UPDATING for AgentInsightStoreStatus
+        /// </summary>
+        public static readonly AgentInsightStoreStatus UPDATING = new AgentInsightStoreStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom AgentInsightStoreStatus for a value not among the defined constants.
+        /// </summary>
+        public AgentInsightStoreStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInsightStoreStatus FindValue(string value)
+        {
+            return FindValue<AgentInsightStoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInsightStoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AgentManagedRuntimeType.
     /// </summary>
     public class AgentManagedRuntimeType : ConstantClass
@@ -2003,6 +2136,52 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EvaluatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExampleField.
+    /// </summary>
+    public class ExampleField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTOR_PROFILE for ExampleField
+        /// </summary>
+        public static readonly ExampleField ACTOR_PROFILE = new ExampleField("ACTOR_PROFILE");
+
+        /// <summary>
+        /// Constant INPUT for ExampleField
+        /// </summary>
+        public static readonly ExampleField INPUT = new ExampleField("INPUT");
+
+        /// <summary>
+        /// Constant TURNS for ExampleField
+        /// </summary>
+        public static readonly ExampleField TURNS = new ExampleField("TURNS");
+
+        /// <summary>
+        /// Constructs a custom ExampleField for a value not among the defined constants.
+        /// </summary>
+        public ExampleField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExampleField FindValue(string value)
+        {
+            return FindValue<ExampleField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExampleField(string value)
         {
             return FindValue(value);
         }
@@ -4535,6 +4714,47 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalMatchOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PrivilegeMode.
+    /// </summary>
+    public class PrivilegeMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIVILEGED for PrivilegeMode
+        /// </summary>
+        public static readonly PrivilegeMode PRIVILEGED = new PrivilegeMode("PRIVILEGED");
+
+        /// <summary>
+        /// Constant STANDARD for PrivilegeMode
+        /// </summary>
+        public static readonly PrivilegeMode STANDARD = new PrivilegeMode("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom PrivilegeMode for a value not among the defined constants.
+        /// </summary>
+        public PrivilegeMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrivilegeMode FindValue(string value)
+        {
+            return FindValue<PrivilegeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrivilegeMode(string value)
         {
             return FindValue(value);
         }

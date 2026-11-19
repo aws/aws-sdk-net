@@ -515,6 +515,16 @@ namespace Amazon.Evs
         public static readonly InstanceType I7iMetal48xl = new InstanceType("i7i.metal-48xl");
 
         /// <summary>
+        /// Constant R7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iMetal24xl = new InstanceType("r7i.metal-24xl");
+
+        /// <summary>
+        /// Constant R7iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7iMetal48xl = new InstanceType("r7i.metal-48xl");
+
+        /// <summary>
         /// Constructs a custom InstanceType for a value not among the defined constants.
         /// </summary>
         public InstanceType(string value) : base(value) { }

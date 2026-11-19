@@ -65,8 +65,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version setting for all queries on the workgroup. Queries on the <c>AmazonAthenaPreviewFunctionality</c>
-        /// workgroup run on the preview engine regardless of this setting.
+        /// The engine version setting for all queries on the workgroup.
         /// </para>
         /// </summary>
         public EngineVersion EngineVersion { get; set; }

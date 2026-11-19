@@ -53,6 +53,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             request.Parameters.Add("Action", "UpdateLoginProfile");
             request.Parameters.Add("Version", "2010-05-08");
 
+            if (publicRequest.IsSetMaxSigninSessionDuration())
+            {
+                request.Parameters.Add("MaxSigninSessionDuration", StringUtils.FromInt(publicRequest.MaxSigninSessionDuration.Value));
+            }
             if (publicRequest.IsSetPassword())
             {
                 request.Parameters.Add("Password", StringUtils.FromString(publicRequest.Password));
@@ -60,6 +64,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPasswordResetRequired())
             {
                 request.Parameters.Add("PasswordResetRequired", StringUtils.FromBool(publicRequest.PasswordResetRequired.Value));
+            }
+            if (publicRequest.IsSetResetMaxSigninSessionDuration())
+            {
+                request.Parameters.Add("ResetMaxSigninSessionDuration", StringUtils.FromBool(publicRequest.ResetMaxSigninSessionDuration.Value));
             }
             if (publicRequest.IsSetUserName())
             {

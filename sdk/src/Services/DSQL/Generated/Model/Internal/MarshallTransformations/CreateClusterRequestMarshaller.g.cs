@@ -93,6 +93,21 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("kmsEncryptionKey");
                 context.Writer.WriteStringValue(publicRequest.KmsEncryptionKey);
             }
+            if (publicRequest.IsSetMetricGroups())
+            {
+                context.Writer.WritePropertyName("metricGroups");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetricGroupRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetricGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetMultiRegionProperties())
             {
                 context.Writer.WritePropertyName("multiRegionProperties");

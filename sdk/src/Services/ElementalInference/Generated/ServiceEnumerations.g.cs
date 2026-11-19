@@ -22,6 +22,93 @@ using Amazon.Runtime;
 namespace Amazon.ElementalInference
 {
     /// <summary>
+    /// Constants used for properties of type BedrockApi.
+    /// </summary>
+    public class BedrockApi : ConstantClass
+    {
+        /// <summary>
+        /// Constant INVOKE_MODEL for BedrockApi
+        /// </summary>
+        public static readonly BedrockApi INVOKE_MODEL = new BedrockApi("INVOKE_MODEL");
+
+        /// <summary>
+        /// Constructs a custom BedrockApi for a value not among the defined constants.
+        /// </summary>
+        public BedrockApi(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BedrockApi FindValue(string value)
+        {
+            return FindValue<BedrockApi>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BedrockApi(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContextType.
+    /// </summary>
+    public class ContextType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLIP_METADATA for ContextType
+        /// </summary>
+        public static readonly ContextType CLIP_METADATA = new ContextType("CLIP_METADATA");
+
+        /// <summary>
+        /// Constant CONTEXTUAL_METADATA for ContextType
+        /// </summary>
+        public static readonly ContextType CONTEXTUAL_METADATA = new ContextType("CONTEXTUAL_METADATA");
+
+        /// <summary>
+        /// Constant FRAMES for ContextType
+        /// </summary>
+        public static readonly ContextType FRAMES = new ContextType("FRAMES");
+
+        /// <summary>
+        /// Constant SUBTITLES for ContextType
+        /// </summary>
+        public static readonly ContextType SUBTITLES = new ContextType("SUBTITLES");
+
+        /// <summary>
+        /// Constructs a custom ContextType for a value not among the defined constants.
+        /// </summary>
+        public ContextType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextType FindValue(string value)
+        {
+            return FindValue<ContextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DataSourceSport.
     /// </summary>
     public class DataSourceSport : ConstantClass
@@ -180,6 +267,47 @@ namespace Amazon.ElementalInference
     }
 
     /// <summary>
+    /// Constants used for properties of type EventBridgeDeliveryMode.
+    /// </summary>
+    public class EventBridgeDeliveryMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for EventBridgeDeliveryMode
+        /// </summary>
+        public static readonly EventBridgeDeliveryMode DISABLED = new EventBridgeDeliveryMode("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for EventBridgeDeliveryMode
+        /// </summary>
+        public static readonly EventBridgeDeliveryMode ENABLED = new EventBridgeDeliveryMode("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom EventBridgeDeliveryMode for a value not among the defined constants.
+        /// </summary>
+        public EventBridgeDeliveryMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventBridgeDeliveryMode FindValue(string value)
+        {
+            return FindValue<EventBridgeDeliveryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventBridgeDeliveryMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ExtendedAnalysisMode.
     /// </summary>
     public class ExtendedAnalysisMode : ConstantClass
@@ -317,6 +445,108 @@ namespace Amazon.ElementalInference
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FrameSamplingMode.
+    /// </summary>
+    public class FrameSamplingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant FIRST for FrameSamplingMode
+        /// </summary>
+        public static readonly FrameSamplingMode FIRST = new FrameSamplingMode("FIRST");
+
+        /// <summary>
+        /// Constant LAST for FrameSamplingMode
+        /// </summary>
+        public static readonly FrameSamplingMode LAST = new FrameSamplingMode("LAST");
+
+        /// <summary>
+        /// Constant UNIFORM for FrameSamplingMode
+        /// </summary>
+        public static readonly FrameSamplingMode UNIFORM = new FrameSamplingMode("UNIFORM");
+
+        /// <summary>
+        /// Constructs a custom FrameSamplingMode for a value not among the defined constants.
+        /// </summary>
+        public FrameSamplingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrameSamplingMode FindValue(string value)
+        {
+            return FindValue<FrameSamplingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrameSamplingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FunctionStatus.
+    /// </summary>
+    public class FunctionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for FunctionStatus
+        /// </summary>
+        public static readonly FunctionStatus AVAILABLE = new FunctionStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant CREATING for FunctionStatus
+        /// </summary>
+        public static readonly FunctionStatus CREATING = new FunctionStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for FunctionStatus
+        /// </summary>
+        public static readonly FunctionStatus DELETED = new FunctionStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETING for FunctionStatus
+        /// </summary>
+        public static readonly FunctionStatus DELETING = new FunctionStatus("DELETING");
+
+        /// <summary>
+        /// Constant REFERENCED for FunctionStatus
+        /// </summary>
+        public static readonly FunctionStatus REFERENCED = new FunctionStatus("REFERENCED");
+
+        /// <summary>
+        /// Constructs a custom FunctionStatus for a value not among the defined constants.
+        /// </summary>
+        public FunctionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionStatus FindValue(string value)
+        {
+            return FindValue<FunctionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionStatus(string value)
         {
             return FindValue(value);
         }

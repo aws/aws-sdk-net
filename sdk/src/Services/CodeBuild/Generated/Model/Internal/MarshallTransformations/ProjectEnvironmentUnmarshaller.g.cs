@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,107 +38,108 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProjectEnvironment Object
     /// </summary>
-    public partial class ProjectEnvironmentUnmarshaller : IJsonUnmarshaller<ProjectEnvironment, JsonUnmarshallerContext>
+    public partial class ProjectEnvironmentUnmarshaller : ICborUnmarshaller<ProjectEnvironment, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProjectEnvironment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProjectEnvironment Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ProjectEnvironment();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("certificate", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Certificate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("computeConfiguration", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "certificate":
+                        context.AddPathSegment("Certificate");
+                        unmarshalledObject.Certificate = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("computeType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "computeConfiguration":
+                        context.AddPathSegment("ComputeConfiguration");
+                        unmarshalledObject.ComputeConfiguration = ComputeConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("dockerServer", targetDepth, ref reader))
-                {
-                    var unmarshaller = DockerServerUnmarshaller.Instance;
-                    unmarshalledObject.DockerServer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "computeType":
+                        context.AddPathSegment("ComputeType");
+                        unmarshalledObject.ComputeType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("environmentVariables", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "dockerServer":
+                        context.AddPathSegment("DockerServer");
+                        unmarshalledObject.DockerServer = DockerServerUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("fleet", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProjectFleetUnmarshaller.Instance;
-                    unmarshalledObject.Fleet = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "environmentVariables":
+                        context.AddPathSegment("EnvironmentVariables");
+                        unmarshalledObject.EnvironmentVariables = new CborListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("hostKernel", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostKernel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "fleet":
+                        context.AddPathSegment("Fleet");
+                        unmarshalledObject.Fleet = ProjectFleetUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("image", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "hostKernel":
+                        context.AddPathSegment("HostKernel");
+                        unmarshalledObject.HostKernel = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("imagePullCredentialsType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImagePullCredentialsType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "image":
+                        context.AddPathSegment("Image");
+                        unmarshalledObject.Image = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("privilegedMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "imagePullCredentialsType":
+                        context.AddPathSegment("ImagePullCredentialsType");
+                        unmarshalledObject.ImagePullCredentialsType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("registryCredential", targetDepth, ref reader))
-                {
-                    var unmarshaller = RegistryCredentialUnmarshaller.Instance;
-                    unmarshalledObject.RegistryCredential = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "privilegedMode":
+                        context.AddPathSegment("PrivilegedMode");
+                        unmarshalledObject.PrivilegedMode = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "registryCredential":
+                        context.AddPathSegment("RegistryCredential");
+                        unmarshalledObject.RegistryCredential = RegistryCredentialUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

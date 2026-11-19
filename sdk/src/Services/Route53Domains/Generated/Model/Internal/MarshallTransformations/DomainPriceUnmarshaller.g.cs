@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DomainPrice Object
     /// </summary>
-    public partial class DomainPriceUnmarshaller : IJsonUnmarshaller<DomainPrice, JsonUnmarshallerContext>
+    public partial class DomainPriceUnmarshaller : ICborUnmarshaller<DomainPrice, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DomainPrice Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DomainPrice Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DomainPrice();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ChangeOwnershipPrice", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.ChangeOwnershipPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Name", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ChangeOwnershipPrice":
+                        context.AddPathSegment("ChangeOwnershipPrice");
+                        unmarshalledObject.ChangeOwnershipPrice = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegistrationPrice", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RenewalPrice", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.RenewalPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegistrationPrice":
+                        context.AddPathSegment("RegistrationPrice");
+                        unmarshalledObject.RegistrationPrice = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RestorationPrice", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.RestorationPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RenewalPrice":
+                        context.AddPathSegment("RenewalPrice");
+                        unmarshalledObject.RenewalPrice = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TransferPrice", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceWithCurrencyUnmarshaller.Instance;
-                    unmarshalledObject.TransferPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RestorationPrice":
+                        context.AddPathSegment("RestorationPrice");
+                        unmarshalledObject.RestorationPrice = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TransferPrice":
+                        context.AddPathSegment("TransferPrice");
+                        unmarshalledObject.TransferPrice = PriceWithCurrencyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -120,6 +120,10 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     {
                         return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
+                    {
+                        return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                 }
             }
             return new AmazonKinesisAnalyticsV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

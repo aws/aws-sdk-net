@@ -212,6 +212,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     {
                         return ResourceNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("RuntimeAliasDeletedException"))
+                    {
+                        return RuntimeAliasDeletedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("RuntimeVersionDeletedException"))
+                    {
+                        return RuntimeVersionDeletedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("S3FilesMountConnectivityException"))
                     {
                         return S3FilesMountConnectivityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

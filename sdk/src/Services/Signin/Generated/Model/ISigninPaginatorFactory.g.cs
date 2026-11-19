@@ -37,5 +37,11 @@ namespace Amazon.Signin.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListResourcePermissionStatementsPaginator ListResourcePermissionStatements(ListResourcePermissionStatementsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
     }
 }

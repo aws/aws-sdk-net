@@ -126,6 +126,28 @@ namespace Amazon.DSQL.Model
         internal bool IsSetKmsEncryptionKey() => this.KmsEncryptionKey != null;
 
         /// <summary>
+        /// Gets and sets the property MetricGroups. 
+        /// <para>
+        /// The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring
+        /// collects detailed, query-level database metrics to help you analyze and resolve performance
+        /// issues. If you omit this parameter, no metric groups are enabled.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 20)]
+        public List<MetricGroupRequest> MetricGroups { get; set; } = AWSConfigs.InitializeCollections ? new List<MetricGroupRequest>() : null;
+
+        /// <summary>
+        /// Checks to see if the MetricGroups property is set.
+        /// </summary>
+        internal bool IsSetMetricGroups() => this.MetricGroups != null && (this.MetricGroups.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property MultiRegionProperties. 
         /// <para>
         /// The configuration settings when creating a multi-Region cluster, including the witness

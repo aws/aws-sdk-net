@@ -164,12 +164,12 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ACTIVE</c>–Get a budget being evaluated.
+        ///  <c>ACTIVE</c> - Get a budget being evaluated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INACTIVE</c>–Get an inactive budget. This can include expired, canceled, or deleted
-        /// statuses.
+        ///  <c>INACTIVE</c> - Get an inactive budget. This can include expired, canceled, or
+        /// deleted statuses.
         /// </para>
         ///  </li> </ul>
         /// </summary>

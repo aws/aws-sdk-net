@@ -49,6 +49,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCloudConnectorId() => this.CloudConnectorId != null;
 
         /// <summary>
+        /// Gets and sets the property ConfigConnectorArn. 
+        /// <para>
+        /// The ARN of the Amazon Web Services Config connector associated with this cloud connector.
+        /// This value is returned only if the cloud connector was created with an Amazon Web
+        /// Services Config connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 512)]
+        public string ConfigConnectorArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConfigConnectorArn property is set.
+        /// </summary>
+        internal bool IsSetConfigConnectorArn() => this.ConfigConnectorArn != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time the cloud connector was created.
@@ -88,6 +104,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Checks to see if the DisplayName property is set.
         /// </summary>
         internal bool IsSetDisplayName() => this.DisplayName != null;
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The third-party cloud provider that the cloud connector connects to. Valid values:
+        /// <c>Azure</c> | <c>GCP</c>.
+        /// </para>
+        /// </summary>
+        public Provider Provider { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Provider property is set.
+        /// </summary>
+        internal bool IsSetProvider() => this.Provider != null;
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

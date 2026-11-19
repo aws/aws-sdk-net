@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Specifies how long to pause the durable execution.
+    /// Specifies how long the durable execution waits.
     /// </summary>
     public partial class WaitOptions
     {

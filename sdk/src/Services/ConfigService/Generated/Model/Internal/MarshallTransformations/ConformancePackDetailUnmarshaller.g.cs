@@ -109,10 +109,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("Scope", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConformancePackScopeUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Source", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConformancePackSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("TemplateSSMDocumentDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateSSMDocumentDetailsUnmarshaller.Instance;
                     unmarshalledObject.TemplateSSMDocumentDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Type", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

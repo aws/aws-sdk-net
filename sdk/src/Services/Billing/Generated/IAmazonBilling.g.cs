@@ -579,8 +579,8 @@ namespace Amazon.Billing
         /// <summary>
         /// Retrieves billing preferences for the specified feature. Each feature controls a distinct
         /// billing capability: which accounts can share Reserved Instances or credits, whether
-        /// billing alerts are enabled, the historical record of sharing changes, and per-credit
-        /// options.
+        /// billing alerts are enabled, the historical record of sharing changes, per-credit options,
+        /// and which accounts an individual Reserved Instance or Savings Plan is shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBillingPreferences service method.</param>
         /// <returns>The response from the GetBillingPreferences service method, as returned by Billing.</returns>
@@ -603,8 +603,8 @@ namespace Amazon.Billing
         /// <summary>
         /// Retrieves billing preferences for the specified feature. Each feature controls a distinct
         /// billing capability: which accounts can share Reserved Instances or credits, whether
-        /// billing alerts are enabled, the historical record of sharing changes, and per-credit
-        /// options.
+        /// billing alerts are enabled, the historical record of sharing changes, per-credit options,
+        /// and which accounts an individual Reserved Instance or Savings Plan is shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBillingPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -1673,6 +1673,117 @@ namespace Amazon.Billing
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Splits the available balance of a credit into 2 to 99 new credits in the same account,
+        /// and cancels the original credit. The new credits keep the original credit's end date
+        /// and applicable products.
+        /// 
+        ///  
+        /// <para>
+        /// The available balance is the remaining balance minus any amount reserved for a bill
+        /// that isn't finalized. The portions must add up to exactly the available balance. Each
+        /// portion must be at least 100.00 in the currency of the credit. For example, if the
+        /// credit is in USD, each portion must be at least USD $100.00. A reserved amount stays
+        /// on the original credit and still applies to that bill.
+        /// </para>
+        ///  
+        /// <para>
+        /// A credit and every credit split from it count toward a limit of 100 credits. After
+        /// a split, you can't split or transfer the original credit. You can split or transfer
+        /// its new credits, and you can split a credit after you transfer it.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must own the credit or be the payer of the account that owns it. You can't undo
+        /// a split. This operation is idempotent and supports a dry run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SplitCredit service method.</param>
+        /// <returns>The response from the SplitCredit service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/SplitCredit">REST API Reference for SplitCredit Operation</seealso>
+        SplitCreditResponse SplitCredit(SplitCreditRequest request);
+#endif
+
+        /// <summary>
+        /// Splits the available balance of a credit into 2 to 99 new credits in the same account,
+        /// and cancels the original credit. The new credits keep the original credit's end date
+        /// and applicable products.
+        /// 
+        ///  
+        /// <para>
+        /// The available balance is the remaining balance minus any amount reserved for a bill
+        /// that isn't finalized. The portions must add up to exactly the available balance. Each
+        /// portion must be at least 100.00 in the currency of the credit. For example, if the
+        /// credit is in USD, each portion must be at least USD $100.00. A reserved amount stays
+        /// on the original credit and still applies to that bill.
+        /// </para>
+        ///  
+        /// <para>
+        /// A credit and every credit split from it count toward a limit of 100 credits. After
+        /// a split, you can't split or transfer the original credit. You can split or transfer
+        /// its new credits, and you can split a credit after you transfer it.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must own the credit or be the payer of the account that owns it. You can't undo
+        /// a split. This operation is idempotent and supports a dry run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SplitCredit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SplitCredit service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/SplitCredit">REST API Reference for SplitCredit Operation</seealso>
+        Task<SplitCreditResponse> SplitCreditAsync(SplitCreditRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// An API operation for adding one or more tags (key-value pairs) to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1721,6 +1832,105 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Moves a credit to another account in the same consolidated billing family. The credit
+        /// keeps its ID, balance, end date, and applicable products. Only the account that owns
+        /// the credit changes.
+        /// 
+        ///  
+        /// <para>
+        /// The transfer removes the credit's sharing settings. The new owner or the payer can
+        /// set them again. Any amount reserved for a bill that isn't finalized moves with the
+        /// credit and still applies to that bill.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must be the payer of both accounts. You can't transfer a credit that has ended,
+        /// has no available balance, or is the original credit of a split. A transfer creates
+        /// no credit, so it doesn't count toward the split limit, and the payer can transfer
+        /// the credit back. This operation is idempotent and supports a dry run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferCredit service method.</param>
+        /// <returns>The response from the TransferCredit service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TransferCredit">REST API Reference for TransferCredit Operation</seealso>
+        TransferCreditResponse TransferCredit(TransferCreditRequest request);
+#endif
+
+        /// <summary>
+        /// Moves a credit to another account in the same consolidated billing family. The credit
+        /// keeps its ID, balance, end date, and applicable products. Only the account that owns
+        /// the credit changes.
+        /// 
+        ///  
+        /// <para>
+        /// The transfer removes the credit's sharing settings. The new owner or the payer can
+        /// set them again. Any amount reserved for a bill that isn't finalized moves with the
+        /// credit and still applies to that bill.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must be the payer of both accounts. You can't transfer a credit that has ended,
+        /// has no available balance, or is the original credit of a split. A transfer creates
+        /// no credit, so it doesn't count toward the split limit, and the payer can transfer
+        /// the credit back. This operation is idempotent and supports a dry run.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferCredit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TransferCredit service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TransferCredit">REST API Reference for TransferCredit Operation</seealso>
+        Task<TransferCreditResponse> TransferCreditAsync(TransferCreditRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1783,11 +1993,10 @@ namespace Amazon.Billing
         /// 
         ///  
         /// <para>
-        /// Sharing keys (<c>RI_SHARING</c>, <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>,
-        /// and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>) may only be set by the management
-        /// account of a consolidated billing family. The <c>credit/{creditId}/status</c> key
-        /// may be set by member accounts for credits they own, or by the management account for
-        /// any credit in the family.
+        /// To set sharing keys (<c>RI_SHARING</c>, <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>,
+        /// <c>BENEFIT_LEVEL_SHARING</c>, and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>),
+        /// you must use the management account of a consolidated billing family. To set the <c>credit/{creditId}/status</c>
+        /// key, you must own the credit or use the management account of its family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBillingPreferences service method.</param>
@@ -1815,11 +2024,10 @@ namespace Amazon.Billing
         /// 
         ///  
         /// <para>
-        /// Sharing keys (<c>RI_SHARING</c>, <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>,
-        /// and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>) may only be set by the management
-        /// account of a consolidated billing family. The <c>credit/{creditId}/status</c> key
-        /// may be set by member accounts for credits they own, or by the management account for
-        /// any credit in the family.
+        /// To set sharing keys (<c>RI_SHARING</c>, <c>CREDIT_SHARING</c>, <c>CREDIT_LEVEL_SHARING</c>,
+        /// <c>BENEFIT_LEVEL_SHARING</c>, and sharing keys under <c>CREDIT_PREFERENCE_OPTIONS</c>),
+        /// you must use the management account of a consolidated billing family. To set the <c>credit/{creditId}/status</c>
+        /// key, you must own the credit or use the management account of its family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBillingPreferences service method.</param>

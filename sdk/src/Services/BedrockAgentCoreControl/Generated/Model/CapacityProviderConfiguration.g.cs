@@ -49,5 +49,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Checks to see if the CapacityProviderArn property is set.
         /// </summary>
         internal bool IsSetCapacityProviderArn() => this.CapacityProviderArn != null;
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystemConfiguration. 
+        /// <para>
+        /// The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime
+        /// runs on the capacity provider.
+        /// </para>
+        /// </summary>
+        public OperatingSystemConfiguration OperatingSystemConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OperatingSystemConfiguration property is set.
+        /// </summary>
+        internal bool IsSetOperatingSystemConfiguration() => this.OperatingSystemConfiguration != null;
     }
 }

@@ -121,8 +121,8 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property DiscoveryUrl. 
         /// <para>
-        /// The OpenID Connect discovery URL used to retrieve the identity provider's metadata
-        /// and signing keys.
+        /// The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to
+        /// retrieve the identity provider's metadata and signing keys.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]

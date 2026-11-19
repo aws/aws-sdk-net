@@ -33,7 +33,7 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the DeleteBucketMetadataTableConfiguration operation.
     /// <important> 
     /// <para>
-    ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+    ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
     /// API operation. We no longer recommend using the V1 <c>DeleteBucketMetadataTableConfiguration</c>
     /// API operation. 
     /// </para>

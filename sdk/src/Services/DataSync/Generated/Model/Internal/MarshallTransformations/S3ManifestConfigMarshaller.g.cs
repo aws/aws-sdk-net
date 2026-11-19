@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3ManifestConfig Marshaller
     /// </summary>
-    public partial class S3ManifestConfigMarshaller : IRequestMarshaller<S3ManifestConfig, JsonMarshallerContext>
+    public partial class S3ManifestConfigMarshaller : IRequestMarshaller<S3ManifestConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3ManifestConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3ManifestConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucketAccessRoleArn())
             {
-                context.Writer.WritePropertyName("BucketAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.BucketAccessRoleArn);
+                context.Writer.WriteTextString("BucketAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.BucketAccessRoleArn);
             }
 
             if (requestObject.IsSetManifestObjectPath())
             {
-                context.Writer.WritePropertyName("ManifestObjectPath");
-                context.Writer.WriteStringValue(requestObject.ManifestObjectPath);
+                context.Writer.WriteTextString("ManifestObjectPath");
+                context.Writer.WriteTextString(requestObject.ManifestObjectPath);
             }
 
             if (requestObject.IsSetManifestObjectVersionId())
             {
-                context.Writer.WritePropertyName("ManifestObjectVersionId");
-                context.Writer.WriteStringValue(requestObject.ManifestObjectVersionId);
+                context.Writer.WriteTextString("ManifestObjectVersionId");
+                context.Writer.WriteTextString(requestObject.ManifestObjectVersionId);
             }
 
             if (requestObject.IsSetS3BucketArn())
             {
-                context.Writer.WritePropertyName("S3BucketArn");
-                context.Writer.WriteStringValue(requestObject.S3BucketArn);
+                context.Writer.WriteTextString("S3BucketArn");
+                context.Writer.WriteTextString(requestObject.S3BucketArn);
             }
         }
 

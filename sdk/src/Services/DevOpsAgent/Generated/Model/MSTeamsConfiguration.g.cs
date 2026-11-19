@@ -37,6 +37,21 @@ namespace Amazon.DevOpsAgent.Model
     public partial class MSTeamsConfiguration
     {
         /// <summary>
+        /// Gets and sets the property Bidirectional. 
+        /// <para>
+        /// The bidirectional communication configuration for the Microsoft Teams integration.
+        /// Provide this configuration with <c>enabled</c> set to <c>true</c> to allow users to
+        /// interact with the agent directly from Microsoft Teams.
+        /// </para>
+        /// </summary>
+        public MSTeamsBidirectionalConfiguration Bidirectional { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Bidirectional property is set.
+        /// </summary>
+        internal bool IsSetBidirectional() => this.Bidirectional != null;
+
+        /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
         /// The identifier of the Microsoft Teams team to connect to the DevOps Agent service.

@@ -1003,6 +1003,18 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ConnectedAccountConfig.ConnectedAccountArn</property>
+    <min>56</min>
+    <max>140</max>
+    <pattern>^arn:aws(-[a-z]+)*:payments::[0-9]{12}:connectedaccount/[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}-[A-Za-z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ConnectedAccountPrice.Amount</property>
+    <min>1</min>
+    <max>9</max>
+    <pattern>^([1-9][0-9]{0,5}(\.[0-9]{1,2})?|0\.(0[1-9]|[1-9][0-9]?))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.CustomHTTPHeader.Name</property>
     <min>1</min>
     <max>64</max>

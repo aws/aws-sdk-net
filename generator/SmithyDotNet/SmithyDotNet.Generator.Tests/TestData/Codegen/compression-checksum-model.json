@@ -10,7 +10,12 @@
         { "target": "com.example#DoNeither" },
         { "target": "com.example#DoUnsupportedEncoding" },
         { "target": "com.example#DoMixedEncodings" },
-        { "target": "com.example#DoCompressedFixedLengthStream" }
+        { "target": "com.example#DoCompressedFixedLengthStream" },
+        { "target": "com.example#DoFlexibleChecksum" },
+        { "target": "com.example#DoRequiredChecksum" },
+        { "target": "com.example#DoValidatedChecksum" },
+        { "target": "com.example#DoDanglingAlgorithmMember" },
+        { "target": "com.example#DoDanglingModeMember" }
       ],
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
@@ -66,6 +71,78 @@
       "traits": {
         "smithy.api#http": { "uri": "/compressed-stream", "method": "POST" },
         "smithy.api#requestCompression": { "encodings": ["gzip"] }
+      }
+    },
+    "com.example#DoFlexibleChecksum": {
+      "type": "operation",
+      "input": { "target": "com.example#FlexibleChecksumRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/flexible-checksum", "method": "POST" },
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true, "requestAlgorithmMember": "checksumAlgorithm" }
+      }
+    },
+    "com.example#DoRequiredChecksum": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/required-checksum", "method": "POST" },
+        "aws.protocols#httpChecksum": { "requestChecksumRequired": true }
+      }
+    },
+    "com.example#DoValidatedChecksum": {
+      "type": "operation",
+      "input": { "target": "com.example#ValidatedChecksumRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/validated-checksum", "method": "POST" },
+        "aws.protocols#httpChecksum": { "requestValidationModeMember": "checksumMode", "responseAlgorithms": [ "CRC64NVME", "CRC32", "XXHASH128", "SHA256" ] }
+      }
+    },
+    "com.example#DoDanglingAlgorithmMember": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/dangling-algorithm", "method": "POST" },
+        "aws.protocols#httpChecksum": { "requestAlgorithmMember": "missing" }
+      }
+    },
+    "com.example#DoDanglingModeMember": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/dangling-mode", "method": "POST" },
+        "aws.protocols#httpChecksum": { "requestValidationModeMember": "missing", "responseAlgorithms": [ "CRC32" ] }
+      }
+    },
+    "com.example#FlexibleChecksumRequest": {
+      "type": "structure",
+      "members": {
+        "checksumAlgorithm": { "target": "com.example#ChecksumAlgorithm", "traits": { "smithy.api#httpHeader": "x-amz-sdk-checksum-algorithm" } },
+        "data": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ValidatedChecksumRequest": {
+      "type": "structure",
+      "members": {
+        "checksumMode": { "target": "com.example#ChecksumMode", "traits": { "smithy.api#httpHeader": "x-amz-checksum-mode" } },
+        "data": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ChecksumAlgorithm": {
+      "type": "enum",
+      "members": {
+        "CRC32": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "CRC32" } },
+        "SHA256": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "SHA256" } }
+      }
+    },
+    "com.example#ChecksumMode": {
+      "type": "enum",
+      "members": {
+        "ENABLED": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ENABLED" } }
       }
     },
     "com.example#StreamRequest": {

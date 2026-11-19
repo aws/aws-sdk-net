@@ -37,9 +37,7 @@ public static class EndpointRulesCompiler
         ["isValidHostLabel"] = new("IsValidHostLabel", IsBoolean: true, ArgCasts: ["string", "bool"]),
         ["substring"] = new("Substring", IsBoolean: false, ArgCasts: ["string", "int", "int", "bool"]),
         ["uriEncode"] = new("UriEncode", IsBoolean: false, ArgCasts: ["string"]),
-        // TODO: aws.isVirtualHostableS3Bucket is intentionally omitted — it's S3-specific (restXml),
-        // which the generator can't emit yet (DetectProtocol only accepts restJson1). Add it when
-        // restXml/S3 support lands.
+        ["aws.isVirtualHostableS3Bucket"] = new("IsVirtualHostableS3Bucket", IsBoolean: true, ArgCasts: ["string", "bool"]),
     };
 
     /// <summary>Emits the compiled rules into <paramref name="writer"/> at its current indent.</summary>

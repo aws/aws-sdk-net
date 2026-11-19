@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.DirectoryService.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -54,73 +55,79 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDirectorySetupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectoryService");
-            string target = "DirectoryService_20150416.UpdateDirectorySetup";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-16";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/DirectoryService_20150416/operation/UpdateDirectorySetup";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCreateSnapshotBeforeUpdate())
+                {
+                    context.Writer.WriteTextString("CreateSnapshotBeforeUpdate");
+                    context.Writer.WriteBoolean(publicRequest.CreateSnapshotBeforeUpdate.Value);
+                }
+                if (publicRequest.IsSetDirectoryId())
+                {
+                    context.Writer.WriteTextString("DirectoryId");
+                    context.Writer.WriteTextString(publicRequest.DirectoryId);
+                }
+                if (publicRequest.IsSetDirectorySizeUpdateSettings())
+                {
+                    context.Writer.WriteTextString("DirectorySizeUpdateSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DirectorySizeUpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DirectorySizeUpdateSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetNetworkUpdateSettings())
+                {
+                    context.Writer.WriteTextString("NetworkUpdateSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = NetworkUpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkUpdateSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetOSUpdateSettings())
+                {
+                    context.Writer.WriteTextString("OSUpdateSettings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OSUpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OSUpdateSettings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetUpdateType())
+                {
+                    context.Writer.WriteTextString("UpdateType");
+                    context.Writer.WriteTextString(publicRequest.UpdateType);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetCreateSnapshotBeforeUpdate())
-            {
-                context.Writer.WritePropertyName("CreateSnapshotBeforeUpdate");
-                context.Writer.WriteBooleanValue(publicRequest.CreateSnapshotBeforeUpdate.Value);
             }
-            if (publicRequest.IsSetDirectoryId())
+            finally
             {
-                context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+                CborWriterPool.Return(writer);
             }
-            if (publicRequest.IsSetDirectorySizeUpdateSettings())
-            {
-                context.Writer.WritePropertyName("DirectorySizeUpdateSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DirectorySizeUpdateSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DirectorySizeUpdateSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetNetworkUpdateSettings())
-            {
-                context.Writer.WritePropertyName("NetworkUpdateSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = NetworkUpdateSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.NetworkUpdateSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetOSUpdateSettings())
-            {
-                context.Writer.WritePropertyName("OSUpdateSettings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OSUpdateSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OSUpdateSettings, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetUpdateType())
-            {
-                context.Writer.WritePropertyName("UpdateType");
-                context.Writer.WriteStringValue(publicRequest.UpdateType);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ZonalConfig Object
     /// </summary>
-    public partial class ZonalConfigUnmarshaller : IJsonUnmarshaller<ZonalConfig, JsonUnmarshallerContext>
+    public partial class ZonalConfigUnmarshaller : ICborUnmarshaller<ZonalConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ZonalConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ZonalConfig Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ZonalConfig();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("firstZoneMonitorDurationInSeconds", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FirstZoneMonitorDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("minimumHealthyHostsPerZone", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = MinimumHealthyHostsPerZoneUnmarshaller.Instance;
-                    unmarshalledObject.MinimumHealthyHostsPerZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "firstZoneMonitorDurationInSeconds":
+                        context.AddPathSegment("FirstZoneMonitorDurationInSeconds");
+                        unmarshalledObject.FirstZoneMonitorDurationInSeconds = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("monitorDurationInSeconds", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MonitorDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "minimumHealthyHostsPerZone":
+                        context.AddPathSegment("MinimumHealthyHostsPerZone");
+                        unmarshalledObject.MinimumHealthyHostsPerZone = MinimumHealthyHostsPerZoneUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "monitorDurationInSeconds":
+                        context.AddPathSegment("MonitorDurationInSeconds");
+                        unmarshalledObject.MonitorDurationInSeconds = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

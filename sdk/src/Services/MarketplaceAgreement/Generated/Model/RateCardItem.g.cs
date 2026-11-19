@@ -52,7 +52,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Price. 
         /// <para>
-        /// Per unit price for the product dimension that’s used for calculating the amount to
+        /// Per unit price for the product dimension that's used for calculating the amount to
         /// be charged.
         /// </para>
         /// </summary>

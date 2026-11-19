@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReportExportConfig Marshaller
     /// </summary>
-    public partial class ReportExportConfigMarshaller : IRequestMarshaller<ReportExportConfig, JsonMarshallerContext>
+    public partial class ReportExportConfigMarshaller : IRequestMarshaller<ReportExportConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ReportExportConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ReportExportConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetExportConfigType())
             {
-                context.Writer.WritePropertyName("exportConfigType");
-                context.Writer.WriteStringValue(requestObject.ExportConfigType);
+                context.Writer.WriteTextString("exportConfigType");
+                context.Writer.WriteTextString(requestObject.ExportConfigType);
             }
 
             if (requestObject.IsSetS3Destination())
             {
-                context.Writer.WritePropertyName("s3Destination");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("s3Destination");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3ReportExportConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Destination, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

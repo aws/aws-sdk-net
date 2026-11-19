@@ -486,6 +486,30 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// stream.graphics.gr6f.4xlarge
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.24xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g7.48xlarge
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true, Min = 1)]

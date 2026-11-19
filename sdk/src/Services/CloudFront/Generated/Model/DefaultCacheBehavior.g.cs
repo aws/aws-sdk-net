@@ -1,0 +1,484 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CloudFront.Model
+{
+    /// <summary>
+    /// A complex type that describes the default cache behavior if you don't specify a <c>CacheBehavior</c>
+    /// element or if request URLs don't match any of the values of <c>PathPattern</c> in
+    /// <c>CacheBehavior</c> elements. You must create exactly one default cache behavior.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If your minimum TTL is greater than 0, CloudFront will cache content for at least
+    /// the duration specified in the cache policy's minimum TTL, even if the <c>Cache-Control:
+    /// no-cache</c>, <c>no-store</c>, or <c>private</c> directives are present in the origin
+    /// headers.
+    /// </para>
+    ///  </important>
+    /// </summary>
+    public partial class DefaultCacheBehavior
+    {
+        /// <summary>
+        /// Gets and sets the property AllowedMethods.
+        /// </summary>
+        public AllowedMethods AllowedMethods { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AllowedMethods property is set.
+        /// </summary>
+        internal bool IsSetAllowedMethods() => this.AllowedMethods != null;
+
+        /// <summary>
+        /// Gets and sets the property CachePolicyId. 
+        /// <para>
+        /// The unique identifier of the cache policy that is attached to the default cache behavior.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <c>DefaultCacheBehavior</c> must include either a <c>CachePolicyId</c> or <c>ForwardedValues</c>.
+        /// We recommend that you use a <c>CachePolicyId</c>.
+        /// </para>
+        /// </summary>
+        public string CachePolicyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CachePolicyId property is set.
+        /// </summary>
+        internal bool IsSetCachePolicyId() => this.CachePolicyId != null;
+
+        /// <summary>
+        /// Gets and sets the property Compress. 
+        /// <para>
+        /// Whether you want CloudFront to automatically compress certain files for this cache
+        /// behavior. If so, specify <c>true</c>; if not, specify <c>false</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+        /// Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? Compress { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Compress property is set.
+        /// </summary>
+        internal bool IsSetCompress() => this.Compress.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DefaultTTL. <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This field is deprecated. We recommend that you use the <c>DefaultTTL</c> field in
+        /// a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default amount of time that you want objects to stay in CloudFront caches before
+        /// CloudFront forwards another request to your origin to determine whether the object
+        /// has been updated. The value that you specify applies only when your origin does not
+        /// add HTTP headers such as <c>Cache-Control max-age</c>, <c>Cache-Control s-maxage</c>,
+        /// and <c>Expires</c> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
+        public long? DefaultTTL { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultTTL property is set.
+        /// </summary>
+        internal bool IsSetDefaultTTL() => this.DefaultTTL.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FieldLevelEncryptionId. 
+        /// <para>
+        /// The value of <c>ID</c> for the field-level encryption configuration that you want
+        /// CloudFront to use for encrypting specific fields of data for the default cache behavior.
+        /// </para>
+        /// </summary>
+        public string FieldLevelEncryptionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FieldLevelEncryptionId property is set.
+        /// </summary>
+        internal bool IsSetFieldLevelEncryptionId() => this.FieldLevelEncryptionId != null;
+
+        /// <summary>
+        /// Gets and sets the property ForwardedValues. 
+        /// <para>
+        /// This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working
+        /// with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include values in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to send values to the origin but not include them in the cache key, use
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+        /// the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <c>DefaultCacheBehavior</c> must include either a <c>CachePolicyId</c> or <c>ForwardedValues</c>.
+        /// We recommend that you use a <c>CachePolicyId</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A complex type that specifies how CloudFront handles query strings, cookies, and HTTP
+        /// headers.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
+        public ForwardedValues ForwardedValues { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ForwardedValues property is set.
+        /// </summary>
+        internal bool IsSetForwardedValues() => this.ForwardedValues != null;
+
+        /// <summary>
+        /// Gets and sets the property FunctionAssociations. 
+        /// <para>
+        /// A list of CloudFront functions that are associated with this cache behavior. Your
+        /// functions must be published to the <c>LIVE</c> stage to associate them with a cache
+        /// behavior.
+        /// </para>
+        /// </summary>
+        public FunctionAssociations FunctionAssociations { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FunctionAssociations property is set.
+        /// </summary>
+        internal bool IsSetFunctionAssociations() => this.FunctionAssociations != null;
+
+        /// <summary>
+        /// Gets and sets the property GrpcConfig. 
+        /// <para>
+        /// The gRPC configuration for your cache behavior.
+        /// </para>
+        /// </summary>
+        public GrpcConfig GrpcConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GrpcConfig property is set.
+        /// </summary>
+        internal bool IsSetGrpcConfig() => this.GrpcConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionAssociations. 
+        /// <para>
+        /// A complex type that contains zero or more Lambda@Edge function associations for a
+        /// cache behavior.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionAssociations LambdaFunctionAssociations { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LambdaFunctionAssociations property is set.
+        /// </summary>
+        internal bool IsSetLambdaFunctionAssociations() => this.LambdaFunctionAssociations != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxTTL. <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This field is deprecated. We recommend that you use the <c>MaxTTL</c> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum amount of time that you want objects to stay in CloudFront caches before
+        /// CloudFront forwards another request to your origin to determine whether the object
+        /// has been updated. The value that you specify applies only when your origin adds HTTP
+        /// headers such as <c>Cache-Control max-age</c>, <c>Cache-Control s-maxage</c>, and <c>Expires</c>
+        /// to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
+        public long? MaxTTL { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxTTL property is set.
+        /// </summary>
+        internal bool IsSetMaxTTL() => this.MaxTTL.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property MinTTL. <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This field is deprecated. We recommend that you use the <c>MinTTL</c> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating
+        /// cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+        /// the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The minimum amount of time that you want objects to stay in CloudFront caches before
+        /// CloudFront forwards another request to your origin to determine whether the object
+        /// has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify <c>0</c> for <c>MinTTL</c> if you configure CloudFront to forward
+        /// all headers to your origin (under <c>Headers</c>, if you specify <c>1</c> for <c>Quantity</c>
+        /// and <c>*</c> for <c>Name</c>).
+        /// </para>
+        /// </summary>
+        [Obsolete("This field is deprecated. Use CachePolicy instead.")]
+        public long? MinTTL { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MinTTL property is set.
+        /// </summary>
+        internal bool IsSetMinTTL() => this.MinTTL.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property OriginRequestPolicyId. 
+        /// <para>
+        /// The unique identifier of the origin request policy that is attached to the default
+        /// cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating
+        /// origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using
+        /// the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OriginRequestPolicyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OriginRequestPolicyId property is set.
+        /// </summary>
+        internal bool IsSetOriginRequestPolicyId() => this.OriginRequestPolicyId != null;
+
+        /// <summary>
+        /// Gets and sets the property RealtimeLogConfigArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the real-time log configuration that is attached
+        /// to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RealtimeLogConfigArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RealtimeLogConfigArn property is set.
+        /// </summary>
+        internal bool IsSetRealtimeLogConfigArn() => this.RealtimeLogConfigArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ResponseHeadersPolicyId. 
+        /// <para>
+        /// The identifier for a response headers policy.
+        /// </para>
+        /// </summary>
+        public string ResponseHeadersPolicyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResponseHeadersPolicyId property is set.
+        /// </summary>
+        internal bool IsSetResponseHeadersPolicyId() => this.ResponseHeadersPolicyId != null;
+
+        /// <summary>
+        /// Gets and sets the property SmoothStreaming. <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
+        /// format using the origin that is associated with this cache behavior. If so, specify
+        /// <c>true</c>; if not, specify <c>false</c>. If you specify <c>true</c> for <c>SmoothStreaming</c>,
+        /// you can still distribute other content using this cache behavior if the content matches
+        /// the value of <c>PathPattern</c>.
+        /// </para>
+        /// </summary>
+        public bool? SmoothStreaming { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SmoothStreaming property is set.
+        /// </summary>
+        internal bool IsSetSmoothStreaming() => this.SmoothStreaming.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TargetOriginId. 
+        /// <para>
+        /// The value of <c>ID</c> for the origin that you want CloudFront to route requests to
+        /// when they use the default cache behavior.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string TargetOriginId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetOriginId property is set.
+        /// </summary>
+        internal bool IsSetTargetOriginId() => this.TargetOriginId != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedKeyGroups. 
+        /// <para>
+        /// A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a cache behavior contains trusted key groups, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public TrustedKeyGroups TrustedKeyGroups { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedKeyGroups property is set.
+        /// </summary>
+        internal bool IsSetTrustedKeyGroups() => this.TrustedKeyGroups != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedSigners. <important> 
+        /// <para>
+        /// We recommend using <c>TrustedKeyGroups</c> instead of <c>TrustedSigners</c>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// A list of Amazon Web Services account IDs whose public keys CloudFront can use to
+        /// validate signed URLs or signed cookies.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a cache behavior contains trusted signers, CloudFront requires signed URLs or
+        /// signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with the private key of a CloudFront key pair in a trusted signer's
+        /// Amazon Web Services account. The signed URL or cookie contains information about which
+        /// public key CloudFront should use to verify the signature. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public TrustedSigners TrustedSigners { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedSigners property is set.
+        /// </summary>
+        internal bool IsSetTrustedSigners() => this.TrustedSigners != null;
+
+        /// <summary>
+        /// Gets and sets the property ViewerProtocolPolicy. 
+        /// <para>
+        /// The protocol that viewers can use to access the files in the origin specified by <c>TargetOriginId</c>
+        /// when a request matches the path pattern in <c>PathPattern</c>. You can specify the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>allow-all</c>: Viewers can use HTTP or HTTPS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>redirect-to-https</c>: If a viewer submits an HTTP request, CloudFront returns
+        /// an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS
+        /// URL. The viewer then resubmits the request using the new URL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>https-only</c>: If a viewer sends an HTTP request, CloudFront returns an HTTP
+        /// status code of 403 (Forbidden).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+        /// HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only way to guarantee that viewers retrieve an object that was fetched from the
+        /// origin using HTTPS is never to use any other protocol to fetch the object. If you
+        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
+        /// cache because cached objects are protocol agnostic. That means that an edge location
+        /// will return an object from the cache regardless of whether the current request protocol
+        /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+        /// Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ViewerProtocolPolicy ViewerProtocolPolicy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ViewerProtocolPolicy property is set.
+        /// </summary>
+        internal bool IsSetViewerProtocolPolicy() => this.ViewerProtocolPolicy != null;
+    }
+}

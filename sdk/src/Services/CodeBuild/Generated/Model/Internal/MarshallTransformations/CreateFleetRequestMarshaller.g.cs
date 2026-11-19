@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.CodeBuild.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -54,118 +55,124 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateFleetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeBuild");
-            string target = "CodeBuild_20161006.CreateFleet";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-06";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetBaseCapacity())
+            request.ResourcePath = "service/CodeBuild_20161006/operation/CreateFleet";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("baseCapacity");
-                context.Writer.WriteNumberValue(publicRequest.BaseCapacity.Value);
-            }
-            if (publicRequest.IsSetComputeConfiguration())
-            {
-                context.Writer.WritePropertyName("computeConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ComputeConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ComputeConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetComputeType())
-            {
-                context.Writer.WritePropertyName("computeType");
-                context.Writer.WriteStringValue(publicRequest.ComputeType);
-            }
-            if (publicRequest.IsSetEnvironmentType())
-            {
-                context.Writer.WritePropertyName("environmentType");
-                context.Writer.WriteStringValue(publicRequest.EnvironmentType);
-            }
-            if (publicRequest.IsSetFleetServiceRole())
-            {
-                context.Writer.WritePropertyName("fleetServiceRole");
-                context.Writer.WriteStringValue(publicRequest.FleetServiceRole);
-            }
-            if (publicRequest.IsSetImageId())
-            {
-                context.Writer.WritePropertyName("imageId");
-                context.Writer.WriteStringValue(publicRequest.ImageId);
-            }
-            if (publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-            if (publicRequest.IsSetOverflowBehavior())
-            {
-                context.Writer.WritePropertyName("overflowBehavior");
-                context.Writer.WriteStringValue(publicRequest.OverflowBehavior);
-            }
-            if (publicRequest.IsSetProxyConfiguration())
-            {
-                context.Writer.WritePropertyName("proxyConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProxyConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ProxyConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetScalingConfiguration())
-            {
-                context.Writer.WritePropertyName("scalingConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ScalingConfigurationInputMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ScalingConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetBaseCapacity())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("baseCapacity");
+                    context.Writer.WriteInt32(publicRequest.BaseCapacity.Value);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetVpcConfig())
-            {
-                context.Writer.WritePropertyName("vpcConfig");
-                context.Writer.WriteStartObject();
+                if (publicRequest.IsSetComputeConfiguration())
+                {
+                    context.Writer.WriteTextString("computeConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                var marshaller = VpcConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VpcConfig, context);
+                    var marshaller = ComputeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeConfiguration, context);
 
-                context.Writer.WriteEndObject();
-            }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WriteTextString("computeType");
+                    context.Writer.WriteTextString(publicRequest.ComputeType);
+                }
+                if (publicRequest.IsSetEnvironmentType())
+                {
+                    context.Writer.WriteTextString("environmentType");
+                    context.Writer.WriteTextString(publicRequest.EnvironmentType);
+                }
+                if (publicRequest.IsSetFleetServiceRole())
+                {
+                    context.Writer.WriteTextString("fleetServiceRole");
+                    context.Writer.WriteTextString(publicRequest.FleetServiceRole);
+                }
+                if (publicRequest.IsSetImageId())
+                {
+                    context.Writer.WriteTextString("imageId");
+                    context.Writer.WriteTextString(publicRequest.ImageId);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetOverflowBehavior())
+                {
+                    context.Writer.WriteTextString("overflowBehavior");
+                    context.Writer.WriteTextString(publicRequest.OverflowBehavior);
+                }
+                if (publicRequest.IsSetProxyConfiguration())
+                {
+                    context.Writer.WriteTextString("proxyConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = ProxyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetScalingConfiguration())
+                {
+                    context.Writer.WriteTextString("scalingConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ScalingConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScalingConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WriteTextString("vpcConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

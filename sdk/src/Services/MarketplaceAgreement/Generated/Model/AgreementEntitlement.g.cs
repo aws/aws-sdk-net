@@ -58,7 +58,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// for purchase agreements.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 512)]
+        [AWSProperty(Sensitive = true, Min = 1, Max = 512)]
         public string RegistrationToken { get; set; }
 
         /// <summary>

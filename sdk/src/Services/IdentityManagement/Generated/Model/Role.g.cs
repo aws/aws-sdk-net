@@ -111,6 +111,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMaxSessionDuration() => this.MaxSessionDuration.HasValue;
 
         /// <summary>
+        /// Gets and sets the property MaxSigninSessionDuration. 
+        /// <para>
+        /// The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users
+        /// who sign in with this role. This value is independent of <c>MaxSessionDuration</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This member is omitted when the setting is unset. In that case, no default value is
+        /// returned and the existing sign-in session behavior applies.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 3600, Max = 7776000)]
+        public int? MaxSigninSessionDuration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxSigninSessionDuration property is set.
+        /// </summary>
+        internal bool IsSetMaxSigninSessionDuration() => this.MaxSigninSessionDuration.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM

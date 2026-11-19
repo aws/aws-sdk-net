@@ -32,6 +32,13 @@ A **removed** line in generated output is a red flag — investigate it, do not 
   reach internals; an entry without its own `PublicKey=` gets the SDK's)
 - The config constructor's region fallback, from metadata.json `default-region` (iam only: a partition-global
   service still needs a region to sign and resolve an endpoint when the environment supplies none)
+- The auth resolver's `GetSigner` override, from metadata.json `signature-version` (C2J's non-SigV4
+  `signatureVersion`: `"v2"` sdb → `QueryStringSigner`, `"S3"` S3 → `Amazon.S3.Internal.S3Signer`, `"S3V4"`
+  S3Control → Core's `S3Signer`; values are case-insensitive). `v2` also keeps the SigV4 default and `Region`
+  although the model carries no auth trait, Smithy having no SigV2 trait
+- The auth scheme handler's endpoint-first resolution, from metadata.json `endpoint-resolves-auth` (S3, EventBridge,
+  SESv2, CloudFront KeyValueStore: C2J's allowlist in `ModeledResolver.partial.cs`; many other rule sets carry
+  `authSchemes` but are not consulted)
 
 ## What Can Differ
 
@@ -243,8 +250,8 @@ differ (see `marshalling`). Each `@streaming` union is emitted once, however man
 | Client class | `AmazonServiceClient, IAmazon{BaseName}` |
 | Service exception base | `AmazonServiceException` |
 | Service request base | `AmazonWebServiceRequest` |
-| Request classes | `Amazon{BaseName}Request` (the service request base) |
-| Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream) |
+| Request classes | `Amazon{BaseName}Request` (the service request base), or `service.requestBaseClass` |
+| Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream). With `service.streamingResponseBaseClass`, a response with a `@streaming` blob member derives from that class instead, without the member (the unmarshaller assigns its `ResponseStream`) |
 | Structure classes | No base type (plain class) |
 | Exception classes | `Amazon{BaseName}Exception` (the service exception base) |
 | Config class (`Amazon{BaseName}Config`) | `ClientConfig` |
@@ -308,7 +315,11 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 
 ## Customizations (`*.customizations.json`)
 
-The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
+The .NET-owned override layer (not part of the shared, upstream Smithy model). metadata.json describes the package
+(names, namespace, dependencies, visibility); customizations describe where generated code deviates from the model,
+including what hand-written code supplies instead. A new knob goes in the second unless it would exist for a service
+with nothing hand-written; the C2J-inherited `generate-client-constructors` and `signature-version` predate the rule
+and stay in metadata.json. A hook with a Smithy
 trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`, `exclude`, `useWrappingResult`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
 `CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
@@ -324,20 +335,45 @@ A Smithy-only `"Structure$member"` key instead copies that member's target under
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.
 
-`emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire
-name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
-As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
-`emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
-The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
-base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from `AWSCredentials`,
-whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
-`paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
-`LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
-remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
-added to the modeled one. A field the trait already has fails generation.
-`operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
-Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
-emitted name.
+- `emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire name on
+  every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived. As in C2J, the
+  name's first letter is upper-cased (iot's `marker` is `Marker`) and `emitIsSetProperties`/`dataTypeSwap` list a
+  renamed member under its new name.
+- The Smithy-only `overridesBaseMember` emits a member with `override` when a hand-written partial gives its structure a
+  base class declaring the same member: CognitoIdentity's and SecurityToken's `Credentials` derive from
+  `AWSCredentials`, whose `BaseIdentity.Expiration` is virtual. C2J hard-codes that case instead.
+- `paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
+  `LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while
+  entries remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items`
+  (dotted paths) added to the modeled one. A field the trait already has fails generation. Unlike the C2J-inherited
+  hooks above, `paginators` names members as the model does (like `@paginated`), not by their emitted name.
+- `operationModifiers.{Operation}.name` is the operation's C# name (S3 `CreateBucket` is `PutBucket`): client methods,
+  request/response classes, marshallers, paginators and the metadata `OperationNameMapping` (C# name to modeled name).
+  restXml and restJson1 only, as other protocols put the operation name on the wire. The API reference link and the other
+  operation-keyed hooks keep the modeled name (the lookup helpers accept the C# name the writers pass);
+  `simpleMethods`, `noArgOverloads` and `simpleConstructors` take the C# name, as C2J does.
+- `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
+- `operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`,
+  `UploadPart`).
+- The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches. Each key names
+  something S3 supplies by hand:
+  - `skipClientContextParams`: the listed params stay out of the generated config (hand-written for S3, S3 Control; an
+    unmodeled name fails).
+  - `skipDocSamples`: no doc samples.
+  - `requestBaseClass`, `streamingResponseBaseClass`: replace the generated bases (see Base Types).
+  - `customErrorHandling`: replaces the error handling and skips the generated service exception (see marshalling →
+    restXml).
+  - `clientDisposeMethod`: the client's `Dispose(bool)` calls it inside `if (disposing)`, before the base call. Empty fails.
+  - `retryPolicyRequestList`: emits `Amazon{BaseName}RetryPolicy` with the 200-error request list, which excludes only
+    operations whose output has a `@streaming` blob (`RetryPolicyWriter` says why that matches shipped S3).
+  - `customPropertyValueRules`: `Generated/PropertyValueRules.xml` stays empty and the code-analysis project also embeds
+    `Custom/PropertyValueRules.xml`.
+  - `endpointResolverPartial`: the endpoint resolver is `partial` and declares `private partial` hooks the hand-written
+    half must implement, so a missing file fails to compile: `BeforeInjectHostPrefix` (S3's SigV2/KMS tweaks) and
+    `TryMapNonGeneratedRequest` (maps presigned/ACL requests and returns early, ahead of the per-operation blocks).
+    Needs an endpoint rule set, else generation fails.
+  - `endpointResolvedLabel`, `keepGreedyLabelLeadingSlash`, `requiredLabelServiceExceptionOperations`: change the
+    `@httpLabel` handling (see marshalling).
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
@@ -350,10 +386,33 @@ for a form member). All three carry the member `@documentation` onto the paramet
 
 `ServiceGenerator` emits C2J's reflection tests under `UnitTests/Generated/Customizations/` when the hook is present
 (`SimpleConstructorTestsWriter`, `SimpleMethodTestsWriter`); `noArgOverloads` has no generated test.
-`operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource and `shapeModifiers.{Shape}.exclude`
-removes members, so whatever is no longer reachable is not emitted. `useWrappingResult` moves the output under one member,
-`wrappedResultMember`, of a new output structure: the response has a single property of the output's type, paginator paths go
-through it, and the JSON, CBOR and ec2Query response unmarshallers read it from the whole body.
+
+Hooks that remove or reshape what is emitted:
+- `operationModifiers.{Operation}.exclude` unbinds the operation from its service or resource, and
+  `shapeModifiers.{Shape}.exclude` removes members. Whatever is no longer reachable is not emitted.
+- `clientMethodOnly` (C2J's hard-coded `S3ExcludeListOperations`, S3 `SelectObjectContent`) keeps the operation in
+  `Operations` for the client, interface, endpoint and metadata writers, but `GeneratedOperations` drops it. Its
+  request/response classes, marshallers, event streams and the shapes only it reaches are hand-written.
+- The top-level `excludeShapes` (structures and enums) and `excludeMembers` leave the model alone and mark code as
+  hand-written:
+  - an excluded structure gets no class or (un)marshaller (the structures it holds still do);
+  - an excluded enum gets no enum class;
+  - an excluded member gets no property or `IsSet`, though the (un)marshallers still use it.
+
+  Both key shapes by modeled name (C2J keys a renamed structure by its new name); `excludeMembers` lists members by
+  emitted name, as C2J.
+- `flattenShapes` (S3, restXml only) replaces an input/output's structure `@httpPayload` member with the target's
+  members, so they become request/response properties.
+  - The input takes the payload's `@xmlName`, so the body writers match C2J: the request writes that root even when
+    nothing is set (the payload path sent an empty body).
+  - The response reads the members one level under the root, behind `if (context.IsStartOfDocument)` where C2J bumps
+    the depth unconditionally.
+  - The target keeps its class, as in C2J (S3's `Delete`), unless `excludeShapes` lists it.
+  - It runs before `shapeModifiers`, which address the flattened members on the parent as C2J does, and drops their
+    `@required` (C2J checks it against the parent).
+- `useWrappingResult` moves the output under one member, `wrappedResultMember`, of a new output structure. The response
+  has a single property of the output's type, paginator paths go through it, and the JSON, CBOR and ec2Query response
+  unmarshallers read it from the whole body.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
@@ -414,6 +473,7 @@ Must expose these public constructors:
 4. `(Exception innerException)`
 5. `(string message, Exception innerException, ErrorType, string errorCode, string requestId, HttpStatusCode)`
 6. `(string message, ErrorType, string errorCode, string requestId, HttpStatusCode)`
+7. With `service.customErrorHandling`: item 5 plus `string amazonId2, string amazonCfId`. The service exception is then hand-written, since the generated one lacks it.
 
 Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `[Serializable]` attribute on the class
@@ -421,7 +481,7 @@ Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit: `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
   The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set, every modeled member except `message` (C2J parity), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). Both are keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
-The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
+The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes constructors 1-6 above, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
 
 ### Exception Member Property Names
 
@@ -460,6 +520,11 @@ Must expose:
 - `CustomizeRuntimePipeline` override: first the `runtimePipelineOverride` customization's handlers, in file order (each
   under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
+
+The auth scheme handler (`AuthResolverWriter`) overrides `GetSigner` when metadata.json sets
+`signature-version` (e.g. S3Control's `"S3V4"` → `S3Signer`). C2J derives the signer from
+`metadata.signatureVersion`, which Smithy does not model, so each such service carries the key in its
+metadata.json rather than the generator keeping a list by name.
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
 

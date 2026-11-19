@@ -756,13 +756,48 @@ namespace Amazon.Util
 
         /// <summary>
         /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// <para />
+        /// Digits past the millisecond are truncated (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
+        /// The value is rounded to 15 significant digits before truncation, which removes the floating-point error of the double
+        /// (1762594202.123 is stored as 1762594202.12299990...). Sub-millisecond digits can round up before truncation.
         /// </summary>
         /// <param name="seconds">The number of seconds since January 1, 1970.</param>
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixDoubleEpochSeconds(double seconds)
         {
-            var ticksSinceEpoch = (long)(seconds * TicksPerSecond);
-            return new DateTime(ticksSinceEpoch + EPOCH_START.Ticks, DateTimeKind.Utc);
+            // Before .NET 11, casting double to decimal rounded to 15 significant digits. Starting with .NET 11 the
+            // cast keeps the exact binary value, so 1762594202.123 would truncate to .122. Rounding the decimal to
+            // 15 significant digits explicitly gives the same result on every target framework without allocating.
+            decimal value = (decimal)seconds;
+            if (seconds != 0)
+            {
+                // Number of digits before the decimal point, minus one. Math.Log10 can return the next whole
+                // number for values just below a power of ten (Log10(999.9999999999994) is exactly 3), so the
+                // exponent is corrected downward to keep 15 significant digits instead of 14.
+                double abs = Math.Abs(seconds);
+                int exponent = (int)Math.Floor(Math.Log10(abs));
+                if (abs < Math.Pow(10, exponent))
+                {
+                    exponent--;
+                }
+
+                // decimal supports between 0 and 28 digits after the decimal point.
+                int decimals = Math.Max(0, Math.Min(28, 14 - exponent));
+                value = Math.Round(value, decimals, MidpointRounding.ToEven);
+            }
+            return ConvertFromUnixDecimalEpochSeconds(value);
+        }
+
+        /// <summary>
+        /// Utility method for converting Unix epoch seconds to DateTime structure.
+        /// <para />
+        /// Digits past the millisecond are truncated (1762594202.1239 is .123), as the Smithy epoch-seconds timestamp format specifies.
+        /// </summary>
+        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixDecimalEpochSeconds(decimal seconds)
+        {
+            return EPOCH_START.AddMilliseconds((long)(seconds * 1000));
         }
 
         /// <summary>
@@ -1812,9 +1847,50 @@ namespace Amazon.Util
         }
 
 #if NETSTANDARD
+        // A handler owns a connection pool, and from .NET 11 also two System.Net.Http metric instruments that are never released.
+        // Requests therefore share one handler per proxy and CA bundle, and each still gets its own HttpClient for its timeout and headers.
+        // The .NET 11 leak is tracked in https://github.com/dotnet/runtime/issues/136418.
+        private static readonly HandlerCache _handlersWithoutCABundle = new HandlerCache(null);
+        // Keyed on the bundle instance, which CABundle.FromEnvironment caches by path, so a changed AWS_CA_BUNDLE gets new handlers.
+        private static readonly ConditionalWeakTable<CABundle, HandlerCache> _handlersByCABundle = new ConditionalWeakTable<CABundle, HandlerCache>();
+
+        /// <summary>
+        /// The shared handlers for one CA bundle (or none): one for the default proxy and one per explicit proxy.
+        /// </summary>
+        private sealed class HandlerCache
+        {
+            private readonly CABundle _caBundle;
+            private readonly Lazy<HttpClientHandler> _defaultProxyHandler;
+            private readonly ConditionalWeakTable<IWebProxy, HttpClientHandler> _proxyHandlers = new ConditionalWeakTable<IWebProxy, HttpClientHandler>();
+
+            public HandlerCache(CABundle caBundle)
+            {
+                _caBundle = caBundle;
+                _defaultProxyHandler = new Lazy<HttpClientHandler>(() => CreateHandler(null));
+            }
+
+            public HttpClientHandler GetHandler(IWebProxy proxy)
+            {
+                return proxy == null ? _defaultProxyHandler.Value : _proxyHandlers.GetValue(proxy, CreateHandler);
+            }
+
+            private HttpClientHandler CreateHandler(IWebProxy proxy)
+            {
+                // Without this, a shared handler would send cookies from one response with every later request.
+                var handler = new HttpClientHandler { Proxy = proxy, UseCookies = false };
+                _caBundle?.ApplyTo(handler);
+                return handler;
+            }
+        }
+
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
         {
-            var client = new HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy });
+            // Resolved per request, outside the cached Lazy, so an invalid bundle fails this request instead of being cached
+            // for the life of the process.
+            var caBundle = CABundle.FromEnvironment();
+            var handlers = caBundle == null ? _handlersWithoutCABundle : _handlersByCABundle.GetValue(caBundle, b => new HandlerCache(b));
+            var handler = handlers.GetHandler(proxy);
+            var client = new HttpClient(handler, disposeHandler: false);
             
             if (timeout > TimeSpan.Zero)
             {
@@ -1838,6 +1914,13 @@ namespace Amazon.Util
         { 
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
             request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
+
+            // Scoped to this request, as in HttpWebRequestFactory, so the process-wide ServicePointManager callback is untouched.
+            var caBundle = CABundle.FromEnvironment();
+            if (caBundle != null)
+            {
+                request.ServerCertificateValidationCallback = caBundle.RemoteCertificateValidationCallback;
+            }
 
             if (timeout > TimeSpan.Zero)
             {
@@ -1893,20 +1976,9 @@ namespace Amazon.Util
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
         /// <param name="data">The input string to process.</param>
-        /// <returns>The processed string with compressed spaces.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string CompressSpaces(string data)
-        {
-            return CompressSpaces(data, false);
-        }
-
-        /// <summary>
-        /// Utility method that accepts a string and replaces white spaces with a space.
-        /// </summary>
-        /// <param name="data">The input string to process.</param>
         /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
         /// <returns>The processed string with compressed spaces.</returns>
-        public static string CompressSpaces(string data, bool trim)
+        public static string CompressSpaces(string data, bool trim = false)
         {
             const char SPACE = ' ';
             if (data == null)

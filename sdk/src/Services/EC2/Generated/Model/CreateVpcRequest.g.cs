@@ -1,0 +1,285 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EC2.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateVpc operation. Creates a VPC with the specified
+    /// CIDR blocks. <para> A VPC must have an associated IPv4 CIDR block. You can choose
+    /// an IPv4 CIDR block or an IPAM-allocated IPv4 CIDR block. You can optionally associate
+    /// an IPv6 CIDR block with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided
+    /// IPv6 CIDR block, an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you
+    /// brought to Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+    /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>. </para>
+    /// <para> By default, each instance that you launch in the VPC has the default DHCP options,
+    /// which include only a default DNS server that we provide (AmazonProvidedDNS). For more
+    /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+    /// option sets</a> in the <i>Amazon VPC User Guide</i>. </para> <para> You can specify
+    /// DNS options and tenancy for a VPC when you create it. You can't change the tenancy
+    /// of a VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
+    /// configuration options</a> in the <i>Amazon VPC User Guide</i>. </para>
+    /// </summary>
+    public partial class CreateVpcRequest : AmazonEC2Request
+    {
+        /// <summary>
+        /// Empty constructor used to set properties independently even when a simple constructor is available
+        /// </summary>
+        public CreateVpcRequest() { }
+
+        /// <summary>
+        /// Instantiates CreateVpcRequest with the parameterized properties
+        /// </summary>
+        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example,		  <c>10.0.0.0/16</c>. We modify the specified CIDR block to its canonical form; for example, if you specify <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>.</param>
+        public CreateVpcRequest(string cidrBlock)
+        {
+            this.CidrBlock = cidrBlock;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonProvidedIpv6CidrBlock. 
+        /// <para>
+        /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
+        /// You cannot specify the range of IP addresses, or the size of the CIDR block.
+        /// </para>
+        /// </summary>
+        public bool? AmazonProvidedIpv6CidrBlock { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AmazonProvidedIpv6CidrBlock property is set.
+        /// </summary>
+        internal bool IsSetAmazonProvidedIpv6CidrBlock() => this.AmazonProvidedIpv6CidrBlock.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property CidrBlock. 
+        /// <para>
+        /// The IPv4 network range for the VPC, in CIDR notation. For example, <c>10.0.0.0/16</c>.
+        /// We modify the specified CIDR block to its canonical form; for example, if you specify
+        /// <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>.
+        /// </para>
+        /// </summary>
+        public string CidrBlock { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CidrBlock property is set.
+        /// </summary>
+        internal bool IsSetCidrBlock() => this.CidrBlock != null;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DryRun property is set.
+        /// </summary>
+        internal bool IsSetDryRun() => this.DryRun.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property InstanceTenancy. 
+        /// <para>
+        /// The tenancy options for instances launched into the VPC. For <c>default</c>, instances
+        /// are launched with shared tenancy by default. You can launch instances with any tenancy
+        /// into a shared tenancy VPC. For <c>dedicated</c>, instances are launched as dedicated
+        /// tenancy instances by default. You can only launch instances with a tenancy of <c>dedicated</c>
+        /// or <c>host</c> into a dedicated tenancy VPC. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important:</b> The <c>host</c> value cannot be used with this parameter. Use the
+        /// <c>default</c> or <c>dedicated</c> values only.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>default</c> 
+        /// </para>
+        /// </summary>
+        public Tenancy InstanceTenancy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceTenancy property is set.
+        /// </summary>
+        internal bool IsSetInstanceTenancy() => this.InstanceTenancy != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv4IpamPoolId. 
+        /// <para>
+        /// The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public string Ipv4IpamPoolId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv4IpamPoolId property is set.
+        /// </summary>
+        internal bool IsSetIpv4IpamPoolId() => this.Ipv4IpamPoolId != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv4NetmaskLength. 
+        /// <para>
+        /// The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? Ipv4NetmaskLength { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv4NetmaskLength property is set.
+        /// </summary>
+        internal bool IsSetIpv4NetmaskLength() => this.Ipv4NetmaskLength.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlock. 
+        /// <para>
+        /// The IPv6 CIDR block from the IPv6 address pool. You must also specify <c>Ipv6Pool</c>
+        /// in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlock { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6CidrBlock property is set.
+        /// </summary>
+        internal bool IsSetIpv6CidrBlock() => this.Ipv6CidrBlock != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockNetworkBorderGroup. 
+        /// <para>
+        /// The name of the location from which we advertise the IPV6 CIDR block. Use this parameter
+        /// to limit the address to this location.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You must set <c>AmazonProvidedIpv6CidrBlock</c> to <c>true</c> to use this parameter.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlockNetworkBorderGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6CidrBlockNetworkBorderGroup property is set.
+        /// </summary>
+        internal bool IsSetIpv6CidrBlockNetworkBorderGroup() => this.Ipv6CidrBlockNetworkBorderGroup != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6IpamPoolId. 
+        /// <para>
+        /// The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6 CIDR.
+        /// IPAM is a VPC feature that you can use to automate your IP address management workflows
+        /// including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
+        /// Web Services Regions and accounts throughout your Amazon Web Services Organization.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Ipv6IpamPoolId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6IpamPoolId property is set.
+        /// </summary>
+        internal bool IsSetIpv6IpamPoolId() => this.Ipv6IpamPoolId != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6NetmaskLength. 
+        /// <para>
+        /// The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int? Ipv6NetmaskLength { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6NetmaskLength property is set.
+        /// </summary>
+        internal bool IsSetIpv6NetmaskLength() => this.Ipv6NetmaskLength.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Pool. 
+        /// <para>
+        /// The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+        /// </para>
+        /// </summary>
+        public string Ipv6Pool { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv6Pool property is set.
+        /// </summary>
+        internal bool IsSetIpv6Pool() => this.Ipv6Pool != null;
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the VPC.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications { get; set; } = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Checks to see if the TagSpecifications property is set.
+        /// </summary>
+        internal bool IsSetTagSpecifications() => this.TagSpecifications != null && (this.TagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VpcEncryptionControl. 
+        /// <para>
+        /// Specifies the encryption control configuration to apply to the VPC during creation.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlConfiguration VpcEncryptionControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcEncryptionControl property is set.
+        /// </summary>
+        internal bool IsSetVpcEncryptionControl() => this.VpcEncryptionControl != null;
+    }
+}

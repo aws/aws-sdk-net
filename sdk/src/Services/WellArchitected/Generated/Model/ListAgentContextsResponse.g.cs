@@ -55,7 +55,10 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetItems() => this.Items != null && (this.Items.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token to retrieve the next set of results, if available.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string NextToken { get; set; }

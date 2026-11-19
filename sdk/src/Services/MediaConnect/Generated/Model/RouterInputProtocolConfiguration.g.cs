@@ -45,6 +45,19 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRist() => this.Rist != null;
 
         /// <summary>
+        /// Gets and sets the property RtmpPush. 
+        /// <para>
+        /// The configuration settings for a router input that uses the RTMP protocol.
+        /// </para>
+        /// </summary>
+        public RtmpPushRouterInputConfiguration RtmpPush { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RtmpPush property is set.
+        /// </summary>
+        internal bool IsSetRtmpPush() => this.RtmpPush != null;
+
+        /// <summary>
         /// Gets and sets the property Rtp.
         /// </summary>
         public RtpRouterInputConfiguration Rtp { get; set; }

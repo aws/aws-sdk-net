@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,226 +38,210 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectoryDescription Object
     /// </summary>
-    public partial class DirectoryDescriptionUnmarshaller : IJsonUnmarshaller<DirectoryDescription, JsonUnmarshallerContext>
+    public partial class DirectoryDescriptionUnmarshaller : ICborUnmarshaller<DirectoryDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DirectoryDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DirectoryDescription Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DirectoryDescription();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccessUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Alias", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AccessUrl":
+                        context.AddPathSegment("AccessUrl");
+                        unmarshalledObject.AccessUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConnectSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = DirectoryConnectSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ConnectSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Alias":
+                        context.AddPathSegment("Alias");
+                        unmarshalledObject.Alias = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ConnectSettings":
+                        context.AddPathSegment("ConnectSettings");
+                        unmarshalledObject.ConnectSettings = DirectoryConnectSettingsDescriptionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DesiredNumberOfDomainControllers", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredNumberOfDomainControllers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Description":
+                        context.AddPathSegment("Description");
+                        unmarshalledObject.Description = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DesiredNumberOfDomainControllers":
+                        context.AddPathSegment("DesiredNumberOfDomainControllers");
+                        unmarshalledObject.DesiredNumberOfDomainControllers = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnsIpAddrs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DirectoryId":
+                        context.AddPathSegment("DirectoryId");
+                        unmarshalledObject.DirectoryId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DnsIpv6Addrs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpv6Addrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpAddrs":
+                        context.AddPathSegment("DnsIpAddrs");
+                        unmarshalledObject.DnsIpAddrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Edition", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Edition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpv6Addrs":
+                        context.AddPathSegment("DnsIpv6Addrs");
+                        unmarshalledObject.DnsIpv6Addrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("HybridSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = HybridSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.HybridSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Edition":
+                        context.AddPathSegment("Edition");
+                        unmarshalledObject.Edition = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LaunchTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "HybridSettings":
+                        context.AddPathSegment("HybridSettings");
+                        unmarshalledObject.HybridSettings = HybridSettingsDescriptionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LaunchTime":
+                        context.AddPathSegment("LaunchTime");
+                        unmarshalledObject.LaunchTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NetworkType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Name":
+                        context.AddPathSegment("Name");
+                        unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OsVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NetworkType":
+                        context.AddPathSegment("NetworkType");
+                        unmarshalledObject.NetworkType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OwnerDirectoryDescription", targetDepth, ref reader))
-                {
-                    var unmarshaller = OwnerDirectoryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.OwnerDirectoryDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OsVersion":
+                        context.AddPathSegment("OsVersion");
+                        unmarshalledObject.OsVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = RadiusSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RadiusSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OwnerDirectoryDescription":
+                        context.AddPathSegment("OwnerDirectoryDescription");
+                        unmarshalledObject.OwnerDirectoryDescription = OwnerDirectoryDescriptionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RadiusStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusSettings":
+                        context.AddPathSegment("RadiusSettings");
+                        unmarshalledObject.RadiusSettings = RadiusSettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegionsInfo", targetDepth, ref reader))
-                {
-                    var unmarshaller = RegionsInfoUnmarshaller.Instance;
-                    unmarshalledObject.RegionsInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RadiusStatus":
+                        context.AddPathSegment("RadiusStatus");
+                        unmarshalledObject.RadiusStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareMethod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareMethod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegionsInfo":
+                        context.AddPathSegment("RegionsInfo");
+                        unmarshalledObject.RegionsInfo = RegionsInfoUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareNotes", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareNotes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareMethod":
+                        context.AddPathSegment("ShareMethod");
+                        unmarshalledObject.ShareMethod = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShareStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShareStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareNotes":
+                        context.AddPathSegment("ShareNotes");
+                        unmarshalledObject.ShareNotes = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ShortName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShortName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShareStatus":
+                        context.AddPathSegment("ShareStatus");
+                        unmarshalledObject.ShareStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Size", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Size = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ShortName":
+                        context.AddPathSegment("ShortName");
+                        unmarshalledObject.ShortName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SsoEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SsoEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Size":
+                        context.AddPathSegment("Size");
+                        unmarshalledObject.Size = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Stage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SsoEnabled":
+                        context.AddPathSegment("SsoEnabled");
+                        unmarshalledObject.SsoEnabled = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StageLastUpdatedDateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StageLastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Stage":
+                        context.AddPathSegment("Stage");
+                        unmarshalledObject.Stage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StageReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StageReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StageLastUpdatedDateTime":
+                        context.AddPathSegment("StageLastUpdatedDateTime");
+                        unmarshalledObject.StageLastUpdatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StageReason":
+                        context.AddPathSegment("StageReason");
+                        unmarshalledObject.StageReason = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = DirectoryVpcSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.VpcSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcSettings":
+                        context.AddPathSegment("VpcSettings");
+                        unmarshalledObject.VpcSettings = DirectoryVpcSettingsDescriptionUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

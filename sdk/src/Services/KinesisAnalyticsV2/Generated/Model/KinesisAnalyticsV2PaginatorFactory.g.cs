@@ -63,5 +63,21 @@ namespace Amazon.KinesisAnalyticsV2.Model
         {
             return new ListApplicationsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSnapshotOperations operation
+        /// </summary>
+        public IListSnapshotOperationsPaginator ListSnapshotOperations(ListSnapshotOperationsRequest request)
+        {
+            return new ListSnapshotOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSnapshots operation
+        /// </summary>
+        public IListSnapshotsPaginator ListSnapshots(ListSnapshotsRequest request)
+        {
+            return new ListSnapshotsPaginator(this.client, request);
+        }
     }
 }

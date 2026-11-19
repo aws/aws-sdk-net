@@ -45,6 +45,71 @@ namespace Amazon.MarketplaceAgreement
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Allows the management account or a delegated administrator of the buyer's AWS organization
+        /// to approve an agreement approval that is in <c>PENDING_APPROVAL</c> status, as the
+        /// organization administrator approver or on behalf of another approver. Once every level
+        /// is approved, the agreement approval transitions to <c>APPROVED</c> status. You can
+        /// optionally provide purchase order references and a note.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAgreementApproval service method.</param>
+        /// <returns>The response from the AcceptAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/AcceptAgreementApproval">REST API Reference for AcceptAgreementApproval Operation</seealso>
+        AcceptAgreementApprovalResponse AcceptAgreementApproval(AcceptAgreementApprovalRequest request);
+#endif
+
+        /// <summary>
+        /// Allows the management account or a delegated administrator of the buyer's AWS organization
+        /// to approve an agreement approval that is in <c>PENDING_APPROVAL</c> status, as the
+        /// organization administrator approver or on behalf of another approver. Once every level
+        /// is approved, the agreement approval transitions to <c>APPROVED</c> status. You can
+        /// optionally provide purchase order references and a note.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAgreementApproval service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AcceptAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/AcceptAgreementApproval">REST API Reference for AcceptAgreementApproval Operation</seealso>
+        Task<AcceptAgreementApprovalResponse> AcceptAgreementApprovalAsync(AcceptAgreementApprovalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Allows buyers (acceptors) to accept a cancellation request that is in <c>PENDING_APPROVAL</c>
         /// status. Once accepted, the cancellation request transitions to <c>APPROVED</c> status
         /// and the agreement cancellation will be processed.
@@ -214,6 +279,10 @@ namespace Amazon.MarketplaceAgreement
         /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ServiceQuotaExceededException">
+        /// Request exceeded the maximum allowed limit (quota) for a specific resource or API
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -244,6 +313,10 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ServiceQuotaExceededException">
+        /// Request exceeded the maximum allowed limit (quota) for a specific resource or API
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -536,6 +609,69 @@ namespace Amazon.MarketplaceAgreement
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Allows buyers (acceptors) to cancel an agreement request that is in <c>PENDING_APPROVAL</c>
+        /// status, or in <c>APPROVED</c> status when no agreement has been created from it. Once
+        /// cancelled, the agreement request transitions to <c>CANCELLED</c> status and its open
+        /// agreement approvals are cancelled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementRequest service method.</param>
+        /// <returns>The response from the CancelAgreementRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementRequest">REST API Reference for CancelAgreementRequest Operation</seealso>
+        CancelAgreementRequestResponse CancelAgreementRequest(CancelAgreementRequestRequest request);
+#endif
+
+        /// <summary>
+        /// Allows buyers (acceptors) to cancel an agreement request that is in <c>PENDING_APPROVAL</c>
+        /// status, or in <c>APPROVED</c> status when no agreement has been created from it. Once
+        /// cancelled, the agreement request transitions to <c>CANCELLED</c> status and its open
+        /// agreement approvals are cancelled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelAgreementRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementRequest">REST API Reference for CancelAgreementRequest Operation</seealso>
+        Task<CancelAgreementRequestResponse> CancelAgreementRequestAsync(CancelAgreementRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an agreement request that acts as a quote for the terms you want to accept.
         /// The agreement request captures the requested terms, calculates charges, and returns
         /// a summary. Use <c>AcceptAgreementRequest</c> with the returned <c>agreementRequestId</c>
@@ -660,6 +796,63 @@ namespace Amazon.MarketplaceAgreement
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves detailed information about a specific agreement approval, including its
+        /// approval levels, the approvers at each level, and the decision of each approver. The
+        /// acceptor, or the management account or a delegated administrator of the acceptor's
+        /// AWS organization, can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementApproval service method.</param>
+        /// <returns>The response from the GetAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementApproval">REST API Reference for GetAgreementApproval Operation</seealso>
+        GetAgreementApprovalResponse GetAgreementApproval(GetAgreementApprovalRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about a specific agreement approval, including its
+        /// approval levels, the approvers at each level, and the decision of each approver. The
+        /// acceptor, or the management account or a delegated administrator of the acceptor's
+        /// AWS organization, can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementApproval service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementApproval">REST API Reference for GetAgreementApproval Operation</seealso>
+        Task<GetAgreementApprovalResponse> GetAgreementApprovalAsync(GetAgreementApprovalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves detailed information about a specific agreement cancellation request. Both
         /// sellers (proposers) and buyers (acceptors) can use this operation to view cancellation
         /// requests associated with their agreements.
@@ -712,6 +905,75 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementCancellationRequest">REST API Reference for GetAgreementCancellationRequest Operation</seealso>
         Task<GetAgreementCancellationRequestResponse> GetAgreementCancellationRequestAsync(GetAgreementCancellationRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Obtains details about the acceptor's contact information for an active agreement that
+        /// you participate in as the proposer, acceptor, or manufacturer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the acceptor's contact information isn't available, the operation succeeds but
+        /// doesn't return <c>acceptorContact</c>. This happens when the acceptor didn't provide
+        /// it, the information was removed, or the agreement isn't active.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementContacts service method.</param>
+        /// <returns>The response from the GetAgreementContacts service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementContacts">REST API Reference for GetAgreementContacts Operation</seealso>
+        GetAgreementContactsResponse GetAgreementContacts(GetAgreementContactsRequest request);
+#endif
+
+        /// <summary>
+        /// Obtains details about the acceptor's contact information for an active agreement that
+        /// you participate in as the proposer, acceptor, or manufacturer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the acceptor's contact information isn't available, the operation succeeds but
+        /// doesn't return <c>acceptorContact</c>. This happens when the acceptor didn't provide
+        /// it, the information was removed, or the agreement isn't active.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementContacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgreementContacts service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementContacts">REST API Reference for GetAgreementContacts Operation</seealso>
+        Task<GetAgreementContactsResponse> GetAgreementContactsAsync(GetAgreementContactsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -834,6 +1096,177 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementPaymentRequest">REST API Reference for GetAgreementPaymentRequest Operation</seealso>
         Task<GetAgreementPaymentRequestResponse> GetAgreementPaymentRequestAsync(GetAgreementPaymentRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves detailed information about a specific agreement request, including its status,
+        /// intent, approval requirement, and charges. The acceptor, or the management account
+        /// or a delegated administrator of the acceptor's AWS organization, can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequest service method.</param>
+        /// <returns>The response from the GetAgreementRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequest">REST API Reference for GetAgreementRequest Operation</seealso>
+        GetAgreementRequestResponse GetAgreementRequest(GetAgreementRequestRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves detailed information about a specific agreement request, including its status,
+        /// intent, approval requirement, and charges. The acceptor, or the management account
+        /// or a delegated administrator of the acceptor's AWS organization, can call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgreementRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequest">REST API Reference for GetAgreementRequest Operation</seealso>
+        Task<GetAgreementRequestResponse> GetAgreementRequestAsync(GetAgreementRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the approval plans that apply to an agreement request. Only the acceptor
+        /// of the agreement request can call this operation. Each approval plan lists its approval
+        /// levels and the approvers at each level. Pass the <c>planReference</c> of an approval
+        /// plan to <c>StartAgreementApprovals</c> to start an agreement approval for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequestApprovalPlans service method.</param>
+        /// <returns>The response from the GetAgreementRequestApprovalPlans service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestApprovalPlans">REST API Reference for GetAgreementRequestApprovalPlans Operation</seealso>
+        GetAgreementRequestApprovalPlansResponse GetAgreementRequestApprovalPlans(GetAgreementRequestApprovalPlansRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the approval plans that apply to an agreement request. Only the acceptor
+        /// of the agreement request can call this operation. Each approval plan lists its approval
+        /// levels and the approvers at each level. Pass the <c>planReference</c> of an approval
+        /// plan to <c>StartAgreementApprovals</c> to start an agreement approval for it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequestApprovalPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgreementRequestApprovalPlans service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestApprovalPlans">REST API Reference for GetAgreementRequestApprovalPlans Operation</seealso>
+        Task<GetAgreementRequestApprovalPlansResponse> GetAgreementRequestApprovalPlansAsync(GetAgreementRequestApprovalPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the terms proposed for an agreement request, such as pricing, legal, and
+        /// renewal terms. The acceptor, or the management account or a delegated administrator
+        /// of the acceptor's AWS organization, can call this operation. This operation is similar
+        /// to <c>GetAgreementTerms</c>, but it takes an <c>agreementRequestId</c> instead of
+        /// an <c>agreementId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequestTerms service method.</param>
+        /// <returns>The response from the GetAgreementRequestTerms service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestTerms">REST API Reference for GetAgreementRequestTerms Operation</seealso>
+        GetAgreementRequestTermsResponse GetAgreementRequestTerms(GetAgreementRequestTermsRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the terms proposed for an agreement request, such as pricing, legal, and
+        /// renewal terms. The acceptor, or the management account or a delegated administrator
+        /// of the acceptor's AWS organization, can call this operation. This operation is similar
+        /// to <c>GetAgreementTerms</c>, but it takes an <c>agreementRequestId</c> instead of
+        /// an <c>agreementId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementRequestTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgreementRequestTerms service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementRequestTerms">REST API Reference for GetAgreementRequestTerms Operation</seealso>
+        Task<GetAgreementRequestTermsResponse> GetAgreementRequestTermsAsync(GetAgreementRequestTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -998,6 +1431,59 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetBillingAdjustmentRequest">REST API Reference for GetBillingAdjustmentRequest Operation</seealso>
         Task<GetBillingAdjustmentRequestResponse> GetBillingAdjustmentRequestAsync(GetBillingAdjustmentRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists agreement approvals available to you as a buyer. Use <c>REQUESTER</c> as the
+        /// <c>partyType</c> to list the agreement approvals that your account started. Use <c>AWS_ORGANIZATION_ADMIN</c>
+        /// to list the agreement approvals in your AWS organization, if your account is the management
+        /// account or a delegated administrator of the organization. You can filter the results
+        /// by agreement request, approval type, and status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementApprovals service method.</param>
+        /// <returns>The response from the ListAgreementApprovals service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementApprovals">REST API Reference for ListAgreementApprovals Operation</seealso>
+        ListAgreementApprovalsResponse ListAgreementApprovals(ListAgreementApprovalsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists agreement approvals available to you as a buyer. Use <c>REQUESTER</c> as the
+        /// <c>partyType</c> to list the agreement approvals that your account started. Use <c>AWS_ORGANIZATION_ADMIN</c>
+        /// to list the agreement approvals in your AWS organization, if your account is the management
+        /// account or a delegated administrator of the organization. You can filter the results
+        /// by agreement request, approval type, and status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementApprovals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAgreementApprovals service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementApprovals">REST API Reference for ListAgreementApprovals Operation</seealso>
+        Task<ListAgreementApprovalsResponse> ListAgreementApprovalsAsync(ListAgreementApprovalsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1247,6 +1733,53 @@ namespace Amazon.MarketplaceAgreement
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists agreement requests available to you as a buyer (acceptor). You can filter the
+        /// results by <c>catalog</c>, <c>status</c>, and <c>resourceId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementRequests service method.</param>
+        /// <returns>The response from the ListAgreementRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementRequests">REST API Reference for ListAgreementRequests Operation</seealso>
+        ListAgreementRequestsResponse ListAgreementRequests(ListAgreementRequestsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists agreement requests available to you as a buyer (acceptor). You can filter the
+        /// results by <c>catalog</c>, <c>status</c>, and <c>resourceId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAgreementRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementRequests">REST API Reference for ListAgreementRequests Operation</seealso>
+        Task<ListAgreementRequestsResponse> ListAgreementRequestsAsync(ListAgreementRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists billing adjustment requests for a specific agreement. Sellers (proposers) can
         /// use this operation to view all billing adjustment requests associated with an agreement.
         /// </summary>
@@ -1291,6 +1824,71 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListBillingAdjustmentRequests">REST API Reference for ListBillingAdjustmentRequests Operation</seealso>
         Task<ListBillingAdjustmentRequestsResponse> ListBillingAdjustmentRequestsAsync(ListBillingAdjustmentRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Allows the management account or a delegated administrator of the buyer's AWS organization
+        /// to reject an agreement approval that is in <c>PENDING_APPROVAL</c> status, as the
+        /// organization administrator approver or on behalf of another approver. Once rejected,
+        /// the agreement approval and its agreement request transition to <c>REJECTED</c> status.
+        /// You must provide a reason for the rejection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAgreementApproval service method.</param>
+        /// <returns>The response from the RejectAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/RejectAgreementApproval">REST API Reference for RejectAgreementApproval Operation</seealso>
+        RejectAgreementApprovalResponse RejectAgreementApproval(RejectAgreementApprovalRequest request);
+#endif
+
+        /// <summary>
+        /// Allows the management account or a delegated administrator of the buyer's AWS organization
+        /// to reject an agreement approval that is in <c>PENDING_APPROVAL</c> status, as the
+        /// organization administrator approver or on behalf of another approver. Once rejected,
+        /// the agreement approval and its agreement request transition to <c>REJECTED</c> status.
+        /// You must provide a reason for the rejection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAgreementApproval service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RejectAgreementApproval service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/RejectAgreementApproval">REST API Reference for RejectAgreementApproval Operation</seealso>
+        Task<RejectAgreementApprovalResponse> RejectAgreementApprovalAsync(RejectAgreementApprovalRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1628,6 +2226,71 @@ namespace Amazon.MarketplaceAgreement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementPaymentRequest">REST API Reference for SendAgreementPaymentRequest Operation</seealso>
         Task<SendAgreementPaymentRequestResponse> SendAgreementPaymentRequestAsync(SendAgreementPaymentRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Allows buyers (acceptors) to start the approvals that their organization requires
+        /// for an agreement request. You start one agreement approval for each approval plan
+        /// that you specify. Use <c>GetAgreementRequestApprovalPlans</c> to retrieve the approval
+        /// plans of the agreement request. Once the agreement approvals start, the agreement
+        /// request transitions to <c>PENDING_APPROVAL</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAgreementApprovals service method.</param>
+        /// <returns>The response from the StartAgreementApprovals service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/StartAgreementApprovals">REST API Reference for StartAgreementApprovals Operation</seealso>
+        StartAgreementApprovalsResponse StartAgreementApprovals(StartAgreementApprovalsRequest request);
+#endif
+
+        /// <summary>
+        /// Allows buyers (acceptors) to start the approvals that their organization requires
+        /// for an agreement request. You start one agreement approval for each approval plan
+        /// that you specify. Use <c>GetAgreementRequestApprovalPlans</c> to retrieve the approval
+        /// plans of the agreement request. Once the agreement approvals start, the agreement
+        /// request transitions to <c>PENDING_APPROVAL</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAgreementApprovals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartAgreementApprovals service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// Request was denied due to a resource conflict.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/StartAgreementApprovals">REST API Reference for StartAgreementApprovals Operation</seealso>
+        Task<StartAgreementApprovalsResponse> StartAgreementApprovalsAsync(StartAgreementApprovalsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

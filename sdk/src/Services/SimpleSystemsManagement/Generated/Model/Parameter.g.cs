@@ -50,8 +50,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type of the parameter, such as <c>text</c> or <c>aws:ec2:image</c>. The default
-        /// is <c>text</c>.
+        /// The data type of the parameter, such as <c>text</c>, <c>aws:ec2:image</c>, or <c>json</c>.
+        /// The default is <c>text</c>. For the list of data types, see the <c>DataType</c> parameter
+        /// of <c>PutParameter</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 128)]

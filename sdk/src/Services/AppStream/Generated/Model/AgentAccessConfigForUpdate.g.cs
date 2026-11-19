@@ -36,10 +36,40 @@ namespace Amazon.AppStream.Model
     public partial class AgentAccessConfigForUpdate
     {
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key
+        /// that encrypts Replay Session artifacts while WorkSpaces Applications processes them.
+        /// To remove the key, use AttributesToDelete with the AGENT_ACCESS_CONFIG_KMS_KEY_ARN
+        /// value.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyArn property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyArn() => this.KmsKeyArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ReplaySessionEnabled. 
+        /// <para>
+        /// Indicates whether Replay Session is enabled for agent sessions. Setting this attribute
+        /// to false also removes the KmsKeyArn value from the stack.
+        /// </para>
+        /// </summary>
+        public bool? ReplaySessionEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReplaySessionEnabled property is set.
+        /// </summary>
+        internal bool IsSetReplaySessionEnabled() => this.ReplaySessionEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are
-        /// stored.
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and
+        /// Replay Session artifacts are stored.
         /// </para>
         /// </summary>
         public string S3BucketArn { get; set; }
@@ -91,7 +121,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// The list of agent access settings that define permissions for each agent action.
+        /// The list of agent access settings that define permissions for each agent action. The
+        /// merged settings must have at least one agent action enabled.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

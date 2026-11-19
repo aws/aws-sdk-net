@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3Tables.IAmazonS3Tables.GetTableBucketLogging(Amazon.S3Tables.Model.GetTableBucketLoggingRequest)" />
+      <member name="M:Amazon.S3Tables.AmazonS3TablesClient.GetTableBucketLogging(Amazon.S3Tables.Model.GetTableBucketLoggingRequest)" />
+      <member name="T:Amazon.S3Tables.Model.GetTableBucketLoggingRequest" />
+      <member name="T:Amazon.S3Tables.Model.GetTableBucketLoggingResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets the server access logging configuration of a table bucket that has logging enabled.
+        </para>
+        <code title="To get the server access logging configuration of a table bucket" source=".\AWSSDKDocSamples\S3Tables\S3Tables.GeneratedSamples.cs" region="GetTableBucketLogging-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3Tables.IAmazonS3Tables.GetTableBucketLogging(Amazon.S3Tables.Model.GetTableBucketLoggingRequest)" />
+      <member name="M:Amazon.S3Tables.AmazonS3TablesClient.GetTableBucketLogging(Amazon.S3Tables.Model.GetTableBucketLoggingRequest)" />
+      <member name="T:Amazon.S3Tables.Model.GetTableBucketLoggingRequest" />
+      <member name="T:Amazon.S3Tables.Model.GetTableBucketLoggingResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets the server access logging configuration of a table bucket that has logging disabled. The response has an empty logging status.
+        </para>
+        <code title="To get the server access logging configuration of a table bucket that has logging disabled" source=".\AWSSDKDocSamples\S3Tables\S3Tables.GeneratedSamples.cs" region="GetTableBucketLogging-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3Tables.IAmazonS3Tables.PutTableBucketLogging(Amazon.S3Tables.Model.PutTableBucketLoggingRequest)" />
+      <member name="M:Amazon.S3Tables.AmazonS3TablesClient.PutTableBucketLogging(Amazon.S3Tables.Model.PutTableBucketLoggingRequest)" />
+      <member name="T:Amazon.S3Tables.Model.PutTableBucketLoggingRequest" />
+      <member name="T:Amazon.S3Tables.Model.PutTableBucketLoggingResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example enables server access logging for a table bucket. Logs are delivered to the specified general purpose bucket, with object keys partitioned by the time of the logged events.
+        </para>
+        <code title="To enable server access logging for a table bucket" source=".\AWSSDKDocSamples\S3Tables\S3Tables.GeneratedSamples.cs" region="PutTableBucketLogging-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.S3Tables.IAmazonS3Tables.PutTableBucketLogging(Amazon.S3Tables.Model.PutTableBucketLoggingRequest)" />
+      <member name="M:Amazon.S3Tables.AmazonS3TablesClient.PutTableBucketLogging(Amazon.S3Tables.Model.PutTableBucketLoggingRequest)" />
+      <member name="T:Amazon.S3Tables.Model.PutTableBucketLoggingRequest" />
+      <member name="T:Amazon.S3Tables.Model.PutTableBucketLoggingResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example disables server access logging for a table bucket by specifying an empty logging status.
+        </para>
+        <code title="To disable server access logging for a table bucket" source=".\AWSSDKDocSamples\S3Tables\S3Tables.GeneratedSamples.cs" region="PutTableBucketLogging-2" />
+      </example>
+    </value>
+  </doc>
+</docs>

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,28 +39,28 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// AutoRollbackConfiguration Marshaller
     /// </summary>
-    public partial class AutoRollbackConfigurationMarshaller : IRequestMarshaller<AutoRollbackConfiguration, JsonMarshallerContext>
+    public partial class AutoRollbackConfigurationMarshaller : IRequestMarshaller<AutoRollbackConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AutoRollbackConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoRollbackConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+                context.Writer.WriteTextString("enabled");
+                context.Writer.WriteBoolean(requestObject.Enabled.Value);
             }
 
             if (requestObject.IsSetEvents())
             {
-                context.Writer.WritePropertyName("events");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("events");
+                context.Writer.WriteStartArray(requestObject.Events.Count);
                 foreach (var requestObjectEventsListValue in requestObject.Events)
                 {
-                    context.Writer.WriteStringValue(requestObjectEventsListValue);
+                    context.Writer.WriteTextString(requestObjectEventsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

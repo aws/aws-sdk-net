@@ -62,6 +62,8 @@ public class ServiceSpecificSolutionFileWriterTests : IDisposable
         AssertHelper("""<Folder Name="/Core/">""");
         AssertHelper("""<Project Path="../../Core/AWSSDK.Core.NetFramework.csproj" />""");
         AssertHelper("""<Project Path="../../Core/AWSSDK.Core.NetStandard.csproj" />""");
+        // Core references AWSSDK.Extensions.Numerics, so the solution loads it with Core.
+        AssertHelper("""<Project Path="../../../../extensions/src/AWSSDK.Extensions.Numerics/AWSSDK.Extensions.Numerics.csproj" />""");
     }
 
     [Fact]

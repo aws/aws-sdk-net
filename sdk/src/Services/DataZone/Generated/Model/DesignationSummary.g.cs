@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Summary representation of a designation returned by list operations.
+    /// The summary representation of a designation returned by <c>ListDesignations</c>. The
+    /// summary omits the Cedar permit policy. Call <c>GetDesignation</c> to retrieve the
+    /// full designation record including the policy.
     /// </summary>
     public partial class DesignationSummary
     {
@@ -62,8 +64,11 @@ namespace Amazon.DataZone.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
-        /// Gets and sets the property DeletionProtection. Whether deletion protection is enabled
-        /// for this designation.
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether deletion protection is enabled for this designation. When <c>true</c>,
+        /// <c>DeleteDesignation</c> is rejected until protection is disabled through <c>UpdateDesignation</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public bool? DeletionProtection { get; set; }
@@ -88,7 +93,19 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property DesignationType. The classification of this designation.
+        /// Gets and sets the property DesignationType. 
+        /// <para>
+        /// The classification of this designation. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MANAGED</c> — System-defined designation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>USER_CREATED</c> — User-created designation.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DesignationType DesignationType { get; set; }
 

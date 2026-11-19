@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Route Object
     /// </summary>
-    public partial class RouteUnmarshaller : IJsonUnmarshaller<Route, JsonUnmarshallerContext>
+    public partial class RouteUnmarshaller : ICborUnmarshaller<Route, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Route Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Route Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Route();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("addressFamily", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("asPath", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AsPathSegment, AsPathSegmentUnmarshaller>(AsPathSegmentUnmarshaller.Instance);
-                    unmarshalledObject.AsPath = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "addressFamily":
+                        context.AddPathSegment("AddressFamily");
+                        unmarshalledObject.AddressFamily = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("awsLogicalDeviceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "asPath":
+                        context.AddPathSegment("AsPath");
+                        unmarshalledObject.AsPath = new CborListUnmarshaller<AsPathSegment, AsPathSegmentUnmarshaller>(AsPathSegmentUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("cidr", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cidr = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "awsLogicalDeviceId":
+                        context.AddPathSegment("AwsLogicalDeviceId");
+                        unmarshalledObject.AwsLogicalDeviceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("communities", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Communities = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "cidr":
+                        context.AddPathSegment("Cidr");
+                        unmarshalledObject.Cidr = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("routeDirection", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RouteDirection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "communities":
+                        context.AddPathSegment("Communities");
+                        unmarshalledObject.Communities = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("routeInstalledAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RouteInstalledAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "routeDirection":
+                        context.AddPathSegment("RouteDirection");
+                        unmarshalledObject.RouteDirection = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "routeInstalledAt":
+                        context.AddPathSegment("RouteInstalledAt");
+                        unmarshalledObject.RouteInstalledAt = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

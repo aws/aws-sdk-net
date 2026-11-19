@@ -116,7 +116,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Gets and sets the property TelemetryConfigurationState. 
         /// <para>
         ///  The configuration state for the resource, for example <c>{ Logs: NotApplicable; Metrics:
-        /// Enabled; Traces: NotApplicable; }</c>. 
+        /// Enabled; Traces: NotApplicable; Insights: NotApplicable; }</c>. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

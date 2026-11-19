@@ -62,7 +62,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The Azure tenant ID to filter by. Filters the results to connectors that target the
         /// specified tenant.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> <dt>ProjectId</dt> <dd> 
+        /// <para>
+        /// The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors
+        /// that target the specified project.
+        /// </para>
+        ///  </dd> <dt>OrganizationId</dt> <dd> 
+        /// <para>
+        /// The GCP organization ID to filter by. Filters the results to connectors that target
+        /// the entire specified organization.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// You can't combine Azure filter keys (<c>SubscriptionId</c> and <c>TenantId</c>) with
+        /// GCP filter keys (<c>ProjectId</c> and <c>OrganizationId</c>) in the same request.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

@@ -30,14 +30,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Details of errors thrown by the protected query.
+    /// Details of the error that caused the protected query to fail.
     /// </summary>
     public partial class ProtectedQueryError
     {
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// An error code for the error.
+        /// A code that identifies the category of the failure. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MALFORMED_QUERY</c> – The query is not valid (syntax, semantics, columns, or an
+        /// unsupported operation).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOURCE_NOT_FOUND</c> – A referenced resource doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_RESOURCE</c> – A referenced resource exists, but you can't use it because
+        /// its configuration, state, or data is not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOURCE_ACCESS_DENIED</c> – A required permission is missing for a data source
+        /// or resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INSUFFICIENT_COMPUTE</c> – The query exceeded the available compute (memory, disk,
+        /// or time).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRANSIENT_ERROR</c> – A temporary condition caused the failure, such as throttling
+        /// or a network interruption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INTERNAL_ERROR</c> – Clean Rooms encountered an unexpected error. If the error
+        /// persists, contact AWS Support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN_ERROR</c> – The failure couldn't be classified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about error codes, see <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/error-codes.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/error-codes.html</a>
+        /// in the Clean Rooms User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +94,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of why the query failed.
+        /// A description of why the protected query failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -61,5 +104,18 @@ namespace Amazon.CleanRooms.Model
         /// Checks to see if the Message property is set.
         /// </summary>
         internal bool IsSetMessage() => this.Message != null;
+
+        /// <summary>
+        /// Gets and sets the property Retry. 
+        /// <para>
+        /// Contains information about whether running the same protected query again might succeed.
+        /// </para>
+        /// </summary>
+        public RetryInfo Retry { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Retry property is set.
+        /// </summary>
+        internal bool IsSetRetry() => this.Retry != null;
     }
 }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Defines a short-term free pricing model where the buyers aren’t charged anything within
+    /// Defines a short-term free pricing model where the buyers aren't charged anything within
     /// a specified limit.
     /// </summary>
     public partial class FreeTrialPricingTerm
@@ -38,7 +38,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// Duration of the free trial period (5–31 days). 
+        /// Duration of the free trial period. The allowed duration depends on the product type.
+        /// For SaaS products, the free trial lasts 7 to 90 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]

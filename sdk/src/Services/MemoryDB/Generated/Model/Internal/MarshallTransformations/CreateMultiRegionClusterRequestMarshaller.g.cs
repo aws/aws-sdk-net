@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.MemoryDB.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -54,83 +55,89 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateMultiRegionClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MemoryDB");
-            string target = "AmazonMemoryDB.CreateMultiRegionCluster";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetDescription())
+            request.ResourcePath = "service/AmazonMemoryDB/operation/CreateMultiRegionCluster";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-            if (publicRequest.IsSetEngine())
-            {
-                context.Writer.WritePropertyName("Engine");
-                context.Writer.WriteStringValue(publicRequest.Engine);
-            }
-            if (publicRequest.IsSetEngineVersion())
-            {
-                context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.WriteStringValue(publicRequest.EngineVersion);
-            }
-            if (publicRequest.IsSetMultiRegionClusterNameSuffix())
-            {
-                context.Writer.WritePropertyName("MultiRegionClusterNameSuffix");
-                context.Writer.WriteStringValue(publicRequest.MultiRegionClusterNameSuffix);
-            }
-            if (publicRequest.IsSetMultiRegionParameterGroupName())
-            {
-                context.Writer.WritePropertyName("MultiRegionParameterGroupName");
-                context.Writer.WriteStringValue(publicRequest.MultiRegionParameterGroupName);
-            }
-            if (publicRequest.IsSetNodeType())
-            {
-                context.Writer.WritePropertyName("NodeType");
-                context.Writer.WriteStringValue(publicRequest.NodeType);
-            }
-            if (publicRequest.IsSetNumShards())
-            {
-                context.Writer.WritePropertyName("NumShards");
-                context.Writer.WriteNumberValue(publicRequest.NumShards.Value);
-            }
-            if (publicRequest.IsSetTLSEnabled())
-            {
-                context.Writer.WritePropertyName("TLSEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.TLSEnabled.Value);
-            }
-            if (publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDescription())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetEngine())
+                {
+                    context.Writer.WriteTextString("Engine");
+                    context.Writer.WriteTextString(publicRequest.Engine);
+                }
+                if (publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WriteTextString("EngineVersion");
+                    context.Writer.WriteTextString(publicRequest.EngineVersion);
+                }
+                if (publicRequest.IsSetMultiRegionClusterNameSuffix())
+                {
+                    context.Writer.WriteTextString("MultiRegionClusterNameSuffix");
+                    context.Writer.WriteTextString(publicRequest.MultiRegionClusterNameSuffix);
+                }
+                if (publicRequest.IsSetMultiRegionParameterGroupName())
+                {
+                    context.Writer.WriteTextString("MultiRegionParameterGroupName");
+                    context.Writer.WriteTextString(publicRequest.MultiRegionParameterGroupName);
+                }
+                if (publicRequest.IsSetNodeType())
+                {
+                    context.Writer.WriteTextString("NodeType");
+                    context.Writer.WriteTextString(publicRequest.NodeType);
+                }
+                if (publicRequest.IsSetNumShards())
+                {
+                    context.Writer.WriteTextString("NumShards");
+                    context.Writer.WriteInt32(publicRequest.NumShards.Value);
+                }
+                if (publicRequest.IsSetTLSEnabled())
+                {
+                    context.Writer.WriteTextString("TLSEnabled");
+                    context.Writer.WriteBoolean(publicRequest.TLSEnabled.Value);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

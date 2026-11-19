@@ -80,6 +80,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.SSECustomerKeyMD5 = context.ResponseData.GetHeaderValue("x-amz-server-side-encryption-customer-key-MD5");
             if (context.ResponseData.IsHeaderPresent("x-amz-server-side-encryption-aws-kms-key-id"))
                 response.SSEKMSKeyId = context.ResponseData.GetHeaderValue("x-amz-server-side-encryption-aws-kms-key-id");
+            if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
+                response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
             PostUnmarshallCustomization(context, response);
             return response;

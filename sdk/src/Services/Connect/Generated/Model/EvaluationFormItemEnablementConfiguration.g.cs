@@ -37,7 +37,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// An enablement action that if condition is satisfied. 
+        /// The enablement action to apply if the condition is satisfied.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -65,7 +65,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DefaultAction. 
         /// <para>
-        /// An enablement action that if condition is not satisfied. 
+        /// The enablement action to apply if the condition is not satisfied. This action is also
+        /// applied when the condition depends on an external source that is still pending or
+        /// could not be resolved.
         /// </para>
         /// </summary>
         public EvaluationFormItemEnablementAction DefaultAction { get; set; }

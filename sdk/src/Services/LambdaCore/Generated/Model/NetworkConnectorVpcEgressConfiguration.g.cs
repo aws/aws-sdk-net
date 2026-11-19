@@ -57,6 +57,21 @@ namespace Amazon.LambdaCore.Model
         internal bool IsSetAssociatedComputeResourceTypes() => this.AssociatedComputeResourceTypes != null && (this.AssociatedComputeResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ElasticIpConfiguration. 
+        /// <para>
+        /// The Elastic IP configuration for the connector's ENIs. Specify <c>ServiceManaged</c>
+        /// to have Lambda assign a service-managed Elastic IP address to each ENI. The operator
+        /// role must allow <c>ec2:AllocateAddress</c> and <c>ec2:AssociateAddress</c>.
+        /// </para>
+        /// </summary>
+        public ElasticIpConfiguration ElasticIpConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ElasticIpConfiguration property is set.
+        /// </summary>
+        internal bool IsSetElasticIpConfiguration() => this.ElasticIpConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property NetworkProtocol. 
         /// <para>
         /// The network protocol for the connector. Specify <c>IPv4</c> for IPv4-only networking,

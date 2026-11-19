@@ -35,6 +35,20 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSingleSelectQuestionAutomationOption
     {
         /// <summary>
+        /// Gets and sets the property AutomationRule. 
+        /// <para>
+        /// The automation option based on a condition for the single select question. Use with
+        /// the <c>CONDITION</c> answer source type.
+        /// </para>
+        /// </summary>
+        public SingleSelectQuestionAutomationRule AutomationRule { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutomationRule property is set.
+        /// </summary>
+        internal bool IsSetAutomationRule() => this.AutomationRule != null;
+
+        /// <summary>
         /// Gets and sets the property RuleCategory. 
         /// <para>
         /// The automation option based on a rule category for the single select question.

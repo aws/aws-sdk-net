@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// EngineWorkflowResourceIdentifier Marshaller
     /// </summary>
-    public partial class EngineWorkflowResourceIdentifierMarshaller : IRequestMarshaller<EngineWorkflowResourceIdentifier, JsonMarshallerContext>
+    public partial class EngineWorkflowResourceIdentifierMarshaller : IRequestMarshaller<EngineWorkflowResourceIdentifier, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EngineWorkflowResourceIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(EngineWorkflowResourceIdentifier requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetUniqueTag())
             {
-                context.Writer.WritePropertyName("UniqueTag");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("UniqueTag");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = UniqueTagResourceIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.UniqueTag, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

@@ -59,13 +59,27 @@ namespace Amazon.Route53GlobalResolver.Model
         /// The CIDR block for the access source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 43)]
+        [AWSProperty(Min = 0, Max = 43)]
         public string Cidr { get; set; }
 
         /// <summary>
         /// Checks to see if the Cidr property is set.
         /// </summary>
         internal bool IsSetCidr() => this.Cidr != null;
+
+        /// <summary>
+        /// Gets and sets the property DnsViewId. 
+        /// <para>
+        /// The ID of the DNS view to associate with this access source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string DnsViewId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DnsViewId property is set.
+        /// </summary>
+        internal bool IsSetDnsViewId() => this.DnsViewId != null;
 
         /// <summary>
         /// Gets and sets the property IpAddressType. 

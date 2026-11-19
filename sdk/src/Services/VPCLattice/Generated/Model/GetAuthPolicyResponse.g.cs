@@ -66,7 +66,7 @@ namespace Amazon.VPCLattice.Model
         /// The auth policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Max = 36864)]
+        [AWSProperty(Max = 102400)]
         public string Policy { get; set; }
 
         /// <summary>

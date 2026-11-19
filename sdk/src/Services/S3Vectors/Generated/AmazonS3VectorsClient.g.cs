@@ -2373,11 +2373,19 @@ namespace Amazon.S3Vectors
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Performs an approximate nearest neighbor search query in a vector index using a query
-        /// vector. By default, it returns the keys of approximate nearest neighbors. You can
-        /// optionally include the computed distance (between the query vector and each vector
-        /// in the response) and metadata of each vector in the response.
+        /// Returns matching vector keys from a vector index ranked by vector similarity, full-text
+        /// relevance, or both. Specify <c>queryVector</c> to perform a vector search, specify
+        /// <c>queryTexts</c> to perform a full-text search, or specify both to perform a hybrid
+        /// search. Full-text search ranks results using BM25. Hybrid search combines the vector
+        /// and full-text rankings using Reciprocal Rank Fusion (RRF).
         /// 
+        ///  
+        /// <para>
+        /// Amazon S3 Vectors ranks results by distance for a vector-only search, by BM25 score
+        /// for a full-text-only search, and by RRF score for a hybrid search. You can optionally
+        /// include computed distances, relevance scores, and vector metadata in the response.
+        /// Full-text and hybrid searches require a vector index in <c>ENHANCED</c> mode.
+        /// </para>
         ///  
         /// <para>
         /// To specify the vector index, you can either use both the vector bucket name and the
@@ -2392,15 +2400,16 @@ namespace Amazon.S3Vectors
         /// <para>
         /// With only <c>s3vectors:QueryVectors</c> permission, you can retrieve vector keys of
         /// approximate nearest neighbors and computed distances between these vectors. This permission
-        /// is sufficient only when you don't set any metadata filters and don't request metadata
-        /// (by keeping the <c>returnMetadata</c> parameter set to <c>false</c> or not specified).
+        /// is sufficient only when you don't set <c>queryTexts</c>, don't set any metadata filters,
+        /// and don't request metadata (by keeping the <c>returnMetadata</c> parameter set to
+        /// <c>false</c> or not specified).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a metadata filter or set <c>returnMetadata</c> to true, you must have
-        /// both <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c> permissions. The
-        /// request fails with a <c>403 Forbidden error</c> if you request metadata filtering
-        /// or metadata without the <c>s3vectors:GetVectors</c> permission.
+        /// To use <c>queryTexts</c>, a metadata filter, or <c>returnMetadata</c> set to <c>true</c>
+        /// with this operation, you must have both the <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c>
+        /// permissions. If you use any of these options without the <c>s3vectors:GetVectors</c>
+        /// permission, Amazon S3 Vectors returns an <c>AccessDeniedException</c>.
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
@@ -2482,11 +2491,19 @@ namespace Amazon.S3Vectors
 #endif
 
         /// <summary>
-        /// Performs an approximate nearest neighbor search query in a vector index using a query
-        /// vector. By default, it returns the keys of approximate nearest neighbors. You can
-        /// optionally include the computed distance (between the query vector and each vector
-        /// in the response) and metadata of each vector in the response.
+        /// Returns matching vector keys from a vector index ranked by vector similarity, full-text
+        /// relevance, or both. Specify <c>queryVector</c> to perform a vector search, specify
+        /// <c>queryTexts</c> to perform a full-text search, or specify both to perform a hybrid
+        /// search. Full-text search ranks results using BM25. Hybrid search combines the vector
+        /// and full-text rankings using Reciprocal Rank Fusion (RRF).
         /// 
+        ///  
+        /// <para>
+        /// Amazon S3 Vectors ranks results by distance for a vector-only search, by BM25 score
+        /// for a full-text-only search, and by RRF score for a hybrid search. You can optionally
+        /// include computed distances, relevance scores, and vector metadata in the response.
+        /// Full-text and hybrid searches require a vector index in <c>ENHANCED</c> mode.
+        /// </para>
         ///  
         /// <para>
         /// To specify the vector index, you can either use both the vector bucket name and the
@@ -2501,15 +2518,16 @@ namespace Amazon.S3Vectors
         /// <para>
         /// With only <c>s3vectors:QueryVectors</c> permission, you can retrieve vector keys of
         /// approximate nearest neighbors and computed distances between these vectors. This permission
-        /// is sufficient only when you don't set any metadata filters and don't request metadata
-        /// (by keeping the <c>returnMetadata</c> parameter set to <c>false</c> or not specified).
+        /// is sufficient only when you don't set <c>queryTexts</c>, don't set any metadata filters,
+        /// and don't request metadata (by keeping the <c>returnMetadata</c> parameter set to
+        /// <c>false</c> or not specified).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a metadata filter or set <c>returnMetadata</c> to true, you must have
-        /// both <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c> permissions. The
-        /// request fails with a <c>403 Forbidden error</c> if you request metadata filtering
-        /// or metadata without the <c>s3vectors:GetVectors</c> permission.
+        /// To use <c>queryTexts</c>, a metadata filter, or <c>returnMetadata</c> set to <c>true</c>
+        /// with this operation, you must have both the <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c>
+        /// permissions. If you use any of these options without the <c>s3vectors:GetVectors</c>
+        /// permission, Amazon S3 Vectors returns an <c>AccessDeniedException</c>.
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
@@ -2947,6 +2965,122 @@ namespace Amazon.S3Vectors
             options.ResponseUnmarshaller = UpdateIndexModeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIndexModeResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds or deletes text search configurations on a vector index. Specify either <c>add</c>
+        /// or <c>delete</c>, but not both. The vector index must be in <c>ENHANCED</c> mode.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:UpdateMetadataConfiguration</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetadataConfiguration service method.</param>
+        /// <returns>The response from the UpdateMetadataConfiguration service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ConflictException">
+        /// The request failed because a vector bucket name or a vector index name already exists.
+        /// Vector bucket names must be unique within your Amazon Web Services account for each
+        /// Amazon Web Services Region. Vector index names must be unique within your vector bucket.
+        /// Choose a different vector bucket name or vector index name, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UpdateMetadataConfiguration">REST API Reference for UpdateMetadataConfiguration Operation</seealso>
+        public virtual UpdateMetadataConfigurationResponse UpdateMetadataConfiguration(UpdateMetadataConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetadataConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetadataConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetadataConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateMetadataConfigurationResponse UpdateMetadataConfiguration(UpdateMetadataConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetadataConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetadataConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetadataConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Adds or deletes text search configurations on a vector index. Specify either <c>add</c>
+        /// or <c>delete</c>, but not both. The vector index must be in <c>ENHANCED</c> mode.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:UpdateMetadataConfiguration</c> permission to use this
+        /// operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetadataConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateMetadataConfiguration service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ConflictException">
+        /// The request failed because a vector bucket name or a vector index name already exists.
+        /// Vector bucket names must be unique within your Amazon Web Services account for each
+        /// Amazon Web Services Region. Vector index names must be unique within your vector bucket.
+        /// Choose a different vector bucket name or vector index name, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UpdateMetadataConfiguration">REST API Reference for UpdateMetadataConfiguration Operation</seealso>
+        public virtual Task<UpdateMetadataConfigurationResponse> UpdateMetadataConfigurationAsync(UpdateMetadataConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetadataConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetadataConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMetadataConfigurationResponse>(request, options, cancellationToken);
         }
 
         /// <summary>

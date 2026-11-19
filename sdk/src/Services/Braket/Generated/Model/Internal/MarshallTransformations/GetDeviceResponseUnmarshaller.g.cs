@@ -87,6 +87,13 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("deviceStatusReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeviceStatusReasonUnmarshaller.Instance;
+                    unmarshalledObject.DeviceStatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("deviceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

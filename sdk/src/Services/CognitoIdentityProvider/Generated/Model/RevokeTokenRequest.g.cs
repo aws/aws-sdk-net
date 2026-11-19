@@ -71,6 +71,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientSecret() => this.ClientSecret != null;
 
         /// <summary>
+        /// Gets and sets the property RevokeAssociatedSessions. 
+        /// <para>
+        /// Specifies whether to also revoke the SSO session that is linked to the token session
+        /// being revoked. <c>NONE</c>, the default, revokes only the token session that is associated
+        /// with the refresh token. <c>LINKED</c> also revokes the parent SSO session that the
+        /// token session came through; the other token sessions that came through that SSO session
+        /// aren't revoked. <c>LINKED</c> has no effect when session tracking is disabled or when
+        /// the token session has no parent SSO session.
+        /// </para>
+        /// </summary>
+        public RevokeAssociatedSessionsType RevokeAssociatedSessions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RevokeAssociatedSessions property is set.
+        /// </summary>
+        internal bool IsSetRevokeAssociatedSessions() => this.RevokeAssociatedSessions != null;
+
+        /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
         /// The refresh token that you want to revoke.

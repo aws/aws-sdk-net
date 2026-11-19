@@ -67,6 +67,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("captionLanguageSetting", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaptionLanguageSetting = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("id3Behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

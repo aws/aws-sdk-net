@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.IAMToolbox.IAmazonIAMToolbox.GetRequestAuthorizationPolicy(Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyRequest)" />
+      <member name="M:Amazon.IAMToolbox.AmazonIAMToolboxClient.GetRequestAuthorizationPolicy(Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyRequest)" />
+      <member name="T:Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyRequest" />
+      <member name="T:Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Retrieve the policy for an explicitly denied request" source=".\AWSSDKDocSamples\IAMToolbox\IAMToolbox.GeneratedSamples.cs" region="GetRequestAuthorizationPolicy-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

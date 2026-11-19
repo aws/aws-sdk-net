@@ -52,8 +52,28 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class ReplicationRuleAndOperator
     {
+        private ReplicationRuleNotOperator _not;
         private string _prefix;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Not. 
+        /// <para>
+        /// A container for specifying filters that exclude matching objects from the replication
+        /// rule.
+        /// </para>
+        /// </summary>
+        public ReplicationRuleNotOperator Not
+        {
+            get { return this._not; }
+            set { this._not = value; }
+        }
+
+        // Check to see if Not property is set
+        internal bool IsSetNot()
+        {
+            return this._not != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Prefix. 

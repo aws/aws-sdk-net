@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// BatchRestrictions Marshaller
     /// </summary>
-    public partial class BatchRestrictionsMarshaller : IRequestMarshaller<BatchRestrictions, JsonMarshallerContext>
+    public partial class BatchRestrictionsMarshaller : IRequestMarshaller<BatchRestrictions, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(BatchRestrictions requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchRestrictions requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetComputeTypesAllowed())
             {
-                context.Writer.WritePropertyName("computeTypesAllowed");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("computeTypesAllowed");
+                context.Writer.WriteStartArray(requestObject.ComputeTypesAllowed.Count);
                 foreach (var requestObjectComputeTypesAllowedListValue in requestObject.ComputeTypesAllowed)
                 {
-                    context.Writer.WriteStringValue(requestObjectComputeTypesAllowedListValue);
+                    context.Writer.WriteTextString(requestObjectComputeTypesAllowedListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetFleetsAllowed())
             {
-                context.Writer.WritePropertyName("fleetsAllowed");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("fleetsAllowed");
+                context.Writer.WriteStartArray(requestObject.FleetsAllowed.Count);
                 foreach (var requestObjectFleetsAllowedListValue in requestObject.FleetsAllowed)
                 {
-                    context.Writer.WriteStringValue(requestObjectFleetsAllowedListValue);
+                    context.Writer.WriteTextString(requestObjectFleetsAllowedListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetMaximumBuildsAllowed())
             {
-                context.Writer.WritePropertyName("maximumBuildsAllowed");
-                context.Writer.WriteNumberValue(requestObject.MaximumBuildsAllowed.Value);
+                context.Writer.WriteTextString("maximumBuildsAllowed");
+                context.Writer.WriteInt32(requestObject.MaximumBuildsAllowed.Value);
             }
         }
 

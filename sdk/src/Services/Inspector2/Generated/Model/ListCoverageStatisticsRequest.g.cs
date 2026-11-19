@@ -52,7 +52,10 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// The value to group the results by.
+        /// The value to group the results by. For multi-cloud resources, use <c>PROVIDER</c>,
+        /// <c>PROVIDER_ACCOUNT_ID</c> (Azure subscription ID or Google Cloud Platform (GCP) project
+        /// ID), <c>PROVIDER_ORG_ID</c> (Azure tenant ID or Google Cloud Platform (GCP) organization
+        /// ID), or <c>PROVIDER_REGION</c>.
         /// </para>
         /// </summary>
         public GroupKey GroupBy { get; set; }

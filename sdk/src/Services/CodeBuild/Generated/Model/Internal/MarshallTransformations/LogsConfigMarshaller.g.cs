@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,35 +39,35 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// LogsConfig Marshaller
     /// </summary>
-    public partial class LogsConfigMarshaller : IRequestMarshaller<LogsConfig, JsonMarshallerContext>
+    public partial class LogsConfigMarshaller : IRequestMarshaller<LogsConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(LogsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LogsConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCloudWatchLogs())
             {
-                context.Writer.WritePropertyName("cloudWatchLogs");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("cloudWatchLogs");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CloudWatchLogsConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLogs, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetS3Logs())
             {
-                context.Writer.WritePropertyName("s3Logs");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("s3Logs");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3LogsConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Logs, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

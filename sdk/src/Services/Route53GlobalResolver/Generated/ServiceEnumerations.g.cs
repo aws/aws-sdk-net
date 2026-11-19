@@ -564,6 +564,11 @@ namespace Amazon.Route53GlobalResolver
         public static readonly IpAddressType IPV6 = new IpAddressType("IPV6");
 
         /// <summary>
+        /// Constant NONE for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType NONE = new IpAddressType("NONE");
+
+        /// <summary>
         /// Constructs a custom IpAddressType for a value not among the defined constants.
         /// </summary>
         public IpAddressType(string value) : base(value) { }
@@ -656,6 +661,93 @@ namespace Amazon.Route53GlobalResolver
     }
 
     /// <summary>
+    /// Constants used for properties of type PublicIpStatus.
+    /// </summary>
+    public class PublicIpStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED_RELEASED for PublicIpStatus
+        /// </summary>
+        public static readonly PublicIpStatus DISABLED_RELEASED = new PublicIpStatus("DISABLED_RELEASED");
+
+        /// <summary>
+        /// Constant DISABLED_RESERVED for PublicIpStatus
+        /// </summary>
+        public static readonly PublicIpStatus DISABLED_RESERVED = new PublicIpStatus("DISABLED_RESERVED");
+
+        /// <summary>
+        /// Constant ENABLED_RESERVED for PublicIpStatus
+        /// </summary>
+        public static readonly PublicIpStatus ENABLED_RESERVED = new PublicIpStatus("ENABLED_RESERVED");
+
+        /// <summary>
+        /// Constructs a custom PublicIpStatus for a value not among the defined constants.
+        /// </summary>
+        public PublicIpStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublicIpStatus FindValue(string value)
+        {
+            return FindValue<PublicIpStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublicIpStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RegionScopeType.
+    /// </summary>
+    public class RegionScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for RegionScopeType
+        /// </summary>
+        public static readonly RegionScopeType ALL = new RegionScopeType("ALL");
+
+        /// <summary>
+        /// Constant REGIONAL for RegionScopeType
+        /// </summary>
+        public static readonly RegionScopeType REGIONAL = new RegionScopeType("REGIONAL");
+
+        /// <summary>
+        /// Constructs a custom RegionScopeType for a value not among the defined constants.
+        /// </summary>
+        public RegionScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionScopeType FindValue(string value)
+        {
+            return FindValue<RegionScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type TokenStatus.
     /// </summary>
     public class TokenStatus : ConstantClass
@@ -696,6 +788,52 @@ namespace Amazon.Route53GlobalResolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TokenStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdateIpAddressOperation.
+    /// </summary>
+    public class UpdateIpAddressOperation : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADD for UpdateIpAddressOperation
+        /// </summary>
+        public static readonly UpdateIpAddressOperation ADD = new UpdateIpAddressOperation("ADD");
+
+        /// <summary>
+        /// Constant REMOVE for UpdateIpAddressOperation
+        /// </summary>
+        public static readonly UpdateIpAddressOperation REMOVE = new UpdateIpAddressOperation("REMOVE");
+
+        /// <summary>
+        /// Constant UPDATE for UpdateIpAddressOperation
+        /// </summary>
+        public static readonly UpdateIpAddressOperation UPDATE = new UpdateIpAddressOperation("UPDATE");
+
+        /// <summary>
+        /// Constructs a custom UpdateIpAddressOperation for a value not among the defined constants.
+        /// </summary>
+        public UpdateIpAddressOperation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateIpAddressOperation FindValue(string value)
+        {
+            return FindValue<UpdateIpAddressOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateIpAddressOperation(string value)
         {
             return FindValue(value);
         }

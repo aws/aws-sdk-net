@@ -158,6 +158,27 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIndustry() => this.Industry != null;
 
         /// <summary>
+        /// Gets and sets the property OrganizationalUnitIds. 
+        /// <para>
+        /// The AWS Organizations organizational unit (OU) IDs associated with this application
+        /// context. Valid only for organizational profiles; rejected for standard profiles.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 2500)]
+        public List<string> OrganizationalUnitIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the OrganizationalUnitIds property is set.
+        /// </summary>
+        internal bool IsSetOrganizationalUnitIds() => this.OrganizationalUnitIds != null && (this.OrganizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
         /// The Amazon Web Services Regions where this application operates.

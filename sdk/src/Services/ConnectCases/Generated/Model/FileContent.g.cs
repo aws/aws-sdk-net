@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// An object that represents a content of an Amazon Connect file object.
+    /// An object that represents a content of an Connect Customer file object.
     /// </summary>
     public partial class FileContent
     {
         /// <summary>
         /// Gets and sets the property FileArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a File in Amazon Connect.
+        /// The Amazon Resource Name (ARN) of a File in Connect Customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 500)]

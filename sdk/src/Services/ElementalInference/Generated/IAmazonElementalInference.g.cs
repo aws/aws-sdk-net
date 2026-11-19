@@ -362,6 +362,359 @@ namespace Amazon.ElementalInference
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a function. A function analyzes a feed by building a request from the feed's
+        /// media and metadata, optionally sending that request to an Amazon Bedrock model in
+        /// your account, and publishing the result to the feed's metadata timeline. 
+        /// 
+        ///  
+        /// <para>
+        /// A function runs only after you attach it to a feed as a function output. For more
+        /// information, see <a href="https://docs.aws.amazon.com/elemental-inference/latest/userguide/functions.html">Using
+        /// functions</a> in the <i>AWS Elemental Inference User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// <returns>The response from the CreateFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a function. A function analyzes a feed by building a request from the feed's
+        /// media and metadata, optionally sending that request to an Amazon Bedrock model in
+        /// your account, and publishing the result to the feed's metadata timeline. 
+        /// 
+        ///  
+        /// <para>
+        /// A function runs only after you attach it to a feed as a function output. For more
+        /// information, see <a href="https://docs.aws.amazon.com/elemental-inference/latest/userguide/functions.html">Using
+        /// functions</a> in the <i>AWS Elemental Inference User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a question set. Use a question set to get answers about content that's specific
+        /// to your business, in addition to the built-in contextual metadata classifications.
+        /// A question set contains your own questions. You ask Elemental Inference these questions
+        /// about each shot or scene of the media in a contextual metadata output, and Elemental
+        /// Inference answers each question with scores. To use a question set, reference it in
+        /// the customQuestions property of the contextual metadata configuration of a feed output.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// CreateQuestionSet creates the question set with a DRAFT version that contains the
+        /// questions in the request. To change DRAFT, use UpdateQuestionSet. To publish DRAFT
+        /// as a numbered version, use CreateQuestionSetVersion. You can't change a published
+        /// version. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A question set can contain the following types of questions. You must specify at least
+        /// one question. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// yesNo – Elemental Inference answers yes or no.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// yesNoPerOption – Elemental Inference answers yes or no for each option.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// chooseOne – Elemental Inference chooses one of the options.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A version can contain up to 100 scored items, where each yesNo question, each option
+        /// of a yesNoPerOption question, and each chooseOne question counts as one item. The
+        /// name of each question must be unique across all three types. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuestionSet service method.</param>
+        /// <returns>The response from the CreateQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSet">REST API Reference for CreateQuestionSet Operation</seealso>
+        CreateQuestionSetResponse CreateQuestionSet(CreateQuestionSetRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a question set. Use a question set to get answers about content that's specific
+        /// to your business, in addition to the built-in contextual metadata classifications.
+        /// A question set contains your own questions. You ask Elemental Inference these questions
+        /// about each shot or scene of the media in a contextual metadata output, and Elemental
+        /// Inference answers each question with scores. To use a question set, reference it in
+        /// the customQuestions property of the contextual metadata configuration of a feed output.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// CreateQuestionSet creates the question set with a DRAFT version that contains the
+        /// questions in the request. To change DRAFT, use UpdateQuestionSet. To publish DRAFT
+        /// as a numbered version, use CreateQuestionSetVersion. You can't change a published
+        /// version. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A question set can contain the following types of questions. You must specify at least
+        /// one question. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// yesNo – Elemental Inference answers yes or no.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// yesNoPerOption – Elemental Inference answers yes or no for each option.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// chooseOne – Elemental Inference chooses one of the options.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A version can contain up to 100 scored items, where each yesNo question, each option
+        /// of a yesNoPerOption question, and each chooseOne question counts as one item. The
+        /// name of each question must be unique across all three types. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuestionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSet">REST API Reference for CreateQuestionSet Operation</seealso>
+        Task<CreateQuestionSetResponse> CreateQuestionSetAsync(CreateQuestionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Publishes the DRAFT version of the specified question set as a new version. The new
+        /// version has the same name and questions as DRAFT, and you can't change it. DRAFT doesn't
+        /// change, so you can continue to update it. 
+        /// 
+        ///  
+        /// <para>
+        /// Version numbers start at 1, and each new version has the next number. Elemental Inference
+        /// never reuses a version number, even after you delete that version. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If DRAFT hasn't changed since the latest published version, Elemental Inference doesn't
+        /// create a version. Instead, it returns the latest version. A change to the name of
+        /// the question set counts as a change to DRAFT. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A question set can have a limited number of versions. If the question set already
+        /// has the maximum number of versions, Elemental Inference returns ServiceQuotaExceededException.
+        /// To free space for a new version, delete a version that you no longer need, or create
+        /// a new question set. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuestionSetVersion service method.</param>
+        /// <returns>The response from the CreateQuestionSetVersion service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSetVersion">REST API Reference for CreateQuestionSetVersion Operation</seealso>
+        CreateQuestionSetVersionResponse CreateQuestionSetVersion(CreateQuestionSetVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Publishes the DRAFT version of the specified question set as a new version. The new
+        /// version has the same name and questions as DRAFT, and you can't change it. DRAFT doesn't
+        /// change, so you can continue to update it. 
+        /// 
+        ///  
+        /// <para>
+        /// Version numbers start at 1, and each new version has the next number. Elemental Inference
+        /// never reuses a version number, even after you delete that version. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If DRAFT hasn't changed since the latest published version, Elemental Inference doesn't
+        /// create a version. Instead, it returns the latest version. A change to the name of
+        /// the question set counts as a change to DRAFT. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A question set can have a limited number of versions. If the question set already
+        /// has the maximum number of versions, Elemental Inference returns ServiceQuotaExceededException.
+        /// To free space for a new version, delete a version that you no longer need, or create
+        /// a new question set. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuestionSetVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateQuestionSetVersion service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateQuestionSetVersion">REST API Reference for CreateQuestionSetVersion Operation</seealso>
+        Task<CreateQuestionSetVersionResponse> CreateQuestionSetVersionAsync(CreateQuestionSetVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a schedule action on a feed. A schedule action applies configuration changes
         /// to the feed at a time that you specify, in the same way as an UpdateFeed request.
         /// 
@@ -657,6 +1010,255 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFeedPolicy">REST API Reference for DeleteFeedPolicy Operation</seealso>
         Task<DeleteFeedPolicyResponse> DeleteFeedPolicyAsync(DeleteFeedPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a function. If any feed still references the function, the operation returns
+        /// a ConflictException. A disabled function output still references the function. Use
+        /// GetFunction to find those feeds, then remove the function output from each one with
+        /// UpdateFeed, or delete the feed, before retrying. 
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a function doesn't delete the metadata that it has already produced.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <returns>The response from the DeleteFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a function. If any feed still references the function, the operation returns
+        /// a ConflictException. A disabled function output still references the function. Use
+        /// GetFunction to find those feeds, then remove the function output from each one with
+        /// UpdateFeed, or delete the feed, before retrying. 
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a function doesn't delete the metadata that it has already produced.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the specified question set, including its DRAFT version and all its published
+        /// versions. You can't delete a question set while any feed references any of its versions,
+        /// including an archived feed. You must first remove the question set from the customQuestions
+        /// configuration of each feed output that references it, or delete those feeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuestionSet service method.</param>
+        /// <returns>The response from the DeleteQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSet">REST API Reference for DeleteQuestionSet Operation</seealso>
+        DeleteQuestionSetResponse DeleteQuestionSet(DeleteQuestionSetRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the specified question set, including its DRAFT version and all its published
+        /// versions. You can't delete a question set while any feed references any of its versions,
+        /// including an archived feed. You must first remove the question set from the customQuestions
+        /// configuration of each feed output that references it, or delete those feeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuestionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSet">REST API Reference for DeleteQuestionSet Operation</seealso>
+        Task<DeleteQuestionSetResponse> DeleteQuestionSetAsync(DeleteQuestionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a published version of the specified question set. You can't delete a version
+        /// while a feed references it, including an archived feed. You can't restore a deleted
+        /// version, and Elemental Inference doesn't reuse its number. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete the DRAFT version on its own. To delete DRAFT, delete the question
+        /// set by using DeleteQuestionSet. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting a version doesn't change the latestVersion of the question set, even if you
+        /// delete the highest version. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuestionSetVersion service method.</param>
+        /// <returns>The response from the DeleteQuestionSetVersion service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSetVersion">REST API Reference for DeleteQuestionSetVersion Operation</seealso>
+        DeleteQuestionSetVersionResponse DeleteQuestionSetVersion(DeleteQuestionSetVersionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a published version of the specified question set. You can't delete a version
+        /// while a feed references it, including an archived feed. You can't restore a deleted
+        /// version, and Elemental Inference doesn't reuse its number. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete the DRAFT version on its own. To delete DRAFT, delete the question
+        /// set by using DeleteQuestionSet. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Deleting a version doesn't change the latestVersion of the question set, even if you
+        /// delete the highest version. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuestionSetVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteQuestionSetVersion service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteQuestionSetVersion">REST API Reference for DeleteQuestionSetVersion Operation</seealso>
+        Task<DeleteQuestionSetVersionResponse> DeleteQuestionSetVersionAsync(DeleteQuestionSetVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1125,6 +1727,136 @@ namespace Amazon.ElementalInference
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the details of a function, including its expressions, the media context
+        /// that Elemental Inference derived from the request expression, and the feeds that currently
+        /// reference it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <returns>The response from the GetFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        GetFunctionResponse GetFunction(GetFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves the details of a function, including its expressions, the media context
+        /// that Elemental Inference derived from the request expression, and the feeds that currently
+        /// reference it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about the specified question set at one version. By default,
+        /// GetQuestionSet returns the DRAFT version. To retrieve a published version, specify
+        /// questionSetVersion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuestionSet service method.</param>
+        /// <returns>The response from the GetQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetQuestionSet">REST API Reference for GetQuestionSet Operation</seealso>
+        GetQuestionSetResponse GetQuestionSet(GetQuestionSetRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about the specified question set at one version. By default,
+        /// GetQuestionSet returns the DRAFT version. To retrieve a published version, specify
+        /// questionSetVersion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuestionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetQuestionSet">REST API Reference for GetQuestionSet Operation</seealso>
+        Task<GetQuestionSetResponse> GetQuestionSetAsync(GetQuestionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the dictionaries in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDictionaries service method.</param>
@@ -1238,6 +1970,197 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListFeeds">REST API Reference for ListFeeds Operation</seealso>
         Task<ListFeedsResponse> ListFeedsAsync(ListFeedsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the functions in this account, in this Region. Each entry is a summary. To get
+        /// the expressions of a function, use GetFunction.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <returns>The response from the ListFunctions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the functions in this account, in this Region. Each entry is a summary. To get
+        /// the expressions of a function, use GetFunction.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFunctions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the versions of the specified question set. The list starts with the DRAFT version,
+        /// followed by the published versions from the highest version number to the lowest.
+        /// The list doesn't include deleted versions. 
+        /// 
+        ///  
+        /// <para>
+        /// The response doesn't include the questions in each version. To retrieve them, use
+        /// GetQuestionSet and specify questionSetVersion. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuestionSetVersions service method.</param>
+        /// <returns>The response from the ListQuestionSetVersions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSetVersions">REST API Reference for ListQuestionSetVersions Operation</seealso>
+        ListQuestionSetVersionsResponse ListQuestionSetVersions(ListQuestionSetVersionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the versions of the specified question set. The list starts with the DRAFT version,
+        /// followed by the published versions from the highest version number to the lowest.
+        /// The list doesn't include deleted versions. 
+        /// 
+        ///  
+        /// <para>
+        /// The response doesn't include the questions in each version. To retrieve them, use
+        /// GetQuestionSet and specify questionSetVersion. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuestionSetVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListQuestionSetVersions service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSetVersions">REST API Reference for ListQuestionSetVersions Operation</seealso>
+        Task<ListQuestionSetVersionsResponse> ListQuestionSetVersionsAsync(ListQuestionSetVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the question sets in your account. The response doesn't include the questions
+        /// in each question set. To retrieve them, use GetQuestionSet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuestionSets service method.</param>
+        /// <returns>The response from the ListQuestionSets service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSets">REST API Reference for ListQuestionSets Operation</seealso>
+        ListQuestionSetsResponse ListQuestionSets(ListQuestionSetsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the question sets in your account. The response doesn't include the questions
+        /// in each question set. To retrieve them, use GetQuestionSet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuestionSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListQuestionSets service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListQuestionSets">REST API Reference for ListQuestionSets Operation</seealso>
+        Task<ListQuestionSetsResponse> ListQuestionSetsAsync(ListQuestionSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1842,6 +2765,198 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateFeed">REST API Reference for UpdateFeed Operation</seealso>
         Task<UpdateFeedResponse> UpdateFeedAsync(UpdateFeedRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a function. Include only the parameters that you want to change; parameters
+        /// that you don't include aren't affected. Elemental Inference validates the updated
+        /// expressions in the same way as CreateFunction. 
+        /// 
+        ///  
+        /// <para>
+        /// While a feed references the function, you can change only its expressions and its
+        /// description, and you can set eventBridgeDelivery to DISABLED but not to ENABLED. The
+        /// request expression must keep referencing the same media context, as reported in contextTypes.
+        /// Changing an expression changes the behavior of every feed that references the function.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// <returns>The response from the UpdateFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a function. Include only the parameters that you want to change; parameters
+        /// that you don't include aren't affected. Elemental Inference validates the updated
+        /// expressions in the same way as CreateFunction. 
+        /// 
+        ///  
+        /// <para>
+        /// While a feed references the function, you can change only its expressions and its
+        /// description, and you can set eventBridgeDelivery to DISABLED but not to ENABLED. The
+        /// request expression must keep referencing the same media context, as reported in contextTypes.
+        /// Changing an expression changes the behavior of every feed that references the function.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFunction service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the DRAFT version of the specified question set. UpdateQuestionSet doesn't
+        /// create a version and doesn't change published versions. To publish the updated DRAFT
+        /// as a new version, use CreateQuestionSetVersion. 
+        /// 
+        ///  
+        /// <para>
+        /// UpdateQuestionSet replaces questions one type at a time. For each of yesNo, yesNoPerOption,
+        /// and chooseOne: if you omit the array, DRAFT keeps its questions of that type. If you
+        /// include the array, it replaces all the questions of that type in DRAFT. If you include
+        /// an empty array, DRAFT no longer has questions of that type. The updated DRAFT must
+        /// follow the same rules as in CreateQuestionSet, and Elemental Inference applies those
+        /// rules to the questions that DRAFT keeps as well as to the questions in the request.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Feeds that reference the DRAFT version use the updated questions. To make sure that
+        /// the questions for a feed don't change, reference a published version instead. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuestionSet service method.</param>
+        /// <returns>The response from the UpdateQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateQuestionSet">REST API Reference for UpdateQuestionSet Operation</seealso>
+        UpdateQuestionSetResponse UpdateQuestionSet(UpdateQuestionSetRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the DRAFT version of the specified question set. UpdateQuestionSet doesn't
+        /// create a version and doesn't change published versions. To publish the updated DRAFT
+        /// as a new version, use CreateQuestionSetVersion. 
+        /// 
+        ///  
+        /// <para>
+        /// UpdateQuestionSet replaces questions one type at a time. For each of yesNo, yesNoPerOption,
+        /// and chooseOne: if you omit the array, DRAFT keeps its questions of that type. If you
+        /// include the array, it replaces all the questions of that type in DRAFT. If you include
+        /// an empty array, DRAFT no longer has questions of that type. The updated DRAFT must
+        /// follow the same rules as in CreateQuestionSet, and Elemental Inference applies those
+        /// rules to the questions that DRAFT keeps as well as to the questions in the request.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Feeds that reference the DRAFT version use the updated questions. To make sure that
+        /// the questions for a feed don't change, reference a published version instead. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuestionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateQuestionSet service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateQuestionSet">REST API Reference for UpdateQuestionSet Operation</seealso>
+        Task<UpdateQuestionSetResponse> UpdateQuestionSetAsync(UpdateQuestionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.

@@ -60,6 +60,13 @@ namespace Amazon.LambdaCore.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ElasticIpConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ElasticIpConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ElasticIpConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("NetworkProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

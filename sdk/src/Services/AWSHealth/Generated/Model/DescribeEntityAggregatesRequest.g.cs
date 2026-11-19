@@ -56,5 +56,18 @@ namespace Amazon.AWSHealth.Model
         /// Checks to see if the EventArns property is set.
         /// </summary>
         internal bool IsSetEventArns() => this.EventArns != null && (this.EventArns.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Values to narrow the results returned.
+        /// </para>
+        /// </summary>
+        public EntityAggregateFilter Filter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filter property is set.
+        /// </summary>
+        internal bool IsSetFilter() => this.Filter != null;
     }
 }

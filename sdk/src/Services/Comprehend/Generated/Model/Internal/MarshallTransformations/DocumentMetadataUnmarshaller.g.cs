@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DocumentMetadata Object
     /// </summary>
-    public partial class DocumentMetadataUnmarshaller : IJsonUnmarshaller<DocumentMetadata, JsonUnmarshallerContext>
+    public partial class DocumentMetadataUnmarshaller : ICborUnmarshaller<DocumentMetadata, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DocumentMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DocumentMetadata Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DocumentMetadata();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ExtractedCharacters", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ExtractedCharactersListItem, ExtractedCharactersListItemUnmarshaller>(ExtractedCharactersListItemUnmarshaller.Instance);
-                    unmarshalledObject.ExtractedCharacters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Pages", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Pages = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ExtractedCharacters":
+                        context.AddPathSegment("ExtractedCharacters");
+                        unmarshalledObject.ExtractedCharacters = new CborListUnmarshaller<ExtractedCharactersListItem, ExtractedCharactersListItemUnmarshaller>(ExtractedCharactersListItemUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Pages":
+                        context.AddPathSegment("Pages");
+                        unmarshalledObject.Pages = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

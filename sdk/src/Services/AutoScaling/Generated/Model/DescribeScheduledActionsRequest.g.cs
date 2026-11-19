@@ -67,10 +67,31 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetEndTime() => this.EndTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property IncludeManagedResources. 
+        /// <para>
+        ///  Specifies whether to include scheduled actions for managed Auto Scaling groups in
+        /// the response. When set to <c>true</c> (default), the response includes scheduled actions
+        /// for managed Auto Scaling groups. 
+        /// </para>
+        /// </summary>
+        public bool? IncludeManagedResources { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeManagedResources property is set.
+        /// </summary>
+        internal bool IsSetIncludeManagedResources() => this.IncludeManagedResources.HasValue;
+
+        /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of items to return with this call. The default value is <c>50</c>
         /// and the maximum value is <c>100</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A response can contain fewer items than the value specified by <c>MaxRecords</c>,
+        /// even when more items are available. To retrieve the additional items, use the <c>NextToken</c>
+        /// value in a subsequent call rather than relying on the number of items in the response.
         /// </para>
         /// </summary>
         public int? MaxRecords { get; set; }

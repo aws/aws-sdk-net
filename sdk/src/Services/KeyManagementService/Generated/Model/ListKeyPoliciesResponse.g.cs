@@ -52,8 +52,17 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// A list of key policy names. The only valid value is <c>default</c>.
+        /// A list of key policy names. Valid values are:
         /// </para>
+        ///  <dl> <dt>default</dt> <dd> 
+        /// <para>
+        /// The key policy that you manage.
+        /// </para>
+        ///  </dd> <dt>AWS_RAM</dt> <dd> 
+        /// <para>
+        /// The key policy that RAM manages for KMS keys that you share through RAM.
+        /// </para>
+        ///  </dd> </dl>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

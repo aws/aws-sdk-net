@@ -36,6 +36,27 @@ namespace Amazon.NetworkFirewall.Model
     public partial class RuleVariables
     {
         /// <summary>
+        /// Gets and sets the property ContextSets. 
+        /// <para>
+        /// A list of context sets. Each context set lists resources from the context store that
+        /// is associated with the firewall. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public Dictionary<string, ContextSet> ContextSets { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, ContextSet>() : null;
+
+        /// <summary>
+        /// Checks to see if the ContextSets property is set.
+        /// </summary>
+        internal bool IsSetContextSets() => this.ContextSets != null && (this.ContextSets.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property IPSets. 
         /// <para>
         /// A list of IP addresses and address ranges, in CIDR notation. 

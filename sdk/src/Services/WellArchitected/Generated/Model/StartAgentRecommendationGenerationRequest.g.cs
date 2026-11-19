@@ -31,20 +31,44 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the StartAgentRecommendationGeneration operation.
-    /// Initiates a new recommendation generation process for the specified optimization profile.
-    /// This asynchronous operation analyzes your Amazon Web Services resources and generates
-    /// optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration
-    /// to check status.
+    /// Starts a recommendation generation process for the specified agent profile. This asynchronous
+    /// operation returns immediately. Use <c>GetAgentRecommendationGeneration</c> to check
+    /// the status of the generation. <para> Currently, only the <c>ARCHITECTURE</c> recommendation
+    /// type is supported. <c>RESOURCE</c> and <c>APPLICATION</c> recommendations are generated
+    /// only by the scheduled generation cycle and cannot be started with this operation.
+    /// </para> <para> For the <c>ARCHITECTURE</c> type, the generation analyzes the infrastructure
+    /// as code (IaC) template that you specify in <c>additionalContext</c>, and returns updated
+    /// templates with best practice fixes applied. You must specify <c>scope</c> and <c>additionalContext</c>.
+    /// You can optionally specify <c>name</c>. </para> <para> Architecture review generations
+    /// are subject to a daily quota for each profile. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-quotas.html">Quotas
+    /// and limits</a> in the Amazon Web Services Well-Architected User Guide. </para>
     /// </summary>
     public partial class StartAgentRecommendationGenerationRequest : AmazonWellArchitectedRequest
     {
         /// <summary>
         /// Gets and sets the property AdditionalContext. 
         /// <para>
-        /// Optional additional context to guide the recommendation generation, such as specific
-        /// business requirements or constraints.
+        /// The location of the infrastructure as code (IaC) template to review, and the lenses
+        /// to review it against. Required for the <c>ARCHITECTURE</c> type. Must be absent for
+        /// other types. Specify a JSON object with the following members:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3Uri</c>: The Amazon S3 URI of the IaC template, .zip archive, or folder to review.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3VersionId</c>: The version ID of the Amazon S3 object. If you omit this member,
+        /// the current version is used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>lensArns</c>: The ARNs of the lenses to review against. Only <c>arn:aws:wellarchitected::aws:lens/wellarchitected</c>
+        /// is supported.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public Amazon.Runtime.Documents.Document AdditionalContext { get; set; }
 
         /// <summary>
@@ -55,7 +79,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An optional name for this generation process to help identify it in lists and logs.
+        /// An optional name for this generation that identifies the architecture review in the
+        /// console and in <c>ListAgentRecommendationGenerations</c> results. Applies to <c>ARCHITECTURE</c>
+        /// type only. Must be absent for other types.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
@@ -83,10 +109,10 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Scope configuration to focus the generation on specific pillars or goals.
+        /// Defines which pillars, goals, and items the review covers. Required for the <c>ARCHITECTURE</c>
+        /// type. Must be absent for other types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public Scope Scope { get; set; }
 
         /// <summary>
@@ -97,7 +123,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// The types of recommendations to generate.
+        /// The types of recommendations to generate. You can specify up to two types in a single
+        /// request. Currently, only <c>ARCHITECTURE</c> is supported for this operation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -106,7 +133,7 @@ namespace Amazon.WellArchitected.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 1)]
+        [AWSProperty(Required = true, Min = 1, Max = 2)]
         public List<string> Types { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>

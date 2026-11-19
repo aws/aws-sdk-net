@@ -127,5 +127,11 @@ namespace Amazon.Neptune.Model
         /// </summary>
         [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
         IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeServerlessV2PlatformVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxRecords", OutputToken = ["Marker"])]
+        IDescribeServerlessV2PlatformVersionsPaginator DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request);
     }
 }

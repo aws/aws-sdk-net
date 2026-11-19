@@ -45,10 +45,22 @@ namespace Amazon.BedrockAgentCore.Model
         IListActorsPaginator ListActors(ListActorsRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentInsights operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgentInsightsPaginator ListAgentInsights(ListAgentInsightsRequest request);
+
+        /// <summary>
         /// Paginator for ListBatchEvaluations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListBatchEvaluationsPaginator ListBatchEvaluations(ListBatchEvaluationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetGenerations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDatasetGenerationsPaginator ListDatasetGenerations(ListDatasetGenerationsRequest request);
 
         /// <summary>
         /// Paginator for ListEvents operation

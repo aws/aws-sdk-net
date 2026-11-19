@@ -105,7 +105,8 @@ namespace Amazon.ConnectHealth.Model
         /// <summary>
         /// Gets and sets the property ResponseStream. 
         /// <para>
-        /// The output stream containing transcript events
+        /// The output stream that contains transcript events, periodontal chart events, checklist
+        /// events, and errors.
         /// </para>
         /// </summary>
         public MedicalScribeOutputStream ResponseStream { get; set; }

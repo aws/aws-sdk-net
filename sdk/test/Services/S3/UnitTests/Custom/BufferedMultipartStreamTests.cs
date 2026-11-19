@@ -331,7 +331,7 @@ namespace AWSSDK.UnitTests
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object);
             var buffer = new byte[1024];
             await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
-                await stream.ReadAsync(buffer, 0, buffer.Length));
+                _ = await stream.ReadAsync(buffer, 0, buffer.Length));
         }
 
         [TestMethod]
@@ -343,7 +343,7 @@ namespace AWSSDK.UnitTests
             stream.Dispose();
             var buffer = new byte[1024];
             await Assert.ThrowsExactlyAsync<ObjectDisposedException>(async () =>
-                await stream.ReadAsync(buffer, 0, buffer.Length));
+                _ = await stream.ReadAsync(buffer, 0, buffer.Length));
         }
 
         #endregion
@@ -358,7 +358,7 @@ namespace AWSSDK.UnitTests
 
             // Act & Assert
             await Assert.ThrowsExactlyAsync<ArgumentNullException>(
-                async () => await stream.ReadAsync(null, 0, MEDIUM_OBJECT_SIZE));
+                async () => _ = await stream.ReadAsync(null, 0, MEDIUM_OBJECT_SIZE));
 
             // Cleanup
             stream.Dispose();
@@ -373,7 +373,7 @@ namespace AWSSDK.UnitTests
 
             // Act & Assert
             await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(
-                async () => await stream.ReadAsync(buffer, -1, MEDIUM_OBJECT_SIZE));
+                async () => _ = await stream.ReadAsync(buffer, -1, MEDIUM_OBJECT_SIZE));
 
             // Cleanup
             stream.Dispose();
@@ -388,7 +388,7 @@ namespace AWSSDK.UnitTests
 
             // Act & Assert
             await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(
-                async () => await stream.ReadAsync(buffer, 0, -1));
+                async () => _ = await stream.ReadAsync(buffer, 0, -1));
 
             // Cleanup
             stream.Dispose();
@@ -403,7 +403,7 @@ namespace AWSSDK.UnitTests
 
             // Act & Assert
             await Assert.ThrowsExactlyAsync<ArgumentException>(
-                async () => await stream.ReadAsync(buffer, 100, 1000)); // 100 + 1000 > 1024
+                async () => _ = await stream.ReadAsync(buffer, 100, 1000)); // 100 + 1000 > 1024
 
             // Cleanup
             stream.Dispose();
@@ -575,7 +575,7 @@ namespace AWSSDK.UnitTests
 
             // Act - Read entire stream
             var buffer = new byte[objectSize];
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            _ = await stream.ReadAsync(buffer, 0, buffer.Length);
 
             // Assert
             Assert.AreEqual(stream.Length, stream.Position, 
@@ -603,11 +603,11 @@ namespace AWSSDK.UnitTests
 
             // Act - Read entire stream, then try to read again
             var buffer = new byte[objectSize];
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            _ = await stream.ReadAsync(buffer, 0, buffer.Length);
             var positionAfterFullRead = stream.Position;
-            
+
             // Try to read past end
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            _ = await stream.ReadAsync(buffer, 0, buffer.Length);
             var positionAfterSecondRead = stream.Position;
 
             // Assert
@@ -1090,7 +1090,7 @@ namespace AWSSDK.UnitTests
 
             // Act - Read entire stream
             var buffer = new byte[objectSize];
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            _ = await stream.ReadAsync(buffer, 0, buffer.Length);
             
             // Try multiple reads after end
             var read1 = await stream.ReadAsync(buffer, 0, buffer.Length);

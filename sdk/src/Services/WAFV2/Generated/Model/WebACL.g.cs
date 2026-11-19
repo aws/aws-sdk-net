@@ -59,6 +59,20 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetARN() => this.ARN != null;
 
         /// <summary>
+        /// Gets and sets the property AnalyticsConfig. 
+        /// <para>
+        /// The security analytics configuration for the web ACL. For more information, see <a>AnalyticsConfig</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public AnalyticsConfig AnalyticsConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AnalyticsConfig property is set.
+        /// </summary>
+        internal bool IsSetAnalyticsConfig() => this.AnalyticsConfig != null;
+
+        /// <summary>
         /// Gets and sets the property ApplicationConfig. 
         /// <para>
         /// Returns a list of <c>ApplicationAttribute</c>s.
@@ -319,8 +333,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property MonetizationConfig. 
         /// <para>
         /// The monetization configuration for the web ACL. Required when any rule in the web
-        /// ACL uses the <c>Monetize</c> action. Specifies the cryptocurrency payment networks
-        /// and currency mode for AI bot monetization.
+        /// ACL uses the <c>Monetize</c> action. Specifies the payment settlement options and
+        /// currency mode for AI bot monetization.
         /// </para>
         /// </summary>
         public MonetizationConfig MonetizationConfig { get; set; }

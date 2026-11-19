@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,22 +39,22 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// HumanLoopDataAttributes Marshaller
     /// </summary>
-    public partial class HumanLoopDataAttributesMarshaller : IRequestMarshaller<HumanLoopDataAttributes, JsonMarshallerContext>
+    public partial class HumanLoopDataAttributesMarshaller : IRequestMarshaller<HumanLoopDataAttributes, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(HumanLoopDataAttributes requestObject, JsonMarshallerContext context)
+        public void Marshall(HumanLoopDataAttributes requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetContentClassifiers())
             {
-                context.Writer.WritePropertyName("ContentClassifiers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ContentClassifiers");
+                context.Writer.WriteStartArray(requestObject.ContentClassifiers.Count);
                 foreach (var requestObjectContentClassifiersListValue in requestObject.ContentClassifiers)
                 {
-                    context.Writer.WriteStringValue(requestObjectContentClassifiersListValue);
+                    context.Writer.WriteTextString(requestObjectContentClassifiersListValue);
                 }
                 context.Writer.WriteEndArray();
             }

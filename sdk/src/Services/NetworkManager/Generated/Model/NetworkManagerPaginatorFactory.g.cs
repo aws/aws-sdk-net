@@ -201,6 +201,38 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListContextChanges operation
+        /// </summary>
+        public IListContextChangesPaginator ListContextChanges(ListContextChangesRequest request)
+        {
+            return new ListContextChangesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContextStoreAssociations operation
+        /// </summary>
+        public IListContextStoreAssociationsPaginator ListContextStoreAssociations(ListContextStoreAssociationsRequest request)
+        {
+            return new ListContextStoreAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        public IListContextStoresPaginator ListContextStores(ListContextStoresRequest request)
+        {
+            return new ListContextStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContexts operation
+        /// </summary>
+        public IListContextsPaginator ListContexts(ListContextsRequest request)
+        {
+            return new ListContextsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCoreNetworkPolicyVersions operation
         /// </summary>
         public IListCoreNetworkPolicyVersionsPaginator ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request)

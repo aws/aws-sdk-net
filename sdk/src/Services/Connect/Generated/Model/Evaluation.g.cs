@@ -110,6 +110,28 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluationType() => this.EvaluationType != null;
 
         /// <summary>
+        /// Gets and sets the property ItemEnablementStatus. 
+        /// <para>
+        /// A map of item (section or question) identifiers to their enablement status, computed
+        /// by the service from each item's conditional enablement configuration. Disabled items
+        /// are excluded from scoring. Valid values: <c>ENABLED</c> | <c>DISABLED</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public Dictionary<string, string> ItemEnablementStatus { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ItemEnablementStatus property is set.
+        /// </summary>
+        internal bool IsSetItemEnablementStatus() => this.ItemEnablementStatus != null && (this.ItemEnablementStatus.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
         /// The timestamp for when the evaluation was last updated.
@@ -176,6 +198,61 @@ namespace Amazon.Connect.Model
         /// Checks to see if the Scores property is set.
         /// </summary>
         internal bool IsSetScores() => this.Scores != null && (this.Scores.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SourceResolutionStatus. 
+        /// <para>
+        /// The aggregate status of resolving the external source data (such as Contact Lens analysis
+        /// and AI metrics) that is used by conditional enablement in the evaluation. Source data
+        /// is resolved asynchronously after the evaluation is started. While a source is pending
+        /// or after it fails to resolve, conditions that depend on it evaluate to the item's
+        /// <c>DefaultAction</c>. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PENDING</c> - One or more sources have not been resolved yet. Call <c>DescribeContactEvaluation</c>
+        /// again to get updated <c>ItemEnablementStatus</c> values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOLVED</c> - All sources have been resolved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED</c> - One or more sources could not be resolved. Dependent conditions use
+        /// the item's <c>DefaultAction</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EvaluationItemResolutionStatus SourceResolutionStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceResolutionStatus property is set.
+        /// </summary>
+        internal bool IsSetSourceResolutionStatus() => this.SourceResolutionStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceValues. 
+        /// <para>
+        /// The resolved values of the external sources (such as contact data, evaluation metadata,
+        /// form metadata, and AI metrics) that are used by the conditions in the evaluation form.
+        /// You can use these values to evaluate the conditions against the current answers without
+        /// calling <c>DescribeContactEvaluation</c> again.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<EvaluationResolvedSource> SourceValues { get; set; } = AWSConfigs.InitializeCollections ? new List<EvaluationResolvedSource>() : null;
+
+        /// <summary>
+        /// Checks to see if the SourceValues property is set.
+        /// </summary>
+        internal bool IsSetSourceValues() => this.SourceValues != null && (this.SourceValues.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Status. 

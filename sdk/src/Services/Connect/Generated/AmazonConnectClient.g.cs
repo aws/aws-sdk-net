@@ -7894,6 +7894,94 @@ namespace Amazon.Connect
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes all active sessions for the specified entity in the specified Connect Customer
+        /// instance. The operation supports only the <c>USER</c> entity type, so you can use
+        /// it to sign out all of a user's active sessions. Use it when you need to end a user's
+        /// access right away, for example when they leave your organization or you suspect that
+        /// their credentials are compromised.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllEntitySessions service method.</param>
+        /// <returns>The response from the DeleteAllEntitySessions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAllEntitySessions">REST API Reference for DeleteAllEntitySessions Operation</seealso>
+        public virtual DeleteAllEntitySessionsResponse DeleteAllEntitySessions(DeleteAllEntitySessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAllEntitySessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAllEntitySessionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAllEntitySessionsResponse>(request, options);
+        }
+#else
+        internal virtual DeleteAllEntitySessionsResponse DeleteAllEntitySessions(DeleteAllEntitySessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAllEntitySessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAllEntitySessionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAllEntitySessionsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes all active sessions for the specified entity in the specified Connect Customer
+        /// instance. The operation supports only the <c>USER</c> entity type, so you can use
+        /// it to sign out all of a user's active sessions. Use it when you need to end a user's
+        /// access right away, for example when they leave your organization or you suspect that
+        /// their credentials are compromised.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllEntitySessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAllEntitySessions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAllEntitySessions">REST API Reference for DeleteAllEntitySessions Operation</seealso>
+        public virtual Task<DeleteAllEntitySessionsResponse> DeleteAllEntitySessionsAsync(DeleteAllEntitySessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAllEntitySessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAllEntitySessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAllEntitySessionsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an attached file along with the underlying S3 Object.
         /// 
         ///  <important> 
@@ -24724,7 +24812,7 @@ namespace Amazon.Connect
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Allows pausing an ongoing task contact.
+        /// Pauses an ongoing task or email contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
         /// <returns>The response from the PauseContact service method, as returned by Connect.</returns>
@@ -24774,7 +24862,7 @@ namespace Amazon.Connect
 #endif
 
         /// <summary>
-        /// Allows pausing an ongoing task contact.
+        /// Pauses an ongoing task or email contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PauseContact service method.</param>
         /// <param name="cancellationToken">
@@ -25186,7 +25274,7 @@ namespace Amazon.Connect
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Allows resuming a task contact in a paused state.
+        /// Resumes a task or email contact in a paused state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
         /// <returns>The response from the ResumeContact service method, as returned by Connect.</returns>
@@ -25233,7 +25321,7 @@ namespace Amazon.Connect
 #endif
 
         /// <summary>
-        /// Allows resuming a task contact in a paused state.
+        /// Resumes a task or email contact in a paused state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContact service method.</param>
         /// <param name="cancellationToken">

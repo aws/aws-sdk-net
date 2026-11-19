@@ -328,25 +328,6 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Validates whether the CRT dependency is available by trying to create an <see cref="AWS4aSignerCRTWrapper"/> instance.
-        /// </summary>
-        /// <returns>
-        /// True if the CRT package is available at runtime, false otherwise.
-        /// </returns>
-        private static bool IsCrtDependencyAvailable()
-        {
-            try
-            {
-                var signer = new AWS4aSignerCRTWrapper();
-                return signer != null;
-            }
-            catch (AWSCommonRuntimeException)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Inject host prefix into request endpoint.
         /// </summary>
         protected static void InjectHostPrefix(IRequestContext requestContext)

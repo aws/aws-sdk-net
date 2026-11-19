@@ -37,8 +37,33 @@ namespace Amazon.Signin.Model
     public partial class CreateOAuth2TokenWithTokenExchangeRequest : AmazonSigninRequest
     {
         /// <summary>
-        /// Gets and sets the property GrantType. The OAuth 2.0 grant type. Currently only supports
-        /// "urn:ietf:params:oauth:grant-type:token-exchange".
+        /// Gets and sets the property Assertion. The JWT authorization grant, as defined in RFC
+        /// 7523. Required when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer".
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 4, Max = 20000)]
+        public string Assertion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Assertion property is set.
+        /// </summary>
+        internal bool IsSetAssertion() => this.Assertion != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientId. The OAuth 2.0 client identifier. If provided
+        /// with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's
+        /// "client_id" claim.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 212)]
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientId property is set.
+        /// </summary>
+        internal bool IsSetClientId() => this.ClientId != null;
+
+        /// <summary>
+        /// Gets and sets the property GrantType. The OAuth 2.0 grant type. Currently supports
+        /// "urn:ietf:params:oauth:grant-type:token-exchange" and "urn:ietf:params:oauth:grant-type:jwt-bearer".
         /// </summary>
         [AWSProperty(Required = true)]
         public string GrantType { get; set; }
@@ -50,8 +75,10 @@ namespace Amazon.Signin.Model
 
         /// <summary>
         /// Gets and sets the property Resource. The OAuth resource for which the access token
-        /// is requested. Required when "grant_type=urn:ietf:params:oauth:grant-type:token-exchange".
-        /// Example: "glue.amazonaws.com".
+        /// is requested: - "grant_type=urn:ietf:params:oauth:grant-type:token-exchange": Required.
+        /// Must be a service principal. Example: "glue.amazonaws.com". - "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer":
+        /// Required when the assertion has no "resource" claim, otherwise must match it. Must
+        /// be a URI. Example: "https://aws-mcp.us-east-1.api.aws/mcp".
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string Resource { get; set; }
@@ -62,9 +89,11 @@ namespace Amazon.Signin.Model
         internal bool IsSetResource() => this.Resource != null;
 
         /// <summary>
-        /// Gets and sets the property Scope. IAM managed policy Amazon Resource Names (ARNs)
+        /// Gets and sets the property Scope. The IAM managed policy Amazon Resource Names (ARNs)
         /// to apply as session policies that further scope down the permissions of the issued
         /// access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy".
+        /// If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match
+        /// the assertion's "scope" claim.
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]
         public string Scope { get; set; }

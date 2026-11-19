@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeploymentConfigInfo Object
     /// </summary>
-    public partial class DeploymentConfigInfoUnmarshaller : IJsonUnmarshaller<DeploymentConfigInfo, JsonUnmarshallerContext>
+    public partial class DeploymentConfigInfoUnmarshaller : ICborUnmarshaller<DeploymentConfigInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentConfigInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DeploymentConfigInfo Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DeploymentConfigInfo();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("computePlatform", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("createTime", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "computePlatform":
+                        context.AddPathSegment("ComputePlatform");
+                        unmarshalledObject.ComputePlatform = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentConfigId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "createTime":
+                        context.AddPathSegment("CreateTime");
+                        unmarshalledObject.CreateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deploymentConfigName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentConfigId":
+                        context.AddPathSegment("DeploymentConfigId");
+                        unmarshalledObject.DeploymentConfigId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("minimumHealthyHosts", targetDepth, ref reader))
-                {
-                    var unmarshaller = MinimumHealthyHostsUnmarshaller.Instance;
-                    unmarshalledObject.MinimumHealthyHosts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deploymentConfigName":
+                        context.AddPathSegment("DeploymentConfigName");
+                        unmarshalledObject.DeploymentConfigName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("trafficRoutingConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = TrafficRoutingConfigUnmarshaller.Instance;
-                    unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "minimumHealthyHosts":
+                        context.AddPathSegment("MinimumHealthyHosts");
+                        unmarshalledObject.MinimumHealthyHosts = MinimumHealthyHostsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("zonalConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ZonalConfigUnmarshaller.Instance;
-                    unmarshalledObject.ZonalConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "trafficRoutingConfig":
+                        context.AddPathSegment("TrafficRoutingConfig");
+                        unmarshalledObject.TrafficRoutingConfig = TrafficRoutingConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "zonalConfig":
+                        context.AddPathSegment("ZonalConfig");
+                        unmarshalledObject.ZonalConfig = ZonalConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

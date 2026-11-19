@@ -57,6 +57,20 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConformancePackNames() => this.ConformancePackNames != null && (this.ConformancePackNames.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Returns a filtered list of custom or managed conformance packs. By default, if the
+        /// filter is not defined, Config returns details for all your conformance packs.
+        /// </para>
+        /// </summary>
+        public DescribeConformancePacksFilters Filters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filters property is set.
+        /// </summary>
+        internal bool IsSetFilters() => this.Filters != null;
+
+        /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of conformance packs returned on each page.

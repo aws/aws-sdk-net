@@ -31,9 +31,12 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProxySettings operation. Modifies the proxy
-    /// listener configuration of a proxy mode firewall. Proxy mode firewalls are created
-    /// with <c>NoSourcePreservation</c> set to <c>TRUE</c>. Use this operation to change
-    /// the ports and protocols on which the firewall's proxy listens for traffic.
+    /// settings of a proxy mode firewall. Use this operation to change the ports and protocols
+    /// on which the firewall's proxy listens for traffic. The new listeners take effect without
+    /// recreating the firewall. <para> The <c>ProxySettings</c> that you provide replace
+    /// the firewall's current proxy settings. If you created the firewall with your own <c>CertificateArn</c>
+    /// and <c>DomainName</c>, you must specify the same values in every request. You can't
+    /// change or remove them. </para>
     /// </summary>
     public partial class UpdateProxySettingsRequest : AmazonNetworkFirewallRequest
     {
@@ -77,8 +80,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ProxySettings. 
         /// <para>
-        /// The proxy listener configuration to set on the firewall. This specifies the ports
-        /// and protocols on which the firewall's proxy listens for traffic. 
+        /// The proxy settings to set on the firewall. These replace the current proxy settings.
+        /// Specify at least one listener, and at most one HTTP listener and one HTTPS listener,
+        /// on different ports. If the firewall uses your own <c>CertificateArn</c> and <c>DomainName</c>,
+        /// specify the same values that you used to create the firewall.
         /// </para>
         /// </summary>
         public ProxySettings ProxySettings { get; set; }

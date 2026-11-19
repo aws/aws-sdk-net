@@ -120,6 +120,11 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("UsageQuantity");
                 context.Writer.WriteNumberValue(publicRequest.UsageQuantity.Value);
             }
+            if (publicRequest.IsSetUsageQuantityAsDecimal())
+            {
+                context.Writer.WritePropertyName("UsageQuantityAsDecimal");
+                context.Writer.WriteStringValue(publicRequest.UsageQuantityAsDecimal);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

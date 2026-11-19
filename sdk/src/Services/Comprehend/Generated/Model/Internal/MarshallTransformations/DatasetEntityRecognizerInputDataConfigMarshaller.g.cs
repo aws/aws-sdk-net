@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,46 +39,46 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DatasetEntityRecognizerInputDataConfig Marshaller
     /// </summary>
-    public partial class DatasetEntityRecognizerInputDataConfigMarshaller : IRequestMarshaller<DatasetEntityRecognizerInputDataConfig, JsonMarshallerContext>
+    public partial class DatasetEntityRecognizerInputDataConfigMarshaller : IRequestMarshaller<DatasetEntityRecognizerInputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatasetEntityRecognizerInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DatasetEntityRecognizerInputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAnnotations())
             {
-                context.Writer.WritePropertyName("Annotations");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Annotations");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DatasetEntityRecognizerAnnotationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Annotations, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetDocuments())
             {
-                context.Writer.WritePropertyName("Documents");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Documents");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DatasetEntityRecognizerDocumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Documents, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEntityList())
             {
-                context.Writer.WritePropertyName("EntityList");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EntityList");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DatasetEntityRecognizerEntityListMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityList, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

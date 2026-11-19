@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -38,265 +38,240 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeTaskExecution operation.
     /// </summary>
-    public partial class DescribeTaskExecutionResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeTaskExecutionResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeTaskExecutionResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeTaskExecution");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("BytesCompressed", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesCompressed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BytesCompressed":
+                        context.AddPathSegment("BytesCompressed");
+                        unmarshalledObject.BytesCompressed = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BytesTransferred", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesTransferred = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BytesTransferred":
+                        context.AddPathSegment("BytesTransferred");
+                        unmarshalledObject.BytesTransferred = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("BytesWritten", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesWritten = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BytesWritten":
+                        context.AddPathSegment("BytesWritten");
+                        unmarshalledObject.BytesWritten = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EndTime":
+                        context.AddPathSegment("EndTime");
+                        unmarshalledObject.EndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EstimatedBytesToTransfer", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedBytesToTransfer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EstimatedBytesToTransfer":
+                        context.AddPathSegment("EstimatedBytesToTransfer");
+                        unmarshalledObject.EstimatedBytesToTransfer = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EstimatedFilesToDelete", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedFilesToDelete = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EstimatedFilesToDelete":
+                        context.AddPathSegment("EstimatedFilesToDelete");
+                        unmarshalledObject.EstimatedFilesToDelete = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EstimatedFilesToTransfer", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedFilesToTransfer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EstimatedFilesToTransfer":
+                        context.AddPathSegment("EstimatedFilesToTransfer");
+                        unmarshalledObject.EstimatedFilesToTransfer = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EstimatedFoldersToDelete", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedFoldersToDelete = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EstimatedFoldersToDelete":
+                        context.AddPathSegment("EstimatedFoldersToDelete");
+                        unmarshalledObject.EstimatedFoldersToDelete = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EstimatedFoldersToTransfer", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedFoldersToTransfer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EstimatedFoldersToTransfer":
+                        context.AddPathSegment("EstimatedFoldersToTransfer");
+                        unmarshalledObject.EstimatedFoldersToTransfer = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Excludes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
-                    unmarshalledObject.Excludes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Excludes":
+                        context.AddPathSegment("Excludes");
+                        unmarshalledObject.Excludes = new CborListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesDeleted", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesDeleted = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesDeleted":
+                        context.AddPathSegment("FilesDeleted");
+                        unmarshalledObject.FilesDeleted = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesFailed", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskExecutionFilesFailedDetailUnmarshaller.Instance;
-                    unmarshalledObject.FilesFailed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesFailed":
+                        context.AddPathSegment("FilesFailed");
+                        unmarshalledObject.FilesFailed = TaskExecutionFilesFailedDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesListed", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskExecutionFilesListedDetailUnmarshaller.Instance;
-                    unmarshalledObject.FilesListed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesListed":
+                        context.AddPathSegment("FilesListed");
+                        unmarshalledObject.FilesListed = TaskExecutionFilesListedDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesPrepared", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesPrepared = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesPrepared":
+                        context.AddPathSegment("FilesPrepared");
+                        unmarshalledObject.FilesPrepared = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesSkipped", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesSkipped = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesSkipped":
+                        context.AddPathSegment("FilesSkipped");
+                        unmarshalledObject.FilesSkipped = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesTransferred", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesTransferred = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesTransferred":
+                        context.AddPathSegment("FilesTransferred");
+                        unmarshalledObject.FilesTransferred = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FilesVerified", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesVerified = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FilesVerified":
+                        context.AddPathSegment("FilesVerified");
+                        unmarshalledObject.FilesVerified = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersDeleted", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FoldersDeleted = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersDeleted":
+                        context.AddPathSegment("FoldersDeleted");
+                        unmarshalledObject.FoldersDeleted = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersFailed", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskExecutionFoldersFailedDetailUnmarshaller.Instance;
-                    unmarshalledObject.FoldersFailed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersFailed":
+                        context.AddPathSegment("FoldersFailed");
+                        unmarshalledObject.FoldersFailed = TaskExecutionFoldersFailedDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersListed", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskExecutionFoldersListedDetailUnmarshaller.Instance;
-                    unmarshalledObject.FoldersListed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersListed":
+                        context.AddPathSegment("FoldersListed");
+                        unmarshalledObject.FoldersListed = TaskExecutionFoldersListedDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersPrepared", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FoldersPrepared = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersPrepared":
+                        context.AddPathSegment("FoldersPrepared");
+                        unmarshalledObject.FoldersPrepared = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersSkipped", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FoldersSkipped = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersSkipped":
+                        context.AddPathSegment("FoldersSkipped");
+                        unmarshalledObject.FoldersSkipped = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersTransferred", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FoldersTransferred = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersTransferred":
+                        context.AddPathSegment("FoldersTransferred");
+                        unmarshalledObject.FoldersTransferred = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FoldersVerified", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FoldersVerified = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FoldersVerified":
+                        context.AddPathSegment("FoldersVerified");
+                        unmarshalledObject.FoldersVerified = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Includes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
-                    unmarshalledObject.Includes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Includes":
+                        context.AddPathSegment("Includes");
+                        unmarshalledObject.Includes = new CborListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LaunchTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LaunchTime":
+                        context.AddPathSegment("LaunchTime");
+                        unmarshalledObject.LaunchTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ManifestConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ManifestConfigUnmarshaller.Instance;
-                    unmarshalledObject.ManifestConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ManifestConfig":
+                        context.AddPathSegment("ManifestConfig");
+                        unmarshalledObject.ManifestConfig = ManifestConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Options", targetDepth, ref reader))
-                {
-                    var unmarshaller = OptionsUnmarshaller.Instance;
-                    unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Options":
+                        context.AddPathSegment("Options");
+                        unmarshalledObject.Options = OptionsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ReportResult", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReportResultUnmarshaller.Instance;
-                    unmarshalledObject.ReportResult = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ReportResult":
+                        context.AddPathSegment("ReportResult");
+                        unmarshalledObject.ReportResult = ReportResultUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Result", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskExecutionResultDetailUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Result":
+                        context.AddPathSegment("Result");
+                        unmarshalledObject.Result = TaskExecutionResultDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StartTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TaskExecutionArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskExecutionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TaskExecutionArn":
+                        context.AddPathSegment("TaskExecutionArn");
+                        unmarshalledObject.TaskExecutionArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TaskMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TaskMode":
+                        context.AddPathSegment("TaskMode");
+                        unmarshalledObject.TaskMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TaskReportConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = TaskReportConfigUnmarshaller.Instance;
-                    unmarshalledObject.TaskReportConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "TaskReportConfig":
+                        context.AddPathSegment("TaskReportConfig");
+                        unmarshalledObject.TaskReportConfig = TaskReportConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -304,11 +279,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -316,16 +289,15 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                     {
-                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                     {
-                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

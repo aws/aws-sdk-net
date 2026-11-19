@@ -68,6 +68,7 @@ namespace Amazon.Signin.Internal
         public List<IAuthSchemeOption> ResolveAuthScheme(AmazonSigninAuthSchemeParameters authParameters) =>
             authParameters.Operation switch
             {
+                "CreateBearerTokenRequest" => AuthSchemeOption.DEFAULT_SIGV4,
                 "CreateOAuth2TokenRequest" => AuthSchemeOption.DEFAULT_NOAUTH,
                 "CreateOAuth2TokenWithIAMRequest" => AuthSchemeOption.DEFAULT_SIGV4,
                 "CreateOAuth2TokenWithTokenExchangeRequest" => AuthSchemeOption.DEFAULT_NOAUTH,

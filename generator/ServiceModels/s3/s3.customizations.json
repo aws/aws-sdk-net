@@ -1,4 +1,22 @@
 {
+    "service": {
+        "skipClientContextParams": ["ForcePathStyle", "UseArnRegion", "DisableMultiRegionAccessPoints", "Accelerate", "DisableS3ExpressSessionAuth"],
+        "skipDocSamples": true,
+        "requestBaseClass": "AmazonWebServiceRequest",
+        "streamingResponseBaseClass": "StreamResponse",
+        "customErrorHandling": {
+            "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller",
+            "errorResponseType": "S3ErrorResponse",
+            "exceptionFactory": "ConstructS3Exception"
+        },
+        "clientDisposeMethod": "DisposeS3ExpressCredentialProvider",
+        "retryPolicyRequestList": true,
+        "customPropertyValueRules": true,
+        "endpointResolverPartial": true,
+        "endpointResolvedLabel": "Bucket",
+        "keepGreedyLabelLeadingSlash": true,
+        "requiredLabelServiceExceptionOperations": ["CreateSession", "GetObjectAttributes", "GetBucketAcl", "PutObjectAcl", "GetObjectAcl", "PutBucketAcl", "CreateBucketMetadataConfiguration", "GetBucketMetadataConfiguration", "DeleteBucketMetadataConfiguration"]
+    },
     "runtimePipelineOverride": {
         "overrides": [
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
@@ -32,13 +50,6 @@
             "modify": [
                 {
                     "Bucket": { "emitPropertyName": "BucketName" }
-                }
-            ]
-        },
-        "CloudFunctionConfiguration": {
-            "modify": [
-                {
-                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
                 }
             ]
         },
@@ -454,12 +465,6 @@
                     "ID" : {"emitPropertyName" : "Id"}
                 },
                 {
-                    "Transition" : {"emitPropertyName" : "Transitions"}
-                },
-                {
-                    "NoncurrentVersionTransition": {"emitPropertyName": "NoncurrentVersionTransitions"}
-                },
-                {
                     "Status":{
                           "injectXmlPrivateMemberAssignment" :[
                             "private LifecycleRuleStatus _status = LifecycleRuleStatus.Disabled;"
@@ -613,8 +618,7 @@
             ],
             "excludeFromMarshalling":[
                 "ServerSideEncryptionCustomerProvidedKey",
-                "ServerSideEncryptionCustomerProvidedKeyMD5",
-                "Metadata"
+                "ServerSideEncryptionCustomerProvidedKeyMD5"
             ]
         },
         "CreateMultipartUploadOutput":{
@@ -643,13 +647,6 @@
                 }
             ]
         },
-        "QueueConfigurationDeprecated": {
-            "modify": [
-                {
-                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
-                }
-            ]
-        },
         "ReplicationRule":{
             "modify":[
                 {
@@ -657,13 +654,6 @@
                 },
                 {
                     "ID": { "emitPropertyName": "Id" }
-                }
-            ]
-        },
-        "TopicConfigurationDeprecated": {
-            "modify": [
-                {
-                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
                 }
             ]
         },
@@ -956,9 +946,6 @@
                     "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
                 },
                 {
-                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
-                },
-                {
                     "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
                 }
             ],
@@ -1124,9 +1111,6 @@
         },
         "ListBucketMetricsConfigurationsRequest":{
             "modify":[
-                {
-                    "Token": {"emitPropertyName": "ContinuationToken"}
-                },
                 {
                      "ContinuationToken" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]}
                 },
@@ -2104,13 +2088,6 @@
                     }
                 },
                 {
-                    "ServerSideEncryptionCustomerMethod":{
-                        "injectXmlIsSet":[
-                            "return this._serverSideEncryptionCustomerMethod != null && this._serverSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None;"
-                        ]
-                    }
-                },
-                {
                     "RequestToken":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._requestToken);"]}
                 },
                 {
@@ -2323,9 +2300,6 @@
                 },
                 {
                     "SSECustomerAlgorithm":{"emitPropertyName":"ServerSideEncryptionCustomerMethod"}
-                },
-                {
-                    "SSECustomerKey":{"emitPropertyName": "ServerSideEncryptionCustomerProvidedKey"}
                 },
                 {
                     "SSECustomerKeyMD5":{"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
@@ -2839,13 +2813,6 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             }
-        },
-        "ListMultipartUploadsRequest":{
-            "CommonPrefixes" : {
-                "Type": "List<string>",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
-            } 
         },
         "ListMultipartUploadsOutput":{
             "CommonPrefixes" : {

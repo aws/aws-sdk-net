@@ -53,7 +53,7 @@ namespace Amazon.AppStream.Model
         /// The URL to start the WorkSpaces Applications streaming session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1)]
+        [AWSProperty(Sensitive = true)]
         public string StreamingURL { get; set; }
 
         /// <summary>

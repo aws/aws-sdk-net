@@ -26,8 +26,7 @@ An operation output already named `{Operation}Response` that a member also targe
 No C2J service has this shape, so there is no parity target.
 
 A structure named in the `generateUnmarshaller` customization also gets a `{Shape}Unmarshaller`,
-though only requests use it (mobileanalytics `Event`, `Session`). Its nested structures need their own
-entries.
+though only requests use it. No current service sets it. Its nested structures need their own entries.
 
 Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
 `StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a
@@ -49,7 +48,7 @@ Every request marshaller emits, in this order:
 4. `@httpQuery` members, then `@httpQueryParams`; `@httpPrefixHeaders`, then `@httpHeader` members.
 5. `@httpLabel` members as `AddPathResource` calls, then `request.ResourcePath` set to the `@http` uri
    template (labels left as `{name}` for the runtime to substitute).
-6. The body (below), `@httpChecksumRequired`, `@unsignedPayload`, `UseQueryString`, `@endpoint` host
+6. The body (below), the request checksum (below), `@unsignedPayload`, `UseQueryString`, `@endpoint` host
    prefix, `return request`.
 
 An operation that requires HTTP/2 pins `request.HttpProtocolVersion = System.Net.HttpVersion.Version20`
@@ -81,11 +80,11 @@ instead of the default `application/json`, matching C2J.
 | `@httpQuery("name")` `list<string>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop)` (repeated params, ordinal-sorted at runtime) |
 | `@httpQuery("name")` `list<value-type>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop.ConvertAll<string>(item => StringUtils.FromX(item)))` |
 | `@httpQueryParams` map | Query string | Loop entries into query params (see below); `@httpQuery` wins on key collision |
-| `@httpLabel` | URI segment | `if (!publicRequest.IsSetProp()) throw new Amazon{BaseName}Exception(...)`, then `request.AddPathResource("{name}", <conversion>)`. A greedy label keeps `{name+}` as the key and passes the value through `.TrimStart('/')` |
+| `@httpLabel` | URI segment | `if (!publicRequest.IsSetProp()) throw new Amazon{BaseName}Exception(...)`, then `request.AddPathResource("{name}", <conversion>)`. A greedy label keeps `{name+}` as the key and passes the value through `.TrimStart('/')`. S3 changes this with three `service` keys (see below) |
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
 | `@httpHeader("name")` `@mediaType` string | Header | Base64: `Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(...))`; the read side decodes (C2J "jsonvalue"). Body-bound `@mediaType` strings are plain |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
-| `@httpHeader("name")` `list<value-type>` | Header | `request.Headers["name"] = StringUtils.FromValueTypeList(publicRequest.Prop)` (the `List<T>` overload lowercases bool and forces `DateTime` to RFC822, so no per-element or per-format branch is emitted) |
+| `@httpHeader("name")` `list<value-type>` | Header | `request.Headers["name"] = StringUtils.FromValueTypeList(publicRequest.Prop)` (the `List<T>` overload lowercases bool and forces `DateTime` to RFC822, so no per-element or per-format branch is emitted). byte/short/bigInteger/bigDecimal pass their formatter: `StringUtils.FromValueTypeList(publicRequest.Prop, StringUtils.FromShort)`, since the untyped overload uses the current culture |
 | `@httpPrefixHeaders("prefix")` map | Multiple headers | Loop `map<string,string>`, emit `{prefix}{key}` headers (see below); request & response |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
 | `@hostLabel` | Endpoint host prefix | `request.HostPrefix` label **in addition to** the member's normal binding (see below) |
@@ -100,6 +99,15 @@ required check.
 A label whose property is listed in the `skipUriPropertyValidation` customization gets no required check
 and is sent empty when unset: `request.AddPathResource("{name}", publicRequest.IsSetProp() ? <conversion> : string.Empty)`.
 Glacier lists `AccountId`, which its `ProcessRequestHandler` then replaces with `-` (the caller's account).
+
+S3 sets three `service` keys that change label handling:
+
+- `endpointResolvedLabel` (`Bucket`): `/{Bucket}` is left out of `ResourcePath` and gets no `AddPathResource`,
+  because the endpoint resolver adds the bucket to the URL.
+- `keepGreedyLabelLeadingSlash`: no `TrimStart('/')`, so a key can start with `/`.
+- `requiredLabelServiceExceptionOperations` (restXml only): an unset string label throws `System.ArgumentException`
+  on `string.IsNullOrEmpty`, as C2J's S3 marshallers do. The listed operations keep the `IsSet` check with the
+  service exception.
 
 List query/header bindings accept `list<string>`/`list<enum>` (an enum element is a plain `string`, see
 type-mapping) and value-type element lists (int, long, bool, double, float, timestamp, intEnum), matching
@@ -153,8 +161,9 @@ already open, then reads `context.Request.EventHeaders` and `context.Request.Con
 route by trait:
 
 - `@eventHeader` → `IsSet`-guarded `EventStreamHeader("{memberName}")` (never `@jsonName`) with the typed
-  setter for the target shape (`SetString` string/enum, `SetBool`/`SetInt32`/`SetInt64`/`SetTimestamp`
-  with `.Value`, `SetByteBuf(….ToArray())` blob), added to `EventHeaders`. Any other target fails loud.
+  setter for the target shape (`SetString` string/enum, `SetBool`/`SetInt32`/`SetInt64`/`SetSByte` (byte)/
+  `SetInt16` (short)/`SetTimestamp` with `.Value`, `SetByteBuf(….ToArray())` blob), added to `EventHeaders`. Any
+  other target (bigInteger/bigDecimal have no header encoding) fails loud.
 - `@eventPayload` → `IsSet`-guarded: blob `Request.Content = ….ToArray()`, string/enum
   `Encoding.UTF8.GetBytes(…)` (publisher sends octet-stream / text/plain, C2J parity); structure/union
   `{Type}Marshaller.Instance.Marshall(…, context)` into the open object (the protocol tests expect the bare
@@ -178,7 +187,7 @@ A `@httpPayload` member IS the entire body: no wrapping object/property name, no
 
 List and map payloads fail loud.
 
-### `@requestCompression` and `@httpChecksumRequired` (request)
+### `@requestCompression` and request checksums (request)
 
 Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`, at opposite ends of the body.
 
@@ -189,10 +198,10 @@ Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util`,
   throw, where C2J warns and emits no call: silently dropping compression changes wire behavior with no
   signal. A `@streaming` `@requiresLength` payload is rejected (Smithy forbids it; the compressed length
   isn't known until the stream has been read).
-- `@httpChecksumRequired` → `ChecksumUtils.SetChecksumData(request);` **after** body serialization (the
-  checksum covers the body), before the `DisablePayloadSigning` line. This is the legacy MD5-only trait.
-  C2J also treats the flexible `aws.protocols#httpChecksum` as MD5-required; we deliberately don't (that
-  trait is rejected as unsupported), so flexible-checksum operations stay off the MD5 path.
+- `aws.protocols#httpChecksum` / `@httpChecksumRequired` → one `ChecksumUtils.SetChecksumData(...)` call, the same
+  arguments C2J emits, **after** body serialization and only for an operation with a body (S3Control has the legacy
+  trait on GETs). restXml emits it after `PostMarshallCustomization`, as C2J does, so the modeled checksum wins over a
+  hand-written hook. `skipChecksumDuringMarshalling` suppresses it; a response-only `httpChecksum` emits nothing.
 
 ### `@endpoint` host prefix (request)
 
@@ -226,7 +235,7 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 - **Structure** → reader + `if (reader.Reader.IsFinalBlock) return unmarshalledObject;` + `{Type}Unmarshaller.Instance.Unmarshall(context, ref reader)`.
 - **Document** → the structure scaffold with `Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance`. C2J models a document as a structure flagged `document: true`, so its output takes the structure-payload branch; we emit the same (bedrock-agentcore `GetAgentCardResponse`).
 - **Blob** (non-streaming, `MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
-- **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J, see Polly `SynthesizeSpeech`).
+- **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered (to the base's `ResponseStream` under `service.streamingResponseBaseClass`) and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J, see Polly `SynthesizeSpeech`).
 
 `@httpHeader` members read from `context.ResponseData` after. An `@httpPayload` **error** member fails
 loud: C2J never bound an error body to a payload, and emitting a never-populated property would be worse.
@@ -261,8 +270,8 @@ invoked per event from the event-stream class's `EventMapping`. A member carries
 - **`@eventHeader`** → read from the event-message header via `context.ResponseData`, guarded by
   `IsEventHeaderPresent("{ModeledName}")` (the wire header key is the member name verbatim). The accessor on
   `GetEventStreamHeader("{ModeledName}")` follows the target shape: string/enum → `AsString()`, boolean →
-  `AsBool()`, integer/intEnum → `AsInt32()`, long → `AsInt64()`, timestamp → `AsTimestamp()`, blob →
-  `new MemoryStream(...AsByteBuf())`. Any other target fails loud.
+  `AsBool()`, integer/intEnum → `AsInt32()`, long → `AsInt64()`, byte → `AsSByte()`, short → `AsInt16()`,
+  timestamp → `AsTimestamp()`, blob → `new MemoryStream(...AsByteBuf())`. Any other target fails loud.
 - **unbound** → the JSON body, read through the ordinary reader loop.
 
 An event can carry `@eventHeader` members **without** an `@eventPayload` member: a headers-only event (only
@@ -284,13 +293,20 @@ members still get marshallers.
   event's `@eventPayload` member: a blob payload → `application/octet-stream`, a string payload →
   `text/plain`, both read from `context.Request.Content`; a structure payload or an implicit body →
   `application/json` from the JSON writer's stream. (C2J emits `text/plain` for a structure payload too,
-  but the event marshaller writes it as JSON, so JSON is kept here.) On rpcv2Cbor the class derives from
+  but the event marshaller writes it as JSON, so JSON is kept here.) An event whose members are all
+  `@eventHeader` (or that has none) has no payload: empty bytes and a null content type, so the runtime
+  omits `:content-type` (event-streams SEP). On rpcv2Cbor the class derives from
   `CborEventStreamPublisher` and the body is a CBOR map (`application/cbor`).
 - The request member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property (keeps any modeled
   `[AWSProperty]`/`[Obsolete]`, no `IsSet`). The request marshaller wires it:
   `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
   `Content-Type: application/vnd.amazon.eventstream`, replacing body serialization.
 - On RPC protocols, input siblings are serialized into an `initial-request` event before the first modeled event.
+  It is always sent, as an empty map/object when the stream is the only member (Amazon Event Stream
+  specification, Initial Message Events; pinned by the rpcv2Cbor corpus protocol tests).
+- An output event may arrive with an empty payload: an event with no body members is then the empty event, and
+  an unset structure `@eventPayload` is left unset. The generated unmarshaller checks for it before reading
+  (`CborReaderState.Finished` on rpcv2Cbor, a zero-length payload stream on JSON).
 
 ## Response Header Unmarshalling
 
@@ -312,6 +328,8 @@ Each member is guarded by `context.ResponseData.IsHeaderPresent("x-foo")` and as
 | timestamp, epoch-seconds | `Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(value, CultureInfo.InvariantCulture))` |
 | `list<string>` / `list<enum>` | `MultiValueHeaderParser.ToStringList(value)` |
 | `list<value-type>` (int/long/bool/double/float) | `MultiValueHeaderParser.ToValueTypeList<T>(value)` (T = the non-nullable element type, e.g. `int`) |
+| byte / short / bigInteger / bigDecimal | `{T}.Parse(value, CultureInfo.InvariantCulture)` with T `sbyte`, `short`, `System.Numerics.BigInteger`, `Amazon.Extensions.Numerics.BigDecimal` |
+| `list<byte/short/bigInteger/bigDecimal>` | `MultiValueHeaderParser.ToValueTypeList<T>(value, s => T.Parse(s, CultureInfo.InvariantCulture))` (BigInteger/BigDecimal are not `IConvertible`) |
 | `list<timestamp>` | `MultiValueHeaderParser.ToDateTimeList(value, "FMT")`, where `FMT` is the runtime's format name (`RFC822`/`ISO8601`/`UnixTimestamp`, header default `RFC822`), **not** the Smithy token |
 
 A non-scalar list element fails loud, as does a `@sparse` value-type element.
@@ -336,6 +354,10 @@ Same output on the response and exception unmarshallers.
 | float | `float?` | `WriteNumberValue` (NaN/∞ as strings, members only) | `FloatUnmarshaller` |
 | double | `double?` | `WriteNumberValue` (NaN/∞ as strings, members only) | `DoubleUnmarshaller` |
 | timestamp | `DateTime?` | Format-dependent (see below) | `DateTimeUnmarshaller` |
+| byte | `sbyte?` | `WriteNumberValue` | `SByteUnmarshaller` (out of range throws `OverflowException`) |
+| short | `short?` | `WriteNumberValue` | `ShortUnmarshaller` (out of range throws `OverflowException`) |
+| bigInteger | `System.Numerics.BigInteger?` | `StringUtils.WriteBigIntegerValue(context.Writer, ...)` (raw JSON number, every digit) | `BigIntegerUnmarshaller` (parses the raw token text, never via double) |
+| bigDecimal | `Amazon.Extensions.Numerics.BigDecimal?` | `StringUtils.WriteBigDecimalValue(context.Writer, ...)` (raw JSON number, plain decimal) | `BigDecimalUnmarshaller` (parses the raw token text, never via double) |
 | blob | `MemoryStream` | `StringUtils.WriteBase64StringValue(context.Writer, ...)` | `MemoryStreamUnmarshaller` |
 | document | `Amazon.Runtime.Documents.Document` | `DocumentMarshaller.Instance.Write` | `DocumentUnmarshaller.Instance` |
 | list | `List<T>` | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
@@ -435,12 +457,18 @@ operation is `POST service/{ServiceShapeName}/operation/{OperationName}` with `s
 timestamps are tag 1. The output is wire-compatible with C2J's CBOR templates and formatted like the JSON
 writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `RpcV2CborCodegenTests`.
 
+byte/short are written with `WriteInt32` (smallest integer encoding) and read by `CborSByteUnmarshaller` /
+`CborShortUnmarshaller` (out of range throws `OverflowException`). bigInteger is written with
+`CborWriter.WriteBigInteger` (tag 2/3 bignum) and bigDecimal with the `WriteBigDecimal` extension (tag 4 decimal
+fraction, bignum mantissa when it exceeds 64 bits), as the spec requires; the readers also accept a plain integer,
+and reject floats so no value goes through a double.
+
 A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
 list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by
 `UnsupportedTraitValidator`.
 
 Event streams follow the awsJson rules, plus `Accept: application/vnd.amazon.eventstream` for an output stream.
-Initial messages and modeled events are CBOR maps. Each modeled event is decoded without its message headers, so a response `@eventHeader` fails loud.
+Initial messages and modeled events are CBOR maps. A modeled event is decoded through a `CborUnmarshallerContext` whose response data is the message's headers (`EventStreamUtils.ConvertMessageToResponseData`), so `@eventPayload`/`@eventHeader`/body members partition exactly as on awsJson.
 
 ## restXml
 
@@ -461,12 +489,13 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   is marshalled by that structure's own marshaller into the root. `Content-Type: application/xml` and
   `x-amz-api-version` are set only when there is an XML body, inside a `try`/`catch` that maps an
   `EncoderFallbackException` to an `AmazonServiceException`. A structure/union `@httpPayload` is `IsSet`-guarded
-  so an unset payload sends an empty body, not `<Root />` (as C2J and the JSON writer do). A non-structure
+  so an unset payload sends an empty body, not `<Root />`. With a request checksum only the root element is
+  guarded and the stream is always created (C2J), so the checksum covers the empty body instead of nothing. A non-structure
   `@httpPayload` (string/blob) takes the raw-content path with `text/plain`/`application/octet-stream` (or
   `@mediaType`). The `@endpoint` host prefix is skipped when a `@hostLabel` member is also a `@contextParam`
   (the endpoint ruleset already consumes it into the host; only S3 Control matches today) — derived from the
   model, not hard-coded.
-- **Response body** — `XmlResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) reads the body
+- **Response body** — `XmlResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`, or `service.customErrorHandling.responseUnmarshallerBaseClass`) reads the body
   through a `UnmarshallResult` element loop matching on `context.TestExpression("{xmlName}", targetDepth)`
   (C2J parity), not a JSON reader. A structure `@httpPayload` is matched by its root element name through
   that loop; string/blob/streaming payloads read the raw stream via the shared,
@@ -474,7 +503,12 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   restJson1 emitters. The s3control `allowEmptyResult` customization returns early on a successful empty
   body (the loop would otherwise throw); it is rejected at generation time on any non-restXml protocol.
 - **Errors** — `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope; dispatch is
-  on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path.
+  on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path. S3 supplies its own
+  error handling through `service.customErrorHandling`, whose three parts are all required (a partial set fails at
+  load): `responseUnmarshallerBaseClass` (which handles unmodeled errors, so only an operation with modeled errors
+  overrides `UnmarshallException`), `errorResponseType` (parsed by `{type}Unmarshaller`; exception unmarshallers
+  pass its `Id2`/`AmzCfId`) and `exceptionFactory` (the base's fallback for an unmatched code). Setting it also
+  skips the generated service exception, since the hand-written one takes those ids.
 
 ## awsQueryCompatible
 
@@ -503,7 +537,9 @@ body. Wire names reuse the XML naming traits via `XmlNames` (member `@xmlName` e
   `StringUtils.From*` conversions as restXml (value types unwrap `.Value`; body timestamps default to
   `date-time`; blobs are base64; enums are `FromString`); an idempotency token fills a GUID when unset.
   Nested list-of-collection and map-of-map/map-of-struct-list fail loud (C2J has no path for them). The
-  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`. An
+  body is cached up front via `AWSSDKUtils.WriteParametersToPooledStream` / `GetRequestPayloadBytes`, except
+  under metadata.json `signature-version: "v2"` (sdb), whose `QueryStringSigner` appends `SecurityToken` to
+  the parameters after marshalling and so would miss a cached body. An
   `@endpoint` host prefix is emitted like restJson1; streaming (blobs and event streams) and documents are
   rejected.
 - **Response body** — `QueryResponseUnmarshallerWriter` (base `XmlResponseUnmarshaller`) descends the
@@ -536,3 +572,22 @@ awsQuery writers with EC2's differences; only EC2 and the EC2Protocol test clien
   (`new {Error}Exception(errorResponse.Message, …)`), with no body copy or per-error unmarshaller call,
   matching C2J's `AWSQueryEC2ResponseUnmarshaller.tt`. The exception unmarshallers themselves are the awsQuery
   ones.
+- **EC2 customizations** — `CustomizationTransform` folds most into the model (only EC2 uses them), so the
+  writers above only add:
+  - `emitAsShape` + `emitFromMember` (`AttributeValue` → `string`): `TypeMapper` types the member as the wrapper's
+    value and sets `TypeDescriptor.Unwrapped`; the wire keeps the wrapper (`InstanceType.Value`, `instanceType/value`;
+    a list item `Name.{i}.Value`, `name/item/value`). `listMemberSuffixExclusions` drops the item suffix for the
+    listed operations' requests.
+  - `emitAsShape` alone retargets members to another modeled shape. The old name's `shapeModifiers` are merged
+    into the new shape's, since C2J applies them only while marshalling the substituted member; this fails when
+    a request already sends the new shape, when a key would change the emitted class, or when the new shape has
+    an `inject`, `locationName` or `customMarshall` the old name does not set with the same values or skip with
+    `customMarshall`.
+  - `inject` adds a real member; its `locationName` becomes `@xmlName`, so the request name upper-cases it and
+    the response name lower-cases it, as C2J. An injected name a renamed member already has moves that member
+    to its emitted name, keeping its wire name.
+  - `modify.locationName` becomes `@ec2QueryName` (upper-cased): request only, ranked above the model's name.
+  - `marshallNameOverrides` names a member for one operation's request, above every other rule (upper-cased).
+  - `customMarshall` keeps the member on the class but out of the request; hand-written code sends it.
+  - `suppressResultGeneration` makes the output Unit: an empty response class whose unmarshaller reads no
+    members.

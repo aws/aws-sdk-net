@@ -32,13 +32,18 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CreateDesignation operation. Creates a new user-defined
     /// designation with a Cedar permit policy. The designation defines a named role that
-    /// can be assigned to project members.
+    /// can be assigned to project members through <c>CreateProjectMembership</c> or granted
+    /// through <c>AddPolicyGrant</c>.
     /// </summary>
     public partial class CreateDesignationRequest : AmazonDataZoneRequest
     {
         /// <summary>
-        /// Gets and sets the property DeletionProtection. Whether deletion protection is enabled
-        /// for this designation. Defaults to true when omitted.
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether deletion protection is enabled for this designation. Defaults to
+        /// <c>true</c> when omitted. When enabled, <c>DeleteDesignation</c> is rejected until
+        /// protection is disabled through <c>UpdateDesignation</c>.
+        /// </para>
         /// </summary>
         public bool? DeletionProtection { get; set; }
 
@@ -90,8 +95,11 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Policy. The Cedar permit policy that defines what actions
-        /// holders of this designation are allowed to perform.
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// The Cedar permit policy that defines the actions holders of this designation are allowed
+        /// to perform.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 10000)]
         public string Policy { get; set; }

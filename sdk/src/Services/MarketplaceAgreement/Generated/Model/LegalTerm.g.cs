@@ -57,7 +57,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifer for the term.
+        /// The unique identifier for the term.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]

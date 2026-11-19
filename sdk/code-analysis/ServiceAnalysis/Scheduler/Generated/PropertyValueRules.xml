@@ -21,7 +21,7 @@
     <property>Amazon.Scheduler.Model.CreateScheduleRequest.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[a-z]+)?:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
+    <pattern>^arn:aws[a-z-]*:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.CreateScheduleRequest.Name</property>
@@ -43,7 +43,7 @@
     <property>Amazon.Scheduler.Model.CreateScheduleResponse.ScheduleArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.CreateScheduleGroupRequest.ClientToken</property>
@@ -61,7 +61,7 @@
     <property>Amazon.Scheduler.Model.CreateScheduleGroupResponse.ScheduleGroupArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.DeleteScheduleRequest.ClientToken</property>
@@ -109,7 +109,7 @@
     <property>Amazon.Scheduler.Model.GetScheduleResponse.Arn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.GetScheduleResponse.Description</property>
@@ -126,7 +126,7 @@
     <property>Amazon.Scheduler.Model.GetScheduleResponse.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[a-z]+)?:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
+    <pattern>^arn:aws[a-z-]*:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.GetScheduleResponse.Name</property>
@@ -154,7 +154,7 @@
     <property>Amazon.Scheduler.Model.GetScheduleGroupResponse.Arn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.GetScheduleGroupResponse.Name</property>
@@ -214,19 +214,19 @@
     <property>Amazon.Scheduler.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.UpdateScheduleRequest.ClientToken</property>
@@ -249,7 +249,7 @@
     <property>Amazon.Scheduler.Model.UpdateScheduleRequest.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[a-z]+)?:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
+    <pattern>^arn:aws[a-z-]*:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.UpdateScheduleRequest.Name</property>
@@ -271,7 +271,7 @@
     <property>Amazon.Scheduler.Model.UpdateScheduleResponse.ScheduleArn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.CapacityProviderStrategyItem.Base</property>
@@ -292,7 +292,7 @@
     <property>Amazon.Scheduler.Model.DeadLetterConfig.Arn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws(-[a-z]+)?:sqs:[a-z0-9\-]+:\d{12}:[a-zA-Z0-9\-_]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:sqs:[a-z0-9\-]+:\d{12}:[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.EcsParameters.Group</property>
@@ -325,6 +325,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.EventBridgeParameters.Source</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(?=[/\.\-_A-Za-z0-9]+)((?!aws\.).*)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Scheduler.Model.EventBridgePutEventsV2Parameters.DetailType</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Scheduler.Model.EventBridgePutEventsV2Parameters.Source</property>
     <min>1</min>
     <max>256</max>
     <pattern>^(?=[/\.\-_A-Za-z0-9]+)((?!aws\.).*)|(\$(\.[\w_-]+(\[(\d+|\*)\])*)*)$</pattern>
@@ -372,7 +383,7 @@
     <property>Amazon.Scheduler.Model.ScheduleGroupSummary.Arn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule-group\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.ScheduleGroupSummary.Name</property>
@@ -384,7 +395,7 @@
     <property>Amazon.Scheduler.Model.ScheduleSummary.Arn</property>
     <min>1</min>
     <max>1224</max>
-    <pattern>^arn:aws(-[a-z]+)?:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:scheduler:[a-z0-9\-]+:\d{12}:schedule\/[0-9a-zA-Z-_.]+\/[0-9a-zA-Z-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.ScheduleSummary.GroupName</property>
@@ -426,7 +437,7 @@
     <property>Amazon.Scheduler.Model.Target.RoleArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws(-[a-z]+)?:iam::\d{12}:role\/[\w+=,.@\/-]+$</pattern>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@\/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Scheduler.Model.TargetSummary.Arn</property>

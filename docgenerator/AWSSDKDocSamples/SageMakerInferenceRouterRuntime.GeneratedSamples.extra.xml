@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.SageMakerInferenceRouterRuntime.IAmazonSageMakerInferenceRouterRuntime.InvokeInferenceRouter(Amazon.SageMakerInferenceRouterRuntime.Model.InvokeInferenceRouterRequest)" />
+      <member name="M:Amazon.SageMakerInferenceRouterRuntime.AmazonSageMakerInferenceRouterRuntimeClient.InvokeInferenceRouter(Amazon.SageMakerInferenceRouterRuntime.Model.InvokeInferenceRouterRequest)" />
+      <member name="T:Amazon.SageMakerInferenceRouterRuntime.Model.InvokeInferenceRouterRequest" />
+      <member name="T:Amazon.SageMakerInferenceRouterRuntime.Model.InvokeInferenceRouterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sends a JSON request to the my-target routing target of the my-router inference router. The response shows that a destination in the router's Region served the request.
+        </para>
+        <code title="Invoke an inference router" source=".\AWSSDKDocSamples\SageMakerInferenceRouterRuntime\SageMakerInferenceRouterRuntime.GeneratedSamples.cs" region="InvokeInferenceRouter-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

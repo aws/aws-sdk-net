@@ -1,0 +1,90 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GuardDuty.Model
+{
+    /// <summary>
+    /// Contains an analysis of the findings in an Amazon Web Services account.
+    /// </summary>
+    public partial class AccountAnalysis
+    {
+        /// <summary>
+        /// Gets and sets the property AffectedResources. 
+        /// <para>
+        /// The resources in the account that are associated with findings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 50)]
+        public List<AccountAffectedResource> AffectedResources { get; set; } = AWSConfigs.InitializeCollections ? new List<AccountAffectedResource>() : null;
+
+        /// <summary>
+        /// Checks to see if the AffectedResources property is set.
+        /// </summary>
+        internal bool IsSetAffectedResources() => this.AffectedResources != null && (this.AffectedResources.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FindingsSummary. 
+        /// <para>
+        /// A summary of the findings in the account.
+        /// </para>
+        /// </summary>
+        public FindingsSummary FindingsSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FindingsSummary property is set.
+        /// </summary>
+        internal bool IsSetFindingsSummary() => this.FindingsSummary != null;
+
+        /// <summary>
+        /// Gets and sets the property TacticCoverage. 
+        /// <para>
+        /// The findings in the account, mapped to MITRE ATT&amp;CK tactics and techniques.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 20)]
+        public List<TacticCoverage> TacticCoverage { get; set; } = AWSConfigs.InitializeCollections ? new List<TacticCoverage>() : null;
+
+        /// <summary>
+        /// Checks to see if the TacticCoverage property is set.
+        /// </summary>
+        internal bool IsSetTacticCoverage() => this.TacticCoverage != null && (this.TacticCoverage.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

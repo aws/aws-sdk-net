@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// TimeRange Marshaller
     /// </summary>
-    public partial class TimeRangeMarshaller : IRequestMarshaller<TimeRange, JsonMarshallerContext>
+    public partial class TimeRangeMarshaller : IRequestMarshaller<TimeRange, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeRange requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFromInclusive())
             {
-                context.Writer.WritePropertyName("FromInclusive");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.FromInclusive.Value));
+                context.Writer.WriteTextString("FromInclusive");
+                context.Writer.WriteDateTime(requestObject.FromInclusive.Value);
             }
 
             if (requestObject.IsSetToExclusive())
             {
-                context.Writer.WritePropertyName("ToExclusive");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ToExclusive.Value));
+                context.Writer.WriteTextString("ToExclusive");
+                context.Writer.WriteDateTime(requestObject.ToExclusive.Value);
             }
         }
 

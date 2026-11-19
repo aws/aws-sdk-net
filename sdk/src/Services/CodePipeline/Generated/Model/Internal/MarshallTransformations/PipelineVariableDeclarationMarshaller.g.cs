@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// PipelineVariableDeclaration Marshaller
     /// </summary>
-    public partial class PipelineVariableDeclarationMarshaller : IRequestMarshaller<PipelineVariableDeclaration, JsonMarshallerContext>
+    public partial class PipelineVariableDeclarationMarshaller : IRequestMarshaller<PipelineVariableDeclaration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PipelineVariableDeclaration requestObject, JsonMarshallerContext context)
+        public void Marshall(PipelineVariableDeclaration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDefaultValue())
             {
-                context.Writer.WritePropertyName("defaultValue");
-                context.Writer.WriteStringValue(requestObject.DefaultValue);
+                context.Writer.WriteTextString("defaultValue");
+                context.Writer.WriteTextString(requestObject.DefaultValue);
             }
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
         }
 

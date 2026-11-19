@@ -45,6 +45,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetJobParameters())
+            {
+                context.Writer.WritePropertyName("jobParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PopulationAnalysisJobParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.JobParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSqlParameters())
             {
                 context.Writer.WritePropertyName("sqlParameters");

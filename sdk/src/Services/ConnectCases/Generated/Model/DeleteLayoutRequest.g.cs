@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLayout operation. Deletes a layout from
-    /// a cases template. You can delete up to 100 layouts per domain. <para> After a layout
+    /// a Cases template. You can delete up to 100 layouts per domain. <para> After a layout
     /// is deleted: </para> <ul> <li> <para> You can still retrieve the layout by calling
     /// <c>GetLayout</c>. </para> </li> <li> <para> You cannot update a deleted layout by
     /// calling <c>UpdateLayout</c>; it throws a <c>ValidationException</c>. </para> </li>

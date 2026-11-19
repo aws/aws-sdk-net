@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// CodeStarParameters Marshaller
     /// </summary>
-    public partial class CodeStarParametersMarshaller : IRequestMarshaller<CodeStarParameters, JsonMarshallerContext>
+    public partial class CodeStarParametersMarshaller : IRequestMarshaller<CodeStarParameters, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CodeStarParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(CodeStarParameters requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetArtifactPath())
             {
-                context.Writer.WritePropertyName("ArtifactPath");
-                context.Writer.WriteStringValue(requestObject.ArtifactPath);
+                context.Writer.WriteTextString("ArtifactPath");
+                context.Writer.WriteTextString(requestObject.ArtifactPath);
             }
 
             if (requestObject.IsSetBranch())
             {
-                context.Writer.WritePropertyName("Branch");
-                context.Writer.WriteStringValue(requestObject.Branch);
+                context.Writer.WriteTextString("Branch");
+                context.Writer.WriteTextString(requestObject.Branch);
             }
 
             if (requestObject.IsSetConnectionArn())
             {
-                context.Writer.WritePropertyName("ConnectionArn");
-                context.Writer.WriteStringValue(requestObject.ConnectionArn);
+                context.Writer.WriteTextString("ConnectionArn");
+                context.Writer.WriteTextString(requestObject.ConnectionArn);
             }
 
             if (requestObject.IsSetRepository())
             {
-                context.Writer.WritePropertyName("Repository");
-                context.Writer.WriteStringValue(requestObject.Repository);
+                context.Writer.WriteTextString("Repository");
+                context.Writer.WriteTextString(requestObject.Repository);
             }
         }
 

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AttackProperty Object
     /// </summary>
-    public partial class AttackPropertyUnmarshaller : IJsonUnmarshaller<AttackProperty, JsonUnmarshallerContext>
+    public partial class AttackPropertyUnmarshaller : ICborUnmarshaller<AttackProperty, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AttackProperty Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AttackProperty Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new AttackProperty();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AttackLayer", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttackLayer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AttackPropertyIdentifier", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttackPropertyIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttackLayer":
+                        context.AddPathSegment("AttackLayer");
+                        unmarshalledObject.AttackLayer = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TopContributors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Contributor, ContributorUnmarshaller>(ContributorUnmarshaller.Instance);
-                    unmarshalledObject.TopContributors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttackPropertyIdentifier":
+                        context.AddPathSegment("AttackPropertyIdentifier");
+                        unmarshalledObject.AttackPropertyIdentifier = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Total", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Total = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TopContributors":
+                        context.AddPathSegment("TopContributors");
+                        unmarshalledObject.TopContributors = new CborListUnmarshaller<Contributor, ContributorUnmarshaller>(ContributorUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Unit", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Total":
+                        context.AddPathSegment("Total");
+                        unmarshalledObject.Total = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Unit":
+                        context.AddPathSegment("Unit");
+                        unmarshalledObject.Unit = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// ActiveDirectoryConfig Marshaller
     /// </summary>
-    public partial class ActiveDirectoryConfigMarshaller : IRequestMarshaller<ActiveDirectoryConfig, JsonMarshallerContext>
+    public partial class ActiveDirectoryConfigMarshaller : IRequestMarshaller<ActiveDirectoryConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ActiveDirectoryConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ActiveDirectoryConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDomainName())
             {
-                context.Writer.WritePropertyName("DomainName");
-                context.Writer.WriteStringValue(requestObject.DomainName);
+                context.Writer.WriteTextString("DomainName");
+                context.Writer.WriteTextString(requestObject.DomainName);
             }
 
             if (requestObject.IsSetServiceAccountSecretArn())
             {
-                context.Writer.WritePropertyName("ServiceAccountSecretArn");
-                context.Writer.WriteStringValue(requestObject.ServiceAccountSecretArn);
+                context.Writer.WriteTextString("ServiceAccountSecretArn");
+                context.Writer.WriteTextString(requestObject.ServiceAccountSecretArn);
             }
         }
 

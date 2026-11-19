@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService
     {
 
         #region SubscribeQueue
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to an existing Amazon SNS topic.
         /// <para>
@@ -110,7 +110,7 @@ namespace Amazon.SimpleNotificationService
         /// successfully subscribed to the topic.</returns>
         Task<string> SubscribeQueueAsync(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to existing Amazon SNS topics.
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.SimpleNotificationService
 
 
         #region FindTopic
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found.
         /// <para>
@@ -219,7 +219,7 @@ namespace Amazon.SimpleNotificationService
         #endregion
 
         #region AuthorizeS3ToPublish
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the
         /// S3 bucket to publish events to it.

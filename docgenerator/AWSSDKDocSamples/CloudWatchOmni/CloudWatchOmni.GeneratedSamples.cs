@@ -615,6 +615,26 @@ namespace AWSSDKDocSamples.Amazon.CloudWatchOmni.Generated
             #endregion
         }
 
+        public void CloudWatchOmniGetContextGraph()
+        {
+            #region GetContextGraph-2
+
+            var client = new AmazonCloudWatchOmniClient();
+            var response = client.GetContextGraph(new GetContextGraphRequest
+            {
+                Depth = 0,
+                EndTime = new DateTime(2026, 9, 16, 1, 0, 0, DateTimeKind.Utc),
+                IncludeMetadata = true,
+                MaxResults = 1,
+                NodeFilters = new NodeFilters { NodeId = "svc:checkout-service" },
+                StartTime = new DateTime(2026, 9, 16, 0, 0, 0, DateTimeKind.Utc)
+            });
+
+            List<Node> nodes = response.Nodes;
+
+            #endregion
+        }
+
         public void CloudWatchOmniGetDomain()
         {
             #region GetDomain-1
@@ -732,6 +752,34 @@ namespace AWSSDKDocSamples.Amazon.CloudWatchOmni.Generated
             {
                 Context = new SpaceCredentialRequestContext { SpaceId = "a1b2c3d4-5e6f-4a3b-8c9d-0e1f2a3b4c5d" },
                 CredentialType = "SPACE_OPERATION"
+            });
+
+            AwsCredentials credentials = response.Credentials;
+
+            #endregion
+        }
+
+        public void CloudWatchOmniGetSpaceDataAccess()
+        {
+            #region GetSpaceDataAccess-1
+
+            var client = new AmazonCloudWatchOmniClient();
+            var response = client.GetSpaceDataAccess(new GetSpaceDataAccessRequest
+            {
+                AuditContext = new Dictionary<string, string> {
+                    { "source", "logs-console" }
+                },
+                DurationSeconds = 3600,
+                SpaceId = "a1b2c3d4-5e6f-4a3b-8c9d-0e1f2a3b4c5d",
+                TargetScopes = new List<DataAccessTarget> {
+                    new DataAccessTarget { Actions = new List<string> {
+                        "logs:StartQuery",
+                        "logs:GetQueryResults"
+                    } },
+                    new DataAccessTarget { Actions = new List<string> {
+                        "cloudwatch:GetMetricData"
+                    } }
+                }
             });
 
             AwsCredentials credentials = response.Credentials;

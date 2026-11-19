@@ -119,10 +119,53 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void EmitFromMemberWrapper_GetsNoUnmarshaller()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeSubstitutions["AttributeValue"] = new ShapeSubstitution { EmitAsShape = "String", EmitFromMember = "Value" };
+        var context = TestModels.Context(TestModels.Load("Codegen/ec2-model.json"), customizations);
+        var outputDir = Path.Combine(_outputDir, "ec2");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        Assert.Contains(Path.Combine(marshalling, "DoThingResponseUnmarshaller.g.cs"), written);
+        Assert.DoesNotContain(Path.Combine(marshalling, "AttributeValueUnmarshaller.g.cs"), written);
+    }
+
+    [Fact]
+    public void CustomErrorHandling_EmitsNoServiceException()
+    {
+        var customizations = new CustomizationsModel { Service = TestCustomizations.ErrorHandling() };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, customizations);
+        var outputDir = Path.Combine(_outputDir, "custom-error-handling");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var serviceException = Path.Combine("Generated", "AmazonCloudTrailDataException.g.cs");
+        Assert.Contains(serviceException, _written);
+        Assert.DoesNotContain(serviceException, written);
+    }
+
+    [Fact]
     public void WritesResponseUnmarshallerFiles()
     {
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
         AssertFileExists(marshalling, "PutAuditEventsResponseUnmarshaller.g.cs");
+    }
+
+    [Fact]
+    public void RetryPolicyRequestList_EmitsRetryPolicy()
+    {
+        var service = new ServiceCustomizations { RetryPolicyRequestList = true };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, new CustomizationsModel { Service = service });
+        var outputDir = Path.Combine(_outputDir, "retry-policy");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var retryPolicy = Path.Combine("Generated", "AmazonCloudTrailDataRetryPolicy.g.cs");
+        Assert.Contains(retryPolicy, written);
+        Assert.DoesNotContain(retryPolicy, _written);
     }
 
     [Fact]
@@ -195,6 +238,7 @@ public class ServiceGeneratorTests : IDisposable
             "AWSSDK.CloudTrailData.CodeAnalysis.csproj",
             Path.Combine("Properties", "AssemblyInfo.cs"),
             Path.Combine("Generated", "NullCollectionInitializerAnalyzer.g.cs"),
+            Path.Combine("Generated", "DeprecatedTargetFrameworkAnalyzer.g.cs"),
             Path.Combine("Generated", "PropertyValueAssignmentAnalyzer.g.cs"),
             Path.Combine("Generated", "PropertyValueRules.xml"),
         ];

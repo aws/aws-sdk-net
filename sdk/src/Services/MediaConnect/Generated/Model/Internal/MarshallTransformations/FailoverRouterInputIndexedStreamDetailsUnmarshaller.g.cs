@@ -53,6 +53,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("rtmpPush", targetDepth, ref reader))
+                {
+                    var unmarshaller = RtmpPushStreamDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RtmpPush = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("sourceIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

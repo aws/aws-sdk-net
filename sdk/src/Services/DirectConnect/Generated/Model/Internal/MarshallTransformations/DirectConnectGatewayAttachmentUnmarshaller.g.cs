@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectConnectGatewayAttachment Object
     /// </summary>
-    public partial class DirectConnectGatewayAttachmentUnmarshaller : IJsonUnmarshaller<DirectConnectGatewayAttachment, JsonUnmarshallerContext>
+    public partial class DirectConnectGatewayAttachmentUnmarshaller : ICborUnmarshaller<DirectConnectGatewayAttachment, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DirectConnectGatewayAttachment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DirectConnectGatewayAttachment Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DirectConnectGatewayAttachment();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("attachmentState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("attachmentType", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "attachmentState":
+                        context.AddPathSegment("AttachmentState");
+                        unmarshalledObject.AttachmentState = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("directConnectGatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "attachmentType":
+                        context.AddPathSegment("AttachmentType");
+                        unmarshalledObject.AttachmentType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("stateChangeError", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "directConnectGatewayId":
+                        context.AddPathSegment("DirectConnectGatewayId");
+                        unmarshalledObject.DirectConnectGatewayId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualInterfaceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "stateChangeError":
+                        context.AddPathSegment("StateChangeError");
+                        unmarshalledObject.StateChangeError = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualInterfaceOwnerAccount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "virtualInterfaceId":
+                        context.AddPathSegment("VirtualInterfaceId");
+                        unmarshalledObject.VirtualInterfaceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualInterfaceRegion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceRegion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "virtualInterfaceOwnerAccount":
+                        context.AddPathSegment("VirtualInterfaceOwnerAccount");
+                        unmarshalledObject.VirtualInterfaceOwnerAccount = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "virtualInterfaceRegion":
+                        context.AddPathSegment("VirtualInterfaceRegion");
+                        unmarshalledObject.VirtualInterfaceRegion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

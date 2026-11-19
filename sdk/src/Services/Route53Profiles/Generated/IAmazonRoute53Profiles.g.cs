@@ -31,7 +31,7 @@ namespace Amazon.Route53Profiles
     /// <para>Interface for accessing Route53Profiles</para>
     ///
     /// With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and
-    /// AWS accounts
+    /// Amazon Web Services accounts
     /// </summary>
     public partial interface IAmazonRoute53Profiles : IAmazonService, IDisposable
     {
@@ -42,9 +42,46 @@ namespace Amazon.Route53Profiles
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile
-        /// associated with it, but a Profile can be associated with 1000 of VPCs (and you can
-        /// request a higher quota). For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.
+        /// Associates a Route 53 Profiles profile with a VPC. A VPC can have up to two Profile
+        /// associations. A Profile can be associated with up to 1,000 VPCs, and you can request
+        /// a higher quota for the number of VPCs. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-route53-profiles">Quotas
+        /// on Route 53 Profiles</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order,
+        /// starting with the lowest <c>Priority</c> value. If the VPC has no other Profile associations,
+        /// you can omit <c>Priority</c>, and the association gets priority 100. When the VPC
+        /// already has a Profile association, you must specify a <c>Priority</c>, and each Profile
+        /// association for the VPC must have a unique priority. To change the priority of an
+        /// existing association, use <c>UpdateProfileAssociation</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ValidationException</c> in these cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You omit <c>Priority</c>, and the VPC already has a Profile association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Another Profile association for the VPC already uses the priority that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The priority is outside the range 100–9900.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Profile is already associated with the VPC, and you specify a different <c>Name</c>
+        /// or <c>Priority</c>. To change the priority, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileAssociation.html">UpdateProfileAssociation</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The request fails with a <c>LimitExceededException</c> if the VPC already has the
+        /// maximum number of Profile associations. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateProfile service method.</param>
         /// <returns>The response from the AssociateProfile service method, as returned by Route53Profiles.</returns>
@@ -78,9 +115,46 @@ namespace Amazon.Route53Profiles
 #endif
 
         /// <summary>
-        /// Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile
-        /// associated with it, but a Profile can be associated with 1000 of VPCs (and you can
-        /// request a higher quota). For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.
+        /// Associates a Route 53 Profiles profile with a VPC. A VPC can have up to two Profile
+        /// associations. A Profile can be associated with up to 1,000 VPCs, and you can request
+        /// a higher quota for the number of VPCs. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-route53-profiles">Quotas
+        /// on Route 53 Profiles</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order,
+        /// starting with the lowest <c>Priority</c> value. If the VPC has no other Profile associations,
+        /// you can omit <c>Priority</c>, and the association gets priority 100. When the VPC
+        /// already has a Profile association, you must specify a <c>Priority</c>, and each Profile
+        /// association for the VPC must have a unique priority. To change the priority of an
+        /// existing association, use <c>UpdateProfileAssociation</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ValidationException</c> in these cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You omit <c>Priority</c>, and the VPC already has a Profile association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Another Profile association for the VPC already uses the priority that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The priority is outside the range 100–9900.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Profile is already associated with the VPC, and you specify a different <c>Name</c>
+        /// or <c>Priority</c>. To change the priority, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileAssociation.html">UpdateProfileAssociation</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The request fails with a <c>LimitExceededException</c> if the VPC already has the
+        /// maximum number of Profile associations. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateProfile service method.</param>
         /// <param name="cancellationToken">
@@ -117,7 +191,7 @@ namespace Amazon.Route53Profiles
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Associates a DNS reource configuration to a Route 53 Profile.
+        /// Associates a DNS resource configuration to a Route 53 Profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceToProfile service method.</param>
         /// <returns>The response from the AssociateResourceToProfile service method, as returned by Route53Profiles.</returns>
@@ -151,7 +225,7 @@ namespace Amazon.Route53Profiles
 #endif
 
         /// <summary>
-        /// Associates a DNS reource configuration to a Route 53 Profile.
+        /// Associates a DNS resource configuration to a Route 53 Profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceToProfile service method.</param>
         /// <param name="cancellationToken">
@@ -475,8 +549,8 @@ namespace Amazon.Route53Profiles
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Retrieves a Route 53 Profile association for a VPC. A VPC can have only one Profile
-        /// association, but a Profile can be associated with up to 5000 VPCs.
+        /// Retrieves a Route 53 Profile association for a VPC. A VPC can have up to two Profile
+        /// associations, and a Profile can be associated with up to 1,000 VPCs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfileAssociation service method.</param>
         /// <returns>The response from the GetProfileAssociation service method, as returned by Route53Profiles.</returns>
@@ -498,8 +572,8 @@ namespace Amazon.Route53Profiles
 #endif
 
         /// <summary>
-        /// Retrieves a Route 53 Profile association for a VPC. A VPC can have only one Profile
-        /// association, but a Profile can be associated with up to 5000 VPCs.
+        /// Retrieves a Route 53 Profile association for a VPC. A VPC can have up to two Profile
+        /// associations, and a Profile can be associated with up to 1,000 VPCs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfileAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -898,6 +972,127 @@ namespace Amazon.Route53Profiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the name or priority of the specified Route 53 Profile association with a
+        /// VPC. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority
+        /// order, starting with the lowest value. Only the account that created the association
+        /// can update it. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you change the priority, the association status is <c>UPDATING</c> until the
+        /// change propagates, and then <c>COMPLETE</c>. While the status is <c>UPDATING</c>,
+        /// Route 53 VPC Resolver might still use the previous priority for some queries. When
+        /// the status is <c>COMPLETE</c>, the new priority applies to all queries from the VPC.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The request fails with a <c>ValidationException</c> if another Profile association
+        /// for the VPC already uses the priority that you specify, or if the priority is outside
+        /// the range 100–9900. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can update an association whose status is <c>CREATING</c>, <c>UPDATING</c>, or
+        /// <c>COMPLETE</c>. The request fails with a <c>ConflictException</c> if the association
+        /// status is <c>DELETING</c>, <c>DELETED</c>, or <c>FAILED</c>, or if the account that
+        /// owns the association is inactive. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfileAssociation service method.</param>
+        /// <returns>The response from the UpdateProfileAssociation service method, as returned by Route53Profiles.</returns>
+        /// <exception cref="Amazon.Route53Profiles.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ConflictException">
+        /// The request you submitted conflicts with an existing request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.InternalServiceErrorException">
+        /// An internal server error occured. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ResourceNotFoundException">
+        /// The resource you are associating is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ValidationException">
+        /// You have provided an invalid command.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UpdateProfileAssociation">REST API Reference for UpdateProfileAssociation Operation</seealso>
+        UpdateProfileAssociationResponse UpdateProfileAssociation(UpdateProfileAssociationRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the name or priority of the specified Route 53 Profile association with a
+        /// VPC. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority
+        /// order, starting with the lowest value. Only the account that created the association
+        /// can update it. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you change the priority, the association status is <c>UPDATING</c> until the
+        /// change propagates, and then <c>COMPLETE</c>. While the status is <c>UPDATING</c>,
+        /// Route 53 VPC Resolver might still use the previous priority for some queries. When
+        /// the status is <c>COMPLETE</c>, the new priority applies to all queries from the VPC.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The request fails with a <c>ValidationException</c> if another Profile association
+        /// for the VPC already uses the priority that you specify, or if the priority is outside
+        /// the range 100–9900. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can update an association whose status is <c>CREATING</c>, <c>UPDATING</c>, or
+        /// <c>COMPLETE</c>. The request fails with a <c>ConflictException</c> if the association
+        /// status is <c>DELETING</c>, <c>DELETED</c>, or <c>FAILED</c>, or if the account that
+        /// owns the association is inactive. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfileAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateProfileAssociation service method, as returned by Route53Profiles.</returns>
+        /// <exception cref="Amazon.Route53Profiles.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ConflictException">
+        /// The request you submitted conflicts with an existing request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.InternalServiceErrorException">
+        /// An internal server error occured. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ResourceNotFoundException">
+        /// The resource you are associating is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Profiles.Model.ValidationException">
+        /// You have provided an invalid command.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UpdateProfileAssociation">REST API Reference for UpdateProfileAssociation Operation</seealso>
+        Task<UpdateProfileAssociationResponse> UpdateProfileAssociationAsync(UpdateProfileAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

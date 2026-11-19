@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// OutputArtifact Marshaller
     /// </summary>
-    public partial class OutputArtifactMarshaller : IRequestMarshaller<OutputArtifact, JsonMarshallerContext>
+    public partial class OutputArtifactMarshaller : IRequestMarshaller<OutputArtifact, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(OutputArtifact requestObject, JsonMarshallerContext context)
+        public void Marshall(OutputArtifact requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFiles())
             {
-                context.Writer.WritePropertyName("files");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("files");
+                context.Writer.WriteStartArray(requestObject.Files.Count);
                 foreach (var requestObjectFilesListValue in requestObject.Files)
                 {
-                    context.Writer.WriteStringValue(requestObjectFilesListValue);
+                    context.Writer.WriteTextString(requestObjectFilesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
         }
 

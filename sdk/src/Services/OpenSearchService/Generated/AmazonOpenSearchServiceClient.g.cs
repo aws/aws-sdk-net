@@ -7524,6 +7524,88 @@ namespace Amazon.OpenSearchService
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Manages a cloned blue/green upgrade that is in progress on a domain. Use it to shift
+        /// a percentage of search traffic to the cloned cluster, to cut over to the cloned cluster
+        /// or back to the primary cluster, or to change the retention period. Specify exactly
+        /// one of <c>TrafficSplitOptions</c>, <c>CutoverOptions</c>, or <c>RetentionOptions</c>
+        /// in each request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClone service method.</param>
+        /// <returns>The response from the UpdateClone service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateClone">REST API Reference for UpdateClone Operation</seealso>
+        public virtual UpdateCloneResponse UpdateClone(UpdateCloneRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloneResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloneResponse>(request, options);
+        }
+#else
+        internal virtual UpdateCloneResponse UpdateClone(UpdateCloneRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloneResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloneResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Manages a cloned blue/green upgrade that is in progress on a domain. Use it to shift
+        /// a percentage of search traffic to the cloned cluster, to cut over to the cloned cluster
+        /// or back to the primary cluster, or to change the retention period. Specify exactly
+        /// one of <c>TrafficSplitOptions</c>, <c>CutoverOptions</c>, or <c>RetentionOptions</c>
+        /// in each request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateClone service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateClone">REST API Reference for UpdateClone Operation</seealso>
+        public virtual Task<UpdateCloneResponse> UpdateCloneAsync(UpdateCloneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloneRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloneResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCloneResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
         /// with Amazon OpenSearch Service data source integrations with Amazon S3</a>.
         /// </summary>

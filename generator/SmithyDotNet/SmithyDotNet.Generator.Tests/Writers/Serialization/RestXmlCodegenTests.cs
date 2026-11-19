@@ -28,9 +28,16 @@ public class RestXmlCodegenTests
         new XmlStructureMarshallerWriter(context, ModelFileName)
             .Write(context.Structures[shape], TestContext.Current.CancellationToken);
 
-    private static string ResponseUnmarshaller(string operationName) =>
-        new XmlResponseUnmarshallerWriter(Context, ModelFileName)
-            .Write(Context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+    private static string ResponseUnmarshaller(GenerationContext context, string operationName) =>
+        new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == operationName), TestContext.Current.CancellationToken);
+
+    private static string WriteExceptionUnmarshaller(GenerationContext context, ShapeId shape) =>
+        new XmlExceptionUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Errors[shape], TestContext.Current.CancellationToken);
+
+    private static GenerationContext ServiceContext(ServiceCustomizations service) =>
+        TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), new CustomizationsModel { Service = service });
 
     [Fact]
     public void Protocol_ResolvesRestXml()
@@ -50,6 +57,24 @@ public class RestXmlCodegenTests
         Assert.Contains("""request.ResourcePath = "/things/{id}";""", source);
         Assert.Contains("""request.Parameters.Add("filter", StringUtils.FromString(publicRequest.Filter));""", source);
         Assert.Contains("request.UseQueryString = true;", source);
+    }
+
+    [Fact]
+    public void Request_HttpChecksum_EmitsCallAfterPostMarshallCustomization()
+    {
+        var source = RequestMarshaller(Context, "PutChecksummedThing");
+
+        Assert.Contains("publicRequest.ChecksumAlgorithm,", source);
+        // With a checksum the stream exists even when the structure payload is unset (C2J PutBucketAcl).
+        Assert.True(source.IndexOf("request.ContentStream = new PooledContentStream();", StringComparison.Ordinal) < source.IndexOf("if (publicRequest.IsSetDetails())", StringComparison.Ordinal));
+        Assert.True(source.IndexOf("PostMarshallCustomization(request, publicRequest);", StringComparison.Ordinal) < source.IndexOf("ChecksumUtils.SetChecksumData(", StringComparison.Ordinal));
+        Assert.True(source.IndexOf("ChecksumUtils.SetChecksumData(", StringComparison.Ordinal) < source.IndexOf("return request;", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void Request_HttpChecksum_NoBody_EmitsNoCall()
+    {
+        Assert.DoesNotContain("ChecksumUtils", RequestMarshaller(Context, "GetChecksummedThing"));
     }
 
     [Fact]
@@ -76,6 +101,10 @@ public class RestXmlCodegenTests
         Assert.Contains("""context.Writer.WriteElementString("ThingName", StringUtils.FromString(publicRequest.Name));""", source);
         Assert.Contains("""context.Writer.WriteElementString("count", StringUtils.FromInt(publicRequest.Count.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("big", StringUtils.FromLong(publicRequest.Big.Value));""", source);
+        // Full Numeric Type Support specification: decimal text, never through double.
+        Assert.Contains("""context.Writer.WriteElementString("tiny", StringUtils.FromSByte(publicRequest.Tiny.Value));""", source);
+        Assert.Contains("""context.Writer.WriteElementString("huge", StringUtils.FromBigInteger(publicRequest.Huge.Value));""", source);
+        Assert.Contains("""context.Writer.WriteElementString("precise", StringUtils.FromBigDecimal(publicRequest.Precise.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("flag", StringUtils.FromBool(publicRequest.Flag.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("ratio", StringUtils.FromDouble(publicRequest.Ratio.Value));""", source);
         Assert.Contains("""context.Writer.WriteElementString("when", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.When.Value));""", source);
@@ -154,7 +183,7 @@ public class RestXmlCodegenTests
         var request = RequestMarshaller(Context, "PutThing");
         Assert.Contains("""context.Writer.WriteElementString("data", StringUtils.FromMemoryStream(publicRequest.Data));""", request);
 
-        var response = ResponseUnmarshaller("PutThing");
+        var response = ResponseUnmarshaller(Context, "PutThing");
         Assert.Contains("""if (context.TestExpression("data", targetDepth))""", response);
         Assert.Contains("var unmarshaller = MemoryStreamUnmarshaller.Instance;", response);
     }
@@ -170,6 +199,38 @@ public class RestXmlCodegenTests
         Assert.Contains("NestedThingMarshaller.Instance.Marshall(publicRequest.Details, context);", source);
     }
 
+    // S3's DeleteObjectsRequest: the payload's members are the request's, written under the payload's root unguarded (C2J).
+    [Fact]
+    public void Request_FlattenedPayload_WritesMembersUnderPayloadRoot()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["PutPayloadRequest"] = ["details"];
+        var source = RequestMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "PutPayload");
+
+        Assert.DoesNotContain("IsSetDetails", source);
+        Assert.Contains("""context.Writer.WriteStartElement("NestedThing", "http://example.com/doc/2023-01-01/");""", source);
+        Assert.Contains("""context.Writer.WriteElementString("note", StringUtils.FromString(publicRequest.Note));""", source);
+        Assert.DoesNotContain("NestedThingMarshaller", source);
+    }
+
+    // S3's CopyObjectOutput: the payload's members are read straight into the response, one level under the root.
+    [Fact]
+    public void Response_FlattenedPayload_ReadsMembersIntoTheResponse()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetPayloadResponse"] = ["details"];
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "GetPayload"), TestContext.Current.CancellationToken);
+
+        // The members sit under the root element, which a body read at the document start descends past.
+        Assert.Contains("if (context.IsStartOfDocument)", source);
+        Assert.Contains("targetDepth += 1;", source);
+        Assert.Contains("""if (context.TestExpression("note", targetDepth))""", source);
+        Assert.Contains("unmarshalledObject.Note = unmarshaller.Unmarshall(context);", source);
+        Assert.DoesNotContain("PayloadThingUnmarshaller", source);
+    }
+
     [Fact]
     public void Request_HostPrefix_SkippedWhenHostLabelIsContextParam()
     {
@@ -181,6 +242,69 @@ public class RestXmlCodegenTests
         // A plain @hostLabel (no @contextParam) still emits the prefix.
         var emitted = RequestMarshaller(Context, "RegionOp");
         Assert.Contains("""request.HostPrefix = $"{hostPrefixLabels.region}.";""", emitted);
+    }
+
+    // S3 object keys can start with '/'.
+    [Fact]
+    public void Request_KeepGreedyLabelLeadingSlash_SendsValueAsIs()
+    {
+        var service = new ServiceCustomizations { KeepGreedyLabelLeadingSlash = true };
+        var source = RequestMarshaller(ServiceContext(service), "GetItem");
+
+        Assert.Contains("""request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));""", source);
+    }
+
+    // S3's Bucket: the endpoint resolver adds it to the URL.
+    [Fact]
+    public void Request_EndpointResolvedLabel_LeavesThePath()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "GetItem");
+
+        Assert.Contains("if (!publicRequest.IsSetContainer())", source);
+        Assert.DoesNotContain("{Container}", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_AloneInThePath_LeavesTheRoot()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "ListItems");
+        Assert.Contains("""request.ResourcePath = "/";""", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_Greedy_StaysInThePath()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var source = RequestMarshaller(ServiceContext(service), "GetContainerPath");
+        Assert.Contains("""request.AddPathResource("{Container+}", StringUtils.FromString(publicRequest.Container.TrimStart('/')));""", source);
+    }
+
+    [Fact]
+    public void Request_EndpointResolvedLabel_WithSkipUriPropertyValidation_HasNoRequiredCheck()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container" };
+        var customizations = new CustomizationsModel { Service = service, SkipUriPropertyValidation = ["Container"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = RequestMarshaller(context, "GetItem");
+        Assert.DoesNotContain("Container", source);
+    }
+
+    // C2J's S3 marshallers throw ArgumentException for an unset bucket or key, except in a few operations.
+    [Fact]
+    public void Request_RequiredLabelServiceExceptionOperations_OthersThrowArgumentException()
+    {
+        var service = new ServiceCustomizations { EndpointResolvedLabel = "Container", RequiredLabelServiceExceptionOperations = ["ListItems"] };
+        var context = ServiceContext(service);
+
+        var source = RequestMarshaller(context, "GetItem");
+        Assert.Contains("if (string.IsNullOrEmpty(publicRequest.Container))", source);
+        Assert.Contains("""throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetItemRequest.Key");""", source);
+        Assert.DoesNotContain("IsSetKey", source);
+
+        var listed = RequestMarshaller(context, "ListItems");
+        Assert.Contains("if (!publicRequest.IsSetContainer())", listed);
     }
 
     [Fact]
@@ -220,7 +344,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_BodyLoop_HeadersAndStatusCode()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("public partial class PutThingResponseUnmarshaller : XmlResponseUnmarshaller", source);
         Assert.Contains("private static void UnmarshallResult(XmlUnmarshallerContext context, PutThingResponse unmarshalledObject)", source);
@@ -243,7 +367,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_NestedMap_UsesNestedDictionaryUnmarshaller()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("""if (context.TestExpression("nestedProps", targetDepth))""", source);
         Assert.Contains(
@@ -254,13 +378,55 @@ public class RestXmlCodegenTests
     [Fact]
     public void Response_ErrorDispatch()
     {
-        var source = ResponseUnmarshaller("PutThing");
+        var source = ResponseUnmarshaller(Context, "PutThing");
 
         Assert.Contains("ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);", source);
         Assert.Contains("using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, context.ResponseData))", source);
         Assert.Contains("""if (errorResponse.Code != null && errorResponse.Code.Equals("ThingConflict"))""", source);
         Assert.Contains("return ThingConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);", source);
         Assert.Contains("return new AmazonExampleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);", source);
+    }
+
+    [Theory]
+    [InlineData(null, "Body")]
+    [InlineData("StreamResponse", "ResponseStream")]
+    public void Response_StreamingBlobPayload_AssignsRawStreamAndOverridesHasStreamingProperty(string? streamingResponseBaseClass, string property)
+    {
+        var source = ResponseUnmarshaller(ServiceContext(new ServiceCustomizations { StreamingResponseBaseClass = streamingResponseBaseClass }), "GetThingStream");
+
+        Assert.Contains($"unmarshalledObject.{property} = context.Stream;", source);
+        Assert.Contains("public override bool HasStreamingProperty => true;", source);
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_OverridesUnmarshallExceptionOnlyForModeledErrors()
+    {
+        var context = ServiceContext(TestCustomizations.ErrorHandling());
+
+        var withErrors = ResponseUnmarshaller(context, "PutThing");
+        var withoutErrors = ResponseUnmarshaller(context, "GetThing");
+
+        Assert.Contains("public partial class PutThingResponseUnmarshaller : S3ReponseUnmarshaller", withErrors);
+        Assert.Contains("UnmarshallException", withErrors);
+        Assert.Contains("public partial class GetThingResponseUnmarshaller : S3ReponseUnmarshaller", withoutErrors);
+        Assert.DoesNotContain("UnmarshallException", withoutErrors);
+        Assert.Contains("UnmarshallException", ResponseUnmarshaller(Context, "GetThing"));
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_ParsesWithErrorResponseUnmarshaller()
+    {
+        var source = ResponseUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), "PutThing");
+
+        Assert.Contains("S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);", source);
+    }
+
+    [Fact]
+    public void Response_WithCustomErrorHandling_FallsBackToExceptionFactory()
+    {
+        var source = ResponseUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), "PutThing");
+
+        Assert.Contains("return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);", source);
     }
 
     [Fact]
@@ -279,8 +445,7 @@ public class RestXmlCodegenTests
     [Fact]
     public void ExceptionUnmarshaller()
     {
-        var source = new XmlExceptionUnmarshallerWriter(Context, ModelFileName)
-            .Write(Context.Errors[ThingConflict], TestContext.Current.CancellationToken);
+        var source = WriteExceptionUnmarshaller(Context, ThingConflict);
 
         Assert.Contains("public partial class ThingConflictExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ThingConflictException, XmlUnmarshallerContext>", source);
         Assert.Contains("throw new NotImplementedException();", source);
@@ -295,6 +460,14 @@ public class RestXmlCodegenTests
     }
 
     [Fact]
+    public void ExceptionUnmarshaller_WithCustomErrorHandling_PassesIds()
+    {
+        var source = WriteExceptionUnmarshaller(ServiceContext(TestCustomizations.ErrorHandling()), ThingConflict);
+
+        Assert.Contains("errorResponse.StatusCode, (errorResponse as S3ErrorResponse)?.Id2, (errorResponse as S3ErrorResponse)?.AmzCfId);", source);
+    }
+
+    [Fact]
     public void AllowEmptyResult_SkipsBodyParseOnEmptySuccess()
     {
         var customizations = new CustomizationsModel
@@ -305,6 +478,20 @@ public class RestXmlCodegenTests
         var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
             .Write(context.Operations.Single(o => o.Name == "PutThing"), TestContext.Current.CancellationToken);
 
+        Assert.Contains("if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)", source);
+    }
+
+    // Writers look hooks up by the C# name; the modifier stays keyed by the modeled one.
+    [Fact]
+    public void RenamedOperation_KeepsModeledKeyHooks()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["PutThing"] = new OperationModifier { Name = "StoreThing", AllowEmptyResult = true };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = new XmlResponseUnmarshallerWriter(context, ModelFileName)
+            .Write(context.Operations.Single(o => o.Name == "StoreThing"), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class StoreThingResponseUnmarshaller : XmlResponseUnmarshaller", source);
         Assert.Contains("if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)", source);
     }
 

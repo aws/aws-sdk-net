@@ -43,15 +43,6 @@ namespace Amazon.AWSSupport.Endpoints
         }
 
         /// <summary>
-        /// The AWS region used to dispatch the request.
-        /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
-
-        /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
         public bool? UseDualStack
@@ -76,6 +67,15 @@ namespace Amazon.AWSSupport.Endpoints
         {
             get => (string)this["Endpoint"];
             set => this["Endpoint"] = value;
+        }
+
+        /// <summary>
+        /// The AWS region used to dispatch the request.
+        /// </summary>
+        public string Region
+        {
+            get => (string)this["Region"];
+            set => this["Region"] = value;
         }
     }
 }

@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.Comprehend.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -38,44 +38,50 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for InvalidRequestException
     /// </summary>
-    public partial class InvalidRequestExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<InvalidRequestException, JsonUnmarshallerContext>
+    public partial class InvalidRequestExceptionUnmarshaller : ICborErrorResponseUnmarshaller<InvalidRequestException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InvalidRequestException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public InvalidRequestException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("InvalidRequestException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                context.Read(ref reader);
-                int targetDepth = context.CurrentDepth;
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("Detail", targetDepth, ref reader))
-                    {
-                        var unmarshaller = InvalidRequestDetailUnmarshaller.Instance;
-                        unmarshalledObject.Detail = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "Detail":
+                        context.AddPathSegment("Detail");
+                        unmarshalledObject.Detail = InvalidRequestDetailUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                    if (context.TestExpression("Reason", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "Reason":
+                        context.AddPathSegment("Reason");
+                        unmarshalledObject.Reason = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }

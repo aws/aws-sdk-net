@@ -75,5 +75,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Checks to see if the ExampleCount property is set.
         /// </summary>
         internal bool IsSetExampleCount() => this.ExampleCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ExampleCountByField. 
+        /// <para>
+        ///  The number of examples that have each field, for this version. Absent when the counts
+        /// are unknown. 
+        /// </para>
+        /// </summary>
+        public ExampleCountByField ExampleCountByField { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExampleCountByField property is set.
+        /// </summary>
+        internal bool IsSetExampleCountByField() => this.ExampleCountByField != null;
     }
 }

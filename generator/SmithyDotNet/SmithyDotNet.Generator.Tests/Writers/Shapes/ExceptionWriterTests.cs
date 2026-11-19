@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
@@ -12,11 +13,13 @@ public class ExceptionWriterTests
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
     private const string Namespace = "com.amazonaws.cloudtraildata";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _serviceException;
     private readonly string _channelNotFound;
 
     public ExceptionWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new ExceptionWriter(fixture.Context, ModelFileName);
         _serviceException = writer.WriteServiceException(TestContext.Current.CancellationToken);
         _channelNotFound = WriteException(fixture.Context, writer, "ChannelNotFound");
@@ -82,5 +85,17 @@ public class ExceptionWriterTests
         Assert.Equal("UnsupportedOperationException", ExceptionWriter.ToExceptionName("UnsupportedOperationException"));
         Assert.Equal("ServiceException", ExceptionWriter.ToExceptionName("ServiceFault"));
         Assert.Equal("MyFaultyException", ExceptionWriter.ToExceptionName("MyFaultyFault"));
+    }
+
+    [Fact]
+    public void OperationException_WithCustomErrorHandling_TakesIds()
+    {
+        var customizations = new CustomizationsModel { Service = TestCustomizations.ErrorHandling() };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, customizations);
+
+        var source = WriteException(context, new ExceptionWriter(context, ModelFileName), "ChannelNotFound");
+
+        Assert.Contains("public ChannelNotFoundException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId) : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) { }", source);
+        Assert.DoesNotContain("amazonId2", _channelNotFound);
     }
 }

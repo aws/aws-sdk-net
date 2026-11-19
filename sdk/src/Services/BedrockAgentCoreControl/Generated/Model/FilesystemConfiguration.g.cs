@@ -63,6 +63,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEfsAccessPoint() => this.EfsAccessPoint != null;
 
         /// <summary>
+        /// Gets and sets the property S3BucketMount. 
+        /// <para>
+        /// Mounts an Amazon S3 bucket as a file system in the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public S3BucketMountConfiguration S3BucketMount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3BucketMount property is set.
+        /// </summary>
+        internal bool IsSetS3BucketMount() => this.S3BucketMount != null;
+
+        /// <summary>
         /// Gets and sets the property S3FilesAccessPoint. 
         /// <para>
         /// Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.
