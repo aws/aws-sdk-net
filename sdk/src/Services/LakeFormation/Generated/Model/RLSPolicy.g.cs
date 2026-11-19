@@ -97,5 +97,37 @@ namespace Amazon.LakeFormation.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Whether the row-level security policy can be evaluated. <c>VALID</c> means that every
+        /// lookup table and user-defined function the filter expression references exists. <c>INVALID</c>
+        /// means that a lookup table or user-defined function the filter expression references
+        /// was deleted.
+        /// </para>
+        /// </summary>
+        public RLSPolicyStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason the row-level security policy is <c>INVALID</c>. <c>REFERENCED_LOOKUP_TABLE_DELETED</c>
+        /// means that a lookup table the filter expression references was deleted. <c>REFERENCED_UDF_DELETED</c>
+        /// means that a user-defined function the filter expression references was deleted. Not
+        /// returned when the status is <c>VALID</c>.
+        /// </para>
+        /// </summary>
+        public RLSPolicyStatusReason StatusReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusReason property is set.
+        /// </summary>
+        internal bool IsSetStatusReason() => this.StatusReason != null;
     }
 }

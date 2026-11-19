@@ -668,6 +668,88 @@ namespace Amazon.LakeFormation
     }
 
     /// <summary>
+    /// Constants used for properties of type RLSPolicyStatus.
+    /// </summary>
+    public class RLSPolicyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant INVALID for RLSPolicyStatus
+        /// </summary>
+        public static readonly RLSPolicyStatus INVALID = new RLSPolicyStatus("INVALID");
+
+        /// <summary>
+        /// Constant VALID for RLSPolicyStatus
+        /// </summary>
+        public static readonly RLSPolicyStatus VALID = new RLSPolicyStatus("VALID");
+
+        /// <summary>
+        /// Constructs a custom RLSPolicyStatus for a value not among the defined constants.
+        /// </summary>
+        public RLSPolicyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RLSPolicyStatus FindValue(string value)
+        {
+            return FindValue<RLSPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RLSPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RLSPolicyStatusReason.
+    /// </summary>
+    public class RLSPolicyStatusReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant REFERENCED_LOOKUP_TABLE_DELETED for RLSPolicyStatusReason
+        /// </summary>
+        public static readonly RLSPolicyStatusReason REFERENCED_LOOKUP_TABLE_DELETED = new RLSPolicyStatusReason("REFERENCED_LOOKUP_TABLE_DELETED");
+
+        /// <summary>
+        /// Constant REFERENCED_UDF_DELETED for RLSPolicyStatusReason
+        /// </summary>
+        public static readonly RLSPolicyStatusReason REFERENCED_UDF_DELETED = new RLSPolicyStatusReason("REFERENCED_UDF_DELETED");
+
+        /// <summary>
+        /// Constructs a custom RLSPolicyStatusReason for a value not among the defined constants.
+        /// </summary>
+        public RLSPolicyStatusReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RLSPolicyStatusReason FindValue(string value)
+        {
+            return FindValue<RLSPolicyStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RLSPolicyStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ResourceShareType.
     /// </summary>
     public class ResourceShareType : ConstantClass
