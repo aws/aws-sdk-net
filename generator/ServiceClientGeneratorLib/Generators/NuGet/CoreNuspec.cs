@@ -47,6 +47,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud aws-sdk-v4</tags>
     <icon>images\AWSLogo.png</icon>
+    <readme>README.md</readme>
     <dependencies>
       <group targetFramework=""net472"">
         <dependency id=""AWSSDK.Extensions.Numerics"" version=""");
@@ -105,7 +106,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\" />\r\n        <dependency id=\"System.IO.Hashing\" version=\"11.0.0\" />\r\n      </gro" +
                     "up>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuge" +
-                    "t-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file src=\"..\\..\\code-analysis\\C" +
+                    "t-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file src=\"README.md\" target=\"README.md\" />\r\n    <file src=\"..\\..\\code-analysis\\C" +
                     "oreAnalysis\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsof" +
                     "t.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadata" +
                     ".*;**\\System.Composition.*\" />\r\n\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Cor" +

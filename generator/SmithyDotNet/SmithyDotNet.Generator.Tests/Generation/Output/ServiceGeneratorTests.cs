@@ -24,6 +24,9 @@ public class ServiceGeneratorTests : IDisposable
         _codeAnalysisDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
         _testsOutputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
 
+        Directory.CreateDirectory(Path.Combine(_outputDir, "Custom"));
+        File.WriteAllText(Path.Combine(_outputDir, "Custom", "nuget-readme.md"), "Hand-written content.");
+
         var generator = new ServiceGenerator(fixture.Context, ModelFileName, ServiceFileVersion, fixture.DefaultConfigurationModes);
         _written = generator.Generate(_outputDir, _codeAnalysisDir, _testsOutputDir, TestContext.Current.CancellationToken);
     }
@@ -222,9 +225,19 @@ public class ServiceGeneratorTests : IDisposable
     }
 
     [Fact]
-    public void WritesReadme()
+    public void ReadmePutsCustomContentAfterServiceDocumentation()
     {
-        AssertFileExists("nuget-readme.md");
+        var readme = File.ReadAllText(Path.Combine(_outputDir, "nuget-readme.md"));
+        Assert.StartsWith("The CloudTrail Data Service", readme);
+        Assert.Contains("---", readme);
+        Assert.EndsWith("Hand-written content.", readme);
+    }
+
+    [Fact]
+    public void ReadmeHasAGettingStartedExample()
+    {
+        var readme = File.ReadAllText(Path.Combine(_outputDir, "nuget-readme.md"));
+        Assert.Contains("var response = await client.PutAuditEventsAsync(new PutAuditEventsRequest", readme);
     }
 
     [Fact]
