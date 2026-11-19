@@ -109,6 +109,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         return ContinuousDeploymentPolicyInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("EntityLimitExceeded"))
+                    {
+                        return EntityLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFound"))
                     {
                         return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

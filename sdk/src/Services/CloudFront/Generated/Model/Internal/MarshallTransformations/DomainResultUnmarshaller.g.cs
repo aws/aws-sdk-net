@@ -62,6 +62,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("ServeOn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServeOn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

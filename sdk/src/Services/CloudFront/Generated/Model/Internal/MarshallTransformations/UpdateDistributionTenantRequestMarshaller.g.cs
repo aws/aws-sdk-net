@@ -118,6 +118,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     ManagedCertificateRequestMarshaller.Instance.Marshall(publicRequest.ManagedCertificateRequest, context);
                     context.Writer.WriteEndElement();
                 }
+                if (publicRequest.IsSetOnDomainTakeover())
+                {
+                    context.Writer.WriteElementString("OnDomainTakeover", StringUtils.FromString(publicRequest.OnDomainTakeover));
+                }
                 if (publicRequest.IsSetParameters())
                 {
                     var publicRequestParameters = publicRequest.Parameters;

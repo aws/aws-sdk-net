@@ -10772,6 +10772,9 @@ namespace Amazon.CloudFront
         /// You cannot delete a continuous deployment policy that is associated with a primary
         /// distribution.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
         /// </exception>
@@ -11067,6 +11070,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.ContinuousDeploymentPolicyInUseException">
         /// You cannot delete a continuous deployment policy that is associated with a primary
         /// distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
@@ -11954,6 +11960,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
         /// </exception>
@@ -11962,6 +11971,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
@@ -12010,6 +12022,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
         /// The entity was not found.
         /// </exception>
@@ -12018,6 +12033,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidAssociationException">
+        /// The specified CloudFront resource can't be associated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.

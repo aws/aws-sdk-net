@@ -91,6 +91,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteElementString("Ipv6Enabled", StringUtils.FromBool(publicRequest.Ipv6Enabled.Value));
                 }
+                if (publicRequest.IsSetViewerFallback())
+                {
+                    context.Writer.WriteStartElement("ViewerFallback");
+                    ViewerFallbackMarshaller.Instance.Marshall(publicRequest.ViewerFallback, context);
+                    context.Writer.WriteEndElement();
+                }
                 context.Writer.WriteEndElement();
             }
             try

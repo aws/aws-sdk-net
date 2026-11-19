@@ -48,6 +48,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 context.Writer.WriteElementString("Domain", StringUtils.FromString(requestObject.Domain));
             }
+            if (requestObject.IsSetServeOn())
+            {
+                context.Writer.WriteElementString("ServeOn", StringUtils.FromString(requestObject.ServeOn));
+            }
         }
 
         /// <summary>

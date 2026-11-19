@@ -47,5 +47,33 @@ namespace Amazon.CloudFront.Model
         /// Checks to see if the Domain property is set.
         /// </summary>
         internal bool IsSetDomain() => this.Domain != null;
+
+        /// <summary>
+        /// Gets and sets the property ServeOn. 
+        /// <para>
+        /// Specifies which requests for this domain CloudFront routes to the distribution tenant.
+        /// Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>any</c> – CloudFront routes requests for this domain to the distribution tenant
+        /// regardless of the IP address that they arrive on. This is the default if you don't
+        /// specify a value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>anycast-ip-list-only</c> – CloudFront routes requests for this domain to the distribution
+        /// tenant only when they arrive on the Anycast static IPs of the distribution tenant's
+        /// connection group. CloudFront treats requests that arrive on other IP addresses as
+        /// requests for an unknown domain.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ServeOn ServeOn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServeOn property is set.
+        /// </summary>
+        internal bool IsSetServeOn() => this.ServeOn != null;
     }
 }

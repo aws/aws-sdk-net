@@ -131,6 +131,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("ViewerFallback", targetDepth))
+                    {
+                        var unmarshaller = ViewerFallbackUnmarshaller.Instance;
+                        unmarshalledObject.ViewerFallback = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -1324,6 +1324,47 @@ namespace Amazon.CloudFront
     }
 
     /// <summary>
+    /// Constants used for properties of type OnDomainTakeover.
+    /// </summary>
+    public class OnDomainTakeover : ConstantClass
+    {
+        /// <summary>
+        /// Constant Allow for OnDomainTakeover
+        /// </summary>
+        public static readonly OnDomainTakeover Allow = new OnDomainTakeover("allow");
+
+        /// <summary>
+        /// Constant Reject for OnDomainTakeover
+        /// </summary>
+        public static readonly OnDomainTakeover Reject = new OnDomainTakeover("reject");
+
+        /// <summary>
+        /// Constructs a custom OnDomainTakeover for a value not among the defined constants.
+        /// </summary>
+        public OnDomainTakeover(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDomainTakeover FindValue(string value)
+        {
+            return FindValue<OnDomainTakeover>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDomainTakeover(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OriginAccessControlOriginTypes.
     /// </summary>
     public class OriginAccessControlOriginTypes : ConstantClass
@@ -2068,6 +2109,47 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SSLSupportMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ServeOn.
+    /// </summary>
+    public class ServeOn : ConstantClass
+    {
+        /// <summary>
+        /// Constant Any for ServeOn
+        /// </summary>
+        public static readonly ServeOn Any = new ServeOn("any");
+
+        /// <summary>
+        /// Constant AnycastIpListOnly for ServeOn
+        /// </summary>
+        public static readonly ServeOn AnycastIpListOnly = new ServeOn("anycast-ip-list-only");
+
+        /// <summary>
+        /// Constructs a custom ServeOn for a value not among the defined constants.
+        /// </summary>
+        public ServeOn(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServeOn FindValue(string value)
+        {
+            return FindValue<ServeOn>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServeOn(string value)
         {
             return FindValue(value);
         }

@@ -103,5 +103,19 @@ namespace Amazon.CloudFront.Model
         /// Checks to see if the Ipv6Enabled property is set.
         /// </summary>
         internal bool IsSetIpv6Enabled() => this.Ipv6Enabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ViewerFallback. 
+        /// <para>
+        /// The distribution whose certificate CloudFront uses for viewer requests that arrive
+        /// on the connection group's Anycast static IPs without Server Name Indication (SNI).
+        /// </para>
+        /// </summary>
+        public ViewerFallback ViewerFallback { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ViewerFallback property is set.
+        /// </summary>
+        internal bool IsSetViewerFallback() => this.ViewerFallback != null;
     }
 }

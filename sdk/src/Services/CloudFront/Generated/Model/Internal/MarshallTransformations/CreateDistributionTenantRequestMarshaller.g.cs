@@ -111,6 +111,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
                 }
+                if (publicRequest.IsSetOnDomainTakeover())
+                {
+                    context.Writer.WriteElementString("OnDomainTakeover", StringUtils.FromString(publicRequest.OnDomainTakeover));
+                }
                 if (publicRequest.IsSetParameters())
                 {
                     var publicRequestParameters = publicRequest.Parameters;

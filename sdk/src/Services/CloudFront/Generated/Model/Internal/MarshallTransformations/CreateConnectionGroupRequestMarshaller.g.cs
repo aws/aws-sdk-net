@@ -90,6 +90,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     TagsMarshaller.Instance.Marshall(publicRequest.Tags, context);
                     context.Writer.WriteEndElement();
                 }
+                if (publicRequest.IsSetViewerFallback())
+                {
+                    context.Writer.WriteStartElement("ViewerFallback");
+                    ViewerFallbackMarshaller.Instance.Marshall(publicRequest.ViewerFallback, context);
+                    context.Writer.WriteEndElement();
+                }
                 context.Writer.WriteEndElement();
             }
             try

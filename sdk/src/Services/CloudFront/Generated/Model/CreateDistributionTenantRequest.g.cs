@@ -144,6 +144,33 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property OnDomainTakeover. 
+        /// <para>
+        /// Specifies whether CloudFront moves a domain in this request to this distribution tenant
+        /// when the domain is already associated with another standard distribution or distribution
+        /// tenant. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>allow</c> – CloudFront moves the domain to this distribution tenant when the domain's
+        /// DNS points to this distribution tenant.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>reject</c> – CloudFront doesn't move the domain, and the request fails if the
+        /// domain is associated with another resource. This is the default if you don't specify
+        /// a value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OnDomainTakeover OnDomainTakeover { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OnDomainTakeover property is set.
+        /// </summary>
+        internal bool IsSetOnDomainTakeover() => this.OnDomainTakeover != null;
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of parameter values to add to the resource. A parameter is specified as a key-value
