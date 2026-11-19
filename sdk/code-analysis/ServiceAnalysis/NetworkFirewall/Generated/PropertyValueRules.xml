@@ -133,30 +133,6 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.AttachRuleGroupsToProxyConfigurationRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.AttachRuleGroupsToProxyConfigurationRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.AttachRuleGroupsToProxyConfigurationRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.AttachRuleGroupsToProxyConfigurationResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationRequest.ContainerAssociationName</property>
     <min>1</min>
     <max>128</max>
@@ -241,83 +217,19 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRequest.NatGatewayId</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRequest.ProxyName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyConfigurationRequest.Description</property>
+    <property>Amazon.NetworkFirewall.Model.CreateFirewallPolicyV2Request.Description</property>
     <min>0</min>
     <max>512</max>
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyConfigurationRequest.ProxyConfigurationName</property>
+    <property>Amazon.NetworkFirewall.Model.CreateFirewallPolicyV2Request.FirewallPolicyV2Name</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyConfigurationResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRuleGroupRequest.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRuleGroupRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRuleGroupResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRulesRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRulesRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRulesResponse.UpdateToken</property>
+    <property>Amazon.NetworkFirewall.Model.CreateFirewallPolicyV2Response.UpdateToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
@@ -430,6 +342,18 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteFirewallPolicyV2Request.FirewallPolicyV2Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteFirewallPolicyV2Request.FirewallPolicyV2Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteNetworkFirewallTransitGatewayAttachmentRequest.TransitGatewayAttachmentId</property>
     <min>1</min>
     <max>128</max>
@@ -469,66 +393,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteProxyResponse.ProxyName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyConfigurationRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyConfigurationRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyConfigurationResponse.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyConfigurationResponse.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRuleGroupRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRuleGroupRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRuleGroupResponse.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRuleGroupResponse.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRulesRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DeleteProxyRulesRequest.ProxyRuleGroupName</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
@@ -677,6 +541,24 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallPolicyV2Request.FirewallPolicyV2Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallPolicyV2Request.FirewallPolicyV2Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeFirewallPolicyV2Response.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFlowOperationRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -762,66 +644,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeProxyResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyConfigurationRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyConfigurationRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyConfigurationResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleRequest.ProxyRuleName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleGroupRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleGroupRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DescribeProxyRuleGroupResponse.UpdateToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
@@ -933,30 +755,6 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DetachRuleGroupsFromProxyConfigurationRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DetachRuleGroupsFromProxyConfigurationRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DetachRuleGroupsFromProxyConfigurationRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.DetachRuleGroupsFromProxyConfigurationResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DisassociateAvailabilityZonesRequest.FirewallArn</property>
@@ -1110,6 +908,23 @@
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContextStoresResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1122,6 +937,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesV2Request.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesV2Response.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
@@ -1250,52 +1082,18 @@
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxiesRequest.MaxResults</property>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxiesRequest.NextToken</property>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreRequest.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxiesResponse.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyConfigurationsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyConfigurationsRequest.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyConfigurationsResponse.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyRuleGroupsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyRuleGroupsRequest.NextToken</property>
-    <min>1</min>
-    <max>4096</max>
-    <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ListProxyRuleGroupsResponse.NextToken</property>
+    <property>Amazon.NetworkFirewall.Model.ListResourcesInContextStoreResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[0-9A-Za-z:\/+=]+$</pattern>
@@ -1801,6 +1599,36 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyV2Request.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyV2Request.FirewallPolicyV2Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyV2Request.FirewallPolicyV2Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyV2Request.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyV2Response.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.UpdateLoggingConfigurationRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -1823,154 +1651,6 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRequest.NatGatewayId</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRequest.ProxyArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRequest.ProxyName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyConfigurationRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyConfigurationRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyConfigurationRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyConfigurationResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleRequest.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleRequest.ProxyRuleName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleGroupPrioritiesRequest.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleGroupPrioritiesRequest.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleGroupPrioritiesRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRuleGroupPrioritiesResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesRequest.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesRequest.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesRequest.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesResponse.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesResponse.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.UpdateProxyRulePrioritiesResponse.UpdateToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.UpdateProxySettingsRequest.FirewallArn</property>
@@ -2174,16 +1854,14 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRule.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
+    <property>Amazon.NetworkFirewall.Model.ContextFilters.Region</property>
+    <pattern>^[a-z]{2}(-[a-z]+)+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.CreateProxyRule.ProxyRuleName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <property>Amazon.NetworkFirewall.Model.ContextStore.ContextStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CustomAction.ActionName</property>
@@ -2230,6 +1908,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.Firewall.ContextStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Firewall.Description</property>
@@ -2357,6 +2041,93 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Metadata.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Metadata.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Response.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Response.FirewallPolicyV2Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Response.FirewallPolicyV2Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Response.FirewallPolicyV2Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicyV2Response.StatusMessage</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRule.DestIPs</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRule.DestPorts</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRule.SourceIPs</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRule.SourcePorts</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRuleGroupEntry.Priority</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRuleGroupEntry.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallRulesSource.RulesString</property>
+    <min>0</min>
+    <max>2000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Flow.DestinationPort</property>
     <min>1</min>
     <max>1024</max>
@@ -2428,6 +2199,17 @@
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.IpsRuleGroupEntry.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.IpsRulesSource.RulesString</property>
+    <min>0</min>
+    <max>2000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.LogDestinationConfig.LogDestinationType</property>
     <min>2</min>
     <max>30</max>
@@ -2442,10 +2224,6 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9- ]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.NatGatewayMapping.NatGatewayId</property>
-    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.PerObjectStatus.UpdateToken</property>
@@ -2464,152 +2242,20 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.Proxy.NatGatewayId</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.Proxy.ProxyArn</property>
+    <property>Amazon.NetworkFirewall.Model.ProxySettings.CertificateArn</property>
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.Proxy.ProxyConfigurationArn</property>
+    <property>Amazon.NetworkFirewall.Model.ProxySettings.DomainName</property>
     <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
+    <max>253</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.Proxy.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.Proxy.ProxyName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfigRuleGroup.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfigRuleGroup.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfiguration.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfiguration.ProxyConfigurationArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfiguration.ProxyConfigurationName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfigurationMetadata.Arn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyConfigurationMetadata.Name</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyMetadata.Arn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyMetadata.Name</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRule.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRule.ProxyRuleName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroup.Description</property>
-    <min>0</min>
-    <max>512</max>
-    <pattern>^.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroup.ProxyRuleGroupArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroup.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroupAttachment.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroupMetadata.Arn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroupMetadata.Name</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroupPriority.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRuleGroupPriorityResult.ProxyRuleGroupName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.ProxyRulePriority.ProxyRuleName</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <property>Amazon.NetworkFirewall.Model.ResourceContext.Region</property>
+    <pattern>^[a-z]{2}(-[a-z]+)+-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Route53ResolvedIPValidation.DNSFirewallRuleGroupId</property>
@@ -2658,6 +2304,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.RuleMetadata.RuleDescription</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.RuleOption.Keyword</property>
@@ -2783,12 +2435,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.TlsInterceptProperties.PcaArn</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^arn:aws.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NetworkFirewall.Model.TlsInterceptPropertiesRequest.PcaArn</property>
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>

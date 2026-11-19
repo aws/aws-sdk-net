@@ -75,7 +75,7 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
                 }
 
                 WriteOverrides(writer);
-                WriteDispose(writer);
+                WriteDispose(writer, context.Customizations.Service?.ClientDisposeMethod);
 
                 if (context.EndpointDiscoveryOperation is { } discoveryOperation)
                 {
@@ -260,13 +260,17 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine();
     }
 
-    private static void WriteDispose(CodeWriter writer)
+    private static void WriteDispose(CodeWriter writer, string? disposeMethod)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Disposes the service client.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock("protected override void Dispose(bool disposing)", () =>
         {
+            if (disposeMethod is not null)
+            {
+                writer.OpenBlock("if (disposing)", () => writer.WriteLine($"{disposeMethod}();"));
+            }
             writer.WriteLine("base.Dispose(disposing);");
         });
         writer.WriteLine();

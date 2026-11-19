@@ -116,6 +116,37 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetObservabilityRegion() => this.ObservabilityRegion != null;
 
         /// <summary>
+        /// Gets and sets the property PublicIpStatus. 
+        /// <para>
+        /// Specifies the public IP connectivity to configure for the Route 53 Global Resolver.
+        /// Public IP addresses let DNS clients send queries to the resolver over the internet.
+        /// Valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED_RESERVED</c> - Public IP connectivity is enabled, and the global anycast
+        /// public IP addresses are reserved for the Route 53 Global Resolver.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED_RESERVED</c> - Public IP connectivity is disabled, and the global anycast
+        /// public IP addresses remain reserved for the Route 53 Global Resolver.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED_RELEASED</c> - Public IP connectivity is disabled, and the global anycast
+        /// public IP addresses are released.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PublicIpStatus PublicIpStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PublicIpStatus property is set.
+        /// </summary>
+        internal bool IsSetPublicIpStatus() => this.PublicIpStatus != null;
+
+        /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
         /// List of Amazon Web Services Regions where the Route 53 Global Resolver will operate.

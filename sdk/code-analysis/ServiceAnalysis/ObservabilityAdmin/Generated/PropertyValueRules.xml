@@ -13,6 +13,24 @@
     <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateConnectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateConnectorRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateConnectorRequest.RoleArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.CreateDatasetIntegrationRequest.RoleArn</property>
     <min>1</min>
     <max>1011</max>
@@ -84,6 +102,12 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.DeleteConnectorRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.DeleteDatasetIntegrationRequest.Arn</property>
     <min>1</min>
     <max>1011</max>
@@ -130,6 +154,24 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z-_.#/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetConnectorRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetConnectorTelemetryManifestRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetConnectorTelemetrySetupRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.GetDatasetIntegrationRequest.Arn</property>
@@ -235,6 +277,23 @@
     <pattern>^[0-9A-Za-z-_.#/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetThirdPartyTelemetryEnrichmentRequest.TelemetryEnrichmentIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetThirdPartyTelemetryEnrichmentResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z]+)*:observabilityadmin:[a-z0-9\-]+:[0-9]{12}:telemetry-enrichments/[a-z][a-z0-9]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetThirdPartyTelemetryEnrichmentResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.ListCentralizationRulesForOrganizationRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -243,6 +302,23 @@
     <property>Amazon.ObservabilityAdmin.Model.ListCentralizationRulesForOrganizationRequest.RuleNamePrefix</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListConnectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListConnectorsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>^[A-Za-z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListConnectorsResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>^[A-Za-z0-9+/=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.ListDatasetIntegrationsRequest.MaxResults</property>
@@ -268,6 +344,29 @@
     <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryForOrganizationRequest.ResourceIdentifierPrefix</property>
     <min>3</min>
     <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourcesByConnectorRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourcesByConnectorRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourcesByConnectorRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>^[A-Za-z0-9+/=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourcesByConnectorResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>^[A-Za-z0-9+/=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.ListS3TableIntegrationsRequest.MaxResults</property>
@@ -296,10 +395,61 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListThirdPartyTelemetryEnrichmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.PutConnectorTelemetryManifestRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.PutConnectorTelemetryManifestRequest.ConnectorIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([a-z0-9]+|arn:aws[a-z0-9\-]*:observabilityadmin:[a-z0-9-]+:[0-9]{12}:connector/(azure/)?[a-z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.StartTelemetryEnrichmentResponse.AwsResourceExplorerManagedViewArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws([a-z0-9\-]+)?:resource-explorer-2:([a-z0-9\-]+)?:([0-9]{12})?:managed-view/(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StartTelemetryPipelineRefreshRequest.PipelineIdentifier</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StartThirdPartyTelemetryEnrichmentRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StartThirdPartyTelemetryEnrichmentResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z]+)*:observabilityadmin:[a-z0-9\-]+:[0-9]{12}:telemetry-enrichments/[a-z][a-z0-9]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StartThirdPartyTelemetryEnrichmentResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StopThirdPartyTelemetryEnrichmentRequest.TelemetryEnrichmentIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.StopThirdPartyTelemetryEnrichmentResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TagResourceRequest.ResourceARN</property>
@@ -376,6 +526,170 @@
     <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureAwsManagedFlowLogs.RetentionDays</property>
+    <min>1</min>
+    <max>365</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureConnectorConfiguration.ClientIdentifier</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureConnectorConfiguration.TenantIdentifier</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubConfiguration.PartitionCount</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubSummary.NamespaceName</property>
+    <min>6</min>
+    <max>50</max>
+    <pattern>^[A-Za-z][A-Za-z0-9-]{4,48}[A-Za-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubSummary.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubSummary.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubSummary.SubscriptionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubsQuery.NamespaceName</property>
+    <min>6</min>
+    <max>50</max>
+    <pattern>^[A-Za-z][A-Za-z0-9-]{4,48}[A-Za-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureEventHubsQuery.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureFlowLogStorageAccountScope.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureInfrastructure.SubscriptionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureManagementGroupSummary.Id</property>
+    <min>1</min>
+    <max>90</max>
+    <pattern>^[-\w._()]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureManagementGroupsQuery.ParentManagementGroupId</property>
+    <min>1</min>
+    <max>90</max>
+    <pattern>^[-\w._()]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureQueryScope.ManagementGroupId</property>
+    <min>1</min>
+    <max>90</max>
+    <pattern>^[-\w._()]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdScope.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdentifierSummary.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdentifierSummary.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdentifierSummary.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9]+\.[A-Za-z0-9]+/[A-Za-z0-9/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdentifierSummary.SubscriptionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdsQuery.Region</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureResourceIdsQuery.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9]+\.[A-Za-z0-9]+/[A-Za-z0-9/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureSubscriptionSummary.ManagementGroupId</property>
+    <min>1</min>
+    <max>90</max>
+    <pattern>^[-\w._()]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureSubscriptionSummary.SubscriptionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureSubscriptionsQuery.ManagementGroupId</property>
+    <min>1</min>
+    <max>90</max>
+    <pattern>^[-\w._()]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureTelemetrySourceConfigurationInput.AwsConfigConnectorArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z]+)*:config:[a-z0-9\-]+:[0-9]{12}:connector/[^\r\n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureTelemetrySourceConfigurationOutput.AwsConfigConnectorArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z]+)*:config:[a-z0-9\-]+:[0-9]{12}:connector/[^\r\n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.AzureTelemetrySourceConfigurationOutput.ServiceLinkedRecorderArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z]+)*:config:[a-z0-9\-]+:[0-9]{12}:configuration-recorder/[^\r\n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.CentralizationRuleDestination.Account</property>
     <min>12</min>
     <max>12</max>
@@ -409,6 +723,36 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z-_.#/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.Connector.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.Connector.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-_.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.Connector.RoleArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ConnectorSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ConnectorSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-_.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.DatasetIntegrationSummary.Arn</property>
@@ -467,6 +811,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ProfilesBackupConfiguration.Region</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.RegionStatus.Region</property>
     <min>1</min>
   </property-value-rule>
@@ -475,6 +823,21 @@
     <min>1</min>
     <max>1011</max>
     <pattern>^arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SetupArtifact.Content</property>
+    <min>0</min>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SetupArtifact.ContentType</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SetupArtifact.FileName</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.SingleHeader.Name</property>
@@ -495,6 +858,25 @@
     <property>Amazon.ObservabilityAdmin.Model.SourceMetricsConfiguration.MetricsSelectionCriteria</property>
     <min>1</min>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SourceProfilesConfiguration.ProfilesSelectionCriteria</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SourceProgress.Active</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.SourceProgress.Total</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TagFilter.Key</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^&lt;&gt;%&amp;\\?/${}'"`\u0000-\u001F\u007F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TagPropagationConfiguration.DestinationRoleArn</property>
@@ -559,5 +941,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z-_.#/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ThirdPartyTelemetryEnrichmentSummary.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9\-]*$</pattern>
   </property-value-rule>
 </property-value-rules>

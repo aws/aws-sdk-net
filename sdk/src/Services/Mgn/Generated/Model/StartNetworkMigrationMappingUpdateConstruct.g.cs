@@ -40,7 +40,7 @@ namespace Amazon.Mgn.Model
         /// The ID of the construct to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Min = 36, Max = 36)]
         public string ConstructID { get; set; }
 
         /// <summary>
@@ -49,12 +49,28 @@ namespace Amazon.Mgn.Model
         internal bool IsSetConstructID() => this.ConstructID != null;
 
         /// <summary>
+        /// Gets and sets the property ConstructLogicalID. 
+        /// <para>
+        /// The logical identifier for a construct created by a create operation; other operations
+        /// identify the construct by constructID. Other entries in the same request can reference
+        /// the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ConstructLogicalID { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConstructLogicalID property is set.
+        /// </summary>
+        internal bool IsSetConstructLogicalID() => this.ConstructLogicalID != null;
+
+        /// <summary>
         /// Gets and sets the property ConstructType. 
         /// <para>
         /// The type of the construct.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 24)]
+        [AWSProperty(Required = true, Min = 0, Max = 64)]
         public string ConstructType { get; set; }
 
         /// <summary>
@@ -81,12 +97,27 @@ namespace Amazon.Mgn.Model
         /// The ID of the segment containing the construct.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 36, Max = 36)]
+        [AWSProperty(Min = 36, Max = 36)]
         public string SegmentID { get; set; }
 
         /// <summary>
         /// Checks to see if the SegmentID property is set.
         /// </summary>
         internal bool IsSetSegmentID() => this.SegmentID != null;
+
+        /// <summary>
+        /// Gets and sets the property SegmentLogicalID. 
+        /// <para>
+        /// The identifier of a segment created in the same request that this construct belongs
+        /// to. Use it instead of <c>segmentID</c> for a new segment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string SegmentLogicalID { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SegmentLogicalID property is set.
+        /// </summary>
+        internal bool IsSetSegmentLogicalID() => this.SegmentLogicalID != null;
     }
 }

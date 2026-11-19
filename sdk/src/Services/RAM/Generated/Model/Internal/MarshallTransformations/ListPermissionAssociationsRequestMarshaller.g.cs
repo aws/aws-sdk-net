@@ -103,6 +103,16 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("permissionVersion");
                 context.Writer.WriteNumberValue(publicRequest.PermissionVersion.Value);
             }
+            if (publicRequest.IsSetResourceOwner())
+            {
+                context.Writer.WritePropertyName("resourceOwner");
+                context.Writer.WriteStringValue(publicRequest.ResourceOwner);
+            }
+            if (publicRequest.IsSetResourceShareArn())
+            {
+                context.Writer.WritePropertyName("resourceShareArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareArn);
+            }
             if (publicRequest.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");

@@ -79,6 +79,11 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("cidr");
                 context.Writer.WriteStringValue(publicRequest.Cidr);
             }
+            if (publicRequest.IsSetDnsViewId())
+            {
+                context.Writer.WritePropertyName("dnsViewId");
+                context.Writer.WriteStringValue(publicRequest.DnsViewId);
+            }
             if (publicRequest.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("ipAddressType");

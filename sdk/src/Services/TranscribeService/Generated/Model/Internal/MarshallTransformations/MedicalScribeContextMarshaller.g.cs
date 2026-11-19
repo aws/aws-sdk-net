@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// MedicalScribeContext Marshaller
     /// </summary>
-    public partial class MedicalScribeContextMarshaller : IRequestMarshaller<MedicalScribeContext, JsonMarshallerContext>
+    public partial class MedicalScribeContextMarshaller : IRequestMarshaller<MedicalScribeContext, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MedicalScribeContext requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeContext requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPatientContext())
             {
-                context.Writer.WritePropertyName("PatientContext");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PatientContext");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MedicalScribePatientContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.PatientContext, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

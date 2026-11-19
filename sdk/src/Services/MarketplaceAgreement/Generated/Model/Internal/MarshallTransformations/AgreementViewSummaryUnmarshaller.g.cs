@@ -110,6 +110,18 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "freeTrialEndTime":
+                        context.AddPathSegment("FreeTrialEndTime");
+                        unmarshalledObject.FreeTrialEndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "includesContactOfType":
+                        context.AddPathSegment("IncludesContactOfType");
+                        unmarshalledObject.IncludesContactOfType = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "initialAgreementId":
                         context.AddPathSegment("InitialAgreementId");
                         unmarshalledObject.InitialAgreementId = CborStringUnmarshaller.Instance.Unmarshall(context);

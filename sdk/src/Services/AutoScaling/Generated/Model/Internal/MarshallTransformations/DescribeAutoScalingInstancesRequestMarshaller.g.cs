@@ -53,6 +53,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             request.Parameters.Add("Action", "DescribeAutoScalingInstances");
             request.Parameters.Add("Version", "2011-01-01");
 
+            if (publicRequest.IsSetIncludeManagedResources())
+            {
+                request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources.Value));
+            }
             if (publicRequest.IsSetInstanceIds())
             {
                 if (publicRequest.InstanceIds.Count == 0)

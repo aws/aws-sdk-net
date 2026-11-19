@@ -34,15 +34,17 @@ namespace Amazon.SecurityHub.Model
     /// packages installed on your resources. Each result identifies a package by name, version,
     /// and type, and includes the number of resources that contain that package. <para> You
     /// can use the <c>Scopes</c> parameter to define the data boundary for the query. Currently,
-    /// <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve software from
-    /// your entire organization or from specific organizational units. Only the delegated
-    /// administrator account can use <c>Scopes</c>. </para> <para> You can use the <c>Filters</c>
-    /// parameter to refine results based on package and resource attributes. You can use
-    /// <c>Scopes</c> and <c>Filters</c> independently or together. When both are provided,
-    /// <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines results
-    /// within that scoped data set. </para> <para> To list the resources that contain a specific
-    /// package, use <c>GetSoftwareResourcesV2</c>. To get counts of software grouped by a
-    /// field, use <c>GetSoftwareStatisticsV2</c>. </para>
+    /// <c>Scopes</c> supports <c>AwsOrganizations</c>. With <c>AwsOrganizations</c>, you
+    /// can retrieve software from your entire organization or from specific organizational
+    /// units. Only the delegated administrator account can use <c>Scopes</c>. </para> <para>
+    /// You can use the <c>Filters</c> parameter to refine results based on package and resource
+    /// attributes. You can use <c>Scopes</c> and <c>Filters</c> independently or together.
+    /// When both are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c>
+    /// refines results within that scoped data set. </para> <para> To list the resources
+    /// that contain a specific package, use <c>GetSoftwareResourcesV2</c>. To get counts
+    /// of software grouped by a field, use <c>GetSoftwareStatisticsV2</c>. </para> <para>
+    /// This operation returns paginated results. To retrieve additional results, use the
+    /// <c>NextToken</c> value from the previous response. </para>
     /// </summary>
     public partial class GetSoftwareV2Request : AmazonSecurityHubRequest
     {

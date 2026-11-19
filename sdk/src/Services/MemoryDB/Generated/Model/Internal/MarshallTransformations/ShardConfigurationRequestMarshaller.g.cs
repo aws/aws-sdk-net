@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// ShardConfigurationRequest Marshaller
     /// </summary>
-    public partial class ShardConfigurationRequestMarshaller : IRequestMarshaller<ShardConfigurationRequest, JsonMarshallerContext>
+    public partial class ShardConfigurationRequestMarshaller : IRequestMarshaller<ShardConfigurationRequest, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ShardConfigurationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ShardConfigurationRequest requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetShardCount())
             {
-                context.Writer.WritePropertyName("ShardCount");
-                context.Writer.WriteNumberValue(requestObject.ShardCount.Value);
+                context.Writer.WriteTextString("ShardCount");
+                context.Writer.WriteInt32(requestObject.ShardCount.Value);
             }
         }
 

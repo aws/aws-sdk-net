@@ -40,6 +40,7 @@ namespace Amazon.Kinesis.Endpoints
         {
             UseDualStack = false;
             UseFIPS = false;
+            ResourceType = "";
         }
 
         /// <summary>
@@ -93,6 +94,16 @@ namespace Amazon.Kinesis.Endpoints
         public string ChannelARN { get; set; }
 
         /// <summary>
+        /// The ARN of the Kinesis queue
+        /// </summary>
+        public string QueueARN { get; set; }
+
+        /// <summary>
+        /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+        /// </summary>
+        public string ResourceType { get; set; }
+
+        /// <summary>
         /// The AWS AccountId used for the request.
         /// </summary>
         public string AccountId { get; set; }
@@ -120,6 +131,8 @@ namespace Amazon.Kinesis.Endpoints
                 "ConsumerARN" => ConsumerARN,
                 "ResourceARN" => ResourceARN,
                 "ChannelARN" => ChannelARN,
+                "QueueARN" => QueueARN,
+                "ResourceType" => ResourceType,
                 "AccountId" => AccountId,
                 "AccountIdEndpointMode" => AccountIdEndpointMode,
                 _ => base[name],
@@ -138,6 +151,8 @@ namespace Amazon.Kinesis.Endpoints
                     case "ConsumerARN": ConsumerARN = (string)value; break;
                     case "ResourceARN": ResourceARN = (string)value; break;
                     case "ChannelARN": ChannelARN = (string)value; break;
+                    case "QueueARN": QueueARN = (string)value; break;
+                    case "ResourceType": ResourceType = (string)value; break;
                     case "AccountId": AccountId = (string)value; break;
                     case "AccountIdEndpointMode": AccountIdEndpointMode = (string)value; break;
                     default: base[name] = value; break;
@@ -159,6 +174,8 @@ namespace Amazon.Kinesis.Endpoints
                 && ConsumerARN == o.ConsumerARN
                 && ResourceARN == o.ResourceARN
                 && ChannelARN == o.ChannelARN
+                && QueueARN == o.QueueARN
+                && ResourceType == o.ResourceType
                 && AccountId == o.AccountId
                 && AccountIdEndpointMode == o.AccountIdEndpointMode
                 && base.ParameterValuesEqual(other);

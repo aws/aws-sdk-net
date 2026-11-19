@@ -22,6 +22,123 @@ using Amazon.Runtime;
 namespace Amazon.IAMToolbox
 {
     /// <summary>
+    /// Constants used for properties of type CheckEffect.
+    /// </summary>
+    public class CheckEffect : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALLOW for CheckEffect
+        /// </summary>
+        public static readonly CheckEffect ALLOW = new CheckEffect("ALLOW");
+
+        /// <summary>
+        /// Constant EXPLICIT_DENY for CheckEffect
+        /// </summary>
+        public static readonly CheckEffect EXPLICIT_DENY = new CheckEffect("EXPLICIT_DENY");
+
+        /// <summary>
+        /// Constant IMPLICIT_DENY for CheckEffect
+        /// </summary>
+        public static readonly CheckEffect IMPLICIT_DENY = new CheckEffect("IMPLICIT_DENY");
+
+        /// <summary>
+        /// Constant NO_IMPACT for CheckEffect
+        /// </summary>
+        public static readonly CheckEffect NO_IMPACT = new CheckEffect("NO_IMPACT");
+
+        /// <summary>
+        /// Constructs a custom CheckEffect for a value not among the defined constants.
+        /// </summary>
+        public CheckEffect(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckEffect FindValue(string value)
+        {
+            return FindValue<CheckEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckEffect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CheckType.
+    /// </summary>
+    public class CheckType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PERMISSIONS_BOUNDARY for CheckType
+        /// </summary>
+        public static readonly CheckType PERMISSIONS_BOUNDARY = new CheckType("PERMISSIONS_BOUNDARY");
+
+        /// <summary>
+        /// Constant PRINCIPAL for CheckType
+        /// </summary>
+        public static readonly CheckType PRINCIPAL = new CheckType("PRINCIPAL");
+
+        /// <summary>
+        /// Constant RESOURCE for CheckType
+        /// </summary>
+        public static readonly CheckType RESOURCE = new CheckType("RESOURCE");
+
+        /// <summary>
+        /// Constant RESOURCE_CONTROL_POLICY for CheckType
+        /// </summary>
+        public static readonly CheckType RESOURCE_CONTROL_POLICY = new CheckType("RESOURCE_CONTROL_POLICY");
+
+        /// <summary>
+        /// Constant SERVICE_CONTROL_POLICY for CheckType
+        /// </summary>
+        public static readonly CheckType SERVICE_CONTROL_POLICY = new CheckType("SERVICE_CONTROL_POLICY");
+
+        /// <summary>
+        /// Constant SESSION for CheckType
+        /// </summary>
+        public static readonly CheckType SESSION = new CheckType("SESSION");
+
+        /// <summary>
+        /// Constant VPC_ENDPOINT for CheckType
+        /// </summary>
+        public static readonly CheckType VPC_ENDPOINT = new CheckType("VPC_ENDPOINT");
+
+        /// <summary>
+        /// Constructs a custom CheckType for a value not among the defined constants.
+        /// </summary>
+        public CheckType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckType FindValue(string value)
+        {
+            return FindValue<CheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EvaluatedEffect.
     /// </summary>
     public class EvaluatedEffect : ConstantClass

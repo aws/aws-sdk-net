@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,30 +38,42 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClientCertAuthSettings Object
     /// </summary>
-    public partial class ClientCertAuthSettingsUnmarshaller : IJsonUnmarshaller<ClientCertAuthSettings, JsonUnmarshallerContext>
+    public partial class ClientCertAuthSettingsUnmarshaller : ICborUnmarshaller<ClientCertAuthSettings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ClientCertAuthSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClientCertAuthSettings Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ClientCertAuthSettings();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("OCSPUrl", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OCSPUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "OCSPUrl":
+                        context.AddPathSegment("OCSPUrl");
+                        unmarshalledObject.OCSPUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
@@ -38,41 +38,48 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateLanguageModel operation.
     /// </summary>
-    public partial class UpdateLanguageModelResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class UpdateLanguageModelResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new UpdateLanguageModelResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("UpdateLanguageModel");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastModifiedTime":
+                        context.AddPathSegment("LastModifiedTime");
+                        unmarshalledObject.LastModifiedTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ModelName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ModelName":
+                        context.AddPathSegment("ModelName");
+                        unmarshalledObject.ModelName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ModelStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ModelStatus":
+                        context.AddPathSegment("ModelStatus");
+                        unmarshalledObject.ModelStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -80,11 +87,9 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -92,28 +97,27 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                     {
-                        return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                     {
-                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                     {
-                        return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                     {
-                        return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                     {
-                        return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

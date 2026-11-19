@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// SucceededInStageFilter Marshaller
     /// </summary>
-    public partial class SucceededInStageFilterMarshaller : IRequestMarshaller<SucceededInStageFilter, JsonMarshallerContext>
+    public partial class SucceededInStageFilterMarshaller : IRequestMarshaller<SucceededInStageFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SucceededInStageFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(SucceededInStageFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetStageName())
             {
-                context.Writer.WritePropertyName("stageName");
-                context.Writer.WriteStringValue(requestObject.StageName);
+                context.Writer.WriteTextString("stageName");
+                context.Writer.WriteTextString(requestObject.StageName);
             }
         }
 

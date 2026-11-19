@@ -53,7 +53,7 @@ namespace Amazon.Mgn.Model
         /// Launch template disk iops configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 100, Max = 64000)]
+        [AWSProperty(Min = 100, Max = 80000)]
         public long? Iops { get; set; }
 
         /// <summary>

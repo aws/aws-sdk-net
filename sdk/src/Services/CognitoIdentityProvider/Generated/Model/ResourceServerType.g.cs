@@ -57,6 +57,20 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetIdentifier() => this.Identifier != null;
 
         /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// This value is reserved for resource servers that Amazon Cognito manages. Resource
+        /// servers that you create don't have this value.
+        /// </para>
+        /// </summary>
+        public ResourceServerManagedByType ManagedBy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ManagedBy property is set.
+        /// </summary>
+        internal bool IsSetManagedBy() => this.ManagedBy != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the resource server.

@@ -47,13 +47,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.DnsViewId</property>
@@ -68,6 +74,11 @@
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.Segment</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.Arn</property>
     <min>1</min>
     <max>2048</max>
@@ -75,8 +86,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.DnsViewId</property>
@@ -95,6 +112,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.Segment</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessTokenRequest.ClientToken</property>
@@ -146,6 +168,59 @@
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessTokenResponse.Value</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointRequest.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointRequest.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointResponse.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointResponse.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CreateCoreNetworkEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateDNSViewRequest.ClientToken</property>
@@ -426,8 +501,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.DnsViewId</property>
@@ -448,6 +529,11 @@
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.Segment</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteAccessTokenRequest.AccessTokenId</property>
     <min>1</min>
     <max>64</max>
@@ -458,6 +544,42 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointRequest.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointResponse.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointResponse.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.DeleteCoreNetworkEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteDNSViewRequest.DnsViewId</property>
@@ -756,8 +878,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.DnsViewId</property>
@@ -776,6 +904,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.Segment</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetAccessTokenRequest.AccessTokenId</property>
@@ -822,6 +955,42 @@
     <property>Amazon.Route53GlobalResolver.Model.GetAccessTokenResponse.Value</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointRequest.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointResponse.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointResponse.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.GetCoreNetworkEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetDNSViewRequest.DnsViewId</property>
@@ -1140,8 +1309,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceRequest.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceRequest.DnsViewId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceRequest.Name</property>
@@ -1157,8 +1332,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.DnsViewId</property>
@@ -1177,6 +1358,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.Segment</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessTokenRequest.AccessTokenId</property>
@@ -1200,6 +1386,48 @@
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessTokenResponse.Name</property>
     <min>1</min>
     <max>32</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointRequest.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointResponse.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointResponse.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateCoreNetworkEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1467,8 +1695,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.Cidr</property>
-    <min>1</min>
+    <min>0</min>
     <max>43</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.CoreNetworkEndpointId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.DnsViewId</property>
@@ -1487,6 +1721,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.Segment</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.AccessTokenItem.Arn</property>
@@ -1740,6 +1979,75 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpInputItem.DnsLabel</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpInputItem.Ipv4Address</property>
+    <min>1</min>
+    <max>15</max>
+    <pattern>^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpInputItem.Ipv6Address</property>
+    <min>1</min>
+    <max>39</max>
+    <pattern>^(?:[A-Fa-f0-9]{0,4}:){2,7}[A-Fa-f0-9]{1,4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpItem.DnsLabel</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpItem.DnsName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpItem.Ipv4Address</property>
+    <min>1</min>
+    <max>15</max>
+    <pattern>^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointDnsIpItem.Ipv6Address</property>
+    <min>1</min>
+    <max>39</max>
+    <pattern>^(?:[A-Fa-f0-9]{0,4}:){2,7}[A-Fa-f0-9]{1,4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointsItem.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointsItem.CoreNetworkArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:[-.a-z0-9]{1,63}:[-.a-z0-9]{1,63}:[-.a-z0-9]{0,63}:[-.a-z0-9]{0,63}:[^/].{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointsItem.GlobalResolverId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointsItem.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[-.a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.CoreNetworkEndpointsItem.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!^[0-9]+$)([a-zA-Z0-9-_/' ']+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DNSViewSummary.Arn</property>
     <min>1</min>
     <max>2048</max>
@@ -1974,5 +2282,22 @@
     <min>12</min>
     <max>32</max>
     <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateIpAddressEntry.DnsLabel</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateIpAddressEntry.Ipv4Address</property>
+    <min>1</min>
+    <max>15</max>
+    <pattern>^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53GlobalResolver.Model.UpdateIpAddressEntry.Ipv6Address</property>
+    <min>1</min>
+    <max>39</max>
+    <pattern>^(?:[A-Fa-f0-9]{0,4}:){2,7}[A-Fa-f0-9]{1,4}$</pattern>
   </property-value-rule>
 </property-value-rules>

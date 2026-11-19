@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "18.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -28,46 +28,102 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 9 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 9 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
             #line hidden
-            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>The Ama" +
-                    "zon Web Services SDK for .NET - Core Runtime</description>\r\n    <language>en-US<" +
-                    "/language>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <projectUrl" +
-                    ">https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazon cloud aw" +
-                    "s-sdk-v4</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
-                    "<group targetFramework=\"net472\">\r\n        <dependency id=\"System.Buffers\" versio" +
-                    "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
-                    " <dependency id=\"System.Text.Json\" version=\"8.0.6\" />\r\n      </group>\r\n      <gr" +
-                    "oup targetFramework=\"netstandard2.0\">\r\n        <dependency id=\"Microsoft.Bcl.Asy" +
-                    "ncInterfaces\" version=\"8.0.0\" />\r\n        <dependency id=\"System.Buffers\" versio" +
-                    "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
-                    " <dependency id=\"System.Text.Json\" version=\"8.0.6\" />\r\n      </group>\r\n      <gr" +
-                    "oup targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group targetFramewo" +
-                    "rk=\"net8.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n" +
-                    "    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file s" +
-                    "rc=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file s" +
-                    "rc=\".\\bin\\Release\\net472\\AWSSDK.Core.dll\" target=\"lib\\net472\" />\r\n    <file src=" +
-                    "\".\\bin\\Release\\net472\\AWSSDK.Core.xml\" target=\"lib\\net472\" />\r\n    <file src=\".\\" +
-                    "bin\\Release\\net472\\AWSSDK.Core.pdb\" target=\"lib\\net472\" />\r\n\r\n    <file src=\".\\b" +
-                    "in\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <f" +
-                    "ile src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2." +
-                    "0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\n" +
-                    "etstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" " +
-                    "target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK." +
-                    "Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3" +
-                    ".1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release" +
-                    "\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net" +
-                    "8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net8.0\\" +
-                    "AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n  </files>\r\n</package>");
+            this.Write(@"</version> 
+    <authors>Amazon Web Services</authors>
+    <description>The Amazon Web Services SDK for .NET - Core Runtime</description>
+    <language>en-US</language>
+    <license type=""expression"">Apache-2.0</license>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon cloud aws-sdk-v4</tags>
+    <icon>images\AWSLogo.png</icon>
+    <dependencies>
+      <group targetFramework=""net472"">
+        <dependency id=""AWSSDK.Extensions.Numerics"" version=""");
+            
+            #line 19 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NumericsVersionRange"]));
+            
+            #line default
+            #line hidden
+            this.Write(@""" />
+        <dependency id=""System.Buffers"" version=""4.6.1"" />
+        <dependency id=""System.Memory"" version=""4.6.3"" />
+        <dependency id=""System.Text.Json"" version=""8.0.6"" />
+        <dependency id=""System.IO.Hashing"" version=""11.0.0"" />
+      </group>
+      <group targetFramework=""netstandard2.0"">
+        <dependency id=""AWSSDK.Extensions.Numerics"" version=""");
+            
+            #line 26 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NumericsVersionRange"]));
+            
+            #line default
+            #line hidden
+            this.Write(@""" />
+        <dependency id=""Microsoft.Bcl.AsyncInterfaces"" version=""8.0.0"" />
+        <dependency id=""System.Buffers"" version=""4.6.1"" />
+        <dependency id=""System.Memory"" version=""4.6.3"" />
+        <dependency id=""System.Text.Json"" version=""8.0.6"" />
+        <dependency id=""System.IO.Hashing"" version=""11.0.0"" />
+      </group>
+      <group targetFramework=""net8.0"">
+        <dependency id=""AWSSDK.Extensions.Numerics"" version=""");
+            
+            #line 34 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NumericsVersionRange"]));
+            
+            #line default
+            #line hidden
+            this.Write("\" />\r\n        <dependency id=\"System.IO.Hashing\" version=\"11.0.0\" />\r\n      </gro" +
+                    "up>\t\t\r\n      <group targetFramework=\"net10.0\">\r\n        <dependency id=\"AWSSDK.E" +
+                    "xtensions.Numerics\" version=\"");
+            
+            #line 38 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NumericsVersionRange"]));
+            
+            #line default
+            #line hidden
+            this.Write("\" />\r\n        <dependency id=\"System.IO.Hashing\" version=\"11.0.0\" />\r\n      </gro" +
+                    "up>\t\t\r\n      <group targetFramework=\"net11.0\">\r\n        <dependency id=\"AWSSDK.E" +
+                    "xtensions.Numerics\" version=\"");
+            
+            #line 42 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NumericsVersionRange"]));
+            
+            #line default
+            #line hidden
+            this.Write("\" />\r\n        <dependency id=\"System.IO.Hashing\" version=\"11.0.0\" />\r\n      </gro" +
+                    "up>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuge" +
+                    "t-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file src=\"..\\..\\code-analysis\\C" +
+                    "oreAnalysis\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsof" +
+                    "t.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadata" +
+                    ".*;**\\System.Composition.*\" />\r\n\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Cor" +
+                    "e.dll\" target=\"lib\\net472\" />\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Core.x" +
+                    "ml\" target=\"lib\\net472\" />\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Core.pdb\"" +
+                    " target=\"lib\\net472\" />\r\n\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Co" +
+                    "re.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2" +
+                    ".0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\" +
+                    "netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstandard2.0\"/>\r\n\r\n    <file src=\"" +
+                    ".\\bin\\Release\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bi" +
+                    "n\\Release\\net8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\net8.0\\AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n\r\n    <file src=\".\\bin\\Rele" +
+                    "ase\\net10.0\\AWSSDK.Core.dll\" target=\"lib\\net10.0\"/>\r\n\t<file src=\".\\bin\\Release\\n" +
+                    "et10.0\\AWSSDK.Core.xml\" target=\"lib\\net10.0\"/>\r\n\t<file src=\".\\bin\\Release\\net10." +
+                    "0\\AWSSDK.Core.pdb\" target=\"lib\\net10.0\"/>\r\n\r\n\t<file src=\".\\bin\\Release\\net11.0\\A" +
+                    "WSSDK.Core.dll\" target=\"lib\\net11.0\"/>\r\n\t<file src=\".\\bin\\Release\\net11.0\\AWSSDK" +
+                    ".Core.xml\" target=\"lib\\net11.0\"/>\r\n\t<file src=\".\\bin\\Release\\net11.0\\AWSSDK.Core" +
+                    ".pdb\" target=\"lib\\net11.0\"/>\r\n\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

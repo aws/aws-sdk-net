@@ -78,6 +78,16 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetIncludeConfiguration())
+            {
+                context.Writer.WritePropertyName("includeConfiguration");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeConfiguration.Value);
+            }
+            if (publicRequest.IsSetIncludeEnrichedProperties())
+            {
+                context.Writer.WritePropertyName("includeEnrichedProperties");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeEnrichedProperties.Value);
+            }
             if (publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

@@ -73,6 +73,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAsyncInferenceConfig() => this.AsyncInferenceConfig != null;
 
         /// <summary>
+        /// Gets and sets the property CrossRegionTrafficConfig. 
+        /// <para>
+        /// The cross-Region traffic cap for the endpoint. The cap limits the requests per second
+        /// that the endpoint accepts from inference routers in other Amazon Web Services Regions.
+        /// If you don't specify it, these requests aren't limited. You can't specify it with
+        /// serverless variants or with <c>AsyncInferenceConfig</c>. For information about the
+        /// cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit
+        /// requests from other Regions</a>.
+        /// </para>
+        /// </summary>
+        public CrossRegionTrafficConfig CrossRegionTrafficConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossRegionTrafficConfig property is set.
+        /// </summary>
+        internal bool IsSetCrossRegionTrafficConfig() => this.CrossRegionTrafficConfig != null;
+
+        /// <summary>
         /// Gets and sets the property DataCaptureConfig.
         /// </summary>
         public DataCaptureConfig DataCaptureConfig { get; set; }

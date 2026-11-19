@@ -35,7 +35,10 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormMultiSelectQuestionAutomation
     {
         /// <summary>
-        /// Gets and sets the property AnswerSource.
+        /// Gets and sets the property AnswerSource. 
+        /// <para>
+        /// Automation answer source.
+        /// </para>
         /// </summary>
         public EvaluationFormQuestionAutomationAnswerSource AnswerSource { get; set; }
 

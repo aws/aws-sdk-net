@@ -50,7 +50,7 @@ namespace Amazon.WellArchitected.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 100)]
+        [AWSProperty(Required = true, Min = 0, Max = 1000)]
         public List<AggregationConfiguration> AggregationConfiguration { get; set; } = AWSConfigs.InitializeCollections ? new List<AggregationConfiguration>() : null;
 
         /// <summary>
@@ -159,7 +159,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Pillars. 
         /// <para>
-        /// The Well-Architected Tool Framework pillars to associate with this profile.
+        /// The Amazon Web Services Well-Architected Framework pillars to associate with this
+        /// profile.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

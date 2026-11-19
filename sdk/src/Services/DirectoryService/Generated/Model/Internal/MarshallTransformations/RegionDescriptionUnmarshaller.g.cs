@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,86 +38,90 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RegionDescription Object
     /// </summary>
-    public partial class RegionDescriptionUnmarshaller : IJsonUnmarshaller<RegionDescription, JsonUnmarshallerContext>
+    public partial class RegionDescriptionUnmarshaller : ICborUnmarshaller<RegionDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RegionDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RegionDescription Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RegionDescription();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DesiredNumberOfDomainControllers", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredNumberOfDomainControllers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DesiredNumberOfDomainControllers":
+                        context.AddPathSegment("DesiredNumberOfDomainControllers");
+                        unmarshalledObject.DesiredNumberOfDomainControllers = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LastUpdatedDateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DirectoryId":
+                        context.AddPathSegment("DirectoryId");
+                        unmarshalledObject.DirectoryId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LaunchTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LastUpdatedDateTime":
+                        context.AddPathSegment("LastUpdatedDateTime");
+                        unmarshalledObject.LastUpdatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LaunchTime":
+                        context.AddPathSegment("LaunchTime");
+                        unmarshalledObject.LaunchTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RegionType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegionType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegionName":
+                        context.AddPathSegment("RegionName");
+                        unmarshalledObject.RegionName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RegionType":
+                        context.AddPathSegment("RegionType");
+                        unmarshalledObject.RegionType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatusLastUpdatedDateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StatusLastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = DirectoryVpcSettingsUnmarshaller.Instance;
-                    unmarshalledObject.VpcSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StatusLastUpdatedDateTime":
+                        context.AddPathSegment("StatusLastUpdatedDateTime");
+                        unmarshalledObject.StatusLastUpdatedDateTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcSettings":
+                        context.AddPathSegment("VpcSettings");
+                        unmarshalledObject.VpcSettings = DirectoryVpcSettingsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

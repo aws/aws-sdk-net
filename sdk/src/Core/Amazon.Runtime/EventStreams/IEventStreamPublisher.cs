@@ -59,10 +59,13 @@ namespace Amazon.Runtime.EventStreams
         {
             var eventHeaders = new List<IEventStreamHeader>();
 
-            // Add the content type header
-            var eventContentTypeHeader = new EventStreamHeader(HeaderContentType) { HeaderType = EventStreamHeaderType.String };
-            eventContentTypeHeader.SetString(contentType);
-            eventHeaders.Add(eventContentTypeHeader);
+            // Add the content type header. An event with no payload has no content type to describe.
+            if (contentType != null)
+            {
+                var eventContentTypeHeader = new EventStreamHeader(HeaderContentType) { HeaderType = EventStreamHeaderType.String };
+                eventContentTypeHeader.SetString(contentType);
+                eventHeaders.Add(eventContentTypeHeader);
+            }
 
             // Add the event type header mapped to the modeled event type name.
             var eventTypeHeader = new EventStreamHeader(HeaderEventType) { HeaderType = EventStreamHeaderType.String };

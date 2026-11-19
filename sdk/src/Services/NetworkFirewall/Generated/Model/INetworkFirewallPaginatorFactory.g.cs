@@ -51,10 +51,22 @@ namespace Amazon.NetworkFirewall.Model
         IListContainerAssociationsPaginator ListContainerAssociations(ListContainerAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for ListContextStores operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListContextStoresPaginator ListContextStores(ListContextStoresRequest request);
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListFirewallPoliciesV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFirewallPoliciesV2Paginator ListFirewallPoliciesV2(ListFirewallPoliciesV2Request request);
 
         /// <summary>
         /// Paginator for ListFirewalls operation
@@ -75,22 +87,10 @@ namespace Amazon.NetworkFirewall.Model
         IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request);
 
         /// <summary>
-        /// Paginator for ListProxies operation
+        /// Paginator for ListResourcesInContextStore operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxiesPaginator ListProxies(ListProxiesRequest request);
-
-        /// <summary>
-        /// Paginator for ListProxyConfigurations operation
-        /// </summary>
-        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxyConfigurationsPaginator ListProxyConfigurations(ListProxyConfigurationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListProxyRuleGroups operation
-        /// </summary>
-        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
-        IListProxyRuleGroupsPaginator ListProxyRuleGroups(ListProxyRuleGroupsRequest request);
+        IListResourcesInContextStorePaginator ListResourcesInContextStore(ListResourcesInContextStoreRequest request);
 
         /// <summary>
         /// Paginator for ListRuleGroups operation

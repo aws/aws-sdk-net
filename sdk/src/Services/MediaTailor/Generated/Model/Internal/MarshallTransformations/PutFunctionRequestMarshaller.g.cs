@@ -114,6 +114,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("FunctionType");
                 context.Writer.WriteStringValue(publicRequest.FunctionType);
             }
+            if (publicRequest.IsSetHlsTagProcessorConfiguration())
+            {
+                context.Writer.WritePropertyName("HlsTagProcessorConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HlsTagProcessorConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HlsTagProcessorConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetHttpRequestConfiguration())
             {
                 context.Writer.WritePropertyName("HttpRequestConfiguration");

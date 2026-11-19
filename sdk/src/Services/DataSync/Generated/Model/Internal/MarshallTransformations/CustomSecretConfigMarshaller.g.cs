@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// CustomSecretConfig Marshaller
     /// </summary>
-    public partial class CustomSecretConfigMarshaller : IRequestMarshaller<CustomSecretConfig, JsonMarshallerContext>
+    public partial class CustomSecretConfigMarshaller : IRequestMarshaller<CustomSecretConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CustomSecretConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomSecretConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetSecretAccessRoleArn())
             {
-                context.Writer.WritePropertyName("SecretAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.SecretAccessRoleArn);
+                context.Writer.WriteTextString("SecretAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.SecretAccessRoleArn);
             }
 
             if (requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
+                context.Writer.WriteTextString("SecretArn");
+                context.Writer.WriteTextString(requestObject.SecretArn);
             }
         }
 

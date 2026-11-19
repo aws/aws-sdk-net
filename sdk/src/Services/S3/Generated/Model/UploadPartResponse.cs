@@ -52,6 +52,7 @@ namespace Amazon.S3.Model
         private string _sseCustomerAlgorithm;
         private string _sseCustomerKeyMD5;
         private string _ssekmsKeyId;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 
@@ -417,6 +418,34 @@ namespace Amazon.S3.Model
         internal bool IsSetSSEKMSKeyId()
         {
             return this._ssekmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// Version ID of the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns the Version ID of the object for the uploaded part, if bucket versioning is
+        /// enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

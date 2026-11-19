@@ -70,7 +70,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Providers. 
         /// <para>
         /// A list of cloud providers to filter the security control definitions by. For example,
-        /// specify <c>Azure</c> to return only controls that evaluate Azure resources.
+        /// specify <c>Azure</c> to return only controls that evaluate Azure resources, or <c>GCP</c>
+        /// to return only controls that evaluate GCP resources.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

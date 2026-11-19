@@ -32,7 +32,7 @@ namespace Amazon.SageMakerTrainingSessionRuntime
     public partial class AmazonSageMakerTrainingSessionRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMakerTrainingSessionRuntime", "4.0.100.5");
+            InternalSDKUtils.BuildUserAgentString("SageMakerTrainingSessionRuntime", "4.1.0.2");
 
         private static readonly AmazonSageMakerTrainingSessionRuntimeEndpointResolver EndpointResolver =
             new AmazonSageMakerTrainingSessionRuntimeEndpointResolver();

@@ -81,6 +81,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("EndAssociatedEmailsAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = EndAssociatedEmailsActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.EndAssociatedEmailsAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("EndAssociatedTasksAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EndAssociatedTasksActionDefinitionUnmarshaller.Instance;

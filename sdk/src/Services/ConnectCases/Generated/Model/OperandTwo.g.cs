@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Represents the right hand operand in the condition. In the Amazon Connect admin website,
-    /// case rules are known as <i>case field conditions</i>. For more information about case
-    /// field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+    /// Represents the right hand operand in the condition. In the Connect Customer admin
+    /// website, case rules are known as <i>case field conditions</i>. For more information
+    /// about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
     /// case field conditions to a case template</a>.
     /// </summary>
     public partial class OperandTwo

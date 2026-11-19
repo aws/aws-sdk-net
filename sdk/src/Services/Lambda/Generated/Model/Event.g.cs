@@ -227,6 +227,32 @@ namespace Amazon.Lambda.Model
         internal bool IsSetExecutionFailedDetails() => this.ExecutionFailedDetails != null;
 
         /// <summary>
+        /// Gets and sets the property ExecutionPausedDetails. 
+        /// <para>
+        /// The details of an <c>ExecutionPaused</c> event.
+        /// </para>
+        /// </summary>
+        public ExecutionPausedDetails ExecutionPausedDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionPausedDetails property is set.
+        /// </summary>
+        internal bool IsSetExecutionPausedDetails() => this.ExecutionPausedDetails != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionResumedDetails. 
+        /// <para>
+        /// The details of an <c>ExecutionResumed</c> event.
+        /// </para>
+        /// </summary>
+        public ExecutionResumedDetails ExecutionResumedDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutionResumedDetails property is set.
+        /// </summary>
+        internal bool IsSetExecutionResumedDetails() => this.ExecutionResumedDetails != null;
+
+        /// <summary>
         /// Gets and sets the property ExecutionStartedDetails. 
         /// <para>
         /// Details about an execution that started.

@@ -58,5 +58,44 @@ namespace Amazon.MediaConnect.Model
         /// Checks to see if the RecoveryLatencyMode property is set.
         /// </summary>
         internal bool IsSetRecoveryLatencyMode() => this.RecoveryLatencyMode != null;
+
+        /// <summary>
+        /// Gets and sets the property SwitchingConfiguration. 
+        /// <para>
+        /// The configuration settings for the switching mode.
+        /// </para>
+        /// </summary>
+        public FabricSwitchingConfiguration SwitchingConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SwitchingConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSwitchingConfiguration() => this.SwitchingConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property SwitchingMode. 
+        /// <para>
+        /// The switching mode that the router output uses when it switches to a new router input.
+        /// Valid values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IMMEDIATE</c> (default) – Switches to the new router input immediately.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KEY_FRAME</c> – Waits for a key frame on the new router input before it switches.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify it, it must match the switching configuration.
+        /// </para>
+        /// </summary>
+        public FabricSwitchingMode SwitchingMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SwitchingMode property is set.
+        /// </summary>
+        internal bool IsSetSwitchingMode() => this.SwitchingMode != null;
     }
 }

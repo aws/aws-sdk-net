@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// SubnetMapping Marshaller
     /// </summary>
-    public partial class SubnetMappingMarshaller : IRequestMarshaller<SubnetMapping, JsonMarshallerContext>
+    public partial class SubnetMappingMarshaller : IRequestMarshaller<SubnetMapping, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SubnetMapping requestObject, JsonMarshallerContext context)
+        public void Marshall(SubnetMapping requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetIPAddressType())
             {
-                context.Writer.WritePropertyName("IPAddressType");
-                context.Writer.WriteStringValue(requestObject.IPAddressType);
+                context.Writer.WriteTextString("IPAddressType");
+                context.Writer.WriteTextString(requestObject.IPAddressType);
             }
 
             if (requestObject.IsSetSubnetId())
             {
-                context.Writer.WritePropertyName("SubnetId");
-                context.Writer.WriteStringValue(requestObject.SubnetId);
+                context.Writer.WriteTextString("SubnetId");
+                context.Writer.WriteTextString(requestObject.SubnetId);
             }
         }
 

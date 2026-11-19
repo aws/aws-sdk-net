@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CloudHSMV2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
@@ -38,34 +38,42 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeBackups operation.
     /// </summary>
-    public partial class DescribeBackupsResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeBackupsResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeBackupsResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeBackups");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("Backups", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Backup, BackupUnmarshaller>(BackupUnmarshaller.Instance);
-                    unmarshalledObject.Backups = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Backups":
+                        context.AddPathSegment("Backups");
+                        unmarshalledObject.Backups = new CborListUnmarshaller<Backup, BackupUnmarshaller>(BackupUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NextToken", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "NextToken":
+                        context.AddPathSegment("NextToken");
+                        unmarshalledObject.NextToken = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -73,11 +81,9 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -85,32 +91,31 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmAccessDeniedException"))
                     {
-                        return CloudHsmAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmInternalFailureException"))
                     {
-                        return CloudHsmInternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmInternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmInvalidRequestException"))
                     {
-                        return CloudHsmInvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmInvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmResourceNotFoundException"))
                     {
-                        return CloudHsmResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmServiceException"))
                     {
-                        return CloudHsmServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("CloudHsmTagException"))
                     {
-                        return CloudHsmTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return CloudHsmTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

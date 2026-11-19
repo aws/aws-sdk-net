@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProjectSource Object
     /// </summary>
-    public partial class ProjectSourceUnmarshaller : IJsonUnmarshaller<ProjectSource, JsonUnmarshallerContext>
+    public partial class ProjectSourceUnmarshaller : ICborUnmarshaller<ProjectSource, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ProjectSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProjectSource Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ProjectSource();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("auth", targetDepth, ref reader))
-                {
-                    var unmarshaller = SourceAuthUnmarshaller.Instance;
-                    unmarshalledObject.Auth = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("buildStatusConfig", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = BuildStatusConfigUnmarshaller.Instance;
-                    unmarshalledObject.BuildStatusConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "auth":
+                        context.AddPathSegment("Auth");
+                        unmarshalledObject.Auth = SourceAuthUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("buildspec", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Buildspec = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "buildStatusConfig":
+                        context.AddPathSegment("BuildStatusConfig");
+                        unmarshalledObject.BuildStatusConfig = BuildStatusConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("gitCloneDepth", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GitCloneDepth = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "buildspec":
+                        context.AddPathSegment("Buildspec");
+                        unmarshalledObject.Buildspec = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("gitSubmodulesConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = GitSubmodulesConfigUnmarshaller.Instance;
-                    unmarshalledObject.GitSubmodulesConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "gitCloneDepth":
+                        context.AddPathSegment("GitCloneDepth");
+                        unmarshalledObject.GitCloneDepth = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("insecureSsl", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InsecureSsl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "gitSubmodulesConfig":
+                        context.AddPathSegment("GitSubmodulesConfig");
+                        unmarshalledObject.GitSubmodulesConfig = GitSubmodulesConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("location", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "insecureSsl":
+                        context.AddPathSegment("InsecureSsl");
+                        unmarshalledObject.InsecureSsl = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("reportBuildStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ReportBuildStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "location":
+                        context.AddPathSegment("Location");
+                        unmarshalledObject.Location = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("sourceIdentifier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "reportBuildStatus":
+                        context.AddPathSegment("ReportBuildStatus");
+                        unmarshalledObject.ReportBuildStatus = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "sourceIdentifier":
+                        context.AddPathSegment("SourceIdentifier");
+                        unmarshalledObject.SourceIdentifier = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

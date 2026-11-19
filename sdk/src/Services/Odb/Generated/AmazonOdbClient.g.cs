@@ -465,6 +465,96 @@ namespace Amazon.Odb
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Adds virtual machines to the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVirtualMachinesToCloudVmCluster service method.</param>
+        /// <returns>The response from the AssociateVirtualMachinesToCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateVirtualMachinesToCloudVmCluster">REST API Reference for AssociateVirtualMachinesToCloudVmCluster Operation</seealso>
+        public virtual AssociateVirtualMachinesToCloudVmClusterResponse AssociateVirtualMachinesToCloudVmCluster(AssociateVirtualMachinesToCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualMachinesToCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualMachinesToCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVirtualMachinesToCloudVmClusterResponse>(request, options);
+        }
+#else
+        internal virtual AssociateVirtualMachinesToCloudVmClusterResponse AssociateVirtualMachinesToCloudVmCluster(AssociateVirtualMachinesToCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualMachinesToCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualMachinesToCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVirtualMachinesToCloudVmClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Adds virtual machines to the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVirtualMachinesToCloudVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateVirtualMachinesToCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateVirtualMachinesToCloudVmCluster">REST API Reference for AssociateVirtualMachinesToCloudVmCluster Operation</seealso>
+        public virtual Task<AssociateVirtualMachinesToCloudVmClusterResponse> AssociateVirtualMachinesToCloudVmClusterAsync(AssociateVirtualMachinesToCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualMachinesToCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualMachinesToCloudVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateVirtualMachinesToCloudVmClusterResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds virtual machines to the specified Exascale VM cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVirtualMachinesToExadbVmCluster service method.</param>
@@ -2393,6 +2483,96 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = DisassociateIamRoleFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateIamRoleFromResourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes virtual machines from the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVirtualMachinesFromCloudVmCluster service method.</param>
+        /// <returns>The response from the DisassociateVirtualMachinesFromCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateVirtualMachinesFromCloudVmCluster">REST API Reference for DisassociateVirtualMachinesFromCloudVmCluster Operation</seealso>
+        public virtual DisassociateVirtualMachinesFromCloudVmClusterResponse DisassociateVirtualMachinesFromCloudVmCluster(DisassociateVirtualMachinesFromCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateVirtualMachinesFromCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateVirtualMachinesFromCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVirtualMachinesFromCloudVmClusterResponse>(request, options);
+        }
+#else
+        internal virtual DisassociateVirtualMachinesFromCloudVmClusterResponse DisassociateVirtualMachinesFromCloudVmCluster(DisassociateVirtualMachinesFromCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateVirtualMachinesFromCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateVirtualMachinesFromCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVirtualMachinesFromCloudVmClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes virtual machines from the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVirtualMachinesFromCloudVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateVirtualMachinesFromCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateVirtualMachinesFromCloudVmCluster">REST API Reference for DisassociateVirtualMachinesFromCloudVmCluster Operation</seealso>
+        public virtual Task<DisassociateVirtualMachinesFromCloudVmClusterResponse> DisassociateVirtualMachinesFromCloudVmClusterAsync(DisassociateVirtualMachinesFromCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateVirtualMachinesFromCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateVirtualMachinesFromCloudVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateVirtualMachinesFromCloudVmClusterResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -6589,6 +6769,96 @@ namespace Amazon.Odb
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates the properties of the specified Autonomous VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudAutonomousVmCluster service method.</param>
+        /// <returns>The response from the UpdateCloudAutonomousVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudAutonomousVmCluster">REST API Reference for UpdateCloudAutonomousVmCluster Operation</seealso>
+        public virtual UpdateCloudAutonomousVmClusterResponse UpdateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudAutonomousVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudAutonomousVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudAutonomousVmClusterResponse>(request, options);
+        }
+#else
+        internal virtual UpdateCloudAutonomousVmClusterResponse UpdateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudAutonomousVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudAutonomousVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudAutonomousVmClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the properties of the specified Autonomous VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudAutonomousVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCloudAutonomousVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudAutonomousVmCluster">REST API Reference for UpdateCloudAutonomousVmCluster Operation</seealso>
+        public virtual Task<UpdateCloudAutonomousVmClusterResponse> UpdateCloudAutonomousVmClusterAsync(UpdateCloudAutonomousVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudAutonomousVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudAutonomousVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCloudAutonomousVmClusterResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates the properties of an Exadata infrastructure resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCloudExadataInfrastructure service method.</param>
@@ -6675,6 +6945,186 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCloudExadataInfrastructureResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds storage capacity to the specified Exadata infrastructure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudExadataInfrastructureStorageCapacity service method.</param>
+        /// <returns>The response from the UpdateCloudExadataInfrastructureStorageCapacity service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudExadataInfrastructureStorageCapacity">REST API Reference for UpdateCloudExadataInfrastructureStorageCapacity Operation</seealso>
+        public virtual UpdateCloudExadataInfrastructureStorageCapacityResponse UpdateCloudExadataInfrastructureStorageCapacity(UpdateCloudExadataInfrastructureStorageCapacityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudExadataInfrastructureStorageCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureStorageCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudExadataInfrastructureStorageCapacityResponse>(request, options);
+        }
+#else
+        internal virtual UpdateCloudExadataInfrastructureStorageCapacityResponse UpdateCloudExadataInfrastructureStorageCapacity(UpdateCloudExadataInfrastructureStorageCapacityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudExadataInfrastructureStorageCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureStorageCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudExadataInfrastructureStorageCapacityResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Adds storage capacity to the specified Exadata infrastructure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudExadataInfrastructureStorageCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCloudExadataInfrastructureStorageCapacity service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudExadataInfrastructureStorageCapacity">REST API Reference for UpdateCloudExadataInfrastructureStorageCapacity Operation</seealso>
+        public virtual Task<UpdateCloudExadataInfrastructureStorageCapacityResponse> UpdateCloudExadataInfrastructureStorageCapacityAsync(UpdateCloudExadataInfrastructureStorageCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudExadataInfrastructureStorageCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureStorageCapacityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCloudExadataInfrastructureStorageCapacityResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the properties of the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudVmCluster service method.</param>
+        /// <returns>The response from the UpdateCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudVmCluster">REST API Reference for UpdateCloudVmCluster Operation</seealso>
+        public virtual UpdateCloudVmClusterResponse UpdateCloudVmCluster(UpdateCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudVmClusterResponse>(request, options);
+        }
+#else
+        internal virtual UpdateCloudVmClusterResponse UpdateCloudVmCluster(UpdateCloudVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudVmClusterResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the properties of the specified VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateCloudVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudVmCluster">REST API Reference for UpdateCloudVmCluster Operation</seealso>
+        public virtual Task<UpdateCloudVmClusterResponse> UpdateCloudVmClusterAsync(UpdateCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCloudVmClusterResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

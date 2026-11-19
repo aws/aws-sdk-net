@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,63 +39,63 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// RevisionLocation Marshaller
     /// </summary>
-    public partial class RevisionLocationMarshaller : IRequestMarshaller<RevisionLocation, JsonMarshallerContext>
+    public partial class RevisionLocationMarshaller : IRequestMarshaller<RevisionLocation, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RevisionLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(RevisionLocation requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAppSpecContent())
             {
-                context.Writer.WritePropertyName("appSpecContent");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("appSpecContent");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AppSpecContentMarshaller.Instance;
                 marshaller.Marshall(requestObject.AppSpecContent, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetGitHubLocation())
             {
-                context.Writer.WritePropertyName("gitHubLocation");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("gitHubLocation");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GitHubLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitHubLocation, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetRevisionType())
             {
-                context.Writer.WritePropertyName("revisionType");
-                context.Writer.WriteStringValue(requestObject.RevisionType);
+                context.Writer.WriteTextString("revisionType");
+                context.Writer.WriteTextString(requestObject.RevisionType);
             }
 
             if (requestObject.IsSetS3Location())
             {
-                context.Writer.WritePropertyName("s3Location");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("s3Location");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Location, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetString())
             {
-                context.Writer.WritePropertyName("string");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("string");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RawStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.String, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

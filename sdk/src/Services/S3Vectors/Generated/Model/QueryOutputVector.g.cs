@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// The attributes of a vector in the approximate nearest neighbor search.
+    /// Contains the key and optional distance, relevance scores, and metadata for a vector
+    /// returned by the <c>QueryVectors</c> operation.
     /// </summary>
     public partial class QueryOutputVector
     {
@@ -50,7 +51,7 @@ namespace Amazon.S3Vectors.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the vector in the approximate nearest neighbor search.
+        /// The key of the matching vector.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
@@ -73,5 +74,19 @@ namespace Amazon.S3Vectors.Model
         /// Checks to see if the Metadata property is set.
         /// </summary>
         internal bool IsSetMetadata() => !this.Metadata.IsNull();
+
+        /// <summary>
+        /// Gets and sets the property Scores. 
+        /// <para>
+        /// The relevance scores for a full-text-only or hybrid result, when requested through
+        /// <c>returnScores</c>.
+        /// </para>
+        /// </summary>
+        public QueryScores Scores { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scores property is set.
+        /// </summary>
+        internal bool IsSetScores() => this.Scores != null;
     }
 }

@@ -150,6 +150,35 @@ namespace AWSSDKDocSamples.Amazon.CloudFormation.Generated
             #endregion
         }
 
+        public void CloudFormationRemoveAlias()
+        {
+            #region RemoveAlias-1
+
+            var client = new AmazonCloudFormationClient();
+            var response = client.RemoveAlias(new RemoveAliasRequest
+            {
+                AliasName = "MyAlias"
+            });
+
+
+            #endregion
+        }
+
+        public void CloudFormationSetAlias()
+        {
+            #region SetAlias-1
+
+            var client = new AmazonCloudFormationClient();
+            var response = client.SetAlias(new SetAliasRequest
+            {
+                AliasName = "MyAlias",
+                StackName = "MyStack"
+            });
+
+
+            #endregion
+        }
+
         public void CloudFormationStartResourceScan()
         {
             #region StartResourceScan-1

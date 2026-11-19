@@ -70,6 +70,8 @@
         "audio": { "target": "com.example#AudioEvent" },
         "implicit": { "target": "com.example#ImplicitPayloadEvent" },
         "explicit": { "target": "com.example#ExplicitPayloadEvent" },
+        "headersOnly": { "target": "com.example#HeadersOnlyEvent" },
+        "end": { "target": "com.example#EndEvent" },
         "error": { "target": "com.example#ChatError" }
       },
       "traits": { "smithy.api#streaming": {} }
@@ -107,6 +109,16 @@
       "members": {
         "PCM": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "pcm" } },
         "OPUS": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "opus" } }
+      }
+    },
+    "com.example#EndEvent": {
+      "type": "structure",
+      "members": {}
+    },
+    "com.example#HeadersOnlyEvent": {
+      "type": "structure",
+      "members": {
+        "sequenceNum": { "target": "smithy.api#Integer", "traits": { "smithy.api#eventHeader": {} } }
       }
     },
     "com.example#ImplicitPayloadEvent": {

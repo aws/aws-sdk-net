@@ -32,7 +32,8 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation. Removes tags from the
     /// specified Kinesis resource. Removed tags are deleted and can't be recovered after
-    /// this operation completes successfully.
+    /// this operation completes successfully. <para> The Kinesis resource can be a data stream,
+    /// a queue, or an enhanced fan-out consumer. </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonKinesisRequest
     {

@@ -97,6 +97,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
                     context.Writer.WriteEndMap();
                 }
+                if (publicRequest.IsSetLogConfiguration())
+                {
+                    context.Writer.WriteTextString("LogConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = GameSessionQueueLogConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetName())
                 {
                     context.Writer.WriteTextString("Name");

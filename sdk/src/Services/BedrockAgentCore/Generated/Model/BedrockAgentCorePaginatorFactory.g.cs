@@ -49,11 +49,27 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentInsights operation
+        /// </summary>
+        public IListAgentInsightsPaginator ListAgentInsights(ListAgentInsightsRequest request)
+        {
+            return new ListAgentInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBatchEvaluations operation
         /// </summary>
         public IListBatchEvaluationsPaginator ListBatchEvaluations(ListBatchEvaluationsRequest request)
         {
             return new ListBatchEvaluationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetGenerations operation
+        /// </summary>
+        public IListDatasetGenerationsPaginator ListDatasetGenerations(ListDatasetGenerationsRequest request)
+        {
+            return new ListDatasetGenerationsPaginator(this.client, request);
         }
 
         /// <summary>

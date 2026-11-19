@@ -1,4 +1,5 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
@@ -23,9 +24,9 @@ public class PayloadMemberCodegenTests
             .Write(operation, TestContext.Current.CancellationToken);
     }
 
-    private static string ResponseUnmarshaller(string operationName)
+    private static string ResponseUnmarshaller(string operationName, ServiceCustomizations? service = null)
     {
-        var context = TestModels.Context("Codegen/payload-model.json");
+        var context = TestModels.Context(TestModels.Load("Codegen/payload-model.json"), new CustomizationsModel { Service = service });
         var operation = context.Operations.Single(o => o.Name == operationName);
         return new JsonResponseUnmarshallerWriter(context, ModelFileName)
             .Write(operation, TestContext.Current.CancellationToken);
@@ -323,15 +324,17 @@ public class PayloadMemberCodegenTests
         Assert.Contains("request.DisablePayloadSigning = true;", m);
     }
 
-    [Fact]
-    public void StreamingBlobResponsePayload_AssignsRawStreamAndOverridesHasStreamingProperty()
+    [Theory]
+    [InlineData(null, "Body")]
+    [InlineData("StreamResponse", "ResponseStream")]
+    public void StreamingBlobResponsePayload_AssignsRawStreamAndOverridesHasStreamingProperty(string? streamingResponseBaseClass, string property)
     {
         // A @streaming blob output hands back the raw response stream unbuffered and the unmarshaller
         // overrides HasStreamingProperty (matches C2J - see Polly SynthesizeSpeech). It must NOT buffer
         // the body into a MemoryStream the way a non-streaming blob does.
-        var m = ResponseUnmarshaller("GetStreamingBlobPayload");
+        var m = ResponseUnmarshaller("GetStreamingBlobPayload", new ServiceCustomizations { StreamingResponseBaseClass = streamingResponseBaseClass });
 
-        Assert.Contains("unmarshalledObject.Body = context.Stream;", m);
+        Assert.Contains($"unmarshalledObject.{property} = context.Stream;", m);
         Assert.Contains("public override bool HasStreamingProperty => true;", m);
 
         // Not the buffered non-streaming blob path; the header sibling still reads.

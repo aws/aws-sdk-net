@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3LogsConfig Marshaller
     /// </summary>
-    public partial class S3LogsConfigMarshaller : IRequestMarshaller<S3LogsConfig, JsonMarshallerContext>
+    public partial class S3LogsConfigMarshaller : IRequestMarshaller<S3LogsConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3LogsConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3LogsConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucketOwnerAccess())
             {
-                context.Writer.WritePropertyName("bucketOwnerAccess");
-                context.Writer.WriteStringValue(requestObject.BucketOwnerAccess);
+                context.Writer.WriteTextString("bucketOwnerAccess");
+                context.Writer.WriteTextString(requestObject.BucketOwnerAccess);
             }
 
             if (requestObject.IsSetEncryptionDisabled())
             {
-                context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.WriteBooleanValue(requestObject.EncryptionDisabled.Value);
+                context.Writer.WriteTextString("encryptionDisabled");
+                context.Writer.WriteBoolean(requestObject.EncryptionDisabled.Value);
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

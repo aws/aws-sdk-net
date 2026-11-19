@@ -55,6 +55,22 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+
+            if (requestObject.IsSetTextSearchConfigurations())
+            {
+                context.Writer.WritePropertyName("textSearchConfigurations");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectTextSearchConfigurationsListValue in requestObject.TextSearchConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TextSearchConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTextSearchConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
         }
 
         /// <summary>

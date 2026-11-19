@@ -12,6 +12,24 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 {
     class SecretsManagerSamples : ISample
     {
+        public void SecretsManagerAssociateCrossAccountReplica()
+        {
+            #region AssociateCrossAccountReplica-1
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.AssociateCrossAccountReplica(new AssociateCrossAccountReplicaRequest
+            {
+                CrossAccountReplicaARN = "arn:aws:secretsmanager:us-west-2:222222222222:secret:MyReplicaSecret-a1b2c3",
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            string arn = response.ARN;
+            string crossAccountReplicaARN = response.CrossAccountReplicaARN;
+            StatusType replicationStatus = response.ReplicationStatus;
+
+            #endregion
+        }
+
         public void SecretsManagerBatchGetSecretValue()
         {
             #region BatchGetSecretValue-1
@@ -68,6 +86,24 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
+        public void SecretsManagerCreateSecret()
+        {
+            #region CreateSecret-2
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.CreateSecret(new CreateSecretRequest
+            {
+                CrossAccountPrimaryARN = "arn:aws:secretsmanager:us-west-2:123456789012:secret:MyTestDatabaseSecret-a1b2c3",
+                KmsKeyId = "arn:aws:kms:us-west-2:222222222222:key/EXAMPLE1-90ab-cdef-fedc-ba987EXAMPLE",
+                Name = "MyReplicaSecret"
+            });
+
+            string arn = response.ARN;
+            string name = response.Name;
+
+            #endregion
+        }
+
         public void SecretsManagerDeleteResourcePolicy()
         {
             #region DeleteResourcePolicy-1
@@ -80,6 +116,24 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
             string arn = response.ARN;
             string name = response.Name;
+            string policyName = response.PolicyName;
+
+            #endregion
+        }
+
+        public void SecretsManagerDisassociateCrossAccountReplica()
+        {
+            #region DisassociateCrossAccountReplica-1
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.DisassociateCrossAccountReplica(new DisassociateCrossAccountReplicaRequest
+            {
+                CrossAccountReplicaARN = "arn:aws:secretsmanager:us-west-2:222222222222:secret:MyReplicaSecret-a1b2c3",
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            string arn = response.ARN;
+            string crossAccountReplicaARN = response.CrossAccountReplicaARN;
 
             #endregion
         }
@@ -113,6 +167,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
             string arn = response.ARN;
             string name = response.Name;
+            string policyName = response.PolicyName;
             string resourcePolicy = response.ResourcePolicy;
 
             #endregion
@@ -134,6 +189,21 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             string secretString = response.SecretString;
             string versionId = response.VersionId;
             List<string> versionStages = response.VersionStages;
+
+            #endregion
+        }
+
+        public void SecretsManagerListResourcePolicies()
+        {
+            #region ListResourcePolicies-1
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.ListResourcePolicies(new ListResourcePoliciesRequest
+            {
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            List<ResourcePolicySummary> resourcePolicies = response.ResourcePolicies;
 
             #endregion
         }
@@ -183,6 +253,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 
             string arn = response.ARN;
             string name = response.Name;
+            string policyName = response.PolicyName;
 
             #endregion
         }
@@ -278,6 +349,21 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             string arn = response.ARN;
             string name = response.Name;
             string versionId = response.VersionId;
+
+            #endregion
+        }
+
+        public void SecretsManagerStopReplicationToReplica()
+        {
+            #region StopReplicationToReplica-1
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.StopReplicationToReplica(new StopReplicationToReplicaRequest
+            {
+                SecretId = "arn:aws:secretsmanager:us-west-2:222222222222:secret:MyReplicaSecret-a1b2c3"
+            });
+
+            string arn = response.ARN;
 
             #endregion
         }

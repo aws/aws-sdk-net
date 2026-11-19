@@ -44,14 +44,17 @@ namespace Amazon.ConfigService.Model
     /// if your account IAM policies explicitly deny these actions. </para> </important> <para>
     /// This API creates a service-linked role <c>AWSServiceRoleForConfigConforms</c> in your
     /// account. The service-linked role is created only when the role does not exist in your
-    /// account. </para> <note> <para> You must specify only one of the follow parameters:
-    /// <c>TemplateS3Uri</c>, <c>TemplateBody</c> or <c>TemplateSSMDocumentDetails</c>. </para>
-    /// </note> <note> <para> <b>Tags are added at creation and cannot be updated with this
-    /// operation</b> </para> <para> <c>PutConformancePack</c> is an idempotent API. Subsequent
-    /// requests won't create a duplicate resource if one was already created. If a following
-    /// request has different <c>tags</c> values, Config will ignore these differences and
-    /// treat it as an idempotent request of the previous. In this case, <c>tags</c> will
-    /// not be updated, even if they are different. </para> <para> Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// account. </para> <note> <para> For custom conformance packs, you must specify only
+    /// one of <c>TemplateS3Uri</c>, <c>TemplateBody</c>, <c>TemplateSSMDocumentDetails</c>.
+    /// </para> <para> For managed conformance packs, you must specify <c>Source</c>. Do not
+    /// specify <c>TemplateS3Uri</c>, <c>TemplateBody</c>, <c>TemplateSSMDocumentDetails</c>,
+    /// <c>DeliveryS3Bucket</c>, or <c>DeliveryS3KeyPrefix</c>. </para> </note> <note> <para>
+    /// <b>Tags are added at creation and cannot be updated with this operation</b> </para>
+    /// <para> <c>PutConformancePack</c> is an idempotent API. Subsequent requests won't create
+    /// a duplicate resource if one was already created. If a following request has different
+    /// <c>tags</c> values, Config will ignore these differences and treat it as an idempotent
+    /// request of the previous. In this case, <c>tags</c> will not be updated, even if they
+    /// are different. </para> <para> Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
     /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
     /// to update tags after creation. </para> </note>
     /// </summary>
@@ -60,7 +63,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackInputParameters. 
         /// <para>
-        /// A list of <c>ConformancePackInputParameter</c> objects.
+        /// A list of <c>ConformancePackInputParameter</c> objects. Custom conformance packs can
+        /// have at most 60 input parameters. Managed conformance packs can have at most 330 input
+        /// parameters.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -69,7 +74,7 @@ namespace Amazon.ConfigService.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 60)]
+        [AWSProperty(Min = 0, Max = 330)]
         public List<ConformancePackInputParameter> ConformancePackInputParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<ConformancePackInputParameter>() : null;
 
         /// <summary>
@@ -128,6 +133,54 @@ namespace Amazon.ConfigService.Model
         /// Checks to see if the DeliveryS3KeyPrefix property is set.
         /// </summary>
         internal bool IsSetDeliveryS3KeyPrefix() => this.DeliveryS3KeyPrefix != null;
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// An object of type <c>ConformancePackScope</c> that defines which resources can trigger
+        /// an evaluation for Config rules in the conformance pack. The scope can include a tag
+        /// key and optional tag value. Specify a scope to constrain the resources that can trigger
+        /// an evaluation for rules in the conformance pack. If you do not specify a scope, all
+        /// rules in the conformance pack are unscoped.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional and is supported only for managed conformance packs. If you
+        /// specify a scope, you must also specify <c>Source</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConformancePackScope Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// An object of type <c>ConformancePackSource</c>, which contains the identifier of the
+        /// managed conformance pack that you want to deploy. If you specify a source, Config
+        /// creates a managed conformance pack. Managed conformance packs are predefined collections
+        /// of Config rules that are created and maintained by Amazon Web Services.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify a source, you cannot specify <c>TemplateS3Uri</c>, <c>TemplateBody</c>,
+        /// <c>TemplateSSMDocumentDetails</c>, <c>DeliveryS3Bucket</c>, or <c>DeliveryS3KeyPrefix</c>.
+        /// You cannot convert an existing conformance pack between a managed conformance pack
+        /// and a custom conformance pack. You also cannot change the source of an existing managed
+        /// conformance pack.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ConformancePackSource Source { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Source property is set.
+        /// </summary>
+        internal bool IsSetSource() => this.Source != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

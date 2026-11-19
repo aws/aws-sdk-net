@@ -332,6 +332,8 @@ namespace Amazon.Runtime
                 Logger.GetLogger(typeof(HttpRequestMessageFactory)).Debug(pns, $"The current runtime does not support modifying proxy settings of HttpClient.");
             }
 
+            ApplyCABundle(httpMessageHandler);
+
             var httpClient = new HttpClient(httpMessageHandler);
             
             if (clientConfig.Timeout.HasValue)
@@ -343,6 +345,28 @@ namespace Amazon.Runtime
 
             return httpClient;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Configures the handler to trust only the CA bundle set by the AWS_CA_BUNDLE environment variable, if set.
+        /// </summary>
+        private static void ApplyCABundle(SocketsHttpHandler httpMessageHandler)
+        {
+            var caBundle = CABundle.FromEnvironment();
+            if (caBundle != null)
+            {
+                httpMessageHandler.SslOptions.CertificateChainPolicy = caBundle.CreateChainPolicy();
+            }
+        }
+#else
+        /// <summary>
+        /// Configures the handler to trust only the CA bundle set by the AWS_CA_BUNDLE environment variable, if set.
+        /// </summary>
+        private static void ApplyCABundle(HttpClientHandler httpMessageHandler)
+        {
+            CABundle.ApplyFromEnvironment(httpMessageHandler);
+        }
+#endif
 
     }
 
@@ -488,7 +512,25 @@ namespace Amazon.Runtime
         public string Method
         {
             get { return _request.Method.Method; }
-            set { _request.Method = new HttpMethod(value); }
+            set { _request.Method = GetHttpMethod(value); }
+        }
+
+        /// <summary>
+        /// Returns the shared HttpMethod instance for the standard methods (exact, upper-case match)
+        /// and a new HttpMethod otherwise.
+        /// </summary>
+        internal static HttpMethod GetHttpMethod(string method)
+        {
+            switch (method)
+            {
+                case "GET": return HttpMethod.Get;
+                case "POST": return HttpMethod.Post;
+                case "PUT": return HttpMethod.Put;
+                case "DELETE": return HttpMethod.Delete;
+                case "HEAD": return HttpMethod.Head;
+                case "OPTIONS": return HttpMethod.Options;
+                default: return new HttpMethod(method);
+            }
         }
 
         /// <summary>
@@ -799,10 +841,10 @@ namespace Amazon.Runtime
 
         private void WriteContentHeaders(IDictionary<string, string> contentHeaders)
         {
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentTypeHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentTypeHeader, out var contentTypeHeader))
             {
                 _request.Content.Headers.ContentType =
-                    MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
+                    MediaTypeHeaderValue.Parse(contentTypeHeader);
             }
 
             if (contentHeaders.TryGetValue(HeaderKeys.ContentRangeHeader, out var contentRangeHeader))

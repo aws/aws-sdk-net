@@ -33,6 +33,12 @@ namespace Amazon.ConnectHealth.Model
     public interface IConnectHealthPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListDatasets operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

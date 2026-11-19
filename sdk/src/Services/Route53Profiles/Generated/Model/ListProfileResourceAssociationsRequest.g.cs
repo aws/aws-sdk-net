@@ -91,6 +91,21 @@ namespace Amazon.Route53Profiles.Model
         internal bool IsSetProfileId() => this.ProfileId != null;
 
         /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only
+        /// the association with that resource is returned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         ///  ID of a resource if you want information on only one type. 

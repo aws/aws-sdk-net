@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.MemoryDB.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -38,20 +38,20 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for ReservedNodeQuotaExceededException
     /// </summary>
-    public partial class ReservedNodeQuotaExceededExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ReservedNodeQuotaExceededException, JsonUnmarshallerContext>
+    public partial class ReservedNodeQuotaExceededExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ReservedNodeQuotaExceededException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ReservedNodeQuotaExceededException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ReservedNodeQuotaExceededException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public ReservedNodeQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public ReservedNodeQuotaExceededException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new ReservedNodeQuotaExceededException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 

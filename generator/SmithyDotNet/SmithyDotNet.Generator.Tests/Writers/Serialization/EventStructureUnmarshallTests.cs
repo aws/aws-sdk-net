@@ -76,6 +76,15 @@ public class EventStructureUnmarshallTests
     {
         var source = Unmarshaller("StructPayloadEvent");
         Assert.Contains("unmarshalledObject.Body = DetailUnmarshaller.Instance.Unmarshall(context, ref reader);", source);
+        // An unset structure payload arrives as zero bytes, which the JSON reader cannot parse.
+        Assert.Contains("if (!(context.Stream is MemoryStream { Length: 0 }))", source);
+    }
+
+    [Fact]
+    public void NoMembers_EmptyPayloadIsTheEmptyEvent()
+    {
+        var source = Unmarshaller("EmptyEvent");
+        Assert.Contains("if (context.Stream is MemoryStream { Length: 0 }) return unmarshalledObject;", source);
     }
 
     [Fact]
@@ -86,6 +95,7 @@ public class EventStructureUnmarshallTests
         Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", source);
         Assert.Contains("""if (context.TestExpression("value", targetDepth, ref reader))""", source);
         Assert.DoesNotContain("IsEventHeaderPresent", source);
+        Assert.DoesNotContain("Length: 0", source);
     }
 
     [Fact]
@@ -100,6 +110,13 @@ public class EventStructureUnmarshallTests
     }
 
     [Fact]
+    public void HeadersOnlyButNotAnEvent_StillReadsJsonBody()
+    {
+        var source = Unmarshaller("HeaderBag");
+        Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", source);
+    }
+
+    [Fact]
     public void EmptyOrdinaryStructure_StillReadsJsonBody()
     {
         var source = Unmarshaller("Marker");
@@ -109,6 +126,7 @@ public class EventStructureUnmarshallTests
         Assert.Contains("if (context.CurrentTokenType == JsonTokenType.Null) return null;", source);
         Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", source);
         Assert.DoesNotContain("IsEventHeaderPresent", source);
+        Assert.DoesNotContain("Length: 0", source);
     }
 
     [Fact]

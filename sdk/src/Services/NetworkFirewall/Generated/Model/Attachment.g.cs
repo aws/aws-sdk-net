@@ -57,9 +57,16 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name that resolves to the firewall endpoint in the subnet. This is populated
-        /// for proxy mode firewalls, where clients direct traffic to the firewall's proxy using
-        /// this name. 
+        /// The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the
+        /// firewall at this name. It's your <c>ProxySettings</c> <c>DomainName</c> if you specified
+        /// one, or a name that Network Firewall generates in the format <c>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The firewall has one proxy DNS name for every Availability Zone and VPC that it serves.
+        /// In each Availability Zone, the name resolves to the firewall endpoint in that Availability
+        /// Zone, so traffic stays in your client's Availability Zone. Your clients must use the
+        /// VPC's Route 53 Resolver.
         /// </para>
         /// </summary>
         public string DnsName { get; set; }

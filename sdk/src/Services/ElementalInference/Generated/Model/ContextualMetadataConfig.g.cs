@@ -36,6 +36,30 @@ namespace Amazon.ElementalInference.Model
     public partial class ContextualMetadataConfig
     {
         /// <summary>
+        /// Gets and sets the property CustomQuestions. 
+        /// <para>
+        /// The question sets that you ask Elemental Inference about each shot, each scene, or
+        /// both, in this output. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If
+        /// you omit extendedAnalysis, it defaults to ENABLED, and the request fails. 
+        /// </para>
+        ///  
+        /// <para>
+        /// While a feed references a version of a question set, you can't delete that version
+        /// or the question set. 
+        /// </para>
+        /// </summary>
+        public CustomQuestionsConfig CustomQuestions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomQuestions property is set.
+        /// </summary>
+        internal bool IsSetCustomQuestions() => this.CustomQuestions != null;
+
+        /// <summary>
         /// Gets and sets the property ExtendedAnalysis. 
         /// <para>
         /// Specifies whether Elemental Inference generates extended analysis of the media content
@@ -57,7 +81,10 @@ namespace Amazon.ElementalInference.Model
         /// DISABLED – Elemental Inference doesn't populate the people, environments, brands,
         /// and on-screen text fields. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify <c>customQuestions</c>, you must set this property to DISABLED. 
+        /// </para>
         /// </summary>
         public ExtendedAnalysisMode ExtendedAnalysis { get; set; }
 

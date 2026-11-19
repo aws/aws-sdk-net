@@ -36,6 +36,58 @@ namespace Amazon.NetworkFirewall.Model
     public partial class ServerCertificateScope
     {
         /// <summary>
+        /// Gets and sets the property DecryptionAction. 
+        /// <para>
+        /// Whether the firewall decrypts traffic that matches this scope. You can choose from
+        /// the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DECRYPT</c> - The firewall decrypts the traffic for inspection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BYPASS</c> - The firewall doesn't decrypt the traffic.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DecryptionAction DecryptionAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DecryptionAction property is set.
+        /// </summary>
+        internal bool IsSetDecryptionAction() => this.DecryptionAction != null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// The type of firewall that this scope applies to. If you don't specify a value, the
+        /// scope applies to both types, the same as <c>ALL</c>. You can choose from the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALL</c> - The scope applies to both transparent firewalls and proxy mode firewalls.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRANSPARENT_FIREWALL_ONLY</c> - The scope applies only to transparent firewalls.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EXPLICIT_PROXY_ONLY</c> - The scope applies only to proxy mode firewalls. A scope
+        /// that specifies <c>DomainMatch</c> must use this value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TLSInspectionScopeDeploymentMode DeploymentMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentMode property is set.
+        /// </summary>
+        internal bool IsSetDeploymentMode() => this.DeploymentMode != null;
+
+        /// <summary>
         /// Gets and sets the property DestinationPorts. 
         /// <para>
         /// The destination ports to decrypt for inspection, in Transmission Control Protocol
@@ -79,6 +131,23 @@ namespace Amazon.NetworkFirewall.Model
         /// Checks to see if the Destinations property is set.
         /// </summary>
         internal bool IsSetDestinations() => this.Destinations != null && (this.Destinations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property DomainMatch. 
+        /// <para>
+        /// The domains that this scope matches, based on the host name in the client's HTTP CONNECT
+        /// request. Domain matching applies only to proxy mode firewalls. If you specify <c>DomainMatch</c>,
+        /// you must set <c>DeploymentMode</c> to <c>EXPLICIT_PROXY_ONLY</c>. If you don't specify
+        /// <c>DomainMatch</c>, the scope matches traffic by its source, destination, ports, and
+        /// protocols only.
+        /// </para>
+        /// </summary>
+        public DomainMatch DomainMatch { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainMatch property is set.
+        /// </summary>
+        internal bool IsSetDomainMatch() => this.DomainMatch != null;
 
         /// <summary>
         /// Gets and sets the property Protocols. 

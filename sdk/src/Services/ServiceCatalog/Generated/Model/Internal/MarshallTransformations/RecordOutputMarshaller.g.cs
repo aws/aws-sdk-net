@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// RecordOutput Marshaller
     /// </summary>
-    public partial class RecordOutputMarshaller : IRequestMarshaller<RecordOutput, JsonMarshallerContext>
+    public partial class RecordOutputMarshaller : IRequestMarshaller<RecordOutput, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RecordOutput requestObject, JsonMarshallerContext context)
+        public void Marshall(RecordOutput requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
 
             if (requestObject.IsSetOutputKey())
             {
-                context.Writer.WritePropertyName("OutputKey");
-                context.Writer.WriteStringValue(requestObject.OutputKey);
+                context.Writer.WriteTextString("OutputKey");
+                context.Writer.WriteTextString(requestObject.OutputKey);
             }
 
             if (requestObject.IsSetOutputValue())
             {
-                context.Writer.WritePropertyName("OutputValue");
-                context.Writer.WriteStringValue(requestObject.OutputValue);
+                context.Writer.WriteTextString("OutputValue");
+                context.Writer.WriteTextString(requestObject.OutputValue);
             }
         }
 

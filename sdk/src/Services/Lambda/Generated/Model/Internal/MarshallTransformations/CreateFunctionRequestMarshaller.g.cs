@@ -68,6 +68,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAcceleratorConfig())
+            {
+                context.Writer.WritePropertyName("AcceleratorConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AcceleratorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AcceleratorConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetArchitectures())
             {
                 context.Writer.WritePropertyName("Architectures");
@@ -237,6 +247,16 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Runtime");
                 context.Writer.WriteStringValue(publicRequest.Runtime);
+            }
+            if (publicRequest.IsSetRuntimeConfig())
+            {
+                context.Writer.WritePropertyName("RuntimeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FunctionRuntimeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RuntimeConfig, context);
+
+                context.Writer.WriteEndObject();
             }
             if (publicRequest.IsSetSnapStart())
             {

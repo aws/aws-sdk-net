@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,33 +39,33 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// JobWorkerExecutorConfiguration Marshaller
     /// </summary>
-    public partial class JobWorkerExecutorConfigurationMarshaller : IRequestMarshaller<JobWorkerExecutorConfiguration, JsonMarshallerContext>
+    public partial class JobWorkerExecutorConfigurationMarshaller : IRequestMarshaller<JobWorkerExecutorConfiguration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(JobWorkerExecutorConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(JobWorkerExecutorConfiguration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetPollingAccounts())
             {
-                context.Writer.WritePropertyName("pollingAccounts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("pollingAccounts");
+                context.Writer.WriteStartArray(requestObject.PollingAccounts.Count);
                 foreach (var requestObjectPollingAccountsListValue in requestObject.PollingAccounts)
                 {
-                    context.Writer.WriteStringValue(requestObjectPollingAccountsListValue);
+                    context.Writer.WriteTextString(requestObjectPollingAccountsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetPollingServicePrincipals())
             {
-                context.Writer.WritePropertyName("pollingServicePrincipals");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("pollingServicePrincipals");
+                context.Writer.WriteStartArray(requestObject.PollingServicePrincipals.Count);
                 foreach (var requestObjectPollingServicePrincipalsListValue in requestObject.PollingServicePrincipals)
                 {
-                    context.Writer.WriteStringValue(requestObjectPollingServicePrincipalsListValue);
+                    context.Writer.WriteTextString(requestObjectPollingServicePrincipalsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

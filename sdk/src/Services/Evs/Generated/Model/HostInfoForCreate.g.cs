@@ -76,6 +76,13 @@ namespace Amazon.Evs.Model
         /// <para>
         /// The EC2 instance type that represents the host.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// With VCF 5.2.x, you can use only the <c>i4i.metal</c>, <c>i7i.metal-24xl</c>, and
+        /// <c>i7i.metal-48xl</c> instance types. All of these instance types are supported with
+        /// <c>vcfVersion</c> set to <c>SELF_DEPLOYED</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required = true)]
         public InstanceType InstanceType { get; set; }

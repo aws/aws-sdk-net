@@ -78,7 +78,7 @@ namespace Amazon.Signin.Model
         /// Gets and sets the property RefreshToken. A refresh token that can be used to obtain
         /// new access tokens without re-authenticating.
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 2048)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 12288)]
         public string RefreshToken { get; set; }
 
         /// <summary>

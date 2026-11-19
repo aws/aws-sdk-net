@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.MemoryDB.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
@@ -36,65 +38,72 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedNodesOffering Object
     /// </summary>
-    public partial class ReservedNodesOfferingUnmarshaller : IJsonUnmarshaller<ReservedNodesOffering, JsonUnmarshallerContext>
+    public partial class ReservedNodesOfferingUnmarshaller : ICborUnmarshaller<ReservedNodesOffering, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ReservedNodesOffering Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ReservedNodesOffering Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ReservedNodesOffering();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Duration", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("FixedPrice", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Duration":
+                        context.AddPathSegment("Duration");
+                        unmarshalledObject.Duration = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NodeType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FixedPrice":
+                        context.AddPathSegment("FixedPrice");
+                        unmarshalledObject.FixedPrice = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OfferingType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "NodeType":
+                        context.AddPathSegment("NodeType");
+                        unmarshalledObject.NodeType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RecurringCharges", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RecurringCharge, RecurringChargeUnmarshaller>(RecurringChargeUnmarshaller.Instance);
-                    unmarshalledObject.RecurringCharges = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OfferingType":
+                        context.AddPathSegment("OfferingType");
+                        unmarshalledObject.OfferingType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ReservedNodesOfferingId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservedNodesOfferingId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RecurringCharges":
+                        context.AddPathSegment("RecurringCharges");
+                        unmarshalledObject.RecurringCharges = new CborListUnmarshaller<RecurringCharge, RecurringChargeUnmarshaller>(RecurringChargeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ReservedNodesOfferingId":
+                        context.AddPathSegment("ReservedNodesOfferingId");
+                        unmarshalledObject.ReservedNodesOfferingId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

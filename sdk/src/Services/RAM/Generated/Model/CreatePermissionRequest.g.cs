@@ -80,6 +80,30 @@ namespace Amazon.RAM.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// Specifies a list of template parameter declarations for this permission. Each declaration
+        /// defines a named placeholder that can be used in the policy template using the syntax
+        /// <c>@{parameterName}</c>. Template parameters can only appear in Condition Key and
+        /// Condition Value fields of the policy. When you associate this permission with a resource
+        /// share, you must provide values for all declared parameters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<PermissionTemplateParameterDeclaration> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameterDeclaration>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property PolicyTemplate. 
         /// <para>
         /// A string in JSON format string that contains the following elements of a resource-based

@@ -122,6 +122,19 @@ namespace Amazon.ConnectHealth.Model
         internal bool IsSetMediaSampleRateHertz() => this.MediaSampleRateHertz.HasValue;
 
         /// <summary>
+        /// Gets and sets the property MedicalCodingContextProvided. 
+        /// <para>
+        /// Indicates whether medical coding context was provided.
+        /// </para>
+        /// </summary>
+        public bool? MedicalCodingContextProvided { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MedicalCodingContextProvided property is set.
+        /// </summary>
+        internal bool IsSetMedicalCodingContextProvided() => this.MedicalCodingContextProvided.HasValue;
+
+        /// <summary>
         /// Gets and sets the property PostStreamActionResult. 
         /// <para>
         /// Results of post-stream actions

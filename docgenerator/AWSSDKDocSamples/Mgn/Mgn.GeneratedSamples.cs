@@ -265,6 +265,27 @@ namespace AWSSDKDocSamples.Amazon.Mgn.Generated
             #endregion
         }
 
+        public void MgnListNetworkMigrationInsights()
+        {
+            #region ListNetworkMigrationInsights-1
+
+            var client = new AmazonMgnClient();
+            var response = client.ListNetworkMigrationInsights(new ListNetworkMigrationInsightsRequest
+            {
+                Filters = new ListNetworkMigrationInsightsFilters { InsightTypes = new List<string> {
+                    "WARNING"
+                } },
+                NetworkMigrationDefinitionID = "nmd-54cf850b22f7cf65e",
+                NetworkMigrationExecutionID = "b1235ba8-398e-4ef0-b803-78c8c85b5021",
+                ProducerID = "f7aa9266-b070-421b-a630-e503783b7f12"
+            });
+
+            List<NetworkMigrationInsight> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
         public void MgnListNetworkMigrationMapperSegmentConstructs()
         {
             #region ListNetworkMigrationMapperSegmentConstructs-1

@@ -101,6 +101,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("jwtConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = JwtConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JwtConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

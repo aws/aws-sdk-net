@@ -43,11 +43,6 @@ namespace Amazon.AWSSupport.Endpoints
         }
 
         /// <summary>
-        /// The AWS region used to dispatch the request.
-        /// </summary>
-        public string Region { get; set; }
-
-        /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
         public bool? UseDualStack { get; set; }
@@ -63,6 +58,11 @@ namespace Amazon.AWSSupport.Endpoints
         public string Endpoint { get; set; }
 
         /// <summary>
+        /// The AWS region used to dispatch the request.
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
         /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
         /// properties; any other name falls through to the underlying property bag.
         /// </summary>
@@ -70,20 +70,20 @@ namespace Amazon.AWSSupport.Endpoints
         {
             get => name switch
             {
-                "Region" => Region,
                 "UseDualStack" => UseDualStack,
                 "UseFIPS" => UseFIPS,
                 "Endpoint" => Endpoint,
+                "Region" => Region,
                 _ => base[name],
             };
             set
             {
                 switch (name)
                 {
-                    case "Region": Region = (string)value; break;
                     case "UseDualStack": UseDualStack = (bool?)value; break;
                     case "UseFIPS": UseFIPS = (bool?)value; break;
                     case "Endpoint": Endpoint = (string)value; break;
+                    case "Region": Region = (string)value; break;
                     default: base[name] = value; break;
                 }
             }
@@ -93,10 +93,10 @@ namespace Amazon.AWSSupport.Endpoints
         protected override bool ParameterValuesEqual(EndpointParameters other)
         {
             var o = (AWSSupportEndpointParameters)other;
-            return Region == o.Region
-                && UseDualStack == o.UseDualStack
+            return UseDualStack == o.UseDualStack
                 && UseFIPS == o.UseFIPS
                 && Endpoint == o.Endpoint
+                && Region == o.Region
                 && base.ParameterValuesEqual(other);
         }
     }

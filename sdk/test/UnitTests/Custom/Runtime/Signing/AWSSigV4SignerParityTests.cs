@@ -61,6 +61,10 @@ namespace AWSSDK.UnitTests.Signing
             public string ExpectedSignature;
             /// <summary>Externally-computed expected presign (query-signing) signature (hex); null if not presignable.</summary>
             public string ExpectedPresignSignature;
+            /// <summary>Sub-resources and form-body parameters. The facade can't express these, so they're signed through AWS4Signer.</summary>
+            public Dictionary<string, string> SubResources;
+            public Dictionary<string, string> FormParameters;
+            public bool SignsInternalRequestOnly => SubResources != null || FormParameters != null;
             public override string ToString() => Name;
         }
 
@@ -102,6 +106,8 @@ namespace AWSSDK.UnitTests.Signing
                     };
                     foreach (var h in c.GetProperty("headers").EnumerateObject())
                         scenario.Headers[h.Name] = h.Value.GetString();
+                    scenario.SubResources = ReadOptionalMap(c, "subResources");
+                    scenario.FormParameters = ReadOptionalMap(c, "formParameters");
                     var body = c.GetProperty("body");
                     if (body.ValueKind != JsonValueKind.Null)
                         scenario.Content = Encoding.UTF8.GetBytes(body.GetString());
@@ -140,11 +146,24 @@ namespace AWSSDK.UnitTests.Signing
                 return reader.ReadToEnd();
         }
 
+        private static Dictionary<string, string> ReadOptionalMap(JsonElement c, string property)
+        {
+            if (!c.TryGetProperty(property, out var map))
+                return null;
+            return map.EnumerateObject().ToDictionary(p => p.Name, p => p.Value.ValueKind == JsonValueKind.Null ? null : p.Value.GetString());
+        }
+
         public static IEnumerable<object[]> AllScenarios()
         {
             // DynamicData is evaluated before ClassInitialize, so load the fixture here too if needed.
             EnsureLoaded();
-            return Scenarios.Select(s => new object[] { s.Name });
+            return Scenarios.Where(s => !s.SignsInternalRequestOnly).Select(s => new object[] { s.Name });
+        }
+
+        public static IEnumerable<object[]> InternalRequestScenarios()
+        {
+            EnsureLoaded();
+            return Scenarios.Where(s => s.SignsInternalRequestOnly).Select(s => new object[] { s.Name });
         }
 
         // Presign rejects a request body and a precomputed content hash, so the presign parity test runs over
@@ -154,7 +173,7 @@ namespace AWSSDK.UnitTests.Signing
         {
             EnsureLoaded();
             return Scenarios
-                .Where(s => s.Content == null
+                .Where(s => !s.SignsInternalRequestOnly && s.Content == null
                             && !s.Headers.Keys.Any(k => string.Equals(k, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase)))
                 .Select(s => new object[] { s.Name });
         }
@@ -186,6 +205,35 @@ namespace AWSSDK.UnitTests.Signing
             Assert.AreEqual(expected, facade,
                 $"Facade output did not match the independent known-answer vector for scenario '{scenario.Name}'.");
         }
+
+        [TestMethod]
+        [DynamicData(nameof(InternalRequestScenarios))]
+        public void AWS4Signer_MatchesKnownAnswerVector(string scenarioName)
+        {
+            var scenario = Get(scenarioName);
+            var uri = new Uri(scenario.Url);
+            var request = new DefaultRequest(new ParityRequest(), Service)
+            {
+                HttpMethod = scenario.Method,
+                Endpoint = new Uri(uri.GetLeftPart(UriPartial.Authority)),
+                ResourcePath = uri.AbsolutePath,
+                Content = scenario.Content,
+            };
+            foreach (var header in scenario.Headers)
+                request.Headers[header.Key] = header.Value;
+            foreach (var subResource in scenario.SubResources ?? new Dictionary<string, string>())
+                request.AddSubResource(subResource.Key, subResource.Value);
+            foreach (var parameter in scenario.FormParameters ?? new Dictionary<string, string>())
+                request.Parameters[parameter.Key] = parameter.Value;
+            var config = new MockClientConfig { AuthenticationRegion = Region, AuthenticationServiceName = Service };
+
+            var result = new AWS4Signer(scenario.SignPayload).SignRequest(request, config, null, AccessKey, SecretKey, SignedAt);
+
+            Assert.AreEqual(ExpectedSignedHeaders(scenario), result.SignedHeaders, scenario.Name);
+            Assert.AreEqual(scenario.ExpectedSignature, result.Signature, scenario.Name);
+        }
+
+        private class ParityRequest : AmazonWebServiceRequest { }
 
         [TestMethod]
         [DynamicData(nameof(PresignableScenarios))]

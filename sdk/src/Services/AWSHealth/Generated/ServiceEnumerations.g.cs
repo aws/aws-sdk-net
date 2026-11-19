@@ -22,6 +22,42 @@ using Amazon.Runtime;
 namespace Amazon.AWSHealth
 {
     /// <summary>
+    /// Constants used for properties of type AccountTagType.
+    /// </summary>
+    public class AccountTagType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT_RESOURCE_TAG for AccountTagType
+        /// </summary>
+        public static readonly AccountTagType ACCOUNT_RESOURCE_TAG = new AccountTagType("ACCOUNT_RESOURCE_TAG");
+
+        /// <summary>
+        /// Constructs a custom AccountTagType for a value not among the defined constants.
+        /// </summary>
+        public AccountTagType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountTagType FindValue(string value)
+        {
+            return FindValue<AccountTagType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountTagType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EventActionability.
     /// </summary>
     public class EventActionability : ConstantClass
@@ -200,6 +236,170 @@ namespace Amazon.AWSHealth
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventTypePersona(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationTagType.
+    /// </summary>
+    public class OrganizationTagType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ORGANIZATION_ACCOUNT_TAG for OrganizationTagType
+        /// </summary>
+        public static readonly OrganizationTagType ORGANIZATION_ACCOUNT_TAG = new OrganizationTagType("ORGANIZATION_ACCOUNT_TAG");
+
+        /// <summary>
+        /// Constant ORGANIZATION_RESOURCE_TAG for OrganizationTagType
+        /// </summary>
+        public static readonly OrganizationTagType ORGANIZATION_RESOURCE_TAG = new OrganizationTagType("ORGANIZATION_RESOURCE_TAG");
+
+        /// <summary>
+        /// Constructs a custom OrganizationTagType for a value not among the defined constants.
+        /// </summary>
+        public OrganizationTagType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationTagType FindValue(string value)
+        {
+            return FindValue<OrganizationTagType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationTagType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TagKeyStatus.
+    /// </summary>
+    public class TagKeyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for TagKeyStatus
+        /// </summary>
+        public static readonly TagKeyStatus ACTIVE = new TagKeyStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant PENDING for TagKeyStatus
+        /// </summary>
+        public static readonly TagKeyStatus PENDING = new TagKeyStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom TagKeyStatus for a value not among the defined constants.
+        /// </summary>
+        public TagKeyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagKeyStatus FindValue(string value)
+        {
+            return FindValue<TagKeyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagKeyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TagsOnboardingStatus.
+    /// </summary>
+    public class TagsOnboardingStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for TagsOnboardingStatus
+        /// </summary>
+        public static readonly TagsOnboardingStatus DISABLED = new TagsOnboardingStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for TagsOnboardingStatus
+        /// </summary>
+        public static readonly TagsOnboardingStatus ENABLED = new TagsOnboardingStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom TagsOnboardingStatus for a value not among the defined constants.
+        /// </summary>
+        public TagsOnboardingStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagsOnboardingStatus FindValue(string value)
+        {
+            return FindValue<TagsOnboardingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagsOnboardingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TagsOnboardingStatusForOrganization.
+    /// </summary>
+    public class TagsOnboardingStatusForOrganization : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for TagsOnboardingStatusForOrganization
+        /// </summary>
+        public static readonly TagsOnboardingStatusForOrganization DISABLED = new TagsOnboardingStatusForOrganization("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for TagsOnboardingStatusForOrganization
+        /// </summary>
+        public static readonly TagsOnboardingStatusForOrganization ENABLED = new TagsOnboardingStatusForOrganization("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom TagsOnboardingStatusForOrganization for a value not among the defined constants.
+        /// </summary>
+        public TagsOnboardingStatusForOrganization(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagsOnboardingStatusForOrganization FindValue(string value)
+        {
+            return FindValue<TagsOnboardingStatusForOrganization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagsOnboardingStatusForOrganization(string value)
         {
             return FindValue(value);
         }

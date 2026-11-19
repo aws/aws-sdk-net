@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,44 +38,54 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Computer Object
     /// </summary>
-    public partial class ComputerUnmarshaller : IJsonUnmarshaller<Computer, JsonUnmarshallerContext>
+    public partial class ComputerUnmarshaller : ICborUnmarshaller<Computer, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Computer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Computer Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Computer();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ComputerAttributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance);
-                    unmarshalledObject.ComputerAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ComputerId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputerId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ComputerAttributes":
+                        context.AddPathSegment("ComputerAttributes");
+                        unmarshalledObject.ComputerAttributes = new CborListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ComputerName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ComputerId":
+                        context.AddPathSegment("ComputerId");
+                        unmarshalledObject.ComputerId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ComputerName":
+                        context.AddPathSegment("ComputerName");
+                        unmarshalledObject.ComputerName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

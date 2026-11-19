@@ -76,6 +76,66 @@ public class CustomizationsModelTests
     }
 
     [Fact]
+    public void Load_Service_ReadsSection()
+    {
+        var model = LoadFiles("""
+            {
+                "service": {
+                    "skipClientContextParams": ["UseArnRegion"],
+                    "skipDocSamples": true,
+                    "requestBaseClass": "AmazonWebServiceRequest",
+                    "streamingResponseBaseClass": "StreamResponse",
+                    "customErrorHandling": {
+                        "responseUnmarshallerBaseClass": "S3ReponseUnmarshaller",
+                        "errorResponseType": "S3ErrorResponse",
+                        "exceptionFactory": "ConstructS3Exception"
+                    },
+                    "clientDisposeMethod": "DisposeS3ExpressCredentialProvider",
+                    "retryPolicyRequestList": true,
+                    "customPropertyValueRules": true,
+                    "endpointResolverPartial": true,
+                    "endpointResolvedLabel": "Bucket",
+                    "keepGreedyLabelLeadingSlash": true
+                }
+            }
+            """);
+        Assert.Equal(["UseArnRegion"], model.Service?.SkipClientContextParams);
+        Assert.True(model.Service?.SkipDocSamples);
+        Assert.Equal("AmazonWebServiceRequest", model.Service?.RequestBaseClass);
+        Assert.Equal("StreamResponse", model.Service?.StreamingResponseBaseClass);
+        Assert.Equal(TestCustomizations.ErrorHandling().CustomErrorHandling, model.Service?.CustomErrorHandling);
+        Assert.Equal("DisposeS3ExpressCredentialProvider", model.Service?.ClientDisposeMethod);
+        Assert.True(model.Service?.RetryPolicyRequestList);
+        Assert.True(model.Service?.CustomPropertyValueRules);
+        Assert.True(model.Service?.EndpointResolverPartial);
+        Assert.Equal("Bucket", model.Service?.EndpointResolvedLabel);
+        Assert.True(model.Service?.KeepGreedyLabelLeadingSlash);
+    }
+
+    // Each part only works with the others, so a partial set fails at load, not in the generated code.
+    [Theory]
+    [InlineData("responseUnmarshallerBaseClass")]
+    [InlineData("errorResponseType")]
+    [InlineData("exceptionFactory")]
+    public void Load_CustomErrorHandling_MissingPart_Throws(string missing)
+    {
+        var parts = new[] { "responseUnmarshallerBaseClass", "errorResponseType", "exceptionFactory" }
+            .Where(part => part != missing)
+            .Select(part => $""" "{part}": "X" """);
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles($$"""{ "service": { "customErrorHandling": { {{string.Join(", ", parts)}} } } }"""));
+        Assert.Contains($"missing required properties, including the following: {missing}", ex.Message);
+    }
+
+    [Fact]
+    public void Load_Service_InTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "service": { "skipDocSamples": true } }""",
+            """{ "service": { "skipDocSamples": true } }"""));
+        Assert.Contains("service appears in more than one customizations file", ex.Message);
+    }
+
+    [Fact]
     public void Load_UnsupportedNestedHook_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeModifiers": { "Thing": { "modify": [{ "m": { "unsupportedHook": "x" } }] } } }"""));
@@ -97,6 +157,8 @@ public class CustomizationsModelTests
               "shapeModifiers": { "PutTargetsResponse": { "exclude": ["FailedEntryCount"] } },
               "operationModifiers": {
                 "InvokeAsync": { "exclude": true },
+                "CreateBucket": { "name": "PutBucket" },
+                "SelectObjectContent": { "clientMethodOnly": true },
                 "DescribeDomain": { "useWrappingResult": true, "wrappedResultShape": "DomainDetail", "wrappedResultMember": "DomainDetail" }
               }
             }
@@ -104,15 +166,39 @@ public class CustomizationsModelTests
 
         Assert.Equal(["FailedEntryCount"], model.ShapeModifiers["PutTargetsResponse"].Exclude);
         Assert.True(model.OperationModifiers["InvokeAsync"].Exclude);
+        Assert.Equal("PutBucket", model.OperationName("CreateBucket"));
+        Assert.True(model.IsClientMethodOnly("SelectObjectContent"));
         var wrap = model.OperationModifiers["DescribeDomain"];
         Assert.Equal((true, "DomainDetail", "DomainDetail"), (wrap.UseWrappingResult, wrap.WrappedResultShape, wrap.WrappedResultMember));
     }
 
     [Fact]
-    public void Load_ShapeSubstitutions_EmitAsShape_Throws()
+    public void Load_Ec2Hooks_ReadsHooks()
     {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeSubstitutions": { "Thing": { "emitAsShape": "String" } } }"""));
-        Assert.Contains("emitAsShape", ex.Message);
+        var model = LoadFiles("""
+            {
+              "shapeSubstitutions": { "AttributeValue": { "emitAsShape": "String", "emitFromMember": "Value", "listMemberSuffixExclusions": ["CreateDhcpOptions"] } },
+              "shapeModifiers": {
+                "Reservation": {
+                  "modify": [{ "Url": { "locationName": "Location", "customMarshall": true, "accessModifier": "internal" } }],
+                  "inject": [{ "GroupNames": { "shape": "GroupNameStringList", "documentation": "Doc", "locationName": "groupName", "customMarshall": true } }]
+                }
+              },
+              "operationModifiers": { "CreateDhcpOptions": { "marshallNameOverrides": [{ "DhcpConfiguration": { "Values": { "marshallName": "Value" } } }] } },
+              "suppressResultGeneration": ["DeleteThing"]
+            }
+            """,
+            """{ "suppressResultGeneration": ["RejectThing"] }""");
+
+        var substitution = model.ShapeSubstitutions["AttributeValue"];
+        Assert.Equal(("String", "Value"), (substitution.EmitAsShape, substitution.EmitFromMember));
+        Assert.Equal(["CreateDhcpOptions"], substitution.ListMemberSuffixExclusions);
+        var property = model.ShapeModifiers["Reservation"].Modify[0]["Url"];
+        Assert.Equal(("Location", true, "internal"), (property.LocationName, property.CustomMarshall, property.AccessModifier));
+        var injector = model.ShapeModifiers["Reservation"].Inject[0]["GroupNames"];
+        Assert.Equal(("GroupNameStringList", "Doc", "groupName", true), (injector.Shape, injector.Documentation, injector.LocationName, injector.CustomMarshall));
+        Assert.Equal("Value", model.MarshallNameOverride("CreateDhcpOptions", "DhcpConfiguration", "Values"));
+        Assert.Equal(["DeleteThing", "RejectThing"], model.SuppressResultGeneration);
     }
 
     [Fact]
@@ -134,6 +220,50 @@ public class CustomizationsModelTests
             """{ "emitIsSetProperties": { "QueryInput": ["Limit"] } }""",
             """{ "emitIsSetProperties": { "QueryInput": ["Select"] } }"""));
         Assert.Contains("emitIsSetProperties['QueryInput']", ex.Message);
+    }
+
+    // S3 splits excludeShapes between s3.customizations.json and s3.customizations.enums.json.
+    [Fact]
+    public void Load_ExcludeShapesAndMembers_MergeAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "excludeShapes": ["NotificationConfiguration"], "excludeMembers": { "PartDetail": ["ETag"] } }""",
+            """{ "excludeShapes": ["Protocol"], "excludeMembers": { "S3ObjectVersion": ["Key"] } }""");
+
+        Assert.Equal(["NotificationConfiguration", "Protocol"], model.ExcludeShapes);
+        Assert.True(model.IsExcludedMember("PartDetail", "ETag"));
+        Assert.True(model.IsExcludedMember("S3ObjectVersion", "Key"));
+    }
+
+    [Theory]
+    [InlineData("""{ "excludeShapes": ["Protocol"] }""", "excludeShapes lists 'Protocol' more than once")]
+    [InlineData("""{ "excludeMembers": { "PartDetail": ["Size"] } }""", "excludeMembers['PartDetail'] appears in more than one customizations file")]
+    public void Load_ExcludeShapesAndMembers_RepeatedAcrossFiles_Throws(string second, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "excludeShapes": ["Protocol"], "excludeMembers": { "PartDetail": ["ETag"] } }""",
+            second));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void Load_FlattenShapes_MergesAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Delete"] } }""",
+            """{ "flattenShapes": { "CopyObjectOutput": ["CopyObjectResult"] } }""");
+
+        Assert.Equal(["Delete"], model.FlattenShapes["DeleteObjectsRequest"]);
+        Assert.Equal(["CopyObjectResult"], model.FlattenShapes["CopyObjectOutput"]);
+    }
+
+    [Fact]
+    public void Load_FlattenShapes_SameShapeInTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Delete"] } }""",
+            """{ "flattenShapes": { "DeleteObjectsRequest": ["Other"] } }"""));
+        Assert.Contains("flattenShapes['DeleteObjectsRequest'] appears in more than one customizations file", ex.Message);
     }
 
     [Fact]

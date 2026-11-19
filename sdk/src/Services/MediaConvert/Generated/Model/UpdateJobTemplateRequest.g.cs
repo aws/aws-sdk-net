@@ -71,6 +71,17 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
+        /// Gets and sets the property ElementalInferenceSettings. The Elemental Inference settings
+        /// used in this job.
+        /// </summary>
+        public ElementalInferenceSettings ElementalInferenceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ElementalInferenceSettings property is set.
+        /// </summary>
+        internal bool IsSetElementalInferenceSettings() => this.ElementalInferenceSettings != null;
+
+        /// <summary>
         /// Gets and sets the property HopDestinations. Optional list of hop destinations.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

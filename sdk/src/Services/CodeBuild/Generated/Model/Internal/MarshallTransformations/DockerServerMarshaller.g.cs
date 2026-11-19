@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// DockerServer Marshaller
     /// </summary>
-    public partial class DockerServerMarshaller : IRequestMarshaller<DockerServer, JsonMarshallerContext>
+    public partial class DockerServerMarshaller : IRequestMarshaller<DockerServer, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DockerServer requestObject, JsonMarshallerContext context)
+        public void Marshall(DockerServer requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetComputeType())
             {
-                context.Writer.WritePropertyName("computeType");
-                context.Writer.WriteStringValue(requestObject.ComputeType);
+                context.Writer.WriteTextString("computeType");
+                context.Writer.WriteTextString(requestObject.ComputeType);
             }
 
             if (requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("securityGroupIds");
+                context.Writer.WriteStartArray(requestObject.SecurityGroupIds.Count);
                 foreach (var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                    context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                    context.Writer.WriteTextString(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DockerServerStatusMarshaller.Instance;
                 marshaller.Marshall(requestObject.Status, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

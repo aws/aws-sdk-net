@@ -193,6 +193,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("subdomain", targetDepth, ref reader))
+                {
+                    var unmarshaller = LightsailDistributionSubdomainUnmarshaller.Instance;
+                    unmarshalledObject.Subdomain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("supportCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -209,6 +209,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for ListNetworkMigrationInsights operation
+        /// </summary>
+        public IListNetworkMigrationInsightsPaginator ListNetworkMigrationInsights(ListNetworkMigrationInsightsRequest request)
+        {
+            return new ListNetworkMigrationInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNetworkMigrationMapperSegmentConstructs operation
         /// </summary>
         public IListNetworkMigrationMapperSegmentConstructsPaginator ListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request)
@@ -238,6 +246,38 @@ namespace Amazon.Mgn.Model
         public IListNetworkMigrationMappingsPaginator ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request)
         {
             return new ListNetworkMigrationMappingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionInvocationResults operation
+        /// </summary>
+        public IListRemoteSourceActionInvocationResultsPaginator ListRemoteSourceActionInvocationResults(ListRemoteSourceActionInvocationResultsRequest request)
+        {
+            return new ListRemoteSourceActionInvocationResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionInvocations operation
+        /// </summary>
+        public IListRemoteSourceActionInvocationsPaginator ListRemoteSourceActionInvocations(ListRemoteSourceActionInvocationsRequest request)
+        {
+            return new ListRemoteSourceActionInvocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionJobs operation
+        /// </summary>
+        public IListRemoteSourceActionJobsPaginator ListRemoteSourceActionJobs(ListRemoteSourceActionJobsRequest request)
+        {
+            return new ListRemoteSourceActionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActions operation
+        /// </summary>
+        public IListRemoteSourceActionsPaginator ListRemoteSourceActions(ListRemoteSourceActionsRequest request)
+        {
+            return new ListRemoteSourceActionsPaginator(this.client, request);
         }
 
         /// <summary>

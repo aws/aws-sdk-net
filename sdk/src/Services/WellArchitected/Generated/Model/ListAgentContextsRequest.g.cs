@@ -36,7 +36,10 @@ namespace Amazon.WellArchitected.Model
     public partial class ListAgentContextsRequest : AmazonWellArchitectedRequest
     {
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of contexts to return in a single call. Default is 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1000)]
         public int? MaxResults { get; set; }
@@ -47,7 +50,10 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token returned from a previous call to continue retrieving results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1)]
         public string NextToken { get; set; }

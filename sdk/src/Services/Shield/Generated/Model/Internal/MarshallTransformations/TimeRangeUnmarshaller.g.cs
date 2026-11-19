@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TimeRange Object
     /// </summary>
-    public partial class TimeRangeUnmarshaller : IJsonUnmarshaller<TimeRange, JsonUnmarshallerContext>
+    public partial class TimeRangeUnmarshaller : ICborUnmarshaller<TimeRange, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TimeRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TimeRange Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TimeRange();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("FromInclusive", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FromInclusive = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ToExclusive", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ToExclusive = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "FromInclusive":
+                        context.AddPathSegment("FromInclusive");
+                        unmarshalledObject.FromInclusive = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ToExclusive":
+                        context.AddPathSegment("ToExclusive");
+                        unmarshalledObject.ToExclusive = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

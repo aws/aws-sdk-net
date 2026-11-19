@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.WorkSpaces.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -54,43 +55,49 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateConnectionAliasPermissionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkSpaces");
-            string target = "WorkspacesService.UpdateConnectionAliasPermission";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "service/WorkspacesService/operation/UpdateConnectionAliasPermission";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAliasId())
+                {
+                    context.Writer.WriteTextString("AliasId");
+                    context.Writer.WriteTextString(publicRequest.AliasId);
+                }
+                if (publicRequest.IsSetConnectionAliasPermission())
+                {
+                    context.Writer.WriteTextString("ConnectionAliasPermission");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ConnectionAliasPermissionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConnectionAliasPermission, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAliasId())
-            {
-                context.Writer.WritePropertyName("AliasId");
-                context.Writer.WriteStringValue(publicRequest.AliasId);
             }
-            if (publicRequest.IsSetConnectionAliasPermission())
+            finally
             {
-                context.Writer.WritePropertyName("ConnectionAliasPermission");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ConnectionAliasPermissionMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ConnectionAliasPermission, context);
-
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
 
             return request;
         }

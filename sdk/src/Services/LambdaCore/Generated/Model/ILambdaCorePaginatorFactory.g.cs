@@ -43,5 +43,23 @@ namespace Amazon.LambdaCore.Model
         /// </summary>
         [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]
         IListNetworkConnectorsPaginator ListNetworkConnectors(ListNetworkConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRuntimeAliases operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRuntimeAliasesPaginator ListRuntimeAliases(ListRuntimeAliasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRuntimeVersions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRuntimeVersionsPaginator ListRuntimeVersions(ListRuntimeVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRuntimes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRuntimesPaginator ListRuntimes(ListRuntimesRequest request);
     }
 }

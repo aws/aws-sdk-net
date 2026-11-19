@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.TranscribeService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,64 +39,64 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
     /// <summary>
     /// TranscriptFilter Marshaller
     /// </summary>
-    public partial class TranscriptFilterMarshaller : IRequestMarshaller<TranscriptFilter, JsonMarshallerContext>
+    public partial class TranscriptFilterMarshaller : IRequestMarshaller<TranscriptFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TranscriptFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(TranscriptFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAbsoluteTimeRange())
             {
-                context.Writer.WritePropertyName("AbsoluteTimeRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AbsoluteTimeRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AbsoluteTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbsoluteTimeRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetNegate())
             {
-                context.Writer.WritePropertyName("Negate");
-                context.Writer.WriteBooleanValue(requestObject.Negate.Value);
+                context.Writer.WriteTextString("Negate");
+                context.Writer.WriteBoolean(requestObject.Negate.Value);
             }
 
             if (requestObject.IsSetParticipantRole())
             {
-                context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.WriteStringValue(requestObject.ParticipantRole);
+                context.Writer.WriteTextString("ParticipantRole");
+                context.Writer.WriteTextString(requestObject.ParticipantRole);
             }
 
             if (requestObject.IsSetRelativeTimeRange())
             {
-                context.Writer.WritePropertyName("RelativeTimeRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("RelativeTimeRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RelativeTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelativeTimeRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetTargets())
             {
-                context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Targets");
+                context.Writer.WriteStartArray(requestObject.Targets.Count);
                 foreach (var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                    context.Writer.WriteStringValue(requestObjectTargetsListValue);
+                    context.Writer.WriteTextString(requestObjectTargetsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTranscriptFilterType())
             {
-                context.Writer.WritePropertyName("TranscriptFilterType");
-                context.Writer.WriteStringValue(requestObject.TranscriptFilterType);
+                context.Writer.WriteTextString("TranscriptFilterType");
+                context.Writer.WriteTextString(requestObject.TranscriptFilterType);
             }
         }
 

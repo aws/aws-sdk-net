@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -38,27 +38,36 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateDeployment operation.
     /// </summary>
-    public partial class CreateDeploymentResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class CreateDeploymentResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new CreateDeploymentResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("CreateDeployment");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("deploymentId", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "deploymentId":
+                        context.AddPathSegment("DeploymentId");
+                        unmarshalledObject.DeploymentId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -66,11 +75,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -78,128 +85,127 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("AlarmsLimitExceededException"))
                     {
-                        return AlarmsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return AlarmsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ApplicationDoesNotExistException"))
                     {
-                        return ApplicationDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return ApplicationDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ApplicationNameRequiredException"))
                     {
-                        return ApplicationNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return ApplicationNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigDoesNotExistException"))
                     {
-                        return DeploymentConfigDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DeploymentConfigDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentGroupDoesNotExistException"))
                     {
-                        return DeploymentGroupDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DeploymentGroupDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentGroupNameRequiredException"))
                     {
-                        return DeploymentGroupNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DeploymentGroupNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentLimitExceededException"))
                     {
-                        return DeploymentLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DeploymentLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("DescriptionTooLongException"))
                     {
-                        return DescriptionTooLongExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return DescriptionTooLongExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAlarmConfigException"))
                     {
-                        return InvalidAlarmConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidAlarmConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidApplicationNameException"))
                     {
-                        return InvalidApplicationNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidApplicationNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAutoRollbackConfigException"))
                     {
-                        return InvalidAutoRollbackConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidAutoRollbackConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAutoScalingGroupException"))
                     {
-                        return InvalidAutoScalingGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidAutoScalingGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAutoScalingGroupProcessToSuspendException"))
                     {
-                        return InvalidAutoScalingGroupProcessToSuspendExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidAutoScalingGroupProcessToSuspendExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidComputePlatformException"))
                     {
-                        return InvalidComputePlatformExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidComputePlatformExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentConfigNameException"))
                     {
-                        return InvalidDeploymentConfigNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidDeploymentConfigNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentGroupNameException"))
                     {
-                        return InvalidDeploymentGroupNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidDeploymentGroupNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidECSServiceException"))
                     {
-                        return InvalidECSServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidECSServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFileExistsBehaviorException"))
                     {
-                        return InvalidFileExistsBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidFileExistsBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGitHubAccountTokenException"))
                     {
-                        return InvalidGitHubAccountTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidGitHubAccountTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIgnoreApplicationStopFailuresValueException"))
                     {
-                        return InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
                     {
-                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLoadBalancerInfoException"))
                     {
-                        return InvalidLoadBalancerInfoExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidLoadBalancerInfoExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRevisionException"))
                     {
-                        return InvalidRevisionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRevisionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
                     {
-                        return InvalidRoleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRoleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTargetInstancesException"))
                     {
-                        return InvalidTargetInstancesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidTargetInstancesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrafficRoutingConfigurationException"))
                     {
-                        return InvalidTrafficRoutingConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidTrafficRoutingConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUpdateOutdatedInstancesOnlyValueException"))
                     {
-                        return InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("RevisionDoesNotExistException"))
                     {
-                        return RevisionDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return RevisionDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("RevisionRequiredException"))
                     {
-                        return RevisionRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return RevisionRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                     {
-                        return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

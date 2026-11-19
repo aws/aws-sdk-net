@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// MinimumHealthyHosts Marshaller
     /// </summary>
-    public partial class MinimumHealthyHostsMarshaller : IRequestMarshaller<MinimumHealthyHosts, JsonMarshallerContext>
+    public partial class MinimumHealthyHostsMarshaller : IRequestMarshaller<MinimumHealthyHosts, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(MinimumHealthyHosts requestObject, JsonMarshallerContext context)
+        public void Marshall(MinimumHealthyHosts requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("value");
-                context.Writer.WriteNumberValue(requestObject.Value.Value);
+                context.Writer.WriteTextString("value");
+                context.Writer.WriteInt32(requestObject.Value.Value);
             }
         }
 

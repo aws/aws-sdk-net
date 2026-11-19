@@ -118,6 +118,7 @@
             <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
             <SignableItems Include="../extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
             <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
+            <SignableItems Include="../sdk/code-analysis/CoreAnalysis/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
             <SignableItems Include="../sdk/nuget-content/account-management.ps1" />
@@ -309,6 +310,7 @@
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/SSOAdmin/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
 
             <PrivateKeyException Include="extensions/src/AWSSDK.Extensions.CloudFront.Signers/AmazonCloudFrontUrlSigner.cs"/>
@@ -317,6 +319,9 @@
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-rsa-key.pem"/>
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-ecdsa-key.pem"/>
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-dsa-key.pem"/>
+            <!-- PEM parsing for AWS_CA_BUNDLE: the CERTIFICATE markers and generated test certificates are not secrets. -->
+            <PrivateKeyException Include="sdk/src/Core/Amazon.Runtime/Pipeline/HttpHandler/CABundle.cs"/>
+            <PrivateKeyException Include="sdk/test/UnitTests/Custom/Runtime/HttpClientTests/CABundleTests.cs"/>
         </ItemGroup>
 
         <ItemGroup>

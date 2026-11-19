@@ -60,6 +60,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("medicalCodeGenerationSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = MedicalCodeGenerationSettingsResponseUnmarshaller.Instance;
+                    unmarshalledObject.MedicalCodeGenerationSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("outputS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Exception thrown as a result of concurrent modifications to an application. This error
-    /// can be the result of attempting to modify an application without using the current
-    /// application ID.
+    /// Exception thrown as a result of concurrent modifications to an application or snapshot.
+    /// This error can be the result of attempting to modify an application without using
+    /// the current application ID.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

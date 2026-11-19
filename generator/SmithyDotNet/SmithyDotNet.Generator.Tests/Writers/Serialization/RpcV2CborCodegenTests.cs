@@ -14,6 +14,11 @@ public class RpcV2CborCodegenTests
     private static readonly ShapeId Item = ShapeId.Parse("com.example#Item");
     private static readonly ShapeId Broken = ShapeId.Parse("com.example#Broken");
     private static readonly ShapeId AudioEvent = ShapeId.Parse("com.example#AudioEvent");
+    private static readonly ShapeId SummaryEvent = ShapeId.Parse("com.example#SummaryEvent");
+    private static readonly ShapeId DoneEvent = ShapeId.Parse("com.example#DoneEvent");
+    private static readonly ShapeId HeaderBag = ShapeId.Parse("com.example#HeaderBag");
+    private static readonly ShapeId PingEvent = ShapeId.Parse("com.example#PingEvent");
+    private static readonly ShapeId ProgressEvent = ShapeId.Parse("com.example#ProgressEvent");
 
     private static string RequestMarshaller(string operationName) =>
         new CborRequestMarshallerWriter(Context, ModelFileName)
@@ -38,6 +43,11 @@ public class RpcV2CborCodegenTests
         Assert.Contains("""context.Writer.WriteTextString("name");""", source);
         Assert.Contains("context.Writer.WriteInt32(publicRequest.Count.Value);", source);
         Assert.Contains("context.Writer.WriteInt64(publicRequest.Big.Value);", source);
+        // Full Numeric Type Support specification: byte/short are plain integers, bigInteger a bignum, bigDecimal a decimal fraction.
+        Assert.Contains("context.Writer.WriteInt32(publicRequest.Tiny.Value);", source);
+        Assert.Contains("context.Writer.WriteInt32(publicRequest.Small.Value);", source);
+        Assert.Contains("context.Writer.WriteBigInteger(publicRequest.Huge.Value);", source);
+        Assert.Contains("context.Writer.WriteBigDecimal(publicRequest.Precise.Value);", source);
         Assert.Contains("context.Writer.WriteBoolean(publicRequest.Flag.Value);", source);
         Assert.Contains("context.Writer.WriteTextString(publicRequest.Color);", source);
         Assert.Contains("context.Writer.WriteDateTime(publicRequest.When.Value);", source);
@@ -125,6 +135,10 @@ public class RpcV2CborCodegenTests
         Assert.Contains("reader.ReadStartMap();", source);
         Assert.Contains("""case "count":""", source);
         Assert.Contains("unmarshalledObject.Count = CborNullableIntUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Tiny = CborNullableSByteUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Small = CborNullableShortUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Huge = CborNullableBigIntegerUnmarshaller.Instance.Unmarshall(context);", source);
+        Assert.Contains("unmarshalledObject.Precise = CborNullableBigDecimalUnmarshaller.Instance.Unmarshall(context);", source);
         Assert.Contains("unmarshalledObject.When = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);", source);
         Assert.Contains("new CborListUnmarshaller<Item, ItemUnmarshaller>(ItemUnmarshaller.Instance).Unmarshall(context);", source);
         Assert.Contains("new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);", source);
@@ -163,10 +177,9 @@ public class RpcV2CborCodegenTests
     {
         var source = RequestMarshaller("Converse");
 
-        Assert.Contains("request.EventStreamPublisher = new InputStreamPublisherMarshaller(publicRequest.InputPublisher);", source);
+        Assert.Contains("request.EventStreamPublisher = new InputStreamPublisherMarshaller(publicRequest.InputPublisher, initialRequest);", source);
         Assert.Contains("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""", source);
         Assert.Contains("""request.Headers["Accept"] = "application/vnd.amazon.eventstream";""", source);
-        Assert.DoesNotContain("initialRequest", source);
         Assert.DoesNotContain("application/cbor", source);
     }
 
@@ -216,10 +229,63 @@ public class RpcV2CborCodegenTests
     }
 
     [Fact]
-    public void EventUnmarshaller_EventHeader_Throws()
+    public void EventUnmarshaller_EmptyPayloadIsTheEmptyEvent()
     {
-        var ex = Assert.Throws<GeneratorException>(() => new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[AudioEvent], TestContext.Current.CancellationToken));
-        Assert.Contains("@eventHeader on 'AudioEvent'", ex.Message);
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[DoneEvent], TestContext.Current.CancellationToken);
+        Assert.Contains("if (reader.PeekState() == CborReaderState.Finished) return unmarshalledObject;", source);
+    }
+
+    [Fact]
+    public void StructureUnmarshaller_HeadersOnlyButNotAnEvent_StillReadsTheMap()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[HeaderBag], TestContext.Current.CancellationToken);
+        Assert.Contains("var reader = context.Reader;", source);
+    }
+
+    [Fact]
+    public void EventUnmarshaller_EmptyStructurePayloadIsLeftUnset()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[SummaryEvent], TestContext.Current.CancellationToken);
+
+        Assert.Contains("if (context.Reader.PeekState() != CborReaderState.Finished)", source);
+    }
+
+    [Fact]
+    public void StructureUnmarshaller_HasNoEmptyPayloadGuard()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[Item], TestContext.Current.CancellationToken);
+
+        Assert.DoesNotContain("CborReaderState.Finished", source);
+    }
+
+    [Fact]
+    public void EventUnmarshaller_HeadersOnly_ReadsNoMap()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[PingEvent], TestContext.Current.CancellationToken);
+
+        Assert.Contains("""unmarshalledObject.SentAt = context.ResponseData.GetEventStreamHeader("sentAt").AsTimestamp();""", source);
+        Assert.DoesNotContain("context.Reader", source);
+    }
+
+    [Fact]
+    public void EventUnmarshaller_HeaderAndBody_ReadsOnlyTheBodyFromTheMap()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[ProgressEvent], TestContext.Current.CancellationToken);
+
+        Assert.Contains("""unmarshalledObject.RequestId = context.ResponseData.GetEventStreamHeader("requestId").AsString();""", source);
+        Assert.Contains("""case "percent":""", source);
+        Assert.DoesNotContain("""case "requestId":""", source);
+        Assert.DoesNotContain("CborReaderState.Finished", source);
+    }
+
+    [Fact]
+    public void EventUnmarshaller_ReadsPayloadFromTheStreamAndHeaderFromTheMessage()
+    {
+        var source = new CborStructureUnmarshallerWriter(Context, ModelFileName).Write(Context.Structures[AudioEvent], TestContext.Current.CancellationToken);
+
+        Assert.Contains("unmarshalledObject.Chunk = context.Stream as MemoryStream;", source);
+        Assert.Contains("""unmarshalledObject.Codec = context.ResponseData.GetEventStreamHeader("codec").AsString();""", source);
+        Assert.DoesNotContain("context.Reader", source);
     }
 
     [Fact]

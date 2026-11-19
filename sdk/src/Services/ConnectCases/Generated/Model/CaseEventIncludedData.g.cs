@@ -30,14 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Details of what case data is published through the case event stream.
+    /// Details of what case data is published through the case event stream. Use <c>fields</c>
+    /// to include a specific list of fields, and use <c>autoIncludeFields</c> to automatically
+    /// include a category of fields. When both are set, the effective field set is the union
+    /// of the two.
     /// </summary>
     public partial class CaseEventIncludedData
     {
         /// <summary>
+        /// Gets and sets the property AutoIncludeFields. 
+        /// <para>
+        /// Automatically include a category of fields in case event data, combined as a union
+        /// with any fields specified in <c>fields</c>. Valid values are <c>All</c> (include all
+        /// fields on the case), <c>System</c> (include all system fields), and <c>Custom</c>
+        /// (include all custom fields). When this attribute is set, new fields added to the domain
+        /// are picked up automatically without another call to PutCaseEventConfiguration. For
+        /// the full behavior matrix and IAM requirements, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-event-streams.html">Case
+        /// event streams in Connect Customer Cases</a> in the <i>Connect Customer Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public AutoIncludeFields AutoIncludeFields { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoIncludeFields property is set.
+        /// </summary>
+        internal bool IsSetAutoIncludeFields() => this.AutoIncludeFields != null;
+
+        /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// List of field identifiers.
+        /// List of field identifiers to include in case event data.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

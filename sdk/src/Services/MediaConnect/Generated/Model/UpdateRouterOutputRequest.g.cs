@@ -120,6 +120,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property Processors. 
+        /// <para>
+        /// The updated processor settings for the router output. When you update the processors,
+        /// include every setting that you want to keep. MediaConnect resets the settings that
+        /// you don't specify to their defaults.
+        /// </para>
+        /// </summary>
+        public RouterOutputProcessors Processors { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Processors property is set.
+        /// </summary>
+        internal bool IsSetProcessors() => this.Processors != null;
+
+        /// <summary>
         /// Gets and sets the property RoutingScope. 
         /// <para>
         /// Specifies whether the router output can take inputs that are in different Regions.

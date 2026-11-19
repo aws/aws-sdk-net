@@ -38,9 +38,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ScopeType. 
         /// <para>
-        /// The type of scope. Valid values are <c>TENANT</c>, which scans all resources in the
-        /// Azure tenant, and <c>SUBSCRIPTION</c>, which scans only the resources in the specified
-        /// Azure subscriptions.
+        /// The type of scope: <c>TENANT</c>, which scans all resources in the Azure tenant, or
+        /// <c>SUBSCRIPTION</c>, which scans only the resources in the specified Azure subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -2341,7 +2341,9 @@
         "SelfservicePermissions$IncreaseVolumeSize": "<p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>",
         "SelfservicePermissions$ChangeComputeType": "<p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>",
         "SelfservicePermissions$SwitchRunningMode": "<p>Specifies whether users can switch the running mode of their WorkSpace.</p>",
-        "SelfservicePermissions$RebuildWorkspace": "<p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>"
+        "SelfservicePermissions$RebuildWorkspace": "<p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>",
+        "SelfservicePermissions$NestedVirtualization": "<p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href=\"https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html\">Nested virtualization for Amazon WorkSpaces</a>.</p>",
+        "SelfservicePermissions$EnableEndUserAdvisor": "<p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>"
       }
     },
     "Region": {
@@ -3279,6 +3281,13 @@
         "DescribeWorkspacesRequest$WorkspaceName": "<p>The name of the user-decoupled WorkSpace.</p>",
         "Workspace$WorkspaceName": "<p>The name of the user-decoupled WorkSpace.</p>",
         "WorkspaceRequest$WorkspaceName": "<p>The name of the user-decoupled WorkSpace.</p> <note> <p> <code>WorkspaceName</code> is required if <code>UserName</code> is <code>[UNDEFINED]</code> for user-decoupled WorkSpaces. <code>WorkspaceName</code> is not applicable if <code>UserName</code> is specified for user-assigned WorkSpaces.</p> </note>"
+      }
+    },
+    "WorkspaceOSUserMode": {
+      "base": null,
+      "refs": {
+        "RegisterWorkspaceDirectoryRequest$WorkspaceOsUserMode": "<p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>",
+        "WorkspaceDirectory$WorkspaceOsUserMode": "<p>Indicates how users are set up on the WorkSpace operating system.</p>"
       }
     },
     "WorkspaceProperties": {

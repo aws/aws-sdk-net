@@ -32,6 +32,10 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the GetDistributions operation. Returns information
     /// about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
+    /// <note> <para> The <c>defaultRootObject</c> and <c>customErrorResponses</c> values
+    /// are returned only when you specify <c>distributionName</c> to retrieve a single distribution.
+    /// When you call <c>GetDistributions</c> without a distribution name to list all distributions,
+    /// these two fields aren't included in the response. </para> </note>
     /// </summary>
     public partial class GetDistributionsRequest : AmazonLightsailRequest
     {

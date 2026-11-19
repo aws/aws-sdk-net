@@ -109,6 +109,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("securityContext", targetDepth, ref reader))
+                {
+                    var unmarshaller = EksPodSecurityContextUnmarshaller.Instance;
+                    unmarshalledObject.SecurityContext = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("serviceAccountName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

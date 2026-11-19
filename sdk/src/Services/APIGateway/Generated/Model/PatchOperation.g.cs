@@ -91,8 +91,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The new target value of the update operation. It is applicable for the add or replace
-        /// operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
-        /// object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'.
+        /// operation. When using CLI to update a property of a JSON value, enclose the JSON object
+        /// with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'.
         /// </para>
         /// </summary>
         public string Value { get; set; }

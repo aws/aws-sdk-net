@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FlowOperationMetadata Object
     /// </summary>
-    public partial class FlowOperationMetadataUnmarshaller : IJsonUnmarshaller<FlowOperationMetadata, JsonUnmarshallerContext>
+    public partial class FlowOperationMetadataUnmarshaller : ICborUnmarshaller<FlowOperationMetadata, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public FlowOperationMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FlowOperationMetadata Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new FlowOperationMetadata();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("FlowOperationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowOperationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("FlowOperationStatus", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowOperationStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FlowOperationId":
+                        context.AddPathSegment("FlowOperationId");
+                        unmarshalledObject.FlowOperationId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FlowOperationType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowOperationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FlowOperationStatus":
+                        context.AddPathSegment("FlowOperationStatus");
+                        unmarshalledObject.FlowOperationStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FlowRequestTimestamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FlowRequestTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "FlowOperationType":
+                        context.AddPathSegment("FlowOperationType");
+                        unmarshalledObject.FlowOperationType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "FlowRequestTimestamp":
+                        context.AddPathSegment("FlowRequestTimestamp");
+                        unmarshalledObject.FlowRequestTimestamp = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

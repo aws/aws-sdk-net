@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "test-service": true,
+  "synopsis": "RpcV2 CBOR corpus protocol test service"
+}

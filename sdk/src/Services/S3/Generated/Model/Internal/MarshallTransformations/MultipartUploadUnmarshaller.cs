@@ -104,6 +104,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.UploadId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("VersionId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

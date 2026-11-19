@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Subscription Object
     /// </summary>
-    public partial class SubscriptionUnmarshaller : IJsonUnmarshaller<Subscription, JsonUnmarshallerContext>
+    public partial class SubscriptionUnmarshaller : ICborUnmarshaller<Subscription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Subscription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Subscription Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Subscription();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AutoRenew", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AutoRenew":
+                        context.AddPathSegment("AutoRenew");
+                        unmarshalledObject.AutoRenew = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Limits", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
-                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EndTime":
+                        context.AddPathSegment("EndTime");
+                        unmarshalledObject.EndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ProactiveEngagementStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProactiveEngagementStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Limits":
+                        context.AddPathSegment("Limits");
+                        unmarshalledObject.Limits = new CborListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ProactiveEngagementStatus":
+                        context.AddPathSegment("ProactiveEngagementStatus");
+                        unmarshalledObject.ProactiveEngagementStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubscriptionArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "StartTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubscriptionLimits", targetDepth, ref reader))
-                {
-                    var unmarshaller = SubscriptionLimitsUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionLimits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SubscriptionArn":
+                        context.AddPathSegment("SubscriptionArn");
+                        unmarshalledObject.SubscriptionArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TimeCommitmentInSeconds", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SubscriptionLimits":
+                        context.AddPathSegment("SubscriptionLimits");
+                        unmarshalledObject.SubscriptionLimits = SubscriptionLimitsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "TimeCommitmentInSeconds":
+                        context.AddPathSegment("TimeCommitmentInSeconds");
+                        unmarshalledObject.TimeCommitmentInSeconds = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -40,7 +40,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// permissions. </para> </li> <li> <para> To see transformer policies, you must have
     /// the <c>logs:GetTransformer</c> and <c>logs:DescribeAccountPolicies</c> permissions.
     /// </para> </li> <li> <para> To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c>
-    /// and <c>logs:DescribeAccountPolicies</c> permissions. </para> </li> </ul>
+    /// and <c>logs:DescribeAccountPolicies</c> permissions. </para> </li> <li> <para> To
+    /// see retention policies, you must have the <c>logs:DescribeAccountPolicies</c> permission.
+    /// </para> </li> </ul>
     /// </summary>
     public partial class DescribeAccountPoliciesRequest : AmazonCloudWatchLogsRequest
     {

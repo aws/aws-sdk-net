@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.AssociateCrossAccountReplicaRequest.CrossAccountReplicaARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.AssociateCrossAccountReplicaRequest.ReplicationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.AssociateCrossAccountReplicaRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.AssociateCrossAccountReplicaResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.AssociateCrossAccountReplicaResponse.CrossAccountReplicaARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.BatchGetSecretValueRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -39,6 +64,11 @@
     <property>Amazon.SecretsManager.Model.CreateSecretRequest.ClientRequestToken</property>
     <min>32</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CreateSecretRequest.CrossAccountPrimaryARN</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.CreateSecretRequest.Description</property>
@@ -86,6 +116,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DeleteResourcePolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.DeleteResourcePolicyRequest.SecretId</property>
     <min>1</min>
     <max>2048</max>
@@ -99,6 +134,11 @@
     <property>Amazon.SecretsManager.Model.DeleteResourcePolicyResponse.Name</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DeleteResourcePolicyResponse.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.DeleteSecretRequest.SecretId</property>
@@ -167,6 +207,26 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DisassociateCrossAccountReplicaRequest.CrossAccountReplicaARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DisassociateCrossAccountReplicaRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DisassociateCrossAccountReplicaResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DisassociateCrossAccountReplicaResponse.CrossAccountReplicaARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetRandomPasswordRequest.ExcludeCharacters</property>
     <min>0</min>
     <max>4096</max>
@@ -182,6 +242,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetResourcePolicyRequest.SecretId</property>
     <min>1</min>
     <max>2048</max>
@@ -195,6 +260,11 @@
     <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.Name</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.ResourcePolicy</property>
@@ -242,6 +312,26 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ListResourcePoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ListResourcePoliciesRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ListResourcePoliciesRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ListResourcePoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.ListSecretVersionIdsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -287,6 +377,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyRequest.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutResourcePolicyRequest.ResourcePolicy</property>
     <min>1</min>
     <max>20480</max>
@@ -305,6 +400,11 @@
     <property>Amazon.SecretsManager.Model.PutResourcePolicyResponse.Name</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyResponse.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutSecretValueRequest.ClientRequestToken</property>
@@ -533,6 +633,31 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CrossAccountPrimaryType.PrimarySecretARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CrossAccountPrimaryType.StatusMessage</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CrossAccountReplicaEntry.ReplicaSecretARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CrossAccountReplicaEntry.ReplicationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.CrossAccountReplicaEntry.StatusMessage</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.ExternalSecretRotationMetadataItem.Key</property>
     <min>1</min>
     <max>256</max>
@@ -568,6 +693,11 @@
     <property>Amazon.SecretsManager.Model.ReplicationStatusType.StatusMessage</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.ResourcePolicySummary.PolicyName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.RotationRulesType.AutomaticallyAfterDays</property>

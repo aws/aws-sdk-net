@@ -434,6 +434,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+      <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphRequest" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example returns aggregation metadata for a metric stream observed on a service over a one-hour window. The metric attributes identify its producing service and instrumentation scope; additional data point dimensions can identify multiple time series. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+        </para>
+        <code title="Return metric aggregation metadata" source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs" region="GetContextGraph-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
       <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
       <member name="T:Amazon.CloudWatchOmni.Model.GetDomainRequest" />
@@ -557,6 +573,22 @@
           The following example returns temporary, space-scoped AWS credentials for an existing space in an organization member account, selected by spaceId. The credentials are valid for one hour, as reflected by the expiration timestamp. Payloads are shown as JSON; on the wire they are CBOR-encoded.
         </para>
         <code title="Get space credentials for an organization member account" source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs" region="GetSpaceCredentialsForOrganization-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetSpaceDataAccess(Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest)" />
+      <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetSpaceDataAccess(Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest)" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest" />
+      <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceDataAccessResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example requests credentials that allow running log queries and reading metric data in a space. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+        </para>
+        <code title="Get data credentials for log queries" source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs" region="GetSpaceDataAccess-1" />
       </example>
     </value>
   </doc>

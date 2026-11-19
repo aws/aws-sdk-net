@@ -44,6 +44,22 @@ namespace Amazon.SecretsManager.Model
     public partial class GetResourcePolicyRequest : AmazonSecretsManagerRequest
     {
         /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the resource policy to retrieve. If you don't specify this field, Secrets
+        /// Manager uses <c>default</c>. If you specify a name other than <c>default</c> and no
+        /// policy with that name exists, the operation returns a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
+
+        /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
         /// The ARN or name of the secret to retrieve the attached resource-based policy for.

@@ -69,7 +69,7 @@ namespace AWSSDK.ProtocolTests.AwsEc2
             var actualResponse = await client.FractionalSecondsAsync(new FractionalSecondsRequest()).ConfigureAwait(false);
             var expectedResponse = new FractionalSecondsResponse
             {
-                Datetime = ProtocolTestConstants.epoch.AddSeconds(9.46845296123E8),
+                Datetime = ProtocolTestConstants.epoch.AddMilliseconds(946845296123),
             };
 
             // Assert

@@ -3603,6 +3603,47 @@ namespace Amazon.MediaConvert
     }
 
     /// <summary>
+    /// Constants used for properties of type CaptionSource.
+    /// </summary>
+    public class CaptionSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant INPUT_CAPTION_SELECTOR for CaptionSource
+        /// </summary>
+        public static readonly CaptionSource INPUT_CAPTION_SELECTOR = new CaptionSource("INPUT_CAPTION_SELECTOR");
+
+        /// <summary>
+        /// Constant SMART_SUBTITLE for CaptionSource
+        /// </summary>
+        public static readonly CaptionSource SMART_SUBTITLE = new CaptionSource("SMART_SUBTITLE");
+
+        /// <summary>
+        /// Constructs a custom CaptionSource for a value not among the defined constants.
+        /// </summary>
+        public CaptionSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaptionSource FindValue(string value)
+        {
+            return FindValue<CaptionSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaptionSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CaptionSourceByteRateLimit.
     /// </summary>
     public class CaptionSourceByteRateLimit : ConstantClass
@@ -8757,6 +8798,11 @@ namespace Amazon.MediaConvert
         /// Constant SMART_CROP for ElementalInferenceFeature
         /// </summary>
         public static readonly ElementalInferenceFeature SMART_CROP = new ElementalInferenceFeature("SMART_CROP");
+
+        /// <summary>
+        /// Constant SMART_SUBTITLE for ElementalInferenceFeature
+        /// </summary>
+        public static readonly ElementalInferenceFeature SMART_SUBTITLE = new ElementalInferenceFeature("SMART_SUBTITLE");
 
         /// <summary>
         /// Constructs a custom ElementalInferenceFeature for a value not among the defined constants.

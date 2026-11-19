@@ -159,5 +159,13 @@ namespace Amazon.Neptune.Model
         {
             return new DescribePendingMaintenanceActionsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeServerlessV2PlatformVersions operation
+        /// </summary>
+        public IDescribeServerlessV2PlatformVersionsPaginator DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request)
+        {
+            return new DescribeServerlessV2PlatformVersionsPaginator(this.client, request);
+        }
     }
 }

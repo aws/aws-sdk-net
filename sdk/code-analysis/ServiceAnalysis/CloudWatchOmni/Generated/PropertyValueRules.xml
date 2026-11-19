@@ -357,6 +357,15 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest.DurationSeconds</property>
+    <min>900</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchOmni.Model.GetSpaceDataAccessRequest.SpaceId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>

@@ -20,7 +20,8 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
             var response = client.BatchDeleteImage(new BatchDeleteImageRequest
             {
                 ImageIds = new List<ImageIdentifier> {
-                    new ImageIdentifier { ImageTag = "precise" }
+                    new ImageIdentifier { ImageTag = "precise" },
+                    new ImageIdentifier { ImageTag = "trusty" }
                 },
                 RepositoryName = "ubuntu"
             });

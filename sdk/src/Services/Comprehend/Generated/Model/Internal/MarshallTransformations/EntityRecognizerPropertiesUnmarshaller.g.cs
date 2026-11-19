@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
@@ -36,149 +38,144 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntityRecognizerProperties Object
     /// </summary>
-    public partial class EntityRecognizerPropertiesUnmarshaller : IJsonUnmarshaller<EntityRecognizerProperties, JsonUnmarshallerContext>
+    public partial class EntityRecognizerPropertiesUnmarshaller : ICborUnmarshaller<EntityRecognizerProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public EntityRecognizerProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EntityRecognizerProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new EntityRecognizerProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DataAccessRoleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DataAccessRoleArn":
+                        context.AddPathSegment("DataAccessRoleArn");
+                        unmarshalledObject.DataAccessRoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EntityRecognizerArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityRecognizerArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EndTime":
+                        context.AddPathSegment("EndTime");
+                        unmarshalledObject.EndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FlywheelArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlywheelArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EntityRecognizerArn":
+                        context.AddPathSegment("EntityRecognizerArn");
+                        unmarshalledObject.EntityRecognizerArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = EntityRecognizerInputDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FlywheelArn":
+                        context.AddPathSegment("FlywheelArn");
+                        unmarshalledObject.FlywheelArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InputDataConfig":
+                        context.AddPathSegment("InputDataConfig");
+                        unmarshalledObject.InputDataConfig = EntityRecognizerInputDataConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Message", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LanguageCode":
+                        context.AddPathSegment("LanguageCode");
+                        unmarshalledObject.LanguageCode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ModelKmsKeyId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Message":
+                        context.AddPathSegment("Message");
+                        unmarshalledObject.Message = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OutputDataConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = EntityRecognizerOutputDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ModelKmsKeyId":
+                        context.AddPathSegment("ModelKmsKeyId");
+                        unmarshalledObject.ModelKmsKeyId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RecognizerMetadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = EntityRecognizerMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RecognizerMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OutputDataConfig":
+                        context.AddPathSegment("OutputDataConfig");
+                        unmarshalledObject.OutputDataConfig = EntityRecognizerOutputDataConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceModelArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceModelArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "RecognizerMetadata":
+                        context.AddPathSegment("RecognizerMetadata");
+                        unmarshalledObject.RecognizerMetadata = EntityRecognizerMetadataUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SourceModelArn":
+                        context.AddPathSegment("SourceModelArn");
+                        unmarshalledObject.SourceModelArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubmitTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubmitTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TrainingEndTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TrainingEndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SubmitTime":
+                        context.AddPathSegment("SubmitTime");
+                        unmarshalledObject.SubmitTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TrainingStartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TrainingStartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TrainingEndTime":
+                        context.AddPathSegment("TrainingEndTime");
+                        unmarshalledObject.TrainingEndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VersionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TrainingStartTime":
+                        context.AddPathSegment("TrainingStartTime");
+                        unmarshalledObject.TrainingStartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "VersionName":
+                        context.AddPathSegment("VersionName");
+                        unmarshalledObject.VersionName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "VolumeKmsKeyId":
+                        context.AddPathSegment("VolumeKmsKeyId");
+                        unmarshalledObject.VolumeKmsKeyId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VpcConfig":
+                        context.AddPathSegment("VpcConfig");
+                        unmarshalledObject.VpcConfig = VpcConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

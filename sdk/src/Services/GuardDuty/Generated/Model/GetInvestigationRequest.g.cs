@@ -35,9 +35,13 @@ namespace Amazon.GuardDuty.Model
     /// Regions: US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central),
     /// Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm),
     /// and Asia Pacific (Tokyo). <para> Retrieves the results and status of a specific GuardDuty
-    /// investigation. </para> <para> An administrator account can retrieve any investigation
-    /// within the organization. Member accounts can only retrieve investigations that belong
-    /// to them. </para>
+    /// investigation. </para> <para> GuardDuty returns the results, including the summary
+    /// and the scope of the investigation, only when the investigation status is <c>COMPLETED</c>.
+    /// By default, GuardDuty returns the summary as text in <c>Summary</c>. To return a typed
+    /// summary in <c>SummaryData</c> instead, set <c>SummaryFormat</c> to <c>STRUCTURED</c>.
+    /// </para> <para> An administrator account can retrieve any investigation within the
+    /// organization. Member accounts can only retrieve investigations that belong to them.
+    /// </para>
     /// </summary>
     public partial class GetInvestigationRequest : AmazonGuardDutyRequest
     {
@@ -74,5 +78,30 @@ namespace Amazon.GuardDuty.Model
         /// Checks to see if the InvestigationId property is set.
         /// </summary>
         internal bool IsSetInvestigationId() => this.InvestigationId != null;
+
+        /// <summary>
+        /// Gets and sets the property SummaryFormat. 
+        /// <para>
+        /// The format in which to return the investigation summary. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STRING</c> – (Default) Returns the summary as text in <c>Summary</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STRUCTURED</c> – Returns a typed summary in <c>SummaryData</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// GuardDuty returns a summary only when the investigation status is <c>COMPLETED</c>.
+        /// </para>
+        /// </summary>
+        public SummaryFormat SummaryFormat { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SummaryFormat property is set.
+        /// </summary>
+        internal bool IsSetSummaryFormat() => this.SummaryFormat != null;
     }
 }

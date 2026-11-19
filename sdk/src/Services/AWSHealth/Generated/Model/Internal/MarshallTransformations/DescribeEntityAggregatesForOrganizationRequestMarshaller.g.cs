@@ -87,6 +87,16 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     }
                     context.Writer.WriteEndArray();
                 }
+                if (publicRequest.IsSetFilter())
+                {
+                    context.Writer.WriteTextString("filter");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OrganizationEntityAggregateFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
                 var encodedLength = writer.BytesWritten;

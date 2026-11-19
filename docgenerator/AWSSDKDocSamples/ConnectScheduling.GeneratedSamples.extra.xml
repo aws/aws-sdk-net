@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.ApproveTimeOff(Amazon.ConnectScheduling.Model.ApproveTimeOffRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.ApproveTimeOff(Amazon.ConnectScheduling.Model.ApproveTimeOffRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.ApproveTimeOffRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.ApproveTimeOffResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example approves a time off request with RuleFailureAction OVERRIDE, so a failed rule is recorded as a WARNING instead of rejecting the request.
+        </para>
+        <code title="To approve a time off request past a failed rule" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="ApproveTimeOff-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.CancelTimeOff(Amazon.ConnectScheduling.Model.CancelTimeOffRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.CancelTimeOff(Amazon.ConnectScheduling.Model.CancelTimeOffRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.CancelTimeOffRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.CancelTimeOffResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example cancels a time off request and records the reason on the cancellation.
+        </para>
+        <code title="To cancel a time off request" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="CancelTimeOff-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.CreateTimeOff(Amazon.ConnectScheduling.Model.CreateTimeOffRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.CreateTimeOff(Amazon.ConnectScheduling.Model.CreateTimeOffRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.CreateTimeOffRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.CreateTimeOffResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a time off request for one day. The request is created in AWAITING_APPROVAL until an ApproveTimeOff or RejectTimeOff call decides it.
+        </para>
+        <code title="To create a time off request that waits for approval" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="CreateTimeOff-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.GetTimeOff(Amazon.ConnectScheduling.Model.GetTimeOffRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.GetTimeOff(Amazon.ConnectScheduling.Model.GetTimeOffRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.GetTimeOffRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.GetTimeOffResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets a time off request that was approved past a failed group allowance rule, which is reported as a WARNING.
+        </para>
+        <code title="To get a time off request" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="GetTimeOff-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.PutTimeOffBalance(Amazon.ConnectScheduling.Model.PutTimeOffBalanceRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.PutTimeOffBalance(Amazon.ConnectScheduling.Model.PutTimeOffBalanceRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.PutTimeOffBalanceRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.PutTimeOffBalanceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example sets a user's balance for one time off activity to 80 hours, replacing any existing balance.
+        </para>
+        <code title="To set a user's time off balance" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="PutTimeOffBalance-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ConnectScheduling.IAmazonConnectScheduling.RejectTimeOff(Amazon.ConnectScheduling.Model.RejectTimeOffRequest)" />
+      <member name="M:Amazon.ConnectScheduling.AmazonConnectSchedulingClient.RejectTimeOff(Amazon.ConnectScheduling.Model.RejectTimeOffRequest)" />
+      <member name="T:Amazon.ConnectScheduling.Model.RejectTimeOffRequest" />
+      <member name="T:Amazon.ConnectScheduling.Model.RejectTimeOffResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example rejects a time off request and records the reason on the rejection.
+        </para>
+        <code title="To reject a time off request" source=".\AWSSDKDocSamples\ConnectScheduling\ConnectScheduling.GeneratedSamples.cs" region="RejectTimeOff-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

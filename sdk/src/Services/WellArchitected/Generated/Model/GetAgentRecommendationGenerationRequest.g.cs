@@ -30,11 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAgentRecommendationGeneration operation. Retrieves
-    /// information about a recommendation generation process, including its status, progress,
-    /// and results. Recommendation generation is asynchronous: poll this operation until
-    /// status reaches a terminal value of COMPLETED (results are ready) or ERROR (see errorDetails).
-    /// Intermediate values are QUEUED and IN_PROGRESS.
+    /// Container for the parameters to the GetAgentRecommendationGeneration operation. <important>
+    /// <para> Application-level recommendations are a new recommendation format currently
+    /// in beta. We are actively seeking customer feedback to improve their quality and relevance.
+    /// As with any AI-generated content, please thoroughly review each recommendation before
+    /// taking any action based on it. </para> </important> <para> Retrieves information about
+    /// a recommendation generation process, including its status, progress, and results.
+    /// Recommendation generation is asynchronous: poll this operation until status reaches
+    /// a terminal value of COMPLETED (results are ready) or ERROR (see errorDetails). Intermediate
+    /// values are QUEUED and IN_PROGRESS. </para>
     /// </summary>
     public partial class GetAgentRecommendationGenerationRequest : AmazonWellArchitectedRequest
     {

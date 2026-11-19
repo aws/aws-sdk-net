@@ -93,6 +93,100 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
+        public async Task DuplexByteHeaderInputRequest()
+        {
+            // Arrange
+            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
+            {
+                new HeadersEvent
+                {
+                    ByteHeader = 1,
+                },
+            });
+            var request = new DuplexStreamRequest
+            {
+                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                ContentType = "application/vnd.amazon.eventstream",
+            };
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            using var actualResponse = await client.DuplexStreamAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
+            await actualRequest.InputStreamCompleted.ConfigureAwait(false);
+
+            // Assert
+            var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);
+            Assert.AreEqual(1, sentEvents.Count);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], "byteHeader", (sbyte)1);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
+        }
+        #endif
+
+        #if NET8_0_OR_GREATER
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public async Task DuplexShortHeaderInputRequest()
+        {
+            // Arrange
+            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
+            {
+                new HeadersEvent
+                {
+                    ShortHeader = 2,
+                },
+            });
+            var request = new DuplexStreamRequest
+            {
+                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                ContentType = "application/vnd.amazon.eventstream",
+            };
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            using var actualResponse = await client.DuplexStreamAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
+            await actualRequest.InputStreamCompleted.ConfigureAwait(false);
+
+            // Assert
+            var sentEvents = MockHttpClientUtils.DecodeSignedInputFrames(actualRequest.InputFrames);
+            Assert.AreEqual(1, sentEvents.Count);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], "shortHeader", (short)2);
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":event-type", "headers");
+            MockHttpClientUtils.AssertEventHeader(sentEvents[0], ":message-type", "event");
+        }
+        #endif
+
+        #if NET8_0_OR_GREATER
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
         public async Task DuplexIntegerHeaderInputRequest()
         {
             // Arrange
@@ -716,6 +810,98 @@ namespace AWSSDK.ProtocolTests.RestJson
             Comparer.CompareObjects<HeadersEvent>(new HeadersEvent
             {
                 BooleanHeader = true,
+            }, (HeadersEvent)actualEvents[0]);
+        }
+        #endif
+
+        #if NET8_0_OR_GREATER
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public async Task DuplexByteHeaderOutputResponse()
+        {
+            // Arrange
+            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
+            {
+            });
+            var request = new DuplexStreamRequest
+            {
+                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                ContentType = "application/vnd.amazon.eventstream",
+                Body = MockHttpClientUtils.EncodeEvents(
+                    Convert.FromBase64String("AAAASQAAADlvxG1ZDTptZXNzYWdlLXR5cGUHAAVldmVudAs6ZXZlbnQtdHlwZQcAB2hlYWRlcnMKYnl0ZUhlYWRlcgIBKFTmjg==")
+                ),
+            };
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            using var actualResponse = await client.DuplexStreamAsync(request).ConfigureAwait(false);
+            var actualEvents = actualResponse.Stream.ToList();
+
+            // Assert
+            Assert.AreEqual(1, actualEvents.Count);
+            Assert.IsInstanceOfType(actualEvents[0], typeof(HeadersEvent));
+            Comparer.CompareObjects<HeadersEvent>(new HeadersEvent
+            {
+                ByteHeader = 1,
+            }, (HeadersEvent)actualEvents[0]);
+        }
+        #endif
+
+        #if NET8_0_OR_GREATER
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public async Task DuplexShortHeaderOutputResponse()
+        {
+            // Arrange
+            var inputEvents = new Queue<IEventStreamEvent>(new IEventStreamEvent[]
+            {
+            });
+            var request = new DuplexStreamRequest
+            {
+                StreamPublisher = () => Task.FromResult(inputEvents.Count > 0 ? inputEvents.Dequeue() : null),
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                ContentType = "application/vnd.amazon.eventstream",
+                Body = MockHttpClientUtils.EncodeEvents(
+                    Convert.FromBase64String("AAAASwAAADv7Cl8VDTptZXNzYWdlLXR5cGUHAAVldmVudAs6ZXZlbnQtdHlwZQcAB2hlYWRlcnMLc2hvcnRIZWFkZXIDAAL1ETsK")
+                ),
+            };
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            using var actualResponse = await client.DuplexStreamAsync(request).ConfigureAwait(false);
+            var actualEvents = actualResponse.Stream.ToList();
+
+            // Assert
+            Assert.AreEqual(1, actualEvents.Count);
+            Assert.IsInstanceOfType(actualEvents[0], typeof(HeadersEvent));
+            Comparer.CompareObjects<HeadersEvent>(new HeadersEvent
+            {
+                ShortHeader = 2,
             }, (HeadersEvent)actualEvents[0]);
         }
         #endif

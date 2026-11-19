@@ -66,7 +66,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ProxySettings. 
         /// <para>
-        /// The updated proxy listener configuration on the firewall. 
+        /// The updated proxy settings for the firewall. 
         /// </para>
         /// </summary>
         public ProxySettings ProxySettings { get; set; }

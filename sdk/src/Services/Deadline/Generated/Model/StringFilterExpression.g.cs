@@ -47,6 +47,7 @@ namespace Amazon.Deadline.Model
 
         /// <summary>
         /// Gets and sets the property Operator. The type of comparison to use for this search.
+        /// Only `EQUAL` and `NOT_EQUAL` are supported.
         /// </summary>
         [AWSProperty(Required = true)]
         public ComparisonOperator Operator { get; set; }

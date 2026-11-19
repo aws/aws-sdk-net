@@ -169,6 +169,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>routing.http.x_amzn_tls_kx.enabled</c> - Indicates whether the <c>x-amzn-tls-kx</c>
+        /// header, which contains information about the negotiated key exchange group, is added
+        /// to the client request before sending it to the target. The <c>x-amzn-tls-kx</c> header
+        /// uses IANA TLS Supported Groups registry naming. The possible values for the attribute
+        /// are <c>true</c> and <c>false</c>. The default is <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>routing.http.xff_client_port.enabled</c> - Indicates whether the <c>X-Forwarded-For</c>
         /// header should preserve the source port that the client used to connect to the load
         /// balancer. The possible values are <c>true</c> and <c>false</c>. The default is <c>false</c>.

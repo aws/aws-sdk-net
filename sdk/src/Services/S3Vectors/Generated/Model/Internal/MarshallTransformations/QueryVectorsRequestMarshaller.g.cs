@@ -93,6 +93,21 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("queryMode");
                 context.Writer.WriteStringValue(publicRequest.QueryMode);
             }
+            if (publicRequest.IsSetQueryTexts())
+            {
+                context.Writer.WritePropertyName("queryTexts");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestQueryTextsListValue in publicRequest.QueryTexts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = QueryTextMarshaller.Instance;
+                    marshaller.Marshall(publicRequestQueryTextsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetQueryVector())
             {
                 context.Writer.WritePropertyName("queryVector");
@@ -112,6 +127,11 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("returnMetadata");
                 context.Writer.WriteBooleanValue(publicRequest.ReturnMetadata.Value);
+            }
+            if (publicRequest.IsSetReturnScores())
+            {
+                context.Writer.WritePropertyName("returnScores");
+                context.Writer.WriteBooleanValue(publicRequest.ReturnScores.Value);
             }
             if (publicRequest.IsSetTopK())
             {

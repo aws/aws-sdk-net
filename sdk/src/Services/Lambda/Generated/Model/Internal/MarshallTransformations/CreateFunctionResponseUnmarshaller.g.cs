@@ -52,6 +52,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AcceleratorConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AcceleratorConfigUnmarshaller.Instance;
+                    unmarshalledObject.AcceleratorConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Architectures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -245,6 +252,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Runtime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RuntimeConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = FunctionRuntimeConfigUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

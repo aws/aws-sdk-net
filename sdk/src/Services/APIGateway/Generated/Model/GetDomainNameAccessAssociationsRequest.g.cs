@@ -68,7 +68,7 @@ namespace Amazon.APIGateway.Model
         ///  The owner of the domain name access association. Use <c>SELF</c> to only list the
         /// domain name access associations owned by your own account. Use <c>OTHER_ACCOUNTS</c>
         /// to list the domain name access associations with your private custom domain names
-        /// that are owned by other AWS accounts.
+        /// that are owned by other Amazon Web Services accounts.
         /// </para>
         /// </summary>
         public ResourceOwner ResourceOwner { get; set; }

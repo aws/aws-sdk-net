@@ -35,6 +35,20 @@ namespace Amazon.CleanRooms.Model
     public partial class IntermediateTableComputeConfiguration
     {
         /// <summary>
+        /// Gets and sets the property JobComputeConfiguration. 
+        /// <para>
+        /// Specifies the compute configuration for the PySpark job that populates the intermediate
+        /// table.
+        /// </para>
+        /// </summary>
+        public ProtectedJobComputeConfiguration JobComputeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobComputeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetJobComputeConfiguration() => this.JobComputeConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property QueryComputeConfiguration.
         /// </summary>
         public WorkerComputeConfiguration QueryComputeConfiguration { get; set; }

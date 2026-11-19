@@ -5273,11 +5273,16 @@ namespace Amazon.SSOAdmin
         /// <para>
         /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the network configuration of the instance by specifying <c>NetworkConfiguration</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
-        /// in a request, the request returns a <c>ValidationException</c>. To perform both operations,
-        /// call <c>UpdateInstance</c> separately for each. You can make the two calls in parallel.
+        /// A request that specifies more than one of <c>EncryptionConfiguration</c>, <c>PermissionSetsEnabled</c>,
+        /// and <c>NetworkConfiguration</c> returns a <c>ValidationException</c>. To perform more
+        /// than one of these operations, call <c>UpdateInstance</c> separately for each. The
+        /// calls can be made in parallel.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
@@ -5325,11 +5330,16 @@ namespace Amazon.SSOAdmin
         /// <para>
         /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the network configuration of the instance by specifying <c>NetworkConfiguration</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
-        /// in a request, the request returns a <c>ValidationException</c>. To perform both operations,
-        /// call <c>UpdateInstance</c> separately for each. You can make the two calls in parallel.
+        /// A request that specifies more than one of <c>EncryptionConfiguration</c>, <c>PermissionSetsEnabled</c>,
+        /// and <c>NetworkConfiguration</c> returns a <c>ValidationException</c>. To perform more
+        /// than one of these operations, call <c>UpdateInstance</c> separately for each. The
+        /// calls can be made in parallel.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>

@@ -12355,6 +12355,47 @@ namespace Amazon.QuickSight
     }
 
     /// <summary>
+    /// Constants used for properties of type ServiceRoleType.
+    /// </summary>
+    public class ServiceRoleType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for ServiceRoleType
+        /// </summary>
+        public static readonly ServiceRoleType CUSTOMER_MANAGED = new ServiceRoleType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// Constant QUICKSIGHT_MANAGED for ServiceRoleType
+        /// </summary>
+        public static readonly ServiceRoleType QUICKSIGHT_MANAGED = new ServiceRoleType("QUICKSIGHT_MANAGED");
+
+        /// <summary>
+        /// Constructs a custom ServiceRoleType for a value not among the defined constants.
+        /// </summary>
+        public ServiceRoleType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceRoleType FindValue(string value)
+        {
+            return FindValue<ServiceRoleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceRoleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ServiceType.
     /// </summary>
     public class ServiceType : ConstantClass

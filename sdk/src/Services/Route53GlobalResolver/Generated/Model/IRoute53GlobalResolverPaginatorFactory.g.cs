@@ -45,6 +45,12 @@ namespace Amazon.Route53GlobalResolver.Model
         IListAccessTokensPaginator ListAccessTokens(ListAccessTokensRequest request);
 
         /// <summary>
+        /// Paginator for ListCoreNetworkEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCoreNetworkEndpointsPaginator ListCoreNetworkEndpoints(ListCoreNetworkEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListDNSViews operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

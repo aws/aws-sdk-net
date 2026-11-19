@@ -2,6 +2,22 @@
 <docs>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.AcceptAgreementApproval(Amazon.MarketplaceAgreement.Model.AcceptAgreementApprovalRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.AcceptAgreementApproval(Amazon.MarketplaceAgreement.Model.AcceptAgreementApprovalRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.AcceptAgreementApprovalRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.AcceptAgreementApprovalResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Approve an agreement approval" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="AcceptAgreementApproval-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.BatchCreateBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest)" />
       <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.BatchCreateBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest)" />
       <member name="T:Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest" />
@@ -34,6 +50,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.CancelAgreementRequest(Amazon.MarketplaceAgreement.Model.CancelAgreementRequestRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.CancelAgreementRequest(Amazon.MarketplaceAgreement.Model.CancelAgreementRequestRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.CancelAgreementRequestRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.CancelAgreementRequestResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Cancel an agreement request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="CancelAgreementRequest-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementApproval(Amazon.MarketplaceAgreement.Model.GetAgreementApprovalRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementApproval(Amazon.MarketplaceAgreement.Model.GetAgreementApprovalRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementApprovalRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementApprovalResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get an agreement approval" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetAgreementApproval-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest)" />
       <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest)" />
       <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest" />
@@ -50,6 +98,70 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementContacts(Amazon.MarketplaceAgreement.Model.GetAgreementContactsRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementContacts(Amazon.MarketplaceAgreement.Model.GetAgreementContactsRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementContactsRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementContactsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get the contacts captured on an agreement" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetAgreementContacts-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementRequest(Amazon.MarketplaceAgreement.Model.GetAgreementRequestRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementRequest(Amazon.MarketplaceAgreement.Model.GetAgreementRequestRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get an agreement request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetAgreementRequest-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementRequestApprovalPlans(Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementRequestApprovalPlans(Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestApprovalPlansResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get the approval plans of an agreement request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetAgreementRequestApprovalPlans-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementRequestTerms(Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementRequestTerms(Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementRequestTermsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Get the terms of an agreement request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetAgreementRequestTerms-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest)" />
       <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest)" />
       <member name="T:Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest" />
@@ -61,6 +173,22 @@
 
         </para>
         <code title="Get a billing adjustment request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="GetBillingAdjustmentRequest-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListAgreementApprovals(Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListAgreementApprovals(Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementApprovalsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List agreement approvals" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="ListAgreementApprovals-1" />
       </example>
     </value>
   </doc>
@@ -98,6 +226,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListAgreementRequests(Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListAgreementRequests(Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementRequestsRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementRequestsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List agreement requests" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="ListAgreementRequests-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListBillingAdjustmentRequests(Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest)" />
       <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListBillingAdjustmentRequests(Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest)" />
       <member name="T:Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest" />
@@ -114,6 +258,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.RejectAgreementApproval(Amazon.MarketplaceAgreement.Model.RejectAgreementApprovalRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.RejectAgreementApproval(Amazon.MarketplaceAgreement.Model.RejectAgreementApprovalRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.RejectAgreementApprovalRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.RejectAgreementApprovalResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Reject an agreement approval" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="RejectAgreementApproval-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.SendAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest)" />
       <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.SendAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest)" />
       <member name="T:Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest" />
@@ -125,6 +285,22 @@
 
         </para>
         <code title="Send a cancellation request" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="SendAgreementCancellationRequest-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.StartAgreementApprovals(Amazon.MarketplaceAgreement.Model.StartAgreementApprovalsRequest)" />
+      <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.StartAgreementApprovals(Amazon.MarketplaceAgreement.Model.StartAgreementApprovalsRequest)" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.StartAgreementApprovalsRequest" />
+      <member name="T:Amazon.MarketplaceAgreement.Model.StartAgreementApprovalsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Start agreement approvals" source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs" region="StartAgreementApprovals-1" />
       </example>
     </value>
   </doc>

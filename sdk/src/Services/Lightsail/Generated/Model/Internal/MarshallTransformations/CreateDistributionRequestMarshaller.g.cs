@@ -165,6 +165,11 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetSubdomainName())
+            {
+                context.Writer.WritePropertyName("subdomainName");
+                context.Writer.WriteStringValue(publicRequest.SubdomainName);
+            }
             if (publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

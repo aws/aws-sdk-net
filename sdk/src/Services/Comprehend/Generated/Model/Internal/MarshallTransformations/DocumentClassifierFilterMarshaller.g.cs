@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DocumentClassifierFilter Marshaller
     /// </summary>
-    public partial class DocumentClassifierFilterMarshaller : IRequestMarshaller<DocumentClassifierFilter, JsonMarshallerContext>
+    public partial class DocumentClassifierFilterMarshaller : IRequestMarshaller<DocumentClassifierFilter, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DocumentClassifierFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentClassifierFilter requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDocumentClassifierName())
             {
-                context.Writer.WritePropertyName("DocumentClassifierName");
-                context.Writer.WriteStringValue(requestObject.DocumentClassifierName);
+                context.Writer.WriteTextString("DocumentClassifierName");
+                context.Writer.WriteTextString(requestObject.DocumentClassifierName);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
 
             if (requestObject.IsSetSubmitTimeAfter())
             {
-                context.Writer.WritePropertyName("SubmitTimeAfter");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.SubmitTimeAfter.Value));
+                context.Writer.WriteTextString("SubmitTimeAfter");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeAfter.Value);
             }
 
             if (requestObject.IsSetSubmitTimeBefore())
             {
-                context.Writer.WritePropertyName("SubmitTimeBefore");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.SubmitTimeBefore.Value));
+                context.Writer.WriteTextString("SubmitTimeBefore");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeBefore.Value);
             }
         }
 

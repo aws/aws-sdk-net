@@ -266,6 +266,19 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetOutputType() => this.OutputType != null;
 
         /// <summary>
+        /// Gets and sets the property Processors. 
+        /// <para>
+        /// The processor settings for the router output.
+        /// </para>
+        /// </summary>
+        public RouterOutputProcessors Processors { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Processors property is set.
+        /// </summary>
+        internal bool IsSetProcessors() => this.Processors != null;
+
+        /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
         /// The Amazon Web Services Region where the router output is located.

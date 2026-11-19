@@ -35,7 +35,7 @@ namespace Amazon.Signin.Model
     public partial class CreateOAuth2TokenWithTokenExchangeResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AccessToken. Access token containing principal identity,
+        /// Gets and sets the property AccessToken. The access token containing principal identity,
         /// resource scope, and session metadata.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
@@ -47,8 +47,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetAccessToken() => this.AccessToken != null;
 
         /// <summary>
-        /// Gets and sets the property ExpiresIn. Token lifetime in seconds. Value is the minimum
-        /// of the subject token's validity and 1 hour (3600 seconds).
+        /// Gets and sets the property ExpiresIn. The token lifetime in seconds. Value is the
+        /// minimum of the provided token's validity and 1 hour (3600 seconds).
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 3600)]
         public int? ExpiresIn { get; set; }
@@ -59,8 +59,9 @@ namespace Amazon.Signin.Model
         internal bool IsSetExpiresIn() => this.ExpiresIn.HasValue;
 
         /// <summary>
-        /// Gets and sets the property IssuedTokenType. The token type of the issued token. Always
-        /// "urn:ietf:params:oauth:token-type:access_token" as defined in RFC 8693 §2.2.1.
+        /// Gets and sets the property IssuedTokenType. The token type of the issued token. Returned
+        /// when "grant_type=urn:ietf:params:oauth:grant-type:token-exchange". Value is "urn:ietf:params:oauth:token-type:access_token"
+        /// as defined in RFC 8693 §2.2.1.
         /// </summary>
         public string IssuedTokenType { get; set; }
 
@@ -68,6 +69,31 @@ namespace Amazon.Signin.Model
         /// Checks to see if the IssuedTokenType property is set.
         /// </summary>
         internal bool IsSetIssuedTokenType() => this.IssuedTokenType != null;
+
+        /// <summary>
+        /// Gets and sets the property Resource. The resource the access token is scoped to. Returned
+        /// when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer".
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string Resource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Resource property is set.
+        /// </summary>
+        internal bool IsSetResource() => this.Resource != null;
+
+        /// <summary>
+        /// Gets and sets the property Scope. The IAM managed policy ARNs applied as session policies,
+        /// as a space-delimited list. Returned when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer"
+        /// and the assertion has a scope.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 4096)]
+        public string Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
 
         /// <summary>
         /// Gets and sets the property TokenType. The token type. Currently only supports "Bearer"

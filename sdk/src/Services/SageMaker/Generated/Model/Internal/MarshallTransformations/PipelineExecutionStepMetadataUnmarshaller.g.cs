@@ -165,6 +165,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("HubContent", targetDepth, ref reader))
+                {
+                    var unmarshaller = HubContentStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.HubContent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("InferenceComponent", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentMetadataUnmarshaller.Instance;

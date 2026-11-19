@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// Nameserver Marshaller
     /// </summary>
-    public partial class NameserverMarshaller : IRequestMarshaller<Nameserver, JsonMarshallerContext>
+    public partial class NameserverMarshaller : IRequestMarshaller<Nameserver, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Nameserver requestObject, JsonMarshallerContext context)
+        public void Marshall(Nameserver requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetGlueIps())
             {
-                context.Writer.WritePropertyName("GlueIps");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("GlueIps");
+                context.Writer.WriteStartArray(requestObject.GlueIps.Count);
                 foreach (var requestObjectGlueIpsListValue in requestObject.GlueIps)
                 {
-                    context.Writer.WriteStringValue(requestObjectGlueIpsListValue);
+                    context.Writer.WriteTextString(requestObjectGlueIpsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
         }
 

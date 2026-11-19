@@ -58,7 +58,7 @@ namespace AWSSDK.ProtocolTests.RestJson
                     null,
                     "hi",
                 },
-                SparseShortList =  new List<int?>()
+                SparseShortList =  new List<short?>()
                 {
                     null,
                     2,
@@ -123,7 +123,7 @@ namespace AWSSDK.ProtocolTests.RestJson
                     null,
                     "hi",
                 },
-                SparseShortList =  new List<int?>()
+                SparseShortList =  new List<short?>()
                 {
                     null,
                     2,

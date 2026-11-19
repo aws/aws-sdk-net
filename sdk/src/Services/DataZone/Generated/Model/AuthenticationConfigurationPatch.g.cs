@@ -49,6 +49,21 @@ namespace Amazon.DataZone.Model
         internal bool IsSetBasicAuthenticationCredentials() => this.BasicAuthenticationCredentials != null;
 
         /// <summary>
+        /// Gets and sets the property OAuth2Properties. 
+        /// <para>
+        /// The OAuth2 properties, such as the client application, grant type, and token URL,
+        /// that you want to update for a connection. Only the properties that you specify are
+        /// updated; the connection keeps its existing values for the properties that you omit.
+        /// </para>
+        /// </summary>
+        public OAuth2PropertiesPatch OAuth2Properties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OAuth2Properties property is set.
+        /// </summary>
+        internal bool IsSetOAuth2Properties() => this.OAuth2Properties != null;
+
+        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The secret ARN of a connection.

@@ -139,6 +139,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeId() => this.NodeId != null;
 
         /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The unique identifier (UUID) of a cluster operation for which to filter events. If
+        /// specified, only events associated with this operation are returned. This ID can be
+        /// obtained from the <c>ListClusterOperations</c> operation.
+        /// </para>
+        /// </summary>
+        public string OperationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OperationId property is set.
+        /// </summary>
+        internal bool IsSetOperationId() => this.OperationId != null;
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource for which to filter events. Valid values are <c>Cluster</c>,

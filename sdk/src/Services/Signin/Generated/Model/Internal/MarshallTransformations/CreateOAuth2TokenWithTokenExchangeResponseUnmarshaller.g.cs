@@ -73,6 +73,20 @@ namespace Amazon.Signin.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("resource", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("scope", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("token_type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

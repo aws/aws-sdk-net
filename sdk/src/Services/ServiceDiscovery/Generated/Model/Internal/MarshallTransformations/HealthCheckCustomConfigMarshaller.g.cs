@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// HealthCheckCustomConfig Marshaller
     /// </summary>
-    public partial class HealthCheckCustomConfigMarshaller : IRequestMarshaller<HealthCheckCustomConfig, JsonMarshallerContext>
+    public partial class HealthCheckCustomConfigMarshaller : IRequestMarshaller<HealthCheckCustomConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(HealthCheckCustomConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(HealthCheckCustomConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetFailureThreshold())
             {
-                context.Writer.WritePropertyName("FailureThreshold");
-                context.Writer.WriteNumberValue(requestObject.FailureThreshold.Value);
+                context.Writer.WriteTextString("FailureThreshold");
+                context.Writer.WriteInt32(requestObject.FailureThreshold.Value);
             }
         }
 

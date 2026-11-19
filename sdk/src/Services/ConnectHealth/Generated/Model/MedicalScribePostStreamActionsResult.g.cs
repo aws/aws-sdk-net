@@ -46,5 +46,19 @@ namespace Amazon.ConnectHealth.Model
         /// Checks to see if the ClinicalNoteGenerationResult property is set.
         /// </summary>
         internal bool IsSetClinicalNoteGenerationResult() => this.ClinicalNoteGenerationResult != null;
+
+        /// <summary>
+        /// Gets and sets the property MedicalCodeGenerationResult. 
+        /// <para>
+        /// Results of medical code generation. Returned if medical code generation runs for the
+        /// session. Not returned if you set enabled to false in medicalCodeGenerationSettings.
+        /// </para>
+        /// </summary>
+        public MedicalCodeGenerationResult MedicalCodeGenerationResult { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MedicalCodeGenerationResult property is set.
+        /// </summary>
+        internal bool IsSetMedicalCodeGenerationResult() => this.MedicalCodeGenerationResult != null;
     }
 }

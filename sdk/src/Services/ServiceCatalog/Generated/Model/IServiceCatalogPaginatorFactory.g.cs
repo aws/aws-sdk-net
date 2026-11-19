@@ -99,10 +99,22 @@ namespace Amazon.ServiceCatalog.Model
         IListPrincipalsForPortfolioPaginator ListPrincipalsForPortfolio(ListPrincipalsForPortfolioRequest request);
 
         /// <summary>
+        /// Paginator for ListProvisionedProductPlans operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IListProvisionedProductPlansPaginator ListProvisionedProductPlans(ListProvisionedProductPlansRequest request);
+
+        /// <summary>
         /// Paginator for ListProvisioningArtifactsForServiceAction operation
         /// </summary>
         [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
         IListProvisioningArtifactsForServiceActionPaginator ListProvisioningArtifactsForServiceAction(ListProvisioningArtifactsForServiceActionRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecordHistory operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IListRecordHistoryPaginator ListRecordHistory(ListRecordHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListResourcesForTagOption operation
@@ -123,10 +135,22 @@ namespace Amazon.ServiceCatalog.Model
         IListServiceActionsForProvisioningArtifactPaginator ListServiceActionsForProvisioningArtifact(ListServiceActionsForProvisioningArtifactRequest request);
 
         /// <summary>
+        /// Paginator for ListStackInstancesForProvisionedProduct operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IListStackInstancesForProvisionedProductPaginator ListStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request);
+
+        /// <summary>
         /// Paginator for ListTagOptions operation
         /// </summary>
         [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["PageToken"])]
         IListTagOptionsPaginator ListTagOptions(ListTagOptionsRequest request);
+
+        /// <summary>
+        /// Paginator for ScanProvisionedProducts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["PageToken"], LimitKey = "PageSize", OutputToken = ["NextPageToken"])]
+        IScanProvisionedProductsPaginator ScanProvisionedProducts(ScanProvisionedProductsRequest request);
 
         /// <summary>
         /// Paginator for SearchProducts operation

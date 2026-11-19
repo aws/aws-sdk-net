@@ -83,6 +83,93 @@ namespace Amazon.ObservabilityAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type AzureEventHubTier.
+    /// </summary>
+    public class AzureEventHubTier : ConstantClass
+    {
+        /// <summary>
+        /// Constant Premium for AzureEventHubTier
+        /// </summary>
+        public static readonly AzureEventHubTier Premium = new AzureEventHubTier("Premium");
+
+        /// <summary>
+        /// Constant Standard for AzureEventHubTier
+        /// </summary>
+        public static readonly AzureEventHubTier Standard = new AzureEventHubTier("Standard");
+
+        /// <summary>
+        /// Constructs a custom AzureEventHubTier for a value not among the defined constants.
+        /// </summary>
+        public AzureEventHubTier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AzureEventHubTier FindValue(string value)
+        {
+            return FindValue<AzureEventHubTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AzureEventHubTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AzureTelemetryType.
+    /// </summary>
+    public class AzureTelemetryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FlowLogs for AzureTelemetryType
+        /// </summary>
+        public static readonly AzureTelemetryType FlowLogs = new AzureTelemetryType("FlowLogs");
+
+        /// <summary>
+        /// Constant Metrics for AzureTelemetryType
+        /// </summary>
+        public static readonly AzureTelemetryType Metrics = new AzureTelemetryType("Metrics");
+
+        /// <summary>
+        /// Constant ResourceLogs for AzureTelemetryType
+        /// </summary>
+        public static readonly AzureTelemetryType ResourceLogs = new AzureTelemetryType("ResourceLogs");
+
+        /// <summary>
+        /// Constructs a custom AzureTelemetryType for a value not among the defined constants.
+        /// </summary>
+        public AzureTelemetryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AzureTelemetryType FindValue(string value)
+        {
+            return FindValue<AzureTelemetryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AzureTelemetryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CentralizationFailureReason.
     /// </summary>
     public class CentralizationFailureReason : ConstantClass
@@ -123,6 +210,42 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CentralizationFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorProvider.
+    /// </summary>
+    public class ConnectorProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZURE for ConnectorProvider
+        /// </summary>
+        public static readonly ConnectorProvider AZURE = new ConnectorProvider("AZURE");
+
+        /// <summary>
+        /// Constructs a custom ConnectorProvider for a value not among the defined constants.
+        /// </summary>
+        public ConnectorProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorProvider FindValue(string value)
+        {
+            return FindValue<ConnectorProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorProvider(string value)
         {
             return FindValue(value);
         }
@@ -976,6 +1099,42 @@ namespace Amazon.ObservabilityAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type SetupFormat.
+    /// </summary>
+    public class SetupFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant BICEP for SetupFormat
+        /// </summary>
+        public static readonly SetupFormat BICEP = new SetupFormat("BICEP");
+
+        /// <summary>
+        /// Constructs a custom SetupFormat for a value not among the defined constants.
+        /// </summary>
+        public SetupFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SetupFormat FindValue(string value)
+        {
+            return FindValue<SetupFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SetupFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SignalType.
     /// </summary>
     public class SignalType : ConstantClass
@@ -1475,6 +1634,93 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TelemetryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ThirdPartyTelemetryEnrichmentStatus.
+    /// </summary>
+    public class ThirdPartyTelemetryEnrichmentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Impaired for ThirdPartyTelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly ThirdPartyTelemetryEnrichmentStatus Impaired = new ThirdPartyTelemetryEnrichmentStatus("Impaired");
+
+        /// <summary>
+        /// Constant Initializing for ThirdPartyTelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly ThirdPartyTelemetryEnrichmentStatus Initializing = new ThirdPartyTelemetryEnrichmentStatus("Initializing");
+
+        /// <summary>
+        /// Constant Running for ThirdPartyTelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly ThirdPartyTelemetryEnrichmentStatus Running = new ThirdPartyTelemetryEnrichmentStatus("Running");
+
+        /// <summary>
+        /// Constant Stopped for ThirdPartyTelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly ThirdPartyTelemetryEnrichmentStatus Stopped = new ThirdPartyTelemetryEnrichmentStatus("Stopped");
+
+        /// <summary>
+        /// Constructs a custom ThirdPartyTelemetryEnrichmentStatus for a value not among the defined constants.
+        /// </summary>
+        public ThirdPartyTelemetryEnrichmentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThirdPartyTelemetryEnrichmentStatus FindValue(string value)
+        {
+            return FindValue<ThirdPartyTelemetryEnrichmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThirdPartyTelemetryEnrichmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ThirdPartyTelemetrySource.
+    /// </summary>
+    public class ThirdPartyTelemetrySource : ConstantClass
+    {
+        /// <summary>
+        /// Constant Azure for ThirdPartyTelemetrySource
+        /// </summary>
+        public static readonly ThirdPartyTelemetrySource Azure = new ThirdPartyTelemetrySource("Azure");
+
+        /// <summary>
+        /// Constructs a custom ThirdPartyTelemetrySource for a value not among the defined constants.
+        /// </summary>
+        public ThirdPartyTelemetrySource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThirdPartyTelemetrySource FindValue(string value)
+        {
+            return FindValue<ThirdPartyTelemetrySource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThirdPartyTelemetrySource(string value)
         {
             return FindValue(value);
         }

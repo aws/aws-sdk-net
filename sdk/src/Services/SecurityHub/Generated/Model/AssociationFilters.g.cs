@@ -40,7 +40,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AssociationStatus. 
         /// <para>
         ///  The current status of the association between a target and a configuration policy.
-        /// 
+        /// Possible values are <c>PENDING</c>, <c>SUCCESS</c>, <c>FAILED</c>, and <c>DISABLED</c>.
+        /// The value is <c>DISABLED</c> when central configuration is disabled because the organization
+        /// is managed by Security Hub CSPM policies in Organizations. 
         /// </para>
         /// </summary>
         public ConfigurationPolicyAssociationStatus AssociationStatus { get; set; }

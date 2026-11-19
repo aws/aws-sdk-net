@@ -35,7 +35,7 @@ namespace Amazon.Signin.Model
     public partial class CreateOAuth2TokenWithIAMResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AccessToken. Access token containing principal identity,
+        /// Gets and sets the property AccessToken. The access token containing principal identity,
         /// resource scope, and session metadata.
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
@@ -47,8 +47,8 @@ namespace Amazon.Signin.Model
         internal bool IsSetAccessToken() => this.AccessToken != null;
 
         /// <summary>
-        /// Gets and sets the property ExpiresIn. Token lifetime in seconds. Value is the minimum
-        /// of the caller's session validity and 1 hour (3600 seconds).
+        /// Gets and sets the property ExpiresIn. The token lifetime in seconds. Value is the
+        /// minimum of the caller's session validity and 1 hour (3600 seconds).
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 3600)]
         public int? ExpiresIn { get; set; }

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,120 +39,120 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// PipelineDeclaration Marshaller
     /// </summary>
-    public partial class PipelineDeclarationMarshaller : IRequestMarshaller<PipelineDeclaration, JsonMarshallerContext>
+    public partial class PipelineDeclarationMarshaller : IRequestMarshaller<PipelineDeclaration, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PipelineDeclaration requestObject, JsonMarshallerContext context)
+        public void Marshall(PipelineDeclaration requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetArtifactStore())
             {
-                context.Writer.WritePropertyName("artifactStore");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("artifactStore");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ArtifactStoreMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArtifactStore, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetArtifactStores())
             {
-                context.Writer.WritePropertyName("artifactStores");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("artifactStores");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectArtifactStoresKvp in requestObject.ArtifactStores)
                 {
-                    context.Writer.WritePropertyName(requestObjectArtifactStoresKvp.Key);
+                    context.Writer.WriteTextString(requestObjectArtifactStoresKvp.Key);
                     var requestObjectArtifactStoresValue = requestObjectArtifactStoresKvp.Value;
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ArtifactStoreMarshaller.Instance;
                     marshaller.Marshall(requestObjectArtifactStoresValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetExecutionMode())
             {
-                context.Writer.WritePropertyName("executionMode");
-                context.Writer.WriteStringValue(requestObject.ExecutionMode);
+                context.Writer.WriteTextString("executionMode");
+                context.Writer.WriteTextString(requestObject.ExecutionMode);
             }
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetPipelineType())
             {
-                context.Writer.WritePropertyName("pipelineType");
-                context.Writer.WriteStringValue(requestObject.PipelineType);
+                context.Writer.WriteTextString("pipelineType");
+                context.Writer.WriteTextString(requestObject.PipelineType);
             }
 
             if (requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("roleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
             }
 
             if (requestObject.IsSetStages())
             {
-                context.Writer.WritePropertyName("stages");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("stages");
+                context.Writer.WriteStartArray(requestObject.Stages.Count);
                 foreach (var requestObjectStagesListValue in requestObject.Stages)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StageDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectStagesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetTriggers())
             {
-                context.Writer.WritePropertyName("triggers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("triggers");
+                context.Writer.WriteStartArray(requestObject.Triggers.Count);
                 foreach (var requestObjectTriggersListValue in requestObject.Triggers)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PipelineTriggerDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTriggersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVariables())
             {
-                context.Writer.WritePropertyName("variables");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("variables");
+                context.Writer.WriteStartArray(requestObject.Variables.Count);
                 foreach (var requestObjectVariablesListValue in requestObject.Variables)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PipelineVariableDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectVariablesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("version");
-                context.Writer.WriteNumberValue(requestObject.Version.Value);
+                context.Writer.WriteTextString("version");
+                context.Writer.WriteInt32(requestObject.Version.Value);
             }
         }
 

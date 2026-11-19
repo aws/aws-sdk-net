@@ -124,6 +124,22 @@ namespace Amazon.Lambda.Model
         internal bool IsSetExecutionDataIncluded() => this.ExecutionDataIncluded.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ExpectedExecutionTimeoutTimestamp. 
+        /// <para>
+        /// The date and time when the durable execution will time out, in Unix timestamp format.
+        /// This value includes any extension from time the execution spent paused. While the
+        /// execution is paused with its execution timeout paused, this value is 366 days after
+        /// the start time. This field isn't present for completed executions.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpectedExecutionTimeoutTimestamp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpectedExecutionTimeoutTimestamp property is set.
+        /// </summary>
+        internal bool IsSetExpectedExecutionTimeoutTimestamp() => this.ExpectedExecutionTimeoutTimestamp.HasValue;
+
+        /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function that was invoked to start this
@@ -152,6 +168,21 @@ namespace Amazon.Lambda.Model
         /// Checks to see if the InputPayload property is set.
         /// </summary>
         internal bool IsSetInputPayload() => this.InputPayload != null;
+
+        /// <summary>
+        /// Gets and sets the property PauseDetails. 
+        /// <para>
+        /// The details of the pause, including when you requested it and whether it pauses the
+        /// execution timeout. This field is only present when the execution status is <c>PAUSING</c>
+        /// or <c>PAUSED</c>.
+        /// </para>
+        /// </summary>
+        public PauseDetails PauseDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PauseDetails property is set.
+        /// </summary>
+        internal bool IsSetPauseDetails() => this.PauseDetails != null;
 
         /// <summary>
         /// Gets and sets the property Result. 
@@ -186,9 +217,43 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the durable execution. Valid values are <c>RUNNING</c>, <c>SUCCEEDED</c>,
-        /// <c>FAILED</c>, <c>TIMED_OUT</c>, and <c>STOPPED</c>.
+        /// The durable execution has one of the following statuses:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RUNNING</c> – The execution is running or waiting for pending operations to complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PAUSING</c> – The execution is waiting for an in-progress invocation to reach
+        /// its next checkpoint before it pauses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PAUSED</c> – The execution is paused, and Lambda doesn't invoke your function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SUCCEEDED</c> – The execution completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED</c> – The execution completed with an error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TIMED_OUT</c> – The execution exceeded its execution timeout.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STOPPED</c> – A <c>StopDurableExecution</c> request stopped the execution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETING</c> – A <c>DeleteDurableExecution</c> request is deleting the execution
+        /// and its data.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public ExecutionStatus Status { get; set; }

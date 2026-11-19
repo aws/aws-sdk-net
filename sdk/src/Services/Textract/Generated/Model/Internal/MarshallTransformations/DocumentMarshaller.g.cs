@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,30 +39,30 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Document Marshaller
     /// </summary>
-    public partial class DocumentMarshaller : IRequestMarshaller<Document, JsonMarshallerContext>
+    public partial class DocumentMarshaller : IRequestMarshaller<Document, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(Document requestObject, JsonMarshallerContext context)
+        public void Marshall(Document requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBytes())
             {
-                context.Writer.WritePropertyName("Bytes");
-                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Bytes);
+                context.Writer.WriteTextString("Bytes");
+                context.Writer.WriteByteString(requestObject.Bytes);
             }
 
             if (requestObject.IsSetS3Object())
             {
-                context.Writer.WritePropertyName("S3Object");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("S3Object");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3ObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Object, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

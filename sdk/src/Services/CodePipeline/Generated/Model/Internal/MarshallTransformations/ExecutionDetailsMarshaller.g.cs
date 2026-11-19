@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,31 +39,31 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// ExecutionDetails Marshaller
     /// </summary>
-    public partial class ExecutionDetailsMarshaller : IRequestMarshaller<ExecutionDetails, JsonMarshallerContext>
+    public partial class ExecutionDetailsMarshaller : IRequestMarshaller<ExecutionDetails, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ExecutionDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(ExecutionDetails requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetExternalExecutionId())
             {
-                context.Writer.WritePropertyName("externalExecutionId");
-                context.Writer.WriteStringValue(requestObject.ExternalExecutionId);
+                context.Writer.WriteTextString("externalExecutionId");
+                context.Writer.WriteTextString(requestObject.ExternalExecutionId);
             }
 
             if (requestObject.IsSetPercentComplete())
             {
-                context.Writer.WritePropertyName("percentComplete");
-                context.Writer.WriteNumberValue(requestObject.PercentComplete.Value);
+                context.Writer.WriteTextString("percentComplete");
+                context.Writer.WriteInt32(requestObject.PercentComplete.Value);
             }
 
             if (requestObject.IsSetSummary())
             {
-                context.Writer.WritePropertyName("summary");
-                context.Writer.WriteStringValue(requestObject.Summary);
+                context.Writer.WriteTextString("summary");
+                context.Writer.WriteTextString(requestObject.Summary);
             }
         }
 

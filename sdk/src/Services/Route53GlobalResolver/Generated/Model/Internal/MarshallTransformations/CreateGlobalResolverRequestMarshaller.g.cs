@@ -98,6 +98,11 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("observabilityRegion");
                 context.Writer.WriteStringValue(publicRequest.ObservabilityRegion);
             }
+            if (publicRequest.IsSetPublicIpStatus())
+            {
+                context.Writer.WritePropertyName("publicIpStatus");
+                context.Writer.WriteStringValue(publicRequest.PublicIpStatus);
+            }
             if (publicRequest.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");

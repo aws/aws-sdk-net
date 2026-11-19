@@ -13,6 +13,34 @@
     <pattern>^sub-[a-zA-Z0-9]{21}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.CreateDatasetRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.CreateDatasetRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.CreateDatasetRequest.Name</property>
+    <min>1</min>
+    <max>1028</max>
+    <pattern>^[\x20-\x21\x23\x24\x2A-\x3A\x3F-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.CreateDatasetResponse.Arn</property>
+    <pattern>^arn:aws[a-z\-]*:[a-z0-9\-]+:[a-z0-9\-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.CreateDatasetResponse.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectHealth.Model.CreateDomainRequest.KmsKeyArn</property>
     <pattern>^arn:aws:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9-]+$</pattern>
   </property-value-rule>
@@ -75,6 +103,28 @@
     <pattern>^sub-[a-zA-Z0-9]{21}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DeleteDatasetRequest.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DeleteDatasetRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DeleteDatasetResponse.Arn</property>
+    <pattern>^arn:aws[a-z\-]*:[a-z0-9\-]+:[a-z0-9\-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DeleteDatasetResponse.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectHealth.Model.DeleteDomainRequest.DomainId</property>
     <min>20</min>
     <max>25</max>
@@ -89,6 +139,40 @@
     <min>20</min>
     <max>25</max>
     <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetRequest.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetResponse.Arn</property>
+    <pattern>^arn:aws[a-z\-]*:[a-z0-9\-]+:[a-z0-9\-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetResponse.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetResponse.Name</property>
+    <min>1</min>
+    <max>1028</max>
+    <pattern>^[\x20-\x21\x23\x24\x2A-\x3A\x3F-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetDatasetResponse.StatusDetails</property>
+    <min>1</min>
+    <max>1028</max>
+    <pattern>^[\x20-\x21\x23\x24\x2A-\x3A\x3F-\x7E]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.GetDomainRequest.DomainId</property>
@@ -114,6 +198,42 @@
     <property>Amazon.ConnectHealth.Model.GetDomainResponse.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobRequest.JobId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobResponse.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobResponse.JobArn</property>
+    <min>20</min>
+    <max>200</max>
+    <pattern>^arn:aws[-a-z]*:health-agent:[-a-z0-9]+:[0-9]{12}:domain/[-a-zA-Z0-9-]+/medical-coding-job/[-a-zA-Z0-9_/.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobResponse.JobId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobResponse.StatusDetails</property>
+    <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.GetMedicalCodingJobResponse.Text</property>
+    <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.GetMedicalScribeListeningSessionRequest.DomainId</property>
@@ -172,6 +292,17 @@
     <pattern>^sub-[a-zA-Z0-9]{21}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.ListDatasetsRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.ListDatasetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectHealth.Model.ListDomainsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -186,6 +317,37 @@
     <property>Amazon.ConnectHealth.Model.ListSubscriptionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobRequest.ClientToken</property>
+    <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobRequest.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobRequest.Text</property>
+    <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobResponse.JobArn</property>
+    <min>20</min>
+    <max>200</max>
+    <pattern>^arn:aws[-a-z]*:health-agent:[-a-z0-9]+:[0-9]{12}:domain/[-a-zA-Z0-9-]+/medical-coding-job/[-a-zA-Z0-9_/.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.StartMedicalCodingJobResponse.JobId</property>
+    <min>1</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.StartMedicalScribeListeningSessionRequest.DomainId</property>
@@ -260,6 +422,44 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.ArtifactSourceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.Comments</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.DomainId</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^(hai-|dom-)[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.GeneratedArtifactS3Uri</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.SignedArtifactS3Uri</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.SubmitFeedbackRequest.SubscriptionId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^sub-[a-zA-Z0-9]{21}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectHealth.Model.ArtifactDetails.FailureReason</property>
     <min>1</min>
     <max>2048</max>
@@ -269,6 +469,16 @@
     <property>Amazon.ConnectHealth.Model.ArtifactDetails.OutputLocation</property>
     <min>1</min>
     <pattern>.*(s3://|http(s*)://).+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.Checklist.ChecklistId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.ChecklistItem.ItemKey</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.CreateWebAppConfiguration.EhrRole</property>
@@ -285,6 +495,28 @@
     <property>Amazon.ConnectHealth.Model.CreateWebAppConfiguration.IdcRegion</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DatasetSummary.Arn</property>
+    <pattern>^arn:aws[a-z\-]*:[a-z0-9\-]+:[a-z0-9\-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DatasetSummary.DatasetId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DatasetSummary.Name</property>
+    <min>1</min>
+    <max>1028</max>
+    <pattern>^[\x20-\x21\x23\x24\x2A-\x3A\x3F-\x7E]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.DatasetSummary.StatusDetails</property>
+    <min>1</min>
+    <max>1028</max>
+    <pattern>^[\x20-\x21\x23\x24\x2A-\x3A\x3F-\x7E]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.DomainSummary.Arn</property>
@@ -319,6 +551,71 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.InsightsOutput.Uri</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodeGenerationResult.JobId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodesEncounterContext.EncounterDate</property>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodesEncounterContext.EncounterDurationMinutes</property>
+    <min>1</min>
+    <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodesEncounterContext.EncounterReason</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9 .,-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodesPatientContext.DateOfBirth</property>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodesPatientContext.Insurance</property>
+    <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingContext.DateOfBirth</property>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingContext.EncounterDate</property>
+    <pattern>^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingContext.EncounterReason</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9 .,-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingDatasetArtifacts.EvaluationS3Uri</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingDatasetConfig.S3InputPath</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingDatasetConfig.S3OutputPath</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingOutput.Uri</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.MedicalCodingOutputDataConfig.S3OutputPath</property>
     <max>1024</max>
     <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
   </property-value-rule>
@@ -378,6 +675,36 @@
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.PatientInsightsPatientContext.PatientId</property>
     <pattern>.*[\s\S]*\S[\s\S]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalReview.ToothNumber</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalSite.ProbingDepth</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalSite.Recession</property>
+    <min>-5</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalTooth.Furcation</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalTooth.Mobility</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectHealth.Model.PeriodontalTooth.ToothNumber</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.S3Source.Uri</property>

@@ -165,6 +165,12 @@ namespace Amazon.Mgn.Model
         IListNetworkMigrationExecutionsPaginator ListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListNetworkMigrationInsights operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListNetworkMigrationInsightsPaginator ListNetworkMigrationInsights(ListNetworkMigrationInsightsRequest request);
+
+        /// <summary>
         /// Paginator for ListNetworkMigrationMapperSegmentConstructs operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -187,6 +193,30 @@ namespace Amazon.Mgn.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListNetworkMigrationMappingsPaginator ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionInvocationResults operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRemoteSourceActionInvocationResultsPaginator ListRemoteSourceActionInvocationResults(ListRemoteSourceActionInvocationResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionInvocations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRemoteSourceActionInvocationsPaginator ListRemoteSourceActionInvocations(ListRemoteSourceActionInvocationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActionJobs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRemoteSourceActionJobsPaginator ListRemoteSourceActionJobs(ListRemoteSourceActionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRemoteSourceActions operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListRemoteSourceActionsPaginator ListRemoteSourceActions(ListRemoteSourceActionsRequest request);
 
         /// <summary>
         /// Paginator for ListSourceServerActions operation

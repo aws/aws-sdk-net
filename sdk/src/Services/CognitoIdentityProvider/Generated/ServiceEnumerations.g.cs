@@ -739,6 +739,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type ClientTypeType.
+    /// </summary>
+    public class ClientTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DCR for ClientTypeType
+        /// </summary>
+        public static readonly ClientTypeType DCR = new ClientTypeType("DCR");
+
+        /// <summary>
+        /// Constant REGULAR for ClientTypeType
+        /// </summary>
+        public static readonly ClientTypeType REGULAR = new ClientTypeType("REGULAR");
+
+        /// <summary>
+        /// Constructs a custom ClientTypeType for a value not among the defined constants.
+        /// </summary>
+        public ClientTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientTypeType FindValue(string value)
+        {
+            return FindValue<ClientTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ColorSchemeModeType.
     /// </summary>
     public class ColorSchemeModeType : ConstantClass
@@ -1414,6 +1455,16 @@ namespace Amazon.CognitoIdentityProvider
         public static readonly ExplicitAuthFlowsType ALLOW_REFRESH_TOKEN_AUTH = new ExplicitAuthFlowsType("ALLOW_REFRESH_TOKEN_AUTH");
 
         /// <summary>
+        /// Constant ALLOW_TOKEN_EXCHANGE_DELEGATION for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_TOKEN_EXCHANGE_DELEGATION = new ExplicitAuthFlowsType("ALLOW_TOKEN_EXCHANGE_DELEGATION");
+
+        /// <summary>
+        /// Constant ALLOW_TOKEN_EXCHANGE_IMPERSONATION for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_TOKEN_EXCHANGE_IMPERSONATION = new ExplicitAuthFlowsType("ALLOW_TOKEN_EXCHANGE_IMPERSONATION");
+
+        /// <summary>
         /// Constant ALLOW_USER_AUTH for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType ALLOW_USER_AUTH = new ExplicitAuthFlowsType("ALLOW_USER_AUTH");
@@ -1644,6 +1695,47 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type IssuedTokenTypeIdentifierType.
+    /// </summary>
+    public class IssuedTokenTypeIdentifierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_TOKEN for IssuedTokenTypeIdentifierType
+        /// </summary>
+        public static readonly IssuedTokenTypeIdentifierType ACCESS_TOKEN = new IssuedTokenTypeIdentifierType("ACCESS_TOKEN");
+
+        /// <summary>
+        /// Constant ID_TOKEN for IssuedTokenTypeIdentifierType
+        /// </summary>
+        public static readonly IssuedTokenTypeIdentifierType ID_TOKEN = new IssuedTokenTypeIdentifierType("ID_TOKEN");
+
+        /// <summary>
+        /// Constructs a custom IssuedTokenTypeIdentifierType for a value not among the defined constants.
+        /// </summary>
+        public IssuedTokenTypeIdentifierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IssuedTokenTypeIdentifierType FindValue(string value)
+        {
+            return FindValue<IssuedTokenTypeIdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IssuedTokenTypeIdentifierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IssuerType.
     /// </summary>
     public class IssuerType : ConstantClass
@@ -1843,6 +1935,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuthFlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OAuthTokenTypeType.
+    /// </summary>
+    public class OAuthTokenTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Bearer for OAuthTokenTypeType
+        /// </summary>
+        public static readonly OAuthTokenTypeType Bearer = new OAuthTokenTypeType("Bearer");
+
+        /// <summary>
+        /// Constant N_A for OAuthTokenTypeType
+        /// </summary>
+        public static readonly OAuthTokenTypeType N_A = new OAuthTokenTypeType("N_A");
+
+        /// <summary>
+        /// Constructs a custom OAuthTokenTypeType for a value not among the defined constants.
+        /// </summary>
+        public OAuthTokenTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthTokenTypeType FindValue(string value)
+        {
+            return FindValue<OAuthTokenTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthTokenTypeType(string value)
         {
             return FindValue(value);
         }
@@ -2125,6 +2258,159 @@ namespace Amazon.CognitoIdentityProvider
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceServerManagedByType.
+    /// </summary>
+    public class ResourceServerManagedByType : ConstantClass
+    {
+        /// <summary>
+        /// Constant COGNITO for ResourceServerManagedByType
+        /// </summary>
+        public static readonly ResourceServerManagedByType COGNITO = new ResourceServerManagedByType("COGNITO");
+
+        /// <summary>
+        /// Constructs a custom ResourceServerManagedByType for a value not among the defined constants.
+        /// </summary>
+        public ResourceServerManagedByType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceServerManagedByType FindValue(string value)
+        {
+            return FindValue<ResourceServerManagedByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceServerManagedByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RestoreStatusType.
+    /// </summary>
+    public class RestoreStatusType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS_ABORTED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType AWS_ABORTED = new RestoreStatusType("AWS_ABORTED");
+
+        /// <summary>
+        /// Constant PREVIEW_CANCELLED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_CANCELLED = new RestoreStatusType("PREVIEW_CANCELLED");
+
+        /// <summary>
+        /// Constant PREVIEW_EXPIRED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_EXPIRED = new RestoreStatusType("PREVIEW_EXPIRED");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATED = new RestoreStatusType("PREVIEW_GENERATED");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATING for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATING = new RestoreStatusType("PREVIEW_GENERATING");
+
+        /// <summary>
+        /// Constant PREVIEW_GENERATION_FAILED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType PREVIEW_GENERATION_FAILED = new RestoreStatusType("PREVIEW_GENERATION_FAILED");
+
+        /// <summary>
+        /// Constant RESTORE_COMPLETED for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType RESTORE_COMPLETED = new RestoreStatusType("RESTORE_COMPLETED");
+
+        /// <summary>
+        /// Constant RESTORING for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType RESTORING = new RestoreStatusType("RESTORING");
+
+        /// <summary>
+        /// Constant TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE for RestoreStatusType
+        /// </summary>
+        public static readonly RestoreStatusType TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE = new RestoreStatusType("TEMPORARY_INTERNAL_ERROR_SEE_SUPPORT_CASE");
+
+        /// <summary>
+        /// Constructs a custom RestoreStatusType for a value not among the defined constants.
+        /// </summary>
+        public RestoreStatusType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreStatusType FindValue(string value)
+        {
+            return FindValue<RestoreStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RevokeAssociatedSessionsType.
+    /// </summary>
+    public class RevokeAssociatedSessionsType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LINKED for RevokeAssociatedSessionsType
+        /// </summary>
+        public static readonly RevokeAssociatedSessionsType LINKED = new RevokeAssociatedSessionsType("LINKED");
+
+        /// <summary>
+        /// Constant NONE for RevokeAssociatedSessionsType
+        /// </summary>
+        public static readonly RevokeAssociatedSessionsType NONE = new RevokeAssociatedSessionsType("NONE");
+
+        /// <summary>
+        /// Constructs a custom RevokeAssociatedSessionsType for a value not among the defined constants.
+        /// </summary>
+        public RevokeAssociatedSessionsType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevokeAssociatedSessionsType FindValue(string value)
+        {
+            return FindValue<RevokeAssociatedSessionsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevokeAssociatedSessionsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RiskDecisionType.
     /// </summary>
     public class RiskDecisionType : ConstantClass
@@ -2257,6 +2543,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SessionTypeType.
+    /// </summary>
+    public class SessionTypeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SSO for SessionTypeType
+        /// </summary>
+        public static readonly SessionTypeType SSO = new SessionTypeType("SSO");
+
+        /// <summary>
+        /// Constant TOKEN for SessionTypeType
+        /// </summary>
+        public static readonly SessionTypeType TOKEN = new SessionTypeType("TOKEN");
+
+        /// <summary>
+        /// Constructs a custom SessionTypeType for a value not among the defined constants.
+        /// </summary>
+        public SessionTypeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionTypeType FindValue(string value)
+        {
+            return FindValue<SessionTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionTypeType(string value)
         {
             return FindValue(value);
         }
@@ -2421,6 +2748,52 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeUnitsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TokenTypeIdentifierType.
+    /// </summary>
+    public class TokenTypeIdentifierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_TOKEN for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType ACCESS_TOKEN = new TokenTypeIdentifierType("ACCESS_TOKEN");
+
+        /// <summary>
+        /// Constant ID_TOKEN for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType ID_TOKEN = new TokenTypeIdentifierType("ID_TOKEN");
+
+        /// <summary>
+        /// Constant SAML2 for TokenTypeIdentifierType
+        /// </summary>
+        public static readonly TokenTypeIdentifierType SAML2 = new TokenTypeIdentifierType("SAML2");
+
+        /// <summary>
+        /// Constructs a custom TokenTypeIdentifierType for a value not among the defined constants.
+        /// </summary>
+        public TokenTypeIdentifierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TokenTypeIdentifierType FindValue(string value)
+        {
+            return FindValue<TokenTypeIdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TokenTypeIdentifierType(string value)
         {
             return FindValue(value);
         }
@@ -2625,6 +2998,47 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserPoolTierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UserSessionTrackingType.
+    /// </summary>
+    public class UserSessionTrackingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for UserSessionTrackingType
+        /// </summary>
+        public static readonly UserSessionTrackingType DISABLED = new UserSessionTrackingType("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for UserSessionTrackingType
+        /// </summary>
+        public static readonly UserSessionTrackingType ENABLED = new UserSessionTrackingType("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom UserSessionTrackingType for a value not among the defined constants.
+        /// </summary>
+        public UserSessionTrackingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserSessionTrackingType FindValue(string value)
+        {
+            return FindValue<UserSessionTrackingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserSessionTrackingType(string value)
         {
             return FindValue(value);
         }

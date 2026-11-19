@@ -94,6 +94,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSourceProfilesConfiguration())
+            {
+                context.Writer.WritePropertyName("SourceProfilesConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceProfilesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceProfilesConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

@@ -111,6 +111,16 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ExecutionRoleArn");
                 context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
+            if (publicRequest.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetKmsKey())
             {
                 context.Writer.WritePropertyName("KmsKey");
@@ -205,6 +215,23 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;
                     context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetTeams())
+            {
+                context.Writer.WritePropertyName("Teams");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTeamsKvp in publicRequest.Teams)
+                {
+                    context.Writer.WritePropertyName(publicRequestTeamsKvp.Key);
+                    var publicRequestTeamsValue = publicRequestTeamsKvp.Value;
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TeamConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTeamsValue, context);
+
+                    context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndObject();
             }

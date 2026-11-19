@@ -59,6 +59,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Azure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("gcp", targetDepth, ref reader))
+                {
+                    var unmarshaller = GcpConnectorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Gcp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

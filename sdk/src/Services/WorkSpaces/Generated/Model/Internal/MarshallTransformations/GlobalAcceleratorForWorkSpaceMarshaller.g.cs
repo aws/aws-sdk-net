@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// GlobalAcceleratorForWorkSpace Marshaller
     /// </summary>
-    public partial class GlobalAcceleratorForWorkSpaceMarshaller : IRequestMarshaller<GlobalAcceleratorForWorkSpace, JsonMarshallerContext>
+    public partial class GlobalAcceleratorForWorkSpaceMarshaller : IRequestMarshaller<GlobalAcceleratorForWorkSpace, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GlobalAcceleratorForWorkSpace requestObject, JsonMarshallerContext context)
+        public void Marshall(GlobalAcceleratorForWorkSpace requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("Mode");
-                context.Writer.WriteStringValue(requestObject.Mode);
+                context.Writer.WriteTextString("Mode");
+                context.Writer.WriteTextString(requestObject.Mode);
             }
 
             if (requestObject.IsSetPreferredProtocol())
             {
-                context.Writer.WritePropertyName("PreferredProtocol");
-                context.Writer.WriteStringValue(requestObject.PreferredProtocol);
+                context.Writer.WriteTextString("PreferredProtocol");
+                context.Writer.WriteTextString(requestObject.PreferredProtocol);
             }
         }
 

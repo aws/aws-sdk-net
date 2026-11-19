@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ThirdPartyJobData Object
     /// </summary>
-    public partial class ThirdPartyJobDataUnmarshaller : IJsonUnmarshaller<ThirdPartyJobData, JsonUnmarshallerContext>
+    public partial class ThirdPartyJobDataUnmarshaller : ICborUnmarshaller<ThirdPartyJobData, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ThirdPartyJobData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ThirdPartyJobData Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ThirdPartyJobData();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("actionConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = ActionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ActionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("actionTypeId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ActionTypeIdUnmarshaller.Instance;
-                    unmarshalledObject.ActionTypeId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "actionConfiguration":
+                        context.AddPathSegment("ActionConfiguration");
+                        unmarshalledObject.ActionConfiguration = ActionConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("artifactCredentials", targetDepth, ref reader))
-                {
-                    var unmarshaller = AWSSessionCredentialsUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactCredentials = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "actionTypeId":
+                        context.AddPathSegment("ActionTypeId");
+                        unmarshalledObject.ActionTypeId = ActionTypeIdUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("continuationToken", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContinuationToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "artifactCredentials":
+                        context.AddPathSegment("ArtifactCredentials");
+                        unmarshalledObject.ArtifactCredentials = AWSSessionCredentialsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = EncryptionKeyUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "continuationToken":
+                        context.AddPathSegment("ContinuationToken");
+                        unmarshalledObject.ContinuationToken = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("inputArtifacts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance);
-                    unmarshalledObject.InputArtifacts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "encryptionKey":
+                        context.AddPathSegment("EncryptionKey");
+                        unmarshalledObject.EncryptionKey = EncryptionKeyUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("outputArtifacts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance);
-                    unmarshalledObject.OutputArtifacts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inputArtifacts":
+                        context.AddPathSegment("InputArtifacts");
+                        unmarshalledObject.InputArtifacts = new CborListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("pipelineContext", targetDepth, ref reader))
-                {
-                    var unmarshaller = PipelineContextUnmarshaller.Instance;
-                    unmarshalledObject.PipelineContext = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "outputArtifacts":
+                        context.AddPathSegment("OutputArtifacts");
+                        unmarshalledObject.OutputArtifacts = new CborListUnmarshaller<Artifact, ArtifactUnmarshaller>(ArtifactUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "pipelineContext":
+                        context.AddPathSegment("PipelineContext");
+                        unmarshalledObject.PipelineContext = PipelineContextUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

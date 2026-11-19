@@ -73,7 +73,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : {baseClassName}", () =>
             {
-                WriteConstructors(writer, className);
+                WriteConstructors(writer, className, withAmazonIds: context.Customizations.Service?.CustomErrorHandling is not null);
                 if (propertyMembers.Count > 0)
                 {
                     writer.WriteLine();
@@ -142,7 +142,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine("#endif");
     }
 
-    private static void WriteConstructors(CodeWriter writer, string className)
+    private static void WriteConstructors(CodeWriter writer, string className, bool withAmazonIds)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Default constructor for {className}");
@@ -183,6 +183,15 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"/// Construct instance of {className}");
         writer.WriteLine("/// </summary>");
         writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
+
+        if (withAmazonIds)
+        {
+            writer.WriteLine();
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine($"/// Construct instance of {className}");
+            writer.WriteLine("/// </summary>");
+            writer.WriteLine($"public {className}(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2, string amazonCfId) : base(message, innerException, errorType, errorCode, requestId, statusCode, amazonId2, amazonCfId) {{ }}");
+        }
     }
 
     // Base service-exception constructors. The first two carry their own doc comments; the rest reuse the

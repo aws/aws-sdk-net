@@ -1654,6 +1654,47 @@ namespace Amazon.KeyManagementService
     }
 
     /// <summary>
+    /// Constants used for properties of type ResourceOwnerType.
+    /// </summary>
+    public class ResourceOwnerType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OTHER_ACCOUNTS_VIA_RAM for ResourceOwnerType
+        /// </summary>
+        public static readonly ResourceOwnerType OTHER_ACCOUNTS_VIA_RAM = new ResourceOwnerType("OTHER_ACCOUNTS_VIA_RAM");
+
+        /// <summary>
+        /// Constant SELF for ResourceOwnerType
+        /// </summary>
+        public static readonly ResourceOwnerType SELF = new ResourceOwnerType("SELF");
+
+        /// <summary>
+        /// Constructs a custom ResourceOwnerType for a value not among the defined constants.
+        /// </summary>
+        public ResourceOwnerType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceOwnerType FindValue(string value)
+        {
+            return FindValue<ResourceOwnerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceOwnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RotationType.
     /// </summary>
     public class RotationType : ConstantClass

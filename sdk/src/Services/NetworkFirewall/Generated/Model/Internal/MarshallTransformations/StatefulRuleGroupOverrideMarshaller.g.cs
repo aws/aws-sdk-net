@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// StatefulRuleGroupOverride Marshaller
     /// </summary>
-    public partial class StatefulRuleGroupOverrideMarshaller : IRequestMarshaller<StatefulRuleGroupOverride, JsonMarshallerContext>
+    public partial class StatefulRuleGroupOverrideMarshaller : IRequestMarshaller<StatefulRuleGroupOverride, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(StatefulRuleGroupOverride requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulRuleGroupOverride requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
         }
 

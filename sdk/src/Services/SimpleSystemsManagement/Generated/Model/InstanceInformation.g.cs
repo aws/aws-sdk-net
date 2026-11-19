@@ -347,6 +347,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The type of the source resource. For IoT Greengrass devices, <c>SourceType</c> is
         /// <c>AWS::IoT::Thing</c>. For Azure Virtual Machines, <c>SourceType</c> is <c>Microsoft.Compute/virtualMachines</c>.
+        /// For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <c>SourceType</c>
+        /// is <c>compute.googleapis.com/Instance</c>.
         /// </para>
         /// </summary>
         public SourceType SourceType { get; set; }

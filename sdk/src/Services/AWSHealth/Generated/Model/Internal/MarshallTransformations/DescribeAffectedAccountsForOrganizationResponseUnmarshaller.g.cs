@@ -55,6 +55,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "affectedAccountEntities":
+                        context.AddPathSegment("AffectedAccountEntities");
+                        unmarshalledObject.AffectedAccountEntities = new CborListUnmarshaller<AccountEntity, AccountEntityUnmarshaller>(AccountEntityUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "affectedAccounts":
                         context.AddPathSegment("AffectedAccounts");
                         unmarshalledObject.AffectedAccounts = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);

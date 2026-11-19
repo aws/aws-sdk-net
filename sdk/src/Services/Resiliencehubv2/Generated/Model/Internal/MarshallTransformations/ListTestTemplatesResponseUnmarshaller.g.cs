@@ -52,6 +52,13 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("testTemplates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TestTemplateSummary, TestTemplateSummaryUnmarshaller>(TestTemplateSummaryUnmarshaller.Instance);
@@ -88,6 +95,10 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                    {
+                        return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                     {

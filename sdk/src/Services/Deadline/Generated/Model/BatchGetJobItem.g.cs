@@ -79,6 +79,7 @@ namespace Amazon.Deadline.Model
 
         /// <summary>
         /// Gets and sets the property EndedAt. The date and time the resource ended running.
+        /// Returned only when the job has finished.
         /// </summary>
         public DateTime? EndedAt { get; set; }
 
@@ -230,6 +231,7 @@ namespace Amazon.Deadline.Model
 
         /// <summary>
         /// Gets and sets the property StartedAt. The date and time the resource started running.
+        /// Requeuing the job doesn't change this value.
         /// </summary>
         public DateTime? StartedAt { get; set; }
 
@@ -301,6 +303,7 @@ namespace Amazon.Deadline.Model
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. The date and time the resource was updated.
+        /// Task status changes don't update this value.
         /// </summary>
         public DateTime? UpdatedAt { get; set; }
 

@@ -31,7 +31,11 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAgentRecommendationGenerations operation.
-    /// Lists recommendation generation processes for a specified profile.
+    /// <important> <para> Application-level recommendations are a new recommendation format
+    /// currently in beta. We are actively seeking customer feedback to improve their quality
+    /// and relevance. As with any AI-generated content, please thoroughly review each recommendation
+    /// before taking any action based on it. </para> </important> <para> Lists recommendation
+    /// generation processes for a specified profile. </para>
     /// </summary>
     public partial class ListAgentRecommendationGenerationsRequest : AmazonWellArchitectedRequest
     {

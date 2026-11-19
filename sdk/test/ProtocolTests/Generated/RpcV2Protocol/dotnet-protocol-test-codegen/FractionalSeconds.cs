@@ -62,7 +62,7 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
             var unmarshalledResponse = new FractionalSecondsResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new FractionalSecondsResponse
             {
-                Datetime = ProtocolTestConstants.epoch.AddSeconds(9.46845296123E8),
+                Datetime = ProtocolTestConstants.epoch.AddMilliseconds(946845296123),
             };
 
             // Assert

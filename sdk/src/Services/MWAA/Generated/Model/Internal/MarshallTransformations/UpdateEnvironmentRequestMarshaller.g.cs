@@ -106,6 +106,16 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ExecutionRoleArn");
                 context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
+            if (publicRequest.IsSetIdentityCenterConfiguration())
+            {
+                context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IdentityCenterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLoggingConfiguration())
             {
                 context.Writer.WritePropertyName("LoggingConfiguration");
@@ -185,6 +195,16 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("StartupScriptS3Path");
                 context.Writer.WriteStringValue(publicRequest.StartupScriptS3Path);
+            }
+            if (publicRequest.IsSetTeams())
+            {
+                context.Writer.WritePropertyName("Teams");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateTeamsInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Teams, context);
+
+                context.Writer.WriteEndObject();
             }
             if (publicRequest.IsSetWebserverAccessMode())
             {

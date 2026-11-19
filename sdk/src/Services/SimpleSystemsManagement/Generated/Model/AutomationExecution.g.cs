@@ -530,6 +530,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargets() => this.Targets != null && (this.Targets.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property TargetsSummary. 
+        /// <para>
+        /// A summary of the child executions that a rate control execution started for its targets.
+        /// This field is returned only for rate control executions.
+        /// </para>
+        /// </summary>
+        public TargetsSummary TargetsSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetsSummary property is set.
+        /// </summary>
+        internal bool IsSetTargetsSummary() => this.TargetsSummary != null;
+
+        /// <summary>
         /// Gets and sets the property TriggeredAlarms. 
         /// <para>
         /// The CloudWatch alarm that was invoked by the automation.

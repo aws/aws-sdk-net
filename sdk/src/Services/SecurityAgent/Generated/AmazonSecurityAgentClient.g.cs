@@ -1859,7 +1859,8 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a new membership, granting a user access to an agent space within an application.
+        /// Creates a new membership, granting a user or group access to an agent space within
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <returns>The response from the CreateMembership service method, as returned by SecurityAgent.</returns>
@@ -1884,7 +1885,8 @@ namespace Amazon.SecurityAgent
 #endif
 
         /// <summary>
-        /// Creates a new membership, granting a user access to an agent space within an application.
+        /// Creates a new membership, granting a user or group access to an agent space within
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -2507,7 +2509,7 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a membership, revoking a user's access to an agent space.
+        /// Deletes a membership, revoking a user's or group's access to an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembership service method.</param>
         /// <returns>The response from the DeleteMembership service method, as returned by SecurityAgent.</returns>
@@ -2532,7 +2534,7 @@ namespace Amazon.SecurityAgent
 #endif
 
         /// <summary>
-        /// Deletes a membership, revoking a user's access to an agent space.
+        /// Deletes a membership, revoking a user's or group's access to an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembership service method.</param>
         /// <param name="cancellationToken">
@@ -4539,6 +4541,54 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = ListThreatsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListThreatsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Resumes a stopped or paused pentest job from its last saved checkpoint. The job keeps
+        /// its pentest job identifier and continues as a new version, keeping the findings and
+        /// progress from earlier runs. You can resume a job within 7 days of when it was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumePentestJob service method.</param>
+        /// <returns>The response from the ResumePentestJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ResumePentestJob">REST API Reference for ResumePentestJob Operation</seealso>
+        public virtual ResumePentestJobResponse ResumePentestJob(ResumePentestJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return Invoke<ResumePentestJobResponse>(request, options);
+        }
+#else
+        internal virtual ResumePentestJobResponse ResumePentestJob(ResumePentestJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return Invoke<ResumePentestJobResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Resumes a stopped or paused pentest job from its last saved checkpoint. The job keeps
+        /// its pentest job identifier and continues as a new version, keeping the findings and
+        /// progress from earlier runs. You can resume a job within 7 days of when it was created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumePentestJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ResumePentestJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ResumePentestJob">REST API Reference for ResumePentestJob Operation</seealso>
+        public virtual Task<ResumePentestJobResponse> ResumePentestJobAsync(ResumePentestJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ResumePentestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResumePentestJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumePentestJobResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

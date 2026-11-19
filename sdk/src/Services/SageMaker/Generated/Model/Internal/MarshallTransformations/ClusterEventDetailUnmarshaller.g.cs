@@ -116,6 +116,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("OperationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

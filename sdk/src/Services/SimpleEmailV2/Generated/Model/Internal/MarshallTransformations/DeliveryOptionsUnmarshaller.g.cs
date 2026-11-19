@@ -67,6 +67,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("SharedPoolDeliveryMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SharedPoolDeliveryMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("TlsPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

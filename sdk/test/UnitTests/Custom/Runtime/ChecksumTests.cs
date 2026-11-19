@@ -57,6 +57,38 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
+        /// Test that the managed checksum implementations produce the same value when the
+        /// content is fed incrementally (one byte at a time via TransformBlock) as they do
+        /// for a one-shot ComputeHash. This mirrors the rolling checksum tests that previously
+        /// covered the CRT implementation and confirms the streaming path used by
+        /// HashStream / ChunkedUploadWrapperStream.
+        /// </summary>
+        [DataRow(CoreChecksumAlgorithm.CRC32, "", "AAAAAA==")]
+        [DataRow(CoreChecksumAlgorithm.CRC32, "abc", "NSRBwg==")]
+        [DataRow(CoreChecksumAlgorithm.CRC32, "Hello world", "i9aeUg==")]
+        [DataRow(CoreChecksumAlgorithm.CRC32C, "", "AAAAAA==")]
+        [DataRow(CoreChecksumAlgorithm.CRC32C, "abc", "Nks/tw==")]
+        [DataRow(CoreChecksumAlgorithm.CRC32C, "Hello world", "crUfeA==")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "", "AAAAAAAAAAA=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "abc", "BeXKuz/B+us=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "Hello world", "OOJZ0D8xKts=")]
+        [TestMethod]
+        public void CalculateChecksumIncrementallyTest(CoreChecksumAlgorithm algorithm, string content, string expectedBase64Checksum)
+        {
+            var contentBytes = Encoding.Default.GetBytes(content);
+            var hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(algorithm);
+
+            // Feed the content one byte at a time to exercise incremental hashing.
+            for (var i = 0; i < contentBytes.Length; i++)
+            {
+                hashAlgorithm.TransformBlock(contentBytes, i, 1, null, 0);
+            }
+            hashAlgorithm.TransformFinalBlock(contentBytes, 0, 0);
+
+            Assert.AreEqual(expectedBase64Checksum, Convert.ToBase64String(hashAlgorithm.Hash));
+        }
+
+        /// <summary>
         /// Test the interaction between whether a checksum is required, whether
         /// an algorithm is provided, and whether a precalculated checksum is provided
         /// to verify that the correct checksum is calculated for the request.

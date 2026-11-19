@@ -31,15 +31,19 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation. <note> <para> If you provide
-    /// a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-    /// permission on the User ARN resource that you provide </para> </note> <para> Creates
-    /// a case in the specified Cases domain. Case system and custom fields are taken as an
-    /// array id/value pairs with a declared data types. </para> <para> When creating a case
-    /// from a template that has tag propagation configurations, the specified tags are automatically
-    /// applied to the case. </para> <para> The following fields are required when creating
-    /// a case: </para> <ul> <li> <para> <c>customer_id</c> - You must provide the full customer
-    /// profile ARN in this format: <c>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</c>
-    /// </para> </li> <li> <para> <c>title</c> </para> </li> </ul>
+    /// a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+    /// permission on the user ARN that you provide. </para> </note> <para> Creates a case
+    /// in the specified Cases domain. Case system and custom fields are taken as an array
+    /// id/value pairs with a declared data types. </para> <para> When creating a case from
+    /// a template that has tag propagation configurations, the specified tags are automatically
+    /// applied to the case. </para> <para> The following field is always required when creating
+    /// a case: </para> <ul> <li> <para> <c>title</c> </para> </li> </ul> <para> The following
+    /// field may be required depending on the template configuration: </para> <ul> <li> <para>
+    /// <c>customer_id</c> - Required only if the template's <c>requiredFields</c> list includes
+    /// <c>customer_id</c>. When required, provide the full customer profile ARN in this format:
+    /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account_ID:domains/your_profiles_domain_name/profiles/profile_ID</c>.
+    /// When not required, the field is optional and can be omitted, added, changed, or removed
+    /// after case creation. </para> </li> </ul>
     /// </summary>
     public partial class CreateCaseRequest : AmazonConnectCasesRequest
     {
@@ -108,7 +112,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of of key-value pairs that represent tags on a resource. Tags are used to organize,
+        /// A map of key-value pairs that represent tags on a resource. Tags are used to organize,
         /// track, or control access for this resource.
         /// </para>
         /// <para />

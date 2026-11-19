@@ -132,6 +132,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteStartElement("EncryptionConfiguration");
                                         if(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetReplicaKmsKeyID())
                                             xmlWriter.WriteElementString("ReplicaKmsKeyID", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
+                                        if (publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.IsSetUseSourceMultiRegionKey())
+                                        {
+                                            xmlWriter.WriteStartElement("UseSourceMultiRegionKey");
+                                            if(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.UseSourceMultiRegionKey.IsSetStatus())
+                                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestConfigurationRulesValue.Destination.EncryptionConfiguration.UseSourceMultiRegionKey.Status));
+                                            xmlWriter.WriteEndElement();
+                                        }
                                         xmlWriter.WriteEndElement();
                                     }
                                     if (publicRequestConfigurationRulesValue.Destination.IsSetMetrics())
@@ -179,6 +186,53 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if (publicRequestConfigurationRulesValue.Filter.IsSetAnd())
                                     {
                                         xmlWriter.WriteStartElement("And");
+                                        if (publicRequestConfigurationRulesValue.Filter.And.IsSetNot())
+                                        {
+                                            xmlWriter.WriteStartElement("Not");
+                                            if (publicRequestConfigurationRulesValue.Filter.And.Not.IsSetOr())
+                                            {
+                                                xmlWriter.WriteStartElement("Or");
+                                                var publicRequestConfigurationRulesValueFilterAndNotOrPrefixes = publicRequestConfigurationRulesValue.Filter.And.Not.Or.Prefixes;
+                                                if (publicRequestConfigurationRulesValue.Filter.And.Not.Or.IsSetPrefixes()) 
+                                                {
+                                                    foreach (var publicRequestConfigurationRulesValueFilterAndNotOrPrefixesValue in publicRequestConfigurationRulesValueFilterAndNotOrPrefixes) 
+                                                    {
+                                                        xmlWriter.WriteStartElement("Prefix");
+                                                        xmlWriter.WriteValue(publicRequestConfigurationRulesValueFilterAndNotOrPrefixesValue);
+                                                        xmlWriter.WriteEndElement();
+                                                    }            
+                                                }
+                                                var publicRequestConfigurationRulesValueFilterAndNotOrTags = publicRequestConfigurationRulesValue.Filter.And.Not.Or.Tags;
+                                                if (publicRequestConfigurationRulesValue.Filter.And.Not.Or.IsSetTags()) 
+                                                {
+                                                    foreach (var publicRequestConfigurationRulesValueFilterAndNotOrTagsValue in publicRequestConfigurationRulesValueFilterAndNotOrTags) 
+                                                    {
+                                                        if (publicRequestConfigurationRulesValueFilterAndNotOrTagsValue != null)
+                                                        {
+                                                            xmlWriter.WriteStartElement("Tag");
+                                                            if(publicRequestConfigurationRulesValueFilterAndNotOrTagsValue.IsSetKey())
+                                                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndNotOrTagsValue.Key));
+                                                            if(publicRequestConfigurationRulesValueFilterAndNotOrTagsValue.IsSetValue())
+                                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndNotOrTagsValue.Value));
+                                                            xmlWriter.WriteEndElement();
+                                                        }
+                                                    }            
+                                                }
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            if(publicRequestConfigurationRulesValue.Filter.And.Not.IsSetPrefix())
+                                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Not.Prefix));
+                                            if (publicRequestConfigurationRulesValue.Filter.And.Not.IsSetTag())
+                                            {
+                                                xmlWriter.WriteStartElement("Tag");
+                                                if(publicRequestConfigurationRulesValue.Filter.And.Not.Tag.IsSetKey())
+                                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Not.Tag.Key));
+                                                if(publicRequestConfigurationRulesValue.Filter.And.Not.Tag.IsSetValue())
+                                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Not.Tag.Value));
+                                                xmlWriter.WriteEndElement();
+                                            }
+                                            xmlWriter.WriteEndElement();
+                                        }
                                         if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
                                             xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
                                         var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
@@ -196,6 +250,53 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                                     xmlWriter.WriteEndElement();
                                                 }
                                             }            
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestConfigurationRulesValue.Filter.IsSetNot())
+                                    {
+                                        xmlWriter.WriteStartElement("Not");
+                                        if (publicRequestConfigurationRulesValue.Filter.Not.IsSetOr())
+                                        {
+                                            xmlWriter.WriteStartElement("Or");
+                                            var publicRequestConfigurationRulesValueFilterNotOrPrefixes = publicRequestConfigurationRulesValue.Filter.Not.Or.Prefixes;
+                                            if (publicRequestConfigurationRulesValue.Filter.Not.Or.IsSetPrefixes()) 
+                                            {
+                                                foreach (var publicRequestConfigurationRulesValueFilterNotOrPrefixesValue in publicRequestConfigurationRulesValueFilterNotOrPrefixes) 
+                                                {
+                                                    xmlWriter.WriteStartElement("Prefix");
+                                                    xmlWriter.WriteValue(publicRequestConfigurationRulesValueFilterNotOrPrefixesValue);
+                                                    xmlWriter.WriteEndElement();
+                                                }            
+                                            }
+                                            var publicRequestConfigurationRulesValueFilterNotOrTags = publicRequestConfigurationRulesValue.Filter.Not.Or.Tags;
+                                            if (publicRequestConfigurationRulesValue.Filter.Not.Or.IsSetTags()) 
+                                            {
+                                                foreach (var publicRequestConfigurationRulesValueFilterNotOrTagsValue in publicRequestConfigurationRulesValueFilterNotOrTags) 
+                                                {
+                                                    if (publicRequestConfigurationRulesValueFilterNotOrTagsValue != null)
+                                                    {
+                                                        xmlWriter.WriteStartElement("Tag");
+                                                        if(publicRequestConfigurationRulesValueFilterNotOrTagsValue.IsSetKey())
+                                                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterNotOrTagsValue.Key));
+                                                        if(publicRequestConfigurationRulesValueFilterNotOrTagsValue.IsSetValue())
+                                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterNotOrTagsValue.Value));
+                                                        xmlWriter.WriteEndElement();
+                                                    }
+                                                }            
+                                            }
+                                            xmlWriter.WriteEndElement();
+                                        }
+                                        if(publicRequestConfigurationRulesValue.Filter.Not.IsSetPrefix())
+                                            xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Not.Prefix));
+                                        if (publicRequestConfigurationRulesValue.Filter.Not.IsSetTag())
+                                        {
+                                            xmlWriter.WriteStartElement("Tag");
+                                            if(publicRequestConfigurationRulesValue.Filter.Not.Tag.IsSetKey())
+                                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Not.Tag.Key));
+                                            if(publicRequestConfigurationRulesValue.Filter.Not.Tag.IsSetValue())
+                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Not.Tag.Value));
+                                            xmlWriter.WriteEndElement();
                                         }
                                         xmlWriter.WriteEndElement();
                                     }

@@ -40,7 +40,7 @@ public sealed class LegacyUnitTestProjectFileWriter(UnitTestProjectManifest mani
             ProjectFileSections.WriteSigningChoose(writer, "../../awssdk.dll.snk");
             writer.WriteLine();
             WriteItemGroup(writer, ["""<Compile Include="../Services/*/UnitTests/**/*.cs"/>"""]);
-            WriteItemGroup(writer, CompileRemoves(configuration.OtherVariantFolder, isNetFramework));
+            WriteItemGroup(writer, CompileRemoves(configuration.OtherVariantFolder));
             writer.WriteLine();
             WriteItemGroup(writer,
             [
@@ -73,16 +73,9 @@ public sealed class LegacyUnitTestProjectFileWriter(UnitTestProjectManifest mani
     }
 
     // As C2J's template spells them: bin/obj also drop None items, and a path is used as is.
-    private IEnumerable<string> CompileRemoves(string otherVariantFolder, bool isNetFramework)
+    private IEnumerable<string> CompileRemoves(string otherVariantFolder)
     {
-        var folders = manifest.ExcludeFolders.Append(otherVariantFolder);
-        // MobileAnalytics ships only for .NET Framework, as in C2J.
-        if (!isNetFramework)
-        {
-            folders = folders.Append("../Services/MobileAnalytics/UnitTests/**/*.cs");
-        }
-
-        foreach (var folder in folders)
+        foreach (var folder in manifest.ExcludeFolders.Append(otherVariantFolder))
         {
             if (folder is "bin" or "obj")
             {

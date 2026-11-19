@@ -77,6 +77,7 @@
     "CreateWorkspace": "<p>Creates a workspace that defines the user experience by mapping views to pages. Workspaces can be assigned to users or routing profiles.</p>",
     "CreateWorkspacePage": "<p>Associates a view with a page in a workspace, defining what users see when they navigate to that page.</p>",
     "DeactivateEvaluationForm": "<p>Deactivates an evaluation form in the specified Connect Customer instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form. </p>",
+    "DeleteAllEntitySessions": "<p>Deletes all active sessions for the specified entity in the specified Connect Customer instance. The operation supports only the <code>USER</code> entity type, so you can use it to sign out all of a user's active sessions. Use it when you need to end a user's access right away, for example when they leave your organization or you suspect that their credentials are compromised.</p>",
     "DeleteAttachedFile": "<p>Deletes an attached file along with the underlying S3 Object.</p> <important> <p>The attached file is <b>permanently deleted</b> if S3 bucket versioning is not enabled.</p> </important>",
     "DeleteContactData": "<p>Deletes the specified fields containing personally identifiable information (PII) from a contact in the specified Connect Customer instance. We redact PII (such as customer endpoints, additional email recipients, and the email subject) from the contact and its associated contact trace record (CTR). The contact must be in a terminated state.</p> <important> <p> <b>This deletion is permanent and cannot be undone.</b> Performing this operation permanently deletes the specified PII. There is no retention period; you cannot recover the data after deletion. We remove only the fields that Connect Customer identifies and stores as PII. Any PII that you place in fields outside the scope of this operation remains your responsibility to remove.</p> </important>",
     "DeleteContactEvaluation": "<p>Deletes a contact evaluation in the specified Connect Customer instance.</p>",
@@ -269,11 +270,11 @@
     "ListWorkspacePages": "<p>Lists the page configurations in a workspace, including the views assigned to each page.</p>",
     "ListWorkspaces": "<p>Lists the workspaces in an Amazon Connect instance.</p>",
     "MonitorContact": "<p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i> will be set to silent monitoring mode on the contact.</p>",
-    "PauseContact": "<p>Allows pausing an ongoing task contact.</p>",
+    "PauseContact": "<p>Pauses an ongoing task or email contact.</p>",
     "PutUserStatus": "<p>Changes the current status of a user or agent in Connect Customer. If the agent is currently handling a contact, this sets the agent's next status.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html\">Agent status</a> and <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html\">Set your next status</a> in the <i>Connect Customer Administrator Guide</i>.</p>",
     "ReleasePhoneNumber": "<p>Releases a phone number previously claimed to an Connect Customer instance or traffic distribution group. You can call this API only in the Amazon Web Services Region where the number was claimed.</p> <important> <p>To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the Connect Customer admin website.</p> <p>After releasing a phone number, the phone number enters into a cooldown period for up to 180 days. It cannot be searched for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web Services Support.</p> </important> <p>If you plan to claim and release numbers frequently, contact us for a service quota exception. Otherwise, it is possible you will be blocked from claiming and releasing any more numbers until up to 180 days past the oldest number released has expired.</p> <p>By default you can claim and release up to 200% of your maximum number of active phone numbers. If you claim and release phone numbers using the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number service level quota, you will be blocked from claiming any more numbers until 180 days past the oldest number released has expired. </p> <p>For example, if you already have 99 claimed numbers and a service level quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and then release 99, you will have exceeded the 200% limit. At that point you are blocked from claiming any more numbers until you open an Amazon Web Services support ticket.</p>",
     "ReplicateInstance": "<p>Replicates an Connect Customer instance in the specified Amazon Web Services Region and copies configuration information for Connect Customer resources across Amazon Web Services Regions. </p> <p>For more information about replicating an Connect Customer instance, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html\">Create a replica of your existing Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.</p>",
-    "ResumeContact": "<p>Allows resuming a task contact in a paused state.</p>",
+    "ResumeContact": "<p>Resumes a task or email contact in a paused state.</p>",
     "ResumeContactRecording": "<p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording whatever recording is selected in the flow configuration: call, screen, or both. If only call recording or only screen recording is enabled, then it would resume.</p> <p>Voice and screen recordings are supported.</p>",
     "SearchAgentStatuses": "<p>Searches AgentStatuses in an Connect Customer instance, with optional filtering.</p>",
     "SearchAvailablePhoneNumbers": "<p>Searches for available phone numbers that you can claim to your Connect Customer instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with the traffic distribution group.</p>",
@@ -779,7 +780,7 @@
       "base": "<p>A list of after contact work (ACW) timeout configuration settings for each channel.</p>",
       "refs": {
         "CreateUserRequest$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>",
-        "UpdateUserConfigRequest$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>",
+        "UpdateUserConfigRequest$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>",
         "User$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>",
         "UserSearchSummary$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>"
       }
@@ -787,8 +788,8 @@
     "AfterContactWorkTimeLimit": {
       "base": null,
       "refs": {
-        "AfterContactWorkConfig$AfterContactWorkTimeLimit": "<p>The ACW timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). Enter 0 for indefinite ACW time.</p>",
-        "UserPhoneConfig$AfterContactWorkTimeLimit": "<p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW. </p> <note> <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> </note>"
+        "AfterContactWorkConfig$AfterContactWorkTimeLimit": "<p>The after contact work (ACW) timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>",
+        "UserPhoneConfig$AfterContactWorkTimeLimit": "<p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW. </p> <note> <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> </note>"
       }
     },
     "AgentAvailabilityTimer": {
@@ -2064,6 +2065,7 @@
         "AutoEvaluationConfiguration$Enabled": "<p>Whether automated evaluations are enabled.</p>",
         "AutoEvaluationDetails$AutoEvaluationEnabled": "<p>Whether automated evaluation is enabled.</p>",
         "ContactSearchSummaryAiAgentInfo$AiAgentEscalated": "<p>A boolean flag indicating whether the contact initially handled by this AI agent was escalated to a human agent.</p>",
+        "ConversationalAnalyticsConfiguration$Enabled": "<p>Specifies whether conversational analytics is enabled for the contact.</p>",
         "CreateDataTableAttributeRequest$Primary": "<p>Optional boolean that defaults to false. Determines if the value is used to identify a record in the table. Values for primary attributes must not be expressions.</p>",
         "DataTableAttribute$Primary": "<p>Boolean indicating whether this attribute is used as a primary key for record identification. Primary attributes must have unique value combinations and cannot contain expressions.</p>",
         "DataTableEvaluatedValue$Found": "<p>The value's found.</p>",
@@ -2582,6 +2584,12 @@
       "base": "<p>Information about a reference when the <code>referenceType</code> is <code>CONTACT_ANALYSIS</code>. Otherwise, null.</p>",
       "refs": {
         "ReferenceSummary$ContactAnalysis": null
+      }
+    },
+    "ContactAnalysisReferenceState": {
+      "base": "<p>The current processing state of conversational analytics for a contact, including the analysis status and, when applicable, the reason for that status.</p>",
+      "refs": {
+        "ConversationalAnalytics$ContactAnalysisReferenceState": "<p>The current state of conversational analytics processing for the contact.</p>"
       }
     },
     "ContactConfiguration": {
@@ -3181,6 +3189,54 @@
         "ListEvaluationFormAIVersionsRequest$ContactInteractionType": "<p>The contact interaction type for the evaluation form.</p>"
       }
     },
+    "ContactLens": {
+      "base": "<p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>",
+      "refs": {
+        "Contact$ContactLens": "<p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>"
+      }
+    },
+    "ContactLensAnalyticsModeList": {
+      "base": null,
+      "refs": {
+        "ContactLensChannelConfiguration$AnalyticsModes": "<p>The conversational analytics modes enabled for the channel. Valid values:</p> <ul> <li> <p> <code>RealTime</code> – Real-time analysis is enabled during the contact. Voice channel only.</p> </li> <li> <p> <code>PostContact</code> – Post-contact analysis is enabled after the contact ends. Voice channel only.</p> </li> <li> <p> <code>ContactLens</code> – Conversational analytics is enabled for the contact. Chat channel only.</p> </li> </ul>"
+      }
+    },
+    "ContactLensChannelConfiguration": {
+      "base": "<p>The per-channel conversational analytics configuration for a contact.</p>",
+      "refs": {
+        "ConversationalAnalyticsConfiguration$ChannelConfiguration": "<p>The per-channel conversational analytics settings for the contact.</p>"
+      }
+    },
+    "ContactLensRedactionConfiguration": {
+      "base": "<p>The redaction configuration for conversational analytics transcripts.</p>",
+      "refs": {
+        "ConversationalAnalyticsConfiguration$RedactionConfiguration": "<p>The redaction configuration for the contact transcript.</p>"
+      }
+    },
+    "ContactLensRedactionEntitiesList": {
+      "base": null,
+      "refs": {
+        "ContactLensRedactionConfiguration$Entities": "<p>The entity types to redact from the transcript (for example, <code>NAME</code>, <code>EMAIL</code>, <code>ADDRESS</code>).</p>"
+      }
+    },
+    "ContactLensSentimentConfiguration": {
+      "base": "<p>The conversational analytics sentiment analysis configuration for a contact.</p>",
+      "refs": {
+        "ConversationalAnalyticsConfiguration$SentimentConfiguration": "<p>The sentiment analysis configuration for the contact.</p>"
+      }
+    },
+    "ContactLensSummaryConfiguration": {
+      "base": "<p>The conversational analytics summary configuration for a contact.</p>",
+      "refs": {
+        "ConversationalAnalyticsConfiguration$SummaryConfiguration": "<p>The summary configuration for the contact.</p>"
+      }
+    },
+    "ContactLensSummaryModeList": {
+      "base": null,
+      "refs": {
+        "ContactLensSummaryConfiguration$SummaryModes": "<p>The conversational analytics summary modes enabled for the contact. Valid values: <code>PostContact</code> | <code>AutomatedInteraction</code> | <code>ContactChain</code>.</p>"
+      }
+    },
     "ContactMediaProcessingFailureMode": {
       "base": null,
       "refs": {
@@ -3407,6 +3463,18 @@
       "base": "<p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the <code>SearchFilter</code>.</p> <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p> <ul> <li> <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator</p> </li> <li> <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li> </ul> <note> <p>Only one field can be populated. Maximum number of allowed Tag conditions is 25. Maximum number of allowed Hierarchy Group conditions is 20.</p> </note>",
       "refs": {
         "UserSearchFilter$UserAttributeFilter": "<p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the SearchFilter.</p> <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p> <ul> <li> <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p> </li> <li> <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li> </ul> <note> <p>Only one field can be populated. This object can’t be used along with TagFilter. Request can either contain TagFilter or UserAttributeFilter if SearchFilter is specified, combination of both is not supported and such request will throw AccessDeniedException.</p> </note>"
+      }
+    },
+    "ConversationalAnalytics": {
+      "base": "<p>Contains the conversational analytics configuration and state for a contact.</p>",
+      "refs": {
+        "ContactLens$ConversationalAnalytics": "<p>The conversational analytics configuration applied to the contact.</p>"
+      }
+    },
+    "ConversationalAnalyticsConfiguration": {
+      "base": "<p>The conversational analytics configuration settings for a contact.</p>",
+      "refs": {
+        "ConversationalAnalytics$Configuration": "<p>The conversational analytics settings that apply to the contact.</p>"
       }
     },
     "Count": {
@@ -4282,6 +4350,14 @@
         "RoutingProfileQueueConfig$Delay": "<p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html\">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>",
         "RoutingProfileQueueConfigSummary$Delay": "<p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html\">Queues: priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.</p>"
       }
+    },
+    "DeleteAllEntitySessionsRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeleteAllEntitySessionsResponse": {
+      "base": null,
+      "refs": {}
     },
     "DeleteAttachedFileRequest": {
       "base": "Request to DeleteAttachedFile API",
@@ -5397,6 +5473,12 @@
         "EncryptionConfig$EncryptionType": "<p>The type of encryption.</p>"
       }
     },
+    "EndAssociatedEmailsActionDefinition": {
+      "base": "<p>End associated emails related to a case.</p>",
+      "refs": {
+        "RuleAction$EndAssociatedEmailsAction": "<p>Information about the end associated emails action.</p> <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>"
+      }
+    },
     "EndAssociatedTasksActionDefinition": {
       "base": "<p>End associated tasks related to a case.</p>",
       "refs": {
@@ -5467,7 +5549,8 @@
       "base": null,
       "refs": {
         "AuthScope$EntityId": "<p>The identifier of the entity to scope the session to.</p>",
-        "CreateAuthCodeResponse$EntityId": "<p>The identifier of the entity associated with the authorization code.</p>"
+        "CreateAuthCodeResponse$EntityId": "<p>The identifier of the entity associated with the authorization code.</p>",
+        "DeleteAllEntitySessionsRequest$EntityId": "<p>The identifier of the entity whose sessions you want to delete. For <code>USER</code>, use the user ID or the user ARN.</p>"
       }
     },
     "EntityType": {
@@ -5628,6 +5711,18 @@
         "EvaluationSummary$ContactParticipant": "<p>Information about a contact participant in the evaluation.</p>"
       }
     },
+    "EvaluationEnablementStatus": {
+      "base": null,
+      "refs": {
+        "EvaluationEnablementStatusMap$value": null
+      }
+    },
+    "EvaluationEnablementStatusMap": {
+      "base": null,
+      "refs": {
+        "Evaluation$ItemEnablementStatus": "<p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>"
+      }
+    },
     "EvaluationForm": {
       "base": "<p>Information about the evaluation form.</p>",
       "refs": {
@@ -5669,6 +5764,12 @@
         "ListEvaluationFormAIVersionsResponse$AIVersionSummaries": "<p>The list of AI version summaries.</p>"
       }
     },
+    "EvaluationFormAiMetricsField": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSource$AiMetricsField": "<p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>"
+      }
+    },
     "EvaluationFormAutoEvaluationConfiguration": {
       "base": "<p>The automatic evaluation configuration of an evaluation form.</p>",
       "refs": {
@@ -5676,6 +5777,18 @@
         "EvaluationForm$AutoEvaluationConfiguration": "<p>The automatic evaluation configuration of an evaluation form.</p>",
         "EvaluationFormContent$AutoEvaluationConfiguration": "<p>The configuration of the automated evaluation.</p>",
         "UpdateEvaluationFormRequest$AutoEvaluationConfiguration": "<p>Whether automated evaluations are enabled.</p>"
+      }
+    },
+    "EvaluationFormContactAttributeKey": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSource$ContactAttributeKey": "<p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>"
+      }
+    },
+    "EvaluationFormContactField": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSource$ContactField": "<p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>"
       }
     },
     "EvaluationFormContent": {
@@ -5694,6 +5807,30 @@
         "UpdateEvaluationFormRequest$Description": "<p>The description of the evaluation form.</p>"
       }
     },
+    "EvaluationFormEnablementBooleanValue": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSourceValue$BooleanValue": "<p>A Boolean value to compare against the source. Use when <code>Type</code> is <code>BOOLEAN_VALUE</code>.</p>"
+      }
+    },
+    "EvaluationFormEnablementNumericValue": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSourceValue$NumericValue": "<p>A numeric value to compare against the source. Use when <code>Type</code> is <code>NUMERIC_VALUE</code>.</p>"
+      }
+    },
+    "EvaluationFormEnablementStringValue": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSourceValue$StringValue": "<p>A string value to compare against the source. Use when <code>Type</code> is <code>STRING_VALUE</code>.</p>"
+      }
+    },
+    "EvaluationFormEvaluationMetadataField": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSource$EvaluationMetadataField": "<p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>"
+      }
+    },
     "EvaluationFormId": {
       "base": null,
       "refs": {
@@ -5709,15 +5846,16 @@
     "EvaluationFormItemEnablementAction": {
       "base": null,
       "refs": {
-        "EvaluationFormItemEnablementConfiguration$Action": "<p>An enablement action that if condition is satisfied. </p>",
-        "EvaluationFormItemEnablementConfiguration$DefaultAction": "<p>An enablement action that if condition is not satisfied. </p>"
+        "EvaluationFormItemEnablementConfiguration$Action": "<p>The enablement action to apply if the condition is satisfied.</p>",
+        "EvaluationFormItemEnablementConfiguration$DefaultAction": "<p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>"
       }
     },
     "EvaluationFormItemEnablementCondition": {
       "base": "<p>A condition for item enablement.</p>",
       "refs": {
         "EvaluationFormItemEnablementConditionOperand$Condition": "<p>A condition for item enablement.</p>",
-        "EvaluationFormItemEnablementConfiguration$Condition": "<p>A condition for item enablement configuration.</p>"
+        "EvaluationFormItemEnablementConfiguration$Condition": "<p>A condition for item enablement configuration.</p>",
+        "SingleSelectQuestionAutomationRule$Condition": "<p>The condition that must be satisfied for the answer option to be selected. The condition uses the same sources, comparators, and operators as item enablement conditions.</p>"
       }
     },
     "EvaluationFormItemEnablementConditionOperand": {
@@ -5735,7 +5873,8 @@
     "EvaluationFormItemEnablementConfiguration": {
       "base": "<p>An item enablement configuration.</p>",
       "refs": {
-        "EvaluationFormQuestion$Enablement": "<p>A question conditional enablement.</p>"
+        "EvaluationFormQuestion$Enablement": "<p>A question conditional enablement.</p>",
+        "EvaluationFormSection$Enablement": "<p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>"
       }
     },
     "EvaluationFormItemEnablementExpression": {
@@ -5747,25 +5886,27 @@
     "EvaluationFormItemEnablementOperator": {
       "base": null,
       "refs": {
-        "EvaluationFormItemEnablementCondition$Operator": "<p>The operator to be used to be applied to operands if more than one provided. </p>"
+        "EvaluationFormItemEnablementCondition$Operator": "<p>The operator to apply to the operands when more than one operand is provided.</p>"
       }
     },
     "EvaluationFormItemEnablementSource": {
       "base": "<p>An enablement expression source item.</p>",
       "refs": {
-        "EvaluationFormItemEnablementExpression$Source": "<p>A source item of enablement expression.</p>"
+        "EvaluationFormItemEnablementExpression$Source": "<p>A source item of enablement expression.</p>",
+        "EvaluationResolvedSource$Source": "<p>The external source, such as contact data, evaluation metadata, form metadata, or AI metrics.</p>"
       }
     },
     "EvaluationFormItemEnablementSourceType": {
       "base": null,
       "refs": {
-        "EvaluationFormItemEnablementSource$Type": "<p>A type of source item. </p>"
+        "EvaluationFormItemEnablementSource$Type": "<p>A type of source item. Valid values:</p> <ul> <li> <p> <code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p> </li> <li> <p> <code>CONTACT</code> - Data from the evaluated contact.</p> </li> <li> <p> <code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p> </li> <li> <p> <code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p> </li> </ul>"
       }
     },
     "EvaluationFormItemEnablementSourceValue": {
-      "base": "<p>An enablement expression source value.</p>",
+      "base": "<p>An enablement expression source value. Provide only the value member that matches the specified <code>Type</code>.</p>",
       "refs": {
-        "EvaluationFormItemEnablementSourceValueList$member": null
+        "EvaluationFormItemEnablementSourceValueList$member": null,
+        "EvaluationResolvedSourceValueList$member": null
       }
     },
     "EvaluationFormItemEnablementSourceValueList": {
@@ -5777,13 +5918,13 @@
     "EvaluationFormItemEnablementSourceValueType": {
       "base": null,
       "refs": {
-        "EvaluationFormItemEnablementSourceValue$Type": "<p>A type of source item value. </p>"
+        "EvaluationFormItemEnablementSourceValue$Type": "<p>A type of source item value. Valid values: <code>OPTION_REF_ID</code> | <code>STRING_VALUE</code> | <code>NUMERIC_VALUE</code> | <code>BOOLEAN_VALUE</code> | <code>DATETIME_VALUE</code>.</p>"
       }
     },
     "EvaluationFormItemSourceValuesComparator": {
       "base": null,
       "refs": {
-        "EvaluationFormItemEnablementExpression$Comparator": "<p>A comparator to be used against list of values. </p>"
+        "EvaluationFormItemEnablementExpression$Comparator": "<p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>"
       }
     },
     "EvaluationFormItemWeight": {
@@ -5926,7 +6067,7 @@
     "EvaluationFormQuestionAutomationAnswerSource": {
       "base": "<p>A question automation answer.</p>",
       "refs": {
-        "EvaluationFormMultiSelectQuestionAutomation$AnswerSource": null,
+        "EvaluationFormMultiSelectQuestionAutomation$AnswerSource": "<p>Automation answer source.</p>",
         "EvaluationFormNumericQuestionAutomation$AnswerSource": "<p>A source of automation answer for numeric question.</p>",
         "EvaluationFormSingleSelectQuestionAutomation$AnswerSource": "<p>Automation answer source.</p>",
         "EvaluationFormTextQuestionAutomation$AnswerSource": "<p>Automation answer source.</p>"
@@ -5935,7 +6076,7 @@
     "EvaluationFormQuestionAutomationAnswerSourceType": {
       "base": null,
       "refs": {
-        "EvaluationFormQuestionAutomationAnswerSource$SourceType": "<p>The automation answer source type.</p>"
+        "EvaluationFormQuestionAutomationAnswerSource$SourceType": "<p>The automation answer source type. Valid values:</p> <ul> <li> <p> <code>CONTACT_LENS_DATA</code> - The answer is based on Contact Lens data, such as rule categories and metrics.</p> </li> <li> <p> <code>GEN_AI</code> - The answer is generated by generative AI.</p> </li> <li> <p> <code>CONDITION</code> - The answer is determined by evaluating the conditions defined in the automation rules of the question.</p> </li> </ul>"
       }
     },
     "EvaluationFormQuestionInstructions": {
@@ -6046,6 +6187,12 @@
       "base": null,
       "refs": {
         "EvaluationFormSection$Title": "<p>The title of the section.</p>"
+      }
+    },
+    "EvaluationFormSegmentAttributeKey": {
+      "base": null,
+      "refs": {
+        "EvaluationFormItemEnablementSource$SegmentAttributeKey": "<p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>"
       }
     },
     "EvaluationFormSingleSelectQuestionAutomation": {
@@ -6248,6 +6395,13 @@
         "ContactEvaluations$key": null
       }
     },
+    "EvaluationItemResolutionStatus": {
+      "base": null,
+      "refs": {
+        "Evaluation$SourceResolutionStatus": "<p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p> <ul> <li> <p> <code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p> </li> <li> <p> <code>RESOLVED</code> - All sources have been resolved.</p> </li> <li> <p> <code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p> </li> </ul>",
+        "EvaluationResolvedSource$Status": "<p>The status of resolving the source. Valid values:</p> <ul> <li> <p> <code>PENDING</code> - The source has not been resolved yet.</p> </li> <li> <p> <code>RESOLVED</code> - The source has been resolved.</p> </li> <li> <p> <code>FAILED</code> - The source could not be resolved.</p> </li> </ul>"
+      }
+    },
     "EvaluationMetadata": {
       "base": "<p>Metadata information about a contact evaluation.</p>",
       "refs": {
@@ -6283,13 +6437,31 @@
     "EvaluationQuestionAnswerAnalysisType": {
       "base": null,
       "refs": {
-        "EvaluationSuggestedAnswer$AnalysisType": "<p>Type of analysis used to provide suggested answer.</p>"
+        "EvaluationSuggestedAnswer$AnalysisType": "<p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>"
       }
     },
     "EvaluationQuestionInputDetails": {
       "base": "<p>Details of the input data used for automated question processing.</p>",
       "refs": {
         "EvaluationSuggestedAnswer$Input": "<p>Details about the input used to question automation.</p>"
+      }
+    },
+    "EvaluationResolvedSource": {
+      "base": "<p>The resolved value of an external source that is used by the conditions in an evaluation form.</p>",
+      "refs": {
+        "EvaluationResolvedSourceList$member": null
+      }
+    },
+    "EvaluationResolvedSourceList": {
+      "base": null,
+      "refs": {
+        "Evaluation$SourceValues": "<p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>"
+      }
+    },
+    "EvaluationResolvedSourceValueList": {
+      "base": null,
+      "refs": {
+        "EvaluationResolvedSource$Values": "<p>The resolved values of the source. Present when <code>Status</code> is <code>RESOLVED</code>. Contains one value for a single-valued source, any number of values for a multi-valued source, and no values when the source is not present on the contact.</p>"
       }
     },
     "EvaluationReviewConfiguration": {
@@ -7771,6 +7943,7 @@
         "CreateWorkspaceRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "DeactivateEvaluationFormRequest$InstanceId": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "DefaultVocabulary$InstanceId": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+        "DeleteAllEntitySessionsRequest$InstanceId": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "DeleteAttachedFileRequest$InstanceId": "<p>The unique identifier of the Connect instance.</p>",
         "DeleteContactDataRequest$InstanceId": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "DeleteContactEvaluationRequest$InstanceId": "<p>The identifier of the Connect Customer instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
@@ -8345,7 +8518,14 @@
     "LanguageLocale": {
       "base": null,
       "refs": {
-        "LanguageConfiguration$LanguageLocale": "<p>The language locale setting for conversational analytics.</p>"
+        "LanguageConfiguration$LanguageLocale": "<p>The language locale setting for conversational analytics.</p>",
+        "LanguageLocales$member": null
+      }
+    },
+    "LanguageLocales": {
+      "base": null,
+      "refs": {
+        "ConversationalAnalyticsConfiguration$LanguageLocales": "<p>The language locales that conversational analytics uses to analyze the contact (for example, <code>en-US</code> and <code>es-ES</code>).</p>"
       }
     },
     "LargeNextToken": {
@@ -10102,7 +10282,7 @@
       }
     },
     "NullableAdditionalRecipients": {
-      "base": "Additional recipients for UpdateContact, allowing an empty list to clear CC recipients.",
+      "base": "<p>The additional recipients of an outbound email that you can update. An empty list of <code>CcEmailAddresses</code> clears the existing CC recipients.</p>",
       "refs": {
         "UpdateContactRequest$AdditionalRecipients": "<p>The additional recipients of an outbound email. Use this field to update the CC email address recipients of a contact. An empty list clears the existing CC recipients.</p>"
       }
@@ -10170,7 +10350,7 @@
       }
     },
     "NumericQuestionPropertyValueAutomation": {
-      "base": "<p>Information about the property value used in automation of a numeric questions. Label values are associated with minimum and maximum values for the numeric question.</p> <ul> <li> <p>Sentiment scores have a minimum value of -5 and maximum value of 5.</p> </li> <li> <p> Duration labels, such as <code>NON_TALK_TIME</code>, <code>CONTACT_DURATION</code>, <code>AGENT_INTERACTION_DURATION</code>, <code>CUSTOMER_HOLD_TIME</code> have a minimum value of 0 and maximum value of 63072000.</p> </li> <li> <p>Percentages have a minimum value of 0 and maximum value of 100. </p> </li> <li> <p> <code>NUMBER_OF_INTERRUPTIONS</code> has a minimum value of 0 and maximum value of 1000.</p> </li> </ul>",
+      "base": "<p>Information about the property value used in automation of a numeric question. Label values are associated with minimum and maximum values for the numeric question.</p> <ul> <li> <p>Sentiment scores have a minimum value of -5 and maximum value of 5.</p> </li> <li> <p> Duration labels, such as <code>NON_TALK_TIME</code>, <code>CONTACT_DURATION</code>, <code>AGENT_INTERACTION_DURATION</code>, <code>CUSTOMER_HOLD_TIME</code> have a minimum value of 0 and maximum value of 63072000.</p> </li> <li> <p>Percentages have a minimum value of 0 and maximum value of 100. </p> </li> <li> <p> <code>NUMBER_OF_INTERRUPTIONS</code> has a minimum value of 0 and maximum value of 1000.</p> </li> </ul>",
       "refs": {
         "EvaluationFormNumericQuestionAutomation$PropertyValue": "<p>The property value of the automation.</p>"
       }
@@ -12016,8 +12196,9 @@
       "base": null,
       "refs": {
         "AutomaticFailConfiguration$TargetSection": "<p>The referenceId of the target section for auto failure.</p>",
-        "EvaluationFormItemEnablementSource$RefId": "<p>A referenceId of the source item.</p>",
-        "EvaluationFormItemEnablementSourceValue$RefId": "<p>A referenceId of the source value.</p>",
+        "EvaluationEnablementStatusMap$key": null,
+        "EvaluationFormItemEnablementSource$RefId": "<p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>",
+        "EvaluationFormItemEnablementSourceValue$RefId": "<p>A referenceId of the source value. Use when <code>Type</code> is <code>OPTION_REF_ID</code>.</p>",
         "EvaluationFormMultiSelectQuestionOption$RefId": "<p>Reference identifier for this option.</p>",
         "EvaluationFormQuestion$RefId": "<p>The identifier of the question. An identifier must be unique within the evaluation form.</p>",
         "EvaluationFormSection$RefId": "<p>The identifier of the section. An identifier must be unique within the evaluation form.</p>",
@@ -12025,6 +12206,7 @@
         "EvaluationFormSingleSelectQuestionOption$RefId": "<p>The identifier of the answer option. An identifier must be unique within the question.</p>",
         "EvaluationFormValidationFindingItem$RefId": "<p>The identifier of the evaluation form item (question or section) affected by the finding.</p>",
         "ReferenceIdList$member": null,
+        "SingleSelectQuestionAutomationRule$OptionRefId": "<p>The identifier of the answer option to select when the condition is satisfied.</p>",
         "SingleSelectQuestionRuleCategoryAutomation$OptionRefId": "<p>The identifier of the answer option.</p>"
       }
     },
@@ -12140,6 +12322,7 @@
         "HierarchyLevel$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
         "HoursOfOperation$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
         "HoursOfOperationSummary$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
+        "IntegrationAssociationSummary$LastModifiedRegion": "<p>The Amazon Web Services Region where the integration association was last modified.</p>",
         "ListChildHoursOfOperationsResponse$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
         "ListHoursOfOperationOverridesResponse$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
         "ListQueueEmailAddressesResponse$LastModifiedRegion": "<p>The Amazon Web Services Region where this resource was last modified.</p>",
@@ -13557,6 +13740,12 @@
         "ServiceQuotaExceededException$Reason": null
       }
     },
+    "SessionEntityType": {
+      "base": "<p>Specifies the type of entity whose sessions you delete when you call <code>DeleteAllEntitySessions</code>. The only valid value is <code>USER</code>, which targets a user in your Connect Customer instance.</p>",
+      "refs": {
+        "DeleteAllEntitySessionsRequest$EntityType": "<p>The type of entity whose sessions you want to delete.</p> <note> <p>The only valid value is <code>USER</code>, which signs out a user in your Connect Customer instance.</p> </note>"
+      }
+    },
     "SessionId": {
       "base": null,
       "refs": {
@@ -13593,6 +13782,12 @@
       "base": null,
       "refs": {
         "TaskTemplateField$SingleSelectOptions": "<p>A list of options for a single select field.</p>"
+      }
+    },
+    "SingleSelectQuestionAutomationRule": {
+      "base": "<p>Information about a condition-based automation rule for a single select question. When the condition is satisfied, the specified answer option is selected.</p>",
+      "refs": {
+        "EvaluationFormSingleSelectQuestionAutomationOption$AutomationRule": "<p>The automation option based on a condition for the single select question. Use with the <code>CONDITION</code> answer source type.</p>"
       }
     },
     "SingleSelectQuestionRuleCategoryAutomation": {
@@ -13938,7 +14133,17 @@
         "BatchUpdateDataTableValueFailureResult$Message": "<p>The result's message.</p>",
         "BooleanCondition$FieldName": "<p>A name of the property to be searched.</p>",
         "Contact$DisconnectReason": "<p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord\">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>. </p>",
+        "ContactAnalysisReferenceState$Status": "<p>The status of conversational analytics processing for the contact. Valid values:</p> <ul> <li> <p> <code>REQUESTED</code> – Analysis has been requested for the contact and has not finished.</p> </li> <li> <p> <code>COMPLETED</code> – Analysis finished successfully.</p> </li> <li> <p> <code>FAILED</code> – Analysis did not finish successfully. See <code>StatusReason</code> for the cause.</p> </li> </ul>",
+        "ContactAnalysisReferenceState$StatusReason": "<p>The reason for the current analysis status. This value is populated only when the status is <code>FAILED</code>.</p>",
         "ContactEvaluationAttributeValue$StringValue": "<p>A string value for the attribute.</p>",
+        "ContactLensAnalyticsModeList$member": null,
+        "ContactLensRedactionConfiguration$Behavior": "<p>Specifies whether redaction is enabled for sensitive data, such as personal information, in the conversational analytics output. Valid values:</p> <ul> <li> <p> <code>Enable</code> – Redaction is applied according to the other values in this object.</p> </li> <li> <p> <code>Disable</code> – Redaction is not applied, and all other values in this object are ignored.</p> </li> </ul>",
+        "ContactLensRedactionConfiguration$Policy": "<p>The redaction policy that determines which versions of the transcript are stored. Valid values:</p> <ul> <li> <p> <code>None</code> – No redaction is applied.</p> </li> <li> <p> <code>RedactedOnly</code> – Only the redacted transcript is stored.</p> </li> <li> <p> <code>RedactedAndOriginal</code> – Both the redacted and the original transcript are stored.</p> </li> </ul>",
+        "ContactLensRedactionConfiguration$MaskMode": "<p>How sensitive information is masked in the transcript. Valid values:</p> <ul> <li> <p> <code>PII</code> – All redacted entities are replaced with the <code>[PII]</code> string.</p> </li> <li> <p> <code>EntityType</code> – All redacted entities are replaced with the label of the entity. For example, when the <code>EMAIL</code> entity is configured for redaction, emails in the transcript are replaced with the <code>[EMAIL]</code> string.</p> </li> </ul>",
+        "ContactLensRedactionEntitiesList$member": null,
+        "ContactLensSentimentConfiguration$Behavior": "<p>Specifies whether sentiment analysis is enabled for the contact. The default value is <code>Disable</code>. Valid values:</p> <ul> <li> <p> <code>Enable</code> – Sentiment analysis is performed on the contact.</p> </li> <li> <p> <code>Disable</code> – Sentiment analysis is not performed on the contact.</p> </li> </ul>",
+        "ContactLensSummaryModeList$member": null,
+        "ConversationalAnalyticsConfiguration$LanguageLocale": "<p>The language locale that conversational analytics uses to analyze the contact (for example, <code>en-US</code>).</p>",
         "DataTableEvaluatedValue$EvaluatedValue": "<p>The value's evaluated value.</p>",
         "DataTableLockVersion$DataTable": "<p>The lock version for the data table itself. Used for optimistic locking and table versioning. Changes with each update to the table's metadata or structure.</p>",
         "DataTableLockVersion$Attribute": "<p>The lock version for a specific attribute. When the ValueLockLevel is ATTRIBUTE, this version changes when any value for the attribute changes. For other lock levels, it only changes when the attribute's properties are directly updated.</p>",
@@ -14846,6 +15051,7 @@
         "EvaluationForm$LastValidationTime": "<p>The timestamp when the most recent validation was started for this evaluation form.</p>",
         "EvaluationFormAIVersionLifecycle$StartOfLifeTime": "<p>The timestamp for when this AI version became available.</p>",
         "EvaluationFormAIVersionLifecycle$EndOfLifeTime": "<p>The timestamp when this AI version reaches or reached end of life.</p>",
+        "EvaluationFormItemEnablementSourceValue$DateTimeValue": "<p>A date and time value to compare against the source. Use when <code>Type</code> is <code>DATETIME_VALUE</code>.</p>",
         "EvaluationFormSearchSummary$CreatedTime": "<p>When the evaluation form was created.</p>",
         "EvaluationFormSearchSummary$LastModifiedTime": "<p>When the evaluation form was last changed.</p>",
         "EvaluationFormSearchSummary$LastActivatedTime": "<p>When the evaluation format was last activated.</p>",
@@ -14881,6 +15087,7 @@
         "HoursOfOperationSummary$LastModifiedTime": "<p>The timestamp when this resource was last modified.</p>",
         "Instance$CreatedTime": "<p>When the instance was created.</p>",
         "InstanceSummary$CreatedTime": "<p>When the instance was created.</p>",
+        "IntegrationAssociationSummary$LastModifiedTime": "<p>The timestamp when the integration association was last modified.</p>",
         "ListChildHoursOfOperationsResponse$LastModifiedTime": "<p>The timestamp when this resource was last modified.</p>",
         "ListHoursOfOperationOverridesResponse$LastModifiedTime": "<p>The timestamp when this resource was last modified.</p>",
         "ListQueueEmailAddressesResponse$LastModifiedTime": "<p>The timestamp when this resource was last modified.</p>",

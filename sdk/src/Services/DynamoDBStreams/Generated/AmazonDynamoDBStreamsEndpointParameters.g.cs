@@ -43,6 +43,11 @@ namespace Amazon.DynamoDBStreams.Endpoints
         }
 
         /// <summary>
+        /// The AWS region used to dispatch the request.
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
         public bool? UseDualStack { get; set; }
@@ -58,9 +63,24 @@ namespace Amazon.DynamoDBStreams.Endpoints
         public string Endpoint { get; set; }
 
         /// <summary>
-        /// The AWS region used to dispatch the request.
+        /// The AWS AccountId used for the request.
         /// </summary>
-        public string Region { get; set; }
+        public string AccountId { get; set; }
+
+        /// <summary>
+        /// The AccountId Endpoint Mode.
+        /// </summary>
+        public string AccountIdEndpointMode { get; set; }
+
+        /// <summary>
+        /// The ARN of the stream for the request.
+        /// </summary>
+        public string StreamArn { get; set; }
+
+        /// <summary>
+        /// The shard iterator for the GetRecords request.
+        /// </summary>
+        public string ShardIterator { get; set; }
 
         /// <summary>
         /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
@@ -70,20 +90,28 @@ namespace Amazon.DynamoDBStreams.Endpoints
         {
             get => name switch
             {
+                "Region" => Region,
                 "UseDualStack" => UseDualStack,
                 "UseFIPS" => UseFIPS,
                 "Endpoint" => Endpoint,
-                "Region" => Region,
+                "AccountId" => AccountId,
+                "AccountIdEndpointMode" => AccountIdEndpointMode,
+                "StreamArn" => StreamArn,
+                "ShardIterator" => ShardIterator,
                 _ => base[name],
             };
             set
             {
                 switch (name)
                 {
+                    case "Region": Region = (string)value; break;
                     case "UseDualStack": UseDualStack = (bool?)value; break;
                     case "UseFIPS": UseFIPS = (bool?)value; break;
                     case "Endpoint": Endpoint = (string)value; break;
-                    case "Region": Region = (string)value; break;
+                    case "AccountId": AccountId = (string)value; break;
+                    case "AccountIdEndpointMode": AccountIdEndpointMode = (string)value; break;
+                    case "StreamArn": StreamArn = (string)value; break;
+                    case "ShardIterator": ShardIterator = (string)value; break;
                     default: base[name] = value; break;
                 }
             }
@@ -93,10 +121,14 @@ namespace Amazon.DynamoDBStreams.Endpoints
         protected override bool ParameterValuesEqual(EndpointParameters other)
         {
             var o = (DynamoDBStreamsEndpointParameters)other;
-            return UseDualStack == o.UseDualStack
+            return Region == o.Region
+                && UseDualStack == o.UseDualStack
                 && UseFIPS == o.UseFIPS
                 && Endpoint == o.Endpoint
-                && Region == o.Region
+                && AccountId == o.AccountId
+                && AccountIdEndpointMode == o.AccountIdEndpointMode
+                && StreamArn == o.StreamArn
+                && ShardIterator == o.ShardIterator
                 && base.ParameterValuesEqual(other);
         }
     }

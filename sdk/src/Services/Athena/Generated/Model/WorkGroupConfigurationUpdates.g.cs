@@ -130,8 +130,7 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The engine version requested when a workgroup is updated. After the update, all queries
         /// on the workgroup run on the requested engine version. If no value was previously set,
-        /// the default is Auto. Queries on the <c>AmazonAthenaPreviewFunctionality</c> workgroup
-        /// run on the preview engine regardless of this setting.
+        /// the default is Auto.
         /// </para>
         /// </summary>
         public EngineVersion EngineVersion { get; set; }

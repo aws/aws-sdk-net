@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,100 +38,102 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectConnectGatewayAssociation Object
     /// </summary>
-    public partial class DirectConnectGatewayAssociationUnmarshaller : IJsonUnmarshaller<DirectConnectGatewayAssociation, JsonUnmarshallerContext>
+    public partial class DirectConnectGatewayAssociationUnmarshaller : ICborUnmarshaller<DirectConnectGatewayAssociation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DirectConnectGatewayAssociation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DirectConnectGatewayAssociation Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DirectConnectGatewayAssociation();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("allowedPrefixesToDirectConnectGateway", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
-                    unmarshalledObject.AllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("associatedCoreNetwork", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = AssociatedCoreNetworkUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedCoreNetwork = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "allowedPrefixesToDirectConnectGateway":
+                        context.AddPathSegment("AllowedPrefixesToDirectConnectGateway");
+                        unmarshalledObject.AllowedPrefixesToDirectConnectGateway = new CborListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("associatedGateway", targetDepth, ref reader))
-                {
-                    var unmarshaller = AssociatedGatewayUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedGateway = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "associatedCoreNetwork":
+                        context.AddPathSegment("AssociatedCoreNetwork");
+                        unmarshalledObject.AssociatedCoreNetwork = AssociatedCoreNetworkUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("associationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "associatedGateway":
+                        context.AddPathSegment("AssociatedGateway");
+                        unmarshalledObject.AssociatedGateway = AssociatedGatewayUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("associationState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "associationId":
+                        context.AddPathSegment("AssociationId");
+                        unmarshalledObject.AssociationId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("directConnectGatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "associationState":
+                        context.AddPathSegment("AssociationState");
+                        unmarshalledObject.AssociationState = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("directConnectGatewayOwnerAccount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "directConnectGatewayId":
+                        context.AddPathSegment("DirectConnectGatewayId");
+                        unmarshalledObject.DirectConnectGatewayId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("stateChangeError", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "directConnectGatewayOwnerAccount":
+                        context.AddPathSegment("DirectConnectGatewayOwnerAccount");
+                        unmarshalledObject.DirectConnectGatewayOwnerAccount = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualGatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "stateChangeError":
+                        context.AddPathSegment("StateChangeError");
+                        unmarshalledObject.StateChangeError = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualGatewayOwnerAccount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "virtualGatewayId":
+                        context.AddPathSegment("VirtualGatewayId");
+                        unmarshalledObject.VirtualGatewayId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("virtualGatewayRegion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayRegion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "virtualGatewayOwnerAccount":
+                        context.AddPathSegment("VirtualGatewayOwnerAccount");
+                        unmarshalledObject.VirtualGatewayOwnerAccount = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "virtualGatewayRegion":
+                        context.AddPathSegment("VirtualGatewayRegion");
+                        unmarshalledObject.VirtualGatewayRegion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

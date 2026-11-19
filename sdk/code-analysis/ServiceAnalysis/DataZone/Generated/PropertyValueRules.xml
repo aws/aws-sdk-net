@@ -6804,6 +6804,11 @@
     <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.OAuth2PropertiesPatch.TokenUrl</property>
+    <max>256</max>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.OwnerGroupProperties.GroupIdentifier</property>
     <pattern>.*(^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$|[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+).*</pattern>
   </property-value-rule>

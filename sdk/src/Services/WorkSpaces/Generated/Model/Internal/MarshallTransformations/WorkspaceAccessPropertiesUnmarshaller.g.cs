@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,93 +38,96 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WorkspaceAccessProperties Object
     /// </summary>
-    public partial class WorkspaceAccessPropertiesUnmarshaller : IJsonUnmarshaller<WorkspaceAccessProperties, JsonUnmarshallerContext>
+    public partial class WorkspaceAccessPropertiesUnmarshaller : ICborUnmarshaller<WorkspaceAccessProperties, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public WorkspaceAccessProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkspaceAccessProperties Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new WorkspaceAccessProperties();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccessEndpointConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = AccessEndpointConfigUnmarshaller.Instance;
-                    unmarshalledObject.AccessEndpointConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DeviceTypeAndroid", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeAndroid = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AccessEndpointConfig":
+                        context.AddPathSegment("AccessEndpointConfig");
+                        unmarshalledObject.AccessEndpointConfig = AccessEndpointConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeChromeOs", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeChromeOs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeAndroid":
+                        context.AddPathSegment("DeviceTypeAndroid");
+                        unmarshalledObject.DeviceTypeAndroid = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeIos", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeIos = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeChromeOs":
+                        context.AddPathSegment("DeviceTypeChromeOs");
+                        unmarshalledObject.DeviceTypeChromeOs = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeLinux", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeLinux = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeIos":
+                        context.AddPathSegment("DeviceTypeIos");
+                        unmarshalledObject.DeviceTypeIos = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeOsx", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeOsx = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeLinux":
+                        context.AddPathSegment("DeviceTypeLinux");
+                        unmarshalledObject.DeviceTypeLinux = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeWeb", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWeb = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeOsx":
+                        context.AddPathSegment("DeviceTypeOsx");
+                        unmarshalledObject.DeviceTypeOsx = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeWindows", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWindows = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeWeb":
+                        context.AddPathSegment("DeviceTypeWeb");
+                        unmarshalledObject.DeviceTypeWeb = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeWorkSpacesThinClient", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWorkSpacesThinClient = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DeviceTypeWindows":
+                        context.AddPathSegment("DeviceTypeWindows");
+                        unmarshalledObject.DeviceTypeWindows = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DeviceTypeZeroClient", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeZeroClient = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DeviceTypeWorkSpacesThinClient":
+                        context.AddPathSegment("DeviceTypeWorkSpacesThinClient");
+                        unmarshalledObject.DeviceTypeWorkSpacesThinClient = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "DeviceTypeZeroClient":
+                        context.AddPathSegment("DeviceTypeZeroClient");
+                        unmarshalledObject.DeviceTypeZeroClient = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// The <c>ReplaceEmailContent</c> object to be used for a specific <c>BulkEmailEntry</c>.
+    /// The <c>ReplacementEmailContent</c> object to be used for a specific <c>BulkEmailEntry</c>.
     /// The <c>ReplacementTemplate</c> can be specified within this object.
     /// </summary>
     public partial class ReplacementEmailContent

@@ -515,6 +515,19 @@ namespace Amazon.Odb.Model
         internal bool IsSetOcid() => this.Ocid != null;
 
         /// <summary>
+        /// Gets and sets the property OcpusLowestScaledValue. 
+        /// <para>
+        /// The minimum value to which you can scale down the number of CPU cores.
+        /// </para>
+        /// </summary>
+        public int? OcpusLowestScaledValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OcpusLowestScaledValue property is set.
+        /// </summary>
+        internal bool IsSetOcpusLowestScaledValue() => this.OcpusLowestScaledValue.HasValue;
+
+        /// <summary>
         /// Gets and sets the property OdbNetworkArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous

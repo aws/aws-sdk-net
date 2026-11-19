@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LambdaCore.Model
 {
     /// <summary>
-    /// The specified network connector does not exist. Verify the identifier (ID, name, or
-    /// ARN) and Region.
+    /// The specified resource does not exist. Verify the identifier and Region.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

@@ -53,6 +53,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("jobParameters", targetDepth, ref reader))
+                {
+                    var unmarshaller = PopulationAnalysisJobParametersUnmarshaller.Instance;
+                    unmarshalledObject.JobParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("sqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PopulationAnalysisSqlParametersUnmarshaller.Instance;

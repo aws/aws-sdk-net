@@ -48,6 +48,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WriteTextString("KmsKeyArn");
+                context.Writer.WriteTextString(requestObject.KmsKeyArn);
+            }
+
+            if (requestObject.IsSetReplaySessionEnabled())
+            {
+                context.Writer.WriteTextString("ReplaySessionEnabled");
+                context.Writer.WriteBoolean(requestObject.ReplaySessionEnabled.Value);
+            }
+
             if (requestObject.IsSetS3BucketArn())
             {
                 context.Writer.WriteTextString("S3BucketArn");

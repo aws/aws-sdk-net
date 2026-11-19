@@ -77,15 +77,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
                 HeadersEventMarshaller.Instance.Marshall((HeadersEvent)evnt, context);
                 eventHeaders = context.Request.EventHeaders;
-                context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
                 eventType = "headers";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                contentType = null;
+                eventPayload = Array.Empty<byte>();
             }
             else if (evnt is HeadersAndExplicitPayloadEvent)
             {

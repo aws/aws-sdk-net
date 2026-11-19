@@ -102,6 +102,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("exampleCountByField", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExampleCountByFieldUnmarshaller.Instance;
+                    unmarshalledObject.ExampleCountByField = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("schemaType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

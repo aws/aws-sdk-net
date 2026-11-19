@@ -50,6 +50,22 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetChangeComputeType() => this.ChangeComputeType != null;
 
         /// <summary>
+        /// Gets and sets the property EnableEndUserAdvisor. 
+        /// <para>
+        /// Specifies whether users can use End User Advisor in the WorkSpaces client for Windows
+        /// to see their session health and get recommended actions for common issues. The default
+        /// value is <c>ENABLED</c>. For more information, see Proactive troubleshooting for your
+        /// WorkSpaces users.
+        /// </para>
+        /// </summary>
+        public ReconnectEnum EnableEndUserAdvisor { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableEndUserAdvisor property is set.
+        /// </summary>
+        internal bool IsSetEnableEndUserAdvisor() => this.EnableEndUserAdvisor != null;
+
+        /// <summary>
         /// Gets and sets the property IncreaseVolumeSize. 
         /// <para>
         /// Specifies whether users can increase the volume size of the drives on their WorkSpace.
@@ -61,6 +77,21 @@ namespace Amazon.WorkSpaces.Model
         /// Checks to see if the IncreaseVolumeSize property is set.
         /// </summary>
         internal bool IsSetIncreaseVolumeSize() => this.IncreaseVolumeSize != null;
+
+        /// <summary>
+        /// Gets and sets the property NestedVirtualization. 
+        /// <para>
+        /// Specifies whether users can enable or disable nested virtualization on their WorkSpace.
+        /// The default value is <c>DISABLED</c>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested
+        /// virtualization for Amazon WorkSpaces</a>.
+        /// </para>
+        /// </summary>
+        public ReconnectEnum NestedVirtualization { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NestedVirtualization property is set.
+        /// </summary>
+        internal bool IsSetNestedVirtualization() => this.NestedVirtualization != null;
 
         /// <summary>
         /// Gets and sets the property RebuildWorkspace. 

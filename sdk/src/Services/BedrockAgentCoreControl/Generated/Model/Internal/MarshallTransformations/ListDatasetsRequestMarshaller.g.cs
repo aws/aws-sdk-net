@@ -54,22 +54,46 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDatasetsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockAgentCoreControl");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-06-05";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
+            request.ResourcePath = "/datasets/list";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ListDatasetsFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetMaxResults())
             {
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
-
             if (publicRequest.IsSetNextToken())
             {
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
-            request.ResourcePath = "/datasets";
-
-            request.UseQueryString = true;
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
 
             return request;
         }

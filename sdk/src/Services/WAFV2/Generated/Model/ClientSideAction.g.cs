@@ -38,19 +38,29 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExemptUriRegularExpressions. 
         /// <para>
-        /// The regular expression to match against the web request URI, used to identify requests
-        /// that can't handle a silent browser challenge. When the <c>ClientSideAction</c> setting
-        /// <c>UsageOfAction</c> is enabled, the managed rule group uses this setting to determine
-        /// which requests to label with <c>awswaf:managed:aws:anti-ddos:challengeable-request</c>.
+        /// The regular expression to match against the request's host followed by its normalized
+        /// URI path, used to identify requests that can't handle a silent browser challenge.
+        /// When the <c>ClientSideAction</c> setting <c>UsageOfAction</c> is enabled, the managed
+        /// rule group uses this setting to determine which requests to label with <c>awswaf:managed:aws:anti-ddos:challengeable-request</c>.
         /// If <c>UsageOfAction</c> is disabled, this setting has no effect and the managed rule
         /// group doesn't add the label to any requests.
         /// </para>
         ///  
         /// <para>
+        /// WAF matches against the host immediately followed by the normalized URI path and doesn't
+        /// include the scheme, the query string, or the fragment. For example, <c>www.example.com/api/orders</c>.
+        /// Because the match begins with the host, a pattern anchored to the start of the path,
+        /// such as <c>^/api/</c>, never matches. WAF normalizes the path first, removing empty
+        /// segments (including a trailing slash) and single-dot (<c>.</c>) segments and resolving
+        /// double-dot (<c>..</c>) segments, so <c>/api/</c> is evaluated as <c>/api</c>. Only
+        /// <c>GET</c> requests are challengeable.
+        /// </para>
+        ///  
+        /// <para>
         /// The anti-DDoS managed rule group doesn't evaluate the rules <c>ChallengeDDoSRequests</c>
-        /// or <c>ChallengeAllDuringEvent</c> for web requests whose URIs match this regex. This
-        /// is true regardless of whether you override the rule action for either of the rules
-        /// in your web ACL configuration. 
+        /// or <c>ChallengeAllDuringEvent</c> for web requests that match this regex. This is
+        /// true regardless of whether you override the rule action for either of the rules in
+        /// your web ACL configuration. 
         /// </para>
         ///  
         /// <para>
@@ -68,7 +78,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp[34]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</c>
+        ///  <c>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp[34]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</c>
         /// 
         /// </para>
         /// <para />
@@ -136,8 +146,8 @@ namespace Amazon.WAFV2.Model
         ///  <ul> <li> 
         /// <para>
         /// The managed rule group adds the label <c>awswaf:managed:aws:anti-ddos:challengeable-request</c>
-        /// to any web request whose URL does <i>NOT</i> match the regular expressions provided
-        /// in the <c>ClientSideAction</c> setting <c>ExemptUriRegularExpressions</c>. 
+        /// to any web request that does not match the regular expressions provided in the <c>ClientSideAction</c>
+        /// setting <c>ExemptUriRegularExpressions</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

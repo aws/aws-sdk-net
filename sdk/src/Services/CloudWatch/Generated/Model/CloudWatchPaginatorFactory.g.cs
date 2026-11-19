@@ -97,6 +97,14 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetricDataQueryDefinitions operation
+        /// </summary>
+        public IListMetricDataQueryDefinitionsPaginator ListMetricDataQueryDefinitions(ListMetricDataQueryDefinitionsRequest request)
+        {
+            return new ListMetricDataQueryDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMetricStreams operation
         /// </summary>
         public IListMetricStreamsPaginator ListMetricStreams(ListMetricStreamsRequest request)

@@ -94,7 +94,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The date and time when the agreement ends. The field is <c>null</c> for pay-as-you-go
-        /// agreements, which don’t have end dates.
+        /// agreements, which don't have end dates.
         /// </para>
         /// </summary>
         public DateTime? EndTime { get; set; }
@@ -204,6 +204,46 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Checks to see if the Entitlements property is set.
         /// </summary>
         internal bool IsSetEntitlements() => this.Entitlements != null && (this.Entitlements.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FreeTrialEndTime. 
+        /// <para>
+        /// The date and time when the free trial of the agreement ends. This field is present
+        /// only when the agreement includes a free trial.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an agreement that includes both a free trial and usage-based pricing, the agreement
+        /// converts to paid usage at this time.
+        /// </para>
+        /// </summary>
+        public DateTime? FreeTrialEndTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FreeTrialEndTime property is set.
+        /// </summary>
+        internal bool IsSetFreeTrialEndTime() => this.FreeTrialEndTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IncludesContactOfType. 
+        /// <para>
+        /// The types of contact information on file for the agreement. For example, <c>ACCEPTOR</c>
+        /// indicates that the acceptor's contact information is on file, which you can retrieve
+        /// with <c>GetAgreementContacts</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> IncludesContactOfType { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the IncludesContactOfType property is set.
+        /// </summary>
+        internal bool IsSetIncludesContactOfType() => this.IncludesContactOfType != null && (this.IncludesContactOfType.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property InitialAgreementId. 

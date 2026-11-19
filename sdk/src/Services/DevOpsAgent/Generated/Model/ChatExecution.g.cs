@@ -35,6 +35,19 @@ namespace Amazon.DevOpsAgent.Model
     public partial class ChatExecution
     {
         /// <summary>
+        /// Gets and sets the property ArchiveStatus. 
+        /// <para>
+        /// Indicates whether the chat execution is archived or active.
+        /// </para>
+        /// </summary>
+        public ChatArchiveStatus ArchiveStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArchiveStatus property is set.
+        /// </summary>
+        internal bool IsSetArchiveStatus() => this.ArchiveStatus != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// Timestamp when the chat was created

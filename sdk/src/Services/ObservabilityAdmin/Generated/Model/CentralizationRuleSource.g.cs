@@ -109,5 +109,18 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Checks to see if the SourceMetricsConfiguration property is set.
         /// </summary>
         internal bool IsSetSourceMetricsConfiguration() => this.SourceMetricsConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceProfilesConfiguration. 
+        /// <para>
+        /// Profile-specific configuration for centralization source profiles.
+        /// </para>
+        /// </summary>
+        public SourceProfilesConfiguration SourceProfilesConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceProfilesConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSourceProfilesConfiguration() => this.SourceProfilesConfiguration != null;
     }
 }

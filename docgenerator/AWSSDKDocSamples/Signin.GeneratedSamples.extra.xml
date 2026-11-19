@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsRequest" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Revokes a session owned by the caller and records the reason.
+        </para>
+        <code title="Revoke one of your own sessions" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="BatchRevokeSessions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsRequest" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Uses the account wildcard principal ARN to revoke another IAM identity's session.
+        </para>
+        <code title="Revoke another identity's session as an account administrator" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="BatchRevokeSessions-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.BatchRevokeSessions(Amazon.Signin.Model.BatchRevokeSessionsRequest)" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsRequest" />
+      <member name="T:Amazon.Signin.Model.BatchRevokeSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Revokes the caller's session and reports a session that was not found in the errors list.
+        </para>
+        <code title="Revoke a batch of sessions with a partial failure" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="BatchRevokeSessions-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.GetSession(Amazon.Signin.Model.GetSessionRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.GetSession(Amazon.Signin.Model.GetSessionRequest)" />
+      <member name="T:Amazon.Signin.Model.GetSessionRequest" />
+      <member name="T:Amazon.Signin.Model.GetSessionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns a session owned by the caller when principalArn is omitted.
+        </para>
+        <code title="Get one of your own sessions" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="GetSession-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.GetSession(Amazon.Signin.Model.GetSessionRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.GetSession(Amazon.Signin.Model.GetSessionRequest)" />
+      <member name="T:Amazon.Signin.Model.GetSessionRequest" />
+      <member name="T:Amazon.Signin.Model.GetSessionResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Uses the account wildcard principal ARN to get a session owned by another IAM identity.
+        </para>
+        <code title="Get another identity's session as an account administrator" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="GetSession-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.ListSessions(Amazon.Signin.Model.ListSessionsRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.ListSessions(Amazon.Signin.Model.ListSessionsRequest)" />
+      <member name="T:Amazon.Signin.Model.ListSessionsRequest" />
+      <member name="T:Amazon.Signin.Model.ListSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Lists the caller's sessions when principalArn is omitted.
+        </para>
+        <code title="List your own sessions" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="ListSessions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Signin.IAmazonSignin.ListSessions(Amazon.Signin.Model.ListSessionsRequest)" />
+      <member name="M:Amazon.Signin.AmazonSigninClient.ListSessions(Amazon.Signin.Model.ListSessionsRequest)" />
+      <member name="T:Amazon.Signin.Model.ListSessionsRequest" />
+      <member name="T:Amazon.Signin.Model.ListSessionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          Returns one active session and a token to request the next page.
+        </para>
+        <code title="List active sessions one page at a time" source=".\AWSSDKDocSamples\Signin\Signin.GeneratedSamples.cs" region="ListSessions-2" />
+      </example>
+    </value>
+  </doc>
+</docs>

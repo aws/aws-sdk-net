@@ -122,6 +122,22 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property NetworkConfigurationDetails. 
+        /// <para>
+        /// The network access controls configured for your Identity Center instance, including
+        /// whether VPC endpoint access is required, and any VPC, IP address range, or application
+        /// controls applied to instance traffic. Present only after a network configuration has
+        /// been set on the instance.
+        /// </para>
+        /// </summary>
+        public NetworkConfigurationInfo NetworkConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetworkConfigurationDetails property is set.
+        /// </summary>
+        internal bool IsSetNetworkConfigurationDetails() => this.NetworkConfigurationDetails != null;
+
+        /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
         /// The identifier of the Amazon Web Services account for which the instance was created.

@@ -84,6 +84,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetEndAssociatedEmailsAction())
+            {
+                context.Writer.WritePropertyName("EndAssociatedEmailsAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndAssociatedEmailsActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.EndAssociatedEmailsAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetEndAssociatedTasksAction())
             {
                 context.Writer.WritePropertyName("EndAssociatedTasksAction");

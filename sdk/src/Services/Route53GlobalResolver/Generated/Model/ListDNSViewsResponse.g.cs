@@ -37,8 +37,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property DnsViews. 
         /// <para>
-        /// An array of information about the DNS views, such as whether DNSSEC is enabled, creation
-        /// time, etc.
+        /// An array of information about the DNS views, such as whether DNSSEC is enabled and
+        /// the creation time.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

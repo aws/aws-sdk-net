@@ -84,9 +84,9 @@ namespace Amazon.S3
     /// </para>
     ///  <note> 
     /// <para>
-    /// Support for SOAP over HTTP is deprecated, but it is still available over HTTPS. However,
-    /// new Amazon S3 features will not be supported for SOAP. We recommend that you use either
-    /// this REST API or the Amazon Web Services SDKs.
+    /// As announced on May 5, 2025, SOAP API support is discontinued. Requests that use the
+    /// SOAP API return an HTTP <c>400 Bad Request</c> error. Use this REST API or the Amazon
+    /// Web Services SDKs instead.
     /// </para>
     ///  </note>
     /// </summary>
@@ -6175,7 +6175,7 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
         /// API operation. We no longer recommend using the V1 <c>DeleteBucketMetadataTableConfiguration</c>
         /// API operation. 
         /// </para>
@@ -6250,7 +6250,7 @@ namespace Amazon.S3
         /// <summary>
         /// <important> 
         /// <para>
-        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
         /// API operation. We no longer recommend using the V1 <c>DeleteBucketMetadataTableConfiguration</c>
         /// API operation. 
         /// </para>
@@ -11622,7 +11622,7 @@ namespace Amazon.S3
         /// <important> 
         /// <para>
         ///  We recommend that you retrieve your S3 Metadata configurations by using the V2 <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
         /// API operation. We no longer recommend using the V1 <c>GetBucketMetadataTableConfiguration</c>
         /// API operation. 
         /// </para>
@@ -11698,7 +11698,7 @@ namespace Amazon.S3
         /// <important> 
         /// <para>
         ///  We recommend that you retrieve your S3 Metadata configurations by using the V2 <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
         /// API operation. We no longer recommend using the V1 <c>GetBucketMetadataTableConfiguration</c>
         /// API operation. 
         /// </para>
@@ -14142,10 +14142,6 @@ namespace Amazon.S3
         /// <para>
         /// HTTP Status Code: 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
-        /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// The following operations are related to <c>GetBucketLifecycleConfiguration</c>:
@@ -14262,10 +14258,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// HTTP Status Code: 404 Not Found
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -14386,10 +14378,6 @@ namespace Amazon.S3
         /// <para>
         /// HTTP Status Code: 404 Not Found
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
-        /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// The following operations are related to <c>GetBucketLifecycleConfiguration</c>:
@@ -14509,10 +14497,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// HTTP Status Code: 404 Not Found
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -18806,14 +18790,23 @@ namespace Amazon.S3
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
         /// charged for storing the uploaded parts, you must either complete or abort the multipart
         /// upload. Amazon S3 frees up the space used to store the parts and stops charging you
         /// for storing them only after you either complete or abort a multipart upload. 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// When you initiate a multipart upload, Amazon S3 records the bucket configuration in
+        /// place at that time and uses it for the rest of the upload. Changes that you make to
+        /// the bucket configuration after you initiate the upload don't apply to that upload.
+        /// To apply new bucket configuration to uploads in progress, use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// to find them and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// to stop them. Then start the uploads again.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
         /// created multipart upload must be completed within the number of days specified in
@@ -19103,14 +19096,23 @@ namespace Amazon.S3
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
         /// charged for storing the uploaded parts, you must either complete or abort the multipart
         /// upload. Amazon S3 frees up the space used to store the parts and stops charging you
         /// for storing them only after you either complete or abort a multipart upload. 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// When you initiate a multipart upload, Amazon S3 records the bucket configuration in
+        /// place at that time and uses it for the rest of the upload. Changes that you make to
+        /// the bucket configuration after you initiate the upload don't apply to that upload.
+        /// To apply new bucket configuration to uploads in progress, use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// to find them and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// to stop them. Then start the uploads again.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
         /// created multipart upload must be completed within the number of days specified in
@@ -19400,14 +19402,23 @@ namespace Amazon.S3
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
         /// charged for storing the uploaded parts, you must either complete or abort the multipart
         /// upload. Amazon S3 frees up the space used to store the parts and stops charging you
         /// for storing them only after you either complete or abort a multipart upload. 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// When you initiate a multipart upload, Amazon S3 records the bucket configuration in
+        /// place at that time and uses it for the rest of the upload. Changes that you make to
+        /// the bucket configuration after you initiate the upload don't apply to that upload.
+        /// To apply new bucket configuration to uploads in progress, use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// to find them and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// to stop them. Then start the uploads again.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
         /// created multipart upload must be completed within the number of days specified in
@@ -19700,14 +19711,23 @@ namespace Amazon.S3
         /// multipart upload request. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
         /// Upload Overview</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// After you initiate a multipart upload and upload one or more parts, to stop being
         /// charged for storing the uploaded parts, you must either complete or abort the multipart
         /// upload. Amazon S3 frees up the space used to store the parts and stops charging you
         /// for storing them only after you either complete or abort a multipart upload. 
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
+        /// <para>
+        /// When you initiate a multipart upload, Amazon S3 records the bucket configuration in
+        /// place at that time and uses it for the rest of the upload. Changes that you make to
+        /// the bucket configuration after you initiate the upload don't apply to that upload.
+        /// To apply new bucket configuration to uploads in progress, use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+        /// to find them and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+        /// to stop them. Then start the uploads again.
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// If you have configured a lifecycle rule to abort incomplete multipart uploads, the
         /// created multipart upload must be completed within the number of days specified in
@@ -32528,10 +32548,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -32545,10 +32561,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -32759,10 +32771,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -32776,10 +32784,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -32992,10 +32996,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -33009,10 +33009,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -33225,10 +33221,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -33242,10 +33234,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -33460,10 +33448,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -33477,10 +33461,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -33691,10 +33671,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -33708,10 +33684,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -33925,10 +33897,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -33942,10 +33910,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -34161,10 +34125,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -34178,10 +34138,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -34397,10 +34353,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -34414,10 +34366,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -34635,10 +34583,6 @@ namespace Amazon.S3
         /// <para>
         ///  <i>HTTP Status Code: 409 Conflict</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: Client</i> 
-        /// </para>
         ///  </li> </ul> </li> <li> <ul> <li> 
         /// <para>
         ///  <i>Code: GlacierExpeditedRetrievalNotAvailable</i> 
@@ -34652,10 +34596,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <i>HTTP Status Code: 503</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>SOAP Fault Code Prefix: N/A</i> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl> 
         /// <para>
@@ -35986,10 +35926,6 @@ namespace Amazon.S3
         /// <para>
         /// HTTP Status Code: 404 Not Found 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
-        /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
@@ -36225,10 +36161,6 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// HTTP Status Code: 404 Not Found 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// SOAP Fault Code Prefix: Client
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>

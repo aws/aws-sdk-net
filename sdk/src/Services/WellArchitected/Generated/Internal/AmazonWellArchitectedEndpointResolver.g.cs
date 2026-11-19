@@ -85,12 +85,27 @@ namespace Amazon.WellArchitected.Internal
             }
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CreateAgentBasicProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
             if (requestContext.RequestName == "CreateAgentContextRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
             }
             if (requestContext.RequestName == "CreateAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAgentOrganizationalProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAgentOrganizationalReportRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
@@ -110,7 +125,22 @@ namespace Amazon.WellArchitected.Internal
                 result.SubServiceType = "AGENT";
                 return result;
             }
+            if (requestContext.RequestName == "DeleteAgentOrganizationalReportRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
             if (requestContext.RequestName == "DeleteAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAgentProfilePolicyRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAgentRecommendationPolicyRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
@@ -125,7 +155,27 @@ namespace Amazon.WellArchitected.Internal
                 result.SubServiceType = "AGENT";
                 return result;
             }
+            if (requestContext.RequestName == "GetAgentOrganizationalReportRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentOrganizationalReportDataRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentPreferencesRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
             if (requestContext.RequestName == "GetAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentProfilePolicyRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
@@ -140,12 +190,22 @@ namespace Amazon.WellArchitected.Internal
                 result.SubServiceType = "AGENT";
                 return result;
             }
+            if (requestContext.RequestName == "GetAgentRecommendationPolicyRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
             if (requestContext.RequestName == "ListAgentContextsRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
             }
             if (requestContext.RequestName == "ListAgentGoalsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentOrganizationalReportsRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;
@@ -170,7 +230,27 @@ namespace Amazon.WellArchitected.Internal
                 result.SubServiceType = "AGENT";
                 return result;
             }
+            if (requestContext.RequestName == "PutAgentPreferencesRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "PutAgentProfilePolicyRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
             if (requestContext.RequestName == "PutAgentRecommendationFeedbackRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "PutAgentRecommendationPolicyRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "SendAgentOrganizationalReportDataToS3Request")
             {
                 result.SubServiceType = "AGENT";
                 return result;
@@ -186,6 +266,11 @@ namespace Amazon.WellArchitected.Internal
                 return result;
             }
             if (requestContext.RequestName == "UpdateAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAgentOrganizationalProfileRequest")
             {
                 result.SubServiceType = "AGENT";
                 return result;

@@ -15,13 +15,17 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// <c>{name}.{i}</c> when <c>@xmlFlattened</c>), its item element named by the list value's <c>@xmlName</c>;
 /// a map is <c>{name}.entry.{i}.key</c>/<c>.value</c> (or <c>{name}.{i}.*</c> when flattened). Indices are
 /// 1-based, matching C2J (<c>AWSQueryRequestMarshaller.tt</c>). ec2Query names a member by
-/// <see cref="XmlNames.Ec2QueryName"/> and writes every list flattened.
+/// <see cref="XmlNames.Ec2QueryName"/> and writes every list flattened. <paramref name="operationName"/> selects
+/// the ec2 customizations that apply to one operation's request only.
 /// </summary>
-internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
+internal sealed class QueryBodyMemberMarshaller(GenerationContext context, string operationName)
 {
     // awsQuery body timestamps default to date-time (ISO8601) when @timestampFormat is unset.
     // https://smithy.io/2.0/aws/protocols/aws-query-protocol.html
     private const string BodyTimestampDefault = "date-time";
+
+    // The structures that contain themselves and so need a method.
+    private readonly List<StructureShape> _recursive = [];
 
     /// <summary>
     /// Writes every member of <paramref name="owner"/> accessed through <paramref name="objectVar"/> under
@@ -32,9 +36,14 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
     {
         foreach (var member in members)
         {
+            // Sent by hand-written code instead (ec2's AmazonEC2PostMarshallHandler).
+            if (context.Customizations.CustomMarshall(owner.Id.Name, member.ModeledName))
+            {
+                continue;
+            }
+
             var memberShape = owner.Members[member.ModeledName];
-            var name = context.Protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2QueryName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName);
-            var paramName = Join(prefix, name);
+            var paramName = Join(prefix, ParameterName(owner, memberShape, member));
             var access = $"{objectVar}.{member.PropertyName}";
 
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
@@ -53,12 +62,93 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
         }
     }
 
+    /// <summary>
+    /// Writes a <c>Marshall{Structure}</c> method for each structure <see cref="WriteStructureBody"/> met that
+    /// contains itself.
+    /// </summary>
+    public void WriteRecursiveStructureMethods(CodeWriter writer)
+    {
+        // A method's body can find another recursive structure, so the list can grow during the loop.
+        for (var i = 0; i < _recursive.Count; i++)
+        {
+            var structure = _recursive[i];
+            var className = context.ToDotNetName(structure.Id);
+            writer.WriteLine("");
+            writer.OpenBlock($"private static void Marshall{className}(IRequest request, {className} value, string prefix)", () =>
+            {
+                WriteStructureBody(writer, structure, TypeMapper.ResolveMembers(structure, context), "value", "prefix", depth: 0);
+            });
+        }
+    }
+
+    // A nested structure is written inline. One that contains itself would never end, so it calls a method
+    // that calls itself.
+    private void WriteNestedStructure(CodeWriter writer, StructureShape structure, string objectVar, string prefix, int depth)
+    {
+        if (ContainsItself(structure))
+        {
+            if (!_recursive.Contains(structure))
+            {
+                _recursive.Add(structure);
+            }
+
+            writer.WriteLine($"Marshall{context.ToDotNetName(structure.Id)}(request, {objectVar}, {prefix});");
+            return;
+        }
+
+        WriteStructureBody(writer, structure, TypeMapper.ResolveMembers(structure, context), objectVar, prefix, depth + 1);
+    }
+
+    // True when one of the structure's members, at any depth, is the structure itself.
+    private bool ContainsItself(StructureShape structure)
+    {
+        // Every structure found under it is added to the list and looked into in turn.
+        var nested = new List<StructureShape> { structure };
+        for (var i = 0; i < nested.Count; i++)
+        {
+            foreach (var member in TypeMapper.ResolveMembers(nested[i], context))
+            {
+                var type = member.Type.ListElement ?? member.Type.MapValue ?? member.Type;
+                if (type.Target is not StructureShape found)
+                {
+                    continue;
+                }
+
+                if (found == structure)
+                {
+                    return true;
+                }
+
+                if (!nested.Contains(found))
+                {
+                    nested.Add(found);
+                }
+            }
+        }
+
+        return false;
+    }
+
+    // ec2Query: a marshallNameOverrides name outranks the modeled one (C2J upper-cases both), and an unwrapped value
+    // keeps its wrapper element.
+    private string ParameterName(StructureShape owner, MemberShape memberShape, Member member)
+    {
+        if (context.Protocol != AWSProtocol.Ec2Query)
+        {
+            return XmlNames.ElementName(memberShape, member.ModeledName);
+        }
+
+        var name = context.Customizations.MarshallNameOverride(operationName, owner.Id.Name, member.PropertyName) is { } overridden
+            ? SdkNaming.ToUpperFirstCharacter(overridden)
+            : XmlNames.Ec2QueryName(memberShape, member.ModeledName);
+        return member.Type.Unwrapped is { } unwrapped ? $"{name}.{unwrapped.QueryName}" : name;
+    }
+
     private void WriteMember(CodeWriter writer, MemberShape memberShape, Member member, string access, string paramName, int depth)
     {
-        if (member.Type.IsStructure)
+        if (member.Type.Target is StructureShape structure)
         {
-            var structure = (StructureShape)member.Type.Target;
-            WriteStructureBody(writer, structure, TypeMapper.ResolveMembers(structure, context), access, paramName, depth + 1);
+            WriteNestedStructure(writer, structure, access, paramName, depth);
             return;
         }
 
@@ -101,15 +191,18 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
             writer.OpenBlock($"foreach (var {itemVar} in {access})", () =>
             {
                 var itemParam = JoinIndex(itemPrefix, indexVar);
-                if (element.IsStructure)
+                if (element.Target is StructureShape structure)
                 {
-                    var structure = (StructureShape)element.Target;
-                    WriteStructureBody(writer, structure, TypeMapper.ResolveMembers(structure, context), itemVar, itemParam, depth + 1);
+                    WriteNestedStructure(writer, structure, itemVar, itemParam, depth);
                 }
                 else
                 {
                     var conversion = ScalarConversion(element, itemVar, nullable: false)
                         ?? throw new GeneratorException($"Unsupported awsQuery list element type '{element.DotNetType}'.");
+                    if (element.Unwrapped is { } unwrapped && !context.Customizations.ShapeSubstitutions[unwrapped.Wrapper].ListMemberSuffixExclusions.Contains(operationName))
+                    {
+                        itemParam = Join(itemParam, unwrapped.QueryName);
+                    }
                     writer.WriteLine($"request.Parameters.Add({itemParam}, {conversion});");
                 }
                 writer.WriteLine($"{indexVar}++;");
@@ -137,10 +230,9 @@ internal sealed class QueryBodyMemberMarshaller(GenerationContext context)
             writer.WriteLine($"request.Parameters.Add({Join(entryPrefix, keyName)}, StringUtils.FromString({kvpVar}.Key));");
 
             var valueParam = Join(entryPrefix, valueName);
-            if (mapValue.IsStructure)
+            if (mapValue.Target is StructureShape structure)
             {
-                var structure = (StructureShape)mapValue.Target;
-                WriteStructureBody(writer, structure, TypeMapper.ResolveMembers(structure, context), $"{kvpVar}.Value", valueParam, depth + 1);
+                WriteNestedStructure(writer, structure, $"{kvpVar}.Value", valueParam, depth);
             }
             else if (mapValue.ListElement is { } valueElement)
             {

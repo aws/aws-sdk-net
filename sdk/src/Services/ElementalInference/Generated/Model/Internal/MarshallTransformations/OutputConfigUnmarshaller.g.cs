@@ -74,6 +74,13 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("function", targetDepth, ref reader))
+                {
+                    var unmarshaller = FunctionConfigUnmarshaller.Instance;
+                    unmarshalledObject.Function = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("subtitling", targetDepth, ref reader))
                 {
                     var unmarshaller = SubtitlingConfigUnmarshaller.Instance;

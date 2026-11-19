@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LogsLocation Object
     /// </summary>
-    public partial class LogsLocationUnmarshaller : IJsonUnmarshaller<LogsLocation, JsonUnmarshallerContext>
+    public partial class LogsLocationUnmarshaller : ICborUnmarshaller<LogsLocation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public LogsLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LogsLocation Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new LogsLocation();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("cloudWatchLogs", targetDepth, ref reader))
-                {
-                    var unmarshaller = CloudWatchLogsConfigUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("cloudWatchLogsArn", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogsArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "cloudWatchLogs":
+                        context.AddPathSegment("CloudWatchLogs");
+                        unmarshalledObject.CloudWatchLogs = CloudWatchLogsConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("deepLink", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeepLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "cloudWatchLogsArn":
+                        context.AddPathSegment("CloudWatchLogsArn");
+                        unmarshalledObject.CloudWatchLogsArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("groupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "deepLink":
+                        context.AddPathSegment("DeepLink");
+                        unmarshalledObject.DeepLink = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("s3DeepLink", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3DeepLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "groupName":
+                        context.AddPathSegment("GroupName");
+                        unmarshalledObject.GroupName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("s3Logs", targetDepth, ref reader))
-                {
-                    var unmarshaller = S3LogsConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "s3DeepLink":
+                        context.AddPathSegment("S3DeepLink");
+                        unmarshalledObject.S3DeepLink = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("s3LogsArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3LogsArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "s3Logs":
+                        context.AddPathSegment("S3Logs");
+                        unmarshalledObject.S3Logs = S3LogsConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("streamName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "s3LogsArn":
+                        context.AddPathSegment("S3LogsArn");
+                        unmarshalledObject.S3LogsArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "streamName":
+                        context.AddPathSegment("StreamName");
+                        unmarshalledObject.StreamName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

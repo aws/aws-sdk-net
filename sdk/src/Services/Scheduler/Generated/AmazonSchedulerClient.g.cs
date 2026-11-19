@@ -272,7 +272,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateSchedule">REST API Reference for CreateSchedule Operation</seealso>
         public virtual CreateScheduleResponse CreateSchedule(CreateScheduleRequest request)
@@ -318,7 +318,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateSchedule">REST API Reference for CreateSchedule Operation</seealso>
         public virtual Task<CreateScheduleResponse> CreateScheduleAsync(CreateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -349,7 +349,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateScheduleGroup">REST API Reference for CreateScheduleGroup Operation</seealso>
         public virtual CreateScheduleGroupResponse CreateScheduleGroup(CreateScheduleGroupRequest request)
@@ -392,7 +392,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CreateScheduleGroup">REST API Reference for CreateScheduleGroup Operation</seealso>
         public virtual Task<CreateScheduleGroupResponse> CreateScheduleGroupAsync(CreateScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -419,11 +419,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteSchedule">REST API Reference for DeleteSchedule Operation</seealso>
         public virtual DeleteScheduleResponse DeleteSchedule(DeleteScheduleRequest request)
@@ -462,11 +465,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteSchedule">REST API Reference for DeleteSchedule Operation</seealso>
         public virtual Task<DeleteScheduleResponse> DeleteScheduleAsync(DeleteScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -508,7 +514,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteScheduleGroup">REST API Reference for DeleteScheduleGroup Operation</seealso>
         public virtual DeleteScheduleGroupResponse DeleteScheduleGroup(DeleteScheduleGroupRequest request)
@@ -562,7 +568,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/DeleteScheduleGroup">REST API Reference for DeleteScheduleGroup Operation</seealso>
         public virtual Task<DeleteScheduleGroupResponse> DeleteScheduleGroupAsync(DeleteScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -586,11 +592,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetSchedule">REST API Reference for GetSchedule Operation</seealso>
         public virtual GetScheduleResponse GetSchedule(GetScheduleRequest request)
@@ -626,11 +635,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetSchedule">REST API Reference for GetSchedule Operation</seealso>
         public virtual Task<GetScheduleResponse> GetScheduleAsync(GetScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -658,7 +670,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetScheduleGroup">REST API Reference for GetScheduleGroup Operation</seealso>
         public virtual GetScheduleGroupResponse GetScheduleGroup(GetScheduleGroupRequest request)
@@ -698,7 +710,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/GetScheduleGroup">REST API Reference for GetScheduleGroup Operation</seealso>
         public virtual Task<GetScheduleGroupResponse> GetScheduleGroupAsync(GetScheduleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -723,7 +735,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListScheduleGroups">REST API Reference for ListScheduleGroups Operation</seealso>
         public virtual ListScheduleGroupsResponse ListScheduleGroups(ListScheduleGroupsRequest request)
@@ -760,7 +772,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListScheduleGroups">REST API Reference for ListScheduleGroups Operation</seealso>
         public virtual Task<ListScheduleGroupsResponse> ListScheduleGroupsAsync(ListScheduleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -788,7 +800,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListSchedules">REST API Reference for ListSchedules Operation</seealso>
         public virtual ListSchedulesResponse ListSchedules(ListSchedulesRequest request)
@@ -828,7 +840,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListSchedules">REST API Reference for ListSchedules Operation</seealso>
         public virtual Task<ListSchedulesResponse> ListSchedulesAsync(ListSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -856,7 +868,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -896,7 +908,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -928,7 +940,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -972,7 +984,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1003,7 +1015,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1046,7 +1058,7 @@ namespace Amazon.Scheduler
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1084,11 +1096,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UpdateSchedule">REST API Reference for UpdateSchedule Operation</seealso>
         public virtual UpdateScheduleResponse UpdateSchedule(UpdateScheduleRequest request)
@@ -1138,11 +1153,14 @@ namespace Amazon.Scheduler
         /// <exception cref="Amazon.Scheduler.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.Scheduler.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Scheduler.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/UpdateSchedule">REST API Reference for UpdateSchedule Operation</seealso>
         public virtual Task<UpdateScheduleResponse> UpdateScheduleAsync(UpdateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

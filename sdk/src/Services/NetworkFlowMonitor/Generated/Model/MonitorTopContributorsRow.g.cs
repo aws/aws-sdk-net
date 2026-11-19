@@ -38,6 +38,20 @@ namespace Amazon.NetworkFlowMonitor.Model
     public partial class MonitorTopContributorsRow
     {
         /// <summary>
+        /// Gets and sets the property AdditionalFlowInfo. 
+        /// <para>
+        /// Additional information about the network flow, such as the network that the remote
+        /// address belongs to and the location of the client.
+        /// </para>
+        /// </summary>
+        public AdditionalFlowInfo AdditionalFlowInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdditionalFlowInfo property is set.
+        /// </summary>
+        internal bool IsSetAdditionalFlowInfo() => this.AdditionalFlowInfo != null;
+
+        /// <summary>
         /// Gets and sets the property DestinationCategory. 
         /// <para>
         /// The destination category for a top contributors row. Destination categories can be

@@ -56,6 +56,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Not", targetDepth))
+                    {
+                        var unmarshaller = ReplicationRuleNotOperatorUnmarshaller.Instance;
+                        unmarshalledObject.Not = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

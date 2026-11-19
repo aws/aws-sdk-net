@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Detailed case rule information. In the Amazon Connect admin website, case rules are
-    /// known as <i>case field conditions</i>. For more information about case field conditions,
+    /// Detailed case rule information. In the Connect Customer admin website, case rules
+    /// are known as <i>case field conditions</i>. For more information about case field conditions,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
     /// case field conditions to a case template</a>.
     /// </summary>
@@ -149,7 +149,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of of key-value pairs that represent tags on a resource. Tags are used to organize,
+        /// A map of key-value pairs that represent tags on a resource. Tags are used to organize,
         /// track, or control access for this resource.
         /// </para>
         /// <para />

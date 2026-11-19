@@ -94,6 +94,13 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("NetworkConfigurationDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = NetworkConfigurationInfoUnmarshaller.Instance;
+                    unmarshalledObject.NetworkConfigurationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("OwnerAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

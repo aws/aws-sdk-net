@@ -3,6 +3,7 @@ using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Serialization;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -66,6 +67,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="UnmarshallerName">The generated unmarshaller class for a structure target (see
 /// <see cref="GenerationContext.StructureUnmarshallerName"/>); null for any other target. Non-null whenever
 /// <see cref="IsStructure"/> is.</param>
+/// <param name="Unwrapped">The wrapper an <c>emitFromMember</c> substitution unwrapped the member from, or null.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     Shape Target,
@@ -88,7 +90,8 @@ public sealed record TypeDescriptor(
     string? MarshallerOverride = null,
     string? UnmarshallerOverride = null,
     string? MarshallerName = null,
-    string? UnmarshallerName = null)
+    string? UnmarshallerName = null,
+    UnwrappedValue? Unwrapped = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -102,6 +105,14 @@ public sealed record TypeDescriptor(
     /// converts implicitly to/from <c>string</c>, matching C2J).
     /// </summary>
     public bool MarshalsAsString => IsString || IsEnum;
+
+    /// <summary>
+    /// True for the byte, short, bigInteger and bigDecimal types from the Full Numeric Type Support specification. Header
+    /// lists of these pass an explicit invariant-culture converter: the untyped <c>StringUtils.FromValueTypeList</c> formats
+    /// with the current culture, and the untyped <c>MultiValueHeaderParser.ToValueTypeList</c> uses
+    /// <c>Convert.ChangeType</c>, which also uses the current culture and fails for BigInteger and BigDecimal (not IConvertible).
+    /// </summary>
+    public bool NeedsTypedHeaderConverter => Target is ByteShape or ShortShape or BigIntegerShape or BigDecimalShape;
 }
 
 /// <summary>The modifier a member needs because a base class declares a member of the same name.</summary>
@@ -111,6 +122,13 @@ public enum BaseMemberModifier
     New,
     Override,
 }
+
+/// <summary>
+/// The wrapper an <c>emitAsShape</c> + <c>emitFromMember</c> substitution unwraps a member from (ec2's
+/// <c>AttributeValue</c>). The member exposes the wrapper's value, and the query writers append the value member's names to
+/// keep the wrapper on the wire (<c>InstanceType.Value</c>, <c>instanceType/value</c>).
+/// </summary>
+public sealed record UnwrappedValue(string Wrapper, string QueryName, string ElementName);
 
 /// <summary>
 /// A resolved structure member ready for codegen: .NET type, attribute, doc, and modeledName (the name as it appears in the model)
@@ -128,6 +146,8 @@ public enum BaseMemberModifier
 /// <param name="BaseMemberModifier">How the member relates to a same-named base-class member: <c>new</c> for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>); <c>override</c> when the customizations set <c>overridesBaseMember</c>.</param>
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
 /// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
+/// <param name="IsInternal">True when the customizations' <c>accessModifier</c> makes the property <c>internal</c>.</param>
+/// <param name="IsPropertyExcluded">True when <c>excludeMembers</c> lists the member: hand-written code declares the property, so the class omits it but the (un)marshallers still use it.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
@@ -143,7 +163,9 @@ public sealed record Member(
     BaseMemberModifier BaseMemberModifier = BaseMemberModifier.None,
     bool IsEventPayload = false,
     bool IsEventHeader = false,
-    EventStreamPublisherInfo? EventStreamPublisher = null
+    EventStreamPublisherInfo? EventStreamPublisher = null,
+    bool IsInternal = false,
+    bool IsPropertyExcluded = false
 )
 {
     /// <summary>
@@ -229,7 +251,9 @@ public static class TypeMapper
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 BaseMemberModifier: BaseMemberModifierFor(context.Customizations, shapeName, memberName, propertyName),
                 IsEventPayload: member.IsEventPayload(),
-                IsEventHeader: member.IsEventHeader())
+                IsEventHeader: member.IsEventHeader(),
+                IsInternal: context.Customizations.IsInternal(shapeName, memberName),
+                IsPropertyExcluded: context.Customizations.IsExcludedMember(shapeName, emittedName))
             );
         }
 
@@ -262,6 +286,14 @@ public static class TypeMapper
     private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, DataTypeSwap? swap = null, bool isCollectionValue = false, bool isSparse = false)
     {
         var target = context.Resolve(member.Target);
+        // emitAsShape + emitFromMember (ec2's AttributeValue): the member is typed as the wrapper's value, and the query
+        // writers append the value's names to keep the wrapper on the wire.
+        if (target is StructureShape wrapper && context.Customizations.EmittedValueMember(wrapper.Id.Name) is { } valueMember)
+        {
+            var value = wrapper.Members[valueMember];
+            var unwrapped = new UnwrappedValue(wrapper.Id.Name, XmlNames.Ec2QueryName(value, valueMember), XmlNames.Ec2ResponseName(value, valueMember));
+            return ResolveType(value, context, swap, isCollectionValue, isSparse) with { Unwrapped = unwrapped };
+        }
         if (isCollectionValue)
         {
             // An enum element/value is surfaced as a string, so IsEnum/IsString below reflect the
@@ -363,9 +395,7 @@ public static class TypeMapper
         }
 
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
-        // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal) have no settled mapping yet and fall through to the
-        // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
+        // Value-type scalars follow the V4 nullable convention.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
 
@@ -465,6 +495,12 @@ public static class TypeMapper
         FloatShape => "float",
         DoubleShape => "double",
         TimestampShape => "DateTime",
+        // Full Numeric Type Support specification: Smithy's byte is signed, so it is sbyte, not System.Byte. BigDecimal
+        // comes from AWSSDK.Extensions.Numerics, which AWSSDK.Core depends on.
+        ByteShape => "sbyte",
+        ShortShape => "short",
+        BigIntegerShape => "System.Numerics.BigInteger",
+        BigDecimalShape => "Amazon.Extensions.Numerics.BigDecimal",
         _ => null,
     };
 
@@ -483,7 +519,13 @@ public static class TypeMapper
     public static Shape CollectionElementTarget(Shape target) => target is EnumShape ? new StringShape() : target;
 
     private static Shape ElementTarget(ShapeId id, GenerationContext context) =>
-        CollectionElementTarget(context.Resolve(id));
+        CollectionElementTarget(Unwrap(context.Resolve(id), context));
+
+    /// <summary>The shape a value typed as <paramref name="target"/> exposes: an <c>emitFromMember</c> wrapper's value type, otherwise the target itself.</summary>
+    internal static Shape Unwrap(Shape target, GenerationContext context) =>
+        target is StructureShape wrapper && context.Customizations.EmittedValueMember(wrapper.Id.Name) is { } valueMember
+            ? context.Resolve(wrapper.Members[valueMember].Target)
+            : target;
 
     private static string MapElementType(ShapeId id, Shape collection, GenerationContext context)
     {

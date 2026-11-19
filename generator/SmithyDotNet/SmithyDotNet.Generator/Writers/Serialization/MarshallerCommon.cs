@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -33,6 +34,49 @@ public static class MarshallerCommon
             throw new GeneratorException($"Operation '{operation.Name}' requests compression encodings '{string.Join(", ", compression.Encodings)}'; only 'gzip' is supported.");
         }
         return compressionEncoding;
+    }
+
+    // The checksum covers the body, so the protocol writers call this once the content is set, and only when there is
+    // content: the runtime would otherwise checksum a null body. Same gate and calls as C2J.
+    internal static void WriteRequestChecksum(CodeWriter writer, GenerationContext context, Operation operation)
+    {
+        if (context.Customizations.SkipsChecksumDuringMarshalling(operation.Name))
+        {
+            return;
+        }
+
+        var checksum = operation.Shape.GetHttpChecksum();
+        if (checksum?.RequestAlgorithmMember is { } memberName)
+        {
+            if (!operation.Input.Members.TryGetValue(memberName, out var member))
+            {
+                throw new GeneratorException($"Operation '{operation.Name}' names httpChecksum requestAlgorithmMember '{memberName}', which is not a member of its input.");
+            }
+
+            // A header-bound member also sends the algorithm name next to the x-amz-checksum-* header; a body-bound one sends nothing extra.
+            var headerName = member.GetHttpHeader() ?? string.Empty;
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(");
+            writer.Indent(() =>
+            {
+                writer.WriteLine("request,");
+                writer.WriteLine($"publicRequest.{context.Customizations.PropertyName(operation.Input.Id.Name, memberName)},");
+                writer.WriteLine("fallbackToMD5: false,");
+                writer.WriteLine($"isRequestChecksumRequired: {(checksum.RequestChecksumRequired ? "true" : "false")},");
+                writer.WriteLine($"headerName: {CodeWriter.Literal(headerName)}");
+            });
+            writer.WriteLine(");");
+        }
+        else if (checksum is { RequestChecksumRequired: true })
+        {
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(request, checksumAlgorithm: null, fallbackToMD5: false, isRequestChecksumRequired: true);");
+        }
+        else if (operation.Shape.RequiresHttpChecksum())
+        {
+            writer.WriteLine();
+            writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
+        }
     }
 
     internal static void WriteBaseMarshallMethod(CodeWriter writer, string className)
@@ -142,8 +186,9 @@ public static class MarshallerCommon
     }
 
     // The @eventPayload member IS the message payload: a blob is the raw MemoryStream, a string is the stream
-    // read to end, a structure is the whole body decoded by its own unmarshaller.
-    internal static void WriteEventPayloadMember(CodeWriter writer, Member member, string unmarshallArguments)
+    // read to end, a structure is the whole body decoded by its own unmarshaller. `hasPayload` is the protocol's
+    // check that the payload is not empty: an unset structure payload arrives as zero bytes and is left unset.
+    internal static void WriteEventPayloadMember(CodeWriter writer, Member member, string unmarshallArguments, string hasPayload)
     {
         if (member.Type.MarshalsAsString)
         {
@@ -154,7 +199,10 @@ public static class MarshallerCommon
         }
         else if (member.Type.UnmarshallerName is { } unmarshaller)
         {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall({unmarshallArguments});");
+            writer.OpenBlock($"if ({hasPayload})", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall({unmarshallArguments});");
+            });
         }
         else if (member.Type.IsBlob)
         {
@@ -177,6 +225,8 @@ public static class MarshallerCommon
             BooleanShape => $"SetBool({value}.Value)",
             IntegerShape or IntEnumShape => $"SetInt32({value}.Value)",
             LongShape => $"SetInt64({value}.Value)",
+            ByteShape => $"SetSByte({value}.Value)",
+            ShortShape => $"SetInt16({value}.Value)",
             TimestampShape => $"SetTimestamp({value}.Value)",
             BlobShape => $"SetByteBuf({value}.ToArray())",
             var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
@@ -190,10 +240,34 @@ public static class MarshallerCommon
         });
     }
 
+    // A @eventHeader member is read from the event-message header via context.ResponseData. The accessor is
+    // chosen by the target shape, symmetric with WriteEventHeader (an enum rides AsString via its implicit conversion).
+    internal static void WriteEventHeaderUnmarshall(CodeWriter writer, Member member)
+    {
+        var header = $"""context.ResponseData.GetEventStreamHeader("{member.ModeledName}")""";
+        var value = member.Type.Target switch
+        {
+            StringShape or EnumShape => $"{header}.AsString()",
+            BooleanShape => $"{header}.AsBool()",
+            IntegerShape or IntEnumShape => $"{header}.AsInt32()",
+            LongShape => $"{header}.AsInt64()",
+            TimestampShape => $"{header}.AsTimestamp()",
+            BlobShape => $"new MemoryStream({header}.AsByteBuf())",
+            ShortShape => $"{header}.AsInt16()",
+            ByteShape => $"{header}.AsSByte()",
+            var other => throw new GeneratorException($"Unsupported @eventHeader type '{other.Type}' on member '{member.ModeledName}'."),
+        };
+
+        writer.OpenBlock($"""if (context.ResponseData.IsEventHeaderPresent("{member.ModeledName}"))""", () =>
+        {
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {value};");
+        });
+    }
+
     // A @httpPayload response member IS the whole body, read into the in-scope unmarshalledObject local. restXml
     // reads a structure/union payload through the element loop instead (handled by the caller), so only the JSON
     // protocols reach the structure/document branch; a stray XML document payload falls through to the fail-loud throw.
-    internal static void WritePayloadUnmarshall(CodeWriter writer, Member payload, AWSProtocol protocol)
+    internal static void WritePayloadUnmarshall(CodeWriter writer, GenerationContext context, Member payload)
     {
         if (payload.Type.MarshalsAsString)
         {
@@ -204,7 +278,7 @@ public static class MarshallerCommon
             return;
         }
 
-        if (protocol is not AWSProtocol.RestXml && (payload.Type.IsStructure || payload.Type.IsDocument))
+        if (context.Protocol is not AWSProtocol.RestXml && (payload.Type.IsStructure || payload.Type.IsDocument))
         {
             // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
             // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
@@ -220,9 +294,11 @@ public static class MarshallerCommon
 
         if (payload.Type.IsStreaming)
         {
-            // A streaming blob hands back the raw response stream unbuffered (the caller reads it);
-            // the class also overrides HasStreamingProperty. Matches C2J (see Polly SynthesizeSpeech).
-            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = context.Stream;");
+            // A streaming blob hands back the raw response stream unbuffered (the caller reads it), as the base's
+            // ResponseStream under service.streamingResponseBaseClass; the class also overrides HasStreamingProperty.
+            // Matches C2J (see Polly SynthesizeSpeech).
+            var property = context.Customizations.Service?.StreamingResponseBaseClass is null ? payload.PropertyName : "ResponseStream";
+            writer.WriteLine($"unmarshalledObject.{property} = context.Stream;");
             return;
         }
 

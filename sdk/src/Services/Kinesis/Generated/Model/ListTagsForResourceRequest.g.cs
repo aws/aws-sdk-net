@@ -33,8 +33,10 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the ListTagsForResource operation. List all tags added
     /// to the specified Kinesis resource. Each tag is a label consisting of a user-defined
     /// key and value. Tags can help you manage, identify, organize, search for, and filter
-    /// resources. <para> For more information about tagging Kinesis resources, see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag
-    /// your Amazon Kinesis Data Streams resources</a>. </para>
+    /// resources. <para> The Kinesis resource can be a data stream, a queue, or an enhanced
+    /// fan-out consumer. </para> <para> For more information about tagging Kinesis resources,
+    /// see <a href="https://docs.aws.amazon.com/streams/latest/dev/tagging.html">Tag your
+    /// Amazon Kinesis Data Streams resources</a>. </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonKinesisRequest
     {

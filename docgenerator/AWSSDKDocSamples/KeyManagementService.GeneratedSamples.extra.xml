@@ -562,6 +562,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
+      <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
+      <member name="T:Amazon.KeyManagementService.Model.GetKeyPolicyRequest" />
+      <member name="T:Amazon.KeyManagementService.Model.GetKeyPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example retrieves the AWS_RAM key policy for a KMS key that is shared with account 444455556666 through a resource share that uses a customer managed AWS RAM permission. AWS Resource Access Manager (AWS RAM) creates and manages the AWS_RAM key policy for KMS keys that you share through AWS RAM.
+        </para>
+        <code title="To retrieve the AWS_RAM key policy" source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs" region="GetKeyPolicy-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetPublicKey(Amazon.KeyManagementService.Model.GetPublicKeyRequest)" />
       <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetPublicKey(Amazon.KeyManagementService.Model.GetPublicKeyRequest)" />
       <member name="T:Amazon.KeyManagementService.Model.GetPublicKeyRequest" />
@@ -626,6 +642,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
+      <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
+      <member name="T:Amazon.KeyManagementService.Model.ListKeyPoliciesRequest" />
+      <member name="T:Amazon.KeyManagementService.Model.ListKeyPoliciesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists key policies for a KMS key that has an AWS_RAM key policy. AWS Resource Access Manager (AWS RAM) manages the AWS_RAM key policy for KMS keys that you share through AWS RAM.
+        </para>
+        <code title="To list key policies for a KMS key that has an AWS_RAM key policy" source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs" region="ListKeyPolicies-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
       <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
       <member name="T:Amazon.KeyManagementService.Model.ListKeysRequest" />
@@ -637,6 +669,22 @@
           The following example lists KMS keys.
         </para>
         <code title="To list KMS keys" source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs" region="ListKeys-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
+      <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
+      <member name="T:Amazon.KeyManagementService.Model.ListKeysRequest" />
+      <member name="T:Amazon.KeyManagementService.Model.ListKeysResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the KMS keys in the Region that other AWS accounts shared with your AWS account through AWS Resource Access Manager (AWS RAM).
+        </para>
+        <code title="To list KMS keys that other accounts shared with you through AWS RAM" source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs" region="ListKeys-2" />
       </example>
     </value>
   </doc>

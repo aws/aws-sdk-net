@@ -54,7 +54,9 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Configuration. The fleet configuration to update.
+        /// Gets and sets the property Configuration. The fleet configuration to update. The new
+        /// configuration replaces the existing one, so include every setting you want to keep.
+        /// Settings that you omit revert to their defaults.
         /// </summary>
         public FleetConfiguration Configuration { get; set; }
 

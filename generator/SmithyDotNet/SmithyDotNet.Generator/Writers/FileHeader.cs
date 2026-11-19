@@ -246,6 +246,16 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the retry policy file. The caller appends the service's <c>.Model</c> namespace.
+    /// </summary>
+    public static IReadOnlyList<string> RetryPolicyUsings { get; } =
+    [
+        "Amazon.Runtime.Internal",
+        "System",
+        "System.Collections.Generic",
+    ];
+
+    /// <summary>
     /// Usings for the default-configuration file.
     /// </summary>
     public static IReadOnlyList<string> DefaultConfigurationUsings { get; } =

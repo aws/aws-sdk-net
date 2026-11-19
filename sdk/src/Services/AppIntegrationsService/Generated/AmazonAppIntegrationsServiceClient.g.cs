@@ -1582,6 +1582,9 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1622,6 +1625,9 @@ namespace Amazon.AppIntegrationsService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the ListTagsForResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1650,6 +1656,13 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Verify the resource's
+        /// current state and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1690,6 +1703,13 @@ namespace Amazon.AppIntegrationsService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the TagResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Verify the resource's
+        /// current state and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1718,6 +1738,13 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Verify the resource's
+        /// current state and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1758,6 +1785,13 @@ namespace Amazon.AppIntegrationsService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the UntagResource service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Verify the resource's
+        /// current state and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.
         /// </exception>
@@ -1790,7 +1824,7 @@ namespace Amazon.AppIntegrationsService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
-        /// The request conflicts with the current state of the resource. Verify the application's
+        /// The request conflicts with the current state of the resource. Verify the resource's
         /// current state and retry the request.
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
@@ -1840,7 +1874,7 @@ namespace Amazon.AppIntegrationsService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
-        /// The request conflicts with the current state of the resource. Verify the application's
+        /// The request conflicts with the current state of the resource. Verify the resource's
         /// current state and retry the request.
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">

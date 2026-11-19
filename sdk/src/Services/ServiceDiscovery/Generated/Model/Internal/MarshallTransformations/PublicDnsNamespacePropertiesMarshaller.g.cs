@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,24 +39,24 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// PublicDnsNamespaceProperties Marshaller
     /// </summary>
-    public partial class PublicDnsNamespacePropertiesMarshaller : IRequestMarshaller<PublicDnsNamespaceProperties, JsonMarshallerContext>
+    public partial class PublicDnsNamespacePropertiesMarshaller : IRequestMarshaller<PublicDnsNamespaceProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(PublicDnsNamespaceProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(PublicDnsNamespaceProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDnsProperties())
             {
-                context.Writer.WritePropertyName("DnsProperties");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DnsProperties");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PublicDnsPropertiesMutableMarshaller.Instance;
                 marshaller.Marshall(requestObject.DnsProperties, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
         }
 

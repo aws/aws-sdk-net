@@ -54,7 +54,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("byteValue", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    var unmarshaller = NullableSByteUnmarshaller.Instance;
                     unmarshalledObject.ByteValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
                 if (context.TestExpression("shortValue", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    var unmarshaller = NullableShortUnmarshaller.Instance;
                     unmarshalledObject.ShortValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

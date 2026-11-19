@@ -12,13 +12,36 @@ internal static class TestCustomizations
         return customizations;
     }
 
+    // S3's, the one service that sets it.
+    public static ServiceCustomizations ErrorHandling() => new()
+    {
+        CustomErrorHandling = new CustomErrorHandling
+        {
+            ResponseUnmarshallerBaseClass = "S3ReponseUnmarshaller",
+            ErrorResponseType = "S3ErrorResponse",
+            ExceptionFactory = "ConstructS3Exception",
+        },
+    };
+
     public static ShapeModifier RenameMember(string member, string newName) =>
         Modify(member, new PropertyModifier { EmitPropertyName = newName });
 
-    public static ShapeModifier Modify(string member, PropertyModifier property)
+    // Adds the entry to `into` when given, so one modifier can carry several.
+    public static ShapeModifier Modify(string member, PropertyModifier property, ShapeModifier? into = null)
     {
-        var modifier = new ShapeModifier();
-        modifier.Modify.Add(new Dictionary<string, PropertyModifier> { [member] = property });
+        var modifier = into ?? new ShapeModifier();
+        var entry = new Dictionary<string, PropertyModifier>();
+        entry[member] = property;
+        modifier.Modify.Add(entry);
+        return modifier;
+    }
+
+    public static ShapeModifier Inject(string member, PropertyInjector injector, ShapeModifier? into = null)
+    {
+        var modifier = into ?? new ShapeModifier();
+        var entry = new Dictionary<string, PropertyInjector>();
+        entry[member] = injector;
+        modifier.Inject.Add(entry);
         return modifier;
     }
 }

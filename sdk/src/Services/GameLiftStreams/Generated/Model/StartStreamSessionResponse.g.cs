@@ -121,6 +121,21 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetApplicationArn() => this.ApplicationArn != null;
 
         /// <summary>
+        /// Gets and sets the property ApplicationStartedAt. 
+        /// <para>
+        /// A timestamp that indicates when the application launched for this stream session.
+        /// Timestamps are expressed using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c>
+        /// (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime? ApplicationStartedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationStartedAt property is set.
+        /// </summary>
+        internal bool IsSetApplicationStartedAt() => this.ApplicationStartedAt.HasValue;
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
@@ -487,6 +502,35 @@ namespace Amazon.GameLiftStreams.Model
         /// Checks to see if the StreamGroupId property is set.
         /// </summary>
         internal bool IsSetStreamGroupId() => this.StreamGroupId != null;
+
+        /// <summary>
+        /// Gets and sets the property StreamingEndedAt. 
+        /// <para>
+        /// A timestamp that indicates when streaming ended for this stream session. Timestamps
+        /// are expressed using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime? StreamingEndedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamingEndedAt property is set.
+        /// </summary>
+        internal bool IsSetStreamingEndedAt() => this.StreamingEndedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property StreamingStartedAt. 
+        /// <para>
+        /// A timestamp that indicates when streaming started for this stream session, which is
+        /// when a client connected to the stream session. Timestamps are expressed using in ISO8601
+        /// format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime? StreamingStartedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamingStartedAt property is set.
+        /// </summary>
+        internal bool IsSetStreamingStartedAt() => this.StreamingStartedAt.HasValue;
 
         /// <summary>
         /// Gets and sets the property UserId. 

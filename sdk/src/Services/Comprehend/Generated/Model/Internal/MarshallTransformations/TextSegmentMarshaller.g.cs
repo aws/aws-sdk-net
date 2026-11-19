@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,19 +39,19 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// TextSegment Marshaller
     /// </summary>
-    public partial class TextSegmentMarshaller : IRequestMarshaller<TextSegment, JsonMarshallerContext>
+    public partial class TextSegmentMarshaller : IRequestMarshaller<TextSegment, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TextSegment requestObject, JsonMarshallerContext context)
+        public void Marshall(TextSegment requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetText())
             {
-                context.Writer.WritePropertyName("Text");
-                context.Writer.WriteStringValue(requestObject.Text);
+                context.Writer.WriteTextString("Text");
+                context.Writer.WriteTextString(requestObject.Text);
             }
         }
 

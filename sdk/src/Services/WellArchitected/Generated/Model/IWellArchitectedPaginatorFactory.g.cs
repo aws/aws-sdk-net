@@ -51,6 +51,12 @@ namespace Amazon.WellArchitected.Model
         IListAgentGoalsPaginator ListAgentGoals(ListAgentGoalsRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentOrganizationalReports operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgentOrganizationalReportsPaginator ListAgentOrganizationalReports(ListAgentOrganizationalReportsRequest request);
+
+        /// <summary>
         /// Paginator for ListAgentProfiles operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

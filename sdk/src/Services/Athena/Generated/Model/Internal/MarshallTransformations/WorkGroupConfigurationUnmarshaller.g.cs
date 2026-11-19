@@ -157,6 +157,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResultConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("SystemTableStatuses", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SystemTableStatus, SystemTableStatusUnmarshaller>(SystemTableStatusUnmarshaller.Instance);
+                    unmarshalledObject.SystemTableStatuses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

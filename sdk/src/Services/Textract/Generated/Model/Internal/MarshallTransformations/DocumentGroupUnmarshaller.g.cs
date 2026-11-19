@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Textract.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DocumentGroup Object
     /// </summary>
-    public partial class DocumentGroupUnmarshaller : IJsonUnmarshaller<DocumentGroup, JsonUnmarshallerContext>
+    public partial class DocumentGroupUnmarshaller : ICborUnmarshaller<DocumentGroup, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DocumentGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DocumentGroup Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DocumentGroup();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DetectedSignatures", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DetectedSignature, DetectedSignatureUnmarshaller>(DetectedSignatureUnmarshaller.Instance);
-                    unmarshalledObject.DetectedSignatures = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("SplitDocuments", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<SplitDocument, SplitDocumentUnmarshaller>(SplitDocumentUnmarshaller.Instance);
-                    unmarshalledObject.SplitDocuments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DetectedSignatures":
+                        context.AddPathSegment("DetectedSignatures");
+                        unmarshalledObject.DetectedSignatures = new CborListUnmarshaller<DetectedSignature, DetectedSignatureUnmarshaller>(DetectedSignatureUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SplitDocuments":
+                        context.AddPathSegment("SplitDocuments");
+                        unmarshalledObject.SplitDocuments = new CborListUnmarshaller<SplitDocument, SplitDocumentUnmarshaller>(SplitDocumentUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("UndetectedSignatures", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UndetectedSignature, UndetectedSignatureUnmarshaller>(UndetectedSignatureUnmarshaller.Instance);
-                    unmarshalledObject.UndetectedSignatures = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Type":
+                        context.AddPathSegment("Type");
+                        unmarshalledObject.Type = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "UndetectedSignatures":
+                        context.AddPathSegment("UndetectedSignatures");
+                        unmarshalledObject.UndetectedSignatures = new CborListUnmarshaller<UndetectedSignature, UndetectedSignatureUnmarshaller>(UndetectedSignatureUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

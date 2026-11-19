@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TaskReportConfig Object
     /// </summary>
-    public partial class TaskReportConfigUnmarshaller : IJsonUnmarshaller<TaskReportConfig, JsonUnmarshallerContext>
+    public partial class TaskReportConfigUnmarshaller : ICborUnmarshaller<TaskReportConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TaskReportConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TaskReportConfig Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TaskReportConfig();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Destination", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReportDestinationUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ObjectVersionIds", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectVersionIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Destination":
+                        context.AddPathSegment("Destination");
+                        unmarshalledObject.Destination = ReportDestinationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OutputType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ObjectVersionIds":
+                        context.AddPathSegment("ObjectVersionIds");
+                        unmarshalledObject.ObjectVersionIds = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Overrides", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReportOverridesUnmarshaller.Instance;
-                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OutputType":
+                        context.AddPathSegment("OutputType");
+                        unmarshalledObject.OutputType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ReportLevel", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReportLevel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Overrides":
+                        context.AddPathSegment("Overrides");
+                        unmarshalledObject.Overrides = ReportOverridesUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ReportLevel":
+                        context.AddPathSegment("ReportLevel");
+                        unmarshalledObject.ReportLevel = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

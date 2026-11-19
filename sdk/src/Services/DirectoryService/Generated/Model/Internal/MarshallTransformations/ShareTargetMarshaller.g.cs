@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// ShareTarget Marshaller
     /// </summary>
-    public partial class ShareTargetMarshaller : IRequestMarshaller<ShareTarget, JsonMarshallerContext>
+    public partial class ShareTargetMarshaller : IRequestMarshaller<ShareTarget, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ShareTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(ShareTarget requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("Id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

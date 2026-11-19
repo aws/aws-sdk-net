@@ -293,6 +293,26 @@
       "signPayload": true,
       "expectedSignature": "fe9c1f96e56909b8dcf7df8d450c0b12964e31e7d73d1c539eee3665752ad490",
       "expectedPresignSignature": "ef25015d1ac2c489ac9d0e68ca5a403700aab69ccd1f1c22359e49b367a212e4"
+    },
+    {
+      "name": "sub-resources",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": null,
+      "subResources": { "acl": null, "versionId": "3/L4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo" },
+      "signPayload": true,
+      "expectedSignature": "5a1515e76405013e2eca42954d68e129e35e84eeb3099ba24a57b41727780052"
+    },
+    {
+      "name": "body-from-parameters",
+      "method": "POST",
+      "url": "https://example.amazonaws.com/",
+      "headers": { "Content-Type": "application/x-www-form-urlencoded; charset=utf-8" },
+      "body": null,
+      "formParameters": { "Action": "GetCallerIdentity", "Version": "2011-06-15" },
+      "signPayload": true,
+      "expectedSignature": "d7d8bdd055476274a7abcf50cb236dd18e5f71ca2ddb140c55dbc44e4bfbbe30"
     }
   ]
 }

@@ -657,6 +657,24 @@ namespace Amazon.Neptune.Model
         internal bool IsSetReplicationSourceIdentifier() => this.ReplicationSourceIdentifier != null;
 
         /// <summary>
+        /// Gets and sets the property ServerlessV2PlatformVersion. 
+        /// <para>
+        /// The serverless platform version used by the Neptune Serverless DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+        /// Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ServerlessV2PlatformVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServerlessV2PlatformVersion property is set.
+        /// </summary>
+        internal bool IsSetServerlessV2PlatformVersion() => this.ServerlessV2PlatformVersion != null;
+
+        /// <summary>
         /// Gets and sets the property ServerlessV2ScalingConfiguration. 
         /// <para>
         /// Shows the scaling configuration for a Neptune Serverless DB cluster.

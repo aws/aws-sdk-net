@@ -37,6 +37,8 @@ namespace AWSSDK.UnitTests
 
         public Queue<MultipleResponseServlet.Response> Responses { get; } = new Queue<Response>();
 
+        public List<string> RequestedPaths { get; } = new List<string>();
+
         public void AddTokenFetchResponse(string token, HttpStatusCode statusCode = HttpStatusCode.OK)
         {
             var headers = new Dictionary<string, string>();
@@ -85,6 +87,7 @@ namespace AWSSDK.UnitTests
         {
             OnRequest += path =>
             {
+                RequestedPaths.Add(path);
                 if (Responses.Count == 0)
                     Assert.Fail("Number or responses requested exceeds the number of mocked responses.");
 

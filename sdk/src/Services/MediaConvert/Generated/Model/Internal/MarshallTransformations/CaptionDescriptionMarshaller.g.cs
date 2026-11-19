@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAudioSourceNames())
+            {
+                context.Writer.WritePropertyName("audioSourceNames");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectAudioSourceNamesListValue in requestObject.AudioSourceNames)
+                {
+                    context.Writer.WriteStringValue(requestObjectAudioSourceNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");
@@ -78,6 +89,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("languageDescription");
                 context.Writer.WriteStringValue(requestObject.LanguageDescription);
+            }
+
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStringValue(requestObject.Source);
             }
         }
 

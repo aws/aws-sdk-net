@@ -59,6 +59,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Azure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("GCP", targetDepth, ref reader))
+                {
+                    var unmarshaller = GcpDetailUnmarshaller.Instance;
+                    unmarshalledObject.GCP = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

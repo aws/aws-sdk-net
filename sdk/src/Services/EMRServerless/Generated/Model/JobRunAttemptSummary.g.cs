@@ -119,6 +119,19 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetExecutionRole() => this.ExecutionRole != null;
 
         /// <summary>
+        /// Gets and sets the property FlexExecution. 
+        /// <para>
+        /// The Amazon EMR Serverless Flex settings for the job run attempt.
+        /// </para>
+        /// </summary>
+        public FlexExecution FlexExecution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FlexExecution property is set.
+        /// </summary>
+        internal bool IsSetFlexExecution() => this.FlexExecution != null;
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the job run attempt.

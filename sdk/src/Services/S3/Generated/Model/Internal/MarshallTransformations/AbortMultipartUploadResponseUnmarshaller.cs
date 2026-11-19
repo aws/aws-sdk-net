@@ -48,6 +48,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             AbortMultipartUploadResponse response = new AbortMultipartUploadResponse();
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
+            if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
+                response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
             PostUnmarshallCustomization(context, response);
             return response;

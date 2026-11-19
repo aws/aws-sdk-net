@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeBuild.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,43 +39,43 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
     /// <summary>
     /// ProjectFileSystemLocation Marshaller
     /// </summary>
-    public partial class ProjectFileSystemLocationMarshaller : IRequestMarshaller<ProjectFileSystemLocation, JsonMarshallerContext>
+    public partial class ProjectFileSystemLocationMarshaller : IRequestMarshaller<ProjectFileSystemLocation, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ProjectFileSystemLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(ProjectFileSystemLocation requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetIdentifier())
             {
-                context.Writer.WritePropertyName("identifier");
-                context.Writer.WriteStringValue(requestObject.Identifier);
+                context.Writer.WriteTextString("identifier");
+                context.Writer.WriteTextString(requestObject.Identifier);
             }
 
             if (requestObject.IsSetLocation())
             {
-                context.Writer.WritePropertyName("location");
-                context.Writer.WriteStringValue(requestObject.Location);
+                context.Writer.WriteTextString("location");
+                context.Writer.WriteTextString(requestObject.Location);
             }
 
             if (requestObject.IsSetMountOptions())
             {
-                context.Writer.WritePropertyName("mountOptions");
-                context.Writer.WriteStringValue(requestObject.MountOptions);
+                context.Writer.WriteTextString("mountOptions");
+                context.Writer.WriteTextString(requestObject.MountOptions);
             }
 
             if (requestObject.IsSetMountPoint())
             {
-                context.Writer.WritePropertyName("mountPoint");
-                context.Writer.WriteStringValue(requestObject.MountPoint);
+                context.Writer.WriteTextString("mountPoint");
+                context.Writer.WriteTextString(requestObject.MountPoint);
             }
 
             if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
         }
 

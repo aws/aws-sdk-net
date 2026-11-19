@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
@@ -26,11 +27,21 @@ public sealed record CustomizationsModel
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
 
     /// <summary>True when <c>useWrappingResult</c> wraps <paramref name="operationName"/>'s output.</summary>
-    public bool WrapsOutput(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.UseWrappingResult;
+    public bool WrapsOutput(string operationName) => ModifierFor(operationName) is { UseWrappingResult: true };
+
+    /// <summary>The C# name of modeled operation <paramref name="operationName"/>: its <c>name</c> modifier, otherwise the modeled name.</summary>
+    public string OperationName(string operationName) => OperationModifiers.GetValueOrDefault(operationName)?.Name ?? operationName;
+
+    // Writers look a hook up by Operation.Name, which a name modifier changes, so a C# name finds its modeled entry.
+    private OperationModifier? ModifierFor(string operationName) =>
+        OperationModifiers.Values.FirstOrDefault(modifier => modifier.Name == operationName) ?? OperationModifiers.GetValueOrDefault(operationName);
 
     /// <summary>Handlers the client adds to its runtime pipeline in <c>CustomizeRuntimePipeline</c>.</summary>
     [JsonPropertyName("runtimePipelineOverride")]
     public RuntimePipelineOverride? RuntimePipelineOverride { get; init; }
+
+    [JsonPropertyName("service")]
+    public ServiceCustomizations? Service { get; init; }
 
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
@@ -42,8 +53,14 @@ public sealed record CustomizationsModel
     [JsonPropertyName("retainOriginalMemberOrdering")]
     public bool RetainOriginalMemberOrdering { get; init; }
 
+    /// <summary>True when <c>operationModifiers.{op}.clientMethodOnly</c> is set for modeled operation <paramref name="operationName"/>.</summary>
+    public bool IsClientMethodOnly(string operationName) => OperationModifiers.GetValueOrDefault(operationName) is { ClientMethodOnly: true };
+
     /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
-    public bool AllowsEmptyResult(string operationName) => OperationModifiers.TryGetValue(operationName, out var modifier) && modifier.AllowEmptyResult;
+    public bool AllowsEmptyResult(string operationName) => ModifierFor(operationName) is { AllowEmptyResult: true };
+
+    /// <summary>True when <c>operationModifiers.{op}.skipChecksumDuringMarshalling</c> is set for <paramref name="operationName"/>.</summary>
+    public bool SkipsChecksumDuringMarshalling(string operationName) => ModifierFor(operationName) is { SkipChecksumDuringMarshalling: true };
 
     /// <summary>
     /// Usage:
@@ -110,6 +127,68 @@ public sealed record CustomizationsModel
     [JsonPropertyName("generateUnmarshaller")]
     public List<string> GenerateUnmarshaller { get; init; } = [];
 
+    /// <summary>Operations whose output is dropped, so the response class is emitted empty.</summary>
+    [JsonPropertyName("suppressResultGeneration")]
+    public List<string> SuppressResultGeneration { get; init; } = [];
+
+    /// <summary>
+    /// Structures and enums, by modeled name, that hand-written code supplies: no class, enum class or (un)marshaller is
+    /// emitted for them, but members still target them by name (S3's <c>NotificationConfiguration</c>).
+    /// </summary>
+    [JsonPropertyName("excludeShapes")]
+    public List<string> ExcludeShapes { get; init; } = [];
+
+    /// <summary>
+    /// Members, by <see cref="EmittedName"/> and keyed by modeled shape name, whose properties are hand-written: the class omits the property and its
+    /// <c>IsSet</c>, but the (un)marshallers still read and write it. Unlike <c>shapeModifiers.exclude</c>, the member stays in the model.
+    /// </summary>
+    [JsonPropertyName("excludeMembers")]
+    public Dictionary<string, List<string>> ExcludeMembers { get; init; } = [];
+
+    /// <summary>
+    /// Structure <c>@httpPayload</c> members, keyed by modeled input/output shape name, whose target's members replace them
+    /// on the request/response class. Applied by <see cref="Customizations.FlattenShapes"/>.
+    /// </summary>
+    [JsonPropertyName("flattenShapes")]
+    public Dictionary<string, List<string>> FlattenShapes { get; init; } = [];
+
+    /// <summary>
+    /// The targets <c>flattenShapes</c> replaced, filled in by <see cref="CustomizationTransform"/>. No longer reachable, but
+    /// C2J still ships their classes (S3's <c>Delete</c>), so they are emitted unless <c>excludeShapes</c> lists them.
+    /// </summary>
+    [JsonIgnore]
+    public List<StructureShape> FlattenedTargets { get; } = [];
+
+    /// <summary>True when <c>excludeShapes</c> lists modeled shape <paramref name="shapeName"/>.</summary>
+    public bool IsExcludedShape(string shapeName) => ExcludeShapes.Contains(shapeName);
+
+    /// <summary>True when <c>excludeMembers</c> lists the member emitted as <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
+    public bool IsExcludedMember(string shapeName, string memberName) => ExcludeMembers.TryGetValue(shapeName, out var members) && members.Contains(memberName);
+
+    /// <summary>The value member an <c>emitFromMember</c> substitution unwraps <paramref name="shapeName"/> to, or null.</summary>
+    public string? EmittedValueMember(string shapeName) => ShapeSubstitutions.GetValueOrDefault(shapeName)?.EmitFromMember;
+
+    /// <summary>
+    /// True when <c>customMarshall</c> is set on modeled or injected member <paramref name="memberName"/>: the member stays
+    /// on the class, but the generated marshaller skips it because hand-written code sends it.
+    /// </summary>
+    public bool CustomMarshall(string shapeName, string memberName) =>
+        (PropertyModifierFor(shapeName, memberName)?.CustomMarshall ?? false)
+        || (ShapeModifiers.TryGetValue(shapeName, out var modifier) && (modifier.InjectorFor(memberName)?.CustomMarshall ?? false));
+
+    /// <summary>True when <c>accessModifier</c> makes modeled member <paramref name="memberName"/> <c>internal</c>, the only value supported.</summary>
+    public bool IsInternal(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AccessModifier == "internal";
+
+    /// <summary>
+    /// The <c>marshallNameOverrides</c> wire name <paramref name="operationName"/>'s request gives property
+    /// <paramref name="propertyName"/> of <paramref name="shapeName"/>, or null.
+    /// </summary>
+    public string? MarshallNameOverride(string operationName, string shapeName, string propertyName) =>
+        OperationModifiers.TryGetValue(operationName, out var modifier)
+            ? modifier.MarshallNameOverrides.SelectMany(entry => entry).Where(entry => entry.Key == shapeName)
+                .Select(entry => entry.Value.GetValueOrDefault(propertyName)?.MarshallName).FirstOrDefault(name => name is not null)
+            : null;
+
     /// <summary>
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
@@ -121,7 +200,7 @@ public sealed record CustomizationsModel
 
     private PropertyModifier? PropertyModifierFor(string shapeName, string memberName) =>
         ShapeModifiers.TryGetValue(shapeName, out var modifier)
-            ? modifier.Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value
+            ? modifier.PropertyFor(memberName)
             : null;
 
     /// <summary>
@@ -143,6 +222,7 @@ public sealed record CustomizationsModel
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
         RuntimePipelineOverride? runtimePipelineOverride = null;
+        ServiceCustomizations? service = null;
         var paginators = new Dictionary<string, PaginatorCustomization>();
         var noArgOverloads = new List<string>();
         var simpleMethods = new Dictionary<string, SimpleMethodForms>();
@@ -151,6 +231,10 @@ public sealed record CustomizationsModel
         var skipUriPropertyValidation = new List<string>();
         var generateUnmarshaller = new List<string>();
         var retainOriginalMemberOrdering = false;
+        var suppressResultGeneration = new List<string>();
+        var excludeShapes = new List<string>();
+        var excludeMembers = new Dictionary<string, List<string>>();
+        var flattenShapes = new Dictionary<string, List<string>>();
 
         foreach (var path in paths)
         {
@@ -201,6 +285,16 @@ public sealed record CustomizationsModel
                 }
 
                 runtimePipelineOverride = pipelineOverride;
+            }
+
+            if (file.Service is { } serviceSection)
+            {
+                if (service is not null)
+                {
+                    throw new GeneratorException($"'{path}': service appears in more than one customizations file; merging is not supported yet.");
+                }
+
+                service = serviceSection;
             }
 
             foreach (var (operationName, modifier) in file.OperationModifiers)
@@ -278,6 +372,34 @@ public sealed record CustomizationsModel
 
             skipUriPropertyValidation.AddRange(file.SkipUriPropertyValidation);
             generateUnmarshaller.AddRange(file.GenerateUnmarshaller);
+            suppressResultGeneration.AddRange(file.SuppressResultGeneration);
+
+            // S3 splits excludeShapes between its main and enums files.
+            foreach (var shapeName in file.ExcludeShapes)
+            {
+                if (excludeShapes.Contains(shapeName))
+                {
+                    throw new GeneratorException($"'{path}': excludeShapes lists '{shapeName}' more than once.");
+                }
+
+                excludeShapes.Add(shapeName);
+            }
+
+            foreach (var (shapeName, members) in file.ExcludeMembers)
+            {
+                if (!excludeMembers.TryAdd(shapeName, members))
+                {
+                    throw new GeneratorException($"'{path}': excludeMembers['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
+            foreach (var (shapeName, members) in file.FlattenShapes)
+            {
+                if (!flattenShapes.TryAdd(shapeName, members))
+                {
+                    throw new GeneratorException($"'{path}': flattenShapes['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
         return new CustomizationsModel
@@ -288,6 +410,7 @@ public sealed record CustomizationsModel
             EmitIsSetProperties = emitIsSetProperties,
             ShapeSubstitutions = shapeSubstitutions,
             RuntimePipelineOverride = runtimePipelineOverride,
+            Service = service,
             Paginators = paginators,
             NoArgOverloads = noArgOverloads,
             SimpleMethods = simpleMethods.Count > 0 ? new SimpleMethodsCustomization { Operations = simpleMethods } : null,
@@ -295,9 +418,107 @@ public sealed record CustomizationsModel
             OverrideContentType = overrideContentType,
             SkipUriPropertyValidation = skipUriPropertyValidation,
             GenerateUnmarshaller = generateUnmarshaller,
-            RetainOriginalMemberOrdering = retainOriginalMemberOrdering
+            RetainOriginalMemberOrdering = retainOriginalMemberOrdering,
+            SuppressResultGeneration = suppressResultGeneration,
+            ExcludeShapes = excludeShapes,
+            ExcludeMembers = excludeMembers,
+            FlattenShapes = flattenShapes,
         };
     }
+}
+
+/// <summary>
+/// The Smithy-only <c>service</c> section: what hand-written code supplies instead of the generator, where C2J
+/// branched on <c>ServiceId == "S3"</c>. Allowed in one customizations file per service.
+/// </summary>
+public sealed record ServiceCustomizations
+{
+    /// <summary><c>clientContextParams</c> whose config properties are hand-written (S3, S3 Control).</summary>
+    [JsonPropertyName("skipClientContextParams")]
+    public List<string> SkipClientContextParams { get; init; } = [];
+
+    /// <summary>No doc samples from <c>smithy.api#examples</c>; S3's are hand-written.</summary>
+    [JsonPropertyName("skipDocSamples")]
+    public bool SkipDocSamples { get; init; }
+
+    /// <summary>Replaces <c>Amazon{BaseName}Request</c> as the request base; S3's partials declare <c>AmazonWebServiceRequest</c>.</summary>
+    [JsonPropertyName("requestBaseClass")]
+    public string? RequestBaseClass { get; init; }
+
+    /// <summary>Base for a response with a <c>@streaming</c> blob; the member is dropped and the unmarshaller assigns the base's <c>ResponseStream</c> (S3's <c>StreamResponse</c>).</summary>
+    [JsonPropertyName("streamingResponseBaseClass")]
+    public string? StreamingResponseBaseClass { get; init; }
+
+    /// <summary>
+    /// Hand-written error handling; the generated service exception is skipped (S3's <c>AmazonS3Exception</c> is
+    /// hand-written). The parts only work together, so each is required.
+    /// </summary>
+    [JsonPropertyName("customErrorHandling")]
+    public CustomErrorHandling? CustomErrorHandling { get; init; }
+
+    /// <summary>
+    /// Instance method the client's <c>Dispose(bool)</c> calls when <c>disposing</c>, before the base call
+    /// (S3's <c>DisposeS3ExpressCredentialProvider</c>). Unlike the model-keyed hooks, a stale name here can't be
+    /// validated — it resolves against hand-written code, so a typo surfaces as a compile error in the SDK.
+    /// </summary>
+    [JsonPropertyName("clientDisposeMethod")]
+    public string? ClientDisposeMethod { get; init; }
+
+    /// <summary>Emit <c>Amazon{BaseName}RetryPolicy</c> with the <c>RequestsWith200Error</c> list; only S3 consumes this today.</summary>
+    [JsonPropertyName("retryPolicyRequestList")]
+    public bool RetryPolicyRequestList { get; init; }
+
+    /// <summary>
+    /// Emit an empty <c>Generated/PropertyValueRules.xml</c> and also embed <c>Custom/PropertyValueRules.xml</c>
+    /// in the code-analysis project (S3's rules are hand-maintained).
+    /// </summary>
+    [JsonPropertyName("customPropertyValueRules")]
+    public bool CustomPropertyValueRules { get; init; }
+
+    /// <summary>
+    /// Emit the endpoint resolver as <c>partial</c> with two hooks the hand-written half must implement:
+    /// <c>BeforeInjectHostPrefix</c> (S3's SigV2/KMS tweaks) and <c>TryMapNonGeneratedRequest</c>, which maps
+    /// requests with no generated marshaller (S3's presigned URL/POST and ACL requests) and returns early.
+    /// </summary>
+    [JsonPropertyName("endpointResolverPartial")]
+    public bool EndpointResolverPartial { get; init; }
+
+    /// <summary>
+    /// An <c>@httpLabel</c> the endpoint resolver adds to the URL (S3's <c>Bucket</c>). It is removed from
+    /// <c>ResourcePath</c> and gets no <c>AddPathResource</c>; its required check stays.
+    /// </summary>
+    [JsonPropertyName("endpointResolvedLabel")]
+    public string? EndpointResolvedLabel { get; init; }
+
+    /// <summary>A greedy label's value is sent as is, so an S3 key can start with <c>/</c>; otherwise the leading <c>/</c> is trimmed.</summary>
+    [JsonPropertyName("keepGreedyLabelLeadingSlash")]
+    public bool KeepGreedyLabelLeadingSlash { get; init; }
+
+    /// <summary>When set, an unset string label throws <c>ArgumentException</c>, as S3's C2J marshallers do; the listed operations keep the service exception.</summary>
+    [JsonPropertyName("requiredLabelServiceExceptionOperations")]
+    public List<string>? RequiredLabelServiceExceptionOperations { get; init; }
+}
+
+/// <summary>The <c>service.customErrorHandling</c> hook. Read by the restXml writers today.</summary>
+public sealed record CustomErrorHandling
+{
+    /// <summary>
+    /// Base for response unmarshallers (S3's <c>S3ReponseUnmarshaller</c>, sic: the shipped name). It unmarshalls the
+    /// errors an operation doesn't model, so only an operation with modeled errors overrides <c>UnmarshallException</c>.
+    /// </summary>
+    [JsonPropertyName("responseUnmarshallerBaseClass")]
+    public required string ResponseUnmarshallerBaseClass { get; init; }
+
+    /// <summary>
+    /// Error response parsed by its <c>{type}Unmarshaller</c> (S3's <c>S3ErrorResponse</c>); exceptions also take its
+    /// <c>Id2</c> and <c>AmzCfId</c>, which the hand-written service exception accepts.
+    /// </summary>
+    [JsonPropertyName("errorResponseType")]
+    public required string ErrorResponseType { get; init; }
+
+    /// <summary>The base unmarshaller's method that builds the exception for an unmodeled error code (S3's <c>ConstructS3Exception</c>).</summary>
+    [JsonPropertyName("exceptionFactory")]
+    public required string ExceptionFactory { get; init; }
 }
 
 /// <summary>The <c>simpleMethods</c> hook: convenience client overloads keyed by operation name.</summary>
@@ -334,6 +555,10 @@ public sealed record ShapeModifier
     [JsonPropertyName("modify")]
     public List<Dictionary<string, PropertyModifier>> Modify { get; init; } = [];
 
+    /// <summary>Members the model lacks, added to the shape; each is a single-key object like <c>modify</c>'s.</summary>
+    [JsonPropertyName("inject")]
+    public List<Dictionary<string, PropertyInjector>> Inject { get; init; } = [];
+
     /// <summary>Members dropped from the shape, so they are neither emitted nor sent or read.</summary>
     [JsonPropertyName("exclude")]
     public List<string> Exclude { get; init; } = [];
@@ -341,6 +566,12 @@ public sealed record ShapeModifier
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+
+    /// <summary>The <c>modify</c> entry for <paramref name="memberName"/>, or null.</summary>
+    public PropertyModifier? PropertyFor(string memberName) => Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value;
+
+    /// <summary>The <c>inject</c> entry for <paramref name="memberName"/>, or null.</summary>
+    public PropertyInjector? InjectorFor(string memberName) => Inject.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value;
 }
 
 /// <summary>A single member's modifications inside a <c>modify</c> entry.</summary>
@@ -361,11 +592,49 @@ public sealed record PropertyModifier
     /// </summary>
     [JsonPropertyName("overridesBaseMember")]
     public bool OverridesBaseMember { get; init; }
+
+    /// <summary>ec2Query-only: the request parameter name, upper-cased as C2J does; responses keep the modeled name.</summary>
+    [JsonPropertyName("locationName")]
+    public string? LocationName { get; init; }
+
+    /// <summary>ec2Query-only: see <see cref="CustomizationsModel.CustomMarshall"/>.</summary>
+    [JsonPropertyName("customMarshall")]
+    public bool CustomMarshall { get; init; }
+
+    /// <summary>The property's accessibility instead of <c>public</c>; only <c>internal</c> is accepted (ec2's SDK-filled PresignedUrl).</summary>
+    [JsonPropertyName("accessModifier")]
+    public string? AccessModifier { get; init; }
+}
+
+/// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>
+public sealed record PropertyInjector
+{
+    [JsonPropertyName("shape")]
+    public required string Shape { get; init; }
+
+    [JsonPropertyName("documentation")]
+    public string? Documentation { get; init; }
+
+    /// <summary>ec2Query-only: the wire name (upper-cased in requests, lower-cased in responses, as C2J does).</summary>
+    [JsonPropertyName("locationName")]
+    public string? LocationName { get; init; }
+
+    /// <summary>ec2Query-only: see <see cref="CustomizationsModel.CustomMarshall"/>.</summary>
+    [JsonPropertyName("customMarshall")]
+    public bool CustomMarshall { get; init; }
 }
 
 /// <summary>An <c>operationModifiers</c> entry, keyed by operation name.</summary>
 public sealed record OperationModifier
 {
+    /// <summary>
+    /// The operation's C# name: client methods, request/response classes and marshallers. restXml and restJson1 only, as
+    /// their wire carries no operation name. <c>simpleMethods</c>, <c>noArgOverloads</c> and <c>simpleConstructors</c> key the
+    /// operation by this name, as C2J does; every other hook keys the modeled one.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; init; }
+
     /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
@@ -380,6 +649,13 @@ public sealed record OperationModifier
     /// <summary>Drops the operation, and with it the structures only it uses.</summary>
     [JsonPropertyName("exclude")]
     public bool Exclude { get; init; }
+
+    /// <summary>
+    /// Emits only the operation's client methods; its request/response classes, marshallers and the structures only it
+    /// uses are hand-written (S3 <c>SelectObjectContent</c>). C2J: <c>S3ExcludeListOperations</c>.
+    /// </summary>
+    [JsonPropertyName("clientMethodOnly")]
+    public bool ClientMethodOnly { get; init; }
 
     /// <summary>
     /// The response exposes the output, <c>wrappedResultShape</c>, as a single <c>wrappedResultMember</c> property
@@ -402,6 +678,27 @@ public sealed record OperationModifier
     /// </summary>
     [JsonPropertyName("allowEmptyResult")]
     public bool AllowEmptyResult { get; init; }
+
+    /// <summary>
+    /// The request marshaller sets no checksum data for the operation's modeled checksum; the service's hand-written
+    /// code does (S3 PutObject and UploadPart).
+    /// </summary>
+    [JsonPropertyName("skipChecksumDuringMarshalling")]
+    public bool SkipChecksumDuringMarshalling { get; init; }
+
+    /// <summary>
+    /// ec2Query-only: wire names for this operation's request, keyed by shape name then property name; they take
+    /// precedence over every other naming rule.
+    /// </summary>
+    [JsonPropertyName("marshallNameOverrides")]
+    public List<Dictionary<string, Dictionary<string, MarshallNameOverride>>> MarshallNameOverrides { get; init; } = [];
+}
+
+/// <summary>A <c>marshallNameOverrides</c> entry; C2J's <c>marshallLocationName</c> is rejected as no service uses it.</summary>
+public sealed record MarshallNameOverride
+{
+    [JsonPropertyName("marshallName")]
+    public required string MarshallName { get; init; }
 }
 
 /// <summary>
@@ -428,11 +725,25 @@ public sealed record DataTypeSwap
     public string? AlternateLocationName { get; init; }
 }
 
+/// <summary>A <c>shapeSubstitutions</c> entry: either <c>renameShape</c> or <c>emitAsShape</c>.</summary>
 public sealed record ShapeSubstitution
 {
-    // TODO: C2J also has emitAsShape and emitFromMember; the loader rejects them as unknown keys.
     [JsonPropertyName("renameShape")]
-    public required string RenamedShapeName { get; init; }
+    public string? RenamedShapeName { get; init; }
+
+    /// <summary>
+    /// ec2Query-only: members targeting this shape target the named shape instead; with <see cref="EmitFromMember"/>,
+    /// the named shape is the type of that member of this wrapper, which the wire keeps.
+    /// </summary>
+    [JsonPropertyName("emitAsShape")]
+    public string? EmitAsShape { get; init; }
+
+    [JsonPropertyName("emitFromMember")]
+    public string? EmitFromMember { get; init; }
+
+    /// <summary>Operations whose requests send a list of this wrapper without the member suffix on each item.</summary>
+    [JsonPropertyName("listMemberSuffixExclusions")]
+    public List<string> ListMemberSuffixExclusions { get; init; } = [];
 }
 
 /// <summary>A <c>runtimePipelineOverride</c> entry: its <c>overrides</c> are applied in order.</summary>
@@ -489,4 +800,3 @@ public sealed record PaginatorCustomization
     [JsonPropertyName("items")]
     public List<string>? Items { get; init; }
 }
-

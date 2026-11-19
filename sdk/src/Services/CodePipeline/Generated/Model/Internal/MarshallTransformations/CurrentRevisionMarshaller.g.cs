@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodePipeline.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,37 +39,37 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
     /// <summary>
     /// CurrentRevision Marshaller
     /// </summary>
-    public partial class CurrentRevisionMarshaller : IRequestMarshaller<CurrentRevision, JsonMarshallerContext>
+    public partial class CurrentRevisionMarshaller : IRequestMarshaller<CurrentRevision, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CurrentRevision requestObject, JsonMarshallerContext context)
+        public void Marshall(CurrentRevision requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetChangeIdentifier())
             {
-                context.Writer.WritePropertyName("changeIdentifier");
-                context.Writer.WriteStringValue(requestObject.ChangeIdentifier);
+                context.Writer.WriteTextString("changeIdentifier");
+                context.Writer.WriteTextString(requestObject.ChangeIdentifier);
             }
 
             if (requestObject.IsSetCreated())
             {
-                context.Writer.WritePropertyName("created");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.Created.Value));
+                context.Writer.WriteTextString("created");
+                context.Writer.WriteDateTime(requestObject.Created.Value);
             }
 
             if (requestObject.IsSetRevision())
             {
-                context.Writer.WritePropertyName("revision");
-                context.Writer.WriteStringValue(requestObject.Revision);
+                context.Writer.WriteTextString("revision");
+                context.Writer.WriteTextString(requestObject.Revision);
             }
 
             if (requestObject.IsSetRevisionSummary())
             {
-                context.Writer.WritePropertyName("revisionSummary");
-                context.Writer.WriteStringValue(requestObject.RevisionSummary);
+                context.Writer.WriteTextString("revisionSummary");
+                context.Writer.WriteTextString(requestObject.RevisionSummary);
             }
         }
 

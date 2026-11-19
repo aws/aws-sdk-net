@@ -111,6 +111,20 @@ namespace Amazon.ConnectContactLens.Model
         internal bool IsSetIssuesDetected() => this.IssuesDetected != null && (this.IssuesDetected.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language code detected for this piece of transcript, for example, <c>en-US</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string LanguageCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LanguageCode property is set.
+        /// </summary>
+        internal bool IsSetLanguageCode() => this.LanguageCode != null;
+
+        /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
         /// The identifier of the participant. Valid values are CUSTOMER or AGENT.

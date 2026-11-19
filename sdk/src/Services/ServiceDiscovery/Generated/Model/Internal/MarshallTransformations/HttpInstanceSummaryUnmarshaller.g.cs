@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceDiscovery.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpInstanceSummary Object
     /// </summary>
-    public partial class HttpInstanceSummaryUnmarshaller : IJsonUnmarshaller<HttpInstanceSummary, JsonUnmarshallerContext>
+    public partial class HttpInstanceSummaryUnmarshaller : ICborUnmarshaller<HttpInstanceSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public HttpInstanceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HttpInstanceSummary Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new HttpInstanceSummary();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Attributes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("HealthStatus", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Attributes":
+                        context.AddPathSegment("Attributes");
+                        unmarshalledObject.Attributes = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("InstanceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "HealthStatus":
+                        context.AddPathSegment("HealthStatus");
+                        unmarshalledObject.HealthStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("NamespaceName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "InstanceId":
+                        context.AddPathSegment("InstanceId");
+                        unmarshalledObject.InstanceId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ServiceName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "NamespaceName":
+                        context.AddPathSegment("NamespaceName");
+                        unmarshalledObject.NamespaceName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ServiceName":
+                        context.AddPathSegment("ServiceName");
+                        unmarshalledObject.ServiceName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

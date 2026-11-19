@@ -22,6 +22,52 @@ using Amazon.Runtime;
 namespace Amazon.ConnectHealth
 {
     /// <summary>
+    /// Constants used for properties of type ChecklistItemStatus.
+    /// </summary>
+    public class ChecklistItemStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISCUSSED for ChecklistItemStatus
+        /// </summary>
+        public static readonly ChecklistItemStatus DISCUSSED = new ChecklistItemStatus("DISCUSSED");
+
+        /// <summary>
+        /// Constant NOT_DISCUSSED for ChecklistItemStatus
+        /// </summary>
+        public static readonly ChecklistItemStatus NOT_DISCUSSED = new ChecklistItemStatus("NOT_DISCUSSED");
+
+        /// <summary>
+        /// Constant PARTIALLY_DISCUSSED for ChecklistItemStatus
+        /// </summary>
+        public static readonly ChecklistItemStatus PARTIALLY_DISCUSSED = new ChecklistItemStatus("PARTIALLY_DISCUSSED");
+
+        /// <summary>
+        /// Constructs a custom ChecklistItemStatus for a value not among the defined constants.
+        /// </summary>
+        public ChecklistItemStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChecklistItemStatus FindValue(string value)
+        {
+            return FindValue<ChecklistItemStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChecklistItemStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CustomTemplateBase.
     /// </summary>
     public class CustomTemplateBase : ConstantClass
@@ -83,6 +129,103 @@ namespace Amazon.ConnectHealth
     }
 
     /// <summary>
+    /// Constants used for properties of type DatasetStatus.
+    /// </summary>
+    public class DatasetStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus ACTIVE = new DatasetStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATE_FAILED = new DatasetStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATING = new DatasetStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETED = new DatasetStatus("DELETED");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETE_FAILED = new DatasetStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETING = new DatasetStatus("DELETING");
+
+        /// <summary>
+        /// Constructs a custom DatasetStatus for a value not among the defined constants.
+        /// </summary>
+        public DatasetStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatus FindValue(string value)
+        {
+            return FindValue<DatasetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DatasetType.
+    /// </summary>
+    public class DatasetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MEDICAL_CODING for DatasetType
+        /// </summary>
+        public static readonly DatasetType MEDICAL_CODING = new DatasetType("MEDICAL_CODING");
+
+        /// <summary>
+        /// Constructs a custom DatasetType for a value not among the defined constants.
+        /// </summary>
+        public DatasetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetType FindValue(string value)
+        {
+            return FindValue<DatasetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -129,6 +272,47 @@ namespace Amazon.ConnectHealth
     }
 
     /// <summary>
+    /// Constants used for properties of type EncounterType.
+    /// </summary>
+    public class EncounterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_PERSON for EncounterType
+        /// </summary>
+        public static readonly EncounterType IN_PERSON = new EncounterType("IN_PERSON");
+
+        /// <summary>
+        /// Constant TELEHEALTH for EncounterType
+        /// </summary>
+        public static readonly EncounterType TELEHEALTH = new EncounterType("TELEHEALTH");
+
+        /// <summary>
+        /// Constructs a custom EncounterType for a value not among the defined constants.
+        /// </summary>
+        public EncounterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncounterType FindValue(string value)
+        {
+            return FindValue<EncounterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncounterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EncryptionType.
     /// </summary>
     public class EncryptionType : ConstantClass
@@ -164,6 +348,47 @@ namespace Amazon.ConnectHealth
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FeedbackArtifactType.
+    /// </summary>
+    public class FeedbackArtifactType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLINICAL_DOC for FeedbackArtifactType
+        /// </summary>
+        public static readonly FeedbackArtifactType CLINICAL_DOC = new FeedbackArtifactType("CLINICAL_DOC");
+
+        /// <summary>
+        /// Constant MEDICAL_CODES for FeedbackArtifactType
+        /// </summary>
+        public static readonly FeedbackArtifactType MEDICAL_CODES = new FeedbackArtifactType("MEDICAL_CODES");
+
+        /// <summary>
+        /// Constructs a custom FeedbackArtifactType for a value not among the defined constants.
+        /// </summary>
+        public FeedbackArtifactType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeedbackArtifactType FindValue(string value)
+        {
+            return FindValue<FeedbackArtifactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeedbackArtifactType(string value)
         {
             return FindValue(value);
         }
@@ -533,6 +758,179 @@ namespace Amazon.ConnectHealth
     }
 
     /// <summary>
+    /// Constants used for properties of type PatientStatus.
+    /// </summary>
+    public class PatientStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ESTABLISHED for PatientStatus
+        /// </summary>
+        public static readonly PatientStatus ESTABLISHED = new PatientStatus("ESTABLISHED");
+
+        /// <summary>
+        /// Constant NEW for PatientStatus
+        /// </summary>
+        public static readonly PatientStatus NEW = new PatientStatus("NEW");
+
+        /// <summary>
+        /// Constructs a custom PatientStatus for a value not among the defined constants.
+        /// </summary>
+        public PatientStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatientStatus FindValue(string value)
+        {
+            return FindValue<PatientStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatientStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PeriodontalReviewReason.
+    /// </summary>
+    public class PeriodontalReviewReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant LINE_UNCLEAR for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason LINE_UNCLEAR = new PeriodontalReviewReason("LINE_UNCLEAR");
+
+        /// <summary>
+        /// Constant MEASUREMENT_NOT_CHARTED for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason MEASUREMENT_NOT_CHARTED = new PeriodontalReviewReason("MEASUREMENT_NOT_CHARTED");
+
+        /// <summary>
+        /// Constant MISSING_TOOTH_CONFLICT for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason MISSING_TOOTH_CONFLICT = new PeriodontalReviewReason("MISSING_TOOTH_CONFLICT");
+
+        /// <summary>
+        /// Constant READING_COUNT_MISMATCH for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason READING_COUNT_MISMATCH = new PeriodontalReviewReason("READING_COUNT_MISMATCH");
+
+        /// <summary>
+        /// Constant SESSION_ISSUE for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason SESSION_ISSUE = new PeriodontalReviewReason("SESSION_ISSUE");
+
+        /// <summary>
+        /// Constant SITE_NOT_CHARTED for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason SITE_NOT_CHARTED = new PeriodontalReviewReason("SITE_NOT_CHARTED");
+
+        /// <summary>
+        /// Constant TOOTH_UNCLEAR for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason TOOTH_UNCLEAR = new PeriodontalReviewReason("TOOTH_UNCLEAR");
+
+        /// <summary>
+        /// Constant VALUE_NOT_CHARTED for PeriodontalReviewReason
+        /// </summary>
+        public static readonly PeriodontalReviewReason VALUE_NOT_CHARTED = new PeriodontalReviewReason("VALUE_NOT_CHARTED");
+
+        /// <summary>
+        /// Constructs a custom PeriodontalReviewReason for a value not among the defined constants.
+        /// </summary>
+        public PeriodontalReviewReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeriodontalReviewReason FindValue(string value)
+        {
+            return FindValue<PeriodontalReviewReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeriodontalReviewReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PeriodontalSiteName.
+    /// </summary>
+    public class PeriodontalSiteName : ConstantClass
+    {
+        /// <summary>
+        /// Constant B for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName B = new PeriodontalSiteName("B");
+
+        /// <summary>
+        /// Constant DB for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName DB = new PeriodontalSiteName("DB");
+
+        /// <summary>
+        /// Constant DL for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName DL = new PeriodontalSiteName("DL");
+
+        /// <summary>
+        /// Constant L for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName L = new PeriodontalSiteName("L");
+
+        /// <summary>
+        /// Constant MB for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName MB = new PeriodontalSiteName("MB");
+
+        /// <summary>
+        /// Constant ML for PeriodontalSiteName
+        /// </summary>
+        public static readonly PeriodontalSiteName ML = new PeriodontalSiteName("ML");
+
+        /// <summary>
+        /// Constructs a custom PeriodontalSiteName for a value not among the defined constants.
+        /// </summary>
+        public PeriodontalSiteName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeriodontalSiteName FindValue(string value)
+        {
+            return FindValue<PeriodontalSiteName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeriodontalSiteName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PostStreamArtifactGenerationStatus.
     /// </summary>
     public class PostStreamArtifactGenerationStatus : ConstantClass
@@ -551,6 +949,16 @@ namespace Amazon.ConnectHealth
         /// Constant IN_PROGRESS for PostStreamArtifactGenerationStatus
         /// </summary>
         public static readonly PostStreamArtifactGenerationStatus IN_PROGRESS = new PostStreamArtifactGenerationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PENDING for PostStreamArtifactGenerationStatus
+        /// </summary>
+        public static readonly PostStreamArtifactGenerationStatus PENDING = new PostStreamArtifactGenerationStatus("PENDING");
+
+        /// <summary>
+        /// Constant SKIPPED for PostStreamArtifactGenerationStatus
+        /// </summary>
+        public static readonly PostStreamArtifactGenerationStatus SKIPPED = new PostStreamArtifactGenerationStatus("SKIPPED");
 
         /// <summary>
         /// Constructs a custom PostStreamArtifactGenerationStatus for a value not among the defined constants.
@@ -655,6 +1063,57 @@ namespace Amazon.ConnectHealth
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProviderRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Sex.
+    /// </summary>
+    public class Sex : ConstantClass
+    {
+        /// <summary>
+        /// Constant FEMALE for Sex
+        /// </summary>
+        public static readonly Sex FEMALE = new Sex("FEMALE");
+
+        /// <summary>
+        /// Constant MALE for Sex
+        /// </summary>
+        public static readonly Sex MALE = new Sex("MALE");
+
+        /// <summary>
+        /// Constant NON_BINARY for Sex
+        /// </summary>
+        public static readonly Sex NON_BINARY = new Sex("NON_BINARY");
+
+        /// <summary>
+        /// Constant UNKNOWN for Sex
+        /// </summary>
+        public static readonly Sex UNKNOWN = new Sex("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom Sex for a value not among the defined constants.
+        /// </summary>
+        public Sex(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Sex FindValue(string value)
+        {
+            return FindValue<Sex>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Sex(string value)
         {
             return FindValue(value);
         }

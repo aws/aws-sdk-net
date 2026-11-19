@@ -46,7 +46,7 @@ namespace Amazon.AWSSupport.Internal
             }
         }
 
-        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABIAAAADAAAAAQAAAAQF9eEQAAAAAgAAAAUF9eEQAAAAAwAAAA0AAAAGAAAABAAAAAwAAAAHAAAABQX14QQAAAAIAAAABwX14QUAAAAJAAAACAX14QYAAAAKAAAACgX14QcAAAALAAAACwX14QgF9eEPAAAABgX14Q0F9eEOAAAABAAAABAAAAAOAAAACAX14QYAAAAPAAAACQX14QsF9eEMAAAABgAAABEF9eEKAAAACQX14QkF9eEKAAAAAwX14QEAAAATAAAABAX14QIF9eED");
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABAAAAADAAAAAQAAAAQF9eEPAAAAAgAAAAUF9eEPAAAAAwAAAAoAAAAGAAAABAAAAAkAAAAHAAAABQAAAAgF9eEOAAAABgX14QwF9eENAAAABQX14QYF9eEEAAAABAAAAA8AAAALAAAABQAAAA0AAAAMAAAABwX14QoF9eELAAAABgAAAA4F9eEJAAAABwX14QgF9eEJAAAABQX14QcF9eEFAAAAAwX14QEAAAARAAAABQX14QIF9eED");
         private const int Root = 2;
 
         /// <summary>
@@ -81,45 +81,52 @@ namespace Amazon.AWSSupport.Internal
                 case 3:
                     return new Endpoint((string)context.Parameters.Endpoint);
                 case 4:
-                    return new Endpoint("https://support.us-east-1.amazonaws.com")
-                    {
-                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "support", "us-east-1", null, null) },
-                    };
-                case 5:
                     return new Endpoint("https://support.cn-north-1.amazonaws.com.cn")
                     {
-                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "support", "cn-north-1", null, null) },
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "cn-north-1", null, null) },
+                    };
+                case 5:
+                    return new Endpoint("https://support-fips.cn-north-1.amazonaws.com.cn")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "cn-north-1", null, null) },
                     };
                 case 6:
-                    return new Endpoint("https://support.us-gov-west-1.amazonaws.com")
+                    return new Endpoint("https://support.cn-north-1.api.amazonwebservices.com.cn")
                     {
-                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "support", "us-gov-west-1", null, null) },
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "cn-north-1", null, null) },
                     };
                 case 7:
-                    return new Endpoint("https://support.us-iso-east-1.c2s.ic.gov")
+                    return new Endpoint("https://support-fips.cn-north-1.api.amazonwebservices.com.cn")
                     {
-                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "support", "us-iso-east-1", null, null) },
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "cn-north-1", null, null) },
                     };
                 case 8:
-                    return new Endpoint("https://support.us-isob-east-1.sc2s.sgov.gov")
+                    return new Endpoint($"https://support-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "support", "us-isob-east-1", null, null) },
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
                     };
                 case 9:
-                    return new Endpoint($"https://support-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
-                case 10:
                     throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 10:
+                    return new Endpoint($"https://support-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
                 case 11:
-                    return new Endpoint($"https://support-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
-                case 12:
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 12:
+                    return new Endpoint($"https://support.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
                 case 13:
-                    return new Endpoint($"https://support.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
-                case 14:
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 14:
+                    return new Endpoint($"https://support.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
                 case 15:
-                    return new Endpoint($"https://support.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
-                case 16:
                     throw new AmazonClientException("Invalid Configuration: Missing Region");
                 default:
                     throw new AmazonClientException("Cannot resolve endpoint");
@@ -142,21 +149,13 @@ namespace Amazon.AWSSupport.Internal
                 case 3:
                     return Equals(context.Parameters.UseFIPS, true);
                 case 4:
-                    return Equals(context.Parameters.UseDualStack, true);
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
                 case 5:
-                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                    return Equals(context.Parameters.UseDualStack, true);
                 case 6:
                     return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
                 case 7:
-                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
-                case 8:
-                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
-                case 9:
                     return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
-                case 10:
-                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso");
-                case 11:
-                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-b");
                 default:
                     throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }

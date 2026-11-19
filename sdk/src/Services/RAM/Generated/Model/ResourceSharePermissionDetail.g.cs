@@ -169,6 +169,28 @@ namespace Amazon.RAM.Model
         internal bool IsSetPermission() => this.Permission != null;
 
         /// <summary>
+        /// Gets and sets the property PermissionTemplateParameters. 
+        /// <para>
+        /// The list of template parameter declarations defined for this permission. Each declaration
+        /// includes the parameter name, type, and description. This field is present only if
+        /// the permission is a template with declared parameters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 100)]
+        public List<PermissionTemplateParameterDeclaration> PermissionTemplateParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<PermissionTemplateParameterDeclaration>() : null;
+
+        /// <summary>
+        /// Checks to see if the PermissionTemplateParameters property is set.
+        /// </summary>
+        internal bool IsSetPermissionTemplateParameters() => this.PermissionTemplateParameters != null && (this.PermissionTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
         /// The type of managed permission. This can be one of the following values:
@@ -192,6 +214,29 @@ namespace Amazon.RAM.Model
         /// Checks to see if the PermissionType property is set.
         /// </summary>
         internal bool IsSetPermissionType() => this.PermissionType != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The owner of the permission. This can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SELF</c> – The permission is owned by the current account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OTHER-ACCOUNTS</c> – The permission is owned by another account and shared with
+        /// the current account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceOwner ResourceOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceOwner property is set.
+        /// </summary>
+        internal bool IsSetResourceOwner() => this.ResourceOwner != null;
 
         /// <summary>
         /// Gets and sets the property ResourceType. 
@@ -228,6 +273,11 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>DELETED</c> – This permission or version is deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DEPRECATED</c> – The permission owner deprecated this permission. It can't be
+        /// associated with new resource shares, but existing associations continue to function.
         /// </para>
         ///  </li> </ul>
         /// </summary>

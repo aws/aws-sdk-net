@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,79 +38,84 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AttackDetail Object
     /// </summary>
-    public partial class AttackDetailUnmarshaller : IJsonUnmarshaller<AttackDetail, JsonUnmarshallerContext>
+    public partial class AttackDetailUnmarshaller : ICborUnmarshaller<AttackDetail, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AttackDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AttackDetail Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new AttackDetail();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AttackCounters", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
-                    unmarshalledObject.AttackCounters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("AttackId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttackId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttackCounters":
+                        context.AddPathSegment("AttackCounters");
+                        unmarshalledObject.AttackCounters = new CborListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("AttackProperties", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance);
-                    unmarshalledObject.AttackProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttackId":
+                        context.AddPathSegment("AttackId");
+                        unmarshalledObject.AttackId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AttackProperties":
+                        context.AddPathSegment("AttackProperties");
+                        unmarshalledObject.AttackProperties = new CborListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Mitigations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Mitigation, MitigationUnmarshaller>(MitigationUnmarshaller.Instance);
-                    unmarshalledObject.Mitigations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EndTime":
+                        context.AddPathSegment("EndTime");
+                        unmarshalledObject.EndTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Mitigations":
+                        context.AddPathSegment("Mitigations");
+                        unmarshalledObject.Mitigations = new CborListUnmarshaller<Mitigation, MitigationUnmarshaller>(MitigationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ResourceArn":
+                        context.AddPathSegment("ResourceArn");
+                        unmarshalledObject.ResourceArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubResources", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<SubResourceSummary, SubResourceSummaryUnmarshaller>(SubResourceSummaryUnmarshaller.Instance);
-                    unmarshalledObject.SubResources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StartTime":
+                        context.AddPathSegment("StartTime");
+                        unmarshalledObject.StartTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SubResources":
+                        context.AddPathSegment("SubResources");
+                        unmarshalledObject.SubResources = new CborListUnmarshaller<SubResourceSummary, SubResourceSummaryUnmarshaller>(SubResourceSummaryUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

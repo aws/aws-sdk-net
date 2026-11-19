@@ -447,6 +447,14 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
+            // Trust only the CA bundle set by the AWS_CA_BUNDLE environment variable, if set. The callback is scoped to
+            // this request rather than the process-wide ServicePointManager so other HTTP code in the application is unaffected.
+            var caBundle = CABundle.FromEnvironment();
+            if (caBundle != null)
+            {
+                _request.ServerCertificateValidationCallback = caBundle.RemoteCertificateValidationCallback;
+            }
+
             // Set service point properties.
             _request.ServicePoint.ConnectionLimit = clientConfig.ConnectionLimit;
             _request.ServicePoint.UseNagleAlgorithm = clientConfig.UseNagleAlgorithm;

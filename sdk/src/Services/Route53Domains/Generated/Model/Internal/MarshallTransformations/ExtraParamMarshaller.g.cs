@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Route53Domains.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
     /// <summary>
     /// ExtraParam Marshaller
     /// </summary>
-    public partial class ExtraParamMarshaller : IRequestMarshaller<ExtraParam, JsonMarshallerContext>
+    public partial class ExtraParamMarshaller : IRequestMarshaller<ExtraParam, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ExtraParam requestObject, JsonMarshallerContext context)
+        public void Marshall(ExtraParam requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
 
             if (requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
             }
         }
 

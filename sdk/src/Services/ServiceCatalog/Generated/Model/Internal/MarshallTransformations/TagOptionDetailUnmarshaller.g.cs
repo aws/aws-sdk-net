@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TagOptionDetail Object
     /// </summary>
-    public partial class TagOptionDetailUnmarshaller : IJsonUnmarshaller<TagOptionDetail, JsonUnmarshallerContext>
+    public partial class TagOptionDetailUnmarshaller : ICborUnmarshaller<TagOptionDetail, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public TagOptionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TagOptionDetail Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new TagOptionDetail();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Active", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Id", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Active":
+                        context.AddPathSegment("Active");
+                        unmarshalledObject.Active = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Key", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Key = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Id":
+                        context.AddPathSegment("Id");
+                        unmarshalledObject.Id = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Owner", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Key":
+                        context.AddPathSegment("Key");
+                        unmarshalledObject.Key = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Value", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Owner":
+                        context.AddPathSegment("Owner");
+                        unmarshalledObject.Owner = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "Value":
+                        context.AddPathSegment("Value");
+                        unmarshalledObject.Value = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

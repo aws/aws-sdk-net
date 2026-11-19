@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectoryService.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConditionalForwarder Object
     /// </summary>
-    public partial class ConditionalForwarderUnmarshaller : IJsonUnmarshaller<ConditionalForwarder, JsonUnmarshallerContext>
+    public partial class ConditionalForwarderUnmarshaller : ICborUnmarshaller<ConditionalForwarder, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ConditionalForwarder Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConditionalForwarder Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ConditionalForwarder();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DnsIpAddrs", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("DnsIpv6Addrs", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpv6Addrs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpAddrs":
+                        context.AddPathSegment("DnsIpAddrs");
+                        unmarshalledObject.DnsIpAddrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("RemoteDomainName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RemoteDomainName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsIpv6Addrs":
+                        context.AddPathSegment("DnsIpv6Addrs");
+                        unmarshalledObject.DnsIpv6Addrs = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ReplicationScope", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationScope = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RemoteDomainName":
+                        context.AddPathSegment("RemoteDomainName");
+                        unmarshalledObject.RemoteDomainName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ReplicationScope":
+                        context.AddPathSegment("ReplicationScope");
+                        unmarshalledObject.ReplicationScope = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

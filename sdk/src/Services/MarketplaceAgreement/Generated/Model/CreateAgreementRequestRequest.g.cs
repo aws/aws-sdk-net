@@ -38,6 +38,25 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class CreateAgreementRequestRequest : AmazonMarketplaceAgreementRequest
     {
         /// <summary>
+        /// Gets and sets the property AcceptorContact. 
+        /// <para>
+        /// The contact information of the acceptor.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Don't provide this parameter if the intent is <c>AMEND</c>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public AcceptorContact AcceptorContact { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AcceptorContact property is set.
+        /// </summary>
+        internal bool IsSetAcceptorContact() => this.AcceptorContact != null;
+
+        /// <summary>
         /// Gets and sets the property AgreementProposalIdentifier. 
         /// <para>
         /// The agreement proposal signed by the proposer. The proposal includes the requested

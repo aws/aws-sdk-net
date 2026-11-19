@@ -385,6 +385,42 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void Matches_OnlySameComponentsAndFeaturesInOrder()
+        {
+            var cached = CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b" }).CreateGeneratedUserAgent();
+
+            Assert.IsTrue(CreateDetails(new[] { "ua/2.1", string.Concat("md/", "ClientAsync") }, new[] { "E", "b" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientSync" }, new[] { "E", "b" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "c" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "b", "E" }).Matches(cached));
+            Assert.IsFalse(CreateDetails(new[] { "ua/2.1", "md/ClientAsync" }, new[] { "E", "b", "Z" }).Matches(cached));
+        }
+
+        [TestMethod]
+        public void HttpHandler_ReusesUserAgentPerShape()
+        {
+            var handler = new HttpHandler<Stream>(new HttpHandlerTests.MockHttpRequestFactory(), new object());
+            var shapes = Enumerable.Range(0, 9).Select(i => new[] { "ua/2.1", "md/shape" + i }).ToArray();
+
+            // Up to four shapes are reused; more than that are regenerated but still correct.
+            var first = shapes.Take(3).Select(c => handler.GetUserAgent(CreateDetails(c, new[] { "E" }))).ToArray();
+            for (int i = 0; i < 3; i++)
+                Assert.AreSame(first[i], handler.GetUserAgent(CreateDetails(shapes[i], new[] { "E" })));
+            foreach (var components in shapes.Concat(shapes))
+                Assert.AreEqual($"{string.Join(" ", components)} m/E", handler.GetUserAgent(CreateDetails(components, new[] { "E" })));
+        }
+
+        private static UserAgentDetails CreateDetails(IEnumerable<string> components, IEnumerable<string> featureIds)
+        {
+            var details = new UserAgentDetails();
+            foreach (var c in components)
+                details.AddUserAgentComponent(c);
+            foreach (var f in featureIds)
+                details.AddFeature(new UserAgentFeatureId(f));
+            return details;
+        }
+
+        [TestMethod]
         public void Test_ReusingRequestObjectDoesNotDuplicateUserAgentComponents()
         {
             var listObjectsV2Request = new ListObjectsV2Request

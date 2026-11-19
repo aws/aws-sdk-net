@@ -140,6 +140,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAllowedWorkloadConfiguration() => this.AllowedWorkloadConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property CertificateConfigurations. 
+        /// <para>
+        /// The private certificate authority (CA) configurations for the identity provider. Use
+        /// this to have AgentCore Identity trust a private CA when establishing TLS connections
+        /// to identity provider endpoints. You can specify only one certificate authority configuration
+        /// in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon
+        /// Web Services Secrets Manager secret. You can use this only together with <c>privateEndpoint</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1)]
+        public List<CertificateConfiguration> CertificateConfigurations { get; set; } = AWSConfigs.InitializeCollections ? new List<CertificateConfiguration>() : null;
+
+        /// <summary>
+        /// Checks to see if the CertificateConfigurations property is set.
+        /// </summary>
+        internal bool IsSetCertificateConfigurations() => this.CertificateConfigurations != null && (this.CertificateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CustomClaims. 
         /// <para>
         /// An array of objects that define a custom claim validation name, value, and operation

@@ -72,6 +72,12 @@ namespace Amazon.SecurityHub.Model
         /// for the organization. If your <c>ConfigurationType</c> is local configuration, then
         /// the value of <c>Status</c> is always <c>ENABLED</c>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  If the value of <c>Status</c> is <c>DISABLED</c>, central configuration is disabled
+        /// because the organization is managed by Security Hub CSPM policies in Organizations.
+        /// 
+        /// </para>
         /// </summary>
         public OrganizationConfigurationStatus Status { get; set; }
 

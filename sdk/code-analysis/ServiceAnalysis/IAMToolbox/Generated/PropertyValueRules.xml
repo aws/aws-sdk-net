@@ -2,7 +2,18 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.IAMToolbox.Model.GetRequestAuthorizationDetailsRequest.AuthorizationId</property>
+    <max>256</max>
     <pattern>^[0123456789abcdefghijklmnopqrstuvwxyz]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyRequest.AuthorizationId</property>
+    <max>256</max>
+    <pattern>^[0123456789abcdefghijklmnopqrstuvwxyz]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMToolbox.Model.GetRequestAuthorizationPolicyRequest.PolicyUri</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMToolbox.Model.AttachedTo.Arn</property>

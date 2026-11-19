@@ -53,6 +53,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("intermediateTable", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntermediateTableOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IntermediateTable = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("member", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedJobMemberOutputConfigurationOutputUnmarshaller.Instance;

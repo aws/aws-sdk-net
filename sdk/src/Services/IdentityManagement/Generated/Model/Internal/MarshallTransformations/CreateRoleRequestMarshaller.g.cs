@@ -65,6 +65,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("MaxSessionDuration", StringUtils.FromInt(publicRequest.MaxSessionDuration.Value));
             }
+            if (publicRequest.IsSetMaxSigninSessionDuration())
+            {
+                request.Parameters.Add("MaxSigninSessionDuration", StringUtils.FromInt(publicRequest.MaxSigninSessionDuration.Value));
+            }
             if (publicRequest.IsSetPath())
             {
                 request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));

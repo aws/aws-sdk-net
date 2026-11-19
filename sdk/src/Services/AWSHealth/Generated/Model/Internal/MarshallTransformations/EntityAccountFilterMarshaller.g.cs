@@ -70,6 +70,24 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+
+            if (requestObject.IsSetTags())
+            {
+                context.Writer.WriteTextString("tags");
+                context.Writer.WriteStartMap(null);
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
+                {
+                    context.Writer.WriteTextString(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+                    context.Writer.WriteStartArray(requestObjectTagsValue.Count);
+                    foreach (var requestObjectTagsValueListValue in requestObjectTagsValue)
+                    {
+                        context.Writer.WriteTextString(requestObjectTagsValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndMap();
+            }
         }
 
         /// <summary>

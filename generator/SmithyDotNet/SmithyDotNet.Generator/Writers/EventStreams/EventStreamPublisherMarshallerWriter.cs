@@ -26,7 +26,9 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
     // The event's wire :content-type and payload source. A blob/string @eventPayload is the raw body the
     // event marshaller wrote to context.Request.Content; anything else (a structure payload or an implicit
     // body) is the protocol's encoding the marshaller wrote through the writer.
-    private enum PayloadKind { Body, Blob, String }
+    // None: every member is an @eventHeader (or there are none), so the event has no payload and, per the
+    // event-streams SEP, no :content-type.
+    private enum PayloadKind { Body, Blob, String, None }
 
     public string Write(RequestEventStream stream, CancellationToken cancellationToken = default)
     {
@@ -43,8 +45,9 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), context.StructureMarshallerName(member.Value.Target), PayloadOf(member.Value.Target)))
             .ToList();
 
-        var hasInitialRequest = !context.UsesHttpBindings &&
-            stream.Operations.Any(operation => TypeMapper.ResolveMembers(operation.Input, context).Any(member => !member.Type.IsEventStream));
+        // RPC protocols send the input's other members as an initial-request event, an empty one when the stream
+        // is the only member. REST protocols bind them to the HTTP request instead.
+        var hasInitialRequest = !context.UsesHttpBindings;
 
         // Without this the loop below emits no branch and the trailing `else` doesn't compile.
         if (events.Count == 0)
@@ -167,10 +170,16 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         {
             writer.WriteLine("var memoryStream = new MemoryStream();");
             writer.WriteLine("var context = CreateJsonMarshallerContext(memoryStream);");
-            writer.WriteLine("context.Writer.WriteStartObject();");
+            if (evnt.Payload != PayloadKind.None)
+            {
+                writer.WriteLine("context.Writer.WriteStartObject();");
+            }
             writer.WriteLine($"{evnt.Marshaller}.Instance.Marshall(({evnt.EventClass})evnt, context);");
             writer.WriteLine("eventHeaders = context.Request.EventHeaders;");
-            writer.WriteLine("context.Writer.WriteEndObject();");
+            if (evnt.Payload != PayloadKind.None)
+            {
+                writer.WriteLine("context.Writer.WriteEndObject();");
+            }
             writer.WriteLine("context.Writer.Flush();");
             writer.WriteLine();
             writer.WriteLine($"eventType = {CodeWriter.Literal(evnt.WireName)};");
@@ -188,10 +197,16 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             writer.OpenBlock("try", () =>
             {
                 writer.WriteLine("var context = CreateCborMarshallerContext(writer);");
-                writer.WriteLine("context.Writer.WriteStartMap(null);");
+                if (evnt.Payload != PayloadKind.None)
+                {
+                    writer.WriteLine("context.Writer.WriteStartMap(null);");
+                }
                 writer.WriteLine($"{evnt.Marshaller}.Instance.Marshall(({evnt.EventClass})evnt, context);");
                 writer.WriteLine("eventHeaders = context.Request.EventHeaders;");
-                writer.WriteLine("context.Writer.WriteEndMap();");
+                if (evnt.Payload != PayloadKind.None)
+                {
+                    writer.WriteLine("context.Writer.WriteEndMap();");
+                }
                 writer.WriteLine();
                 writer.WriteLine($"eventType = {CodeWriter.Literal(evnt.WireName)};");
                 WritePayload(writer, evnt.Payload, "application/cbor", "writer.Encode()");
@@ -218,6 +233,10 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
                 writer.WriteLine("""contentType = "text/plain";""");
                 writer.WriteLine("eventPayload = context.Request.Content;");
                 break;
+            case PayloadKind.None:
+                writer.WriteLine("contentType = null;");
+                writer.WriteLine("eventPayload = Array.Empty<byte>();");
+                break;
             default:
                 writer.WriteLine($"""contentType = "{bodyContentType}";""");
                 writer.WriteLine($"eventPayload = {body};");
@@ -235,7 +254,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         var payload = eventStructure.Members.Values.FirstOrDefault(member => member.IsEventPayload());
         if (payload is null)
         {
-            return PayloadKind.Body;
+            return eventStructure.Members.Values.Any(member => !member.IsEventHeader()) ? PayloadKind.Body : PayloadKind.None;
         }
 
         return context.Resolve(payload.Target) switch

@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,43 +39,43 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// S3Location Marshaller
     /// </summary>
-    public partial class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext>
+    public partial class S3LocationMarshaller : IRequestMarshaller<S3Location, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(S3Location requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Location requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
+                context.Writer.WriteTextString("bucket");
+                context.Writer.WriteTextString(requestObject.Bucket);
             }
 
             if (requestObject.IsSetBundleType())
             {
-                context.Writer.WritePropertyName("bundleType");
-                context.Writer.WriteStringValue(requestObject.BundleType);
+                context.Writer.WriteTextString("bundleType");
+                context.Writer.WriteTextString(requestObject.BundleType);
             }
 
             if (requestObject.IsSetETag())
             {
-                context.Writer.WritePropertyName("eTag");
-                context.Writer.WriteStringValue(requestObject.ETag);
+                context.Writer.WriteTextString("eTag");
+                context.Writer.WriteTextString(requestObject.ETag);
             }
 
             if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
 
             if (requestObject.IsSetVersion())
             {
-                context.Writer.WritePropertyName("version");
-                context.Writer.WriteStringValue(requestObject.Version);
+                context.Writer.WriteTextString("version");
+                context.Writer.WriteTextString(requestObject.Version);
             }
         }
 

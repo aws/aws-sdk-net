@@ -125,6 +125,122 @@ public class GenerationContextTests
         Assert.Contains("operationModifiers['GetThing'] allows an empty result, which is only supported for restXml.", ex.Message);
     }
 
+    [Theory]
+    [InlineData("Codegen/codegen-model.json")]
+    [InlineData("Codegen/rpcv2cbor-model.json")]
+    public void FlattenShapes_OutsideRestXml_Throws(string modelPath)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetThingRequest"] = ["details"];
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load(modelPath)), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("flattenShapes['GetThingRequest'] flattens a payload, which is only supported for restXml.", ex.Message);
+    }
+
+    [Fact]
+    public void EndpointResolverPartial_WithoutEndpointRuleSet_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { EndpointResolverPartial = true } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.endpointResolverPartial needs an endpoint rule set", ex.Message);
+    }
+
+    [Fact]
+    public void EmptyClientDisposeMethod_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { ClientDisposeMethod = "" } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.clientDisposeMethod is empty", ex.Message);
+    }
+
+    [Fact]
+    public void EndpointResolvedLabel_OnlyInClientMethodOnlyUris_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { EndpointResolvedLabel = "Container" } };
+        customizations.OperationModifiers["GetItem"] = new OperationModifier { ClientMethodOnly = true };
+        customizations.OperationModifiers["ListItems"] = new OperationModifier { ClientMethodOnly = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/restxml-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.endpointResolvedLabel is 'Container', which no generated operation's URI has.", ex.Message);
+    }
+
+    [Fact]
+    public void RequiredLabelServiceExceptionOperations_ClientMethodOnlyOperation_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { RequiredLabelServiceExceptionOperations = ["GetItem"] } };
+        customizations.OperationModifiers["GetItem"] = new OperationModifier { ClientMethodOnly = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/restxml-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.requiredLabelServiceExceptionOperations lists 'GetItem', which is not a generated operation.", ex.Message);
+    }
+
+    [Fact]
+    public void RequiredLabelServiceExceptionOperations_NotRestXml_Throws()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { RequiredLabelServiceExceptionOperations = [] } };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("service.requiredLabelServiceExceptionOperations is only supported for restXml.", ex.Message);
+    }
+
+    [Fact]
+    public void Name_WithoutHttpBindings_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["GetThing"] = new OperationModifier { Name = "FetchThing" };
+
+        var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/rpcv2cbor-model.json")), TestManifests.Example(), customizations: customizations));
+        Assert.Contains("operationModifiers['GetThing'] renames the operation, which is only supported for restXml and restJson1.", ex.Message);
+    }
+
+    [Fact]
+    public void Name_OnRestJson1_RenamesOperation()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["DoLists"] = new OperationModifier { Name = "ListThings" };
+
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations);
+        Assert.Contains(context.Operations, operation => operation.Name == "ListThings" && operation.Shape.Id.Name == "DoLists");
+    }
+
+    // SelectThing alone reaches SelectProgress, SelectFailed and the SelectEvents stream; NestedThing is shared with PutThing.
+    [Fact]
+    public void ClientMethodOnly_KeepsOperation_DropsShapesOnlyItReaches()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["SelectThing"] = new OperationModifier { ClientMethodOnly = true };
+
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        Assert.Contains(context.Operations, operation => operation.Name == "SelectThing");
+        Assert.DoesNotContain(context.GeneratedOperations, operation => operation.Name == "SelectThing");
+        Assert.Equal(context.Operations.Count - 1, context.GeneratedOperations.Count);
+        Assert.Empty(context.ResponseEventStreams);
+        Assert.DoesNotContain(context.Structures.Keys, id => id.Name is "SelectProgress" or "SelectEvents" or "RecordsEvent");
+        Assert.Contains(context.Structures.Keys, id => id.Name == "NestedThing");
+        Assert.DoesNotContain(context.Errors.Keys, id => id.Name == "SelectFailed");
+    }
+
+    // C2J still ships a flattened payload's class (S3's Delete, RestoreRequest), though nothing references it.
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void FlattenedPayloadTarget_KeepsItsClassUnlessExcluded(bool excluded)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.FlattenShapes["GetPayloadResponse"] = ["details"];
+        if (excluded)
+        {
+            customizations.ExcludeShapes.Add("PayloadThing");
+        }
+
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        Assert.Equal(!excluded, context.Structures.Keys.Any(id => id.Name == "PayloadThing"));
+    }
+
     [Fact]
     public void ApiVersion_DerivedFromServiceShape()
     {

@@ -17,7 +17,6 @@ using System;
 using System.Globalization;
 using System.Net;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Ionic.Zlib;
 
 namespace Amazon.Runtime.EventStreams.Internal
 {
@@ -137,7 +136,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         private int _amountBytesRead;
         private byte[] _workingMessage;
         private byte[] _workingBuffer;
-        private CrcCalculatorStream _runningChecksumStream;
+        private Crc32Stream _runningChecksumStream;
 
         /// <summary>
         /// Default constructor. Initializes internal _state machine.
@@ -160,7 +159,7 @@ namespace Amazon.Runtime.EventStreams.Internal
                 _runningChecksumStream.Dispose();
             }
 
-            _runningChecksumStream = new CrcCalculatorStream(new NullStream());
+            _runningChecksumStream = new Crc32Stream(new NullStream());
             _currentMessageLength = 0;
             _state = DecoderState.ReadPrelude;
             return 0;

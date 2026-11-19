@@ -80,6 +80,16 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DescribeConformancePacksFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filters, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");

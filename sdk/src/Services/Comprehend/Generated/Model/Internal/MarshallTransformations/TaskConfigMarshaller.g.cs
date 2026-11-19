@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,41 +39,41 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// TaskConfig Marshaller
     /// </summary>
-    public partial class TaskConfigMarshaller : IRequestMarshaller<TaskConfig, JsonMarshallerContext>
+    public partial class TaskConfigMarshaller : IRequestMarshaller<TaskConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TaskConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TaskConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetDocumentClassificationConfig())
             {
-                context.Writer.WritePropertyName("DocumentClassificationConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DocumentClassificationConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DocumentClassificationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentClassificationConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetEntityRecognitionConfig())
             {
-                context.Writer.WritePropertyName("EntityRecognitionConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EntityRecognitionConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EntityRecognitionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityRecognitionConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLanguageCode())
             {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(requestObject.LanguageCode);
+                context.Writer.WriteTextString("LanguageCode");
+                context.Writer.WriteTextString(requestObject.LanguageCode);
             }
         }
 

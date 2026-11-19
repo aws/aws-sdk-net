@@ -167,7 +167,7 @@ namespace Amazon.Runtime.Internal
                     foreach (PropertyBag schema in authSchemes)
                     {
                         var schemaName = (string)schema["name"];
-                        if (ShouldSkipScheme(request, schemaName, hasMultipleSchemes))
+                        if (ShouldSkipScheme(request, schemaName))
                         {
                             continue;
                         }
@@ -229,10 +229,9 @@ namespace Amazon.Runtime.Internal
 
         private static void ApplyTypedAuthSchemes(IRequest request, IReadOnlyList<AuthScheme> schemes)
         {
-            var hasMultipleSchemes = schemes.Count > 1;
             foreach (var scheme in schemes)
             {
-                if (ShouldSkipScheme(request, scheme.Name, hasMultipleSchemes))
+                if (ShouldSkipScheme(request, scheme.Name))
                 {
                     continue;
                 }
@@ -279,7 +278,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private static bool ShouldSkipScheme(IRequest request, string schemaName, bool hasMultipleSchemes)
+        private static bool ShouldSkipScheme(IRequest request, string schemaName)
         {
             if (!SupportedAuthSchemas.Contains(schemaName))
             {
@@ -302,13 +301,6 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            // If there are multiple authentication schemes but the CRT dependency is not available,
-            // we will proceed to check the next value in authSchemes.
-            if (schemaName == "sigv4a" && hasMultipleSchemes && !IsCrtDependencyAvailable())
-            {
-                return true;
-            }
-
             return false;
         }
 
@@ -324,25 +316,6 @@ namespace Amazon.Runtime.Internal
             if (disableDoubleEncoding != null)
             {
                 request.UseDoubleEncoding = !(bool)disableDoubleEncoding;
-            }
-        }
-
-        /// <summary>
-        /// Validates whether the CRT dependency is available by trying to create an <see cref="AWS4aSignerCRTWrapper"/> instance.
-        /// </summary>
-        /// <returns>
-        /// True if the CRT package is available at runtime, false otherwise.
-        /// </returns>
-        private static bool IsCrtDependencyAvailable()
-        {
-            try
-            {
-                var signer = new AWS4aSignerCRTWrapper();
-                return signer != null;
-            }
-            catch (AWSCommonRuntimeException)
-            {
-                return false;
             }
         }
 

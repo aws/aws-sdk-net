@@ -86,6 +86,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "purchaseOrderReference":
+                        context.AddPathSegment("PurchaseOrderReference");
+                        unmarshalledObject.PurchaseOrderReference = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "time":
                         context.AddPathSegment("Time");
                         unmarshalledObject.Time = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);

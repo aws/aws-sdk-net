@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The size of the function's <c>/tmp</c> directory in MB. The default value is 512,
-    /// but can be any whole number between 512 and 10,240 MB. For more information, see <a
-    /// href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+    /// but can be any whole number between 512 and 10,240 MB. For functions that use <c>AcceleratorConfig</c>,
+    /// the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
     /// ephemeral storage (console)</a>.
     /// </summary>
     public partial class EphemeralStorage

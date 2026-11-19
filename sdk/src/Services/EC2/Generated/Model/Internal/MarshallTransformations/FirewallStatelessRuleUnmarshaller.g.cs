@@ -1,0 +1,150 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.EC2.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.EC2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for FirewallStatelessRule Object
+    /// </summary>
+    public partial class FirewallStatelessRuleUnmarshaller : IXmlUnmarshaller<FirewallStatelessRule, XmlUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public FirewallStatelessRule Unmarshall(XmlUnmarshallerContext context)
+        {
+            FirewallStatelessRule unmarshalledObject = new FirewallStatelessRule();
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            if (context.IsStartOfDocument)
+            {
+                targetDepth += 2;
+            }
+
+            while (context.Read())
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("destinationPortSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.DestinationPorts == null)
+                        {
+                            unmarshalledObject.DestinationPorts = new List<PortRange>();
+                        }
+                        var unmarshaller = PortRangeUnmarshaller.Instance;
+                        unmarshalledObject.DestinationPorts.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("destinationSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.Destinations == null)
+                        {
+                            unmarshalledObject.Destinations = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Destinations.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("priority", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("protocolSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.Protocols == null)
+                        {
+                            unmarshalledObject.Protocols = new List<int>();
+                        }
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Protocols.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("ruleAction", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ruleGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RuleGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("sourcePortSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.SourcePorts == null)
+                        {
+                            unmarshalledObject.SourcePorts = new List<PortRange>();
+                        }
+                        var unmarshaller = PortRangeUnmarshaller.Instance;
+                        unmarshalledObject.SourcePorts.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
+                    if (context.TestExpression("sourceSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.Sources == null)
+                        {
+                            unmarshalledObject.Sources = new List<string>();
+                        }
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Sources.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        private static FirewallStatelessRuleUnmarshaller _instance = new FirewallStatelessRuleUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static FirewallStatelessRuleUnmarshaller Instance => _instance;
+    }
+}

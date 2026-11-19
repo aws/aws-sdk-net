@@ -430,6 +430,55 @@ namespace Amazon.Mgn
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a source action, which references a script in AWS Systems Manager Parameter
+        /// Store that Application Migration Service runs on source environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteSourceAction service method.</param>
+        /// <returns>The response from the CreateRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because it exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateRemoteSourceAction">REST API Reference for CreateRemoteSourceAction Operation</seealso>
+        CreateRemoteSourceActionResponse CreateRemoteSourceAction(CreateRemoteSourceActionRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a source action, which references a script in AWS Systems Manager Parameter
+        /// Store that Application Migration Service runs on source environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteSourceAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because it exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateRemoteSourceAction">REST API Reference for CreateRemoteSourceAction Operation</seealso>
+        Task<CreateRemoteSourceActionResponse> CreateRemoteSourceActionAsync(CreateRemoteSourceActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a new ReplicationConfigurationTemplate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfigurationTemplate service method.</param>
@@ -712,6 +761,55 @@ namespace Amazon.Mgn
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
         Task<DeleteNetworkMigrationDefinitionResponse> DeleteNetworkMigrationDefinitionAsync(DeleteNetworkMigrationDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a source action. This operation also deletes the invocation results of the
+        /// source action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteSourceAction service method.</param>
+        /// <returns>The response from the DeleteRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteRemoteSourceAction">REST API Reference for DeleteRemoteSourceAction Operation</seealso>
+        DeleteRemoteSourceActionResponse DeleteRemoteSourceAction(DeleteRemoteSourceActionRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a source action. This operation also deletes the invocation results of the
+        /// source action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteSourceAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteRemoteSourceAction">REST API Reference for DeleteRemoteSourceAction Operation</seealso>
+        Task<DeleteRemoteSourceActionResponse> DeleteRemoteSourceActionAsync(DeleteRemoteSourceActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1341,6 +1439,49 @@ namespace Amazon.Mgn
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         Task<GetLaunchConfigurationResponse> GetLaunchConfigurationAsync(GetLaunchConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the launch configuration defaults of a source server: the Amazon Elastic Block
+        /// Store (Amazon EBS) volume configuration used for the disk mappings created later in
+        /// the source server's Amazon Elastic Compute Cloud (Amazon EC2) launch template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLaunchConfigurationDefaults service method.</param>
+        /// <returns>The response from the GetLaunchConfigurationDefaults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfigurationDefaults">REST API Reference for GetLaunchConfigurationDefaults Operation</seealso>
+        GetLaunchConfigurationDefaultsResponse GetLaunchConfigurationDefaults(GetLaunchConfigurationDefaultsRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the launch configuration defaults of a source server: the Amazon Elastic Block
+        /// Store (Amazon EBS) volume configuration used for the disk mappings created later in
+        /// the source server's Amazon Elastic Compute Cloud (Amazon EC2) launch template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLaunchConfigurationDefaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetLaunchConfigurationDefaults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfigurationDefaults">REST API Reference for GetLaunchConfigurationDefaults Operation</seealso>
+        Task<GetLaunchConfigurationDefaultsResponse> GetLaunchConfigurationDefaultsAsync(GetLaunchConfigurationDefaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2072,6 +2213,51 @@ namespace Amazon.Mgn
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists network migration insights for a network migration definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationInsights service method.</param>
+        /// <returns>The response from the ListNetworkMigrationInsights service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operation denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationInsights">REST API Reference for ListNetworkMigrationInsights Operation</seealso>
+        ListNetworkMigrationInsightsResponse ListNetworkMigrationInsights(ListNetworkMigrationInsightsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists network migration insights for a network migration definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListNetworkMigrationInsights service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operation denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationInsights">REST API Reference for ListNetworkMigrationInsights Operation</seealso>
+        Task<ListNetworkMigrationInsightsResponse> ListNetworkMigrationInsightsAsync(ListNetworkMigrationInsightsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists constructs within a mapper segment, representing individual infrastructure components
         /// like VPCs, subnets, or security groups.
         /// </summary>
@@ -2257,6 +2443,152 @@ namespace Amazon.Mgn
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
         Task<ListNetworkMigrationMappingsResponse> ListNetworkMigrationMappingsAsync(ListNetworkMigrationMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the latest invocation result of each source action that ran on a source server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionInvocationResults service method.</param>
+        /// <returns>The response from the ListRemoteSourceActionInvocationResults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocationResults">REST API Reference for ListRemoteSourceActionInvocationResults Operation</seealso>
+        ListRemoteSourceActionInvocationResultsResponse ListRemoteSourceActionInvocationResults(ListRemoteSourceActionInvocationResultsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the latest invocation result of each source action that ran on a source server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionInvocationResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRemoteSourceActionInvocationResults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocationResults">REST API Reference for ListRemoteSourceActionInvocationResults Operation</seealso>
+        Task<ListRemoteSourceActionInvocationResultsResponse> ListRemoteSourceActionInvocationResultsAsync(ListRemoteSourceActionInvocationResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the invocations of a source action job, one for each source server and source
+        /// action, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionInvocations service method.</param>
+        /// <returns>The response from the ListRemoteSourceActionInvocations service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocations">REST API Reference for ListRemoteSourceActionInvocations Operation</seealso>
+        ListRemoteSourceActionInvocationsResponse ListRemoteSourceActionInvocations(ListRemoteSourceActionInvocationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the invocations of a source action job, one for each source server and source
+        /// action, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionInvocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRemoteSourceActionInvocations service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionInvocations">REST API Reference for ListRemoteSourceActionInvocations Operation</seealso>
+        Task<ListRemoteSourceActionInvocationsResponse> ListRemoteSourceActionInvocationsAsync(ListRemoteSourceActionInvocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the source action jobs in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionJobs service method.</param>
+        /// <returns>The response from the ListRemoteSourceActionJobs service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionJobs">REST API Reference for ListRemoteSourceActionJobs Operation</seealso>
+        ListRemoteSourceActionJobsResponse ListRemoteSourceActionJobs(ListRemoteSourceActionJobsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the source action jobs in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRemoteSourceActionJobs service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActionJobs">REST API Reference for ListRemoteSourceActionJobs Operation</seealso>
+        Task<ListRemoteSourceActionJobsResponse> ListRemoteSourceActionJobsAsync(ListRemoteSourceActionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the source actions in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActions service method.</param>
+        /// <returns>The response from the ListRemoteSourceActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActions">REST API Reference for ListRemoteSourceActions Operation</seealso>
+        ListRemoteSourceActionsResponse ListRemoteSourceActions(ListRemoteSourceActionsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the source actions in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteSourceActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRemoteSourceActions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListRemoteSourceActions">REST API Reference for ListRemoteSourceActions Operation</seealso>
+        Task<ListRemoteSourceActionsResponse> ListRemoteSourceActionsAsync(ListRemoteSourceActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3269,6 +3601,59 @@ namespace Amazon.Mgn
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Starts a job that runs a source action on source servers through a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRemoteSourceActionJob service method.</param>
+        /// <returns>The response from the StartRemoteSourceActionJob service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because it exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartRemoteSourceActionJob">REST API Reference for StartRemoteSourceActionJob Operation</seealso>
+        StartRemoteSourceActionJobResponse StartRemoteSourceActionJob(StartRemoteSourceActionJobRequest request);
+#endif
+
+        /// <summary>
+        /// Starts a job that runs a source action on source servers through a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRemoteSourceActionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartRemoteSourceActionJob service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because it exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartRemoteSourceActionJob">REST API Reference for StartRemoteSourceActionJob Operation</seealso>
+        Task<StartRemoteSourceActionJobResponse> StartRemoteSourceActionJobAsync(StartRemoteSourceActionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Start replication for source server irrespective of its replication type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
@@ -3796,6 +4181,49 @@ namespace Amazon.Mgn
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates the launch configuration defaults of a source server. They apply only to disk
+        /// mappings created later in the source server's Amazon Elastic Compute Cloud (Amazon
+        /// EC2) launch template, and members you omit keep their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationDefaults service method.</param>
+        /// <returns>The response from the UpdateLaunchConfigurationDefaults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationDefaults">REST API Reference for UpdateLaunchConfigurationDefaults Operation</seealso>
+        UpdateLaunchConfigurationDefaultsResponse UpdateLaunchConfigurationDefaults(UpdateLaunchConfigurationDefaultsRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the launch configuration defaults of a source server. They apply only to disk
+        /// mappings created later in the source server's Amazon Elastic Compute Cloud (Amazon
+        /// EC2) launch template, and members you omit keep their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationDefaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateLaunchConfigurationDefaults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationDefaults">REST API Reference for UpdateLaunchConfigurationDefaults Operation</seealso>
+        Task<UpdateLaunchConfigurationDefaultsResponse> UpdateLaunchConfigurationDefaultsAsync(UpdateLaunchConfigurationDefaultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates an existing Launch Configuration Template by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate service method.</param>
@@ -3916,6 +4344,53 @@ namespace Amazon.Mgn
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
         Task<UpdateNetworkMigrationMapperSegmentResponse> UpdateNetworkMigrationMapperSegmentAsync(UpdateNetworkMigrationMapperSegmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a source action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRemoteSourceAction service method.</param>
+        /// <returns>The response from the UpdateRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateRemoteSourceAction">REST API Reference for UpdateRemoteSourceAction Operation</seealso>
+        UpdateRemoteSourceActionResponse UpdateRemoteSourceAction(UpdateRemoteSourceActionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a source action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRemoteSourceAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateRemoteSourceAction service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateRemoteSourceAction">REST API Reference for UpdateRemoteSourceAction Operation</seealso>
+        Task<UpdateRemoteSourceActionResponse> UpdateRemoteSourceActionAsync(UpdateRemoteSourceActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

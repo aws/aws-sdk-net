@@ -16,25 +16,37 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net472">
-        <dependency id="System.Buffers" version="4.5.1" />
-        <dependency id="System.Memory" version="4.5.5" />
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
+        <dependency id="System.Buffers" version="4.6.1" />
+        <dependency id="System.Memory" version="4.6.3" />
         <dependency id="System.Text.Json" version="8.0.6" />
+        <dependency id="System.IO.Hashing" version="11.0.0" />
       </group>
       <group targetFramework="netstandard2.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
         <dependency id="Microsoft.Bcl.AsyncInterfaces" version="8.0.0" />
-        <dependency id="System.Buffers" version="4.5.1" />
-        <dependency id="System.Memory" version="4.5.5" />
+        <dependency id="System.Buffers" version="4.6.1" />
+        <dependency id="System.Memory" version="4.6.3" />
         <dependency id="System.Text.Json" version="8.0.6" />
-      </group>
-      <group targetFramework="netcoreapp3.1">
+        <dependency id="System.IO.Hashing" version="11.0.0" />
       </group>
       <group targetFramework="net8.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
+        <dependency id="System.IO.Hashing" version="11.0.0" />
+      </group>		
+      <group targetFramework="net10.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
+        <dependency id="System.IO.Hashing" version="11.0.0" />
+      </group>		
+      <group targetFramework="net11.0">
+        <dependency id="AWSSDK.Extensions.Numerics" version="<#=this.Session["NumericsVersionRange"]#>" />
+        <dependency id="System.IO.Hashing" version="11.0.0" />
       </group>		
     </dependencies>
   </metadata> 
   <files>
     <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
-    <file src="..\..\nuget-content\account-management.ps1" target="tools" />
+    <file src="..\..\code-analysis\CoreAnalysis\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
 
     <file src=".\bin\Release\net472\AWSSDK.Core.dll" target="lib\net472" />
     <file src=".\bin\Release\net472\AWSSDK.Core.xml" target="lib\net472" />
@@ -44,12 +56,17 @@
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.xml" target="lib\netstandard2.0"/>
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Core.pdb" target="lib\netstandard2.0"/>
 
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.dll" target="lib\netcoreapp3.1"/>
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.xml" target="lib\netcoreapp3.1"/>
-    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Core.pdb" target="lib\netcoreapp3.1"/>
-
     <file src=".\bin\Release\net8.0\AWSSDK.Core.dll" target="lib\net8.0"/>
     <file src=".\bin\Release\net8.0\AWSSDK.Core.xml" target="lib\net8.0"/>
     <file src=".\bin\Release\net8.0\AWSSDK.Core.pdb" target="lib\net8.0"/>
+
+    <file src=".\bin\Release\net10.0\AWSSDK.Core.dll" target="lib\net10.0"/>
+	<file src=".\bin\Release\net10.0\AWSSDK.Core.xml" target="lib\net10.0"/>
+	<file src=".\bin\Release\net10.0\AWSSDK.Core.pdb" target="lib\net10.0"/>
+
+	<file src=".\bin\Release\net11.0\AWSSDK.Core.dll" target="lib\net11.0"/>
+	<file src=".\bin\Release\net11.0\AWSSDK.Core.xml" target="lib\net11.0"/>
+	<file src=".\bin\Release\net11.0\AWSSDK.Core.pdb" target="lib\net11.0"/>
+
   </files>
 </package>

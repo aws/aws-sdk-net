@@ -36,10 +36,42 @@ namespace Amazon.AppStream.Model
     public partial class AgentAccessConfig
     {
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key
+        /// that encrypts Replay Session artifacts while WorkSpaces Applications processes them.
+        /// The key must be in the same Region as the stack, and ReplaySessionEnabled must be
+        /// true.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyArn property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyArn() => this.KmsKeyArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ReplaySessionEnabled. 
+        /// <para>
+        /// Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications
+        /// delivers a video combining session screenshots, a transcript, and a report for each
+        /// session. Requires the COMPUTER_VISION agent action.
+        /// </para>
+        /// </summary>
+        public bool? ReplaySessionEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReplaySessionEnabled property is set.
+        /// </summary>
+        internal bool IsSetReplaySessionEnabled() => this.ReplaySessionEnabled.HasValue;
+
+        /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are
-        /// stored. Required when ScreenshotsUploadEnabled is true.
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and
+        /// Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled
+        /// is true.
         /// </para>
         /// </summary>
         public string S3BucketArn { get; set; }
@@ -94,7 +126,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// The list of agent access settings that define permissions for each agent action. You
-        /// must specify at least one setting.
+        /// must specify at least one setting, and at least one agent action must be enabled.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

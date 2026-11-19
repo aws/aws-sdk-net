@@ -18,19 +18,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Xml.Serialization;
-
-using Amazon.CloudHSMV2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+
+using Amazon.CloudHSMV2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
@@ -38,20 +38,20 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Exception Unmarshaller for CloudHsmResourceNotFoundException
     /// </summary>
-    public partial class CloudHsmResourceNotFoundExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<CloudHsmResourceNotFoundException, JsonUnmarshallerContext>
+    public partial class CloudHsmResourceNotFoundExceptionUnmarshaller : ICborErrorResponseUnmarshaller<CloudHsmResourceNotFoundException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public CloudHsmResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CloudHsmResourceNotFoundException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshall the exception from the service to the appropriate exception class
         /// </summary>
-        public CloudHsmResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public CloudHsmResourceNotFoundException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             var unmarshalledObject = new CloudHsmResourceNotFoundException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 

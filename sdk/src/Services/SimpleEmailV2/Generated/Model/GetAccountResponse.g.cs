@@ -49,6 +49,20 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetDedicatedIpAutoWarmupEnabled() => this.DedicatedIpAutoWarmupEnabled.HasValue;
 
         /// <summary>
+        /// Gets and sets the property DeliveryAttributes. 
+        /// <para>
+        /// The delivery attributes that apply to your Amazon SES account in the current Amazon
+        /// Web Services Region.
+        /// </para>
+        /// </summary>
+        public DeliveryAttributes DeliveryAttributes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeliveryAttributes property is set.
+        /// </summary>
+        internal bool IsSetDeliveryAttributes() => this.DeliveryAttributes != null;
+
+        /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
         /// An object that defines your account details.

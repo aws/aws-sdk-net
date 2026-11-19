@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Comprehend.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,81 +39,81 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
     /// <summary>
     /// DocumentClassifierInputDataConfig Marshaller
     /// </summary>
-    public partial class DocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DocumentClassifierInputDataConfig, JsonMarshallerContext>
+    public partial class DocumentClassifierInputDataConfigMarshaller : IRequestMarshaller<DocumentClassifierInputDataConfig, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DocumentClassifierInputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentClassifierInputDataConfig requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetAugmentedManifests())
             {
-                context.Writer.WritePropertyName("AugmentedManifests");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AugmentedManifests");
+                context.Writer.WriteStartArray(requestObject.AugmentedManifests.Count);
                 foreach (var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AugmentedManifestsListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
 
             if (requestObject.IsSetDataFormat())
             {
-                context.Writer.WritePropertyName("DataFormat");
-                context.Writer.WriteStringValue(requestObject.DataFormat);
+                context.Writer.WriteTextString("DataFormat");
+                context.Writer.WriteTextString(requestObject.DataFormat);
             }
 
             if (requestObject.IsSetDocumentReaderConfig())
             {
-                context.Writer.WritePropertyName("DocumentReaderConfig");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DocumentReaderConfig");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DocumentReaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentReaderConfig, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetDocumentType())
             {
-                context.Writer.WritePropertyName("DocumentType");
-                context.Writer.WriteStringValue(requestObject.DocumentType);
+                context.Writer.WriteTextString("DocumentType");
+                context.Writer.WriteTextString(requestObject.DocumentType);
             }
 
             if (requestObject.IsSetDocuments())
             {
-                context.Writer.WritePropertyName("Documents");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Documents");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DocumentClassifierDocumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Documents, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLabelDelimiter())
             {
-                context.Writer.WritePropertyName("LabelDelimiter");
-                context.Writer.WriteStringValue(requestObject.LabelDelimiter);
+                context.Writer.WriteTextString("LabelDelimiter");
+                context.Writer.WriteTextString(requestObject.LabelDelimiter);
             }
 
             if (requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                context.Writer.WriteTextString("S3Uri");
+                context.Writer.WriteTextString(requestObject.S3Uri);
             }
 
             if (requestObject.IsSetTestS3Uri())
             {
-                context.Writer.WritePropertyName("TestS3Uri");
-                context.Writer.WriteStringValue(requestObject.TestS3Uri);
+                context.Writer.WriteTextString("TestS3Uri");
+                context.Writer.WriteTextString(requestObject.TestS3Uri);
             }
         }
 

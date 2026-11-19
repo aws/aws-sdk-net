@@ -1,0 +1,2115 @@
+{
+    "smithy": "2.0",
+    "metadata": {
+        "suppressions": [
+            {
+                "id": "HttpMethodSemantics",
+                "namespace": "*"
+            },
+            {
+                "id": "HttpResponseCodeSemantics",
+                "namespace": "*"
+            },
+            {
+                "id": "PaginatedTrait",
+                "namespace": "*"
+            },
+            {
+                "id": "HttpHeaderTrait",
+                "namespace": "*"
+            },
+            {
+                "id": "HttpUriConflict",
+                "namespace": "*"
+            },
+            {
+                "id": "Service",
+                "namespace": "*"
+            }
+        ]
+    },
+    "shapes": {
+        "com.amazonaws.sdb#AmazonSimpleDB": {
+            "type": "service",
+            "version": "2009-04-15",
+            "operations": [
+                {
+                    "target": "com.amazonaws.sdb#BatchDeleteAttributes"
+                },
+                {
+                    "target": "com.amazonaws.sdb#BatchPutAttributes"
+                },
+                {
+                    "target": "com.amazonaws.sdb#CreateDomain"
+                },
+                {
+                    "target": "com.amazonaws.sdb#DeleteAttributes"
+                },
+                {
+                    "target": "com.amazonaws.sdb#DeleteDomain"
+                },
+                {
+                    "target": "com.amazonaws.sdb#DomainMetadata"
+                },
+                {
+                    "target": "com.amazonaws.sdb#GetAttributes"
+                },
+                {
+                    "target": "com.amazonaws.sdb#ListDomains"
+                },
+                {
+                    "target": "com.amazonaws.sdb#PutAttributes"
+                },
+                {
+                    "target": "com.amazonaws.sdb#Select"
+                }
+            ],
+            "traits": {
+                "aws.api#service": {
+                    "sdkId": "SimpleDB",
+                    "arnNamespace": "sdb",
+                    "cloudFormationName": "SDB",
+                    "docId": "sdb-2009-04-15",
+                    "endpointPrefix": "sdb"
+                },
+                "aws.protocols#awsQuery": {},
+                "smithy.api#documentation": "Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides developers the freedom to focus on application development. <p> A traditional, clustered relational database requires a sizable upfront capital outlay, is complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven computing environment, are able to scale instantly, and pay only for what they use. </p> <p> Visit <a href=\"http://aws.amazon.com/simpledb/\">http://aws.amazon.com/simpledb/</a> for more information. </p>",
+                "smithy.api#title": "Amazon SimpleDB",
+                "smithy.api#xmlNamespace": {
+                    "uri": "http://sdb.amazonaws.com/doc/2009-04-15/"
+                },
+                "smithy.rules#endpointRuleSet": {
+                    "version": "1.0",
+                    "parameters": {
+                        "Region": {
+                            "builtIn": "AWS::Region",
+                            "required": false,
+                            "documentation": "The AWS region used to dispatch the request.",
+                            "type": "String"
+                        },
+                        "UseDualStack": {
+                            "builtIn": "AWS::UseDualStack",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+                            "type": "Boolean"
+                        },
+                        "UseFIPS": {
+                            "builtIn": "AWS::UseFIPS",
+                            "required": true,
+                            "default": false,
+                            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+                            "type": "Boolean"
+                        },
+                        "Endpoint": {
+                            "builtIn": "SDK::Endpoint",
+                            "required": false,
+                            "documentation": "Override the endpoint used to send this request",
+                            "type": "String"
+                        }
+                    },
+                    "rules": [
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "aws.partition",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ],
+                                    "assign": "PartitionResult"
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "fn": "parseURL",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ],
+                                            "assign": "url"
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                                    "type": "error"
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": {
+                                                            "ref": "Endpoint"
+                                                        },
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": "https://sdb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://sdb-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": "https://sdb.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "stringEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "Region"
+                                                        },
+                                                        "us-east-1"
+                                                    ]
+                                                }
+                                            ],
+                                            "endpoint": {
+                                                "url": "https://sdb.amazonaws.com",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://sdb.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "smithy.rules#endpointTests": {
+                    "testCases": [
+                        {
+                            "documentation": "For region us-west-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-west-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-west-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-west-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.us-west-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-west-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-west-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-west-2.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-west-2",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-west-2",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.us-west-2.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-west-2",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-west-2",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.eu-west-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "eu-west-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "eu-west-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.eu-west-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "eu-west-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "eu-west-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-northeast-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-northeast-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-northeast-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-northeast-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-northeast-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-northeast-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.sa-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "sa-east-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.sa-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "sa-east-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.sa-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "sa-east-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.sa-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "sa-east-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-southeast-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-southeast-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-southeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-southeast-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-southeast-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-southeast-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-southeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-southeast-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-southeast-2.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-southeast-2",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "ap-southeast-2",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-southeast-2.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-southeast-2",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "ap-southeast-2",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-east-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-east-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.us-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-east-1",
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://sdb.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-east-1",
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://example.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-east-1",
+                                "UseDualStack": false,
+                                "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips enabled and dualstack disabled",
+                            "expect": {
+                                "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "Region": "us-east-1",
+                                "UseDualStack": false,
+                                "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack enabled",
+                            "expect": {
+                                "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "Region": "us-east-1",
+                                "UseDualStack": true,
+                                "Endpoint": "https://example.com"
+                            }
+                        }
+                    ],
+                    "version": "1.0"
+                }
+            }
+        },
+        "com.amazonaws.sdb#Attribute": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the attribute.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "AlternateNameEncoding": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p></p>"
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The value of the attribute.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "AlternateValueEncoding": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p></p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p></p>"
+            }
+        },
+        "com.amazonaws.sdb#AttributeDoesNotExist": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "AttributeDoesNotExist",
+                    "httpResponseCode": 404
+                },
+                "smithy.api#documentation": "<p>The specified attribute does not exist.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 404
+            }
+        },
+        "com.amazonaws.sdb#AttributeList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#Attribute",
+                "traits": {
+                    "smithy.api#xmlName": "Attribute"
+                }
+            }
+        },
+        "com.amazonaws.sdb#AttributeNameList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#String",
+                "traits": {
+                    "smithy.api#xmlName": "AttributeName"
+                }
+            }
+        },
+        "com.amazonaws.sdb#BatchDeleteAttributes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#BatchDeleteAttributesRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB to optimize requests, which generally yields better throughput. </p> <p> The following limitations are enforced for this operation: <ul> <li>1 MB request size</li> <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>"
+            }
+        },
+        "com.amazonaws.sdb#BatchDeleteAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain in which the attributes are being deleted.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Items": {
+                    "target": "com.amazonaws.sdb#DeletableItemList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of items on which to perform the operation.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Item"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#BatchPutAttributes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#BatchPutAttributesRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#DuplicateItemName"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberDomainAttributesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberDomainBytesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberItemAttributesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberSubmittedAttributesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberSubmittedItemsExceeded"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ \"first_name\", \"first_value\" }</code> and <code>{ \"first_name\", \"second_value\" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>"
+            }
+        },
+        "com.amazonaws.sdb#BatchPutAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain in which the attributes are being stored.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Items": {
+                    "target": "com.amazonaws.sdb#ReplaceableItemList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of items on which to perform the operation.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Item"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#Boolean": {
+            "type": "boolean",
+            "traits": {
+                "smithy.api#default": false
+            }
+        },
+        "com.amazonaws.sdb#CreateDomain": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#CreateDomainRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberDomainsExceeded"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href=\"http://aws.amazon.com/contact-us/simpledb-limit-request/\"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>"
+            }
+        },
+        "com.amazonaws.sdb#CreateDomainRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#DeletableItem": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#required": {},
+                        "smithy.api#xmlName": "ItemName"
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#AttributeList",
+                    "traits": {
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.sdb#DeletableItemList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#DeletableItem",
+                "traits": {
+                    "smithy.api#xmlName": "Item"
+                }
+            }
+        },
+        "com.amazonaws.sdb#DeleteAttributes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#DeleteAttributesRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#AttributeDoesNotExist"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>"
+            }
+        },
+        "com.amazonaws.sdb#DeleteAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain in which to perform the operation.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ItemName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#AttributeList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.",
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                },
+                "Expected": {
+                    "target": "com.amazonaws.sdb#UpdateCondition",
+                    "traits": {
+                        "smithy.api#documentation": "The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#DeleteDomain": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#DeleteDomainRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p>"
+            }
+        },
+        "com.amazonaws.sdb#DeleteDomainRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain to delete.",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#DomainMetadata": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#DomainMetadataRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sdb#DomainMetadataResult"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>"
+            }
+        },
+        "com.amazonaws.sdb#DomainMetadataRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain for which to display the metadata of.",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#DomainMetadataResult": {
+            "type": "structure",
+            "members": {
+                "ItemCount": {
+                    "target": "com.amazonaws.sdb#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The number of all items in the domain."
+                    }
+                },
+                "ItemNamesSizeBytes": {
+                    "target": "com.amazonaws.sdb#Long",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The total size of all item names in the domain, in bytes."
+                    }
+                },
+                "AttributeNameCount": {
+                    "target": "com.amazonaws.sdb#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The number of unique attribute names in the domain."
+                    }
+                },
+                "AttributeNamesSizeBytes": {
+                    "target": "com.amazonaws.sdb#Long",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The total size of all unique attribute names in the domain, in bytes."
+                    }
+                },
+                "AttributeValueCount": {
+                    "target": "com.amazonaws.sdb#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The number of all attribute name/value pairs in the domain."
+                    }
+                },
+                "AttributeValuesSizeBytes": {
+                    "target": "com.amazonaws.sdb#Long",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The total size of all attribute values in the domain, in bytes."
+                    }
+                },
+                "Timestamp": {
+                    "target": "com.amazonaws.sdb#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The data and time when metadata was calculated, in Epoch (UNIX) seconds."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sdb#DomainNameList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#String",
+                "traits": {
+                    "smithy.api#xmlName": "DomainName"
+                }
+            }
+        },
+        "com.amazonaws.sdb#DuplicateItemName": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "DuplicateItemName",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The item name was specified more than once. </p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#Float": {
+            "type": "float",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.sdb#GetAttributes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#GetAttributesRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sdb#GetAttributesResult"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p>"
+            }
+        },
+        "com.amazonaws.sdb#GetAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain in which to perform the operation.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ItemName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the item.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "AttributeNames": {
+                    "target": "com.amazonaws.sdb#AttributeNameList",
+                    "traits": {
+                        "smithy.api#documentation": "The names of the attributes.",
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "AttributeName"
+                    }
+                },
+                "ConsistentRead": {
+                    "target": "com.amazonaws.sdb#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#GetAttributesResult": {
+            "type": "structure",
+            "members": {
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#AttributeList",
+                    "traits": {
+                        "smithy.api#documentation": "The list of attributes returned by the operation.",
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sdb#Integer": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.sdb#InvalidNextToken": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidNextToken",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The specified NextToken is not valid. </p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#InvalidNumberPredicates": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidNumberPredicates",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>Too many predicates exist in the query expression.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#InvalidNumberValueTests": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidNumberValueTests",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>Too many predicates exist in the query expression.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#InvalidParameterValue": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidParameterValue",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The value for a parameter is invalid.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#InvalidQueryExpression": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidQueryExpression",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The specified query expression syntax is not valid.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#Item": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the item.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "AlternateNameEncoding": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p></p>"
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#AttributeList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of attributes.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p></p>"
+            }
+        },
+        "com.amazonaws.sdb#ItemList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#Item",
+                "traits": {
+                    "smithy.api#xmlName": "Item"
+                }
+            }
+        },
+        "com.amazonaws.sdb#ListDomains": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#ListDomainsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sdb#ListDomainsResult"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#InvalidNextToken"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href=\"#MaxNumberOfDomains\">MaxNumberOfDomains</a>. A <a href=\"#NextToken\">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "DomainNames",
+                    "pageSize": "MaxNumberOfDomains"
+                }
+            }
+        },
+        "com.amazonaws.sdb#ListDomainsRequest": {
+            "type": "structure",
+            "members": {
+                "MaxNumberOfDomains": {
+                    "target": "com.amazonaws.sdb#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100."
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "A string informing Amazon SimpleDB where to start the next list of domain names."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#ListDomainsResult": {
+            "type": "structure",
+            "members": {
+                "DomainNames": {
+                    "target": "com.amazonaws.sdb#DomainNameList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of domain names that match the expression.",
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "DomainName"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sdb#Long": {
+            "type": "long",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
+        "com.amazonaws.sdb#MissingParameter": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "MissingParameter",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The request must contain the specified missing parameter.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#NoSuchDomain": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NoSuchDomain",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>The specified domain does not exist.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#NumberDomainAttributesExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberDomainAttributesExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many attributes in this domain.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#NumberDomainBytesExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberDomainBytesExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many bytes in this domain.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#NumberDomainsExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberDomainsExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many domains exist per this account.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#NumberItemAttributesExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberItemAttributesExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many attributes in this item.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#NumberSubmittedAttributesExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberSubmittedAttributesExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many attributes exist in a single call.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#NumberSubmittedItemsExceeded": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NumberSubmittedItemsExceeded",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>Too many items exist in a single call.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 409
+            }
+        },
+        "com.amazonaws.sdb#PutAttributes": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#PutAttributesRequest"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#AttributeDoesNotExist"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberDomainAttributesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberDomainBytesExceeded"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NumberItemAttributesExceeded"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ \"first_name\", \"first_value\" }</code> and <code>{ \"first_name\", second_value\" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>"
+            }
+        },
+        "com.amazonaws.sdb#PutAttributesRequest": {
+            "type": "structure",
+            "members": {
+                "DomainName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the domain in which to perform the operation.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ItemName": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the item.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#ReplaceableAttributeList",
+                    "traits": {
+                        "smithy.api#documentation": "The list of attributes.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                },
+                "Expected": {
+                    "target": "com.amazonaws.sdb#UpdateCondition",
+                    "traits": {
+                        "smithy.api#documentation": "The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#ReplaceableAttribute": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the replaceable attribute.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The value of the replaceable attribute.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Replace": {
+                    "target": "com.amazonaws.sdb#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p></p>"
+            }
+        },
+        "com.amazonaws.sdb#ReplaceableAttributeList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#ReplaceableAttribute",
+                "traits": {
+                    "smithy.api#xmlName": "Attribute"
+                }
+            }
+        },
+        "com.amazonaws.sdb#ReplaceableItem": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The name of the replaceable item.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlName": "ItemName"
+                    }
+                },
+                "Attributes": {
+                    "target": "com.amazonaws.sdb#ReplaceableAttributeList",
+                    "traits": {
+                        "smithy.api#documentation": "The list of attributes for a replaceable item.",
+                        "smithy.api#required": {},
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Attribute"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p></p>"
+            }
+        },
+        "com.amazonaws.sdb#ReplaceableItemList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sdb#ReplaceableItem",
+                "traits": {
+                    "smithy.api#xmlName": "Item"
+                }
+            }
+        },
+        "com.amazonaws.sdb#RequestTimeout": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "RequestTimeout",
+                    "httpResponseCode": 408
+                },
+                "smithy.api#documentation": "<p>A timeout occurred when attempting to query the specified domain with specified query expression.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 408
+            }
+        },
+        "com.amazonaws.sdb#Select": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sdb#SelectRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sdb#SelectResult"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sdb#InvalidNextToken"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidNumberPredicates"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidNumberValueTests"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidParameterValue"
+                },
+                {
+                    "target": "com.amazonaws.sdb#InvalidQueryExpression"
+                },
+                {
+                    "target": "com.amazonaws.sdb#MissingParameter"
+                },
+                {
+                    "target": "com.amazonaws.sdb#NoSuchDomain"
+                },
+                {
+                    "target": "com.amazonaws.sdb#RequestTimeout"
+                },
+                {
+                    "target": "com.amazonaws.sdb#TooManyRequestedAttributes"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>",
+                "smithy.api#paginated": {
+                    "inputToken": "NextToken",
+                    "outputToken": "NextToken",
+                    "items": "Items"
+                }
+            }
+        },
+        "com.amazonaws.sdb#SelectRequest": {
+            "type": "structure",
+            "members": {
+                "SelectExpression": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "The expression used to query the domain.",
+                        "smithy.api#required": {}
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>."
+                    }
+                },
+                "ConsistentRead": {
+                    "target": "com.amazonaws.sdb#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sdb#SelectResult": {
+            "type": "structure",
+            "members": {
+                "Items": {
+                    "target": "com.amazonaws.sdb#ItemList",
+                    "traits": {
+                        "smithy.api#documentation": "A list of items that match the select expression.",
+                        "smithy.api#xmlFlattened": {},
+                        "smithy.api#xmlName": "Item"
+                    }
+                },
+                "NextToken": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds."
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sdb#String": {
+            "type": "string"
+        },
+        "com.amazonaws.sdb#TooManyRequestedAttributes": {
+            "type": "structure",
+            "members": {
+                "BoxUsage": {
+                    "target": "com.amazonaws.sdb#Float",
+                    "traits": {
+                        "smithy.api#default": 0
+                    }
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "TooManyRequestedAttributes",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>Too many attributes requested.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.sdb#UpdateCondition": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the attribute involved in the condition.</p>"
+                    }
+                },
+                "Value": {
+                    "target": "com.amazonaws.sdb#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>"
+                    }
+                },
+                "Exists": {
+                    "target": "com.amazonaws.sdb#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p> Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist. </p>"
+            }
+        }
+    }
+}

@@ -100,6 +100,19 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFrameResolution() => this.FrameResolution != null;
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The language of the elementary stream.
+        /// </para>
+        /// </summary>
+        public string Language { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Language property is set.
+        /// </summary>
+        internal bool IsSetLanguage() => this.Language != null;
+
+        /// <summary>
         /// Gets and sets the property Pid. 
         /// <para>
         ///  The Packet ID (PID) as it is reported in the Program Map Table.
@@ -138,6 +151,19 @@ namespace Amazon.MediaConnect.Model
         /// Checks to see if the SampleSize property is set.
         /// </summary>
         internal bool IsSetSampleSize() => this.SampleSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ScanMode. 
+        /// <para>
+        /// The scan mode used by the video stream.
+        /// </para>
+        /// </summary>
+        public ScanMode ScanMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScanMode property is set.
+        /// </summary>
+        internal bool IsSetScanMode() => this.ScanMode != null;
 
         /// <summary>
         /// Gets and sets the property StreamType. 

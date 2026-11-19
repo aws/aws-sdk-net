@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -36,135 +38,132 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Options Object
     /// </summary>
-    public partial class OptionsUnmarshaller : IJsonUnmarshaller<Options, JsonUnmarshallerContext>
+    public partial class OptionsUnmarshaller : ICborUnmarshaller<Options, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Options Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Options Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Options();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Atime", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Atime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("BytesPerSecond", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Atime":
+                        context.AddPathSegment("Atime");
+                        unmarshalledObject.Atime = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Gid", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Gid = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BytesPerSecond":
+                        context.AddPathSegment("BytesPerSecond");
+                        unmarshalledObject.BytesPerSecond = CborNullableLongUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LogLevel", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Gid":
+                        context.AddPathSegment("Gid");
+                        unmarshalledObject.Gid = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Mtime", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mtime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LogLevel":
+                        context.AddPathSegment("LogLevel");
+                        unmarshalledObject.LogLevel = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ObjectMetadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Mtime":
+                        context.AddPathSegment("Mtime");
+                        unmarshalledObject.Mtime = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ObjectTags", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectTags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ObjectMetadata":
+                        context.AddPathSegment("ObjectMetadata");
+                        unmarshalledObject.ObjectMetadata = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OverwriteMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverwriteMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ObjectTags":
+                        context.AddPathSegment("ObjectTags");
+                        unmarshalledObject.ObjectTags = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PosixPermissions", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PosixPermissions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "OverwriteMode":
+                        context.AddPathSegment("OverwriteMode");
+                        unmarshalledObject.OverwriteMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PreserveDeletedFiles", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreserveDeletedFiles = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PosixPermissions":
+                        context.AddPathSegment("PosixPermissions");
+                        unmarshalledObject.PosixPermissions = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("PreserveDevices", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreserveDevices = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PreserveDeletedFiles":
+                        context.AddPathSegment("PreserveDeletedFiles");
+                        unmarshalledObject.PreserveDeletedFiles = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SecurityDescriptorCopyFlags", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityDescriptorCopyFlags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "PreserveDevices":
+                        context.AddPathSegment("PreserveDevices");
+                        unmarshalledObject.PreserveDevices = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TaskQueueing", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskQueueing = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SecurityDescriptorCopyFlags":
+                        context.AddPathSegment("SecurityDescriptorCopyFlags");
+                        unmarshalledObject.SecurityDescriptorCopyFlags = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("TransferMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransferMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TaskQueueing":
+                        context.AddPathSegment("TaskQueueing");
+                        unmarshalledObject.TaskQueueing = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Uid", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "TransferMode":
+                        context.AddPathSegment("TransferMode");
+                        unmarshalledObject.TransferMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("VerifyMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VerifyMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Uid":
+                        context.AddPathSegment("Uid");
+                        unmarshalledObject.Uid = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "VerifyMode":
+                        context.AddPathSegment("VerifyMode");
+                        unmarshalledObject.VerifyMode = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

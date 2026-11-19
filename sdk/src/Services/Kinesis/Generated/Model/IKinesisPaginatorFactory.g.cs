@@ -39,6 +39,12 @@ namespace Amazon.Kinesis.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListQueues operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListQueuesPaginator ListQueues(ListQueuesRequest request);
+
+        /// <summary>
         /// Paginator for ListStreamConsumers operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

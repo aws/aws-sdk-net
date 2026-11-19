@@ -212,12 +212,8 @@ namespace Amazon.MWAAServerless.Model
         /// <summary>
         /// Gets and sets the property ScheduleConfiguration. 
         /// <para>
-        /// The schedule configuration for the workflow, including cron expressions for automated
-        /// execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge
-        /// Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes
-        /// schedule information in its YAML definition, the service automatically configures
-        /// the appropriate triggers for automated execution. Only one version of a workflow can
-        /// have an active schedule at any given time.
+        /// The schedule configuration for the workflow. Only one version of a workflow can have
+        /// an active schedule at any given time.
         /// </para>
         /// </summary>
         public ScheduleConfiguration ScheduleConfiguration { get; set; }

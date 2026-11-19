@@ -479,6 +479,9 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.MalformedPolicyTemplateException">
         /// The operation failed because the policy template that you provided isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.PermissionVersionsLimitExceededException">
         /// The operation failed because it would exceed the limit for the number of versions
         /// you can have for a permission. To view the limits for your Amazon Web Services account,
@@ -537,6 +540,9 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedPolicyTemplateException">
         /// The operation failed because the policy template that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.PermissionVersionsLimitExceededException">
         /// The operation failed because it would exceed the limit for the number of versions
@@ -1245,6 +1251,15 @@ namespace Amazon.RAM
 #if NETFRAMEWORK
         /// <summary>
         /// Retrieves the contents of a managed permission in JSON format.
+        /// 
+        ///  
+        /// <para>
+        /// If the permission has template parameters, you can include the <c>permissionTemplateParameters</c>
+        /// parameter in your request. The operation then renders the returned policy with the
+        /// specified values in place of the template parameter placeholders. If you omit <c>permissionTemplateParameters</c>,
+        /// the operation returns the raw policy template with <c>@{parameterName}</c> placeholders
+        /// unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
         /// <returns>The response from the GetPermission service method, as returned by RAM.</returns>
@@ -1274,6 +1289,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves the contents of a managed permission in JSON format.
+        /// 
+        ///  
+        /// <para>
+        /// If the permission has template parameters, you can include the <c>permissionTemplateParameters</c>
+        /// parameter in your request. The operation then renders the returned policy with the
+        /// specified values in place of the template parameter placeholders. If you omit <c>permissionTemplateParameters</c>,
+        /// the operation returns the raw policy template with <c>@{parameterName}</c> placeholders
+        /// unchanged.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
         /// <param name="cancellationToken">
@@ -3215,6 +3239,109 @@ namespace Amazon.RAM
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the status of the specified customer managed permission.
+        /// 
+        ///  
+        /// <para>
+        /// Setting the status to <c>DEPRECATED</c> prevents new resource share associations.
+        /// Setting it to <c>ATTACHABLE</c> restores a previously deprecated permission. Existing
+        /// resource shares that use the permission continue to function.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePermission service method.</param>
+        /// <returns>The response from the UpdatePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.PermissionLimitExceededException">
+        /// The operation failed because it would exceed the maximum number of permissions you
+        /// can create in each Amazon Web Services Region. To view the limits for your Amazon
+        /// Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdatePermission">REST API Reference for UpdatePermission Operation</seealso>
+        UpdatePermissionResponse UpdatePermission(UpdatePermissionRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the status of the specified customer managed permission.
+        /// 
+        ///  
+        /// <para>
+        /// Setting the status to <c>DEPRECATED</c> prevents new resource share associations.
+        /// Setting it to <c>ATTACHABLE</c> restores a previously deprecated permission. Existing
+        /// resource shares that use the permission continue to function.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.PermissionLimitExceededException">
+        /// The operation failed because it would exceed the maximum number of permissions you
+        /// can create in each Amazon Web Services Region. To view the limits for your Amazon
+        /// Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdatePermission">REST API Reference for UpdatePermission Operation</seealso>
+        Task<UpdatePermissionResponse> UpdatePermissionAsync(UpdatePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

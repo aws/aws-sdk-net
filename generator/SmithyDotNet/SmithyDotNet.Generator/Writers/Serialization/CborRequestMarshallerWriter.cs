@@ -82,15 +82,9 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
                 // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
                 // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
                 writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
-                if (initialRequestMembers.Count > 0)
-                {
-                    WriteInitialRequest(writer, initialRequestMembers);
-                    writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher, initialRequest);");
-                }
-                else
-                {
-                    writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher);");
-                }
+                // The initial-request event is always sent; it is an empty map when the stream is the only member.
+                WriteInitialRequest(writer, initialRequestMembers);
+                writer.WriteLine($"request.EventStreamPublisher = new {eventStream.Type.DotNetType}PublisherMarshaller(publicRequest.{eventStream.PropertyName}Publisher, initialRequest);");
             }
             else if (hasBody)
             {
@@ -120,12 +114,7 @@ public sealed class CborRequestMarshallerWriter(GenerationContext context, strin
             if (hasBody)
             {
                 WriteBody(writer, members, () => WriteRequestContent(writer));
-
-                // The checksum covers the body, so it follows serialization.
-                if (operation.Shape.RequiresHttpChecksum())
-                {
-                    writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
-                }
+                MarshallerCommon.WriteRequestChecksum(writer, context, operation);
             }
             if (operation.Shape.HasUnsignedPayload())
             {

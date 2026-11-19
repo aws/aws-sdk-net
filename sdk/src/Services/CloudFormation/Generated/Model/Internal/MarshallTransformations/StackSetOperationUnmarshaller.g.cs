@@ -111,6 +111,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("RegionalStatusDetails/entry", targetDepth))
+                    {
+                        if (unmarshalledObject.RegionalStatusDetails == null)
+                        {
+                            unmarshalledObject.RegionalStatusDetails = new Dictionary<string, RegionalStatusDetail>();
+                        }
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, RegionalStatusDetail, StringUnmarshaller, RegionalStatusDetailUnmarshaller>(StringUnmarshaller.Instance, RegionalStatusDetailUnmarshaller.Instance, "key", "value");
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RegionalStatusDetails.Add(item.Key, item.Value);
+                        continue;
+                    }
+
                     if (context.TestExpression("RetainStacks", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

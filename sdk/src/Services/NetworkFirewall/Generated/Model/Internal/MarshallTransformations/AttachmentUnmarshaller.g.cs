@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Attachment Object
     /// </summary>
-    public partial class AttachmentUnmarshaller : IJsonUnmarshaller<Attachment, JsonUnmarshallerContext>
+    public partial class AttachmentUnmarshaller : ICborUnmarshaller<Attachment, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Attachment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Attachment Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Attachment();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DnsName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("EndpointId", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DnsName":
+                        context.AddPathSegment("DnsName");
+                        unmarshalledObject.DnsName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "EndpointId":
+                        context.AddPathSegment("EndpointId");
+                        unmarshalledObject.EndpointId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Status":
+                        context.AddPathSegment("Status");
+                        unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SubnetId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StatusMessage":
+                        context.AddPathSegment("StatusMessage");
+                        unmarshalledObject.StatusMessage = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SubnetId":
+                        context.AddPathSegment("SubnetId");
+                        unmarshalledObject.SubnetId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

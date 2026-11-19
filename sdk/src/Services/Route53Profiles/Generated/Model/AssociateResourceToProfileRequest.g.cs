@@ -31,7 +31,7 @@ namespace Amazon.Route53Profiles.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateResourceToProfile operation. Associates
-    /// a DNS reource configuration to a Route 53 Profile.
+    /// a DNS resource configuration to a Route 53 Profile.
     /// </summary>
     public partial class AssociateResourceToProfileRequest : AmazonRoute53ProfilesRequest
     {
@@ -66,7 +66,8 @@ namespace Amazon.Route53Profiles.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  Amazon resource number, ARN, of the DNS resource. 
+        ///  Amazon resource number, ARN, of the resource to associate. Either a private hosted
+        /// zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint. 
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 255)]

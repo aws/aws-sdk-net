@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionAlias Object
     /// </summary>
-    public partial class ConnectionAliasUnmarshaller : IJsonUnmarshaller<ConnectionAlias, JsonUnmarshallerContext>
+    public partial class ConnectionAliasUnmarshaller : ICborUnmarshaller<ConnectionAlias, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ConnectionAlias Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConnectionAlias Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new ConnectionAlias();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AliasId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AliasId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("Associations", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ConnectionAliasAssociation, ConnectionAliasAssociationUnmarshaller>(ConnectionAliasAssociationUnmarshaller.Instance);
-                    unmarshalledObject.Associations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AliasId":
+                        context.AddPathSegment("AliasId");
+                        unmarshalledObject.AliasId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("ConnectionString", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionString = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Associations":
+                        context.AddPathSegment("Associations");
+                        unmarshalledObject.Associations = new CborListUnmarshaller<ConnectionAliasAssociation, ConnectionAliasAssociationUnmarshaller>(ConnectionAliasAssociationUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("OwnerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ConnectionString":
+                        context.AddPathSegment("ConnectionString");
+                        unmarshalledObject.ConnectionString = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "OwnerAccountId":
+                        context.AddPathSegment("OwnerAccountId");
+                        unmarshalledObject.OwnerAccountId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "State":
+                        context.AddPathSegment("State");
+                        unmarshalledObject.State = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

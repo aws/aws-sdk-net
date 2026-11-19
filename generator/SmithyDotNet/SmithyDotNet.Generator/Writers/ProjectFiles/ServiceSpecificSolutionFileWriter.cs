@@ -144,7 +144,8 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetFramework.csproj")}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetStandard.csproj")}" />""");
 
-            foreach (var extension in context.ExtensionDependencies)
+            // Core's own extension dependencies come first so the solution loads everything Core references.
+            foreach (var extension in SdkExtension.CoreDependencies.Concat(context.ExtensionDependencies))
             {
                 foreach (var project in extension.Projects)
                 {

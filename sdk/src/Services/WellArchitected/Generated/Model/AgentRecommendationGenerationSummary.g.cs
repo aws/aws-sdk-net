@@ -63,6 +63,32 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetCreatedBy() => this.CreatedBy != null;
 
         /// <summary>
+        /// Gets and sets the property EndedAt. 
+        /// <para>
+        /// The timestamp when the recommendation generation process completed.
+        /// </para>
+        /// </summary>
+        public DateTime? EndedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndedAt property is set.
+        /// </summary>
+        internal bool IsSetEndedAt() => this.EndedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ErrorDetails. 
+        /// <para>
+        /// Details about the error if the generation status is ERROR.
+        /// </para>
+        /// </summary>
+        public ErrorDetails ErrorDetails { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ErrorDetails property is set.
+        /// </summary>
+        internal bool IsSetErrorDetails() => this.ErrorDetails != null;
+
+        /// <summary>
         /// Gets and sets the property EstimatedCompletionTime. 
         /// <para>
         /// The estimated time for the generation to complete.
@@ -74,6 +100,39 @@ namespace Amazon.WellArchitected.Model
         /// Checks to see if the EstimatedCompletionTime property is set.
         /// </summary>
         internal bool IsSetEstimatedCompletionTime() => this.EstimatedCompletionTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GenerationRecommendationTypes. 
+        /// <para>
+        /// The recommendation types the generation covers.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 3)]
+        public List<string> GenerationRecommendationTypes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the GenerationRecommendationTypes property is set.
+        /// </summary>
+        internal bool IsSetGenerationRecommendationTypes() => this.GenerationRecommendationTypes != null && (this.GenerationRecommendationTypes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property GenerationType. 
+        /// <para>
+        /// How the generation was started.
+        /// </para>
+        /// </summary>
+        public GenerationType GenerationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GenerationType property is set.
+        /// </summary>
+        internal bool IsSetGenerationType() => this.GenerationType != null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -142,6 +201,19 @@ namespace Amazon.WellArchitected.Model
         /// Checks to see if the ProfileArn property is set.
         /// </summary>
         internal bool IsSetProfileArn() => this.ProfileArn != null;
+
+        /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The timestamp when the recommendation generation process started.
+        /// </para>
+        /// </summary>
+        public DateTime? StartedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartedAt property is set.
+        /// </summary>
+        internal bool IsSetStartedAt() => this.StartedAt.HasValue;
 
         /// <summary>
         /// Gets and sets the property Status. 

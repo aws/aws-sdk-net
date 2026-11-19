@@ -51,7 +51,9 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ConsumerCount. 
         /// <para>
-        /// The number of enhanced fan-out consumers registered with the stream.
+        /// The number of enhanced fan-out consumers registered with the stream. Queues are not
+        /// included in this count, even though they share the stream's registered consumer limit
+        /// with enhanced fan-out consumers. <c>QueueCount</c> reports the number of queues.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000000)]
@@ -173,6 +175,20 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetOpenShardCount() => this.OpenShardCount.HasValue;
 
         /// <summary>
+        /// Gets and sets the property QueueCount. 
+        /// <para>
+        /// The number of queues created on the data stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1000000)]
+        public int? QueueCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QueueCount property is set.
+        /// </summary>
+        internal bool IsSetQueueCount() => this.QueueCount.HasValue;
+
+        /// <summary>
         /// Gets and sets the property RecordDistributionStrategy. 
         /// <para>
         /// The record distribution strategy that the stream currently uses. A value of <c>AUTO</c>
@@ -249,7 +265,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property StreamModeDetails. 
         /// <para>
         ///  Specifies the capacity mode to which you want to set your data stream. Currently,
-        /// in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode
+        /// in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode
         /// and a <b>provisioned</b> capacity mode for your data streams. 
         /// </para>
         /// </summary>

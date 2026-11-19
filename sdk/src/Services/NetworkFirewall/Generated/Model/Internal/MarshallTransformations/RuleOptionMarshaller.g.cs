@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,28 +39,28 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// RuleOption Marshaller
     /// </summary>
-    public partial class RuleOptionMarshaller : IRequestMarshaller<RuleOption, JsonMarshallerContext>
+    public partial class RuleOptionMarshaller : IRequestMarshaller<RuleOption, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(RuleOption requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleOption requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetKeyword())
             {
-                context.Writer.WritePropertyName("Keyword");
-                context.Writer.WriteStringValue(requestObject.Keyword);
+                context.Writer.WriteTextString("Keyword");
+                context.Writer.WriteTextString(requestObject.Keyword);
             }
 
             if (requestObject.IsSetSettings())
             {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Settings");
+                context.Writer.WriteStartArray(requestObject.Settings.Count);
                 foreach (var requestObjectSettingsListValue in requestObject.Settings)
                 {
-                    context.Writer.WriteStringValue(requestObjectSettingsListValue);
+                    context.Writer.WriteTextString(requestObjectSettingsListValue);
                 }
                 context.Writer.WriteEndArray();
             }

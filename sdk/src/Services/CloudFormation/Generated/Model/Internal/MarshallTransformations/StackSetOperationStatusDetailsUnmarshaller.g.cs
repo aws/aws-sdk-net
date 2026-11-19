@@ -61,6 +61,27 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.FailedStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("Stages", targetDepth))
+                    {
+                        var unmarshaller = StagesUnmarshaller.Instance;
+                        unmarshalledObject.Stages = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TotalAccountsCount", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TotalAccountsCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("TotalStackInstancesCount", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.TotalStackInstancesCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

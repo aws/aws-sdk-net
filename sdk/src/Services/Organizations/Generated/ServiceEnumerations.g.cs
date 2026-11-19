@@ -771,6 +771,11 @@ namespace Amazon.Organizations
         public static readonly EffectivePolicyType S3_POLICY = new EffectivePolicyType("S3_POLICY");
 
         /// <summary>
+        /// Constant SECURITYHUB_CSPM_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType SECURITYHUB_CSPM_POLICY = new EffectivePolicyType("SECURITYHUB_CSPM_POLICY");
+
+        /// <summary>
         /// Constant SECURITYHUB_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType SECURITYHUB_POLICY = new EffectivePolicyType("SECURITYHUB_POLICY");
@@ -1543,6 +1548,11 @@ namespace Amazon.Organizations
         /// Constant S3_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType S3_POLICY = new PolicyType("S3_POLICY");
+
+        /// <summary>
+        /// Constant SECURITYHUB_CSPM_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType SECURITYHUB_CSPM_POLICY = new PolicyType("SECURITYHUB_CSPM_POLICY");
 
         /// <summary>
         /// Constant SECURITYHUB_POLICY for PolicyType

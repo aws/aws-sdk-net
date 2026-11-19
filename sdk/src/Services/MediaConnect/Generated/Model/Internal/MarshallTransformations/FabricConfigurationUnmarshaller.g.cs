@@ -59,6 +59,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecoveryLatencyMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("switchingConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FabricSwitchingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SwitchingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("switchingMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SwitchingMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

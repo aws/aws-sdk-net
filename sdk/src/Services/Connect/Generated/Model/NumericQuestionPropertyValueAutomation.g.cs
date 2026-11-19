@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the property value used in automation of a numeric questions. Label
+    /// Information about the property value used in automation of a numeric question. Label
     /// values are associated with minimum and maximum values for the numeric question.
     /// 
     ///  <ul> <li> 

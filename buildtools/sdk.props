@@ -6,7 +6,7 @@
         <H2RequiredSupported>true</H2RequiredSupported>
 
         <!-- Protocols the Smithy generator fully supports, so new services using them can be generated with it -->
-        <SmithyGeneratorProtocols>json, rest-json, smithy-rpc-v2-cbor</SmithyGeneratorProtocols>
+        <SmithyGeneratorProtocols>ec2, json, query, rest-json, rest-xml, smithy-rpc-v2-cbor</SmithyGeneratorProtocols>
     </PropertyGroup>
 
     <!-- Test projects the release pipeline runs. No target framework is named here:

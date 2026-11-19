@@ -133,6 +133,33 @@ namespace Amazon.QConnect.Model
         internal bool IsSetInferenceConfiguration() => this.InferenceConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The Amazon Web Services Region where the AI Prompt was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 8, Max = 31)]
+        public string LastModifiedRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedRegion property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedRegion() => this.LastModifiedRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when the AI Prompt was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastModifiedTime property is set.
+        /// </summary>
+        internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
         /// The identifier of the model used for this AI Prompt. The following model Ids are supported:

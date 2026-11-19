@@ -53,6 +53,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("group", targetDepth, ref reader))
+                {
+                    var unmarshaller = GroupMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Group = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("user", targetDepth, ref reader))
                 {
                     var unmarshaller = UserMetadataUnmarshaller.Instance;

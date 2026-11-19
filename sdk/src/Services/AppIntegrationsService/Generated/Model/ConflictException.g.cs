@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// The request conflicts with the current state of the resource. Verify the application's
+    /// The request conflicts with the current state of the resource. Verify the resource's
     /// current state and retry the request.
     /// </summary>
 #if !NETSTANDARD

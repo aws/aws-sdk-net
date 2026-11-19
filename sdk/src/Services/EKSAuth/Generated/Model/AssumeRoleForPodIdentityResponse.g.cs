@@ -116,5 +116,19 @@ namespace Amazon.EKSAuth.Model
         /// Checks to see if the Subject property is set.
         /// </summary>
         internal bool IsSetSubject() => this.Subject != null;
+
+        /// <summary>
+        /// Gets and sets the property WorkloadIdentityProviderArn. 
+        /// <para>
+        /// The ARN of the workload identity provider for the returned credentials. Returned only
+        /// for associations with workload identity enabled.
+        /// </para>
+        /// </summary>
+        public string WorkloadIdentityProviderArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkloadIdentityProviderArn property is set.
+        /// </summary>
+        internal bool IsSetWorkloadIdentityProviderArn() => this.WorkloadIdentityProviderArn != null;
     }
 }

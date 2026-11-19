@@ -42,11 +42,11 @@ namespace Amazon.ConnectCases
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// With Amazon Connect Cases, your agents can track and manage customer issues that require
-    /// multiple interactions, follow-up tasks, and teams in your contact center. A case represents
-    /// a customer issue. It records the issue, the steps and interactions taken to resolve
-    /// the issue, and the outcome. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon
-    /// Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// With Connect Customer Cases, your agents can track and manage customer issues that
+    /// require multiple interactions, follow-up tasks, and teams in your contact center.
+    /// A case represents a customer issue. It records the issue, the steps and interactions
+    /// taken to resolve the issue, and the outcome. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Connect
+    /// Customer Cases</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonConnectCases : IAmazonService, IDisposable
@@ -58,8 +58,173 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
-        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// Creates a comment and associates it with multiple cases in a single request. All cases
+        /// must belong to the same domain. This operation supports only the Comment related item
+        /// type.
+        /// 
+        ///  
+        /// <para>
+        /// Each case is processed independently. If some cases fail, the remaining cases still
+        /// receive the related item. To determine whether individual items failed, inspect the
+        /// <c>failedItems</c> array in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The entire request fails, and no related items are created, in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified domain doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A reference ID doesn't match any case in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request contains duplicate case IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The content isn't comment content.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This operation uses the same IAM action as <a href="https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateRelatedItem.html">CreateRelatedItem</a>
+        /// (<c>cases:CreateRelatedItem</c>). You can use the <c>cases:IsBatchAction</c> condition
+        /// key in IAM policies to allow or deny batch operations independently from single-case
+        /// operations.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// permission on the ARN of the user that you provide.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRelatedItem service method.</param>
+        /// <returns>The response from the BatchCreateRelatedItem service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchCreateRelatedItem">REST API Reference for BatchCreateRelatedItem Operation</seealso>
+        BatchCreateRelatedItemResponse BatchCreateRelatedItem(BatchCreateRelatedItemRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a comment and associates it with multiple cases in a single request. All cases
+        /// must belong to the same domain. This operation supports only the Comment related item
+        /// type.
+        /// 
+        ///  
+        /// <para>
+        /// Each case is processed independently. If some cases fail, the remaining cases still
+        /// receive the related item. To determine whether individual items failed, inspect the
+        /// <c>failedItems</c> array in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The entire request fails, and no related items are created, in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified domain doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A reference ID doesn't match any case in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request contains duplicate case IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The content isn't comment content.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This operation uses the same IAM action as <a href="https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateRelatedItem.html">CreateRelatedItem</a>
+        /// (<c>cases:CreateRelatedItem</c>). You can use the <c>cases:IsBatchAction</c> condition
+        /// key in IAM policies to allow or deny batch operations independently from single-case
+        /// operations.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// permission on the ARN of the user that you provide.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRelatedItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchCreateRelatedItem service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchCreateRelatedItem">REST API Reference for BatchCreateRelatedItem Operation</seealso>
+        Task<BatchCreateRelatedItemResponse> BatchCreateRelatedItemAsync(BatchCreateRelatedItemRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a batch of case rules. In the Connect Customer admin website, case rules are
+        /// known as <i>case field conditions</i>. For more information about case field conditions,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
         /// </summary>
@@ -87,8 +252,8 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
-        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// Gets a batch of case rules. In the Connect Customer admin website, case rules are
+        /// known as <i>case field conditions</i>. For more information about case field conditions,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
         /// </summary>
@@ -190,8 +355,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -223,8 +388,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -237,10 +402,195 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates fields on multiple cases in a single request. All cases must belong to the
+        /// same domain. Set the title, status, and customer ID through the top-level <c>title</c>,
+        /// <c>status</c>, and <c>customerId</c> parameters, and set other fields through the
+        /// <c>fields</c> array.
+        /// 
+        ///  
+        /// <para>
+        /// Each case is processed independently. If some cases fail, the remaining cases are
+        /// still updated. To determine whether individual cases failed, inspect the <c>failedCases</c>
+        /// array in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The entire request fails, and no cases are updated, in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified domain doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A reference ID doesn't match any case in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request contains duplicate case IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request doesn't specify any update. Provide at least one entry in <c>fields</c>,
+        /// or a <c>title</c>, <c>status</c>, or <c>customerId</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A field identifier in <c>fields</c> doesn't resolve to a field in the domain, for
+        /// example, an unknown field name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A field name contains a pipe (<c>|</c>) or comma (<c>,</c>) character.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fields</c> includes <c>title</c>, <c>status</c>, or <c>customerId</c>.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This operation uses the same IAM action as <a href="https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCase.html">UpdateCase</a>
+        /// (<c>cases:UpdateCase</c>). You can use the <c>cases:IsBatchAction</c> condition key
+        /// in IAM policies to allow or deny batch operations independently from single-case operations.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// permission on the ARN of the user that you provide.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCase service method.</param>
+        /// <returns>The response from the BatchUpdateCase service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchUpdateCase">REST API Reference for BatchUpdateCase Operation</seealso>
+        BatchUpdateCaseResponse BatchUpdateCase(BatchUpdateCaseRequest request);
+#endif
+
+        /// <summary>
+        /// Updates fields on multiple cases in a single request. All cases must belong to the
+        /// same domain. Set the title, status, and customer ID through the top-level <c>title</c>,
+        /// <c>status</c>, and <c>customerId</c> parameters, and set other fields through the
+        /// <c>fields</c> array.
+        /// 
+        ///  
+        /// <para>
+        /// Each case is processed independently. If some cases fail, the remaining cases are
+        /// still updated. To determine whether individual cases failed, inspect the <c>failedCases</c>
+        /// array in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// The entire request fails, and no cases are updated, in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified domain doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A reference ID doesn't match any case in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request contains duplicate case IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request doesn't specify any update. Provide at least one entry in <c>fields</c>,
+        /// or a <c>title</c>, <c>status</c>, or <c>customerId</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A field identifier in <c>fields</c> doesn't resolve to a field in the domain, for
+        /// example, an unknown field name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A field name contains a pipe (<c>|</c>) or comma (<c>,</c>) character.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fields</c> includes <c>title</c>, <c>status</c>, or <c>customerId</c>.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This operation uses the same IAM action as <a href="https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCase.html">UpdateCase</a>
+        /// (<c>cases:UpdateCase</c>). You can use the <c>cases:IsBatchAction</c> condition key
+        /// in IAM policies to allow or deny batch operations independently from single-case operations.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// permission on the ARN of the user that you provide.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchUpdateCase service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchUpdateCase">REST API Reference for BatchUpdateCase Operation</seealso>
+        Task<BatchUpdateCaseResponse> BatchUpdateCaseAsync(BatchUpdateCaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// <note> 
         /// <para>
-        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-        /// permission on the User ARN resource that you provide
+        /// If you provide a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the user ARN that you provide.
         /// </para>
         ///  </note> 
         /// <para>
@@ -254,17 +604,23 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
-        /// The following fields are required when creating a case:
+        /// The following field is always required when creating a case:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>customer_id</c> - You must provide the full customer profile ARN in this format:
-        /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</c>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>title</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following field may be required depending on the template configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>customer_id</c> - Required only if the template's <c>requiredFields</c> list includes
+        /// <c>customer_id</c>. When required, provide the full customer profile ARN in this format:
+        /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account_ID:domains/your_profiles_domain_name/profiles/profile_ID</c>.
+        /// When not required, the field is optional and can be omitted, added, changed, or removed
+        /// after case creation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -299,8 +655,8 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// <note> 
         /// <para>
-        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-        /// permission on the User ARN resource that you provide
+        /// If you provide a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the user ARN that you provide.
         /// </para>
         ///  </note> 
         /// <para>
@@ -314,17 +670,23 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
-        /// The following fields are required when creating a case:
+        /// The following field is always required when creating a case:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>customer_id</c> - You must provide the full customer profile ARN in this format:
-        /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID</c>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>title</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following field may be required depending on the template configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>customer_id</c> - Required only if the template's <c>requiredFields</c> list includes
+        /// <c>customer_id</c>. When required, provide the full customer profile ARN in this format:
+        /// <c>arn:aws:profile:your_AWS_Region:your_AWS_account_ID:domains/your_profiles_domain_name/profiles/profile_ID</c>.
+        /// When not required, the field is optional and can be omitted, added, changed, or removed
+        /// after case creation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -360,7 +722,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a new case rule. In the Amazon Connect admin website, case rules are known
+        /// Creates a new case rule. In the Connect Customer admin website, case rules are known
         /// as <i>case field conditions</i>. For more information about case field conditions,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -384,8 +746,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -398,7 +760,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Creates a new case rule. In the Amazon Connect admin website, case rules are known
+        /// Creates a new case rule. In the Connect Customer admin website, case rules are known
         /// as <i>case field conditions</i>. For more information about case field conditions,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -425,8 +787,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -440,12 +802,13 @@ namespace Amazon.ConnectCases
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a domain, which is a container for all case data, such as cases, fields, templates
-        /// and layouts. Each Amazon Connect instance can be associated with only one Cases domain.
+        /// and layouts. Each Connect Customer instance can be associated with only one Cases
+        /// domain.
         /// 
         ///  <important> 
         /// <para>
-        /// This will not associate your connect instance to Cases domain. Instead, use the Amazon
-        /// Connect <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
+        /// This will not associate your connect instance to Cases domain. Instead, use the Connect
+        /// Customer <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
         /// API. You need specific IAM permissions to successfully associate the Cases domain.
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
@@ -466,8 +829,8 @@ namespace Amazon.ConnectCases
         /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -481,12 +844,13 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Creates a domain, which is a container for all case data, such as cases, fields, templates
-        /// and layouts. Each Amazon Connect instance can be associated with only one Cases domain.
+        /// and layouts. Each Connect Customer instance can be associated with only one Cases
+        /// domain.
         /// 
         ///  <important> 
         /// <para>
-        /// This will not associate your connect instance to Cases domain. Instead, use the Amazon
-        /// Connect <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
+        /// This will not associate your connect instance to Cases domain. Instead, use the Connect
+        /// Customer <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
         /// API. You need specific IAM permissions to successfully associate the Cases domain.
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
@@ -510,8 +874,8 @@ namespace Amazon.ConnectCases
         /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -546,8 +910,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -585,8 +949,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -635,8 +999,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -688,8 +1052,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -707,8 +1071,8 @@ namespace Amazon.ConnectCases
         ///  
         /// <para>
         /// There's a quota for the number of fields allowed in a Custom type related item. See
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-        /// Connect Cases quotas</a>.
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -732,7 +1096,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cases, to capture related Amazon Connect Cases
+        /// Cases, to capture related Connect Customer Cases
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -762,23 +1126,29 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>type</c> field is reserved for internal use only.
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// <returns>The response from the CreateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -789,8 +1159,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -808,8 +1178,8 @@ namespace Amazon.ConnectCases
         ///  
         /// <para>
         /// There's a quota for the number of fields allowed in a Custom type related item. See
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-        /// Connect Cases quotas</a>.
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
         /// </para>
         ///  
         /// <para>
@@ -833,7 +1203,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cases, to capture related Amazon Connect Cases
+        /// Cases, to capture related Connect Customer Cases
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -863,17 +1233,18 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>type</c> field is reserved for internal use only.
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
@@ -884,6 +1255,11 @@ namespace Amazon.ConnectCases
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
@@ -893,8 +1269,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -959,8 +1335,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -1028,8 +1404,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -1057,7 +1433,13 @@ namespace Amazon.ConnectCases
         /// <para>
         /// Perform any operations that require the CaseID
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't delete a case while it's part of a merge that is running, as either the
+        /// primary or the secondary case. The request fails with a <c>ConflictException</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// This action is irreversible. After you delete a case, you cannot recover its data.
         /// </para>
@@ -1067,6 +1449,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1102,7 +1489,13 @@ namespace Amazon.ConnectCases
         /// <para>
         /// Perform any operations that require the CaseID
         /// </para>
-        ///  </li> </ul> <important> 
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't delete a case while it's part of a merge that is running, as either the
+        /// primary or the secondary case. The request fails with a <c>ConflictException</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
+        ///  <important> 
         /// <para>
         /// This action is irreversible. After you delete a case, you cannot recover its data.
         /// </para>
@@ -1115,6 +1508,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1135,7 +1533,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a case rule. In the Amazon Connect admin website, case rules are known as
+        /// Deletes a case rule. In the Connect Customer admin website, case rules are known as
         /// <i>case field conditions</i>. For more information about case field conditions, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -1166,7 +1564,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Deletes a case rule. In the Amazon Connect admin website, case rules are known as
+        /// Deletes a case rule. In the Connect Customer admin website, case rules are known as
         /// <i>case field conditions</i>. For more information about case field conditions, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -1204,9 +1602,9 @@ namespace Amazon.ConnectCases
         /// 
         ///  <note> 
         /// <para>
-        /// After deleting your domain you must disassociate the deleted domain from your Amazon
-        /// Connect instance with another API call before being able to use Cases again with this
-        /// Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
+        /// After deleting your domain you must disassociate the deleted domain from your Connect
+        /// Customer instance with another API call before being able to use Cases again with
+        /// this Connect Customer instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1243,9 +1641,9 @@ namespace Amazon.ConnectCases
         /// 
         ///  <note> 
         /// <para>
-        /// After deleting your domain you must disassociate the deleted domain from your Amazon
-        /// Connect instance with another API call before being able to use Cases again with this
-        /// Amazon Connect instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
+        /// After deleting your domain you must disassociate the deleted domain from your Connect
+        /// Customer instance with another API call before being able to use Cases again with
+        /// this Connect Customer instance. See <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1281,7 +1679,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a field from a cases template.
+        /// Deletes a field from a Cases template.
         /// 
         ///  
         /// <para>
@@ -1363,8 +1761,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -1377,7 +1775,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Deletes a field from a cases template.
+        /// Deletes a field from a Cases template.
         /// 
         ///  
         /// <para>
@@ -1462,8 +1860,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -1476,7 +1874,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+        /// Deletes a layout from a Cases template. You can delete up to 100 layouts per domain.
         /// 
         ///  
         /// <para>
@@ -1525,7 +1923,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+        /// Deletes a layout from a Cases template. You can delete up to 100 layouts per domain.
         /// 
         ///  
         /// <para>
@@ -1585,12 +1983,21 @@ namespace Amazon.ConnectCases
         /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
         /// API
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
         /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1619,7 +2026,11 @@ namespace Amazon.ConnectCases
         /// file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
         /// API
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -1628,6 +2039,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the DeleteRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -1648,11 +2064,11 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes a cases template. You can delete up to 100 templates per domain.
+        /// Deletes a Cases template. You can delete up to 100 templates per domain.
         /// 
         ///  
         /// <para>
-        /// After a cases template is deleted:
+        /// After a Cases template is deleted:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1701,11 +2117,11 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Deletes a cases template. You can delete up to 100 templates per domain.
+        /// Deletes a Cases template. You can delete up to 100 templates per domain.
         /// 
         ///  
         /// <para>
-        /// After a cases template is deleted:
+        /// After a Cases template is deleted:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2032,6 +2448,113 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the merge status of a case. Use this operation to track a merge that you started
+        /// with <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>,
+        /// or to check whether a case is part of a merge before you modify it.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns the following, depending on the case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the primary case or the secondary case of a merge that is running, it returns
+        /// <c>IN_PROGRESS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a case that was merged into another case as the secondary case, it returns <c>COMPLETED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other case, it returns a <c>ResourceNotFoundException</c>. This includes the
+        /// primary case after its merge finishes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCasesStatus service method.</param>
+        /// <returns>The response from the GetMergeCasesStatus service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetMergeCasesStatus">REST API Reference for GetMergeCasesStatus Operation</seealso>
+        GetMergeCasesStatusResponse GetMergeCasesStatus(GetMergeCasesStatusRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the merge status of a case. Use this operation to track a merge that you started
+        /// with <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>,
+        /// or to check whether a case is part of a merge before you modify it.
+        /// 
+        ///  
+        /// <para>
+        /// The operation returns the following, depending on the case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the primary case or the secondary case of a merge that is running, it returns
+        /// <c>IN_PROGRESS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a case that was merged into another case as the secondary case, it returns <c>COMPLETED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For any other case, it returns a <c>ResourceNotFoundException</c>. This includes the
+        /// primary case after its merge finishes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMergeCasesStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetMergeCasesStatus service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetMergeCasesStatus">REST API Reference for GetMergeCasesStatus Operation</seealso>
+        Task<GetMergeCasesStatusResponse> GetMergeCasesStatusAsync(GetMergeCasesStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns the details for the requested template. Other template APIs are: 
         /// 
         ///  <ul> <li> 
@@ -2131,7 +2654,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists all case rules in a Cases domain. In the Amazon Connect admin website, case
+        /// Lists all case rules in a Cases domain. In the Connect Customer admin website, case
         /// rules are known as <i>case field conditions</i>. For more information about case field
         /// conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -2160,7 +2683,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Lists all case rules in a Cases domain. In the Amazon Connect admin website, case
+        /// Lists all case rules in a Cases domain. In the Connect Customer admin website, case
         /// rules are known as <i>case field conditions</i>. For more information about case field
         /// conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -2627,7 +3150,7 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Adds case event publishing configuration. For a complete list of fields you can add
         /// to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create
-        /// case fields</a> in the <i>Amazon Connect Administrator Guide</i>
+        /// case fields</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCaseEventConfiguration service method.</param>
         /// <returns>The response from the PutCaseEventConfiguration service method, as returned by ConnectCases.</returns>
@@ -2660,7 +3183,7 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Adds case event publishing configuration. For a complete list of fields you can add
         /// to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create
-        /// case fields</a> in the <i>Amazon Connect Administrator Guide</i>
+        /// case fields</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCaseEventConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2739,8 +3262,8 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAllRelatedItems service method.</param>
@@ -2812,8 +3335,8 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAllRelatedItems service method.</param>
@@ -2983,6 +3506,225 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Merges a secondary case into a primary case. The primary case, which you specify in
+        /// the request URI, remains active. Both cases must belong to the same domain.
+        /// 
+        ///  
+        /// <para>
+        /// The merge runs asynchronously. To track its progress, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetMergeCasesStatus.html">GetMergeCasesStatus</a>.
+        /// When the merge finishes, the selected field values and related items from the secondary
+        /// case are on the primary case, the two cases are linked, and the secondary case is
+        /// closed. Both cases record the merge in their audit history. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCaseAuditEvents.html">GetCaseAuditEvents</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both cases must have the same customer, or at least one of them must have no customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// While the merge runs, you can't modify the secondary case or its related items, and
+        /// you can't delete the primary case. These requests return a <c>ConflictException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the secondary case can be reopened, updated, and deleted, but it
+        /// can't be merged again.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ValidationException</c>, and no merge starts, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The primary case and the secondary case are the same case.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Either case is closed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Both cases have a customer, and the customers are different.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fieldsConfiguration</c> selects a field that can't be merged, or a field that
+        /// the secondary case doesn't have.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the primary case would have more than 500 field values, or would
+        /// exceed the maximum case size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ServiceQuotaExceededException</c> if, after the merge,
+        /// either case would exceed the quota for related items per case. For the primary case,
+        /// the count is its existing related items, plus the related items moved from the secondary
+        /// case, plus the new case link. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ConflictException</c> if either case is already part of
+        /// a merge that is running, or was previously merged into another case as the secondary
+        /// case.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMergeCases service method.</param>
+        /// <returns>The response from the StartMergeCases service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/StartMergeCases">REST API Reference for StartMergeCases Operation</seealso>
+        StartMergeCasesResponse StartMergeCases(StartMergeCasesRequest request);
+#endif
+
+        /// <summary>
+        /// Merges a secondary case into a primary case. The primary case, which you specify in
+        /// the request URI, remains active. Both cases must belong to the same domain.
+        /// 
+        ///  
+        /// <para>
+        /// The merge runs asynchronously. To track its progress, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetMergeCasesStatus.html">GetMergeCasesStatus</a>.
+        /// When the merge finishes, the selected field values and related items from the secondary
+        /// case are on the primary case, the two cases are linked, and the secondary case is
+        /// closed. Both cases record the merge in their audit history. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCaseAuditEvents.html">GetCaseAuditEvents</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both cases must have the same customer, or at least one of them must have no customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// While the merge runs, you can't modify the secondary case or its related items, and
+        /// you can't delete the primary case. These requests return a <c>ConflictException</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the secondary case can be reopened, updated, and deleted, but it
+        /// can't be merged again.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ValidationException</c>, and no merge starts, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The primary case and the secondary case are the same case.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Either case is closed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Both cases have a customer, and the customers are different.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>fieldsConfiguration</c> selects a field that can't be merged, or a field that
+        /// the secondary case doesn't have.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the merge, the primary case would have more than 500 field values, or would
+        /// exceed the maximum case size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request fails with a <c>ServiceQuotaExceededException</c> if, after the merge,
+        /// either case would exceed the quota for related items per case. For the primary case,
+        /// the count is its existing related items, plus the related items moved from the secondary
+        /// case, plus the new case link. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request fails with a <c>ConflictException</c> if either case is already part of
+        /// a merge that is running, or was previously merged into another case as the secondary
+        /// case.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMergeCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartMergeCases service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/StartMergeCases">REST API Reference for StartMergeCases Operation</seealso>
+        Task<StartMergeCasesResponse> StartMergeCasesAsync(StartMergeCasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds tags to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -3095,13 +3837,18 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// <note> 
         /// <para>
-        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-        /// permission on the User ARN resource that you provide
+        /// If you provide a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the user ARN that you provide.
         /// </para>
         ///  </note> 
         /// <para>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
-        /// of id/value pairs identical to the <c>CreateCase</c> input .
+        /// of id/value pairs identical to the <c>CreateCase</c> input.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
         /// </para>
         ///  
         /// <para>
@@ -3113,6 +3860,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3135,13 +3887,18 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// <note> 
         /// <para>
-        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-        /// permission on the User ARN resource that you provide
+        /// If you provide a value for <c>PerformedBy.UserArn</c>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the user ARN that you provide.
         /// </para>
         ///  </note> 
         /// <para>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
-        /// of id/value pairs identical to the <c>CreateCase</c> input .
+        /// of id/value pairs identical to the <c>CreateCase</c> input.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
         /// </para>
         ///  
         /// <para>
@@ -3156,6 +3913,11 @@ namespace Amazon.ConnectCases
         /// <returns>The response from the UpdateCase service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3176,7 +3938,7 @@ namespace Amazon.ConnectCases
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates a case rule. In the Amazon Connect admin website, case rules are known as
+        /// Updates a case rule. In the Connect Customer admin website, case rules are known as
         /// <i>case field conditions</i>. For more information about case field conditions, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -3200,8 +3962,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3214,7 +3976,7 @@ namespace Amazon.ConnectCases
 #endif
 
         /// <summary>
-        /// Updates a case rule. In the Amazon Connect admin website, case rules are known as
+        /// Updates a case rule. In the Connect Customer admin website, case rules are known as
         /// <i>case field conditions</i>. For more information about case field conditions, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
         /// case field conditions to a case template</a>.
@@ -3241,8 +4003,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3357,8 +4119,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3411,8 +4173,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3436,8 +4198,8 @@ namespace Amazon.ConnectCases
         /// <para>
         ///  <b>Custom</b> - Update the fields of a custom related item. You can add, modify,
         /// and remove fields from a custom related item. There's a quota for the number of fields
-        /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-        /// Connect Cases quotas</a>.
+        /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3451,7 +4213,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
         ///  </li> <li> 
@@ -3459,16 +4221,26 @@ namespace Amazon.ConnectCases
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
         /// case fields</a> cannot be used in a custom related item.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRelatedItem service method.</param>
         /// <returns>The response from the UpdateRelatedItem service method, as returned by ConnectCases.</returns>
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
@@ -3479,8 +4251,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3504,8 +4276,8 @@ namespace Amazon.ConnectCases
         /// <para>
         ///  <b>Custom</b> - Update the fields of a custom related item. You can add, modify,
         /// and remove fields from a custom related item. There's a quota for the number of fields
-        /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-        /// Connect Cases quotas</a>.
+        /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+        /// Customer Cases quotas</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3519,7 +4291,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
         ///  </li> <li> 
@@ -3527,10 +4299,15 @@ namespace Amazon.ConnectCases
         ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
         /// case fields</a> cannot be used in a custom related item.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the case is the secondary case of a merge that is running, the request fails with
+        /// a <c>ConflictException</c>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-        /// Connect endpoints and quotas</a>.
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+        /// Customer endpoints and quotas</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRelatedItem service method.</param>
@@ -3541,6 +4318,11 @@ namespace Amazon.ConnectCases
         /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
         /// We couldn't process your request because of an issue with the server. Try again later.
         /// </exception>
@@ -3550,8 +4332,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3615,8 +4397,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
@@ -3683,8 +4465,8 @@ namespace Amazon.ConnectCases
         /// again.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
-        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.

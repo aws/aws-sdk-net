@@ -73,6 +73,13 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("scores", targetDepth, ref reader))
+                {
+                    var unmarshaller = QueryScoresUnmarshaller.Instance;
+                    unmarshalledObject.Scores = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

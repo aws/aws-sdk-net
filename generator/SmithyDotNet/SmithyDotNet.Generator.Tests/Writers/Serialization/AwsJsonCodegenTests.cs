@@ -75,6 +75,15 @@ public class AwsJsonCodegenTests
     }
 
     [Fact]
+    public void EventStreamWithoutSiblings_StillSendsTheInitialRequest()
+    {
+        var operation = Json11.Operations.Single(o => o.Name == "Listen");
+        var request = new JsonRequestMarshallerWriter(Json11, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("request.EventStreamPublisher = new ChatStreamPublisherMarshaller(publicRequest.InputPublisher, initialRequest);", request);
+    }
+
+    [Fact]
     public void EventStreamSiblings_UseInitialMessages()
     {
         var operation = Json11.Operations.Single(o => o.Name == "Chat");

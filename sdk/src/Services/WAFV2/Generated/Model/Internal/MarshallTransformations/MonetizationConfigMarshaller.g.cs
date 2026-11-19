@@ -45,6 +45,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetConnectedAccountConfigs())
+            {
+                context.Writer.WritePropertyName("ConnectedAccountConfigs");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectConnectedAccountConfigsListValue in requestObject.ConnectedAccountConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConnectedAccountConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConnectedAccountConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetCryptoConfig())
             {
                 context.Writer.WritePropertyName("CryptoConfig");

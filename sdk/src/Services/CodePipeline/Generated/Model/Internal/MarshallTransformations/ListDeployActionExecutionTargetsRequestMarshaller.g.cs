@@ -18,19 +18,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
 using System.IO;
+using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
 
 using Amazon.CodePipeline.Model;
-using System.Globalization;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
@@ -54,63 +55,69 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeployActionExecutionTargetsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.ListDeployActionExecutionTargets";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetActionExecutionId())
+            request.ResourcePath = "service/CodePipeline_20150709/operation/ListDeployActionExecutionTargets";
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("actionExecutionId");
-                context.Writer.WriteStringValue(publicRequest.ActionExecutionId);
-            }
-            if (publicRequest.IsSetFilters())
-            {
-                context.Writer.WritePropertyName("filters");
-                context.Writer.WriteStartArray();
-                foreach (var publicRequestFiltersListValue in publicRequest.Filters)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetActionExecutionId())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TargetFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("actionExecutionId");
+                    context.Writer.WriteTextString(publicRequest.ActionExecutionId);
                 }
-                context.Writer.WriteEndArray();
-            }
-            if (publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("maxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetPipelineName())
-            {
-                context.Writer.WritePropertyName("pipelineName");
-                context.Writer.WriteStringValue(publicRequest.PipelineName);
-            }
+                if (publicRequest.IsSetFilters())
+                {
+                    context.Writer.WriteTextString("filters");
+                    context.Writer.WriteStartArray(publicRequest.Filters.Count);
+                    foreach (var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        var marshaller = TargetFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("maxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("nextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetPipelineName())
+                {
+                    context.Writer.WriteTextString("pipelineName");
+                    context.Writer.WriteTextString(publicRequest.PipelineName);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
 
             return request;
         }

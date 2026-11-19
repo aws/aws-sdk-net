@@ -59,6 +59,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AzureConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("GcpConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = GcpConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GcpConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

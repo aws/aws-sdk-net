@@ -90,6 +90,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("MaxSigninSessionDuration", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaxSigninSessionDuration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("Path", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

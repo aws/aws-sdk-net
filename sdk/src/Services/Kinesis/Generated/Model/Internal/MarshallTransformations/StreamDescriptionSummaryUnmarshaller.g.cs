@@ -102,6 +102,13 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("QueueCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.QueueCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("RecordDistributionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

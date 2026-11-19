@@ -109,6 +109,20 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("gcpRegions", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.GcpRegions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("gcpScopeConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = GcpScopeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GcpScopeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("health", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectorHealthUnmarshaller.Instance;

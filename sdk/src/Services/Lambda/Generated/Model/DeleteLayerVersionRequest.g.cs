@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// The name or Amazon Resource Name (ARN) of the layer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 140)]
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
         public string LayerName { get; set; }
 
         /// <summary>

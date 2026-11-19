@@ -165,20 +165,19 @@ public class TypeMapperTests
     [InlineData("float", "float?")]
     [InlineData("double", "double?")]
     [InlineData("timestamp", "DateTime?")]
+    [InlineData("byte", "sbyte?")]
+    [InlineData("short", "short?")]
+    [InlineData("bigInteger", "System.Numerics.BigInteger?")]
+    [InlineData("bigDecimal", "Amazon.Extensions.Numerics.BigDecimal?")]
     public void MapScalar_SupportedScalars_MapToNullableValueTypes(string smithyType, string expected)
     {
         var shape = TestModels.DeserializeShape($$"""{ "type": "{{smithyType}}" }""");
         Assert.Equal(expected, TypeMapper.MapScalar(shape));
     }
 
-    // MapScalar only maps the primitive value scalars and timestamp above. Everything else returns
-    // null: string maps via a dedicated path, aggregates are never scalars, and the remaining scalars
-    // are not supported yet (MapType throws for them).
+    // MapScalar only maps the value scalars and timestamp above. Everything else returns null: string
+    // maps via a dedicated path, and blobs, documents and aggregates are never scalars.
     [Theory]
-    [InlineData("""{ "type": "byte" }""")]
-    [InlineData("""{ "type": "short" }""")]
-    [InlineData("""{ "type": "bigInteger" }""")]
-    [InlineData("""{ "type": "bigDecimal" }""")]
     [InlineData("""{ "type": "blob" }""")]
     [InlineData("""{ "type": "document" }""")]
     [InlineData("""{ "type": "string" }""")]
@@ -251,6 +250,10 @@ public class TypeMapperTests
     [InlineData("smithy.api#Double", "List<double>")]
     [InlineData("smithy.api#Timestamp", "List<DateTime>")]
     [InlineData("com.example#Priority", "List<int>")] // intEnum collapses to a plain int, like Integer
+    [InlineData("smithy.api#Byte", "List<sbyte>")]
+    [InlineData("smithy.api#Short", "List<short>")]
+    [InlineData("smithy.api#BigInteger", "List<System.Numerics.BigInteger>")]
+    [InlineData("smithy.api#BigDecimal", "List<Amazon.Extensions.Numerics.BigDecimal>")]
     public void ValueTypeCollectionElement_Resolves(string elementTarget, string expected)
     {
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");

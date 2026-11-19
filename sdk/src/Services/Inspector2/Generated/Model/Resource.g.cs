@@ -78,8 +78,21 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The cloud provider of the resource.
+        /// The cloud provider of the resource. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – Microsoft Azure resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Google Cloud Platform (GCP) resources.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Provider Provider { get; set; }
 
@@ -91,10 +104,24 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ProviderAccountId. 
         /// <para>
-        /// The cloud provider account ID of the resource.
+        /// The cloud provider account ID of the resource. The value format depends on the cloud
+        /// provider:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services account ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure subscription ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Google Cloud Platform (GCP) project ID, such as <c>my-project</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string ProviderAccountId { get; set; }
 
         /// <summary>
@@ -105,10 +132,24 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ProviderOrgId. 
         /// <para>
-        /// The cloud provider organization ID of the resource.
+        /// The cloud provider organization ID of the resource. The value format depends on the
+        /// cloud provider:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Organizations organization ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Azure tenant ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A numeric Google Cloud Platform (GCP) organization ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min = 12, Max = 36)]
+        [AWSProperty(Min = 6, Max = 36)]
         public string ProviderOrgId { get; set; }
 
         /// <summary>

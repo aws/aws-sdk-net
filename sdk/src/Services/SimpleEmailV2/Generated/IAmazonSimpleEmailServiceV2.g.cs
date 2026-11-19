@@ -4188,6 +4188,57 @@ namespace Amazon.SimpleEmailV2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Set the shared pool delivery mode for your Amazon SES account in the current Amazon
+        /// Web Services Region. The mode controls whether Amazon SES can deliver your email from
+        /// shared IP addresses in other Amazon Web Services Regions within the same Amazon Web
+        /// Services partition.
+        /// 
+        ///  
+        /// <para>
+        /// A change may take a few minutes to take effect. Messages that are already queued for
+        /// delivery keep the mode that they were sent with.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDeliveryAttributes service method.</param>
+        /// <returns>The response from the PutAccountDeliveryAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDeliveryAttributes">REST API Reference for PutAccountDeliveryAttributes Operation</seealso>
+        PutAccountDeliveryAttributesResponse PutAccountDeliveryAttributes(PutAccountDeliveryAttributesRequest request);
+#endif
+
+        /// <summary>
+        /// Set the shared pool delivery mode for your Amazon SES account in the current Amazon
+        /// Web Services Region. The mode controls whether Amazon SES can deliver your email from
+        /// shared IP addresses in other Amazon Web Services Regions within the same Amazon Web
+        /// Services partition.
+        /// 
+        ///  
+        /// <para>
+        /// A change may take a few minutes to take effect. Messages that are already queued for
+        /// delivery keep the mode that they were sent with.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDeliveryAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutAccountDeliveryAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDeliveryAttributes">REST API Reference for PutAccountDeliveryAttributes Operation</seealso>
+        Task<PutAccountDeliveryAttributesResponse> PutAccountDeliveryAttributesAsync(PutAccountDeliveryAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Update your Amazon SES account details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountDetails service method.</param>

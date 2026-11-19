@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,50 +39,50 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// DefaultImportClientBrandingAttributes Marshaller
     /// </summary>
-    public partial class DefaultImportClientBrandingAttributesMarshaller : IRequestMarshaller<DefaultImportClientBrandingAttributes, JsonMarshallerContext>
+    public partial class DefaultImportClientBrandingAttributesMarshaller : IRequestMarshaller<DefaultImportClientBrandingAttributes, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DefaultImportClientBrandingAttributes requestObject, JsonMarshallerContext context)
+        public void Marshall(DefaultImportClientBrandingAttributes requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetForgotPasswordLink())
             {
-                context.Writer.WritePropertyName("ForgotPasswordLink");
-                context.Writer.WriteStringValue(requestObject.ForgotPasswordLink);
+                context.Writer.WriteTextString("ForgotPasswordLink");
+                context.Writer.WriteTextString(requestObject.ForgotPasswordLink);
             }
 
             if (requestObject.IsSetLoginMessage())
             {
-                context.Writer.WritePropertyName("LoginMessage");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("LoginMessage");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectLoginMessageKvp in requestObject.LoginMessage)
                 {
-                    context.Writer.WritePropertyName(requestObjectLoginMessageKvp.Key);
+                    context.Writer.WriteTextString(requestObjectLoginMessageKvp.Key);
                     var requestObjectLoginMessageValue = requestObjectLoginMessageKvp.Value;
-                    context.Writer.WriteStringValue(requestObjectLoginMessageValue);
+                    context.Writer.WriteTextString(requestObjectLoginMessageValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
 
             if (requestObject.IsSetLogo())
             {
-                context.Writer.WritePropertyName("Logo");
-                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Logo);
+                context.Writer.WriteTextString("Logo");
+                context.Writer.WriteByteString(requestObject.Logo);
             }
 
             if (requestObject.IsSetSupportEmail())
             {
-                context.Writer.WritePropertyName("SupportEmail");
-                context.Writer.WriteStringValue(requestObject.SupportEmail);
+                context.Writer.WriteTextString("SupportEmail");
+                context.Writer.WriteTextString(requestObject.SupportEmail);
             }
 
             if (requestObject.IsSetSupportLink())
             {
-                context.Writer.WritePropertyName("SupportLink");
-                context.Writer.WriteStringValue(requestObject.SupportLink);
+                context.Writer.WriteTextString("SupportLink");
+                context.Writer.WriteTextString(requestObject.SupportLink);
             }
         }
 

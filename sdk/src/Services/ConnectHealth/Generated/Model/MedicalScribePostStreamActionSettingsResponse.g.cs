@@ -49,6 +49,20 @@ namespace Amazon.ConnectHealth.Model
         internal bool IsSetClinicalNoteGenerationSettings() => this.ClinicalNoteGenerationSettings != null;
 
         /// <summary>
+        /// Gets and sets the property MedicalCodeGenerationSettings. 
+        /// <para>
+        /// Settings for medical code generation. Returned only if you specified medicalCodeGenerationSettings
+        /// when you started the session.
+        /// </para>
+        /// </summary>
+        public MedicalCodeGenerationSettingsResponse MedicalCodeGenerationSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MedicalCodeGenerationSettings property is set.
+        /// </summary>
+        internal bool IsSetMedicalCodeGenerationSettings() => this.MedicalCodeGenerationSettings != null;
+
+        /// <summary>
         /// Gets and sets the property OutputS3Uri.
         /// </summary>
         [AWSProperty(Required = true, Max = 1024)]

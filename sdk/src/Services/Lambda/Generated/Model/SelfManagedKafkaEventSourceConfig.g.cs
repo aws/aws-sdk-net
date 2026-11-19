@@ -56,21 +56,25 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ConsumptionMode. 
         /// <para>
         /// The mode that Lambda uses to consume records from your self-managed Apache Kafka topic.
-        /// The default is <c>Stream</c>.
+        /// Valid values are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>Stream</c> – Lambda consumes records using a Kafka consumer group and preserves
-        /// the order of records within each partition. This is the default when you omit <c>ConsumptionMode</c>.
+        ///  <c>Stream</c> (default) – Lambda consumes records using a Kafka consumer group and
+        /// preserves the order of records within each partition.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>Queue</c> – Lambda consumes records using a Kafka share group. Multiple consumers
-        /// can process records from the same partitions concurrently. Queue mode does not preserve
-        /// per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2
-        /// or later with share groups enabled.
+        /// can process records from the same partition concurrently, so Lambda doesn't preserve
+        /// per-partition order. To use Queue mode, your cluster must run Apache Kafka version
+        /// 4.2 or later with share groups enabled.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If you omit this parameter, Lambda uses <c>Stream</c>.
+        /// </para>
+        ///  
         /// <para>
         /// You cannot change <c>ConsumptionMode</c> after you create the event source mapping.
         /// To use a different consumption mode, create a new event source mapping.

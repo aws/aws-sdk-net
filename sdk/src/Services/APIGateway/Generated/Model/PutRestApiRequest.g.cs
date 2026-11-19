@@ -86,7 +86,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// Custom header parameters as part of the request. For example, to exclude DocumentationParts
         /// from an imported API, set <c>ignore=documentation</c> as a <c>parameters</c> value,
-        /// as in the AWS CLI command of <c>aws apigateway import-rest-api --parameters ignore=documentation
+        /// as in the CLI command of <c>aws apigateway import-rest-api --parameters ignore=documentation
         /// --body 'file:///path/to/imported-api-body.json'</c>.
         /// </para>
         /// <para />

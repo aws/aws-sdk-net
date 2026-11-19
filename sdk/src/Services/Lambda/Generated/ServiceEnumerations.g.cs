@@ -134,6 +134,11 @@ namespace Amazon.Lambda
         public static readonly CapacityProviderPredefinedMetricType LambdaCapacityProviderAverageCPUUtilization = new CapacityProviderPredefinedMetricType("LambdaCapacityProviderAverageCPUUtilization");
 
         /// <summary>
+        /// Constant LambdaCapacityProviderAverageGPUUtilization for CapacityProviderPredefinedMetricType
+        /// </summary>
+        public static readonly CapacityProviderPredefinedMetricType LambdaCapacityProviderAverageGPUUtilization = new CapacityProviderPredefinedMetricType("LambdaCapacityProviderAverageGPUUtilization");
+
+        /// <summary>
         /// Constructs a custom CapacityProviderPredefinedMetricType for a value not among the defined constants.
         /// </summary>
         public CapacityProviderPredefinedMetricType(string value) : base(value) { }
@@ -583,6 +588,16 @@ namespace Amazon.Lambda
         public static readonly EventType ExecutionFailed = new EventType("ExecutionFailed");
 
         /// <summary>
+        /// Constant ExecutionPaused for EventType
+        /// </summary>
+        public static readonly EventType ExecutionPaused = new EventType("ExecutionPaused");
+
+        /// <summary>
+        /// Constant ExecutionResumed for EventType
+        /// </summary>
+        public static readonly EventType ExecutionResumed = new EventType("ExecutionResumed");
+
+        /// <summary>
         /// Constant ExecutionStarted for EventType
         /// </summary>
         public static readonly EventType ExecutionStarted = new EventType("ExecutionStarted");
@@ -669,9 +684,24 @@ namespace Amazon.Lambda
     public class ExecutionStatus : ConstantClass
     {
         /// <summary>
+        /// Constant DELETING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus DELETING = new ExecutionStatus("DELETING");
+
+        /// <summary>
         /// Constant FAILED for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+
+        /// <summary>
+        /// Constant PAUSED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PAUSED = new ExecutionStatus("PAUSED");
+
+        /// <summary>
+        /// Constant PAUSING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PAUSING = new ExecutionStatus("PAUSING");
 
         /// <summary>
         /// Constant RUNNING for ExecutionStatus
@@ -1286,6 +1316,11 @@ namespace Amazon.Lambda
         public static readonly LastUpdateStatusReasonCode ImageDeleted = new LastUpdateStatusReasonCode("ImageDeleted");
 
         /// <summary>
+        /// Constant IncompatibleAcceleratorInstanceTypes for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode IncompatibleAcceleratorInstanceTypes = new LastUpdateStatusReasonCode("IncompatibleAcceleratorInstanceTypes");
+
+        /// <summary>
         /// Constant InsufficientCapacity for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InsufficientCapacity = new LastUpdateStatusReasonCode("InsufficientCapacity");
@@ -1871,6 +1906,11 @@ namespace Amazon.Lambda
     /// </summary>
     public class Runtime : ConstantClass
     {
+        /// <summary>
+        /// Constant Custom for Runtime
+        /// </summary>
+        public static readonly Runtime Custom = new Runtime("custom");
+
         /// <summary>
         /// Constant Dotnet10 for Runtime
         /// </summary>
@@ -2617,6 +2657,11 @@ namespace Amazon.Lambda
         /// Constant ImageDeleted for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode ImageDeleted = new StateReasonCode("ImageDeleted");
+
+        /// <summary>
+        /// Constant IncompatibleAcceleratorInstanceTypes for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode IncompatibleAcceleratorInstanceTypes = new StateReasonCode("IncompatibleAcceleratorInstanceTypes");
 
         /// <summary>
         /// Constant InsufficientCapacity for StateReasonCode

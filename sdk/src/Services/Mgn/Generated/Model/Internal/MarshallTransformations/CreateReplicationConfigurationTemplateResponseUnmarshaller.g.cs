@@ -115,6 +115,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("outpostSnapshotLocation", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutpostSnapshotLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("replicationConfigurationTemplateID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

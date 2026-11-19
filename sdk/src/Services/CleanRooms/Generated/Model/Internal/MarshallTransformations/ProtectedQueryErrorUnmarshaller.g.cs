@@ -66,6 +66,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("retry", targetDepth, ref reader))
+                {
+                    var unmarshaller = RetryInfoUnmarshaller.Instance;
+                    unmarshalledObject.Retry = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

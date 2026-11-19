@@ -70,6 +70,16 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAttributesToGet())
+            {
+                context.Writer.WritePropertyName("AttributesToGet");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAttributesToGetListValue in publicRequest.AttributesToGet)
+                {
+                    context.Writer.WriteStringValue(publicRequestAttributesToGetListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetCatalogName())
             {
                 context.Writer.WritePropertyName("CatalogName");

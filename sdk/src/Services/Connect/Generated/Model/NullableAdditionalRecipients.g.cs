@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Additional recipients for UpdateContact, allowing an empty list to clear CC recipients.
+    /// The additional recipients of an outbound email that you can update. An empty list
+    /// of <c>CcEmailAddresses</c> clears the existing CC recipients.
     /// </summary>
     public partial class NullableAdditionalRecipients
     {

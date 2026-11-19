@@ -128,6 +128,11 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetMapAutoTaggingKey())
+            {
+                context.Writer.WritePropertyName("mapAutoTaggingKey");
+                context.Writer.WriteStringValue(publicRequest.MapAutoTaggingKey);
+            }
             if (publicRequest.IsSetMapAutoTaggingMpeID())
             {
                 context.Writer.WritePropertyName("mapAutoTaggingMpeID");

@@ -62,6 +62,44 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetCreatedDate() => this.CreatedDate.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CrossAccountPrimary. 
+        /// <para>
+        /// Information about the primary secret in the other Amazon Web Services account that
+        /// this cross-account replica secret replicates from, including the primary secret ARN
+        /// and the replication status. This field is omitted if the secret is not a cross-account
+        /// replica.
+        /// </para>
+        /// </summary>
+        public CrossAccountPrimaryType CrossAccountPrimary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossAccountPrimary property is set.
+        /// </summary>
+        internal bool IsSetCrossAccountPrimary() => this.CrossAccountPrimary != null;
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountReplicas. 
+        /// <para>
+        /// A list of this secret's cross-account replica secrets and their replication status,
+        /// if this secret is the primary for cross-account replication. This field is omitted
+        /// if the secret has no cross-account replicas.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public List<CrossAccountReplicaEntry> CrossAccountReplicas { get; set; } = AWSConfigs.InitializeCollections ? new List<CrossAccountReplicaEntry>() : null;
+
+        /// <summary>
+        /// Checks to see if the CrossAccountReplicas property is set.
+        /// </summary>
+        internal bool IsSetCrossAccountReplicas() => this.CrossAccountReplicas != null && (this.CrossAccountReplicas.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property DeletedDate. 
         /// <para>
         /// The date the secret is scheduled for deletion. If it is not scheduled for deletion,

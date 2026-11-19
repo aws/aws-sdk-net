@@ -7,5 +7,6 @@
   "tags": [
     "SESV2"
   ],
-  "legacy-service-id": "SESv2"
+  "legacy-service-id": "SESv2",
+  "endpoint-resolves-auth": true
 }

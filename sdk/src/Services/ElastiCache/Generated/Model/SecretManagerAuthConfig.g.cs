@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating
+        /// The ARN of the secret in Secrets Manager that contains the credentials for authenticating
         /// with the source.
         /// </para>
         /// </summary>

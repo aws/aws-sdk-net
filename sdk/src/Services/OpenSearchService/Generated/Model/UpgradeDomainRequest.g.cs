@@ -59,6 +59,20 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedOptions() => this.AdvancedOptions != null && (this.AdvancedOptions.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade,
+        /// set <c>DeploymentStrategy</c> to <c>ClonedBlueGreen</c>.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOverrideOptions DeploymentStrategyOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentStrategyOptions property is set.
+        /// </summary>
+        internal bool IsSetDeploymentStrategyOptions() => this.DeploymentStrategyOptions != null;
+
+        /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
         /// Name of the OpenSearch Service domain that you want to upgrade.

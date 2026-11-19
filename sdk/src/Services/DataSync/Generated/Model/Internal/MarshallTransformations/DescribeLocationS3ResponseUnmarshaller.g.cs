@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -38,62 +38,66 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeLocationS3 operation.
     /// </summary>
-    public partial class DescribeLocationS3ResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeLocationS3ResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeLocationS3Response();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeLocationS3");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("AgentArns", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AgentArns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "AgentArns":
+                        context.AddPathSegment("AgentArns");
+                        unmarshalledObject.AgentArns = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("CreationTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreationTime":
+                        context.AddPathSegment("CreationTime");
+                        unmarshalledObject.CreationTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationArn":
+                        context.AddPathSegment("LocationArn");
+                        unmarshalledObject.LocationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationUri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationUri":
+                        context.AddPathSegment("LocationUri");
+                        unmarshalledObject.LocationUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("S3Config", targetDepth, ref reader))
-                {
-                    var unmarshaller = S3ConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3Config = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "S3Config":
+                        context.AddPathSegment("S3Config");
+                        unmarshalledObject.S3Config = S3ConfigUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("S3StorageClass", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3StorageClass = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "S3StorageClass":
+                        context.AddPathSegment("S3StorageClass");
+                        unmarshalledObject.S3StorageClass = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -101,11 +105,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -113,16 +115,15 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                     {
-                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                     {
-                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

@@ -315,6 +315,27 @@ namespace Amazon.QConnect.Model
         internal bool IsSetBusinessPhoneNumber() => this.BusinessPhoneNumber != null;
 
         /// <summary>
+        /// Gets and sets the property CalculatedAttributes. 
+        /// <para>
+        /// The calculated attributes from the customer profile that are used with the message
+        /// template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive = true, Max = 100)]
+        public Dictionary<string, string> CalculatedAttributes { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the CalculatedAttributes property is set.
+        /// </summary>
+        internal bool IsSetCalculatedAttributes() => this.CalculatedAttributes != null && (this.CalculatedAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property City. 
         /// <para>
         /// The city in which a customer lives.
@@ -699,6 +720,26 @@ namespace Amazon.QConnect.Model
         /// Checks to see if the Province property is set.
         /// </summary>
         internal bool IsSetProvince() => this.Province != null;
+
+        /// <summary>
+        /// Gets and sets the property Recommendations. 
+        /// <para>
+        /// The recommendations that are associated with the customer profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 50)]
+        public List<ProfileRecommendation> Recommendations { get; set; } = AWSConfigs.InitializeCollections ? new List<ProfileRecommendation>() : null;
+
+        /// <summary>
+        /// Checks to see if the Recommendations property is set.
+        /// </summary>
+        internal bool IsSetRecommendations() => this.Recommendations != null && (this.Recommendations.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property ShippingAddress1. 

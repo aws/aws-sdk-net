@@ -41,7 +41,7 @@ namespace Amazon.Signin.Model
         /// Gets and sets the property Token. The access token or refresh token issued by AWS
         /// Sign-In.
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 4096)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 12288)]
         public string Token { get; set; }
 
         /// <summary>

@@ -88,6 +88,47 @@ namespace Amazon.SecretsManager
     }
 
     /// <summary>
+    /// Constants used for properties of type ReplicaRestrictionType.
+    /// </summary>
+    public class ReplicaRestrictionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant NoRestriction for ReplicaRestrictionType
+        /// </summary>
+        public static readonly ReplicaRestrictionType NoRestriction = new ReplicaRestrictionType("NoRestriction");
+
+        /// <summary>
+        /// Constant SameOrg for ReplicaRestrictionType
+        /// </summary>
+        public static readonly ReplicaRestrictionType SameOrg = new ReplicaRestrictionType("SameOrg");
+
+        /// <summary>
+        /// Constructs a custom ReplicaRestrictionType for a value not among the defined constants.
+        /// </summary>
+        public ReplicaRestrictionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicaRestrictionType FindValue(string value)
+        {
+            return FindValue<ReplicaRestrictionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicaRestrictionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SortByType.
     /// </summary>
     public class SortByType : ConstantClass
@@ -185,6 +226,11 @@ namespace Amazon.SecretsManager
     public class StatusType : ConstantClass
     {
         /// <summary>
+        /// Constant Detached for StatusType
+        /// </summary>
+        public static readonly StatusType Detached = new StatusType("Detached");
+
+        /// <summary>
         /// Constant Failed for StatusType
         /// </summary>
         public static readonly StatusType Failed = new StatusType("Failed");
@@ -198,6 +244,11 @@ namespace Amazon.SecretsManager
         /// Constant InSync for StatusType
         /// </summary>
         public static readonly StatusType InSync = new StatusType("InSync");
+
+        /// <summary>
+        /// Constant Pending for StatusType
+        /// </summary>
+        public static readonly StatusType Pending = new StatusType("Pending");
 
         /// <summary>
         /// Constructs a custom StatusType for a value not among the defined constants.

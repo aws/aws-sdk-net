@@ -35,6 +35,28 @@ namespace Amazon.AWSHealth.Model
     public partial class AffectedEntity
     {
         /// <summary>
+        /// Gets and sets the property AccountTags. 
+        /// <para>
+        /// A map of account tag key-value pairs for the account that owns the affected entity.
+        /// This field is returned only by DescribeAffectedEntitiesForOrganization and is not
+        /// populated by DescribeAffectedEntities.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public Dictionary<string, string> AccountTags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AccountTags property is set.
+        /// </summary>
+        internal bool IsSetAccountTags() => this.AccountTags != null && (this.AccountTags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The 12-digit Amazon Web Services account number that contains the affected entity.
@@ -148,6 +170,26 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetLastUpdatedTime() => this.LastUpdatedTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        /// A map of resource tag key-value pairs attached to the affected entity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public Dictionary<string, string> ResourceTags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ResourceTags property is set.
+        /// </summary>
+        internal bool IsSetResourceTags() => this.ResourceTags != null && (this.ResourceTags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
         /// The most recent status of the entity affected by the event. The possible values are
@@ -160,30 +202,5 @@ namespace Amazon.AWSHealth.Model
         /// Checks to see if the StatusCode property is set.
         /// </summary>
         internal bool IsSetStatusCode() => this.StatusCode != null;
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A map of entity tags attached to the affected entity.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently, the <c>tags</c> property isn't supported.
-        /// </para>
-        ///  </note>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data
-        /// for this property is returned from the service the property will also be null. This
-        /// was changed to improve performance and allow the SDK and caller to distinguish between
-        /// a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        [AWSProperty(Min = 0, Max = 50)]
-        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-
-        /// <summary>
-        /// Checks to see if the Tags property is set.
-        /// </summary>
-        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

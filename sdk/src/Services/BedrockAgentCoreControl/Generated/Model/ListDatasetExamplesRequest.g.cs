@@ -33,7 +33,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Container for the parameters to the ListDatasetExamples operation. Returns paginated
     /// examples from the dataset. The server embeds the resolved version in the pagination
     /// token. Once pagination begins, all subsequent pages are pinned to that version regardless
-    /// of concurrent mutations.
+    /// of concurrent mutations. A request with a pagination token can omit <c>datasetVersion</c>.
+    /// If it sets a version that differs from the token's version, the request fails with
+    /// a <c>ValidationException</c>.
     /// </summary>
     public partial class ListDatasetExamplesRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -54,9 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        ///  Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent. Only
-        /// used on the first request; for subsequent pages, the version is extracted from the
-        /// pagination token. 
+        ///  Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent on
+        /// the first request. With a pagination token, the version comes from the token: you
+        /// can omit this member, and a value that differs from the token's version is rejected
+        /// with a <c>ValidationException</c>. 
         /// </para>
         /// </summary>
         public string DatasetVersion { get; set; }
@@ -65,6 +68,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Checks to see if the DatasetVersion property is set.
         /// </summary>
         internal bool IsSetDatasetVersion() => this.DatasetVersion != null;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        ///  A filter to apply to the examples. 
+        /// </para>
+        /// </summary>
+        public ListDatasetExamplesFilter Filter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Filter property is set.
+        /// </summary>
+        internal bool IsSetFilter() => this.Filter != null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

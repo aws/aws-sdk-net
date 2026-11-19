@@ -68,7 +68,8 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Pillars. 
         /// <para>
-        /// The Well-Architected Tool Framework pillars to associate with this goal.
+        /// The Amazon Web Services Well-Architected Framework pillars to associate with this
+        /// goal.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

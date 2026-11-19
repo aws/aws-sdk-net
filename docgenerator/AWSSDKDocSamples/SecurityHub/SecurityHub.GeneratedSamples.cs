@@ -740,6 +740,23 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             var client = new AmazonSecurityHubClient();
             var response = client.DescribeStandards(new DescribeStandardsRequest
             {
+                Providers = new List<string> {
+                    "GCP"
+                }
+            });
+
+            List<Standard> standards = response.Standards;
+
+            #endregion
+        }
+
+        public void SecurityHubDescribeStandards()
+        {
+            #region DescribeStandards-3
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.DescribeStandards(new DescribeStandardsRequest
+            {
             });
 
             List<Standard> standards = response.Standards;
@@ -1259,6 +1276,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
         public void SecurityHubListSecurityControlDefinitions()
         {
             #region ListSecurityControlDefinitions-2
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest
+            {
+                MaxResults = 3,
+                Providers = new List<string> {
+                    "GCP"
+                }
+            });
+
+            string nextToken = response.NextToken;
+            List<SecurityControlDefinition> securityControlDefinitions = response.SecurityControlDefinitions;
+
+            #endregion
+        }
+
+        public void SecurityHubListSecurityControlDefinitions()
+        {
+            #region ListSecurityControlDefinitions-3
 
             var client = new AmazonSecurityHubClient();
             var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest

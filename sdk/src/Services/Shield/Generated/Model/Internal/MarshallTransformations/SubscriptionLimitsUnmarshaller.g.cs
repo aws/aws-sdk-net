@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Shield.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubscriptionLimits Object
     /// </summary>
-    public partial class SubscriptionLimitsUnmarshaller : IJsonUnmarshaller<SubscriptionLimits, JsonUnmarshallerContext>
+    public partial class SubscriptionLimitsUnmarshaller : ICborUnmarshaller<SubscriptionLimits, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public SubscriptionLimits Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SubscriptionLimits Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new SubscriptionLimits();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ProtectionGroupLimits", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProtectionGroupLimitsUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionGroupLimits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("ProtectionLimits", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ProtectionLimitsUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionLimits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ProtectionGroupLimits":
+                        context.AddPathSegment("ProtectionGroupLimits");
+                        unmarshalledObject.ProtectionGroupLimits = ProtectionGroupLimitsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "ProtectionLimits":
+                        context.AddPathSegment("ProtectionLimits");
+                        unmarshalledObject.ProtectionLimits = ProtectionLimitsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

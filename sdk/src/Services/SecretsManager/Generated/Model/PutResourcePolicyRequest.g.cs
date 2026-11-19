@@ -84,6 +84,22 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetBlockPublicPolicy() => this.BlockPublicPolicy.HasValue;
 
         /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the resource policy to attach. If you don't specify this field, Secrets
+        /// Manager uses <c>default</c>. You can only attach the <c>default</c> policy; if you
+        /// specify any other name, the operation returns an <c>InvalidParameterException</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string PolicyName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PolicyName property is set.
+        /// </summary>
+        internal bool IsSetPolicyName() => this.PolicyName != null;
+
+        /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
         /// A JSON-formatted string for an Amazon Web Services resource-based policy. For example

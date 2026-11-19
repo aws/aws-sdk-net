@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// TaskSchedule Marshaller
     /// </summary>
-    public partial class TaskScheduleMarshaller : IRequestMarshaller<TaskSchedule, JsonMarshallerContext>
+    public partial class TaskScheduleMarshaller : IRequestMarshaller<TaskSchedule, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(TaskSchedule requestObject, JsonMarshallerContext context)
+        public void Marshall(TaskSchedule requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetScheduleExpression())
             {
-                context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
+                context.Writer.WriteTextString("ScheduleExpression");
+                context.Writer.WriteTextString(requestObject.ScheduleExpression);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

@@ -59,6 +59,12 @@ internal static class XmlBodyMemberUnmarshaller
                 expression = name;
             }
 
+            // An unwrapped value is read from inside its wrapper element (ec2's instanceType/value, valueSet/item/value).
+            if ((member.Type.ListElement ?? member.Type).Unwrapped is { } unwrapped)
+            {
+                expression = $"{expression}/{unwrapped.ElementName}";
+            }
+
             var testArg = depth is null ? $"\"{expression}\"" : $"\"{expression}\", {depth}";
             writer.OpenBlock($"if (context.TestExpression({testArg}))", () =>
             {

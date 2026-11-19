@@ -272,6 +272,20 @@
         {"shape":"ResourceLimitExceeded"}
       ]
     },
+    "CreateClusterExtension":{
+      "name":"CreateClusterExtension",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateClusterExtensionRequest"},
+      "output":{"shape":"CreateClusterExtensionResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceInUse"}
+      ]
+    },
     "CreateClusterSchedulerConfig":{
       "name":"CreateClusterSchedulerConfig",
       "http":{
@@ -590,6 +604,20 @@
       "output":{"shape":"CreateInferenceRecommendationsJobResponse"},
       "errors":[
         {"shape":"ResourceInUse"},
+        {"shape":"ResourceLimitExceeded"}
+      ]
+    },
+    "CreateInferenceRouter":{
+      "name":"CreateInferenceRouter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateInferenceRouterInput"},
+      "output":{"shape":"CreateInferenceRouterOutput"},
+      "errors":[
+        {"shape":"ResourceAlreadyExists"},
+        {"shape":"ConflictException"},
         {"shape":"ResourceLimitExceeded"}
       ]
     },
@@ -1168,6 +1196,20 @@
         {"shape":"ResourceNotFound"}
       ]
     },
+    "DeleteClusterExtension":{
+      "name":"DeleteClusterExtension",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteClusterExtensionRequest"},
+      "output":{"shape":"DeleteClusterExtensionResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceInUse"}
+      ]
+    },
     "DeleteClusterSchedulerConfig":{
       "name":"DeleteClusterSchedulerConfig",
       "http":{
@@ -1292,6 +1334,18 @@
         "requestUri":"/"
       },
       "input":{"shape":"DeleteEndpointConfigInput"}
+    },
+    "DeleteEndpointPolicy":{
+      "name":"DeleteEndpointPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteEndpointPolicyRequest"},
+      "output":{"shape":"DeleteEndpointPolicyResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ]
     },
     "DeleteExperiment":{
       "name":"DeleteExperiment",
@@ -1430,6 +1484,19 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFound"}
       ]
+    },
+    "DeleteInferenceRouter":{
+      "name":"DeleteInferenceRouter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteInferenceRouterInput"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFound"}
+      ],
+      "idempotent":true
     },
     "DeleteJob":{
       "name":"DeleteJob",
@@ -1902,6 +1969,19 @@
         {"shape":"ResourceNotFound"}
       ]
     },
+    "DescribeClusterExtension":{
+      "name":"DescribeClusterExtension",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeClusterExtensionRequest"},
+      "output":{"shape":"DescribeClusterExtensionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "readonly":true
+    },
     "DescribeClusterNode":{
       "name":"DescribeClusterNode",
       "http":{
@@ -1913,6 +1993,19 @@
       "errors":[
         {"shape":"ResourceNotFound"}
       ]
+    },
+    "DescribeClusterOperation":{
+      "name":"DescribeClusterOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeClusterOperationRequest"},
+      "output":{"shape":"DescribeClusterOperationResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "readonly":true
     },
     "DescribeClusterSchedulerConfig":{
       "name":"DescribeClusterSchedulerConfig",
@@ -2213,6 +2306,19 @@
       "errors":[
         {"shape":"ResourceNotFound"}
       ]
+    },
+    "DescribeInferenceRouter":{
+      "name":"DescribeInferenceRouter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeInferenceRouterInput"},
+      "output":{"shape":"DescribeInferenceRouterOutput"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "readonly":true
     },
     "DescribeJob":{
       "name":"DescribeJob",
@@ -2710,6 +2816,18 @@
       "input":{"shape":"GetDeviceFleetReportRequest"},
       "output":{"shape":"GetDeviceFleetReportResponse"}
     },
+    "GetEndpointPolicy":{
+      "name":"GetEndpointPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetEndpointPolicyRequest"},
+      "output":{"shape":"GetEndpointPolicyResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ]
+    },
     "GetLineageGroupPolicy":{
       "name":"GetLineageGroupPolicy",
       "http":{
@@ -2910,6 +3028,29 @@
         {"shape":"ResourceNotFound"}
       ]
     },
+    "ListClusterExtensionVersions":{
+      "name":"ListClusterExtensionVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListClusterExtensionVersionsRequest"},
+      "output":{"shape":"ListClusterExtensionVersionsResponse"},
+      "readonly":true
+    },
+    "ListClusterExtensions":{
+      "name":"ListClusterExtensions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListClusterExtensionsRequest"},
+      "output":{"shape":"ListClusterExtensionsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "readonly":true
+    },
     "ListClusterNodes":{
       "name":"ListClusterNodes",
       "http":{
@@ -2921,6 +3062,19 @@
       "errors":[
         {"shape":"ResourceNotFound"}
       ]
+    },
+    "ListClusterOperations":{
+      "name":"ListClusterOperations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListClusterOperationsRequest"},
+      "output":{"shape":"ListClusterOperationsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "readonly":true
     },
     "ListClusterSchedulerConfigs":{
       "name":"ListClusterSchedulerConfigs",
@@ -3188,6 +3342,16 @@
       },
       "input":{"shape":"ListInferenceRecommendationsJobsRequest"},
       "output":{"shape":"ListInferenceRecommendationsJobsResponse"}
+    },
+    "ListInferenceRouters":{
+      "name":"ListInferenceRouters",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListInferenceRoutersInput"},
+      "output":{"shape":"ListInferenceRoutersOutput"},
+      "readonly":true
     },
     "ListJobSchemaVersions":{
       "name":"ListJobSchemaVersions",
@@ -3675,6 +3839,18 @@
       "input":{"shape":"ListWorkteamsRequest"},
       "output":{"shape":"ListWorkteamsResponse"}
     },
+    "PutEndpointPolicy":{
+      "name":"PutEndpointPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutEndpointPolicyRequest"},
+      "output":{"shape":"PutEndpointPolicyResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ]
+    },
     "PutModelPackageGroupPolicy":{
       "name":"PutModelPackageGroupPolicy",
       "http":{
@@ -4153,6 +4329,19 @@
         {"shape":"ResourceLimitExceeded"}
       ]
     },
+    "UpdateClusterExtension":{
+      "name":"UpdateClusterExtension",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateClusterExtensionRequest"},
+      "output":{"shape":"UpdateClusterExtensionResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFound"}
+      ]
+    },
     "UpdateClusterSchedulerConfig":{
       "name":"UpdateClusterSchedulerConfig",
       "http":{
@@ -4413,6 +4602,21 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFound"}
       ]
+    },
+    "UpdateInferenceRouter":{
+      "name":"UpdateInferenceRouter",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateInferenceRouterInput"},
+      "output":{"shape":"UpdateInferenceRouterOutput"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceLimitExceeded"}
+      ],
+      "idempotent":true
     },
     "UpdateMlflowApp":{
       "name":"UpdateMlflowApp",
@@ -5702,6 +5906,13 @@
       "members":{
         "ValidationRole":{"shape":"RoleArn"},
         "ValidationProfiles":{"shape":"AlgorithmValidationProfiles"}
+      }
+    },
+    "AliasOperations":{
+      "type":"structure",
+      "members":{
+        "Add":{"shape":"PipelineVersionAliasList"},
+        "Remove":{"shape":"PipelineVersionAliasList"}
       }
     },
     "AmazonQSettings":{
@@ -8301,7 +8512,9 @@
       "members":{
         "PatchingStrategy":{"shape":"ClusterPatchingStrategy"},
         "PatchSchedule":{"shape":"ClusterPatchSchedule"},
-        "DeploymentConfig":{"shape":"DeploymentConfiguration"}
+        "DeploymentConfig":{"shape":"DeploymentConfiguration"},
+        "IdleWaitWindowInSeconds":{"shape":"IdleWaitWindowInSecondsValue"},
+        "DrainPolicy":{"shape":"ClusterDrainPolicy"}
       }
     },
     "ClusterAutoPatchConfigDetails":{
@@ -8310,7 +8523,9 @@
         "PatchingStrategy":{"shape":"ClusterPatchingStrategy"},
         "CurrentPatchSchedule":{"shape":"ClusterPatchScheduleDetails"},
         "DesiredPatchSchedule":{"shape":"ClusterPatchScheduleDetails"},
-        "DeploymentConfig":{"shape":"DeploymentConfiguration"}
+        "DeploymentConfig":{"shape":"DeploymentConfiguration"},
+        "IdleWaitWindowInSeconds":{"shape":"IdleWaitWindowInSecondsValue"},
+        "DrainPolicy":{"shape":"ClusterDrainPolicy"}
       }
     },
     "ClusterAutoScalerType":{
@@ -8395,6 +8610,13 @@
       "min":16,
       "pattern":"((fs|fc)i?-[0-9a-f]{8,}\\..{4,253})"
     },
+    "ClusterDrainPolicy":{
+      "type":"structure",
+      "members":{
+        "DrainTimeoutInSeconds":{"shape":"DrainTimeoutInSecondsValue"},
+        "OnDrainTimeout":{"shape":"ClusterOnDrainTimeout"}
+      }
+    },
     "ClusterEbsVolumeConfig":{
       "type":"structure",
       "members":{
@@ -8431,7 +8653,8 @@
         "EventTime":{"shape":"Timestamp"},
         "EventDetails":{"shape":"EventDetails"},
         "Description":{"shape":"String"},
-        "EventLevel":{"shape":"ClusterEventLevel"}
+        "EventLevel":{"shape":"ClusterEventLevel"},
+        "OperationId":{"shape":"ClusterOperationId"}
       }
     },
     "ClusterEventLevel":{
@@ -8480,7 +8703,8 @@
         "ResourceType":{"shape":"ClusterEventResourceType"},
         "EventTime":{"shape":"Timestamp"},
         "Description":{"shape":"String"},
-        "EventLevel":{"shape":"ClusterEventLevel"}
+        "EventLevel":{"shape":"ClusterEventLevel"},
+        "OperationId":{"shape":"ClusterOperationId"}
       }
     },
     "ClusterFSxLustreDeletionPolicy":{
@@ -9042,7 +9266,7 @@
       "type":"string",
       "max":256,
       "min":0,
-      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})"
+      "pattern":"((arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}))"
     },
     "ClusterNetworkInterface":{
       "type":"structure",
@@ -9168,6 +9392,82 @@
       "type":"structure",
       "members":{}
     },
+    "ClusterOnDrainTimeout":{
+      "type":"string",
+      "enum":[
+        "Force",
+        "Skip"
+      ]
+    },
+    "ClusterOperationCount":{
+      "type":"integer",
+      "box":true,
+      "min":0
+    },
+    "ClusterOperationId":{
+      "type":"string",
+      "pattern":"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    "ClusterOperationMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ClusterOperationScalingConfiguration":{
+      "type":"structure",
+      "members":{
+        "CurrentCount":{"shape":"ClusterOperationCount"},
+        "TargetCount":{"shape":"ClusterOperationCount"},
+        "MinCount":{"shape":"ClusterOperationCount"}
+      }
+    },
+    "ClusterOperationScalingDetails":{
+      "type":"structure",
+      "members":{
+        "InstanceGroupName":{"shape":"String"},
+        "Status":{"shape":"ClusterOperationStatus"},
+        "Original":{"shape":"ClusterOperationScalingConfiguration"},
+        "Desired":{"shape":"ClusterOperationScalingConfiguration"}
+      }
+    },
+    "ClusterOperationScalingDetailsList":{
+      "type":"list",
+      "member":{"shape":"ClusterOperationScalingDetails"}
+    },
+    "ClusterOperationSortBy":{
+      "type":"string",
+      "enum":["CreationTime"]
+    },
+    "ClusterOperationStatus":{
+      "type":"string",
+      "enum":[
+        "InProgress",
+        "Superseded",
+        "Done"
+      ]
+    },
+    "ClusterOperationSummaries":{
+      "type":"list",
+      "member":{"shape":"ClusterOperationSummary"}
+    },
+    "ClusterOperationSummary":{
+      "type":"structure",
+      "members":{
+        "OperationId":{"shape":"ClusterOperationId"},
+        "ClusterArn":{"shape":"ClusterArn"},
+        "Type":{"shape":"ClusterOperationType"},
+        "Status":{"shape":"ClusterOperationStatus"},
+        "CreationTime":{"shape":"Timestamp"}
+      }
+    },
+    "ClusterOperationType":{
+      "type":"string",
+      "enum":[
+        "Scaling",
+        "DeepHealthCheck"
+      ]
+    },
     "ClusterOrchestrator":{
       "type":"structure",
       "members":{
@@ -9217,7 +9517,8 @@
       "type":"string",
       "enum":[
         "WhenIdle",
-        "WhenAllIdle"
+        "WhenAllIdle",
+        "DrainFirst"
       ]
     },
     "ClusterPrivateDnsHostname":{
@@ -10249,6 +10550,37 @@
         "AutoMLJobArn":{"shape":"AutoMLJobArn"}
       }
     },
+    "CreateClusterExtensionRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "ExtensionName"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "ExtensionName":{"shape":"ExtensionName"},
+        "ExtensionVersion":{"shape":"ExtensionVersion"},
+        "ConfigurationValues":{"shape":"ExtensionConfigurationValues"},
+        "Tags":{"shape":"TagList"},
+        "ClientToken":{
+          "shape":"CreateClusterExtensionRequestClientTokenString",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateClusterExtensionRequestClientTokenString":{
+      "type":"string",
+      "max":64,
+      "min":0,
+      "pattern":"[\\x21-\\x7E]+"
+    },
+    "CreateClusterExtensionResponse":{
+      "type":"structure",
+      "required":["ExtensionArn"],
+      "members":{
+        "ExtensionArn":{"shape":"ExtensionArn"}
+      }
+    },
     "CreateClusterRequest":{
       "type":"structure",
       "required":["ClusterName"],
@@ -10552,7 +10884,8 @@
           "shape":"Boolean",
           "box":true
         },
-        "MetricsConfig":{"shape":"MetricsConfig"}
+        "MetricsConfig":{"shape":"MetricsConfig"},
+        "CrossRegionTrafficConfig":{"shape":"CrossRegionTrafficConfig"}
       }
     },
     "CreateEndpointConfigOutput":{
@@ -10895,6 +11228,29 @@
       "required":["JobArn"],
       "members":{
         "JobArn":{"shape":"RecommendationJobArn"}
+      }
+    },
+    "CreateInferenceRouterInput":{
+      "type":"structure",
+      "required":[
+        "InferenceRouterName",
+        "RoutingTargets"
+      ],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"},
+        "RoutingTargets":{"shape":"RoutingTargetList"},
+        "ClientToken":{
+          "shape":"InferenceRouterClientToken",
+          "idempotencyToken":true
+        },
+        "Tags":{"shape":"TagList"}
+      }
+    },
+    "CreateInferenceRouterOutput":{
+      "type":"structure",
+      "required":["InferenceRouterArn"],
+      "members":{
+        "InferenceRouterArn":{"shape":"InferenceRouterArn"}
       }
     },
     "CreateJobRequest":{
@@ -11404,7 +11760,8 @@
         },
         "RoleArn":{"shape":"RoleArn"},
         "Tags":{"shape":"TagList"},
-        "ParallelismConfiguration":{"shape":"ParallelismConfiguration"}
+        "ParallelismConfiguration":{"shape":"ParallelismConfiguration"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
     },
     "CreatePipelineResponse":{
@@ -11835,6 +12192,29 @@
         "SameAccount",
         "CrossAccount"
       ]
+    },
+    "CrossRegionMaxInvocationsPerSecondPerInstance":{
+      "type":"integer",
+      "box":true,
+      "max":10000,
+      "min":1
+    },
+    "CrossRegionPercentPerEndpoint":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "CrossRegionTrafficConfig":{
+      "type":"structure",
+      "required":[
+        "MaxInvocationsPerSecondPerInstance",
+        "MaxCrossRegionPercentPerEndpoint"
+      ],
+      "members":{
+        "MaxInvocationsPerSecondPerInstance":{"shape":"CrossRegionMaxInvocationsPerSecondPerInstance"},
+        "MaxCrossRegionPercentPerEndpoint":{"shape":"CrossRegionPercentPerEndpoint"}
+      }
     },
     "CsvContentType":{
       "type":"string",
@@ -12358,6 +12738,24 @@
         "DestinationArn":{"shape":"AssociationEntityArn"}
       }
     },
+    "DeleteClusterExtensionRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "ExtensionArn"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "ExtensionArn":{"shape":"ExtensionArn"}
+      }
+    },
+    "DeleteClusterExtensionResponse":{
+      "type":"structure",
+      "required":["ExtensionArn"],
+      "members":{
+        "ExtensionArn":{"shape":"ExtensionArn"}
+      }
+    },
     "DeleteClusterRequest":{
       "type":"structure",
       "required":["ClusterName"],
@@ -12466,6 +12864,17 @@
       "members":{
         "EndpointName":{"shape":"EndpointName"}
       }
+    },
+    "DeleteEndpointPolicyRequest":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{"shape":"EndpointName"}
+      }
+    },
+    "DeleteEndpointPolicyResponse":{
+      "type":"structure",
+      "members":{}
     },
     "DeleteExperimentRequest":{
       "type":"structure",
@@ -12594,6 +13003,13 @@
       "required":["InferenceExperimentArn"],
       "members":{
         "InferenceExperimentArn":{"shape":"InferenceExperimentArn"}
+      }
+    },
+    "DeleteInferenceRouterInput":{
+      "type":"structure",
+      "required":["InferenceRouterName"],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"}
       }
     },
     "DeleteJobRequest":{
@@ -13339,6 +13755,26 @@
         "EventDetails":{"shape":"ClusterEventDetail"}
       }
     },
+    "DescribeClusterExtensionRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "ExtensionArn"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "ExtensionArn":{"shape":"ExtensionArn"}
+      }
+    },
+    "DescribeClusterExtensionResponse":{
+      "type":"structure",
+      "required":["ExtensionDetails"],
+      "members":{
+        "ExtensionDetails":{"shape":"ExtensionDetails"},
+        "NodeSummary":{"shape":"ExtensionNodeSummary"},
+        "Health":{"shape":"ExtensionHealth"}
+      }
+    },
     "DescribeClusterNodeRequest":{
       "type":"structure",
       "required":["ClusterName"],
@@ -13353,6 +13789,29 @@
       "required":["NodeDetails"],
       "members":{
         "NodeDetails":{"shape":"ClusterNodeDetails"}
+      }
+    },
+    "DescribeClusterOperationRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterName",
+        "OperationId"
+      ],
+      "members":{
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "OperationId":{"shape":"ClusterOperationId"}
+      }
+    },
+    "DescribeClusterOperationResponse":{
+      "type":"structure",
+      "members":{
+        "OperationId":{"shape":"ClusterOperationId"},
+        "ClusterArn":{"shape":"ClusterArn"},
+        "Type":{"shape":"ClusterOperationType"},
+        "Status":{"shape":"ClusterOperationStatus"},
+        "CreationTime":{"shape":"Timestamp"},
+        "ScalingDetails":{"shape":"ClusterOperationScalingDetailsList"},
+        "DeepHealthCheckDetails":{"shape":"DeepHealthCheckConfigurations"}
       }
     },
     "DescribeClusterRequest":{
@@ -13803,7 +14262,8 @@
           "shape":"Boolean",
           "box":true
         },
-        "MetricsConfig":{"shape":"MetricsConfig"}
+        "MetricsConfig":{"shape":"MetricsConfig"},
+        "CrossRegionTrafficConfig":{"shape":"CrossRegionTrafficConfig"}
       }
     },
     "DescribeEndpointInput":{
@@ -13837,7 +14297,8 @@
         "PendingDeploymentSummary":{"shape":"PendingDeploymentSummary"},
         "ExplainerConfig":{"shape":"ExplainerConfig"},
         "ShadowProductionVariants":{"shape":"ProductionVariantSummaryList"},
-        "MetricsConfig":{"shape":"MetricsConfig"}
+        "MetricsConfig":{"shape":"MetricsConfig"},
+        "CrossRegionTrafficConfig":{"shape":"CrossRegionTrafficConfig"}
       }
     },
     "DescribeExperimentRequest":{
@@ -14011,7 +14472,9 @@
         "HubContentStatus":{"shape":"HubContentStatus"},
         "FailureReason":{"shape":"FailureReason"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModifiedTime":{"shape":"Timestamp"}
+        "LastModifiedTime":{"shape":"Timestamp"},
+        "CreatedBy":{"shape":"UserContext"},
+        "LastModifiedBy":{"shape":"UserContext"}
       }
     },
     "DescribeHubRequest":{
@@ -14040,7 +14503,9 @@
         "HubStatus":{"shape":"HubStatus"},
         "FailureReason":{"shape":"FailureReason"},
         "CreationTime":{"shape":"Timestamp"},
-        "LastModifiedTime":{"shape":"Timestamp"}
+        "LastModifiedTime":{"shape":"Timestamp"},
+        "CreatedBy":{"shape":"UserContext"},
+        "LastModifiedBy":{"shape":"UserContext"}
       }
     },
     "DescribeHumanTaskUiRequest":{
@@ -14262,6 +14727,33 @@
         "StoppingConditions":{"shape":"RecommendationJobStoppingConditions"},
         "InferenceRecommendations":{"shape":"InferenceRecommendations"},
         "EndpointPerformances":{"shape":"EndpointPerformances"}
+      }
+    },
+    "DescribeInferenceRouterInput":{
+      "type":"structure",
+      "required":["InferenceRouterName"],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"}
+      }
+    },
+    "DescribeInferenceRouterOutput":{
+      "type":"structure",
+      "required":[
+        "InferenceRouterName",
+        "InferenceRouterArn",
+        "RoutingTargets",
+        "Status",
+        "CreationTime",
+        "LastModifiedTime"
+      ],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"},
+        "InferenceRouterArn":{"shape":"InferenceRouterArn"},
+        "RoutingTargets":{"shape":"RoutingTargetList"},
+        "Status":{"shape":"InferenceRouterStatus"},
+        "StatusReason":{"shape":"InferenceRouterStatusReason"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModifiedTime":{"shape":"Timestamp"}
       }
     },
     "DescribeJobRequest":{
@@ -14946,7 +15438,9 @@
         "ParallelismConfiguration":{"shape":"ParallelismConfiguration"},
         "SelectiveExecutionConfig":{"shape":"SelectiveExecutionConfig"},
         "PipelineVersionId":{"shape":"PipelineVersionId"},
-        "MLflowConfig":{"shape":"MLflowConfiguration"}
+        "MLflowConfig":{"shape":"MLflowConfiguration"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"},
+        "RoleArn":{"shape":"RoleArn"}
       }
     },
     "DescribePipelineRequest":{
@@ -14954,7 +15448,8 @@
       "required":["PipelineName"],
       "members":{
         "PipelineName":{"shape":"PipelineNameOrArn"},
-        "PipelineVersionId":{"shape":"PipelineVersionId"}
+        "PipelineVersionId":{"shape":"PipelineVersionId"},
+        "PipelineVersionAlias":{"shape":"PipelineVersionAlias"}
       }
     },
     "DescribePipelineResponse":{
@@ -14974,7 +15469,8 @@
         "LastModifiedBy":{"shape":"UserContext"},
         "ParallelismConfiguration":{"shape":"ParallelismConfiguration"},
         "PipelineVersionDisplayName":{"shape":"PipelineVersionName"},
-        "PipelineVersionDescription":{"shape":"PipelineVersionDescription"}
+        "PipelineVersionDescription":{"shape":"PipelineVersionDescription"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
     },
     "DescribeProcessingJobRequest":{
@@ -15455,6 +15951,26 @@
       "member":{"shape":"DesiredWeightAndCapacity"},
       "min":1
     },
+    "Destination":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{"shape":"DestinationResourceArn"},
+        "RoutingStatus":{"shape":"RoutingStatus"}
+      }
+    },
+    "DestinationList":{
+      "type":"list",
+      "member":{"shape":"Destination"},
+      "max":10,
+      "min":1
+    },
+    "DestinationResourceArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-z-]*:sagemaker:[a-z0-9-]+:[0-9]{12}:(endpoint|inference-component)/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    },
     "DestinationS3Uri":{
       "type":"string",
       "max":512,
@@ -15836,6 +16352,12 @@
     "DoubleParameterValue":{
       "type":"double",
       "box":true
+    },
+    "DrainTimeoutInSecondsValue":{
+      "type":"integer",
+      "box":true,
+      "max":5400,
+      "min":0
     },
     "DriftCheckBaselines":{
       "type":"structure",
@@ -16466,6 +16988,12 @@
       "max":1,
       "min":0
     },
+    "EndpointPolicyDocument":{
+      "type":"string",
+      "max":20480,
+      "min":1,
+      "pattern":".*(?:[ \\r\\n\\t].*)*.*"
+    },
     "EndpointSortKey":{
       "type":"string",
       "enum":[
@@ -16793,6 +17321,157 @@
       "required":["TrainingPlanExtensions"],
       "members":{
         "TrainingPlanExtensions":{"shape":"TrainingPlanExtensions"}
+      }
+    },
+    "ExtensionArn":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:extension/(sagemaker|eks|pcs)-[a-z0-9-]+/[a-z0-9-]+/[a-z0-9]+"
+    },
+    "ExtensionConfigurationValues":{
+      "type":"string",
+      "max":10240,
+      "min":1
+    },
+    "ExtensionDetails":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "ExtensionArn",
+        "ExtensionName",
+        "ExtensionVersion",
+        "Status"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "ExtensionArn":{"shape":"ExtensionArn"},
+        "ExtensionName":{"shape":"ExtensionName"},
+        "ExtensionVersion":{"shape":"ExtensionVersion"},
+        "Status":{"shape":"ExtensionStatus"},
+        "ConfigurationValues":{"shape":"ExtensionConfigurationValues"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModifiedTime":{"shape":"Timestamp"}
+      }
+    },
+    "ExtensionHealth":{
+      "type":"structure",
+      "required":["Issues"],
+      "members":{
+        "Issues":{"shape":"ExtensionHealthIssues"}
+      }
+    },
+    "ExtensionHealthIssue":{
+      "type":"structure",
+      "required":[
+        "Code",
+        "Message",
+        "NodeCount"
+      ],
+      "members":{
+        "Code":{"shape":"ExtensionHealthIssueCode"},
+        "Message":{"shape":"ExtensionHealthIssueMessage"},
+        "NodeCount":{"shape":"ExtensionNodeCount"}
+      }
+    },
+    "ExtensionHealthIssueCode":{
+      "type":"string",
+      "enum":[
+        "InvalidConfiguration",
+        "ConfigurationConflict",
+        "AccessDenied",
+        "ResourceNotFound",
+        "DependencyUnreachable",
+        "ExtensionUnhealthy",
+        "InternalFailure",
+        "Other"
+      ]
+    },
+    "ExtensionHealthIssueMessage":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "ExtensionHealthIssues":{
+      "type":"list",
+      "member":{"shape":"ExtensionHealthIssue"},
+      "max":20,
+      "min":0
+    },
+    "ExtensionName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-z]([a-z0-9]|-[a-z0-9])*"
+    },
+    "ExtensionNodeCount":{
+      "type":"integer",
+      "box":true,
+      "min":0
+    },
+    "ExtensionNodeSummary":{
+      "type":"structure",
+      "required":[
+        "TotalCount",
+        "ActiveCount"
+      ],
+      "members":{
+        "TotalCount":{"shape":"ExtensionNodeCount"},
+        "ActiveCount":{"shape":"ExtensionNodeCount"}
+      }
+    },
+    "ExtensionStatus":{
+      "type":"string",
+      "enum":[
+        "Creating",
+        "Active",
+        "CreateFailed",
+        "Updating",
+        "Deleting",
+        "DeleteFailed",
+        "Degraded",
+        "UpdateFailed"
+      ]
+    },
+    "ExtensionSummaries":{
+      "type":"list",
+      "member":{"shape":"ExtensionSummary"},
+      "max":100,
+      "min":0
+    },
+    "ExtensionSummary":{
+      "type":"structure",
+      "required":[
+        "ExtensionArn",
+        "ExtensionName",
+        "ExtensionVersion",
+        "Status"
+      ],
+      "members":{
+        "ExtensionArn":{"shape":"ExtensionArn"},
+        "ExtensionName":{"shape":"ExtensionName"},
+        "ExtensionVersion":{"shape":"ExtensionVersion"},
+        "Status":{"shape":"ExtensionStatus"},
+        "CreationTime":{"shape":"Timestamp"}
+      }
+    },
+    "ExtensionVersion":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[0-9]+\\.[0-9]+\\.[0-9]+"
+    },
+    "ExtensionVersionSummaries":{
+      "type":"list",
+      "member":{"shape":"ExtensionVersionSummary"},
+      "max":100,
+      "min":0
+    },
+    "ExtensionVersionSummary":{
+      "type":"structure",
+      "required":["ExtensionVersion"],
+      "members":{
+        "ExtensionVersion":{"shape":"ExtensionVersion"}
       }
     },
     "FSxLustreConfig":{
@@ -17362,7 +18041,7 @@
       "type":"string",
       "max":5,
       "min":1,
-      "pattern":"1Y|Y|([1-9]|1[0-1])M|M|[1-4]W|W|[1-6]D|D|([1-9]|1[0-9]|2[0-3])H|H|([1-9]|[1-5][0-9])min"
+      "pattern":"(1Y|Y|([1-9]|1[0-1])M|M|[1-4]W|W|[1-6]D|D|([1-9]|1[0-9]|2[0-3])H|H|([1-9]|[1-5][0-9])min)"
     },
     "ForecastHorizon":{
       "type":"integer",
@@ -17430,6 +18109,21 @@
         "DeviceStats":{"shape":"DeviceStats"},
         "AgentVersions":{"shape":"AgentVersions"},
         "ModelStats":{"shape":"EdgeModelStats"}
+      }
+    },
+    "GetEndpointPolicyRequest":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{"shape":"EndpointName"}
+      }
+    },
+    "GetEndpointPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "EndpointName":{"shape":"EndpointName"},
+        "EndpointArn":{"shape":"EndpointArn"},
+        "ResourcePolicy":{"shape":"EndpointPolicyDocument"}
       }
     },
     "GetLineageGroupPolicyRequest":{
@@ -17668,6 +18362,8 @@
         "FailureReason":{"shape":"FailureReason"},
         "CreationTime":{"shape":"Timestamp"},
         "LastModifiedTime":{"shape":"Timestamp"},
+        "CreatedBy":{"shape":"UserContext"},
+        "LastModifiedBy":{"shape":"UserContext"},
         "Tags":{"shape":"TagList"}
       }
     },
@@ -17781,6 +18477,13 @@
         "PendingImport",
         "PendingDelete"
       ]
+    },
+    "HubContentStepMetadata":{
+      "type":"structure",
+      "members":{
+        "HubArn":{"shape":"String2048"},
+        "HubContentArn":{"shape":"String2048"}
+      }
     },
     "HubContentSupportStatus":{
       "type":"string",
@@ -18492,6 +19195,12 @@
       "max":525600,
       "min":60
     },
+    "IdleWaitWindowInSecondsValue":{
+      "type":"integer",
+      "box":true,
+      "max":2160000,
+      "min":3600
+    },
     "Image":{
       "type":"structure",
       "required":[
@@ -18577,7 +19286,7 @@
       "type":"string",
       "max":21,
       "min":7,
-      "pattern":"ami-[0-9a-fA-F]{8,17}|default"
+      "pattern":"(ami-[0-9a-fA-F]{8,17}|default)"
     },
     "ImageName":{
       "type":"string",
@@ -19219,6 +19928,83 @@
       "type":"list",
       "member":{"shape":"InferenceRecommendationsJob"}
     },
+    "InferenceRouterArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-z-]*:sagemaker:[a-z0-9-]+:[0-9]{12}:inference-router/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    },
+    "InferenceRouterClientToken":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[\\x21-\\x7E]+"
+    },
+    "InferenceRouterMaxTimeInBacklogSeconds":{
+      "type":"integer",
+      "box":true,
+      "max":21600,
+      "min":60
+    },
+    "InferenceRouterName":{
+      "type":"string",
+      "max":63,
+      "min":1,
+      "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
+    },
+    "InferenceRouterRoutingPreference":{
+      "type":"string",
+      "enum":[
+        "LocalRegionFirst",
+        "InstancePoolOrder"
+      ]
+    },
+    "InferenceRouterS3Uri":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"(https|s3)://([^/])/?(.*)"
+    },
+    "InferenceRouterSnsTopicArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-z-]*:sns:[a-z0-9-]*:[0-9]{12}:[a-zA-Z0-9_.-]+"
+    },
+    "InferenceRouterStatus":{
+      "type":"string",
+      "enum":[
+        "InService",
+        "Creating",
+        "Updating",
+        "Failed",
+        "Deleting"
+      ]
+    },
+    "InferenceRouterStatusReason":{
+      "type":"string",
+      "max":1024,
+      "min":0
+    },
+    "InferenceRouterSummary":{
+      "type":"structure",
+      "required":[
+        "InferenceRouterName",
+        "InferenceRouterArn",
+        "CreationTime",
+        "LastModifiedTime"
+      ],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"},
+        "InferenceRouterArn":{"shape":"InferenceRouterArn"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModifiedTime":{"shape":"Timestamp"}
+      }
+    },
+    "InferenceRouterSummaryList":{
+      "type":"list",
+      "member":{"shape":"InferenceRouterSummary"}
+    },
     "InferenceSpecification":{
       "type":"structure",
       "required":["Containers"],
@@ -19795,7 +20581,10 @@
       "type":"string",
       "enum":[
         "AgentRFT",
-        "AgentRFTEvaluation"
+        "SyntheticDataGeneration",
+        "DataQualityEvaluation",
+        "AgentRFTEvaluation",
+        "DataTransformation"
       ]
     },
     "JobConfigDocument":{
@@ -19859,7 +20648,15 @@
         "Completed",
         "Restarting",
         "Pending",
+        "Generating",
+        "PartialGeneration",
         "Evaluating",
+        "Validating",
+        "Preparing",
+        "Executing",
+        "Publishing",
+        "Finalizing",
+        "Transforming",
         "Deleting",
         "DeleteFailed"
       ]
@@ -20643,6 +21440,7 @@
         "SortBy":{"shape":"EventSortBy"},
         "SortOrder":{"shape":"SortOrder"},
         "ResourceType":{"shape":"ClusterEventResourceType"},
+        "OperationId":{"shape":"ClusterOperationId"},
         "MaxResults":{"shape":"ClusterEventMaxResults"},
         "NextToken":{"shape":"NextToken"}
       }
@@ -20652,6 +21450,42 @@
       "members":{
         "NextToken":{"shape":"NextToken"},
         "Events":{"shape":"ClusterEventSummaries"}
+      }
+    },
+    "ListClusterExtensionVersionsRequest":{
+      "type":"structure",
+      "required":["ExtensionName"],
+      "members":{
+        "ExtensionName":{"shape":"ExtensionName"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListClusterExtensionVersionsResponse":{
+      "type":"structure",
+      "required":["ExtensionVersions"],
+      "members":{
+        "ExtensionVersions":{"shape":"ExtensionVersionSummaries"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListClusterExtensionsRequest":{
+      "type":"structure",
+      "required":["ClusterArn"],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"NextToken"},
+        "CreationTimeAfter":{"shape":"Timestamp"},
+        "CreationTimeBefore":{"shape":"Timestamp"}
+      }
+    },
+    "ListClusterExtensionsResponse":{
+      "type":"structure",
+      "required":["Extensions"],
+      "members":{
+        "Extensions":{"shape":"ExtensionSummaries"},
+        "NextToken":{"shape":"NextToken"}
       }
     },
     "ListClusterNodesRequest":{
@@ -20675,6 +21509,28 @@
       "members":{
         "NextToken":{"shape":"NextToken"},
         "ClusterNodeSummaries":{"shape":"ClusterNodeSummaries"}
+      }
+    },
+    "ListClusterOperationsRequest":{
+      "type":"structure",
+      "required":["ClusterName"],
+      "members":{
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "Status":{"shape":"ClusterOperationStatus"},
+        "Type":{"shape":"ClusterOperationType"},
+        "CreationTimeAfter":{"shape":"Timestamp"},
+        "CreationTimeBefore":{"shape":"Timestamp"},
+        "SortBy":{"shape":"ClusterOperationSortBy"},
+        "SortOrder":{"shape":"SortOrder"},
+        "MaxResults":{"shape":"ClusterOperationMaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListClusterOperationsResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "ClusterOperationSummaries":{"shape":"ClusterOperationSummaries"}
       }
     },
     "ListClusterSchedulerConfigsRequest":{
@@ -21336,6 +22192,21 @@
         "Status"
       ]
     },
+    "ListInferenceRoutersInput":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListInferenceRoutersOutput":{
+      "type":"structure",
+      "required":["InferenceRouters"],
+      "members":{
+        "InferenceRouters":{"shape":"InferenceRouterSummaryList"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "ListJobSchemaVersionsRequest":{
       "type":"structure",
       "required":["JobCategory"],
@@ -21916,7 +22787,8 @@
         "SortBy":{"shape":"SortPipelineExecutionsBy"},
         "SortOrder":{"shape":"SortOrder"},
         "NextToken":{"shape":"NextToken"},
-        "MaxResults":{"shape":"MaxResults"}
+        "MaxResults":{"shape":"MaxResults"},
+        "PipelineVersionAlias":{"shape":"PipelineVersionAlias"}
       }
     },
     "ListPipelineExecutionsResponse":{
@@ -21970,7 +22842,8 @@
         "SortBy":{"shape":"SortPipelinesBy"},
         "SortOrder":{"shape":"SortOrder"},
         "NextToken":{"shape":"NextToken"},
-        "MaxResults":{"shape":"MaxResults"}
+        "MaxResults":{"shape":"MaxResults"},
+        "ManagedBy":{"shape":"PipelineManagedBy"}
       }
     },
     "ListPipelinesResponse":{
@@ -22808,7 +23681,7 @@
       "type":"string",
       "max":1,
       "min":0,
-      "pattern":"1|2"
+      "pattern":"(1|2)"
     },
     "MlFlowResourceArn":{
       "type":"string",
@@ -25684,7 +26557,8 @@
         "Job":{"shape":"JobStepMetadata"},
         "Athena":{"shape":"AthenaStepMetadata"},
         "Cleanup":{"shape":"CleanupStepMetadata"},
-        "ForEach":{"shape":"ForEachStepMetadata"}
+        "ForEach":{"shape":"ForEachStepMetadata"},
+        "HubContent":{"shape":"HubContentStepMetadata"}
       }
     },
     "PipelineExecutionSummary":{
@@ -25695,7 +26569,8 @@
         "PipelineExecutionStatus":{"shape":"PipelineExecutionStatus"},
         "PipelineExecutionDescription":{"shape":"PipelineExecutionDescription"},
         "PipelineExecutionDisplayName":{"shape":"PipelineExecutionName"},
-        "PipelineExecutionFailureReason":{"shape":"String3072"}
+        "PipelineExecutionFailureReason":{"shape":"String3072"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
     },
     "PipelineExecutionSummaryList":{
@@ -25710,6 +26585,13 @@
         "ExperimentName":{"shape":"ExperimentEntityName"},
         "TrialName":{"shape":"ExperimentEntityName"}
       }
+    },
+    "PipelineManagedBy":{
+      "type":"string",
+      "enum":[
+        "AWS",
+        "CUSTOMER"
+      ]
     },
     "PipelineName":{
       "type":"string",
@@ -25768,8 +26650,21 @@
         "LastModifiedBy":{"shape":"UserContext"},
         "LastExecutedPipelineExecutionArn":{"shape":"PipelineExecutionArn"},
         "LastExecutedPipelineExecutionDisplayName":{"shape":"PipelineExecutionName"},
-        "LastExecutedPipelineExecutionStatus":{"shape":"PipelineExecutionStatus"}
+        "LastExecutedPipelineExecutionStatus":{"shape":"PipelineExecutionStatus"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
+    },
+    "PipelineVersionAlias":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._\\-]{1,128}"
+    },
+    "PipelineVersionAliasList":{
+      "type":"list",
+      "member":{"shape":"PipelineVersionAlias"},
+      "max":10,
+      "min":0
     },
     "PipelineVersionDescription":{
       "type":"string",
@@ -25796,7 +26691,8 @@
         "CreationTime":{"shape":"Timestamp"},
         "PipelineVersionDescription":{"shape":"PipelineVersionDescription"},
         "PipelineVersionDisplayName":{"shape":"PipelineVersionName"},
-        "LastExecutionPipelineExecutionArn":{"shape":"PipelineExecutionArn"}
+        "LastExecutionPipelineExecutionArn":{"shape":"PipelineExecutionArn"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
     },
     "PipelineVersionSummaryList":{
@@ -25826,7 +26722,7 @@
       "type":"string",
       "max":20,
       "min":0,
-      "pattern":"(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1)"
+      "pattern":"(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3|notebook-al2023-v1|notebook-al2023-v2)"
     },
     "PolicyString":{
       "type":"string",
@@ -27125,6 +28021,23 @@
         "AmountInUsd":{"shape":"USD"}
       }
     },
+    "PutEndpointPolicyRequest":{
+      "type":"structure",
+      "required":[
+        "EndpointName",
+        "ResourcePolicy"
+      ],
+      "members":{
+        "EndpointName":{"shape":"EndpointName"},
+        "ResourcePolicy":{"shape":"EndpointPolicyDocument"}
+      }
+    },
+    "PutEndpointPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "EndpointArn":{"shape":"EndpointArn"}
+      }
+    },
     "PutModelPackageGroupPolicyInput":{
       "type":"structure",
       "required":[
@@ -27902,6 +28815,13 @@
         "CompletionCriteria":{"shape":"AutoMLJobCompletionCriteria"}
       }
     },
+    "ResourceAlreadyExists":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"FailureReason"}
+      },
+      "exception":true
+    },
     "ResourceArn":{
       "type":"string",
       "max":256,
@@ -28205,13 +29125,81 @@
         "Disabled"
       ]
     },
+    "RoutingStatus":{
+      "type":"string",
+      "enum":[
+        "Routable",
+        "Unroutable",
+        "Unknown"
+      ]
+    },
     "RoutingStrategy":{
       "type":"string",
       "enum":[
         "LEAST_OUTSTANDING_REQUESTS",
         "RANDOM",
-        "PREFIX_AWARE"
+        "PREFIX_AWARE",
+        "KV_AWARE"
       ]
+    },
+    "RoutingTarget":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Destinations"
+      ],
+      "members":{
+        "Name":{"shape":"RoutingTargetName"},
+        "Destinations":{"shape":"DestinationList"},
+        "AsyncInferenceConfig":{"shape":"RoutingTargetAsyncInferenceConfig"},
+        "RoutingPreference":{"shape":"InferenceRouterRoutingPreference"}
+      }
+    },
+    "RoutingTargetAsyncInferenceClientConfig":{
+      "type":"structure",
+      "members":{
+        "MaxTimeInBacklogSeconds":{"shape":"InferenceRouterMaxTimeInBacklogSeconds"}
+      }
+    },
+    "RoutingTargetAsyncInferenceConfig":{
+      "type":"structure",
+      "required":["OutputConfig"],
+      "members":{
+        "OutputConfig":{"shape":"RoutingTargetAsyncInferenceOutputConfig"},
+        "ClientConfig":{"shape":"RoutingTargetAsyncInferenceClientConfig"}
+      }
+    },
+    "RoutingTargetAsyncInferenceNotificationConfig":{
+      "type":"structure",
+      "members":{
+        "SuccessTopic":{"shape":"InferenceRouterSnsTopicArn"},
+        "ErrorTopic":{"shape":"InferenceRouterSnsTopicArn"}
+      }
+    },
+    "RoutingTargetAsyncInferenceOutputConfig":{
+      "type":"structure",
+      "required":[
+        "S3OutputPath",
+        "S3FailurePath"
+      ],
+      "members":{
+        "S3OutputPath":{"shape":"InferenceRouterS3Uri"},
+        "S3FailurePath":{"shape":"InferenceRouterS3Uri"},
+        "KmsKeyId":{"shape":"KmsKeyId"},
+        "NotificationConfig":{"shape":"RoutingTargetAsyncInferenceNotificationConfig"}
+      }
+    },
+    "RoutingTargetList":{
+      "type":"list",
+      "member":{"shape":"RoutingTarget"},
+      "max":20,
+      "min":1
+    },
+    "RoutingTargetName":{
+      "type":"string",
+      "max":63,
+      "min":1,
+      "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}"
     },
     "RuleConfigurationName":{
       "type":"string",
@@ -29372,7 +30360,9 @@
         "ParallelismConfiguration":{"shape":"ParallelismConfiguration"},
         "SelectiveExecutionConfig":{"shape":"SelectiveExecutionConfig"},
         "PipelineVersionId":{"shape":"PipelineVersionId"},
-        "MlflowExperimentName":{"shape":"MlflowExperimentEntityName"}
+        "MlflowExperimentName":{"shape":"MlflowExperimentEntityName"},
+        "PipelineVersionAlias":{"shape":"PipelineVersionAlias"},
+        "RoleArn":{"shape":"RoleArn"}
       }
     },
     "StartPipelineExecutionResponse":{
@@ -32015,6 +33005,36 @@
         "ArtifactArn":{"shape":"ArtifactArn"}
       }
     },
+    "UpdateClusterExtensionRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "ExtensionArn"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "ExtensionArn":{"shape":"ExtensionArn"},
+        "ExtensionVersion":{"shape":"ExtensionVersion"},
+        "ConfigurationValues":{"shape":"ExtensionConfigurationValues"},
+        "ClientToken":{
+          "shape":"UpdateClusterExtensionRequestClientTokenString",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "UpdateClusterExtensionRequestClientTokenString":{
+      "type":"string",
+      "max":64,
+      "min":0,
+      "pattern":"[\\x21-\\x7E]+"
+    },
+    "UpdateClusterExtensionResponse":{
+      "type":"structure",
+      "required":["ExtensionArn"],
+      "members":{
+        "ExtensionArn":{"shape":"ExtensionArn"}
+      }
+    },
     "UpdateClusterRequest":{
       "type":"structure",
       "required":["ClusterName"],
@@ -32474,6 +33494,24 @@
         "InferenceExperimentArn":{"shape":"InferenceExperimentArn"}
       }
     },
+    "UpdateInferenceRouterInput":{
+      "type":"structure",
+      "required":[
+        "InferenceRouterName",
+        "RoutingTargets"
+      ],
+      "members":{
+        "InferenceRouterName":{"shape":"InferenceRouterName"},
+        "RoutingTargets":{"shape":"RoutingTargetList"}
+      }
+    },
+    "UpdateInferenceRouterOutput":{
+      "type":"structure",
+      "required":["InferenceRouterArn"],
+      "members":{
+        "InferenceRouterArn":{"shape":"InferenceRouterArn"}
+      }
+    },
     "UpdateMlflowAppRequest":{
       "type":"structure",
       "required":["Arn"],
@@ -32709,7 +33747,8 @@
         "PipelineDefinitionS3Location":{"shape":"PipelineDefinitionS3Location"},
         "PipelineDescription":{"shape":"PipelineDescription"},
         "RoleArn":{"shape":"RoleArn"},
-        "ParallelismConfiguration":{"shape":"ParallelismConfiguration"}
+        "ParallelismConfiguration":{"shape":"ParallelismConfiguration"},
+        "PipelineVersionAliases":{"shape":"PipelineVersionAliasList"}
       }
     },
     "UpdatePipelineResponse":{
@@ -32729,7 +33768,8 @@
         "PipelineArn":{"shape":"PipelineArn"},
         "PipelineVersionId":{"shape":"PipelineVersionId"},
         "PipelineVersionDisplayName":{"shape":"PipelineVersionName"},
-        "PipelineVersionDescription":{"shape":"PipelineVersionDescription"}
+        "PipelineVersionDescription":{"shape":"PipelineVersionDescription"},
+        "PipelineVersionAliasOperations":{"shape":"AliasOperations"}
       }
     },
     "UpdatePipelineVersionResponse":{

@@ -202,7 +202,8 @@ namespace AWSSDK.ProtocolTests.RestJson
                 // Act
                 using (var actualResponse = await client.OutputStreamAsync(new OutputStreamRequest()).ConfigureAwait(false))
                 {
-                    var events = actualResponse.Stream.OfType<HeadersAndImplicitPayloadEvent>().ToList();
+                    // The stream is both IEnumerable and IAsyncEnumerable, so on net10.0+ the extension call is ambiguous.
+                    var events = Enumerable.OfType<HeadersAndImplicitPayloadEvent>(actualResponse.Stream).ToList();
 
                     // Assert
                     CollectionAssert.AreEqual(new[] { "first", "second" }, events.Select(e => e.Payload).ToList());

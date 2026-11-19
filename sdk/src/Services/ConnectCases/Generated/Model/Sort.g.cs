@@ -51,7 +51,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// A structured set of sort terms
+        /// Whether results should be sorted in ascending or descending order.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

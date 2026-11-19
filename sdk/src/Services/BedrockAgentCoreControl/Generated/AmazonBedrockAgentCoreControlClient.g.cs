@@ -5593,6 +5593,82 @@ namespace Amazon.BedrockAgentCoreControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the account's service-defined default Agent Insight Store. The logical default
+        /// exists for every enrolled account; its backing state may be initialized on first access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentInsightStore service method.</param>
+        /// <returns>The response from the GetAgentInsightStore service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetAgentInsightStore">REST API Reference for GetAgentInsightStore Operation</seealso>
+        public virtual GetAgentInsightStoreResponse GetAgentInsightStore(GetAgentInsightStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentInsightStoreResponse>(request, options);
+        }
+#else
+        internal virtual GetAgentInsightStoreResponse GetAgentInsightStore(GetAgentInsightStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentInsightStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the account's service-defined default Agent Insight Store. The logical default
+        /// exists for every enrolled account; its backing state may be initialized on first access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentInsightStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAgentInsightStore service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetAgentInsightStore">REST API Reference for GetAgentInsightStore Operation</seealso>
+        public virtual Task<GetAgentInsightStoreResponse> GetAgentInsightStoreAsync(GetAgentInsightStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAgentInsightStoreResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets an Amazon Bedrock AgentCore Runtime.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRuntime service method.</param>
@@ -8327,6 +8403,76 @@ namespace Amazon.BedrockAgentCoreControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the account's service-defined default Agent Insight Store. The singleton backing
+        /// state may be initialized on first access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentInsightStores service method.</param>
+        /// <returns>The response from the ListAgentInsightStores service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentInsightStores">REST API Reference for ListAgentInsightStores Operation</seealso>
+        public virtual ListAgentInsightStoresResponse ListAgentInsightStores(ListAgentInsightStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgentInsightStoresResponse>(request, options);
+        }
+#else
+        internal virtual ListAgentInsightStoresResponse ListAgentInsightStores(ListAgentInsightStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgentInsightStoresResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the account's service-defined default Agent Insight Store. The singleton backing
+        /// state may be initialized on first access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentInsightStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAgentInsightStores service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentInsightStores">REST API Reference for ListAgentInsightStores Operation</seealso>
+        public virtual Task<ListAgentInsightStoresResponse> ListAgentInsightStoresAsync(ListAgentInsightStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgentInsightStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgentInsightStoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAgentInsightStoresResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists all endpoints for a specific Amazon Secure Agent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentRuntimeEndpoints service method.</param>
@@ -9191,7 +9337,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <summary>
         /// Returns paginated examples from the dataset. The server embeds the resolved version
         /// in the pagination token. Once pagination begins, all subsequent pages are pinned to
-        /// that version regardless of concurrent mutations.
+        /// that version regardless of concurrent mutations. A request with a pagination token
+        /// can omit <c>datasetVersion</c>. If it sets a version that differs from the token's
+        /// version, the request fails with a <c>ValidationException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExamples service method.</param>
         /// <returns>The response from the ListDatasetExamples service method, as returned by BedrockAgentCoreControl.</returns>
@@ -9236,7 +9384,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <summary>
         /// Returns paginated examples from the dataset. The server embeds the resolved version
         /// in the pagination token. Once pagination begins, all subsequent pages are pinned to
-        /// that version regardless of concurrent mutations.
+        /// that version regardless of concurrent mutations. A request with a pagination token
+        /// can omit <c>datasetVersion</c>. If it sets a version that differs from the token's
+        /// version, the request fails with a <c>ValidationException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetExamples service method.</param>
         /// <param name="cancellationToken">
@@ -12239,6 +12389,92 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the enablement status or encryption configuration of an Agent Insight Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentInsightStore service method.</param>
+        /// <returns>The response from the UpdateAgentInsightStore service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateAgentInsightStore">REST API Reference for UpdateAgentInsightStore Operation</seealso>
+        public virtual UpdateAgentInsightStoreResponse UpdateAgentInsightStore(UpdateAgentInsightStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgentInsightStoreResponse>(request, options);
+        }
+#else
+        internal virtual UpdateAgentInsightStoreResponse UpdateAgentInsightStore(UpdateAgentInsightStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgentInsightStoreResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the enablement status or encryption configuration of an Agent Insight Store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentInsightStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAgentInsightStore service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateAgentInsightStore">REST API Reference for UpdateAgentInsightStore Operation</seealso>
+        public virtual Task<UpdateAgentInsightStoreResponse> UpdateAgentInsightStoreAsync(UpdateAgentInsightStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAgentInsightStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgentInsightStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAgentInsightStoreResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

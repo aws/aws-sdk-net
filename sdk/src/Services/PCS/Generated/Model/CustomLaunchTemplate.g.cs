@@ -30,14 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// An Amazon EC2 launch template PCS uses to launch compute nodes.
+    /// An Amazon EC2 launch template PCS uses to launch compute nodes. The structure contains
+    /// the launch template ID and version.
     /// </summary>
     public partial class CustomLaunchTemplate
     {
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the EC2 launch template to use to provision instances.
+        /// The ID of the EC2 launch template to use to provision instances. Specify this value
+        /// together with <c>version</c>.
         /// </para>
         ///  
         /// <para>
@@ -55,7 +57,8 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the EC2 launch template to use to provision instances.
+        /// The version of the EC2 launch template to use to provision instances. Specify this
+        /// value together with <c>id</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

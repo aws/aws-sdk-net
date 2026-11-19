@@ -148,5 +148,20 @@ namespace Amazon.Mgn.Model
         /// Checks to see if the ReplicatorId property is set.
         /// </summary>
         internal bool IsSetReplicatorId() => this.ReplicatorId != null;
+
+        /// <summary>
+        /// Gets and sets the property StagingOutpostArn. 
+        /// <para>
+        /// The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet
+        /// is on an Outpost.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 255)]
+        public string StagingOutpostArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StagingOutpostArn property is set.
+        /// </summary>
+        internal bool IsSetStagingOutpostArn() => this.StagingOutpostArn != null;
     }
 }

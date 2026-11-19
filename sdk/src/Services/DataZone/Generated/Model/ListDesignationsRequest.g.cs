@@ -31,8 +31,9 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDesignations operation. Lists the designations
-    /// in a domain. Returns system-managed designations first, followed by user-created designations
-    /// sorted alphabetically by name.
+    /// in a domain. The response returns system-managed designations first, followed by user-created
+    /// designations in alphabetical order by name. Results are paginated. Use <c>nextToken</c>
+    /// to retrieve additional pages of results.
     /// </summary>
     public partial class ListDesignationsRequest : AmazonDataZoneRequest
     {

@@ -60,6 +60,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AutoUpgradeMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutoUpgradeMetadataUnmarshaller.Instance;
+                    unmarshalledObject.AutoUpgradeMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CodeGenConfigurationNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CodeGenConfigurationNode, StringUnmarshaller, CodeGenConfigurationNodeUnmarshaller>(StringUnmarshaller.Instance, CodeGenConfigurationNodeUnmarshaller.Instance);

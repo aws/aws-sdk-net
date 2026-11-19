@@ -37,8 +37,21 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property CloudProvider. 
         /// <para>
-        /// The cloud provider associated with the usage information.
+        /// The cloud provider associated with the usage information. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AZURE</c> – Microsoft Azure resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> – Google Cloud Platform (GCP) resources.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CloudProvider CloudProvider { get; set; }
 
@@ -91,8 +104,26 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type scan.
+        /// The type of scan. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services – <c>EC2_INSTANCE_HOURS</c>, <c>EC2_AGENTLESS_INSTANCE_HOURS</c>,
+        /// <c>EC2_AMI_HOURS</c>, <c>EC2_AMI_ONE_SHOT_SCAN</c>, <c>ECR_INITIAL_SCAN</c>, <c>ECR_RESCAN</c>,
+        /// <c>LAMBDA_FUNCTION_HOURS</c>, <c>LAMBDA_FUNCTION_CODE_HOURS</c>, <c>CODE_REPOSITORY_SAST</c>,
+        /// <c>CODE_REPOSITORY_IAC</c>, or <c>CODE_REPOSITORY_SCA</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Azure – <c>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</c>, <c>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</c>,
+        /// <c>AZURE_CONTAINER_IMAGE_RESCAN</c>, or <c>AZURE_SERVERLESS_FUNCTION_HOURS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Google Cloud Platform (GCP) – <c>GCP_VM_AGENT_BASED_INSTANCE_HOURS</c>, <c>GCP_CONTAINER_IMAGE_INITIAL_SCAN</c>,
+        /// <c>GCP_CONTAINER_IMAGE_RESCAN</c>, or <c>GCP_CLOUD_RUN_HOURS</c> (Cloud Run functions).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UsageType Type { get; set; }
 

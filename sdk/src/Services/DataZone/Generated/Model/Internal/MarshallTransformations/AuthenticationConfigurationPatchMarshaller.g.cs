@@ -56,6 +56,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetOAuth2Properties())
+            {
+                context.Writer.WritePropertyName("oAuth2Properties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OAuth2PropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuth2Properties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("secretArn");

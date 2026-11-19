@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.NetworkFirewall.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Route53ResolvedIPValidation Object
     /// </summary>
-    public partial class Route53ResolvedIPValidationUnmarshaller : IJsonUnmarshaller<Route53ResolvedIPValidation, JsonUnmarshallerContext>
+    public partial class Route53ResolvedIPValidationUnmarshaller : ICborUnmarshaller<Route53ResolvedIPValidation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Route53ResolvedIPValidation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Route53ResolvedIPValidation Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Route53ResolvedIPValidation();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Action", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("BypassDestinationValidationIPRanges", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
-                    unmarshalledObject.BypassDestinationValidationIPRanges = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Action":
+                        context.AddPathSegment("Action");
+                        unmarshalledObject.Action = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DNSExpiryExceptionPolicy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DNSExpiryExceptionPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "BypassDestinationValidationIPRanges":
+                        context.AddPathSegment("BypassDestinationValidationIPRanges");
+                        unmarshalledObject.BypassDestinationValidationIPRanges = new CborListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("DNSFirewallRuleGroupId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DNSFirewallRuleGroupId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "DNSExpiryExceptionPolicy":
+                        context.AddPathSegment("DNSExpiryExceptionPolicy");
+                        unmarshalledObject.DNSExpiryExceptionPolicy = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SourceIPRanges", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
-                    unmarshalledObject.SourceIPRanges = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DNSFirewallRuleGroupId":
+                        context.AddPathSegment("DNSFirewallRuleGroupId");
+                        unmarshalledObject.DNSFirewallRuleGroupId = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SourceIPRanges":
+                        context.AddPathSegment("SourceIPRanges");
+                        unmarshalledObject.SourceIPRanges = new CborListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

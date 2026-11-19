@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.ServiceCatalog.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
@@ -36,37 +38,48 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Principal Object
     /// </summary>
-    public partial class PrincipalUnmarshaller : IJsonUnmarshaller<Principal, JsonUnmarshallerContext>
+    public partial class PrincipalUnmarshaller : ICborUnmarshaller<Principal, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public Principal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Principal Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new Principal();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("PrincipalARN", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("PrincipalType", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "PrincipalARN":
+                        context.AddPathSegment("PrincipalARN");
+                        unmarshalledObject.PrincipalARN = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "PrincipalType":
+                        context.AddPathSegment("PrincipalType");
+                        unmarshalledObject.PrincipalType = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

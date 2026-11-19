@@ -91,6 +91,20 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetId() => this.Id != null;
 
         /// <summary>
+        /// Gets and sets the property PurchaseOrderReference. 
+        /// <para>
+        /// The purchase order reference associated with the charge, if any.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public string PurchaseOrderReference { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PurchaseOrderReference property is set.
+        /// </summary>
+        internal bool IsSetPurchaseOrderReference() => this.PurchaseOrderReference != null;
+
+        /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
         /// The date and time when the charge is due to be invoiced. This is available only when

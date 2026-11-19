@@ -36,6 +36,21 @@ namespace Amazon.WellArchitected.Model
     public partial class AgentRecommendationItemSummary
     {
         /// <summary>
+        /// Gets and sets the property AutoRemediation. 
+        /// <para>
+        /// The optional per-resource auto-remediation for this affected resource, representing
+        /// an SSM runbook execution. Present only when the item's check is backed by an SSM automation
+        /// runbook.
+        /// </para>
+        /// </summary>
+        public AutoRemediation AutoRemediation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoRemediation property is set.
+        /// </summary>
+        internal bool IsSetAutoRemediation() => this.AutoRemediation != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp when the recommendation item was created.

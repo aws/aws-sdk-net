@@ -120,6 +120,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PipelineName");
                 context.Writer.WriteStringValue(publicRequest.PipelineName);
             }
+            if (publicRequest.IsSetPipelineVersionAliases())
+            {
+                context.Writer.WritePropertyName("PipelineVersionAliases");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestPipelineVersionAliasesListValue in publicRequest.PipelineVersionAliases)
+                {
+                    context.Writer.WriteStringValue(publicRequestPipelineVersionAliasesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");

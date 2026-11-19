@@ -61,6 +61,18 @@ namespace Amazon.Glue.Model
         internal bool IsSetAllocatedCapacity() => this.AllocatedCapacity.HasValue;
 
         /// <summary>
+        /// Gets and sets the property AutoUpgradeMetadata. <text>The auto-upgrade assessment
+        /// information for a job configured with glueVersion=auto. This field is null when the
+        /// job is not configured to auto.</text>
+        /// </summary>
+        public AutoUpgradeMetadata AutoUpgradeMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutoUpgradeMetadata property is set.
+        /// </summary>
+        internal bool IsSetAutoUpgradeMetadata() => this.AutoUpgradeMetadata != null;
+
+        /// <summary>
         /// Gets and sets the property CodeGenConfigurationNodes. 
         /// <para>
         /// The representation of a directed acyclic graph on which both the Glue Studio visual
@@ -244,7 +256,15 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Jobs that are created without specifying a Glue version default to Glue 5.1.
+        /// Jobs that are created without specifying a Glue version default to Glue 6.0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set <c>GlueVersion</c> to <c>auto</c> to turn on automatic version upgrades for the
+        /// job. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html">Automatic
+        /// version upgrades for Glue jobs</a> in the developer guide. For the job requirements,
+        /// see <a href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html#auto-version-upgrades-before-you-start">Before
+        /// you start</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 255)]

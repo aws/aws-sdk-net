@@ -104,6 +104,23 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameSessionQueueArn() => this.GameSessionQueueArn != null;
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// An optional configuration that delivers game session placement insight logs to one
+        /// or more destinations of your choice. Use these logs to diagnose why a game session
+        /// placement is <c>FULFILLED</c>, <c>CANCELLED</c>, <c>TIMED_OUT</c>, or <c>FAILED</c>,
+        /// which locations were evaluated, and the latency and cost factors that influenced each
+        /// decision.
+        /// </para>
+        /// </summary>
+        public GameSessionQueueLogConfiguration LogConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogConfiguration property is set.
+        /// </summary>
+        internal bool IsSetLogConfiguration() => this.LogConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive label that is associated with game session queue. Queue names must be
@@ -160,9 +177,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PriorityConfiguration. 
         /// <para>
         /// Custom settings to use when prioritizing destinations and locations for game session
-        /// placements. This configuration replaces the FleetIQ default prioritization process.
-        /// Priority types that are not explicitly named will be automatically applied at the
-        /// end of the prioritization process. 
+        /// placements. This configuration replaces the default prioritization process. Priority
+        /// types that are not explicitly named will be automatically applied at the end of the
+        /// prioritization process. 
         /// </para>
         /// </summary>
         public PriorityConfiguration PriorityConfiguration { get; set; }

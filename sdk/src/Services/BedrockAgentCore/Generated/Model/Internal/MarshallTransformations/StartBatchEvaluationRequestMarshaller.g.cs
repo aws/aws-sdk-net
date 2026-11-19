@@ -93,6 +93,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetDatasetExecutionConfig())
+            {
+                context.Writer.WritePropertyName("datasetExecutionConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DatasetExecutionConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DatasetExecutionConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

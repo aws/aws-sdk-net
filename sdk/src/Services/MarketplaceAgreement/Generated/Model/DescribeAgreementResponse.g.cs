@@ -144,6 +144,20 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetEstimatedCharges() => this.EstimatedCharges != null;
 
         /// <summary>
+        /// Gets and sets the property FreeTrialSummary. 
+        /// <para>
+        /// The free trial details of the agreement. This field is present only when the agreement
+        /// includes a free trial.
+        /// </para>
+        /// </summary>
+        public FreeTrialSummary FreeTrialSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FreeTrialSummary property is set.
+        /// </summary>
+        internal bool IsSetFreeTrialSummary() => this.FreeTrialSummary != null;
+
+        /// <summary>
         /// Gets and sets the property InitialAgreementId. 
         /// <para>
         /// The unique identifier of the very first agreement in a chain of related agreements,

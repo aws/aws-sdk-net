@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DataSync.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Globalization;
-using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
@@ -38,69 +38,72 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DescribeLocationFsxOntap operation.
     /// </summary>
-    public partial class DescribeLocationFsxOntapResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class DescribeLocationFsxOntapResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new DescribeLocationFsxOntapResponse();
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = context.Reader;
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            context.AddPathSegment("DescribeLocationFsxOntap");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                if (context.TestExpression("CreationTime", targetDepth, ref reader))
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "CreationTime":
+                        context.AddPathSegment("CreationTime");
+                        unmarshalledObject.CreationTime = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("FsxFilesystemArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FsxFilesystemArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "FsxFilesystemArn":
+                        context.AddPathSegment("FsxFilesystemArn");
+                        unmarshalledObject.FsxFilesystemArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationArn":
+                        context.AddPathSegment("LocationArn");
+                        unmarshalledObject.LocationArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LocationUri", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LocationUri":
+                        context.AddPathSegment("LocationUri");
+                        unmarshalledObject.LocationUri = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Protocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = FsxProtocolUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Protocol":
+                        context.AddPathSegment("Protocol");
+                        unmarshalledObject.Protocol = FsxProtocolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SecurityGroupArns", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupArns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "SecurityGroupArns":
+                        context.AddPathSegment("SecurityGroupArns");
+                        unmarshalledObject.SecurityGroupArns = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("StorageVirtualMachineArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageVirtualMachineArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "StorageVirtualMachineArn":
+                        context.AddPathSegment("StorageVirtualMachineArn");
+                        unmarshalledObject.StorageVirtualMachineArn = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return unmarshalledObject;
         }
@@ -108,11 +111,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Unmarshall error response to exception.
         /// </summary>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
-
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -120,16 +121,15 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             {
-                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                     {
-                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                     {
-                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                        return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
                 }
             }

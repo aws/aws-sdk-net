@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
@@ -36,72 +38,78 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IosClientBrandingAttributes Object
     /// </summary>
-    public partial class IosClientBrandingAttributesUnmarshaller : IJsonUnmarshaller<IosClientBrandingAttributes, JsonUnmarshallerContext>
+    public partial class IosClientBrandingAttributesUnmarshaller : ICborUnmarshaller<IosClientBrandingAttributes, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public IosClientBrandingAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IosClientBrandingAttributes Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new IosClientBrandingAttributes();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ForgotPasswordLink", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ForgotPasswordLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("LoginMessage", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.LoginMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "ForgotPasswordLink":
+                        context.AddPathSegment("ForgotPasswordLink");
+                        unmarshalledObject.ForgotPasswordLink = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Logo2xUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Logo2xUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LoginMessage":
+                        context.AddPathSegment("LoginMessage");
+                        unmarshalledObject.LoginMessage = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("Logo3xUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Logo3xUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Logo2xUrl":
+                        context.AddPathSegment("Logo2xUrl");
+                        unmarshalledObject.Logo2xUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("LogoUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogoUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "Logo3xUrl":
+                        context.AddPathSegment("Logo3xUrl");
+                        unmarshalledObject.Logo3xUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SupportEmail", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SupportEmail = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "LogoUrl":
+                        context.AddPathSegment("LogoUrl");
+                        unmarshalledObject.LogoUrl = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("SupportLink", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SupportLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "SupportEmail":
+                        context.AddPathSegment("SupportEmail");
+                        unmarshalledObject.SupportEmail = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "SupportLink":
+                        context.AddPathSegment("SupportLink");
+                        unmarshalledObject.SupportLink = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

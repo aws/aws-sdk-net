@@ -171,6 +171,22 @@ namespace Amazon.Mgn.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property OutpostSnapshotLocation. 
+        /// <para>
+        /// Updates the location of replication snapshots when the staging area subnet is on an
+        /// AWS Outpost. Set to <c>OUTPOST</c> to keep replication snapshots on the Outpost, or
+        /// <c>REGION</c> to store them in the AWS Region. Required when the staging area subnet
+        /// is on an Outpost, and not allowed otherwise.
+        /// </para>
+        /// </summary>
+        public OutpostSnapshotLocation OutpostSnapshotLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutpostSnapshotLocation property is set.
+        /// </summary>
+        internal bool IsSetOutpostSnapshotLocation() => this.OutpostSnapshotLocation != null;
+
+        /// <summary>
         /// Gets and sets the property ReplicatedDisks. 
         /// <para>
         /// Update replication configuration replicated disks request.

@@ -97,7 +97,8 @@ namespace Amazon.NetworkFirewall.Model
         ///  <c>AWS_ROUTE_53_RESOLVED_DOMAIN</c> matches on how the destination IP address was
         /// resolved, rather than on the domain that the client asserts in its TLS SNI or HTTP
         /// <c>Host</c> header. This target type takes effect when you configure resolved IP validation
-        /// on the firewall policy. For more information, see <a>Route53ResolvedIPValidation</a>.
+        /// on the firewall policy. For more information, see the <c>Route53ResolvedIPValidation</c>
+        /// firewall policy setting.
         /// </para>
         ///  
         /// <para>
@@ -106,12 +107,12 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Combining <c>AWS_ROUTE_53_RESOLVED_DOMAIN</c> with <c>TLS_SNI</c> or <c>HTTP_HOST</c>
-        /// in an <c>ALLOWLIST</c> requires both conditions to match. The SNI or <c>Host</c> header
-        /// must match the domain, <b>and</b> the Route 53 Resolver must have resolved the destination
-        /// IP address for that domain. Network Firewall allows traffic only in that case. Traffic
-        /// that matches one condition, such as a spoofed <c>Host</c> header sent to an unresolved
-        /// IP address, is not allowed.
+        /// In an <c>ALLOWLIST</c>, combining <c>AWS_ROUTE_53_RESOLVED_DOMAIN</c> with <c>TLS_SNI</c>
+        /// or <c>HTTP_HOST</c> requires both conditions to match: the SNI or <c>Host</c> header
+        /// matches the domain, <b>and</b> the Route 53 Resolver resolved the destination IP address
+        /// for that domain. Network Firewall allows the traffic only when both conditions match,
+        /// so it blocks traffic that matches just one—for example, a spoofed <c>Host</c> header
+        /// sent to an unresolved IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>

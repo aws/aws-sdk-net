@@ -109,6 +109,11 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetSessionMetadata())
+            {
+                context.Writer.WritePropertyName("SessionMetadata");
+                context.Writer.WriteStringValue(publicRequest.SessionMetadata);
+            }
             if (publicRequest.IsSetUserDetails())
             {
                 context.Writer.WritePropertyName("UserDetails");

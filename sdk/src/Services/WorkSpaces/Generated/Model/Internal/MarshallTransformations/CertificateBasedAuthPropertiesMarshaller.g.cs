@@ -28,6 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.WorkSpaces.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 
 #pragma warning disable CS0612,CS0618
 
@@ -36,25 +39,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
     /// <summary>
     /// CertificateBasedAuthProperties Marshaller
     /// </summary>
-    public partial class CertificateBasedAuthPropertiesMarshaller : IRequestMarshaller<CertificateBasedAuthProperties, JsonMarshallerContext>
+    public partial class CertificateBasedAuthPropertiesMarshaller : IRequestMarshaller<CertificateBasedAuthProperties, CborMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CertificateBasedAuthProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(CertificateBasedAuthProperties requestObject, CborMarshallerContext context)
         {
             if (requestObject == null) return;
 
             if (requestObject.IsSetCertificateAuthorityArn())
             {
-                context.Writer.WritePropertyName("CertificateAuthorityArn");
-                context.Writer.WriteStringValue(requestObject.CertificateAuthorityArn);
+                context.Writer.WriteTextString("CertificateAuthorityArn");
+                context.Writer.WriteTextString(requestObject.CertificateAuthorityArn);
             }
 
             if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
             }
         }
 

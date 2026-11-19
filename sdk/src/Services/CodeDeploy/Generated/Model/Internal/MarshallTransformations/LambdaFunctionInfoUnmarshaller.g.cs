@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.CodeDeploy.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
@@ -36,58 +38,66 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LambdaFunctionInfo Object
     /// </summary>
-    public partial class LambdaFunctionInfoUnmarshaller : IJsonUnmarshaller<LambdaFunctionInfo, JsonUnmarshallerContext>
+    public partial class LambdaFunctionInfoUnmarshaller : ICborUnmarshaller<LambdaFunctionInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public LambdaFunctionInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LambdaFunctionInfo Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new LambdaFunctionInfo();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("currentVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("functionAlias", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionAlias = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "currentVersion":
+                        context.AddPathSegment("CurrentVersion");
+                        unmarshalledObject.CurrentVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("functionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "functionAlias":
+                        context.AddPathSegment("FunctionAlias");
+                        unmarshalledObject.FunctionAlias = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "functionName":
+                        context.AddPathSegment("FunctionName");
+                        unmarshalledObject.FunctionName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("targetVersionWeight", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetVersionWeight = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "targetVersion":
+                        context.AddPathSegment("TargetVersion");
+                        unmarshalledObject.TargetVersion = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "targetVersionWeight":
+                        context.AddPathSegment("TargetVersionWeight");
+                        unmarshalledObject.TargetVersionWeight = CborNullableDoubleUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

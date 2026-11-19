@@ -145,6 +145,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string Password { get; set; }
 
         /// <summary>
@@ -175,6 +176,7 @@ namespace Amazon.Lightsail.Model
         /// you should save this value to <c>tempkey</c>).
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive = true)]
         public string PrivateKey { get; set; }
 
         /// <summary>

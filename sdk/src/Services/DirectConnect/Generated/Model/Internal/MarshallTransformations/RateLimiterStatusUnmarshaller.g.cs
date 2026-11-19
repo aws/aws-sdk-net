@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 using Amazon.DirectConnect.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
@@ -36,51 +38,60 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RateLimiterStatus Object
     /// </summary>
-    public partial class RateLimiterStatusUnmarshaller : IJsonUnmarshaller<RateLimiterStatus, JsonUnmarshallerContext>
+    public partial class RateLimiterStatusUnmarshaller : ICborUnmarshaller<RateLimiterStatus, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RateLimiterStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RateLimiterStatus Unmarshall(CborUnmarshallerContext context)
         {
             var unmarshalledObject = new RateLimiterStatus();
             if (context.IsEmptyResponse) return null;
 
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("inUse", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InUse = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                reader.ReadNull();
+                return null;
+            }
 
-                if (context.TestExpression("maxAllowed", targetDepth, ref reader))
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAllowed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "inUse":
+                        context.AddPathSegment("InUse");
+                        unmarshalledObject.InUse = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("remaining", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Remaining = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
+                    case "maxAllowed":
+                        context.AddPathSegment("MaxAllowed");
+                        unmarshalledObject.MaxAllowed = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
 
-                if (context.TestExpression("totalBandwidth", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalBandwidth = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "remaining":
+                        context.AddPathSegment("Remaining");
+                        unmarshalledObject.Remaining = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "totalBandwidth":
+                        context.AddPathSegment("TotalBandwidth");
+                        unmarshalledObject.TotalBandwidth = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

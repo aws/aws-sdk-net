@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeDeadLetterQueueRecordsRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeQueueRecordsRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.AddTagsToStreamRequest.StreamARN</property>
     <min>1</min>
     <max>2048</max>
@@ -29,6 +41,12 @@
     <min>1</min>
     <max>512</max>
     <pattern>^arn:aws[-a-z0-9]*:iam::\d{12}:role/[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.CreateQueueRequest.QueueName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.CreateStreamRequest.MaxRecordSizeInKiB</property>
@@ -74,10 +92,16 @@
     <pattern>^arn:aws.*:kinesis:.*:\d{12}:channel/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DeleteQueueRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DeleteResourcePolicyRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DeleteResourcePolicyRequest.StreamId</property>
@@ -162,6 +186,12 @@
     <property>Amazon.Kinesis.Model.DescribeLimitsResponse.ShardLimit</property>
     <min>0</min>
     <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeQueueRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeStreamRequest.ExclusiveStartShardId</property>
@@ -329,7 +359,7 @@
     <property>Amazon.Kinesis.Model.GetResourcePolicyRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.GetResourcePolicyRequest.StreamId</property>
@@ -400,6 +430,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListChannelsResponse.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListQueuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListQueuesRequest.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListQueuesResponse.NextToken</property>
     <min>1</min>
     <max>1048576</max>
   </property-value-rule>
@@ -494,7 +539,7 @@
     <property>Amazon.Kinesis.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListTagsForResourceRequest.StreamId</property>
@@ -632,13 +677,55 @@
     <property>Amazon.Kinesis.Model.PutResourcePolicyRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.PutResourcePolicyRequest.StreamId</property>
     <min>1</min>
     <max>24</max>
     <pattern>^[a-z0-9]{20}-[a-z0-9]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveDeadLetterQueueRecordsRequest.Limit</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveDeadLetterQueueRecordsRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveDeadLetterQueueRecordsRequest.VisibilityTimeoutSeconds</property>
+    <min>0</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveDeadLetterQueueRecordsRequest.WaitTimeSeconds</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveQueueRecordsRequest.Limit</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveQueueRecordsRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveQueueRecordsRequest.VisibilityTimeoutSeconds</property>
+    <min>0</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ReceiveQueueRecordsRequest.WaitTimeSeconds</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.RegisterStreamConsumerRequest.ConsumerName</property>
@@ -675,6 +762,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.RestoreDeadLetterQueueRecordsRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.SplitShardRequest.NewStartingHashKey</property>
@@ -772,7 +865,7 @@
     <property>Amazon.Kinesis.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.TagResourceRequest.StreamId</property>
@@ -784,7 +877,7 @@
     <property>Amazon.Kinesis.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel)/\S+$</pattern>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:.*(stream|channel|queue)/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.UntagResourceRequest.StreamId</property>
@@ -797,6 +890,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws.*:kinesis:.*:\d{12}:channel/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateDeadLetterQueueRecordsVisibilityRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateMaxRecordSizeRequest.MaxRecordSizeInKiB</property>
@@ -814,6 +913,18 @@
     <min>1</min>
     <max>24</max>
     <pattern>^[a-z0-9]{20}-[a-z0-9]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRecordsVisibilityRequest.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateShardCountRequest.StreamARN</property>
@@ -918,6 +1029,36 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeDeadLetterQueueRecordsErrorEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeDeadLetterQueueRecordsRequestEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeDeadLetterQueueRecordsResultEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeQueueRecordsErrorEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeQueueRecordsRequestEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.AcknowledgeQueueRecordsResultEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ChannelDescription.ChannelARN</property>
@@ -1053,6 +1194,11 @@
     <pattern>^arn:aws.*:kinesis:.*:\d{12}:stream/\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DeadLetterConfiguration.MaxReceiveCount</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DeadLetterQueueS3Configuration.BucketARN</property>
     <min>1</min>
     <max>2048</max>
@@ -1108,6 +1254,78 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueAttributes.VisibilityTimeoutSeconds</property>
+    <min>0</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueDescription.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueDescription.QueueName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueRecord.Data</property>
+    <min>0</min>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueRecord.PartitionKey</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueRecord.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueRecord.ReceiveCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueRecord.RecordId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueStreamConfiguration.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:stream/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueStreamFilter.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:stream/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueStreamIdentifier.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:stream/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueSummary.QueueARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws.*:kinesis:.*:\d{12}:queue/\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.QueueSummary.QueueName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.Record.Data</property>
     <min>0</min>
     <max>10485760</max>
@@ -1126,6 +1344,21 @@
     <min>1</min>
     <max>512</max>
     <pattern>^arn:aws[-a-z0-9]*:glue:[-a-z0-9]+:\d{12}:schema/[-a-zA-Z0-9_$#.]+/[-a-zA-Z0-9_$#.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.RestoreDeadLetterQueueRecordsErrorEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.RestoreDeadLetterQueueRecordsRequestEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.RestoreDeadLetterQueueRecordsResultEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.S3StorageConfiguration.BucketARN</property>
@@ -1242,6 +1475,11 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.StreamDescriptionSummary.QueueCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescriptionSummary.StreamARN</property>
     <min>1</min>
     <max>2048</max>
@@ -1294,6 +1532,46 @@
     <property>Amazon.Kinesis.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateDeadLetterQueueRecordsVisibilityErrorEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateDeadLetterQueueRecordsVisibilityRequestEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateDeadLetterQueueRecordsVisibilityRequestEntry.VisibilityTimeoutSeconds</property>
+    <min>0</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateDeadLetterQueueRecordsVisibilityResultEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRecordsVisibilityErrorEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRecordsVisibilityRequestEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRecordsVisibilityRequestEntry.VisibilityTimeoutSeconds</property>
+    <min>0</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateQueueRecordsVisibilityResultEntry.ReceiptHandle</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.WarmThroughputObject.CurrentMiBps</property>

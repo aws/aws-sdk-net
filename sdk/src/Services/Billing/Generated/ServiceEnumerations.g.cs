@@ -150,6 +150,11 @@ namespace Amazon.Billing
     public class BillingFeature : ConstantClass
     {
         /// <summary>
+        /// Constant BENEFIT_LEVEL_SHARING for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature BENEFIT_LEVEL_SHARING = new BillingFeature("BENEFIT_LEVEL_SHARING");
+
+        /// <summary>
         /// Constant BILLING_ALERTS for BillingFeature
         /// </summary>
         public static readonly BillingFeature BILLING_ALERTS = new BillingFeature("BILLING_ALERTS");
