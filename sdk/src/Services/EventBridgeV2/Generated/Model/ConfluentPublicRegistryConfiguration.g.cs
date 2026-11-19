@@ -36,8 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ConfluentPublicRegistryConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ConnectionArn. EventBridge Connection ARN that provides
-        /// API Key or OAuth credentials for the registry.
+        /// Gets and sets the property ConnectionArn. 
+        /// <para>
+        /// EventBridge Connection ARN that provides API Key or OAuth credentials for the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1600)]
         public string ConnectionArn { get; set; }

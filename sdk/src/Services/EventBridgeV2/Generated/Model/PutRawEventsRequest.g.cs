@@ -31,13 +31,20 @@ namespace Amazon.EventBridgeV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRawEvents operation. Publishes pre-shaped events
-    /// to an event bus.
+    /// to an event bus. <para> The total size of all event entries in a request must not
+    /// exceed 1 MB (1,048,576 bytes), including the <c>Data</c> payload and the keys and
+    /// values of <c>Metadata</c> for each entry. The limit applies to the request as a whole,
+    /// not to individual entries. </para> <para> If you exceed the limit, the request fails
+    /// with <c>InvalidInputException</c>, and the service doesn't publish any of the entries
+    /// in the request. </para>
     /// </summary>
     public partial class PutRawEventsRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationConfiguration. Request-level deduplication
-        /// settings, applied to every entry in the batch.
+        /// Gets and sets the property DeduplicationConfiguration. 
+        /// <para>
+        /// Request-level deduplication settings, applied to every entry in the batch.
+        /// </para>
         /// </summary>
         public DeduplicationConfiguration DeduplicationConfiguration { get; set; }
 
@@ -47,7 +54,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationConfiguration() => this.DeduplicationConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Entries.
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// List of event entries to publish. Must contain at least one entry.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -64,7 +74,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEntries() => this.Entries != null && (this.Entries.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -75,10 +88,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property SchemaRegistryConfiguration. Schema-registry settings for
-        /// encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored
-        /// for JSON entries. The registry is read with the caller's credentials, so the caller
-        /// needs read access to the registry it references.
+        /// Gets and sets the property SchemaRegistryConfiguration. 
+        /// <para>
+        /// Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required
+        /// for open-format entries; ignored for JSON entries. The registry is read with the caller's
+        /// credentials, so the caller needs read access to the registry it references.
+        /// </para>
         /// </summary>
         public SchemaRegistryConfiguration SchemaRegistryConfiguration { get; set; }
 

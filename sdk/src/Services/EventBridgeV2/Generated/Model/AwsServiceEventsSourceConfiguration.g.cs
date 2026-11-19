@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class AwsServiceEventsSourceConfiguration
     {
         /// <summary>
-        /// Gets and sets the property AwsService.
+        /// Gets and sets the property AwsService. 
+        /// <para>
+        /// A single AWS service source identifier, e.g. "aws.s3". Wildcards and lists are rejected.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string AwsService { get; set; }
@@ -47,8 +50,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetAwsService() => this.AwsService != null;
 
         /// <summary>
-        /// Gets and sets the property OnFailureConfiguration. The destination for events that
-        /// could not be forwarded.
+        /// Gets and sets the property OnFailureConfiguration. 
+        /// <para>
+        /// The destination for events that could not be forwarded.
+        /// </para>
         /// </summary>
         public OnFailureConfiguration OnFailureConfiguration { get; set; }
 
@@ -58,10 +63,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetOnFailureConfiguration() => this.OnFailureConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Pattern. A filter pattern, as a JSON string, that defines
-        /// which of the service's events are forwarded to the event bus. Do not include source,
-        /// account, or region as top-level fields. If no pattern is specified, all events from
-        /// the service are forwarded.
+        /// Gets and sets the property Pattern. 
+        /// <para>
+        /// A filter pattern, as a JSON string, that defines which of the service's events are
+        /// forwarded to the event bus. Do not include source, account, or region as top-level
+        /// fields. If no pattern is specified, all events from the service are forwarded.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 0, Max = 3753)]
         public string Pattern { get; set; }

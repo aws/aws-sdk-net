@@ -37,7 +37,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class SnsParameters
     {
         /// <summary>
-        /// Gets and sets the property MessageAttributes. Custom message attributes for SNS filtering.
+        /// Gets and sets the property MessageAttributes. 
+        /// <para>
+        /// Custom message attributes for SNS filtering.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -54,8 +57,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageAttributes() => this.MessageAttributes != null && (this.MessageAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property MessageDeduplicationId. Message deduplication ID for FIFO
-        /// topics. Accepts JSONata expression.
+        /// Gets and sets the property MessageDeduplicationId. 
+        /// <para>
+        /// Message deduplication ID for FIFO topics. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string MessageDeduplicationId { get; set; }
@@ -66,8 +71,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageDeduplicationId() => this.MessageDeduplicationId != null;
 
         /// <summary>
-        /// Gets and sets the property MessageGroupId. Message group ID for FIFO topics. Accepts
-        /// JSONata expression.
+        /// Gets and sets the property MessageGroupId. 
+        /// <para>
+        /// Message group ID for FIFO topics. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string MessageGroupId { get; set; }
@@ -78,8 +85,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageGroupId() => this.MessageGroupId != null;
 
         /// <summary>
-        /// Gets and sets the property MessageStructure. Per-protocol message formatting mode,
-        /// forwarded to SNS Publish unchanged. Accepts JSONata expression.
+        /// Gets and sets the property MessageStructure. 
+        /// <para>
+        /// Per-protocol message formatting mode, forwarded to SNS Publish unchanged. Accepts
+        /// JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string MessageStructure { get; set; }
@@ -90,8 +100,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageStructure() => this.MessageStructure != null;
 
         /// <summary>
-        /// Gets and sets the property Subject. Subject line for email protocol subscriptions.
-        /// Accepts JSONata expression.
+        /// Gets and sets the property Subject. 
+        /// <para>
+        /// Subject line for email protocol subscriptions. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string Subject { get; set; }

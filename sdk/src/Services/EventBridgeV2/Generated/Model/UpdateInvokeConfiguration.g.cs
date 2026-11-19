@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class UpdateInvokeConfiguration
     {
         /// <summary>
-        /// Gets and sets the property EventBusV2Parameters.
+        /// Gets and sets the property EventBusV2Parameters. 
+        /// <para>
+        /// Parameters for forwarding events to another EventBridge event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public EventBusV2Parameters EventBusV2Parameters { get; set; }
@@ -46,7 +49,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusV2Parameters() => this.EventBusV2Parameters != null;
 
         /// <summary>
-        /// Gets and sets the property HttpParameters.
+        /// Gets and sets the property HttpParameters. 
+        /// <para>
+        /// HTTP invocation parameters for subscribers (API Gateway / API Destination). Values
+        /// are forwarded to the HTTP endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public HttpParameters HttpParameters { get; set; }
@@ -57,7 +64,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetHttpParameters() => this.HttpParameters != null;
 
         /// <summary>
-        /// Gets and sets the property KinesisParameters.
+        /// Gets and sets the property KinesisParameters. 
+        /// <para>
+        /// Kinesis Data Streams invocation parameters for subscribers. Values are forwarded to
+        /// the Kinesis PutRecords API. All scalar values accept a literal or a JSONata expression
+        /// (e.g. "{% $events.Data.partitionKey %}").
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public KinesisParameters KinesisParameters { get; set; }
@@ -68,7 +80,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetKinesisParameters() => this.KinesisParameters != null;
 
         /// <summary>
-        /// Gets and sets the property LambdaParameters.
+        /// Gets and sets the property LambdaParameters. 
+        /// <para>
+        /// Lambda invocation parameters for subscribers. Values are forwarded to the Lambda Invoke
+        /// API. Every string member accepts a literal or a JSONata expression (e.g. "{% $events.Data.qualifier
+        /// %}").
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public LambdaParameters LambdaParameters { get; set; }
@@ -79,8 +96,24 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetLambdaParameters() => this.LambdaParameters != null;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. IAM role the service assumes to invoke the target.
-        /// Must belong to the calling account.
+        /// Gets and sets the property MskParameters. 
+        /// <para>
+        /// MSK (Apache Kafka) invocation parameters for subscribers targeting an Amazon MSK cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public MskParameters MskParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MskParameters property is set.
+        /// </summary>
+        internal bool IsSetMskParameters() => this.MskParameters != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// IAM role the service assumes to invoke the target. Must belong to the calling account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1600)]
         public string RoleArn { get; set; }
@@ -91,7 +124,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetRoleArn() => this.RoleArn != null;
 
         /// <summary>
-        /// Gets and sets the property SnsParameters.
+        /// Gets and sets the property SnsParameters. 
+        /// <para>
+        /// SNS invocation parameters for subscribers. Values are forwarded to the SNS PublishBatch
+        /// API. All scalar values accept a literal or a JSONata expression (e.g. "{% $events.Data.groupId
+        /// %}").
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public SnsParameters SnsParameters { get; set; }
@@ -102,7 +140,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSnsParameters() => this.SnsParameters != null;
 
         /// <summary>
-        /// Gets and sets the property SqsParameters.
+        /// Gets and sets the property SqsParameters. 
+        /// <para>
+        /// SQS invocation parameters for subscribers. Values are forwarded to the SQS SendMessageBatch
+        /// API. All scalar values accept a literal or a JSONata expression (e.g. "{% $events.Data.groupId
+        /// %}").
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public SqsParameters SqsParameters { get; set; }
@@ -113,7 +156,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSqsParameters() => this.SqsParameters != null;
 
         /// <summary>
-        /// Gets and sets the property StepFunctionsParameters.
+        /// Gets and sets the property StepFunctionsParameters. 
+        /// <para>
+        /// Step Functions invocation parameters for subscribers. Values are forwarded to the
+        /// Step Functions StartExecution or StartSyncExecution API. Every string member accepts
+        /// a literal or a JSONata expression (e.g. "{% $events.Data.executionName %}").
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public StepFunctionsParameters StepFunctionsParameters { get; set; }
@@ -124,7 +172,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetStepFunctionsParameters() => this.StepFunctionsParameters != null;
 
         /// <summary>
-        /// Gets and sets the property UniversalTargetParameters.
+        /// Gets and sets the property UniversalTargetParameters. 
+        /// <para>
+        /// Parameters for USI (Universal Service Integration) targets. Used when TargetArn is
+        /// in the format arn:aws:events:::aws-sdk:{service}:{apiAction}
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public UniversalTargetParameters UniversalTargetParameters { get; set; }

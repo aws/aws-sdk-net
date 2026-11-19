@@ -32,12 +32,18 @@ namespace Amazon.EventBridgeV2.Model
     /// <summary>
     /// Container for the parameters to the CreateSubscriber operation. Creates a subscriber
     /// on an event bus, which delivers matching events to the configured target. The bus
-    /// must be ACTIVE. Retries carrying the same ClientToken are idempotent.
+    /// must be ACTIVE. Retries carrying the same ClientToken are idempotent. A subscriber
+    /// that targets an Amazon MSK cluster provisions its connectivity asynchronously after
+    /// this call returns and begins delivering when its ConnectivityState reaches ACTIVE
+    /// (see the MskSubscriberActive waiter).
     /// </summary>
     public partial class CreateSubscriberRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property BatchConfiguration.
+        /// Gets and sets the property BatchConfiguration. 
+        /// <para>
+        /// Batching configuration for a subscriber.
+        /// </para>
         /// </summary>
         public BatchConfiguration BatchConfiguration { get; set; }
 
@@ -47,7 +53,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetBatchConfiguration() => this.BatchConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that ensures the idempotency of the request. The
+        /// SDK generates one automatically when the field is omitted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -58,7 +68,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Free-text description. Used by every resource type that has one: event buses, subscribers,
+        /// and event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 512)]
         public string Description { get; set; }
@@ -69,7 +83,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -80,7 +97,16 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property FilterConfiguration.
+        /// Gets and sets the property FilterConfiguration. 
+        /// <para>
+        /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber,
+        /// Filters is required and must contain at least one Filter with a non-empty Pattern.
+        /// On UpdateSubscriber, an empty <c>FilterConfiguration:{}</c> clears the existing filter.
+        /// Any non-empty shape (including <c>{Language:X}</c> without Filters) must contain a
+        /// valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites;
+        /// an omitted FilterConfiguration preserves existing state. All Filters are implicitly
+        /// ANDed — an event must match every Filter to be delivered.
+        /// </para>
         /// </summary>
         public FilterConfiguration FilterConfiguration { get; set; }
 
@@ -90,7 +116,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetFilterConfiguration() => this.FilterConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property InvokeConfiguration.
+        /// Gets and sets the property InvokeConfiguration. 
+        /// <para>
+        /// Configuration for how the subscriber invokes its target.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public InvokeConfiguration InvokeConfiguration { get; set; }
@@ -101,7 +130,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvokeConfiguration() => this.InvokeConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property LogConfiguration.
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// Log configuration for a subscriber.
+        /// </para>
         /// </summary>
         public LogConfiguration LogConfiguration { get; set; }
 
@@ -111,7 +143,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetLogConfiguration() => this.LogConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of a subscriber. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Name { get; set; }
@@ -122,7 +158,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property OnFailureConfiguration.
+        /// Gets and sets the property OnFailureConfiguration. 
+        /// <para>
+        /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber
+        /// and the EventSource.
+        /// </para>
         /// </summary>
         public OnFailureConfiguration OnFailureConfiguration { get; set; }
 
@@ -132,7 +172,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetOnFailureConfiguration() => this.OnFailureConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property PointInTimeConfiguration.
+        /// Gets and sets the property PointInTimeConfiguration. 
+        /// <para>
+        /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition
+        /// is POINT_IN_TIME.
+        /// </para>
         /// </summary>
         public PointInTimeConfiguration PointInTimeConfiguration { get; set; }
 
@@ -142,7 +186,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPointInTimeConfiguration() => this.PointInTimeConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property RetryPolicy.
+        /// Gets and sets the property RetryPolicy. 
+        /// <para>
+        /// Retry policy for a subscriber.
+        /// </para>
         /// </summary>
         public RetryPolicy RetryPolicy { get; set; }
 
@@ -152,7 +199,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetRetryPolicy() => this.RetryPolicy != null;
 
         /// <summary>
-        /// Gets and sets the property StartingPosition.
+        /// Gets and sets the property StartingPosition. 
+        /// <para>
+        /// Starting position for a subscriber.
+        /// </para>
         /// </summary>
         public StartingPosition StartingPosition { get; set; }
 
@@ -162,7 +212,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetStartingPosition() => this.StartingPosition != null;
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Customer-controlled run state of a subscriber, set on create or update. Distinct from
+        /// the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery
+        /// requires State RUNNING on a subscriber that is not revoked.
+        /// </para>
         /// </summary>
         public SubscriberState State { get; set; }
 
@@ -172,7 +227,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags attached to a resource, as key-value pairs.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -189,9 +247,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Transformer. Not applicable to universal (aws-sdk) targets,
-        /// whose input transformation is UniversalTargetParameters.Input; a Transformer on such
-        /// a target is rejected.
+        /// Gets and sets the property Transformer. 
+        /// <para>
+        /// Transformer configuration for a subscriber.
+        /// </para>
         /// </summary>
         public Transformer Transformer { get; set; }
 
@@ -201,7 +260,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetTransformer() => this.Transformer != null;
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event
+        /// group; UNORDERED delivers without an ordering guarantee.
+        /// </para>
         /// </summary>
         public OrderingType Type { get; set; }
 

@@ -37,8 +37,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class KinesisParameters
     {
         /// <summary>
-        /// Gets and sets the property ExplicitHashKey. Explicit hash key forwarded to PutRecords
-        /// unchanged. Accepts JSONata expression.
+        /// Gets and sets the property ExplicitHashKey. 
+        /// <para>
+        /// Explicit hash key forwarded to PutRecords unchanged. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string ExplicitHashKey { get; set; }
@@ -49,8 +51,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetExplicitHashKey() => this.ExplicitHashKey != null;
 
         /// <summary>
-        /// Gets and sets the property PartitionKey. Required by PutRecords even when an explicit
-        /// hash key is supplied. Accepts JSONata expression.
+        /// Gets and sets the property PartitionKey. 
+        /// <para>
+        /// Required by PutRecords even when an explicit hash key is supplied. Accepts JSONata
+        /// expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string PartitionKey { get; set; }

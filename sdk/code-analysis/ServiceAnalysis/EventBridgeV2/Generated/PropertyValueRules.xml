@@ -75,7 +75,7 @@
     <property>Amazon.EventBridgeV2.Model.CreateEventSourceResponse.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.CreateEventSourceResponse.Name</property>
@@ -135,7 +135,7 @@
     <property>Amazon.EventBridgeV2.Model.DeleteEventSourceRequest.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.DeleteResourcePolicyRequest.ExpectedRevisionId</property>
@@ -198,7 +198,7 @@
     <property>Amazon.EventBridgeV2.Model.DescribeEventSourceRequest.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.DescribeEventSourceResponse.Description</property>
@@ -216,7 +216,7 @@
     <property>Amazon.EventBridgeV2.Model.DescribeEventSourceResponse.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.DescribeEventSourceResponse.Name</property>
@@ -394,7 +394,7 @@
     <property>Amazon.EventBridgeV2.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner|webhook))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.PutEventsRequest.EventBusArn</property>
@@ -451,25 +451,43 @@
     <property>Amazon.EventBridgeV2.Model.RevokeResourceRequest.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(subscriber|event-sourcev2\/(aws\.service|aws\.partner))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(subscriber|event-sourcev2\/(aws\.service|aws\.partner|webhook))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.RevokeResourceResponse.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(subscriber|event-sourcev2\/(aws\.service|aws\.partner))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(subscriber|event-sourcev2\/(aws\.service|aws\.partner|webhook))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.RotateWebhookCredentialsRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\u0021-\u007E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.RotateWebhookCredentialsRequest.EventSourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/webhook\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.RotateWebhookCredentialsResponse.SecretArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z0-9]+)*:secretsmanager:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):secret:events-webhook(-preprod)?[!/].+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner|webhook))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):(event-busv2|subscriber|event-sourcev2\/(aws\.service|aws\.partner|webhook))\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.UpdateEventBusRequest.Description</property>
@@ -516,7 +534,7 @@
     <property>Amazon.EventBridgeV2.Model.UpdateEventSourceRequest.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.UpdateEventSourceResponse.EventBusArn</property>
@@ -528,7 +546,7 @@
     <property>Amazon.EventBridgeV2.Model.UpdateEventSourceResponse.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.UpdateEventSourceResponse.Name</property>
@@ -644,7 +662,7 @@
     <property>Amazon.EventBridgeV2.Model.EventSourceSummary.EventSourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
+    <pattern>^arn:aws(-[a-z0-9]+)*:events:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):event-sourcev2\/(aws\.service|aws\.partner|webhook)\/[A-Za-z0-9][\.\-_A-Za-z0-9]{0,255}\/[a-z0-9]{25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.EventSourceSummary.Name</property>
@@ -697,6 +715,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridgeV2.Model.LambdaParameters.TenantId</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskDetails.StateReason</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskDetails.VpcConnectionArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskHeader.Key</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskHeader.Value</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskParameters.ClientId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskParameters.PartitionKey</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.MskParameters.TopicName</property>
+    <min>1</min>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -925,5 +975,111 @@
     <min>1</min>
     <max>1600</max>
     <pattern>^arn:aws(-[a-z0-9]+)*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookBasicHttpAuthConfiguration.Password</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookBasicHttpAuthConfiguration.Username</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^:\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookCredential.BasicHttpPassword</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookCredential.HmacSecretValue</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookCredential.StaticTokenSecretValue</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookDetails.SecretArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[a-z0-9]+)*:secretsmanager:[a-z][a-z0-9]*(-[a-z0-9]+)*:([0-9]{12}):secret:events-webhook(-preprod)?[!/].+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookDetails.WebhookUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookEventsSourceConfiguration.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9_\-/:]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookEventsSourceConfiguration.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws(-[a-z0-9]+)*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.Delimiter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\u0020-\u007E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.MessageIdHttpHeader</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[!#$%&amp;'*+\-.^_`|~0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.SecretValue</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.SignatureHttpHeader</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[!#$%&amp;'*+\-.^_`|~0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.SignaturePrefix</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\u0020-\u007E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.TimestampHttpHeader</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[!#$%&amp;'*+\-.^_`|~0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.TimestampPrefix</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\u0020-\u007E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookHmacAuthConfiguration.TimestampToleranceInSeconds</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookStaticTokenAuthConfiguration.SecretValue</property>
+    <min>6</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridgeV2.Model.WebhookStaticTokenAuthConfiguration.TokenHttpHeader</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[!#$%&amp;'*+\-.^_`|~0-9A-Za-z]+$</pattern>
   </property-value-rule>
 </property-value-rules>

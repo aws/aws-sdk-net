@@ -35,7 +35,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class EventSourceConfiguration
     {
         /// <summary>
-        /// Gets and sets the property AwsServiceEventsConfiguration.
+        /// Gets and sets the property AwsServiceEventsConfiguration. 
+        /// <para>
+        /// Configuration for forwarding a single AWS service's events from the account's default
+        /// event bus.
+        /// </para>
         /// </summary>
         public AwsServiceEventsSourceConfiguration AwsServiceEventsConfiguration { get; set; }
 
@@ -45,7 +49,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetAwsServiceEventsConfiguration() => this.AwsServiceEventsConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property PartnerEventsConfiguration.
+        /// Gets and sets the property PartnerEventsConfiguration. 
+        /// <para>
+        /// Configuration for forwarding a partner event source's events through a managed partner
+        /// event bus.
+        /// </para>
         /// </summary>
         public PartnerEventsSourceConfiguration PartnerEventsConfiguration { get; set; }
 
@@ -53,5 +61,19 @@ namespace Amazon.EventBridgeV2.Model
         /// Checks to see if the PartnerEventsConfiguration property is set.
         /// </summary>
         internal bool IsSetPartnerEventsConfiguration() => this.PartnerEventsConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property WebhookEventsConfiguration. 
+        /// <para>
+        /// Configuration for receiving events that a third-party provider sends to an HTTPS webhook
+        /// URL.
+        /// </para>
+        /// </summary>
+        public WebhookEventsSourceConfiguration WebhookEventsConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WebhookEventsConfiguration property is set.
+        /// </summary>
+        internal bool IsSetWebhookEventsConfiguration() => this.WebhookEventsConfiguration != null;
     }
 }

@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class HttpParameters
     {
         /// <summary>
-        /// Gets and sets the property HeaderParameters.
+        /// Gets and sets the property HeaderParameters. 
+        /// <para>
+        /// Map of HTTP header names to values, sent with the request to an HTTP target.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -53,8 +56,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetHeaderParameters() => this.HeaderParameters != null && (this.HeaderParameters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property InvocationTimeoutSeconds. Timeout in seconds for each invocation
-        /// of the target (1-30). String-typed (not integer) so the value may be a JSONata expression.
+        /// Gets and sets the property InvocationTimeoutSeconds. 
+        /// <para>
+        /// Timeout in seconds for each invocation of the target (1-30). String-typed (not integer)
+        /// so the value may be a JSONata expression.
+        /// </para>
         /// </summary>
         public string InvocationTimeoutSeconds { get; set; }
 
@@ -64,7 +70,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvocationTimeoutSeconds() => this.InvocationTimeoutSeconds != null;
 
         /// <summary>
-        /// Gets and sets the property PathParameterValues.
+        /// Gets and sets the property PathParameterValues. 
+        /// <para>
+        /// Values substituted, in order, for the path-parameter placeholders in an HTTP target's
+        /// endpoint path.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -81,7 +91,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPathParameterValues() => this.PathParameterValues != null && (this.PathParameterValues.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property QueryStringParameters.
+        /// Gets and sets the property QueryStringParameters. 
+        /// <para>
+        /// Map of query-string parameter names to values, appended to the request to an HTTP
+        /// target.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

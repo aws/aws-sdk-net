@@ -73,6 +73,12 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "EventSourceDetails":
+                        context.AddPathSegment("EventSourceDetails");
+                        unmarshalledObject.EventSourceDetails = EventSourceDetailsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Name":
                         context.AddPathSegment("Name");
                         unmarshalledObject.Name = CborStringUnmarshaller.Instance.Unmarshall(context);

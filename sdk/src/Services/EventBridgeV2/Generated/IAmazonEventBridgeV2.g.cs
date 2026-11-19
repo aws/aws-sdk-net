@@ -30,12 +30,15 @@ namespace Amazon.EventBridgeV2
     /// <summary>
     /// <para>Interface for accessing EventBridgeV2</para>
     ///
+    /// Amazon EventBridge Custom Event Bus 
+    /// <para>
     /// Amazon EventBridge event bus API. An event bus receives events published by your applications
     /// and AWS services, stores them for a configurable retention period, and delivers them
     /// to subscribers. A subscriber filters events, optionally transforms them, and invokes
     /// a target such as Lambda, SQS, SNS, Kinesis, Step Functions, or an HTTP endpoint. The
     /// API manages event buses, subscribers, event sources, resource policies, and tags,
     /// and publishes events through PutEvents and PutRawEvents.
+    /// </para>
     /// </summary>
     public partial interface IAmazonEventBridgeV2 : IAmazonService, IDisposable
     {
@@ -133,9 +136,10 @@ namespace Amazon.EventBridgeV2
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates an EventSource, which forwards events from an origin (an AWS service or another
-        /// account) onto an event bus. The bus must be ACTIVE. Retries carrying the same ClientToken
-        /// are idempotent.
+        /// Creates an EventSource, which forwards events from an origin (an AWS service, a partner,
+        /// or a third-party webhook provider) to an event bus. The event bus must be in the ACTIVE
+        /// state. This operation is idempotent: retries that use the same ClientToken return
+        /// the same result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSource service method.</param>
         /// <returns>The response from the CreateEventSource service method, as returned by EventBridgeV2.</returns>
@@ -178,9 +182,10 @@ namespace Amazon.EventBridgeV2
 #endif
 
         /// <summary>
-        /// Creates an EventSource, which forwards events from an origin (an AWS service or another
-        /// account) onto an event bus. The bus must be ACTIVE. Retries carrying the same ClientToken
-        /// are idempotent.
+        /// Creates an EventSource, which forwards events from an origin (an AWS service, a partner,
+        /// or a third-party webhook provider) to an event bus. The event bus must be in the ACTIVE
+        /// state. This operation is idempotent: retries that use the same ClientToken return
+        /// the same result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSource service method.</param>
         /// <param name="cancellationToken">
@@ -228,6 +233,9 @@ namespace Amazon.EventBridgeV2
         /// <summary>
         /// Creates a subscriber on an event bus, which delivers matching events to the configured
         /// target. The bus must be ACTIVE. Retries carrying the same ClientToken are idempotent.
+        /// A subscriber that targets an Amazon MSK cluster provisions its connectivity asynchronously
+        /// after this call returns and begins delivering when its ConnectivityState reaches ACTIVE
+        /// (see the MskSubscriberActive waiter).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscriber service method.</param>
         /// <returns>The response from the CreateSubscriber service method, as returned by EventBridgeV2.</returns>
@@ -272,6 +280,9 @@ namespace Amazon.EventBridgeV2
         /// <summary>
         /// Creates a subscriber on an event bus, which delivers matching events to the configured
         /// target. The bus must be ACTIVE. Retries carrying the same ClientToken are idempotent.
+        /// A subscriber that targets an Amazon MSK cluster provisions its connectivity asynchronously
+        /// after this call returns and begins delivering when its ConnectivityState reaches ACTIVE
+        /// (see the MskSubscriberActive waiter).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscriber service method.</param>
         /// <param name="cancellationToken">
@@ -481,12 +492,17 @@ namespace Amazon.EventBridgeV2
         /// <exception cref="Amazon.EventBridgeV2.Model.ConflictException">
         /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write)
         /// did not match the current state of the resource. Retrying the same request will fail
-        /// again; re-read the resource and re-evaluate before retrying. A conditional request
-        /// is not retry-safe on its own. If an earlier attempt committed but its response never
-        /// reached the caller, retrying fails with this error, which is indistinguishable from
-        /// another writer having won. Compare the resource's current contents with what the request
-        /// intended: a successful attempt stores a revision ID the caller never saw, so the revision
-        /// alone cannot tell the two apart, but matching contents mean the change took effect.
+        /// again; re-read the resource and re-evaluate before retrying.
+        /// 
+        ///  
+        /// <para>
+        /// A conditional request is not retry-safe on its own. If an earlier attempt committed
+        /// but its response never reached the caller, retrying fails with this error, which is
+        /// indistinguishable from another writer having won. Compare the resource's current contents
+        /// with what the request intended: a successful attempt stores a revision ID the caller
+        /// never saw, so the revision alone cannot tell the two apart, but matching contents
+        /// mean the change took effect.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
         /// The request failed because of an internal service error. Retry the request.
@@ -523,12 +539,17 @@ namespace Amazon.EventBridgeV2
         /// <exception cref="Amazon.EventBridgeV2.Model.ConflictException">
         /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write)
         /// did not match the current state of the resource. Retrying the same request will fail
-        /// again; re-read the resource and re-evaluate before retrying. A conditional request
-        /// is not retry-safe on its own. If an earlier attempt committed but its response never
-        /// reached the caller, retrying fails with this error, which is indistinguishable from
-        /// another writer having won. Compare the resource's current contents with what the request
-        /// intended: a successful attempt stores a revision ID the caller never saw, so the revision
-        /// alone cannot tell the two apart, but matching contents mean the change took effect.
+        /// again; re-read the resource and re-evaluate before retrying.
+        /// 
+        ///  
+        /// <para>
+        /// A conditional request is not retry-safe on its own. If an earlier attempt committed
+        /// but its response never reached the caller, retrying fails with this error, which is
+        /// indistinguishable from another writer having won. Compare the resource's current contents
+        /// with what the request intended: a successful attempt stores a revision ID the caller
+        /// never saw, so the revision alone cannot tell the two apart, but matching contents
+        /// mean the change took effect.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
         /// The request failed because of an internal service error. Retry the request.
@@ -1117,6 +1138,14 @@ namespace Amazon.EventBridgeV2
 #if NETFRAMEWORK
         /// <summary>
         /// Publishes events to an event bus.
+        /// 
+        ///  
+        /// <para>
+        /// The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes).
+        /// The limit applies to the request as a whole, not to individual entries. If you exceed
+        /// the limit, the request fails with <c>InvalidInputException</c> and the service publishes
+        /// none of the entries in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// <returns>The response from the PutEvents service method, as returned by EventBridgeV2.</returns>
@@ -1147,6 +1176,14 @@ namespace Amazon.EventBridgeV2
 
         /// <summary>
         /// Publishes events to an event bus.
+        /// 
+        ///  
+        /// <para>
+        /// The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes).
+        /// The limit applies to the request as a whole, not to individual entries. If you exceed
+        /// the limit, the request fails with <c>InvalidInputException</c> and the service publishes
+        /// none of the entries in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// <param name="cancellationToken">
@@ -1180,6 +1217,18 @@ namespace Amazon.EventBridgeV2
 #if NETFRAMEWORK
         /// <summary>
         /// Publishes pre-shaped events to an event bus.
+        /// 
+        ///  
+        /// <para>
+        /// The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes),
+        /// including the <c>Data</c> payload and the keys and values of <c>Metadata</c> for each
+        /// entry. The limit applies to the request as a whole, not to individual entries.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you exceed the limit, the request fails with <c>InvalidInputException</c>, and
+        /// the service doesn't publish any of the entries in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRawEvents service method.</param>
         /// <returns>The response from the PutRawEvents service method, as returned by EventBridgeV2.</returns>
@@ -1213,6 +1262,18 @@ namespace Amazon.EventBridgeV2
 
         /// <summary>
         /// Publishes pre-shaped events to an event bus.
+        /// 
+        ///  
+        /// <para>
+        /// The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes),
+        /// including the <c>Data</c> payload and the keys and values of <c>Metadata</c> for each
+        /// entry. The limit applies to the request as a whole, not to individual entries.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you exceed the limit, the request fails with <c>InvalidInputException</c>, and
+        /// the service doesn't publish any of the entries in the request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRawEvents service method.</param>
         /// <param name="cancellationToken">
@@ -1269,12 +1330,17 @@ namespace Amazon.EventBridgeV2
         /// <exception cref="Amazon.EventBridgeV2.Model.ConflictException">
         /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write)
         /// did not match the current state of the resource. Retrying the same request will fail
-        /// again; re-read the resource and re-evaluate before retrying. A conditional request
-        /// is not retry-safe on its own. If an earlier attempt committed but its response never
-        /// reached the caller, retrying fails with this error, which is indistinguishable from
-        /// another writer having won. Compare the resource's current contents with what the request
-        /// intended: a successful attempt stores a revision ID the caller never saw, so the revision
-        /// alone cannot tell the two apart, but matching contents mean the change took effect.
+        /// again; re-read the resource and re-evaluate before retrying.
+        /// 
+        ///  
+        /// <para>
+        /// A conditional request is not retry-safe on its own. If an earlier attempt committed
+        /// but its response never reached the caller, retrying fails with this error, which is
+        /// indistinguishable from another writer having won. Compare the resource's current contents
+        /// with what the request intended: a successful attempt stores a revision ID the caller
+        /// never saw, so the revision alone cannot tell the two apart, but matching contents
+        /// mean the change took effect.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
         /// The request failed because of an internal service error. Retry the request.
@@ -1283,8 +1349,7 @@ namespace Amazon.EventBridgeV2
         /// A request parameter is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.PolicyLengthExceededException">
-        /// The policy document is larger than the account's resource policy size quota, or larger
-        /// than the service maximum.
+        /// The policy document exceeds the maximum allowed size.
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.PublicPolicyException">
         /// The policy was rejected because it would grant public access to the event bus. A statement
@@ -1332,12 +1397,17 @@ namespace Amazon.EventBridgeV2
         /// <exception cref="Amazon.EventBridgeV2.Model.ConflictException">
         /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write)
         /// did not match the current state of the resource. Retrying the same request will fail
-        /// again; re-read the resource and re-evaluate before retrying. A conditional request
-        /// is not retry-safe on its own. If an earlier attempt committed but its response never
-        /// reached the caller, retrying fails with this error, which is indistinguishable from
-        /// another writer having won. Compare the resource's current contents with what the request
-        /// intended: a successful attempt stores a revision ID the caller never saw, so the revision
-        /// alone cannot tell the two apart, but matching contents mean the change took effect.
+        /// again; re-read the resource and re-evaluate before retrying.
+        /// 
+        ///  
+        /// <para>
+        /// A conditional request is not retry-safe on its own. If an earlier attempt committed
+        /// but its response never reached the caller, retrying fails with this error, which is
+        /// indistinguishable from another writer having won. Compare the resource's current contents
+        /// with what the request intended: a successful attempt stores a revision ID the caller
+        /// never saw, so the revision alone cannot tell the two apart, but matching contents
+        /// mean the change took effect.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
         /// The request failed because of an internal service error. Retry the request.
@@ -1346,8 +1416,7 @@ namespace Amazon.EventBridgeV2
         /// A request parameter is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.PolicyLengthExceededException">
-        /// The policy document is larger than the account's resource policy size quota, or larger
-        /// than the service maximum.
+        /// The policy document exceeds the maximum allowed size.
         /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.PublicPolicyException">
         /// The policy was rejected because it would grant public access to the event bus. A statement
@@ -1443,6 +1512,213 @@ namespace Amazon.EventBridgeV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/RevokeResource">REST API Reference for RevokeResource Operation</seealso>
         Task<RevokeResourceResponse> RevokeResourceAsync(RevokeResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sets a new credential on a webhook EventSource. If you supply Credential, EventBridge
+        /// uses that value. Otherwise, EventBridge generates one. For HTTP Basic authentication,
+        /// only the password changes. The username does not change. EventBridge never returns
+        /// the credential. To read a generated value, call secretsmanager:GetSecretValue on the
+        /// secret that SecretArn identifies.
+        /// 
+        ///  
+        /// <para>
+        /// You can rotate the credential of an EventSource in the ACTIVE, UPDATING, or UPDATE_FAILED
+        /// state. For a revoked EventSource or an EventSource in any other state, EventBridge
+        /// returns InvalidStateException. EventBridge also returns InvalidStateException if the
+        /// secret of the EventSource is scheduled for deletion or has been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you rotate the credential of one EventSource too many times in 24 hours, EventBridge
+        /// returns LimitExceededException. Retry later. The limit becomes available again automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Secrets Manager throttles the call, EventBridge returns ThrottlingException.
+        /// Retry later.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions in your IAM policy:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:PutSecretValue on the secret of the EventSource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// secretsmanager:GetSecretValue on the secret of the EventSource, for HTTP Basic authentication
+        /// only
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// kms:GenerateDataKey and kms:Decrypt on the AWS KMS key that encrypts the secret
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The resource policy of the secret must not deny the secretsmanager actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// EventBridge accepts the new credential when this call returns. In rare cases, the
+        /// new credential takes up to 2 minutes to reach every EventBridge endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// EventBridge also accepts the previous credential for 15 minutes after the rotation.
+        /// The window ends at the CreatedDate of the AWSCURRENT secret version plus 15 minutes.
+        /// Only the credential that the most recent rotation replaced stays valid. If you rotate
+        /// again within 15 minutes, the older credential stops working immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// A retry with the same ClientToken within 8 hours returns the same result and does
+        /// not rotate again. A retry of a rotation that supplied a value can arrive after a later
+        /// rotation completed. In that case, the retried value becomes the current credential,
+        /// and the credential it replaces does not stay valid.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotateWebhookCredentials service method.</param>
+        /// <returns>The response from the RotateWebhookCredentials service method, as returned by EventBridgeV2.</returns>
+        /// <exception cref="Amazon.EventBridgeV2.Model.AccessDeniedException">
+        /// The caller does not have the permissions required to perform the operation. This error
+        /// is also returned when the operation cannot use the AWS KMS key for the event bus.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ConcurrentModificationException">
+        /// Another change to the resource is already in progress. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.IdempotentParameterMismatchException">
+        /// The request reuses the client token of an earlier request with different parameters.
+        /// Use a new client token, or resend the earlier request unchanged.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
+        /// The request failed because of an internal service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InvalidInputException">
+        /// A request parameter is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InvalidStateException">
+        /// The resource is not in a state that allows the operation. For example, an event bus
+        /// that is still being created cannot accept events.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.LimitExceededException">
+        /// The request would exceed a service quota for the account.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ResourceNotFoundException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ThrottlingException">
+        /// The request was throttled because it exceeds a request rate limit. Retry the request
+        /// with backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/RotateWebhookCredentials">REST API Reference for RotateWebhookCredentials Operation</seealso>
+        RotateWebhookCredentialsResponse RotateWebhookCredentials(RotateWebhookCredentialsRequest request);
+#endif
+
+        /// <summary>
+        /// Sets a new credential on a webhook EventSource. If you supply Credential, EventBridge
+        /// uses that value. Otherwise, EventBridge generates one. For HTTP Basic authentication,
+        /// only the password changes. The username does not change. EventBridge never returns
+        /// the credential. To read a generated value, call secretsmanager:GetSecretValue on the
+        /// secret that SecretArn identifies.
+        /// 
+        ///  
+        /// <para>
+        /// You can rotate the credential of an EventSource in the ACTIVE, UPDATING, or UPDATE_FAILED
+        /// state. For a revoked EventSource or an EventSource in any other state, EventBridge
+        /// returns InvalidStateException. EventBridge also returns InvalidStateException if the
+        /// secret of the EventSource is scheduled for deletion or has been deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you rotate the credential of one EventSource too many times in 24 hours, EventBridge
+        /// returns LimitExceededException. Retry later. The limit becomes available again automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// If AWS Secrets Manager throttles the call, EventBridge returns ThrottlingException.
+        /// Retry later.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the following permissions in your IAM policy:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:PutSecretValue on the secret of the EventSource
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// secretsmanager:GetSecretValue on the secret of the EventSource, for HTTP Basic authentication
+        /// only
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// kms:GenerateDataKey and kms:Decrypt on the AWS KMS key that encrypts the secret
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The resource policy of the secret must not deny the secretsmanager actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// EventBridge accepts the new credential when this call returns. In rare cases, the
+        /// new credential takes up to 2 minutes to reach every EventBridge endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// EventBridge also accepts the previous credential for 15 minutes after the rotation.
+        /// The window ends at the CreatedDate of the AWSCURRENT secret version plus 15 minutes.
+        /// Only the credential that the most recent rotation replaced stays valid. If you rotate
+        /// again within 15 minutes, the older credential stops working immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// A retry with the same ClientToken within 8 hours returns the same result and does
+        /// not rotate again. A retry of a rotation that supplied a value can arrive after a later
+        /// rotation completed. In that case, the retried value becomes the current credential,
+        /// and the credential it replaces does not stay valid.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotateWebhookCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RotateWebhookCredentials service method, as returned by EventBridgeV2.</returns>
+        /// <exception cref="Amazon.EventBridgeV2.Model.AccessDeniedException">
+        /// The caller does not have the permissions required to perform the operation. This error
+        /// is also returned when the operation cannot use the AWS KMS key for the event bus.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ConcurrentModificationException">
+        /// Another change to the resource is already in progress. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.IdempotentParameterMismatchException">
+        /// The request reuses the client token of an earlier request with different parameters.
+        /// Use a new client token, or resend the earlier request unchanged.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InternalException">
+        /// The request failed because of an internal service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InvalidInputException">
+        /// A request parameter is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.InvalidStateException">
+        /// The resource is not in a state that allows the operation. For example, an event bus
+        /// that is still being created cannot accept events.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.LimitExceededException">
+        /// The request would exceed a service quota for the account.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ResourceNotFoundException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.ThrottlingException">
+        /// The request was throttled because it exceeds a request rate limit. Retry the request
+        /// with backoff.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridgev2-2025-05-15/RotateWebhookCredentials">REST API Reference for RotateWebhookCredentials Operation</seealso>
+        Task<RotateWebhookCredentialsResponse> RotateWebhookCredentialsAsync(RotateWebhookCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1682,6 +1958,9 @@ namespace Amazon.EventBridgeV2
         /// The resource is not in a state that allows the operation. For example, an event bus
         /// that is still being created cannot accept events.
         /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.LimitExceededException">
+        /// The request would exceed a service quota for the account.
+        /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.ResourceNotFoundException">
         /// The resource does not exist.
         /// </exception>
@@ -1718,6 +1997,9 @@ namespace Amazon.EventBridgeV2
         /// The resource is not in a state that allows the operation. For example, an event bus
         /// that is still being created cannot accept events.
         /// </exception>
+        /// <exception cref="Amazon.EventBridgeV2.Model.LimitExceededException">
+        /// The request would exceed a service quota for the account.
+        /// </exception>
         /// <exception cref="Amazon.EventBridgeV2.Model.ResourceNotFoundException">
         /// The resource does not exist.
         /// </exception>
@@ -1730,7 +2012,10 @@ namespace Amazon.EventBridgeV2
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates a subscriber. Fields omitted from the request are left unchanged.
+        /// Updates a subscriber. Fields omitted from the request are left unchanged. Changing
+        /// an Amazon MSK subscriber's connectivity can re-provision it; when it does, the subscriber
+        /// resumes delivering once its ConnectivityState returns to ACTIVE (see the MskSubscriberActive
+        /// waiter).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriber service method.</param>
         /// <returns>The response from the UpdateSubscriber service method, as returned by EventBridgeV2.</returns>
@@ -1766,7 +2051,10 @@ namespace Amazon.EventBridgeV2
 #endif
 
         /// <summary>
-        /// Updates a subscriber. Fields omitted from the request are left unchanged.
+        /// Updates a subscriber. Fields omitted from the request are left unchanged. Changing
+        /// an Amazon MSK subscriber's connectivity can re-provision it; when it does, the subscriber
+        /// resumes delivering once its ConnectivityState returns to ACTIVE (see the MskSubscriberActive
+        /// waiter).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriber service method.</param>
         /// <param name="cancellationToken">

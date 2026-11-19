@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutEventsRequestEntry
     {
         /// <summary>
-        /// Gets and sets the property Detail. The event payload, as a valid JSON string.
+        /// Gets and sets the property Detail. 
+        /// <para>
+        /// The event payload, as a valid JSON string.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public string Detail { get; set; }
@@ -46,7 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDetail() => this.Detail != null;
 
         /// <summary>
-        /// Gets and sets the property DetailType.
+        /// Gets and sets the property DetailType. 
+        /// <para>
+        /// Free-form detail-type classifying an event within its source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 128)]
         public string DetailType { get; set; }
@@ -57,8 +63,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDetailType() => this.DetailType != null;
 
         /// <summary>
-        /// Gets and sets the property Resources. ARNs of resources the event concerns. Included
-        /// in the event delivered to subscribers.
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// ARNs of resources the event concerns. Included in the event delivered to subscribers.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -75,8 +83,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetResources() => this.Resources != null && (this.Resources.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Source. The source of the event. The `aws.` value prefix
-        /// is service-reserved and cannot be used as a value.
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source of the event. The <c>aws.</c> value prefix is service-reserved and cannot
+        /// be used as a value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Source { get; set; }
@@ -87,7 +98,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSource() => this.Source != null;
 
         /// <summary>
-        /// Gets and sets the property SystemMetadata.
+        /// Gets and sets the property SystemMetadata. 
+        /// <para>
+        /// System metadata for PutEvents entries. ContentType is not applicable (always application/eventbridge+json,
+        /// set server-side).
+        /// </para>
         /// </summary>
         public PutEventsSystemMetadata SystemMetadata { get; set; }
 
@@ -97,8 +112,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSystemMetadata() => this.SystemMetadata != null;
 
         /// <summary>
-        /// Gets and sets the property Time. The time the event occurred. Defaults to the time
-        /// the service receives the event when omitted.
+        /// Gets and sets the property Time. 
+        /// <para>
+        /// The time the event occurred. Defaults to the time the service receives the event when
+        /// omitted.
+        /// </para>
         /// </summary>
         public DateTime? Time { get; set; }
 

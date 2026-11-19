@@ -35,8 +35,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class SchemaRegistryConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ConfluentPublicRegistryConfiguration. Required when RegistryUri
-        /// is an HTTPS URL. Provides Connection-based auth for Confluent Cloud.
+        /// Gets and sets the property ConfluentPublicRegistryConfiguration. 
+        /// <para>
+        /// Required when RegistryUri is an HTTPS URL. Provides Connection-based auth for Confluent
+        /// Cloud.
+        /// </para>
         /// </summary>
         public ConfluentPublicRegistryConfiguration ConfluentPublicRegistryConfiguration { get; set; }
 
@@ -46,8 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetConfluentPublicRegistryConfiguration() => this.ConfluentPublicRegistryConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property RegistryUri. Glue Schema Registry ARN, or Confluent Cloud
-        /// HTTPS URL.
+        /// Gets and sets the property RegistryUri. 
+        /// <para>
+        /// Glue Schema Registry ARN, or Confluent Cloud HTTPS URL.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]
         public string RegistryUri { get; set; }

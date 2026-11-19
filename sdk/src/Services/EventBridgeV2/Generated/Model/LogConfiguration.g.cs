@@ -30,13 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridgeV2.Model
 {
     /// <summary>
-    /// Log configuration for a subscriber.
+    /// Log configuration for a resource that delivers vended logs: a subscriber or a webhook
+    /// EventSource.
     /// </summary>
     public partial class LogConfiguration
     {
         /// <summary>
-        /// Gets and sets the property IncludePayload. Whether the customer event payload is embedded
-        /// in log records. Defaults to ON_ERROR_ONLY.
+        /// Gets and sets the property IncludePayload. 
+        /// <para>
+        /// Whether the customer event payload is embedded in log records. Defaults to ON_ERROR_ONLY.
+        /// </para>
         /// </summary>
         public IncludePayload IncludePayload { get; set; }
 
@@ -46,8 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetIncludePayload() => this.IncludePayload != null;
 
         /// <summary>
-        /// Gets and sets the property Level. Minimum log level. Records below this level are
-        /// not emitted. Defaults to OFF.
+        /// Gets and sets the property Level. 
+        /// <para>
+        /// Minimum log level. Records below this level are not emitted. Defaults to OFF.
+        /// </para>
         /// </summary>
         public LogLevel Level { get; set; }
 

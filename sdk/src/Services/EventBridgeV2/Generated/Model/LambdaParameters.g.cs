@@ -37,8 +37,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class LambdaParameters
     {
         /// <summary>
-        /// Gets and sets the property DurableExecutionName. Durable execution name. Accepts a
-        /// JSONata expression.
+        /// Gets and sets the property DurableExecutionName. 
+        /// <para>
+        /// Durable execution name. Accepts a JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string DurableExecutionName { get; set; }
@@ -49,8 +51,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDurableExecutionName() => this.DurableExecutionName != null;
 
         /// <summary>
-        /// Gets and sets the property InvocationTimeoutSeconds. Timeout in seconds for each invocation
-        /// of the target. String-typed so the value may be a JSONata expression.
+        /// Gets and sets the property InvocationTimeoutSeconds. 
+        /// <para>
+        /// Timeout in seconds for each invocation of the target. String-typed so the value may
+        /// be a JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string InvocationTimeoutSeconds { get; set; }
@@ -61,8 +66,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvocationTimeoutSeconds() => this.InvocationTimeoutSeconds != null;
 
         /// <summary>
-        /// Gets and sets the property InvocationType. Lambda invocation type. EVENT invokes the
-        /// function asynchronously; REQUEST_RESPONSE waits for its result.
+        /// Gets and sets the property InvocationType. 
+        /// <para>
+        /// Lambda invocation type. EVENT invokes the function asynchronously; REQUEST_RESPONSE
+        /// waits for its result.
+        /// </para>
         /// </summary>
         public InvocationType InvocationType { get; set; }
 
@@ -72,8 +80,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvocationType() => this.InvocationType != null;
 
         /// <summary>
-        /// Gets and sets the property Qualifier. Lambda qualifier: $LATEST, $LATEST.PUBLISHED,
-        /// a numeric version, or an alias. Accepts a JSONata expression.
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// Lambda qualifier: $LATEST, $LATEST.PUBLISHED, a numeric version, or an alias. Accepts
+        /// a JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string Qualifier { get; set; }
@@ -84,7 +95,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetQualifier() => this.Qualifier != null;
 
         /// <summary>
-        /// Gets and sets the property TenantId. Tenant identifier. Accepts a JSONata expression.
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// Tenant identifier. Accepts a JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string TenantId { get; set; }

@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class Filter
     {
         /// <summary>
-        /// Gets and sets the property Pattern.
+        /// Gets and sets the property Pattern. 
+        /// <para>
+        /// An event pattern, as a JSON string, that selects which events match.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true, Min = 0, Max = 4096)]
         public string Pattern { get; set; }
@@ -46,7 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPattern() => this.Pattern != null;
 
         /// <summary>
-        /// Gets and sets the property Scope.
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Scope of a filter pattern within a FilterConfiguration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public FilterScope Scope { get; set; }

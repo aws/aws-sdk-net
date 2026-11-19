@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ListEventBusesResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property EventBuses.
+        /// Gets and sets the property EventBuses. 
+        /// <para>
+        /// List of event bus summaries.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -51,7 +54,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBuses() => this.EventBuses != null && (this.EventBuses.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Opaque pagination token returned by a List operation. Pass it back in the next request
+        /// to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]
         public string NextToken { get; set; }

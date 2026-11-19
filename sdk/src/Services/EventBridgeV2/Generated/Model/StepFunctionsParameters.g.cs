@@ -37,8 +37,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class StepFunctionsParameters
     {
         /// <summary>
-        /// Gets and sets the property InvocationTimeoutSeconds. Timeout in seconds for each invocation
-        /// of the target (1-30). String-typed (not integer) so the value may be a JSONata expression.
+        /// Gets and sets the property InvocationTimeoutSeconds. 
+        /// <para>
+        /// Timeout in seconds for each invocation of the target (1-30). String-typed (not integer)
+        /// so the value may be a JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string InvocationTimeoutSeconds { get; set; }
@@ -49,8 +52,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvocationTimeoutSeconds() => this.InvocationTimeoutSeconds != null;
 
         /// <summary>
-        /// Gets and sets the property InvocationType. Selects StartExecution (EVENT) or StartSyncExecution
-        /// (REQUEST_RESPONSE) at delivery.
+        /// Gets and sets the property InvocationType. 
+        /// <para>
+        /// Selects StartExecution (EVENT) or StartSyncExecution (REQUEST_RESPONSE) at delivery.
+        /// </para>
         /// </summary>
         public InvocationType InvocationType { get; set; }
 
@@ -60,8 +65,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetInvocationType() => this.InvocationType != null;
 
         /// <summary>
-        /// Gets and sets the property Name. Name for the execution. Must be unique per account/region/state
-        /// machine. Accepts JSONata expression.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name for the execution. Must be unique per account/region/state machine. Accepts JSONata
+        /// expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string Name { get; set; }
@@ -72,8 +80,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property TraceHeader. X-Ray trace header for distributed tracing.
-        /// Accepts JSONata expression.
+        /// Gets and sets the property TraceHeader. 
+        /// <para>
+        /// X-Ray trace header for distributed tracing. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string TraceHeader { get; set; }

@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DescribeSubscriberRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property SubscriberArn.
+        /// Gets and sets the property SubscriberArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string SubscriberArn { get; set; }

@@ -35,7 +35,12 @@ namespace Amazon.EventBridgeV2.Model
     public partial class EncryptionConfiguration
     {
         /// <summary>
-        /// Gets and sets the property KmsKeyIdentifier.
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// Identifier of the AWS KMS customer managed key used to encrypt events: a key ID, key
+        /// ARN, alias name, or alias ARN. When absent, events are encrypted with an AWS owned
+        /// key.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 2048)]
         public string KmsKeyIdentifier { get; set; }

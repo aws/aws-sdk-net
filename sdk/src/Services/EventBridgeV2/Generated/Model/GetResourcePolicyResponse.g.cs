@@ -35,7 +35,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property PolicyDocument.
+        /// Gets and sets the property PolicyDocument. 
+        /// <para>
+        /// A resource policy document, as a JSON string. The maximum size is 389,120 bytes of
+        /// UTF-8; the byte limit is enforced by the service.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 389120)]
         public string PolicyDocument { get; set; }
@@ -46,7 +50,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyDocument() => this.PolicyDocument != null;
 
         /// <summary>
-        /// Gets and sets the property PolicyName.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed
+        /// policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other
+        /// value is rejected.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 128)]
         public string PolicyName { get; set; }
@@ -57,7 +66,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyName() => this.PolicyName != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }
@@ -68,7 +80,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetResourceArn() => this.ResourceArn != null;
 
         /// <summary>
-        /// Gets and sets the property RevisionId.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Revision ID of a resource policy. A new revision ID is generated on every successful
+        /// write.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string RevisionId { get; set; }

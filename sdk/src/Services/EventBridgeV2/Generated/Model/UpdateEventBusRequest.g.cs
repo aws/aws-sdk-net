@@ -37,7 +37,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class UpdateEventBusRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Free-text description. Used by every resource type that has one: event buses, subscribers,
+        /// and event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 512)]
         public string Description { get; set; }
@@ -48,7 +52,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration.
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Encryption configuration for an event bus.
+        /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
@@ -58,7 +65,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -69,7 +79,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Event storage configuration for an event bus.
+        /// </para>
         /// </summary>
         public StorageConfiguration StorageConfiguration { get; set; }
 

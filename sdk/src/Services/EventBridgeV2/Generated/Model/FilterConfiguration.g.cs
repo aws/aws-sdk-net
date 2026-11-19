@@ -32,16 +32,19 @@ namespace Amazon.EventBridgeV2.Model
     /// <summary>
     /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber,
     /// Filters is required and must contain at least one Filter with a non-empty Pattern.
-    /// On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter.
-    /// Any non-empty shape (including `{Language:X}` without Filters) must contain a valid
-    /// Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites;
+    /// On UpdateSubscriber, an empty <c>FilterConfiguration:{}</c> clears the existing filter.
+    /// Any non-empty shape (including <c>{Language:X}</c> without Filters) must contain a
+    /// valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites;
     /// an omitted FilterConfiguration preserves existing state. All Filters are implicitly
     /// ANDed — an event must match every Filter to be delivered.
     /// </summary>
     public partial class FilterConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// List of filters. An event must match every filter to be delivered.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -58,7 +61,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetFilters() => this.Filters != null && (this.Filters.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property Language. Defaults to EVENT_BRIDGE_PATTERN when not specified.
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// Defaults to EVENT_BRIDGE_PATTERN when not specified.
+        /// </para>
         /// </summary>
         public FilterLanguage Language { get; set; }
 

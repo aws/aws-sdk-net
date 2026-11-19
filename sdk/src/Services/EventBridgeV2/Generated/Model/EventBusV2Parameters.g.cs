@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class EventBusV2Parameters
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationConfiguration. Deduplication settings applied
-        /// to the forwarded events on the downstream bus.
+        /// Gets and sets the property DeduplicationConfiguration. 
+        /// <para>
+        /// Deduplication settings applied to the forwarded events on the downstream bus.
+        /// </para>
         /// </summary>
         public DeduplicationConfiguration DeduplicationConfiguration { get; set; }
 
@@ -46,8 +48,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationConfiguration() => this.DeduplicationConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Metadata. Customer-defined metadata forwarded with each
-        /// event.
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Customer-defined metadata forwarded with each event.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -64,8 +68,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMetadata() => this.Metadata != null && (this.Metadata.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property SystemMetadata. Customer-controllable system metadata attached
-        /// to each forwarded event.
+        /// Gets and sets the property SystemMetadata. 
+        /// <para>
+        /// Customer-controllable system metadata attached to each forwarded event.
+        /// </para>
         /// </summary>
         public EventBusV2SystemMetadata SystemMetadata { get; set; }
 

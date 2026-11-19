@@ -92,6 +92,17 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndMap();
             }
 
+            if (requestObject.IsSetMskParameters())
+            {
+                context.Writer.WriteTextString("MskParameters");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = MskParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.MskParameters, context);
+
+                context.Writer.WriteEndMap();
+            }
+
             if (requestObject.IsSetRoleArn())
             {
                 context.Writer.WriteTextString("RoleArn");

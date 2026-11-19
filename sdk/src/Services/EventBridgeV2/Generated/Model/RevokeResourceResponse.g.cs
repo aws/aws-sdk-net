@@ -35,7 +35,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class RevokeResourceResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern
+        /// is the revocable subset of TaggableResourceArn; buses are not revocable.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1011)]
         public string Arn { get; set; }

@@ -69,6 +69,17 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndMap();
             }
+
+            if (requestObject.IsSetWebhookEventsConfiguration())
+            {
+                context.Writer.WriteTextString("WebhookEventsConfiguration");
+                context.Writer.WriteStartMap(null);
+
+                var marshaller = WebhookEventsSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebhookEventsConfiguration, context);
+
+                context.Writer.WriteEndMap();
+            }
         }
 
         /// <summary>

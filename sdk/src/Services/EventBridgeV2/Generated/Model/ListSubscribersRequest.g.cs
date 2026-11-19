@@ -38,7 +38,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ListSubscribersRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -49,7 +52,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of results to return in one page of a List operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -60,7 +66,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NamePrefix.
+        /// Gets and sets the property NamePrefix. 
+        /// <para>
+        /// Name of a subscriber. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string NamePrefix { get; set; }
@@ -71,7 +81,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetNamePrefix() => this.NamePrefix != null;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Opaque pagination token returned by a List operation. Pass it back in the next request
+        /// to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]
         public string NextToken { get; set; }

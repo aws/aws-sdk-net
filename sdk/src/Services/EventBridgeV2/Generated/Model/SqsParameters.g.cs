@@ -37,8 +37,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class SqsParameters
     {
         /// <summary>
-        /// Gets and sets the property DelaySeconds. Delay in seconds before the message becomes
-        /// visible, standard queues only. Accepts JSONata expression.
+        /// Gets and sets the property DelaySeconds. 
+        /// <para>
+        /// Delay in seconds before the message becomes visible, standard queues only. Accepts
+        /// JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string DelaySeconds { get; set; }
@@ -49,7 +52,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDelaySeconds() => this.DelaySeconds != null;
 
         /// <summary>
-        /// Gets and sets the property MessageAttributes. Custom message attributes (name/type/value).
+        /// Gets and sets the property MessageAttributes. 
+        /// <para>
+        /// Custom message attributes (name/type/value).
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -66,8 +72,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageAttributes() => this.MessageAttributes != null && (this.MessageAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property MessageDeduplicationId. Message deduplication ID for FIFO
-        /// queues. Accepts JSONata expression.
+        /// Gets and sets the property MessageDeduplicationId. 
+        /// <para>
+        /// Message deduplication ID for FIFO queues. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string MessageDeduplicationId { get; set; }
@@ -78,8 +86,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageDeduplicationId() => this.MessageDeduplicationId != null;
 
         /// <summary>
-        /// Gets and sets the property MessageGroupId. Message group ID for FIFO queues. Accepts
-        /// JSONata expression.
+        /// Gets and sets the property MessageGroupId. 
+        /// <para>
+        /// Message group ID for FIFO queues. Accepts JSONata expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string MessageGroupId { get; set; }
@@ -90,8 +100,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMessageGroupId() => this.MessageGroupId != null;
 
         /// <summary>
-        /// Gets and sets the property MessageSystemAttributes. System message attributes (e.g.,
-        /// AWSTraceHeader).
+        /// Gets and sets the property MessageSystemAttributes. 
+        /// <para>
+        /// System message attributes (e.g., AWSTraceHeader).
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

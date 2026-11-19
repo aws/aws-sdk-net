@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutRawEventsRequestEntry
     {
         /// <summary>
-        /// Gets and sets the property Data. The event data as a base64-encoded blob. Supports
-        /// binary formats.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The event data as a base64-encoded blob. Supports binary formats.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]
         public MemoryStream Data { get; set; }
@@ -47,8 +49,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetData() => this.Data != null;
 
         /// <summary>
-        /// Gets and sets the property Metadata. Metadata key-value pairs you define. Keys must
-        /// be 1-128 characters and must not contain "/".
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata key-value pairs you define. Keys must be 1-128 characters and must not contain
+        /// "/".
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -65,8 +70,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMetadata() => this.Metadata != null && (this.Metadata.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property SystemMetadata. Structured system metadata with defined
-        /// properties.
+        /// Gets and sets the property SystemMetadata. 
+        /// <para>
+        /// Structured system metadata with defined properties.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public PutRawEventsSystemMetadata SystemMetadata { get; set; }

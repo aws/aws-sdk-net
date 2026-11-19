@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutRawEventsResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Entries.
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// List of per-entry publish results, in the same order as the request entries.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -51,8 +54,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEntries() => this.Entries != null && (this.Entries.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property FailedEntryCount. The number of entries in the batch that
-        /// failed to be published.
+        /// Gets and sets the property FailedEntryCount. 
+        /// <para>
+        /// The number of entries in the batch that failed to be published.
+        /// </para>
         /// </summary>
         public int? FailedEntryCount { get; set; }
 

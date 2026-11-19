@@ -32,12 +32,17 @@ namespace Amazon.EventBridgeV2.Model
     /// <summary>
     /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write)
     /// did not match the current state of the resource. Retrying the same request will fail
-    /// again; re-read the resource and re-evaluate before retrying. A conditional request
-    /// is not retry-safe on its own. If an earlier attempt committed but its response never
-    /// reached the caller, retrying fails with this error, which is indistinguishable from
-    /// another writer having won. Compare the resource's current contents with what the request
-    /// intended: a successful attempt stores a revision ID the caller never saw, so the revision
-    /// alone cannot tell the two apart, but matching contents mean the change took effect.
+    /// again; re-read the resource and re-evaluate before retrying.
+    /// 
+    ///  
+    /// <para>
+    /// A conditional request is not retry-safe on its own. If an earlier attempt committed
+    /// but its response never reached the caller, retrying fails with this error, which is
+    /// indistinguishable from another writer having won. Compare the resource's current contents
+    /// with what the request intended: a successful attempt stores a revision ID the caller
+    /// never saw, so the revision alone cannot tell the two apart, but matching contents
+    /// mean the change took effect.
+    /// </para>
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

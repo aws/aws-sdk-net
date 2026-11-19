@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutEventsSystemMetadata
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationId. Deduplication ID for FIFO deduplication.
+        /// Gets and sets the property DeduplicationId. 
+        /// <para>
+        /// Deduplication ID for FIFO deduplication.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string DeduplicationId { get; set; }
@@ -47,7 +50,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationId() => this.DeduplicationId != null;
 
         /// <summary>
-        /// Gets and sets the property EventGroupId. Event group ID for FIFO ordering.
+        /// Gets and sets the property EventGroupId. 
+        /// <para>
+        /// Event group ID for FIFO ordering.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string EventGroupId { get; set; }

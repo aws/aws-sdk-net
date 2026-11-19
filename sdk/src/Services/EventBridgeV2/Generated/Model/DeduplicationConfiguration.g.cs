@@ -35,7 +35,12 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DeduplicationConfiguration
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationType.
+        /// Gets and sets the property DeduplicationType. 
+        /// <para>
+        /// How duplicate events are detected: by a hash of the event content (CONTENT_BASED).
+        /// To deduplicate by a caller-supplied token instead, omit DeduplicationConfiguration
+        /// and set DeduplicationId on each entry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public DeduplicationType DeduplicationType { get; set; }

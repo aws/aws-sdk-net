@@ -36,9 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PartnerEventsSourceConfiguration
     {
         /// <summary>
-        /// Gets and sets the property OnFailureConfiguration. The destination for events that
-        /// could not be forwarded, covering both the forwarding target and the managed partner
-        /// event bus.
+        /// Gets and sets the property OnFailureConfiguration. 
+        /// <para>
+        /// The destination for events that could not be forwarded, covering both the forwarding
+        /// target and the managed partner event bus.
+        /// </para>
         /// </summary>
         public OnFailureConfiguration OnFailureConfiguration { get; set; }
 
@@ -48,7 +50,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetOnFailureConfiguration() => this.OnFailureConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property PartnerBusKmsKeyIdentifier.
+        /// Gets and sets the property PartnerBusKmsKeyIdentifier. 
+        /// <para>
+        /// Identifier of the AWS KMS customer managed key used to encrypt events: a key ID, key
+        /// ARN, alias name, or alias ARN. When absent, events are encrypted with an AWS owned
+        /// key.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 2048)]
         public string PartnerBusKmsKeyIdentifier { get; set; }
@@ -59,7 +66,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPartnerBusKmsKeyIdentifier() => this.PartnerBusKmsKeyIdentifier != null;
 
         /// <summary>
-        /// Gets and sets the property PartnerEventSourceArn.
+        /// Gets and sets the property PartnerEventSourceArn. 
+        /// <para>
+        /// ARN of the partner event source to forward. It is a partner-owned resource, so the
+        /// account segment is empty: arn:aws:events:&lt;region&gt;::event-source/aws.partner/&lt;name&gt;.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1600)]
         public string PartnerEventSourceArn { get; set; }
@@ -70,9 +81,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPartnerEventSourceArn() => this.PartnerEventSourceArn != null;
 
         /// <summary>
-        /// Gets and sets the property Pattern. A filter pattern, as a JSON string, that defines
-        /// which of the partner event source's events are forwarded to the event bus. If no pattern
-        /// is specified, all events from the partner event source are forwarded.
+        /// Gets and sets the property Pattern. 
+        /// <para>
+        /// A filter pattern, as a JSON string, that defines which of the partner event source's
+        /// events are forwarded to the event bus. If no pattern is specified, all events from
+        /// the partner event source are forwarded.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true, Min = 0, Max = 3753)]
         public string Pattern { get; set; }

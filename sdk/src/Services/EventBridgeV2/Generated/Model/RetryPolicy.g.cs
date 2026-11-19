@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class RetryPolicy
     {
         /// <summary>
-        /// Gets and sets the property MaxEventAgeInSeconds. Maximum age of an event in seconds
-        /// before it is discarded (60-86400, default: 300).
+        /// Gets and sets the property MaxEventAgeInSeconds. 
+        /// <para>
+        /// Maximum age of an event in seconds before it is discarded (60-86400, default: 300).
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 60, Max = 86400)]
         public int? MaxEventAgeInSeconds { get; set; }
@@ -47,8 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMaxEventAgeInSeconds() => this.MaxEventAgeInSeconds.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxRetryAttempts. Maximum number of retry attempts (0-185,
-        /// default: 5).
+        /// Gets and sets the property MaxRetryAttempts. 
+        /// <para>
+        /// Maximum number of retry attempts (0-185, default: 5).
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 185)]
         public int? MaxRetryAttempts { get; set; }
@@ -59,8 +63,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMaxRetryAttempts() => this.MaxRetryAttempts.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RetryStrategy. Strategy for determining which exceptions
-        /// are retried. Default: ALL.
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// Strategy for determining which exceptions are retried. Default: ALL.
+        /// </para>
         /// </summary>
         public RetryStrategy RetryStrategy { get; set; }
 

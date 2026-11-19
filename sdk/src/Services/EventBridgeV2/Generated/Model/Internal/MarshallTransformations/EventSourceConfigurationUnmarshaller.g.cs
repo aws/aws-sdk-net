@@ -74,6 +74,12 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "WebhookEventsConfiguration":
+                        context.AddPathSegment("WebhookEventsConfiguration");
+                        unmarshalledObject.WebhookEventsConfiguration = WebhookEventsSourceConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     default:
                         reader.SkipValue();
                         break;

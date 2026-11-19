@@ -36,7 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class TagResourceRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and
+        /// event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }
@@ -47,7 +51,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetResourceArn() => this.ResourceArn != null;
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags attached to a resource, as key-value pairs.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

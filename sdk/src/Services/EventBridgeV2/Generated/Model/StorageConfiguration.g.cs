@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class StorageConfiguration
     {
         /// <summary>
-        /// Gets and sets the property RetentionPeriodInDays.
+        /// Gets and sets the property RetentionPeriodInDays. 
+        /// <para>
+        /// Number of days events are retained on the event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 365)]
         public int? RetentionPeriodInDays { get; set; }

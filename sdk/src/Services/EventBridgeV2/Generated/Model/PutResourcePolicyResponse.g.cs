@@ -35,7 +35,12 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property PolicyName.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed
+        /// policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other
+        /// value is rejected.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 128)]
         public string PolicyName { get; set; }
@@ -46,7 +51,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyName() => this.PolicyName != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }
@@ -57,8 +65,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetResourceArn() => this.ResourceArn != null;
 
         /// <summary>
-        /// Gets and sets the property RevisionId. Absent when the write removed the policy; a
-        /// removal produces no new revision.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Absent when the write removed the policy; a removal produces no new revision.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string RevisionId { get; set; }

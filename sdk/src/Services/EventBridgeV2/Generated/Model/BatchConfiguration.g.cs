@@ -35,12 +35,14 @@ namespace Amazon.EventBridgeV2.Model
     public partial class BatchConfiguration
     {
         /// <summary>
-        /// Gets and sets the property MaxBatchSize. The maximum number of events to include in
-        /// a single batch delivered to the target. The service delivers up to this many events
-        /// per batch; fewer may be delivered when the batch window elapses or the target's per-batch
-        /// limit is smaller. This is a maximum, not a guaranteed count. Valid range is 1-500
-        /// (default: 10, or the target API's per-batch maximum). The resolved value applied by
-        /// the service is returned on read.
+        /// Gets and sets the property MaxBatchSize. 
+        /// <para>
+        /// The maximum number of events to include in a single batch delivered to the target.
+        /// The service delivers up to this many events per batch; fewer may be delivered when
+        /// the batch window elapses or the target's per-batch limit is smaller. This is a maximum,
+        /// not a guaranteed count. Valid range is 1-500 (default: 10, or the target API's per-batch
+        /// maximum). The resolved value applied by the service is returned on read.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 500)]
         public int? MaxBatchSize { get; set; }
@@ -51,11 +53,13 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMaxBatchSize() => this.MaxBatchSize.HasValue;
 
         /// <summary>
-        /// Gets and sets the property MaxBatchWindowInSeconds. The maximum time in seconds to
-        /// wait for a batch to fill before delivering it to the target. This is a maximum; a
-        /// batch may be delivered sooner if it reaches MaxBatchSize or another delivery condition
-        /// is met. Valid range is 0-300 (default: 0, meaning no wait). The resolved value applied
-        /// by the service is always returned on read.
+        /// Gets and sets the property MaxBatchWindowInSeconds. 
+        /// <para>
+        /// The maximum time in seconds to wait for a batch to fill before delivering it to the
+        /// target. This is a maximum; a batch may be delivered sooner if it reaches MaxBatchSize
+        /// or another delivery condition is met. Valid range is 0-300 (default: 0, meaning no
+        /// wait). The resolved value applied by the service is always returned on read.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 300)]
         public int? MaxBatchWindowInSeconds { get; set; }

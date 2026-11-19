@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class Transformer
     {
         /// <summary>
-        /// Gets and sets the property JsonataConfiguration. JSONata expression configuration.
-        /// Required when Type is JSONATA.
+        /// Gets and sets the property JsonataConfiguration. 
+        /// <para>
+        /// JSONata expression configuration. Required when Type is JSONATA.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
         public JsonataConfiguration JsonataConfiguration { get; set; }
@@ -47,7 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetJsonataConfiguration() => this.JsonataConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Type. Transform type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Transform type.
+        /// </para>
         /// </summary>
         public TransformerType Type { get; set; }
 

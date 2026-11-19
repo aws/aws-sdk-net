@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class SubscriberSummary
     {
         /// <summary>
-        /// Gets and sets the property CreationTime. The time the subscriber was created.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time the subscriber was created.
+        /// </para>
         /// </summary>
         public DateTime? CreationTime { get; set; }
 
@@ -45,7 +48,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetCreationTime() => this.CreationTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -56,7 +62,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. The time the subscriber was last modified.
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The time the subscriber was last modified.
+        /// </para>
         /// </summary>
         public DateTime? LastModifiedTime { get; set; }
 
@@ -66,7 +75,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of a subscriber. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string Name { get; set; }
@@ -77,9 +90,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Revoked. True when the bus owner has revoked this subscriber.
-        /// Present only when true, so a bus owner listing subscribers sees at a glance which
-        /// ones they revoked. See DescribeSubscriberResponse$Revoked.
+        /// Gets and sets the property Revoked. 
+        /// <para>
+        /// True when the bus owner has revoked this subscriber. Present only when true, so a
+        /// bus owner listing subscribers sees at a glance which ones they revoked. See DescribeSubscriberResponse$Revoked.
+        /// </para>
         /// </summary>
         public bool? Revoked { get; set; }
 
@@ -89,7 +104,12 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetRevoked() => this.Revoked.HasValue;
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Customer-controlled run state of a subscriber, set on create or update. Distinct from
+        /// the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery
+        /// requires State RUNNING on a subscriber that is not revoked.
+        /// </para>
         /// </summary>
         public SubscriberState State { get; set; }
 
@@ -99,7 +119,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property SubscriberAccountId.
+        /// Gets and sets the property SubscriberAccountId. 
+        /// <para>
+        /// AWS Account Id.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 12, Max = 12)]
         public string SubscriberAccountId { get; set; }
@@ -110,7 +133,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSubscriberAccountId() => this.SubscriberAccountId != null;
 
         /// <summary>
-        /// Gets and sets the property SubscriberArn.
+        /// Gets and sets the property SubscriberArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1011)]
         public string SubscriberArn { get; set; }
@@ -121,7 +147,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSubscriberArn() => this.SubscriberArn != null;
 
         /// <summary>
-        /// Gets and sets the property TargetArn.
+        /// Gets and sets the property TargetArn. 
+        /// <para>
+        /// ARN of the target a subscriber invokes. The resource grammar is service-neutral because
+        /// target services use different separators and the USI form omits region and account.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1600)]
         public string TargetArn { get; set; }
@@ -132,7 +162,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetTargetArn() => this.TargetArn != null;
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event
+        /// group; UNORDERED delivers without an ordering guarantee.
+        /// </para>
         /// </summary>
         public OrderingType Type { get; set; }
 

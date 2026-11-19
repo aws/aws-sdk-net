@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DescribeEventBusRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }

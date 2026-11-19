@@ -86,6 +86,12 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "MskParameters":
+                        context.AddPathSegment("MskParameters");
+                        unmarshalledObject.MskParameters = MskParametersUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "RoleArn":
                         context.AddPathSegment("RoleArn");
                         unmarshalledObject.RoleArn = CborStringUnmarshaller.Instance.Unmarshall(context);

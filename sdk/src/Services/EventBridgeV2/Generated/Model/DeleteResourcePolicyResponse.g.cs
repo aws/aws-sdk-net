@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DeleteResourcePolicyResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property RevisionId. Revision ID of the policy that was deleted.
-        /// Absent when no policy was deleted.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string RevisionId { get; set; }

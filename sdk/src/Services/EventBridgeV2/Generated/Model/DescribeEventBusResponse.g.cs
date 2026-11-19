@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DescribeEventBusResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property CreationTime. The time the event bus was created.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time the event bus was created.
+        /// </para>
         /// </summary>
         public DateTime? CreationTime { get; set; }
 
@@ -45,7 +48,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetCreationTime() => this.CreationTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Free-text description. Used by every resource type that has one: event buses, subscribers,
+        /// and event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 512)]
         public string Description { get; set; }
@@ -56,7 +63,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration.
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Encryption configuration for an event bus.
+        /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
@@ -66,7 +76,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }
@@ -77,7 +90,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusArn() => this.EventBusArn != null;
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. The time the event bus was last modified.
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The time the event bus was last modified.
+        /// </para>
         /// </summary>
         public DateTime? LastModifiedTime { get; set; }
 
@@ -87,7 +103,13 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetLastModifiedTime() => this.LastModifiedTime.HasValue;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of an event bus. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn
+        /// (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the
+        /// bus's ARN. The same type is used everywhere a bus name appears.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string Name { get; set; }
@@ -98,7 +120,41 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Lifecycle state of an event bus.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATING: Bus creation is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE_FAILED: Bus creation failed; see StateReason. The bus cannot be recovered or
+        /// recreated in place: delete it with DeleteEventBus, then create a new bus.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE: Bus is fully operational and can accept events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATING: Bus update is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATE_FAILED: Bus update failed; the bus remains operational with its previous configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETING: Bus deletion is actively in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE_FAILED: Bus deletion failed; see StateReason. Retry DeleteEventBus after removing
+        /// subscribers and event sources.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BusState State { get; set; }
 
@@ -108,7 +164,14 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetState() => this.State != null;
 
         /// <summary>
-        /// Gets and sets the property StateReason.
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Human-readable explanation of why an event bus is in its current State. Omitted when
+        /// the bus is in a normal operational state (ACTIVE). It stands in for the error response
+        /// an asynchronous failure cannot return, so it applies only to resources with an asynchronous
+        /// lifecycle: event buses. EventSources and subscribers are provisioned synchronously
+        /// and report failures directly on the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000)]
         public string StateReason { get; set; }
@@ -119,7 +182,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetStateReason() => this.StateReason != null;
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Event storage configuration of an event bus, as returned on reads.
+        /// </para>
         /// </summary>
         public StorageConfigurationOutput StorageConfiguration { get; set; }
 

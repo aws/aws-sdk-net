@@ -35,8 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class JsonataConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Expression. JSONata expression to transform the event.
-        /// Must be wrapped in {% %} delimiters.
+        /// Gets and sets the property Expression. 
+        /// <para>
+        /// JSONata expression to transform the event. Must be wrapped in {% %} delimiters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 8192)]
         public string Expression { get; set; }

@@ -88,6 +88,52 @@ namespace Amazon.EventBridgeV2
     }
 
     /// <summary>
+    /// Constants used for properties of type ConnectivityState.
+    /// </summary>
+    public class ConnectivityState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ConnectivityState
+        /// </summary>
+        public static readonly ConnectivityState ACTIVE = new ConnectivityState("ACTIVE");
+
+        /// <summary>
+        /// Constant PROVISIONING for ConnectivityState
+        /// </summary>
+        public static readonly ConnectivityState PROVISIONING = new ConnectivityState("PROVISIONING");
+
+        /// <summary>
+        /// Constant PROVISION_FAILED for ConnectivityState
+        /// </summary>
+        public static readonly ConnectivityState PROVISION_FAILED = new ConnectivityState("PROVISION_FAILED");
+
+        /// <summary>
+        /// Constructs a custom ConnectivityState for a value not among the defined constants.
+        /// </summary>
+        public ConnectivityState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectivityState FindValue(string value)
+        {
+            return FindValue<ConnectivityState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectivityState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DeduplicationType.
     /// </summary>
     public class DeduplicationType : ConstantClass
@@ -203,6 +249,11 @@ namespace Amazon.EventBridgeV2
         /// Constant PARTNER_EVENTS for EventSourceType
         /// </summary>
         public static readonly EventSourceType PARTNER_EVENTS = new EventSourceType("PARTNER_EVENTS");
+
+        /// <summary>
+        /// Constant WEBHOOK_EVENTS for EventSourceType
+        /// </summary>
+        public static readonly EventSourceType WEBHOOK_EVENTS = new EventSourceType("WEBHOOK_EVENTS");
 
         /// <summary>
         /// Constructs a custom EventSourceType for a value not among the defined constants.
@@ -435,6 +486,144 @@ namespace Amazon.EventBridgeV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MskAcks.
+    /// </summary>
+    public class MskAcks : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for MskAcks
+        /// </summary>
+        public static readonly MskAcks ALL = new MskAcks("ALL");
+
+        /// <summary>
+        /// Constant LEADER for MskAcks
+        /// </summary>
+        public static readonly MskAcks LEADER = new MskAcks("LEADER");
+
+        /// <summary>
+        /// Constructs a custom MskAcks for a value not among the defined constants.
+        /// </summary>
+        public MskAcks(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MskAcks FindValue(string value)
+        {
+            return FindValue<MskAcks>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MskAcks(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MskCompression.
+    /// </summary>
+    public class MskCompression : ConstantClass
+    {
+        /// <summary>
+        /// Constant GZIP for MskCompression
+        /// </summary>
+        public static readonly MskCompression GZIP = new MskCompression("GZIP");
+
+        /// <summary>
+        /// Constant LZ4 for MskCompression
+        /// </summary>
+        public static readonly MskCompression LZ4 = new MskCompression("LZ4");
+
+        /// <summary>
+        /// Constant NONE for MskCompression
+        /// </summary>
+        public static readonly MskCompression NONE = new MskCompression("NONE");
+
+        /// <summary>
+        /// Constant SNAPPY for MskCompression
+        /// </summary>
+        public static readonly MskCompression SNAPPY = new MskCompression("SNAPPY");
+
+        /// <summary>
+        /// Constant ZSTD for MskCompression
+        /// </summary>
+        public static readonly MskCompression ZSTD = new MskCompression("ZSTD");
+
+        /// <summary>
+        /// Constructs a custom MskCompression for a value not among the defined constants.
+        /// </summary>
+        public MskCompression(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MskCompression FindValue(string value)
+        {
+            return FindValue<MskCompression>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MskCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MskConnectivity.
+    /// </summary>
+    public class MskConnectivity : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRIVATE for MskConnectivity
+        /// </summary>
+        public static readonly MskConnectivity PRIVATE = new MskConnectivity("PRIVATE");
+
+        /// <summary>
+        /// Constant PUBLIC for MskConnectivity
+        /// </summary>
+        public static readonly MskConnectivity PUBLIC = new MskConnectivity("PUBLIC");
+
+        /// <summary>
+        /// Constructs a custom MskConnectivity for a value not among the defined constants.
+        /// </summary>
+        public MskConnectivity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MskConnectivity FindValue(string value)
+        {
+            return FindValue<MskConnectivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MskConnectivity(string value)
         {
             return FindValue(value);
         }
@@ -763,6 +952,211 @@ namespace Amazon.EventBridgeV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransformerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookDeduplicationType.
+    /// </summary>
+    public class WebhookDeduplicationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTENT_BASED for WebhookDeduplicationType
+        /// </summary>
+        public static readonly WebhookDeduplicationType CONTENT_BASED = new WebhookDeduplicationType("CONTENT_BASED");
+
+        /// <summary>
+        /// Constructs a custom WebhookDeduplicationType for a value not among the defined constants.
+        /// </summary>
+        public WebhookDeduplicationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookDeduplicationType FindValue(string value)
+        {
+            return FindValue<WebhookDeduplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookDeduplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookHmacAlgorithm.
+    /// </summary>
+    public class WebhookHmacAlgorithm : ConstantClass
+    {
+        /// <summary>
+        /// Constant SHA1 for WebhookHmacAlgorithm
+        /// </summary>
+        public static readonly WebhookHmacAlgorithm SHA1 = new WebhookHmacAlgorithm("SHA1");
+
+        /// <summary>
+        /// Constant SHA256 for WebhookHmacAlgorithm
+        /// </summary>
+        public static readonly WebhookHmacAlgorithm SHA256 = new WebhookHmacAlgorithm("SHA256");
+
+        /// <summary>
+        /// Constructs a custom WebhookHmacAlgorithm for a value not among the defined constants.
+        /// </summary>
+        public WebhookHmacAlgorithm(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookHmacAlgorithm FindValue(string value)
+        {
+            return FindValue<WebhookHmacAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookHmacAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookHmacEncoding.
+    /// </summary>
+    public class WebhookHmacEncoding : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASE64 for WebhookHmacEncoding
+        /// </summary>
+        public static readonly WebhookHmacEncoding BASE64 = new WebhookHmacEncoding("BASE64");
+
+        /// <summary>
+        /// Constant HEX for WebhookHmacEncoding
+        /// </summary>
+        public static readonly WebhookHmacEncoding HEX = new WebhookHmacEncoding("HEX");
+
+        /// <summary>
+        /// Constructs a custom WebhookHmacEncoding for a value not among the defined constants.
+        /// </summary>
+        public WebhookHmacEncoding(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookHmacEncoding FindValue(string value)
+        {
+            return FindValue<WebhookHmacEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookHmacEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookSecretEncoding.
+    /// </summary>
+    public class WebhookSecretEncoding : ConstantClass
+    {
+        /// <summary>
+        /// Constant BASE64 for WebhookSecretEncoding
+        /// </summary>
+        public static readonly WebhookSecretEncoding BASE64 = new WebhookSecretEncoding("BASE64");
+
+        /// <summary>
+        /// Constant RAW for WebhookSecretEncoding
+        /// </summary>
+        public static readonly WebhookSecretEncoding RAW = new WebhookSecretEncoding("RAW");
+
+        /// <summary>
+        /// Constructs a custom WebhookSecretEncoding for a value not among the defined constants.
+        /// </summary>
+        public WebhookSecretEncoding(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookSecretEncoding FindValue(string value)
+        {
+            return FindValue<WebhookSecretEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookSecretEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookSignedMessageComposition.
+    /// </summary>
+    public class WebhookSignedMessageComposition : ConstantClass
+    {
+        /// <summary>
+        /// Constant BODY for WebhookSignedMessageComposition
+        /// </summary>
+        public static readonly WebhookSignedMessageComposition BODY = new WebhookSignedMessageComposition("BODY");
+
+        /// <summary>
+        /// Constant MESSAGE_ID_DOT_TIMESTAMP_DOT_BODY for WebhookSignedMessageComposition
+        /// </summary>
+        public static readonly WebhookSignedMessageComposition MESSAGE_ID_DOT_TIMESTAMP_DOT_BODY = new WebhookSignedMessageComposition("MESSAGE_ID_DOT_TIMESTAMP_DOT_BODY");
+
+        /// <summary>
+        /// Constant TIMESTAMP_DOT_BODY for WebhookSignedMessageComposition
+        /// </summary>
+        public static readonly WebhookSignedMessageComposition TIMESTAMP_DOT_BODY = new WebhookSignedMessageComposition("TIMESTAMP_DOT_BODY");
+
+        /// <summary>
+        /// Constructs a custom WebhookSignedMessageComposition for a value not among the defined constants.
+        /// </summary>
+        public WebhookSignedMessageComposition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookSignedMessageComposition FindValue(string value)
+        {
+            return FindValue<WebhookSignedMessageComposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookSignedMessageComposition(string value)
         {
             return FindValue(value);
         }

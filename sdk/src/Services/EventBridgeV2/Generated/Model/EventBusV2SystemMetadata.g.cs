@@ -36,8 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class EventBusV2SystemMetadata
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationId. Deduplication ID for FIFO deduplication
-        /// on the downstream bus. Accepts a literal or a JSONata expression.
+        /// Gets and sets the property DeduplicationId. 
+        /// <para>
+        /// Deduplication ID for FIFO deduplication on the downstream bus. Accepts a literal or
+        /// a JSONata expression.
+        /// </para>
         /// </summary>
         public string DeduplicationId { get; set; }
 
@@ -47,8 +50,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationId() => this.DeduplicationId != null;
 
         /// <summary>
-        /// Gets and sets the property EventGroupId. Event group ID for FIFO ordering on the downstream
-        /// bus. Accepts a literal or a JSONata expression.
+        /// Gets and sets the property EventGroupId. 
+        /// <para>
+        /// Event group ID for FIFO ordering on the downstream bus. Accepts a literal or a JSONata
+        /// expression.
+        /// </para>
         /// </summary>
         public string EventGroupId { get; set; }
 

@@ -37,12 +37,15 @@ namespace Amazon.EventBridgeV2.Model
     public partial class GetResourcePolicyRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property PolicyName. Which named policy to read. Defaults to "default"
-        /// when omitted (a read AWS Resource Access Manager makes on the owner's behalf resolves
-        /// to "AWS_RAM" instead). Unlike writing, neither name is reserved on a read: the bus
-        /// owner can read both. There is no fallback between the two, so a bus shared only through
-        /// Resource Access Manager fails with ResourceNotFoundException until "AWS_RAM" is named
-        /// explicitly. A well-formed name that is neither of the two fails with InvalidInputException.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Which named policy to read. Defaults to "default" when omitted (a read AWS Resource
+        /// Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). Unlike
+        /// writing, neither name is reserved on a read: the bus owner can read both. There is
+        /// no fallback between the two, so a bus shared only through Resource Access Manager
+        /// fails with ResourceNotFoundException until "AWS_RAM" is named explicitly. A well-formed
+        /// name that is neither of the two fails with InvalidInputException.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string PolicyName { get; set; }
@@ -53,7 +56,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyName() => this.PolicyName != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }

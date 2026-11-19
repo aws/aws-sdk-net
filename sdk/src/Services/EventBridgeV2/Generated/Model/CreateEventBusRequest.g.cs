@@ -38,7 +38,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class CreateEventBusRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that ensures the idempotency of the request. The
+        /// SDK generates one automatically when the field is omitted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 64)]
         public string ClientToken { get; set; }
@@ -49,7 +53,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Free-text description. Used by every resource type that has one: event buses, subscribers,
+        /// and event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 512)]
         public string Description { get; set; }
@@ -60,7 +68,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDescription() => this.Description != null;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration.
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Encryption configuration for an event bus.
+        /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration { get; set; }
 
@@ -70,7 +81,13 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of an event bus. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn
+        /// (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the
+        /// bus's ARN. The same type is used everywhere a bus name appears.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Name { get; set; }
@@ -81,7 +98,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property StorageConfiguration.
+        /// Gets and sets the property StorageConfiguration. 
+        /// <para>
+        /// Event storage configuration for an event bus.
+        /// </para>
         /// </summary>
         public StorageConfiguration StorageConfiguration { get; set; }
 
@@ -91,7 +111,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetStorageConfiguration() => this.StorageConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags attached to a resource, as key-value pairs.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

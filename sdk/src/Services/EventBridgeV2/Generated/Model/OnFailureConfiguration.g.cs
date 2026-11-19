@@ -36,8 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class OnFailureConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Arn. The ARN of the destination that receives events that
-        /// could not be delivered. An Amazon SQS queue is the supported destination.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the destination that receives events that could not be delivered. An Amazon
+        /// SQS queue is the supported destination.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1600)]
         public string Arn { get; set; }

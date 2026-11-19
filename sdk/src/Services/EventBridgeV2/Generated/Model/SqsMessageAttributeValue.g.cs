@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class SqsMessageAttributeValue
     {
         /// <summary>
-        /// Gets and sets the property BinaryValue. Base64-encoded literal binary attribute value.
+        /// Gets and sets the property BinaryValue. 
+        /// <para>
+        /// Base64-encoded literal binary attribute value.
+        /// </para>
         /// </summary>
         public string BinaryValue { get; set; }
 
@@ -45,9 +48,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetBinaryValue() => this.BinaryValue != null;
 
         /// <summary>
-        /// Gets and sets the property DataType. Attribute data type. Requiredness, the accepted
-        /// vocabulary, and any custom label belong to SQS, which rejects an attribute without
-        /// a data type on delivery.
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// Attribute data type. Requiredness, the accepted vocabulary, and any custom label belong
+        /// to SQS, which rejects an attribute without a data type on delivery.
+        /// </para>
         /// </summary>
         [AWSProperty(Max = 8192)]
         public string DataType { get; set; }
@@ -58,8 +63,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDataType() => this.DataType != null;
 
         /// <summary>
-        /// Gets and sets the property StringValue. String attribute value. A JSONata expression
-        /// resolves once per delivered event.
+        /// Gets and sets the property StringValue. 
+        /// <para>
+        /// String attribute value. A JSONata expression resolves once per delivered event.
+        /// </para>
         /// </summary>
         public string StringValue { get; set; }
 

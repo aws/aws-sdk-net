@@ -39,7 +39,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ListEventBusesRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property EventBusAccountId.
+        /// Gets and sets the property EventBusAccountId. 
+        /// <para>
+        /// AWS Account Id.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 12, Max = 12)]
         public string EventBusAccountId { get; set; }
@@ -50,7 +53,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventBusAccountId() => this.EventBusAccountId != null;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of results to return in one page of a List operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
@@ -61,7 +67,13 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetMaxResults() => this.MaxResults.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NamePrefix.
+        /// Gets and sets the property NamePrefix. 
+        /// <para>
+        /// Name of an event bus. The first character must be alphanumeric; the remaining characters
+        /// may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn
+        /// (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the
+        /// bus's ARN. The same type is used everywhere a bus name appears.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string NamePrefix { get; set; }
@@ -72,7 +84,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetNamePrefix() => this.NamePrefix != null;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Opaque pagination token returned by a List operation. Pass it back in the next request
+        /// to retrieve the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]
         public string NextToken { get; set; }

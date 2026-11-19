@@ -35,7 +35,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class StorageConfigurationOutput
     {
         /// <summary>
-        /// Gets and sets the property RetentionPeriodInDays.
+        /// Gets and sets the property RetentionPeriodInDays. 
+        /// <para>
+        /// Number of days events are retained on the event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 365)]
         public int? RetentionPeriodInDays { get; set; }
@@ -46,8 +49,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetRetentionPeriodInDays() => this.RetentionPeriodInDays.HasValue;
 
         /// <summary>
-        /// Gets and sets the property RetentionWindowStartTime. The earliest point in time from
-        /// which stored events are available. Events older than this have expired from retention.
+        /// Gets and sets the property RetentionWindowStartTime. 
+        /// <para>
+        /// The earliest point in time from which stored events are available. Events older than
+        /// this have expired from retention.
+        /// </para>
         /// </summary>
         public DateTime? RetentionWindowStartTime { get; set; }
 

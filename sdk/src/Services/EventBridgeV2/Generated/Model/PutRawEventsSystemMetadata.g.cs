@@ -36,7 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutRawEventsSystemMetadata
     {
         /// <summary>
-        /// Gets and sets the property ContentType. Content type of the event data (e.g., "application/cloudevents+json").
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// Content type of the event data. Valid values: <c>application/json</c>, <c>application/avro</c>,
+        /// <c>application/protobuf</c>, <c>application/octet-stream</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string ContentType { get; set; }
@@ -47,7 +51,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetContentType() => this.ContentType != null;
 
         /// <summary>
-        /// Gets and sets the property DeduplicationId. Deduplication ID for FIFO deduplication.
+        /// Gets and sets the property DeduplicationId. 
+        /// <para>
+        /// Deduplication ID for FIFO deduplication.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string DeduplicationId { get; set; }
@@ -58,7 +65,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationId() => this.DeduplicationId != null;
 
         /// <summary>
-        /// Gets and sets the property EventGroupId. Event group ID for FIFO ordering.
+        /// Gets and sets the property EventGroupId. 
+        /// <para>
+        /// Event group ID for FIFO ordering.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string EventGroupId { get; set; }

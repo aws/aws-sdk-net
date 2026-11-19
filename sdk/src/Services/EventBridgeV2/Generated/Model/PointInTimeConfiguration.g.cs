@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PointInTimeConfiguration
     {
         /// <summary>
-        /// Gets and sets the property EndPoint. Timestamp to stop at. Optional.
+        /// Gets and sets the property EndPoint. 
+        /// <para>
+        /// Timestamp to stop at. Optional.
+        /// </para>
         /// </summary>
         public DateTime? EndPoint { get; set; }
 
@@ -46,8 +49,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEndPoint() => this.EndPoint.HasValue;
 
         /// <summary>
-        /// Gets and sets the property PointType. Whether to start from the horizon or a specific
-        /// timestamp.
+        /// Gets and sets the property PointType. 
+        /// <para>
+        /// Whether to start from the horizon or a specific timestamp.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public PointType PointType { get; set; }
@@ -58,8 +63,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPointType() => this.PointType != null;
 
         /// <summary>
-        /// Gets and sets the property StartingPoint. Timestamp to start from. Required when PointType
-        /// is TIMESTAMP.
+        /// Gets and sets the property StartingPoint. 
+        /// <para>
+        /// Timestamp to start from. Required when PointType is TIMESTAMP.
+        /// </para>
         /// </summary>
         public DateTime? StartingPoint { get; set; }
 

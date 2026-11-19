@@ -36,14 +36,16 @@ namespace Amazon.EventBridgeV2.Model
     public partial class DeleteResourcePolicyRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property ExpectedRevisionId. The delete succeeds only if the named
-        /// policy's current revision ID matches this value; if it differs or the policy does
-        /// not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is
-        /// not valid here. When omitted, deleting an absent policy is an idempotent success.
-        /// Supplying this value makes the delete non-idempotent: once it succeeds the expected
-        /// revision no longer exists, so retrying an unanswered request fails with ConflictException
-        /// even though the policy was deleted. To establish the outcome, read the policy back:
-        /// ResourceNotFoundException means the delete took effect.
+        /// Gets and sets the property ExpectedRevisionId. 
+        /// <para>
+        /// The delete succeeds only if the named policy's current revision ID matches this value;
+        /// if it differs or the policy does not exist, the operation fails with ConflictException.
+        /// The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy
+        /// is an idempotent success. Supplying this value makes the delete non-idempotent: once
+        /// it succeeds the expected revision no longer exists, so retrying an unanswered request
+        /// fails with ConflictException even though the policy was deleted. To establish the
+        /// outcome, read the policy back: ResourceNotFoundException means the delete took effect.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string ExpectedRevisionId { get; set; }
@@ -54,12 +56,15 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetExpectedRevisionId() => this.ExpectedRevisionId != null;
 
         /// <summary>
-        /// Gets and sets the property PolicyName. Which named policy to delete. Defaults to "default"
-        /// when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves
-        /// to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource
-        /// Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" —
-        /// so naming the other party's policy fails with AccessDeniedException. A well-formed
-        /// name that is neither of the two fails with InvalidInputException.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource
+        /// Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two
+        /// writers are exclusive in both directions — only Resource Access Manager can delete
+        /// "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's
+        /// policy fails with AccessDeniedException. A well-formed name that is neither of the
+        /// two fails with InvalidInputException.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string PolicyName { get; set; }
@@ -70,7 +75,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyName() => this.PolicyName != null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }

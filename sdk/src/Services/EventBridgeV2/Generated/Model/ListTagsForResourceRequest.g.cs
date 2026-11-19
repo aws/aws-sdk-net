@@ -36,7 +36,11 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ListTagsForResourceRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and
+        /// event sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string ResourceArn { get; set; }

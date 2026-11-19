@@ -35,7 +35,12 @@ namespace Amazon.EventBridgeV2.Model
     public partial class ResourcePolicySummary
     {
         /// <summary>
-        /// Gets and sets the property PolicyName.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed
+        /// policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other
+        /// value is rejected.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 128)]
         public string PolicyName { get; set; }
@@ -46,7 +51,11 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetPolicyName() => this.PolicyName != null;
 
         /// <summary>
-        /// Gets and sets the property RevisionId.
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Revision ID of a resource policy. A new revision ID is generated on every successful
+        /// write.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string RevisionId { get; set; }

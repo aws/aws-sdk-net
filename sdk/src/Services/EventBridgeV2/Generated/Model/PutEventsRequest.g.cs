@@ -31,13 +31,18 @@ namespace Amazon.EventBridgeV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEvents operation. Publishes events to an event
-    /// bus.
+    /// bus. <para> The total size of all event entries in a request must not exceed 1 MB
+    /// (1,048,576 bytes). The limit applies to the request as a whole, not to individual
+    /// entries. If you exceed the limit, the request fails with <c>InvalidInputException</c>
+    /// and the service publishes none of the entries in the request. </para>
     /// </summary>
     public partial class PutEventsRequest : AmazonEventBridgeV2Request
     {
         /// <summary>
-        /// Gets and sets the property DeduplicationConfiguration. Request-level deduplication
-        /// settings, applied to every entry in the batch.
+        /// Gets and sets the property DeduplicationConfiguration. 
+        /// <para>
+        /// Request-level deduplication settings, applied to every entry in the batch.
+        /// </para>
         /// </summary>
         public DeduplicationConfiguration DeduplicationConfiguration { get; set; }
 
@@ -47,7 +52,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetDeduplicationConfiguration() => this.DeduplicationConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property Entries.
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// List of event entries to publish. Must contain at least one entry.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -64,7 +72,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEntries() => this.Entries != null && (this.Entries.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property EventBusArn.
+        /// Gets and sets the property EventBusArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string EventBusArn { get; set; }

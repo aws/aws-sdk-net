@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridgeV2.Model
 {
     /// <summary>
-    /// The policy document is larger than the account's resource policy size quota, or larger
-    /// than the service maximum.
+    /// The policy document exceeds the maximum allowed size.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

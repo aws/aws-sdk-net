@@ -36,7 +36,10 @@ namespace Amazon.EventBridgeV2.Model
     public partial class PutEventsResultEntry
     {
         /// <summary>
-        /// Gets and sets the property ErrorCode.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// Error code if the entry failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
         public string ErrorCode { get; set; }
@@ -47,7 +50,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetErrorCode() => this.ErrorCode != null;
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Error message if the entry failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string ErrorMessage { get; set; }
@@ -58,7 +64,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetErrorMessage() => this.ErrorMessage != null;
 
         /// <summary>
-        /// Gets and sets the property EventId.
+        /// Gets and sets the property EventId. 
+        /// <para>
+        /// Unique event ID assigned by the service.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string EventId { get; set; }
@@ -69,7 +78,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetEventId() => this.EventId != null;
 
         /// <summary>
-        /// Gets and sets the property SequenceNumber.
+        /// Gets and sets the property SequenceNumber. 
+        /// <para>
+        /// Sequence number assigned to the message for ordering within the message group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 128)]
         public string SequenceNumber { get; set; }
@@ -80,7 +92,10 @@ namespace Amazon.EventBridgeV2.Model
         internal bool IsSetSequenceNumber() => this.SequenceNumber != null;
 
         /// <summary>
-        /// Gets and sets the property SuccessCode.
+        /// Gets and sets the property SuccessCode. 
+        /// <para>
+        /// Indicates the outcome for a successfully processed publish entry.
+        /// </para>
         /// </summary>
         public SuccessCode SuccessCode { get; set; }
 

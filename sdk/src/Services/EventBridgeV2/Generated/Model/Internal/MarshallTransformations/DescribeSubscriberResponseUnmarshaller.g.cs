@@ -151,6 +151,12 @@ namespace Amazon.EventBridgeV2.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "SubscriberDetails":
+                        context.AddPathSegment("SubscriberDetails");
+                        unmarshalledObject.SubscriberDetails = SubscriberDetailsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Transformer":
                         context.AddPathSegment("Transformer");
                         unmarshalledObject.Transformer = TransformerUnmarshaller.Instance.Unmarshall(context);
