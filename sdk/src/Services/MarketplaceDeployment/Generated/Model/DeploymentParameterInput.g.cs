@@ -35,7 +35,7 @@ namespace Amazon.MarketplaceDeployment.Model
     ///  <note> 
     /// <para>
     /// To support AWS CloudFormation dynamic references to this resource using Quick Launch,
-    /// this value must match a parameter defined in the CloudFormation templated provided
+    /// this value must match a parameter defined in the CloudFormation template provided
     /// to buyers.
     /// </para>
     ///  </note>

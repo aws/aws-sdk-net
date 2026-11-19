@@ -31,15 +31,14 @@ namespace Amazon.MarketplaceDeployment.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation. Lists all tags
-    /// that have been added to a deployment parameter resource.
+    /// that have been added to a resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonMarketplaceDeploymentRequest
     {
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated with the deployment parameter resource you
-        /// want to list tags on.
+        /// The Amazon Resource Name (ARN) of the resource you want to list tags on.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

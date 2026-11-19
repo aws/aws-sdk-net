@@ -87,7 +87,7 @@ namespace Amazon.MarketplaceDeployment.Model
         /// Gets and sets the property DeploymentParameter. 
         /// <para>
         /// The deployment parameter targeted to the acceptor of an agreement for which to create
-        /// the AWS Secret Manager resource.
+        /// the AWS Secrets Manager resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

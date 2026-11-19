@@ -33,15 +33,223 @@ namespace Amazon.MarketplaceDeployment
     /// The AWS Marketplace Deployment Service supports the Quick Launch experience, which
     /// is a deployment option for software as a service (SaaS) products. Quick Launch simplifies
     /// and reduces the time, resources, and steps required to configure, deploy, and launch
-    /// a products. The AWS Marketplace Deployment Service provides sellers with a secure
-    /// method for passing deployment parameters, such as API keys and external IDs, to buyers
-    /// during the Quick Launch experience.
+    /// a product. The AWS Marketplace Deployment Service provides sellers with a secure method
+    /// for passing deployment parameters, such as API keys and external IDs, to buyers during
+    /// the Quick Launch experience.
+    /// 
+    ///  
+    /// <para>
+    /// You can also use the AWS Marketplace Deployment Service to publish deployment configurations.
+    /// A deployment configuration defines how buyers access a product's delivery option after
+    /// they subscribe. For example, for the Data as a Service delivery option, it specifies
+    /// the seller's fulfillment URL.
+    /// </para>
     /// </summary>
     public partial interface IAmazonMarketplaceDeployment : IAmazonService, IDisposable
     {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IMarketplaceDeploymentPaginatorFactory Paginators { get; }
+
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists all tags that have been added to a deployment parameter resource.
+        /// Returns the active deployment configuration for a product and delivery option. The
+        /// active deployment configuration is the configuration from the most recent successful
+        /// deployment configuration job. The seller that owns the product and buyers entitled
+        /// to the product can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// If the product and delivery option have no active deployment configuration, the operation
+        /// returns a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentConfiguration service method.</param>
+        /// <returns>The response from the GetDeploymentConfiguration service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/GetDeploymentConfiguration">REST API Reference for GetDeploymentConfiguration Operation</seealso>
+        GetDeploymentConfigurationResponse GetDeploymentConfiguration(GetDeploymentConfigurationRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the active deployment configuration for a product and delivery option. The
+        /// active deployment configuration is the configuration from the most recent successful
+        /// deployment configuration job. The seller that owns the product and buyers entitled
+        /// to the product can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// If the product and delivery option have no active deployment configuration, the operation
+        /// returns a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDeploymentConfiguration service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/GetDeploymentConfiguration">REST API Reference for GetDeploymentConfiguration Operation</seealso>
+        Task<GetDeploymentConfigurationResponse> GetDeploymentConfigurationAsync(GetDeploymentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the details of a deployment configuration job. Only the seller that started
+        /// the job can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// If the job doesn't belong to the product and delivery option in the request path,
+        /// the operation returns a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentConfigurationJob service method.</param>
+        /// <returns>The response from the GetDeploymentConfigurationJob service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/GetDeploymentConfigurationJob">REST API Reference for GetDeploymentConfigurationJob Operation</seealso>
+        GetDeploymentConfigurationJobResponse GetDeploymentConfigurationJob(GetDeploymentConfigurationJobRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the details of a deployment configuration job. Only the seller that started
+        /// the job can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// If the job doesn't belong to the product and delivery option in the request path,
+        /// the operation returns a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentConfigurationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDeploymentConfigurationJob service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/GetDeploymentConfigurationJob">REST API Reference for GetDeploymentConfigurationJob Operation</seealso>
+        Task<GetDeploymentConfigurationJobResponse> GetDeploymentConfigurationJobAsync(GetDeploymentConfigurationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the deployment configuration jobs that you started for a product and delivery
+        /// option, ordered from newest to oldest. Results are paginated. Use the <c>nextToken</c>
+        /// parameter to retrieve additional results.
+        /// 
+        ///  
+        /// <para>
+        /// If you haven't started any jobs for the product and delivery option, the operation
+        /// returns an empty <c>jobs</c> list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentConfigurationJobs service method.</param>
+        /// <returns>The response from the ListDeploymentConfigurationJobs service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/ListDeploymentConfigurationJobs">REST API Reference for ListDeploymentConfigurationJobs Operation</seealso>
+        ListDeploymentConfigurationJobsResponse ListDeploymentConfigurationJobs(ListDeploymentConfigurationJobsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the deployment configuration jobs that you started for a product and delivery
+        /// option, ordered from newest to oldest. Results are paginated. Use the <c>nextToken</c>
+        /// parameter to retrieve additional results.
+        /// 
+        ///  
+        /// <para>
+        /// If you haven't started any jobs for the product and delivery option, the operation
+        /// returns an empty <c>jobs</c> list.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentConfigurationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDeploymentConfigurationJobs service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/ListDeploymentConfigurationJobs">REST API Reference for ListDeploymentConfigurationJobs Operation</seealso>
+        Task<ListDeploymentConfigurationJobsResponse> ListDeploymentConfigurationJobsAsync(ListDeploymentConfigurationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all tags that have been added to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by MarketplaceDeployment.</returns>
@@ -65,7 +273,7 @@ namespace Amazon.MarketplaceDeployment
 #endif
 
         /// <summary>
-        /// Lists all tags that have been added to a deployment parameter resource.
+        /// Lists all tags that have been added to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -152,6 +360,81 @@ namespace Amazon.MarketplaceDeployment
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/PutDeploymentParameter">REST API Reference for PutDeploymentParameter Operation</seealso>
         Task<PutDeploymentParameterResponse> PutDeploymentParameterAsync(PutDeploymentParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts a job that publishes a deployment configuration for a product and delivery
+        /// option. The job runs asynchronously. Use <c>GetDeploymentConfigurationJob</c> to track
+        /// its status. When the job reaches the <c>SUCCEEDED</c> status, its configuration becomes
+        /// the active deployment configuration for the product and delivery option.
+        /// 
+        ///  
+        /// <para>
+        /// The populated member of <c>configuration</c> must match the <c>deliveryOptionType</c>
+        /// in the request path.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeploymentConfigurationJob service method.</param>
+        /// <returns>The response from the StartDeploymentConfigurationJob service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/StartDeploymentConfigurationJob">REST API Reference for StartDeploymentConfigurationJob Operation</seealso>
+        StartDeploymentConfigurationJobResponse StartDeploymentConfigurationJob(StartDeploymentConfigurationJobRequest request);
+#endif
+
+        /// <summary>
+        /// Starts a job that publishes a deployment configuration for a product and delivery
+        /// option. The job runs asynchronously. Use <c>GetDeploymentConfigurationJob</c> to track
+        /// its status. When the job reaches the <c>SUCCEEDED</c> status, its configuration becomes
+        /// the active deployment configuration for the product and delivery option.
+        /// 
+        ///  
+        /// <para>
+        /// The populated member of <c>configuration</c> must match the <c>deliveryOptionType</c>
+        /// in the request path.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeploymentConfigurationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartDeploymentConfigurationJob service method, as returned by MarketplaceDeployment.</returns>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.InternalServerException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDeployment.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-deployment-2023-01-25/StartDeploymentConfigurationJob">REST API Reference for StartDeploymentConfigurationJob Operation</seealso>
+        Task<StartDeploymentConfigurationJobResponse> StartDeploymentConfigurationJobAsync(StartDeploymentConfigurationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

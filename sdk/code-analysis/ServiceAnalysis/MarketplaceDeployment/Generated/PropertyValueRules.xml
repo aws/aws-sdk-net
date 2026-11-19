@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationRequest.ProductId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobRequest.ProductId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse.ConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:*/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.GetDeploymentConfigurationJobResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsRequest.ProductId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.ListDeploymentConfigurationJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest.AgreementId</property>
     <min>1</min>
     <max>64</max>
@@ -43,10 +112,45 @@
     <pattern>^[a-zA-Z0-9:*/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest.ClientToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9/_+=.:@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobRequest.ProductId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.StartDeploymentConfigurationJobResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDeployment.Model.ConflictException.ResourceId</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9_/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.DataAsAServiceConfigurationDetail.FulfillmentUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDeployment.Model.DeploymentConfigurationJobSummary.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDeployment.Model.DeploymentParameterInput.Name</property>
