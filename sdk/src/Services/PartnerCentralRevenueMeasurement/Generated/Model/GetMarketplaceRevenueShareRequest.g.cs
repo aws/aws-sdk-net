@@ -50,18 +50,18 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetCatalog() => this.Catalog != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property Identifier. 
         /// <para>
-        /// The AWS Marketplace product identifier of the revenue share to retrieve.
+        /// The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
+        [AWSProperty(Required = true, Min = 17, Max = 1011)]
+        public string Identifier { get; set; }
 
         /// <summary>
-        /// Checks to see if the ProductId property is set.
+        /// Checks to see if the Identifier property is set.
         /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
+        internal bool IsSetIdentifier() => this.Identifier != null;
 
         /// <summary>
         /// Gets and sets the property Revision. 
@@ -70,12 +70,12 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// revision.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1)]
-        public int? Revision { get; set; }
+        [AWSProperty(Min = 1, Max = 19)]
+        public string Revision { get; set; }
 
         /// <summary>
         /// Checks to see if the Revision property is set.
         /// </summary>
-        internal bool IsSetRevision() => this.Revision.HasValue;
+        internal bool IsSetRevision() => this.Revision != null;
     }
 }

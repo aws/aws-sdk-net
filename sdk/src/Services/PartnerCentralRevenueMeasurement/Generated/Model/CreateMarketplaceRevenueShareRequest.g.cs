@@ -64,18 +64,25 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property Products. 
         /// <para>
-        /// The AWS Marketplace product identifier for this revenue share.
+        /// The products in the marketplace revenue share, each with its typed account lists.
+        /// 1 to 25 products.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
+        [AWSProperty(Required = true, Min = 1, Max = 25)]
+        public List<MarketplaceRevenueShareProductEntry> Products { get; set; } = AWSConfigs.InitializeCollections ? new List<MarketplaceRevenueShareProductEntry>() : null;
 
         /// <summary>
-        /// Checks to see if the ProductId property is set.
+        /// Checks to see if the Products property is set.
         /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
+        internal bool IsSetProducts() => this.Products != null && (this.Products.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Tags. 
@@ -89,7 +96,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 0, Max = 50)]
+        [AWSProperty(Min = 1, Max = 200)]
         public List<Tag> Tags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>

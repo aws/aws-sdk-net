@@ -77,15 +77,15 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("MarketplaceRevenueShareAllocationId");
                     context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareAllocationId);
                 }
+                if (publicRequest.IsSetMarketplaceRevenueShareIdentifier())
+                {
+                    context.Writer.WriteTextString("MarketplaceRevenueShareIdentifier");
+                    context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareIdentifier);
+                }
                 if (publicRequest.IsSetMarketplaceRevenueShareRevision())
                 {
                     context.Writer.WriteTextString("MarketplaceRevenueShareRevision");
                     context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareRevision);
-                }
-                if (publicRequest.IsSetProductId())
-                {
-                    context.Writer.WriteTextString("ProductId");
-                    context.Writer.WriteTextString(publicRequest.ProductId);
                 }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK

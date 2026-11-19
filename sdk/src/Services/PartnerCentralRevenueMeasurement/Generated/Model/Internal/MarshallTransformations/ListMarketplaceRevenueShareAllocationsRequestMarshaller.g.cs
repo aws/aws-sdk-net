@@ -72,15 +72,30 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("AfterEffectiveFrom");
                     context.Writer.WriteTextString(publicRequest.AfterEffectiveFrom);
                 }
+                if (publicRequest.IsSetAfterEffectiveUntil())
+                {
+                    context.Writer.WriteTextString("AfterEffectiveUntil");
+                    context.Writer.WriteTextString(publicRequest.AfterEffectiveUntil);
+                }
                 if (publicRequest.IsSetBeforeEffectiveFrom())
                 {
                     context.Writer.WriteTextString("BeforeEffectiveFrom");
                     context.Writer.WriteTextString(publicRequest.BeforeEffectiveFrom);
                 }
+                if (publicRequest.IsSetBeforeEffectiveUntil())
+                {
+                    context.Writer.WriteTextString("BeforeEffectiveUntil");
+                    context.Writer.WriteTextString(publicRequest.BeforeEffectiveUntil);
+                }
                 if (publicRequest.IsSetCatalog())
                 {
                     context.Writer.WriteTextString("Catalog");
                     context.Writer.WriteTextString(publicRequest.Catalog);
+                }
+                if (publicRequest.IsSetMarketplaceRevenueShareIdentifier())
+                {
+                    context.Writer.WriteTextString("MarketplaceRevenueShareIdentifier");
+                    context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareIdentifier);
                 }
                 if (publicRequest.IsSetMarketplaceRevenueShareRevision())
                 {
@@ -97,11 +112,6 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("NextToken");
                     context.Writer.WriteTextString(publicRequest.NextToken);
                 }
-                if (publicRequest.IsSetProductId())
-                {
-                    context.Writer.WriteTextString("ProductId");
-                    context.Writer.WriteTextString(publicRequest.ProductId);
-                }
                 if (publicRequest.IsSetSortBy())
                 {
                     context.Writer.WriteTextString("SortBy");
@@ -112,10 +122,10 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("SortOrder");
                     context.Writer.WriteTextString(publicRequest.SortOrder);
                 }
-                if (publicRequest.IsSetStatus())
+                if (publicRequest.IsSetStatusFilter())
                 {
-                    context.Writer.WriteTextString("Status");
-                    context.Writer.WriteTextString(publicRequest.Status);
+                    context.Writer.WriteTextString("StatusFilter");
+                    context.Writer.WriteTextString(publicRequest.StatusFilter);
                 }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK

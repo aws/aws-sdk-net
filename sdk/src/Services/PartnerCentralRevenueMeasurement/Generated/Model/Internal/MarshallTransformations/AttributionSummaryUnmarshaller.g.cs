@@ -74,6 +74,12 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                         context.PopPathSegment();
                         break;
 
+                    case "Context":
+                        context.AddPathSegment("Context");
+                        unmarshalledObject.Context = new CborDictionaryUnmarshaller<string, string, CborStringUnmarshaller, CborStringUnmarshaller>(CborStringUnmarshaller.Instance, CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "CreatedDate":
                         context.AddPathSegment("CreatedDate");
                         unmarshalledObject.CreatedDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);

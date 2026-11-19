@@ -52,6 +52,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetAfterEffectiveFrom() => this.AfterEffectiveFrom != null;
 
         /// <summary>
+        /// Gets and sets the property AfterEffectiveUntil. 
+        /// <para>
+        /// Inclusive lower bound for EffectiveUntil date filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 10, Max = 10)]
+        public string AfterEffectiveUntil { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AfterEffectiveUntil property is set.
+        /// </summary>
+        internal bool IsSetAfterEffectiveUntil() => this.AfterEffectiveUntil != null;
+
+        /// <summary>
         /// Gets and sets the property BeforeEffectiveFrom. 
         /// <para>
         /// Exclusive upper bound for EffectiveFrom date filter (half-open range).
@@ -66,6 +80,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetBeforeEffectiveFrom() => this.BeforeEffectiveFrom != null;
 
         /// <summary>
+        /// Gets and sets the property BeforeEffectiveUntil. 
+        /// <para>
+        /// Exclusive upper bound for EffectiveUntil date filter (half-open range).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 10, Max = 10)]
+        public string BeforeEffectiveUntil { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BeforeEffectiveUntil property is set.
+        /// </summary>
+        internal bool IsSetBeforeEffectiveUntil() => this.BeforeEffectiveUntil != null;
+
+        /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
         /// The catalog containing the allocations.
@@ -78,6 +106,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// Checks to see if the Catalog property is set.
         /// </summary>
         internal bool IsSetCatalog() => this.Catalog != null;
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceRevenueShareIdentifier. 
+        /// <para>
+        /// The parent marketplace revenue share, by ID (mrs-...) or ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 17, Max = 1011)]
+        public string MarketplaceRevenueShareIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MarketplaceRevenueShareIdentifier property is set.
+        /// </summary>
+        internal bool IsSetMarketplaceRevenueShareIdentifier() => this.MarketplaceRevenueShareIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property MarketplaceRevenueShareRevision. 
@@ -123,20 +165,6 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The AWS Marketplace product identifier for the parent revenue share.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ProductId property is set.
-        /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
-
-        /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The field to sort marketplace revenue share allocations by.
@@ -152,7 +180,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The direction to sort results. Defaults to DESCENDING.
+        /// The direction to sort results. Defaults to ASCENDING.
         /// </para>
         /// </summary>
         public SortOrder SortOrder { get; set; }
@@ -163,16 +191,16 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetSortOrder() => this.SortOrder != null;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property StatusFilter. 
         /// <para>
         /// Filter by allocation status.
         /// </para>
         /// </summary>
-        public AllocationStatus Status { get; set; }
+        public AllocationStatus StatusFilter { get; set; }
 
         /// <summary>
-        /// Checks to see if the Status property is set.
+        /// Checks to see if the StatusFilter property is set.
         /// </summary>
-        internal bool IsSetStatus() => this.Status != null;
+        internal bool IsSetStatusFilter() => this.StatusFilter != null;
     }
 }

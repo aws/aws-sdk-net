@@ -31,7 +31,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMarketplaceRevenueShareAllocation operation.
-    /// Creates a new marketplace revenue share allocation for the specified product.
+    /// Creates a new allocation under the specified marketplace revenue share.
     /// </summary>
     public partial class CreateMarketplaceRevenueShareAllocationRequest : AmazonPartnerCentralRevenueMeasurementRequest
     {
@@ -81,10 +81,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// Gets and sets the property EffectiveUntil. 
         /// <para>
         /// The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).
-        /// Omit for open-ended allocations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 10, Max = 10)]
+        [AWSProperty(Required = true, Min = 10, Max = 10)]
         public string EffectiveUntil { get; set; }
 
         /// <summary>
@@ -93,18 +92,34 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetEffectiveUntil() => this.EffectiveUntil != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property MarketplaceRevenueShareIdentifier. 
         /// <para>
-        /// The AWS Marketplace product identifier for the parent revenue share.
+        /// The parent marketplace revenue share, by ID (mrs-...) or ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
+        [AWSProperty(Required = true, Min = 17, Max = 1011)]
+        public string MarketplaceRevenueShareIdentifier { get; set; }
 
         /// <summary>
-        /// Checks to see if the ProductId property is set.
+        /// Checks to see if the MarketplaceRevenueShareIdentifier property is set.
         /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
+        internal bool IsSetMarketplaceRevenueShareIdentifier() => this.MarketplaceRevenueShareIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceRevenueShareRevision. 
+        /// <para>
+        /// The revision of the parent marketplace revenue share that the caller last read, for
+        /// optimistic concurrency control. A stale value returns ConflictException with Reason
+        /// REVISION_MISMATCH.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 19)]
+        public string MarketplaceRevenueShareRevision { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MarketplaceRevenueShareRevision property is set.
+        /// </summary>
+        internal bool IsSetMarketplaceRevenueShareRevision() => this.MarketplaceRevenueShareRevision != null;
 
         /// <summary>
         /// Gets and sets the property RevenueSharePercent. 

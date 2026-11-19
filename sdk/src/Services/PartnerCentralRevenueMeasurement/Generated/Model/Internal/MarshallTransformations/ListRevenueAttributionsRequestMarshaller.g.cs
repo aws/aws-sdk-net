@@ -72,6 +72,21 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("Catalog");
                     context.Writer.WriteTextString(publicRequest.Catalog);
                 }
+                if (publicRequest.IsSetContextFilters())
+                {
+                    context.Writer.WriteTextString("ContextFilters");
+                    context.Writer.WriteStartArray(publicRequest.ContextFilters.Count);
+                    foreach (var publicRequestContextFiltersListValue in publicRequest.ContextFilters)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ContextFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContextFiltersListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetCreatedAfter())
                 {
                     context.Writer.WriteTextString("CreatedAfter");

@@ -82,6 +82,18 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("ClientToken");
                     context.Writer.WriteTextString(Guid.NewGuid().ToString());
                 }
+                if (publicRequest.IsSetContext())
+                {
+                    context.Writer.WriteTextString("Context");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestContextKvp in publicRequest.Context)
+                    {
+                        context.Writer.WriteTextString(publicRequestContextKvp.Key);
+                        var publicRequestContextValue = publicRequestContextKvp.Value;
+                        context.Writer.WriteTextString(publicRequestContextValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetDescription())
                 {
                     context.Writer.WriteTextString("Description");

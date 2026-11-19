@@ -35,25 +35,12 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
     public partial class CreateMarketplaceRevenueShareAllocationResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the allocation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true)]
-        public string Arn { get; set; }
-
-        /// <summary>
-        /// Checks to see if the Arn property is set.
-        /// </summary>
-        internal bool IsSetArn() => this.Arn != null;
-
-        /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date when the allocation was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
@@ -78,10 +65,10 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property EffectiveUntil. 
         /// <para>
-        /// The effective end date of the allocation, or null if open-ended.
+        /// The effective end date of the allocation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 10, Max = 10)]
+        [AWSProperty(Required = true, Min = 10, Max = 10)]
         public string EffectiveUntil { get; set; }
 
         /// <summary>
@@ -95,26 +82,13 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The date when the allocation was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public DateTime? LastModifiedDate { get; set; }
 
         /// <summary>
         /// Checks to see if the LastModifiedDate property is set.
         /// </summary>
         internal bool IsSetLastModifiedDate() => this.LastModifiedDate.HasValue;
-
-        /// <summary>
-        /// Gets and sets the property LatestMarketplaceRevenueShareRevision. 
-        /// <para>
-        /// The latest revision of the parent marketplace revenue share.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min = 1, Max = 19)]
-        public string LatestMarketplaceRevenueShareRevision { get; set; }
-
-        /// <summary>
-        /// Checks to see if the LatestMarketplaceRevenueShareRevision property is set.
-        /// </summary>
-        internal bool IsSetLatestMarketplaceRevenueShareRevision() => this.LatestMarketplaceRevenueShareRevision != null;
 
         /// <summary>
         /// Gets and sets the property MarketplaceRevenueShareAllocationId. 
@@ -131,31 +105,46 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetMarketplaceRevenueShareAllocationId() => this.MarketplaceRevenueShareAllocationId != null;
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property MarketplaceRevenueShareIdentifier. 
         /// <para>
-        /// The AWS Marketplace product identifier.
+        /// The parent marketplace revenue share, short ID form (mrs-...).
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
+        [AWSProperty(Required = true, Min = 17, Max = 17)]
+        public string MarketplaceRevenueShareIdentifier { get; set; }
 
         /// <summary>
-        /// Checks to see if the ProductId property is set.
+        /// Checks to see if the MarketplaceRevenueShareIdentifier property is set.
         /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
+        internal bool IsSetMarketplaceRevenueShareIdentifier() => this.MarketplaceRevenueShareIdentifier != null;
 
         /// <summary>
-        /// Gets and sets the property ProductName. 
+        /// Gets and sets the property MarketplaceRevenueShareLatestRevision. 
         /// <para>
-        /// The display name of the AWS Marketplace product.
+        /// The latest revision of the parent marketplace revenue share.
         /// </para>
         /// </summary>
-        public string ProductName { get; set; }
+        [AWSProperty(Required = true, Min = 1, Max = 19)]
+        public string MarketplaceRevenueShareLatestRevision { get; set; }
 
         /// <summary>
-        /// Checks to see if the ProductName property is set.
+        /// Checks to see if the MarketplaceRevenueShareLatestRevision property is set.
         /// </summary>
-        internal bool IsSetProductName() => this.ProductName != null;
+        internal bool IsSetMarketplaceRevenueShareLatestRevision() => this.MarketplaceRevenueShareLatestRevision != null;
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceRevenueShareRevision. 
+        /// <para>
+        /// The revision of the parent marketplace revenue share at which the allocation was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 19)]
+        public string MarketplaceRevenueShareRevision { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MarketplaceRevenueShareRevision property is set.
+        /// </summary>
+        internal bool IsSetMarketplaceRevenueShareRevision() => this.MarketplaceRevenueShareRevision != null;
 
         /// <summary>
         /// Gets and sets the property RevenueSharePercent. 

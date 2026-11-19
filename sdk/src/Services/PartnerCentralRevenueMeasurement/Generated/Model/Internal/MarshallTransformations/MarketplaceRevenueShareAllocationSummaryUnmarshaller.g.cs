@@ -62,12 +62,6 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "Arn":
-                        context.AddPathSegment("Arn");
-                        unmarshalledObject.Arn = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
                     case "CreatedDate":
                         context.AddPathSegment("CreatedDate");
                         unmarshalledObject.CreatedDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
@@ -98,15 +92,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                         context.PopPathSegment();
                         break;
 
-                    case "ProductId":
-                        context.AddPathSegment("ProductId");
-                        unmarshalledObject.ProductId = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "ProductName":
-                        context.AddPathSegment("ProductName");
-                        unmarshalledObject.ProductName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                    case "MarketplaceRevenueShareIdentifier":
+                        context.AddPathSegment("MarketplaceRevenueShareIdentifier");
+                        unmarshalledObject.MarketplaceRevenueShareIdentifier = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

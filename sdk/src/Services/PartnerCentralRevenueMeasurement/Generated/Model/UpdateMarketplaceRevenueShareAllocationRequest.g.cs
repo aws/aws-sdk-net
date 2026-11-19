@@ -31,8 +31,8 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMarketplaceRevenueShareAllocation operation.
-    /// Updates an existing marketplace revenue share allocation. Supports modifying effective
-    /// dates, revenue share percentage, and status with time-based mutability rules.
+    /// Updates an existing marketplace revenue share allocation. Supports modifying the revenue
+    /// share percentage and status only, with time-based mutability rules.
     /// </summary>
     public partial class UpdateMarketplaceRevenueShareAllocationRequest : AmazonPartnerCentralRevenueMeasurementRequest
     {
@@ -65,35 +65,6 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property EffectiveFrom. 
-        /// <para>
-        /// The new effective start date. Must be the first day of a month. Only modifiable on
-        /// future-dated allocations.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min = 10, Max = 10)]
-        public string EffectiveFrom { get; set; }
-
-        /// <summary>
-        /// Checks to see if the EffectiveFrom property is set.
-        /// </summary>
-        internal bool IsSetEffectiveFrom() => this.EffectiveFrom != null;
-
-        /// <summary>
-        /// Gets and sets the property EffectiveUntil. 
-        /// <para>
-        /// The new effective end date. Must be the last day of a month and on or after today.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min = 10, Max = 10)]
-        public string EffectiveUntil { get; set; }
-
-        /// <summary>
-        /// Checks to see if the EffectiveUntil property is set.
-        /// </summary>
-        internal bool IsSetEffectiveUntil() => this.EffectiveUntil != null;
-
-        /// <summary>
         /// Gets and sets the property MarketplaceRevenueShareAllocationId. 
         /// <para>
         /// The identifier of the allocation to update.
@@ -108,6 +79,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetMarketplaceRevenueShareAllocationId() => this.MarketplaceRevenueShareAllocationId != null;
 
         /// <summary>
+        /// Gets and sets the property MarketplaceRevenueShareIdentifier. 
+        /// <para>
+        /// The parent marketplace revenue share, by ID (mrs-...) or ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 17, Max = 1011)]
+        public string MarketplaceRevenueShareIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MarketplaceRevenueShareIdentifier property is set.
+        /// </summary>
+        internal bool IsSetMarketplaceRevenueShareIdentifier() => this.MarketplaceRevenueShareIdentifier != null;
+
+        /// <summary>
         /// Gets and sets the property MarketplaceRevenueShareRevision. 
         /// <para>
         /// The current revision of the parent share. Must match for optimistic concurrency control.
@@ -120,20 +105,6 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// Checks to see if the MarketplaceRevenueShareRevision property is set.
         /// </summary>
         internal bool IsSetMarketplaceRevenueShareRevision() => this.MarketplaceRevenueShareRevision != null;
-
-        /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The AWS Marketplace product identifier for the parent revenue share.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ProductId property is set.
-        /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
 
         /// <summary>
         /// Gets and sets the property RevenueSharePercent. 

@@ -92,10 +92,15 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("EffectiveUntil");
                     context.Writer.WriteTextString(publicRequest.EffectiveUntil);
                 }
-                if (publicRequest.IsSetProductId())
+                if (publicRequest.IsSetMarketplaceRevenueShareIdentifier())
                 {
-                    context.Writer.WriteTextString("ProductId");
-                    context.Writer.WriteTextString(publicRequest.ProductId);
+                    context.Writer.WriteTextString("MarketplaceRevenueShareIdentifier");
+                    context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareIdentifier);
+                }
+                if (publicRequest.IsSetMarketplaceRevenueShareRevision())
+                {
+                    context.Writer.WriteTextString("MarketplaceRevenueShareRevision");
+                    context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareRevision);
                 }
                 if (publicRequest.IsSetRevenueSharePercent())
                 {

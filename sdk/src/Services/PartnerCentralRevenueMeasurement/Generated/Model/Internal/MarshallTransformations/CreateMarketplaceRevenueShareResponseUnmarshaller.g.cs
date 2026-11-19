@@ -73,33 +73,27 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                         context.PopPathSegment();
                         break;
 
+                    case "Id":
+                        context.AddPathSegment("Id");
+                        unmarshalledObject.Id = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "LastModifiedDate":
                         context.AddPathSegment("LastModifiedDate");
                         unmarshalledObject.LastModifiedDate = CborNullableDateTimeUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
-                    case "ProductCode":
-                        context.AddPathSegment("ProductCode");
-                        unmarshalledObject.ProductCode = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "ProductId":
-                        context.AddPathSegment("ProductId");
-                        unmarshalledObject.ProductId = CborStringUnmarshaller.Instance.Unmarshall(context);
-                        context.PopPathSegment();
-                        break;
-
-                    case "ProductName":
-                        context.AddPathSegment("ProductName");
-                        unmarshalledObject.ProductName = CborStringUnmarshaller.Instance.Unmarshall(context);
+                    case "Products":
+                        context.AddPathSegment("Products");
+                        unmarshalledObject.Products = new CborListUnmarshaller<MarketplaceRevenueShareProductSummary, MarketplaceRevenueShareProductSummaryUnmarshaller>(MarketplaceRevenueShareProductSummaryUnmarshaller.Instance).Unmarshall(context);
                         context.PopPathSegment();
                         break;
 
                     case "Revision":
                         context.AddPathSegment("Revision");
-                        unmarshalledObject.Revision = CborNullableIntUnmarshaller.Instance.Unmarshall(context);
+                        unmarshalledObject.Revision = CborStringUnmarshaller.Instance.Unmarshall(context);
                         context.PopPathSegment();
                         break;
 

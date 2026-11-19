@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// Filter results to only include marketplace revenue shares created after this timestamp.
+        /// Filter results to marketplace revenue shares created at or after this timestamp (inclusive).
         /// </para>
         /// </summary>
         public DateTime? CreatedAfter { get; set; }
@@ -65,7 +65,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// Filter results to only include marketplace revenue shares created before this timestamp.
+        /// Filter results to marketplace revenue shares created before this timestamp (exclusive).
         /// </para>
         /// </summary>
         public DateTime? CreatedBefore { get; set; }
@@ -74,6 +74,27 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// Checks to see if the CreatedBefore property is set.
         /// </summary>
         internal bool IsSetCreatedBefore() => this.CreatedBefore.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Identifiers. 
+        /// <para>
+        /// Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to
+        /// 100 identifiers. When several filters are sent, a share must match all of them.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public List<string> Identifiers { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Identifiers property is set.
+        /// </summary>
+        internal bool IsSetIdentifiers() => this.Identifiers != null && (this.Identifiers.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -107,7 +128,8 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// Filter results to only include shares with these product codes.
+        /// Filter results to the marketplace revenue shares that contain a product with any of
+        /// these product codes. 1 to 10 product codes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -127,7 +149,8 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property ProductIds. 
         /// <para>
-        /// Filter results to only include shares with these product identifiers.
+        /// Filter results to the marketplace revenue shares that contain any of these products.
+        /// 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

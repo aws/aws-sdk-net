@@ -82,6 +82,16 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("CreatedBefore");
                     context.Writer.WriteDateTime(publicRequest.CreatedBefore.Value);
                 }
+                if (publicRequest.IsSetIdentifiers())
+                {
+                    context.Writer.WriteTextString("Identifiers");
+                    context.Writer.WriteStartArray(publicRequest.Identifiers.Count);
+                    foreach (var publicRequestIdentifiersListValue in publicRequest.Identifiers)
+                    {
+                        context.Writer.WriteTextString(publicRequestIdentifiersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 if (publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WriteTextString("MaxResults");

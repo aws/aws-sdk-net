@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The Amazon Resource Name (ARN) of the marketplace revenue share.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 1011)]
         public string Arn { get; set; }
 
         /// <summary>
@@ -54,6 +54,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The catalog that the marketplace revenue share belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public CatalogName Catalog { get; set; }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The date when the marketplace revenue share was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public DateTime? CreatedDate { get; set; }
 
         /// <summary>
@@ -75,11 +77,56 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         internal bool IsSetCreatedDate() => this.CreatedDate.HasValue;
 
         /// <summary>
+        /// Gets and sets the property EffectiveFrom. 
+        /// <para>
+        /// The date from which this share is effective, derived from the earliest ACTIVE allocation
+        /// start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 10, Max = 10)]
+        public string EffectiveFrom { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EffectiveFrom property is set.
+        /// </summary>
+        internal bool IsSetEffectiveFrom() => this.EffectiveFrom != null;
+
+        /// <summary>
+        /// Gets and sets the property EffectiveUntil. 
+        /// <para>
+        /// The date until which this share is effective, derived from the latest ACTIVE allocation
+        /// end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 10, Max = 10)]
+        public string EffectiveUntil { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EffectiveUntil property is set.
+        /// </summary>
+        internal bool IsSetEffectiveUntil() => this.EffectiveUntil != null;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier of the marketplace revenue share, short ID form (mrs-...).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 17, Max = 17)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// The date when the marketplace revenue share was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public DateTime? LastModifiedDate { get; set; }
 
         /// <summary>
@@ -90,55 +137,37 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// <summary>
         /// Gets and sets the property LatestRevision. 
         /// <para>
-        /// The latest revision number of the marketplace revenue share.
+        /// The latest revision of the marketplace revenue share.
         /// </para>
         /// </summary>
-        public int? LatestRevision { get; set; }
+        [AWSProperty(Required = true, Min = 1, Max = 19)]
+        public string LatestRevision { get; set; }
 
         /// <summary>
         /// Checks to see if the LatestRevision property is set.
         /// </summary>
-        internal bool IsSetLatestRevision() => this.LatestRevision.HasValue;
+        internal bool IsSetLatestRevision() => this.LatestRevision != null;
 
         /// <summary>
-        /// Gets and sets the property ProductCode. 
+        /// Gets and sets the property Products. 
         /// <para>
-        /// The AWS Marketplace product code.
+        /// The products in the marketplace revenue share, each with per-type account counts.
+        /// Empty when the share is closed.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public string ProductCode { get; set; }
+        [AWSProperty(Required = true, Min = 0, Max = 25)]
+        public List<MarketplaceRevenueShareProductSummary> Products { get; set; } = AWSConfigs.InitializeCollections ? new List<MarketplaceRevenueShareProductSummary>() : null;
 
         /// <summary>
-        /// Checks to see if the ProductCode property is set.
+        /// Checks to see if the Products property is set.
         /// </summary>
-        internal bool IsSetProductCode() => this.ProductCode != null;
-
-        /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The AWS Marketplace product identifier.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true, Min = 18, Max = 18)]
-        public string ProductId { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ProductId property is set.
-        /// </summary>
-        internal bool IsSetProductId() => this.ProductId != null;
-
-        /// <summary>
-        /// Gets and sets the property ProductName. 
-        /// <para>
-        /// The display name of the AWS Marketplace product.
-        /// </para>
-        /// </summary>
-        public string ProductName { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ProductName property is set.
-        /// </summary>
-        internal bool IsSetProductName() => this.ProductName != null;
+        internal bool IsSetProducts() => this.Products != null && (this.Products.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property TotalActiveMarketplaceRevenueShareAllocationCount. 
@@ -146,6 +175,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The number of active allocations under this share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true, Min = 0)]
         public int? TotalActiveMarketplaceRevenueShareAllocationCount { get; set; }
 
         /// <summary>
@@ -159,6 +189,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model
         /// The total number of allocations under this share.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true, Min = 0)]
         public int? TotalMarketplaceRevenueShareAllocationCount { get; set; }
 
         /// <summary>

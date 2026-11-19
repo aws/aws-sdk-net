@@ -82,10 +82,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("ClientToken");
                     context.Writer.WriteTextString(Guid.NewGuid().ToString());
                 }
-                if (publicRequest.IsSetProductId())
+                if (publicRequest.IsSetProducts())
                 {
-                    context.Writer.WriteTextString("ProductId");
-                    context.Writer.WriteTextString(publicRequest.ProductId);
+                    context.Writer.WriteTextString("Products");
+                    context.Writer.WriteStartArray(publicRequest.Products.Count);
+                    foreach (var publicRequestProductsListValue in publicRequest.Products)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = MarketplaceRevenueShareProductEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestProductsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
                 }
                 if (publicRequest.IsSetTags())
                 {

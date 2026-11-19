@@ -7,20 +7,22 @@
     <pattern>^[!-~]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareResponse.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareResponse.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareResponse.Id</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareResponse.Revision</property>
     <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest.ClientToken</property>
@@ -41,10 +43,16 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest.RevenueSharePercent</property>
@@ -65,22 +73,28 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.LatestMarketplaceRevenueShareRevision</property>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
+    <min>18</min>
+    <max>18</max>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareLatestRevision</property>
     <min>1</min>
     <max>19</max>
     <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse.RevenueSharePercent</property>
@@ -124,46 +138,78 @@
     <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest.Identifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest.Revision</property>
     <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.EffectiveFrom</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.EffectiveUntil</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.Id</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.LatestRevision</property>
     <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.Revision</property>
     <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.TotalActiveMarketplaceRevenueShareAllocationCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse.TotalMarketplaceRevenueShareAllocationCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareAllocationId</property>
     <min>18</min>
     <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareRevision</property>
     <min>1</min>
     <max>19</max>
     <pattern>^[1-9][0-9]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.EffectiveFrom</property>
@@ -178,22 +224,28 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.LatestMarketplaceRevenueShareRevision</property>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
+    <min>18</min>
+    <max>18</max>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareLatestRevision</property>
     <min>1</min>
     <max>19</max>
     <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse.RevenueSharePercent</property>
@@ -357,10 +409,28 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.AfterEffectiveUntil</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.BeforeEffectiveFrom</property>
     <min>10</min>
     <max>10</max>
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.BeforeEffectiveUntil</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.MarketplaceRevenueShareRevision</property>
@@ -378,12 +448,6 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[\S]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsResponse.NextToken</property>
@@ -482,7 +546,7 @@
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/prod-[a-z0-9]{13})$</pattern>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.StartRevenueAttributionAllocationsTaskRequest.ClientToken</property>
@@ -517,13 +581,49 @@
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/prod-[a-z0-9]{13})$</pattern>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/prod-[a-z0-9]{13})$</pattern>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/(revenue-attribution/[a-zA-Z0-9-]+|marketplace-revenue-share/mrs-[a-z0-9]{13})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest.Identifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareRequest.Revision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareResponse.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareResponse.Id</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareResponse.LatestRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.ClientToken</property>
@@ -532,34 +632,22 @@
     <pattern>^[!-~]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.EffectiveFrom</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.EffectiveUntil</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareAllocationId</property>
     <min>18</min>
     <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>1011</max>
+    <pattern>^(arn:[a-z-]+:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}|mrs-[a-z0-9]{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.MarketplaceRevenueShareRevision</property>
     <min>1</min>
     <max>19</max>
     <pattern>^[1-9][0-9]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest.RevenueSharePercent</property>
@@ -580,22 +668,28 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.LatestMarketplaceRevenueShareRevision</property>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
+    <min>18</min>
+    <max>18</max>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareLatestRevision</property>
     <min>1</min>
     <max>19</max>
     <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareAllocationId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.MarketplaceRevenueShareRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse.RevenueSharePercent</property>
@@ -676,6 +770,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.ContextFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceProductSummary.ProductId</property>
     <min>1</min>
     <max>255</max>
@@ -697,13 +797,13 @@
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareAllocationSummary.MarketplaceRevenueShareAllocationId</property>
     <min>18</min>
     <max>18</max>
-    <pattern>^mrsa-[A-Za-z0-9]{13}$</pattern>
+    <pattern>^mrsa-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareAllocationSummary.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareAllocationSummary.MarketplaceRevenueShareIdentifier</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareAllocationSummary.RevenueSharePercent</property>
@@ -712,10 +812,72 @@
     <pattern>^\d{1,3}(\.\d{1,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.ProductId</property>
-    <min>18</min>
-    <max>18</max>
-    <pattern>^prod-[a-z0-9]{13}$</pattern>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareProductDetail.ProductCode</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareProductDetail.ProductId</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]{1,254}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareProductEntry.ProductId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-:/.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareProductSummary.ProductCode</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareProductSummary.ProductId</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]{1,254}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:partnercentral:[a-z0-9-]+:[0-9]{12}:catalog/[a-zA-Z]+/marketplace-revenue-share/mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.EffectiveFrom</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.EffectiveUntil</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.Id</property>
+    <min>17</min>
+    <max>17</max>
+    <pattern>^mrs-[a-z0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.LatestRevision</property>
+    <min>1</min>
+    <max>19</max>
+    <pattern>^[1-9][0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.TotalActiveMarketplaceRevenueShareAllocationCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.MarketplaceRevenueShareSummary.TotalMarketplaceRevenueShareAllocationCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.RevenueAttributionAllocationErrorDetail.CustomerAwsAccountId</property>
@@ -824,6 +986,14 @@
     <min>1</min>
     <max>6</max>
     <pattern>^\d{1,3}(\.\d{1,2})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.RevenueShareProductAccountDetail.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralRevenueMeasurement.Model.RevenueShareProductAccountSummary.Count</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralRevenueMeasurement.Model.Tag.Key</property>

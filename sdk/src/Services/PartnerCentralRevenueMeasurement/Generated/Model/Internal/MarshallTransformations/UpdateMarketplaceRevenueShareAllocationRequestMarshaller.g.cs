@@ -82,30 +82,20 @@ namespace Amazon.PartnerCentralRevenueMeasurement.Model.Internal.MarshallTransfo
                     context.Writer.WriteTextString("ClientToken");
                     context.Writer.WriteTextString(Guid.NewGuid().ToString());
                 }
-                if (publicRequest.IsSetEffectiveFrom())
-                {
-                    context.Writer.WriteTextString("EffectiveFrom");
-                    context.Writer.WriteTextString(publicRequest.EffectiveFrom);
-                }
-                if (publicRequest.IsSetEffectiveUntil())
-                {
-                    context.Writer.WriteTextString("EffectiveUntil");
-                    context.Writer.WriteTextString(publicRequest.EffectiveUntil);
-                }
                 if (publicRequest.IsSetMarketplaceRevenueShareAllocationId())
                 {
                     context.Writer.WriteTextString("MarketplaceRevenueShareAllocationId");
                     context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareAllocationId);
                 }
+                if (publicRequest.IsSetMarketplaceRevenueShareIdentifier())
+                {
+                    context.Writer.WriteTextString("MarketplaceRevenueShareIdentifier");
+                    context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareIdentifier);
+                }
                 if (publicRequest.IsSetMarketplaceRevenueShareRevision())
                 {
                     context.Writer.WriteTextString("MarketplaceRevenueShareRevision");
                     context.Writer.WriteTextString(publicRequest.MarketplaceRevenueShareRevision);
-                }
-                if (publicRequest.IsSetProductId())
-                {
-                    context.Writer.WriteTextString("ProductId");
-                    context.Writer.WriteTextString(publicRequest.ProductId);
                 }
                 if (publicRequest.IsSetRevenueSharePercent())
                 {

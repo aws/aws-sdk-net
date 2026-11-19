@@ -337,7 +337,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a new marketplace revenue share allocation for the specified product.
+        /// Creates a new allocation under the specified marketplace revenue share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMarketplaceRevenueShareAllocation service method.</param>
         /// <returns>The response from the CreateMarketplaceRevenueShareAllocation service method, as returned by PartnerCentralRevenueMeasurement.</returns>
@@ -353,6 +353,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Retry your request.
@@ -381,7 +384,7 @@ namespace Amazon.PartnerCentralRevenueMeasurement
 #endif
 
         /// <summary>
-        /// Creates a new marketplace revenue share allocation for the specified product.
+        /// Creates a new allocation under the specified marketplace revenue share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMarketplaceRevenueShareAllocation service method.</param>
         /// <param name="cancellationToken">
@@ -400,6 +403,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Retry your request.
@@ -977,6 +983,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Retry your request.
         /// </exception>
@@ -1016,6 +1025,9 @@ namespace Amazon.PartnerCentralRevenueMeasurement
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Retry your request.
@@ -1507,8 +1519,102 @@ namespace Amazon.PartnerCentralRevenueMeasurement
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates an existing marketplace revenue share allocation. Supports modifying effective
-        /// dates, revenue share percentage, and status with time-based mutability rules.
+        /// Replaces the products of a marketplace revenue share. The request carries the complete
+        /// desired set of products and their typed account lists; a product not listed is removed
+        /// and its account lists cleared, and an empty Products list closes the marketplace revenue
+        /// share. Closing is one-way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceRevenueShare service method.</param>
+        /// <returns>The response from the UpdateMarketplaceRevenueShare service method, as returned by PartnerCentralRevenueMeasurement.</returns>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-revenue-measurement-2022-07-26/UpdateMarketplaceRevenueShare">REST API Reference for UpdateMarketplaceRevenueShare Operation</seealso>
+        public virtual UpdateMarketplaceRevenueShareResponse UpdateMarketplaceRevenueShare(UpdateMarketplaceRevenueShareRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMarketplaceRevenueShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMarketplaceRevenueShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMarketplaceRevenueShareResponse>(request, options);
+        }
+#else
+        internal virtual UpdateMarketplaceRevenueShareResponse UpdateMarketplaceRevenueShare(UpdateMarketplaceRevenueShareRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMarketplaceRevenueShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMarketplaceRevenueShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMarketplaceRevenueShareResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Replaces the products of a marketplace revenue share. The request carries the complete
+        /// desired set of products and their typed account lists; a product not listed is removed
+        /// and its account lists cleared, and an empty Products list closes the marketplace revenue
+        /// share. Closing is one-way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceRevenueShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateMarketplaceRevenueShare service method, as returned by PartnerCentralRevenueMeasurement.</returns>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralRevenueMeasurement.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-revenue-measurement-2022-07-26/UpdateMarketplaceRevenueShare">REST API Reference for UpdateMarketplaceRevenueShare Operation</seealso>
+        public virtual Task<UpdateMarketplaceRevenueShareResponse> UpdateMarketplaceRevenueShareAsync(UpdateMarketplaceRevenueShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMarketplaceRevenueShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMarketplaceRevenueShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMarketplaceRevenueShareResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an existing marketplace revenue share allocation. Supports modifying the revenue
+        /// share percentage and status only, with time-based mutability rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceRevenueShareAllocation service method.</param>
         /// <returns>The response from the UpdateMarketplaceRevenueShareAllocation service method, as returned by PartnerCentralRevenueMeasurement.</returns>
@@ -1552,8 +1658,8 @@ namespace Amazon.PartnerCentralRevenueMeasurement
 #endif
 
         /// <summary>
-        /// Updates an existing marketplace revenue share allocation. Supports modifying effective
-        /// dates, revenue share percentage, and status with time-based mutability rules.
+        /// Updates an existing marketplace revenue share allocation. Supports modifying the revenue
+        /// share percentage and status only, with time-based mutability rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMarketplaceRevenueShareAllocation service method.</param>
         /// <param name="cancellationToken">

@@ -641,6 +641,47 @@ namespace Amazon.PartnerCentralRevenueMeasurement
     }
 
     /// <summary>
+    /// Constants used for properties of type RevenueShareProductAccountType.
+    /// </summary>
+    public class RevenueShareProductAccountType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEPLOYMENT for RevenueShareProductAccountType
+        /// </summary>
+        public static readonly RevenueShareProductAccountType DEPLOYMENT = new RevenueShareProductAccountType("DEPLOYMENT");
+
+        /// <summary>
+        /// Constant ORGANIZATION for RevenueShareProductAccountType
+        /// </summary>
+        public static readonly RevenueShareProductAccountType ORGANIZATION = new RevenueShareProductAccountType("ORGANIZATION");
+
+        /// <summary>
+        /// Constructs a custom RevenueShareProductAccountType for a value not among the defined constants.
+        /// </summary>
+        public RevenueShareProductAccountType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevenueShareProductAccountType FindValue(string value)
+        {
+            return FindValue<RevenueShareProductAccountType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevenueShareProductAccountType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ServiceQuotaExceededExceptionReason.
     /// </summary>
     public class ServiceQuotaExceededExceptionReason : ConstantClass
