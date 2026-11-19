@@ -145,6 +145,10 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     {
                         return ExpiredTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidContextAssertion"))
+                    {
+                        return InvalidContextAssertionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedPolicyDocument"))
                     {
                         return MalformedPolicyDocumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -42,7 +42,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.SourceIdentity</property>
     <min>2</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -66,7 +66,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleResponse.SourceIdentity</property>
     <min>2</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -117,7 +117,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse.SourceIdentity</property>
     <min>2</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -173,7 +173,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse.SourceIdentity</property>
     <min>2</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -207,7 +207,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRootResponse.SourceIdentity</property>
     <min>2</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[\w+=,.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -272,6 +272,46 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsRequest.DurationSeconds</property>
+    <min>1</min>
+    <max>129600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsRequest.MinimumSessionTokenSize</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsRequest.Policy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsRequest.ScopedSessionDescription</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsResponse.ScopedPoliciesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsResponse.SessionTokenSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsResponse.SessionTokenUtilization</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetScopedCredentialsResponse.SourceIdentity</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>^[\w+=,.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetSessionTokenRequest.DurationSeconds</property>
     <min>900</min>
     <max>129600</max>
@@ -305,6 +345,12 @@
     <property>Amazon.SecurityToken.Model.GetWebIdentityTokenRequest.DurationSeconds</property>
     <min>60</min>
     <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetWebIdentityTokenRequest.Scope</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\x21\x23-\x2B\x2D-\x5B\x5D-\x7E]+( [\x21\x23-\x2B\x2D-\x5B\x5D-\x7E]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetWebIdentityTokenRequest.SigningAlgorithm</property>
@@ -342,6 +388,12 @@
     <pattern>^[\w+=,.@\:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityToken.Model.OriginIdentity.FederatedProviderArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityToken.Model.PolicyDescriptorType.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -350,13 +402,25 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.ProvidedContext.ContextAssertion</property>
     <min>4</min>
-    <max>2048</max>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.ProvidedContext.ProviderArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.ScopedSession.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.ScopedSession.ScopedSessionId</property>
+    <min>2</min>
+    <max>193</max>
+    <pattern>^[\w+=,.@:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.Tag.Key</property>

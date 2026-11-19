@@ -88,17 +88,12 @@ namespace Amazon.SecurityToken.Model
     /// <para> You can pass up to 50 session tags. The plaintext session tag keys can’t exceed
     /// 128 characters and the values can’t exceed 256 characters. For these and additional
     /// limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-    /// and STS Character Limits</a> in the <i>IAM User Guide</i>. </para> <note> <para> An
-    /// Amazon Web Services conversion compresses the passed inline session policy, managed
-    /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-    /// Your request can fail for this limit even if your plaintext meets the other requirements.
-    /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-    /// policies and tags for your request are to the upper size limit. </para> </note> <para>
-    /// You can pass a session tag with the same key as a tag that is attached to the role.
-    /// When you do, the session tag overrides the role tag with the same key. </para> <para>
-    /// An administrator must grant you the permissions necessary to pass session tags. The
-    /// administrator can also create granular permissions to allow you to pass only specific
-    /// session tags. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+    /// and STS Character Limits</a> in the <i>IAM User Guide</i>. </para> <para> You can
+    /// pass a session tag with the same key as a tag that is attached to the role. When you
+    /// do, the session tag overrides the role tag with the same key. </para> <para> An administrator
+    /// must grant you the permissions necessary to pass session tags. The administrator can
+    /// also create granular permissions to allow you to pass only specific session tags.
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
     /// Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>. </para>
     /// <para> You can set the session tags as transitive. Transitive tags persist during
     /// role chaining. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
@@ -200,15 +195,6 @@ namespace Amazon.SecurityToken.Model
         /// For more information about role session permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// policies</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string Policy { get; set; }
@@ -232,15 +218,7 @@ namespace Amazon.SecurityToken.Model
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon
         /// Web Services General Reference.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Passing policies to this operation returns new temporary credentials. The resulting
         /// session's permissions are the intersection of the role's identity-based policy and

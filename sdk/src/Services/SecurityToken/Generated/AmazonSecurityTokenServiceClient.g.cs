@@ -409,22 +409,27 @@ namespace Amazon.SecurityToken
         /// The web identity token that was passed is expired or is not valid. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidContextAssertionException">
+        /// The request was rejected because the context assertion that was provided is invalid.
+        /// This can happen if the context assertion supplied in the <c>ProvidedContexts</c> parameter
+        /// is malformed, has expired, or does not match a trusted context provider.
+        /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -594,22 +599,27 @@ namespace Amazon.SecurityToken
         /// The web identity token that was passed is expired or is not valid. Get a new identity
         /// token from the identity provider and then retry the request.
         /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidContextAssertionException">
+        /// The request was rejected because the context assertion that was provided is invalid.
+        /// This can happen if the context assertion supplied in the <c>ProvidedContexts</c> parameter
+        /// is malformed, has expired, or does not match a trusted context provider.
+        /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
         /// The request was rejected because the policy document was malformed. The error message
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -740,15 +750,7 @@ namespace Amazon.SecurityToken
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is attached to the role.
         /// When you do, session tags override the role's tags with the same key.
@@ -830,17 +832,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -980,15 +982,7 @@ namespace Amazon.SecurityToken
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is attached to the role.
         /// When you do, session tags override the role's tags with the same key.
@@ -1073,17 +1067,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -1205,15 +1199,7 @@ namespace Amazon.SecurityToken
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is attached to the role.
         /// When you do, the session tag overrides the role tag with the same key.
@@ -1305,17 +1291,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -1446,15 +1432,7 @@ namespace Amazon.SecurityToken
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is attached to the role.
         /// When you do, the session tag overrides the role tag with the same key.
@@ -1549,17 +1527,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -2039,17 +2017,17 @@ namespace Amazon.SecurityToken
         /// for credentials. Request a new token and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -2095,17 +2073,17 @@ namespace Amazon.SecurityToken
         /// for credentials. Request a new token and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -2186,7 +2164,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS operations except <c>GetCallerIdentity</c>.
+        /// You cannot call any STS operations except <c>GetCallerIdentity</c>, <c>GetScopedCredentials</c>,
+        /// or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2262,17 +2241,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -2362,7 +2341,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS operations except <c>GetCallerIdentity</c>.
+        /// You cannot call any STS operations except <c>GetCallerIdentity</c>, <c>GetScopedCredentials</c>,
+        /// or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2441,17 +2421,17 @@ namespace Amazon.SecurityToken
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
-        /// The request was rejected because the total packed size of the session policies and
-        /// session tags combined was too large. An Amazon Web Services conversion compresses
-        /// the session policy document, session policy ARNs, and session tags into a packed binary
-        /// format that has a separate limit. The error message indicates by percentage how close
-        /// the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
         /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You could receive this error even though you meet other defined session policy and
-        /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
         /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </exception>
@@ -2469,6 +2449,168 @@ namespace Amazon.SecurityToken
             options.ResponseUnmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFederationTokenResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a set of temporary security credentials that are scoped down from the caller's
+        /// existing temporary security credentials. <c>GetScopedCredentials</c> preserves the
+        /// caller's identity while narrowing the permissions and optionally shortening the session
+        /// lifetime.
+        /// 
+        ///  
+        /// <para>
+        /// For a comparison of <c>GetScopedCredentials</c> with the other API operations that
+        /// produce temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the IAM User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Credential requirements</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only call <c>GetScopedCredentials</c> with temporary security credentials,
+        /// for example, credentials from an assumed role or a federated session. You cannot call
+        /// it with IAM user credentials or root credentials. If you want to scope down IAM user
+        /// credentials, first call <c>GetSessionToken</c> to get temporary security credentials,
+        /// and then call <c>GetScopedCredentials</c> with those credentials.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>GetScopedCredentials</c> API is not available on the STS Global endpoint.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScopedCredentials service method.</param>
+        /// <returns>The response from the GetScopedCredentials service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.InsufficientSessionLifetimeException">
+        /// The request was rejected because the requested <c>DurationSeconds</c> is greater than
+        /// the remaining lifetime of the calling session. <c>GetScopedCredentials</c> cannot
+        /// extend a session beyond its original expiration. Request a duration that is less than
+        /// or equal to the calling session's remaining lifetime, or omit <c>DurationSeconds</c>
+        /// to inherit it.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidSubjectCredentialsException">
+        /// The request was rejected because the session used to call <c>GetScopedCredentials</c>
+        /// is not a valid session. The calling session's credentials could not be validated or
+        /// resolved.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetScopedCredentials">REST API Reference for GetScopedCredentials Operation</seealso>
+        public virtual GetScopedCredentialsResponse GetScopedCredentials(GetScopedCredentialsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScopedCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScopedCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetScopedCredentialsResponse>(request, options);
+        }
+#else
+        internal virtual GetScopedCredentialsResponse GetScopedCredentials(GetScopedCredentialsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScopedCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScopedCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetScopedCredentialsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns a set of temporary security credentials that are scoped down from the caller's
+        /// existing temporary security credentials. <c>GetScopedCredentials</c> preserves the
+        /// caller's identity while narrowing the permissions and optionally shortening the session
+        /// lifetime.
+        /// 
+        ///  
+        /// <para>
+        /// For a comparison of <c>GetScopedCredentials</c> with the other API operations that
+        /// produce temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the IAM User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Credential requirements</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only call <c>GetScopedCredentials</c> with temporary security credentials,
+        /// for example, credentials from an assumed role or a federated session. You cannot call
+        /// it with IAM user credentials or root credentials. If you want to scope down IAM user
+        /// credentials, first call <c>GetSessionToken</c> to get temporary security credentials,
+        /// and then call <c>GetScopedCredentials</c> with those credentials.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>GetScopedCredentials</c> API is not available on the STS Global endpoint.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScopedCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetScopedCredentials service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.InsufficientSessionLifetimeException">
+        /// The request was rejected because the requested <c>DurationSeconds</c> is greater than
+        /// the remaining lifetime of the calling session. <c>GetScopedCredentials</c> cannot
+        /// extend a session beyond its original expiration. Request a duration that is less than
+        /// or equal to the calling session's remaining lifetime, or omit <c>DurationSeconds</c>
+        /// to inherit it.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.InvalidSubjectCredentialsException">
+        /// The request was rejected because the session used to call <c>GetScopedCredentials</c>
+        /// is not a valid session. The calling session's credentials could not be validated or
+        /// resolved.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.PackedPolicyTooLargeException">
+        /// The request was rejected because the session token exceeded the maximum allowed size.
+        /// The error message reports the session token size and the maximum allowed size, both
+        /// in bytes. Session policies and session tags add to the session token size. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+        /// Session Tags in STS</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You might receive this error even though you meet the individual session policy and
+        /// session tag limits. Monitor <c>SessionTokenUtilization</c> to track how close the
+        /// session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM
+        /// and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetScopedCredentials">REST API Reference for GetScopedCredentials Operation</seealso>
+        public virtual Task<GetScopedCredentialsResponse> GetScopedCredentialsAsync(GetScopedCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetScopedCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetScopedCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetScopedCredentialsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2525,7 +2667,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c> or <c>GetCallerIdentity</c>.
+        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c>, <c>GetCallerIdentity</c>,
+        /// <c>GetScopedCredentials</c>, <c>GetWebIdentityToken</c>, or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2631,7 +2774,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c> or <c>GetCallerIdentity</c>.
+        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c>, <c>GetCallerIdentity</c>,
+        /// <c>GetScopedCredentials</c>, <c>GetWebIdentityToken</c>, or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2731,7 +2875,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c> or <c>GetCallerIdentity</c>.
+        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c>, <c>GetCallerIdentity</c>,
+        /// <c>GetScopedCredentials</c>, <c>GetWebIdentityToken</c>, or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2828,7 +2973,8 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c> or <c>GetCallerIdentity</c>.
+        /// You cannot call any STS API <i>except</i> <c>AssumeRole</c>, <c>GetCallerIdentity</c>,
+        /// <c>GetScopedCredentials</c>, <c>GetWebIdentityToken</c>, or <c>GetDelegatedAccessToken</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2872,10 +3018,19 @@ namespace Amazon.SecurityToken
 #if NETFRAMEWORK
         /// <summary>
         /// Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services
-        /// identity. The returned JWT can be used to authenticate with external services that
-        /// support OIDC discovery. The token is signed by Amazon Web Services STS and can be
-        /// publicly verified using the verification keys published at the issuer's JWKS endpoint.
+        /// identity or, if you set <c>SubjectMode</c> to <c>OriginIdentity</c>, the human user
+        /// or workload on whose behalf the calling session acts. The returned JWT can be used
+        /// to authenticate with external services that support OIDC discovery. The token is signed
+        /// by Amazon Web Services STS and can be publicly verified using the verification keys
+        /// published at the issuer's JWKS endpoint.
         /// 
+        ///  
+        /// <para>
+        /// The <c>sub</c> (subject) claim contains the identity that <c>SubjectMode</c> selects.
+        /// Whichever subject mode you use, the <c>principal_id</c> claim under the <c>https://sts.amazonaws.com/</c>
+        /// namespace contains the ARN of the principal that requested the token, when that principal
+        /// has an ARN. For a role session, this is the ARN of the role.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The <c>GetWebIdentityToken</c> API is not available on the STS Global endpoint.
@@ -2921,10 +3076,19 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services
-        /// identity. The returned JWT can be used to authenticate with external services that
-        /// support OIDC discovery. The token is signed by Amazon Web Services STS and can be
-        /// publicly verified using the verification keys published at the issuer's JWKS endpoint.
+        /// identity or, if you set <c>SubjectMode</c> to <c>OriginIdentity</c>, the human user
+        /// or workload on whose behalf the calling session acts. The returned JWT can be used
+        /// to authenticate with external services that support OIDC discovery. The token is signed
+        /// by Amazon Web Services STS and can be publicly verified using the verification keys
+        /// published at the issuer's JWKS endpoint.
         /// 
+        ///  
+        /// <para>
+        /// The <c>sub</c> (subject) claim contains the identity that <c>SubjectMode</c> selects.
+        /// Whichever subject mode you use, the <c>principal_id</c> claim under the <c>https://sts.amazonaws.com/</c>
+        /// namespace contains the ARN of the principal that requested the token, when that principal
+        /// has an ARN. For a role session, this is the ARN of the role.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The <c>GetWebIdentityToken</c> API is not available on the STS Global endpoint.

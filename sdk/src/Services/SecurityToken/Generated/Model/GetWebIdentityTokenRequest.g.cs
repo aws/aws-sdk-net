@@ -31,12 +31,17 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWebIdentityToken operation. Returns a signed
-    /// JSON Web Token (JWT) that represents the calling Amazon Web Services identity. The
-    /// returned JWT can be used to authenticate with external services that support OIDC
-    /// discovery. The token is signed by Amazon Web Services STS and can be publicly verified
-    /// using the verification keys published at the issuer's JWKS endpoint. <note> <para>
-    /// The <c>GetWebIdentityToken</c> API is not available on the STS Global endpoint. </para>
-    /// </note>
+    /// JSON Web Token (JWT) that represents the calling Amazon Web Services identity or,
+    /// if you set <c>SubjectMode</c> to <c>OriginIdentity</c>, the human user or workload
+    /// on whose behalf the calling session acts. The returned JWT can be used to authenticate
+    /// with external services that support OIDC discovery. The token is signed by Amazon
+    /// Web Services STS and can be publicly verified using the verification keys published
+    /// at the issuer's JWKS endpoint. <para> The <c>sub</c> (subject) claim contains the
+    /// identity that <c>SubjectMode</c> selects. Whichever subject mode you use, the <c>principal_id</c>
+    /// claim under the <c>https://sts.amazonaws.com/</c> namespace contains the ARN of the
+    /// principal that requested the token, when that principal has an ARN. For a role session,
+    /// this is the ARN of the role. </para> <note> <para> The <c>GetWebIdentityToken</c>
+    /// API is not available on the STS Global endpoint. </para> </note>
     /// </summary>
     public partial class GetWebIdentityTokenRequest : AmazonSecurityTokenServiceRequest
     {
@@ -82,6 +87,43 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetDurationSeconds() => this.DurationSeconds.HasValue;
 
         /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// One or more OAuth 2.0 scope values to include in the JSON Web Token (JWT). Amazon
+        /// Web Services STS copies the value exactly as you send it into the top-level <c>scope</c>
+        /// claim of the token. If you don't specify <c>Scope</c>, the token doesn't include a
+        /// <c>scope</c> claim.
+        /// </para>
+        ///  
+        /// <para>
+        /// Separate multiple values with a single space, as defined in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-3.3">RFC
+        /// 6749, section 3.3</a> on the IETF website. Don't begin or end <c>Scope</c> with a
+        /// space. Each scope value can contain printable ASCII characters except spaces, double
+        /// quotation marks (<c>"</c>), commas (<c>,</c>), and backslashes (<c>\</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't repeat a scope value. Scope values are case sensitive. This means that <c>read</c>
+        /// and <c>READ</c> are separate values.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <c>Scope</c> only when <c>SubjectMode</c> is <c>OriginIdentity</c>
+        /// and you request exactly one audience. To specify <c>Scope</c>, the calling principal
+        /// must have permission for the <c>sts:SetWebIdentityTokenScope</c> action in addition
+        /// to <c>sts:GetWebIdentityToken</c>. You can use the multivalued <c>sts:IdentityTokenScope</c>
+        /// condition key in a policy to control which scope values a principal can request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
         /// Gets and sets the property SigningAlgorithm. 
         /// <para>
         /// The cryptographic algorithm to use for signing the JSON Web Token (JWT). Valid values
@@ -95,6 +137,53 @@ namespace Amazon.SecurityToken.Model
         /// Checks to see if the SigningAlgorithm property is set.
         /// </summary>
         internal bool IsSetSigningAlgorithm() => this.SigningAlgorithm != null;
+
+        /// <summary>
+        /// Gets and sets the property SubjectMode. 
+        /// <para>
+        /// Specifies which identity STS puts in the <c>sub</c> (subject) claim of the JSON Web
+        /// Token (JWT). Valid values are <c>AWSIdentity</c> and <c>OriginIdentity</c>. If you
+        /// don't specify a value, Amazon Web Services STS uses <c>AWSIdentity</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWSIdentity</c> – The <c>sub</c> claim contains the ARN of the calling Amazon
+        /// Web Services principal.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OriginIdentity</c> – The <c>sub</c> claim contains the value of the <c>aws:OriginIdentity/Subject</c>
+        /// key in the trusted identity propagation context of the calling session. For example,
+        /// this can identify the human user or workload on whose behalf the calling session acts.
+        /// Amazon Web Services STS also adds a <c>subject_mode</c> claim to the token.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use <c>OriginIdentity</c>, the trusted identity propagation context of the calling
+        /// session must contain the <c>aws:OriginIdentity/Subject</c> key and either the <c>aws:OriginIdentity/Issuer</c>
+        /// key or the <c>aws:OriginIdentity/FederatedProviderArn</c> key. If it doesn't, or if
+        /// the subject is blank, Amazon Web Services STS rejects the request with a validation
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services STS denies the request if the subject begins with the text <c>arn:</c>,
+        /// in any combination of uppercase and lowercase letters. Amazon Web Services STS also
+        /// denies the request if the subject begins or ends with a space, or contains a control,
+        /// format, or separator character other than a space.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the <c>sts:SubjectMode</c> condition key in a policy to control which
+        /// subject modes a principal can request.
+        /// </para>
+        /// </summary>
+        public WebIdentityTokenSubjectModeType SubjectMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SubjectMode property is set.
+        /// </summary>
+        internal bool IsSetSubjectMode() => this.SubjectMode != null;
 
         /// <summary>
         /// Gets and sets the property Tags. 

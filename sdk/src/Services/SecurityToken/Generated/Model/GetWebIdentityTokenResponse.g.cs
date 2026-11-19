@@ -52,12 +52,16 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property WebIdentityToken. 
         /// <para>
-        /// A signed JSON Web Token (JWT) that represents the caller's Amazon Web Services identity.
-        /// The token contains standard JWT claims such as subject, audience, expiration time,
-        /// and additional identity attributes added by STS as custom claims. You can also add
-        /// your own custom claims to the token by passing tags as request parameters to the <c>GetWebIdentityToken</c>
-        /// API. The token is signed using the specified signing algorithm and can be verified
-        /// using the verification keys available at the issuer's JWKS endpoint.
+        /// A signed JSON Web Token (JWT) that represents the caller's Amazon Web Services identity
+        /// or, if you set <c>SubjectMode</c> to <c>OriginIdentity</c>, the human user or workload
+        /// on whose behalf the calling session acts. The token contains standard JWT claims such
+        /// as subject, audience, expiration time, and additional identity attributes added by
+        /// STS as custom claims. These can include the <c>principal_id</c> claim, which contains
+        /// the ARN of the principal that requested the token, whichever subject mode you use.
+        /// You can also add your own custom claims to the token by passing tags as request parameters
+        /// to the <c>GetWebIdentityToken</c> API. The token is signed using the specified signing
+        /// algorithm and can be verified using the verification keys available at the issuer's
+        /// JWKS endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]

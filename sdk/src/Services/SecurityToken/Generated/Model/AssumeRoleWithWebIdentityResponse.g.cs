@@ -89,9 +89,12 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property PackedPolicySize. 
         /// <para>
-        /// A percentage value that indicates the packed size of the session policies and session
-        /// tags combined passed in the request. The request fails if the packed size is greater
-        /// than 100 percent, which means the policies and tags exceeded the allowed space.
+        /// The percentage (0-100) of the maximum allowed session token size that the returned
+        /// session token consumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is deprecated. Use <c>SessionTokenUtilization</c> instead.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. Replaced by SessionTokenUtilization.")]
@@ -169,7 +172,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 2, Max = 64)]
+        [AWSProperty(Min = 2, Max = 256)]
         public string SourceIdentity { get; set; }
 
         /// <summary>
@@ -195,5 +198,31 @@ namespace Amazon.SecurityToken.Model
         /// Checks to see if the SubjectFromWebIdentityToken property is set.
         /// </summary>
         internal bool IsSetSubjectFromWebIdentityToken() => this.SubjectFromWebIdentityToken != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedIdentityPropagationContext. 
+        /// <para>
+        /// The trusted identity propagation context that Amazon Web Services STS set in the session
+        /// from the web identity token, through the context provider attached to the OpenID Connect
+        /// identity provider. It is present only when Amazon Web Services STS set such context
+        /// in the session. It contains the <c>aws:OriginIdentity/Subject</c>, <c>aws:OriginIdentity/SubjectType</c>,
+        /// <c>aws:OriginIdentity/Issuer</c> and <c>aws:OriginIdentity/FederatedProviderArn</c>
+        /// keys and the <c>aws:TransactionContext/IdentityProvider/*</c> keys that Amazon Web
+        /// Services STS set in the session. Other keys in the session, such as <c>aws:IdentityCenterInstanceArn</c>
+        /// and <c>aws:IdentityStoreArn</c> for an identity provider with an Identity Center instance
+        /// attached, are not returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element contains information about the end user. Do not log it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public TrustedIdentityPropagationContext TrustedIdentityPropagationContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedIdentityPropagationContext property is set.
+        /// </summary>
+        internal bool IsSetTrustedIdentityPropagationContext() => this.TrustedIdentityPropagationContext != null;
     }
 }

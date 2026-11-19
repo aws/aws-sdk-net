@@ -43,7 +43,7 @@ namespace Amazon.SecurityToken.Model
         /// The trusted context assertion is signed and encrypted by Amazon Web Services STS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 4, Max = 2048)]
+        [AWSProperty(Min = 4, Max = 3072)]
         public string ContextAssertion { get; set; }
 
         /// <summary>

@@ -210,15 +210,7 @@ namespace Amazon.SecurityToken.Model
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information about role session permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// policies</a>.
@@ -246,15 +238,7 @@ namespace Amazon.SecurityToken.Model
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon
         /// Web Services General Reference.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Passing policies to this operation returns new temporary credentials. The resulting
         /// session's permissions are the intersection of the role's identity-based policy and
@@ -412,7 +396,7 @@ namespace Amazon.SecurityToken.Model
         /// internal use.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 2, Max = 64)]
+        [AWSProperty(Min = 2, Max = 256)]
         public string SourceIdentity { get; set; }
 
         /// <summary>
@@ -434,15 +418,7 @@ namespace Amazon.SecurityToken.Model
         /// For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is already attached to
         /// the role. When you do, session tags override a role tag with the same key. 

@@ -155,6 +155,13 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubjectType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("TrustedIdentityPropagationContext", targetDepth))
+                    {
+                        var unmarshaller = TrustedIdentityPropagationContextUnmarshaller.Instance;
+                        unmarshalledObject.TrustedIdentityPropagationContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
             }
 

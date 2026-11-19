@@ -73,9 +73,17 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds.Value));
             }
+            if (publicRequest.IsSetScope())
+            {
+                request.Parameters.Add("Scope", StringUtils.FromString(publicRequest.Scope));
+            }
             if (publicRequest.IsSetSigningAlgorithm())
             {
                 request.Parameters.Add("SigningAlgorithm", StringUtils.FromString(publicRequest.SigningAlgorithm));
+            }
+            if (publicRequest.IsSetSubjectMode())
+            {
+                request.Parameters.Add("SubjectMode", StringUtils.FromString(publicRequest.SubjectMode));
             }
             if (publicRequest.IsSetTags())
             {

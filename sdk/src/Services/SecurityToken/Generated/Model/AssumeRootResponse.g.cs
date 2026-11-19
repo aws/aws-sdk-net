@@ -96,7 +96,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 2, Max = 64)]
+        [AWSProperty(Min = 2, Max = 256)]
         public string SourceIdentity { get; set; }
 
         /// <summary>

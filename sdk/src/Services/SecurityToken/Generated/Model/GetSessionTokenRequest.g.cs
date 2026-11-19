@@ -58,10 +58,11 @@ namespace Amazon.SecurityToken.Model
     /// Amazon Web Services service with the following exceptions: </para> <ul> <li> <para>
     /// You cannot call any IAM API operations unless MFA authentication information is included
     /// in the request. </para> </li> <li> <para> You cannot call any STS API <i>except</i>
-    /// <c>AssumeRole</c> or <c>GetCallerIdentity</c>. </para> </li> </ul> <para> The credentials
-    /// that <c>GetSessionToken</c> returns are based on permissions associated with the IAM
-    /// user whose credentials were used to call the operation. The temporary credentials
-    /// have the same permissions as the IAM user. </para> <note> <para> Although it is possible
+    /// <c>AssumeRole</c>, <c>GetCallerIdentity</c>, <c>GetScopedCredentials</c>, <c>GetWebIdentityToken</c>,
+    /// or <c>GetDelegatedAccessToken</c>. </para> </li> </ul> <para> The credentials that
+    /// <c>GetSessionToken</c> returns are based on permissions associated with the IAM user
+    /// whose credentials were used to call the operation. The temporary credentials have
+    /// the same permissions as the IAM user. </para> <note> <para> Although it is possible
     /// to call <c>GetSessionToken</c> using the security credentials of an Amazon Web Services
     /// account root user rather than an IAM user, we do not recommend it. If <c>GetSessionToken</c>
     /// is called using root user credentials, the temporary credentials have root user permissions.

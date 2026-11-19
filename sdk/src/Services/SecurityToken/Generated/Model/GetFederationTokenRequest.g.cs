@@ -60,9 +60,9 @@ namespace Amazon.SecurityToken.Model
     /// service with the following exceptions: </para> <ul> <li> <para> You cannot call any
     /// IAM operations using the CLI or the Amazon Web Services API. This limitation does
     /// not apply to console sessions. </para> </li> <li> <para> You cannot call any STS operations
-    /// except <c>GetCallerIdentity</c>. </para> </li> </ul> <para> You can use temporary
-    /// credentials for single sign-on (SSO) to the console. </para> <para> You must pass
-    /// an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
+    /// except <c>GetCallerIdentity</c>, <c>GetScopedCredentials</c>, or <c>GetDelegatedAccessToken</c>.
+    /// </para> </li> </ul> <para> You can use temporary credentials for single sign-on (SSO)
+    /// to the console. </para> <para> You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policy</a> to this operation. You can pass a single JSON policy document to use as
     /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
     /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
@@ -209,15 +209,6 @@ namespace Amazon.SecurityToken.Model
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
         public string Policy { get; set; }
@@ -267,15 +258,6 @@ namespace Amazon.SecurityToken.Model
         /// permissions are granted in addition to the permissions that are granted by the session
         /// policies.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This
@@ -304,15 +286,7 @@ namespace Amazon.SecurityToken.Model
         /// these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
-        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
-        /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
-        /// policies and tags for your request are to the upper size limit.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You can pass a session tag with the same key as a tag that is already attached to
         /// the user you are federating. When you do, session tags override a user tag with the

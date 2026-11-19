@@ -86,6 +86,12 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The value of the <c>Issuer</c> element of the SAML assertion.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not the trusted identity propagation issuer (<c>aws:OriginIdentity/Issuer</c>).
+        /// When the session carries trusted identity propagation context, that value is returned
+        /// in <c>TrustedIdentityPropagationContext</c>.
+        /// </para>
         /// </summary>
         public string Issuer { get; set; }
 
@@ -136,9 +142,12 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property PackedPolicySize. 
         /// <para>
-        /// A percentage value that indicates the packed size of the session policies and session
-        /// tags combined passed in the request. The request fails if the packed size is greater
-        /// than 100 percent, which means the policies and tags exceeded the allowed space.
+        /// The percentage (0-100) of the maximum allowed session token size that the returned
+        /// session token consumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is deprecated. Use <c>SessionTokenUtilization</c> instead.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. Replaced by SessionTokenUtilization.")]
@@ -199,7 +208,7 @@ namespace Amazon.SecurityToken.Model
         /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 2, Max = 64)]
+        [AWSProperty(Min = 2, Max = 256)]
         public string SourceIdentity { get; set; }
 
         /// <summary>
@@ -211,6 +220,12 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Subject. 
         /// <para>
         /// The value of the <c>NameID</c> element in the <c>Subject</c> element of the SAML assertion.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is not the trusted identity propagation subject (<c>aws:OriginIdentity/Subject</c>).
+        /// When the session carries trusted identity propagation context, that value is returned
+        /// in <c>TrustedIdentityPropagationContext</c>.
         /// </para>
         /// </summary>
         public string Subject { get; set; }
@@ -234,6 +249,12 @@ namespace Amazon.SecurityToken.Model
         /// is returned as <c>transient</c>. If the format includes any other prefix, the format
         /// is returned with no modifications.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not the trusted identity propagation subject type (<c>aws:OriginIdentity/SubjectType</c>).
+        /// When the session carries trusted identity propagation context, that value is returned
+        /// in <c>TrustedIdentityPropagationContext</c>.
+        /// </para>
         /// </summary>
         public string SubjectType { get; set; }
 
@@ -241,5 +262,42 @@ namespace Amazon.SecurityToken.Model
         /// Checks to see if the SubjectType property is set.
         /// </summary>
         internal bool IsSetSubjectType() => this.SubjectType != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustedIdentityPropagationContext. 
+        /// <para>
+        /// The trusted identity propagation context that Amazon Web Services STS set in the session
+        /// from the SAML assertion, through the context provider attached to the SAML identity
+        /// provider. It is present only when Amazon Web Services STS set such context in the
+        /// session. It contains the <c>aws:OriginIdentity/Subject</c>, <c>aws:OriginIdentity/SubjectType</c>,
+        /// <c>aws:OriginIdentity/Issuer</c> and <c>aws:OriginIdentity/FederatedProviderArn</c>
+        /// keys and the <c>aws:TransactionContext/IdentityProvider/*</c> keys that Amazon Web
+        /// Services STS set in the session. Other keys in the session, such as <c>aws:IdentityCenterInstanceArn</c>
+        /// and <c>aws:IdentityStoreArn</c> for an identity provider with an Identity Center instance
+        /// attached, are not returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Its <c>OriginIdentity</c> members share the names <c>Subject</c>, <c>SubjectType</c>
+        /// and <c>Issuer</c> with members of this response but carry the trusted identity propagation
+        /// values, which differ from the SAML assertion values.
+        /// </para>
+        ///  
+        /// <para>
+        /// It is not returned when the SAML assertion is encrypted, even though the session carries
+        /// the context.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element contains information about the end user. Do not log it.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public TrustedIdentityPropagationContext TrustedIdentityPropagationContext { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustedIdentityPropagationContext property is set.
+        /// </summary>
+        internal bool IsSetTrustedIdentityPropagationContext() => this.TrustedIdentityPropagationContext != null;
     }
 }

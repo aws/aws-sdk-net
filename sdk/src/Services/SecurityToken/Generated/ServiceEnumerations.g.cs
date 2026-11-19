@@ -21,4 +21,44 @@ using Amazon.Runtime;
 
 namespace Amazon.SecurityToken
 {
+    /// <summary>
+    /// Constants used for properties of type WebIdentityTokenSubjectModeType.
+    /// </summary>
+    public class WebIdentityTokenSubjectModeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWSIdentity for WebIdentityTokenSubjectModeType
+        /// </summary>
+        public static readonly WebIdentityTokenSubjectModeType AWSIdentity = new WebIdentityTokenSubjectModeType("AWSIdentity");
+
+        /// <summary>
+        /// Constant OriginIdentity for WebIdentityTokenSubjectModeType
+        /// </summary>
+        public static readonly WebIdentityTokenSubjectModeType OriginIdentity = new WebIdentityTokenSubjectModeType("OriginIdentity");
+
+        /// <summary>
+        /// Constructs a custom WebIdentityTokenSubjectModeType for a value not among the defined constants.
+        /// </summary>
+        public WebIdentityTokenSubjectModeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebIdentityTokenSubjectModeType FindValue(string value)
+        {
+            return FindValue<WebIdentityTokenSubjectModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebIdentityTokenSubjectModeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }
