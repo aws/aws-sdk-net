@@ -6229,6 +6229,11 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ResponseStreamingConfiguration.MaxEventsPerInvocation</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.RootVolumeConfiguration.FreeSpaceGiB</property>
     <min>2</min>
     <max>65000</max>

@@ -84,5 +84,48 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Checks to see if the Interceptor property is set.
         /// </summary>
         internal bool IsSetInterceptor() => this.Interceptor != null;
+
+        /// <summary>
+        /// Gets and sets the property ResponseInterceptionMode. 
+        /// <para>
+        /// Specifies how the interceptor processes streamed target responses. You can set this
+        /// field only on an interceptor that includes the <c>RESPONSE</c> interception point.
+        /// Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>BUFFERED</c> - The gateway collects the complete target response and then invokes
+        /// the interceptor once. This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STREAM</c> - The gateway sends a streamed target response to the interceptor in
+        /// batches of events and returns each processed batch to the client as soon as it's ready.
+        /// Non-streamed responses still use <c>BUFFERED</c> processing. If you specify <c>STREAM</c>,
+        /// you must also specify <c>responseStreamingConfiguration</c>, and the input configuration
+        /// can't exclude the response body.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResponseInterceptionMode ResponseInterceptionMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResponseInterceptionMode property is set.
+        /// </summary>
+        internal bool IsSetResponseInterceptionMode() => this.ResponseInterceptionMode != null;
+
+        /// <summary>
+        /// Gets and sets the property ResponseStreamingConfiguration. 
+        /// <para>
+        /// Specifies the batching settings for a streamed response. Specify this field only when
+        /// <c>responseInterceptionMode</c> is <c>STREAM</c>. You must specify it for <c>STREAM</c>.
+        /// </para>
+        /// </summary>
+        public ResponseStreamingConfiguration ResponseStreamingConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResponseStreamingConfiguration property is set.
+        /// </summary>
+        internal bool IsSetResponseStreamingConfiguration() => this.ResponseStreamingConfiguration != null;
     }
 }

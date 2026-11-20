@@ -5195,6 +5195,47 @@ namespace Amazon.BedrockAgentCoreControl
     }
 
     /// <summary>
+    /// Constants used for properties of type ResponseInterceptionMode.
+    /// </summary>
+    public class ResponseInterceptionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant BUFFERED for ResponseInterceptionMode
+        /// </summary>
+        public static readonly ResponseInterceptionMode BUFFERED = new ResponseInterceptionMode("BUFFERED");
+
+        /// <summary>
+        /// Constant STREAM for ResponseInterceptionMode
+        /// </summary>
+        public static readonly ResponseInterceptionMode STREAM = new ResponseInterceptionMode("STREAM");
+
+        /// <summary>
+        /// Constructs a custom ResponseInterceptionMode for a value not among the defined constants.
+        /// </summary>
+        public ResponseInterceptionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseInterceptionMode FindValue(string value)
+        {
+            return FindValue<ResponseInterceptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseInterceptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RestApiMethod.
     /// </summary>
     public class RestApiMethod : ConstantClass

@@ -77,6 +77,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetResponseInterceptionMode())
+            {
+                context.Writer.WritePropertyName("responseInterceptionMode");
+                context.Writer.WriteStringValue(requestObject.ResponseInterceptionMode);
+            }
+
+            if (requestObject.IsSetResponseStreamingConfiguration())
+            {
+                context.Writer.WritePropertyName("responseStreamingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResponseStreamingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResponseStreamingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>
