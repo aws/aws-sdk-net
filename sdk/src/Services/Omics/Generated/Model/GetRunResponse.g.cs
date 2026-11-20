@@ -309,6 +309,38 @@ namespace Amazon.Omics.Model
         internal bool IsSetParameters() => !this.Parameters.IsNull();
 
         /// <summary>
+        /// Gets and sets the property ParametersUri. 
+        /// <para>
+        /// For a run that you started with <c>parametersUri</c>, the service returns the location
+        /// of the run parameters in this field instead of <c>parameters</c>. The value is one
+        /// of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services
+        /// HealthOmics stores for the run
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a
+        /// copy of the file yet or the run failed validation
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A presigned URL expires after a limited time. Call <c>GetRun</c> again to get a new
+        /// URL. Treat the URL as a credential and do not share it. If the run failed because
+        /// the parameters were not valid, check <c>failureReason</c> and <c>statusMessage</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 8192)]
+        public string ParametersUri { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParametersUri property is set.
+        /// </summary>
+        internal bool IsSetParametersUri() => this.ParametersUri != null;
+
+        /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
         /// The run's priority.
@@ -321,6 +353,20 @@ namespace Amazon.Omics.Model
         /// Checks to see if the Priority property is set.
         /// </summary>
         internal bool IsSetPriority() => this.Priority.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RequesterPaysEnabled. 
+        /// <para>
+        /// Specifies whether this workflow run can read inputs from Amazon S3 buckets that use
+        /// Requester Pays, as set in the <c>StartRun</c> or <c>StartRunBatch</c> request.
+        /// </para>
+        /// </summary>
+        public bool? RequesterPaysEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterPaysEnabled property is set.
+        /// </summary>
+        internal bool IsSetRequesterPaysEnabled() => this.RequesterPaysEnabled.HasValue;
 
         /// <summary>
         /// Gets and sets the property ResourceDigests. 

@@ -111,6 +111,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
+            if (requestObject.IsSetRequesterPaysEnabled())
+            {
+                context.Writer.WritePropertyName("requesterPaysEnabled");
+                context.Writer.WriteBooleanValue(requestObject.RequesterPaysEnabled.Value);
+            }
+
             if (requestObject.IsSetRetentionMode())
             {
                 context.Writer.WritePropertyName("retentionMode");

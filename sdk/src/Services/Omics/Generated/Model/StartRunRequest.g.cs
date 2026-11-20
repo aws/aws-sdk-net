@@ -120,7 +120,8 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property EngineSettings. 
         /// <para>
         /// Engine-specific settings for the workflow run. Use this field to specify configuration
-        /// options that are specific to the workflow engine (for example, Nextflow profiles).
+        /// options that are specific to the workflow engine (for example, Nextflow profiles,
+        /// Nextflow runtime configuration).
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document EngineSettings { get; set; }
@@ -208,7 +209,9 @@ namespace Amazon.Omics.Model
         /// <para>
         /// Parameters for the run. The run needs all required parameters and can include optional
         /// parameters. The run cannot include any parameters that are not defined in the parameter
-        /// template. To retrieve parameters from the run, use the GetRun API operation.
+        /// template. To retrieve parameters from the run, use the GetRun API operation. To supply
+        /// the parameters in a file in S3 instead, use <c>parametersUri</c>. Specify either <c>parameters</c>
+        /// or <c>parametersUri</c>, not both.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document Parameters { get; set; }
@@ -217,6 +220,32 @@ namespace Amazon.Omics.Model
         /// Checks to see if the Parameters property is set.
         /// </summary>
         internal bool IsSetParameters() => !this.Parameters.IsNull();
+
+        /// <summary>
+        /// Gets and sets the property ParametersUri. 
+        /// <para>
+        /// The S3 URI of a JSON file that contains the run parameters. Use this field instead
+        /// of <c>parameters</c> when your parameters are too large for the request. Specify either
+        /// <c>parameters</c> or <c>parametersUri</c>, not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services HealthOmics validates the file after <c>StartRun</c> returns.
+        /// If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure
+        /// reason <c>INVALID_RUN_PARAMETERS</c>. For more information about permissions, limits,
+        /// and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon
+        /// Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon
+        /// Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1093)]
+        public string ParametersUri { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParametersUri property is set.
+        /// </summary>
+        internal bool IsSetParametersUri() => this.ParametersUri != null;
 
         /// <summary>
         /// Gets and sets the property Priority. 
@@ -251,6 +280,21 @@ namespace Amazon.Omics.Model
         /// Checks to see if the RequestId property is set.
         /// </summary>
         internal bool IsSetRequestId() => this.RequestId != null;
+
+        /// <summary>
+        /// Gets and sets the property RequesterPaysEnabled. 
+        /// <para>
+        /// Specifies whether the workflow run that this request starts can read inputs from Amazon
+        /// S3 buckets that use Requester Pays. Your account pays the request and data transfer
+        /// charges for those reads. The default is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? RequesterPaysEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterPaysEnabled property is set.
+        /// </summary>
+        internal bool IsSetRequesterPaysEnabled() => this.RequesterPaysEnabled.HasValue;
 
         /// <summary>
         /// Gets and sets the property RetentionMode. 

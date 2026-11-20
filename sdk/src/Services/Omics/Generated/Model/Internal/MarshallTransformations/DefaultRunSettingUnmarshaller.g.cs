@@ -130,6 +130,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("requesterPaysEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.RequesterPaysEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("retentionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

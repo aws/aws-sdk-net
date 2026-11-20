@@ -1337,6 +1337,11 @@
     <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.ParametersUri</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Priority</property>
     <min>0</min>
     <max>100000</max>
@@ -2674,6 +2679,12 @@
     <min>1</min>
     <max>750</max>
     <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.ParametersUri</property>
+    <min>1</min>
+    <max>1093</max>
+    <pattern>^s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.Priority</property>

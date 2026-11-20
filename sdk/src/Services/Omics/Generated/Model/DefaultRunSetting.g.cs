@@ -83,7 +83,8 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property EngineSettings. 
         /// <para>
         /// Engine-specific settings for the workflow run. Use this field to specify configuration
-        /// options that are specific to the workflow engine (for example, Nextflow profiles).
+        /// options that are specific to the workflow engine (for example, Nextflow profiles,
+        /// Nextflow runtime configuration).
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document EngineSettings { get; set; }
@@ -194,6 +195,21 @@ namespace Amazon.Omics.Model
         /// Checks to see if the Priority property is set.
         /// </summary>
         internal bool IsSetPriority() => this.Priority.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RequesterPaysEnabled. 
+        /// <para>
+        /// Specifies whether each workflow run in the batch can read inputs from Amazon Simple
+        /// Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the
+        /// request and data transfer charges for those reads. The default is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? RequesterPaysEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RequesterPaysEnabled property is set.
+        /// </summary>
+        internal bool IsSetRequesterPaysEnabled() => this.RequesterPaysEnabled.HasValue;
 
         /// <summary>
         /// Gets and sets the property RetentionMode. 

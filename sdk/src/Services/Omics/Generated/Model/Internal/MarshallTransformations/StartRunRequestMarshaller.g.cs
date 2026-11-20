@@ -118,6 +118,11 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("parameters");
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
             }
+            if (publicRequest.IsSetParametersUri())
+            {
+                context.Writer.WritePropertyName("parametersUri");
+                context.Writer.WriteStringValue(publicRequest.ParametersUri);
+            }
             if (publicRequest.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
@@ -132,6 +137,11 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("requestId");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetRequesterPaysEnabled())
+            {
+                context.Writer.WritePropertyName("requesterPaysEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.RequesterPaysEnabled.Value);
             }
             if (publicRequest.IsSetRetentionMode())
             {

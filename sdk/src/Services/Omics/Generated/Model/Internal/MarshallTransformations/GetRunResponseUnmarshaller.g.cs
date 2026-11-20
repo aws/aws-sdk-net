@@ -192,10 +192,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("parametersUri", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParametersUri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("requesterPaysEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.RequesterPaysEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

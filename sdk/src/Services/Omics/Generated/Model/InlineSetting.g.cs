@@ -39,8 +39,9 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property EngineSettings. 
         /// <para>
         /// Per-run engine-specific settings. Use this field to specify configuration options
-        /// that are specific to the workflow engine (for example, Nextflow profiles). Overrides
-        /// <c>defaultRunSetting.engineSettings</c> for this run.
+        /// that are specific to the workflow engine (for example, Nextflow profiles, Nextflow
+        /// runtime configuration). Overrides <c>defaultRunSetting.engineSettings</c> for this
+        /// run.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document EngineSettings { get; set; }
