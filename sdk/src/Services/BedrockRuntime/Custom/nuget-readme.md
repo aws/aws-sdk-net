@@ -31,11 +31,19 @@ var request = new InvokeModelWithBidirectionalStreamRequest
     }
 };
 
-// The event format is defined by the model.
+// The event format is defined by the model, so these are placeholders.
+// In a real application the caller generates these from application events,
+// while processing the response events as they stream in.
+var events = new[] { "<event 1 JSON>", "<event 2 JSON>", "<event 3 JSON>" };
+
+// Produce events over time from a separate task, then end the input stream.
 _ = Task.Run(async () =>
 {
-    await input.Writer.WriteAsync(firstEventJson);
-    // Write more events here, then end the input stream.
+    foreach (var json in events)
+    {
+        await input.Writer.WriteAsync(json);
+    }
+
     input.Writer.Complete();
 });
 
