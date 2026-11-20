@@ -35,6 +35,19 @@ namespace Amazon.MarketplaceDiscovery.Model
     public partial class CloudFormationFulfillmentOption
     {
         /// <summary>
+        /// Gets and sets the property ArchitectureDiagramUrl. 
+        /// <para>
+        /// The URL of the architecture diagram for the CloudFormation template.
+        /// </para>
+        /// </summary>
+        public string ArchitectureDiagramUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArchitectureDiagramUrl property is set.
+        /// </summary>
+        internal bool IsSetArchitectureDiagramUrl() => this.ArchitectureDiagramUrl != null;
+
+        /// <summary>
         /// Gets and sets the property AvailableFromTime. 
         /// <para>
         /// The date and time when the CloudFormation fulfillment option became available for
@@ -47,6 +60,19 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Checks to see if the AvailableFromTime property is set.
         /// </summary>
         internal bool IsSetAvailableFromTime() => this.AvailableFromTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentTemplateUrl. 
+        /// <para>
+        /// The URL of the CloudFormation template.
+        /// </para>
+        /// </summary>
+        public string DeploymentTemplateUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeploymentTemplateUrl property is set.
+        /// </summary>
+        internal bool IsSetDeploymentTemplateUrl() => this.DeploymentTemplateUrl != null;
 
         /// <summary>
         /// Gets and sets the property FulfillmentOptionDisplayName. 
@@ -134,7 +160,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }

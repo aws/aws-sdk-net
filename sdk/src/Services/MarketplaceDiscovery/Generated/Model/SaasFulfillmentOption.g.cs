@@ -48,6 +48,27 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetAvailableFromTime() => this.AvailableFromTime.HasValue;
 
         /// <summary>
+        /// Gets and sets the property DeploymentTemplates. 
+        /// <para>
+        /// The AWS CloudFormation deployment templates available for this SaaS product. The list
+        /// is empty when no deployment templates are available.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 50)]
+        public List<SaasDeploymentTemplate> DeploymentTemplates { get; set; } = AWSConfigs.InitializeCollections ? new List<SaasDeploymentTemplate>() : null;
+
+        /// <summary>
+        /// Checks to see if the DeploymentTemplates property is set.
+        /// </summary>
+        internal bool IsSetDeploymentTemplates() => this.DeploymentTemplates != null && (this.DeploymentTemplates.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property FulfillmentOptionDisplayName. 
         /// <para>
         /// A human-readable name for the fulfillment option type.
@@ -105,8 +126,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property LaunchUrl. 
         /// <para>
-        /// The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct
-        /// from <c>fulfillmentUrl</c>, which is the seller's software registration landing page.
+        /// The URL that you use to launch the seller's SaaS product. This URL is distinct from
+        /// <c>fulfillmentUrl</c>, which is the seller's software registration landing page.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]
@@ -120,8 +141,18 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property QuickLaunch. 
         /// <para>
-        /// Specifies whether the SaaS product supports quick-launch deployment.
+        /// Specifies whether the SaaS product supports Quick Launch deployment. This field has
+        /// one of the following values:
         /// </para>
+        ///  <dl> <dt>DISABLED</dt> <dd> 
+        /// <para>
+        /// The product does not support Quick Launch.
+        /// </para>
+        ///  </dd> <dt>ENABLED</dt> <dd> 
+        /// <para>
+        /// The product supports Quick Launch.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public SaasQuickLaunchStatus QuickLaunch { get; set; }
@@ -134,7 +165,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property UsageInstructions. 
         /// <para>
-        /// Instructions on how to access and use this SaaS product.
+        /// Instructions on how you access and use this SaaS product.
         /// </para>
         /// </summary>
         public string UsageInstructions { get; set; }

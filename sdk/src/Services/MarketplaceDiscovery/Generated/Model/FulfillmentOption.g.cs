@@ -38,7 +38,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property AmazonMachineImageFulfillmentOption. 
         /// <para>
-        /// An Amazon Machine Image (AMI) fulfillment option for EC2 deployment.
+        /// An Amazon Machine Image (AMI) fulfillment option for Amazon Elastic Compute Cloud
+        /// (Amazon EC2) deployment.
         /// </para>
         /// </summary>
         public AmazonMachineImageFulfillmentOption AmazonMachineImageFulfillmentOption { get; set; }
@@ -103,7 +104,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Ec2ImageBuilderComponentFulfillmentOption. 
         /// <para>
-        /// An EC2 Image Builder component fulfillment option.
+        /// An Amazon Elastic Compute Cloud (Amazon EC2) Image Builder component fulfillment option.
         /// </para>
         /// </summary>
         public Ec2ImageBuilderComponentFulfillmentOption Ec2ImageBuilderComponentFulfillmentOption { get; set; }

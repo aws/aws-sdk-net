@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Recommended instance types for running an AMI fulfillment option.
+    /// The recommended instance types for running an AMI fulfillment option.
     /// </summary>
     public partial class AmazonMachineImageRecommendation
     {
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The recommended EC2 instance type for this AMI.
+        /// The recommended Amazon Elastic Compute Cloud (Amazon EC2) instance type for this AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a validity term that specifies the duration or date range of an agreement.
+    /// Describes a validity term that specifies the duration or date range of an agreement.
     /// </summary>
     public partial class ValidityTerm
     {

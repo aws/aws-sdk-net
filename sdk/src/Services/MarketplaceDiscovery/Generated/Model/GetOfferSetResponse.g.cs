@@ -57,7 +57,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property AvailableFromTime. 
         /// <para>
-        /// The date and time when the offer set became available to the buyer.
+        /// The date and time when the offer set became available to you.
         /// </para>
         /// </summary>
         public DateTime? AvailableFromTime { get; set; }
@@ -71,7 +71,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property Badges. 
         /// <para>
         /// Badges indicating special attributes of the offer set, such as private pricing or
-        /// future dated.
+        /// future-dated.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -91,8 +91,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property BuyerNotes. 
         /// <para>
-        /// Detailed information about the offer set that helps buyers understand its purpose
-        /// and contents.
+        /// Detailed information about the offer set that helps you understand its purpose and
+        /// contents.
         /// </para>
         /// </summary>
         [AWSProperty(Max = 255)]
@@ -133,9 +133,9 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale of the returned content. Indicates whether the response contains content
-        /// in the requested locale, or fell back to the default locale. See <c>Locale</c> for
-        /// details.
+        /// The locale of the returned content. This value indicates whether the response contains
+        /// content in the requested locale or fell back to the default locale. See <c>Locale</c>
+        /// for details.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]

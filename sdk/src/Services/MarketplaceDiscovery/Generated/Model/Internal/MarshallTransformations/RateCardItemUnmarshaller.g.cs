@@ -88,6 +88,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("regionalPrices", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RegionalPrice, RegionalPriceUnmarshaller>(RegionalPriceUnmarshaller.Instance);
+                    unmarshalledObject.RegionalPrices = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("unit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

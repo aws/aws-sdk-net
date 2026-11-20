@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// You don't have sufficient access to perform this action.
+    /// You don't have sufficient access to perform this action. Verify that you have the
+    /// required permissions.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

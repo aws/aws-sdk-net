@@ -43,9 +43,11 @@ namespace Amazon.MarketplaceDiscovery
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// The AWS Marketplace Discovery API provides programmatic access to the AWS Marketplace
-    /// catalog, including searching and browsing listings, retrieving product details and
-    /// fulfillment options, and accessing public and private offer pricing and terms.
+    /// With the AWS Marketplace Discovery API (Discovery API), you have programmatic access
+    /// to the AWS Marketplace catalog. You can search and browse listings, retrieve product
+    /// details and fulfillment options, and access public and private offer pricing and terms.
+    /// For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/developerguide/discovery-apis.html">Using
+    /// the AWS Marketplace Discovery API</a> in the <i>AWS Marketplace Developer Guide</i>.
     /// </summary>
     public partial class AmazonMarketplaceDiscoveryClient : AmazonServiceClient, IAmazonMarketplaceDiscovery
     {
@@ -256,19 +258,22 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="request">Container for the necessary parameters to execute the GetListing service method.</param>
         /// <returns>The response from the GetListing service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetListing">REST API Reference for GetListing Operation</seealso>
         public virtual GetListingResponse GetListing(GetListingRequest request)
@@ -300,19 +305,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the GetListing service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetListing">REST API Reference for GetListing Operation</seealso>
         public virtual Task<GetListingResponse> GetListingAsync(GetListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -332,19 +340,22 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="request">Container for the necessary parameters to execute the GetOffer service method.</param>
         /// <returns>The response from the GetOffer service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOffer">REST API Reference for GetOffer Operation</seealso>
         public virtual GetOfferResponse GetOffer(GetOfferRequest request)
@@ -376,19 +387,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the GetOffer service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOffer">REST API Reference for GetOffer Operation</seealso>
         public virtual Task<GetOfferResponse> GetOfferAsync(GetOfferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -409,19 +423,22 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="request">Container for the necessary parameters to execute the GetOfferSet service method.</param>
         /// <returns>The response from the GetOfferSet service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOfferSet">REST API Reference for GetOfferSet Operation</seealso>
         public virtual GetOfferSetResponse GetOfferSet(GetOfferSetRequest request)
@@ -454,19 +471,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the GetOfferSet service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOfferSet">REST API Reference for GetOfferSet Operation</seealso>
         public virtual Task<GetOfferSetResponse> GetOfferSetAsync(GetOfferSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -480,26 +500,30 @@ namespace Amazon.MarketplaceDiscovery
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the terms attached to an offer, such as pricing terms (usage-based, contract,
-        /// BYOL, free trial), legal terms, payment schedules, validity terms, support terms,
-        /// and renewal terms.
+        /// Retrieves the terms attached to an offer, such as pricing terms (usage-based, contract,
+        /// Bring Your Own License (BYOL), free trial), legal terms, payment schedules, validity
+        /// terms, support terms, and renewal terms. The operation returns results in pages. Use
+        /// <c>nextToken</c> to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOfferTerms service method.</param>
         /// <returns>The response from the GetOfferTerms service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOfferTerms">REST API Reference for GetOfferTerms Operation</seealso>
         public virtual GetOfferTermsResponse GetOfferTerms(GetOfferTermsRequest request)
@@ -522,9 +546,10 @@ namespace Amazon.MarketplaceDiscovery
 #endif
 
         /// <summary>
-        /// Returns the terms attached to an offer, such as pricing terms (usage-based, contract,
-        /// BYOL, free trial), legal terms, payment schedules, validity terms, support terms,
-        /// and renewal terms.
+        /// Retrieves the terms attached to an offer, such as pricing terms (usage-based, contract,
+        /// Bring Your Own License (BYOL), free trial), legal terms, payment schedules, validity
+        /// terms, support terms, and renewal terms. The operation returns results in pages. Use
+        /// <c>nextToken</c> to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOfferTerms service method.</param>
         /// <param name="cancellationToken">
@@ -532,19 +557,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the GetOfferTerms service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetOfferTerms">REST API Reference for GetOfferTerms Operation</seealso>
         public virtual Task<GetOfferTermsResponse> GetOfferTermsAsync(GetOfferTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -564,19 +592,22 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="request">Container for the necessary parameters to execute the GetProduct service method.</param>
         /// <returns>The response from the GetProduct service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetProduct">REST API Reference for GetProduct Operation</seealso>
         public virtual GetProductResponse GetProduct(GetProductRequest request)
@@ -608,19 +639,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the GetProduct service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/GetProduct">REST API Reference for GetProduct Operation</seealso>
         public virtual Task<GetProductResponse> GetProductAsync(GetProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -634,25 +668,30 @@ namespace Amazon.MarketplaceDiscovery
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the fulfillment options available for a product, including deployment details
+        /// Retrieves the fulfillment options available for a product, including deployment details
         /// such as version information, operating systems, usage instructions, and release notes.
+        /// The operation returns results in pages. Use <c>nextToken</c> to retrieve the next
+        /// page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFulfillmentOptions service method.</param>
         /// <returns>The response from the ListFulfillmentOptions service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListFulfillmentOptions">REST API Reference for ListFulfillmentOptions Operation</seealso>
         public virtual ListFulfillmentOptionsResponse ListFulfillmentOptions(ListFulfillmentOptionsRequest request)
@@ -675,8 +714,10 @@ namespace Amazon.MarketplaceDiscovery
 #endif
 
         /// <summary>
-        /// Returns the fulfillment options available for a product, including deployment details
+        /// Retrieves the fulfillment options available for a product, including deployment details
         /// such as version information, operating systems, usage instructions, and release notes.
+        /// The operation returns results in pages. Use <c>nextToken</c> to retrieve the next
+        /// page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFulfillmentOptions service method.</param>
         /// <param name="cancellationToken">
@@ -684,19 +725,22 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the ListFulfillmentOptions service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
-        /// The specified resource doesn't exist.
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListFulfillmentOptions">REST API Reference for ListFulfillmentOptions Operation</seealso>
         public virtual Task<ListFulfillmentOptionsResponse> ListFulfillmentOptionsAsync(ListFulfillmentOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -710,9 +754,94 @@ namespace Amazon.MarketplaceDiscovery
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the purchase options (offers and offer sets) available to the buyer. You can
-        /// filter results by product, seller, purchase option type, visibility scope, and availability
-        /// status.
+        /// Retrieves the requested attributes for a listing, including case studies and trust
+        /// center information. The operation returns results in pages. Use <c>nextToken</c> to
+        /// retrieve the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListListingAttributes service method.</param>
+        /// <returns>The response from the ListListingAttributes service method, as returned by MarketplaceDiscovery.</returns>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
+        /// Unexpected error during processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListListingAttributes">REST API Reference for ListListingAttributes Operation</seealso>
+        public virtual ListListingAttributesResponse ListListingAttributes(ListListingAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListListingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListListingAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListListingAttributesResponse>(request, options);
+        }
+#else
+        internal virtual ListListingAttributesResponse ListListingAttributes(ListListingAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListListingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListListingAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListListingAttributesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the requested attributes for a listing, including case studies and trust
+        /// center information. The operation returns results in pages. Use <c>nextToken</c> to
+        /// retrieve the next page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListListingAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListListingAttributes service method, as returned by MarketplaceDiscovery.</returns>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
+        /// Unexpected error during processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist. Verify that the identifier is correct.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListListingAttributes">REST API Reference for ListListingAttributes Operation</seealso>
+        public virtual Task<ListListingAttributesResponse> ListListingAttributesAsync(ListListingAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListListingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListListingAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListListingAttributesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the purchase options (offers and offer sets) available to you. You can filter
+        /// results by product, seller, purchase option type, visibility scope, and availability
+        /// status. The operation returns results in pages. Use <c>nextToken</c> to retrieve the
+        /// next page.
         /// 
         ///  <note> 
         /// <para>
@@ -725,16 +854,19 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="request">Container for the necessary parameters to execute the ListPurchaseOptions service method.</param>
         /// <returns>The response from the ListPurchaseOptions service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListPurchaseOptions">REST API Reference for ListPurchaseOptions Operation</seealso>
         public virtual ListPurchaseOptionsResponse ListPurchaseOptions(ListPurchaseOptionsRequest request)
@@ -757,9 +889,10 @@ namespace Amazon.MarketplaceDiscovery
 #endif
 
         /// <summary>
-        /// Returns the purchase options (offers and offer sets) available to the buyer. You can
-        /// filter results by product, seller, purchase option type, visibility scope, and availability
-        /// status.
+        /// Retrieves the purchase options (offers and offer sets) available to you. You can filter
+        /// results by product, seller, purchase option type, visibility scope, and availability
+        /// status. The operation returns results in pages. Use <c>nextToken</c> to retrieve the
+        /// next page.
         /// 
         ///  <note> 
         /// <para>
@@ -775,16 +908,19 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the ListPurchaseOptions service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/ListPurchaseOptions">REST API Reference for ListPurchaseOptions Operation</seealso>
         public virtual Task<ListPurchaseOptionsResponse> ListPurchaseOptionsAsync(ListPurchaseOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -798,23 +934,26 @@ namespace Amazon.MarketplaceDiscovery
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns available facet values for filtering listings, such as categories, pricing
+        /// Retrieves the available facet values for filtering listings, such as categories, pricing
         /// models, fulfillment option types, publishers, and customer ratings. Each facet value
         /// includes a count of matching listings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchFacets service method.</param>
         /// <returns>The response from the SearchFacets service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchFacets">REST API Reference for SearchFacets Operation</seealso>
         public virtual SearchFacetsResponse SearchFacets(SearchFacetsRequest request)
@@ -837,7 +976,7 @@ namespace Amazon.MarketplaceDiscovery
 #endif
 
         /// <summary>
-        /// Returns available facet values for filtering listings, such as categories, pricing
+        /// Retrieves the available facet values for filtering listings, such as categories, pricing
         /// models, fulfillment option types, publishers, and customer ratings. Each facet value
         /// includes a count of matching listings.
         /// </summary>
@@ -847,16 +986,19 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the SearchFacets service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchFacets">REST API Reference for SearchFacets Operation</seealso>
         public virtual Task<SearchFacetsResponse> SearchFacetsAsync(SearchFacetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -870,23 +1012,27 @@ namespace Amazon.MarketplaceDiscovery
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns a list of product listings based on search criteria and filters. You can search
+        /// Searches for listings that match your search criteria and filters. You can search
         /// by keyword, filter by category, pricing model, fulfillment type, and other attributes,
-        /// and sort results by relevance or customer rating.
+        /// and sort results by relevance or customer rating. The operation returns results in
+        /// pages. Use <c>nextToken</c> to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchListings service method.</param>
         /// <returns>The response from the SearchListings service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchListings">REST API Reference for SearchListings Operation</seealso>
         public virtual SearchListingsResponse SearchListings(SearchListingsRequest request)
@@ -909,9 +1055,10 @@ namespace Amazon.MarketplaceDiscovery
 #endif
 
         /// <summary>
-        /// Returns a list of product listings based on search criteria and filters. You can search
+        /// Searches for listings that match your search criteria and filters. You can search
         /// by keyword, filter by category, pricing model, fulfillment type, and other attributes,
-        /// and sort results by relevance or customer rating.
+        /// and sort results by relevance or customer rating. The operation returns results in
+        /// pages. Use <c>nextToken</c> to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchListings service method.</param>
         /// <param name="cancellationToken">
@@ -919,16 +1066,19 @@ namespace Amazon.MarketplaceDiscovery
         /// </param>
         /// <returns>The response from the SearchListings service method, as returned by MarketplaceDiscovery.</returns>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this action. Verify that you have the
+        /// required permissions.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.InternalServerException">
         /// Unexpected error during processing of the request.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and retry.
         /// </exception>
         /// <exception cref="Amazon.MarketplaceDiscovery.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by the service.
+        /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+        /// field for the constraint that failed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-discovery-2026-02-05/SearchListings">REST API Reference for SearchListings Operation</seealso>
         public virtual Task<SearchListingsResponse> SearchListingsAsync(SearchListingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

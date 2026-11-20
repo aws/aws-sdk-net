@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Recommended instance types for training and inference with a SageMaker algorithm.
+    /// The recommended instance types for training and inference with a SageMaker algorithm.
     /// </summary>
     public partial class SageMakerAlgorithmRecommendation
     {
         /// <summary>
         /// Gets and sets the property RecommendedBatchTransformInstanceType. 
         /// <para>
-        /// The recommended instance type for batch inference.
+        /// The instance type that the seller recommends for batch transform jobs with this algorithm.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +51,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property RecommendedRealtimeInferenceInstanceType. 
         /// <para>
-        /// The recommended instance type for real-time inference.
+        /// The instance type that the seller recommends for real-time inference endpoints with
+        /// this algorithm.
         /// </para>
         /// </summary>
         public string RecommendedRealtimeInferenceInstanceType { get; set; }

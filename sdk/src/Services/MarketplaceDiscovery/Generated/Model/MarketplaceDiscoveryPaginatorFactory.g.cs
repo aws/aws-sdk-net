@@ -49,6 +49,14 @@ namespace Amazon.MarketplaceDiscovery.Model
         }
 
         /// <summary>
+        /// Paginator for ListListingAttributes operation
+        /// </summary>
+        public IListListingAttributesPaginator ListListingAttributes(ListListingAttributesRequest request)
+        {
+            return new ListListingAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPurchaseOptions operation
         /// </summary>
         public IListPurchaseOptionsPaginator ListPurchaseOptions(ListPurchaseOptionsRequest request)

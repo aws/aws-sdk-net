@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a net payment term that sets how many days after the invoice date the payment
+    /// Describes a net payment term that sets how many days after the invoice date the payment
     /// is due.
     /// </summary>
     public partial class NetPaymentTerm

@@ -37,7 +37,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The total number of provisioned IOPS supported.
+        /// The total number of provisioned input/output operations per second (IOPS) that the
+        /// volume supports.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0)]

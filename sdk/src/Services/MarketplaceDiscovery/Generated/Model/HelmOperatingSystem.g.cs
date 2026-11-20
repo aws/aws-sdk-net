@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Describes an operating system supported by a Helm chart fulfillment option.
+    /// Describes an operating system that a Helm chart fulfillment option supports.
     /// </summary>
     public partial class HelmOperatingSystem
     {

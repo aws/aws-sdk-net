@@ -30,15 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Constraints that control how a buyer can configure a rate card.
+    /// Constraints that control how you can configure a rate card.
     /// </summary>
     public partial class Constraints
     {
         /// <summary>
         /// Gets and sets the property MultipleDimensionSelection. 
         /// <para>
-        /// Whether the buyer can select multiple dimensions. Values are <c>Allowed</c> or <c>Disallowed</c>.
+        /// Specifies whether you can select multiple dimensions. This field has one of the following
+        /// values:
         /// </para>
+        ///  <dl> <dt>Allowed</dt> <dd> 
+        /// <para>
+        /// You can select more than one dimension.
+        /// </para>
+        ///  </dd> <dt>Disallowed</dt> <dd> 
+        /// <para>
+        /// You can select only one dimension.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public RateCardConstraintType MultipleDimensionSelection { get; set; }
@@ -51,8 +61,18 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property QuantityConfiguration. 
         /// <para>
-        /// Whether the buyer can configure quantities. Values are <c>Allowed</c> or <c>Disallowed</c>.
+        /// Specifies whether you can configure quantities. This field has one of the following
+        /// values:
         /// </para>
+        ///  <dl> <dt>Allowed</dt> <dd> 
+        /// <para>
+        /// You can set the quantity of each dimension.
+        /// </para>
+        ///  </dd> <dt>Disallowed</dt> <dd> 
+        /// <para>
+        /// You cannot change the quantity.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public RateCardConstraintType QuantityConfiguration { get; set; }

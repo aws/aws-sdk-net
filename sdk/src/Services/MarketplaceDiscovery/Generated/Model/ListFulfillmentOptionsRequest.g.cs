@@ -30,19 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListFulfillmentOptions operation. Returns the
+    /// Container for the parameters to the ListFulfillmentOptions operation. Retrieves the
     /// fulfillment options available for a product, including deployment details such as
-    /// version information, operating systems, usage instructions, and release notes.
+    /// version information, operating systems, usage instructions, and release notes. The
+    /// operation returns results in pages. Use <c>nextToken</c> to retrieve the next page.
     /// </summary>
     public partial class ListFulfillmentOptionsRequest : AmazonMarketplaceDiscoveryRequest
     {
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A BCP 47 language tag or comma-separated priority list specifying the preferred locale
-        /// for response content. See <c>Locale</c> for supported values, constraints, fallback
-        /// behavior, and the default locale. If omitted, the service returns content in the default
-        /// locale.
+        /// The preferred locale for response content, as a Best Current Practice 47 (BCP 47)
+        /// language tag or a comma-separated priority list of language tags. See <c>Locale</c>
+        /// for supported values, constraints, fallback behavior, and the default locale. If you
+        /// omit this field, the service returns content in the default locale.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
@@ -56,8 +57,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
-        /// to get more results.
+        /// The maximum number of fulfillment options to return in each call. If you omit this
+        /// field, the default is 25. Use <c>nextToken</c> to retrieve the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 50)]
@@ -71,8 +72,11 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <c>nextToken</c> is returned, there are more results available. Make the call again
-        /// using the returned token to retrieve the next page.
+        /// If the service returns <c>nextToken</c>, more results are available. The value of
+        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again with
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// Each pagination token expires after 24 hours. An expired pagination token returns
+        /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 8192)]

@@ -37,7 +37,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CidrIpAddresses. 
         /// <para>
-        /// The IP address ranges in CIDR format.
+        /// The IP address ranges in Classless Inter-Domain Routing (CIDR) format.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

@@ -38,8 +38,31 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// The type of filter to apply, such as <c>PRODUCT_ID</c>, <c>VISIBILITY_SCOPE</c>, or
-        /// <c>PURCHASE_OPTION_TYPE</c>.
+        /// The type of filter to apply. This field has one of the following values:
+        /// </para>
+        ///  <dl> <dt>AVAILABILITY_STATUS</dt> <dd> 
+        /// <para>
+        /// Filters by whether the purchase option is available or expired.
+        /// </para>
+        ///  </dd> <dt>PRODUCT_ID</dt> <dd> 
+        /// <para>
+        /// Filters by product.
+        /// </para>
+        ///  </dd> <dt>PURCHASE_OPTION_TYPE</dt> <dd> 
+        /// <para>
+        /// Filters by offer or offer set.
+        /// </para>
+        ///  </dd> <dt>SELLER_OF_RECORD_PROFILE_ID</dt> <dd> 
+        /// <para>
+        /// Filters by seller.
+        /// </para>
+        ///  </dd> <dt>VISIBILITY_SCOPE</dt> <dd> 
+        /// <para>
+        /// Filters by visibility.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// See <c>filterValues</c> for the values that each type accepts.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -55,33 +78,30 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <para>
         /// The values to filter by. Supported values depend on <c>filterType</c>:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>AVAILABILITY_STATUS</dt> <dd> 
         /// <para>
-        ///  <c>PRODUCT_ID</c> – One or more product identifiers to filter by.
+        /// One or more availability statuses to filter by: <c>AVAILABLE</c> or <c>EXPIRED</c>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PRODUCT_ID</dt> <dd> 
         /// <para>
-        ///  <c>SELLER_OF_RECORD_PROFILE_ID</c> – One or more seller profile identifiers to filter
-        /// by.
+        /// One or more product identifiers to filter by.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PURCHASE_OPTION_TYPE</dt> <dd> 
         /// <para>
-        ///  <c>PURCHASE_OPTION_TYPE</c> – One or more purchase option types to filter by: <c>OFFER</c>
-        /// or <c>OFFERSET</c>.
+        /// One or more purchase option types to filter by: <c>OFFER</c> or <c>OFFERSET</c>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SELLER_OF_RECORD_PROFILE_ID</dt> <dd> 
         /// <para>
-        ///  <c>VISIBILITY_SCOPE</c> – The visibility scope to filter by: <c>PRIVATE</c>.
+        /// One or more seller profile identifiers to filter by.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>VISIBILITY_SCOPE</dt> <dd> 
         /// <para>
-        ///  <c>AVAILABILITY_STATUS</c> – One or more availability statuses to filter by: <c>AVAILABLE</c>
-        /// or <c>EXPIRED</c>.
+        /// The visibility scope to filter by: <c>PRIVATE</c>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </dd> </dl> 
         /// <para>
         /// To retrieve private offers and offer sets visible to you, use <c>VISIBILITY_SCOPE</c>
-        /// with <c>PRIVATE</c>. OR logic combines multiple values within the same filter.
+        /// with <c>PRIVATE</c>. Within one filter, a result matches if it has any of the values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

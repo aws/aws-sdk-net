@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a variable payment term with a maximum total charge amount.
+    /// Describes a variable payment term with a maximum total charge amount.
     /// </summary>
     public partial class VariablePaymentTerm
     {

@@ -38,8 +38,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Constraints on how the buyer can configure this rate card, such as whether multiple
-        /// dimensions can be selected.
+        /// Constraints on how you can configure this rate card, such as whether you can select
+        /// multiple dimensions.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

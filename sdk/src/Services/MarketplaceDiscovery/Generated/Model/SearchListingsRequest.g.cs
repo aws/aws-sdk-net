@@ -30,18 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchListings operation. Returns a list of product
-    /// listings based on search criteria and filters. You can search by keyword, filter by
+    /// Container for the parameters to the SearchListings operation. Searches for listings
+    /// that match your search criteria and filters. You can search by keyword, filter by
     /// category, pricing model, fulfillment type, and other attributes, and sort results
-    /// by relevance or customer rating.
+    /// by relevance or customer rating. The operation returns results in pages. Use <c>nextToken</c>
+    /// to retrieve the next page.
     /// </summary>
     public partial class SearchListingsRequest : AmazonMarketplaceDiscoveryRequest
     {
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to narrow search results. Multiple filters are combined with AND logic. Multiple
-        /// values within the same filter are combined with OR logic.
+        /// Filters to narrow search results. A result must match every filter. Within one filter,
+        /// a result matches if it has any of the values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -61,10 +62,10 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A BCP 47 language tag or comma-separated priority list specifying the preferred locale
-        /// for response content. See <c>Locale</c> for supported values, constraints, fallback
-        /// behavior, and the default locale. If omitted, the service returns content in the default
-        /// locale.
+        /// The preferred locale for response content, as a Best Current Practice 47 (BCP 47)
+        /// language tag or a comma-separated priority list of language tags. See <c>Locale</c>
+        /// for supported values, constraints, fallback behavior, and the default locale. If you
+        /// omit this field, the service returns content in the default locale.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
@@ -78,8 +79,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
-        /// to get more results.
+        /// The maximum number of listings to return in each call. If you omit this field, the
+        /// default is 25. Use <c>nextToken</c> to retrieve the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
@@ -93,8 +94,11 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <c>nextToken</c> is returned, there are more results available. Make the call again
-        /// using the returned token to retrieve the next page.
+        /// If the service returns <c>nextToken</c>, more results are available. The value of
+        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again with
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// Each pagination token expires after 24 hours. An expired pagination token returns
+        /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 8192)]
@@ -122,8 +126,18 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. Valid values are <c>RELEVANCE</c> and <c>AVERAGE_CUSTOMER_RATING</c>.
+        /// The field to sort results by. If you do not specify a value, the service sorts by
+        /// <c>RELEVANCE</c>. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>AVERAGE_CUSTOMER_RATING</dt> <dd> 
+        /// <para>
+        /// Sorts by average customer rating.
+        /// </para>
+        ///  </dd> <dt>RELEVANCE</dt> <dd> 
+        /// <para>
+        /// Sorts by relevance to the search query.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public SearchListingsSortBy SortBy { get; set; }
 
@@ -135,8 +149,18 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort direction. Valid values are <c>DESCENDING</c> and <c>ASCENDING</c>.
+        /// The sort direction. If you do not specify a value, the service sorts in <c>DESCENDING</c>
+        /// order. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>ASCENDING</dt> <dd> 
+        /// <para>
+        /// Sorts from lowest to highest.
+        /// </para>
+        ///  </dd> <dt>DESCENDING</dt> <dd> 
+        /// <para>
+        /// Sorts from highest to lowest.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public SearchListingsSortOrder SortOrder { get; set; }
 

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a Bring Your Own License (BYOL) pricing term, where buyers use their existing
-    /// license for the product.
+    /// Describes a Bring Your Own License (BYOL) pricing term. With this term, you use your
+    /// existing license for the product.
     /// </summary>
     public partial class ByolPricingTerm
     {

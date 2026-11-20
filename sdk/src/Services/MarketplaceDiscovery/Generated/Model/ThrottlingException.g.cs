@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// The request was denied due to request throttling.
+    /// The request was denied due to request throttling. Reduce the frequency of your requests
+    /// and retry.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

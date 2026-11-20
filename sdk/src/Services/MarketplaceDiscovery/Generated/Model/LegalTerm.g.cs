@@ -30,15 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a legal term containing documents proposed to buyers, such as EULAs and data
-    /// subscription agreements.
+    /// Describes a legal term containing documents proposed to you, such as End User License
+    /// Agreements (EULAs) and data subscription agreements.
     /// </summary>
     public partial class LegalTerm
     {
         /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
-        /// The legal documents proposed to the buyer as part of this term.
+        /// The legal documents proposed to you as part of this term.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

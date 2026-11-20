@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a usage-based pricing term (typically pay-as-you-go), where buyers are charged
-    /// based on product usage.
+    /// Describes a usage-based pricing term, typically pay-as-you-go. You are charged based
+    /// on your use of the product.
     /// </summary>
     public partial class UsageBasedPricingTerm
     {

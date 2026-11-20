@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a configurable upfront pricing term with selectable rate cards, where buyers
-    /// choose from predefined pricing configurations.
+    /// Describes a configurable upfront pricing term with selectable rate cards. You choose
+    /// from predefined pricing configurations.
     /// </summary>
     public partial class ConfigurableUpfrontPricingTerm
     {

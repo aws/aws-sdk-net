@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Describes an API-based fulfillment option, where the product is accessed through an
+    /// Describes an API-based fulfillment option, where you access the product through an
     /// API integration.
     /// </summary>
     public partial class ApiFulfillmentOption

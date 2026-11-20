@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// A pricing model that determines how buyers are charged for a listing, such as usage-based,
-    /// contract, BYOL, or free.
+    /// A pricing model that determines how you are charged for a listing, such as usage-based,
+    /// contract, Bring Your Own License (BYOL), or free.
     /// </summary>
     public partial class PricingModel
     {
@@ -52,7 +52,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property PricingModelType. 
         /// <para>
-        /// The machine-readable type of the pricing model.
+        /// The machine-readable type of the pricing model. See <c>PricingModelType</c> for the
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -76,6 +76,20 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetBadges() => this.Badges != null && (this.Badges.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property CaseStudiesSummary. 
+        /// <para>
+        /// A summary of the case studies associated with the listing. Retrieve the case studies
+        /// with <c>ListListingAttributes</c>.
+        /// </para>
+        /// </summary>
+        public CaseStudiesSummary CaseStudiesSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CaseStudiesSummary property is set.
+        /// </summary>
+        internal bool IsSetCaseStudiesSummary() => this.CaseStudiesSummary != null;
+
+        /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
         /// The name of the catalog that the listing belongs to.
@@ -92,7 +106,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// The categories used to classify this listing into logical groups.
+        /// The categories that classify this listing into logical groups.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -241,6 +255,27 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetReviewSummary() => this.ReviewSummary != null;
 
         /// <summary>
+        /// Gets and sets the property SellerEngagements. 
+        /// <para>
+        /// The seller engagement options available for this listing, such as buying now, requesting
+        /// a private offer, or requesting a demo.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 100)]
+        public List<SellerEngagement> SellerEngagements { get; set; } = AWSConfigs.InitializeCollections ? new List<SellerEngagement>() : null;
+
+        /// <summary>
+        /// Checks to see if the SellerEngagements property is set.
+        /// </summary>
+        internal bool IsSetSellerEngagements() => this.SellerEngagements != null && (this.SellerEngagements.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property ShortDescription. 
         /// <para>
         /// A 1–3 sentence summary describing the key aspects of the listing.
@@ -253,5 +288,32 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Checks to see if the ShortDescription property is set.
         /// </summary>
         internal bool IsSetShortDescription() => this.ShortDescription != null;
+
+        /// <summary>
+        /// Gets and sets the property TrustCenterSummary. 
+        /// <para>
+        /// A summary of trust center sources and certifications associated with the listing.
+        /// </para>
+        /// </summary>
+        public TrustCenterSummary TrustCenterSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TrustCenterSummary property is set.
+        /// </summary>
+        internal bool IsSetTrustCenterSummary() => this.TrustCenterSummary != null;
+
+        /// <summary>
+        /// Gets and sets the property UseCaseSummary. 
+        /// <para>
+        /// A summary of the use cases the listing is written for: the name and identifier of
+        /// each, without descriptions. The summary is empty when the listing has none.
+        /// </para>
+        /// </summary>
+        public UseCaseSummary UseCaseSummary { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseCaseSummary property is set.
+        /// </summary>
+        internal bool IsSetUseCaseSummary() => this.UseCaseSummary != null;
     }
 }

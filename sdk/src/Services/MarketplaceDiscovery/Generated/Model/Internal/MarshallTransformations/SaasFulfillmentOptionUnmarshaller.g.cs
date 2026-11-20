@@ -60,6 +60,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("deploymentTemplates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SaasDeploymentTemplate, SaasDeploymentTemplateUnmarshaller>(SaasDeploymentTemplateUnmarshaller.Instance);
+                    unmarshalledObject.DeploymentTemplates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("fulfillmentOptionDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

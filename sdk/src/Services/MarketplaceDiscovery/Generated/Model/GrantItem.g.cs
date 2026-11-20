@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// An entitlement granted to the buyer as part of a pricing term.
+    /// An entitlement that you receive as part of a pricing term.
     /// </summary>
     public partial class GrantItem
     {
@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DimensionLabels. 
         /// <para>
-        /// Labels used to categorize this entitlement, such as by region.
+        /// Labels that categorize this entitlement, such as by region.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -98,7 +98,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxQuantity. 
         /// <para>
-        /// The maximum quantity of the entitlement that can be granted.
+        /// The maximum quantity of the entitlement that you can receive.
         /// </para>
         /// </summary>
         public int? MaxQuantity { get; set; }

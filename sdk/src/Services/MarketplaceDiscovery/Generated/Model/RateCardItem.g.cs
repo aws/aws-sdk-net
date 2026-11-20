@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DimensionLabels. 
         /// <para>
-        /// Labels used to categorize this dimension, such as by region.
+        /// Labels that categorize this dimension, such as by region.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -108,6 +108,27 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Checks to see if the Price property is set.
         /// </summary>
         internal bool IsSetPrice() => this.Price != null;
+
+        /// <summary>
+        /// Gets and sets the property RegionalPrices. 
+        /// <para>
+        /// The price overrides for the dimension in individual AWS Regions. When a Regional price
+        /// is present for an AWS Region, it replaces the default price.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 50)]
+        public List<RegionalPrice> RegionalPrices { get; set; } = AWSConfigs.InitializeCollections ? new List<RegionalPrice>() : null;
+
+        /// <summary>
+        /// Checks to see if the RegionalPrices property is set.
+        /// </summary>
+        internal bool IsSetRegionalPrices() => this.RegionalPrices != null && (this.RegionalPrices.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
         /// Gets and sets the property Unit. 

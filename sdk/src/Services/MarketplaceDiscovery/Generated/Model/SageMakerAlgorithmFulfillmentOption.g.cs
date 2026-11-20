@@ -93,7 +93,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// Recommended instance types for training and inference with this algorithm.
+        /// The recommended instance types for training and inference with this algorithm.
         /// </para>
         /// </summary>
         public SageMakerAlgorithmRecommendation Recommendation { get; set; }
@@ -106,7 +106,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }

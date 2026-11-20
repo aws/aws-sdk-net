@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a renewal term that enables automatic agreement renewal.
+    /// Describes a renewal term that renews the agreement automatically.
     /// </summary>
     public partial class RenewalTerm
     {
@@ -38,7 +38,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property AdjustmentDeadline. 
         /// <para>
         /// The duration before the agreement end date by which the renewal price is finalized,
-        /// represented in ISO 8601 format (for example, P30D). Only applicable with <c>PercentageRange</c>.
+        /// represented in ISO 8601 format (for example, P30D). This field applies only with <c>PercentageRange</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 4096)]

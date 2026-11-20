@@ -67,6 +67,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("caseStudiesSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = CaseStudiesSummaryUnmarshaller.Instance;
+                    unmarshalledObject.CaseStudiesSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -137,10 +144,31 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("sellerEngagements", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SellerEngagement, SellerEngagementUnmarshaller>(SellerEngagementUnmarshaller.Instance);
+                    unmarshalledObject.SellerEngagements = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("shortDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShortDescription = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("trustCenterSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = TrustCenterSummaryUnmarshaller.Instance;
+                    unmarshalledObject.TrustCenterSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("useCaseSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = UseCaseSummaryUnmarshaller.Instance;
+                    unmarshalledObject.UseCaseSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

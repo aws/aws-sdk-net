@@ -143,6 +143,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("purchaseIndicators", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PurchaseIndicator, PurchaseIndicatorUnmarshaller>(PurchaseIndicatorUnmarshaller.Instance);
+                    unmarshalledObject.PurchaseIndicators = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);

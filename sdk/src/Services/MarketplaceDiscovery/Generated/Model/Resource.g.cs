@@ -38,8 +38,26 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The format of the resource content, such as a URL, email address, or text.
+        /// The format of the resource content, such as a URL, email address, or text. This field
+        /// has one of the following values:
         /// </para>
+        ///  <dl> <dt>EMAIL</dt> <dd> 
+        /// <para>
+        /// An email address.
+        /// </para>
+        ///  </dd> <dt>LINK</dt> <dd> 
+        /// <para>
+        /// A URL.
+        /// </para>
+        ///  </dd> <dt>OTHER</dt> <dd> 
+        /// <para>
+        /// Text in another format.
+        /// </para>
+        ///  </dd> <dt>PHONE_NUMBER</dt> <dd> 
+        /// <para>
+        /// A phone number.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public ResourceContentType ContentType { get; set; }
@@ -67,7 +85,17 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The category of the resource, such as manufacturer support or usage instructions.
+        /// This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>MANUFACTURER_INSTRUCTIONS</dt> <dd> 
+        /// <para>
+        /// Usage instructions from the seller.
+        /// </para>
+        ///  </dd> <dt>MANUFACTURER_SUPPORT</dt> <dd> 
+        /// <para>
+        /// Support information from the seller.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public ResourceType ResourceType { get; set; }

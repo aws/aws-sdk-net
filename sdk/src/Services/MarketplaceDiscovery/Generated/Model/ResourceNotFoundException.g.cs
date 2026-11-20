@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// The specified resource doesn't exist.
+    /// The specified resource doesn't exist. Verify that the identifier is correct.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

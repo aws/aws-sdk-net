@@ -93,7 +93,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property EbsVolume. 
         /// <para>
-        /// The supported Amazon EBS volume configuration for the AMI.
+        /// The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the
+        /// AMI.
         /// </para>
         /// </summary>
         public AmazonMachineImageEbsVolume EbsVolume { get; set; }
@@ -195,7 +196,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// Recommended instance types for running this AMI.
+        /// The recommended instance types for running this AMI.
         /// </para>
         /// </summary>
         public AmazonMachineImageRecommendation Recommendation { get; set; }
@@ -208,7 +209,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }

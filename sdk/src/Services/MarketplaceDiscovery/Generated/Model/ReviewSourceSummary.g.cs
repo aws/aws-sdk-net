@@ -55,19 +55,19 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// The machine-readable identifier of the review source. This field has one of the following
         /// values:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>AWS_MARKETPLACE</dt> <dd> 
         /// <para>
-        ///  <c>AWS_MARKETPLACE</c> – The reviews come from AWS Marketplace.
+        /// The reviews come from AWS Marketplace.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>G2</dt> <dd> 
         /// <para>
-        ///  <c>G2</c> – The reviews come from G2.
+        /// The reviews come from G2.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>PEERSPOT</dt> <dd> 
         /// <para>
-        ///  <c>PEERSPOT</c> – The reviews come from PeerSpot.
+        /// The reviews come from PeerSpot.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public ReviewSourceId SourceId { get; set; }
@@ -107,7 +107,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// The URL where the reviews can be accessed at the source.
+        /// The URL where you can read the reviews at their source.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 2048)]

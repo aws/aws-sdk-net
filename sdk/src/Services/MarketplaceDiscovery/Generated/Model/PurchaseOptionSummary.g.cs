@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Summary information about a purchase option (offer or offer set) available to the
-    /// buyer, including the seller, badges, and associated products.
+    /// Summary information about a purchase option (offer or offer set) available to you,
+    /// including the seller, badges, and associated products.
     /// </summary>
     public partial class PurchaseOptionSummary
     {
@@ -58,7 +58,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property AvailableFromTime. 
         /// <para>
-        /// The date and time when the purchase option became available to the buyer.
+        /// The date and time when the purchase option became available to you.
         /// </para>
         /// </summary>
         public DateTime? AvailableFromTime { get; set; }
@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property Badges. 
         /// <para>
         /// Badges indicating special attributes of the purchase option, such as private pricing
-        /// or future dated.
+        /// or future-dated.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -148,9 +148,17 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property PurchaseOptionType. 
         /// <para>
-        /// The type of purchase option. Values are <c>OFFER</c> for a single-product offer or
-        /// <c>OFFERSET</c> for a bundled offer set.
+        /// The type of purchase option. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>OFFER</dt> <dd> 
+        /// <para>
+        /// An offer for a single product.
+        /// </para>
+        ///  </dd> <dt>OFFERSET</dt> <dd> 
+        /// <para>
+        /// An offer set that bundles offers for several products.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public PurchaseOptionType PurchaseOptionType { get; set; }

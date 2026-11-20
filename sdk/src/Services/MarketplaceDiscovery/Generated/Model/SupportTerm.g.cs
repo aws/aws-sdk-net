@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a support term that includes the refund policy for the offer.
+    /// Describes a support term that includes the refund policy for the offer.
     /// </summary>
     public partial class SupportTerm
     {

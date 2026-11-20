@@ -58,6 +58,42 @@ namespace Amazon.MarketplaceDiscovery
     }
 
     /// <summary>
+    /// Constants used for properties of type CaseStudyResourceType.
+    /// </summary>
+    public class CaseStudyResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CASE_STUDY_WEBSITE for CaseStudyResourceType
+        /// </summary>
+        public static readonly CaseStudyResourceType CASE_STUDY_WEBSITE = new CaseStudyResourceType("CASE_STUDY_WEBSITE");
+
+        /// <summary>
+        /// Constructs a custom CaseStudyResourceType for a value not among the defined constants.
+        /// </summary>
+        public CaseStudyResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaseStudyResourceType FindValue(string value)
+        {
+            return FindValue<CaseStudyResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaseStudyResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DeployedOnAwsStatus.
     /// </summary>
     public class DeployedOnAwsStatus : ConstantClass
@@ -292,6 +328,77 @@ namespace Amazon.MarketplaceDiscovery
     }
 
     /// <summary>
+    /// Constants used for properties of type ListingAttributeType.
+    /// </summary>
+    public class ListingAttributeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CASE_STUDY for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType CASE_STUDY = new ListingAttributeType("CASE_STUDY");
+
+        /// <summary>
+        /// Constant SPECIALIZATION_DETAIL for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType SPECIALIZATION_DETAIL = new ListingAttributeType("SPECIALIZATION_DETAIL");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_CERTIFICATION for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_CERTIFICATION = new ListingAttributeType("TRUST_CENTER_CERTIFICATION");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_CONTROL for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_CONTROL = new ListingAttributeType("TRUST_CENTER_CONTROL");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_DOCUMENT for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_DOCUMENT = new ListingAttributeType("TRUST_CENTER_DOCUMENT");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_FAQ for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_FAQ = new ListingAttributeType("TRUST_CENTER_FAQ");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_SOURCE for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_SOURCE = new ListingAttributeType("TRUST_CENTER_SOURCE");
+
+        /// <summary>
+        /// Constant TRUST_CENTER_UPDATE for ListingAttributeType
+        /// </summary>
+        public static readonly ListingAttributeType TRUST_CENTER_UPDATE = new ListingAttributeType("TRUST_CENTER_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom ListingAttributeType for a value not among the defined constants.
+        /// </summary>
+        public ListingAttributeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListingAttributeType FindValue(string value)
+        {
+            return FindValue<ListingAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListingAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ListingBadgeType.
     /// </summary>
     public class ListingBadgeType : ConstantClass
@@ -459,6 +566,47 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PricingUnitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PurchaseIndicatorType.
+    /// </summary>
+    public class PurchaseIndicatorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE_FOR_USE_WITHOUT_SUBSCRIPTION for PurchaseIndicatorType
+        /// </summary>
+        public static readonly PurchaseIndicatorType AVAILABLE_FOR_USE_WITHOUT_SUBSCRIPTION = new PurchaseIndicatorType("AVAILABLE_FOR_USE_WITHOUT_SUBSCRIPTION");
+
+        /// <summary>
+        /// Constant NOT_AVAILABLE_FOR_SUBSCRIPTION for PurchaseIndicatorType
+        /// </summary>
+        public static readonly PurchaseIndicatorType NOT_AVAILABLE_FOR_SUBSCRIPTION = new PurchaseIndicatorType("NOT_AVAILABLE_FOR_SUBSCRIPTION");
+
+        /// <summary>
+        /// Constructs a custom PurchaseIndicatorType for a value not among the defined constants.
+        /// </summary>
+        public PurchaseIndicatorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PurchaseIndicatorType FindValue(string value)
+        {
+            return FindValue<PurchaseIndicatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PurchaseIndicatorType(string value)
         {
             return FindValue(value);
         }
@@ -848,6 +996,11 @@ namespace Amazon.MarketplaceDiscovery
         public static readonly SearchFacetType CATEGORY = new SearchFacetType("CATEGORY");
 
         /// <summary>
+        /// Constant CERTIFICATES for SearchFacetType
+        /// </summary>
+        public static readonly SearchFacetType CERTIFICATES = new SearchFacetType("CERTIFICATES");
+
+        /// <summary>
         /// Constant DEPLOYED_ON_AWS for SearchFacetType
         /// </summary>
         public static readonly SearchFacetType DEPLOYED_ON_AWS = new SearchFacetType("DEPLOYED_ON_AWS");
@@ -876,6 +1029,26 @@ namespace Amazon.MarketplaceDiscovery
         /// Constant PUBLISHER for SearchFacetType
         /// </summary>
         public static readonly SearchFacetType PUBLISHER = new SearchFacetType("PUBLISHER");
+
+        /// <summary>
+        /// Constant SELLER_ENGAGEMENT for SearchFacetType
+        /// </summary>
+        public static readonly SearchFacetType SELLER_ENGAGEMENT = new SearchFacetType("SELLER_ENGAGEMENT");
+
+        /// <summary>
+        /// Constant SPECIALIZATION for SearchFacetType
+        /// </summary>
+        public static readonly SearchFacetType SPECIALIZATION = new SearchFacetType("SPECIALIZATION");
+
+        /// <summary>
+        /// Constant SPECIALIZATION_CATEGORY for SearchFacetType
+        /// </summary>
+        public static readonly SearchFacetType SPECIALIZATION_CATEGORY = new SearchFacetType("SPECIALIZATION_CATEGORY");
+
+        /// <summary>
+        /// Constant TRUST_CENTER for SearchFacetType
+        /// </summary>
+        public static readonly SearchFacetType TRUST_CENTER = new SearchFacetType("TRUST_CENTER");
 
         /// <summary>
         /// Constructs a custom SearchFacetType for a value not among the defined constants.
@@ -914,6 +1087,11 @@ namespace Amazon.MarketplaceDiscovery
         public static readonly SearchFilterType CATEGORY = new SearchFilterType("CATEGORY");
 
         /// <summary>
+        /// Constant CERTIFICATES for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType CERTIFICATES = new SearchFilterType("CERTIFICATES");
+
+        /// <summary>
         /// Constant DEPLOYED_ON_AWS for SearchFilterType
         /// </summary>
         public static readonly SearchFilterType DEPLOYED_ON_AWS = new SearchFilterType("DEPLOYED_ON_AWS");
@@ -949,9 +1127,34 @@ namespace Amazon.MarketplaceDiscovery
         public static readonly SearchFilterType PRICING_UNIT = new SearchFilterType("PRICING_UNIT");
 
         /// <summary>
+        /// Constant PRODUCT_ID for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType PRODUCT_ID = new SearchFilterType("PRODUCT_ID");
+
+        /// <summary>
         /// Constant PUBLISHER for SearchFilterType
         /// </summary>
         public static readonly SearchFilterType PUBLISHER = new SearchFilterType("PUBLISHER");
+
+        /// <summary>
+        /// Constant SELLER_ENGAGEMENT for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType SELLER_ENGAGEMENT = new SearchFilterType("SELLER_ENGAGEMENT");
+
+        /// <summary>
+        /// Constant SPECIALIZATION for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType SPECIALIZATION = new SearchFilterType("SPECIALIZATION");
+
+        /// <summary>
+        /// Constant SPECIALIZATION_CATEGORY for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType SPECIALIZATION_CATEGORY = new SearchFilterType("SPECIALIZATION_CATEGORY");
+
+        /// <summary>
+        /// Constant TRUST_CENTER for SearchFilterType
+        /// </summary>
+        public static readonly SearchFilterType TRUST_CENTER = new SearchFilterType("TRUST_CENTER");
 
         /// <summary>
         /// Constructs a custom SearchFilterType for a value not among the defined constants.
@@ -1139,6 +1342,16 @@ namespace Amazon.MarketplaceDiscovery
     public class SellerEngagementType : ConstantClass
     {
         /// <summary>
+        /// Constant BUY_NOW for SellerEngagementType
+        /// </summary>
+        public static readonly SellerEngagementType BUY_NOW = new SellerEngagementType("BUY_NOW");
+
+        /// <summary>
+        /// Constant EXPRESS_PRIVATE_OFFER for SellerEngagementType
+        /// </summary>
+        public static readonly SellerEngagementType EXPRESS_PRIVATE_OFFER = new SellerEngagementType("EXPRESS_PRIVATE_OFFER");
+
+        /// <summary>
         /// Constant REQUEST_FOR_DEMO for SellerEngagementType
         /// </summary>
         public static readonly SellerEngagementType REQUEST_FOR_DEMO = new SellerEngagementType("REQUEST_FOR_DEMO");
@@ -1147,6 +1360,11 @@ namespace Amazon.MarketplaceDiscovery
         /// Constant REQUEST_FOR_PRIVATE_OFFER for SellerEngagementType
         /// </summary>
         public static readonly SellerEngagementType REQUEST_FOR_PRIVATE_OFFER = new SellerEngagementType("REQUEST_FOR_PRIVATE_OFFER");
+
+        /// <summary>
+        /// Constant TRY_FOR_FREE for SellerEngagementType
+        /// </summary>
+        public static readonly SellerEngagementType TRY_FOR_FREE = new SellerEngagementType("TRY_FOR_FREE");
 
         /// <summary>
         /// Constructs a custom SellerEngagementType for a value not among the defined constants.
@@ -1169,6 +1387,52 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SellerEngagementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SpecializationType.
+    /// </summary>
+    public class SpecializationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant INDUSTRY for SpecializationType
+        /// </summary>
+        public static readonly SpecializationType INDUSTRY = new SpecializationType("INDUSTRY");
+
+        /// <summary>
+        /// Constant SERVICES for SpecializationType
+        /// </summary>
+        public static readonly SpecializationType SERVICES = new SpecializationType("SERVICES");
+
+        /// <summary>
+        /// Constant USE_CASE for SpecializationType
+        /// </summary>
+        public static readonly SpecializationType USE_CASE = new SpecializationType("USE_CASE");
+
+        /// <summary>
+        /// Constructs a custom SpecializationType for a value not among the defined constants.
+        /// </summary>
+        public SpecializationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpecializationType FindValue(string value)
+        {
+            return FindValue<SpecializationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpecializationType(string value)
         {
             return FindValue(value);
         }
@@ -1265,6 +1529,144 @@ namespace Amazon.MarketplaceDiscovery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TermType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustCenterControlDomain.
+    /// </summary>
+    public class TrustCenterControlDomain : ConstantClass
+    {
+        /// <summary>
+        /// Constant AI_GOVERNANCE for TrustCenterControlDomain
+        /// </summary>
+        public static readonly TrustCenterControlDomain AI_GOVERNANCE = new TrustCenterControlDomain("AI_GOVERNANCE");
+
+        /// <summary>
+        /// Constant RESILIENCE for TrustCenterControlDomain
+        /// </summary>
+        public static readonly TrustCenterControlDomain RESILIENCE = new TrustCenterControlDomain("RESILIENCE");
+
+        /// <summary>
+        /// Constant SECURITY for TrustCenterControlDomain
+        /// </summary>
+        public static readonly TrustCenterControlDomain SECURITY = new TrustCenterControlDomain("SECURITY");
+
+        /// <summary>
+        /// Constructs a custom TrustCenterControlDomain for a value not among the defined constants.
+        /// </summary>
+        public TrustCenterControlDomain(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustCenterControlDomain FindValue(string value)
+        {
+            return FindValue<TrustCenterControlDomain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustCenterControlDomain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustCenterDocumentAccessType.
+    /// </summary>
+    public class TrustCenterDocumentAccessType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOWNLOAD for TrustCenterDocumentAccessType
+        /// </summary>
+        public static readonly TrustCenterDocumentAccessType DOWNLOAD = new TrustCenterDocumentAccessType("DOWNLOAD");
+
+        /// <summary>
+        /// Constant REQUEST_ACCESS for TrustCenterDocumentAccessType
+        /// </summary>
+        public static readonly TrustCenterDocumentAccessType REQUEST_ACCESS = new TrustCenterDocumentAccessType("REQUEST_ACCESS");
+
+        /// <summary>
+        /// Constant VIEW for TrustCenterDocumentAccessType
+        /// </summary>
+        public static readonly TrustCenterDocumentAccessType VIEW = new TrustCenterDocumentAccessType("VIEW");
+
+        /// <summary>
+        /// Constructs a custom TrustCenterDocumentAccessType for a value not among the defined constants.
+        /// </summary>
+        public TrustCenterDocumentAccessType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustCenterDocumentAccessType FindValue(string value)
+        {
+            return FindValue<TrustCenterDocumentAccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustCenterDocumentAccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustCenterProvider.
+    /// </summary>
+    public class TrustCenterProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant DRATA for TrustCenterProvider
+        /// </summary>
+        public static readonly TrustCenterProvider DRATA = new TrustCenterProvider("DRATA");
+
+        /// <summary>
+        /// Constant OTHER for TrustCenterProvider
+        /// </summary>
+        public static readonly TrustCenterProvider OTHER = new TrustCenterProvider("OTHER");
+
+        /// <summary>
+        /// Constant VANTA for TrustCenterProvider
+        /// </summary>
+        public static readonly TrustCenterProvider VANTA = new TrustCenterProvider("VANTA");
+
+        /// <summary>
+        /// Constructs a custom TrustCenterProvider for a value not among the defined constants.
+        /// </summary>
+        public TrustCenterProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustCenterProvider FindValue(string value)
+        {
+            return FindValue<TrustCenterProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustCenterProvider(string value)
         {
             return FindValue(value);
         }

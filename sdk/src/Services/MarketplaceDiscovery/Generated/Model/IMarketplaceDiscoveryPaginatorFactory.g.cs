@@ -45,6 +45,12 @@ namespace Amazon.MarketplaceDiscovery.Model
         IListFulfillmentOptionsPaginator ListFulfillmentOptions(ListFulfillmentOptionsRequest request);
 
         /// <summary>
+        /// Paginator for ListListingAttributes operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListListingAttributesPaginator ListListingAttributes(ListListingAttributesRequest request);
+
+        /// <summary>
         /// Paginator for ListPurchaseOptions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

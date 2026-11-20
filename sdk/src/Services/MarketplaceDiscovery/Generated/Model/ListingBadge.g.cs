@@ -38,7 +38,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property BadgeType. 
         /// <para>
-        /// The machine-readable type of the badge.
+        /// The machine-readable type of the badge. See <c>ListingBadgeType</c> for the values.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

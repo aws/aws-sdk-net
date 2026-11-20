@@ -58,8 +58,11 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <c>nextToken</c> is returned, there are more results available. Make the call again
-        /// using the returned token to retrieve the next page.
+        /// If the service returns <c>nextToken</c>, more results are available. The value of
+        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again with
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// Each pagination token expires after 24 hours. An expired pagination token returns
+        /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 8192)]

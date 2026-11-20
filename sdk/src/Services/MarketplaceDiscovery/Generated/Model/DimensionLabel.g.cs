@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// A label used to group or categorize pricing dimensions, such as by region or SageMaker
+    /// A label that groups or categorizes pricing dimensions, such as by region or SageMaker
     /// option.
     /// </summary>
     public partial class DimensionLabel
@@ -52,8 +52,17 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property LabelType. 
         /// <para>
-        /// The type of the dimension label, such as <c>Region</c> or <c>SagemakerOption</c>.
+        /// The type of the dimension label. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>Region</dt> <dd> 
+        /// <para>
+        /// The label groups dimensions by AWS Region.
+        /// </para>
+        ///  </dd> <dt>SagemakerOption</dt> <dd> 
+        /// <para>
+        /// The label groups dimensions by Amazon SageMaker option.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public DimensionLabelType LabelType { get; set; }

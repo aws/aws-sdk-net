@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// A legal document associated with a legal term, such as a EULA or data subscription
-    /// agreement.
+    /// A legal document associated with a legal term, such as an End User License Agreement
+    /// (EULA) or a data subscription agreement.
     /// </summary>
     public partial class DocumentItem
     {

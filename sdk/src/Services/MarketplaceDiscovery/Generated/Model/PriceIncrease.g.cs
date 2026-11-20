@@ -31,7 +31,18 @@ namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
     /// The pricing adjustment that applies at each renewal cycle, expressed as either a fixed
-    /// percentage or a percentage range. Exactly one variant is present.
+    /// percentage or a percentage range. Exactly one of the following members is present:
+    /// 
+    ///  <dl> <dt>fixedPercentage</dt> <dd> 
+    /// <para>
+    /// A single fixed percentage applied uniformly at every renewal cycle.
+    /// </para>
+    ///  </dd> <dt>percentageRange</dt> <dd> 
+    /// <para>
+    /// A percentage range with minimum, maximum, and default values that bound the price
+    /// increase at each renewal cycle.
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class PriceIncrease
     {

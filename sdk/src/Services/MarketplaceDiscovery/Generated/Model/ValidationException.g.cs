@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by the service.
+    /// The input fails to satisfy the constraints specified by the service. Check the <c>reason</c>
+    /// field for the constraint that failed.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -75,8 +76,25 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason that the input fails to satisfy the constraints specified by the service.
+        /// The reason that the input fails to satisfy the constraints that the Discovery API
+        /// specifies. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>INVALID_PAGINATION_TOKEN</dt> <dd> 
+        /// <para>
+        /// The <c>nextToken</c> value is malformed, expired, or belongs to a different request.
+        /// Start the pagination again from the first page.
+        /// </para>
+        ///  </dd> <dt>MALFORMED_REQUEST_PARAMETERS</dt> <dd> 
+        /// <para>
+        /// One or more request parameters have an invalid value. Correct the parameters that
+        /// you specified, and then resubmit your request.
+        /// </para>
+        ///  </dd> <dt>PAGINATION_LIMIT_EXCEEDED</dt> <dd> 
+        /// <para>
+        /// The request asks for results beyond the deepest page that the operation returns. Narrow
+        /// your request with filters or a more specific search.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public ValidationExceptionReason Reason { get; set; }
 

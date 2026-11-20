@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a fixed upfront pricing term with a pre-paid amount and granted entitlements.
+    /// Describes a fixed upfront pricing term with a pre-paid amount and granted entitlements.
     /// </summary>
     public partial class FixedUpfrontPricingTerm
     {
@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Grants. 
         /// <para>
-        /// The entitlements granted to the buyer as part of this term.
+        /// The entitlements that you receive as part of this term.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

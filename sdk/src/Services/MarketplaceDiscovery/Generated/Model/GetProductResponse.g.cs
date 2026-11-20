@@ -51,7 +51,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// The categories used to classify this product into logical groups.
+        /// The categories that classify this product into logical groups.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -71,7 +71,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DeployedOnAws. 
         /// <para>
-        /// Indicates whether the product is deployed on AWS infrastructure.
+        /// Specifies whether the product is deployed on AWS infrastructure.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -86,7 +86,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property FulfillmentOptionSummaries. 
         /// <para>
         /// A summary of fulfillment options available for deploying or accessing the product,
-        /// such as AMI, SaaS, or Container.
+        /// such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -140,9 +140,9 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale of the returned content. Indicates whether the response contains content
-        /// in the requested locale, or fell back to the default locale. See <c>Locale</c> for
-        /// details.
+        /// The locale of the returned content. This value indicates whether the response contains
+        /// content in the requested locale or fell back to the default locale. See <c>Locale</c>
+        /// for details.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
@@ -245,6 +245,28 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetPromotionalMedia() => this.PromotionalMedia != null && (this.PromotionalMedia.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property PurchaseIndicators. 
+        /// <para>
+        /// Indicators describing purchase characteristics of this product, such as whether you
+        /// can subscribe to it or use it without a subscription. The list is empty when no special
+        /// purchase conditions apply.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Max = 20)]
+        public List<PurchaseIndicator> PurchaseIndicators { get; set; } = AWSConfigs.InitializeCollections ? new List<PurchaseIndicator>() : null;
+
+        /// <summary>
+        /// Checks to see if the PurchaseIndicators property is set.
+        /// </summary>
+        internal bool IsSetPurchaseIndicators() => this.PurchaseIndicators != null && (this.PurchaseIndicators.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
         /// Resources that provide further information about using the product or requesting support,
@@ -268,8 +290,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SellerEngagements. 
         /// <para>
-        /// Engagement options available to potential buyers, such as requesting a private offer
-        /// or requesting a demo.
+        /// The engagement options available to you, such as buying now, requesting a private
+        /// offer, or requesting a demo.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

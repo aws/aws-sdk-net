@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a recurring payment term with fixed charges at regular billing intervals.
+    /// Describes a recurring payment term with fixed charges at regular billing intervals.
     /// </summary>
     public partial class RecurringPaymentTerm
     {

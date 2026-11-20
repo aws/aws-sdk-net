@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a payment schedule term with installment payments at specified dates.
+    /// Describes a payment schedule term with installment payments at specified dates.
     /// </summary>
     public partial class PaymentScheduleTerm
     {

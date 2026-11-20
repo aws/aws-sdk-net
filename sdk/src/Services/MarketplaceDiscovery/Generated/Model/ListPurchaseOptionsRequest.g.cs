@@ -30,21 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListPurchaseOptions operation. Returns the purchase
-    /// options (offers and offer sets) available to the buyer. You can filter results by
-    /// product, seller, purchase option type, visibility scope, and availability status.
-    /// <note> <para> You must include at least one of the following filters in the request:
-    /// a <c>PRODUCT_ID</c> filter to specify the product for which to retrieve purchase options,
-    /// or a <c>VISIBILITY_SCOPE</c> filter to retrieve purchase options by visibility. </para>
-    /// </note>
+    /// Container for the parameters to the ListPurchaseOptions operation. Retrieves the purchase
+    /// options (offers and offer sets) available to you. You can filter results by product,
+    /// seller, purchase option type, visibility scope, and availability status. The operation
+    /// returns results in pages. Use <c>nextToken</c> to retrieve the next page. <note> <para>
+    /// You must include at least one of the following filters in the request: a <c>PRODUCT_ID</c>
+    /// filter to specify the product for which to retrieve purchase options, or a <c>VISIBILITY_SCOPE</c>
+    /// filter to retrieve purchase options by visibility. </para> </note>
     /// </summary>
     public partial class ListPurchaseOptionsRequest : AmazonMarketplaceDiscoveryRequest
     {
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to narrow the results. Multiple filters are combined with AND logic. Multiple
-        /// values within the same filter are combined with OR logic.
+        /// Filters to narrow the results. A result must match every filter. Within one filter,
+        /// a result matches if it has any of the values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -64,10 +64,10 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A BCP 47 language tag or comma-separated priority list specifying the preferred locale
-        /// for response content. See <c>Locale</c> for supported values, constraints, fallback
-        /// behavior, and the default locale. If omitted, the service returns content in the default
-        /// locale.
+        /// The preferred locale for response content, as a Best Current Practice 47 (BCP 47)
+        /// language tag or a comma-separated priority list of language tags. See <c>Locale</c>
+        /// for supported values, constraints, fallback behavior, and the default locale. If you
+        /// omit this field, the service returns content in the default locale.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
@@ -81,8 +81,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
-        /// to get more results.
+        /// The maximum number of purchase options to return in each call. If you omit this field,
+        /// the default is 25. Use <c>nextToken</c> to retrieve the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
@@ -96,8 +96,11 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <c>nextToken</c> is returned, there are more results available. Make the call again
-        /// using the returned token to retrieve the next page.
+        /// If the service returns <c>nextToken</c>, more results are available. The value of
+        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again with
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// Each pagination token expires after 24 hours. An expired pagination token returns
+        /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 8192)]

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Defines a free trial pricing term that enables customers to try the product before
-    /// purchasing.
+    /// Describes a free trial pricing term. With this term, you can try the product before
+    /// you purchase it.
     /// </summary>
     public partial class FreeTrialPricingTerm
     {
@@ -52,7 +52,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Grants. 
         /// <para>
-        /// The entitlements granted to the buyer during the free trial.
+        /// The entitlements that you receive during the free trial.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

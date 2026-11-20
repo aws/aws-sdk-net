@@ -38,7 +38,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// The type of filter to apply.
+        /// The type of filter to apply. See <c>filterValues</c> for the supported types and their
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -52,8 +53,84 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property FilterValues. 
         /// <para>
-        /// The values to filter by. Term filters accept multiple values (OR logic). Range filters
-        /// (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.
+        /// The values to filter by. Term filters accept multiple values, and a result matches
+        /// if it has any of them. Range filters accept a single value. The supported values for
+        /// each <c>filterType</c> are as follows:
+        /// </para>
+        ///  <dl> <dt>CATEGORY</dt> <dd> 
+        /// <para>
+        /// One or more category identifiers. Matches listings in those categories.
+        /// </para>
+        ///  </dd> <dt>CERTIFICATES</dt> <dd> 
+        /// <para>
+        /// One or more certification identifiers, such as <c>ISO_27001</c> or <c>SOC2_TYPE_2</c>.
+        /// Matches listings that hold those certifications.
+        /// </para>
+        ///  </dd> <dt>DEPLOYED_ON_AWS</dt> <dd> 
+        /// <para>
+        /// The single value <c>DEPLOYED_ON_AWS</c>. Matches listings whose products are deployed
+        /// on AWS infrastructure.
+        /// </para>
+        ///  </dd> <dt>FULFILLMENT_OPTION_TYPE</dt> <dd> 
+        /// <para>
+        /// One or more fulfillment option types, such as <c>SAAS</c>, <c>AMAZON_MACHINE_IMAGE</c>,
+        /// or <c>CONTAINER</c>. Matches listings that you can deploy or access in those ways.
+        /// </para>
+        ///  </dd> <dt>MAX_AVERAGE_CUSTOMER_RATING</dt> <dd> 
+        /// <para>
+        /// A single rating between <c>0.0</c> and <c>5.0</c>. Matches listings whose average
+        /// customer rating is at or below that value.
+        /// </para>
+        ///  </dd> <dt>MIN_AVERAGE_CUSTOMER_RATING</dt> <dd> 
+        /// <para>
+        /// A single rating between <c>0.0</c> and <c>5.0</c>. Matches listings whose average
+        /// customer rating is at or above that value.
+        /// </para>
+        ///  </dd> <dt>NUMBER_OF_PRODUCTS</dt> <dd> 
+        /// <para>
+        ///  <c>SINGLE_PRODUCT</c> or <c>MULTI_PRODUCT</c>. Matches single-product listings or
+        /// multi-product solutions.
+        /// </para>
+        ///  </dd> <dt>PRICING_MODEL</dt> <dd> 
+        /// <para>
+        /// One or more of <c>BYOL</c>, <c>CONTRACT</c>, <c>FREE</c>, and <c>USAGE</c>. Matches
+        /// listings with offers that use those pricing models.
+        /// </para>
+        ///  </dd> <dt>PRICING_UNIT</dt> <dd> 
+        /// <para>
+        /// One or more pricing units, such as <c>USERS</c>, <c>HOSTS</c>, or <c>REQUESTS</c>.
+        /// Matches listings that bill by those units.
+        /// </para>
+        ///  </dd> <dt>PRODUCT_ID</dt> <dd> 
+        /// <para>
+        /// One or more product identifiers. Matches listings that contain those products.
+        /// </para>
+        ///  </dd> <dt>PUBLISHER</dt> <dd> 
+        /// <para>
+        /// One or more publisher identifiers. Matches listings from those sellers.
+        /// </para>
+        ///  </dd> <dt>SELLER_ENGAGEMENT</dt> <dd> 
+        /// <para>
+        /// One or more <c>SellerEngagementType</c> values, such as <c>BUY_NOW</c> or <c>REQUEST_FOR_DEMO</c>.
+        /// Matches listings that offer those ways to engage with the seller.
+        /// </para>
+        ///  </dd> <dt>SPECIALIZATION</dt> <dd> 
+        /// <para>
+        /// One or more specialization identifiers. Matches listings that earned those specializations.
+        /// </para>
+        ///  </dd> <dt>SPECIALIZATION_CATEGORY</dt> <dd> 
+        /// <para>
+        /// One or more specialization category identifiers. Matches listings that earned a category
+        /// under a specialization.
+        /// </para>
+        ///  </dd> <dt>TRUST_CENTER</dt> <dd> 
+        /// <para>
+        /// The single value <c>HAS_TRUST_CENTER</c>. Matches listings that have a trust center.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// Use <c>SearchFacets</c> to retrieve the values available for <c>CATEGORY</c>, <c>PUBLISHER</c>,
+        /// <c>CERTIFICATES</c>, <c>SPECIALIZATION</c>, and <c>SPECIALIZATION_CATEGORY</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

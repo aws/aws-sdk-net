@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Describes an operating system supported by an EKS add-on fulfillment option.
+    /// Describes an operating system that an Amazon EKS add-on fulfillment option supports.
     /// </summary>
     public partial class EksAddOnOperatingSystem
     {

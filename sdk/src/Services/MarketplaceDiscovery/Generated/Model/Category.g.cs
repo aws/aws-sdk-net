@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// A category used to classify a listing or product into a logical group.
+    /// A category that classifies a listing or product into a logical group.
     /// </summary>
     public partial class Category
     {

@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchFacets operation. Returns available facet
-    /// values for filtering listings, such as categories, pricing models, fulfillment option
-    /// types, publishers, and customer ratings. Each facet value includes a count of matching
-    /// listings.
+    /// Container for the parameters to the SearchFacets operation. Retrieves the available
+    /// facet values for filtering listings, such as categories, pricing models, fulfillment
+    /// option types, publishers, and customer ratings. Each facet value includes a count
+    /// of matching listings.
     /// </summary>
     public partial class SearchFacetsRequest : AmazonMarketplaceDiscoveryRequest
     {
         /// <summary>
         /// Gets and sets the property FacetTypes. 
         /// <para>
-        /// A list of specific facet types to retrieve. If empty or null, all available facets
-        /// are returned.
+        /// The facet types to retrieve. If you omit this field or leave it empty, the service
+        /// returns all available facets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -61,8 +61,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to apply before retrieving facets. Multiple filters are combined with AND
-        /// logic. Multiple values within the same filter are combined with OR logic.
+        /// Filters to apply before retrieving facets. A result must match every filter. Within
+        /// one filter, a result matches if it has any of the values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -82,10 +82,10 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A BCP 47 language tag or comma-separated priority list specifying the preferred locale
-        /// for response content. See <c>Locale</c> for supported values, constraints, fallback
-        /// behavior, and the default locale. If omitted, the service returns content in the default
-        /// locale.
+        /// The preferred locale for response content, as a Best Current Practice 47 (BCP 47)
+        /// language tag or a comma-separated priority list of language tags. See <c>Locale</c>
+        /// for supported values, constraints, fallback behavior, and the default locale. If you
+        /// omit this field, the service returns content in the default locale.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 256)]
@@ -99,8 +99,11 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <c>nextToken</c> is returned, there are more results available. Make the call again
-        /// using the returned token to retrieve the next page.
+        /// If the service returns <c>nextToken</c>, more results are available. The value of
+        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again with
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// Each pagination token expires after 24 hours. An expired pagination token returns
+        /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 8192)]

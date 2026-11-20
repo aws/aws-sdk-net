@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Describes an Amazon EKS add-on fulfillment option.
+    /// Describes an Amazon Elastic Kubernetes Service (Amazon EKS) add-on fulfillment option.
     /// </summary>
     public partial class EksAddOnFulfillmentOption
     {
@@ -144,7 +144,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }

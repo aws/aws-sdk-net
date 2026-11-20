@@ -31,14 +31,15 @@ namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
     /// A badge indicating a special attribute of a purchase option, such as private pricing
-    /// or future dated.
+    /// or future-dated.
     /// </summary>
     public partial class PurchaseOptionBadge
     {
         /// <summary>
         /// Gets and sets the property BadgeType. 
         /// <para>
-        /// The machine-readable type of the badge.
+        /// The machine-readable type of the badge. See <c>PurchaseOptionBadgeType</c> for the
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

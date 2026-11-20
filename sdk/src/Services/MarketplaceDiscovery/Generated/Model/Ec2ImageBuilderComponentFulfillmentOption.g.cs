@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Describes an EC2 Image Builder component fulfillment option.
+    /// Describes an Amazon Elastic Compute Cloud (Amazon EC2) Image Builder component fulfillment
+    /// option.
     /// </summary>
     public partial class Ec2ImageBuilderComponentFulfillmentOption
     {
         /// <summary>
         /// Gets and sets the property AwsSupportedServices. 
         /// <para>
-        /// The AWS services supported by this EC2 Image Builder component.
+        /// The AWS services that this EC2 Image Builder component supports.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -144,7 +145,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }

@@ -93,7 +93,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// Recommended instance types for inference with this model.
+        /// The recommended instance types for inference with this model.
         /// </para>
         /// </summary>
         public SageMakerModelRecommendation Recommendation { get; set; }
@@ -106,7 +106,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
-        /// Release notes describing changes in this version of the fulfillment option.
+        /// Release notes that describe the changes in this version of the fulfillment option.
         /// </para>
         /// </summary>
         public string ReleaseNotes { get; set; }
@@ -119,7 +119,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property SupportedContentTypes. 
         /// <para>
-        /// The MIME types that this model accepts as input.
+        /// The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as
+        /// input.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

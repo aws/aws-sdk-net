@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// An engagement option available to potential buyers of a product, such as requesting
-    /// a private offer or a demo.
+    /// A way you can engage with the seller of a product, such as requesting a private offer
+    /// or a demo.
     /// </summary>
     public partial class SellerEngagement
     {
@@ -52,8 +52,29 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property EngagementType. 
         /// <para>
-        /// The type of engagement, such as <c>REQUEST_FOR_PRIVATE_OFFER</c> or <c>REQUEST_FOR_DEMO</c>.
+        /// The type of engagement. This field has one of the following values:
         /// </para>
+        ///  <dl> <dt>BUY_NOW</dt> <dd> 
+        /// <para>
+        /// The product is available for immediate purchase.
+        /// </para>
+        ///  </dd> <dt>EXPRESS_PRIVATE_OFFER</dt> <dd> 
+        /// <para>
+        /// You can request an express private offer and accept it immediately.
+        /// </para>
+        ///  </dd> <dt>REQUEST_FOR_DEMO</dt> <dd> 
+        /// <para>
+        /// You can request a demo from the seller.
+        /// </para>
+        ///  </dd> <dt>REQUEST_FOR_PRIVATE_OFFER</dt> <dd> 
+        /// <para>
+        /// You can request a private offer from the seller.
+        /// </para>
+        ///  </dd> <dt>TRY_FOR_FREE</dt> <dd> 
+        /// <para>
+        /// The product offers a free trial.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required = true)]
         public SellerEngagementType EngagementType { get; set; }
