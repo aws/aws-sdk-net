@@ -57,6 +57,11 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));
+            }
+
             if (!publicRequest.IsSetModelIdentifier())
             {
                 throw new AmazonBedrockException("Request object does not have required field ModelIdentifier set");
@@ -64,6 +69,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.AddPathResource("{modelIdentifier}", StringUtils.FromString(publicRequest.ModelIdentifier));
 
             request.ResourcePath = "/foundation-models/{modelIdentifier}";
+
+            request.UseQueryString = true;
 
             return request;
         }

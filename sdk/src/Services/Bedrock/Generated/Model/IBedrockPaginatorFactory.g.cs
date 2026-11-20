@@ -135,6 +135,12 @@ namespace Amazon.Bedrock.Model
         IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListProjects operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
         /// Paginator for ListPromptRouters operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -145,5 +151,11 @@ namespace Amazon.Bedrock.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrustedAccessPrograms operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListTrustedAccessProgramsPaginator ListTrustedAccessPrograms(ListTrustedAccessProgramsRequest request);
     }
 }

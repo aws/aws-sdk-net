@@ -169,6 +169,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListProjects operation
+        /// </summary>
+        public IListProjectsPaginator ListProjects(ListProjectsRequest request)
+        {
+            return new ListProjectsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPromptRouters operation
         /// </summary>
         public IListPromptRoutersPaginator ListPromptRouters(ListPromptRoutersRequest request)
@@ -182,6 +190,14 @@ namespace Amazon.Bedrock.Model
         public IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request)
         {
             return new ListProvisionedModelThroughputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrustedAccessPrograms operation
+        /// </summary>
+        public IListTrustedAccessProgramsPaginator ListTrustedAccessPrograms(ListTrustedAccessProgramsRequest request)
+        {
+            return new ListTrustedAccessProgramsPaginator(this.client, request);
         }
     }
 }

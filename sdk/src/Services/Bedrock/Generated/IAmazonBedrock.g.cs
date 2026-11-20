@@ -42,6 +42,67 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Archives a project. Archiving is terminal; there is no delete. Archiving an already-archived
+        /// project succeeds without effect. The default project cannot be archived.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveProject service method.</param>
+        /// <returns>The response from the ArchiveProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ArchiveProject">REST API Reference for ArchiveProject Operation</seealso>
+        ArchiveProjectResponse ArchiveProject(ArchiveProjectRequest request);
+#endif
+
+        /// <summary>
+        /// Archives a project. Archiving is terminal; there is no delete. Archiving an already-archived
+        /// project succeeds without effect. The default project cannot be archived.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ArchiveProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ArchiveProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ArchiveProject">REST API Reference for ArchiveProject Operation</seealso>
+        Task<ArchiveProjectResponse> ArchiveProjectAsync(ArchiveProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes one or more advanced prompt optimization jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAdvancedPromptOptimizationJob service method.</param>
@@ -1701,6 +1762,75 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a project: a workload boundary within the account that inference requests
+        /// can be associated with.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <returns>The response from the CreateProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        CreateProjectResponse CreateProject(CreateProjectRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a project: a workload boundary within the account that inference requests
+        /// can be associated with.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a prompt router that manages the routing of requests between multiple foundation
         /// models based on the routing criteria.
         /// </summary>
@@ -1852,6 +1982,57 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">REST API Reference for CreateProvisionedModelThroughput Operation</seealso>
         Task<CreateProvisionedModelThroughputResponse> CreateProvisionedModelThroughputAsync(CreateProvisionedModelThroughputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes your account's retention storage configuration for a model provider. Deleting
+        /// an absent configuration succeeds. You do not need to participate in the program to
+        /// delete the configuration. You can delete it even if your account is ineligible or
+        /// its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountDataRetentionStorage service method.</param>
+        /// <returns>The response from the DeleteAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAccountDataRetentionStorage">REST API Reference for DeleteAccountDataRetentionStorage Operation</seealso>
+        DeleteAccountDataRetentionStorageResponse DeleteAccountDataRetentionStorage(DeleteAccountDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes your account's retention storage configuration for a model provider. Deleting
+        /// an absent configuration succeeds. You do not need to participate in the program to
+        /// delete the configuration. You can delete it even if your account is ineligible or
+        /// its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAccountDataRetentionStorage">REST API Reference for DeleteAccountDataRetentionStorage Operation</seealso>
+        Task<DeleteAccountDataRetentionStorageResponse> DeleteAccountDataRetentionStorageAsync(DeleteAccountDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2661,6 +2842,120 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes the organization's retention storage configuration for a model provider. The
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Deleting an absent configuration succeeds; no program participation is required to
+        /// delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationDataRetentionStorage service method.</param>
+        /// <returns>The response from the DeleteOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteOrganizationDataRetentionStorage">REST API Reference for DeleteOrganizationDataRetentionStorage Operation</seealso>
+        DeleteOrganizationDataRetentionStorageResponse DeleteOrganizationDataRetentionStorage(DeleteOrganizationDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the organization's retention storage configuration for a model provider. The
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Deleting an absent configuration succeeds; no program participation is required to
+        /// delete.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteOrganizationDataRetentionStorage">REST API Reference for DeleteOrganizationDataRetentionStorage Operation</seealso>
+        Task<DeleteOrganizationDataRetentionStorageResponse> DeleteOrganizationDataRetentionStorageAsync(DeleteOrganizationDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a project's retention storage configuration for a model provider. Deleting
+        /// an absent configuration on an active project succeeds. If the project does not exist
+        /// or your account does not own it, the operation returns <c>ResourceNotFoundException</c>.
+        /// For an archived project, the operation returns <c>ValidationException</c>. You can
+        /// read the archived project's stored configuration until Amazon Bedrock purges the project.
+        /// You do not need to participate in the program to delete the configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProjectDataRetentionStorage service method.</param>
+        /// <returns>The response from the DeleteProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProjectDataRetentionStorage">REST API Reference for DeleteProjectDataRetentionStorage Operation</seealso>
+        DeleteProjectDataRetentionStorageResponse DeleteProjectDataRetentionStorage(DeleteProjectDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a project's retention storage configuration for a model provider. Deleting
+        /// an absent configuration on an active project succeeds. If the project does not exist
+        /// or your account does not own it, the operation returns <c>ResourceNotFoundException</c>.
+        /// For an archived project, the operation returns <c>ValidationException</c>. You can
+        /// read the archived project's stored configuration until Amazon Bedrock purges the project.
+        /// You do not need to participate in the program to delete the configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProjectDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProjectDataRetentionStorage">REST API Reference for DeleteProjectDataRetentionStorage Operation</seealso>
+        Task<DeleteProjectDataRetentionStorageResponse> DeleteProjectDataRetentionStorageAsync(DeleteProjectDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a specified prompt router. This action cannot be undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePromptRouter service method.</param>
@@ -2994,6 +3289,63 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetention">REST API Reference for GetAccountDataRetention Operation</seealso>
         Task<GetAccountDataRetentionResponse> GetAccountDataRetentionAsync(GetAccountDataRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns your account's stored retention storage configuration for a model provider.
+        /// Amazon Bedrock determines whether the configuration applies when processing an inference
+        /// request. Returns <c>ResourceNotFoundException</c> when no configuration exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountDataRetentionStorage service method.</param>
+        /// <returns>The response from the GetAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetentionStorage">REST API Reference for GetAccountDataRetentionStorage Operation</seealso>
+        GetAccountDataRetentionStorageResponse GetAccountDataRetentionStorage(GetAccountDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Returns your account's stored retention storage configuration for a model provider.
+        /// Amazon Bedrock determines whether the configuration applies when processing an inference
+        /// request. Returns <c>ResourceNotFoundException</c> when no configuration exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetentionStorage">REST API Reference for GetAccountDataRetentionStorage Operation</seealso>
+        Task<GetAccountDataRetentionStorageResponse> GetAccountDataRetentionStorageAsync(GetAccountDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4239,6 +4591,173 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the organization's retention storage configuration for a model provider. The
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Returns ResourceNotFoundException when no configuration exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationDataRetentionStorage service method.</param>
+        /// <returns>The response from the GetOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetOrganizationDataRetentionStorage">REST API Reference for GetOrganizationDataRetentionStorage Operation</seealso>
+        GetOrganizationDataRetentionStorageResponse GetOrganizationDataRetentionStorage(GetOrganizationDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the organization's retention storage configuration for a model provider. The
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Returns ResourceNotFoundException when no configuration exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetOrganizationDataRetentionStorage">REST API Reference for GetOrganizationDataRetentionStorage Operation</seealso>
+        Task<GetOrganizationDataRetentionStorageResponse> GetOrganizationDataRetentionStorageAsync(GetOrganizationDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProject service method.</param>
+        /// <returns>The response from the GetProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProject">REST API Reference for GetProject Operation</seealso>
+        GetProjectResponse GetProject(GetProjectRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProject">REST API Reference for GetProject Operation</seealso>
+        Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a project's retention storage configuration for a model provider. Returns
+        /// ResourceNotFoundException when the project does not exist, is not owned by the calling
+        /// account, or has no configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProjectDataRetentionStorage service method.</param>
+        /// <returns>The response from the GetProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProjectDataRetentionStorage">REST API Reference for GetProjectDataRetentionStorage Operation</seealso>
+        GetProjectDataRetentionStorageResponse GetProjectDataRetentionStorage(GetProjectDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a project's retention storage configuration for a model provider. Returns
+        /// ResourceNotFoundException when the project does not exist, is not owned by the calling
+        /// account, or has no configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProjectDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProjectDataRetentionStorage">REST API Reference for GetProjectDataRetentionStorage Operation</seealso>
+        Task<GetProjectDataRetentionStorageResponse> GetProjectDataRetentionStorageAsync(GetProjectDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves details about a prompt router.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPromptRouter service method.</param>
@@ -4399,6 +4918,248 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets trusted access program details and resolves participation for your account and
+        /// its current organization. If you specify a project, Amazon Bedrock resolves participation
+        /// for the project, including inheritance from the account and organization. Archived
+        /// projects remain readable until they expire. Returns the same flat summary as a ListTrustedAccessPrograms
+        /// item. An absent or invisible program returns ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgram service method.</param>
+        /// <returns>The response from the GetTrustedAccessProgram service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgram">REST API Reference for GetTrustedAccessProgram Operation</seealso>
+        GetTrustedAccessProgramResponse GetTrustedAccessProgram(GetTrustedAccessProgramRequest request);
+#endif
+
+        /// <summary>
+        /// Gets trusted access program details and resolves participation for your account and
+        /// its current organization. If you specify a project, Amazon Bedrock resolves participation
+        /// for the project, including inheritance from the account and organization. Archived
+        /// projects remain readable until they expire. Returns the same flat summary as a ListTrustedAccessPrograms
+        /// item. An absent or invisible program returns ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTrustedAccessProgram service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgram">REST API Reference for GetTrustedAccessProgram Operation</seealso>
+        Task<GetTrustedAccessProgramResponse> GetTrustedAccessProgramAsync(GetTrustedAccessProgramRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the calling account's stored enrollment setting for a trusted access program.
+        /// The account is derived from the authenticated caller. Use GetTrustedAccessProgram
+        /// to retrieve the resolved participation status, including organization inheritance.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramAccountEnrollment service method.</param>
+        /// <returns>The response from the GetTrustedAccessProgramAccountEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramAccountEnrollment">REST API Reference for GetTrustedAccessProgramAccountEnrollment Operation</seealso>
+        GetTrustedAccessProgramAccountEnrollmentResponse GetTrustedAccessProgramAccountEnrollment(GetTrustedAccessProgramAccountEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the calling account's stored enrollment setting for a trusted access program.
+        /// The account is derived from the authenticated caller. Use GetTrustedAccessProgram
+        /// to retrieve the resolved participation status, including organization inheritance.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramAccountEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTrustedAccessProgramAccountEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramAccountEnrollment">REST API Reference for GetTrustedAccessProgramAccountEnrollment Operation</seealso>
+        Task<GetTrustedAccessProgramAccountEnrollmentResponse> GetTrustedAccessProgramAccountEnrollmentAsync(GetTrustedAccessProgramAccountEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the current organization's stored enrollment setting for a trusted access program.
+        /// The organization and payer account are derived from the authenticated context. Requires
+        /// operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. The setting can differ from the caller's resolved status returned by GetTrustedAccessProgram.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramOrganizationEnrollment service method.</param>
+        /// <returns>The response from the GetTrustedAccessProgramOrganizationEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramOrganizationEnrollment">REST API Reference for GetTrustedAccessProgramOrganizationEnrollment Operation</seealso>
+        GetTrustedAccessProgramOrganizationEnrollmentResponse GetTrustedAccessProgramOrganizationEnrollment(GetTrustedAccessProgramOrganizationEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Gets the current organization's stored enrollment setting for a trusted access program.
+        /// The organization and payer account are derived from the authenticated context. Requires
+        /// operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. The setting can differ from the caller's resolved status returned by GetTrustedAccessProgram.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramOrganizationEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTrustedAccessProgramOrganizationEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramOrganizationEnrollment">REST API Reference for GetTrustedAccessProgramOrganizationEnrollment Operation</seealso>
+        Task<GetTrustedAccessProgramOrganizationEnrollmentResponse> GetTrustedAccessProgramOrganizationEnrollmentAsync(GetTrustedAccessProgramOrganizationEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets a named project's stored enrollment setting for a trusted access program. The
+        /// project must exist in this Region and be owned by the calling account. Archived projects
+        /// remain readable until they expire. Use GetTrustedAccessProgram with projectIdentifier
+        /// to retrieve resolved participation, including account and organization inheritance.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramProjectEnrollment service method.</param>
+        /// <returns>The response from the GetTrustedAccessProgramProjectEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramProjectEnrollment">REST API Reference for GetTrustedAccessProgramProjectEnrollment Operation</seealso>
+        GetTrustedAccessProgramProjectEnrollmentResponse GetTrustedAccessProgramProjectEnrollment(GetTrustedAccessProgramProjectEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Gets a named project's stored enrollment setting for a trusted access program. The
+        /// project must exist in this Region and be owned by the calling account. Archived projects
+        /// remain readable until they expire. Use GetTrustedAccessProgram with projectIdentifier
+        /// to retrieve resolved participation, including account and organization inheritance.
+        /// If no enrollment is stored, returns inherit without timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedAccessProgramProjectEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetTrustedAccessProgramProjectEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetTrustedAccessProgramProjectEnrollment">REST API Reference for GetTrustedAccessProgramProjectEnrollment Operation</seealso>
+        Task<GetTrustedAccessProgramProjectEnrollmentResponse> GetTrustedAccessProgramProjectEnrollmentAsync(GetTrustedAccessProgramProjectEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5532,6 +6293,57 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the account's projects. Results are paginated: when the response includes <c>nextToken</c>,
+        /// pass it in the next request to fetch the following page. Page size is 1-100, default
+        /// 20. By default every project is returned regardless of status; set <c>statusFilter</c>
+        /// to list only active or only archived projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <returns>The response from the ListProjects service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        ListProjectsResponse ListProjects(ListProjectsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the account's projects. Results are paginated: when the response includes <c>nextToken</c>,
+        /// pass it in the next request to fetch the following page. Page size is 1-100, default
+        /// 20. By default every project is returned regardless of status; set <c>statusFilter</c>
+        /// to list only active or only archived projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListProjects service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves a list of prompt routers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPromptRouters service method.</param>
@@ -5693,6 +6505,67 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists all trusted access programs visible to your account, ordered by program ID.
+        /// Amazon Bedrock resolves participation for your account and its current organization.
+        /// If you specify a project, Amazon Bedrock resolves participation for the project, including
+        /// inheritance from the account and organization. Archived projects remain readable until
+        /// they expire. Amazon Bedrock returns all visible programs in one response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedAccessPrograms service method.</param>
+        /// <returns>The response from the ListTrustedAccessPrograms service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTrustedAccessPrograms">REST API Reference for ListTrustedAccessPrograms Operation</seealso>
+        ListTrustedAccessProgramsResponse ListTrustedAccessPrograms(ListTrustedAccessProgramsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all trusted access programs visible to your account, ordered by program ID.
+        /// Amazon Bedrock resolves participation for your account and its current organization.
+        /// If you specify a project, Amazon Bedrock resolves participation for the project, including
+        /// inheritance from the account and organization. Archived projects remain readable until
+        /// they expire. Amazon Bedrock returns all visible programs in one response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedAccessPrograms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTrustedAccessPrograms service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTrustedAccessPrograms">REST API Reference for ListTrustedAccessPrograms Operation</seealso>
+        Task<ListTrustedAccessProgramsResponse> ListTrustedAccessProgramsAsync(ListTrustedAccessProgramsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Sets the account-wide data retention mode for Amazon Bedrock.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountDataRetention service method.</param>
@@ -5735,6 +6608,81 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">REST API Reference for PutAccountDataRetention Operation</seealso>
         Task<PutAccountDataRetentionResponse> PutAccountDataRetentionAsync(PutAccountDataRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates or replaces the calling account's retention storage record for a model provider.
+        /// Amazon Bedrock identifies the account from your authenticated request. Requires resolved
+        /// trusted access eligibility for a storage-capable program of the provider at a covering
+        /// scope; otherwise returns ConflictException. Writes replace the whole record; the last
+        /// write wins.
+        /// 
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDataRetentionStorage service method.</param>
+        /// <returns>The response from the PutAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetentionStorage">REST API Reference for PutAccountDataRetentionStorage Operation</seealso>
+        PutAccountDataRetentionStorageResponse PutAccountDataRetentionStorage(PutAccountDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or replaces the calling account's retention storage record for a model provider.
+        /// Amazon Bedrock identifies the account from your authenticated request. Requires resolved
+        /// trusted access eligibility for a storage-capable program of the provider at a covering
+        /// scope; otherwise returns ConflictException. Writes replace the whole record; the last
+        /// write wins.
+        /// 
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutAccountDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetentionStorage">REST API Reference for PutAccountDataRetentionStorage Operation</seealso>
+        Task<PutAccountDataRetentionStorageResponse> PutAccountDataRetentionStorageAsync(PutAccountDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5842,6 +6790,188 @@ namespace Amazon.Bedrock
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates or replaces the organization's retention storage record for a model provider.
+        /// The organization is resolved from the authenticated caller's management context; the
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Requires resolved organization-scope trusted access eligibility for a storage-capable
+        /// program of the provider; otherwise returns ConflictException. Writes replace the whole
+        /// record; the last write wins.
+        /// 
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationDataRetentionStorage service method.</param>
+        /// <returns>The response from the PutOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutOrganizationDataRetentionStorage">REST API Reference for PutOrganizationDataRetentionStorage Operation</seealso>
+        PutOrganizationDataRetentionStorageResponse PutOrganizationDataRetentionStorage(PutOrganizationDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or replaces the organization's retention storage record for a model provider.
+        /// The organization is resolved from the authenticated caller's management context; the
+        /// caller must be the organization's management account or a delegated administrator.
+        /// Requires resolved organization-scope trusted access eligibility for a storage-capable
+        /// program of the provider; otherwise returns ConflictException. Writes replace the whole
+        /// record; the last write wins.
+        /// 
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutOrganizationDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutOrganizationDataRetentionStorage">REST API Reference for PutOrganizationDataRetentionStorage Operation</seealso>
+        Task<PutOrganizationDataRetentionStorageResponse> PutOrganizationDataRetentionStorageAsync(PutOrganizationDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates or replaces a project's retention storage record for a model provider. The
+        /// project must be active in this AWS Region and owned by the calling account. A missing
+        /// or unowned project returns <c>ResourceNotFoundException</c>; an archived project returns
+        /// <c>ValidationException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Requires applicable project, account, or organization approval for a storage-capable
+        /// trusted access program of the provider, with no applicable revocation. Otherwise,
+        /// the operation returns <c>ConflictException</c>. Enrollment is not required to save
+        /// the configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request replaces the complete stored configuration. The last successful write
+        /// wins.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProjectDataRetentionStorage service method.</param>
+        /// <returns>The response from the PutProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutProjectDataRetentionStorage">REST API Reference for PutProjectDataRetentionStorage Operation</seealso>
+        PutProjectDataRetentionStorageResponse PutProjectDataRetentionStorage(PutProjectDataRetentionStorageRequest request);
+#endif
+
+        /// <summary>
+        /// Creates or replaces a project's retention storage record for a model provider. The
+        /// project must be active in this AWS Region and owned by the calling account. A missing
+        /// or unowned project returns <c>ResourceNotFoundException</c>; an archived project returns
+        /// <c>ValidationException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Requires applicable project, account, or organization approval for a storage-capable
+        /// trusted access program of the provider, with no applicable revocation. Otherwise,
+        /// the operation returns <c>ConflictException</c>. Enrollment is not required to save
+        /// the configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request replaces the complete stored configuration. The last successful write
+        /// wins.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>customer_managed</c> destinations, Amazon Bedrock validates the caller's and
+        /// service's access to the bucket and key before saving the configuration. The bucket
+        /// and key must be in the AWS Region where you register the configuration. Validation
+        /// failures reject the write.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProjectDataRetentionStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutProjectDataRetentionStorage service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutProjectDataRetentionStorage">REST API Reference for PutProjectDataRetentionStorage Operation</seealso>
+        Task<PutProjectDataRetentionStorageResponse> PutProjectDataRetentionStorageAsync(PutProjectDataRetentionStorageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds a resource policy for a Bedrock resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -5890,6 +7020,217 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sets your account's enrollment preference for a trusted access program. Amazon Bedrock
+        /// identifies the account from your authenticated request. To enable enrollment, your
+        /// account needs applicable approval and no applicable revocation, including when you
+        /// repeat an enabled setting. Otherwise, Amazon Bedrock returns <c>ConflictException</c>
+        /// and preserves the stored setting. With the required permissions, you can set <c>disabled</c>
+        /// or <c>inherit</c> even if your account is ineligible or its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramAccountEnrollment service method.</param>
+        /// <returns>The response from the PutTrustedAccessProgramAccountEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramAccountEnrollment">REST API Reference for PutTrustedAccessProgramAccountEnrollment Operation</seealso>
+        PutTrustedAccessProgramAccountEnrollmentResponse PutTrustedAccessProgramAccountEnrollment(PutTrustedAccessProgramAccountEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Sets your account's enrollment preference for a trusted access program. Amazon Bedrock
+        /// identifies the account from your authenticated request. To enable enrollment, your
+        /// account needs applicable approval and no applicable revocation, including when you
+        /// repeat an enabled setting. Otherwise, Amazon Bedrock returns <c>ConflictException</c>
+        /// and preserves the stored setting. With the required permissions, you can set <c>disabled</c>
+        /// or <c>inherit</c> even if your account is ineligible or its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramAccountEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutTrustedAccessProgramAccountEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramAccountEnrollment">REST API Reference for PutTrustedAccessProgramAccountEnrollment Operation</seealso>
+        Task<PutTrustedAccessProgramAccountEnrollmentResponse> PutTrustedAccessProgramAccountEnrollmentAsync(PutTrustedAccessProgramAccountEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sets the current organization's enrollment preference for a trusted access program.
+        /// The organization and payer account are derived from the authenticated context. Every
+        /// write requires operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. Enabling requires approval and no revocation for the organization, including
+        /// when repeating an enabled setting; otherwise returns ConflictException and preserves
+        /// the stored setting. Account approval alone is insufficient. If you have the required
+        /// permissions, you can set the enrollment preference to <c>disabled</c> or <c>inherit</c>
+        /// even if your organization is ineligible or its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramOrganizationEnrollment service method.</param>
+        /// <returns>The response from the PutTrustedAccessProgramOrganizationEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramOrganizationEnrollment">REST API Reference for PutTrustedAccessProgramOrganizationEnrollment Operation</seealso>
+        PutTrustedAccessProgramOrganizationEnrollmentResponse PutTrustedAccessProgramOrganizationEnrollment(PutTrustedAccessProgramOrganizationEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Sets the current organization's enrollment preference for a trusted access program.
+        /// The organization and payer account are derived from the authenticated context. Every
+        /// write requires operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. Enabling requires approval and no revocation for the organization, including
+        /// when repeating an enabled setting; otherwise returns ConflictException and preserves
+        /// the stored setting. Account approval alone is insufficient. If you have the required
+        /// permissions, you can set the enrollment preference to <c>disabled</c> or <c>inherit</c>
+        /// even if your organization is ineligible or its eligibility is revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramOrganizationEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutTrustedAccessProgramOrganizationEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramOrganizationEnrollment">REST API Reference for PutTrustedAccessProgramOrganizationEnrollment Operation</seealso>
+        Task<PutTrustedAccessProgramOrganizationEnrollmentResponse> PutTrustedAccessProgramOrganizationEnrollmentAsync(PutTrustedAccessProgramOrganizationEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Sets a named project's enrollment preference for a trusted access program. The project
+        /// must be active in this Region and owned by the calling account. Enabling requires
+        /// applicable project, account, or organization approval and no applicable revocation,
+        /// including when repeating an enabled setting; otherwise returns ConflictException and
+        /// preserves the stored setting. Authorized disable and inherit writes are allowed while
+        /// ineligible or revoked. Archived projects reject all writes with ValidationException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramProjectEnrollment service method.</param>
+        /// <returns>The response from the PutTrustedAccessProgramProjectEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramProjectEnrollment">REST API Reference for PutTrustedAccessProgramProjectEnrollment Operation</seealso>
+        PutTrustedAccessProgramProjectEnrollmentResponse PutTrustedAccessProgramProjectEnrollment(PutTrustedAccessProgramProjectEnrollmentRequest request);
+#endif
+
+        /// <summary>
+        /// Sets a named project's enrollment preference for a trusted access program. The project
+        /// must be active in this Region and owned by the calling account. Enabling requires
+        /// applicable project, account, or organization approval and no applicable revocation,
+        /// including when repeating an enabled setting; otherwise returns ConflictException and
+        /// preserves the stored setting. Authorized disable and inherit writes are allowed while
+        /// ineligible or revoked. Archived projects reject all writes with ValidationException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTrustedAccessProgramProjectEnrollment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutTrustedAccessProgramProjectEnrollment service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutTrustedAccessProgramProjectEnrollment">REST API Reference for PutTrustedAccessProgramProjectEnrollment Operation</seealso>
+        Task<PutTrustedAccessProgramProjectEnrollmentResponse> PutTrustedAccessProgramProjectEnrollmentAsync(PutTrustedAccessProgramProjectEnrollmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -6140,6 +7481,191 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
         Task<StartAutomatedReasoningPolicyTestWorkflowResponse> StartAutomatedReasoningPolicyTestWorkflowAsync(StartAutomatedReasoningPolicyTestWorkflowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Prepare a provider application handoff for the calling account. This does not submit
+        /// an application, grant eligibility, or change enrollment. Programs without self-service
+        /// applications return ValidationException with guidance to contact the AWS account team.
+        /// Repeated calls can issue fresh tokens. Successful responses use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramAccountApplication service method.</param>
+        /// <returns>The response from the StartTrustedAccessProgramAccountApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramAccountApplication">REST API Reference for StartTrustedAccessProgramAccountApplication Operation</seealso>
+        StartTrustedAccessProgramAccountApplicationResponse StartTrustedAccessProgramAccountApplication(StartTrustedAccessProgramAccountApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Prepare a provider application handoff for the calling account. This does not submit
+        /// an application, grant eligibility, or change enrollment. Programs without self-service
+        /// applications return ValidationException with guidance to contact the AWS account team.
+        /// Repeated calls can issue fresh tokens. Successful responses use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramAccountApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTrustedAccessProgramAccountApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramAccountApplication">REST API Reference for StartTrustedAccessProgramAccountApplication Operation</seealso>
+        Task<StartTrustedAccessProgramAccountApplicationResponse> StartTrustedAccessProgramAccountApplicationAsync(StartTrustedAccessProgramAccountApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Prepare a provider application handoff for the calling account's current organization.
+        /// Requires operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. This does not submit an application, grant eligibility, or change enrollment.
+        /// Programs without self-service applications return ValidationException with guidance
+        /// to contact the AWS account team. Repeated calls can issue fresh tokens. Successful
+        /// responses use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramOrganizationApplication service method.</param>
+        /// <returns>The response from the StartTrustedAccessProgramOrganizationApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramOrganizationApplication">REST API Reference for StartTrustedAccessProgramOrganizationApplication Operation</seealso>
+        StartTrustedAccessProgramOrganizationApplicationResponse StartTrustedAccessProgramOrganizationApplication(StartTrustedAccessProgramOrganizationApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Prepare a provider application handoff for the calling account's current organization.
+        /// Requires operation permission and management-account or Bedrock-specific delegated-administrator
+        /// authority. This does not submit an application, grant eligibility, or change enrollment.
+        /// Programs without self-service applications return ValidationException with guidance
+        /// to contact the AWS account team. Repeated calls can issue fresh tokens. Successful
+        /// responses use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramOrganizationApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTrustedAccessProgramOrganizationApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramOrganizationApplication">REST API Reference for StartTrustedAccessProgramOrganizationApplication Operation</seealso>
+        Task<StartTrustedAccessProgramOrganizationApplicationResponse> StartTrustedAccessProgramOrganizationApplicationAsync(StartTrustedAccessProgramOrganizationApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Prepare a provider application handoff for a named project. The project must be active
+        /// in this Region and owned by the calling account. Archived projects return ValidationException.
+        /// This does not submit an application, grant eligibility, or change enrollment. Programs
+        /// without self-service applications return ValidationException with guidance to contact
+        /// the AWS account team. Repeated calls can issue fresh tokens. Successful responses
+        /// use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramProjectApplication service method.</param>
+        /// <returns>The response from the StartTrustedAccessProgramProjectApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramProjectApplication">REST API Reference for StartTrustedAccessProgramProjectApplication Operation</seealso>
+        StartTrustedAccessProgramProjectApplicationResponse StartTrustedAccessProgramProjectApplication(StartTrustedAccessProgramProjectApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Prepare a provider application handoff for a named project. The project must be active
+        /// in this Region and owned by the calling account. Archived projects return ValidationException.
+        /// This does not submit an application, grant eligibility, or change enrollment. Programs
+        /// without self-service applications return ValidationException with guidance to contact
+        /// the AWS account team. Repeated calls can issue fresh tokens. Successful responses
+        /// use Cache-Control: no-store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrustedAccessProgramProjectApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartTrustedAccessProgramProjectApplication service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartTrustedAccessProgramProjectApplication">REST API Reference for StartTrustedAccessProgramProjectApplication Operation</seealso>
+        Task<StartTrustedAccessProgramProjectApplicationResponse> StartTrustedAccessProgramProjectApplicationAsync(StartTrustedAccessProgramProjectApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -7002,6 +8528,67 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">REST API Reference for UpdateMarketplaceModelEndpoint Operation</seealso>
         Task<UpdateMarketplaceModelEndpointResponse> UpdateMarketplaceModelEndpointAsync(UpdateMarketplaceModelEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates one mutable project field per call: exactly one of <c>name</c> or <c>dataRetention</c>
+        /// must be set. The default project and archived projects cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <returns>The response from the UpdateProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
+#endif
+
+        /// <summary>
+        /// Updates one mutable project field per call: exactly one of <c>name</c> or <c>dataRetention</c>
+        /// must be set. The default project and archived projects cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateProject service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

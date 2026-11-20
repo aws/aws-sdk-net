@@ -77,6 +77,11 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 request.Parameters.Add("byProvider", StringUtils.FromString(publicRequest.ByProvider));
             }
 
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));
+            }
+
             request.ResourcePath = "/foundation-models";
 
             request.UseQueryString = true;

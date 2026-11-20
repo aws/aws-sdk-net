@@ -95,5 +95,27 @@ namespace Amazon.Bedrock.Model
         /// Checks to see if the ByProvider property is set.
         /// </summary>
         internal bool IsSetByProvider() => this.ByProvider != null;
+
+        /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's
+        /// trusted access program participation when determining which models to return. The
+        /// project must belong to your account in the same AWS Region and partition as the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter or specify <c>default</c>, Amazon Bedrock uses your account's
+        /// participation, including organization inheritance. A project that doesn't exist or
+        /// is archived causes a <c>ValidationException</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
     }
 }

@@ -70,6 +70,35 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's
+        /// trusted access program participation when determining which system-defined inference
+        /// profiles to return. The project must belong to your account in the same AWS Region
+        /// and partition as the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter or specify <c>default</c>, Amazon Bedrock uses your account's
+        /// participation, including organization inheritance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A project that doesn't exist or is archived causes a <c>ValidationException</c>. Specifying
+        /// a project other than <c>default</c> with <c>typeEquals</c> set to <c>APPLICATION</c>
+        /// also causes a <c>ValidationException</c>. Omit <c>typeEquals</c> or set it to <c>SYSTEM_DEFINED</c>
+        /// to list system-defined inference profiles for the project.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
+
+        /// <summary>
         /// Gets and sets the property TypeEquals. 
         /// <para>
         /// Filters for inference profiles that match the type you specify.

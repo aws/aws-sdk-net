@@ -67,6 +67,11 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             }
 
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));
+            }
+
             if (publicRequest.IsSetTypeEquals())
             {
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.TypeEquals));

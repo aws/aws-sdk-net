@@ -57,6 +57,11 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));
+            }
+
             if (!publicRequest.IsSetInferenceProfileIdentifier())
             {
                 throw new AmazonBedrockException("Request object does not have required field InferenceProfileIdentifier set");
@@ -64,6 +69,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.AddPathResource("{inferenceProfileIdentifier}", StringUtils.FromString(publicRequest.InferenceProfileIdentifier));
 
             request.ResourcePath = "/inference-profiles/{inferenceProfileIdentifier}";
+
+            request.UseQueryString = true;
 
             return request;
         }

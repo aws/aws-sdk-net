@@ -1093,6 +1093,180 @@ namespace Amazon.Bedrock
     }
 
     /// <summary>
+    /// Constants used for properties of type DataRetentionStorageDestination.
+    /// </summary>
+    public class DataRetentionStorageDestination : ConstantClass
+    {
+        /// <summary>
+        /// Constant Amazon_managed for DataRetentionStorageDestination
+        /// </summary>
+        public static readonly DataRetentionStorageDestination Amazon_managed = new DataRetentionStorageDestination("amazon_managed");
+
+        /// <summary>
+        /// Constant Customer_managed for DataRetentionStorageDestination
+        /// </summary>
+        public static readonly DataRetentionStorageDestination Customer_managed = new DataRetentionStorageDestination("customer_managed");
+
+        /// <summary>
+        /// Constructs a custom DataRetentionStorageDestination for a value not among the defined constants.
+        /// </summary>
+        public DataRetentionStorageDestination(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionStorageDestination FindValue(string value)
+        {
+            return FindValue<DataRetentionStorageDestination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionStorageDestination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataRetentionStorageModelProvider.
+    /// </summary>
+    public class DataRetentionStorageModelProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant Anthropic for DataRetentionStorageModelProvider
+        /// </summary>
+        public static readonly DataRetentionStorageModelProvider Anthropic = new DataRetentionStorageModelProvider("anthropic");
+
+        /// <summary>
+        /// Constant Openai for DataRetentionStorageModelProvider
+        /// </summary>
+        public static readonly DataRetentionStorageModelProvider Openai = new DataRetentionStorageModelProvider("openai");
+
+        /// <summary>
+        /// Constructs a custom DataRetentionStorageModelProvider for a value not among the defined constants.
+        /// </summary>
+        public DataRetentionStorageModelProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionStorageModelProvider FindValue(string value)
+        {
+            return FindValue<DataRetentionStorageModelProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionStorageModelProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataRetentionStorageResourceStatus.
+    /// </summary>
+    public class DataRetentionStorageResourceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Access_denied for DataRetentionStorageResourceStatus
+        /// </summary>
+        public static readonly DataRetentionStorageResourceStatus Access_denied = new DataRetentionStorageResourceStatus("access_denied");
+
+        /// <summary>
+        /// Constant Active for DataRetentionStorageResourceStatus
+        /// </summary>
+        public static readonly DataRetentionStorageResourceStatus Active = new DataRetentionStorageResourceStatus("active");
+
+        /// <summary>
+        /// Constant Pending for DataRetentionStorageResourceStatus
+        /// </summary>
+        public static readonly DataRetentionStorageResourceStatus Pending = new DataRetentionStorageResourceStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom DataRetentionStorageResourceStatus for a value not among the defined constants.
+        /// </summary>
+        public DataRetentionStorageResourceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionStorageResourceStatus FindValue(string value)
+        {
+            return FindValue<DataRetentionStorageResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionStorageResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataRetentionStorageScope.
+    /// </summary>
+    public class DataRetentionStorageScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account for DataRetentionStorageScope
+        /// </summary>
+        public static readonly DataRetentionStorageScope Account = new DataRetentionStorageScope("account");
+
+        /// <summary>
+        /// Constant Organization for DataRetentionStorageScope
+        /// </summary>
+        public static readonly DataRetentionStorageScope Organization = new DataRetentionStorageScope("organization");
+
+        /// <summary>
+        /// Constant Project for DataRetentionStorageScope
+        /// </summary>
+        public static readonly DataRetentionStorageScope Project = new DataRetentionStorageScope("project");
+
+        /// <summary>
+        /// Constructs a custom DataRetentionStorageScope for a value not among the defined constants.
+        /// </summary>
+        public DataRetentionStorageScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionStorageScope FindValue(string value)
+        {
+            return FindValue<DataRetentionStorageScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionStorageScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EntitlementAvailability.
     /// </summary>
     public class EntitlementAvailability : ConstantClass
@@ -2986,6 +3160,47 @@ namespace Amazon.Bedrock
     }
 
     /// <summary>
+    /// Constants used for properties of type ProjectStatus.
+    /// </summary>
+    public class ProjectStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus Active = new ProjectStatus("active");
+
+        /// <summary>
+        /// Constant Archived for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus Archived = new ProjectStatus("archived");
+
+        /// <summary>
+        /// Constructs a custom ProjectStatus for a value not among the defined constants.
+        /// </summary>
+        public ProjectStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectStatus FindValue(string value)
+        {
+            return FindValue<ProjectStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PromptRouterStatus.
     /// </summary>
     public class PromptRouterStatus : ConstantClass
@@ -3621,6 +3836,159 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustedAccessProgramOptIn.
+    /// </summary>
+    public class TrustedAccessProgramOptIn : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for TrustedAccessProgramOptIn
+        /// </summary>
+        public static readonly TrustedAccessProgramOptIn Disabled = new TrustedAccessProgramOptIn("disabled");
+
+        /// <summary>
+        /// Constant Enabled for TrustedAccessProgramOptIn
+        /// </summary>
+        public static readonly TrustedAccessProgramOptIn Enabled = new TrustedAccessProgramOptIn("enabled");
+
+        /// <summary>
+        /// Constant Inherit for TrustedAccessProgramOptIn
+        /// </summary>
+        public static readonly TrustedAccessProgramOptIn Inherit = new TrustedAccessProgramOptIn("inherit");
+
+        /// <summary>
+        /// Constructs a custom TrustedAccessProgramOptIn for a value not among the defined constants.
+        /// </summary>
+        public TrustedAccessProgramOptIn(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedAccessProgramOptIn FindValue(string value)
+        {
+            return FindValue<TrustedAccessProgramOptIn>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedAccessProgramOptIn(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustedAccessProgramScope.
+    /// </summary>
+    public class TrustedAccessProgramScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account for TrustedAccessProgramScope
+        /// </summary>
+        public static readonly TrustedAccessProgramScope Account = new TrustedAccessProgramScope("account");
+
+        /// <summary>
+        /// Constant Organization for TrustedAccessProgramScope
+        /// </summary>
+        public static readonly TrustedAccessProgramScope Organization = new TrustedAccessProgramScope("organization");
+
+        /// <summary>
+        /// Constant Program_default for TrustedAccessProgramScope
+        /// </summary>
+        public static readonly TrustedAccessProgramScope Program_default = new TrustedAccessProgramScope("program_default");
+
+        /// <summary>
+        /// Constant Project for TrustedAccessProgramScope
+        /// </summary>
+        public static readonly TrustedAccessProgramScope Project = new TrustedAccessProgramScope("project");
+
+        /// <summary>
+        /// Constructs a custom TrustedAccessProgramScope for a value not among the defined constants.
+        /// </summary>
+        public TrustedAccessProgramScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedAccessProgramScope FindValue(string value)
+        {
+            return FindValue<TrustedAccessProgramScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedAccessProgramScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TrustedAccessProgramStatus.
+    /// </summary>
+    public class TrustedAccessProgramStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for TrustedAccessProgramStatus
+        /// </summary>
+        public static readonly TrustedAccessProgramStatus Disabled = new TrustedAccessProgramStatus("disabled");
+
+        /// <summary>
+        /// Constant Eligible for TrustedAccessProgramStatus
+        /// </summary>
+        public static readonly TrustedAccessProgramStatus Eligible = new TrustedAccessProgramStatus("eligible");
+
+        /// <summary>
+        /// Constant Enabled for TrustedAccessProgramStatus
+        /// </summary>
+        public static readonly TrustedAccessProgramStatus Enabled = new TrustedAccessProgramStatus("enabled");
+
+        /// <summary>
+        /// Constant Requestable for TrustedAccessProgramStatus
+        /// </summary>
+        public static readonly TrustedAccessProgramStatus Requestable = new TrustedAccessProgramStatus("requestable");
+
+        /// <summary>
+        /// Constant Revoked for TrustedAccessProgramStatus
+        /// </summary>
+        public static readonly TrustedAccessProgramStatus Revoked = new TrustedAccessProgramStatus("revoked");
+
+        /// <summary>
+        /// Constructs a custom TrustedAccessProgramStatus for a value not among the defined constants.
+        /// </summary>
+        public TrustedAccessProgramStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedAccessProgramStatus FindValue(string value)
+        {
+            return FindValue<TrustedAccessProgramStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedAccessProgramStatus(string value)
         {
             return FindValue(value);
         }
