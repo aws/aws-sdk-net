@@ -43,6 +43,10 @@
     <pattern>^arn:aws:compute-optimizer::[0-9]{12}:automation-rule/[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.DeleteOrganizationEnrollmentConfigurationRequest.ClientToken</property>
+    <pattern>^[a-zA-Z0-9_-]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.DisassociateAccountsRequest.ClientToken</property>
     <pattern>^[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
@@ -194,6 +198,32 @@
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationEnrollmentConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationEnrollmentConfigurationsRequest.NextToken</property>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationEnrollmentConfigurationsResponse.NextToken</property>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationalUnitsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationalUnitsRequest.NextToken</property>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.ListOrganizationalUnitsResponse.NextToken</property>
+    <pattern>^[A-Za-z0-9+/=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.ListRecommendedActionSummariesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -222,6 +252,10 @@
   <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>^arn:aws:compute-optimizer::[0-9]{12}:automation-rule/[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.PutOrganizationEnrollmentConfigurationRequest.ClientToken</property>
+    <pattern>^[a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.RollbackAutomationEventRequest.ClientToken</property>
@@ -362,6 +396,22 @@
   <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.AutomationRule.RuleId</property>
     <pattern>^[0-9A-Za-z]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.OrganizationTarget.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.OrganizationTarget.OrganizationalUnitId</property>
+    <min>1</min>
+    <max>68</max>
+    <pattern>^(r-[0-9a-z]{4,32}|ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizerAutomation.Model.OrganizationalUnitInfo.OrganizationalUnitId</property>
+    <min>1</min>
+    <max>68</max>
+    <pattern>^(r-[0-9a-z]{4,32}|ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ComputeOptimizerAutomation.Model.PreviewResult.AccountId</property>

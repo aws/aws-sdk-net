@@ -92,6 +92,16 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
                     context.Writer.WriteTextString("nextToken");
                     context.Writer.WriteTextString(publicRequest.NextToken);
                 }
+                if (publicRequest.IsSetOrganizationalUnitIds())
+                {
+                    context.Writer.WriteTextString("organizationalUnitIds");
+                    context.Writer.WriteStartArray(publicRequest.OrganizationalUnitIds.Count);
+                    foreach (var publicRequestOrganizationalUnitIdsListValue in publicRequest.OrganizationalUnitIds)
+                    {
+                        context.Writer.WriteTextString(publicRequestOrganizationalUnitIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
                 var encodedLength = writer.BytesWritten;

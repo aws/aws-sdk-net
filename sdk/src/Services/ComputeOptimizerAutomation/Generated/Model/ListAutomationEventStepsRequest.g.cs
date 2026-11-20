@@ -53,8 +53,8 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of automation event steps to return in a single response. Valid
-        /// range is 1-1000.
+        /// The maximum number of automation event steps to return in a single response. If you
+        /// don't specify a value, the default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]

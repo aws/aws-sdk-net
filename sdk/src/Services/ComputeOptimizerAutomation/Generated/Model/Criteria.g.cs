@@ -174,6 +174,9 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// Gets and sets the property RestartNeeded. 
         /// <para>
         /// Filter criteria indicating whether the recommended action requires a resource restart.
+        /// Valid values are <c>true</c> and <c>false</c>. Values are case-sensitive unless you
+        /// use an <c>IgnoreCase</c> comparison operator. For example, <c>StringEquals</c> with
+        /// the value <c>False</c> matches no recommended actions.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

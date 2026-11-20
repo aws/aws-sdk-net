@@ -53,5 +53,67 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// Checks to see if the AccountIds property is set.
         /// </summary>
         internal bool IsSetAccountIds() => this.AccountIds != null && (this.AccountIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ExcludedAccountIds. 
+        /// <para>
+        /// The Amazon Web Services account IDs to exclude from the preview scope.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public List<string> ExcludedAccountIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ExcludedAccountIds property is set.
+        /// </summary>
+        internal bool IsSetExcludedAccountIds() => this.ExcludedAccountIds != null && (this.ExcludedAccountIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ExcludedOrganizationalUnitIds. 
+        /// <para>
+        /// The organizational unit (OU) or organization root IDs to exclude from the preview
+        /// scope. The preview doesn't include accounts in the specified OUs or their child OUs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 150)]
+        public List<string> ExcludedOrganizationalUnitIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ExcludedOrganizationalUnitIds property is set.
+        /// </summary>
+        internal bool IsSetExcludedOrganizationalUnitIds() => this.ExcludedOrganizationalUnitIds != null && (this.ExcludedOrganizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitIds. 
+        /// <para>
+        /// The organizational unit (OU) or organization root IDs to include in the preview scope.
+        /// The preview includes accounts in the specified OUs and their child OUs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 150)]
+        public List<string> OrganizationalUnitIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the OrganizationalUnitIds property is set.
+        /// </summary>
+        internal bool IsSetOrganizationalUnitIds() => this.OrganizationalUnitIds != null && (this.OrganizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

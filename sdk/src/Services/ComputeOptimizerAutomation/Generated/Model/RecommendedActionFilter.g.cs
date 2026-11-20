@@ -31,6 +31,9 @@ namespace Amazon.ComputeOptimizerAutomation.Model
 {
     /// <summary>
     /// A filter used to narrow down recommended action results based on specific criteria.
+    /// If a filter has more than one value, a recommended action matches the filter when
+    /// it matches any of the values. If you specify more than one filter, a recommended action
+    /// must match all of the filters.
     /// </summary>
     public partial class RecommendedActionFilter
     {
@@ -51,9 +54,43 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// List of filter values to match against the specified filter name. Used to narrow down
-        /// recommended actions based on specific criteria.
+        /// The list of values to filter by for the specified filter name. Wildcards aren't supported.
+        /// An asterisk (<c>*</c>) or a question mark (<c>?</c>) in a value matches only that
+        /// literal character. How a value is matched depends on the filter name:
         /// </para>
+        ///  <dl> <dt>ResourceType, RecommendedActionType, ResourceId, and AccountId</dt> <dd>
+        /// 
+        /// <para>
+        /// The value that you specify must exactly match the corresponding field of the recommended
+        /// action, including case. For example, specify <c>EbsVolume</c>, not <c>ebsvolume</c>.
+        /// </para>
+        ///  </dd> <dt>CurrentResourceDetailsEbsVolumeType</dt> <dd> 
+        /// <para>
+        /// Matches when the value appears anywhere in the current resource details of the recommended
+        /// action, which include the volume type, size, IOPS, and throughput. Matching is case
+        /// sensitive, and a partial value also matches. For example, <c>gp</c> matches both <c>gp2</c>
+        /// and <c>gp3</c> volumes, and <c>100</c> matches any volume whose size, IOPS, or throughput
+        /// contains 100. To filter by volume type, specify the complete volume type, such as
+        /// <c>gp3</c> or <c>io2</c>.
+        /// </para>
+        ///  </dd> <dt>ResourceTagsKey and ResourceTagsValue</dt> <dd> 
+        /// <para>
+        /// Matches when the value appears anywhere in the tags of the resource. Both filter names
+        /// search every tag key and tag value. Matching is case sensitive, and a partial value
+        /// also matches. For example, a <c>ResourceTagsKey</c> value of <c>test</c> matches a
+        /// resource that has a tag value of <c>test</c>.
+        /// </para>
+        ///  </dd> <dt>LookBackPeriodInDays</dt> <dd> 
+        /// <para>
+        /// Matches when the lookback period of the recommended action equals the value. Specify
+        /// a number of days, such as <c>14</c>.
+        /// </para>
+        ///  </dd> <dt>RestartNeeded</dt> <dd> 
+        /// <para>
+        /// Matches recommended actions based on whether implementing them requires a resource
+        /// restart. Specify <c>true</c> or <c>false</c>.
+        /// </para>
+        ///  </dd> </dl>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

@@ -38,8 +38,9 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// is automatically set to "Any allowed," which permits the management account to create
     /// Automation rules that automatically apply actions to that account. If the member account
     /// has not previously enabled the Automation feature, the association process automatically
-    /// enables it. <note> <para> Only the management account or a delegated administrator
-    /// can perform this action. </para> </note>
+    /// enables it. <para> Requests that include an account to which an organization enrollment
+    /// configuration applies are rejected. </para> <note> <para> Only the management account
+    /// or a delegated administrator can perform this action. </para> </note>
     /// </summary>
     public partial class AssociateAccountsRequest : AmazonComputeOptimizerAutomationRequest
     {
@@ -67,7 +68,7 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  A unique identifier to ensure idempotency of the request. Valid for 24 hours after
+        ///  A unique identifier to ensure idempotency of the request. Valid for 30 minutes after
         /// creation. 
         /// </para>
         /// </summary>

@@ -61,6 +61,12 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
                         context.PopPathSegment();
                         break;
 
+                    case "organizationEnrollmentConfigurationStatus":
+                        context.AddPathSegment("OrganizationEnrollmentConfigurationStatus");
+                        unmarshalledObject.OrganizationEnrollmentConfigurationStatus = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "organizationRuleMode":
                         context.AddPathSegment("OrganizationRuleMode");
                         unmarshalledObject.OrganizationRuleMode = CborStringUnmarshaller.Instance.Unmarshall(context);

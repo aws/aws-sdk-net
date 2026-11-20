@@ -39,6 +39,8 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// Gets and sets the property Comparison. 
         /// <para>
         /// The comparison operator used to evaluate the attribute against the specified values.
+        /// Only operators that begin with <c>Numeric</c> are valid. Any other operator returns
+        /// an <c>InvalidParameterValueException</c>.
         /// </para>
         /// </summary>
         public ComparisonOperator Comparison { get; set; }

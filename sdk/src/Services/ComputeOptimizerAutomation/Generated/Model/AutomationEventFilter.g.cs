@@ -51,7 +51,17 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  The values to use for the specified filter. 
+        ///  The values to use for the specified filter. For the <c>ResourceType</c>, <c>EventType</c>,
+        /// and <c>EventStatus</c> filters, the value that you specify must exactly match the
+        /// corresponding field of the automation event, including case. For example, specify
+        /// <c>Complete</c>, not <c>complete</c>. Wildcards aren't supported. An asterisk (<c>*</c>)
+        /// or a question mark (<c>?</c>) in a value matches only that literal character. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values for the <c>EventStatus</c> filter are <c>Ready</c>, <c>InProgress</c>,
+        /// <c>Complete</c>, <c>Failed</c>, <c>Cancelled</c>, <c>RollbackReady</c>, <c>RollbackInProgress</c>,
+        /// <c>RollbackComplete</c>, and <c>RollbackFailed</c>. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

@@ -32,8 +32,9 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// <summary>
     /// Container for the parameters to the StartAutomationEvent operation. Initiates a one-time,
     /// on-demand automation for the specified recommended action. <note> <para> Management
-    /// accounts and delegated administrators can only initiate recommended actions for associated
-    /// member accounts. You can associate a member account using <c>AssociateAccounts</c>.
+    /// accounts and delegated administrators can initiate recommended actions for member
+    /// accounts that are associated using <c>AssociateAccounts</c> or have an applicable
+    /// organization enrollment configuration with <c>organizationRuleMode</c> set to <c>AnyAllowed</c>.
     /// </para> </note>
     /// </summary>
     public partial class StartAutomationEventRequest : AmazonComputeOptimizerAutomationRequest

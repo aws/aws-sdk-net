@@ -50,7 +50,7 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of automation rule preview summaries to return in a single response.
-        /// Valid range is 1-1000.
+        /// If you don't specify a value, the default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
@@ -78,7 +78,8 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property OrganizationScope. 
         /// <para>
-        /// The organizational scope for the rule preview.
+        /// The organizational scope for the rule preview. This parameter is required when <c>ruleType</c>
+        /// is <c>OrganizationRule</c>. Don't specify it when <c>ruleType</c> is <c>AccountRule</c>.
         /// </para>
         /// </summary>
         public OrganizationScope OrganizationScope { get; set; }

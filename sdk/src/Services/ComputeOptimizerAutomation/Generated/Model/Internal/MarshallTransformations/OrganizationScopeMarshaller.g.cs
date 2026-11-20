@@ -58,6 +58,39 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
                 }
                 context.Writer.WriteEndArray();
             }
+
+            if (requestObject.IsSetExcludedAccountIds())
+            {
+                context.Writer.WriteTextString("excludedAccountIds");
+                context.Writer.WriteStartArray(requestObject.ExcludedAccountIds.Count);
+                foreach (var requestObjectExcludedAccountIdsListValue in requestObject.ExcludedAccountIds)
+                {
+                    context.Writer.WriteTextString(requestObjectExcludedAccountIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetExcludedOrganizationalUnitIds())
+            {
+                context.Writer.WriteTextString("excludedOrganizationalUnitIds");
+                context.Writer.WriteStartArray(requestObject.ExcludedOrganizationalUnitIds.Count);
+                foreach (var requestObjectExcludedOrganizationalUnitIdsListValue in requestObject.ExcludedOrganizationalUnitIds)
+                {
+                    context.Writer.WriteTextString(requestObjectExcludedOrganizationalUnitIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetOrganizationalUnitIds())
+            {
+                context.Writer.WriteTextString("organizationalUnitIds");
+                context.Writer.WriteStartArray(requestObject.OrganizationalUnitIds.Count);
+                foreach (var requestObjectOrganizationalUnitIdsListValue in requestObject.OrganizationalUnitIds)
+                {
+                    context.Writer.WriteTextString(requestObjectOrganizationalUnitIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
         }
 
         /// <summary>

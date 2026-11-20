@@ -48,6 +48,24 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         internal bool IsSetLastUpdatedTimestamp() => this.LastUpdatedTimestamp.HasValue;
 
         /// <summary>
+        /// Gets and sets the property OrganizationEnrollmentConfigurationStatus. 
+        /// <para>
+        ///  Specifies whether an organization enrollment configuration on your account, or inherited
+        /// from a parent OU or the organization root, enables Automation for your member account.
+        /// Associations made using <c>AssociateAccounts</c> don't affect this status. This field
+        /// is returned for organization member accounts, including delegated administrators.
+        /// It's omitted for management accounts and accounts that aren't in an organization.
+        /// 
+        /// </para>
+        /// </summary>
+        public OrganizationEnrollmentConfigurationStatus OrganizationEnrollmentConfigurationStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OrganizationEnrollmentConfigurationStatus property is set.
+        /// </summary>
+        internal bool IsSetOrganizationEnrollmentConfigurationStatus() => this.OrganizationEnrollmentConfigurationStatus != null;
+
+        /// <summary>
         /// Gets and sets the property OrganizationRuleMode. 
         /// <para>
         /// Specifies whether the management account can create Automation rules that implement

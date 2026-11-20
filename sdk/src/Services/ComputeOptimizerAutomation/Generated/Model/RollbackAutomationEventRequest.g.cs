@@ -32,9 +32,9 @@ namespace Amazon.ComputeOptimizerAutomation.Model
     /// <summary>
     /// Container for the parameters to the RollbackAutomationEvent operation. Initiates a
     /// rollback for a completed automation event. <note> <para> Management accounts and delegated
-    /// administrators can only initiate a rollback for events belonging to associated member
-    /// accounts. You can associate a member account using <c>AssociateAccounts</c>. </para>
-    /// </note>
+    /// administrators can initiate a rollback for events belonging to member accounts that
+    /// are associated using <c>AssociateAccounts</c> or have an applicable organization enrollment
+    /// configuration with <c>organizationRuleMode</c> set to <c>AnyAllowed</c>. </para> </note>
     /// </summary>
     public partial class RollbackAutomationEventRequest : AmazonComputeOptimizerAutomationRequest
     {

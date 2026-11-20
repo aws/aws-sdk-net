@@ -68,6 +68,24 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
                         context.PopPathSegment();
                         break;
 
+                    case "excludedAccountIds":
+                        context.AddPathSegment("ExcludedAccountIds");
+                        unmarshalledObject.ExcludedAccountIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "excludedOrganizationalUnitIds":
+                        context.AddPathSegment("ExcludedOrganizationalUnitIds");
+                        unmarshalledObject.ExcludedOrganizationalUnitIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    case "organizationalUnitIds":
+                        context.AddPathSegment("OrganizationalUnitIds");
+                        unmarshalledObject.OrganizationalUnitIds = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "ruleApplyOrder":
                         context.AddPathSegment("RuleApplyOrder");
                         unmarshalledObject.RuleApplyOrder = CborStringUnmarshaller.Instance.Unmarshall(context);

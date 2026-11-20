@@ -79,6 +79,19 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         internal bool IsSetOrganizationRuleMode() => this.OrganizationRuleMode != null;
 
         /// <summary>
+        /// Gets and sets the property OrganizationRuleModeSource. 
+        /// <para>
+        /// Information about the source of the account's effective organization rule mode. 
+        /// </para>
+        /// </summary>
+        public OrganizationRuleModeSource OrganizationRuleModeSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OrganizationRuleModeSource property is set.
+        /// </summary>
+        internal bool IsSetOrganizationRuleModeSource() => this.OrganizationRuleModeSource != null;
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         ///  The enrollment status of the account: Active, Inactive, Pending, or Failed. 

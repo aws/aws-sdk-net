@@ -68,15 +68,17 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <c>Pending</c> and <c>Failed</c> options cannot be used to update the enrollment
+        /// The <c>Pending</c> and <c>Failed</c> options can't be used to update the enrollment
         /// status of an account. They are returned in the response of a request to update the
         /// enrollment status of an account.
         /// </para>
         ///  
         /// <para>
-        /// If you are a member account, your account must be disassociated from your organization’s
-        /// management account before you can disable Automation. Contact your administrator to
-        /// make this change.
+        /// If you are a member account, you can't disable Automation while an organization enrollment
+        /// configuration applies. If no organization enrollment configuration applies, you also
+        /// can't disable Automation while your organization rule mode is <c>AnyAllowed</c>. Ask
+        /// your administrator to delete the organization enrollment configuration or disassociate
+        /// your account, as applicable.
         /// </para>
         ///  </note>
         /// </summary>

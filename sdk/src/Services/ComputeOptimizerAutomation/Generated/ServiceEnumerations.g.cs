@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.ComputeOptimizerAutomation
 {
     /// <summary>
+    /// Constants used for properties of type AutoEnrollMemberAccounts.
+    /// </summary>
+    public class AutoEnrollMemberAccounts : ConstantClass
+    {
+        /// <summary>
+        /// Constant All for AutoEnrollMemberAccounts
+        /// </summary>
+        public static readonly AutoEnrollMemberAccounts All = new AutoEnrollMemberAccounts("All");
+
+        /// <summary>
+        /// Constant None for AutoEnrollMemberAccounts
+        /// </summary>
+        public static readonly AutoEnrollMemberAccounts None = new AutoEnrollMemberAccounts("None");
+
+        /// <summary>
+        /// Constructs a custom AutoEnrollMemberAccounts for a value not among the defined constants.
+        /// </summary>
+        public AutoEnrollMemberAccounts(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEnrollMemberAccounts FindValue(string value)
+        {
+            return FindValue<AutoEnrollMemberAccounts>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEnrollMemberAccounts(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AutomationEventFilterName.
     /// </summary>
     public class AutomationEventFilterName : ConstantClass
@@ -453,6 +494,83 @@ namespace Amazon.ComputeOptimizerAutomation
     }
 
     /// <summary>
+    /// Constants used for properties of type OrganizationEnrollmentConfigurationStatus.
+    /// </summary>
+    public class OrganizationEnrollmentConfigurationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for OrganizationEnrollmentConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationEnrollmentConfigurationStatus Active = new OrganizationEnrollmentConfigurationStatus("Active");
+
+        /// <summary>
+        /// Constant Inactive for OrganizationEnrollmentConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationEnrollmentConfigurationStatus Inactive = new OrganizationEnrollmentConfigurationStatus("Inactive");
+
+        /// <summary>
+        /// Constructs a custom OrganizationEnrollmentConfigurationStatus for a value not among the defined constants.
+        /// </summary>
+        public OrganizationEnrollmentConfigurationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationEnrollmentConfigurationStatus FindValue(string value)
+        {
+            return FindValue<OrganizationEnrollmentConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationEnrollmentConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationEnrollmentConfigurationType.
+    /// </summary>
+    public class OrganizationEnrollmentConfigurationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OrganizationRuleMode for OrganizationEnrollmentConfigurationType
+        /// </summary>
+        public static readonly OrganizationEnrollmentConfigurationType OrganizationRuleMode = new OrganizationEnrollmentConfigurationType("OrganizationRuleMode");
+
+        /// <summary>
+        /// Constructs a custom OrganizationEnrollmentConfigurationType for a value not among the defined constants.
+        /// </summary>
+        public OrganizationEnrollmentConfigurationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationEnrollmentConfigurationType FindValue(string value)
+        {
+            return FindValue<OrganizationEnrollmentConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationEnrollmentConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OrganizationRuleMode.
     /// </summary>
     public class OrganizationRuleMode : ConstantClass
@@ -488,6 +606,98 @@ namespace Amazon.ComputeOptimizerAutomation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrganizationRuleMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationRuleModeSourceType.
+    /// </summary>
+    public class OrganizationRuleModeSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Applied for OrganizationRuleModeSourceType
+        /// </summary>
+        public static readonly OrganizationRuleModeSourceType Applied = new OrganizationRuleModeSourceType("Applied");
+
+        /// <summary>
+        /// Constant Default for OrganizationRuleModeSourceType
+        /// </summary>
+        public static readonly OrganizationRuleModeSourceType Default = new OrganizationRuleModeSourceType("Default");
+
+        /// <summary>
+        /// Constant Direct for OrganizationRuleModeSourceType
+        /// </summary>
+        public static readonly OrganizationRuleModeSourceType Direct = new OrganizationRuleModeSourceType("Direct");
+
+        /// <summary>
+        /// Constant Inherited for OrganizationRuleModeSourceType
+        /// </summary>
+        public static readonly OrganizationRuleModeSourceType Inherited = new OrganizationRuleModeSourceType("Inherited");
+
+        /// <summary>
+        /// Constructs a custom OrganizationRuleModeSourceType for a value not among the defined constants.
+        /// </summary>
+        public OrganizationRuleModeSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationRuleModeSourceType FindValue(string value)
+        {
+            return FindValue<OrganizationRuleModeSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationRuleModeSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationTargetType.
+    /// </summary>
+    public class OrganizationTargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account for OrganizationTargetType
+        /// </summary>
+        public static readonly OrganizationTargetType Account = new OrganizationTargetType("Account");
+
+        /// <summary>
+        /// Constant OrganizationalUnit for OrganizationTargetType
+        /// </summary>
+        public static readonly OrganizationTargetType OrganizationalUnit = new OrganizationTargetType("OrganizationalUnit");
+
+        /// <summary>
+        /// Constructs a custom OrganizationTargetType for a value not among the defined constants.
+        /// </summary>
+        public OrganizationTargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationTargetType FindValue(string value)
+        {
+            return FindValue<OrganizationTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationTargetType(string value)
         {
             return FindValue(value);
         }

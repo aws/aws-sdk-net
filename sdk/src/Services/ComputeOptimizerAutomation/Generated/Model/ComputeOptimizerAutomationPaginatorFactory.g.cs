@@ -89,6 +89,22 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         }
 
         /// <summary>
+        /// Paginator for ListOrganizationEnrollmentConfigurations operation
+        /// </summary>
+        public IListOrganizationEnrollmentConfigurationsPaginator ListOrganizationEnrollmentConfigurations(ListOrganizationEnrollmentConfigurationsRequest request)
+        {
+            return new ListOrganizationEnrollmentConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOrganizationalUnits operation
+        /// </summary>
+        public IListOrganizationalUnitsPaginator ListOrganizationalUnits(ListOrganizationalUnitsRequest request)
+        {
+            return new ListOrganizationalUnitsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommendedActionSummaries operation
         /// </summary>
         public IListRecommendedActionSummariesPaginator ListRecommendedActionSummaries(ListRecommendedActionSummariesRequest request)

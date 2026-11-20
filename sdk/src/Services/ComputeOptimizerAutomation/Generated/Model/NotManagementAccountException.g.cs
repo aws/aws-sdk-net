@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizerAutomation.Model
 {
     /// <summary>
-    /// The operation can only be performed by a management account.
+    /// The operation can only be performed by an organization's management account or a
+    /// delegated administrator.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

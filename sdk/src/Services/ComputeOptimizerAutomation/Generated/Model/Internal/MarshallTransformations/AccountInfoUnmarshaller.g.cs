@@ -80,6 +80,12 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
                         context.PopPathSegment();
                         break;
 
+                    case "organizationRuleModeSource":
+                        context.AddPathSegment("OrganizationRuleModeSource");
+                        unmarshalledObject.OrganizationRuleModeSource = OrganizationRuleModeSourceUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "status":
                         context.AddPathSegment("Status");
                         unmarshalledObject.Status = CborStringUnmarshaller.Instance.Unmarshall(context);

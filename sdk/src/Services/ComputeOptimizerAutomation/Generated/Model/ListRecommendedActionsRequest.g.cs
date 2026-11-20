@@ -31,10 +31,10 @@ namespace Amazon.ComputeOptimizerAutomation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendedActions operation. Lists the recommended
-    /// actions based that match specified filters. <note> <para> Management accounts and
-    /// delegated administrators can retrieve recommended actions that include associated
-    /// member accounts. You can associate a member account using <c>AssociateAccounts</c>.
-    /// </para> </note>
+    /// actions that match the specified filters. <note> <para> Management accounts and delegated
+    /// administrators can retrieve recommended actions for member accounts that are associated
+    /// using <c>AssociateAccounts</c> or have an applicable organization enrollment configuration
+    /// with <c>organizationRuleMode</c> set to <c>AnyAllowed</c>. </para> </note>
     /// </summary>
     public partial class ListRecommendedActionsRequest : AmazonComputeOptimizerAutomationRequest
     {
@@ -60,8 +60,8 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of recommended actions to return in a single response. Valid range
-        /// is 1-1000.
+        /// The maximum number of recommended actions to return in a single response. If you don't
+        /// specify a value, the default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 100)]
@@ -85,5 +85,28 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         /// Checks to see if the NextToken property is set.
         /// </summary>
         internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitIds. 
+        /// <para>
+        ///  The organizational unit (OU) or organization root IDs to use to filter the results.
+        /// The response includes recommended actions for accounts in the specified OUs and their
+        /// child OUs. Only the management account or a delegated administrator can specify this
+        /// parameter. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public List<string> OrganizationalUnitIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the OrganizationalUnitIds property is set.
+        /// </summary>
+        internal bool IsSetOrganizationalUnitIds() => this.OrganizationalUnitIds != null && (this.OrganizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

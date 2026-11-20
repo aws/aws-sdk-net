@@ -75,6 +75,18 @@ namespace Amazon.ComputeOptimizerAutomation.Model
         IListAutomationRulesPaginator ListAutomationRules(ListAutomationRulesRequest request);
 
         /// <summary>
+        /// Paginator for ListOrganizationEnrollmentConfigurations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListOrganizationEnrollmentConfigurationsPaginator ListOrganizationEnrollmentConfigurations(ListOrganizationEnrollmentConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOrganizationalUnits operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListOrganizationalUnitsPaginator ListOrganizationalUnits(ListOrganizationalUnitsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendedActionSummaries operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

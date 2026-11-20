@@ -266,6 +266,11 @@ namespace Amazon.ComputeOptimizerAutomation
         /// member account has not previously enabled the Automation feature, the association
         /// process automatically enables it.
         /// 
+        ///  
+        /// <para>
+        /// Requests that include an account to which an organization enrollment configuration
+        /// applies are rejected.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Only the management account or a delegated administrator can perform this action.
@@ -294,7 +299,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -336,6 +342,11 @@ namespace Amazon.ComputeOptimizerAutomation
         /// member account has not previously enabled the Automation feature, the association
         /// process automatically enables it.
         /// 
+        ///  
+        /// <para>
+        /// Requests that include an account to which an organization enrollment configuration
+        /// applies are rejected.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Only the management account or a delegated administrator can perform this action.
@@ -367,7 +378,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -615,11 +627,144 @@ namespace Amazon.ComputeOptimizerAutomation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes the specified configuration types from an organization enrollment configuration.
+        /// After deletion, Automation stays enabled for affected accounts and earlier account
+        /// associations aren't restored. Affected accounts inherit the organization rule mode
+        /// from the closest parent that has an organization enrollment configuration, or get
+        /// None allowed if no parent has one. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationEnrollmentConfiguration service method.</param>
+        /// <returns>The response from the DeleteOrganizationEnrollmentConfiguration service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ConflictException">
+        /// The request conflicts with a concurrent change to the same resource. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotencyTokenInUseException">
+        /// The specified client token is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotentParameterMismatchException">
+        /// Exception thrown when the same client token is used with different parameters, indicating
+        /// a mismatch in idempotent request parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/DeleteOrganizationEnrollmentConfiguration">REST API Reference for DeleteOrganizationEnrollmentConfiguration Operation</seealso>
+        public virtual DeleteOrganizationEnrollmentConfigurationResponse DeleteOrganizationEnrollmentConfiguration(DeleteOrganizationEnrollmentConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOrganizationEnrollmentConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteOrganizationEnrollmentConfigurationResponse DeleteOrganizationEnrollmentConfiguration(DeleteOrganizationEnrollmentConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOrganizationEnrollmentConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes the specified configuration types from an organization enrollment configuration.
+        /// After deletion, Automation stays enabled for affected accounts and earlier account
+        /// associations aren't restored. Affected accounts inherit the organization rule mode
+        /// from the closest parent that has an organization enrollment configuration, or get
+        /// None allowed if no parent has one. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationEnrollmentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteOrganizationEnrollmentConfiguration service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ConflictException">
+        /// The request conflicts with a concurrent change to the same resource. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotencyTokenInUseException">
+        /// The specified client token is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotentParameterMismatchException">
+        /// Exception thrown when the same client token is used with different parameters, indicating
+        /// a mismatch in idempotent request parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/DeleteOrganizationEnrollmentConfiguration">REST API Reference for DeleteOrganizationEnrollmentConfiguration Operation</seealso>
+        public virtual Task<DeleteOrganizationEnrollmentConfigurationResponse> DeleteOrganizationEnrollmentConfigurationAsync(DeleteOrganizationEnrollmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOrganizationEnrollmentConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Disassociates member accounts from your organization's management account, removing
         /// centralized automation capabilities. Once disassociated, organization rules no longer
         /// apply to the member account, and the management account (or delegated administrator)
-        /// cannot create Automation rules for that account. 
+        /// can't create automation rules for that account. 
         /// 
+        ///  
+        /// <para>
+        /// Requests that include an account to which an organization enrollment configuration
+        /// applies are rejected.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Only the management account or a delegated administrator can perform this action.
@@ -648,7 +793,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -684,8 +830,13 @@ namespace Amazon.ComputeOptimizerAutomation
         /// Disassociates member accounts from your organization's management account, removing
         /// centralized automation capabilities. Once disassociated, organization rules no longer
         /// apply to the member account, and the management account (or delegated administrator)
-        /// cannot create Automation rules for that account. 
+        /// can't create automation rules for that account. 
         /// 
+        ///  
+        /// <para>
+        /// Requests that include an account to which an organization enrollment configuration
+        /// applies are rejected.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Only the management account or a delegated administrator can perform this action.
@@ -717,7 +868,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -1047,7 +1199,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -1107,7 +1260,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -1675,13 +1829,220 @@ namespace Amazon.ComputeOptimizerAutomation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the organization enrollment configurations that are stored directly on accounts,
+        /// organizational units (OUs), and the organization root. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationEnrollmentConfigurations service method.</param>
+        /// <returns>The response from the ListOrganizationEnrollmentConfigurations service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationEnrollmentConfigurations">REST API Reference for ListOrganizationEnrollmentConfigurations Operation</seealso>
+        public virtual ListOrganizationEnrollmentConfigurationsResponse ListOrganizationEnrollmentConfigurations(ListOrganizationEnrollmentConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationEnrollmentConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationEnrollmentConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationEnrollmentConfigurationsResponse>(request, options);
+        }
+#else
+        internal virtual ListOrganizationEnrollmentConfigurationsResponse ListOrganizationEnrollmentConfigurations(ListOrganizationEnrollmentConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationEnrollmentConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationEnrollmentConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationEnrollmentConfigurationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the organization enrollment configurations that are stored directly on accounts,
+        /// organizational units (OUs), and the organization root. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationEnrollmentConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOrganizationEnrollmentConfigurations service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationEnrollmentConfigurations">REST API Reference for ListOrganizationEnrollmentConfigurations Operation</seealso>
+        public virtual Task<ListOrganizationEnrollmentConfigurationsResponse> ListOrganizationEnrollmentConfigurationsAsync(ListOrganizationEnrollmentConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationEnrollmentConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationEnrollmentConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrganizationEnrollmentConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the organization root and organizational units (OUs), including whether an
+        /// applicable organization enrollment configuration enables Automation for member accounts
+        /// and the effective organization rule mode for each root or OU. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnits service method.</param>
+        /// <returns>The response from the ListOrganizationalUnits service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        public virtual ListOrganizationalUnitsResponse ListOrganizationalUnits(ListOrganizationalUnitsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationalUnitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationalUnitsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationalUnitsResponse>(request, options);
+        }
+#else
+        internal virtual ListOrganizationalUnitsResponse ListOrganizationalUnits(ListOrganizationalUnitsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationalUnitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationalUnitsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationalUnitsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the organization root and organizational units (OUs), including whether an
+        /// applicable organization enrollment configuration enables Automation for member accounts
+        /// and the effective organization rule mode for each root or OU. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOrganizationalUnits service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        public virtual Task<ListOrganizationalUnitsResponse> ListOrganizationalUnitsAsync(ListOrganizationalUnitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrganizationalUnitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationalUnitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrganizationalUnitsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Provides a summary of recommended actions based on specified filters. 
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can retrieve recommended actions
-        /// that include associated member accounts. You can associate a member account using
-        /// <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can retrieve recommended action summaries
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1734,9 +2095,10 @@ namespace Amazon.ComputeOptimizerAutomation
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can retrieve recommended actions
-        /// that include associated member accounts. You can associate a member account using
-        /// <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can retrieve recommended action summaries
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1779,13 +2141,14 @@ namespace Amazon.ComputeOptimizerAutomation
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Lists the recommended actions based that match specified filters. 
+        /// Lists the recommended actions that match the specified filters. 
         /// 
         ///  <note> 
         /// <para>
         /// Management accounts and delegated administrators can retrieve recommended actions
-        /// that include associated member accounts. You can associate a member account using
-        /// <c>AssociateAccounts</c>.
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1834,13 +2197,14 @@ namespace Amazon.ComputeOptimizerAutomation
 #endif
 
         /// <summary>
-        /// Lists the recommended actions based that match specified filters. 
+        /// Lists the recommended actions that match the specified filters. 
         /// 
         ///  <note> 
         /// <para>
         /// Management accounts and delegated administrators can retrieve recommended actions
-        /// that include associated member accounts. You can associate a member account using
-        /// <c>AssociateAccounts</c>.
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1977,13 +2341,156 @@ namespace Amazon.ComputeOptimizerAutomation
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates or updates an organization enrollment configuration. The organization enrollment
+        /// configuration sets the organization rule mode on the specified account, organizational
+        /// unit (OU), or organization root and enables Automation for affected member accounts
+        /// that have opted in to Compute Optimizer, including accounts that join later. Changes
+        /// on an OU or the organization root can take up to 5 minutes. Organization enrollment
+        /// configurations take precedence over settings made by <c>AssociateAccounts</c> and
+        /// <c>DisassociateAccounts</c>. You must specify at least one configuration in the request.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Organization enrollment configurations can't be created for the management account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationEnrollmentConfiguration service method.</param>
+        /// <returns>The response from the PutOrganizationEnrollmentConfiguration service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ConflictException">
+        /// The request conflicts with a concurrent change to the same resource. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotencyTokenInUseException">
+        /// The specified client token is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotentParameterMismatchException">
+        /// Exception thrown when the same client token is used with different parameters, indicating
+        /// a mismatch in idempotent request parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/PutOrganizationEnrollmentConfiguration">REST API Reference for PutOrganizationEnrollmentConfiguration Operation</seealso>
+        public virtual PutOrganizationEnrollmentConfigurationResponse PutOrganizationEnrollmentConfiguration(PutOrganizationEnrollmentConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutOrganizationEnrollmentConfigurationResponse>(request, options);
+        }
+#else
+        internal virtual PutOrganizationEnrollmentConfigurationResponse PutOrganizationEnrollmentConfiguration(PutOrganizationEnrollmentConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutOrganizationEnrollmentConfigurationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates or updates an organization enrollment configuration. The organization enrollment
+        /// configuration sets the organization rule mode on the specified account, organizational
+        /// unit (OU), or organization root and enables Automation for affected member accounts
+        /// that have opted in to Compute Optimizer, including accounts that join later. Changes
+        /// on an OU or the organization root can take up to 5 minutes. Organization enrollment
+        /// configurations take precedence over settings made by <c>AssociateAccounts</c> and
+        /// <c>DisassociateAccounts</c>. You must specify at least one configuration in the request.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the management account or a delegated administrator can perform this action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Organization enrollment configurations can't be created for the management account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutOrganizationEnrollmentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutOrganizationEnrollmentConfiguration service method, as returned by ComputeOptimizerAutomation.</returns>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ConflictException">
+        /// The request conflicts with a concurrent change to the same resource. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ForbiddenException">
+        /// You are not authorized to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotencyTokenInUseException">
+        /// The specified client token is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.IdempotentParameterMismatchException">
+        /// Exception thrown when the same client token is used with different parameters, indicating
+        /// a mismatch in idempotent request parameters.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InternalServerException">
+        /// An internal error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
+        /// The account must be opted in to Compute Optimizer Automation before performing this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/PutOrganizationEnrollmentConfiguration">REST API Reference for PutOrganizationEnrollmentConfiguration Operation</seealso>
+        public virtual Task<PutOrganizationEnrollmentConfigurationResponse> PutOrganizationEnrollmentConfigurationAsync(PutOrganizationEnrollmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutOrganizationEnrollmentConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutOrganizationEnrollmentConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutOrganizationEnrollmentConfigurationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Initiates a rollback for a completed automation event. 
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can only initiate a rollback for
-        /// events belonging to associated member accounts. You can associate a member account
-        /// using <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can initiate a rollback for events
+        /// belonging to member accounts that are associated using <c>AssociateAccounts</c> or
+        /// have an applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2046,9 +2553,10 @@ namespace Amazon.ComputeOptimizerAutomation
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can only initiate a rollback for
-        /// events belonging to associated member accounts. You can associate a member account
-        /// using <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can initiate a rollback for events
+        /// belonging to member accounts that are associated using <c>AssociateAccounts</c> or
+        /// have an applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2106,8 +2614,10 @@ namespace Amazon.ComputeOptimizerAutomation
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can only initiate recommended actions
-        /// for associated member accounts. You can associate a member account using <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can initiate recommended actions
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2174,8 +2684,10 @@ namespace Amazon.ComputeOptimizerAutomation
         /// 
         ///  <note> 
         /// <para>
-        /// Management accounts and delegated administrators can only initiate recommended actions
-        /// for associated member accounts. You can associate a member account using <c>AssociateAccounts</c>.
+        /// Management accounts and delegated administrators can initiate recommended actions
+        /// for member accounts that are associated using <c>AssociateAccounts</c> or have an
+        /// applicable organization enrollment configuration with <c>organizationRuleMode</c>
+        /// set to <c>AnyAllowed</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2579,7 +3091,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
@@ -2642,7 +3155,8 @@ namespace Amazon.ComputeOptimizerAutomation
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.NotManagementAccountException">
-        /// The operation can only be performed by a management account.
+        /// The operation can only be performed by an organization's management account or a
+        /// delegated administrator.
         /// </exception>
         /// <exception cref="Amazon.ComputeOptimizerAutomation.Model.OptInRequiredException">
         /// The account must be opted in to Compute Optimizer Automation before performing this
