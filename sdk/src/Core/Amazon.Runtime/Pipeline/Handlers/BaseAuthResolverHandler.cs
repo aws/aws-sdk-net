@@ -244,18 +244,26 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         protected static List<IAuthSchemeOption> RetrieveSchemesFromEndpoint(Endpoint endpoint)
         {
-            if (endpoint == null || endpoint.Attributes == null)
+            if (endpoint == null)
             {
                 return null;
             }
 
-            var authSchemes = endpoint.Attributes["authSchemes"] as IList;
-            if (authSchemes == null)
+            List<string> schemeNames;
+            if (endpoint.AuthSchemes != null)
             {
-                return null;
+                schemeNames = endpoint.AuthSchemes.Select(scheme => scheme.Name).ToList();
             }
+            else
+            {
+                var authSchemes = endpoint.RawAttributesOrNull?["authSchemes"] as IList;
+                if (authSchemes == null)
+                {
+                    return null;
+                }
 
-            var schemeNames = authSchemes.OfType<PropertyBag>().Select(scheme => (string)scheme["name"]).ToList();
+                schemeNames = authSchemes.OfType<PropertyBag>().Select(scheme => (string)scheme["name"]).ToList();
+            }
 
             // If there's only one scheme, we'll try to return one of the default collections to avoid extra allocations.
             if (schemeNames.Count == 1)

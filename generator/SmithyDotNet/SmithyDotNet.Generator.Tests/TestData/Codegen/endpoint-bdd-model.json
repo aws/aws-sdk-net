@@ -1,0 +1,331 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        {
+          "target": "com.example#DoNothing"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Example",
+          "endpointPrefix": "example"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#documentation": "Example service exercising every endpoint BDD function and result shape.",
+        "smithy.api#title": "Example",
+        "smithy.rules#endpointBdd": {
+          "version": "1.1",
+          "parameters": {
+            "Region": {
+              "type": "string",
+              "builtIn": "AWS::Region",
+              "documentation": "The AWS region."
+            },
+            "UseFIPS": {
+              "type": "boolean",
+              "builtIn": "AWS::UseFIPS",
+              "required": true,
+              "default": false,
+              "documentation": "Use FIPS."
+            },
+            "UseDualStack": {
+              "type": "boolean",
+              "documentation": "Use dual-stack; optional with no default, so it is a bool?."
+            },
+            "Endpoint": {
+              "type": "string",
+              "builtIn": "SDK::Endpoint",
+              "documentation": "Override endpoint."
+            },
+            "Bucket": {
+              "type": "string",
+              "documentation": "A bucket name or ARN."
+            }
+          },
+          "conditions": [
+            {
+              "fn": "isSet",
+              "argv": [
+                {
+                  "ref": "Region"
+                }
+              ]
+            },
+            {
+              "fn": "booleanEquals",
+              "argv": [
+                {
+                  "ref": "UseFIPS"
+                },
+                true
+              ]
+            },
+            {
+              "fn": "aws.partition",
+              "argv": [
+                {
+                  "ref": "Region"
+                }
+              ],
+              "assign": "PartitionResult"
+            },
+            {
+              "fn": "stringEquals",
+              "argv": [
+                {
+                  "fn": "getAttr",
+                  "argv": [
+                    {
+                      "ref": "PartitionResult"
+                    },
+                    "name"
+                  ]
+                },
+                "aws"
+              ]
+            },
+            {
+              "fn": "not",
+              "argv": [
+                {
+                  "fn": "isSet",
+                  "argv": [
+                    {
+                      "ref": "Endpoint"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "fn": "aws.parseArn",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                }
+              ],
+              "assign": "bucketArn"
+            },
+            {
+              "fn": "getAttr",
+              "argv": [
+                {
+                  "ref": "bucketArn"
+                },
+                "resourceId[0]"
+              ],
+              "assign": "arnResource"
+            },
+            {
+              "fn": "substring",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                },
+                0,
+                4,
+                false
+              ],
+              "assign": "bucketPrefix"
+            },
+            {
+              "fn": "uriEncode",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                }
+              ],
+              "assign": "encodedBucket"
+            },
+            {
+              "fn": "split",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                },
+                "-",
+                0
+              ],
+              "assign": "bucketParts"
+            },
+            {
+              "fn": "isValidHostLabel",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                },
+                false
+              ]
+            },
+            {
+              "fn": "aws.isVirtualHostableS3Bucket",
+              "argv": [
+                {
+                  "ref": "Bucket"
+                },
+                false
+              ]
+            },
+            {
+              "fn": "parseURL",
+              "argv": [
+                {
+                  "ref": "Endpoint"
+                }
+              ],
+              "assign": "url"
+            },
+            {
+              "fn": "booleanEquals",
+              "argv": [
+                {
+                  "fn": "coalesce",
+                  "argv": [
+                    {
+                      "ref": "UseDualStack"
+                    },
+                    false
+                  ]
+                },
+                true
+              ]
+            },
+            {
+              "fn": "stringEquals",
+              "argv": [
+                {
+                  "fn": "coalesce",
+                  "argv": [
+                    {
+                      "fn": "substring",
+                      "argv": [
+                        {
+                          "ref": "Bucket"
+                        },
+                        0,
+                        1,
+                        false
+                      ]
+                    },
+                    ""
+                  ]
+                },
+                "a"
+              ]
+            },
+            {
+              "fn": "ite",
+              "argv": [
+                {
+                  "ref": "UseDualStack"
+                },
+                ".dualstack",
+                ""
+              ],
+              "assign": "_dualStackSuffix"
+            },
+            {
+              "fn": "ite",
+              "argv": [
+                {
+                  "fn": "coalesce",
+                  "argv": [
+                    {
+                      "ref": "UseDualStack"
+                    },
+                    false
+                  ]
+                },
+                "sigv4",
+                "sigv4a"
+              ],
+              "assign": "_authName"
+            }
+          ],
+          "results": [
+            {
+              "type": "endpoint",
+              "conditions": [],
+              "endpoint": {
+                "url": "https://example{_dualStackSuffix}.{Region}.{PartitionResult#dnsSuffix}",
+                "properties": {
+                  "authSchemes": [
+                    {
+                      "name": "{_authName}",
+                      "signingName": "example",
+                      "signingRegion": "{Region}",
+                      "disableDoubleEncoding": true
+                    },
+                    {
+                      "name": "sigv4a",
+                      "signingName": "example",
+                      "signingRegionSet": [
+                        "*"
+                      ]
+                    }
+                  ],
+                  "backend": "S3Express",
+                  "metricValues": [
+                    "O"
+                  ]
+                },
+                "headers": {
+                  "x-amz-region": [
+                    "{Region}"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "endpoint",
+              "conditions": [],
+              "endpoint": {
+                "url": {
+                  "ref": "Endpoint"
+                }
+              }
+            },
+            {
+              "type": "error",
+              "conditions": [],
+              "error": "Invalid region: {Region}"
+            },
+            {
+              "type": "endpoint",
+              "conditions": [],
+              "endpoint": {
+                "url": "https://example.amazonaws.com"
+              }
+            }
+          ],
+          "root": 2,
+          "nodeCount": 1,
+          "nodes": "AAAAAAAAAAAAAAAA"
+        }
+      }
+    },
+    "com.example#DoNothing": {
+      "type": "operation",
+      "input": {
+        "target": "com.example#DoNothingRequest"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "method": "POST",
+          "uri": "/"
+        }
+      }
+    },
+    "com.example#DoNothingRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    }
+  }
+}

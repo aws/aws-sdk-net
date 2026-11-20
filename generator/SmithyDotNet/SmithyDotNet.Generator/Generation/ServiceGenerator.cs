@@ -145,16 +145,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
         }
 
-        // Endpoint files are emitted only when the service carries an endpoint rule set. The
-        // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
-        // provider and resolver under Internal/.
-        if (context.HasEndpointRuleSet)
+        // Endpoint files are emitted when the service carries either an endpoint rule set or an
+        // endpoint BDD. The parameters class lives in the *.Endpoints namespace (emitted under
+        // Generated/), the provider and resolver under Internal/. Only the provider differs between
+        // the two traits — the params and resolver writers are shared, since a BDD changes the
+        // resolution algorithm, not the parameters shape or the request plumbing. Per the SEP, when
+        // endpointBdd is present it is prioritized over endpointRuleSet.
+        if (context.HasEndpointRuleSet || context.HasEndpointBdd)
         {
             var endpointParametersWriter = new EndpointParametersWriter(context, modelFileName);
             Emit(Path.Combine(generated, $"{clientName}EndpointParameters.g.cs"), endpointParametersWriter.Write(cancellationToken));
 
-            var endpointProviderWriter = new EndpointProviderWriter(context, modelFileName);
-            Emit(Path.Combine(@internal, $"{clientName}EndpointProvider.g.cs"), endpointProviderWriter.Write(cancellationToken));
+            // The BDD path emits a drop-in replacement provider: same filename, namespace, and type
+            // name as the tree provider, so the downstream SDK references it by name regardless of
+            // how it was generated.
+            string endpointProviderSource = context.HasEndpointBdd
+                ? new BddProviderWriter(context, modelFileName).Write(cancellationToken)
+                : new EndpointProviderWriter(context, modelFileName).Write(cancellationToken);
+            Emit(Path.Combine(@internal, $"{clientName}EndpointProvider.g.cs"), endpointProviderSource);
 
             var endpointResolverWriter = new EndpointResolverWriter(context, modelFileName);
             Emit(Path.Combine(@internal, $"{clientName}EndpointResolver.g.cs"), endpointResolverWriter.Write(cancellationToken));
