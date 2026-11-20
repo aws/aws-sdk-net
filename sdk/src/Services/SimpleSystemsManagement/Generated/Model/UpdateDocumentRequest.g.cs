@@ -56,6 +56,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAttachments() => this.Attachments != null && (this.Attachments.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property CloudProviders. 
+        /// <para>
+        /// The cloud providers that the new document version can run against. Valid values include
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS</c> - The document runs against Amazon Web Services resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Azure</c> - The document runs against Microsoft Azure resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GCP</c> - The document runs against Google Cloud resources.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, the new version uses the cloud providers of the latest
+        /// version.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<string> CloudProviders { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the CloudProviders property is set.
+        /// </summary>
+        internal bool IsSetCloudProviders() => this.CloudProviders != null && (this.CloudProviders.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
         /// A valid JSON or YAML string.

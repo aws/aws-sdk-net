@@ -121,6 +121,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCategoryEnum() => this.CategoryEnum != null && (this.CategoryEnum.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property CloudProviders. 
+        /// <para>
+        /// This field specifies the cloud providers that the returned version of the document
+        /// can run against.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 10)]
+        public List<string> CloudProviders { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the CloudProviders property is set.
+        /// </summary>
+        internal bool IsSetCloudProviders() => this.CloudProviders != null && (this.CloudProviders.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date when the document was created.

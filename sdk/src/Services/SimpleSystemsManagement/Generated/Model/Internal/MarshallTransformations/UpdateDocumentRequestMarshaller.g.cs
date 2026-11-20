@@ -85,6 +85,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetCloudProviders())
+            {
+                context.Writer.WritePropertyName("CloudProviders");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestCloudProvidersListValue in publicRequest.CloudProviders)
+                {
+                    context.Writer.WriteStringValue(publicRequestCloudProvidersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");

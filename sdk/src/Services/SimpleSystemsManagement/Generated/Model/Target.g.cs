@@ -97,9 +97,33 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Supported JSON keys: <c>CloudConnectorId</c> (required), <c>SsmManagedNodeFilter</c>,
-    /// <c>CloudProviderRegions</c>, and, for GCP, <c>IncludesLabels</c>, <c>ExcludesLabels</c>,
-    /// <c>OsPolicyComplianceFilter</c>, and <c>OsPolicyOrchestratorId</c>.
+    /// Instead of <c>CloudConnector</c>, you can use <c>AzureCloudConnector</c> or <c>GcpCloudConnector</c>
+    /// for a cloud connector to that provider. You must specify exactly one value. A cloud
+    /// connector ID alone targets every running virtual machine (VM) in the cloud connector's
+    /// scope. In the JSON value, <c>CloudConnectorId</c> is required, and the following optional
+    /// keys narrow that scope:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For both providers: <c>SsmManagedNodeFilter</c>, which filters VMs by whether they
+    /// are Systems Manager managed nodes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Microsoft Azure: <c>CloudProviderRegions</c>, <c>AzureSubscriptions</c>, <c>AzureResourceGroups</c>,
+    /// <c>AzureTag</c>, <c>AzureVmPowerStates</c>, and <c>AzureResourceType</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For GCP: <c>Zones</c>, <c>GcpProjects</c>, <c>IncludesLabels</c>, <c>ExcludesLabels</c>,
+    /// <c>GcpInstanceStates</c>, <c>OsPolicyComplianceFilter</c>, <c>OsPolicyOrchestratorName</c>,
+    /// <c>OsPolicyOrchestratorId</c>, and <c>GcpAssetType</c>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For descriptions, valid values, and defaults of these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-cloud-connector-target.html">Cloud
+    /// Connector target reference</a> in the <i>Amazon Web Services Systems Manager User
+    /// Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>

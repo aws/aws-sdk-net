@@ -41,7 +41,29 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// You can also use Amazon Web Services-provided keys, some of which have specific allowed
     /// values. These keys and their associated values are as follows:
     /// </para>
-    ///  <dl> <dt>DocumentType</dt> <dd> <ul> <li> 
+    ///  <dl> <dt>CloudProviders</dt> <dd> 
+    /// <para>
+    /// Returns documents whose default version can run against any of the specified cloud
+    /// providers. The <c>CloudProviders</c> key supports the following values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>AWS</c> - Documents that run against Amazon Web Services resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Azure</c> - Documents that run against Microsoft Azure resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>GCP</c> - Documents that run against Google Cloud resources.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you created a document before Systems Manager supported cloud providers, the document
+    /// runs against <c>AWS</c>.
+    /// </para>
+    ///  </dd> <dt>DocumentType</dt> <dd> <ul> <li> 
     /// <para>
     ///  <c>ApplicationConfiguration</c> 
     /// </para>

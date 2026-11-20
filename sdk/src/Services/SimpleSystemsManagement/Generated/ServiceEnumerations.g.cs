@@ -949,6 +949,52 @@ namespace Amazon.SimpleSystemsManagement
     }
 
     /// <summary>
+    /// Constants used for properties of type CloudProvider.
+    /// </summary>
+    public class CloudProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for CloudProvider
+        /// </summary>
+        public static readonly CloudProvider AWS = new CloudProvider("AWS");
+
+        /// <summary>
+        /// Constant Azure for CloudProvider
+        /// </summary>
+        public static readonly CloudProvider Azure = new CloudProvider("Azure");
+
+        /// <summary>
+        /// Constant GCP for CloudProvider
+        /// </summary>
+        public static readonly CloudProvider GCP = new CloudProvider("GCP");
+
+        /// <summary>
+        /// Constructs a custom CloudProvider for a value not among the defined constants.
+        /// </summary>
+        public CloudProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudProvider FindValue(string value)
+        {
+            return FindValue<CloudProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CommandFilterKey.
     /// </summary>
     public class CommandFilterKey : ConstantClass
