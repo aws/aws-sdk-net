@@ -68,6 +68,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Supported operators: <c>EQUALS</c> 
         /// </para>
+        ///  </dd> <dt>DEVICE_TYPE</dt> <dd> 
+        /// <para>
+        /// The device type. Valid values are PHYSICAL or VIRTUAL.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported operators: <c>EQUALS</c> 
+        /// </para>
         ///  </dd> <dt>FLEET_TYPE</dt> <dd> 
         /// <para>
         /// The fleet type. Valid values are PUBLIC or PRIVATE.

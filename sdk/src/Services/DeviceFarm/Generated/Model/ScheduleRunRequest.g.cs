@@ -87,6 +87,13 @@ namespace Amazon.DeviceFarm.Model
         /// Either <b> <c>devicePoolArn</c> </b> or <b> <c>deviceSelectionConfiguration</c> </b>
         /// is required in a request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the filters select devices by attribute and do not include a <c>DEVICE_TYPE</c>
+        /// filter, only physical devices are selected. If the filters select devices by ARN,
+        /// the run uses the devices you list.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DeviceSelectionConfiguration DeviceSelectionConfiguration { get; set; }
 

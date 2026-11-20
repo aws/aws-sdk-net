@@ -91,6 +91,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// MANUFACTURER: The device manufacturer (for example, Apple).
         /// </para>
         ///  </li> <li> 

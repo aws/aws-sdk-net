@@ -102,6 +102,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Supported operators: <c>EQUALS</c> 
         /// </para>
+        ///  </dd> <dt>DEVICE_TYPE</dt> <dd> 
+        /// <para>
+        /// The device type. Valid values are PHYSICAL or VIRTUAL.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported operators: <c>EQUALS</c> 
+        /// </para>
         ///  </dd> <dt>MANUFACTURER</dt> <dd> 
         /// <para>
         /// The device manufacturer (for example, Apple).
@@ -212,6 +220,10 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// The FORM_FACTOR attribute can be set to PHONE or TABLET.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.
         /// </para>
         ///  </li> <li> 
         /// <para>

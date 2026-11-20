@@ -341,6 +341,11 @@ namespace Amazon.DeviceFarm
         public static readonly DeviceAttribute AVAILABILITY = new DeviceAttribute("AVAILABILITY");
 
         /// <summary>
+        /// Constant DEVICE_TYPE for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute DEVICE_TYPE = new DeviceAttribute("DEVICE_TYPE");
+
+        /// <summary>
         /// Constant FLEET_TYPE for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute FLEET_TYPE = new DeviceAttribute("FLEET_TYPE");
@@ -481,6 +486,11 @@ namespace Amazon.DeviceFarm
         /// Constant AVAILABILITY for DeviceFilterAttribute
         /// </summary>
         public static readonly DeviceFilterAttribute AVAILABILITY = new DeviceFilterAttribute("AVAILABILITY");
+
+        /// <summary>
+        /// Constant DEVICE_TYPE for DeviceFilterAttribute
+        /// </summary>
+        public static readonly DeviceFilterAttribute DEVICE_TYPE = new DeviceFilterAttribute("DEVICE_TYPE");
 
         /// <summary>
         /// Constant FLEET_TYPE for DeviceFilterAttribute
@@ -676,6 +686,47 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DevicePoolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeviceType.
+    /// </summary>
+    public class DeviceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PHYSICAL for DeviceType
+        /// </summary>
+        public static readonly DeviceType PHYSICAL = new DeviceType("PHYSICAL");
+
+        /// <summary>
+        /// Constant VIRTUAL for DeviceType
+        /// </summary>
+        public static readonly DeviceType VIRTUAL = new DeviceType("VIRTUAL");
+
+        /// <summary>
+        /// Constructs a custom DeviceType for a value not among the defined constants.
+        /// </summary>
+        public DeviceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceType FindValue(string value)
+        {
+            return FindValue<DeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceType(string value)
         {
             return FindValue(value);
         }

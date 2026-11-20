@@ -82,6 +82,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// MANUFACTURER: The device manufacturer (for example, Apple).
         /// </para>
         ///  </li> <li> 
@@ -171,9 +175,19 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul> <note> 
+        /// <para>
+        /// If the filters select devices by attribute and do not include a <c>DEVICE_TYPE</c>
+        /// filter, only physical devices are selected. If the filters select devices by ARN,
+        /// the run uses the devices you list.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

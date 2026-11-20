@@ -63,6 +63,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// DEVICE_TYPE (for example, physical or virtual)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// FORM_FACTOR (for example, phone or tablet)
         /// </para>
         ///  </li> <li> 

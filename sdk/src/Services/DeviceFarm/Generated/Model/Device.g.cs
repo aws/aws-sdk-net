@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents a device type that an app is tested against.
+    /// Represents a device that an app is tested against.
     /// </summary>
     public partial class Device
     {
@@ -347,5 +347,37 @@ namespace Amazon.DeviceFarm.Model
         /// Checks to see if the Resolution property is set.
         /// </summary>
         internal bool IsSetResolution() => this.Resolution != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The device type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allowed values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PHYSICAL: A physical device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VIRTUAL: An emulator or simulator hosted by Device Farm.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For iOS, a virtual device requires a simulator build of your app, and a physical device
+        /// requires a device build. If the app does not match the device type, the device is
+        /// reported as incompatible with a <c>DEVICE_TYPE</c> incompatibility message.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DeviceType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }
