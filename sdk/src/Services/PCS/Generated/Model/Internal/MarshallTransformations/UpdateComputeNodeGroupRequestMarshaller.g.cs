@@ -110,6 +110,16 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("iamInstanceProfileArn");
                 context.Writer.WriteStringValue(publicRequest.IamInstanceProfileArn);
             }
+            if (publicRequest.IsSetInstanceHealthChecks())
+            {
+                context.Writer.WritePropertyName("instanceHealthChecks");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateInstanceHealthChecksRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InstanceHealthChecks, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetLaunchTemplateMode())
             {
                 context.Writer.WritePropertyName("launchTemplateMode");

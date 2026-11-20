@@ -80,6 +80,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("instanceHealthChecks", targetDepth, ref reader))
+                {
+                    var unmarshaller = InstanceHealthChecksUnmarshaller.Instance;
+                    unmarshalledObject.InstanceHealthChecks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("nodeID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

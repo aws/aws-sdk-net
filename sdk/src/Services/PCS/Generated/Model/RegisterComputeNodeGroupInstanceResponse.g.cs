@@ -94,6 +94,21 @@ namespace Amazon.PCS.Model
         internal bool IsSetEndpoints() => this.Endpoints != null && (this.Endpoints.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property InstanceHealthChecks. 
+        /// <para>
+        /// The instance health check settings configured for the compute node group that the
+        /// compute node registered into. The compute node uses these settings to configure health
+        /// monitoring and deep health checks.
+        /// </para>
+        /// </summary>
+        public InstanceHealthChecks InstanceHealthChecks { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceHealthChecks property is set.
+        /// </summary>
+        internal bool IsSetInstanceHealthChecks() => this.InstanceHealthChecks != null;
+
+        /// <summary>
         /// Gets and sets the property NodeID. 
         /// <para>
         /// The scheduler node ID for this instance.

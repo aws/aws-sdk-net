@@ -178,6 +178,21 @@ namespace Amazon.PCS.Model
         internal bool IsSetInstanceConfigs() => this.InstanceConfigs != null && (this.InstanceConfigs.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property InstanceHealthChecks. 
+        /// <para>
+        /// The instance health check settings of the compute node group. Instance health checks
+        /// detect faults on instances in the compute node group and respond with the repair action
+        /// that you choose.
+        /// </para>
+        /// </summary>
+        public InstanceHealthChecks InstanceHealthChecks { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceHealthChecks property is set.
+        /// </summary>
+        internal bool IsSetInstanceHealthChecks() => this.InstanceHealthChecks != null;
+
+        /// <summary>
         /// Gets and sets the property LaunchTemplateMode. 
         /// <para>
         /// Indicates whether the compute node group uses a custom launch template or a launch

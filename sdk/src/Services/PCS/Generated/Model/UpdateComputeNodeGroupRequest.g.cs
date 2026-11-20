@@ -140,6 +140,33 @@ namespace Amazon.PCS.Model
         internal bool IsSetIamInstanceProfileArn() => this.IamInstanceProfileArn != null;
 
         /// <summary>
+        /// Gets and sets the property InstanceHealthChecks. 
+        /// <para>
+        /// The instance health check settings for the compute node group. Instance health checks
+        /// detect faults on instances in the compute node group and respond with the repair action
+        /// that you choose. You can configure health monitoring, deep health checks, or both.
+        /// You can't specify an empty object (<c>{}</c>). Instance health checks require Slurm
+        /// version 26.05 or later.
+        /// </para>
+        ///  
+        /// <para>
+        /// The settings that you specify replace all of the current instance health check settings
+        /// of the compute node group. Include every setting that you want to keep. If you omit
+        /// this member, the current settings don't change. If you omit <c>healthMonitoring</c>
+        /// or <c>deepHealthChecks</c>, that check is turned off. You can also turn off a check:
+        /// set <c>healthMonitoring.mode</c> or <c>deepHealthChecks.onStart.profile</c> to <c>NONE</c>
+        /// and omit its <c>repairAction</c>. When you change these settings, PCS drains and replaces
+        /// the instances in the compute node group.
+        /// </para>
+        /// </summary>
+        public UpdateInstanceHealthChecksRequest InstanceHealthChecks { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceHealthChecks property is set.
+        /// </summary>
+        internal bool IsSetInstanceHealthChecks() => this.InstanceHealthChecks != null;
+
+        /// <summary>
         /// Gets and sets the property LaunchTemplateMode. 
         /// <para>
         /// Specifies whether the compute node group uses a custom launch template or a launch

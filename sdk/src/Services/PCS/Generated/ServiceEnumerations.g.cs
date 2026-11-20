@@ -230,6 +230,108 @@ namespace Amazon.PCS
     }
 
     /// <summary>
+    /// Constants used for properties of type DeepHealthCheckOnStartProfile.
+    /// </summary>
+    public class DeepHealthCheckOnStartProfile : ConstantClass
+    {
+        /// <summary>
+        /// Constant LONG for DeepHealthCheckOnStartProfile
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartProfile LONG = new DeepHealthCheckOnStartProfile("LONG");
+
+        /// <summary>
+        /// Constant MEDIUM for DeepHealthCheckOnStartProfile
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartProfile MEDIUM = new DeepHealthCheckOnStartProfile("MEDIUM");
+
+        /// <summary>
+        /// Constant NONE for DeepHealthCheckOnStartProfile
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartProfile NONE = new DeepHealthCheckOnStartProfile("NONE");
+
+        /// <summary>
+        /// Constant QUICK for DeepHealthCheckOnStartProfile
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartProfile QUICK = new DeepHealthCheckOnStartProfile("QUICK");
+
+        /// <summary>
+        /// Constructs a custom DeepHealthCheckOnStartProfile for a value not among the defined constants.
+        /// </summary>
+        public DeepHealthCheckOnStartProfile(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeepHealthCheckOnStartProfile FindValue(string value)
+        {
+            return FindValue<DeepHealthCheckOnStartProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeepHealthCheckOnStartProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeepHealthCheckOnStartRepairAction.
+    /// </summary>
+    public class DeepHealthCheckOnStartRepairAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for DeepHealthCheckOnStartRepairAction
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartRepairAction AUTO = new DeepHealthCheckOnStartRepairAction("AUTO");
+
+        /// <summary>
+        /// Constant ISOLATE for DeepHealthCheckOnStartRepairAction
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartRepairAction ISOLATE = new DeepHealthCheckOnStartRepairAction("ISOLATE");
+
+        /// <summary>
+        /// Constant NONE for DeepHealthCheckOnStartRepairAction
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartRepairAction NONE = new DeepHealthCheckOnStartRepairAction("NONE");
+
+        /// <summary>
+        /// Constant REPLACE for DeepHealthCheckOnStartRepairAction
+        /// </summary>
+        public static readonly DeepHealthCheckOnStartRepairAction REPLACE = new DeepHealthCheckOnStartRepairAction("REPLACE");
+
+        /// <summary>
+        /// Constructs a custom DeepHealthCheckOnStartRepairAction for a value not among the defined constants.
+        /// </summary>
+        public DeepHealthCheckOnStartRepairAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeepHealthCheckOnStartRepairAction FindValue(string value)
+        {
+            return FindValue<DeepHealthCheckOnStartRepairAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeepHealthCheckOnStartRepairAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EndpointType.
     /// </summary>
     public class EndpointType : ConstantClass
@@ -311,6 +413,98 @@ namespace Amazon.PCS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HealthMonitoringMode.
+    /// </summary>
+    public class HealthMonitoringMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant NONE for HealthMonitoringMode
+        /// </summary>
+        public static readonly HealthMonitoringMode NONE = new HealthMonitoringMode("NONE");
+
+        /// <summary>
+        /// Constant STANDARD for HealthMonitoringMode
+        /// </summary>
+        public static readonly HealthMonitoringMode STANDARD = new HealthMonitoringMode("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom HealthMonitoringMode for a value not among the defined constants.
+        /// </summary>
+        public HealthMonitoringMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthMonitoringMode FindValue(string value)
+        {
+            return FindValue<HealthMonitoringMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthMonitoringMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HealthMonitoringRepairAction.
+    /// </summary>
+    public class HealthMonitoringRepairAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for HealthMonitoringRepairAction
+        /// </summary>
+        public static readonly HealthMonitoringRepairAction AUTO = new HealthMonitoringRepairAction("AUTO");
+
+        /// <summary>
+        /// Constant ISOLATE for HealthMonitoringRepairAction
+        /// </summary>
+        public static readonly HealthMonitoringRepairAction ISOLATE = new HealthMonitoringRepairAction("ISOLATE");
+
+        /// <summary>
+        /// Constant NONE for HealthMonitoringRepairAction
+        /// </summary>
+        public static readonly HealthMonitoringRepairAction NONE = new HealthMonitoringRepairAction("NONE");
+
+        /// <summary>
+        /// Constant REPLACE for HealthMonitoringRepairAction
+        /// </summary>
+        public static readonly HealthMonitoringRepairAction REPLACE = new HealthMonitoringRepairAction("REPLACE");
+
+        /// <summary>
+        /// Constructs a custom HealthMonitoringRepairAction for a value not among the defined constants.
+        /// </summary>
+        public HealthMonitoringRepairAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthMonitoringRepairAction FindValue(string value)
+        {
+            return FindValue<HealthMonitoringRepairAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthMonitoringRepairAction(string value)
         {
             return FindValue(value);
         }
