@@ -113,5 +113,15 @@ namespace Amazon.MediaLive.Model
         /// Checks to see if the TeletextSourceSettings property is set.
         /// </summary>
         internal bool IsSetTeletextSourceSettings() => this.TeletextSourceSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property WebvttSourceSettings.
+        /// </summary>
+        public WebvttSourceSettings WebvttSourceSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WebvttSourceSettings property is set.
+        /// </summary>
+        internal bool IsSetWebvttSourceSettings() => this.WebvttSourceSettings != null;
     }
 }

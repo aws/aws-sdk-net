@@ -108,6 +108,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("webvttSourceSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = WebvttSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WebvttSourceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

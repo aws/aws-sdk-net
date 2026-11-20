@@ -45,6 +45,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCaptionServiceChannel())
+            {
+                context.Writer.WritePropertyName("captionServiceChannel");
+                context.Writer.WriteNumberValue(requestObject.CaptionServiceChannel.Value);
+            }
+
+            if (requestObject.IsSetEmbeddedMode())
+            {
+                context.Writer.WritePropertyName("embeddedMode");
+                context.Writer.WriteStringValue(requestObject.EmbeddedMode);
+            }
+
             if (requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");

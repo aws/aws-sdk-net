@@ -35,6 +35,35 @@ namespace Amazon.MediaLive.Model
     public partial class EmbeddedDestinationSettings
     {
         /// <summary>
+        /// Gets and sets the property CaptionServiceChannel. CC Channel / Service number for
+        /// 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number
+        /// (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext,
+        /// smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only,
+        /// embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+        /// </summary>
+        public int? CaptionServiceChannel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CaptionServiceChannel property is set.
+        /// </summary>
+        internal bool IsSetCaptionServiceChannel() => this.CaptionServiceChannel.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property EmbeddedMode. Controls what the encoder generates when
+        /// in encode mode (non-embedded source → embedded destination). Ignored in passthrough
+        /// mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608
+        /// CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service
+        /// blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708
+        /// service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+        /// </summary>
+        public EmbeddedModeType EmbeddedMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EmbeddedMode property is set.
+        /// </summary>
+        internal bool IsSetEmbeddedMode() => this.EmbeddedMode != null;
+
+        /// <summary>
         /// Gets and sets the property Position. Specifies the position of the output captions.
         /// Applies only when styleControl is set to manual.
         /// </summary>

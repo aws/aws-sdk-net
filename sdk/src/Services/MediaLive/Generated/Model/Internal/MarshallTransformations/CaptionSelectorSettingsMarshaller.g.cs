@@ -132,6 +132,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetWebvttSourceSettings())
+            {
+                context.Writer.WritePropertyName("webvttSourceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WebvttSourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebvttSourceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

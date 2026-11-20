@@ -5316,6 +5316,52 @@ namespace Amazon.MediaLive
     }
 
     /// <summary>
+    /// Constants used for properties of type EmbeddedModeType.
+    /// </summary>
+    public class EmbeddedModeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EMBEDDED_608_AND_708 for EmbeddedModeType
+        /// </summary>
+        public static readonly EmbeddedModeType EMBEDDED_608_AND_708 = new EmbeddedModeType("EMBEDDED_608_AND_708");
+
+        /// <summary>
+        /// Constant EMBEDDED_608_ONLY for EmbeddedModeType
+        /// </summary>
+        public static readonly EmbeddedModeType EMBEDDED_608_ONLY = new EmbeddedModeType("EMBEDDED_608_ONLY");
+
+        /// <summary>
+        /// Constant EMBEDDED_708_ONLY for EmbeddedModeType
+        /// </summary>
+        public static readonly EmbeddedModeType EMBEDDED_708_ONLY = new EmbeddedModeType("EMBEDDED_708_ONLY");
+
+        /// <summary>
+        /// Constructs a custom EmbeddedModeType for a value not among the defined constants.
+        /// </summary>
+        public EmbeddedModeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddedModeType FindValue(string value)
+        {
+            return FindValue<EmbeddedModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddedModeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EmbeddedScte20Detection.
     /// </summary>
     public class EmbeddedScte20Detection : ConstantClass
