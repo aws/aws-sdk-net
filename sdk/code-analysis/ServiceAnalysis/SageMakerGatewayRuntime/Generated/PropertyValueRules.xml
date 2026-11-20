@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayRequest.Body</property>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayRequest.ContentType</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayRequest.GatewayId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayResponse.Body</property>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayWithResponseStreamRequest.Body</property>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayWithResponseStreamRequest.ContentType</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerGatewayRuntime.Model.InvokeGlobalInferenceGatewayWithResponseStreamRequest.GatewayId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+</property-value-rules>
