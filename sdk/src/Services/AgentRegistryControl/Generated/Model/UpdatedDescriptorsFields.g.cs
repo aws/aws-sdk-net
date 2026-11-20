@@ -112,5 +112,18 @@ namespace Amazon.AgentRegistryControl.Model
         /// Checks to see if the McpServer property is set.
         /// </summary>
         internal bool IsSetMcpServer() => this.McpServer != null;
+
+        /// <summary>
+        /// Gets and sets the property SignatureAgentCard. 
+        /// <para>
+        /// The patch for the signature agent card descriptor.
+        /// </para>
+        /// </summary>
+        public UpdatedSignatureAgentCardDescriptor SignatureAgentCard { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SignatureAgentCard property is set.
+        /// </summary>
+        internal bool IsSetSignatureAgentCard() => this.SignatureAgentCard != null;
     }
 }

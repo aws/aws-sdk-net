@@ -33,6 +33,22 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListPublisherAssociations operation
+        /// </summary>
+        public IListPublisherAssociationsPaginator ListPublisherAssociations(ListPublisherAssociationsRequest request)
+        {
+            return new ListPublisherAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPublishers operation
+        /// </summary>
+        public IListPublishersPaginator ListPublishers(ListPublishersRequest request)
+        {
+            return new ListPublishersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRegistries operation
         /// </summary>
         public IListRegistriesPaginator ListRegistries(ListRegistriesRequest request)

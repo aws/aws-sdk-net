@@ -110,6 +110,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+
+            if (requestObject.IsSetSignatureAgentCard())
+            {
+                context.Writer.WritePropertyName("signatureAgentCard");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SignatureAgentCardDescriptorMarshaller.Instance;
+                marshaller.Marshall(requestObject.SignatureAgentCard, context);
+
+                context.Writer.WriteEndObject();
+            }
         }
 
         /// <summary>

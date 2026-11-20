@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherRequest.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherRequest.RecordArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherRequest.Subdomain</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherResponse.PublicIdentifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^urn:air:([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}(:[a-z0-9._-]+)*:[a-zA-Z0-9._/-]+([#;+$@][a-z][a-z0-9-]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherResponse.Publisher</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherResponse.RecordArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.AssociatePublisherResponse.StatusReason</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.CreatePublisherRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.CreatePublisherResponse.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.CreatePublisherResponse.StatusReason</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
@@ -64,6 +128,12 @@
     <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.DeletePublisherRequest.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.DeleteRegistryRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
@@ -80,6 +150,29 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.DisassociatePublisherRequest.RecordArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.GetPublisherRequest.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.GetPublisherResponse.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.GetPublisherResponse.StatusReason</property>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRequest.RegistryId</property>
@@ -169,6 +262,46 @@
     <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublisherAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublisherAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublisherAssociationsRequest.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublisherAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublishersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublishersRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ListPublishersResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistriesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -252,6 +385,17 @@
     <property>Amazon.AgentRegistryControl.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.UpdatePublisherAssociationApprovalStatusRequest.ApprovalStatusReason</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.UpdatePublisherAssociationApprovalStatusRequest.RecordArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRequest.Name</property>
@@ -394,6 +538,23 @@
     <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ValidatePublisherRequest.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ValidatePublisherResponse.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ValidatePublisherResponse.StatusReason</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.A2aAgentCardDescriptor.Data</property>
     <min>1</min>
     <max>102400</max>
@@ -458,6 +619,16 @@
     <pattern>^(https|s3)://.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.DomainChallenge.RecordName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.DomainChallenge.RecordValue</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.EncryptionConfiguration.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
@@ -473,6 +644,12 @@
     <property>Amazon.AgentRegistryControl.Model.GitHubSynchronizedSource.Url</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.Identifier.Domain</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(?=.{1,253}$)([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ManagedVpcResource.RoutingDomain</property>
@@ -532,6 +709,43 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherAssociation.PublicIdentifier</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^urn:air:([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}(:[a-z0-9._-]+)*:[a-zA-Z0-9._/-]+([#;+$@][a-z][a-z0-9-]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherAssociation.Publisher</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherAssociation.RecordArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherAssociation.StatusReason</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherSummary.AssociationCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherSummary.PendingAssociationApprovalCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.PublisherSummary.PublisherArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):[a-z0-9-]+::[0-9]{12}:[a-zA-Z0-9._/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RecordTypeSchemaOverride.Schema</property>
@@ -680,6 +894,16 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.SignatureAgentCardDescriptor.Data</property>
+    <min>1</min>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.SignatureAgentCardDescriptor.DataSchemaVersion</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdatedDataSchemaVersion.OptionalValue</property>

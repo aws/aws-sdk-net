@@ -94,6 +94,13 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.McpServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("signatureAgentCard", targetDepth, ref reader))
+                {
+                    var unmarshaller = SignatureAgentCardDescriptorUnmarshaller.Instance;
+                    unmarshalledObject.SignatureAgentCard = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

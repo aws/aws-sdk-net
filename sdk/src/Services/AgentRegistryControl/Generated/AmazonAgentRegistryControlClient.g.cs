@@ -253,6 +253,214 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Associate a registry record with a publisher and assign the record a public identifier
+        /// under the publisher's domain. The registry record must be APPROVED and the publisher
+        /// must be ACTIVE. A registry record can have only one publisher association. The new
+        /// association starts in PENDING_APPROVAL until a curator approves or rejects it. A ConflictException
+        /// (HTTP 409) means the publisher is not ACTIVE yet, the registry record already has
+        /// an association, or another registry record already holds the public identifier. To
+        /// retry safely, repeat the request with the same clientToken; a retry returns the original
+        /// association. If the publisher has reached its association quota, the request fails
+        /// with ServiceQuotaExceededException (HTTP 402). Remove an unused association or request
+        /// a quota increase.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePublisher service method.</param>
+        /// <returns>The response from the AssociatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.DependencyException">
+        /// This exception is thrown on a database (or other dependency) error. Modeled as a server
+        /// error so SDKs retry it (5xx) and it feeds server-error alarming. Marked @retryable
+        /// because it represents a transient downstream failure that is safe to retry (matches
+        /// the forwarder's own retry-on-DependencyException behavior).
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AssociatePublisher">REST API Reference for AssociatePublisher Operation</seealso>
+        public virtual AssociatePublisherResponse AssociatePublisher(AssociatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePublisherResponse>(request, options);
+        }
+#else
+        internal virtual AssociatePublisherResponse AssociatePublisher(AssociatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Associate a registry record with a publisher and assign the record a public identifier
+        /// under the publisher's domain. The registry record must be APPROVED and the publisher
+        /// must be ACTIVE. A registry record can have only one publisher association. The new
+        /// association starts in PENDING_APPROVAL until a curator approves or rejects it. A ConflictException
+        /// (HTTP 409) means the publisher is not ACTIVE yet, the registry record already has
+        /// an association, or another registry record already holds the public identifier. To
+        /// retry safely, repeat the request with the same clientToken; a retry returns the original
+        /// association. If the publisher has reached its association quota, the request fails
+        /// with ServiceQuotaExceededException (HTTP 402). Remove an unused association or request
+        /// a quota increase.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.DependencyException">
+        /// This exception is thrown on a database (or other dependency) error. Modeled as a server
+        /// error so SDKs retry it (5xx) and it feeds server-error alarming. Marked @retryable
+        /// because it represents a transient downstream failure that is safe to retry (matches
+        /// the forwarder's own retry-on-DependencyException behavior).
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/AssociatePublisher">REST API Reference for AssociatePublisher Operation</seealso>
+        public virtual Task<AssociatePublisherResponse> AssociatePublisherAsync(AssociatePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociatePublisherResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Create a publisher for a domain you control. The publisher starts in ACTION_REQUIRED,
+        /// and the response includes a domainChallenge. To verify the domain, create a DNS TXT
+        /// record with the challenge's recordName and recordValue. When the registry finds the
+        /// record, the publisher becomes ACTIVE and you can associate registry records with it.
+        /// Your account can have one publisher per domain. Creating a second publisher for the
+        /// same domain fails with ConflictException unless the request repeats the original clientToken,
+        /// which returns the existing publisher. The request also fails with ConflictException
+        /// when another account has already verified the domain. If your account has reached
+        /// its Publisher quota, the request fails with ServiceQuotaExceededException (HTTP 402).
+        /// Delete an unused Publisher or request a quota increase.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublisher service method.</param>
+        /// <returns>The response from the CreatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/CreatePublisher">REST API Reference for CreatePublisher Operation</seealso>
+        public virtual CreatePublisherResponse CreatePublisher(CreatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublisherResponse>(request, options);
+        }
+#else
+        internal virtual CreatePublisherResponse CreatePublisher(CreatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Create a publisher for a domain you control. The publisher starts in ACTION_REQUIRED,
+        /// and the response includes a domainChallenge. To verify the domain, create a DNS TXT
+        /// record with the challenge's recordName and recordValue. When the registry finds the
+        /// record, the publisher becomes ACTIVE and you can associate registry records with it.
+        /// Your account can have one publisher per domain. Creating a second publisher for the
+        /// same domain fails with ConflictException unless the request repeats the original clientToken,
+        /// which returns the existing publisher. The request also fails with ConflictException
+        /// when another account has already verified the domain. If your account has reached
+        /// its Publisher quota, the request fails with ServiceQuotaExceededException (HTTP 402).
+        /// Delete an unused Publisher or request a quota increase.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/CreatePublisher">REST API Reference for CreatePublisher Operation</seealso>
+        public virtual Task<CreatePublisherResponse> CreatePublisherAsync(CreatePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePublisherResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a new registry, a catalog that organizes registry records and defines their
         /// discovery authorization and record approval behavior. Creation is asynchronous: the
         /// registry begins in the CREATING status and becomes usable once it reaches READY.
@@ -435,6 +643,98 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Delete a publisher. A successful call returns an empty response. You can't delete
+        /// a publisher that has registry record associations; disassociate every registry record
+        /// from it first. The request fails with ConflictException while the publisher has associations
+        /// or another delete is in progress. Association removals can take a few seconds to be
+        /// reflected, so a delete that follows a disassociation can briefly fail with ConflictException;
+        /// retry after a short wait. If the publisher ARN names your account and the publisher
+        /// doesn't exist, the request fails with ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublisher service method.</param>
+        /// <returns>The response from the DeletePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DeletePublisher">REST API Reference for DeletePublisher Operation</seealso>
+        public virtual DeletePublisherResponse DeletePublisher(DeletePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublisherResponse>(request, options);
+        }
+#else
+        internal virtual DeletePublisherResponse DeletePublisher(DeletePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Delete a publisher. A successful call returns an empty response. You can't delete
+        /// a publisher that has registry record associations; disassociate every registry record
+        /// from it first. The request fails with ConflictException while the publisher has associations
+        /// or another delete is in progress. Association removals can take a few seconds to be
+        /// reflected, so a delete that follows a disassociation can briefly fail with ConflictException;
+        /// retry after a short wait. If the publisher ARN names your account and the publisher
+        /// doesn't exist, the request fails with ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DeletePublisher">REST API Reference for DeletePublisher Operation</seealso>
+        public virtual Task<DeletePublisherResponse> DeletePublisherAsync(DeletePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePublisherResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a registry. Deletion is asynchronous: the registry transitions to the DELETING
         /// status and is removed along with its registry records.
         /// </summary>
@@ -597,6 +897,158 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Remove a registry record's publisher association and release its public identifier.
+        /// A successful call returns an empty response. Disassociating a registry record that
+        /// has no association succeeds. If another account created the association, the request
+        /// fails with AccessDeniedException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePublisher service method.</param>
+        /// <returns>The response from the DisassociatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DisassociatePublisher">REST API Reference for DisassociatePublisher Operation</seealso>
+        public virtual DisassociatePublisherResponse DisassociatePublisher(DisassociatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePublisherResponse>(request, options);
+        }
+#else
+        internal virtual DisassociatePublisherResponse DisassociatePublisher(DisassociatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Remove a registry record's publisher association and release its public identifier.
+        /// A successful call returns an empty response. Disassociating a registry record that
+        /// has no association succeeds. If another account created the association, the request
+        /// fails with AccessDeniedException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/DisassociatePublisher">REST API Reference for DisassociatePublisher Operation</seealso>
+        public virtual Task<DisassociatePublisherResponse> DisassociatePublisherAsync(DisassociatePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociatePublisherResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get a publisher, including its verification status and the DNS challenge for its domain.
+        /// If the publisher ARN names your account and the publisher doesn't exist, the request
+        /// fails with ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublisher service method.</param>
+        /// <returns>The response from the GetPublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/GetPublisher">REST API Reference for GetPublisher Operation</seealso>
+        public virtual GetPublisherResponse GetPublisher(GetPublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublisherResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublisherResponse>(request, options);
+        }
+#else
+        internal virtual GetPublisherResponse GetPublisher(GetPublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublisherResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Get a publisher, including its verification status and the DNS challenge for its domain.
+        /// If the publisher ARN names your account and the publisher doesn't exist, the request
+        /// fails with ResourceNotFoundException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/GetPublisher">REST API Reference for GetPublisher Operation</seealso>
+        public virtual Task<GetPublisherResponse> GetPublisherAsync(GetPublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPublisherResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets a registry by identifier (ARN or ID)
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
@@ -753,6 +1205,150 @@ namespace Amazon.AgentRegistryControl
             options.ResponseUnmarshaller = GetRegistryRecordResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRegistryRecordResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the registry record associations your account created. Pass publisherArn to list
+        /// only the associations for that publisher; omit it to list associations across all
+        /// publishers. Results are eventually consistent, so an association you just created
+        /// or removed can take a few seconds to appear in or disappear from the list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublisherAssociations service method.</param>
+        /// <returns>The response from the ListPublisherAssociations service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublisherAssociations">REST API Reference for ListPublisherAssociations Operation</seealso>
+        public virtual ListPublisherAssociationsResponse ListPublisherAssociations(ListPublisherAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublisherAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublisherAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublisherAssociationsResponse>(request, options);
+        }
+#else
+        internal virtual ListPublisherAssociationsResponse ListPublisherAssociations(ListPublisherAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublisherAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublisherAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublisherAssociationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// List the registry record associations your account created. Pass publisherArn to list
+        /// only the associations for that publisher; omit it to list associations across all
+        /// publishers. Results are eventually consistent, so an association you just created
+        /// or removed can take a few seconds to appear in or disappear from the list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublisherAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPublisherAssociations service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublisherAssociations">REST API Reference for ListPublisherAssociations Operation</seealso>
+        public virtual Task<ListPublisherAssociationsResponse> ListPublisherAssociationsAsync(ListPublisherAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublisherAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublisherAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPublisherAssociationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List the publishers your account owns, followed by the ACTIVE publishers shared with
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublishers service method.</param>
+        /// <returns>The response from the ListPublishers service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublishers">REST API Reference for ListPublishers Operation</seealso>
+        public virtual ListPublishersResponse ListPublishers(ListPublishersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublishersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublishersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublishersResponse>(request, options);
+        }
+#else
+        internal virtual ListPublishersResponse ListPublishers(ListPublishersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublishersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublishersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublishersResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// List the publishers your account owns, followed by the ACTIVE publishers shared with
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublishers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPublishers service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ListPublishers">REST API Reference for ListPublishers Operation</seealso>
+        public virtual Task<ListPublishersResponse> ListPublishersAsync(ListPublishersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPublishersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPublishersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPublishersResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -1233,6 +1829,94 @@ namespace Amazon.AgentRegistryControl
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Record the curator's decision (APPROVED or REJECTED) on a registry record's publisher
+        /// association. A successful call returns an empty response. Repeating the decision the
+        /// association already holds changes nothing; the same approvalStatus with a different
+        /// approvalStatusReason updates the reason. If the caller has no publisher association
+        /// for the registry record, the request fails with AccessDeniedException. A ConflictException
+        /// (HTTP 409) means the association is not in a state that accepts the decision (e.g.
+        /// not PENDING_APPROVAL/APPROVED/REJECTED) or it changed while the request was being
+        /// applied; read it again before deciding whether to resubmit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublisherAssociationApprovalStatus service method.</param>
+        /// <returns>The response from the UpdatePublisherAssociationApprovalStatus service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/UpdatePublisherAssociationApprovalStatus">REST API Reference for UpdatePublisherAssociationApprovalStatus Operation</seealso>
+        public virtual UpdatePublisherAssociationApprovalStatusResponse UpdatePublisherAssociationApprovalStatus(UpdatePublisherAssociationApprovalStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePublisherAssociationApprovalStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublisherAssociationApprovalStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePublisherAssociationApprovalStatusResponse>(request, options);
+        }
+#else
+        internal virtual UpdatePublisherAssociationApprovalStatusResponse UpdatePublisherAssociationApprovalStatus(UpdatePublisherAssociationApprovalStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePublisherAssociationApprovalStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublisherAssociationApprovalStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePublisherAssociationApprovalStatusResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Record the curator's decision (APPROVED or REJECTED) on a registry record's publisher
+        /// association. A successful call returns an empty response. Repeating the decision the
+        /// association already holds changes nothing; the same approvalStatus with a different
+        /// approvalStatusReason updates the reason. If the caller has no publisher association
+        /// for the registry record, the request fails with AccessDeniedException. A ConflictException
+        /// (HTTP 409) means the association is not in a state that accepts the decision (e.g.
+        /// not PENDING_APPROVAL/APPROVED/REJECTED) or it changed while the request was being
+        /// applied; read it again before deciding whether to resubmit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublisherAssociationApprovalStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdatePublisherAssociationApprovalStatus service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/UpdatePublisherAssociationApprovalStatus">REST API Reference for UpdatePublisherAssociationApprovalStatus Operation</seealso>
+        public virtual Task<UpdatePublisherAssociationApprovalStatusResponse> UpdatePublisherAssociationApprovalStatusAsync(UpdatePublisherAssociationApprovalStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePublisherAssociationApprovalStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePublisherAssociationApprovalStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePublisherAssociationApprovalStatusResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates an existing registry. This operation uses PATCH semantics: specify only the
         /// fields you want to change, and omit the rest to leave them unchanged. Updates are
         /// applied asynchronously and the registry transitions to the UPDATING status while they
@@ -1493,6 +2177,88 @@ namespace Amazon.AgentRegistryControl
             options.ResponseUnmarshaller = UpdateRegistryRecordStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRegistryRecordStatusResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Restart domain verification for a publisher in FAILED or SUSPENDED. The publisher
+        /// returns to ACTION_REQUIRED with a new domainChallenge, which the response includes.
+        /// Update the DNS TXT record with the new recordValue; the previous value no longer verifies
+        /// the domain. The request fails with ConflictException when the publisher is ACTIVE,
+        /// verification is already in progress (ACTION_REQUIRED), or the publisher is being deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePublisher service method.</param>
+        /// <returns>The response from the ValidatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ValidatePublisher">REST API Reference for ValidatePublisher Operation</seealso>
+        public virtual ValidatePublisherResponse ValidatePublisher(ValidatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<ValidatePublisherResponse>(request, options);
+        }
+#else
+        internal virtual ValidatePublisherResponse ValidatePublisher(ValidatePublisherRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePublisherResponseUnmarshaller.Instance;
+
+            return Invoke<ValidatePublisherResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Restart domain verification for a publisher in FAILED or SUSPENDED. The publisher
+        /// returns to ACTION_REQUIRED with a new domainChallenge, which the response includes.
+        /// Update the DNS TXT record with the new recordValue; the previous value no longer verifies
+        /// the domain. The request fails with ConflictException when the publisher is ACTIVE,
+        /// verification is already in progress (ACTION_REQUIRED), or the publisher is being deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePublisher service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ValidatePublisher service method, as returned by AgentRegistryControl.</returns>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.AccessDeniedException">
+        /// The caller is not authorized to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.InternalServerException">
+        /// The request failed due to an unexpected internal error; the caller may retry.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ThrottlingException">
+        /// The request was denied due to request throttling; the caller may retry after a delay.
+        /// </exception>
+        /// <exception cref="Amazon.AgentRegistryControl.Model.ValidationException">
+        /// The request failed validation of one or more input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/ValidatePublisher">REST API Reference for ValidatePublisher Operation</seealso>
+        public virtual Task<ValidatePublisherResponse> ValidatePublisherAsync(ValidatePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidatePublisherRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidatePublisherResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidatePublisherResponse>(request, options, cancellationToken);
         }
 
         /// <summary>

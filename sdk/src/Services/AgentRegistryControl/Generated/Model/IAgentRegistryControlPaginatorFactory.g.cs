@@ -33,6 +33,18 @@ namespace Amazon.AgentRegistryControl.Model
     public interface IAgentRegistryControlPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListPublisherAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPublisherAssociationsPaginator ListPublisherAssociations(ListPublisherAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPublishers operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPublishersPaginator ListPublishers(ListPublishersRequest request);
+
+        /// <summary>
         /// Paginator for ListRegistries operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

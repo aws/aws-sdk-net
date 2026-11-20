@@ -145,6 +145,98 @@ namespace Amazon.AgentRegistryControl
     }
 
     /// <summary>
+    /// Constants used for properties of type AssociationApprovalStatus.
+    /// </summary>
+    public class AssociationApprovalStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for AssociationApprovalStatus
+        /// </summary>
+        public static readonly AssociationApprovalStatus APPROVED = new AssociationApprovalStatus("APPROVED");
+
+        /// <summary>
+        /// Constant REJECTED for AssociationApprovalStatus
+        /// </summary>
+        public static readonly AssociationApprovalStatus REJECTED = new AssociationApprovalStatus("REJECTED");
+
+        /// <summary>
+        /// Constructs a custom AssociationApprovalStatus for a value not among the defined constants.
+        /// </summary>
+        public AssociationApprovalStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationApprovalStatus FindValue(string value)
+        {
+            return FindValue<AssociationApprovalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationApprovalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AssociationStatus.
+    /// </summary>
+    public class AssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPROVED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus APPROVED = new AssociationStatus("APPROVED");
+
+        /// <summary>
+        /// Constant PENDING_APPROVAL for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus PENDING_APPROVAL = new AssociationStatus("PENDING_APPROVAL");
+
+        /// <summary>
+        /// Constant REJECTED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus REJECTED = new AssociationStatus("REJECTED");
+
+        /// <summary>
+        /// Constant SUSPENDED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus SUSPENDED = new AssociationStatus("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom AssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public AssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatus FindValue(string value)
+        {
+            return FindValue<AssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AutoApprovalRule.
     /// </summary>
     public class AutoApprovalRule : ConstantClass
@@ -252,6 +344,127 @@ namespace Amazon.AgentRegistryControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoDetectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BotCategory.
+    /// </summary>
+    public class BotCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant Advertising for BotCategory
+        /// </summary>
+        public static readonly BotCategory Advertising = new BotCategory("advertising");
+
+        /// <summary>
+        /// Constant Ai_assistant for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_assistant = new BotCategory("ai_assistant");
+
+        /// <summary>
+        /// Constant Ai_content_optimization for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_content_optimization = new BotCategory("ai_content_optimization");
+
+        /// <summary>
+        /// Constant Ai_search for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_search = new BotCategory("ai_search");
+
+        /// <summary>
+        /// Constant Ai_training for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_training = new BotCategory("ai_training");
+
+        /// <summary>
+        /// Constant Archiver for BotCategory
+        /// </summary>
+        public static readonly BotCategory Archiver = new BotCategory("archiver");
+
+        /// <summary>
+        /// Constant Content_fetcher for BotCategory
+        /// </summary>
+        public static readonly BotCategory Content_fetcher = new BotCategory("content_fetcher");
+
+        /// <summary>
+        /// Constant Email_client for BotCategory
+        /// </summary>
+        public static readonly BotCategory Email_client = new BotCategory("email_client");
+
+        /// <summary>
+        /// Constant Http_library for BotCategory
+        /// </summary>
+        public static readonly BotCategory Http_library = new BotCategory("http_library");
+
+        /// <summary>
+        /// Constant Link_checker for BotCategory
+        /// </summary>
+        public static readonly BotCategory Link_checker = new BotCategory("link_checker");
+
+        /// <summary>
+        /// Constant Miscellaneous for BotCategory
+        /// </summary>
+        public static readonly BotCategory Miscellaneous = new BotCategory("miscellaneous");
+
+        /// <summary>
+        /// Constant Monitoring for BotCategory
+        /// </summary>
+        public static readonly BotCategory Monitoring = new BotCategory("monitoring");
+
+        /// <summary>
+        /// Constant Page_preview for BotCategory
+        /// </summary>
+        public static readonly BotCategory Page_preview = new BotCategory("page_preview");
+
+        /// <summary>
+        /// Constant Scraping_framework for BotCategory
+        /// </summary>
+        public static readonly BotCategory Scraping_framework = new BotCategory("scraping_framework");
+
+        /// <summary>
+        /// Constant Search_engine for BotCategory
+        /// </summary>
+        public static readonly BotCategory Search_engine = new BotCategory("search_engine");
+
+        /// <summary>
+        /// Constant Security for BotCategory
+        /// </summary>
+        public static readonly BotCategory Security = new BotCategory("security");
+
+        /// <summary>
+        /// Constant Seo for BotCategory
+        /// </summary>
+        public static readonly BotCategory Seo = new BotCategory("seo");
+
+        /// <summary>
+        /// Constant Social_media for BotCategory
+        /// </summary>
+        public static readonly BotCategory Social_media = new BotCategory("social_media");
+
+        /// <summary>
+        /// Constructs a custom BotCategory for a value not among the defined constants.
+        /// </summary>
+        public BotCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotCategory FindValue(string value)
+        {
+            return FindValue<BotCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotCategory(string value)
         {
             return FindValue(value);
         }
@@ -386,6 +599,42 @@ namespace Amazon.AgentRegistryControl
     }
 
     /// <summary>
+    /// Constants used for properties of type IdentifierType.
+    /// </summary>
+    public class IdentifierType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOMAIN for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType DOMAIN = new IdentifierType("DOMAIN");
+
+        /// <summary>
+        /// Constructs a custom IdentifierType for a value not among the defined constants.
+        /// </summary>
+        public IdentifierType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentifierType FindValue(string value)
+        {
+            return FindValue<IdentifierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentifierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type InboundTokenClaimValueType.
     /// </summary>
     public class InboundTokenClaimValueType : ConstantClass
@@ -491,6 +740,11 @@ namespace Amazon.AgentRegistryControl
         /// Constant SKILL for RecordType
         /// </summary>
         public static readonly RecordType SKILL = new RecordType("SKILL");
+
+        /// <summary>
+        /// Constant WEB_BOT for RecordType
+        /// </summary>
+        public static readonly RecordType WEB_BOT = new RecordType("WEB_BOT");
 
         /// <summary>
         /// Constructs a custom RecordType for a value not among the defined constants.
@@ -977,6 +1231,62 @@ namespace Amazon.AgentRegistryControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTION_REQUIRED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus ACTION_REQUIRED = new VerificationStatus("ACTION_REQUIRED");
+
+        /// <summary>
+        /// Constant ACTIVE for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus ACTIVE = new VerificationStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant DELETING for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus DELETING = new VerificationStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus FAILED = new VerificationStatus("FAILED");
+
+        /// <summary>
+        /// Constant SUSPENDED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus SUSPENDED = new VerificationStatus("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom VerificationStatus for a value not among the defined constants.
+        /// </summary>
+        public VerificationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
         {
             return FindValue(value);
         }
