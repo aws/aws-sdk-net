@@ -71,9 +71,49 @@ namespace Amazon.ElementalInference.Model
         /// <para>
         /// The language of the audio in the source media. Elemental Inference uses this setting
         /// to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter
-        /// code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us,
-        /// fra, ita, deu, spa, por. 
+        /// code, optionally with a region subtag. Supported values: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// eng – English
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// eng-au – English (Australia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// eng-gb – English (United Kingdom)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// eng-us – English (United States)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// fra – French
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ita – Italian
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// deu – German
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// spa – Spanish
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// por – Portuguese
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ara – Arabic
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public TranscriptionLanguage Language { get; set; }

@@ -155,6 +155,11 @@ namespace Amazon.ElementalInference
     public class DictionaryLanguage : ConstantClass
     {
         /// <summary>
+        /// Constant Ara for DictionaryLanguage
+        /// </summary>
+        public static readonly DictionaryLanguage Ara = new DictionaryLanguage("ara");
+
+        /// <summary>
         /// Constant Deu for DictionaryLanguage
         /// </summary>
         public static readonly DictionaryLanguage Deu = new DictionaryLanguage("deu");
@@ -772,6 +777,11 @@ namespace Amazon.ElementalInference
     /// </summary>
     public class TranscriptionLanguage : ConstantClass
     {
+        /// <summary>
+        /// Constant Ara for TranscriptionLanguage
+        /// </summary>
+        public static readonly TranscriptionLanguage Ara = new TranscriptionLanguage("ara");
+
         /// <summary>
         /// Constant Deu for TranscriptionLanguage
         /// </summary>

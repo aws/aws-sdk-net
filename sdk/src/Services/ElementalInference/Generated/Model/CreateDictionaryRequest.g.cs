@@ -56,8 +56,37 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The language of the dictionary entries. Specify the language using an ISO 639-2/T
-        /// three-letter code. Supported values: eng, fra, ita, deu, spa, por. 
+        /// three-letter code. Supported values: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// eng – English
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// fra – French
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ita – Italian
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// deu – German
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// spa – Spanish
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// por – Portuguese
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ara – Arabic
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required = true)]
         public DictionaryLanguage Language { get; set; }
