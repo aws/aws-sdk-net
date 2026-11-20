@@ -55,6 +55,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("OriginHttpVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OriginHttpVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

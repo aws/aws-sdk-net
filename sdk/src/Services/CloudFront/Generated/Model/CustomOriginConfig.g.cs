@@ -82,6 +82,38 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIpAddressType() => this.IpAddressType != null;
 
         /// <summary>
+        /// Gets and sets the property OriginHttpVersion. 
+        /// <para>
+        /// The HTTP version that CloudFront uses for requests to your custom origin. Valid values
+        /// are <c>http1.1</c> and <c>http2</c>. If you don't specify a value, CloudFront uses
+        /// HTTP/1.1.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify <c>http2</c>, CloudFront offers HTTP/2 to the origin by using ALPN.
+        /// If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses
+        /// HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use a version of an AWS SDK or the AWS CLI that doesn't support this field,
+        /// an update that sends back a configuration you got from CloudFront removes the value,
+        /// and CloudFront then uses HTTP/1.1.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin
+        /// HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public OriginHttpVersion OriginHttpVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OriginHttpVersion property is set.
+        /// </summary>
+        internal bool IsSetOriginHttpVersion() => this.OriginHttpVersion != null;
+
+        /// <summary>
         /// Gets and sets the property OriginKeepaliveTimeout. 
         /// <para>
         /// Specifies how long, in seconds, CloudFront persists its connection to the origin.

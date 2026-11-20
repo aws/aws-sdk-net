@@ -1549,6 +1549,47 @@ namespace Amazon.CloudFront
     }
 
     /// <summary>
+    /// Constants used for properties of type OriginHttpVersion.
+    /// </summary>
+    public class OriginHttpVersion : ConstantClass
+    {
+        /// <summary>
+        /// Constant Http11 for OriginHttpVersion
+        /// </summary>
+        public static readonly OriginHttpVersion Http11 = new OriginHttpVersion("http1.1");
+
+        /// <summary>
+        /// Constant Http2 for OriginHttpVersion
+        /// </summary>
+        public static readonly OriginHttpVersion Http2 = new OriginHttpVersion("http2");
+
+        /// <summary>
+        /// Constructs a custom OriginHttpVersion for a value not among the defined constants.
+        /// </summary>
+        public OriginHttpVersion(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginHttpVersion FindValue(string value)
+        {
+            return FindValue<OriginHttpVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginHttpVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OriginProtocolPolicy.
     /// </summary>
     public class OriginProtocolPolicy : ConstantClass

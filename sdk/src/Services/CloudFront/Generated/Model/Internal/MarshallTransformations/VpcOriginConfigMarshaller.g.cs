@@ -44,6 +44,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetOriginHttpVersion())
+            {
+                context.Writer.WriteElementString("OriginHttpVersion", StringUtils.FromString(requestObject.OriginHttpVersion));
+            }
             if (requestObject.IsSetOriginKeepaliveTimeout())
             {
                 context.Writer.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(requestObject.OriginKeepaliveTimeout.Value));
