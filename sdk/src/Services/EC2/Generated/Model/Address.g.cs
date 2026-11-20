@@ -210,11 +210,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The service that manages the elastic IP address.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The only option supported today is <c>alb</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ServiceManaged ServiceManaged { get; set; }
 

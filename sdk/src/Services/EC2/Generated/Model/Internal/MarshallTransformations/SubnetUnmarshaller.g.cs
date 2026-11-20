@@ -157,6 +157,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("networkFirewallConnectivityType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkFirewallConnectivityType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("outpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

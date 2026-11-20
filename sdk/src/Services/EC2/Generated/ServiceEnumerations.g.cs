@@ -6893,6 +6893,93 @@ namespace Amazon.EC2
     }
 
     /// <summary>
+    /// Constants used for properties of type FirewallMode.
+    /// </summary>
+    public class FirewallMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Enforce for FirewallMode
+        /// </summary>
+        public static readonly FirewallMode Enforce = new FirewallMode("enforce");
+
+        /// <summary>
+        /// Constant Monitor for FirewallMode
+        /// </summary>
+        public static readonly FirewallMode Monitor = new FirewallMode("monitor");
+
+        /// <summary>
+        /// Constructs a custom FirewallMode for a value not among the defined constants.
+        /// </summary>
+        public FirewallMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallMode FindValue(string value)
+        {
+            return FindValue<FirewallMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallOnboardingStatus.
+    /// </summary>
+    public class FirewallOnboardingStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for FirewallOnboardingStatus
+        /// </summary>
+        public static readonly FirewallOnboardingStatus Active = new FirewallOnboardingStatus("active");
+
+        /// <summary>
+        /// Constant Disabling for FirewallOnboardingStatus
+        /// </summary>
+        public static readonly FirewallOnboardingStatus Disabling = new FirewallOnboardingStatus("disabling");
+
+        /// <summary>
+        /// Constant Pending for FirewallOnboardingStatus
+        /// </summary>
+        public static readonly FirewallOnboardingStatus Pending = new FirewallOnboardingStatus("pending");
+
+        /// <summary>
+        /// Constructs a custom FirewallOnboardingStatus for a value not among the defined constants.
+        /// </summary>
+        public FirewallOnboardingStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallOnboardingStatus FindValue(string value)
+        {
+            return FindValue<FirewallOnboardingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallOnboardingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FleetActivityStatus.
     /// </summary>
     public class FleetActivityStatus : ConstantClass
@@ -18331,6 +18418,16 @@ namespace Amazon.EC2
         public static readonly IpamPolicyResourceType Eip = new IpamPolicyResourceType("eip");
 
         /// <summary>
+        /// Constant IgwFirewall for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType IgwFirewall = new IpamPolicyResourceType("igw-firewall");
+
+        /// <summary>
+        /// Constant LambdaNetworkConnector for IpamPolicyResourceType
+        /// </summary>
+        public static readonly IpamPolicyResourceType LambdaNetworkConnector = new IpamPolicyResourceType("lambda-network-connector");
+
+        /// <summary>
         /// Constant Rds for IpamPolicyResourceType
         /// </summary>
         public static readonly IpamPolicyResourceType Rds = new IpamPolicyResourceType("rds");
@@ -19721,6 +19818,11 @@ namespace Amazon.EC2
         /// Constant DeleteInProgress for IpamRoutingPolicyRegistrationState
         /// </summary>
         public static readonly IpamRoutingPolicyRegistrationState DeleteInProgress = new IpamRoutingPolicyRegistrationState("delete-in-progress");
+
+        /// <summary>
+        /// Constant DisableComplete for IpamRoutingPolicyRegistrationState
+        /// </summary>
+        public static readonly IpamRoutingPolicyRegistrationState DisableComplete = new IpamRoutingPolicyRegistrationState("disable-complete");
 
         /// <summary>
         /// Constant PendingActivate for IpamRoutingPolicyRegistrationState
@@ -22562,6 +22664,62 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkCardInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NetworkFirewallConnectivityType.
+    /// </summary>
+    public class NetworkFirewallConnectivityType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AzUnsupported for NetworkFirewallConnectivityType
+        /// </summary>
+        public static readonly NetworkFirewallConnectivityType AzUnsupported = new NetworkFirewallConnectivityType("az-unsupported");
+
+        /// <summary>
+        /// Constant Bidirectional for NetworkFirewallConnectivityType
+        /// </summary>
+        public static readonly NetworkFirewallConnectivityType Bidirectional = new NetworkFirewallConnectivityType("bidirectional");
+
+        /// <summary>
+        /// Constant Exclude for NetworkFirewallConnectivityType
+        /// </summary>
+        public static readonly NetworkFirewallConnectivityType Exclude = new NetworkFirewallConnectivityType("exclude");
+
+        /// <summary>
+        /// Constant Flexible for NetworkFirewallConnectivityType
+        /// </summary>
+        public static readonly NetworkFirewallConnectivityType Flexible = new NetworkFirewallConnectivityType("flexible");
+
+        /// <summary>
+        /// Constant OutboundOnly for NetworkFirewallConnectivityType
+        /// </summary>
+        public static readonly NetworkFirewallConnectivityType OutboundOnly = new NetworkFirewallConnectivityType("outbound-only");
+
+        /// <summary>
+        /// Constructs a custom NetworkFirewallConnectivityType for a value not among the defined constants.
+        /// </summary>
+        public NetworkFirewallConnectivityType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkFirewallConnectivityType FindValue(string value)
+        {
+            return FindValue<NetworkFirewallConnectivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkFirewallConnectivityType(string value)
         {
             return FindValue(value);
         }
@@ -27084,6 +27242,16 @@ namespace Amazon.EC2
         public static readonly ServiceManaged Alb = new ServiceManaged("alb");
 
         /// <summary>
+        /// Constant IgwFirewall for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged IgwFirewall = new ServiceManaged("igw-firewall");
+
+        /// <summary>
+        /// Constant LambdaNetworkConnector for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged LambdaNetworkConnector = new ServiceManaged("lambda-network-connector");
+
+        /// <summary>
         /// Constant Nlb for ServiceManaged
         /// </summary>
         public static readonly ServiceManaged Nlb = new ServiceManaged("nlb");
@@ -30803,6 +30971,11 @@ namespace Amazon.EC2
         /// Constant T8i for UnlimitedSupportedInstanceFamily
         /// </summary>
         public static readonly UnlimitedSupportedInstanceFamily T8i = new UnlimitedSupportedInstanceFamily("t8i");
+
+        /// <summary>
+        /// Constant T9g for UnlimitedSupportedInstanceFamily
+        /// </summary>
+        public static readonly UnlimitedSupportedInstanceFamily T9g = new UnlimitedSupportedInstanceFamily("t9g");
 
         /// <summary>
         /// Constructs a custom UnlimitedSupportedInstanceFamily for a value not among the defined constants.

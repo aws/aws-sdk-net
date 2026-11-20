@@ -119,6 +119,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("networkFirewallAssociationSet/item", targetDepth))
+                    {
+                        if (unmarshalledObject.NetworkFirewallAssociations == null)
+                        {
+                            unmarshalledObject.NetworkFirewallAssociations = new List<NetworkFirewallAssociation>();
+                        }
+                        var unmarshaller = NetworkFirewallAssociationUnmarshaller.Instance;
+                        unmarshalledObject.NetworkFirewallAssociations.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

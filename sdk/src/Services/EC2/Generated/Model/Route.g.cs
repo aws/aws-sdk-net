@@ -126,6 +126,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetGatewayId() => this.GatewayId != null;
 
         /// <summary>
+        /// Gets and sets the property IgwFirewall. 
+        /// <para>
+        /// Information about the Automated Internet Firewall that inspects traffic for this route.
+        /// The response includes this value only for routes that target an internet gateway or
+        /// egress-only internet gateway in a VPC that has a firewall. The route target remains
+        /// the internet gateway or egress-only internet gateway.
+        /// </para>
+        /// </summary>
+        public IgwFirewall IgwFirewall { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IgwFirewall property is set.
+        /// </summary>
+        internal bool IsSetIgwFirewall() => this.IgwFirewall != null;
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The ID of a NAT instance in your VPC.

@@ -148,6 +148,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetIsDefault() => this.IsDefault.HasValue;
 
         /// <summary>
+        /// Gets and sets the property NetworkFirewallAssociations. 
+        /// <para>
+        /// Information about the firewall associations for the VPC. Automated Internet Firewall,
+        /// a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the
+        /// VPC and its internet gateway or egress-only internet gateway. This list is empty if
+        /// the VPC doesn't have a firewall.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NetworkFirewallAssociation> NetworkFirewallAssociations { get; set; } = AWSConfigs.InitializeCollections ? new List<NetworkFirewallAssociation>() : null;
+
+        /// <summary>
+        /// Checks to see if the NetworkFirewallAssociations property is set.
+        /// </summary>
+        internal bool IsSetNetworkFirewallAssociations() => this.NetworkFirewallAssociations != null && (this.NetworkFirewallAssociations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The ID of the Amazon Web Services account that owns the VPC.

@@ -147,6 +147,26 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Elastic IP addresses
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Application Load Balancers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NAT gateways in regional availability mode
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda Network Connector
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Automated Internet Firewall
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public IpamPolicyResourceType ResourceType { get; set; }

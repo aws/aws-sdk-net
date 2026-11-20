@@ -104,6 +104,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("igwFirewall", targetDepth))
+                    {
+                        var unmarshaller = IgwFirewallUnmarshaller.Instance;
+                        unmarshalledObject.IgwFirewall = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("instanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

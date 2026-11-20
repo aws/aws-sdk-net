@@ -236,6 +236,54 @@ namespace Amazon.EC2.Model
         internal bool IsSetMapPublicIpOnLaunch() => this.MapPublicIpOnLaunch.HasValue;
 
         /// <summary>
+        /// Gets and sets the property NetworkFirewallConnectivityType. 
+        /// <para>
+        /// The internet connectivity treatment that the Automated Internet Firewall applies to
+        /// the subnet. The response includes this value only if the subnet is in a VPC that has
+        /// a firewall. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>az-unsupported</c>: The firewall doesn't support the subnet's Availability Zone,
+        /// so it doesn't inspect traffic for the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>bidirectional</c>: Provides bidirectional internet connectivity to every network
+        /// interface that has a public IP association. Any network interface without a public
+        /// IP cannot communicate with the internet unless a NAT device is explicitly inserted
+        /// in the path. All inbound and outbound traffic is inspected against your firewall rules.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>exclude</c>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses
+        /// the firewall, and its traffic passes directly through the internet gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>flexible</c>: Sets the connectivity for each network interface in the subnet based
+        /// on whether it is associated with a public IP address. A network interface with a public
+        /// IP address gets bidirectional internet connectivity. A network interface without a
+        /// public IP address gets outbound-only connectivity. All traffic is inspected against
+        /// your firewall rules.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>outbound-only</c>: Provides egress-only connectivity for all network interfaces
+        /// in the subnet. All outbound traffic and inbound responses are inspected against your
+        /// firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the
+        /// firewall performs NAT.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public NetworkFirewallConnectivityType NetworkFirewallConnectivityType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetworkFirewallConnectivityType property is set.
+        /// </summary>
+        internal bool IsSetNetworkFirewallConnectivityType() => this.NetworkFirewallConnectivityType != null;
+
+        /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost.
