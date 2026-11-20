@@ -57,6 +57,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static object GetAttr(object value, string path)
         {
+            if (value == null) return null;
+
 #if NET8_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(path);
 #else
@@ -118,7 +120,10 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
                         // avoid Cast<object>().ToList() – use IList direct access when possible
                         if (enumerable is IList directList)
-                            return index >= 0 && index < directList.Count ? directList[index] : null;
+                        {
+                            var i = index < 0 ? directList.Count + index : index;
+                            return i >= 0 && i < directList.Count ? directList[i] : null;
+                        }
 
                         // fallback for non-IList enumerables: walk without allocating a list
                         int pos = 0;
@@ -142,6 +147,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static Partition Partition(string region)
         {
+            if (region == null) return null;
+            
             return StandardLibrary.Partition.GetPartitionByRegion(region);
         }
 
@@ -168,6 +175,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static bool IsValidHostLabel(string hostLabel, bool allowSubDomains)
         {
+            if (hostLabel == null) return false;
+
             var hosts = new List<string>();
 
             if (allowSubDomains)
@@ -218,6 +227,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static bool IsVirtualHostableS3Bucket(string hostLabel, bool allowSubDomains)
         {
+            if (hostLabel == null) return false;
+
             if (IsIpV4Address(hostLabel))
             {
                 return false;
@@ -492,6 +503,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string Substring(string input, int start, int stop, bool reverse)
         {
+            if (input == null) return null;
+
             var str = (string)input;
             if (start >= stop || str.Length < stop)
             {
@@ -508,6 +521,35 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             var r_start = str.Length - stop;
             var r_stop = str.Length - start;
             return str.Substring(r_start, r_stop - r_start);
+        }
+
+        /// <summary>
+        /// Compares a nullable bool to a bool without boxing.
+        /// </summary>
+        public static bool BooleanEquals(bool? value1, bool value2)
+        {
+            return value1 == value2;
+        }
+
+        /// <summary>
+        /// Splits input on separator into at most limit parts, with 0 being unlimited.
+        /// </summary>
+        public static IList<string> Split(string input, string separator, int limit)
+        {
+            if (input == null) return null;
+
+            return input.Split(new[] { separator }, limit == 0 ? int.MaxValue : limit, StringSplitOptions.None);
+        }
+
+        /// <summary>
+        /// Returns the item at index or null if out of range. Counts from the end if negative.
+        /// </summary>
+        public static T ListItemOrNull<T>(IList<T> list, int index) where T : class
+        {
+            if (list == null) return null;
+
+            var i = index < 0 ? list.Count + index : index;
+            return i < 0 || i > list.Count - 1 ? null : list[i];
         }
     }
 }

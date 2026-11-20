@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace AWSSDK.UnitTests
@@ -237,6 +238,198 @@ namespace AWSSDK.UnitTests
             var bag = new PropertyBag();
             bag["property"] = 42; // int is not a PropertyBag
             Assert.ThrowsExactly<ArgumentException>(() => Fn.GetAttr(bag, "property.subproperty"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_NegativeIndex_ReturnsValueFromEnd()
+        {
+            var bag = new PropertyBag();
+            bag["List"] = new List<string> { "a", "b", "c" };
+            Assert.AreEqual("c", Fn.GetAttr(bag, "List[-1]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_NullTarget_ReturnsNull()
+        {
+            Assert.IsNull(Fn.GetAttr(null, "anything"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void BooleanEquals_ComparesNullableBools_ReturnsBool()
+        {
+            Assert.IsTrue(Fn.BooleanEquals(true, true));
+            Assert.IsFalse(Fn.BooleanEquals(true, false));
+            Assert.IsFalse(Fn.BooleanEquals(null, true));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Split_BasicSplit_ReturnsSplitList()
+        {
+            List<string> expected = new List<string> { "", "x-s3--azid--suffix" };
+            CollectionAssert.AreEqual(expected, Fn.Split("--x-s3--azid--suffix", "--", 2).ToList());
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Split_ZeroLimit_ReturnsSplitList()
+        {
+            List<string> expected = new List<string> { "", "x-s3", "azid", "suffix" };
+            CollectionAssert.AreEqual(expected, Fn.Split("--x-s3--azid--suffix", "--", 0).ToList());
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Split_NullInput_ReturnsNull()
+        {
+            Assert.IsNull(Fn.Split(null, "--", 2));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void ListItemOrNull_IndexInRange_ReturnsItem()
+        {
+            var list = new List<string> { "mybucket", "usw2-az1", "x-s3" };
+            Assert.AreEqual("usw2-az1", Fn.ListItemOrNull(list, 1));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void ListItemOrNull_IndexOutOfRange_ReturnsNull()
+        {
+            var list = new List<string> { "mybucket", "usw2-az1", "x-s3" };
+            Assert.IsNull(Fn.ListItemOrNull(list, 4));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void ListItemOrNull_NegativeIndex_ReturnsItemFromEnd()
+        {
+            var list = new List<string> { "mybucket", "usw2-az1", "x-s3" };
+            Assert.AreEqual("x-s3", Fn.ListItemOrNull(list, -1));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void ListItemOrNull_NullList_ReturnsNull()
+        {
+            Assert.IsNull(Fn.ListItemOrNull((IList<string>)null, 0));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Partition_NullRegion_ReturnsNull()
+        {
+            Assert.IsNull(Fn.Partition(null));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Substring_NullInput_ReturnsNull()
+        {
+            Assert.IsNull(Fn.Substring(null, 0, 1, false));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void IsValidHostLabel_NullInput_ReturnsFalse()
+        {
+            Assert.IsFalse(Fn.IsValidHostLabel(null, false));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void IsVirtualHostableS3Bucket_NullInput_ReturnsFalse()
+        {
+            Assert.IsFalse(Fn.IsVirtualHostableS3Bucket(null, false));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Partition_UnsetBoolProperties_DefaultToFalse()
+        {
+            // Typed-field rewrite: unset bool attributes now default to false via the
+            // indexer instead of throwing on an unbox of a null dict value.
+            var partition = new Partition();
+            Assert.IsFalse(partition.supportsFIPS);
+            Assert.IsFalse(partition.supportsDualStack);
+            Assert.AreEqual(false, partition["supportsFIPS"]);
+            Assert.AreEqual(false, partition["supportsDualStack"]);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Partition_IndexerAndTypedProperty_StayInSync()
+        {
+            var partition = new Partition();
+
+            // typed setter -> indexer getter
+            partition.supportsFIPS = true;
+            partition.dnsSuffix = "amazonaws.com";
+            Assert.AreEqual(true, partition["supportsFIPS"]);
+            Assert.AreEqual("amazonaws.com", partition["dnsSuffix"]);
+
+            // indexer setter -> typed getter
+            partition["dualStackDnsSuffix"] = "api.aws";
+            partition["supportsDualStack"] = true;
+            Assert.AreEqual("api.aws", partition.dualStackDnsSuffix);
+            Assert.IsTrue(partition.supportsDualStack);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Partition_UnknownKey_FallsThroughToBagAndReturnsNull()
+        {
+            // The indexer override's default arm delegates to the PropertyBag base,
+            // which returns null for an undefined key rather than throwing.
+            var partition = new Partition();
+            Assert.IsNull(partition["notARealProperty"]);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void URL_UnsetIsIp_DefaultsToFalse()
+        {
+            var url = new URL();
+            Assert.IsFalse(url.isIp);
+            Assert.AreEqual(false, url["isIp"]);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void URL_IndexerAndTypedProperty_StayInSync()
+        {
+            var url = new URL();
+
+            url.isIp = true;
+            url.scheme = "https";
+            Assert.AreEqual(true, url["isIp"]);
+            Assert.AreEqual("https", url["scheme"]);
+
+            url["authority"] = "example.com";
+            Assert.AreEqual("example.com", url.authority);
         }
     }
 }

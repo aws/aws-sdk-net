@@ -25,50 +25,55 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
     /// </summary>
     public class Arn : PropertyBag
     {
+        public override object this[string propertyName]
+        {
+            get => propertyName switch
+            {
+                "partition" => partition,
+                "service" => service,
+                "region" => region,
+                "accountId" => accountId,
+                "resourceId" => resourceId,
+                _ => base[propertyName],
+            };
+            set
+            {
+                switch (propertyName)
+                {
+                    case "partition": partition = (string)value; break;
+                    case "service": service = (string)value; break;
+                    case "region": region = (string)value; break;
+                    case "accountId": accountId = (string)value; break;
+                    case "resourceId": resourceId = (List<string>)value; break;
+                    default: base[propertyName] = value; break;
+                }
+            }
+        }
+
         /// <summary>
         /// ARN partition
         /// </summary>
-        public string partition
-        {
-            get { return (string)this["partition"]; }
-            set { this["partition"] = value; }
-        }
+        public string partition { get; set; }
 
         /// <summary>
         /// ARN service
         /// </summary>
-        public string service
-        {
-            get { return (string)this["service"]; }
-            set { this["service"] = value; }
-        }
+        public string service { get; set; }
 
         /// <summary>
         /// ARN region
         /// </summary>
-        public string region
-        {
-            get { return (string)this["region"]; }
-            set { this["region"] = value; }
-        }
+        public string region { get; set; }
 
         /// <summary>
         /// ARN accountId
         /// </summary>
-        public string accountId
-        {
-            get { return (string)this["accountId"]; }
-            set { this["accountId"] = value; }
-        }
+        public string accountId { get; set; }
 
         /// <summary>
         /// ARN list of ResourceIDs
         /// </summary>
-        public List<string> resourceId
-        {
-            get { return (List<string>)this["resourceId"]; }
-            set { this["resourceId"] = value; }
-        }
+        public List<string> resourceId { get; set; }
 
         /// <summary>
         /// Check if input string is a valid ARN

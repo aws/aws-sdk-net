@@ -1,0 +1,18 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "minor",
+    "changeLogMessages": [
+      "Added internal runtime support for BDD-based endpoint resolution, including new endpoint standard library functions."
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Added null-safety guards to internal endpoint attribute handling in preparation for BDD."
+      ]
+    }
+  ]
+}
