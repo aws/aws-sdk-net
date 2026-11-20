@@ -69,6 +69,12 @@ namespace Amazon.Route53.Model
         IListHealthChecksBySourcePaginator ListHealthChecksBySource(ListHealthChecksBySourceRequest request);
 
         /// <summary>
+        /// Paginator for ListHostedZoneChangeBatches operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListHostedZoneChangeBatchesPaginator ListHostedZoneChangeBatches(ListHostedZoneChangeBatchesRequest request);
+
+        /// <summary>
         /// Paginator for ListHostedZones operation
         /// </summary>
         [AWSPaginator(InputToken = ["Marker"], LimitKey = "MaxItems", OutputToken = ["NextMarker"])]
@@ -79,6 +85,12 @@ namespace Amazon.Route53.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListQueryLoggingConfigsPaginator ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceRecordSetChanges operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListResourceRecordSetChangesPaginator ListResourceRecordSetChanges(ListResourceRecordSetChangesRequest request);
 
         /// <summary>
         /// Paginator for ListResourceRecordSetProtections operation

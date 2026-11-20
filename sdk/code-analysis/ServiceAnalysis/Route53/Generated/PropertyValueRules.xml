@@ -383,6 +383,16 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.GetHostedZoneChangeBatchRequest.ChangeId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetHostedZoneChangeBatchRequest.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.GetHostedZoneLimitRequest.HostedZoneId</property>
     <min>0</min>
     <max>32</max>
@@ -545,6 +555,38 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesRequest.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesRequest.StartAfterChangeId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesRequest.SubmittedAfter</property>
+    <min>0</min>
+    <max>35</max>
+    <pattern>^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{1,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesRequest.SubmittedBefore</property>
+    <min>0</min>
+    <max>35</max>
+    <pattern>^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{1,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListHostedZoneChangeBatchesResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.ListHostedZonesRequest.DelegationSetId</property>
     <min>0</min>
     <max>32</max>
@@ -626,6 +668,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListQueryLoggingConfigsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesRequest.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesRequest.RecordName</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesRequest.SubmittedAfter</property>
+    <min>0</min>
+    <max>35</max>
+    <pattern>^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{1,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesRequest.SubmittedBefore</property>
+    <min>0</min>
+    <max>35</max>
+    <pattern>^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]{1,9})?(Z|[+-]([01][0-9]|2[0-3]):[0-5][0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListResourceRecordSetChangesResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
   </property-value-rule>
@@ -907,6 +981,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.UpdateHostedZoneTierRequest.HostedZoneId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Comment</property>
     <min>0</min>
     <max>1024</max>
@@ -942,6 +1021,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.AZAffinity.LocationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.AccountLimit.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -969,6 +1053,30 @@
     <property>Amazon.Route53.Model.ChangeBatch.Comment</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchSummary.ChangeCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchSummary.ChangeId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchSummary.Comment</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchSummary.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ChangeBatchSummary.SubmittedBy</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeInfo.Comment</property>
@@ -1383,6 +1491,21 @@
     <property>Amazon.Route53.Model.ResourceRecordSet.Weight</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSetChange.ChangeId</property>
+    <min>0</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSetChange.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ResourceRecordSetChange.SubmittedBy</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecordSetProtection.Comment</property>

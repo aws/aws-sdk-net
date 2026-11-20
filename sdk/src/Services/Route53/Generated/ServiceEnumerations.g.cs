@@ -22,6 +22,62 @@ using Amazon.Runtime;
 namespace Amazon.Route53
 {
     /// <summary>
+    /// Constants used for properties of type AZAffinityLocationType.
+    /// </summary>
+    public class AZAffinityLocationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AvailabilityZone for AZAffinityLocationType
+        /// </summary>
+        public static readonly AZAffinityLocationType AvailabilityZone = new AZAffinityLocationType("AvailabilityZone");
+
+        /// <summary>
+        /// Constant AvailabilityZoneGroup for AZAffinityLocationType
+        /// </summary>
+        public static readonly AZAffinityLocationType AvailabilityZoneGroup = new AZAffinityLocationType("AvailabilityZoneGroup");
+
+        /// <summary>
+        /// Constant Global for AZAffinityLocationType
+        /// </summary>
+        public static readonly AZAffinityLocationType Global = new AZAffinityLocationType("Global");
+
+        /// <summary>
+        /// Constant Partition for AZAffinityLocationType
+        /// </summary>
+        public static readonly AZAffinityLocationType Partition = new AZAffinityLocationType("Partition");
+
+        /// <summary>
+        /// Constant Region for AZAffinityLocationType
+        /// </summary>
+        public static readonly AZAffinityLocationType Region = new AZAffinityLocationType("Region");
+
+        /// <summary>
+        /// Constructs a custom AZAffinityLocationType for a value not among the defined constants.
+        /// </summary>
+        public AZAffinityLocationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AZAffinityLocationType FindValue(string value)
+        {
+            return FindValue<AZAffinityLocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AZAffinityLocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AcceleratedRecoveryStatus.
     /// </summary>
     public class AcceleratedRecoveryStatus : ConstantClass
@@ -194,6 +250,195 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChangeAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChangeGuardrailName.
+    /// </summary>
+    public class ChangeGuardrailName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE_DELEGATION_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName ACTIVE_DELEGATION_CHECK = new ChangeGuardrailName("ACTIVE_DELEGATION_CHECK");
+
+        /// <summary>
+        /// Constant ACTIVE_RECORD_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName ACTIVE_RECORD_CHECK = new ChangeGuardrailName("ACTIVE_RECORD_CHECK");
+
+        /// <summary>
+        /// Constant ALIAS_TARGET_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName ALIAS_TARGET_CHECK = new ChangeGuardrailName("ALIAS_TARGET_CHECK");
+
+        /// <summary>
+        /// Constant NS_DELEGATION_AUTHORITY_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName NS_DELEGATION_AUTHORITY_CHECK = new ChangeGuardrailName("NS_DELEGATION_AUTHORITY_CHECK");
+
+        /// <summary>
+        /// Constant NS_FORMAT_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName NS_FORMAT_CHECK = new ChangeGuardrailName("NS_FORMAT_CHECK");
+
+        /// <summary>
+        /// Constant NS_OCCLUSION_CHECK for ChangeGuardrailName
+        /// </summary>
+        public static readonly ChangeGuardrailName NS_OCCLUSION_CHECK = new ChangeGuardrailName("NS_OCCLUSION_CHECK");
+
+        /// <summary>
+        /// Constructs a custom ChangeGuardrailName for a value not among the defined constants.
+        /// </summary>
+        public ChangeGuardrailName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeGuardrailName FindValue(string value)
+        {
+            return FindValue<ChangeGuardrailName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeGuardrailName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChangeGuardrailStatus.
+    /// </summary>
+    public class ChangeGuardrailStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ChangeGuardrailStatus
+        /// </summary>
+        public static readonly ChangeGuardrailStatus DISABLED = new ChangeGuardrailStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for ChangeGuardrailStatus
+        /// </summary>
+        public static readonly ChangeGuardrailStatus ENABLED = new ChangeGuardrailStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom ChangeGuardrailStatus for a value not among the defined constants.
+        /// </summary>
+        public ChangeGuardrailStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeGuardrailStatus FindValue(string value)
+        {
+            return FindValue<ChangeGuardrailStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeGuardrailStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChangeHistoryOperation.
+    /// </summary>
+    public class ChangeHistoryOperation : ConstantClass
+    {
+        /// <summary>
+        /// Constant ChangeResourceRecordSets for ChangeHistoryOperation
+        /// </summary>
+        public static readonly ChangeHistoryOperation ChangeResourceRecordSets = new ChangeHistoryOperation("ChangeResourceRecordSets");
+
+        /// <summary>
+        /// Constant CreateHostedZone for ChangeHistoryOperation
+        /// </summary>
+        public static readonly ChangeHistoryOperation CreateHostedZone = new ChangeHistoryOperation("CreateHostedZone");
+
+        /// <summary>
+        /// Constant DeleteHostedZone for ChangeHistoryOperation
+        /// </summary>
+        public static readonly ChangeHistoryOperation DeleteHostedZone = new ChangeHistoryOperation("DeleteHostedZone");
+
+        /// <summary>
+        /// Constructs a custom ChangeHistoryOperation for a value not among the defined constants.
+        /// </summary>
+        public ChangeHistoryOperation(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeHistoryOperation FindValue(string value)
+        {
+            return FindValue<ChangeHistoryOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeHistoryOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChangeHistorySortOrder.
+    /// </summary>
+    public class ChangeHistorySortOrder : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASCENDING for ChangeHistorySortOrder
+        /// </summary>
+        public static readonly ChangeHistorySortOrder ASCENDING = new ChangeHistorySortOrder("ASCENDING");
+
+        /// <summary>
+        /// Constant DESCENDING for ChangeHistorySortOrder
+        /// </summary>
+        public static readonly ChangeHistorySortOrder DESCENDING = new ChangeHistorySortOrder("DESCENDING");
+
+        /// <summary>
+        /// Constructs a custom ChangeHistorySortOrder for a value not among the defined constants.
+        /// </summary>
+        public ChangeHistorySortOrder(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeHistorySortOrder FindValue(string value)
+        {
+            return FindValue<ChangeHistorySortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeHistorySortOrder(string value)
         {
             return FindValue(value);
         }
@@ -635,6 +880,98 @@ namespace Amazon.Route53
     }
 
     /// <summary>
+    /// Constants used for properties of type FeatureEnablement.
+    /// </summary>
+    public class FeatureEnablement : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for FeatureEnablement
+        /// </summary>
+        public static readonly FeatureEnablement DISABLED = new FeatureEnablement("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for FeatureEnablement
+        /// </summary>
+        public static readonly FeatureEnablement ENABLED = new FeatureEnablement("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom FeatureEnablement for a value not among the defined constants.
+        /// </summary>
+        public FeatureEnablement(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureEnablement FindValue(string value)
+        {
+            return FindValue<FeatureEnablement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureEnablement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+
+        /// <summary>
+        /// Constant DISABLING for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLING = new FeatureStatus("DISABLING");
+
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+
+        /// <summary>
+        /// Constant ENABLING for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLING = new FeatureStatus("ENABLING");
+
+        /// <summary>
+        /// Constructs a custom FeatureStatus for a value not among the defined constants.
+        /// </summary>
+        public FeatureStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HealthCheckRegion.
     /// </summary>
     public class HealthCheckRegion : ConstantClass
@@ -949,6 +1286,47 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HostedZoneLimitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HostedZoneTier.
+    /// </summary>
+    public class HostedZoneTier : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADVANCED for HostedZoneTier
+        /// </summary>
+        public static readonly HostedZoneTier ADVANCED = new HostedZoneTier("ADVANCED");
+
+        /// <summary>
+        /// Constant STANDARD for HostedZoneTier
+        /// </summary>
+        public static readonly HostedZoneTier STANDARD = new HostedZoneTier("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom HostedZoneTier for a value not among the defined constants.
+        /// </summary>
+        public HostedZoneTier(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HostedZoneTier FindValue(string value)
+        {
+            return FindValue<HostedZoneTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HostedZoneTier(string value)
         {
             return FindValue(value);
         }

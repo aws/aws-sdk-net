@@ -82,7 +82,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property AddTags. 
         /// <para>
         /// A complex type that contains a list of the tags that you want to add to the specified
-        /// health check or hosted zone and/or the tags that you want to edit <c>Value</c> for.
+        /// health check, health check source, or hosted zone and/or the tags that you want to
+        /// edit <c>Value</c> for.
         /// </para>
         ///  
         /// <para>

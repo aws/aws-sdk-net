@@ -62,10 +62,35 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("PublicDNSFallbackStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicDNSFallbackStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ChangeHistory", targetDepth))
+                    {
+                        var unmarshaller = ChangeHistoryFeatureUnmarshaller.Instance;
+                        unmarshalledObject.ChangeHistory = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
                     if (context.TestExpression("FailureReasons", targetDepth))
                     {
                         var unmarshaller = HostedZoneFailureReasonsUnmarshaller.Instance;
                         unmarshalledObject.FailureReasons = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    if (context.TestExpression("ChangeGuardrails/ChangeGuardrail", targetDepth))
+                    {
+                        if (unmarshalledObject.ChangeGuardrails == null)
+                        {
+                            unmarshalledObject.ChangeGuardrails = new List<ChangeGuardrail>();
+                        }
+                        var unmarshaller = ChangeGuardrailUnmarshaller.Instance;
+                        unmarshalledObject.ChangeGuardrails.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }

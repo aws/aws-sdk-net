@@ -44,39 +44,137 @@ namespace Amazon.Route53
     /// </para>
     ///
     /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+    /// Route 53 performs four main functions:
     /// 
-    ///  
-    /// <para>
-    /// You can use Route 53 to:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Register domain names.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html">How
-    /// domain registration works</a>.
+    ///  <b>Domain registration</b> – Route 53 lets you register domain names such as example.com.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Route internet traffic to the resources for your domain
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">How
-    /// internet traffic is routed to your website or web application</a>.
+    ///  <b>Domain Name System (DNS) service</b> – Route 53 translates friendly domain names
+    /// into IP addresses using a global network of authoritative DNS servers, and provides
+    /// DNS resolution within your VPCs for private hosted zones.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Check the health of your resources.
+    ///  <b>Health checking</b> – Route 53 sends automated requests to your application, over
+    /// the internet or from within your VPC for private endpoints, to verify that it's reachable,
+    /// available, and functional.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Resolver</b> – Route 53 Resolver lets you forward DNS queries from a VPC that
+    /// you created using Amazon VPC to DNS resolvers in your network, and from your network
+    /// to resolvers in your VPC.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use the API to create and manage the following resources:
+    /// </para>
+    ///  <dl> <dt>Public and Private Hosted Zones</dt> <dd> 
+    /// <para>
+    /// A <i>public hosted zone</i> is a container that holds information about how you want
+    /// to route traffic on the internet for a domain, such as example.com, and its subdomains.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
-    /// Route 53 checks the health of your resources</a>.
+    /// A <i>private hosted zone</i> is a container that holds information about how you want
+    /// to route traffic for a domain and its subdomains within one or more VPCs that you
+    /// created with the Amazon VPC service.
     /// </para>
-    ///  </li> </ul>
+    ///  </dd> <dt>Reusable Delegation Sets</dt> <dd> 
+    /// <para>
+    /// By default, each hosted zone that you create gets a different set of four name servers—a
+    /// different delegation set. If you create a lot of hosted zones, maintaining different
+    /// delegation sets can be difficult and time consuming. Route 53 lets you create a delegation
+    /// set that you can reuse with multiple hosted zones.
+    /// </para>
+    ///  </dd> <dt>Resource Record Sets</dt> <dd> 
+    /// <para>
+    /// After you create a hosted zone for your domain, such as example.com, you create resource
+    /// record sets to tell the Domain Name System (DNS) how to route traffic for that domain.
+    /// </para>
+    ///  </dd> <dt>Traffic Policies and Traffic Policy Instances</dt> <dd> 
+    /// <para>
+    /// You can create complex routing configurations, known as traffic policies, that use
+    /// weighted, latency, failover, and geolocation resource record sets. You can then associate
+    /// a traffic policy with a domain name or subdomain name, such as www.example.com, by
+    /// creating a traffic policy instance. When users submit DNS queries for the domain or
+    /// subdomain, Route 53 responds based on the traffic policy that you used to create the
+    /// traffic policy instance.
+    /// </para>
+    ///  </dd> <dt>Health Checks</dt> <dd> 
+    /// <para>
+    /// Route 53 health checks monitor the health and performance of your web applications,
+    /// web servers, and other resources. At regular intervals that you specify, Route 53
+    /// submits automated requests to your application, server, or other resource, over the
+    /// internet or from within your VPC for private endpoints, to verify that it's reachable,
+    /// available, and functional.
+    /// </para>
+    ///  </dd> <dt>Domain Registrations</dt> <dd> 
+    /// <para>
+    /// When you want to get a new domain name, such as example.com, you can register it with
+    /// Route 53. You can also transfer the registration for existing domains from other registrars
+    /// to Route 53.
+    /// </para>
+    ///  </dd> <dt>DNS–DNSSEC</dt> <dd> 
+    /// <para>
+    /// You can protect your domain from DNS spoofing or a man-in-the-middle attack, by configuring
+    /// Domain Name System Security Extensions (DNSSEC).
+    /// </para>
+    ///  </dd> <dt>Query Logs</dt> <dd> 
+    /// <para>
+    /// You can configure Route 53 to log information about the DNS queries that Route 53
+    /// receives, such as the domain or subdomain that was requested, the date and time of
+    /// the request, and the DNS record type (such as A or AAAA).
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also configure Route 53 Resolver to log information about the DNS queries
+    /// that originate in Amazon VPCs.
+    /// </para>
+    ///  </dd> <dt>Outbound and Inbound Endpoints, and Rules</dt> <dd> 
+    /// <para>
+    /// You can configure Route 53 Resolver to forward DNS queries from your VPC to your network
+    /// or vice versa. DNS queries pass through an outbound endpoint on their way from a VPC
+    /// to your network, and they pass through an inbound endpoint on their way from your
+    /// network to a VPC. For outbound queries, rules let you specify the domain names that
+    /// you want to forward to your network and the IP addresses of the DNS resolvers in your
+    /// network.
+    /// </para>
+    ///  </dd> <dt>Tags</dt> <dd> 
+    /// <para>
+    /// A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+    /// of a key and a value, both of which you define. You can use tags for a variety of
+    /// purposes; one common use is to categorize and track your Route 53 costs.
+    /// </para>
+    ///  </dd> <dt>Profiles</dt> <dd> 
+    /// <para>
+    /// A <i>profile</i> is a named container that groups DNS configurations—such as private
+    /// hosted zone associations, Resolver rules, and DNS Firewall rule groups—into a single
+    /// reusable unit. You can associate a profile with multiple VPCs and share it across
+    /// Amazon Web Services accounts so that each VPC inherits the same DNS settings without
+    /// requiring individual configuration.
+    /// </para>
+    ///  </dd> <dt>DNS Firewall</dt> <dd> 
+    /// <para>
+    /// A <i>DNS Firewall rule group</i> is an ordered collection of rules that each pair
+    /// a domain list with an action—allow, block, or alert. You associate rule groups with
+    /// your VPCs to filter outbound DNS queries made by VPC resources, preventing connections
+    /// to known-malicious domains or restricting access to only approved domains.
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    /// You can also use the Route 53 API to get the current limit on Route 53 objects that
+    /// you can create, such as hosted zones and health checks.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about Route 53 concepts and about how to use the Route 53 console,
+    /// see the <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/">Amazon
+    /// Route 53 Developer Guide</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
@@ -1398,12 +1496,6 @@ namespace Amazon.Route53
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
-        ///  
-        /// <para>
-        /// You have reached the maximum number of active health checks for an Amazon Web Services
-        /// account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the Amazon Web Services Support Center.
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         public virtual CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
@@ -1522,12 +1614,6 @@ namespace Amazon.Route53
         /// <para>
         /// For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
         /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-        /// a case</a> with the Amazon Web Services Support Center.
-        /// </para>
-        ///  
-        /// <para>
-        /// You have reached the maximum number of active health checks for an Amazon Web Services
-        /// account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </para>
         /// </exception>
@@ -6001,6 +6087,104 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns one change batch from the change history of a hosted zone, including every
+        /// change in the batch. Each resource record set is in the same form that <c>ListResourceRecordSets</c>
+        /// returns. For example, the name is in lowercase and ends with a dot. For an <c>UPSERT</c>
+        /// or a <c>DELETE</c>, the response doesn't contain the values that the resource record
+        /// set had before the change.
+        /// 
+        ///  
+        /// <para>
+        /// If the change batch isn't in the hosted zone's retained change history, for example
+        /// because it's in another hosted zone, it expired, or it's from before <c>RetentionStartsAt</c>,
+        /// Route 53 returns a <c>NoSuchChange</c> error. If Change History isn't turned on for
+        /// the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c> error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneChangeBatch service method.</param>
+        /// <returns>The response from the GetHostedZoneChangeBatch service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
+        /// A change with the specified change ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneChangeBatch">REST API Reference for GetHostedZoneChangeBatch Operation</seealso>
+        public virtual GetHostedZoneChangeBatchResponse GetHostedZoneChangeBatch(GetHostedZoneChangeBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHostedZoneChangeBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHostedZoneChangeBatchResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneChangeBatchResponse>(request, options);
+        }
+#else
+        internal virtual GetHostedZoneChangeBatchResponse GetHostedZoneChangeBatch(GetHostedZoneChangeBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHostedZoneChangeBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHostedZoneChangeBatchResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostedZoneChangeBatchResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns one change batch from the change history of a hosted zone, including every
+        /// change in the batch. Each resource record set is in the same form that <c>ListResourceRecordSets</c>
+        /// returns. For example, the name is in lowercase and ends with a dot. For an <c>UPSERT</c>
+        /// or a <c>DELETE</c>, the response doesn't contain the values that the resource record
+        /// set had before the change.
+        /// 
+        ///  
+        /// <para>
+        /// If the change batch isn't in the hosted zone's retained change history, for example
+        /// because it's in another hosted zone, it expired, or it's from before <c>RetentionStartsAt</c>,
+        /// Route 53 returns a <c>NoSuchChange</c> error. If Change History isn't turned on for
+        /// the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c> error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneChangeBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetHostedZoneChangeBatch service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
+        /// A change with the specified change ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneChangeBatch">REST API Reference for GetHostedZoneChangeBatch Operation</seealso>
+        public virtual Task<GetHostedZoneChangeBatchResponse> GetHostedZoneChangeBatchAsync(GetHostedZoneChangeBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHostedZoneChangeBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHostedZoneChangeBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHostedZoneChangeBatchResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the number of hosted zones that are associated with the current Amazon Web
         /// Services account.
         /// </summary>
@@ -7139,6 +7323,124 @@ namespace Amazon.Route53
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the change batches in an Amazon Route 53 hosted zone. For each change batch,
+        /// the response contains its change ID, the operation that submitted it, and when and
+        /// by whom it was submitted. It also contains the request ID, the comment if there is
+        /// one, and the number of changes. Use this list to review who changed the hosted zone
+        /// and when.
+        /// 
+        ///  
+        /// <para>
+        /// Each change batch records one <c>ChangeResourceRecordSets</c> or <c>CreateHostedZone</c>
+        /// request. A <c>CreateHostedZone</c> change batch has a <c>ChangeCount</c> of 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can read a change batch for 365 days after it was submitted, but not from before
+        /// the <c>RetentionStartsAt</c> time that <c>GetHostedZone</c> returns in <c>Features/ChangeHistory</c>.
+        /// If Change History isn't turned on for the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. To get the next page, use the <c>NextToken</c> value from the
+        /// response. To get the changes in a change batch, use <c>GetHostedZoneChangeBatch</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZoneChangeBatches service method.</param>
+        /// <returns>The response from the ListHostedZoneChangeBatches service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZoneChangeBatches">REST API Reference for ListHostedZoneChangeBatches Operation</seealso>
+        public virtual ListHostedZoneChangeBatchesResponse ListHostedZoneChangeBatches(ListHostedZoneChangeBatchesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHostedZoneChangeBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostedZoneChangeBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZoneChangeBatchesResponse>(request, options);
+        }
+#else
+        internal virtual ListHostedZoneChangeBatchesResponse ListHostedZoneChangeBatches(ListHostedZoneChangeBatchesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHostedZoneChangeBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostedZoneChangeBatchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHostedZoneChangeBatchesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the change batches in an Amazon Route 53 hosted zone. For each change batch,
+        /// the response contains its change ID, the operation that submitted it, and when and
+        /// by whom it was submitted. It also contains the request ID, the comment if there is
+        /// one, and the number of changes. Use this list to review who changed the hosted zone
+        /// and when.
+        /// 
+        ///  
+        /// <para>
+        /// Each change batch records one <c>ChangeResourceRecordSets</c> or <c>CreateHostedZone</c>
+        /// request. A <c>CreateHostedZone</c> change batch has a <c>ChangeCount</c> of 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can read a change batch for 365 days after it was submitted, but not from before
+        /// the <c>RetentionStartsAt</c> time that <c>GetHostedZone</c> returns in <c>Features/ChangeHistory</c>.
+        /// If Change History isn't turned on for the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. To get the next page, use the <c>NextToken</c> value from the
+        /// response. To get the changes in a change batch, use <c>GetHostedZoneChangeBatch</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZoneChangeBatches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListHostedZoneChangeBatches service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZoneChangeBatches">REST API Reference for ListHostedZoneChangeBatches Operation</seealso>
+        public virtual Task<ListHostedZoneChangeBatchesResponse> ListHostedZoneChangeBatchesAsync(ListHostedZoneChangeBatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHostedZoneChangeBatchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHostedZoneChangeBatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHostedZoneChangeBatchesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
         /// current Amazon Web Services account. The response includes a <c>HostedZones</c> child
         /// element for each hosted zone.
@@ -7727,6 +8029,124 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListQueryLoggingConfigsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the individual changes in the change history of a hosted zone. Each entry is
+        /// one change, with the full resource record set that the change wrote or deleted. To
+        /// list only the changes to the resource record sets that have a specific name and type,
+        /// specify <c>RecordName</c> and <c>RecordType</c>. Weighted, latency, and other resource
+        /// record sets that have the same name and type appear as separate entries, each with
+        /// its <c>SetIdentifier</c>.
+        /// 
+        ///  
+        /// <para>
+        /// A change can take a few seconds to appear in <c>ListResourceRecordSetChanges</c> after
+        /// it appears in <c>ListHostedZoneChangeBatches</c>. For a complete, ordered list of
+        /// changes, use <c>ListHostedZoneChangeBatches</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. To get the next page, use the <c>NextToken</c> value from the
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Change History isn't turned on for the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c>
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSetChanges service method.</param>
+        /// <returns>The response from the ListResourceRecordSetChanges service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetChanges">REST API Reference for ListResourceRecordSetChanges Operation</seealso>
+        public virtual ListResourceRecordSetChangesResponse ListResourceRecordSetChanges(ListResourceRecordSetChangesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetChangesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceRecordSetChangesResponse>(request, options);
+        }
+#else
+        internal virtual ListResourceRecordSetChangesResponse ListResourceRecordSetChanges(ListResourceRecordSetChangesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetChangesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceRecordSetChangesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the individual changes in the change history of a hosted zone. Each entry is
+        /// one change, with the full resource record set that the change wrote or deleted. To
+        /// list only the changes to the resource record sets that have a specific name and type,
+        /// specify <c>RecordName</c> and <c>RecordType</c>. Weighted, latency, and other resource
+        /// record sets that have the same name and type appear as separate entries, each with
+        /// its <c>SetIdentifier</c>.
+        /// 
+        ///  
+        /// <para>
+        /// A change can take a few seconds to appear in <c>ListResourceRecordSetChanges</c> after
+        /// it appears in <c>ListHostedZoneChangeBatches</c>. For a complete, ordered list of
+        /// changes, use <c>ListHostedZoneChangeBatches</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are paginated. To get the next page, use the <c>NextToken</c> value from the
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Change History isn't turned on for the hosted zone, Route 53 returns a <c>FeatureNotEnabled</c>
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSetChanges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListResourceRecordSetChanges service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.FeatureNotEnabledException">
+        /// This error occurs when a feature that the operation requires isn't turned on for the
+        /// hosted zone. For example, the tier of the hosted zone doesn't include Change History.
+        /// To resolve this error, turn on the feature, or move the hosted zone to a tier that
+        /// includes it.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// The value that you specified to get the second or subsequent page of results is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetChanges">REST API Reference for ListResourceRecordSetChanges Operation</seealso>
+        public virtual Task<ListResourceRecordSetChangesResponse> ListResourceRecordSetChangesAsync(ListResourceRecordSetChangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResourceRecordSetChangesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceRecordSetChangesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceRecordSetChangesResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -9060,12 +9480,20 @@ namespace Amazon.Route53
 #if NETFRAMEWORK
         /// <summary>
         /// Updates the features configuration for a hosted zone. This operation allows you to
-        /// enable or disable specific features for your hosted zone, such as accelerated recovery.
+        /// enable or disable specific features for your hosted zone, such as accelerated recovery
+        /// and public DNS fallback.
         /// 
         ///  
         /// <para>
         /// Accelerated recovery enables you to update DNS records in your public hosted zone
         /// even when the us-east-1 region is unavailable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Public DNS fallback enables Route 53 to retry a query against public DNS when a query
+        /// for a domain name in a private hosted zone matches no existing name (<c>NXDOMAIN</c>).
+        /// Fallback does not occur when the name exists but has no record of the requested type.
+        /// Public DNS fallback is supported only for private hosted zones.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures service method.</param>
@@ -9110,12 +9538,20 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Updates the features configuration for a hosted zone. This operation allows you to
-        /// enable or disable specific features for your hosted zone, such as accelerated recovery.
+        /// enable or disable specific features for your hosted zone, such as accelerated recovery
+        /// and public DNS fallback.
         /// 
         ///  
         /// <para>
         /// Accelerated recovery enables you to update DNS records in your public hosted zone
         /// even when the us-east-1 region is unavailable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Public DNS fallback enables Route 53 to retry a query against public DNS when a query
+        /// for a domain name in a private hosted zone matches no existing name (<c>NXDOMAIN</c>).
+        /// Fallback does not occur when the name exists but has no record of the requested type.
+        /// Public DNS fallback is supported only for private hosted zones.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures service method.</param>
@@ -9149,6 +9585,108 @@ namespace Amazon.Route53
             options.ResponseUnmarshaller = UpdateHostedZoneFeaturesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateHostedZoneFeaturesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Changes the tier of a hosted zone. The tier determines which features the hosted zone
+        /// includes and which optional features you can turn on. For pricing information, see
+        /// <a href="https://aws.amazon.com/route53/pricing/">Amazon Route 53 pricing</a> on the
+        /// AWS website.
+        /// 
+        ///  
+        /// <para>
+        /// When the hosted zone moves to a new tier, Route 53 turns on the features that the
+        /// new tier includes. Route 53 also disables any enabled features that the new tier doesn't
+        /// include.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you move a hosted zone to a tier that doesn't offer an optional feature that
+        /// you turned on, turn off that feature. You can't change the tier of a hosted zone that
+        /// uses a CloudFront flat-rate pricing plan.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneTier service method.</param>
+        /// <returns>The response from the UpdateHostedZoneTier service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneTier">REST API Reference for UpdateHostedZoneTier Operation</seealso>
+        public virtual UpdateHostedZoneTierResponse UpdateHostedZoneTier(UpdateHostedZoneTierRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneTierResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneTierResponse>(request, options);
+        }
+#else
+        internal virtual UpdateHostedZoneTierResponse UpdateHostedZoneTier(UpdateHostedZoneTierRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneTierResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneTierResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Changes the tier of a hosted zone. The tier determines which features the hosted zone
+        /// includes and which optional features you can turn on. For pricing information, see
+        /// <a href="https://aws.amazon.com/route53/pricing/">Amazon Route 53 pricing</a> on the
+        /// AWS website.
+        /// 
+        ///  
+        /// <para>
+        /// When the hosted zone moves to a new tier, Route 53 turns on the features that the
+        /// new tier includes. Route 53 also disables any enabled features that the new tier doesn't
+        /// include.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you move a hosted zone to a tier that doesn't offer an optional feature that
+        /// you turned on, turn off that feature. You can't change the tier of a hosted zone that
+        /// uses a CloudFront flat-rate pricing plan.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneTier service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateHostedZoneTier service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneTier">REST API Reference for UpdateHostedZoneTier Operation</seealso>
+        public virtual Task<UpdateHostedZoneTierResponse> UpdateHostedZoneTierAsync(UpdateHostedZoneTierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneTierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHostedZoneTierResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

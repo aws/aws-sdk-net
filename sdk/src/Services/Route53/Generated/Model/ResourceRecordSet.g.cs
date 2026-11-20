@@ -843,5 +843,30 @@ namespace Amazon.Route53.Model
         /// Checks to see if the GeoProximityLocation property is set.
         /// </summary>
         internal bool IsSetGeoProximityLocation() => this.GeoProximityLocation != null;
+
+        /// <summary>
+        /// Gets and sets the property AZAffinity. 
+        /// <para>
+        ///  <i>AZ-affinity resource record sets only:</i> The location that this resource record
+        /// set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services
+        /// Region. For each query, Route 53 starts with the most specific location that the query
+        /// matches and falls back to a less specific location when there's no record for that
+        /// location or the record is unhealthy (its health check fails or, for an alias record
+        /// that has <c>EvaluateTargetHealth</c> set to <c>true</c>, its target is unhealthy).
+        /// You must also specify <c>SetIdentifier</c>, and you can't specify another routing
+        /// policy element, such as <c>Weight</c>, in the same resource record set.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity
+        /// routing</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AZAffinity AZAffinity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AZAffinity property is set.
+        /// </summary>
+        internal bool IsSetAZAffinity() => this.AZAffinity != null;
     }
 }

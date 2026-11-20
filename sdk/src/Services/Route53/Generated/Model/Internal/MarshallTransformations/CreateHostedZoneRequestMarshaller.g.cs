@@ -92,6 +92,25 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteElementString("DelegationSetId", StringUtils.FromString(publicRequest.DelegationSetId));
                 }
+                if (publicRequest.IsSetEnablePublicDNSFallback())
+                {
+                    context.Writer.WriteElementString("EnablePublicDNSFallback", StringUtils.FromBool(publicRequest.EnablePublicDNSFallback.Value));
+                }
+                if (publicRequest.IsSetChangeGuardrails())
+                {
+                    var publicRequestChangeGuardrails = publicRequest.ChangeGuardrails;
+                    context.Writer.WriteStartElement("ChangeGuardrails");
+                    foreach (var publicRequestChangeGuardrailsValue in publicRequestChangeGuardrails)
+                    {
+                        if (publicRequestChangeGuardrailsValue != null)
+                        {
+                            context.Writer.WriteStartElement("ChangeGuardrail");
+                            ChangeGuardrailMarshaller.Instance.Marshall(publicRequestChangeGuardrailsValue, context);
+                            context.Writer.WriteEndElement();
+                        }
+                    }
+                    context.Writer.WriteEndElement();
+                }
                 context.Writer.WriteEndElement();
             }
             try

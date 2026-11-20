@@ -123,6 +123,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 GeoProximityLocationMarshaller.Instance.Marshall(requestObject.GeoProximityLocation, context);
                 context.Writer.WriteEndElement();
             }
+            if (requestObject.IsSetAZAffinity())
+            {
+                context.Writer.WriteStartElement("AZAffinity");
+                AZAffinityMarshaller.Instance.Marshall(requestObject.AZAffinity, context);
+                context.Writer.WriteEndElement();
+            }
         }
 
         /// <summary>

@@ -68,6 +68,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("HostedZoneTier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostedZoneTier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

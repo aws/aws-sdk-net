@@ -163,6 +163,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.GeoProximityLocation = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    if (context.TestExpression("AZAffinity", targetDepth))
+                    {
+                        var unmarshaller = AZAffinityUnmarshaller.Instance;
+                        unmarshalledObject.AZAffinity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

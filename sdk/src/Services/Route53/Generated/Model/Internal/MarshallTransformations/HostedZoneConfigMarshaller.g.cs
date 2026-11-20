@@ -52,6 +52,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 context.Writer.WriteElementString("PrivateZone", StringUtils.FromBool(requestObject.PrivateZone.Value));
             }
+            if (requestObject.IsSetHostedZoneTier())
+            {
+                context.Writer.WriteElementString("HostedZoneTier", StringUtils.FromString(requestObject.HostedZoneTier));
+            }
         }
 
         /// <summary>

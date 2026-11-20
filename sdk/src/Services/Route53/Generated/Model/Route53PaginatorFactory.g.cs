@@ -81,6 +81,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Paginator for ListHostedZoneChangeBatches operation
+        /// </summary>
+        public IListHostedZoneChangeBatchesPaginator ListHostedZoneChangeBatches(ListHostedZoneChangeBatchesRequest request)
+        {
+            return new ListHostedZoneChangeBatchesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHostedZones operation
         /// </summary>
         public IListHostedZonesPaginator ListHostedZones(ListHostedZonesRequest request)
@@ -94,6 +102,14 @@ namespace Amazon.Route53.Model
         public IListQueryLoggingConfigsPaginator ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
         {
             return new ListQueryLoggingConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceRecordSetChanges operation
+        /// </summary>
+        public IListResourceRecordSetChangesPaginator ListResourceRecordSetChanges(ListResourceRecordSetChangesRequest request)
+        {
+            return new ListResourceRecordSetChangesPaginator(this.client, request);
         }
 
         /// <summary>

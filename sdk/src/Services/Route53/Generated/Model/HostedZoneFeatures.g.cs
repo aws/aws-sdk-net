@@ -49,6 +49,50 @@ namespace Amazon.Route53.Model
         internal bool IsSetAcceleratedRecoveryStatus() => this.AcceleratedRecoveryStatus != null;
 
         /// <summary>
+        /// Gets and sets the property PublicDNSFallbackStatus. 
+        /// <para>
+        /// The current status of public DNS fallback for the hosted zone. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Public DNS fallback is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c>: Public DNS fallback is disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENABLING</c>: A request to enable public DNS fallback is still propagating.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLING</c>: A request to disable public DNS fallback is still propagating.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FeatureStatus PublicDNSFallbackStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PublicDNSFallbackStatus property is set.
+        /// </summary>
+        internal bool IsSetPublicDNSFallbackStatus() => this.PublicDNSFallbackStatus != null;
+
+        /// <summary>
+        /// Gets and sets the property ChangeHistory. 
+        /// <para>
+        /// The status of Change History for the hosted zone, and the earliest time from which
+        /// you can read its change history.
+        /// </para>
+        /// </summary>
+        public ChangeHistoryFeature ChangeHistory { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ChangeHistory property is set.
+        /// </summary>
+        internal bool IsSetChangeHistory() => this.ChangeHistory != null;
+
+        /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
         /// Information about any failures that occurred when attempting to enable or configure
@@ -61,5 +105,26 @@ namespace Amazon.Route53.Model
         /// Checks to see if the FailureReasons property is set.
         /// </summary>
         internal bool IsSetFailureReasons() => this.FailureReasons != null;
+
+        /// <summary>
+        /// Gets and sets the property ChangeGuardrails. 
+        /// <para>
+        /// The name and status of each Change Guardrail for the hosted zone. For the guardrail
+        /// names and statuses, see <c>ChangeGuardrail</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public List<ChangeGuardrail> ChangeGuardrails { get; set; } = AWSConfigs.InitializeCollections ? new List<ChangeGuardrail>() : null;
+
+        /// <summary>
+        /// Checks to see if the ChangeGuardrails property is set.
+        /// </summary>
+        internal bool IsSetChangeGuardrails() => this.ChangeGuardrails != null && (this.ChangeGuardrails.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

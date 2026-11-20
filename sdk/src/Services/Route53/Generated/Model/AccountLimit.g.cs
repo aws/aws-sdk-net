@@ -47,7 +47,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources
+        ///  <b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources
         /// that you can create using the current account.
         /// </para>
         ///  </li> <li> 

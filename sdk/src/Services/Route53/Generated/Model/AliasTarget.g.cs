@@ -372,11 +372,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property EvaluateTargetHealth. 
         /// <para>
-        ///  <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted
-        /// alias resource record sets:</i> When <c>EvaluateTargetHealth</c> is <c>true</c>, an
-        /// alias resource record set inherits the health of the referenced Amazon Web Services
-        /// resource, such as an ELB load balancer or another resource record set in the hosted
-        /// zone.
+        ///  <i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency
+        /// alias, and weighted alias resource record sets:</i> When <c>EvaluateTargetHealth</c>
+        /// is <c>true</c>, an alias resource record set inherits the health of the referenced
+        /// Amazon Web Services resource, such as an ELB load balancer or another resource record
+        /// set in the hosted zone.
         /// </para>
         ///  
         /// <para>

@@ -46,12 +46,6 @@ namespace Amazon.Route53.Model
     /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
     /// a case</a> with the Amazon Web Services Support Center.
     /// </para>
-    ///  
-    /// <para>
-    /// You have reached the maximum number of active health checks for an Amazon Web Services
-    /// account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
-    /// a case</a> with the Amazon Web Services Support Center.
-    /// </para>
     /// </summary>
 #if !NETSTANDARD
     [Serializable]

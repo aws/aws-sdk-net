@@ -200,5 +200,60 @@ namespace Amazon.Route53.Model
         /// Checks to see if the DelegationSetId property is set.
         /// </summary>
         internal bool IsSetDelegationSetId() => this.DelegationSetId != null;
+
+        /// <summary>
+        /// Gets and sets the property EnablePublicDNSFallback. 
+        /// <para>
+        /// Specifies whether to enable public DNS fallback for the hosted zone. When public DNS
+        /// fallback is enabled and a query for a domain name in the private hosted zone matches
+        /// no existing name (<c>NXDOMAIN</c>), Route 53 retries the query against public DNS
+        /// instead of returning a negative response. Fallback does not occur when the name exists
+        /// but has no record of the requested type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <c>true</c> to enable public DNS fallback, or <c>false</c> to disable it. The
+        /// default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Public DNS fallback is supported only for private hosted zones. If you specify <c>true</c>
+        /// for a public hosted zone, the request fails with an <c>InvalidInput</c> error.
+        /// </para>
+        /// </summary>
+        public bool? EnablePublicDNSFallback { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnablePublicDNSFallback property is set.
+        /// </summary>
+        internal bool IsSetEnablePublicDNSFallback() => this.EnablePublicDNSFallback.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ChangeGuardrails. 
+        /// <para>
+        /// Specify the optional Change Guardrails to turn on for the hosted zone. Each entry
+        /// specifies the name and status of a guardrail. For the guardrail names and statuses,
+        /// see <c>ChangeGuardrail</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route 53 turns on the guardrails that the tier of the hosted zone includes, so you
+        /// don't need to specify them. If you turn on a guardrail that the tier doesn't offer,
+        /// Route 53 returns an <c>InvalidInput</c> error.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1)]
+        public List<ChangeGuardrail> ChangeGuardrails { get; set; } = AWSConfigs.InitializeCollections ? new List<ChangeGuardrail>() : null;
+
+        /// <summary>
+        /// Checks to see if the ChangeGuardrails property is set.
+        /// </summary>
+        internal bool IsSetChangeGuardrails() => this.ChangeGuardrails != null && (this.ChangeGuardrails.Count > 0 || !AWSConfigs.InitializeCollections);
     }
 }

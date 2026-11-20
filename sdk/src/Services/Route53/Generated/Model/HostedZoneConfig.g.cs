@@ -67,5 +67,33 @@ namespace Amazon.Route53.Model
         /// Checks to see if the PrivateZone property is set.
         /// </summary>
         internal bool IsSetPrivateZone() => this.PrivateZone.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneTier. 
+        /// <para>
+        /// The tier of the hosted zone. The tier controls which features you get and which optional
+        /// features you can turn on. Valid values are the following:
+        /// </para>
+        ///  <dl> <dt>STANDARD</dt> <dd> 
+        /// <para>
+        ///  <c>STANDARD</c> is the default tier for new hosted zones.
+        /// </para>
+        ///  </dd> <dt>ADVANCED</dt> <dd> 
+        /// <para>
+        ///  <c>ADVANCED</c> is a tier that includes Change History and offers more optional features.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// If you don't specify a tier when you create a hosted zone, Route 53 uses <c>STANDARD</c>.
+        /// Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing
+        /// on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.
+        /// </para>
+        /// </summary>
+        public HostedZoneTier HostedZoneTier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HostedZoneTier property is set.
+        /// </summary>
+        internal bool IsSetHostedZoneTier() => this.HostedZoneTier != null;
     }
 }
