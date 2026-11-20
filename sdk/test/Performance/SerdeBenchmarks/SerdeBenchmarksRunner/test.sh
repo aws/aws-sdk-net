@@ -33,8 +33,18 @@ fi
 # Clean previous artifacts
 rm -rf "$SCRIPT_DIR/BenchmarkDotNet.Artifacts"
 
-# Run the published benchmark DLL with dotnet (BDN output goes to stderr)
-dotnet "$SCRIPT_DIR/SerdeBenchmarksRunner.dll" --suite "$SUITE" --filter '*' --exporters JSON 1>&2
+# Run the published benchmarks (BDN output goes to stderr).
+# A self-contained publish produces a native launcher next to the DLL and carries its own runtime,
+# so it runs on a host with no .NET installed; prefer it when present. Otherwise the publish is
+# framework-dependent and needs `dotnet` plus a matching runtime on the host.
+APPHOST="$SCRIPT_DIR/SerdeBenchmarksRunner"
+if [ -f "$APPHOST" ]; then
+    # Archiving the artifact can drop the execute bit.
+    chmod +x "$APPHOST"
+    "$APPHOST" --suite "$SUITE" --filter '*' --exporters JSON 1>&2
+else
+    dotnet "$SCRIPT_DIR/SerdeBenchmarksRunner.dll" --suite "$SUITE" --filter '*' --exporters JSON 1>&2
+fi
 
 # Verify all benchmarks produced results (BDN exits 0 even when benchmarks crash)
 RESULTS_DIR="$SCRIPT_DIR/BenchmarkDotNet.Artifacts/results"

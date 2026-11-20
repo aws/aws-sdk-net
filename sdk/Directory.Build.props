@@ -49,6 +49,12 @@
    <!-- Target for performance benchmark and compatibility runner executables. -->
    <SdkPerformanceTargets>net10.0</SdkPerformanceTargets>
 
+   <!-- Target for the serde benchmark runner, which hosts both the BenchmarkDotNet suites and the
+        ops/CPU-sec mode. Kept separate from SdkPerformanceTargets so this runner can measure the newest
+        runtime without moving the other performance projects: LambdaBenchmarks publishes to a Lambda
+        managed runtime, and the compatibility runner targets what customers compile against. -->
+   <SdkBenchmarkRunnerTargets>net11.0</SdkBenchmarkRunnerTargets>
+
    <DeprecatedTargets>netcoreapp3.1;net5.0;net6.0;net7.0</DeprecatedTargets>
  </PropertyGroup>
 

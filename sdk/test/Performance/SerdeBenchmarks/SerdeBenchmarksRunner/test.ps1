@@ -35,8 +35,19 @@ if (Test-Path $metadataPath) {
 # Clean previous artifacts
 Remove-Item -Recurse -Force "$ScriptDir\BenchmarkDotNet.Artifacts" -ErrorAction SilentlyContinue
 
-# Run the published benchmark DLL with dotnet (redirect all output to stderr to keep stdout clean for JSON)
-$null = & dotnet "$ScriptDir\SerdeBenchmarksRunner.dll" --suite $suite --filter '*' --exporters JSON 2>&1 | ForEach-Object { [Console]::Error.WriteLine($_) }
+# Run the published benchmarks (redirect all output to stderr to keep stdout clean for JSON).
+# A self-contained publish produces a native launcher next to the DLL and carries its own runtime,
+# so it runs on a host with no .NET installed; prefer it when present. Otherwise the publish is
+# framework-dependent and needs dotnet plus a matching runtime on the host.
+$appHost = Join-Path $ScriptDir "SerdeBenchmarksRunner.exe"
+if (Test-Path $appHost) {
+    $runner = $appHost
+    $runnerArgs = @()
+} else {
+    $runner = "dotnet"
+    $runnerArgs = @((Join-Path $ScriptDir "SerdeBenchmarksRunner.dll"))
+}
+$null = & $runner @runnerArgs --suite $suite --filter '*' --exporters JSON 2>&1 | ForEach-Object { [Console]::Error.WriteLine($_) }
 if ($LASTEXITCODE -ne 0) { throw "Benchmark execution failed with exit code $LASTEXITCODE" }
 
 # Find JSON result files
