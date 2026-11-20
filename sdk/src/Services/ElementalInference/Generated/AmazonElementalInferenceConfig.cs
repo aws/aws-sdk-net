@@ -32,7 +32,7 @@ namespace Amazon.ElementalInference
     public partial class AmazonElementalInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ElementalInference", "4.1.1.0");
+            InternalSDKUtils.BuildUserAgentString("ElementalInference", "4.1.2.0");
 
         private static readonly AmazonElementalInferenceEndpointResolver EndpointResolver =
             new AmazonElementalInferenceEndpointResolver();

@@ -32,7 +32,7 @@ namespace Amazon.APIPortal
     public partial class AmazonAPIPortalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("APIPortal", "4.0");
+            InternalSDKUtils.BuildUserAgentString("APIPortal", "4.1.0.0");
 
         private static readonly AmazonAPIPortalEndpointResolver EndpointResolver =
             new AmazonAPIPortalEndpointResolver();

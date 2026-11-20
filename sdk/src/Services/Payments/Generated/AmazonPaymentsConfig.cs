@@ -32,7 +32,7 @@ namespace Amazon.Payments
     public partial class AmazonPaymentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Payments", "4.0");
+            InternalSDKUtils.BuildUserAgentString("Payments", "4.1.0.0");
 
         private static readonly AmazonPaymentsEndpointResolver EndpointResolver =
             new AmazonPaymentsEndpointResolver();

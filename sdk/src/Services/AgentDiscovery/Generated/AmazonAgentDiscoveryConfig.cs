@@ -32,7 +32,7 @@ namespace Amazon.AgentDiscovery
     public partial class AmazonAgentDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Agent Discovery", "4.0");
+            InternalSDKUtils.BuildUserAgentString("Agent Discovery", "4.1.0.0");
 
         private static readonly AmazonAgentDiscoveryEndpointResolver EndpointResolver =
             new AmazonAgentDiscoveryEndpointResolver();
