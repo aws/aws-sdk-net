@@ -95,10 +95,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Content");
                 context.Writer.WriteStringValue(publicRequest.Content);
             }
-            if (publicRequest.IsSetFormTypeId())
+            if (publicRequest.IsSetFormTypeIdentifier())
             {
-                context.Writer.WritePropertyName("FormTypeId");
-                context.Writer.WriteStringValue(publicRequest.FormTypeId);
+                context.Writer.WritePropertyName("FormTypeIdentifier");
+                context.Writer.WriteStringValue(publicRequest.FormTypeIdentifier);
             }
             if (publicRequest.IsSetItemIdentifier())
             {

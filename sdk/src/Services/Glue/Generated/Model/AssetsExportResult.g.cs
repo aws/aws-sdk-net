@@ -30,22 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A reference to a form type that is included in an asset type.
+    /// The export setting and current export state for asset metadata.
     /// </summary>
-    public partial class AssetTypeFormReference
+    public partial class AssetsExportResult
     {
         /// <summary>
-        /// Gets and sets the property FormTypeIdentifier. 
+        /// Gets and sets the property S3TablesExport. 
         /// <para>
-        /// The identifier of the referenced form type.
+        /// Whether asset metadata is exported to S3 Tables. Valid values are <c>ENABLED</c> and
+        /// <c>DISABLED</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 256)]
-        public string FormTypeIdentifier { get; set; }
+        public ExportSetting S3TablesExport { get; set; }
 
         /// <summary>
-        /// Checks to see if the FormTypeIdentifier property is set.
+        /// Checks to see if the S3TablesExport property is set.
         /// </summary>
-        internal bool IsSetFormTypeIdentifier() => this.FormTypeIdentifier != null;
+        internal bool IsSetS3TablesExport() => this.S3TablesExport != null;
+
+        /// <summary>
+        /// Gets and sets the property S3TablesExportState. 
+        /// <para>
+        /// The current state of the asset metadata export to S3 Tables.
+        /// </para>
+        /// </summary>
+        public S3TablesExportState S3TablesExportState { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3TablesExportState property is set.
+        /// </summary>
+        internal bool IsSetS3TablesExportState() => this.S3TablesExportState != null;
     }
 }

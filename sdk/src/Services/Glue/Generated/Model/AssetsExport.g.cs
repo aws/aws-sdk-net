@@ -25,36 +25,27 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-using Amazon.Glue.Model;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618,CS1570
 
-#pragma warning disable CS0612,CS0618
-
-namespace Amazon.Glue.Model.Internal.MarshallTransformations
+namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// AssetTypeFormReference Marshaller
+    /// The export setting for asset metadata.
     /// </summary>
-    public partial class AssetTypeFormReferenceMarshaller : IRequestMarshaller<AssetTypeFormReference, JsonMarshallerContext>
+    public partial class AssetsExport
     {
         /// <summary>
-        /// Marshall the structure from the request object to the service
+        /// Gets and sets the property S3TablesExport. 
+        /// <para>
+        /// Whether asset metadata is exported to S3 Tables. Valid values are <c>ENABLED</c> and
+        /// <c>DISABLED</c>.
+        /// </para>
         /// </summary>
-        public void Marshall(AssetTypeFormReference requestObject, JsonMarshallerContext context)
-        {
-            if (requestObject == null) return;
-
-            if (requestObject.IsSetFormTypeIdentifier())
-            {
-                context.Writer.WritePropertyName("FormTypeIdentifier");
-                context.Writer.WriteStringValue(requestObject.FormTypeIdentifier);
-            }
-        }
+        public ExportSetting S3TablesExport { get; set; }
 
         /// <summary>
-        /// Singleton Marshaller
+        /// Checks to see if the S3TablesExport property is set.
         /// </summary>
-        public readonly static AssetTypeFormReferenceMarshaller Instance = new AssetTypeFormReferenceMarshaller();
+        internal bool IsSetS3TablesExport() => this.S3TablesExport != null;
     }
 }

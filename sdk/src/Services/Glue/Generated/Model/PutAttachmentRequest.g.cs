@@ -94,18 +94,18 @@ namespace Amazon.Glue.Model
         internal bool IsSetContent() => this.Content != null;
 
         /// <summary>
-        /// Gets and sets the property FormTypeId. 
+        /// Gets and sets the property FormTypeIdentifier. 
         /// <para>
-        /// The identifier of the form type for this attachment.
+        /// The identifier of the form type for this attachment. This field is required.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 256)]
-        public string FormTypeId { get; set; }
+        [AWSProperty(Min = 1, Max = 256)]
+        public string FormTypeIdentifier { get; set; }
 
         /// <summary>
-        /// Checks to see if the FormTypeId property is set.
+        /// Checks to see if the FormTypeIdentifier property is set.
         /// </summary>
-        internal bool IsSetFormTypeId() => this.FormTypeId != null;
+        internal bool IsSetFormTypeIdentifier() => this.FormTypeIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property ItemIdentifier. 

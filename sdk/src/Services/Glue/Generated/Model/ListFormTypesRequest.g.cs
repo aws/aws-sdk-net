@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1000)]
+        [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
 
         /// <summary>

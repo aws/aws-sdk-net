@@ -52,6 +52,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Assets", targetDepth, ref reader))
+                {
+                    var unmarshaller = AssetsExportResultUnmarshaller.Instance;
+                    unmarshalledObject.Assets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -59,31 +66,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     continue;
                 }
 
-                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("S3TablesConfiguration", targetDepth, ref reader))
                 {
-                    var unmarshaller = ExportEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("ExportSetting", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportSetting = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("S3TableBucketArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3TableBucketArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = S3TablesConfigurationResultUnmarshaller.Instance;
+                    unmarshalledObject.S3TablesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -116,6 +102,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
                     var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                    {
+                        return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFoundException"))
                     {
                         return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

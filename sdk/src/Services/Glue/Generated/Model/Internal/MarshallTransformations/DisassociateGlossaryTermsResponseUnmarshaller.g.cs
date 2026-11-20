@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssetIdentifier", targetDepth, ref reader))
+                if (context.TestExpression("AssetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -66,10 +66,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     continue;
                 }
 
-                if (context.TestExpression("ItemIdentifier", targetDepth, ref reader))
+                if (context.TestExpression("ItemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

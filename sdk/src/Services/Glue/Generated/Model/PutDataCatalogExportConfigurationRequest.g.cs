@@ -37,6 +37,20 @@ namespace Amazon.Glue.Model
     public partial class PutDataCatalogExportConfigurationRequest : AmazonGlueRequest
     {
         /// <summary>
+        /// Gets and sets the property Assets. 
+        /// <para>
+        /// The export setting for asset metadata. Set <c>S3TablesExport</c> to <c>ENABLED</c>
+        /// to start exporting asset metadata to S3 Tables, or to <c>DISABLED</c> to stop exporting.
+        /// </para>
+        /// </summary>
+        public AssetsExport Assets { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Assets property is set.
+        /// </summary>
+        internal bool IsSetAssets() => this.Assets != null;
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
@@ -52,33 +66,18 @@ namespace Amazon.Glue.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration. 
+        /// Gets and sets the property S3TablesConfiguration. 
         /// <para>
-        /// The encryption configuration for the exported data. If not specified, the default
-        /// encryption settings are used.
+        /// The S3 Tables configuration for the export. The encryption configuration applies only
+        /// when Glue creates the table bucket that holds the exported catalog metadata. If not
+        /// specified, the default encryption settings are used.
         /// </para>
         /// </summary>
-        public ExportEncryptionConfiguration EncryptionConfiguration { get; set; }
+        public S3TablesConfiguration S3TablesConfiguration { get; set; }
 
         /// <summary>
-        /// Checks to see if the EncryptionConfiguration property is set.
+        /// Checks to see if the S3TablesConfiguration property is set.
         /// </summary>
-        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
-
-        /// <summary>
-        /// Gets and sets the property ExportSetting. 
-        /// <para>
-        /// The export setting for the data catalog. Specify <c>ENABLED</c> to start exporting
-        /// catalog metadata to S3 Tables, or <c>DISABLED</c> to stop exporting. This field is
-        /// required.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true)]
-        public ExportSetting ExportSetting { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ExportSetting property is set.
-        /// </summary>
-        internal bool IsSetExportSetting() => this.ExportSetting != null;
+        internal bool IsSetS3TablesConfiguration() => this.S3TablesConfiguration != null;
     }
 }

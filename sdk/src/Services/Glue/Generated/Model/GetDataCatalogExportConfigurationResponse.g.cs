@@ -35,6 +35,19 @@ namespace Amazon.Glue.Model
     public partial class GetDataCatalogExportConfigurationResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property Assets. 
+        /// <para>
+        /// The export setting and current export state for asset metadata.
+        /// </para>
+        /// </summary>
+        public AssetsExportResult Assets { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Assets property is set.
+        /// </summary>
+        internal bool IsSetAssets() => this.Assets != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp at which the export configuration was created.
@@ -48,57 +61,18 @@ namespace Amazon.Glue.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration. 
+        /// Gets and sets the property S3TablesConfiguration. 
         /// <para>
-        /// The encryption configuration for the exported data.
+        /// The S3 Tables configuration for the export, including the table bucket that holds
+        /// the exported catalog metadata and its encryption configuration.
         /// </para>
         /// </summary>
-        public ExportEncryptionConfiguration EncryptionConfiguration { get; set; }
+        public S3TablesConfigurationResult S3TablesConfiguration { get; set; }
 
         /// <summary>
-        /// Checks to see if the EncryptionConfiguration property is set.
+        /// Checks to see if the S3TablesConfiguration property is set.
         /// </summary>
-        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
-
-        /// <summary>
-        /// Gets and sets the property ExportSetting. 
-        /// <para>
-        /// The export setting for the data catalog. Valid values are <c>ENABLED</c> and <c>DISABLED</c>.
-        /// </para>
-        /// </summary>
-        public ExportSetting ExportSetting { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ExportSetting property is set.
-        /// </summary>
-        internal bool IsSetExportSetting() => this.ExportSetting != null;
-
-        /// <summary>
-        /// Gets and sets the property S3TableBucketArn. 
-        /// <para>
-        /// The ARN of the S3 Tables bucket where catalog metadata is exported.
-        /// </para>
-        /// </summary>
-        public string S3TableBucketArn { get; set; }
-
-        /// <summary>
-        /// Checks to see if the S3TableBucketArn property is set.
-        /// </summary>
-        internal bool IsSetS3TableBucketArn() => this.S3TableBucketArn != null;
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The current status of the export. Valid values are <c>ENABLING</c>, <c>ENABLED</c>,
-        /// <c>DISABLING</c>, <c>DISABLED</c>, and <c>FAILED</c>.
-        /// </para>
-        /// </summary>
-        public ExportStatus Status { get; set; }
-
-        /// <summary>
-        /// Checks to see if the Status property is set.
-        /// </summary>
-        internal bool IsSetStatus() => this.Status != null;
+        internal bool IsSetS3TablesConfiguration() => this.S3TablesConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. 

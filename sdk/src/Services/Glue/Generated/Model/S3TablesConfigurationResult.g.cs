@@ -30,23 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteAssetType operation. Deletes an asset type
-    /// from Glue Data Catalog.
+    /// The S3 Tables configuration for a data catalog export, including the table bucket
+    /// that holds the exported catalog metadata.
     /// </summary>
-    public partial class DeleteAssetTypeRequest : AmazonGlueRequest
+    public partial class S3TablesConfigurationResult
     {
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// The identifier of the asset type to delete.
+        /// The encryption configuration for the table bucket that holds the exported catalog
+        /// metadata.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 256)]
-        public string Identifier { get; set; }
+        public ExportEncryptionConfiguration EncryptionConfiguration { get; set; }
 
         /// <summary>
-        /// Checks to see if the Identifier property is set.
+        /// Checks to see if the EncryptionConfiguration property is set.
         /// </summary>
-        internal bool IsSetIdentifier() => this.Identifier != null;
+        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property TableBucketArn. 
+        /// <para>
+        /// The ARN of the S3 table bucket that holds the exported catalog metadata.
+        /// </para>
+        /// </summary>
+        public string TableBucketArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TableBucketArn property is set.
+        /// </summary>
+        internal bool IsSetTableBucketArn() => this.TableBucketArn != null;
     }
 }

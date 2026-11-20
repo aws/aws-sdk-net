@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary containing this term.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 36)]
         public string GlossaryId { get; set; }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary term.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 36)]
         public string Id { get; set; }
 
         /// <summary>

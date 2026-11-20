@@ -22,12 +22,7 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.AssetIdentifier</property>
-    <min>1</min>
-    <max>1087</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.ItemIdentifier</property>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.AssetId</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -425,6 +420,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlossaryResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateGlossaryResponse.Name</property>
     <min>1</min>
     <max>256</max>
@@ -433,6 +434,12 @@
     <property>Amazon.Glue.Model.CreateGlossaryTermRequest.ClientToken</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlossaryTermRequest.GlossaryIdentifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateGlossaryTermRequest.LongDescription</property>
@@ -448,6 +455,18 @@
     <property>Amazon.Glue.Model.CreateGlossaryTermRequest.ShortDescription</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlossaryTermResponse.GlossaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlossaryTermResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateGlossaryTermResponse.LongDescription</property>
@@ -908,11 +927,6 @@
     <max>1087</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DeleteAssetTypeRequest.Identifier</property>
-    <min>1</min>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteAttachmentRequest.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
@@ -935,12 +949,7 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DeleteAttachmentResponse.AssetIdentifier</property>
-    <min>1</min>
-    <max>1087</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.DeleteAttachmentResponse.ItemIdentifier</property>
+    <property>Amazon.Glue.Model.DeleteAttachmentResponse.AssetId</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -1079,6 +1088,19 @@
     <property>Amazon.Glue.Model.DeleteFormTypeRequest.Identifier</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteGlossaryRequest.Identifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteGlossaryTermRequest.Identifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteIntegrationRequest.IntegrationIdentifier</property>
@@ -1449,12 +1471,7 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.AssetIdentifier</property>
-    <min>1</min>
-    <max>1087</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.ItemIdentifier</property>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.AssetId</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -1475,9 +1492,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetAssetResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetAssetResponse.Id</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetAssetResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetAssetTypeRequest.Identifier</property>
@@ -1956,11 +1983,13 @@
     <property>Amazon.Glue.Model.GetFormTypeRequest.Identifier</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetFormTypeResponse.Id</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetFormTypeResponse.Name</property>
@@ -1974,14 +2003,44 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlossaryRequest.Identifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetGlossaryResponse.Description</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlossaryResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetGlossaryResponse.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlossaryTermRequest.Identifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlossaryTermResponse.GlossaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlossaryTermResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetGlossaryTermResponse.LongDescription</property>
@@ -2752,7 +2811,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ListAssetTypesRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListBlueprintsRequest.MaxResults</property>
@@ -2897,17 +2956,23 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ListFormTypesRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListGlossariesRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListGlossaryTermsRequest.GlossaryIdentifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListGlossaryTermsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListIntegrationResourcePropertiesRequest.Marker</property>
@@ -3181,7 +3246,7 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAssetRequest.AssetTypeId</property>
+    <property>Amazon.Glue.Model.PutAssetRequest.AssetTypeIdentifier</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -3191,9 +3256,29 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PutAssetRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PutAssetRequest.Identifier</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutAssetRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutAssetResponse.AssetTypeId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutAssetResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAssetResponse.Id</property>
@@ -3201,26 +3286,9 @@
     <max>1087</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAssetTypeRequest.ClientToken</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.PutAssetTypeRequest.Name</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^(?![0-9_])\w+$|^_\w*[a-zA-Z0-9]\w*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.PutAssetTypeResponse.Id</property>
+    <property>Amazon.Glue.Model.PutAssetResponse.Name</property>
     <min>1</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.PutAssetTypeResponse.Name</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>^(?![0-9_])\w+$|^_\w*[a-zA-Z0-9]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentRequest.AssetIdentifier</property>
@@ -3239,9 +3307,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAttachmentRequest.FormTypeId</property>
+    <property>Amazon.Glue.Model.PutAttachmentRequest.FormTypeIdentifier</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentRequest.ItemIdentifier</property>
@@ -3255,7 +3324,7 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.PutAttachmentResponse.AssetIdentifier</property>
+    <property>Amazon.Glue.Model.PutAttachmentResponse.AssetId</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
@@ -3269,11 +3338,7 @@
     <property>Amazon.Glue.Model.PutAttachmentResponse.FormTypeId</property>
     <min>1</min>
     <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Glue.Model.PutAttachmentResponse.ItemIdentifier</property>
-    <min>1</min>
-    <max>1087</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutAttachmentResponse.IterableFormName</property>
@@ -3316,6 +3381,7 @@
     <property>Amazon.Glue.Model.PutFormTypeResponse.Id</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutFormTypeResponse.Name</property>
@@ -3938,14 +4004,34 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateAssetRequest.Identifier</property>
     <min>1</min>
     <max>1087</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateAssetResponse.Id</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateAssetResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateBlueprintRequest.BlueprintLocation</property>
@@ -4159,8 +4245,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGlossaryRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateGlossaryRequest.Identifier</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGlossaryRequest.Name</property>
@@ -4173,6 +4265,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateGlossaryResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGlossaryResponse.Name</property>
     <min>1</min>
     <max>256</max>
@@ -4183,8 +4281,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.UpdateGlossaryTermRequest.LongDescription</property>
+    <property>Amazon.Glue.Model.UpdateGlossaryTermRequest.Identifier</property>
     <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateGlossaryTermRequest.LongDescription</property>
+    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -4194,8 +4298,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGlossaryTermRequest.ShortDescription</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateGlossaryTermResponse.GlossaryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateGlossaryTermResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateGlossaryTermResponse.LongDescription</property>
@@ -4594,11 +4710,19 @@
     <property>Amazon.Glue.Model.AssetFormEntry.FormTypeId</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Glue.Model.AssetTypeFormReference.FormTypeIdentifier</property>
+    <property>Amazon.Glue.Model.AssetFormInput.FormTypeIdentifier</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AssetTypeFormOutput.FormTypeId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AssetTypeItem.Id</property>
@@ -6230,6 +6354,7 @@
     <property>Amazon.Glue.Model.FormTypeItem.Id</property>
     <min>1</min>
     <max>256</max>
+    <pattern>^(?![\.:])([\w.]+(::))?[A-Z]\w*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.FormTypeItem.Name</property>
@@ -6248,9 +6373,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GlossaryItem.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GlossaryItem.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GlossaryTermItem.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GlossaryTermItem.Name</property>
@@ -7813,9 +7950,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.SearchResultItem.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.SearchResultItem.Id</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SearchResultItem.Name</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SearchSort.Attribute</property>

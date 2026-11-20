@@ -35,32 +35,6 @@ namespace Amazon.Glue.Model
     public partial class SearchResultItem
     {
         /// <summary>
-        /// Gets and sets the property AssetDescription. 
-        /// <para>
-        /// The description of the matched asset.
-        /// </para>
-        /// </summary>
-        public string AssetDescription { get; set; }
-
-        /// <summary>
-        /// Checks to see if the AssetDescription property is set.
-        /// </summary>
-        internal bool IsSetAssetDescription() => this.AssetDescription != null;
-
-        /// <summary>
-        /// Gets and sets the property AssetName. 
-        /// <para>
-        /// The name of the matched asset.
-        /// </para>
-        /// </summary>
-        public string AssetName { get; set; }
-
-        /// <summary>
-        /// Checks to see if the AssetName property is set.
-        /// </summary>
-        internal bool IsSetAssetName() => this.AssetName != null;
-
-        /// <summary>
         /// Gets and sets the property AssetTypeId. 
         /// <para>
         /// The identifier of the asset type for the matched asset.
@@ -75,6 +49,33 @@ namespace Amazon.Glue.Model
         internal bool IsSetAssetTypeId() => this.AssetTypeId != null;
 
         /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp at which the matched asset was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedAt property is set.
+        /// </summary>
+        internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the matched asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier of the matched asset.
@@ -87,6 +88,20 @@ namespace Amazon.Glue.Model
         /// Checks to see if the Id property is set.
         /// </summary>
         internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the matched asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. 

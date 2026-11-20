@@ -41,7 +41,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary whose terms to list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string GlossaryIdentifier { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model
         /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1000)]
+        [AWSProperty(Min = 1, Max = 100)]
         public int? MaxResults { get; set; }
 
         /// <summary>

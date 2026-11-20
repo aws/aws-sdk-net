@@ -70,10 +70,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetAssetTypeId())
+            if (publicRequest.IsSetAssetTypeIdentifier())
             {
-                context.Writer.WritePropertyName("AssetTypeId");
-                context.Writer.WriteStringValue(publicRequest.AssetTypeId);
+                context.Writer.WritePropertyName("AssetTypeIdentifier");
+                context.Writer.WriteStringValue(publicRequest.AssetTypeIdentifier);
             }
             if (publicRequest.IsSetClientToken())
             {
@@ -100,7 +100,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     var publicRequestFormsValue = publicRequestFormsKvp.Value;
                     context.Writer.WriteStartObject();
 
-                    var marshaller = AssetFormEntryMarshaller.Instance;
+                    var marshaller = AssetFormInputMarshaller.Instance;
                     marshaller.Marshall(publicRequestFormsValue, context);
 
                     context.Writer.WriteEndObject();

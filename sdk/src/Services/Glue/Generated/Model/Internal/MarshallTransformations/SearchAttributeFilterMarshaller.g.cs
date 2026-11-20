@@ -51,10 +51,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
-            if (requestObject.IsSetOperator())
+            if (requestObject.IsSetComparator())
             {
-                context.Writer.WritePropertyName("Operator");
-                context.Writer.WriteStringValue(requestObject.Operator);
+                context.Writer.WritePropertyName("Comparator");
+                context.Writer.WriteStringValue(requestObject.Comparator);
             }
 
             if (requestObject.IsSetValue())

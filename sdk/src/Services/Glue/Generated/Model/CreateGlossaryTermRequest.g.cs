@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary in which to create the term.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string GlossaryIdentifier { get; set; }
 
         /// <summary>

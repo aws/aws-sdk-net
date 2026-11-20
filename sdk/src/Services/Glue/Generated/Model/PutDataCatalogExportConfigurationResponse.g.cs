@@ -35,29 +35,29 @@ namespace Amazon.Glue.Model
     public partial class PutDataCatalogExportConfigurationResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration. 
+        /// Gets and sets the property Assets. 
         /// <para>
-        /// The encryption configuration for the exported data.
+        /// The export setting for asset metadata.
         /// </para>
         /// </summary>
-        public ExportEncryptionConfiguration EncryptionConfiguration { get; set; }
+        public AssetsExport Assets { get; set; }
 
         /// <summary>
-        /// Checks to see if the EncryptionConfiguration property is set.
+        /// Checks to see if the Assets property is set.
         /// </summary>
-        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
+        internal bool IsSetAssets() => this.Assets != null;
 
         /// <summary>
-        /// Gets and sets the property ExportSetting. 
+        /// Gets and sets the property S3TablesConfiguration. 
         /// <para>
-        /// The export setting for the data catalog.
+        /// The S3 Tables configuration for the export.
         /// </para>
         /// </summary>
-        public ExportSetting ExportSetting { get; set; }
+        public S3TablesConfiguration S3TablesConfiguration { get; set; }
 
         /// <summary>
-        /// Checks to see if the ExportSetting property is set.
+        /// Checks to see if the S3TablesConfiguration property is set.
         /// </summary>
-        internal bool IsSetExportSetting() => this.ExportSetting != null;
+        internal bool IsSetS3TablesConfiguration() => this.S3TablesConfiguration != null;
     }
 }

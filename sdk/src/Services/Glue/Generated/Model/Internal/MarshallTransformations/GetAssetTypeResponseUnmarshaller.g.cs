@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Forms", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AssetTypeFormReference, StringUnmarshaller, AssetTypeFormReferenceUnmarshaller>(StringUnmarshaller.Instance, AssetTypeFormReferenceUnmarshaller.Instance);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AssetTypeFormOutput, StringUnmarshaller, AssetTypeFormOutputUnmarshaller>(StringUnmarshaller.Instance, AssetTypeFormOutputUnmarshaller.Instance);
                     unmarshalledObject.Forms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

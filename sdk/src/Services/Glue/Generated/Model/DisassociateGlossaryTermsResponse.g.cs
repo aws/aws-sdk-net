@@ -35,18 +35,18 @@ namespace Amazon.Glue.Model
     public partial class DisassociateGlossaryTermsResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AssetIdentifier. 
+        /// Gets and sets the property AssetId. 
         /// <para>
         /// The unique identifier of the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1087)]
-        public string AssetIdentifier { get; set; }
+        public string AssetId { get; set; }
 
         /// <summary>
-        /// Checks to see if the AssetIdentifier property is set.
+        /// Checks to see if the AssetId property is set.
         /// </summary>
-        internal bool IsSetAssetIdentifier() => this.AssetIdentifier != null;
+        internal bool IsSetAssetId() => this.AssetId != null;
 
         /// <summary>
         /// Gets and sets the property GlossaryTerms. 
@@ -60,7 +60,6 @@ namespace Amazon.Glue.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 10)]
         public List<string> GlossaryTerms { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -69,18 +68,17 @@ namespace Amazon.Glue.Model
         internal bool IsSetGlossaryTerms() => this.GlossaryTerms != null && (this.GlossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
-        /// Gets and sets the property ItemIdentifier. 
+        /// Gets and sets the property ItemId. 
         /// <para>
         /// The identifier of the item within the iterable form, if applicable.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1087)]
-        public string ItemIdentifier { get; set; }
+        public string ItemId { get; set; }
 
         /// <summary>
-        /// Checks to see if the ItemIdentifier property is set.
+        /// Checks to see if the ItemId property is set.
         /// </summary>
-        internal bool IsSetItemIdentifier() => this.ItemIdentifier != null;
+        internal bool IsSetItemId() => this.ItemId != null;
 
         /// <summary>
         /// Gets and sets the property IterableFormName. 

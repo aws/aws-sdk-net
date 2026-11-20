@@ -49,19 +49,19 @@ namespace Amazon.Glue.Model
         internal bool IsSetAttribute() => this.Attribute != null;
 
         /// <summary>
-        /// Gets and sets the property Operator. 
+        /// Gets and sets the property Comparator. 
         /// <para>
-        /// The comparison operator. Valid values are <c>equals</c>, <c>greaterThan</c>, <c>greaterThanOrEquals</c>,
-        /// <c>lessThan</c>, <c>lessThanOrEquals</c>, and <c>notExists</c>.
+        /// The comparison operator. Valid values are <c>EQUALS</c>, <c>GREATER_THAN</c>, <c>GREATER_THAN_OR_EQUALS</c>,
+        /// <c>LESS_THAN</c>, <c>LESS_THAN_OR_EQUALS</c>, and <c>NOT_EXISTS</c>. This field is
+        /// required.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
-        public SearchFilterOperator Operator { get; set; }
+        public SearchFilterComparator Comparator { get; set; }
 
         /// <summary>
-        /// Checks to see if the Operator property is set.
+        /// Checks to see if the Comparator property is set.
         /// </summary>
-        internal bool IsSetOperator() => this.Operator != null;
+        internal bool IsSetComparator() => this.Comparator != null;
 
         /// <summary>
         /// Gets and sets the property Value. 

@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetTypeFormReference Object
+    /// Response Unmarshaller for AssetTypeFormOutput Object
     /// </summary>
-    public partial class AssetTypeFormReferenceUnmarshaller : IJsonUnmarshaller<AssetTypeFormReference, JsonUnmarshallerContext>
+    public partial class AssetTypeFormOutputUnmarshaller : IJsonUnmarshaller<AssetTypeFormOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AssetTypeFormReference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AssetTypeFormOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new AssetTypeFormReference();
+            var unmarshalledObject = new AssetTypeFormOutput();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,21 +53,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FormTypeIdentifier", targetDepth, ref reader))
+                if (context.TestExpression("FormTypeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FormTypeIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FormTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static AssetTypeFormReferenceUnmarshaller _instance = new AssetTypeFormReferenceUnmarshaller();
+        private static AssetTypeFormOutputUnmarshaller _instance = new AssetTypeFormOutputUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static AssetTypeFormReferenceUnmarshaller Instance => _instance;
+        public static AssetTypeFormOutputUnmarshaller Instance => _instance;
     }
 }

@@ -34,14 +34,14 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssetFormEntry Marshaller
+    /// AssetFormInput Marshaller
     /// </summary>
-    public partial class AssetFormEntryMarshaller : IRequestMarshaller<AssetFormEntry, JsonMarshallerContext>
+    public partial class AssetFormInputMarshaller : IRequestMarshaller<AssetFormInput, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(AssetFormEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(AssetFormInput requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
@@ -51,16 +51,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Content);
             }
 
-            if (requestObject.IsSetFormTypeId())
+            if (requestObject.IsSetFormTypeIdentifier())
             {
-                context.Writer.WritePropertyName("FormTypeId");
-                context.Writer.WriteStringValue(requestObject.FormTypeId);
+                context.Writer.WritePropertyName("FormTypeIdentifier");
+                context.Writer.WriteStringValue(requestObject.FormTypeIdentifier);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static AssetFormEntryMarshaller Instance = new AssetFormEntryMarshaller();
+        public readonly static AssetFormInputMarshaller Instance = new AssetFormInputMarshaller();
     }
 }

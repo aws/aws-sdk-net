@@ -6935,53 +6935,53 @@ namespace Amazon.Glue
     }
 
     /// <summary>
-    /// Constants used for properties of type SearchFilterOperator.
+    /// Constants used for properties of type SearchFilterComparator.
     /// </summary>
-    public class SearchFilterOperator : ConstantClass
+    public class SearchFilterComparator : ConstantClass
     {
         /// <summary>
-        /// Constant Equals for SearchFilterOperator
+        /// Constant EQUALS for SearchFilterComparator
         /// </summary>
-        public new static readonly SearchFilterOperator Equals = new SearchFilterOperator("equals");
+        public static readonly SearchFilterComparator EQUALS = new SearchFilterComparator("EQUALS");
 
         /// <summary>
-        /// Constant GreaterThan for SearchFilterOperator
+        /// Constant GREATER_THAN for SearchFilterComparator
         /// </summary>
-        public static readonly SearchFilterOperator GreaterThan = new SearchFilterOperator("greaterThan");
+        public static readonly SearchFilterComparator GREATER_THAN = new SearchFilterComparator("GREATER_THAN");
 
         /// <summary>
-        /// Constant GreaterThanOrEquals for SearchFilterOperator
+        /// Constant GREATER_THAN_OR_EQUALS for SearchFilterComparator
         /// </summary>
-        public static readonly SearchFilterOperator GreaterThanOrEquals = new SearchFilterOperator("greaterThanOrEquals");
+        public static readonly SearchFilterComparator GREATER_THAN_OR_EQUALS = new SearchFilterComparator("GREATER_THAN_OR_EQUALS");
 
         /// <summary>
-        /// Constant LessThan for SearchFilterOperator
+        /// Constant LESS_THAN for SearchFilterComparator
         /// </summary>
-        public static readonly SearchFilterOperator LessThan = new SearchFilterOperator("lessThan");
+        public static readonly SearchFilterComparator LESS_THAN = new SearchFilterComparator("LESS_THAN");
 
         /// <summary>
-        /// Constant LessThanOrEquals for SearchFilterOperator
+        /// Constant LESS_THAN_OR_EQUALS for SearchFilterComparator
         /// </summary>
-        public static readonly SearchFilterOperator LessThanOrEquals = new SearchFilterOperator("lessThanOrEquals");
+        public static readonly SearchFilterComparator LESS_THAN_OR_EQUALS = new SearchFilterComparator("LESS_THAN_OR_EQUALS");
 
         /// <summary>
-        /// Constant NotExists for SearchFilterOperator
+        /// Constant NOT_EXISTS for SearchFilterComparator
         /// </summary>
-        public static readonly SearchFilterOperator NotExists = new SearchFilterOperator("notExists");
+        public static readonly SearchFilterComparator NOT_EXISTS = new SearchFilterComparator("NOT_EXISTS");
 
         /// <summary>
-        /// Constructs a custom SearchFilterOperator for a value not among the defined constants.
+        /// Constructs a custom SearchFilterComparator for a value not among the defined constants.
         /// </summary>
-        public SearchFilterOperator(string value) : base(value) { }
+        public SearchFilterComparator(string value) : base(value) { }
 
         /// <summary>
         /// Finds the constant for the unique value.
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static SearchFilterOperator FindValue(string value)
+        public static SearchFilterComparator FindValue(string value)
         {
-            return FindValue<SearchFilterOperator>(value);
+            return FindValue<SearchFilterComparator>(value);
         }
 
         /// <summary>
@@ -6989,7 +6989,7 @@ namespace Amazon.Glue
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator SearchFilterOperator(string value)
+        public static implicit operator SearchFilterComparator(string value)
         {
             return FindValue(value);
         }

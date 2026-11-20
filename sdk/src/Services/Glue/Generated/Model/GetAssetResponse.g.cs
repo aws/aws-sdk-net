@@ -86,6 +86,7 @@ namespace Amazon.Glue.Model
         /// The description of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
         public string Description { get; set; }
 
         /// <summary>
@@ -124,7 +125,6 @@ namespace Amazon.Glue.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 10)]
         public List<string> GlossaryTerms { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -173,6 +173,7 @@ namespace Amazon.Glue.Model
         /// The name of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
         public string Name { get; set; }
 
         /// <summary>

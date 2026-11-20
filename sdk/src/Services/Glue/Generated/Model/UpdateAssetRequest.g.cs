@@ -56,6 +56,7 @@ namespace Amazon.Glue.Model
         /// The new description of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
         public string Description { get; set; }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.Glue.Model
         /// The new name of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
         public string Name { get; set; }
 
         /// <summary>

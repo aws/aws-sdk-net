@@ -35,32 +35,31 @@ namespace Amazon.Glue.Model
     public partial class DeleteAttachmentResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property AssetIdentifier. 
+        /// Gets and sets the property AssetId. 
         /// <para>
         /// The unique identifier of the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1087)]
-        public string AssetIdentifier { get; set; }
+        public string AssetId { get; set; }
 
         /// <summary>
-        /// Checks to see if the AssetIdentifier property is set.
+        /// Checks to see if the AssetId property is set.
         /// </summary>
-        internal bool IsSetAssetIdentifier() => this.AssetIdentifier != null;
+        internal bool IsSetAssetId() => this.AssetId != null;
 
         /// <summary>
-        /// Gets and sets the property ItemIdentifier. 
+        /// Gets and sets the property ItemId. 
         /// <para>
         /// The identifier of the item within the iterable form, if applicable.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1087)]
-        public string ItemIdentifier { get; set; }
+        public string ItemId { get; set; }
 
         /// <summary>
-        /// Checks to see if the ItemIdentifier property is set.
+        /// Checks to see if the ItemId property is set.
         /// </summary>
-        internal bool IsSetItemIdentifier() => this.ItemIdentifier != null;
+        internal bool IsSetItemId() => this.ItemId != null;
 
         /// <summary>
         /// Gets and sets the property IterableFormName. 

@@ -37,18 +37,18 @@ namespace Amazon.Glue.Model
     public partial class PutAssetRequest : AmazonGlueRequest
     {
         /// <summary>
-        /// Gets and sets the property AssetTypeId. 
+        /// Gets and sets the property AssetTypeIdentifier. 
         /// <para>
-        /// The identifier of the asset type for the asset.
+        /// The identifier of the asset type for the asset. This field is required.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 256)]
-        public string AssetTypeId { get; set; }
+        [AWSProperty(Min = 1, Max = 256)]
+        public string AssetTypeIdentifier { get; set; }
 
         /// <summary>
-        /// Checks to see if the AssetTypeId property is set.
+        /// Checks to see if the AssetTypeIdentifier property is set.
         /// </summary>
-        internal bool IsSetAssetTypeId() => this.AssetTypeId != null;
+        internal bool IsSetAssetTypeIdentifier() => this.AssetTypeIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -71,6 +71,7 @@ namespace Amazon.Glue.Model
         /// The description of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
         public string Description { get; set; }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Glue.Model
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required = true)]
-        public Dictionary<string, AssetFormEntry> Forms { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, AssetFormEntry>() : null;
+        public Dictionary<string, AssetFormInput> Forms { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, AssetFormInput>() : null;
 
         /// <summary>
         /// Checks to see if the Forms property is set.
@@ -120,7 +121,7 @@ namespace Amazon.Glue.Model
         /// The name of the asset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Name { get; set; }
 
         /// <summary>

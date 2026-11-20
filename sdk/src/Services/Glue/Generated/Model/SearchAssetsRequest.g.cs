@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchAssets operation. Searches for assets in
-    /// Glue Data Catalog using full-text search, filters, sorting, and aggregations. Returns
-    /// matching assets with relevance-ranked results.
+    /// Glue Data Catalog using full-text search, filters, and sorting. Returns matching assets
+    /// with relevance-ranked results.
     /// </summary>
     public partial class SearchAssetsRequest : AmazonGlueRequest
     {

@@ -52,17 +52,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("Assets", targetDepth, ref reader))
                 {
-                    var unmarshaller = ExportEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AssetsExportUnmarshaller.Instance;
+                    unmarshalledObject.Assets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("ExportSetting", targetDepth, ref reader))
+                if (context.TestExpression("S3TablesConfiguration", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportSetting = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = S3TablesConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3TablesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

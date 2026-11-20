@@ -35,6 +35,20 @@ namespace Amazon.Glue.Model
     public partial class PutAssetResponse : AmazonWebServiceResponse
     {
         /// <summary>
+        /// Gets and sets the property AssetTypeId. 
+        /// <para>
+        /// The identifier of the asset type for this asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
+        public string AssetTypeId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssetTypeId property is set.
+        /// </summary>
+        internal bool IsSetAssetTypeId() => this.AssetTypeId != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp at which the asset was created.
@@ -53,6 +67,7 @@ namespace Amazon.Glue.Model
         /// The description of the asset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 0, Max = 2048)]
         public string Description { get; set; }
 
         /// <summary>
@@ -99,7 +114,7 @@ namespace Amazon.Glue.Model
         /// The name of the asset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Name { get; set; }
 
         /// <summary>

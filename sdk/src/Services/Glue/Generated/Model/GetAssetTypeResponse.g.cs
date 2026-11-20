@@ -46,8 +46,7 @@ namespace Amazon.Glue.Model
         /// a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 100)]
-        public Dictionary<string, AssetTypeFormReference> Forms { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, AssetTypeFormReference>() : null;
+        public Dictionary<string, AssetTypeFormOutput> Forms { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, AssetTypeFormOutput>() : null;
 
         /// <summary>
         /// Checks to see if the Forms property is set.

@@ -70,6 +70,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAssets())
+            {
+                context.Writer.WritePropertyName("Assets");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssetsExportMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Assets, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -80,20 +90,15 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if (publicRequest.IsSetEncryptionConfiguration())
+            if (publicRequest.IsSetS3TablesConfiguration())
             {
-                context.Writer.WritePropertyName("EncryptionConfiguration");
+                context.Writer.WritePropertyName("S3TablesConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ExportEncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+                var marshaller = S3TablesConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3TablesConfiguration, context);
 
                 context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetExportSetting())
-            {
-                context.Writer.WritePropertyName("ExportSetting");
-                context.Writer.WriteStringValue(publicRequest.ExportSetting);
             }
 
             writer.WriteEndObject();

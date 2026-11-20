@@ -51,12 +51,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// The updated description of the glossary.
-        /// </para>
+        /// Gets and sets the property Description. The new description. Omit it to keep the current
+        /// description; set it to an empty string to clear it.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 2048)]
+        [AWSProperty(Min = 0, Max = 2048)]
         public string Description { get; set; }
 
         /// <summary>
@@ -70,7 +68,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string Identifier { get; set; }
 
         /// <summary>

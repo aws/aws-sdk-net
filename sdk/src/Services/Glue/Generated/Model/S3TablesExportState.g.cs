@@ -30,9 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteAssetType operation.
+    /// The state of an export to S3 Tables. Glue sets this state.
     /// </summary>
-    public partial class DeleteAssetTypeResponse : AmazonWebServiceResponse
+    public partial class S3TablesExportState
     {
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the export. Valid values are <c>ENABLING</c>, <c>ENABLED</c>,
+        /// <c>DISABLING</c>, <c>DISABLED</c>, and <c>FAILED</c>.
+        /// </para>
+        /// </summary>
+        public ExportStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
     }
 }

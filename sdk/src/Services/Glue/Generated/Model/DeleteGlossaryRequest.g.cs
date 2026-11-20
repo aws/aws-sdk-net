@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string Identifier { get; set; }
 
         /// <summary>

@@ -5191,80 +5191,6 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes an asset type from Glue Data Catalog.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetType service method.</param>
-        /// <returns>The response from the DeleteAssetType service method, as returned by Glue.</returns>
-        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
-        /// Access to a resource was denied.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
-        /// Two processes are trying to modify a resource simultaneously.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
-        /// An internal service error occurred.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
-        /// The throttling threshhold was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAssetType">REST API Reference for DeleteAssetType Operation</seealso>
-        public virtual DeleteAssetTypeResponse DeleteAssetType(DeleteAssetTypeRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteAssetTypeResponse>(request, options);
-        }
-#else
-        internal virtual DeleteAssetTypeResponse DeleteAssetType(DeleteAssetTypeRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteAssetTypeResponse>(request, options);
-        }
-#endif
-
-        /// <summary>
-        /// Deletes an asset type from Glue Data Catalog.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the DeleteAssetType service method, as returned by Glue.</returns>
-        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
-        /// Access to a resource was denied.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
-        /// Two processes are trying to modify a resource simultaneously.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
-        /// An internal service error occurred.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
-        /// The throttling threshhold was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteAssetType">REST API Reference for DeleteAssetType Operation</seealso>
-        public virtual Task<DeleteAssetTypeResponse> DeleteAssetTypeAsync(DeleteAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteAssetTypeResponse>(request, options, cancellationToken);
-        }
-
-#if NETFRAMEWORK
-        /// <summary>
         /// Deletes a form attachment from an asset in Glue Data Catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
@@ -10360,6 +10286,9 @@ namespace Amazon.Glue
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogExportConfiguration service method.</param>
         /// <returns>The response from the GetDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -10401,6 +10330,9 @@ namespace Amazon.Glue
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The response from the GetDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -11580,6 +11512,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
         /// </exception>
@@ -11620,6 +11555,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
         /// </exception>
@@ -11647,6 +11585,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
@@ -11687,6 +11628,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ThrottlingException">
         /// The throttling threshhold was exceeded.
@@ -18515,90 +18459,6 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates or updates an asset type in Glue Data Catalog. An asset type defines the structure
-        /// of assets by specifying which forms they include. If an asset type with the given
-        /// name already exists, it is updated.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutAssetType service method.</param>
-        /// <returns>The response from the PutAssetType service method, as returned by Glue.</returns>
-        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
-        /// Access to a resource was denied.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
-        /// Two processes are trying to modify a resource simultaneously.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
-        /// A specified entity does not exist
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
-        /// An internal service error occurred.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
-        /// The throttling threshhold was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAssetType">REST API Reference for PutAssetType Operation</seealso>
-        public virtual PutAssetTypeResponse PutAssetType(PutAssetTypeRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = PutAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutAssetTypeResponseUnmarshaller.Instance;
-
-            return Invoke<PutAssetTypeResponse>(request, options);
-        }
-#else
-        internal virtual PutAssetTypeResponse PutAssetType(PutAssetTypeRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = PutAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutAssetTypeResponseUnmarshaller.Instance;
-
-            return Invoke<PutAssetTypeResponse>(request, options);
-        }
-#endif
-
-        /// <summary>
-        /// Creates or updates an asset type in Glue Data Catalog. An asset type defines the structure
-        /// of assets by specifying which forms they include. If an asset type with the given
-        /// name already exists, it is updated.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutAssetType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The response from the PutAssetType service method, as returned by Glue.</returns>
-        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
-        /// Access to a resource was denied.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
-        /// Two processes are trying to modify a resource simultaneously.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
-        /// A specified entity does not exist
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
-        /// An internal service error occurred.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
-        /// The input provided was not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
-        /// The throttling threshhold was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutAssetType">REST API Reference for PutAssetType Operation</seealso>
-        public virtual Task<PutAssetTypeResponse> PutAssetTypeAsync(PutAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = PutAssetTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutAssetTypeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutAssetTypeResponse>(request, options, cancellationToken);
-        }
-
-#if NETFRAMEWORK
-        /// <summary>
         /// Attaches a form to an asset or an iterable form item in Glue Data Catalog. If an attachment
         /// with the same name already exists, it is overwritten.
         /// </summary>
@@ -19851,8 +19711,8 @@ namespace Amazon.Glue
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
-        /// and aggregations. Returns matching assets with relevance-ranked results.
+        /// Searches for assets in Glue Data Catalog using full-text search, filters, and sorting.
+        /// Returns matching assets with relevance-ranked results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAssets service method.</param>
         /// <returns>The response from the SearchAssets service method, as returned by Glue.</returns>
@@ -19889,8 +19749,8 @@ namespace Amazon.Glue
 #endif
 
         /// <summary>
-        /// Searches for assets in Glue Data Catalog using full-text search, filters, sorting,
-        /// and aggregations. Returns matching assets with relevance-ranked results.
+        /// Searches for assets in Glue Data Catalog using full-text search, filters, and sorting.
+        /// Returns matching assets with relevance-ranked results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAssets service method.</param>
         /// <param name="cancellationToken">

@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// The unique identifier of the glossary term to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
+        [AWSProperty(Required = true, Min = 1, Max = 36)]
         public string Identifier { get; set; }
 
         /// <summary>
@@ -65,12 +65,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetIdentifier() => this.Identifier != null;
 
         /// <summary>
-        /// Gets and sets the property LongDescription. 
-        /// <para>
-        /// The updated long description of the glossary term.
-        /// </para>
+        /// Gets and sets the property LongDescription. The new long description. Omit it to keep
+        /// the current one; set it to an empty string to clear it.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 4096)]
+        [AWSProperty(Min = 0, Max = 4096)]
         public string LongDescription { get; set; }
 
         /// <summary>
@@ -93,12 +91,10 @@ namespace Amazon.Glue.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property ShortDescription. 
-        /// <para>
-        /// The updated short description of the glossary term.
-        /// </para>
+        /// Gets and sets the property ShortDescription. The new short description. Omit it to
+        /// keep the current one; set it to an empty string to clear it.
         /// </summary>
-        [AWSProperty(Min = 1, Max = 1024)]
+        [AWSProperty(Min = 0, Max = 1024)]
         public string ShortDescription { get; set; }
 
         /// <summary>
