@@ -123,7 +123,7 @@ public class CustomizationsModelTests
             .Where(part => part != missing)
             .Select(part => $""" "{part}": "X" """);
         var ex = Assert.Throws<GeneratorException>(() => LoadFiles($$"""{ "service": { "customErrorHandling": { {{string.Join(", ", parts)}} } } }"""));
-        Assert.Contains($"missing required properties, including the following: {missing}", ex.Message);
+        Assert.Contains($"missing required properties including: '{missing}'", ex.Message);
     }
 
     [Fact]

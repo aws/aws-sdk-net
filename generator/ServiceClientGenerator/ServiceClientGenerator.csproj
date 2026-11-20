@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>$(SdkGeneratorTarget)</TargetFramework>
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Title>AWSSDK_ServiceClientGenerator</Title>

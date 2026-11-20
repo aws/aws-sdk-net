@@ -158,8 +158,7 @@ namespace SDKDocGenerator
                     _manifestAssemblyWrapper = new ManifestAssemblyWrapper(
                         ServiceName,
                         Options.Platform,
-                        AssemblyPath,
-                        useIsolatedContext: true);
+                        AssemblyPath);
                 }
 
                 return _manifestAssemblyWrapper;
@@ -461,16 +460,11 @@ namespace SDKDocGenerator
             /// <param name="serviceName">The service name for documentation ID generation.</param>
             /// <param name="platform">The platform identifier (e.g., "net472", "net8.0").</param>
             /// <param name="assemblyPath">The path to the assembly file.</param>
-            /// <param name="useIsolatedContext">
-            /// If true, loads the assembly in an isolated AssemblyLoadContext. This should be
-            /// used for supplemental platform assemblies to avoid conflicts when the primary
-            /// platform assembly with the same name is already loaded.
-            /// </param>
-            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath, bool useIsolatedContext = false)
+            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath)
             {
                 var docId = NDocUtilities.GenerateDocId(serviceName, platform);
                 SdkAssembly = new AssemblyWrapper(docId);
-                SdkAssembly.LoadAssembly(assemblyPath, useIsolatedContext);
+                SdkAssembly.LoadAssembly(assemblyPath);
             }
 
             #region IDisposable Support
@@ -482,7 +476,7 @@ namespace SDKDocGenerator
                 {
                     if (disposing)
                     {
-                        // Unload the assembly (including isolated context if used)
+                        // Unload the assembly
                         SdkAssembly?.Unload();
                         SdkAssembly = null;
                         if (Domain != null)

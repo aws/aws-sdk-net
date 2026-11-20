@@ -235,7 +235,9 @@ public class CodeWriter
     /// <see cref="Format"/>), where a file that hasn't changed can skip the step.
     /// TODO: same as ToRawString now; fold both into ToString() when fewer PRs touch the writers.
     /// </summary>
+#pragma warning disable IDE0060 // The token goes away with the method (see the TODO); every writer still passes it.
     public string ToFormattedString(CancellationToken cancellationToken = default) => _buffer.ToString();
+#pragma warning restore IDE0060
 
     /// <summary>Runs <paramref name="source"/> through the Roslyn formatter.</summary>
     public static string Format(string source, CancellationToken cancellationToken = default)

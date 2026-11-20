@@ -49,6 +49,12 @@
    <!-- Target for performance benchmark and compatibility runner executables. -->
    <SdkPerformanceTargets>net10.0</SdkPerformanceTargets>
 
+   <!--
+     Target for the code generators and the doc generator, and their test projects. It does not need to
+     match the newest target the SDK supports; the latest LTS is usually enough.
+   -->
+   <SdkGeneratorTarget>net10.0</SdkGeneratorTarget>
+
    <DeprecatedTargets>netcoreapp3.1;net5.0;net6.0;net7.0</DeprecatedTargets>
  </PropertyGroup>
 

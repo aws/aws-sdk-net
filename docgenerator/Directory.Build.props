@@ -1,0 +1,9 @@
+<Project>
+  <!-- Brings in the SDK-wide properties, including the generator target framework. -->
+  <Import Project="../sdk/Directory.Build.props" />
+
+  <!-- The SDK props move obj; keep the default so existing checkouts don't compile stale obj files. -->
+  <PropertyGroup>
+    <BaseIntermediateOutputPath />
+  </PropertyGroup>
+</Project>

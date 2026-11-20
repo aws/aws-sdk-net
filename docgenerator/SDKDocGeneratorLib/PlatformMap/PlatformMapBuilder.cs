@@ -114,10 +114,10 @@ namespace SDKDocGenerator.PlatformMap
                             }
                         }
                     }
-                    catch (Exception ex) when (!isPrimary)
+                    catch (Exception ex)
                     {
-                        Trace.WriteLine($"  WARNING: Failed to scan {platform}: {ex.Message}");
-                        // Continue with other platforms even if a supplemental one fails
+                        // A platform that is skipped silently drops its exclusive APIs from the docs.
+                        throw new InvalidOperationException($"Failed to scan {platform} assembly '{assemblyPath}': {ex.Message}", ex);
                     }
                 }
 
@@ -129,7 +129,19 @@ namespace SDKDocGenerator.PlatformMap
                 }
 
                 // After all platforms scanned, identify and store wrappers for exclusive methods
-                IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts, isVerbose);
+                var contextsInUse = IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts, isVerbose);
+
+                // Only the assemblies an exclusive method was taken from are read again. The maps of all
+                // services are held at once, so the rest are released here to keep memory flat.
+                foreach (var context in loadedContexts)
+                {
+                    if (!contextsInUse.Contains(context))
+                    {
+                        context.Dispose();
+                    }
+                }
+
+                loadedContexts = contextsInUse;
 
                 var map = new PlatformAvailabilityMap(
                     serviceName,
@@ -181,8 +193,7 @@ namespace SDKDocGenerator.PlatformMap
 
             try
             {
-                // Use isolated context to avoid "assembly already loaded" conflicts
-                wrapper.LoadAssembly(assemblyPath, useIsolatedContext: true);
+                wrapper.LoadAssembly(assemblyPath);
 
                 // Scan all types
                 foreach (var type in wrapper.GetTypes())
@@ -292,12 +303,15 @@ namespace SDKDocGenerator.PlatformMap
         /// After all platforms are scanned, identifies exclusive methods and stores their wrappers.
         /// A member is "exclusive" if it exists on some platforms but NOT on the primary platform.
         /// </summary>
-        private static void IdentifyAndStoreExclusiveWrappers(
+        /// <returns>The contexts the stored wrappers were taken from.</returns>
+        private static List<PlatformAssemblyContext> IdentifyAndStoreExclusiveWrappers(
             Dictionary<string, PlatformMemberEntry> memberIndex,
             string primaryPlatform,
             List<PlatformAssemblyContext> loadedContexts,
             bool isVerbose)
         {
+            var contextsInUse = new List<PlatformAssemblyContext>();
+
             // Find method entries that are not on primary platform
             foreach (var kvp in memberIndex)
             {
@@ -332,8 +346,14 @@ namespace SDKDocGenerator.PlatformMap
                 if (methodWrapper != null)
                 {
                     entry.ExclusiveMethodWrapper = methodWrapper;
+                    if (!contextsInUse.Contains(context))
+                    {
+                        contextsInUse.Add(context);
+                    }
                 }
             }
+
+            return contextsInUse;
         }
 
         /// <summary>

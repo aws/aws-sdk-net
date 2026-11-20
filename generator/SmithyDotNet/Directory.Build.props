@@ -1,4 +1,12 @@
 <Project>
+  <!-- Brings in the SDK-wide properties, including the generator target framework. -->
+  <Import Project="../Directory.Build.props" />
+
+  <!-- The SDK props move obj; keep the default so existing checkouts don't compile stale obj files. -->
+  <PropertyGroup>
+    <BaseIntermediateOutputPath />
+  </PropertyGroup>
+
   <!-- Runs the .editorconfig code-style rules at build time and treats them as errors, so style
        nits fail the build the same way the SDK's warnings-as-errors does. -->
   <PropertyGroup>

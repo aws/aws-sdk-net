@@ -517,51 +517,69 @@ namespace SDKDocGenerator.Writers
         protected void AddVersionInformation(TextWriter writer, AbstractWrapper wrapper)
         {
             AddSectionHeader(writer, "Version Information");
-            
-            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper, TypeProvider);
-            var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper, TypeProvider);
-            var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper, TypeProvider);
-            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper, TypeProvider);
 
-            // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs472 == null && docsCore20 == null && docsNetCoreApp31 == null
-                && docsNet80 == null;
-
-            // .NET Core / .NET
-            var netAppVersions = new List<string>();
-
-            if (boolNoDocs || (wrapper != null && docsNet80 != null))
-                netAppVersions.Add("8.0 and newer");
-
-            if (boolNoDocs || (wrapper != null && docsNetCoreApp31 != null))
-                netAppVersions.Add("Core 3.1");
-
-            if (netAppVersions.Count > 0)
+            // The targets whose XML docs have this member. With no docs anywhere, assume it is on all of them.
+            var platforms = new List<string>();
+            foreach (var platform in Artifacts.AllPlatforms)
             {
-                writer.WriteLine("<p><strong>.NET: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netAppVersions));
+                if (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform(platform), wrapper, TypeProvider) != null)
+                {
+                    platforms.Add(platform);
+                }
             }
 
-            // .NET Standard
-            var netstandardVersions = new List<string>();            
-            if (boolNoDocs || (wrapper != null && docsCore20 != null))
-                netstandardVersions.Add("2.0");            
-
-            if(netstandardVersions.Count > 0)
+            if (platforms.Count == 0)
             {
-                writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netstandardVersions));
+                platforms.AddRange(Artifacts.AllPlatforms);
             }
 
-            // .NET Framework
-            var netframeworkVersions = new List<string>();
-            if (boolNoDocs || (wrapper != null && docs472 != null))
-                netframeworkVersions.Add("4.7.2 and newer");
-
-            if (netframeworkVersions.Count > 0)
+            Version lowestNet = null;
+            Version lowestNetStandard = null;
+            Version lowestNetFramework = null;
+            foreach (var platform in platforms)
             {
-                writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netframeworkVersions));
-            }                        
+                if (platform.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase))
+                {
+                    lowestNetStandard = Lowest(lowestNetStandard, Version.Parse(platform.Substring("netstandard".Length)));
+                }
+                else if (platform.Contains("."))
+                {
+                    lowestNet = Lowest(lowestNet, Version.Parse(platform.Substring("net".Length)));
+                }
+                else
+                {
+                    // .NET Framework folder names have no dots: net472 is 4.7.2.
+                    var digits = platform.Substring("net".Length).ToCharArray();
+                    lowestNetFramework = Lowest(lowestNetFramework, Version.Parse(string.Join(".", digits)));
+                }
+            }
+
+            if (lowestNet != null)
+            {
+                writer.WriteLine("<p><strong>.NET: </strong><br/>Supported in: {0} and newer<br/>", lowestNet);
+            }
+
+            if (lowestNetStandard != null)
+            {
+                writer.WriteLine("<p><strong>.NET Standard: </strong><br/>Supported in: {0}<br/>", lowestNetStandard);
+            }
+
+            if (lowestNetFramework != null)
+            {
+                writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0} and newer<br/>", lowestNetFramework);
+            }
 
             AddSectionClosing(writer);
+        }
+
+        private static Version Lowest(Version current, Version candidate)
+        {
+            if (current == null || candidate < current)
+            {
+                return candidate;
+            }
+
+            return current;
         }
 
         protected void AddSyntax(TextWriter writer, string csharpSyntax)

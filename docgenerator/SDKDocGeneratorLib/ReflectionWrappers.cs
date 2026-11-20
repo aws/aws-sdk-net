@@ -4,49 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using System.Runtime.Loader;
+using System.Runtime.InteropServices;
 
 namespace SDKDocGenerator
 {
-    /// <summary>
-    /// An isolated AssemblyLoadContext that allows loading assemblies with the same name
-    /// from different paths. This is used for loading supplemental platform assemblies
-    /// (e.g., net8.0) when the primary platform assembly (e.g., net472) is already loaded.
-    /// </summary>
-    public class IsolatedAssemblyLoadContext : AssemblyLoadContext
-    {
-        private readonly string _basePath;
-
-        public IsolatedAssemblyLoadContext(string basePath)
-        {
-            _basePath = Path.GetDirectoryName(basePath) ?? string.Empty;
-        }
-
-        protected override Assembly Load(AssemblyName assemblyName)
-        {
-            // Try to load from the same directory as the main assembly
-            var assemblyPath = Path.Combine(_basePath, $"{assemblyName.Name}.dll");
-            if (File.Exists(assemblyPath))
-            {
-                return LoadFromAssemblyPath(assemblyPath);
-            }
-
-            // Fall back to searching extension subfolders (e.g. extensions\CborProtocol\)
-            var extensionsPath = Path.Combine(_basePath, "extensions");
-            if (Directory.Exists(extensionsPath))
-            {
-                var nested = Directory.GetFiles(extensionsPath, $"{assemblyName.Name}.dll", SearchOption.AllDirectories);
-                if (nested.Length > 0)
-                {
-                    return LoadFromAssemblyPath(nested[0]);
-                }
-            }
-
-            // Fall back to default context for system assemblies
-            return null;
-        }
-    }
-
     public abstract class AbstractWrapper : MarshalByRefObject
     {
         public string DocId
@@ -86,7 +47,7 @@ namespace SDKDocGenerator
         IDictionary<string, TypeWrapper> _typesByFullName;
         IDictionary<string, IList<TypeWrapper>> _typesByNamespace;
         AbstractTypeProvider _deferredTypesProvider;
-        IsolatedAssemblyLoadContext _isolatedContext;
+        MetadataLoadContext _loadContext;
 
         public AssemblyWrapper(string docId)
             : base(docId)
@@ -94,24 +55,15 @@ namespace SDKDocGenerator
         }
 
         /// <summary>
-        /// Loads the assembly from the specified path.
+        /// Loads the assembly from the specified path. The assembly is read as metadata only, so any
+        /// SDK target can be inspected whatever runtime the generator itself runs on, and each call
+        /// gets its own context, so the same assembly can be loaded once per target.
         /// </summary>
         /// <param name="path">The path to the assembly file.</param>
-        /// <param name="useIsolatedContext">
-        /// If true, loads the assembly in an isolated AssemblyLoadContext to avoid
-        /// conflicts when loading multiple versions of the same assembly.
-        /// </param>
-        public void LoadAssembly(string path, bool useIsolatedContext = false)
+        public void LoadAssembly(string path)
         {
-            if (useIsolatedContext)
-            {
-                _isolatedContext = new IsolatedAssemblyLoadContext(path);
-                _assembly = _isolatedContext.LoadFromAssemblyPath(path);
-            }
-            else
-            {
-                _assembly = Assembly.LoadFrom(path);
-            }
+            _loadContext = CreateLoadContext(path);
+            _assembly = _loadContext.LoadFromAssemblyPath(path);
 
             _allTypes = new List<TypeWrapper>();
             _typesByNamespace = new Dictionary<string, IList<TypeWrapper>>();
@@ -234,10 +186,7 @@ namespace SDKDocGenerator
         }
 
         /// <summary>
-        /// Unloads the isolated assembly context if one was used.
-        /// This helps release resources when the assembly is no longer needed.
-        /// Note: Full unloading is only available in .NET Core 3.0+ with collectible contexts.
-        /// For netstandard2.0, we just null out references to allow GC.
+        /// Releases the assembly. Types and members read from it are no longer usable.
         /// </summary>
         public void Unload()
         {
@@ -246,8 +195,44 @@ namespace SDKDocGenerator
             _typesByFullName = null;
             _typesByNamespace = null;
 
-            // Just null out the reference; full unloading is not available in all frameworks
-            _isolatedContext = null;
+            _loadContext?.Dispose();
+            _loadContext = null;
+        }
+
+        /// <summary>
+        /// References resolve by file name, first match wins: the assembly's own folder, its extension
+        /// subfolders (e.g. extensions\CborProtocol\), then this application and its runtime for
+        /// everything else. The version is not checked, so an assembly built for a newer .NET than the
+        /// one running the generator still resolves its framework references.
+        /// </summary>
+        private static MetadataLoadContext CreateLoadContext(string assemblyPath)
+        {
+            var assemblyFolder = Path.GetDirectoryName(Path.GetFullPath(assemblyPath));
+            var pathsByFileName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+            AddAssemblies(pathsByFileName, assemblyFolder, SearchOption.TopDirectoryOnly);
+            AddAssemblies(pathsByFileName, Path.Combine(assemblyFolder, "extensions"), SearchOption.AllDirectories);
+            AddAssemblies(pathsByFileName, AppContext.BaseDirectory, SearchOption.TopDirectoryOnly);
+            AddAssemblies(pathsByFileName, RuntimeEnvironment.GetRuntimeDirectory(), SearchOption.TopDirectoryOnly);
+
+            return new MetadataLoadContext(new PathAssemblyResolver(pathsByFileName.Values));
+        }
+
+        private static void AddAssemblies(Dictionary<string, string> pathsByFileName, string folder, SearchOption searchOption)
+        {
+            if (!Directory.Exists(folder))
+            {
+                return;
+            }
+
+            foreach (var path in Directory.GetFiles(folder, "*.dll", searchOption))
+            {
+                var fileName = Path.GetFileName(path);
+                if (!pathsByFileName.ContainsKey(fileName))
+                {
+                    pathsByFileName.Add(fileName, path);
+                }
+            }
         }
     }
 
@@ -615,7 +600,7 @@ namespace SDKDocGenerator
                                                                 !x.Name.StartsWith("Equals") &&
                                                                 !x.Name.StartsWith("GetHashCode") &&
                                                                 !x.Name.StartsWith("ToString") &&
-                                                                x.DeclaringType != typeof(object)))
+                                                                x.DeclaringType.FullName != "System.Object"))
             {
                 if(info.DeclaringType.Namespace.StartsWith("Amazon"))
                     wrappers.Add(new MethodInfoWrapper(info, DocId));

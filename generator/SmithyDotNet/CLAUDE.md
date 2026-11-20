@@ -29,7 +29,7 @@ current SDK. Reads the Smithy AST directly - no C2J concepts internally.
   including interpolated (`$"""..."""`). Only reach for `$$"""..."""` when the *emitted* text has
   literal braces, and if the triple/quadruple braces get hard to read, hoist the token into a local
   (`var t = "{" + name + "}";`) and interpolate that instead.
-- net8.0, nullable enabled, xUnit v3 (tests pass `TestContext.Current.CancellationToken`).
+- Target framework is `SdkGeneratorTarget` in `sdk/Directory.Build.props`; nullable enabled, xUnit v3 (tests pass `TestContext.Current.CancellationToken`).
 
 ## Source of truth
 

@@ -154,13 +154,11 @@ namespace SDKDocGenerator
                             map.PlatformRestrictedMemberCount);
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     // Dispose the map if it was built but attachment failed (C2)
                     map?.Dispose();
-                    // Log but don't fail entire generation if one service fails
-                    Info("  WARNING: Failed to build platform map for {0}: {1}",
-                        manifest.ServiceName, ex.Message);
+                    throw;
                 }
             }
 

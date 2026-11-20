@@ -32,6 +32,7 @@
     <Import Project="$(InternalBuildTools)/CodeSign.props" Condition="Exists('$(InternalBuildTools)/CodeSign.props')" />
     <Import Project="common.targets" />
     <Import Project="sdk.props" />
+    <Import Project="../sdk/Directory.Build.props" />
 
     <PropertyGroup>
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
@@ -366,23 +367,13 @@
 
     <Target Name="copy-license-and-notice" DependsOnTargets="$(copy-license-and-notice-DependsOnTargets)">
         <Message Text="Copying License.txt and Notice.txt to the assembly zips" />
-        <!-- net472 and netstandard2.0 need modified Notice with additional 3rd party dependencies -->
+        <!-- Every target in sdk/Directory.Build.props ships third-party dependencies, so they all get the notice that lists them. -->
+        <ItemGroup>
+            <SdkTarget Include="$(SdkNetFrameworkTargets);$(SdkNetTargets)" />
+        </ItemGroup>
         <Copy
             SourceFiles="./NoticeForZips.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/net472/Notice.txt;../Deployment/assemblies/net472/License.txt"
-        />
-        <Copy
-            SourceFiles="./NoticeForZips.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/netstandard2.0/Notice.txt;../Deployment/assemblies/netstandard2.0/License.txt"
-        />
-
-        <Copy
-            SourceFiles="../Notice.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/netcoreapp3.1/Notice.txt;../Deployment/assemblies/netcoreapp3.1/License.txt"
-        />
-        <Copy
-            SourceFiles="../Notice.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/net8.0/Notice.txt;../Deployment/assemblies/net8.0/License.txt"
+            DestinationFiles="../Deployment/assemblies/%(SdkTarget.Identity)/Notice.txt;../Deployment/assemblies/%(SdkTarget.Identity)/License.txt"
         />
     </Target>
 

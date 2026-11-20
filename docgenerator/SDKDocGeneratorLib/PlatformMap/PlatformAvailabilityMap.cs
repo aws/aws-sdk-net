@@ -52,7 +52,7 @@ namespace SDKDocGenerator.PlatformMap
 
         /// <summary>
         /// All platforms that were scanned to build this map.
-        /// Example: ["net472", "netstandard2.0", "netcoreapp3.1", "net8.0"]
+        /// Example: ["net472", "netstandard2.0", "net8.0"]
         /// </summary>
         public IReadOnlyCollection<string> AllPlatforms => _allPlatforms;
 
