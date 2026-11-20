@@ -1633,6 +1633,16 @@ namespace Amazon.MediaConvert
         public static readonly AudioCodec AIFF = new AudioCodec("AIFF");
 
         /// <summary>
+        /// Constant DTSC for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec DTSC = new AudioCodec("DTSC");
+
+        /// <summary>
+        /// Constant DTSX for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec DTSX = new AudioCodec("DTSX");
+
+        /// <summary>
         /// Constant EAC3 for AudioCodec
         /// </summary>
         public static readonly AudioCodec EAC3 = new AudioCodec("EAC3");
@@ -2164,6 +2174,11 @@ namespace Amazon.MediaConvert
     public class Av1AdaptiveQuantization : ConstantClass
     {
         /// <summary>
+        /// Constant AUTO for Av1AdaptiveQuantization
+        /// </summary>
+        public static readonly Av1AdaptiveQuantization AUTO = new Av1AdaptiveQuantization("AUTO");
+
+        /// <summary>
         /// Constant HIGH for Av1AdaptiveQuantization
         /// </summary>
         public static readonly Av1AdaptiveQuantization HIGH = new Av1AdaptiveQuantization("HIGH");
@@ -2255,6 +2270,47 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Av1BitDepth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Av1FastDecode.
+    /// </summary>
+    public class Av1FastDecode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for Av1FastDecode
+        /// </summary>
+        public static readonly Av1FastDecode DISABLED = new Av1FastDecode("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for Av1FastDecode
+        /// </summary>
+        public static readonly Av1FastDecode ENABLED = new Av1FastDecode("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom Av1FastDecode for a value not among the defined constants.
+        /// </summary>
+        public Av1FastDecode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1FastDecode FindValue(string value)
+        {
+            return FindValue<Av1FastDecode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1FastDecode(string value)
         {
             return FindValue(value);
         }
@@ -2394,6 +2450,47 @@ namespace Amazon.MediaConvert
     }
 
     /// <summary>
+    /// Constants used for properties of type Av1GopSizeUnits.
+    /// </summary>
+    public class Av1GopSizeUnits : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRAMES for Av1GopSizeUnits
+        /// </summary>
+        public static readonly Av1GopSizeUnits FRAMES = new Av1GopSizeUnits("FRAMES");
+
+        /// <summary>
+        /// Constant SECONDS for Av1GopSizeUnits
+        /// </summary>
+        public static readonly Av1GopSizeUnits SECONDS = new Av1GopSizeUnits("SECONDS");
+
+        /// <summary>
+        /// Constructs a custom Av1GopSizeUnits for a value not among the defined constants.
+        /// </summary>
+        public Av1GopSizeUnits(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1GopSizeUnits FindValue(string value)
+        {
+            return FindValue<Av1GopSizeUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1GopSizeUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type Av1RateControlMode.
     /// </summary>
     public class Av1RateControlMode : ConstantClass
@@ -2516,6 +2613,47 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Av1SpatialAdaptiveQuantization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Av1TemporalAdaptiveQuantization.
+    /// </summary>
+    public class Av1TemporalAdaptiveQuantization : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for Av1TemporalAdaptiveQuantization
+        /// </summary>
+        public static readonly Av1TemporalAdaptiveQuantization DISABLED = new Av1TemporalAdaptiveQuantization("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for Av1TemporalAdaptiveQuantization
+        /// </summary>
+        public static readonly Av1TemporalAdaptiveQuantization ENABLED = new Av1TemporalAdaptiveQuantization("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom Av1TemporalAdaptiveQuantization for a value not among the defined constants.
+        /// </summary>
+        public Av1TemporalAdaptiveQuantization(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1TemporalAdaptiveQuantization FindValue(string value)
+        {
+            return FindValue<Av1TemporalAdaptiveQuantization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1TemporalAdaptiveQuantization(string value)
         {
             return FindValue(value);
         }
@@ -7044,6 +7182,47 @@ namespace Amazon.MediaConvert
     }
 
     /// <summary>
+    /// Constants used for properties of type DtsxCodingMode.
+    /// </summary>
+    public class DtsxCodingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CODING_MODE_5_1 for DtsxCodingMode
+        /// </summary>
+        public static readonly DtsxCodingMode CODING_MODE_5_1 = new DtsxCodingMode("CODING_MODE_5_1");
+
+        /// <summary>
+        /// Constant CODING_MODE_5_1_4 for DtsxCodingMode
+        /// </summary>
+        public static readonly DtsxCodingMode CODING_MODE_5_1_4 = new DtsxCodingMode("CODING_MODE_5_1_4");
+
+        /// <summary>
+        /// Constructs a custom DtsxCodingMode for a value not among the defined constants.
+        /// </summary>
+        public DtsxCodingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DtsxCodingMode FindValue(string value)
+        {
+            return FindValue<DtsxCodingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DtsxCodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DvbSubSubtitleFallbackFont.
     /// </summary>
     public class DvbSubSubtitleFallbackFont : ConstantClass
@@ -7640,6 +7819,47 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DynamicAudioSelectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DynamicMultiviewSettingsEnabled.
+    /// </summary>
+    public class DynamicMultiviewSettingsEnabled : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for DynamicMultiviewSettingsEnabled
+        /// </summary>
+        public static readonly DynamicMultiviewSettingsEnabled DISABLED = new DynamicMultiviewSettingsEnabled("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for DynamicMultiviewSettingsEnabled
+        /// </summary>
+        public static readonly DynamicMultiviewSettingsEnabled ENABLED = new DynamicMultiviewSettingsEnabled("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom DynamicMultiviewSettingsEnabled for a value not among the defined constants.
+        /// </summary>
+        public DynamicMultiviewSettingsEnabled(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DynamicMultiviewSettingsEnabled FindValue(string value)
+        {
+            return FindValue<DynamicMultiviewSettingsEnabled>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DynamicMultiviewSettingsEnabled(string value)
         {
             return FindValue(value);
         }

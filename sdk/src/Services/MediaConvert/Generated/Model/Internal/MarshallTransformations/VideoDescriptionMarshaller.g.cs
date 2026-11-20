@@ -97,6 +97,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DropFrameTimecode);
             }
 
+            if (requestObject.IsSetDynamicMultiviewSettings())
+            {
+                context.Writer.WritePropertyName("dynamicMultiviewSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DynamicMultiviewSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamicMultiviewSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetFixedAfd())
             {
                 context.Writer.WritePropertyName("fixedAfd");

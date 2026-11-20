@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
             }
 
+            if (requestObject.IsSetFastDecode())
+            {
+                context.Writer.WritePropertyName("fastDecode");
+                context.Writer.WriteStringValue(requestObject.FastDecode);
+            }
+
             if (requestObject.IsSetFilmGrainSynthesis())
             {
                 context.Writer.WritePropertyName("filmGrainSynthesis");
@@ -104,6 +110,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteNumberValue(requestObject.GopSize.Value);
                 }
+            }
+
+            if (requestObject.IsSetGopSizeUnits())
+            {
+                context.Writer.WritePropertyName("gopSizeUnits");
+                context.Writer.WriteStringValue(requestObject.GopSizeUnits);
             }
 
             if (requestObject.IsSetMaxBitrate())
@@ -174,6 +186,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("spatialAdaptiveQuantization");
                 context.Writer.WriteStringValue(requestObject.SpatialAdaptiveQuantization);
+            }
+
+            if (requestObject.IsSetTemporalAdaptiveQuantization())
+            {
+                context.Writer.WritePropertyName("temporalAdaptiveQuantization");
+                context.Writer.WriteStringValue(requestObject.TemporalAdaptiveQuantization);
             }
         }
 

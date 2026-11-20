@@ -102,6 +102,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("dynamicMultiviewSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = DynamicMultiviewSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DynamicMultiviewSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("fixedAfd", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

@@ -95,6 +95,28 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Codec);
             }
 
+            if (requestObject.IsSetDtscSettings())
+            {
+                context.Writer.WritePropertyName("dtscSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DtscSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DtscSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetDtsxSettings())
+            {
+                context.Writer.WritePropertyName("dtsxSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DtsxSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DtsxSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetEac3AtmosSettings())
             {
                 context.Writer.WritePropertyName("eac3AtmosSettings");

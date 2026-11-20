@@ -35,9 +35,18 @@ namespace Amazon.MediaConvert.Model
     public partial class Av1Settings
     {
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization. Specify the strength of any adaptive
-        /// quantization filters that you enable. The value that you choose here applies to Spatial
-        /// adaptive quantization.
+        /// Gets and sets the property AdaptiveQuantization. Specify whether MediaConvert applies
+        /// adaptive quantization in this output. With AV1, adaptive quantization is on or off;
+        /// there is no strength to choose. Choose Auto to let MediaConvert manage adaptive quantization
+        /// for you. MediaConvert enables both Spatial adaptive quantization and Temporal adaptive
+        /// quantization, and you can't specify either one yourself. To choose the filters yourself,
+        /// set Adaptive quantization to any of the strength values, Low, Medium, High, Higher
+        /// or Max, and then use the related settings Spatial adaptive quantization and Temporal
+        /// adaptive quantization. With AV1 these strength values all behave the same, because
+        /// AV1 adaptive quantization has no strength. If you don't want MediaConvert to do any
+        /// adaptive quantization in this transcode, set Adaptive quantization to Off. Related
+        /// settings: The value that you choose here applies to the following settings: Av1SpatialAdaptiveQuantization
+        /// and Av1TemporalAdaptiveQuantization.
         /// </summary>
         public Av1AdaptiveQuantization AdaptiveQuantization { get; set; }
 
@@ -68,6 +77,19 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the Bitrate property is set.
         /// </summary>
         internal bool IsSetBitrate() => this.Bitrate.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FastDecode. Choose Enabled to limit the AV1 feature set
+        /// that MediaConvert uses, which reduces the complexity of decoding your output in software.
+        /// Keep the default value, Disabled, unless your playback devices need the simpler bitstream.
+        /// Encoding with Fast decode is slightly slower and gives comparable video quality.
+        /// </summary>
+        public Av1FastDecode FastDecode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FastDecode property is set.
+        /// </summary>
+        internal bool IsSetFastDecode() => this.FastDecode != null;
 
         /// <summary>
         /// Gets and sets the property FilmGrainSynthesis. Film grain synthesis replaces film
@@ -156,10 +178,10 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFramerateNumerator() => this.FramerateNumerator.HasValue;
 
         /// <summary>
-        /// Gets and sets the property GopSize. Specify the GOP length (keyframe interval) in
-        /// frames. With AV1, MediaConvert doesn't support GOP length in seconds. This value must
-        /// be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where
-        /// x is an integer value.
+        /// Gets and sets the property GopSize. Specify the GOP length (keyframe interval). Use
+        /// GOP size units to say whether this value is in frames or in seconds. This value must
+        /// be greater than zero. With AV1, MediaConvert can't choose the GOP length for you,
+        /// so you must specify it.
         /// </summary>
         public double? GopSize { get; set; }
 
@@ -167,6 +189,19 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the GopSize property is set.
         /// </summary>
         internal bool IsSetGopSize() => this.GopSize.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property GopSizeUnits. Specify the units for GOP size. If you don't
+        /// specify a value, MediaConvert treats GOP size as a number of frames. With AV1, MediaConvert
+        /// can't choose the GOP length for you, so there is no automatic option here: specify
+        /// the GOP length in the related setting GOP size, in frames or in seconds.
+        /// </summary>
+        public Av1GopSizeUnits GopSizeUnits { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GopSizeUnits property is set.
+        /// </summary>
+        internal bool IsSetGopSizeUnits() => this.GopSizeUnits != null;
 
         /// <summary>
         /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second. For example,
@@ -181,10 +216,10 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMaxBitrate() => this.MaxBitrate.HasValue;
 
         /// <summary>
-        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify from the number
-        /// of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose
-        /// a larger number for a lower bitrate and smaller file size; choose a smaller number
-        /// for better video quality.
+        /// Gets and sets the property NumberBFramesBetweenReferenceFrames. Specify the number
+        /// of B-frames between reference frames, in the range of 0-15. For AV1 encoding, we recommend
+        /// the default value, 15, which gives the lowest bitrate and smallest file size. Choose
+        /// a smaller number for better video quality at a higher bitrate.
         /// </summary>
         [AWSProperty(Min = 0, Max = 15)]
         public int? NumberBFramesBetweenReferenceFrames { get; set; }
@@ -250,12 +285,14 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetRateControlMode() => this.RateControlMode != null;
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect. Optional. Use this setting to have the
-        /// service insert I-frames at scene changes that it automatically detects. For AV1, scene
-        /// change detection is disabled by default. Choose Enabled to insert I-frames at detected
-        /// scene changes, which can improve video quality. If this output uses QVBR, you can
-        /// instead choose Transition detection for further video quality improvement. For more
-        /// information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+        /// Gets and sets the property SceneChangeDetect. Keep the default value, Enabled, to
+        /// have MediaConvert insert I-frames at scene changes that it automatically detects,
+        /// which improves video quality. Choose Disabled if you need a strictly fixed keyframe
+        /// cadence instead. With AV1, MediaConvert doesn't support Transition detection. Transition
+        /// detection is accepted for backward compatibility but behaves exactly the same as Enabled,
+        /// so we recommend that you use Enabled instead. It also keeps the QVBR requirement it
+        /// has for other codecs: if you choose Transition detection in an AV1 output, Rate control
+        /// mode must be QVBR. Choose Enabled to get the same result with any rate control mode.
         /// </summary>
         public Av1SceneChangeDetect SceneChangeDetect { get; set; }
 
@@ -308,19 +345,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSlidingWindowPeakBitrate() => this.SlidingWindowPeakBitrate.HasValue;
 
         /// <summary>
-        /// Gets and sets the property SpatialAdaptiveQuantization. Keep the default value, Enabled,
-        /// to adjust quantization within each frame based on spatial variation of content complexity.
-        /// When you enable this feature, the encoder uses fewer bits on areas that can sustain
-        /// more distortion with no noticeable visual degradation and uses more bits on areas
-        /// where any small distortion will be noticeable. For example, complex textured blocks
-        /// are encoded with fewer bits and smooth textured blocks are encoded with more bits.
-        /// Enabling this feature will almost always improve your video quality. Note, though,
+        /// Gets and sets the property SpatialAdaptiveQuantization. Only use this setting when
+        /// you set Adaptive quantization to one of the strength values, Low, Medium, High, Higher
+        /// or Max. When you set Adaptive quantization to Auto, MediaConvert enables this feature
+        /// for you and you can't specify it manually. When you enable adaptive quantization,
+        /// the default value for Av1SpatialAdaptiveQuantization is Enabled. Keep this default
+        /// value to adjust quantization within each frame based on spatial variation of content
+        /// complexity. When you enable this feature, the encoder uses fewer bits on areas that
+        /// can sustain more distortion with no noticeable visual degradation and uses more bits
+        /// on areas where any small distortion will be noticeable. For example, complex textured
+        /// blocks are encoded with fewer bits and smooth textured blocks are encoded with more
+        /// bits. Enabling this feature will almost always improve your video quality. Note, though,
         /// that this feature doesn't take into account where the viewer's attention is likely
         /// to be. If viewers are likely to be focusing their attention on a part of the screen
         /// with a lot of complex texture, you might choose to disable this feature. Related setting:
-        /// When you enable spatial adaptive quantization, set the value for Adaptive quantization
-        /// depending on your content. For homogeneous content, such as cartoons and video games,
-        /// set it to Low. For content with a wider variety of textures, set it to High or Higher.
+        /// With AV1 this filter is on or off; the Adaptive quantization value does not change
+        /// its strength.
         /// </summary>
         public Av1SpatialAdaptiveQuantization SpatialAdaptiveQuantization { get; set; }
 
@@ -328,5 +368,30 @@ namespace Amazon.MediaConvert.Model
         /// Checks to see if the SpatialAdaptiveQuantization property is set.
         /// </summary>
         internal bool IsSetSpatialAdaptiveQuantization() => this.SpatialAdaptiveQuantization != null;
+
+        /// <summary>
+        /// Gets and sets the property TemporalAdaptiveQuantization. Only use this setting when
+        /// you set Adaptive quantization to one of the strength values, Low, Medium, High, Higher
+        /// or Max. When you set Adaptive quantization to Auto, MediaConvert enables this feature
+        /// for you and you can't specify it manually. When you enable adaptive quantization,
+        /// the default value for Av1TemporalAdaptiveQuantization is Enabled. Keep this default
+        /// value to adjust quantization within each frame based on temporal variation of content
+        /// complexity. When you enable this feature, the encoder uses fewer bits on areas of
+        /// the frame that aren't moving and uses more bits on complex objects with sharp edges
+        /// that move a lot. For example, this feature improves the readability of text tickers
+        /// on newscasts and scoreboards on sports matches. Enabling this feature will almost
+        /// always improve your video quality. Note, though, that this feature doesn't take into
+        /// account where the viewer's attention is likely to be. If viewers are likely to be
+        /// focusing their attention on a part of the screen that doesn't have moving objects
+        /// with sharp edges, such as sports athletes' faces, you might choose to set Av1TemporalAdaptiveQuantization
+        /// to Disabled. Related setting: With AV1 this filter is on or off; the Adaptive quantization
+        /// value does not change its strength.
+        /// </summary>
+        public Av1TemporalAdaptiveQuantization TemporalAdaptiveQuantization { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemporalAdaptiveQuantization property is set.
+        /// </summary>
+        internal bool IsSetTemporalAdaptiveQuantization() => this.TemporalAdaptiveQuantization != null;
     }
 }

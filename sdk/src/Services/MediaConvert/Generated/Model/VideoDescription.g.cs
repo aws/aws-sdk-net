@@ -130,6 +130,19 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDropFrameTimecode() => this.DropFrameTimecode != null;
 
         /// <summary>
+        /// Gets and sets the property DynamicMultiviewSettings. Dynamic Multiview settings. Encodes
+        /// this video output so that a downstream packager can combine it with other outputs
+        /// in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and
+        /// H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+        /// </summary>
+        public DynamicMultiviewSettings DynamicMultiviewSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DynamicMultiviewSettings property is set.
+        /// </summary>
+        internal bool IsSetDynamicMultiviewSettings() => this.DynamicMultiviewSettings != null;
+
+        /// <summary>
         /// Gets and sets the property FixedAfd. Applies only if you set AFD Signaling to Fixed.
         /// Use Fixed to specify a four-bit AFD value which the service will write on all frames
         /// of this video output.

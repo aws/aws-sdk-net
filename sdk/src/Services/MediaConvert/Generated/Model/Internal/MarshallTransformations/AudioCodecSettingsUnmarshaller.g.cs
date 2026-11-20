@@ -88,6 +88,20 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("dtscSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = DtscSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DtscSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("dtsxSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = DtsxSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DtsxSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("eac3AtmosSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Eac3AtmosSettingsUnmarshaller.Instance;

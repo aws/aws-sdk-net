@@ -591,6 +591,26 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DtscSettings.Bitrate</property>
+    <min>768000</min>
+    <max>768000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DtscSettings.SampleRate</property>
+    <min>48000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DtsxSettings.Bitrate</property>
+    <min>160000</min>
+    <max>448000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DtsxSettings.SampleRate</property>
+    <min>48000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.DurationControl.IntegerDurationMaximumCompressionDenominator</property>
     <min>1</min>
     <max>2147483647</max>

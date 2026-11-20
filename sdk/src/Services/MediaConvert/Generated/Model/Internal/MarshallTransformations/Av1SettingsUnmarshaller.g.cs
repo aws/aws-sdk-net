@@ -74,6 +74,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("fastDecode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FastDecode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("filmGrainSynthesis", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -113,6 +120,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.GopSize = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("gopSizeUnits", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GopSizeUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -183,6 +197,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpatialAdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("temporalAdaptiveQuantization", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemporalAdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -98,6 +98,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodec() => this.Codec != null;
 
         /// <summary>
+        /// Gets and sets the property DtscSettings. Required when you set Codec to the value
+        /// DTSC.
+        /// </summary>
+        public DtscSettings DtscSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DtscSettings property is set.
+        /// </summary>
+        internal bool IsSetDtscSettings() => this.DtscSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property DtsxSettings. Required when you set Codec to the value
+        /// DTSX.
+        /// </summary>
+        public DtsxSettings DtsxSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DtsxSettings property is set.
+        /// </summary>
+        internal bool IsSetDtsxSettings() => this.DtsxSettings != null;
+
+        /// <summary>
         /// Gets and sets the property Eac3AtmosSettings. Required when you set Codec to the value
         /// EAC3_ATMOS.
         /// </summary>
