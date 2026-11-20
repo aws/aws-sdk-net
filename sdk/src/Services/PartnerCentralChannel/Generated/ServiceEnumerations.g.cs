@@ -22,6 +22,47 @@ using Amazon.Runtime;
 namespace Amazon.PartnerCentralChannel
 {
     /// <summary>
+    /// Constants used for properties of type AccountScope.
+    /// </summary>
+    public class AccountScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENTIRE_ORGANIZATION for AccountScope
+        /// </summary>
+        public static readonly AccountScope ENTIRE_ORGANIZATION = new AccountScope("ENTIRE_ORGANIZATION");
+
+        /// <summary>
+        /// Constant SPECIFIC_MEMBER_ACCOUNTS for AccountScope
+        /// </summary>
+        public static readonly AccountScope SPECIFIC_MEMBER_ACCOUNTS = new AccountScope("SPECIFIC_MEMBER_ACCOUNTS");
+
+        /// <summary>
+        /// Constructs a custom AccountScope for a value not among the defined constants.
+        /// </summary>
+        public AccountScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountScope FindValue(string value)
+        {
+            return FindValue<AccountScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AssociationType.
     /// </summary>
     public class AssociationType : ConstantClass
@@ -40,6 +81,11 @@ namespace Amazon.PartnerCentralChannel
         /// Constant INTERNAL for AssociationType
         /// </summary>
         public static readonly AssociationType INTERNAL = new AssociationType("INTERNAL");
+
+        /// <summary>
+        /// Constant MANAGED_SERVICES_END_CUSTOMER for AssociationType
+        /// </summary>
+        public static readonly AssociationType MANAGED_SERVICES_END_CUSTOMER = new AssociationType("MANAGED_SERVICES_END_CUSTOMER");
 
         /// <summary>
         /// Constructs a custom AssociationType for a value not among the defined constants.
@@ -62,6 +108,98 @@ namespace Amazon.PartnerCentralChannel
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChannelContractStatus.
+    /// </summary>
+    public class ChannelContractStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPTED for ChannelContractStatus
+        /// </summary>
+        public static readonly ChannelContractStatus ACCEPTED = new ChannelContractStatus("ACCEPTED");
+
+        /// <summary>
+        /// Constant CANCELED for ChannelContractStatus
+        /// </summary>
+        public static readonly ChannelContractStatus CANCELED = new ChannelContractStatus("CANCELED");
+
+        /// <summary>
+        /// Constant EXPIRED for ChannelContractStatus
+        /// </summary>
+        public static readonly ChannelContractStatus EXPIRED = new ChannelContractStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant INACTIVE for ChannelContractStatus
+        /// </summary>
+        public static readonly ChannelContractStatus INACTIVE = new ChannelContractStatus("INACTIVE");
+
+        /// <summary>
+        /// Constant PENDING for ChannelContractStatus
+        /// </summary>
+        public static readonly ChannelContractStatus PENDING = new ChannelContractStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom ChannelContractStatus for a value not among the defined constants.
+        /// </summary>
+        public ChannelContractStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelContractStatus FindValue(string value)
+        {
+            return FindValue<ChannelContractStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelContractStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChannelContractType.
+    /// </summary>
+    public class ChannelContractType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MANAGED_SERVICES_ATTESTATION for ChannelContractType
+        /// </summary>
+        public static readonly ChannelContractType MANAGED_SERVICES_ATTESTATION = new ChannelContractType("MANAGED_SERVICES_ATTESTATION");
+
+        /// <summary>
+        /// Constructs a custom ChannelContractType for a value not among the defined constants.
+        /// </summary>
+        public ChannelContractType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelContractType FindValue(string value)
+        {
+            return FindValue<ChannelContractType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelContractType(string value)
         {
             return FindValue(value);
         }
@@ -283,6 +421,113 @@ namespace Amazon.PartnerCentralChannel
     }
 
     /// <summary>
+    /// Constants used for properties of type ManagedServicesAttestationTypeSortName.
+    /// </summary>
+    public class ManagedServicesAttestationTypeSortName : ConstantClass
+    {
+        /// <summary>
+        /// Constant UpdatedAt for ManagedServicesAttestationTypeSortName
+        /// </summary>
+        public static readonly ManagedServicesAttestationTypeSortName UpdatedAt = new ManagedServicesAttestationTypeSortName("UpdatedAt");
+
+        /// <summary>
+        /// Constructs a custom ManagedServicesAttestationTypeSortName for a value not among the defined constants.
+        /// </summary>
+        public ManagedServicesAttestationTypeSortName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedServicesAttestationTypeSortName FindValue(string value)
+        {
+            return FindValue<ManagedServicesAttestationTypeSortName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedServicesAttestationTypeSortName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ManagedServicesSupportedService.
+    /// </summary>
+    public class ManagedServicesSupportedService : ConstantClass
+    {
+        /// <summary>
+        /// Constant ARTIFICIAL_INTELLIGENCE_AND_MACHINE_LEARNING_OPERATIONS for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService ARTIFICIAL_INTELLIGENCE_AND_MACHINE_LEARNING_OPERATIONS = new ManagedServicesSupportedService("ARTIFICIAL_INTELLIGENCE_AND_MACHINE_LEARNING_OPERATIONS");
+
+        /// <summary>
+        /// Constant BACKUP_AND_DISASTER_RECOVERY for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService BACKUP_AND_DISASTER_RECOVERY = new ManagedServicesSupportedService("BACKUP_AND_DISASTER_RECOVERY");
+
+        /// <summary>
+        /// Constant FINANCIAL_OPERATIONS for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService FINANCIAL_OPERATIONS = new ManagedServicesSupportedService("FINANCIAL_OPERATIONS");
+
+        /// <summary>
+        /// Constant INFRASTRUCTURE_AS_CODE_AND_AUTOMATION for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService INFRASTRUCTURE_AS_CODE_AND_AUTOMATION = new ManagedServicesSupportedService("INFRASTRUCTURE_AS_CODE_AND_AUTOMATION");
+
+        /// <summary>
+        /// Constant MONITORING for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService MONITORING = new ManagedServicesSupportedService("MONITORING");
+
+        /// <summary>
+        /// Constant PATCHING for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService PATCHING = new ManagedServicesSupportedService("PATCHING");
+
+        /// <summary>
+        /// Constant SECURITY for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService SECURITY = new ManagedServicesSupportedService("SECURITY");
+
+        /// <summary>
+        /// Constant WELL_ARCHITECTED for ManagedServicesSupportedService
+        /// </summary>
+        public static readonly ManagedServicesSupportedService WELL_ARCHITECTED = new ManagedServicesSupportedService("WELL_ARCHITECTED");
+
+        /// <summary>
+        /// Constructs a custom ManagedServicesSupportedService for a value not among the defined constants.
+        /// </summary>
+        public ManagedServicesSupportedService(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedServicesSupportedService FindValue(string value)
+        {
+            return FindValue<ManagedServicesSupportedService>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedServicesSupportedService(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ParticipantType.
     /// </summary>
     public class ParticipantType : ConstantClass
@@ -337,6 +582,11 @@ namespace Amazon.PartnerCentralChannel
         /// Constant DISTRIBUTION_SELLER for Program
         /// </summary>
         public static readonly Program DISTRIBUTION_SELLER = new Program("DISTRIBUTION_SELLER");
+
+        /// <summary>
+        /// Constant MANAGED_SERVICES_PROVIDER for Program
+        /// </summary>
+        public static readonly Program MANAGED_SERVICES_PROVIDER = new Program("MANAGED_SERVICES_PROVIDER");
 
         /// <summary>
         /// Constant SOLUTION_PROVIDER for Program
@@ -410,6 +660,47 @@ namespace Amazon.PartnerCentralChannel
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProgramManagementAccountStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProgramManagementAccountType.
+    /// </summary>
+    public class ProgramManagementAccountType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MANAGED_SERVICES for ProgramManagementAccountType
+        /// </summary>
+        public static readonly ProgramManagementAccountType MANAGED_SERVICES = new ProgramManagementAccountType("MANAGED_SERVICES");
+
+        /// <summary>
+        /// Constant RESALE_BILLING_TRANSFER for ProgramManagementAccountType
+        /// </summary>
+        public static readonly ProgramManagementAccountType RESALE_BILLING_TRANSFER = new ProgramManagementAccountType("RESALE_BILLING_TRANSFER");
+
+        /// <summary>
+        /// Constructs a custom ProgramManagementAccountType for a value not among the defined constants.
+        /// </summary>
+        public ProgramManagementAccountType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProgramManagementAccountType FindValue(string value)
+        {
+            return FindValue<ProgramManagementAccountType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProgramManagementAccountType(string value)
         {
             return FindValue(value);
         }

@@ -123,5 +123,19 @@ namespace Amazon.PartnerCentralChannel.Model
         /// Checks to see if the Tags property is set.
         /// </summary>
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the program management account (for example, resale billing transfer,
+        /// managed services), required for the managed services provider program.
+        /// </para>
+        /// </summary>
+        public ProgramManagementAccountType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }

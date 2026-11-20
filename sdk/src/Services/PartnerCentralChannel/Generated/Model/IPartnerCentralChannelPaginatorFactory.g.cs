@@ -33,6 +33,12 @@ namespace Amazon.PartnerCentralChannel.Model
     public interface IPartnerCentralChannelPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListChannelContracts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListChannelContractsPaginator ListChannelContracts(ListChannelContractsRequest request);
+
+        /// <summary>
         /// Paginator for ListChannelHandshakes operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

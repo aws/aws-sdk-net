@@ -70,6 +70,11 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetAccountScope())
+            {
+                context.Writer.WritePropertyName("accountScope");
+                context.Writer.WriteStringValue(publicRequest.AccountScope);
+            }
             if (publicRequest.IsSetAssociatedAccountId())
             {
                 context.Writer.WritePropertyName("associatedAccountId");
@@ -124,6 +129,11 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("sector");
                 context.Writer.WriteStringValue(publicRequest.Sector);
+            }
+            if (publicRequest.IsSetStartDate())
+            {
+                context.Writer.WritePropertyName("startDate");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
             }
             if (publicRequest.IsSetTags())
             {

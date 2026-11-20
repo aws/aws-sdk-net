@@ -35,6 +35,20 @@ namespace Amazon.PartnerCentralChannel.Model
     public partial class RelationshipDetail
     {
         /// <summary>
+        /// Gets and sets the property AccountScope. 
+        /// <para>
+        /// The account scope of the managed services relationship. Applies only to managed services
+        /// relationships.
+        /// </para>
+        /// </summary>
+        public AccountScope AccountScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccountScope property is set.
+        /// </summary>
+        internal bool IsSetAccountScope() => this.AccountScope != null;
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the relationship.
@@ -90,6 +104,21 @@ namespace Amazon.PartnerCentralChannel.Model
         internal bool IsSetCatalog() => this.Catalog != null;
 
         /// <summary>
+        /// Gets and sets the property ChannelContractId. 
+        /// <para>
+        /// The identifier of the channel contract currently in effect for the relationship. Applies
+        /// only to managed services relationships.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 16, Max = 16)]
+        public string ChannelContractId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ChannelContractId property is set.
+        /// </summary>
+        internal bool IsSetChannelContractId() => this.ChannelContractId != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp when the relationship was created.
@@ -115,6 +144,19 @@ namespace Amazon.PartnerCentralChannel.Model
         /// Checks to see if the DisplayName property is set.
         /// </summary>
         internal bool IsSetDisplayName() => this.DisplayName != null;
+
+        /// <summary>
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The end date of the relationship.
+        /// </para>
+        /// </summary>
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndDate property is set.
+        /// </summary>
+        internal bool IsSetEndDate() => this.EndDate.HasValue;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -147,7 +189,7 @@ namespace Amazon.PartnerCentralChannel.Model
         /// <summary>
         /// Gets and sets the property ResaleAccountModel. 
         /// <para>
-        /// The resale account model for the relationship.
+        /// The resale account model for the relationship. Applies only to billing transfer relationships.
         /// </para>
         /// </summary>
         public ResaleAccountModel ResaleAccountModel { get; set; }

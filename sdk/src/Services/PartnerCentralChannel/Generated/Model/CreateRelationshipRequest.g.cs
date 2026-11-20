@@ -36,12 +36,26 @@ namespace Amazon.PartnerCentralChannel.Model
     public partial class CreateRelationshipRequest : AmazonPartnerCentralChannelRequest
     {
         /// <summary>
+        /// Gets and sets the property AccountScope. 
+        /// <para>
+        /// The account scope for a managed services relationship (for example, entire organization,
+        /// specific member accounts). Applies only to managed services relationships.
+        /// </para>
+        /// </summary>
+        public AccountScope AccountScope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccountScope property is set.
+        /// </summary>
+        internal bool IsSetAccountScope() => this.AccountScope != null;
+
+        /// <summary>
         /// Gets and sets the property AssociatedAccountId. 
         /// <para>
         /// The AWS account ID to associate in this relationship.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 12, Max = 12)]
+        [AWSProperty(Min = 12, Max = 12)]
         public string AssociatedAccountId { get; set; }
 
         /// <summary>
@@ -122,7 +136,8 @@ namespace Amazon.PartnerCentralChannel.Model
         /// <summary>
         /// Gets and sets the property RequestedSupportPlan. 
         /// <para>
-        /// The support plan requested for this relationship.
+        /// The support plan requested for this relationship. Applies only to billing transfer
+        /// relationships.
         /// </para>
         /// </summary>
         public SupportPlan RequestedSupportPlan { get; set; }
@@ -135,7 +150,7 @@ namespace Amazon.PartnerCentralChannel.Model
         /// <summary>
         /// Gets and sets the property ResaleAccountModel. 
         /// <para>
-        /// The resale account model for the relationship.
+        /// The resale account model for the relationship. Applies only to billing transfer relationships.
         /// </para>
         /// </summary>
         public ResaleAccountModel ResaleAccountModel { get; set; }
@@ -158,6 +173,20 @@ namespace Amazon.PartnerCentralChannel.Model
         /// Checks to see if the Sector property is set.
         /// </summary>
         internal bool IsSetSector() => this.Sector != null;
+
+        /// <summary>
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The start date of the managed services relationship. Applies only to managed services
+        /// relationships.
+        /// </para>
+        /// </summary>
+        public DateTime? StartDate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartDate property is set.
+        /// </summary>
+        internal bool IsSetStartDate() => this.StartDate.HasValue;
 
         /// <summary>
         /// Gets and sets the property Tags. 

@@ -171,6 +171,19 @@ namespace Amazon.PartnerCentralChannel.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the program management account.
+        /// </para>
+        /// </summary>
+        public ProgramManagementAccountType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The timestamp when the account was last updated.

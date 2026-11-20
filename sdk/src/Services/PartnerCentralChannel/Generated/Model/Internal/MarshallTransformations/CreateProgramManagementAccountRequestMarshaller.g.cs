@@ -115,6 +115,11 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
 
             writer.WriteEndObject();
             writer.Flush();

@@ -33,6 +33,14 @@ namespace Amazon.PartnerCentralChannel.Model
         }
 
         /// <summary>
+        /// Paginator for ListChannelContracts operation
+        /// </summary>
+        public IListChannelContractsPaginator ListChannelContracts(ListChannelContractsRequest request)
+        {
+            return new ListChannelContractsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannelHandshakes operation
         /// </summary>
         public IListChannelHandshakesPaginator ListChannelHandshakes(ListChannelHandshakesRequest request)

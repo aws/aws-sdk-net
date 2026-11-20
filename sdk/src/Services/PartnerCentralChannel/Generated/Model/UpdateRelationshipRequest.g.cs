@@ -94,7 +94,7 @@ namespace Amazon.PartnerCentralChannel.Model
         /// <summary>
         /// Gets and sets the property RequestedSupportPlan. 
         /// <para>
-        /// The updated support plan for the relationship.
+        /// The updated support plan for the relationship. Applies only to billing transfer relationships.
         /// </para>
         /// </summary>
         public SupportPlan RequestedSupportPlan { get; set; }

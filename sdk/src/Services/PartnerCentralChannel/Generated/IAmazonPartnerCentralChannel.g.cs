@@ -93,6 +93,69 @@ namespace Amazon.PartnerCentralChannel
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Cancels a pending channel contract created within the last 30 days. A request for
+        /// a channel contract that isn't PENDING, including one that is already CANCELED, fails
+        /// with a ValidationException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelChannelContract service method.</param>
+        /// <returns>The response from the CancelChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CancelChannelContract">REST API Reference for CancelChannelContract Operation</seealso>
+        CancelChannelContractResponse CancelChannelContract(CancelChannelContractRequest request);
+#endif
+
+        /// <summary>
+        /// Cancels a pending channel contract created within the last 30 days. A request for
+        /// a channel contract that isn't PENDING, including one that is already CANCELED, fails
+        /// with a ValidationException.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelChannelContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CancelChannelContract">REST API Reference for CancelChannelContract Operation</seealso>
+        Task<CancelChannelContractResponse> CancelChannelContractAsync(CancelChannelContractRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Cancels a pending channel handshake request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelChannelHandshake service method.</param>
@@ -141,6 +204,73 @@ namespace Amazon.PartnerCentralChannel
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CancelChannelHandshake">REST API Reference for CancelChannelHandshake Operation</seealso>
         Task<CancelChannelHandshakeResponse> CancelChannelHandshakeAsync(CancelChannelHandshakeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new channel contract and sends it to the signatory for signature. In the
+        /// Sandbox catalog, the channel contract is accepted automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelContract service method.</param>
+        /// <returns>The response from the CreateChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CreateChannelContract">REST API Reference for CreateChannelContract Operation</seealso>
+        CreateChannelContractResponse CreateChannelContract(CreateChannelContractRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new channel contract and sends it to the signatory for signature. In the
+        /// Sandbox catalog, the channel contract is accepted automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ServiceQuotaExceededException">
+        /// The request would exceed a service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/CreateChannelContract">REST API Reference for CreateChannelContract Operation</seealso>
+        Task<CreateChannelContractResponse> CreateChannelContractAsync(CreateChannelContractRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -459,6 +589,57 @@ namespace Amazon.PartnerCentralChannel
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves details of a specific channel contract.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelContract service method.</param>
+        /// <returns>The response from the GetChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/GetChannelContract">REST API Reference for GetChannelContract Operation</seealso>
+        GetChannelContractResponse GetChannelContract(GetChannelContractRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves details of a specific channel contract.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelContract service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetChannelContract service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/GetChannelContract">REST API Reference for GetChannelContract Operation</seealso>
+        Task<GetChannelContractResponse> GetChannelContractAsync(GetChannelContractRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves details of a specific partner relationship.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRelationship service method.</param>
@@ -507,6 +688,57 @@ namespace Amazon.PartnerCentralChannel
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/GetRelationship">REST API Reference for GetRelationship Operation</seealso>
         Task<GetRelationshipResponse> GetRelationshipAsync(GetRelationshipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists channel contracts based on specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelContracts service method.</param>
+        /// <returns>The response from the ListChannelContracts service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/ListChannelContracts">REST API Reference for ListChannelContracts Operation</seealso>
+        ListChannelContractsResponse ListChannelContracts(ListChannelContractsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists channel contracts based on specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelContracts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListChannelContracts service method, as returned by PartnerCentralChannel.</returns>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.InternalServerException">
+        /// An internal server error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralChannel.Model.ValidationException">
+        /// The request failed validation due to invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-channel-2024-03-18/ListChannelContracts">REST API Reference for ListChannelContracts Operation</seealso>
+        Task<ListChannelContractsResponse> ListChannelContractsAsync(ListChannelContractsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

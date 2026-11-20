@@ -165,5 +165,18 @@ namespace Amazon.PartnerCentralChannel.Model
         /// Checks to see if the Statuses property is set.
         /// </summary>
         internal bool IsSetStatuses() => this.Statuses != null && (this.Statuses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Filter by program management account type.
+        /// </para>
+        /// </summary>
+        public ProgramManagementAccountType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
     }
 }
