@@ -144,6 +144,11 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                context.Writer.WritePropertyName("projectIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ProjectIdentifier);
+            }
             if (publicRequest.IsSetPromptVariables())
             {
                 context.Writer.WritePropertyName("promptVariables");

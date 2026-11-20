@@ -35,7 +35,9 @@ namespace Amazon.BedrockRuntime.Model
     /// in the request body. You use model inference to generate text, images, and embeddings.
     /// <para> For example code, see <i>Invoke model code examples</i> in the <i>Amazon Bedrock
     /// User Guide</i>. </para> <para> This operation requires permission for the <c>bedrock:InvokeModel</c>
-    /// action. </para> <important> <para> To deny all inference access to resources that
+    /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+    /// or specify <c>default</c>, this includes permission on the default project for your
+    /// account. </para> <important> <para> To deny all inference access to resources that
     /// you specify in the modelId field, you need to deny access to the <c>bedrock:InvokeModel</c>
     /// and <c>bedrock:InvokeModelWithResponseStream</c> actions. Doing this also denies access
     /// to the resource through the Converse API actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
@@ -203,6 +205,29 @@ namespace Amazon.BedrockRuntime.Model
         /// Checks to see if the PerformanceConfigLatency property is set.
         /// </summary>
         internal bool IsSetPerformanceConfigLatency() => this.PerformanceConfigLatency != null;
+
+        /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The
+        /// project must be active and belong to your AWS account and the AWS Region to which
+        /// you send the request. Specify <c>default</c> or omit this field to use the default
+        /// project for your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a non-default project, the inference target must resolve to a foundation model
+        /// or system-defined inference profile. Application inference profiles don't support
+        /// non-default projects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property RequestMetadata. 

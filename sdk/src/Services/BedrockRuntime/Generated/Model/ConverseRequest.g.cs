@@ -34,8 +34,8 @@ namespace Amazon.BedrockRuntime.Model
     /// Amazon Bedrock model. <c>Converse</c> provides a consistent interface that works with
     /// all models that support messages. This allows you to write code once and use it with
     /// different models. If a model has unique inference parameters, you can also pass those
-    /// unique parameters to the model. <para> Amazon Bedrock doesn't store any text, images,
-    /// or documents that you provide as content. The data is only used to generate the response.
+    /// unique parameters to the model. <para> Data retention for this request depends on
+    /// the applicable account or project configuration and the model's data retention policy.
     /// </para> <para> You can submit a prompt by including it in the <c>messages</c> field,
     /// specifying the <c>modelId</c> of a foundation model or inference profile to run inference
     /// on it, and including any other fields that are relevant to your use case. </para>
@@ -52,7 +52,9 @@ namespace Amazon.BedrockRuntime.Model
     /// User Guide</i>. To use a tool with a model, see <i>Tool use (Function calling)</i>
     /// in the <i>Amazon Bedrock User Guide</i> </para> <para> For example code, see <i>Converse
     /// API examples</i> in the <i>Amazon Bedrock User Guide</i>. </para> <para> This operation
-    /// requires permission for the <c>bedrock:InvokeModel</c> action. </para> <important>
+    /// requires permission for the <c>bedrock:InvokeModel</c> action on both the inference
+    /// target and the project. If you omit <c>projectIdentifier</c> or specify <c>default</c>,
+    /// this includes permission on the default project for your account. </para> <important>
     /// <para> To deny all inference access to resources that you specify in the modelId field,
     /// you need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
     /// actions. Doing this also denies access to the resource through the base inference
@@ -245,6 +247,29 @@ namespace Amazon.BedrockRuntime.Model
         /// Checks to see if the PerformanceConfig property is set.
         /// </summary>
         internal bool IsSetPerformanceConfig() => this.PerformanceConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The
+        /// project must be active and belong to your AWS account and the AWS Region to which
+        /// you send the request. Specify <c>default</c> or omit this field to use the default
+        /// project for your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a non-default project, the inference target must resolve to a foundation model
+        /// or system-defined inference profile. Application inference profiles don't support
+        /// non-default projects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property PromptVariables. 

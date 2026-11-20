@@ -147,8 +147,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
-        /// The data is only used to generate the response.
+        /// Data retention for this request depends on the applicable account or project configuration
+        /// and the model's data retention policy.
         /// </para>
         ///  
         /// <para>
@@ -181,7 +181,9 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action on both
+        /// the inference target and the project. If you omit <c>projectIdentifier</c> or specify
+        /// <c>default</c>, this includes permission on the default project for your account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -253,8 +255,8 @@ namespace Amazon.BedrockRuntime
         /// 
         ///  
         /// <para>
-        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
-        /// The data is only used to generate the response.
+        /// Data retention for this request depends on the applicable account or project configuration
+        /// and the model's data retention policy.
         /// </para>
         ///  
         /// <para>
@@ -287,7 +289,9 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action. 
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action on both
+        /// the inference target and the project. If you omit <c>projectIdentifier</c> or specify
+        /// <c>default</c>, this includes permission on the default project for your account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -372,8 +376,8 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  </note> 
         /// <para>
-        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
-        /// The data is only used to generate the response.
+        /// Data retention for this request depends on the applicable account or project configuration
+        /// and the model's data retention policy.
         /// </para>
         ///  
         /// <para>
@@ -407,7 +411,9 @@ namespace Amazon.BedrockRuntime
         ///  
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
-        /// action.
+        /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+        /// or specify <c>default</c>, this includes permission on the default project for your
+        /// account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -489,8 +495,8 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  </note> 
         /// <para>
-        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
-        /// The data is only used to generate the response.
+        /// Data retention for this request depends on the applicable account or project configuration
+        /// and the model's data retention policy.
         /// </para>
         ///  
         /// <para>
@@ -524,7 +530,9 @@ namespace Amazon.BedrockRuntime
         ///  
         /// <para>
         /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
-        /// action.
+        /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+        /// or specify <c>default</c>, this includes permission on the default project for your
+        /// account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -902,7 +910,9 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action on both
+        /// the inference target and the project. If you omit <c>projectIdentifier</c> or specify
+        /// <c>default</c>, this includes permission on the default project for your account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -983,7 +993,9 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
+        /// This operation requires permission for the <c>bedrock:InvokeModel</c> action on both
+        /// the inference target and the project. If you omit <c>projectIdentifier</c> or specify
+        /// <c>default</c>, this includes permission on the default project for your account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1214,8 +1226,10 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
-        /// action. 
+        /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+        /// or specify <c>default</c>, this includes permission on the default project for your
+        /// account.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1307,8 +1321,10 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
-        /// action. 
+        /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+        /// or specify <c>default</c>, this includes permission on the default project for your
+        /// account.
         /// </para>
         ///  <important> 
         /// <para>

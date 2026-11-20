@@ -38,18 +38,17 @@ namespace Amazon.BedrockRuntime.Model
     /// model. <para> To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
     /// and check the <c>responseStreamingSupported</c> field in the response. </para> <note>
     /// <para> The CLI doesn't support streaming operations in Amazon Bedrock, including <c>ConverseStream</c>.
-    /// </para> </note> <para> Amazon Bedrock doesn't store any text, images, or documents
-    /// that you provide as content. The data is only used to generate the response. </para>
-    /// <para> You can submit a prompt by including it in the <c>messages</c> field, specifying
-    /// the <c>modelId</c> of a foundation model or inference profile to run inference on
-    /// it, and including any other fields that are relevant to your use case. </para> <para>
-    /// You can also submit a prompt from Prompt management by specifying the ARN of the prompt
-    /// version and including a map of variables to values in the <c>promptVariables</c> field.
-    /// You can append more messages to the prompt by using the <c>messages</c> field. If
-    /// you use a prompt from Prompt management, you can't include the following fields in
-    /// the request: <c>additionalModelRequestFields</c>, <c>inferenceConfig</c>, <c>system</c>,
-    /// or <c>toolConfig</c>. Instead, these fields must be defined through Prompt management.
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+    /// </para> </note> <para> Data retention for this request depends on the applicable account
+    /// or project configuration and the model's data retention policy. </para> <para> You
+    /// can submit a prompt by including it in the <c>messages</c> field, specifying the <c>modelId</c>
+    /// of a foundation model or inference profile to run inference on it, and including any
+    /// other fields that are relevant to your use case. </para> <para> You can also submit
+    /// a prompt from Prompt management by specifying the ARN of the prompt version and including
+    /// a map of variables to values in the <c>promptVariables</c> field. You can append more
+    /// messages to the prompt by using the <c>messages</c> field. If you use a prompt from
+    /// Prompt management, you can't include the following fields in the request: <c>additionalModelRequestFields</c>,
+    /// <c>inferenceConfig</c>, <c>system</c>, or <c>toolConfig</c>. Instead, these fields
+    /// must be defined through Prompt management. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
     /// a prompt from Prompt management</a>. </para> <para> For information about the Converse
     /// API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use
     /// a guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock
@@ -57,7 +56,9 @@ namespace Amazon.BedrockRuntime.Model
     /// in the <i>Amazon Bedrock User Guide</i> </para> <para> For example code, see <i>Conversation
     /// streaming example</i> in the <i>Amazon Bedrock User Guide</i>. </para> <para> This
     /// operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
-    /// action. </para> <important> <para> To deny all inference access to resources that
+    /// action on both the inference target and the project. If you omit <c>projectIdentifier</c>
+    /// or specify <c>default</c>, this includes permission on the default project for your
+    /// account. </para> <important> <para> To deny all inference access to resources that
     /// you specify in the modelId field, you need to deny access to the <c>bedrock:InvokeModel</c>
     /// and <c>bedrock:InvokeModelWithResponseStream</c> actions. Doing this also denies access
     /// to the resource through the base inference actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
@@ -249,6 +250,29 @@ namespace Amazon.BedrockRuntime.Model
         /// Checks to see if the PerformanceConfig property is set.
         /// </summary>
         internal bool IsSetPerformanceConfig() => this.PerformanceConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The
+        /// project must be active and belong to your AWS account and the AWS Region to which
+        /// you send the request. Specify <c>default</c> or omit this field to use the default
+        /// project for your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a non-default project, the inference target must resolve to a foundation model
+        /// or system-defined inference profile. Application inference profiles don't support
+        /// non-default projects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
 
         /// <summary>
         /// Gets and sets the property PromptVariables. 

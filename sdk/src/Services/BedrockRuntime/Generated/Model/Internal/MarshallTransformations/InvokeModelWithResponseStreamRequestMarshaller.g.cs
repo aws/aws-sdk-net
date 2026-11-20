@@ -83,6 +83,11 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-Bedrock-PerformanceConfig-Latency"] = publicRequest.PerformanceConfigLatency;
             }
 
+            if (publicRequest.IsSetProjectIdentifier())
+            {
+                request.Headers["X-Amzn-Bedrock-ProjectIdentifier"] = publicRequest.ProjectIdentifier;
+            }
+
             if (publicRequest.IsSetRequestMetadata())
             {
                 request.Headers["X-Amzn-Bedrock-Request-Metadata"] = publicRequest.RequestMetadata;
