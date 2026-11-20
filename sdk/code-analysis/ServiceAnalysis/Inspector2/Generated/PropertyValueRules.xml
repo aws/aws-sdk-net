@@ -1740,6 +1740,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.PurlQualifierFilter.Value</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.Recommendation.Text</property>
     <min>1</min>
   </property-value-rule>
@@ -2130,6 +2134,11 @@
     <property>Amazon.Inspector2.Model.VulnerablePackage.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.VulnerablePackage.Purl</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VulnerablePackage.Release</property>

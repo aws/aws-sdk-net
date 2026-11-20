@@ -81,10 +81,31 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("purlQualifier", targetDepth, ref reader))
+                {
+                    var unmarshaller = PurlQualifierFilterUnmarshaller.Instance;
+                    unmarshalledObject.PurlQualifier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("release", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;
                     unmarshalledObject.Release = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("runtimeReachability", targetDepth, ref reader))
+                {
+                    var unmarshaller = RuntimeReachabilityFilterUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeReachability = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("runtimeReachabilityReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = RuntimeReachabilityReasonFilterUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeReachabilityReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

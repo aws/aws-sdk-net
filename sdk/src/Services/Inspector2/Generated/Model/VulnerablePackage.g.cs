@@ -117,6 +117,20 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetPackageManager() => this.PackageManager != null;
 
         /// <summary>
+        /// Gets and sets the property Purl. 
+        /// <para>
+        /// The package URL (purl) of the vulnerable package.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string Purl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Purl property is set.
+        /// </summary>
+        internal bool IsSetPurl() => this.Purl != null;
+
+        /// <summary>
         /// Gets and sets the property Release. 
         /// <para>
         /// The release of the vulnerable package.
@@ -143,6 +157,36 @@ namespace Amazon.Inspector2.Model
         /// Checks to see if the Remediation property is set.
         /// </summary>
         internal bool IsSetRemediation() => this.Remediation != null;
+
+        /// <summary>
+        /// Gets and sets the property RuntimeReachability. 
+        /// <para>
+        /// The runtime reachability status of the vulnerable package. For more information, see
+        /// <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+        /// runtime reachability</a> in the Amazon Inspector user guide.
+        /// </para>
+        /// </summary>
+        public RuntimeReachability RuntimeReachability { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuntimeReachability property is set.
+        /// </summary>
+        internal bool IsSetRuntimeReachability() => this.RuntimeReachability != null;
+
+        /// <summary>
+        /// Gets and sets the property RuntimeReachabilityReason. 
+        /// <para>
+        /// The reason for the runtime reachability status of the vulnerable package. For more
+        /// information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding
+        /// runtime reachability</a> in the Amazon Inspector user guide.
+        /// </para>
+        /// </summary>
+        public RuntimeReachabilityReason RuntimeReachabilityReason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuntimeReachabilityReason property is set.
+        /// </summary>
+        internal bool IsSetRuntimeReachabilityReason() => this.RuntimeReachabilityReason != null;
 
         /// <summary>
         /// Gets and sets the property SourceLambdaLayerArn. 

@@ -5006,6 +5006,117 @@ namespace Amazon.Inspector2
     }
 
     /// <summary>
+    /// Constants used for properties of type PurlQualifierKey.
+    /// </summary>
+    public class PurlQualifierKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant Arch for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Arch = new PurlQualifierKey("arch");
+
+        /// <summary>
+        /// Constant Collector for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Collector = new PurlQualifierKey("collector");
+
+        /// <summary>
+        /// Constant Dev_dependency for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Dev_dependency = new PurlQualifierKey("dev_dependency");
+
+        /// <summary>
+        /// Constant Distro for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Distro = new PurlQualifierKey("distro");
+
+        /// <summary>
+        /// Constant Epoch for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Epoch = new PurlQualifierKey("epoch");
+
+        /// <summary>
+        /// Constant Go_toolchain for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Go_toolchain = new PurlQualifierKey("go_toolchain");
+
+        /// <summary>
+        /// Constant Hardened for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Hardened = new PurlQualifierKey("hardened");
+
+        /// <summary>
+        /// Constant Private for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Private = new PurlQualifierKey("private");
+
+        /// <summary>
+        /// Constant Rust_toolchain for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Rust_toolchain = new PurlQualifierKey("rust_toolchain");
+
+        /// <summary>
+        /// Constant Scope for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Scope = new PurlQualifierKey("scope");
+
+        /// <summary>
+        /// Constant Skip_chromium_download for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Skip_chromium_download = new PurlQualifierKey("skip_chromium_download");
+
+        /// <summary>
+        /// Constant Source for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Source = new PurlQualifierKey("source");
+
+        /// <summary>
+        /// Constant Stream for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Stream = new PurlQualifierKey("stream");
+
+        /// <summary>
+        /// Constant Transitive_dependency for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Transitive_dependency = new PurlQualifierKey("transitive_dependency");
+
+        /// <summary>
+        /// Constant Unresolved for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Unresolved = new PurlQualifierKey("unresolved");
+
+        /// <summary>
+        /// Constant Vendor for PurlQualifierKey
+        /// </summary>
+        public static readonly PurlQualifierKey Vendor = new PurlQualifierKey("vendor");
+
+        /// <summary>
+        /// Constructs a custom PurlQualifierKey for a value not among the defined constants.
+        /// </summary>
+        public PurlQualifierKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PurlQualifierKey FindValue(string value)
+        {
+            return FindValue<PurlQualifierKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PurlQualifierKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RelationshipStatus.
     /// </summary>
     public class RelationshipStatus : ConstantClass
@@ -5705,6 +5816,144 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeReachability.
+    /// </summary>
+    public class RuntimeReachability : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_REACHABLE for RuntimeReachability
+        /// </summary>
+        public static readonly RuntimeReachability NOT_REACHABLE = new RuntimeReachability("NOT_REACHABLE");
+
+        /// <summary>
+        /// Constant REACHABLE for RuntimeReachability
+        /// </summary>
+        public static readonly RuntimeReachability REACHABLE = new RuntimeReachability("REACHABLE");
+
+        /// <summary>
+        /// Constant UNKNOWN for RuntimeReachability
+        /// </summary>
+        public static readonly RuntimeReachability UNKNOWN = new RuntimeReachability("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom RuntimeReachability for a value not among the defined constants.
+        /// </summary>
+        public RuntimeReachability(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeReachability FindValue(string value)
+        {
+            return FindValue<RuntimeReachability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeReachability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeReachabilityComparison.
+    /// </summary>
+    public class RuntimeReachabilityComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant EQUALS for RuntimeReachabilityComparison
+        /// </summary>
+        public static readonly RuntimeReachabilityComparison EQUALS = new RuntimeReachabilityComparison("EQUALS");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for RuntimeReachabilityComparison
+        /// </summary>
+        public static readonly RuntimeReachabilityComparison NOT_EQUALS = new RuntimeReachabilityComparison("NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom RuntimeReachabilityComparison for a value not among the defined constants.
+        /// </summary>
+        public RuntimeReachabilityComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeReachabilityComparison FindValue(string value)
+        {
+            return FindValue<RuntimeReachabilityComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeReachabilityComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeReachabilityReason.
+    /// </summary>
+    public class RuntimeReachabilityReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant PACKAGE_IN_DOCKERFILE_WORKLOAD_PATH for RuntimeReachabilityReason
+        /// </summary>
+        public static readonly RuntimeReachabilityReason PACKAGE_IN_DOCKERFILE_WORKLOAD_PATH = new RuntimeReachabilityReason("PACKAGE_IN_DOCKERFILE_WORKLOAD_PATH");
+
+        /// <summary>
+        /// Constant PACKAGE_NOT_IN_DOCKERFILE_WORKLOAD_PATH for RuntimeReachabilityReason
+        /// </summary>
+        public static readonly RuntimeReachabilityReason PACKAGE_NOT_IN_DOCKERFILE_WORKLOAD_PATH = new RuntimeReachabilityReason("PACKAGE_NOT_IN_DOCKERFILE_WORKLOAD_PATH");
+
+        /// <summary>
+        /// Constant PROCESS_NOT_OBSERVED_IN_EC2_RUNTIME for RuntimeReachabilityReason
+        /// </summary>
+        public static readonly RuntimeReachabilityReason PROCESS_NOT_OBSERVED_IN_EC2_RUNTIME = new RuntimeReachabilityReason("PROCESS_NOT_OBSERVED_IN_EC2_RUNTIME");
+
+        /// <summary>
+        /// Constant PROCESS_OBSERVED_IN_EC2_RUNTIME for RuntimeReachabilityReason
+        /// </summary>
+        public static readonly RuntimeReachabilityReason PROCESS_OBSERVED_IN_EC2_RUNTIME = new RuntimeReachabilityReason("PROCESS_OBSERVED_IN_EC2_RUNTIME");
+
+        /// <summary>
+        /// Constructs a custom RuntimeReachabilityReason for a value not among the defined constants.
+        /// </summary>
+        public RuntimeReachabilityReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeReachabilityReason FindValue(string value)
+        {
+            return FindValue<RuntimeReachabilityReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeReachabilityReason(string value)
         {
             return FindValue(value);
         }

@@ -89,6 +89,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetPurlQualifier())
+            {
+                context.Writer.WritePropertyName("purlQualifier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PurlQualifierFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.PurlQualifier, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRelease())
             {
                 context.Writer.WritePropertyName("release");
@@ -96,6 +107,28 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Release, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetRuntimeReachability())
+            {
+                context.Writer.WritePropertyName("runtimeReachability");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RuntimeReachabilityFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.RuntimeReachability, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetRuntimeReachabilityReason())
+            {
+                context.Writer.WritePropertyName("runtimeReachabilityReason");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RuntimeReachabilityReasonFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.RuntimeReachabilityReason, context);
 
                 context.Writer.WriteEndObject();
             }
