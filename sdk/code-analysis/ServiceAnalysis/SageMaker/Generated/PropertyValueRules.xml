@@ -25,6 +25,47 @@
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:(experiment|experiment-trial-component|artifact|action|context)/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayRequest.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayRequest.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayRequest.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AddInferenceGatewayResponse.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AddTagsRequest.ResourceArn</property>
     <min>0</min>
     <max>256</max>
@@ -786,6 +827,48 @@
     <min>0</min>
     <max>1024</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:flow-definition/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::[0-9]{12}:role/[\w+=,.@\-/]{1,1017}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayRequest.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::[0-9]{12}:role/[\w+=,.@\-/]{1,1017}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateGlobalInferenceGatewayResponse.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateHubRequest.HubDescription</property>
@@ -2202,6 +2285,29 @@
     <pattern>^[a-z0-9](-*[a-z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteGlobalInferenceGatewayRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteGlobalInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteGlobalInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeleteGlobalInferenceGatewayResponse.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteHubRequest.HubName</property>
     <pattern>^(arn:[a-z0-9-\.]{1,63}:sagemaker:\w+(?:-\w+)+:(\d{12}|aws):hub\/)?[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
@@ -3597,6 +3703,50 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.EndpointUrl</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::[0-9]{12}:role/[\w+=,.@\-/]{1,1017}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.FailureReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeGlobalInferenceGatewayResponse.VpcEndpointServiceName</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeHubRequest.HubName</property>
@@ -6421,6 +6571,21 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListGlobalInferenceGatewaysRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListGlobalInferenceGatewaysRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListGlobalInferenceGatewaysResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListHubContentVersionsRequest.HubContentName</property>
     <min>0</min>
     <max>63</max>
@@ -6658,6 +6823,26 @@
     <min>0</min>
     <max>8192</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListInferenceGatewaysRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListInferenceGatewaysRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListInferenceGatewaysRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListInferenceGatewaysResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListInferenceRecommendationsJobStepsRequest.JobName</property>
@@ -7960,6 +8145,41 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.InstanceCount</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.SourceClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.SourceInstanceGroupName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.TargetClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesRequest.TargetInstanceGroupName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.PutEndpointPolicyRequest.EndpointName</property>
     <min>0</min>
     <max>63</max>
@@ -8015,6 +8235,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RegisterDevicesRequest.DeviceFleetName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayRequest.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayRequest.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayRequest.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RemoveInferenceGatewayResponse.Name</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
@@ -8731,6 +8992,29 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateGlobalInferenceGatewayRequest.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateGlobalInferenceGatewayResponse.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateGlobalInferenceGatewayResponse.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateGlobalInferenceGatewayResponse.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateHubRequest.HubDescription</property>
@@ -12404,6 +12688,95 @@
     <pattern>^arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayFilter.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMember.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMember.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMember.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMemberFilter.Value</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMemberSummary.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:cluster/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMemberSummary.FailureReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMemberSummary.Name</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^[a-z0-9]([-a-z0-9.]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayMemberSummary.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayRoutingWeights.ErrorRate</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayRoutingWeights.KVHeadroom</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayRoutingWeights.QueueDepth</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewayRoutingWeights.RegionProximity</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewaySummary.Arn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:global-inference-gateway/[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewaySummary.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[a-z0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GlobalInferenceGatewaySummary.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.HolidayConfigAttributes.CountryCode</property>
     <min>2</min>
     <max>2</max>
@@ -14414,6 +14787,18 @@
     <property>Amazon.SageMaker.Model.MonitoringStoppingCondition.MaxRuntimeInSeconds</property>
     <min>1</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodeLogicalIdsError.NodeLogicalId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MoveClusterNodesError.NodeId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^i-[a-f0-9]{8}(?:[a-f0-9]{9})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.NestedFilters.NestedPropertyName</property>

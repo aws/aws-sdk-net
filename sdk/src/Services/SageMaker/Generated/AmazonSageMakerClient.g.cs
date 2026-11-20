@@ -330,6 +330,94 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Adds an in-cluster inference gateway to a global inference gateway. This operation
+        /// is asynchronous: the in-cluster inference gateway starts in the `ADDING` status. To
+        /// check its status, call `ListInferenceGateways`. If the in-cluster inference gateway
+        /// is already in the global inference gateway, the operation succeeds and returns its
+        /// current status. An in-cluster inference gateway can belong to only one global inference
+        /// gateway. If it already belongs to another global inference gateway, the operation
+        /// fails with `ResourceInUse`. The operation fails with `ConflictException` while another
+        /// operation is in progress on the global inference gateway, or if the global inference
+        /// gateway failed to create.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddInferenceGateway service method.</param>
+        /// <returns>The response from the AddInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddInferenceGateway">REST API Reference for AddInferenceGateway Operation</seealso>
+        public virtual AddInferenceGatewayResponse AddInferenceGateway(AddInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<AddInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual AddInferenceGatewayResponse AddInferenceGateway(AddInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<AddInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Adds an in-cluster inference gateway to a global inference gateway. This operation
+        /// is asynchronous: the in-cluster inference gateway starts in the `ADDING` status. To
+        /// check its status, call `ListInferenceGateways`. If the in-cluster inference gateway
+        /// is already in the global inference gateway, the operation succeeds and returns its
+        /// current status. An in-cluster inference gateway can belong to only one global inference
+        /// gateway. If it already belongs to another global inference gateway, the operation
+        /// fails with `ResourceInUse`. The operation fails with `ConflictException` while another
+        /// operation is in progress on the global inference gateway, or if the global inference
+        /// gateway failed to create.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AddInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddInferenceGateway">REST API Reference for AddInferenceGateway Operation</seealso>
+        public virtual Task<AddInferenceGatewayResponse> AddInferenceGatewayAsync(AddInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddInferenceGatewayResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Adds or overwrites one or more tags for the specified SageMaker resource. You can
         /// add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform
         /// jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
@@ -3524,6 +3612,72 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateFlowDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFlowDefinitionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a global inference gateway. This operation is asynchronous: the global inference
+        /// gateway starts in the `CREATING` status. To check its status, call `DescribeGlobalInferenceGateway`
+        /// until the status is `ACTIVE` or `FAILED`. The operation fails with `ResourceInUse`
+        /// if the name is already in use, or if one of the in-cluster inference gateways in `Gateways`
+        /// already belongs to another global inference gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalInferenceGateway service method.</param>
+        /// <returns>The response from the CreateGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateGlobalInferenceGateway">REST API Reference for CreateGlobalInferenceGateway Operation</seealso>
+        public virtual CreateGlobalInferenceGatewayResponse CreateGlobalInferenceGateway(CreateGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual CreateGlobalInferenceGatewayResponse CreateGlobalInferenceGateway(CreateGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlobalInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a global inference gateway. This operation is asynchronous: the global inference
+        /// gateway starts in the `CREATING` status. To check its status, call `DescribeGlobalInferenceGateway`
+        /// until the status is `ACTIVE` or `FAILED`. The operation fails with `ResourceInUse`
+        /// if the name is already in use, or if one of the in-cluster inference gateways in `Gateways`
+        /// already belongs to another global inference gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateGlobalInferenceGateway">REST API Reference for CreateGlobalInferenceGateway Operation</seealso>
+        public virtual Task<CreateGlobalInferenceGatewayResponse> CreateGlobalInferenceGatewayAsync(CreateGlobalInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlobalInferenceGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -9214,6 +9368,68 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Delete a global inference gateway and its member inference gateways, which are then
+        /// free to join another global inference gateway. Asynchronous: the global inference
+        /// gateway is DELETING while its managed endpoint resources are torn down; poll DescribeGlobalInferenceGateway
+        /// until it returns ResourceNotFound. Does not touch the customer's clusters. Idempotent:
+        /// a Delete whose Identifier matches no global inference gateway succeeds and echoes
+        /// what the Identifier says (Arn and Id for an ARN or Id, Name for a name).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalInferenceGateway service method.</param>
+        /// <returns>The response from the DeleteGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteGlobalInferenceGateway">REST API Reference for DeleteGlobalInferenceGateway Operation</seealso>
+        public virtual DeleteGlobalInferenceGatewayResponse DeleteGlobalInferenceGateway(DeleteGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlobalInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual DeleteGlobalInferenceGatewayResponse DeleteGlobalInferenceGateway(DeleteGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlobalInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Delete a global inference gateway and its member inference gateways, which are then
+        /// free to join another global inference gateway. Asynchronous: the global inference
+        /// gateway is DELETING while its managed endpoint resources are torn down; poll DescribeGlobalInferenceGateway
+        /// until it returns ResourceNotFound. Does not touch the customer's clusters. Idempotent:
+        /// a Delete whose Identifier matches no global inference gateway succeeds and echoes
+        /// what the Identifier says (Arn and Id for an ARN or Id, Name for a name).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteGlobalInferenceGateway">REST API Reference for DeleteGlobalInferenceGateway Operation</seealso>
+        public virtual Task<DeleteGlobalInferenceGatewayResponse> DeleteGlobalInferenceGatewayAsync(DeleteGlobalInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlobalInferenceGatewayResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Delete a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
@@ -13180,6 +13396,62 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeFlowDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFlowDefinitionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a global inference gateway, including its status, endpoints,
+        /// and routing configuration. To list the in-cluster inference gateways of the global
+        /// inference gateway, use <c>ListInferenceGateways</c>. To read the tags of the global
+        /// inference gateway, use <c>ListTags</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalInferenceGateway service method.</param>
+        /// <returns>The response from the DescribeGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeGlobalInferenceGateway">REST API Reference for DescribeGlobalInferenceGateway Operation</seealso>
+        public virtual DescribeGlobalInferenceGatewayResponse DescribeGlobalInferenceGateway(DescribeGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual DescribeGlobalInferenceGatewayResponse DescribeGlobalInferenceGateway(DescribeGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves information about a global inference gateway, including its status, endpoints,
+        /// and routing configuration. To list the in-cluster inference gateways of the global
+        /// inference gateway, use <c>ListInferenceGateways</c>. To read the tags of the global
+        /// inference gateway, use <c>ListTags</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeGlobalInferenceGateway">REST API Reference for DescribeGlobalInferenceGateway Operation</seealso>
+        public virtual Task<DescribeGlobalInferenceGatewayResponse> DescribeGlobalInferenceGatewayAsync(DescribeGlobalInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGlobalInferenceGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -18126,6 +18398,52 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists summaries of the global inference gateways in your account. You can filter the
+        /// results by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalInferenceGateways service method.</param>
+        /// <returns>The response from the ListGlobalInferenceGateways service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListGlobalInferenceGateways">REST API Reference for ListGlobalInferenceGateways Operation</seealso>
+        public virtual ListGlobalInferenceGatewaysResponse ListGlobalInferenceGateways(ListGlobalInferenceGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlobalInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlobalInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlobalInferenceGatewaysResponse>(request, options);
+        }
+#else
+        internal virtual ListGlobalInferenceGatewaysResponse ListGlobalInferenceGateways(ListGlobalInferenceGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlobalInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlobalInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListGlobalInferenceGatewaysResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists summaries of the global inference gateways in your account. You can filter the
+        /// results by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalInferenceGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGlobalInferenceGateways service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListGlobalInferenceGateways">REST API Reference for ListGlobalInferenceGateways Operation</seealso>
+        public virtual Task<ListGlobalInferenceGatewaysResponse> ListGlobalInferenceGatewaysAsync(ListGlobalInferenceGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGlobalInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGlobalInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGlobalInferenceGatewaysResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// List hub content versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
@@ -18542,6 +18860,62 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListInferenceExperimentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInferenceExperimentsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the in-cluster inference gateways in a global inference gateway, in the order
+        /// that they were added. Each summary includes the status of the in-cluster inference
+        /// gateway and, if the status is `FAILED`, the reason for the failure. `DescribeGlobalInferenceGateway`
+        /// doesn't return the in-cluster inference gateways; use this operation to list them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceGateways service method.</param>
+        /// <returns>The response from the ListInferenceGateways service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceGateways">REST API Reference for ListInferenceGateways Operation</seealso>
+        public virtual ListInferenceGatewaysResponse ListInferenceGateways(ListInferenceGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceGatewaysResponse>(request, options);
+        }
+#else
+        internal virtual ListInferenceGatewaysResponse ListInferenceGateways(ListInferenceGatewaysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceGatewaysResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the in-cluster inference gateways in a global inference gateway, in the order
+        /// that they were added. Each summary includes the status of the in-cluster inference
+        /// gateway and, if the status is `FAILED`, the reason for the failure. `DescribeGlobalInferenceGateway`
+        /// doesn't return the in-cluster inference gateways; use this operation to list them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceGateways service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInferenceGateways service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceGateways">REST API Reference for ListInferenceGateways Operation</seealso>
+        public virtual Task<ListInferenceGatewaysResponse> ListInferenceGatewaysAsync(ListInferenceGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInferenceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInferenceGatewaysResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -21166,6 +21540,126 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Moves running nodes from one instance group to another instance group. The target
+        /// instance group can be in the same HyperPod cluster or in a different HyperPod cluster
+        /// in the same account and Region. The underlying instances aren't terminated.
+        /// 
+        ///  
+        /// <para>
+        /// Each node keeps its instance ID, its <c>NodeLogicalId</c>, its network interfaces
+        /// and IP addresses, and its capacity. The node then joins the target instance group
+        /// with the target's configuration and lifecycle scripts.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The move replaces the node's root Amazon Elastic Block Store (Amazon EBS) volume and
+        /// secondary EBS volume, which deletes any data stored on them. Back up any data that
+        /// you need before you move the node.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Specify the nodes to move with exactly one of <c>NodeIds</c>, <c>NodeLogicalIds</c>,
+        /// or <c>InstanceCount</c>. The operation is asynchronous and returns after it accepts
+        /// the nodes for the move. While a node moves, its status is <c>DetachInProgress</c>
+        /// and then <c>AttachInProgress</c>. The node appears in the source cluster while it
+        /// detaches. After HyperPod hands the node off to the target instance group, the node
+        /// appears in the target cluster. To track the node, call <c>DescribeClusterNode</c>
+        /// or <c>ListClusterNodes</c> on the source or target cluster.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Both clusters must be <c>InService</c>, use Amazon EKS orchestration, and use <c>Continuous</c>
+        /// as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The source and target instance groups must also use compatible configurations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveClusterNodes service method.</param>
+        /// <returns>The response from the MoveClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MoveClusterNodes">REST API Reference for MoveClusterNodes Operation</seealso>
+        public virtual MoveClusterNodesResponse MoveClusterNodes(MoveClusterNodesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = MoveClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveClusterNodesResponseUnmarshaller.Instance;
+
+            return Invoke<MoveClusterNodesResponse>(request, options);
+        }
+#else
+        internal virtual MoveClusterNodesResponse MoveClusterNodes(MoveClusterNodesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = MoveClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveClusterNodesResponseUnmarshaller.Instance;
+
+            return Invoke<MoveClusterNodesResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Moves running nodes from one instance group to another instance group. The target
+        /// instance group can be in the same HyperPod cluster or in a different HyperPod cluster
+        /// in the same account and Region. The underlying instances aren't terminated.
+        /// 
+        ///  
+        /// <para>
+        /// Each node keeps its instance ID, its <c>NodeLogicalId</c>, its network interfaces
+        /// and IP addresses, and its capacity. The node then joins the target instance group
+        /// with the target's configuration and lifecycle scripts.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The move replaces the node's root Amazon Elastic Block Store (Amazon EBS) volume and
+        /// secondary EBS volume, which deletes any data stored on them. Back up any data that
+        /// you need before you move the node.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Specify the nodes to move with exactly one of <c>NodeIds</c>, <c>NodeLogicalIds</c>,
+        /// or <c>InstanceCount</c>. The operation is asynchronous and returns after it accepts
+        /// the nodes for the move. While a node moves, its status is <c>DetachInProgress</c>
+        /// and then <c>AttachInProgress</c>. The node appears in the source cluster while it
+        /// detaches. After HyperPod hands the node off to the target instance group, the node
+        /// appears in the target cluster. To track the node, call <c>DescribeClusterNode</c>
+        /// or <c>ListClusterNodes</c> on the source or target cluster.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Both clusters must be <c>InService</c>, use Amazon EKS orchestration, and use <c>Continuous</c>
+        /// as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The source and target instance groups must also use compatible configurations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the MoveClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MoveClusterNodes">REST API Reference for MoveClusterNodes Operation</seealso>
+        public virtual Task<MoveClusterNodesResponse> MoveClusterNodesAsync(MoveClusterNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = MoveClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveClusterNodesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveClusterNodesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Attaches a resource-based policy to an endpoint. With an endpoint policy, you can
         /// allow other Amazon Web Services accounts to send requests to your endpoint, or to
         /// inference components on it, through an inference router. The policy that you specify
@@ -21410,6 +21904,80 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = RegisterDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterDevicesResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes an in-cluster inference gateway from a global inference gateway. This operation
+        /// is asynchronous: the in-cluster inference gateway moves to the `REMOVING` status,
+        /// and then no longer appears in `ListInferenceGateways`. If the in-cluster inference
+        /// gateway isn't in the global inference gateway, the operation succeeds and returns
+        /// no status. The operation returns `ResourceNotFound` only if the global inference gateway
+        /// doesn't exist. The operation fails with `ConflictException` while another operation
+        /// is in progress on the global inference gateway. It fails with `ValidationException`
+        /// if the in-cluster inference gateway is the last one, because a global inference gateway
+        /// must have at least one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveInferenceGateway service method.</param>
+        /// <returns>The response from the RemoveInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RemoveInferenceGateway">REST API Reference for RemoveInferenceGateway Operation</seealso>
+        public virtual RemoveInferenceGatewayResponse RemoveInferenceGateway(RemoveInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual RemoveInferenceGatewayResponse RemoveInferenceGateway(RemoveInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Removes an in-cluster inference gateway from a global inference gateway. This operation
+        /// is asynchronous: the in-cluster inference gateway moves to the `REMOVING` status,
+        /// and then no longer appears in `ListInferenceGateways`. If the in-cluster inference
+        /// gateway isn't in the global inference gateway, the operation succeeds and returns
+        /// no status. The operation returns `ResourceNotFound` only if the global inference gateway
+        /// doesn't exist. The operation fails with `ConflictException` while another operation
+        /// is in progress on the global inference gateway. It fails with `ValidationException`
+        /// if the in-cluster inference gateway is the last one, because a global inference gateway
+        /// must have at least one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the RemoveInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RemoveInferenceGateway">REST API Reference for RemoveInferenceGateway Operation</seealso>
+        public virtual Task<RemoveInferenceGatewayResponse> RemoveInferenceGatewayAsync(RemoveInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveInferenceGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -24736,6 +25304,72 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateFeatureMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFeatureMetadataResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the routing configuration of a global inference gateway. To add or remove
+        /// in-cluster inference gateways, use `AddInferenceGateway` and `RemoveInferenceGateway`.
+        /// This operation is asynchronous: the global inference gateway moves to the `UPDATING`
+        /// status. The operation fails with `ConflictException` while another operation is in
+        /// progress on the global inference gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalInferenceGateway service method.</param>
+        /// <returns>The response from the UpdateGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateGlobalInferenceGateway">REST API Reference for UpdateGlobalInferenceGateway Operation</seealso>
+        public virtual UpdateGlobalInferenceGatewayResponse UpdateGlobalInferenceGateway(UpdateGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalInferenceGatewayResponse>(request, options);
+        }
+#else
+        internal virtual UpdateGlobalInferenceGatewayResponse UpdateGlobalInferenceGateway(UpdateGlobalInferenceGatewayRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalInferenceGatewayResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the routing configuration of a global inference gateway. To add or remove
+        /// in-cluster inference gateways, use `AddInferenceGateway` and `RemoveInferenceGateway`.
+        /// This operation is asynchronous: the global inference gateway moves to the `UPDATING`
+        /// status. The operation fails with `ConflictException` while another operation is in
+        /// progress on the global inference gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalInferenceGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateGlobalInferenceGateway service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateGlobalInferenceGateway">REST API Reference for UpdateGlobalInferenceGateway Operation</seealso>
+        public virtual Task<UpdateGlobalInferenceGatewayResponse> UpdateGlobalInferenceGatewayAsync(UpdateGlobalInferenceGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalInferenceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalInferenceGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlobalInferenceGatewayResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

@@ -249,6 +249,12 @@ namespace Amazon.SageMaker.Model
         IListFlowDefinitionsPaginator ListFlowDefinitions(ListFlowDefinitionsRequest request);
 
         /// <summary>
+        /// Paginator for ListGlobalInferenceGateways operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListGlobalInferenceGatewaysPaginator ListGlobalInferenceGateways(ListGlobalInferenceGatewaysRequest request);
+
+        /// <summary>
         /// Paginator for ListHumanTaskUis operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -283,6 +289,12 @@ namespace Amazon.SageMaker.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListInferenceExperimentsPaginator ListInferenceExperiments(ListInferenceExperimentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInferenceGateways operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInferenceGatewaysPaginator ListInferenceGateways(ListInferenceGatewaysRequest request);
 
         /// <summary>
         /// Paginator for ListInferenceRecommendationsJobSteps operation

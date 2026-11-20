@@ -5050,9 +5050,19 @@ namespace Amazon.SageMaker
     public class ClusterInstanceStatus : ConstantClass
     {
         /// <summary>
+        /// Constant AttachInProgress for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus AttachInProgress = new ClusterInstanceStatus("AttachInProgress");
+
+        /// <summary>
         /// Constant DeepHealthCheckInProgress for ClusterInstanceStatus
         /// </summary>
         public static readonly ClusterInstanceStatus DeepHealthCheckInProgress = new ClusterInstanceStatus("DeepHealthCheckInProgress");
+
+        /// <summary>
+        /// Constant DetachInProgress for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus DetachInProgress = new ClusterInstanceStatus("DetachInProgress");
 
         /// <summary>
         /// Constant Failure for ClusterInstanceStatus
@@ -9179,6 +9189,190 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Framework(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalInferenceGatewayFilterName.
+    /// </summary>
+    public class GlobalInferenceGatewayFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Status for GlobalInferenceGatewayFilterName
+        /// </summary>
+        public static readonly GlobalInferenceGatewayFilterName Status = new GlobalInferenceGatewayFilterName("Status");
+
+        /// <summary>
+        /// Constructs a custom GlobalInferenceGatewayFilterName for a value not among the defined constants.
+        /// </summary>
+        public GlobalInferenceGatewayFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalInferenceGatewayFilterName FindValue(string value)
+        {
+            return FindValue<GlobalInferenceGatewayFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalInferenceGatewayFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalInferenceGatewayMemberFilterName.
+    /// </summary>
+    public class GlobalInferenceGatewayMemberFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant ClusterArn for GlobalInferenceGatewayMemberFilterName
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberFilterName ClusterArn = new GlobalInferenceGatewayMemberFilterName("ClusterArn");
+
+        /// <summary>
+        /// Constant Status for GlobalInferenceGatewayMemberFilterName
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberFilterName Status = new GlobalInferenceGatewayMemberFilterName("Status");
+
+        /// <summary>
+        /// Constructs a custom GlobalInferenceGatewayMemberFilterName for a value not among the defined constants.
+        /// </summary>
+        public GlobalInferenceGatewayMemberFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalInferenceGatewayMemberFilterName FindValue(string value)
+        {
+            return FindValue<GlobalInferenceGatewayMemberFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalInferenceGatewayMemberFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalInferenceGatewayMemberStatus.
+    /// </summary>
+    public class GlobalInferenceGatewayMemberStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for GlobalInferenceGatewayMemberStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberStatus ACTIVE = new GlobalInferenceGatewayMemberStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant ADDING for GlobalInferenceGatewayMemberStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberStatus ADDING = new GlobalInferenceGatewayMemberStatus("ADDING");
+
+        /// <summary>
+        /// Constant FAILED for GlobalInferenceGatewayMemberStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberStatus FAILED = new GlobalInferenceGatewayMemberStatus("FAILED");
+
+        /// <summary>
+        /// Constant REMOVING for GlobalInferenceGatewayMemberStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayMemberStatus REMOVING = new GlobalInferenceGatewayMemberStatus("REMOVING");
+
+        /// <summary>
+        /// Constructs a custom GlobalInferenceGatewayMemberStatus for a value not among the defined constants.
+        /// </summary>
+        public GlobalInferenceGatewayMemberStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalInferenceGatewayMemberStatus FindValue(string value)
+        {
+            return FindValue<GlobalInferenceGatewayMemberStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalInferenceGatewayMemberStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GlobalInferenceGatewayStatus.
+    /// </summary>
+    public class GlobalInferenceGatewayStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for GlobalInferenceGatewayStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayStatus ACTIVE = new GlobalInferenceGatewayStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant CREATING for GlobalInferenceGatewayStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayStatus CREATING = new GlobalInferenceGatewayStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for GlobalInferenceGatewayStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayStatus DELETING = new GlobalInferenceGatewayStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for GlobalInferenceGatewayStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayStatus FAILED = new GlobalInferenceGatewayStatus("FAILED");
+
+        /// <summary>
+        /// Constant UPDATING for GlobalInferenceGatewayStatus
+        /// </summary>
+        public static readonly GlobalInferenceGatewayStatus UPDATING = new GlobalInferenceGatewayStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom GlobalInferenceGatewayStatus for a value not among the defined constants.
+        /// </summary>
+        public GlobalInferenceGatewayStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalInferenceGatewayStatus FindValue(string value)
+        {
+            return FindValue<GlobalInferenceGatewayStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalInferenceGatewayStatus(string value)
         {
             return FindValue(value);
         }
@@ -15073,6 +15267,57 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MonitoringType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MoveClusterNodesErrorCode.
+    /// </summary>
+    public class MoveClusterNodesErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant InvalidNodeStatus for MoveClusterNodesErrorCode
+        /// </summary>
+        public static readonly MoveClusterNodesErrorCode InvalidNodeStatus = new MoveClusterNodesErrorCode("InvalidNodeStatus");
+
+        /// <summary>
+        /// Constant NodeIdInUse for MoveClusterNodesErrorCode
+        /// </summary>
+        public static readonly MoveClusterNodesErrorCode NodeIdInUse = new MoveClusterNodesErrorCode("NodeIdInUse");
+
+        /// <summary>
+        /// Constant NodeIdNotFound for MoveClusterNodesErrorCode
+        /// </summary>
+        public static readonly MoveClusterNodesErrorCode NodeIdNotFound = new MoveClusterNodesErrorCode("NodeIdNotFound");
+
+        /// <summary>
+        /// Constant NodeInstanceTypeMismatch for MoveClusterNodesErrorCode
+        /// </summary>
+        public static readonly MoveClusterNodesErrorCode NodeInstanceTypeMismatch = new MoveClusterNodesErrorCode("NodeInstanceTypeMismatch");
+
+        /// <summary>
+        /// Constructs a custom MoveClusterNodesErrorCode for a value not among the defined constants.
+        /// </summary>
+        public MoveClusterNodesErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MoveClusterNodesErrorCode FindValue(string value)
+        {
+            return FindValue<MoveClusterNodesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MoveClusterNodesErrorCode(string value)
         {
             return FindValue(value);
         }

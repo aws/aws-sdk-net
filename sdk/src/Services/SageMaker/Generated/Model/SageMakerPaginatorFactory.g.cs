@@ -321,6 +321,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListGlobalInferenceGateways operation
+        /// </summary>
+        public IListGlobalInferenceGatewaysPaginator ListGlobalInferenceGateways(ListGlobalInferenceGatewaysRequest request)
+        {
+            return new ListGlobalInferenceGatewaysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHumanTaskUis operation
         /// </summary>
         public IListHumanTaskUisPaginator ListHumanTaskUis(ListHumanTaskUisRequest request)
@@ -366,6 +374,14 @@ namespace Amazon.SageMaker.Model
         public IListInferenceExperimentsPaginator ListInferenceExperiments(ListInferenceExperimentsRequest request)
         {
             return new ListInferenceExperimentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInferenceGateways operation
+        /// </summary>
+        public IListInferenceGatewaysPaginator ListInferenceGateways(ListInferenceGatewaysRequest request)
+        {
+            return new ListInferenceGatewaysPaginator(this.client, request);
         }
 
         /// <summary>
