@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Encryption configuration for the invocation
+    /// The encryption configuration for your custom resource. Specify a customer managed
+    /// KMS key, and optionally an encryption context, to encrypt your custom vocabulary,
+    /// custom vocabulary filter, or custom language model artifacts at rest. If you do not
+    /// provide a key, your artifacts are encrypted with an Amazon Web Services owned key.
     /// </summary>
     public partial class EncryptionConfiguration
     {

@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Your request didn't pass one or more validation tests. This can occur when the entity
-    /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-    /// <c>IN PROGRESS</c>). See the exception message field for more information.
+    /// Your request didn't pass one or more validation tests. This can occur when a parameter
+    /// has an invalid value, when you combine parameters in a way that isn't supported, when
+    /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+    /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
     /// </summary>
 #if !NETSTANDARD
     [Serializable]
@@ -74,6 +75,56 @@ namespace Amazon.TranscribeService.Model
         /// </summary>
         public BadRequestException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) { }
 
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// A code that identifies why the audio in your request was rejected. Currently, <c>TranscribeAudio</c>
+        /// returns this field, and only for problems with your audio. It isn't returned for other
+        /// validation errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>audioTooLong</c>: The audio is longer than the maximum duration of 1 hour.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>audioTooShort</c>: The audio is shorter than 0.5 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>audioFileTooLarge</c>: The audio is larger than the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>unsupportedAudioFormat</c>: The media format isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>unsupportedChannelCount</c>: You enabled <c>ChannelIdentification</c> and the
+        /// audio has more than two channels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>invalidAudio</c>: Amazon Transcribe couldn't decode the audio.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>mediaDownloadFailed</c>: Amazon Transcribe couldn't download the audio at your
+        /// <c>MediaFileUri</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BadRequestExceptionReason Reason { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Reason property is set.
+        /// </summary>
+        internal bool IsSetReason() => this.Reason != null;
+
 #if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the BadRequestException class with serialized data.
@@ -85,6 +136,7 @@ namespace Amazon.TranscribeService.Model
         protected BadRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (BadRequestExceptionReason)info.GetValue("Reason", typeof(BadRequestExceptionReason));
         }
 
         /// <summary>
@@ -97,6 +149,7 @@ namespace Amazon.TranscribeService.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
     }

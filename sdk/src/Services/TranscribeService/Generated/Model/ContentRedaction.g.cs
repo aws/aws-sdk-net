@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Makes it possible to redact or flag specified personally identifiable information
-    /// (PII) in your transcript. If you use <c>ContentRedaction</c>, you must also include
-    /// the sub-parameters: <c>RedactionOutput</c> and <c>RedactionType</c>. You can optionally
-    /// include <c>PiiEntityTypes</c> to choose which types of PII you want to redact.
+    /// Makes it possible to redact specified personally identifiable information (PII) in
+    /// your transcript. If you use <c>ContentRedaction</c>, you must also include the sub-parameters:
+    /// <c>RedactionOutput</c> and <c>RedactionType</c>. You can optionally include <c>PiiEntityTypes</c>
+    /// to choose which types of PII you want to redact.
     /// </summary>
     public partial class ContentRedaction
     {
@@ -73,7 +73,9 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// When you choose <c>redacted_and_unredacted</c> Amazon Transcribe creates a redacted
-        /// and an unredacted transcript (as two separate files).
+        /// and an unredacted transcript. For batch jobs, Amazon Transcribe creates two separate
+        /// files. For <c>TranscribeAudio</c>, Amazon Transcribe returns them in <c>RedactedResults</c>
+        /// and <c>Results</c>, or writes them as two separate files if you use <c>OutputConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -566,6 +566,11 @@
     <pattern>^arn:aws(-[^:]+)?:transcribe:[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z-]*/[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.TranscribeAudioRequest.MaxSpeakerLabels</property>
+    <min>2</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -959,6 +964,23 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.SyncMedia.MediaBytes</property>
+    <min>1</min>
+    <max>26214400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.SyncMedia.MediaFileUri</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^(s3://|http(s*)://).+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.SyncOutputConfiguration.OutputMediaFileUri</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^(s3://|http(s*)://).+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -967,6 +989,11 @@
     <property>Amazon.TranscribeService.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.TranscribeAudioMetadata.MediaSampleRateHertz</property>
+    <min>8000</min>
+    <max>48000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Transcript.RedactedTranscriptFileUri</property>
@@ -998,6 +1025,12 @@
     <pattern>^[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.VocabularyFilterEntry.VocabularyFilterName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.VocabularyFilterInfo.VocabularyFilterName</property>
     <min>1</min>
     <max>200</max>
@@ -1005,6 +1038,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.VocabularyInfo.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.VocabularyPhrase.DisplayAs</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.VocabularyPhrase.Text</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.VocabularySettingsEntry.VocabularyName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+$</pattern>

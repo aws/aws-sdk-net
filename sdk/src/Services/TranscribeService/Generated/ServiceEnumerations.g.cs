@@ -22,6 +22,72 @@ using Amazon.Runtime;
 namespace Amazon.TranscribeService
 {
     /// <summary>
+    /// Constants used for properties of type BadRequestExceptionReason.
+    /// </summary>
+    public class BadRequestExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant AudioFileTooLarge for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason AudioFileTooLarge = new BadRequestExceptionReason("audioFileTooLarge");
+
+        /// <summary>
+        /// Constant AudioTooLong for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason AudioTooLong = new BadRequestExceptionReason("audioTooLong");
+
+        /// <summary>
+        /// Constant AudioTooShort for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason AudioTooShort = new BadRequestExceptionReason("audioTooShort");
+
+        /// <summary>
+        /// Constant InvalidAudio for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason InvalidAudio = new BadRequestExceptionReason("invalidAudio");
+
+        /// <summary>
+        /// Constant MediaDownloadFailed for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason MediaDownloadFailed = new BadRequestExceptionReason("mediaDownloadFailed");
+
+        /// <summary>
+        /// Constant UnsupportedAudioFormat for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason UnsupportedAudioFormat = new BadRequestExceptionReason("unsupportedAudioFormat");
+
+        /// <summary>
+        /// Constant UnsupportedChannelCount for BadRequestExceptionReason
+        /// </summary>
+        public static readonly BadRequestExceptionReason UnsupportedChannelCount = new BadRequestExceptionReason("unsupportedChannelCount");
+
+        /// <summary>
+        /// Constructs a custom BadRequestExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public BadRequestExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BadRequestExceptionReason FindValue(string value)
+        {
+            return FindValue<BadRequestExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BadRequestExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type BaseModelName.
     /// </summary>
     public class BaseModelName : ConstantClass
@@ -914,6 +980,42 @@ namespace Amazon.TranscribeService
     }
 
     /// <summary>
+    /// Constants used for properties of type LanguageDetectionMode.
+    /// </summary>
+    public class LanguageDetectionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IDENTIFY_LANGUAGE for LanguageDetectionMode
+        /// </summary>
+        public static readonly LanguageDetectionMode IDENTIFY_LANGUAGE = new LanguageDetectionMode("IDENTIFY_LANGUAGE");
+
+        /// <summary>
+        /// Constructs a custom LanguageDetectionMode for a value not among the defined constants.
+        /// </summary>
+        public LanguageDetectionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageDetectionMode FindValue(string value)
+        {
+            return FindValue<LanguageDetectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageDetectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type MediaFormat.
     /// </summary>
     public class MediaFormat : ConstantClass
@@ -1769,6 +1871,243 @@ namespace Amazon.TranscribeService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SubtitleFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SyncLanguage.
+    /// </summary>
+    public class SyncLanguage : ConstantClass
+    {
+        /// <summary>
+        /// Constant De for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage De = new SyncLanguage("de");
+
+        /// <summary>
+        /// Constant En for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage En = new SyncLanguage("en");
+
+        /// <summary>
+        /// Constant Es for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage Es = new SyncLanguage("es");
+
+        /// <summary>
+        /// Constant Fr for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage Fr = new SyncLanguage("fr");
+
+        /// <summary>
+        /// Constant It for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage It = new SyncLanguage("it");
+
+        /// <summary>
+        /// Constant Ja for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage Ja = new SyncLanguage("ja");
+
+        /// <summary>
+        /// Constant Ko for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage Ko = new SyncLanguage("ko");
+
+        /// <summary>
+        /// Constant Pt for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage Pt = new SyncLanguage("pt");
+
+        /// <summary>
+        /// Constant ZhCN for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage ZhCN = new SyncLanguage("zh-CN");
+
+        /// <summary>
+        /// Constant ZhHK for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage ZhHK = new SyncLanguage("zh-HK");
+
+        /// <summary>
+        /// Constant ZhTW for SyncLanguage
+        /// </summary>
+        public static readonly SyncLanguage ZhTW = new SyncLanguage("zh-TW");
+
+        /// <summary>
+        /// Constructs a custom SyncLanguage for a value not among the defined constants.
+        /// </summary>
+        public SyncLanguage(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncLanguage FindValue(string value)
+        {
+            return FindValue<SyncLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SyncLanguageCode.
+    /// </summary>
+    public class SyncLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeCH for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode DeCH = new SyncLanguageCode("de-CH");
+
+        /// <summary>
+        /// Constant DeDE for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode DeDE = new SyncLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant EnAB for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnAB = new SyncLanguageCode("en-AB");
+
+        /// <summary>
+        /// Constant EnAU for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnAU = new SyncLanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnGB = new SyncLanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnIE for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnIE = new SyncLanguageCode("en-IE");
+
+        /// <summary>
+        /// Constant EnIN for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnIN = new SyncLanguageCode("en-IN");
+
+        /// <summary>
+        /// Constant EnNZ for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnNZ = new SyncLanguageCode("en-NZ");
+
+        /// <summary>
+        /// Constant EnUS for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnUS = new SyncLanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EnWL for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnWL = new SyncLanguageCode("en-WL");
+
+        /// <summary>
+        /// Constant EnZA for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EnZA = new SyncLanguageCode("en-ZA");
+
+        /// <summary>
+        /// Constant EsES for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EsES = new SyncLanguageCode("es-ES");
+
+        /// <summary>
+        /// Constant EsMX for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EsMX = new SyncLanguageCode("es-MX");
+
+        /// <summary>
+        /// Constant EsUS for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode EsUS = new SyncLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant FrCA for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode FrCA = new SyncLanguageCode("fr-CA");
+
+        /// <summary>
+        /// Constant FrFR for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode FrFR = new SyncLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant ItIT for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode ItIT = new SyncLanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant JaJP for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode JaJP = new SyncLanguageCode("ja-JP");
+
+        /// <summary>
+        /// Constant KoKR for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode KoKR = new SyncLanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant PtBR for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode PtBR = new SyncLanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constant PtPT for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode PtPT = new SyncLanguageCode("pt-PT");
+
+        /// <summary>
+        /// Constant ZhCN for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode ZhCN = new SyncLanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constant ZhHK for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode ZhHK = new SyncLanguageCode("zh-HK");
+
+        /// <summary>
+        /// Constant ZhTW for SyncLanguageCode
+        /// </summary>
+        public static readonly SyncLanguageCode ZhTW = new SyncLanguageCode("zh-TW");
+
+        /// <summary>
+        /// Constructs a custom SyncLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public SyncLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncLanguageCode FindValue(string value)
+        {
+            return FindValue<SyncLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncLanguageCode(string value)
         {
             return FindValue(value);
         }

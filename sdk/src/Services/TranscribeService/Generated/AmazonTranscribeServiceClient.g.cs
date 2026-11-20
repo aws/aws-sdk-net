@@ -302,9 +302,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
         /// <returns>The response from the CreateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -377,9 +378,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the CreateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -433,9 +435,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
         /// <returns>The response from the CreateLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -501,9 +504,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the CreateLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -555,9 +559,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
         /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -621,9 +626,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the CreateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -674,9 +680,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -739,9 +746,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -791,9 +799,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
         /// <returns>The response from the CreateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -855,9 +864,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the CreateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -889,9 +899,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsCategory service method.</param>
         /// <returns>The response from the DeleteCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -935,9 +946,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -969,9 +981,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsJob service method.</param>
         /// <returns>The response from the DeleteCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1011,9 +1024,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1042,9 +1056,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
         /// <returns>The response from the DeleteLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1085,9 +1100,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1115,9 +1131,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalScribeJob service method.</param>
         /// <returns>The response from the DeleteMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1157,9 +1174,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1188,9 +1206,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalTranscriptionJob service method.</param>
         /// <returns>The response from the DeleteMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1231,9 +1250,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1262,9 +1282,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
         /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1309,9 +1330,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1343,9 +1365,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
         /// <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1385,9 +1408,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1416,9 +1440,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1463,9 +1488,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1498,9 +1524,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
         /// <returns>The response from the DeleteVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1545,9 +1572,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DeleteVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1590,9 +1618,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
         /// <returns>The response from the DescribeLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1647,9 +1676,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the DescribeLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1685,9 +1715,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsCategory service method.</param>
         /// <returns>The response from the GetCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1735,9 +1766,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1790,9 +1822,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsJob service method.</param>
         /// <returns>The response from the GetCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1857,9 +1890,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1902,9 +1936,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalScribeJob service method.</param>
         /// <returns>The response from the GetMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -1959,9 +1994,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2004,9 +2040,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalTranscriptionJob service method.</param>
         /// <returns>The response from the GetMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2061,9 +2098,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2106,9 +2144,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalVocabulary service method.</param>
         /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2163,9 +2202,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2213,9 +2253,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetTranscriptionJob service method.</param>
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2275,9 +2316,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2320,9 +2362,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetVocabulary service method.</param>
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2377,9 +2420,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2415,9 +2459,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the GetVocabularyFilter service method.</param>
         /// <returns>The response from the GetVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2465,9 +2510,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the GetVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2504,9 +2550,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsCategories service method.</param>
         /// <returns>The response from the ListCallAnalyticsCategories service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2551,9 +2598,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListCallAnalyticsCategories service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2586,9 +2634,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListCallAnalyticsJobs service method.</param>
         /// <returns>The response from the ListCallAnalyticsJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2633,9 +2682,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListCallAnalyticsJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2668,9 +2718,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListLanguageModels service method.</param>
         /// <returns>The response from the ListLanguageModels service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2715,9 +2766,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListLanguageModels service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2750,9 +2802,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListMedicalScribeJobs service method.</param>
         /// <returns>The response from the ListMedicalScribeJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2797,9 +2850,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListMedicalScribeJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2832,9 +2886,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListMedicalTranscriptionJobs service method.</param>
         /// <returns>The response from the ListMedicalTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2879,9 +2934,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListMedicalTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2914,9 +2970,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListMedicalVocabularies service method.</param>
         /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2961,9 +3018,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListMedicalVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -2997,9 +3055,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <returns>The response from the ListTagsForResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3049,9 +3108,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListTagsForResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3088,9 +3148,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListTranscriptionJobs service method.</param>
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3135,9 +3196,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3170,9 +3232,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListVocabularies service method.</param>
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3217,9 +3280,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3252,9 +3316,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the ListVocabularyFilters service method.</param>
         /// <returns>The response from the ListVocabularyFilters service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3299,9 +3364,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the ListVocabularyFilters service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your
@@ -3389,9 +3455,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the StartCallAnalyticsJob service method.</param>
         /// <returns>The response from the StartCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3495,9 +3562,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the StartCallAnalyticsJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3581,9 +3649,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the StartMedicalScribeJob service method.</param>
         /// <returns>The response from the StartMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3679,9 +3748,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the StartMedicalScribeJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3768,9 +3838,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the StartMedicalTranscriptionJob service method.</param>
         /// <returns>The response from the StartMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3869,9 +3940,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the StartMedicalTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -3940,9 +4012,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the StartTranscriptionJob service method.</param>
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4023,9 +4096,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4063,9 +4137,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <returns>The response from the TagResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4119,9 +4194,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the TagResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4151,6 +4227,168 @@ namespace Amazon.TranscribeService
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Transcribes a media file and returns the transcript in the same response. There is
+        /// no job to start and no status to poll.
+        /// 
+        ///  
+        /// <para>
+        /// Use <c>TranscribeAudio</c> when you already have a complete media file and want the
+        /// transcript right away. For large files, long audio, or bulk processing, use .
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include the following parameters in your <c>TranscribeAudio</c> request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Media</c>: Your audio, either as inline bytes (<c>MediaBytes</c>) or as the Amazon
+        /// S3 location of a media file (<c>MediaFileUri</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One of <c>Language</c> or <c>LanguageDetectionMode</c>: Specify the language of your
+        /// audio, or have Amazon Transcribe identify it.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Your audio must be between 0.5 seconds and 1 hour long. Supported formats are WAV,
+        /// MP3, FLAC, M4A, MP4, Ogg, WebM, and AMR.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you send your audio in the request (<c>MediaBytes</c>), the file can be up to 25
+        /// MB. If you provide an Amazon S3 location (<c>MediaFileUri</c>), the file can be up
+        /// to 500 MB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Transcribe always turns on smart formatting, also known as inverse text normalization
+        /// (ITN). It writes numbers, dates, currency, and similar items in their usual written
+        /// form. For example, "one hundred" becomes "100". You can't turn smart formatting off.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon Transcribe returns the transcript in <c>TranscriptResponse</c>.
+        /// If you include <c>OutputConfiguration</c>, Amazon Transcribe writes the transcript
+        /// to the Amazon S3 location you specify instead, and the response contains only that
+        /// location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TranscribeAudio service method.</param>
+        /// <returns>The response from the TranscribeAudio service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscribeAudio">REST API Reference for TranscribeAudio Operation</seealso>
+        public virtual TranscribeAudioResponse TranscribeAudio(TranscribeAudioRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TranscribeAudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranscribeAudioResponseUnmarshaller.Instance;
+
+            return Invoke<TranscribeAudioResponse>(request, options);
+        }
+#else
+        internal virtual TranscribeAudioResponse TranscribeAudio(TranscribeAudioRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TranscribeAudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranscribeAudioResponseUnmarshaller.Instance;
+
+            return Invoke<TranscribeAudioResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Transcribes a media file and returns the transcript in the same response. There is
+        /// no job to start and no status to poll.
+        /// 
+        ///  
+        /// <para>
+        /// Use <c>TranscribeAudio</c> when you already have a complete media file and want the
+        /// transcript right away. For large files, long audio, or bulk processing, use .
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include the following parameters in your <c>TranscribeAudio</c> request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Media</c>: Your audio, either as inline bytes (<c>MediaBytes</c>) or as the Amazon
+        /// S3 location of a media file (<c>MediaFileUri</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One of <c>Language</c> or <c>LanguageDetectionMode</c>: Specify the language of your
+        /// audio, or have Amazon Transcribe identify it.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Your audio must be between 0.5 seconds and 1 hour long. Supported formats are WAV,
+        /// MP3, FLAC, M4A, MP4, Ogg, WebM, and AMR.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you send your audio in the request (<c>MediaBytes</c>), the file can be up to 25
+        /// MB. If you provide an Amazon S3 location (<c>MediaFileUri</c>), the file can be up
+        /// to 500 MB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Transcribe always turns on smart formatting, also known as inverse text normalization
+        /// (ITN). It writes numbers, dates, currency, and similar items in their usual written
+        /// form. For example, "one hundred" becomes "100". You can't turn smart formatting off.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon Transcribe returns the transcript in <c>TranscriptResponse</c>.
+        /// If you include <c>OutputConfiguration</c>, Amazon Transcribe writes the transcript
+        /// to the Amazon S3 location you specify instead, and the response contains only that
+        /// location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TranscribeAudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TranscribeAudio service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscribeAudio">REST API Reference for TranscribeAudio Operation</seealso>
+        public virtual Task<TranscribeAudioResponse> TranscribeAudioAsync(TranscribeAudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TranscribeAudioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranscribeAudioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TranscribeAudioResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Removes the specified tags from the specified Amazon Transcribe resource.
         /// 
         ///  
@@ -4162,9 +4400,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <returns>The response from the UntagResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4217,9 +4456,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UntagResource service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4261,9 +4501,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UpdateCallAnalyticsCategory service method.</param>
         /// <returns>The response from the UpdateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4317,9 +4558,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UpdateCallAnalyticsCategory service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4368,9 +4610,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UpdateLanguageModel service method.</param>
         /// <returns>The response from the UpdateLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4431,9 +4674,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UpdateLanguageModel service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4470,9 +4714,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UpdateMedicalVocabulary service method.</param>
         /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4521,9 +4766,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UpdateMedicalVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4567,9 +4813,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4625,9 +4872,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4669,9 +4917,10 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabularyFilter service method.</param>
         /// <returns>The response from the UpdateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an
@@ -4725,9 +4974,10 @@ namespace Amazon.TranscribeService
         /// </param>
         /// <returns>The response from the UpdateVocabularyFilter service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. This can occur when the entity
-        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
-        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// Your request didn't pass one or more validation tests. This can occur when a parameter
+        /// has an invalid value, when you combine parameters in a way that isn't supported, when
+        /// the entity you're trying to delete doesn't exist, or if it's in a non-terminal state
+        /// (such as <c>IN PROGRESS</c>). See the exception message field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// A resource already exists with this name. Resource names must be unique within an

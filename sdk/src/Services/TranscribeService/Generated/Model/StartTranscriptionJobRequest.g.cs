@@ -55,11 +55,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentRedaction. 
         /// <para>
-        /// Makes it possible to redact or flag specified personally identifiable information
-        /// (PII) in your transcript. If you use <c>ContentRedaction</c>, you must also include
-        /// the sub-parameters: <c>RedactionOutput</c> and <c>RedactionType</c>. You can optionally
-        /// include <c>PiiEntityTypes</c> to choose which types of PII you want to redact. If
-        /// you do not include <c>PiiEntityTypes</c> in your request, all PII is redacted.
+        /// Makes it possible to redact specified personally identifiable information (PII) in
+        /// your transcript. If you use <c>ContentRedaction</c>, you must also include the sub-parameters:
+        /// <c>RedactionOutput</c> and <c>RedactionType</c>. You can optionally include <c>PiiEntityTypes</c>
+        /// to choose which types of PII you want to redact. If you do not include <c>PiiEntityTypes</c>
+        /// in your request, all PII is redacted.
         /// </para>
         /// </summary>
         public ContentRedaction ContentRedaction { get; set; }

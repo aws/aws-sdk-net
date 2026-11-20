@@ -69,9 +69,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// Specifies the new encryption configuration for your custom vocabulary filter. The
-        /// vocabulary filter artifacts are re-encrypted in place using the specified KMS key
-        /// or with an AWS-owned key if a key is not supplied.
+        /// Specifies the encryption configuration for your custom vocabulary filter. Your vocabulary
+        /// filter artifacts are encrypted with the specified KMS key or with an Amazon Web Services
+        /// owned key if a key is not supplied.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration { get; set; }

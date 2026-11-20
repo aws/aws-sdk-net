@@ -55,6 +55,28 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         {
             var unmarshalledObject = new BadRequestException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
+            var reader = context.Reader;
+            context.AddPathSegment("BadRequestException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                var propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "Reason":
+                        context.AddPathSegment("Reason");
+                        unmarshalledObject.Reason = CborStringUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
+
             return unmarshalledObject;
         }
 
