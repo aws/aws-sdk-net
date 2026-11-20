@@ -45,6 +45,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetEnvironmentBlueprintId())
+            {
+                context.Writer.WritePropertyName("environmentBlueprintId");
+                context.Writer.WriteStringValue(requestObject.EnvironmentBlueprintId);
+            }
+
             if (requestObject.IsSetEnvironmentConfigurationName())
             {
                 context.Writer.WritePropertyName("environmentConfigurationName");

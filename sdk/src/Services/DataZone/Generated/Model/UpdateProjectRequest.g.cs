@@ -139,6 +139,20 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property ProjectProfileAction. 
+        /// <para>
+        /// The action to perform on the project profile of the project. Specify <c>DISASSOCIATE</c>
+        /// to disassociate the project from its project profile.
+        /// </para>
+        /// </summary>
+        public ProjectProfileAction ProjectProfileAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectProfileAction property is set.
+        /// </summary>
+        internal bool IsSetProjectProfileAction() => this.ProjectProfileAction != null;
+
+        /// <summary>
         /// Gets and sets the property ProjectProfileVersion. 
         /// <para>
         /// The project profile version to which the project should be updated. You can only specify

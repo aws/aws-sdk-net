@@ -150,6 +150,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ownershipTransfer", targetDepth, ref reader))
+                {
+                    var unmarshaller = AssetOwnershipTransferUnmarshaller.Instance;
+                    unmarshalledObject.OwnershipTransfer = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("owningProjectId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

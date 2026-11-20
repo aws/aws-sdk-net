@@ -115,6 +115,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetProjectProfileAction())
+            {
+                context.Writer.WritePropertyName("projectProfileAction");
+                context.Writer.WriteStringValue(publicRequest.ProjectProfileAction);
+            }
             if (publicRequest.IsSetProjectProfileVersion())
             {
                 context.Writer.WritePropertyName("projectProfileVersion");

@@ -35,6 +35,19 @@ namespace Amazon.DataZone.Model
     public partial class EnvironmentConfigurationUserParameter
     {
         /// <summary>
+        /// Gets and sets the property EnvironmentBlueprintId. 
+        /// <para>
+        /// The ID of the environment blueprint.
+        /// </para>
+        /// </summary>
+        public string EnvironmentBlueprintId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentBlueprintId property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentBlueprintId() => this.EnvironmentBlueprintId != null;
+
+        /// <summary>
         /// Gets and sets the property EnvironmentConfigurationName. 
         /// <para>
         /// The environment configuration name.

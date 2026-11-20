@@ -16834,6 +16834,138 @@ namespace Amazon.DataZone
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Transfers the ownership of an asset to another project in the same Amazon DataZone
+        /// domain. The transfer changes the asset's owning project and moves its published listing,
+        /// subscriptions, and subscription grants to the target project.
+        /// 
+        ///  
+        /// <para>
+        /// The transfer runs asynchronously, and the operation returns HTTP status code 202.
+        /// To follow the transfer, call <c>GetAsset</c> and check <c>ownershipTransfer.status</c>
+        /// until it is <c>SUCCEEDED</c> or <c>FAILED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to be an owner of the project that currently owns the asset. You can transfer
+        /// an asset from the domain's administration project to any project. You can also transfer
+        /// an asset from any project to the administration project.
+        /// </para>
+        ///  
+        /// <para>
+        /// An asset can have only one ownership transfer in progress at a time. While a transfer
+        /// is in progress, requests that change the asset or its listing fail with a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssetOwner service method.</param>
+        /// <returns>The response from the UpdateAssetOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAssetOwner">REST API Reference for UpdateAssetOwner Operation</seealso>
+        public virtual UpdateAssetOwnerResponse UpdateAssetOwner(UpdateAssetOwnerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAssetOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssetOwnerResponse>(request, options);
+        }
+#else
+        internal virtual UpdateAssetOwnerResponse UpdateAssetOwner(UpdateAssetOwnerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAssetOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetOwnerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssetOwnerResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Transfers the ownership of an asset to another project in the same Amazon DataZone
+        /// domain. The transfer changes the asset's owning project and moves its published listing,
+        /// subscriptions, and subscription grants to the target project.
+        /// 
+        ///  
+        /// <para>
+        /// The transfer runs asynchronously, and the operation returns HTTP status code 202.
+        /// To follow the transfer, call <c>GetAsset</c> and check <c>ownershipTransfer.status</c>
+        /// until it is <c>SUCCEEDED</c> or <c>FAILED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You need to be an owner of the project that currently owns the asset. You can transfer
+        /// an asset from the domain's administration project to any project. You can also transfer
+        /// an asset from any project to the administration project.
+        /// </para>
+        ///  
+        /// <para>
+        /// An asset can have only one ownership transfer in progress at a time. While a transfer
+        /// is in progress, requests that change the asset or its listing fail with a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssetOwner service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAssetOwner service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAssetOwner">REST API Reference for UpdateAssetOwner Operation</seealso>
+        public virtual Task<UpdateAssetOwnerResponse> UpdateAssetOwnerAsync(UpdateAssetOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAssetOwnerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssetOwnerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAssetOwnerResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates a connection. In Amazon DataZone, a connection enables you to connect your
         /// resources (domains, projects, and environments) to external resources and services.
         /// </summary>

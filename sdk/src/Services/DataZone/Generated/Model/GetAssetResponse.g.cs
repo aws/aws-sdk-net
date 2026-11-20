@@ -249,6 +249,20 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
+        /// Gets and sets the property OwnershipTransfer. 
+        /// <para>
+        /// The most recent ownership transfer of the asset. The response omits this member if
+        /// the asset has never had an ownership transfer.
+        /// </para>
+        /// </summary>
+        public AssetOwnershipTransfer OwnershipTransfer { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OwnershipTransfer property is set.
+        /// </summary>
+        internal bool IsSetOwnershipTransfer() => this.OwnershipTransfer != null;
+
+        /// <summary>
         /// Gets and sets the property OwningProjectId. 
         /// <para>
         /// The ID of the project that owns the asset.

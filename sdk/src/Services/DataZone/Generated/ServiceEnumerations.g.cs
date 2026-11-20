@@ -63,6 +63,52 @@ namespace Amazon.DataZone
     }
 
     /// <summary>
+    /// Constants used for properties of type AssetOwnershipTransferStatus.
+    /// </summary>
+    public class AssetOwnershipTransferStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for AssetOwnershipTransferStatus
+        /// </summary>
+        public static readonly AssetOwnershipTransferStatus FAILED = new AssetOwnershipTransferStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for AssetOwnershipTransferStatus
+        /// </summary>
+        public static readonly AssetOwnershipTransferStatus IN_PROGRESS = new AssetOwnershipTransferStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCEEDED for AssetOwnershipTransferStatus
+        /// </summary>
+        public static readonly AssetOwnershipTransferStatus SUCCEEDED = new AssetOwnershipTransferStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom AssetOwnershipTransferStatus for a value not among the defined constants.
+        /// </summary>
+        public AssetOwnershipTransferStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetOwnershipTransferStatus FindValue(string value)
+        {
+            return FindValue<AssetOwnershipTransferStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetOwnershipTransferStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AttributeEntityType.
     /// </summary>
     public class AttributeEntityType : ConstantClass
@@ -3627,6 +3673,42 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProjectDesignation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ProjectProfileAction.
+    /// </summary>
+    public class ProjectProfileAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISASSOCIATE for ProjectProfileAction
+        /// </summary>
+        public static readonly ProjectProfileAction DISASSOCIATE = new ProjectProfileAction("DISASSOCIATE");
+
+        /// <summary>
+        /// Constructs a custom ProjectProfileAction for a value not among the defined constants.
+        /// </summary>
+        public ProjectProfileAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectProfileAction FindValue(string value)
+        {
+            return FindValue<ProjectProfileAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectProfileAction(string value)
         {
             return FindValue(value);
         }
