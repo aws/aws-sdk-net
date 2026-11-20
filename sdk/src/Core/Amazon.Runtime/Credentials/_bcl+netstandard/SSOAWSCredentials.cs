@@ -33,8 +33,12 @@ namespace Amazon.Runtime
     /// </summary>
     public class SSOAWSCredentials : RefreshingAWSCredentials
     {
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
         private readonly Logger _logger = Logger.GetLogger(typeof(SSOAWSCredentials));
         private readonly ISSOTokenManager _ssoTokenManager;
+        private readonly Func<ICoreAmazonSSO> _ssoClientFactory;
 
         /// <summary>
         /// The AWS account ID that temporary AWS credentials will be resolved for.
@@ -89,6 +93,22 @@ namespace Amazon.Runtime
             string accountId, string region,
             string roleName, string startUrl,
             SSOAWSCredentialsOptions options)
+            : this(accountId, region, roleName, startUrl, options, ssoTokenManager: null, ssoClientFactory: null, timeProvider: null)
+        {
+        }
+
+        /// <summary>
+        /// Constructs an SSOAWSCredentials object that uses the given SSO token manager, SSO client factory and clock
+        /// instead of the defaults, when they are not null. Used by tests.
+        /// </summary>
+        internal SSOAWSCredentials(
+            string accountId, string region,
+            string roleName, string startUrl,
+            SSOAWSCredentialsOptions options,
+            ISSOTokenManager ssoTokenManager,
+            Func<ICoreAmazonSSO> ssoClientFactory,
+            ITimeProvider timeProvider)
+            : base(timeProvider)
         {
             if (options == null)
             {
@@ -105,7 +125,7 @@ namespace Amazon.Runtime
             Options = options;
             FeatureIdSources.Add(string.IsNullOrEmpty(options.SessionName) ? UserAgentFeatureId.CREDENTIALS_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_SSO);
 
-            _ssoTokenManager = new SSOTokenManager(
+            _ssoTokenManager = ssoTokenManager ?? new SSOTokenManager(
                 SSOServiceClientHelpers.BuildSSOIDCClient(
                     RegionEndpoint.GetBySystemName(region),
                     options.ProxySettings),
@@ -114,6 +134,17 @@ namespace Amazon.Runtime
                     new FileRetriever(),
                     new DirectoryRetriever())
             );
+            _ssoClientFactory = ssoClientFactory;
+        }
+
+        private ICoreAmazonSSO CreateSsoClient()
+        {
+            if (_ssoClientFactory != null)
+                return _ssoClientFactory();
+
+            return SSOServiceClientHelpers.BuildSSOClient(
+                RegionEndpoint.GetBySystemName(Region),
+                Options.ProxySettings);
         }
 
 #if BCL
@@ -121,10 +152,7 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var ssoClient =
-                SSOServiceClientHelpers.BuildSSOClient(
-                    RegionEndpoint.GetBySystemName(Region),
-                    Options.ProxySettings);
+            var ssoClient = CreateSsoClient();
 
             var credentials = GetSsoCredentials(ssoClient) as SSOImmutableCredentials;
 
@@ -147,10 +175,7 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var ssoClient =
-                SSOServiceClientHelpers.BuildSSOClient(
-                    RegionEndpoint.GetBySystemName(Region),
-                    Options.ProxySettings);
+            var ssoClient = CreateSsoClient();
 
             var credentials =
                 await GetSsoCredentialsAsync(ssoClient).ConfigureAwait(false) as SSOImmutableCredentials;
@@ -200,6 +225,8 @@ namespace Amazon.Runtime
                 Session = Options.SessionName,
                 Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken,
+                // See GetSsoCredentialsAsync.
+                DeferInteractiveSignIn = IsBackgroundRefresh,
                 PkceFlowOptions = Options.PkceFlowOptions,
                 ProxySettings = Options.ProxySettings
             };
@@ -227,6 +254,11 @@ namespace Amazon.Runtime
                 Session = Options.SessionName,
                 Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken,
+                // A background refresh never starts the interactive sign-in, whether it refreshes these credentials or a
+                // provider that uses them as its source credentials, such as AssumeRoleAWSCredentials: when a new token
+                // would need it, the token manager ends the refresh instead, and the sign-in starts when a call made
+                // outside a background refresh finds the credentials expired.
+                DeferInteractiveSignIn = IsBackgroundRefresh,
                 PkceFlowOptions = Options.PkceFlowOptions,
                 ProxySettings = Options.ProxySettings,
             };

@@ -31,22 +31,17 @@ namespace Amazon.Runtime
     /// This is meant to be used when building a <see cref="AmazonServiceClient"/>, as opposed
     /// to <see cref="DefaultInstanceProfileAWSCredentials"/>, which is part of the
     /// <see cref="FallbackCredentialsFactory"/> chain.
+    /// <para />
+    /// While IMDS is enabled, it looks for newer credentials every 2 minutes, through a background refresh that never
+    /// blocks callers and follows the refresh backoff. IMDS rotates in new credentials well before the current ones
+    /// expire, so this keeps the cached credentials recent instead of holding them until their refresh window, which
+    /// for 6-hour credentials opens after about 5 hours. Dispose the instance to stop this.
     /// </remarks>
     public class InstanceProfileAWSCredentials : URIBasedRefreshingCredentialHelper
     {
         #region Private members
 
-        // Set preempt expiry to 15 minutes. New access keys are available at least 15 minutes before expiry time.
-        // http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html
-        private static readonly TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
-        private static readonly TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
-
-        private CredentialsRefreshState _currentRefreshState = null;
         private readonly IWebProxy _proxy = null;
-
-        private const string _receivedExpiredCredentialsFromIMDS =
-            "Attempting credential expiration extension due to a credential service availability issue. " +
-            "A refresh of these credentials will be attempted again in 5-10 minutes.";
 
         private Logger _logger;
 
@@ -64,159 +59,73 @@ namespace Amazon.Runtime
 
         #region Overrides
 
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
+        /// <summary>
+        /// IMDS returns the same credentials until it rotates them, so it cannot supply longer-lived credentials on
+        /// request: <see cref="RefreshingAWSCredentials.GetCredentials(TimeSpan)"/> behaves as
+        /// <see cref="RefreshingAWSCredentials.GetCredentials()"/>.
+        /// </summary>
+        internal override bool SupportsMinimumLifetimeRefresh => false;
+
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
-            CredentialsRefreshState newState = null;
             var token = EC2InstanceMetadata.FetchApiToken();
 
-            try
-            {
-                // Attempt to get early credentials. OK to fail at this point.
-                newState = GetRefreshState(token);
-            }
-            catch (Exception e)
-            {
-                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
-
-                if (httpStatusCode == HttpStatusCode.Unauthorized)
-                {
-                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
-                    throw;
-                }
-
-                var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
-                logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
-
-                // if we already have cached credentials, we'll continue to use those credentials,
-                // but try again to refresh them in 2 minutes.
-                if (null != _currentRefreshState)
-                {
-                    var newExpiryTime = _timeProvider.CorrectedUtcNow + TimeSpan.FromMinutes(2);
-                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials, newExpiryTime);
-                    return _currentRefreshState;
-                }
-            }
-
-            if (newState?.IsExpiredWithin(TimeSpan.Zero) == true)
-            {
-                // special case - credentials returned are expired
-                _logger.InfoFormat(_receivedExpiredCredentialsFromIMDS);
-
-                // use a custom refresh time
-
-                var newExpiryTime = _timeProvider.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
-                _currentRefreshState = new CredentialsRefreshState(newState.Credentials, newExpiryTime);
-
-                return _currentRefreshState;
-            }
-
-            // If successful, save new credentials
-            if (newState != null)
-            {
-                _currentRefreshState = newState;
-            }
-
-            // If still not successful (no credentials available at start), attempt once more to
-            // get credentials, but now without swallowing exception
-            if (_currentRefreshState == null)
+            for (var attempt = 1; ; attempt++)
             {
                 try
                 {
-                    _currentRefreshState = GetRefreshState(token);
+                    // Return the credentials with the expiration IMDS reported. The base class chooses the background
+                    // refresh window from that lifetime, so 6-hour credentials get a 60-minute window.
+                    return GetRefreshState(token);
                 }
-                catch (Exception e)
+                catch (Exception e) when (IsRetriedAfterLogging(e, attempt))
                 {
-                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
-
-                    if (httpStatusCode == HttpStatusCode.Unauthorized)
-                    {
-                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
-                    }
-
-                    throw;
+                    // Retried once; see IsRetriedAfterLogging.
                 }
             }
-
-            // Return credentials that will expire in at most one hour
-            CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
-            return state;
         }
 
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
-            CredentialsRefreshState newState = null;
             var token = await EC2InstanceMetadata.FetchApiTokenAsync().ConfigureAwait(false);
 
-            try
-            {
-                // Attempt to get early credentials. OK to fail at this point.
-                newState = await GetRefreshStateAsync(token).ConfigureAwait(false);
-            }
-            catch (Exception e)
-            {
-                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
-
-                if (httpStatusCode == HttpStatusCode.Unauthorized)
-                {
-                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
-                    throw;
-                }
-
-                var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
-                logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
-
-                // if we already have cached credentials, we'll continue to use those credentials,
-                // but try again to refresh them in 2 minutes.
-                if (null != _currentRefreshState)
-                {
-                    var newExpiryTime = _timeProvider.CorrectedUtcNow + TimeSpan.FromMinutes(2);
-                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials, newExpiryTime);
-                    return _currentRefreshState;
-                }
-            }
-
-            if (newState?.IsExpiredWithin(TimeSpan.Zero) == true)
-            {
-                // special case - credentials returned are expired
-                _logger.InfoFormat(_receivedExpiredCredentialsFromIMDS);
-
-                // use a custom refresh time
-                var newExpiryTime = _timeProvider.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
-                _currentRefreshState = new CredentialsRefreshState(newState.Credentials, newExpiryTime);
-
-                return _currentRefreshState;
-            }
-
-            // If successful, save new credentials
-            if (newState != null)
-            {
-                _currentRefreshState = newState;
-            }
-
-            // If still not successful (no credentials available at start), attempt once more to
-            // get credentials, but now without swallowing exception
-            if (_currentRefreshState == null)
+            for (var attempt = 1; ; attempt++)
             {
                 try
                 {
-                    _currentRefreshState = await GetRefreshStateAsync(token).ConfigureAwait(false);
+                    // Return the credentials with the expiration IMDS reported; see GenerateNewCredentials.
+                    return await GetRefreshStateAsync(token).ConfigureAwait(false);
                 }
-                catch (Exception e)
+                catch (Exception e) when (IsRetriedAfterLogging(e, attempt))
                 {
-                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
-
-                    if (httpStatusCode == HttpStatusCode.Unauthorized)
-                    {
-                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
-                    }
-
-                    throw;
+                    // Retried once; see IsRetriedAfterLogging.
                 }
             }
+        }
 
-            // Return credentials that will expire in at most one hour
-            CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
-            return state;
+        /// <summary>
+        /// Logs a failed request for credentials and returns true when it is made again. It is made once more when no
+        /// credentials are cached and IMDS did not reject the request as unauthorized, as in earlier versions of the SDK:
+        /// there are no credentials to fall back on, so a single dropped or throttled response would otherwise fail the
+        /// fetch. Otherwise the failure is thrown, and the base class keeps serving the cached credentials and contacts
+        /// IMDS again after the jittered refresh backoff. A response whose credentials have already expired is not a
+        /// failure here: the base class uses it when nothing is cached and keeps the cached credentials otherwise.
+        /// </summary>
+        private bool IsRetriedAfterLogging(Exception e, int attempt)
+        {
+            HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+            if (httpStatusCode == HttpStatusCode.Unauthorized)
+            {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                return false;
+            }
+
+            _logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+            return attempt == 1 && currentState == null;
         }
 
         #endregion
@@ -237,6 +146,13 @@ namespace Amazon.Runtime
         /// <param name="role">Name of the role to use</param>
         /// <param name="proxy">Proxy used to process requests to the instance metadata service</param>
         public InstanceProfileAWSCredentials(string role, IWebProxy proxy)
+            : this(role, proxy, DefaultInstanceProfileAWSCredentials.ScheduledRefreshInterval) { }
+
+        /// <summary>
+        /// For tests: the scheduled refresh runs every <paramref name="scheduledRefreshInterval"/>, or not at all when
+        /// it is null.
+        /// </summary>
+        internal InstanceProfileAWSCredentials(string role, IWebProxy proxy, TimeSpan? scheduledRefreshInterval)
         {
             _logger = Logger.GetLogger(GetType());
 
@@ -248,7 +164,13 @@ namespace Amazon.Runtime
                 throw new ArgumentException("The argument '" + nameof(role) + "' must contain a valid role name.");
 
             Role = role;
-            this.PreemptExpiryTime = _preemptExpiryTime;
+            // PreemptExpiryTime is not set: the base class chooses the background refresh window from the lifetime of
+            // the credentials.
+
+            if (EC2InstanceMetadata.IsIMDSEnabled && scheduledRefreshInterval is TimeSpan interval && interval > TimeSpan.Zero)
+            {
+                StartScheduledRefresh(interval);
+            }
         }
 
         /// <summary>
@@ -396,17 +318,6 @@ namespace Amazon.Runtime
             {
                 return new Uri(Server + InfoPath);
             }
-        }
-
-        private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
-        {
-            DateTime newExpiryTime = _timeProvider.CorrectedUtcNow + _refreshAttemptPeriod + PreemptExpiryTime;
-
-            // Use this only if the time is earlier than the default expiration time
-            if (newExpiryTime > state.Expiration)
-                newExpiryTime = state.Expiration;
-
-            return new CredentialsRefreshState(state.Credentials, newExpiryTime);
         }
 
         private CredentialsRefreshState GetRefreshState(string token)

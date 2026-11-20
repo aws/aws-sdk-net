@@ -59,6 +59,7 @@
                 "Custom\\Runtime\\TestEndpoints\\*.json",
                 "Custom\\TestTools\\ComparerTest.json",
                 "Custom\\Runtime\\Signing\\reference\\sigv4_test_cases.json",
+                "Custom\\Runtime\\Credentials\\reference\\credential-refresh-tests.json",
                 "..\\Services\\S3\\UnitTests\\Custom\\EmbeddedResource\\*"
             ],
             "packageReferences": [

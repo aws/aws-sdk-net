@@ -243,5 +243,41 @@ namespace AWSSDK.UnitTests
             
             Assert.IsFalse(token.CanRefresh());
         }
+
+        // EnsureUsable is the client-side validation for a missing or malformed cached Login token.
+        [TestMethod]
+        public void EnsureUsable_WellFormedToken_DoesNotThrow()
+        {
+            var token = new LoginToken
+            {
+                AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+            };
+
+            token.EnsureUsable(); // no throw
+        }
+
+        [TestMethod]
+        public void EnsureUsable_NullToken_ThrowsNonRecoverable()
+        {
+            LoginToken token = null;
+            Assert.ThrowsExactly<AmazonNonRecoverableCredentialsException>(() => token.EnsureUsable());
+        }
+
+        [TestMethod]
+        public void EnsureUsable_NullAccessToken_ThrowsNonRecoverable()
+        {
+            var token = new LoginToken { AccessToken = null };
+            Assert.ThrowsExactly<AmazonNonRecoverableCredentialsException>(() => token.EnsureUsable());
+        }
+
+        [TestMethod]
+        public void EnsureUsable_MissingExpiry_ThrowsNonRecoverable()
+        {
+            var token = new LoginToken
+            {
+                AccessToken = new LoginImmutableCredentials("key", "secret", "token", null, "123456789012")
+            };
+            Assert.ThrowsExactly<AmazonNonRecoverableCredentialsException>(() => token.EnsureUsable());
+        }
     }
 }
