@@ -81,6 +81,13 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("specializedScopeType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpecializedScopeType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

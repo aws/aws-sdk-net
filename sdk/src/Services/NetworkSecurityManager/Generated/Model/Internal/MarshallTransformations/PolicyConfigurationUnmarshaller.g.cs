@@ -53,6 +53,13 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("igwFirewallConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = IgwFirewallConfigUnmarshaller.Instance;
+                    unmarshalledObject.IgwFirewallConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("remediationEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

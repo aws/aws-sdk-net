@@ -45,6 +45,17 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetIgwFirewallConfig())
+            {
+                context.Writer.WritePropertyName("igwFirewallConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IgwFirewallConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.IgwFirewallConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRemediationEnabled())
             {
                 context.Writer.WritePropertyName("remediationEnabled");

@@ -35,6 +35,20 @@ namespace Amazon.NetworkSecurityManager.Model
     public partial class PolicyConfiguration
     {
         /// <summary>
+        /// Gets and sets the property IgwFirewallConfig. 
+        /// <para>
+        /// Policy settings for Network Firewall automated internet firewall policies. Specify
+        /// these settings only for this policy type.
+        /// </para>
+        /// </summary>
+        public IgwFirewallConfig IgwFirewallConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IgwFirewallConfig property is set.
+        /// </summary>
+        internal bool IsSetIgwFirewallConfig() => this.IgwFirewallConfig != null;
+
+        /// <summary>
         /// Gets and sets the property RemediationEnabled. 
         /// <para>
         /// Specifies whether AWS Network Security Manager automatically remediates noncompliant
@@ -53,7 +67,8 @@ namespace Amazon.NetworkSecurityManager.Model
         /// Gets and sets the property ResourcesCleanUp. 
         /// <para>
         /// Specifies whether AWS Network Security Manager automatically removes the resources
-        /// it created when they are no longer needed. Default: <c>false</c>.
+        /// it created when they are no longer needed. This member is required, and the only supported
+        /// value is <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

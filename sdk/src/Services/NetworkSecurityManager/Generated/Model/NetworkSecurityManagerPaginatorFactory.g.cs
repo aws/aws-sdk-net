@@ -65,6 +65,14 @@ namespace Amazon.NetworkSecurityManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListEntityCoverages operation
+        /// </summary>
+        public IListEntityCoveragesPaginator ListEntityCoverages(ListEntityCoveragesRequest request)
+        {
+            return new ListEntityCoveragesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         /// </summary>
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request)
@@ -78,6 +86,14 @@ namespace Amazon.NetworkSecurityManager.Model
         public IListPolicySnapshotsPaginator ListPolicySnapshots(ListPolicySnapshotsRequest request)
         {
             return new ListPolicySnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProtectedResourceCoverages operation
+        /// </summary>
+        public IListProtectedResourceCoveragesPaginator ListProtectedResourceCoverages(ListProtectedResourceCoveragesRequest request)
+        {
+            return new ListProtectedResourceCoveragesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -103,6 +103,11 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scopeName");
                 context.Writer.WriteStringValue(publicRequest.ScopeName);
             }
+            if (publicRequest.IsSetSpecializedScopeType())
+            {
+                context.Writer.WritePropertyName("specializedScopeType");
+                context.Writer.WriteStringValue(publicRequest.SpecializedScopeType);
+            }
             if (publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

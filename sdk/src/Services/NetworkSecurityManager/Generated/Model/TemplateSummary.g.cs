@@ -117,6 +117,28 @@ namespace Amazon.NetworkSecurityManager.Model
         internal bool IsSetTemplateName() => this.TemplateName != null;
 
         /// <summary>
+        /// Gets and sets the property TemplateOwner. 
+        /// <para>
+        /// The owner of the template. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOMER</c> – The template is in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS</c> – The template is an AWS managed template.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TemplateOwner TemplateOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemplateOwner property is set.
+        /// </summary>
+        internal bool IsSetTemplateOwner() => this.TemplateOwner != null;
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The time when the resource was last updated. For a snapshot, this is the time when

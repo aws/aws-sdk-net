@@ -60,6 +60,13 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("invalidResource", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<InvalidResourceIssue>, StringUnmarshaller, JsonListUnmarshaller<InvalidResourceIssue, InvalidResourceIssueUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<InvalidResourceIssue, InvalidResourceIssueUnmarshaller>(InvalidResourceIssueUnmarshaller.Instance));
+                    unmarshalledObject.InvalidResource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("missingFirewall", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

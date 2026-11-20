@@ -63,6 +63,93 @@ namespace Amazon.NetworkSecurityManager
     }
 
     /// <summary>
+    /// Constants used for properties of type CoverageStatus.
+    /// </summary>
+    public class CoverageStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_EFFECT for CoverageStatus
+        /// </summary>
+        public static readonly CoverageStatus IN_EFFECT = new CoverageStatus("IN_EFFECT");
+
+        /// <summary>
+        /// Constant SUPERSEDED for CoverageStatus
+        /// </summary>
+        public static readonly CoverageStatus SUPERSEDED = new CoverageStatus("SUPERSEDED");
+
+        /// <summary>
+        /// Constructs a custom CoverageStatus for a value not among the defined constants.
+        /// </summary>
+        public CoverageStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoverageStatus FindValue(string value)
+        {
+            return FindValue<CoverageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoverageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DefaultSubnetConnectivity.
+    /// </summary>
+    public class DefaultSubnetConnectivity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Bidirectional for DefaultSubnetConnectivity
+        /// </summary>
+        public static readonly DefaultSubnetConnectivity Bidirectional = new DefaultSubnetConnectivity("bidirectional");
+
+        /// <summary>
+        /// Constant Flexible for DefaultSubnetConnectivity
+        /// </summary>
+        public static readonly DefaultSubnetConnectivity Flexible = new DefaultSubnetConnectivity("flexible");
+
+        /// <summary>
+        /// Constant OutboundOnly for DefaultSubnetConnectivity
+        /// </summary>
+        public static readonly DefaultSubnetConnectivity OutboundOnly = new DefaultSubnetConnectivity("outbound-only");
+
+        /// <summary>
+        /// Constructs a custom DefaultSubnetConnectivity for a value not among the defined constants.
+        /// </summary>
+        public DefaultSubnetConnectivity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultSubnetConnectivity FindValue(string value)
+        {
+            return FindValue<DefaultSubnetConnectivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultSubnetConnectivity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EntityStatus.
     /// </summary>
     public class EntityStatus : ConstantClass
@@ -252,6 +339,11 @@ namespace Amazon.NetworkSecurityManager
     public class PolicyFirewallType : ConstantClass
     {
         /// <summary>
+        /// Constant IGW_FIREWALL for PolicyFirewallType
+        /// </summary>
+        public static readonly PolicyFirewallType IGW_FIREWALL = new PolicyFirewallType("IGW_FIREWALL");
+
+        /// <summary>
         /// Constant SHIELD_ADVANCED for PolicyFirewallType
         /// </summary>
         public static readonly PolicyFirewallType SHIELD_ADVANCED = new PolicyFirewallType("SHIELD_ADVANCED");
@@ -306,6 +398,11 @@ namespace Amazon.NetworkSecurityManager
         /// Constant AWSEC2EIP for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2EIP = new ResourceType("AWS::EC2::EIP");
+
+        /// <summary>
+        /// Constant AWSEC2VPC for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2VPC = new ResourceType("AWS::EC2::VPC");
 
         /// <summary>
         /// Constant AWSElasticLoadBalancingLoadBalancer for ResourceType
@@ -363,6 +460,11 @@ namespace Amazon.NetworkSecurityManager
     /// </summary>
     public class RuleFirewallType : ConstantClass
     {
+        /// <summary>
+        /// Constant IGW_FIREWALL for RuleFirewallType
+        /// </summary>
+        public static readonly RuleFirewallType IGW_FIREWALL = new RuleFirewallType("IGW_FIREWALL");
+
         /// <summary>
         /// Constant WAF for RuleFirewallType
         /// </summary>
@@ -497,6 +599,16 @@ namespace Amazon.NetworkSecurityManager
         public static readonly ScopeResourceType AWSEC2EIP = new ScopeResourceType("AWS::EC2::EIP");
 
         /// <summary>
+        /// Constant AWSEC2Subnet for ScopeResourceType
+        /// </summary>
+        public static readonly ScopeResourceType AWSEC2Subnet = new ScopeResourceType("AWS::EC2::Subnet");
+
+        /// <summary>
+        /// Constant AWSEC2VPC for ScopeResourceType
+        /// </summary>
+        public static readonly ScopeResourceType AWSEC2VPC = new ScopeResourceType("AWS::EC2::VPC");
+
+        /// <summary>
         /// Constant AWSElasticLoadBalancingLoadBalancer for ScopeResourceType
         /// </summary>
         public static readonly ScopeResourceType AWSElasticLoadBalancingLoadBalancer = new ScopeResourceType("AWS::ElasticLoadBalancing::LoadBalancer");
@@ -589,6 +701,93 @@ namespace Amazon.NetworkSecurityManager
     }
 
     /// <summary>
+    /// Constants used for properties of type SpecializedScopeType.
+    /// </summary>
+    public class SpecializedScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IGW_FIREWALL_SUBNET_CONNECTIVITY_OVERRIDE for SpecializedScopeType
+        /// </summary>
+        public static readonly SpecializedScopeType IGW_FIREWALL_SUBNET_CONNECTIVITY_OVERRIDE = new SpecializedScopeType("IGW_FIREWALL_SUBNET_CONNECTIVITY_OVERRIDE");
+
+        /// <summary>
+        /// Constructs a custom SpecializedScopeType for a value not among the defined constants.
+        /// </summary>
+        public SpecializedScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpecializedScopeType FindValue(string value)
+        {
+            return FindValue<SpecializedScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpecializedScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SubnetConnectivity.
+    /// </summary>
+    public class SubnetConnectivity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Bidirectional for SubnetConnectivity
+        /// </summary>
+        public static readonly SubnetConnectivity Bidirectional = new SubnetConnectivity("bidirectional");
+
+        /// <summary>
+        /// Constant Exclude for SubnetConnectivity
+        /// </summary>
+        public static readonly SubnetConnectivity Exclude = new SubnetConnectivity("exclude");
+
+        /// <summary>
+        /// Constant Flexible for SubnetConnectivity
+        /// </summary>
+        public static readonly SubnetConnectivity Flexible = new SubnetConnectivity("flexible");
+
+        /// <summary>
+        /// Constant OutboundOnly for SubnetConnectivity
+        /// </summary>
+        public static readonly SubnetConnectivity OutboundOnly = new SubnetConnectivity("outbound-only");
+
+        /// <summary>
+        /// Constructs a custom SubnetConnectivity for a value not among the defined constants.
+        /// </summary>
+        public SubnetConnectivity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubnetConnectivity FindValue(string value)
+        {
+            return FindValue<SubnetConnectivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubnetConnectivity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SynchronizationStatus.
     /// </summary>
     public class SynchronizationStatus : ConstantClass
@@ -640,6 +839,11 @@ namespace Amazon.NetworkSecurityManager
     public class TemplateFirewallType : ConstantClass
     {
         /// <summary>
+        /// Constant IGW_FIREWALL for TemplateFirewallType
+        /// </summary>
+        public static readonly TemplateFirewallType IGW_FIREWALL = new TemplateFirewallType("IGW_FIREWALL");
+
+        /// <summary>
         /// Constant WAF for TemplateFirewallType
         /// </summary>
         public static readonly TemplateFirewallType WAF = new TemplateFirewallType("WAF");
@@ -665,6 +869,47 @@ namespace Amazon.NetworkSecurityManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TemplateFirewallType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TemplateOwner.
+    /// </summary>
+    public class TemplateOwner : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for TemplateOwner
+        /// </summary>
+        public static readonly TemplateOwner AWS = new TemplateOwner("AWS");
+
+        /// <summary>
+        /// Constant CUSTOMER for TemplateOwner
+        /// </summary>
+        public static readonly TemplateOwner CUSTOMER = new TemplateOwner("CUSTOMER");
+
+        /// <summary>
+        /// Constructs a custom TemplateOwner for a value not among the defined constants.
+        /// </summary>
+        public TemplateOwner(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateOwner FindValue(string value)
+        {
+            return FindValue<TemplateOwner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateOwner(string value)
         {
             return FindValue(value);
         }

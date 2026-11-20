@@ -78,5 +78,27 @@ namespace Amazon.NetworkSecurityManager.Model
         /// Checks to see if the Status property is set.
         /// </summary>
         internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property TemplateOwner. 
+        /// <para>
+        /// Specifies which templates to list. The default is <c>CUSTOMER</c>. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOMER</c> – Lists the templates in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS</c> – Lists the AWS managed templates.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TemplateOwner TemplateOwner { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TemplateOwner property is set.
+        /// </summary>
+        internal bool IsSetTemplateOwner() => this.TemplateOwner != null;
     }
 }

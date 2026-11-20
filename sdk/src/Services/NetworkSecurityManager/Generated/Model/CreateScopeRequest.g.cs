@@ -110,6 +110,23 @@ namespace Amazon.NetworkSecurityManager.Model
         internal bool IsSetScopeName() => this.ScopeName != null;
 
         /// <summary>
+        /// Gets and sets the property SpecializedScopeType. 
+        /// <para>
+        /// The specialized type of the scope. Omit this value to create a standard scope that
+        /// you can associate with a deployment. Set it to create a scope that is built for one
+        /// specific purpose: a specialized scope can be used only for the purpose that its type
+        /// defines, is validated against that use, and can't be associated with a deployment.
+        /// This value is set when the scope is created and can't be changed.
+        /// </para>
+        /// </summary>
+        public SpecializedScopeType SpecializedScopeType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SpecializedScopeType property is set.
+        /// </summary>
+        internal bool IsSetSpecializedScopeType() => this.SpecializedScopeType != null;
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to add to the resource when it is created.

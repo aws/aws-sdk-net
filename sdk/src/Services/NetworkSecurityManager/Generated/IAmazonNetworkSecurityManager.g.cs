@@ -172,6 +172,9 @@ namespace Amazon.NetworkSecurityManager
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
         /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
+        /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
         /// try again.
@@ -209,6 +212,9 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
@@ -326,6 +332,9 @@ namespace Amazon.NetworkSecurityManager
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
         /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
+        /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
         /// try again.
@@ -363,6 +372,9 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
@@ -481,6 +493,9 @@ namespace Amazon.NetworkSecurityManager
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
         /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
+        /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
         /// try again.
@@ -519,6 +534,9 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
@@ -636,6 +654,9 @@ namespace Amazon.NetworkSecurityManager
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
         /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
+        /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
         /// try again.
@@ -673,6 +694,9 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
@@ -790,6 +814,9 @@ namespace Amazon.NetworkSecurityManager
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
         /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
+        /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
         /// try again.
@@ -827,6 +854,9 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ServiceQuotaExceededException">
         /// The request would exceed a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.TagPolicyViolationException">
+        /// The request violates a tag policy that is in effect for the account or organization.
         /// </exception>
         /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
         /// The request was denied because of request throttling. Reduce your request rate and
@@ -1820,6 +1850,63 @@ namespace Amazon.NetworkSecurityManager
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the protected resources that the specified Network Security Manager entity covers.
+        /// You can filter the results to the resources owned by a single account and page through
+        /// them. You must call this operation from the administrator account that owns the Network
+        /// Security Manager entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityCoverages service method.</param>
+        /// <returns>The response from the ListEntityCoverages service method, as returned by NetworkSecurityManager.</returns>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.InternalServerException">
+        /// The request processing failed because of an internal error in the service. This is
+        /// a retryable error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Reduce your request rate and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ValidationException">
+        /// The request failed validation. For details, see the <c>reason</c> and <c>fieldList</c>
+        /// members of the response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListEntityCoverages">REST API Reference for ListEntityCoverages Operation</seealso>
+        ListEntityCoveragesResponse ListEntityCoverages(ListEntityCoveragesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the protected resources that the specified Network Security Manager entity covers.
+        /// You can filter the results to the resources owned by a single account and page through
+        /// them. You must call this operation from the administrator account that owns the Network
+        /// Security Manager entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityCoverages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListEntityCoverages service method, as returned by NetworkSecurityManager.</returns>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.InternalServerException">
+        /// The request processing failed because of an internal error in the service. This is
+        /// a retryable error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Reduce your request rate and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ValidationException">
+        /// The request failed validation. For details, see the <c>reason</c> and <c>fieldList</c>
+        /// members of the response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListEntityCoverages">REST API Reference for ListEntityCoverages Operation</seealso>
+        Task<ListEntityCoveragesResponse> ListEntityCoveragesAsync(ListEntityCoveragesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the policies in the account. You can filter the results by status and page through
         /// them using <c>maxResults</c> and <c>nextToken</c>.
         /// </summary>
@@ -1929,6 +2016,61 @@ namespace Amazon.NetworkSecurityManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListPolicySnapshots">REST API Reference for ListPolicySnapshots Operation</seealso>
         Task<ListPolicySnapshotsResponse> ListPolicySnapshotsAsync(ListPolicySnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the AWS Network Security Manager entities that cover the specified protected
+        /// resource. You can filter the results by entity type and page through them. You must
+        /// own the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedResourceCoverages service method.</param>
+        /// <returns>The response from the ListProtectedResourceCoverages service method, as returned by NetworkSecurityManager.</returns>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.InternalServerException">
+        /// The request processing failed because of an internal error in the service. This is
+        /// a retryable error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Reduce your request rate and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ValidationException">
+        /// The request failed validation. For details, see the <c>reason</c> and <c>fieldList</c>
+        /// members of the response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListProtectedResourceCoverages">REST API Reference for ListProtectedResourceCoverages Operation</seealso>
+        ListProtectedResourceCoveragesResponse ListProtectedResourceCoverages(ListProtectedResourceCoveragesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the AWS Network Security Manager entities that cover the specified protected
+        /// resource. You can filter the results by entity type and page through them. You must
+        /// own the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedResourceCoverages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListProtectedResourceCoverages service method, as returned by NetworkSecurityManager.</returns>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.InternalServerException">
+        /// The request processing failed because of an internal error in the service. This is
+        /// a retryable error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Reduce your request rate and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkSecurityManager.Model.ValidationException">
+        /// The request failed validation. For details, see the <c>reason</c> and <c>fieldList</c>
+        /// members of the response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-security-manager-2025-10-30/ListProtectedResourceCoverages">REST API Reference for ListProtectedResourceCoverages Operation</seealso>
+        Task<ListProtectedResourceCoveragesResponse> ListProtectedResourceCoveragesAsync(ListProtectedResourceCoveragesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

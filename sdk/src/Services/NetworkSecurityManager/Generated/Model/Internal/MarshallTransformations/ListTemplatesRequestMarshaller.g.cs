@@ -72,6 +72,11 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             }
 
+            if (publicRequest.IsSetTemplateOwner())
+            {
+                request.Parameters.Add("templateOwner", StringUtils.FromString(publicRequest.TemplateOwner));
+            }
+
             request.ResourcePath = "/templates";
 
             request.UseQueryString = true;

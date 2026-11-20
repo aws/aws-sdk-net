@@ -57,6 +57,12 @@ namespace Amazon.NetworkSecurityManager.Model
         IListDeploymentsPaginator ListDeployments(ListDeploymentsRequest request);
 
         /// <summary>
+        /// Paginator for ListEntityCoverages operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListEntityCoveragesPaginator ListEntityCoverages(ListEntityCoveragesRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -67,6 +73,12 @@ namespace Amazon.NetworkSecurityManager.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListPolicySnapshotsPaginator ListPolicySnapshots(ListPolicySnapshotsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProtectedResourceCoverages operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListProtectedResourceCoveragesPaginator ListProtectedResourceCoverages(ListProtectedResourceCoveragesRequest request);
 
         /// <summary>
         /// Paginator for ListResourceAssociations operation

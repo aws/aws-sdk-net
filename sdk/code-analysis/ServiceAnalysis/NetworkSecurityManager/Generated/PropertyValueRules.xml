@@ -837,6 +837,35 @@
     <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListEntityCoveragesRequest.EntityArn</property>
+    <min>20</min>
+    <max>1010</max>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListEntityCoveragesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListEntityCoveragesRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListEntityCoveragesRequest.ResourceOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^(?:[0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListEntityCoveragesResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkSecurityManager.Model.ListPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -871,6 +900,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkSecurityManager.Model.ListPolicySnapshotsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListProtectedResourceCoveragesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListProtectedResourceCoveragesRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListProtectedResourceCoveragesRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1010</max>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ListProtectedResourceCoveragesResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>^[0-9A-Za-z:/+=_-]+$</pattern>
@@ -1508,6 +1560,24 @@
     <min>20</min>
     <max>1010</max>
     <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ResourceCoverageSummary.EntityArn</property>
+    <min>20</min>
+    <max>1010</max>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ResourceCoverageSummary.ResourceArn</property>
+    <min>20</min>
+    <max>1010</max>
+    <pattern>^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:(.+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkSecurityManager.Model.ResourceCoverageSummary.ResourceOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^(?:[0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkSecurityManager.Model.ResourceSynchronizationStatusSummary.AccountId</property>

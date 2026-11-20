@@ -95,6 +95,13 @@ namespace Amazon.NetworkSecurityManager.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("templateOwner", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateOwner = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
