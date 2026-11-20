@@ -47,5 +47,21 @@ namespace Amazon.Textract.Model
         {
             return new ListAdaptersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListBlueprints operation
+        /// </summary>
+        public IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request)
+        {
+            return new ListBlueprintsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProjects operation
+        /// </summary>
+        public IListProjectsPaginator ListProjects(ListProjectsRequest request)
+        {
+            return new ListProjectsPaginator(this.client, request);
+        }
     }
 }

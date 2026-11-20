@@ -43,5 +43,17 @@ namespace Amazon.Textract.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListAdaptersPaginator ListAdapters(ListAdaptersRequest request);
+
+        /// <summary>
+        /// Paginator for ListBlueprints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProjects operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListProjectsPaginator ListProjects(ListProjectsRequest request);
     }
 }

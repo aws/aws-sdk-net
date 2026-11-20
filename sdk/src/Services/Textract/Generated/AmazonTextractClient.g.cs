@@ -1081,6 +1081,330 @@ namespace Amazon.Textract
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a blueprint that defines the schema Amazon Textract uses to extract structured
+        /// data from a document during a document insights job. A blueprint describes the fields
+        /// to extract and how to normalize them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
+        /// <returns>The response from the CreateBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintResponse>(request, options);
+        }
+#else
+        internal virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a blueprint that defines the schema Amazon Textract uses to extract structured
+        /// data from a document during a document insights job. A blueprint describes the fields
+        /// to extract and how to normalize them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
+        public virtual Task<CreateBlueprintResponse> CreateBlueprintAsync(CreateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBlueprintResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new, immutable version of an existing blueprint so that projects can pin
+        /// to a specific version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprintVersion service method.</param>
+        /// <returns>The response from the CreateBlueprintVersion service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprintVersion">REST API Reference for CreateBlueprintVersion Operation</seealso>
+        public virtual CreateBlueprintVersionResponse CreateBlueprintVersion(CreateBlueprintVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintVersionResponse>(request, options);
+        }
+#else
+        internal virtual CreateBlueprintVersionResponse CreateBlueprintVersion(CreateBlueprintVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBlueprintVersionResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a new, immutable version of an existing blueprint so that projects can pin
+        /// to a specific version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBlueprintVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateBlueprintVersion service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateBlueprintVersion">REST API Reference for CreateBlueprintVersion Operation</seealso>
+        public virtual Task<CreateBlueprintVersionResponse> CreateBlueprintVersionAsync(CreateBlueprintVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateBlueprintVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBlueprintVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBlueprintVersionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a project that groups the configuration used to run document insights jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <returns>The response from the CreateProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectResponse>(request, options);
+        }
+#else
+        internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a project that groups the configuration used to run document insights jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the adapter specified
         /// by the ID.
         /// </summary>
@@ -1287,6 +1611,192 @@ namespace Amazon.Textract
             options.ResponseUnmarshaller = DeleteAdapterVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAdapterVersionResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a blueprint, or a specific version of a blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
+        /// <returns>The response from the DeleteBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBlueprintResponse>(request, options);
+        }
+#else
+        internal virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBlueprintResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a blueprint, or a specific version of a blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
+        public virtual Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBlueprintResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <returns>The response from the DeleteProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectResponse>(request, options);
+        }
+#else
+        internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -1655,6 +2165,96 @@ namespace Amazon.Textract
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Gets the details of a blueprint, including its schema, encryption settings, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
+        /// <returns>The response from the GetBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintResponse>(request, options);
+        }
+#else
+        internal virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlueprintResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the details of a blueprint, including its schema, encryption settings, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
+        public virtual Task<GetBlueprintResponse> GetBlueprintAsync(GetBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBlueprintResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Gets the results for an Amazon Textract asynchronous operation that analyzes text
         /// in a document.
         /// 
@@ -1905,6 +2505,96 @@ namespace Amazon.Textract
             options.ResponseUnmarshaller = GetDocumentAnalysisResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDocumentAnalysisResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Gets the status and results of a document insights job that was started by <a>StartDocumentInsights</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentInsights service method.</param>
+        /// <returns>The response from the GetDocumentInsights service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentInsights">REST API Reference for GetDocumentInsights Operation</seealso>
+        public virtual GetDocumentInsightsResponse GetDocumentInsights(GetDocumentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentInsightsResponse>(request, options);
+        }
+#else
+        internal virtual GetDocumentInsightsResponse GetDocumentInsights(GetDocumentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentInsightsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the status and results of a document insights job that was started by <a>StartDocumentInsights</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDocumentInsights service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidJobIdException">
+        /// An invalid job identifier was passed to an asynchronous analysis operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentInsights">REST API Reference for GetDocumentInsights Operation</seealso>
+        public virtual Task<GetDocumentInsightsResponse> GetDocumentInsightsAsync(GetDocumentInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentInsightsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentInsightsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2549,6 +3239,96 @@ namespace Amazon.Textract
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Gets the details of a project, including its configuration, status, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProject service method.</param>
+        /// <returns>The response from the GetProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetProject">REST API Reference for GetProject Operation</seealso>
+        public virtual GetProjectResponse GetProject(GetProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
+
+            return Invoke<GetProjectResponse>(request, options);
+        }
+#else
+        internal virtual GetProjectResponse GetProject(GetProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
+
+            return Invoke<GetProjectResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Gets the details of a project, including its configuration, status, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetProject">REST API Reference for GetProject Operation</seealso>
+        public virtual Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// List all version of an adapter that meet the specified filtration criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAdapterVersions service method.</param>
@@ -2731,6 +3511,196 @@ namespace Amazon.Textract
             options.ResponseUnmarshaller = ListAdaptersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAdaptersResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the blueprints that are available to the caller, with optional filtering by
+        /// project and resource owner. The results are paginated. If the response includes a
+        /// <c>NextToken</c> value, pass it in a subsequent call to retrieve the next page of
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
+        /// <returns>The response from the ListBlueprints service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBlueprintsResponse>(request, options);
+        }
+#else
+        internal virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBlueprintsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the blueprints that are available to the caller, with optional filtering by
+        /// project and resource owner. The results are paginated. If the response includes a
+        /// <c>NextToken</c> value, pass it in a subsequent call to retrieve the next page of
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlueprints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListBlueprints service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
+        public virtual Task<ListBlueprintsResponse> ListBlueprintsAsync(ListBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBlueprintsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the projects that are available to the caller, with optional filtering by blueprint.
+        /// The results are paginated. If the response includes a <c>NextToken</c> value, pass
+        /// it in a subsequent call to retrieve the next page of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <returns>The response from the ListProjects service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProjectsResponse>(request, options);
+        }
+#else
+        internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProjectsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the projects that are available to the caller, with optional filtering by blueprint.
+        /// The results are paginated. If the response includes a <c>NextToken</c> value, pass
+        /// it in a subsequent call to retrieve the next page of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListProjects service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3025,6 +3995,112 @@ namespace Amazon.Textract
             options.ResponseUnmarshaller = StartDocumentAnalysisResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartDocumentAnalysisResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts an asynchronous job that analyzes a document using the configuration defined
+        /// by a project or a set of blueprints. Use <a>GetDocumentInsights</a> to retrieve the
+        /// results of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDocumentInsights service method.</param>
+        /// <returns>The response from the StartDocumentInsights service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentInsights">REST API Reference for StartDocumentInsights Operation</seealso>
+        public virtual StartDocumentInsightsResponse StartDocumentInsights(StartDocumentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDocumentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<StartDocumentInsightsResponse>(request, options);
+        }
+#else
+        internal virtual StartDocumentInsightsResponse StartDocumentInsights(StartDocumentInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDocumentInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<StartDocumentInsightsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts an asynchronous job that analyzes a document using the configuration defined
+        /// by a project or a set of blueprints. Use <a>GetDocumentInsights</a> to retrieve the
+        /// results of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDocumentInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartDocumentInsights service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentInsights">REST API Reference for StartDocumentInsights Operation</seealso>
+        public virtual Task<StartDocumentInsightsResponse> StartDocumentInsightsAsync(StartDocumentInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDocumentInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDocumentInsightsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDocumentInsightsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3957,6 +5033,216 @@ namespace Amazon.Textract
             options.ResponseUnmarshaller = UpdateAdapterResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAdapterResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an existing blueprint, replacing its schema and, optionally, its encryption
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
+        /// <returns>The response from the UpdateBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBlueprintResponse>(request, options);
+        }
+#else
+        internal virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBlueprintResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates an existing blueprint, replacing its schema and, optionally, its encryption
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateBlueprint service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
+        public virtual Task<UpdateBlueprintResponse> UpdateBlueprintAsync(UpdateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBlueprintResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of an existing project. If you omit a configuration, UpdateProject
+        /// leaves it unchanged. A configuration that you supply replaces the stored one, so include
+        /// every setting that you want to keep.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <returns>The response from the UpdateProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectResponse>(request, options);
+        }
+#else
+        internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates the configuration of an existing project. If you omit a configuration, UpdateProject
+        /// leaves it unchanged. A configuration that you supply replaces the stored one, so include
+        /// every setting that you want to keep.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateProject service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <c>InvalidParameterException</c> exception occurs when neither of the <c>S3Object</c>
+        /// or <c>Bytes</c> values are supplied in the <c>Document</c> request parameter. Validate
+        /// your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.LimitExceededException">
+        /// An Amazon Textract service limit was exceeded. For example, if you start too many
+        /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
+        /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
+        /// the number of concurrently running jobs is below the Amazon Textract service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ResourceNotFoundException">
+        /// Returned when an operation tried to access a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ValidationException">
+        /// Indicates that a request was not valid. Check request for proper formatting.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
 
         /// <summary>

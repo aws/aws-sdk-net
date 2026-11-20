@@ -51,6 +51,78 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintRequest.BlueprintName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintRequest.Schema</property>
+    <min>1</min>
+    <max>100000</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7AF\u3400-\u4DBF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintResponse.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintVersionRequest.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintVersionRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintVersionResponse.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateBlueprintVersionResponse.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateProjectRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateProjectRequest.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateProjectRequest.ProjectName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.CreateProjectResponse.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.DeleteAdapterRequest.AdapterId</property>
     <min>12</min>
     <max>1011</max>
@@ -64,6 +136,24 @@
     <property>Amazon.Textract.Model.DeleteAdapterVersionRequest.AdapterVersion</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.DeleteBlueprintRequest.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.DeleteBlueprintRequest.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.DeleteProjectRequest.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.GetAdapterRequest.AdapterId</property>
@@ -120,6 +210,48 @@
     <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintRequest.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintRequest.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintResponse.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintResponse.BlueprintName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintResponse.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetBlueprintResponse.Schema</property>
+    <min>1</min>
+    <max>100000</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7AF\u3400-\u4DBF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.GetDocumentAnalysisRequest.JobId</property>
     <min>1</min>
     <max>64</max>
@@ -140,6 +272,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetDocumentInsightsRequest.JobArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:[0-9]{12}:job/[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.GetDocumentTextDetectionRequest.JobId</property>
@@ -214,6 +352,30 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.GetProjectRequest.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetProjectResponse.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetProjectResponse.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetProjectResponse.ProjectName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.ListAdapterVersionsRequest.AdapterId</property>
     <min>12</min>
     <max>1011</max>
@@ -251,6 +413,44 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.ListBlueprintsRequest.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListBlueprintsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListBlueprintsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListBlueprintsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListProjectsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListProjectsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ListProjectsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -278,6 +478,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartDocumentInsightsRequest.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartDocumentInsightsResponse.JobArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:[0-9]{12}:job/[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentTextDetectionRequest.ClientRequestToken</property>
@@ -396,6 +608,42 @@
     <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateBlueprintRequest.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateBlueprintRequest.Schema</property>
+    <min>1</min>
+    <max>100000</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7AF\u3400-\u4DBF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateBlueprintResponse.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateProjectRequest.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateProjectRequest.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.UpdateProjectResponse.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.Adapter.AdapterId</property>
     <min>12</min>
     <max>1011</max>
@@ -467,6 +715,48 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintFilter.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintFilter.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintItem.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintItem.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintSummary.BlueprintArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):blueprint/(public-[a-zA-Z0-9-_]{1,30}|[a-zA-Z0-9-]{12,36})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintSummary.BlueprintName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.BlueprintSummary.BlueprintVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.DetectedSignature.Page</property>
     <min>0</min>
   </property-value-rule>
@@ -482,6 +772,12 @@
   <property-value-rule>
     <property>Amazon.Textract.Model.DocumentMetadata.Pages</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.EncryptionConfiguration.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^([A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2047})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.ExpenseCurrency.Confidence</property>
@@ -532,6 +828,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.InputConfiguration.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.LendingDetection.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -569,6 +871,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.OutputConfiguration.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.Prediction.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -576,6 +884,24 @@
   <property-value-rule>
     <property>Amazon.Textract.Model.Prediction.Value</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ProjectFilter.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ProjectSummary.ProjectArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):textract:[a-zA-Z0-9-]*:(aws|[0-9]{12}):project/[a-zA-Z0-9-]{12,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.ProjectSummary.ProjectName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.Query.Alias</property>
