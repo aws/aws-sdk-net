@@ -39,6 +39,33 @@ namespace Amazon.NetworkFirewall.Model
     public partial class ListFirewallsRequest : AmazonNetworkFirewallRequest
     {
         /// <summary>
+        /// Gets and sets the property FirewallType. 
+        /// <para>
+        /// Specifies the firewall type to filter the results by. You can specify one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IGW_FIREWALL</c> - Returns only internet gateway firewalls, which Amazon Web Services
+        /// Network Security Manager creates and manages for your VPCs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FIREWALL</c> - Returns only standard Network Firewall firewalls.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a type, the default is to return firewalls of both types.
+        /// </para>
+        /// </summary>
+        public FirewallType FirewallType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallType property is set.
+        /// </summary>
+        internal bool IsSetFirewallType() => this.FirewallType != null;
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you want Network Firewall to return for this request.

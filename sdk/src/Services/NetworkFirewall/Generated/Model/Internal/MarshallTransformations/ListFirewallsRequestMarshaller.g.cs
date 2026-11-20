@@ -67,6 +67,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetFirewallType())
+                {
+                    context.Writer.WriteTextString("FirewallType");
+                    context.Writer.WriteTextString(publicRequest.FirewallType);
+                }
                 if (publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WriteTextString("MaxResults");

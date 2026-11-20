@@ -108,6 +108,11 @@ namespace Amazon.NetworkFirewall
         public static readonly AttachmentStatus SCALING = new AttachmentStatus("SCALING");
 
         /// <summary>
+        /// Constant STANDBY for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus STANDBY = new AttachmentStatus("STANDBY");
+
+        /// <summary>
         /// Constructs a custom AttachmentStatus for a value not among the defined constants.
         /// </summary>
         public AttachmentStatus(string value) : base(value) { }
@@ -548,6 +553,42 @@ namespace Amazon.NetworkFirewall
     }
 
     /// <summary>
+    /// Constants used for properties of type EnforcementMode.
+    /// </summary>
+    public class EnforcementMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant POLICY_CONTROLLED for EnforcementMode
+        /// </summary>
+        public static readonly EnforcementMode POLICY_CONTROLLED = new EnforcementMode("POLICY_CONTROLLED");
+
+        /// <summary>
+        /// Constructs a custom EnforcementMode for a value not among the defined constants.
+        /// </summary>
+        public EnforcementMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnforcementMode FindValue(string value)
+        {
+            return FindValue<EnforcementMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnforcementMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FirewallPolicyErrorCode.
     /// </summary>
     public class FirewallPolicyErrorCode : ConstantClass
@@ -901,6 +942,11 @@ namespace Amazon.NetworkFirewall
         public static readonly FirewallStatusValue READY = new FirewallStatusValue("READY");
 
         /// <summary>
+        /// Constant STANDBY for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue STANDBY = new FirewallStatusValue("STANDBY");
+
+        /// <summary>
         /// Constructs a custom FirewallStatusValue for a value not among the defined constants.
         /// </summary>
         public FirewallStatusValue(string value) : base(value) { }
@@ -921,6 +967,47 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FirewallStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FirewallType.
+    /// </summary>
+    public class FirewallType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FIREWALL for FirewallType
+        /// </summary>
+        public static readonly FirewallType FIREWALL = new FirewallType("FIREWALL");
+
+        /// <summary>
+        /// Constant IGW_FIREWALL for FirewallType
+        /// </summary>
+        public static readonly FirewallType IGW_FIREWALL = new FirewallType("IGW_FIREWALL");
+
+        /// <summary>
+        /// Constructs a custom FirewallType for a value not among the defined constants.
+        /// </summary>
+        public FirewallType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallType FindValue(string value)
+        {
+            return FindValue<FirewallType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallType(string value)
         {
             return FindValue(value);
         }

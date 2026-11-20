@@ -82,6 +82,11 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("FirewallPolicyArn");
                     context.Writer.WriteTextString(publicRequest.FirewallPolicyArn);
                 }
+                if (publicRequest.IsSetFirewallType())
+                {
+                    context.Writer.WriteTextString("FirewallType");
+                    context.Writer.WriteTextString(publicRequest.FirewallType);
+                }
                 if (publicRequest.IsSetUpdateToken())
                 {
                     context.Writer.WriteTextString("UpdateToken");

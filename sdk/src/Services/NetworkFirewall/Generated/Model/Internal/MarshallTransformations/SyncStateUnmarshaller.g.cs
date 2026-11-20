@@ -62,6 +62,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 var propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "AddressTranslations":
+                        context.AddPathSegment("AddressTranslations");
+                        unmarshalledObject.AddressTranslations = AddressTranslationsUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "Attachment":
                         context.AddPathSegment("Attachment");
                         unmarshalledObject.Attachment = AttachmentUnmarshaller.Instance.Unmarshall(context);

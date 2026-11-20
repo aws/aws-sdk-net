@@ -140,6 +140,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "IgwFirewallConfiguration":
+                        context.AddPathSegment("IgwFirewallConfiguration");
+                        unmarshalledObject.IgwFirewallConfiguration = IgwFirewallConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "NatGatewayCreateMappings":
                         context.AddPathSegment("NatGatewayCreateMappings");
                         unmarshalledObject.NatGatewayCreateMappings = new CborListUnmarshaller<NatGatewayCreateMapping, NatGatewayCreateMappingUnmarshaller>(NatGatewayCreateMappingUnmarshaller.Instance).Unmarshall(context);

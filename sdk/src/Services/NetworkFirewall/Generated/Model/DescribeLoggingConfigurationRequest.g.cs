@@ -71,5 +71,34 @@ namespace Amazon.NetworkFirewall.Model
         /// Checks to see if the FirewallName property is set.
         /// </summary>
         internal bool IsSetFirewallName() => this.FirewallName != null;
+
+        /// <summary>
+        /// Gets and sets the property FirewallType. 
+        /// <para>
+        /// The type of firewall that the request targets. Network Firewall supports the following
+        /// firewall types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IGW_FIREWALL</c> - An internet gateway firewall, which Amazon Web Services Network
+        /// Security Manager creates and manages for a VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FIREWALL</c> - A standard Network Firewall firewall.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify the firewall ARN, the type must match the resource type in the ARN.
+        /// If you specify only the firewall name, Network Firewall uses this value to identify
+        /// the firewall. If you don't specify a type, the default is <c>FIREWALL</c>.
+        /// </para>
+        /// </summary>
+        public FirewallType FirewallType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FirewallType property is set.
+        /// </summary>
+        internal bool IsSetFirewallType() => this.FirewallType != null;
     }
 }

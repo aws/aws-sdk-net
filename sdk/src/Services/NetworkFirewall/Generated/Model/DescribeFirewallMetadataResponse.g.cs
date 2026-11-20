@@ -84,6 +84,12 @@ namespace Amazon.NetworkFirewall.Model
         /// when the <c>ConfigurationSyncStateSummary</c> value is <c>IN_SYNC</c> and the <c>Attachment</c>
         /// <c>Status</c> values for all of the configured subnets are <c>READY</c>. 
         /// </para>
+        ///  
+        /// <para>
+        /// For an internet gateway firewall, this setting is <c>STANDBY</c> while no Availability
+        /// Zone in the VPC has resources that need the firewall. Network Firewall provisions
+        /// the firewall in an Availability Zone when the first resource is launched there.
+        /// </para>
         /// </summary>
         public FirewallStatusValue Status { get; set; }
 

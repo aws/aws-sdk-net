@@ -261,6 +261,22 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyChangeProtection() => this.FirewallPolicyChangeProtection.HasValue;
 
         /// <summary>
+        /// Gets and sets the property IgwFirewallConfiguration. 
+        /// <para>
+        /// Contains the settings that configure an internet gateway firewall, which Amazon Web
+        /// Services Network Security Manager creates and manages for a VPC. Network Firewall
+        /// returns this setting only for an internet gateway firewall. For a standard firewall,
+        /// this setting isn't present.
+        /// </para>
+        /// </summary>
+        public IgwFirewallConfiguration IgwFirewallConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IgwFirewallConfiguration property is set.
+        /// </summary>
+        internal bool IsSetIgwFirewallConfiguration() => this.IgwFirewallConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property NatGatewayCreateMappings. 
         /// <para>
         /// The NAT gateways that you specified for Network Firewall to create for a proxy mode

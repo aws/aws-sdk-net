@@ -101,6 +101,12 @@ namespace Amazon.NetworkFirewall.Model
         /// When this value is <c>READY</c>, the endpoint is available to handle network traffic.
         /// Otherwise, this value reflects its state, for example <c>CREATING</c> or <c>DELETING</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// For an internet gateway firewall, <c>STANDBY</c> indicates an Availability Zone that
+        /// has no resources yet. Network Firewall provisions the endpoint there when the first
+        /// resource is launched in that Availability Zone.
+        /// </para>
         /// </summary>
         public AttachmentStatus Status { get; set; }
 

@@ -57,6 +57,22 @@ namespace Amazon.NetworkFirewall.Model
     public partial class SyncState
     {
         /// <summary>
+        /// Gets and sets the property AddressTranslations. 
+        /// <para>
+        /// The public IP addresses that an internet gateway firewall uses for network address
+        /// translation in this Availability Zone. Network Firewall allocates these addresses
+        /// in your account and adds or removes addresses automatically based on traffic. This
+        /// setting is only present for an internet gateway firewall.
+        /// </para>
+        /// </summary>
+        public AddressTranslations AddressTranslations { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AddressTranslations property is set.
+        /// </summary>
+        internal bool IsSetAddressTranslations() => this.AddressTranslations != null;
+
+        /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
         /// The configuration and status for a single firewall subnet. For each configured subnet,

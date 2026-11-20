@@ -132,6 +132,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("FirewallPolicyChangeProtection");
                     context.Writer.WriteBoolean(publicRequest.FirewallPolicyChangeProtection.Value);
                 }
+                if (publicRequest.IsSetIgwFirewallConfiguration())
+                {
+                    context.Writer.WriteTextString("IgwFirewallConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = IgwFirewallConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IgwFirewallConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetNatGatewayCreateMappings())
                 {
                     context.Writer.WriteTextString("NatGatewayCreateMappings");
