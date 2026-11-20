@@ -1,0 +1,46 @@
+{
+  "services": [
+    {
+      "serviceName": "SecurityToken",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now shows how to use temporary credentials and lists the credential sources that need this package."
+      ]
+    },
+    {
+      "serviceName": "BedrockRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now includes an example of the bidirectional streaming operation and a pointer to the AWS.Bedrock.MEAI package."
+      ]
+    },
+    {
+      "serviceName": "RDS",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now includes an example of generating an IAM database authentication token."
+      ]
+    },
+    {
+      "serviceName": "DSQL",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now includes an example of generating an authentication token."
+      ]
+    },
+    {
+      "serviceName": "SSO",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now explains when the SDK needs this package."
+      ]
+    },
+    {
+      "serviceName": "SSOOIDC",
+      "type": "patch",
+      "changeLogMessages": [
+        "The NuGet package README now explains when the SDK needs this package."
+      ]
+    }
+  ]
+}
