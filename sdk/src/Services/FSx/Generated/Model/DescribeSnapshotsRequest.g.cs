@@ -35,7 +35,7 @@ namespace Amazon.FSx.Model
     /// Otherwise, this operation returns all snapshots owned by your Amazon Web Services
     /// account in the Amazon Web Services Region of the endpoint that you're calling. <para>
     /// When retrieving all snapshots, you can optionally specify the <c>MaxResults</c> parameter
-    /// to limit the number of snapshots in a response. If more backups remain, Amazon FSx
+    /// to limit the number of snapshots in a response. If more snapshots remain, Amazon FSx
     /// returns a <c>NextToken</c> value in the response. In this case, send a later request
     /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
     /// the last response. </para> <para> Use this operation in an iterative process to retrieve
@@ -46,7 +46,7 @@ namespace Amazon.FSx.Model
     /// <ul> <li> <para> The operation might return fewer than the <c>MaxResults</c> value
     /// of snapshot descriptions while still including a <c>NextToken</c> value. </para> </li>
     /// <li> <para> The order of snapshots returned in the response of one <c>DescribeSnapshots</c>
-    /// call and the order of backups returned across the responses of a multi-call iteration
+    /// call and the order of snapshots returned across the responses of a multi-call iteration
     /// is unspecified. </para> </li> </ul>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonFSxRequest

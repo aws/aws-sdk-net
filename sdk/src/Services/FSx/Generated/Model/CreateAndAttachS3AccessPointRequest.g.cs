@@ -34,7 +34,9 @@ namespace Amazon.FSx.Model
     /// an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS file
     /// systems, the volume must be hosted on a high-availability file system, either Single-AZ
     /// or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-    /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+    /// your data using Amazon S3 access points</a> in the Amazon FSx for OpenZFS User Guide.
+    /// For FSx for ONTAP file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/s3-access-points.html">Accessing
+    /// data using Amazon S3 access points</a> in the Amazon FSx for NetApp ONTAP User Guide.
     /// <para> The requester requires the following permissions to perform these actions:
     /// </para> <ul> <li> <para> <c>fsx:CreateAndAttachS3AccessPoint</c> </para> </li> <li>
     /// <para> <c>s3:CreateAccessPoint</c> </para> </li> <li> <para> <c>s3:GetAccessPoint</c>
@@ -112,7 +114,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of S3 access point you want to create. Only <c>OpenZFS</c> is supported.
+        /// The type of S3 access point you want to create. Valid values are <c>OPENZFS</c> and
+        /// <c>ONTAP</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

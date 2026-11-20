@@ -165,9 +165,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Use this parameter to increase the storage capacity of an FSx for Windows File Server,
         /// FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. For second-generation
-        /// FSx for ONTAP file systems, you can also decrease the storage capacity. Specifies
-        /// the storage capacity target value, in GiB, for the file system that you're updating.
-        /// 
+        /// and third-generation FSx for ONTAP file systems, you can also decrease the storage
+        /// capacity. Specifies the storage capacity target value, in GiB, for the file system
+        /// that you're updating. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -218,9 +218,11 @@ namespace Amazon.FSx.Model
         /// <para>
         /// For ONTAP file systems, when increasing storage capacity, the storage capacity target
         /// value must be at least 10 percent greater than the current storage capacity value.
-        /// When decreasing storage capacity on second-generation file systems, the target value
-        /// must be at least 9 percent smaller than the current SSD storage capacity. For more
-        /// information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/storage-capacity-and-IOPS.html">File
+        /// If that increase would reach or exceed the maximum SSD storage capacity for your file
+        /// system's configuration, you can specify any greater value up to that maximum. When
+        /// decreasing storage capacity on second-generation and third-generation file systems,
+        /// the target value must be at least 9 percent smaller than the current SSD storage capacity.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/storage-capacity-and-IOPS.html">File
         /// system storage capacity and IOPS</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>

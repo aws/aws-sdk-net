@@ -112,6 +112,11 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
+        /// You must specify this path when you create a data repository association. There is
+        /// no default value; a request that omits it fails with a <c>BadRequest</c> error.
+        /// </para>
+        ///  
+        /// <para>
         /// This path specifies where in your file system files will be exported from or imported
         /// to. This file system directory can be linked to only one Amazon S3 bucket, and no
         /// other S3 bucket can be linked to the directory.

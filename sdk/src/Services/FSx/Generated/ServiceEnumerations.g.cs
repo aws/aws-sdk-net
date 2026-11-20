@@ -1649,6 +1649,11 @@ namespace Amazon.FSx
         public static readonly OntapDeploymentType MULTI_AZ_2 = new OntapDeploymentType("MULTI_AZ_2");
 
         /// <summary>
+        /// Constant MULTI_AZ_3 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType MULTI_AZ_3 = new OntapDeploymentType("MULTI_AZ_3");
+
+        /// <summary>
         /// Constant SINGLE_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType SINGLE_AZ_1 = new OntapDeploymentType("SINGLE_AZ_1");
@@ -1657,6 +1662,11 @@ namespace Amazon.FSx
         /// Constant SINGLE_AZ_2 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType SINGLE_AZ_2 = new OntapDeploymentType("SINGLE_AZ_2");
+
+        /// <summary>
+        /// Constant SINGLE_AZ_3 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType SINGLE_AZ_3 = new OntapDeploymentType("SINGLE_AZ_3");
 
         /// <summary>
         /// Constructs a custom OntapDeploymentType for a value not among the defined constants.

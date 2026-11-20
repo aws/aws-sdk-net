@@ -44,8 +44,8 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// The SSD read cache size is distributed across provisioned file servers in your file
-        /// system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of
-        /// 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.
+        /// system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of
+        /// 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 2147483647)]

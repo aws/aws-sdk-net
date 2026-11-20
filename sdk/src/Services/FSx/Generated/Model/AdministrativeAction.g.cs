@@ -131,9 +131,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For a backup restore to a second-generation FSx for ONTAP file system, indicates that
-        /// all data has been downloaded to the volume, and clients now have read-write access
-        /// to volume.
+        /// For a backup restore to a second-generation or third-generation FSx for ONTAP file
+        /// system, indicates that all data has been downloaded to the volume, and clients now
+        /// have read-write access to volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -143,16 +143,17 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PENDING</c> - For a backup restore to a second-generation FSx for ONTAP file system,
-        /// indicates that the file metadata is being downloaded onto the volume. The volume's
-        /// Lifecycle state is CREATING.
+        ///  <c>PENDING</c> - For a backup restore to a second-generation or third-generation
+        /// FSx for ONTAP file system, indicates that the file metadata is being downloaded onto
+        /// the volume. The volume's Lifecycle state is CREATING.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IN_PROGRESS</c> - For a backup restore to a second-generation FSx for ONTAP file
-        /// system, indicates that all metadata has been downloaded to the new volume and client
-        /// can access data with read-only access while Amazon FSx downloads the file data to
-        /// the volume. Track the progress of this process with the <c>ProgressPercent</c> element.
+        ///  <c>IN_PROGRESS</c> - For a backup restore to a second-generation or third-generation
+        /// FSx for ONTAP file system, indicates that all metadata has been downloaded to the
+        /// new volume and client can access data with read-only access while Amazon FSx downloads
+        /// the file data to the volume. Track the progress of this process with the <c>ProgressPercent</c>
+        /// element.
         /// </para>
         ///  </li> </ul>
         /// </summary>

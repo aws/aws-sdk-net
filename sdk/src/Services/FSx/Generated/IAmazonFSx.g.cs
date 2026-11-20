@@ -427,7 +427,9 @@ namespace Amazon.FSx
         /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
         /// file systems, the volume must be hosted on a high-availability file system, either
         /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-        /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+        /// your data using Amazon S3 access points</a> in the Amazon FSx for OpenZFS User Guide.
+        /// For FSx for ONTAP file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/s3-access-points.html">Accessing
+        /// data using Amazon S3 access points</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// 
         /// 
         ///  
@@ -511,7 +513,9 @@ namespace Amazon.FSx
         /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
         /// file systems, the volume must be hosted on a high-availability file system, either
         /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-        /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+        /// your data using Amazon S3 access points</a> in the Amazon FSx for OpenZFS User Guide.
+        /// For FSx for ONTAP file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/s3-access-points.html">Accessing
+        /// data using Amazon S3 access points</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// 
         /// 
         ///  
@@ -3122,7 +3126,7 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// When retrieving all snapshots, you can optionally specify the <c>MaxResults</c> parameter
-        /// to limit the number of snapshots in a response. If more backups remain, Amazon FSx
+        /// to limit the number of snapshots in a response. If more snapshots remain, Amazon FSx
         /// returns a <c>NextToken</c> value in the response. In this case, send a later request
         /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
         /// the last response. 
@@ -3146,8 +3150,8 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         /// The order of snapshots returned in the response of one <c>DescribeSnapshots</c> call
-        /// and the order of backups returned across the responses of a multi-call iteration is
-        /// unspecified. 
+        /// and the order of snapshots returned across the responses of a multi-call iteration
+        /// is unspecified. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3175,7 +3179,7 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// When retrieving all snapshots, you can optionally specify the <c>MaxResults</c> parameter
-        /// to limit the number of snapshots in a response. If more backups remain, Amazon FSx
+        /// to limit the number of snapshots in a response. If more snapshots remain, Amazon FSx
         /// returns a <c>NextToken</c> value in the response. In this case, send a later request
         /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
         /// the last response. 
@@ -3199,8 +3203,8 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         /// The order of snapshots returned in the response of one <c>DescribeSnapshots</c> call
-        /// and the order of backups returned across the responses of a multi-call iteration is
-        /// unspecified. 
+        /// and the order of snapshots returned across the responses of a multi-call iteration
+        /// is unspecified. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -286,6 +286,11 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
+        /// On file systems that use the Intelligent-Tiering storage class, you can enable EFA
+        /// only when <c>ThroughputCapacity</c> is 4000 MBps or a multiple of 4000 MBps.
+        /// </para>
+        ///  
+        /// <para>
         /// (Default = <c>false</c>)
         /// </para>
         /// </summary>
@@ -465,8 +470,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering
-        /// storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps
-        /// or multiples of 4000 MBps. You pay for the amount of throughput that you provision.
+        /// storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps,
+        /// 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for
+        /// the amount of throughput that you provision.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 4000, Max = 2000000)]

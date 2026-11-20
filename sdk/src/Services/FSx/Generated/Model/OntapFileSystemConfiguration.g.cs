@@ -35,7 +35,13 @@ namespace Amazon.FSx.Model
     public partial class OntapFileSystemConfiguration
     {
         /// <summary>
-        /// Gets and sets the property AutomaticBackupRetentionDays.
+        /// Gets and sets the property AutomaticBackupRetentionDays. 
+        /// <para>
+        /// The number of days to retain automatic backups. Setting this property to <c>0</c>
+        /// disables automatic backups and deletes all existing automatic backups for the file
+        /// system's volumes. You can retain automatic backups for a maximum of 90 days. The default
+        /// is <c>30</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 90)]
         public int? AutomaticBackupRetentionDays { get; set; }
@@ -83,6 +89,17 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <c>SINGLE_AZ_2</c> - A file system configured with multiple high-availability (HA)
         /// pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MULTI_AZ_3</c> - A high availability file system configured for Multi-AZ redundancy
+        /// to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP
+        /// file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SINGLE_AZ_3</c> - A file system configured with multiple high-availability (HA)
+        /// pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -197,7 +214,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of <c>HAPairs</c> is greater than 1 and the value of <c>DeploymentType</c>
-        /// is <c>SINGLE_AZ_1</c>, <c>MULTI_AZ_1</c>, or <c>MULTI_AZ_2</c>.
+        /// is <c>SINGLE_AZ_1</c>, <c>MULTI_AZ_1</c>, <c>MULTI_AZ_2</c>, or <c>MULTI_AZ_3</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -281,6 +298,15 @@ namespace Amazon.FSx.Model
         /// <para>
         /// For <c>MULTI_AZ_2</c>, valid values are 384, 768, 1536, 3072, or 6144 MBps.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <c>SINGLE_AZ_3</c>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <c>MULTI_AZ_3</c>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432
+        /// MBps.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
@@ -292,8 +318,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is not a valid HA pair (a value between 1 and 12).
+        /// The value of deployment type is <c>SINGLE_AZ_2</c> or <c>SINGLE_AZ_3</c> and <c>ThroughputCapacity</c>
+        /// / <c>ThroughputCapacityPerHAPair</c> is not a valid HA pair (a value between 1 and
+        /// 12).
         /// </para>
         ///  </li> <li> 
         /// <para>

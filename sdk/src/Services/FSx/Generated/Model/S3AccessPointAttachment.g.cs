@@ -69,6 +69,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// MISCONFIGURED - The S3 access point attachment has a configuration issue that prevents
+        /// it from serving requests. Amazon FSx periodically checks for this condition and automatically
+        /// returns the access point to AVAILABLE when the issue is resolved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// UPDATING - Amazon FSx is updating the S3 access point attachment
         /// </para>
         ///  </li> </ul>

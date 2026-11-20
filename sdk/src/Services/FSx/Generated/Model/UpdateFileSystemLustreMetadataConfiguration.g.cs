@@ -51,12 +51,14 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Intelligent-Tiering file systems, valid values are <c>6000</c> and <c>12000</c>.
+        /// For Intelligent-Tiering file systems, valid values are <c>1500</c>, <c>3000</c>, <c>6000</c>,
+        /// <c>12000</c>, and multiples of <c>12000</c> up to a maximum of <c>192000</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The value you provide must be greater than or equal to the current number of Metadata
-        /// IOPS provisioned for the file system.
+        /// IOPS provisioned for the file system. You can't provision fewer Metadata IOPS than
+        /// AUTOMATIC mode provisions for your file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1500, Max = 192000)]
@@ -75,26 +77,23 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To increase the Metadata IOPS or to switch an SSD file system from AUTOMATIC, specify
-        /// <c>USER_PROVISIONED</c> as the value for this parameter. Then use the Iops parameter
-        /// to provide a Metadata IOPS value that is greater than or equal to the current number
-        /// of Metadata IOPS provisioned for the file system.
+        /// To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify <c>USER_PROVISIONED</c>
+        /// as the value for this parameter. Then use the Iops parameter to provide a Metadata
+        /// IOPS value that is greater than or equal to the current number of Metadata IOPS provisioned
+        /// for the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To switch from USER_PROVISIONED mode on an SSD file system, specify <c>AUTOMATIC</c>
-        /// as the value for this parameter, but do not input a value for Iops.
+        /// To switch from USER_PROVISIONED mode, specify <c>AUTOMATIC</c> as the value for this
+        /// parameter, but do not input a value for Iops.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// If you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current Metadata
-        /// IOPS value is greater than the automated default, FSx for Lustre rejects the request
-        /// because downscaling Metadata IOPS is not supported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// AUTOMATIC mode is not supported on Intelligent-Tiering file systems. For Intelligent-Tiering
-        /// file systems, use USER_PROVISIONED mode.
+        /// FSx for Lustre rejects a switch to AUTOMATIC mode when your current Metadata IOPS
+        /// value is greater than what AUTOMATIC mode provisions, because decreasing Metadata
+        /// IOPS is not supported. To unblock the switch, increase storage capacity for SSD file
+        /// systems, or throughput capacity for Intelligent-Tiering file systems, until AUTOMATIC
+        /// mode provisions at least your current Metadata IOPS.
         /// </para>
         ///  </li> </ul> </note> </li> </ul>
         /// </summary>
