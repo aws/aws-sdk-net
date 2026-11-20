@@ -151,6 +151,17 @@ public class CodeWriter
         return this;
     }
 
+    /// <summary>Writes each of <paramref name="lines"/>; nothing when null.</summary>
+    public CodeWriter WriteLines(IReadOnlyList<string>? lines)
+    {
+        foreach (var line in lines ?? [])
+        {
+            WriteLine(line);
+        }
+
+        return this;
+    }
+
     /// <summary>
     /// Emits <paramref name="header"/>, then <c>{</c>, executes <paramref name="body"/>,
     /// and closes with <paramref name="close"/>.

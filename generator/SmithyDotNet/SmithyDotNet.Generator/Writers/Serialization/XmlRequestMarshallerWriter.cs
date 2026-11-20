@@ -72,6 +72,13 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
         string? compressionEncoding)
     {
         var unsignedPayload = operation.Shape.HasUnsignedPayload();
+        var payloadCode = context.Customizations.InjectedMarshallCodeInPayload(operation.Input.Id.Name);
+
+        var hasXmlBody = partitioned.PayloadMember is { Type.IsStructure: true } || partitioned.BodyMembers.Count > 0;
+        if (payloadCode is not null && !hasXmlBody)
+        {
+            throw new GeneratorException($"shapeModifiers['{operation.Input.Id.Name}'] sets injectMarshallCodeInPayload, but the request has no XML body.");
+        }
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -115,20 +122,37 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
 
             if (partitioned.PayloadMember is { Type.IsStructure: true } structurePayload)
             {
-                // An unset payload sends an empty body, not <Root />. A checksum needs a stream to hash, so with
-                // one only the root element is guarded (C2J); otherwise the whole body is.
+                // An unset payload sends an empty body, not <Root />. A checksum and injectMarshallCodeInPayload need
+                // the body either way, so with one only the root element is guarded (C2J); otherwise the whole body is.
                 var marshaller = structurePayload.Type.MarshallerName ?? throw new GeneratorException($"Payload structure '{structurePayload.Type.DotNetType}' has no marshaller name.");
                 var root = StructurePayloadRoot(operation, structurePayload);
-                var marshall = $"{marshaller}.Instance.Marshall(publicRequest.{structurePayload.PropertyName}, context);";
                 var guard = $"if (publicRequest.IsSet{structurePayload.PropertyName}())";
-
-                if (operation.Shape.GetHttpChecksum() is not null || operation.Shape.RequiresHttpChecksum())
+                var writeRoot = () =>
                 {
-                    WriteXmlBody(writer, root, () => writer.WriteLine(marshall), guard);
+                    // The payload member's injected lines open the root, as in C2J.
+                    if (structurePayload.InjectedMarshallCode is { } rootCode)
+                    {
+                        writer.WriteLines(rootCode);
+                    }
+                    else
+                    {
+                        XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
+                    }
+                    writer.WriteLine($"{marshaller}.Instance.Marshall(publicRequest.{structurePayload.PropertyName}, context);");
+                    writer.WriteLine("context.Writer.WriteEndElement();");
+                };
+
+                if (payloadCode is not null || operation.Shape.GetHttpChecksum() is not null || operation.Shape.RequiresHttpChecksum())
+                {
+                    WriteXmlBody(writer, () =>
+                    {
+                        writer.WriteLines(payloadCode);
+                        writer.OpenBlock(guard, writeRoot);
+                    });
                 }
                 else
                 {
-                    writer.OpenBlock(guard, () => WriteXmlBody(writer, root, () => writer.WriteLine(marshall)));
+                    writer.OpenBlock(guard, () => WriteXmlBody(writer, writeRoot));
                 }
             }
             else if (partitioned.PayloadMember is { } payload)
@@ -137,8 +161,14 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
             }
             else if (partitioned.BodyMembers.Count > 0)
             {
-                WriteXmlBody(writer, InputRoot(operation),
-                    () => XmlBodyMemberMarshaller.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest"));
+                var root = InputRoot(operation);
+                WriteXmlBody(writer, () =>
+                {
+                    writer.WriteLines(payloadCode);
+                    XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
+                    XmlBodyMemberMarshaller.WriteStructureBody(writer, operation.Input, partitioned.BodyMembers, "publicRequest");
+                    writer.WriteLine("context.Writer.WriteEndElement();");
+                });
             }
 
             if (unsignedPayload)
@@ -170,12 +200,8 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
         });
     }
 
-    // The XmlWriter body: a PooledContentStream (or MemoryStream on .NET Framework), a root element with
-    // the service @xmlNamespace, the body written by <paramref name="writeBody"/> (the input's members
-    // inline, or the payload structure's marshaller), then Content-Type/api-version set in a try
-    // that maps an XML encoder failure to an AmazonServiceException (C2J restXml). <paramref name="guard"/>
-    // wraps the root element only.
-    private void WriteXmlBody(CodeWriter writer, (string Name, XmlNamespaceTrait? Namespace) root, Action writeBody, string? guard = null)
+    // The XmlWriter around <paramref name="writeBody"/>, then Content-Type/api-version.
+    private void WriteXmlBody(CodeWriter writer, Action writeBody)
     {
         writer.WriteLine("#if !NETFRAMEWORK");
         writer.WriteLine("request.ContentStream = new PooledContentStream();");
@@ -190,21 +216,7 @@ public sealed class XmlRequestMarshallerWriter(GenerationContext context, string
         writer.Indent(() =>
         {
             writer.WriteLine("var context = new XmlMarshallerContext(request, xmlWriter);");
-            if (guard is null)
-            {
-                XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
-                writeBody();
-                writer.WriteLine("context.Writer.WriteEndElement();");
-            }
-            else
-            {
-                writer.OpenBlock(guard, () =>
-                {
-                    XmlBodyMemberMarshaller.OpenElement(writer, root.Name, root.Namespace);
-                    writeBody();
-                    writer.WriteLine("context.Writer.WriteEndElement();");
-                });
-            }
+            writeBody();
         });
         writer.WriteLine("}");
 

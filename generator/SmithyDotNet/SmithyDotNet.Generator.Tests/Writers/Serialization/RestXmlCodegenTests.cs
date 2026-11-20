@@ -358,6 +358,59 @@ public class RestXmlCodegenTests
         Assert.Contains("if (publicRequest.IsSetNsAttr())", source);
     }
 
+    // A header keeps its IsSet guard, a body member does not.
+    [Fact]
+    public void InjectMarshallCode_ReplacesTheMemberWrite()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify("trace", new PropertyModifier { InjectMarshallCode = ["TraceMarshall(request, publicRequest);"] });
+        TestCustomizations.Modify("meta", new PropertyModifier { SkipXmlIsSet = true, InjectMarshallCode = ["MetaMarshall(request, publicRequest);"] }, modifier);
+        TestCustomizations.Modify("nested", new PropertyModifier { InjectMarshallCode = ["NestedMarshall(publicRequest, xmlWriter);"] }, modifier);
+        customizations.ShapeModifiers["PutThingRequest"] = modifier;
+        var source = RequestMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "PutThing");
+
+        Assert.DoesNotContain("x-trace", source);
+        Assert.Contains("if (publicRequest.IsSetTrace())", source);
+        Assert.True(source.IndexOf("if (publicRequest.IsSetTrace())", StringComparison.Ordinal) < source.IndexOf("TraceMarshall(request, publicRequest);", StringComparison.Ordinal));
+        Assert.Contains("MetaMarshall(request, publicRequest);", source);
+        Assert.DoesNotContain("IsSetMeta()", source);
+        Assert.Contains("NestedMarshall(publicRequest, xmlWriter);", source);
+        Assert.DoesNotContain("IsSetNested()", source);
+    }
+
+    [Fact]
+    public void Request_InjectMarshallCodeInPayload_WithoutAnXmlBody_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["GetThingRequest"] = new ShapeModifier { InjectMarshallCodeInPayload = ["Sort(publicRequest);"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var ex = Assert.Throws<GeneratorException>(() => RequestMarshaller(context, "GetThing"));
+        Assert.Equal("shapeModifiers['GetThingRequest'] sets injectMarshallCodeInPayload, but the request has no XML body.", ex.Message);
+    }
+
+    // S3's PutBucketRequest.
+    [Fact]
+    public void Request_InjectMarshallCodeInPayload_WritesBeforeTheRootAndItsGuard()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify("details", new PropertyModifier { InjectMarshallCode = ["OpenRoot(xmlWriter, region);"] });
+        customizations.ShapeModifiers["PutPayloadRequest"] = modifier with { InjectMarshallCodeInPayload = ["var region = RegionMarshall(xmlWriter, publicRequest);"] };
+        customizations.ShapeModifiers["PutThingRequest"] = new ShapeModifier { InjectMarshallCodeInPayload = ["Sort(publicRequest);"] };
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+        var source = RequestMarshaller(context, "PutPayload");
+
+        var guard = source.IndexOf("if (publicRequest.IsSetDetails())", StringComparison.Ordinal);
+        Assert.True(source.IndexOf("var region = RegionMarshall(xmlWriter, publicRequest);", StringComparison.Ordinal) < guard);
+        Assert.True(guard < source.IndexOf("OpenRoot(xmlWriter, region);", StringComparison.Ordinal));
+        Assert.DoesNotContain("WriteStartElement", source);
+
+        // S3's CompleteMultipartUploadRequest, whose payload is flattened into body members.
+        var body = RequestMarshaller(context, "PutThing");
+        Assert.Contains("Sort(publicRequest);", body);
+        Assert.True(body.IndexOf("Sort(publicRequest);", StringComparison.Ordinal) < body.IndexOf("""context.Writer.WriteStartElement("PutThingRequest",""", StringComparison.Ordinal));
+    }
+
     [Fact]
     public void Response_S3UnwrappedXmlOutput_ReadsTheMemberAtTheRoot()
     {
@@ -476,6 +529,17 @@ public class RestXmlCodegenTests
         var nestedUnmarshaller = new XmlStructureUnmarshallerWriter(Context, ModelFileName)
             .Write(Context.Structures[NestedThing], TestContext.Current.CancellationToken);
         Assert.Contains("""if (context.TestExpression("@nsAttr", targetDepth - 1))""", nestedUnmarshaller);
+    }
+
+    [Fact]
+    public void StructureMarshaller_InjectMarshallCode_ReplacesTheMemberWrite()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["NestedThing"] = TestCustomizations.Modify("note", new PropertyModifier { InjectMarshallCode = ["NoteMarshall(requestObject, context);"] });
+        var source = StructureMarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), NestedThing);
+
+        Assert.Contains("NoteMarshall(requestObject, context);", source);
+        Assert.DoesNotContain("IsSetNote()", source);
     }
 
     [Fact]

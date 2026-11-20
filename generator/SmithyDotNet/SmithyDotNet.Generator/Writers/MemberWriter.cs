@@ -86,14 +86,8 @@ public static class MemberWriter
         {
             writer.OpenBlock(declaration, () =>
             {
-                foreach (var line in member.CustomGetter ?? [$"get {{ return this.{field}; }}"])
-                {
-                    writer.WriteLine(line);
-                }
-                foreach (var line in member.CustomSetter ?? [$"set {{ this.{field} = value; }}"])
-                {
-                    writer.WriteLine(line);
-                }
+                writer.WriteLines(member.CustomGetter ?? [$"get {{ return this.{field}; }}"]);
+                writer.WriteLines(member.CustomSetter ?? [$"set {{ this.{field} = value; }}"]);
             });
         }
         else if (field is not null)

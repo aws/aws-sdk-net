@@ -193,7 +193,7 @@ public class DataTypeSwapCodegenTests
     {
         var model = TestModels.Load("Codegen/datatypeswap-model.json");
         CustomizationTransform.Apply(model, customizations);
-        CustomizationTransform.Validate(model, customizations);
+        CustomizationValidator.Validate(model, customizations);
         return new GenerationContext(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
     }
 }

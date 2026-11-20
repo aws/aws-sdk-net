@@ -92,6 +92,13 @@ public static class XmlBodyMemberMarshaller
         var access = $"{objectVar}.{member.PropertyName}";
         var isSet = $"{objectVar}.IsSet{member.PropertyName}()";
 
+        // The lines replace the IsSet guard too, as in C2J.
+        if (member.InjectedMarshallCode is { } injectedCode)
+        {
+            writer.WriteLines(injectedCode);
+            return;
+        }
+
         if (member.Type.IsStructure)
         {
             writer.OpenBlock($"if ({isSet})", () =>

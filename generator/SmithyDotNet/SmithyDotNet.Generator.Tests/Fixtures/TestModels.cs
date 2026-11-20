@@ -36,7 +36,7 @@ internal static class TestModels
     public static GenerationContext Context(SmithyModel model, CustomizationsModel customizations)
     {
         CustomizationTransform.Apply(model, customizations);
-        CustomizationTransform.Validate(model, customizations);
+        CustomizationValidator.Validate(model, customizations);
         return new(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
     }
 

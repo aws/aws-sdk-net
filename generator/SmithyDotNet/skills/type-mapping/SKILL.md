@@ -57,7 +57,7 @@ A member renamed by `emitPropertyName` is named by its new name, as in C2J. Noth
 `MarshallerOverride` / `UnmarshallerOverride` carry the conversion (see marshalling → Data Type Swaps).
 `Target` stays the modeled shape.
 
-`CustomizationTransform` rejects an entry that names no structure member or has a blank `Type`. C2J swaps
+`CustomizationValidator` rejects an entry that names no structure member or has a blank `Type`. C2J swaps
 any member, but these are not supported yet: a swap on a non-scalar member, on a payload, response-code,
 prefix-header, query-map, label, host-label, idempotency-token, or event member (the writers would ignore the
 swapped type there), or to a `List<>`/`Dictionary<>` type (C2J then treats the member as a collection).

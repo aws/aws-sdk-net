@@ -129,6 +129,8 @@ public class GenerationContextTests
     [InlineData("excludeFromMarshalling")]
     [InlineData("excludeFromUnmarshalling")]
     [InlineData("skipXmlIsSet")]
+    [InlineData("injectMarshallCode")]
+    [InlineData("injectMarshallCodeInPayload")]
     public void MarshallingExclusionHooks_OutsideRestXml_Throw(string hook)
     {
         var customizations = new CustomizationsModel();
@@ -136,11 +138,13 @@ public class GenerationContextTests
         {
             "excludeFromMarshalling" => new ShapeModifier { ExcludeFromMarshalling = ["id"] },
             "excludeFromUnmarshalling" => new ShapeModifier { ExcludeFromUnmarshalling = ["id"] },
+            "injectMarshallCode" => TestCustomizations.Modify("id", new PropertyModifier { InjectMarshallCode = ["IdMarshall(request, publicRequest);"] }),
+            "injectMarshallCodeInPayload" => new ShapeModifier { InjectMarshallCodeInPayload = ["Sort(publicRequest);"] },
             _ => TestCustomizations.Modify("id", new PropertyModifier { SkipXmlIsSet = true }),
         };
 
         var ex = Assert.Throws<GeneratorException>(() => new GenerationContext(new ServiceIndex(TestModels.Load("Codegen/codegen-model.json")), TestManifests.Example(), customizations: customizations));
-        Assert.Contains("shapeModifiers['GetThingRequest'] sets excludeFromMarshalling, excludeFromUnmarshalling or skipXmlIsSet, which are only supported for restXml.", ex.Message);
+        Assert.Contains("shapeModifiers['GetThingRequest'] sets a marshalling hook that is only supported for restXml.", ex.Message);
     }
 
     [Theory]

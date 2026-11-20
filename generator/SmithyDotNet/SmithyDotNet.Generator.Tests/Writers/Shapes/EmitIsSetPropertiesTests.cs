@@ -33,7 +33,7 @@ public class EmitIsSetPropertiesTests
         var model = TestModels.Load(ModelPath);
         var customizations = new CustomizationsModel { EmitIsSetProperties = emitIsSet };
         CustomizationTransform.Apply(model, customizations);
-        CustomizationTransform.Validate(model, customizations);
+        CustomizationValidator.Validate(model, customizations);
         return new(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
     }
 

@@ -151,6 +151,7 @@ public sealed record UnwrappedValue(string Wrapper, string QueryName, string Ele
 /// <param name="IsExcludedFromMarshalling">True when <c>excludeFromMarshalling</c> lists the member: hand-written code sends it.</param>
 /// <param name="IsExcludedFromUnmarshalling">True when <c>excludeFromUnmarshalling</c> lists the member: hand-written code reads it.</param>
 /// <param name="SkipIsSet">True when the customizations' <c>skipXmlIsSet</c> is set: the member gets no <c>IsSet</c> method, so the restXml request marshaller sends it unguarded.</param>
+/// <param name="InjectedMarshallCode">The <c>injectMarshallCode</c> lines written in place of the member, or null.</param>
 /// <param name="CustomGetter">The <c>injectPropertyGetter</c> lines that replace the getter, or null.</param>
 /// <param name="CustomSetter">The <c>injectPropertySetter</c> lines that replace the setter, or null.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
@@ -174,6 +175,7 @@ public sealed record Member(
     bool IsExcludedFromMarshalling = false,
     bool IsExcludedFromUnmarshalling = false,
     bool SkipIsSet = false,
+    IReadOnlyList<string>? InjectedMarshallCode = null,
     IReadOnlyList<string>? CustomGetter = null,
     IReadOnlyList<string>? CustomSetter = null
 )
@@ -249,7 +251,7 @@ public static class TypeMapper
             var target = context.Resolve(member.Target);
 
             // Keyed by the structure's modeled name (even if renameShape renamed it), then the member's emitted name,
-            // as in C2J; CustomizationTransform has already validated the entries.
+            // as in C2J; CustomizationValidator has already validated the entries.
             var shapeName = structure.Id.Name;
             var propertyName = context.Customizations.PropertyName(shapeName, memberName);
             var emittedName = context.Customizations.EmittedName(shapeName, memberName);
@@ -275,6 +277,7 @@ public static class TypeMapper
                 IsExcludedFromMarshalling: context.Customizations.IsExcludedFromMarshalling(shapeName, memberName),
                 IsExcludedFromUnmarshalling: context.Customizations.IsExcludedFromUnmarshalling(shapeName, memberName),
                 SkipIsSet: context.Customizations.SkipsXmlIsSet(shapeName, memberName),
+                InjectedMarshallCode: context.Customizations.InjectedMarshallCode(shapeName, memberName),
                 CustomGetter: context.Customizations.CustomGetter(shapeName, memberName),
                 CustomSetter: context.Customizations.CustomSetter(shapeName, memberName))
             );

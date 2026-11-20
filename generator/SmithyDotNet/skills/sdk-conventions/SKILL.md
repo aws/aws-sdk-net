@@ -333,7 +333,7 @@ with nothing hand-written; the C2J-inherited `generate-client-constructors` and 
 and stay in metadata.json. A hook with a Smithy
 trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`, `exclude`, `useWrappingResult`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
-`CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
+`CustomizationValidator` and read from `GenerationContext.Customizations` by shape and member
 name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
 hook key fails deserialization (fail-closed) rather than silently diverging from C2J.
 
@@ -388,7 +388,7 @@ nothing targets it.
 
 Three convenience hooks add hand-picked public members, read from `GenerationContext.Customizations` (not folded into the
 model). A form names members by C# property name (case-insensitive); a stale operation/class/member reference fails
-generation, as the other hooks do (`CustomizationTransform.Validate` for the operation/class key, `ConvenienceMembers.Resolve`
+generation, as the other hooks do (`CustomizationValidator.Validate` for the operation/class key, `ConvenienceMembers.Resolve`
 for a form member). All three carry the member `@documentation` onto the parameters via `DocumentationFormatter.ParamDocFor*`.
 - `noArgOverloads` — parameterless client overloads (sync + async), via `ClientClassWriter`/`ClientInterfaceWriter`.
 - `simpleMethods` — client overloads taking listed request members positionally (sync + async), same writers.
@@ -428,8 +428,8 @@ Hooks that remove or reshape what is emitted:
   has a single property of the output's type, paginator paths go through it, and the JSON, CBOR and ec2Query response
   unmarshallers read it from the whole body.
 
-- What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
-  each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
+- What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` and `Sections/` parse;
+  each hook's per-level behavior lives on those records, its `Apply`/`Validate` step, and its lookup.
 - What each hook means (and every hook C2J has) is documented in `generator/customization-hooks.md`.
 
 ## Reference: Existing Generator

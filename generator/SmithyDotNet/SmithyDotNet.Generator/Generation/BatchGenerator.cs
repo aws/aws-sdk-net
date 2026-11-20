@@ -279,7 +279,7 @@ public sealed class BatchGenerator(string repoRoot)
             var customizationFiles = Directory.EnumerateFiles(modelDirectory, "*.customizations*.json").OrderBy(file => file, StringComparer.Ordinal);
             var customizations = CustomizationsModel.Load(customizationFiles);
             CustomizationTransform.Apply(service.Model, customizations);
-            CustomizationTransform.Validate(service.Model, customizations);
+            CustomizationValidator.Validate(service.Model, customizations);
 
             var index = new ServiceIndex(service.Model);
 

@@ -319,7 +319,7 @@ public class GenerationContext
         {
             if (modifier.HasRestXmlHooks() && Protocol is not AWSProtocol.RestXml)
             {
-                throw new GeneratorException($"shapeModifiers['{shapeName}'] sets excludeFromMarshalling, excludeFromUnmarshalling or skipXmlIsSet, which are only supported for restXml.");
+                throw new GeneratorException($"shapeModifiers['{shapeName}'] sets a marshalling hook that is only supported for restXml.");
             }
         }
 
@@ -542,5 +542,4 @@ public class GenerationContext
     /// the name; writers read it from here or <see cref="Writers.TypeDescriptor.MarshallerName"/>.
     /// </summary>
     public string StructureMarshallerName(ShapeId shapeId) => $"{ToDotNetName(shapeId)}Marshaller";
-
 }

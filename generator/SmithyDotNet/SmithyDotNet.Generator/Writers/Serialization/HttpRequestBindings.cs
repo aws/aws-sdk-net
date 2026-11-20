@@ -199,6 +199,21 @@ public sealed class HttpRequestBindings(GenerationContext context)
     {
         foreach (var (member, headerName) in headerMembers)
         {
+            if (member.InjectedMarshallCode is { } injectedCode)
+            {
+                // skipXmlIsSet leaves no IsSet to guard with.
+                if (member.SkipIsSet)
+                {
+                    writer.WriteLines(injectedCode);
+                }
+                else
+                {
+                    writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () => writer.WriteLines(injectedCode));
+                }
+                writer.WriteLine("");
+                continue;
+            }
+
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
                 // A list header joins to one value: a list<string>/list<enum> via StringUtils.FromList
@@ -423,6 +438,11 @@ public sealed class HttpRequestBindings(GenerationContext context)
             {
                 headerMembers.Add((member, httpHeader));
             }
+            else if (httpPrefixHeaders is not null && member.InjectedMarshallCode is not null)
+            {
+                // In property order among the headers, as in C2J (S3's CopyObjectRequest.Headers).
+                headerMembers.Add((member, httpPrefixHeaders));
+            }
             else if (httpPrefixHeaders is not null)
             {
                 // @httpPrefixHeaders is structurally exclusive — at most one member per structure.
@@ -470,10 +490,11 @@ public sealed class HttpRequestBindings(GenerationContext context)
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");
         }
 
-        // skipXmlIsSet leaves no IsSet method, and every emitter but the body's guards on it.
+        // skipXmlIsSet leaves no IsSet method, and every emitter but the body's and an injected header's guards on it.
         foreach (var member in writtenMembers)
         {
-            if (member.SkipIsSet && !bodyMembers.Contains(member))
+            var isInjectedHeader = member.InjectedMarshallCode is not null && headerMembers.Any(header => header.Member == member);
+            if (member.SkipIsSet && !bodyMembers.Contains(member) && !isInjectedHeader)
             {
                 throw new GeneratorException(XmlBodyMemberMarshaller.UnsupportedSkipXmlIsSet(input, member));
             }

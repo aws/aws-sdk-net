@@ -237,7 +237,7 @@ public class CustomizationsModelTests
 
     // The lists hold emitted names; the lookups take the modeled one.
     [Fact]
-    public void Load_MarshallingExclusionsAndSkipXmlIsSet()
+    public void Load_RestXmlMarshallingHooks()
     {
         var model = LoadFiles(
             """
@@ -246,8 +246,10 @@ public class CustomizationsModelTests
                 "PutObjectRequest": {
                   "modify": [
                     { "Tagging": { "emitPropertyName": "TagSet" } },
-                    { "ContentType": { "skipXmlIsSet": true } }
+                    { "ContentType": { "skipXmlIsSet": true } },
+                    { "Range": { "injectMarshallCode": ["RangeMarshall(request, publicRequest);"] } }
                   ],
+                  "injectMarshallCodeInPayload": ["Sort(publicRequest);"],
                   "excludeFromMarshalling": ["TagSet"],
                   "excludeFromUnmarshalling": ["Expiration"]
                 }
@@ -258,6 +260,8 @@ public class CustomizationsModelTests
         Assert.True(model.IsExcludedFromMarshalling("PutObjectRequest", "Tagging"));
         Assert.True(model.IsExcludedFromUnmarshalling("PutObjectRequest", "Expiration"));
         Assert.True(model.SkipsXmlIsSet("PutObjectRequest", "ContentType"));
+        Assert.Equal(["RangeMarshall(request, publicRequest);"], model.InjectedMarshallCode("PutObjectRequest", "Range"));
+        Assert.Equal(["Sort(publicRequest);"], model.ShapeModifiers["PutObjectRequest"].InjectMarshallCodeInPayload);
     }
 
     [Theory]
