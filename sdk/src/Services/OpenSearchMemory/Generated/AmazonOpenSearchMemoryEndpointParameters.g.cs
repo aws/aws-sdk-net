@@ -44,37 +44,59 @@ namespace Amazon.OpenSearchMemory.Endpoints
         /// <summary>
         /// The AWS Region to send the request to.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// An endpoint URL to use instead of the one the rules resolve.
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// The ID of the space the request targets. When set, the request goes to that space's endpoint.
         /// </summary>
-        public string SpaceId
-        {
-            get => (string)this["SpaceId"];
-            set => this["SpaceId"] = value;
-        }
+        public string SpaceId { get; set; }
 
         /// <summary>
         /// When true, send the request to a FIPS endpoint. The service has no FIPS endpoint, so the request fails.
         /// </summary>
-        public bool? UseFIPS
+        public bool? UseFIPS { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "Endpoint" => Endpoint,
+                "SpaceId" => SpaceId,
+                "UseFIPS" => UseFIPS,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "SpaceId": SpaceId = (string)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (OpenSearchMemoryEndpointParameters)other;
+            return Region == o.Region
+                && Endpoint == o.Endpoint
+                && SpaceId == o.SpaceId
+                && UseFIPS == o.UseFIPS
+                && base.ParameterValuesEqual(other);
         }
     }
 }

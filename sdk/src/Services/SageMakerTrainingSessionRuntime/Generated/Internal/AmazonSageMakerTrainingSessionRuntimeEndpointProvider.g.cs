@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.SageMakerTrainingSessionRuntime.Endpoints;
 
 namespace Amazon.SageMakerTrainingSessionRuntime.Internal
 {
     /// <summary>
-    /// SageMaker Training Session Runtime endpoint provider.
+    /// Amazon SageMakerTrainingSessionRuntime endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SageMakerTrainingSessionRuntimeEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonSageMakerTrainingSessionRuntimeEndpointProvider : IEndpointProvider
+    public class AmazonSageMakerTrainingSessionRuntimeEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonSageMakerTrainingSessionRuntimeEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public SageMakerTrainingSessionRuntimeEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(SageMakerTrainingSessionRuntimeEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAYAAAADAAAAAQAAAAQF9eEFAAAAAgAAAAUF9eEFAAAAAwX14QQF9eEDAAAAAwX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for SageMakerTrainingSessionRuntimeEndpointParameters
+        /// Resolves the endpoint for SageMakerTrainingSessionRuntimeEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,44 +63,46 @@ namespace Amazon.SageMakerTrainingSessionRuntime.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (SageMakerTrainingSessionRuntimeEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 3:
+                    return new Endpoint($"https://training-session-runtime.sagemaker.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 4:
+                    return new Endpoint($"https://training-session-runtime.sagemaker-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 5:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint(Interpolate(@"https://training-session-runtime.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint(Interpolate(@"https://training-session-runtime.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false))
-                    {
-                        return new Endpoint(Interpolate(@"https://training-session-runtime.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://training-session-runtime.sagemaker-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://training-session-runtime.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

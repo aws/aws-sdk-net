@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.BCMPricingCalculator.Endpoints;
 
 namespace Amazon.BCMPricingCalculator.Internal
 {
     /// <summary>
-    /// AWS Billing and Cost Management Pricing Calculator endpoint provider.
+    /// Amazon BCMPricingCalculator endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="BCMPricingCalculatorEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonBCMPricingCalculatorEndpointProvider : IEndpointProvider
+    public class AmazonBCMPricingCalculatorEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonBCMPricingCalculatorEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public BCMPricingCalculatorEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(BCMPricingCalculatorEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAYAAAADAAAAAQAAAAQF9eEFAAAAAgAAAAUF9eEFAAAAAwX14QMF9eEEAAAAAwX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for BCMPricingCalculatorEndpointParameters
+        /// Resolves the endpoint for BCMPricingCalculatorEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,46 +63,52 @@ namespace Amazon.BCMPricingCalculator.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (BCMPricingCalculatorEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["Region"]))
-            {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true))
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 3:
+                    return new Endpoint($"https://bcm-pricing-calculator-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://bcm-pricing-calculator-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://bcm-pricing-calculator.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 4:
+                    return new Endpoint($"https://bcm-pricing-calculator.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 5:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }

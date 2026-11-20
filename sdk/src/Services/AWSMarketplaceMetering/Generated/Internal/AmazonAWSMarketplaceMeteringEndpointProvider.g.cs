@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.AWSMarketplaceMetering.Endpoints;
 
 namespace Amazon.AWSMarketplaceMetering.Internal
 {
     /// <summary>
-    /// AWSMarketplace Metering endpoint provider.
+    /// Amazon AWSMarketplaceMetering endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSMarketplaceMeteringEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonAWSMarketplaceMeteringEndpointProvider : IEndpointProvider
+    public class AmazonAWSMarketplaceMeteringEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonAWSMarketplaceMeteringEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public AWSMarketplaceMeteringEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(AWSMarketplaceMeteringEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABAAAAADAAAAAQAAAAQF9eENAAAAAgAAAAUF9eENAAAAAwAAAAwAAAAGAAAABQAAAAgAAAAHAAAABgX14QUF9eEMAAAABwX14QQAAAAJAAAACAX14QQAAAAKAAAACQX14QQAAAALAAAACgX14QoF9eELAAAABAAAAA4AAAANAAAABQX14QcF9eEJAAAABQAAAA8F9eEIAAAACgX14QYF9eEHAAAAAwX14QEAAAARAAAABQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for AWSMarketplaceMeteringEndpointParameters
+        /// Resolves the endpoint for AWSMarketplaceMeteringEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,73 +67,76 @@ namespace Amazon.AWSMarketplaceMetering.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (AWSMarketplaceMeteringEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint($"https://metering-marketplace.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 5:
+                    return new Endpoint($"https://metering-marketplace.{context.Parameters.Region}.amazonaws.eu");
+                case 6:
+                    return new Endpoint($"https://metering.marketplace-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 7:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 8:
+                    return new Endpoint($"https://metering.marketplace-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 9:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 10:
+                    return new Endpoint($"https://metering.marketplace.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 11:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 12:
+                    return new Endpoint($"https://metering.marketplace.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 13:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://metering-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://metering-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint(Interpolate(@"https://metering-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-eusc") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint(Interpolate(@"https://metering-marketplace.{Region}.amazonaws.eu", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://metering.marketplace-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://metering.marketplace-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://metering.marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://metering.marketplace.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-eusc");
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 9:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 10:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

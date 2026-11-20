@@ -45,109 +45,123 @@ namespace Amazon.S3Control.Endpoints
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// The Account ID used to send the request. This is an optional parameter that will be set automatically for operations that require it.
         /// </summary>
-        public string AccountId
-        {
-            get => (string)this["AccountId"];
-            set => this["AccountId"] = value;
-        }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Internal parameter for operations that require account id host prefix.
         /// </summary>
-        public bool? RequiresAccountId
-        {
-            get => (bool?)this["RequiresAccountId"];
-            set => this["RequiresAccountId"] = value;
-        }
+        public bool? RequiresAccountId { get; set; }
 
         /// <summary>
         /// The Outpost ID.  Some operations have an optional OutpostId which should be used in endpoint construction.
         /// </summary>
-        public string OutpostId
-        {
-            get => (string)this["OutpostId"];
-            set => this["OutpostId"] = value;
-        }
+        public string OutpostId { get; set; }
 
         /// <summary>
         /// The S3 bucket used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 bucket.
         /// </summary>
-        public string Bucket
-        {
-            get => (string)this["Bucket"];
-            set => this["Bucket"] = value;
-        }
+        public string Bucket { get; set; }
 
         /// <summary>
         /// The S3 AccessPointName used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 AccessPoint.
         /// </summary>
-        public string AccessPointName
-        {
-            get => (string)this["AccessPointName"];
-            set => this["AccessPointName"] = value;
-        }
+        public string AccessPointName { get; set; }
 
         /// <summary>
         /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
         /// </summary>
-        public bool? UseArnRegion
-        {
-            get => (bool?)this["UseArnRegion"];
-            set => this["UseArnRegion"] = value;
-        }
+        public bool? UseArnRegion { get; set; }
 
         /// <summary>
         /// The resource ARN included in the request.  Only set on TagResource, UntagResourceand ListTagsForResource
         /// </summary>
-        public string ResourceArn
-        {
-            get => (string)this["ResourceArn"];
-            set => this["ResourceArn"] = value;
-        }
+        public string ResourceArn { get; set; }
 
         /// <summary>
         /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
         /// </summary>
-        public bool? UseS3ExpressControlEndpoint
+        public bool? UseS3ExpressControlEndpoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (bool?)this["UseS3ExpressControlEndpoint"];
-            set => this["UseS3ExpressControlEndpoint"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "UseFIPS" => UseFIPS,
+                "UseDualStack" => UseDualStack,
+                "Endpoint" => Endpoint,
+                "AccountId" => AccountId,
+                "RequiresAccountId" => RequiresAccountId,
+                "OutpostId" => OutpostId,
+                "Bucket" => Bucket,
+                "AccessPointName" => AccessPointName,
+                "UseArnRegion" => UseArnRegion,
+                "ResourceArn" => ResourceArn,
+                "UseS3ExpressControlEndpoint" => UseS3ExpressControlEndpoint,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "AccountId": AccountId = (string)value; break;
+                    case "RequiresAccountId": RequiresAccountId = (bool?)value; break;
+                    case "OutpostId": OutpostId = (string)value; break;
+                    case "Bucket": Bucket = (string)value; break;
+                    case "AccessPointName": AccessPointName = (string)value; break;
+                    case "UseArnRegion": UseArnRegion = (bool?)value; break;
+                    case "ResourceArn": ResourceArn = (string)value; break;
+                    case "UseS3ExpressControlEndpoint": UseS3ExpressControlEndpoint = (bool?)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (S3ControlEndpointParameters)other;
+            return Region == o.Region
+                && UseFIPS == o.UseFIPS
+                && UseDualStack == o.UseDualStack
+                && Endpoint == o.Endpoint
+                && AccountId == o.AccountId
+                && RequiresAccountId == o.RequiresAccountId
+                && OutpostId == o.OutpostId
+                && Bucket == o.Bucket
+                && AccessPointName == o.AccessPointName
+                && UseArnRegion == o.UseArnRegion
+                && ResourceArn == o.ResourceArn
+                && UseS3ExpressControlEndpoint == o.UseS3ExpressControlEndpoint
+                && base.ParameterValuesEqual(other);
         }
     }
 }

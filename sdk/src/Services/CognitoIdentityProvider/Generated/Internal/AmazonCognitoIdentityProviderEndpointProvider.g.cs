@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.CognitoIdentityProvider.Endpoints;
 
 namespace Amazon.CognitoIdentityProvider.Internal
 {
     /// <summary>
-    /// Amazon Cognito Identity Provider endpoint provider.
+    /// Amazon CognitoIdentityProvider endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CognitoIdentityProviderEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonCognitoIdentityProviderEndpointProvider : IEndpointProvider
+    public class AmazonCognitoIdentityProviderEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonCognitoIdentityProviderEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public CognitoIdentityProviderEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(CognitoIdentityProviderEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABEAAAADAAAAAQAAAAQF9eEQAAAAAgAAAAUF9eEQAAAAAwAAAAkAAAAGAAAABQAAAAcF9eEPAAAABgAAAAgF9eEOAAAABwX14QwF9eENAAAABAAAAAsAAAAKAAAABQX14QkF9eELAAAABQAAAAwF9eEKAAAABgAAAA0F9eEJAAAACAX14QQAAAAOAAAACQX14QUAAAAPAAAACgX14QYAAAAQAAAACwX14QcF9eEIAAAAAwX14QEAAAASAAAABQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for CognitoIdentityProviderEndpointParameters
+        /// Resolves the endpoint for CognitoIdentityProviderEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,77 +67,84 @@ namespace Amazon.CognitoIdentityProvider.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (CognitoIdentityProviderEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint("https://cognito-idp-fips.us-east-1.amazonaws.com");
+                case 5:
+                    return new Endpoint("https://cognito-idp-fips.us-east-2.amazonaws.com");
+                case 6:
+                    return new Endpoint("https://cognito-idp-fips.us-west-1.amazonaws.com");
+                case 7:
+                    return new Endpoint("https://cognito-idp-fips.us-west-2.amazonaws.com");
+                case 8:
+                    return new Endpoint($"https://cognito-idp-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 9:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 10:
+                    return new Endpoint($"https://cognito-idp-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 11:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 12:
+                    return new Endpoint($"https://cognito-idp.{context.Parameters.Region}.amazonaws.com");
+                case 13:
+                    return new Endpoint($"https://cognito-idp.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 14:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 15:
+                    return new Endpoint($"https://cognito-idp.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 16:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            if (Equals(refs["Region"], "us-east-1"))
-                            {
-                                return new Endpoint("https://cognito-idp-fips.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals(refs["Region"], "us-east-2"))
-                            {
-                                return new Endpoint("https://cognito-idp-fips.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals(refs["Region"], "us-west-1"))
-                            {
-                                return new Endpoint("https://cognito-idp-fips.us-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            if (Equals(refs["Region"], "us-west-2"))
-                            {
-                                return new Endpoint("https://cognito-idp-fips.us-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            return new Endpoint(Interpolate(@"https://cognito-idp-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://cognito-idp-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
-                            {
-                                return new Endpoint(Interpolate(@"https://cognito-idp.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
-                            return new Endpoint(Interpolate(@"https://cognito-idp.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://cognito-idp.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 8:
+                    return Equals(context.Parameters.Region, "us-east-1");
+                case 9:
+                    return Equals(context.Parameters.Region, "us-east-2");
+                case 10:
+                    return Equals(context.Parameters.Region, "us-west-1");
+                case 11:
+                    return Equals(context.Parameters.Region, "us-west-2");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

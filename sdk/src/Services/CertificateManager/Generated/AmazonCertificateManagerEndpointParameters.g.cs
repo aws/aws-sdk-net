@@ -45,46 +45,67 @@ namespace Amazon.CertificateManager.Endpoints
         /// <summary>
         /// The AWS region to send requests to.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send requests.
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// Use FIPS endpoints.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// Use dual-stack endpoints.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// The service type: ACM or ACM-ACME. Injected via @staticContextParams.
         /// </summary>
-        public string ServiceType
+        public string ServiceType { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["ServiceType"];
-            set => this["ServiceType"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "Endpoint" => Endpoint,
+                "UseFIPS" => UseFIPS,
+                "UseDualStack" => UseDualStack,
+                "ServiceType" => ServiceType,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "ServiceType": ServiceType = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (CertificateManagerEndpointParameters)other;
+            return Region == o.Region
+                && Endpoint == o.Endpoint
+                && UseFIPS == o.UseFIPS
+                && UseDualStack == o.UseDualStack
+                && ServiceType == o.ServiceType
+                && base.ParameterValuesEqual(other);
         }
     }
 }

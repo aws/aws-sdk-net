@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.Pinpoint.Endpoints;
 
 namespace Amazon.Pinpoint.Internal
@@ -31,10 +33,24 @@ namespace Amazon.Pinpoint.Internal
     /// Resolves endpoint for given set of <see cref="PinpointEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonPinpointEndpointProvider : IEndpointProvider
+    public class AmazonPinpointEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonPinpointEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public PinpointEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(PinpointEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABEAAAADAAAAAQAAAAQF9eEPAAAAAgAAAAUF9eEPAAAAAwAAAA0AAAAGAAAABQAAAAwAAAAHAAAABwX14QoAAAAIAAAACAX14QsAAAAJAAAACQX14QwAAAAKAAAACgX14Q0AAAALAAAACwX14Q0F9eEOAAAABgX14QgF9eEJAAAABAAAAA8AAAAOAAAABQX14QUF9eEHAAAABQAAABAF9eEGAAAABgX14QQF9eEFAAAAAwX14QEAAAASAAAABQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for PinpointEndpointParameters
+        /// Resolves the endpoint for PinpointEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,77 +67,82 @@ namespace Amazon.Pinpoint.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (PinpointEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint($"https://pinpoint-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 5:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 6:
+                    return new Endpoint($"https://pinpoint-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 7:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 8:
+                    return new Endpoint($"https://pinpoint.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 9:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 10:
+                    return new Endpoint("https://pinpoint.us-east-1.amazonaws.com");
+                case 11:
+                    return new Endpoint("https://pinpoint.us-west-2.amazonaws.com");
+                case 12:
+                    return new Endpoint("https://pinpoint.us-gov-west-1.amazonaws.com");
+                case 13:
+                    return new Endpoint($"https://pinpoint.{context.Parameters.Region}.amazonaws.com");
+                case 14:
+                    return new Endpoint($"https://pinpoint.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 15:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://pinpoint-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://pinpoint-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://pinpoint.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    if (Equals(refs["Region"], "us-east-1"))
-                    {
-                        return new Endpoint("https://pinpoint.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-west-2"))
-                    {
-                        return new Endpoint("https://pinpoint.us-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-gov-west-1"))
-                    {
-                        return new Endpoint("https://pinpoint.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://pinpoint.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://pinpoint.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://pinpoint.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 7:
+                    return Equals(context.Parameters.Region, "us-east-1");
+                case 8:
+                    return Equals(context.Parameters.Region, "us-west-2");
+                case 9:
+                    return Equals(context.Parameters.Region, "us-gov-west-1");
+                case 10:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 11:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

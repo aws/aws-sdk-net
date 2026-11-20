@@ -43,19 +43,43 @@ namespace Amazon.PricingPlanManager.Endpoints
         /// <summary>
         /// Override the endpoint URL
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// The AWS region
         /// </summary>
-        public string Region
+        public string Region { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
+            get => name switch
+            {
+                "Endpoint" => Endpoint,
+                "Region" => Region,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "Region": Region = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (PricingPlanManagerEndpointParameters)other;
+            return Endpoint == o.Endpoint
+                && Region == o.Region
+                && base.ParameterValuesEqual(other);
         }
     }
 }

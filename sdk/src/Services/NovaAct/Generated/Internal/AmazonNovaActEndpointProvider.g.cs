@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.NovaAct.Endpoints;
 
 namespace Amazon.NovaAct.Internal
 {
     /// <summary>
-    /// Nova Act Service endpoint provider.
+    /// Amazon NovaAct endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NovaActEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonNovaActEndpointProvider : IEndpointProvider
+    public class AmazonNovaActEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonNovaActEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public NovaActEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(NovaActEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAwAAAADAAAAAQAAAAQF9eELAAAAAgAAAAUF9eELAAAAAwAAAAgAAAAGAAAABAAAAAcF9eEKAAAABQX14QgF9eEJAAAABAAAAAoAAAAJAAAABgX14QYF9eEHAAAABQAAAAsF9eEFAAAABgX14QQF9eEFAAAAAwX14QEAAAANAAAABAX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for NovaActEndpointParameters
+        /// Resolves the endpoint for NovaActEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,57 +67,64 @@ namespace Amazon.NovaAct.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (NovaActEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint($"https://nova-act-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 5:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 6:
+                    return new Endpoint($"https://nova-act-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 7:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 8:
+                    return new Endpoint($"https://nova-act.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 9:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 10:
+                    return new Endpoint($"https://nova-act.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 11:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://nova-act-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://nova-act-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://nova-act.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://nova-act.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 5:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

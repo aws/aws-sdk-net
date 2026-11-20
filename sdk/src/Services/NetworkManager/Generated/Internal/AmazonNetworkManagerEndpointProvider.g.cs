@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.NetworkManager.Endpoints;
 
 namespace Amazon.NetworkManager.Internal
 {
     /// <summary>
-    /// AWS Network Manager endpoint provider.
+    /// Amazon NetworkManager endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NetworkManagerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonNetworkManagerEndpointProvider : IEndpointProvider
+    public class AmazonNetworkManagerEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonNetworkManagerEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public NetworkManagerEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(NetworkManagerEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABIAAAADAAAAAQAAAAQF9eERAAAAAgAAAAUF9eERAAAAAwAAAAoAAAAGAAAABAAAAAkAAAAHAAAABQAAAAgF9eEQAAAABwX14Q4F9eEPAAAABQX14QUF9eEEAAAABAAAABEAAAALAAAABQAAAA4AAAAMAAAABgX14QgAAAANAAAACAX14QwF9eENAAAABgX14QkAAAAPAAAABwAAABAF9eELAAAACAX14QoF9eELAAAABQX14QcF9eEGAAAAAwX14QEAAAATAAAABQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for NetworkManagerEndpointParameters
+        /// Resolves the endpoint for NetworkManagerEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,151 +67,110 @@ namespace Amazon.NetworkManager.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (NetworkManagerEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint("https://networkmanager.us-west-2.amazonaws.com")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-west-2", null, null) },
+                    };
+                case 5:
+                    return new Endpoint("https://networkmanager.us-west-2.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-west-2", null, null) },
+                    };
+                case 6:
+                    return new Endpoint("https://networkmanager-fips.us-west-2.amazonaws.com")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-west-2", null, null) },
+                    };
+                case 7:
+                    return new Endpoint("https://networkmanager-fips.us-west-2.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-west-2", null, null) },
+                    };
+                case 8:
+                    return new Endpoint("https://networkmanager.us-gov-west-1.amazonaws.com")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-gov-west-1", null, null) },
+                    };
+                case 9:
+                    return new Endpoint("https://networkmanager.us-gov-west-1.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-gov-west-1", null, null) },
+                    };
+                case 10:
+                    return new Endpoint($"https://networkmanager-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 11:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 12:
+                    return new Endpoint($"https://networkmanager-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 13:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 14:
+                    return new Endpoint($"https://networkmanager.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 15:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 16:
+                    return new Endpoint($"https://networkmanager.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 17:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://networkmanager.us-west-2.amazonaws.com", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-west-2""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://networkmanager.us-west-2.api.aws", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-west-2""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://networkmanager-fips.us-west-2.amazonaws.com", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-west-2""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://networkmanager-fips.us-west-2.api.aws", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-west-2""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://networkmanager.us-gov-west-1.amazonaws.com", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-gov-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://networkmanager.us-gov-west-1.api.aws", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-gov-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://networkmanager-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://networkmanager-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://networkmanager.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://networkmanager.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

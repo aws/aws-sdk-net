@@ -46,127 +46,139 @@ namespace Amazon.Kinesis.Endpoints
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// Internal parameter to distinguish between Control/Data plane API and accordingly generate control/data plane endpoint
         /// </summary>
-        public string OperationType
-        {
-            get => (string)this["OperationType"];
-            set => this["OperationType"] = value;
-        }
+        public string OperationType { get; set; }
 
         /// <summary>
         /// The unique identifier of the Kinesis stream
         /// </summary>
-        public string StreamId
-        {
-            get => (string)this["StreamId"];
-            set => this["StreamId"] = value;
-        }
+        public string StreamId { get; set; }
 
         /// <summary>
         /// The ARN of the Kinesis stream
         /// </summary>
-        public string StreamARN
-        {
-            get => (string)this["StreamARN"];
-            set => this["StreamARN"] = value;
-        }
+        public string StreamARN { get; set; }
 
         /// <summary>
         /// The ARN of the Kinesis consumer
         /// </summary>
-        public string ConsumerARN
-        {
-            get => (string)this["ConsumerARN"];
-            set => this["ConsumerARN"] = value;
-        }
+        public string ConsumerARN { get; set; }
 
         /// <summary>
         /// The ARN of the Kinesis resource
         /// </summary>
-        public string ResourceARN
-        {
-            get => (string)this["ResourceARN"];
-            set => this["ResourceARN"] = value;
-        }
+        public string ResourceARN { get; set; }
 
         /// <summary>
         /// The ARN of the Kinesis data channel
         /// </summary>
-        public string ChannelARN
-        {
-            get => (string)this["ChannelARN"];
-            set => this["ChannelARN"] = value;
-        }
+        public string ChannelARN { get; set; }
 
         /// <summary>
         /// The ARN of the Kinesis queue
         /// </summary>
-        public string QueueARN
-        {
-            get => (string)this["QueueARN"];
-            set => this["QueueARN"] = value;
-        }
+        public string QueueARN { get; set; }
 
         /// <summary>
         /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
         /// </summary>
-        public string ResourceType
-        {
-            get => (string)this["ResourceType"];
-            set => this["ResourceType"] = value;
-        }
+        public string ResourceType { get; set; }
 
         /// <summary>
         /// The AWS AccountId used for the request.
         /// </summary>
-        public string AccountId
-        {
-            get => (string)this["AccountId"];
-            set => this["AccountId"] = value;
-        }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// The AccountId Endpoint Mode.
         /// </summary>
-        public string AccountIdEndpointMode
+        public string AccountIdEndpointMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["AccountIdEndpointMode"];
-            set => this["AccountIdEndpointMode"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "UseDualStack" => UseDualStack,
+                "UseFIPS" => UseFIPS,
+                "Endpoint" => Endpoint,
+                "OperationType" => OperationType,
+                "StreamId" => StreamId,
+                "StreamARN" => StreamARN,
+                "ConsumerARN" => ConsumerARN,
+                "ResourceARN" => ResourceARN,
+                "ChannelARN" => ChannelARN,
+                "QueueARN" => QueueARN,
+                "ResourceType" => ResourceType,
+                "AccountId" => AccountId,
+                "AccountIdEndpointMode" => AccountIdEndpointMode,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "OperationType": OperationType = (string)value; break;
+                    case "StreamId": StreamId = (string)value; break;
+                    case "StreamARN": StreamARN = (string)value; break;
+                    case "ConsumerARN": ConsumerARN = (string)value; break;
+                    case "ResourceARN": ResourceARN = (string)value; break;
+                    case "ChannelARN": ChannelARN = (string)value; break;
+                    case "QueueARN": QueueARN = (string)value; break;
+                    case "ResourceType": ResourceType = (string)value; break;
+                    case "AccountId": AccountId = (string)value; break;
+                    case "AccountIdEndpointMode": AccountIdEndpointMode = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (KinesisEndpointParameters)other;
+            return Region == o.Region
+                && UseDualStack == o.UseDualStack
+                && UseFIPS == o.UseFIPS
+                && Endpoint == o.Endpoint
+                && OperationType == o.OperationType
+                && StreamId == o.StreamId
+                && StreamARN == o.StreamARN
+                && ConsumerARN == o.ConsumerARN
+                && ResourceARN == o.ResourceARN
+                && ChannelARN == o.ChannelARN
+                && QueueARN == o.QueueARN
+                && ResourceType == o.ResourceType
+                && AccountId == o.AccountId
+                && AccountIdEndpointMode == o.AccountIdEndpointMode
+                && base.ParameterValuesEqual(other);
         }
     }
 }

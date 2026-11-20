@@ -45,64 +45,83 @@ namespace Amazon.EventBridgeV2.Endpoints
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request.
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// When true, use the dual-stack endpoint.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// The AWS account ID used for the request, sourced from the caller's credentials.
         /// </summary>
-        public string AccountId
-        {
-            get => (string)this["AccountId"];
-            set => this["AccountId"] = value;
-        }
+        public string AccountId { get; set; }
 
         /// <summary>
         /// The bus ARN from the request, bound via @contextParam. Its account is the bus owner and takes precedence over the credentials-sourced account for cell routing (cross-account calls).
         /// </summary>
-        public string EventBusArn
-        {
-            get => (string)this["EventBusArn"];
-            set => this["EventBusArn"] = value;
-        }
+        public string EventBusArn { get; set; }
 
         /// <summary>
         /// The behavior for account ID based endpoint routing: preferred, disabled, or required.
         /// </summary>
-        public string AccountIdEndpointMode
+        public string AccountIdEndpointMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["AccountIdEndpointMode"];
-            set => this["AccountIdEndpointMode"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "Endpoint" => Endpoint,
+                "UseFIPS" => UseFIPS,
+                "UseDualStack" => UseDualStack,
+                "AccountId" => AccountId,
+                "EventBusArn" => EventBusArn,
+                "AccountIdEndpointMode" => AccountIdEndpointMode,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "AccountId": AccountId = (string)value; break;
+                    case "EventBusArn": EventBusArn = (string)value; break;
+                    case "AccountIdEndpointMode": AccountIdEndpointMode = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (EventBridgeV2EndpointParameters)other;
+            return Region == o.Region
+                && Endpoint == o.Endpoint
+                && UseFIPS == o.UseFIPS
+                && UseDualStack == o.UseDualStack
+                && AccountId == o.AccountId
+                && EventBusArn == o.EventBusArn
+                && AccountIdEndpointMode == o.AccountIdEndpointMode
+                && base.ParameterValuesEqual(other);
         }
     }
 }

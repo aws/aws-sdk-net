@@ -21,20 +21,35 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.AgentRegistry.Endpoints;
 
 namespace Amazon.AgentRegistry.Internal
 {
     /// <summary>
-    /// Agent Registry endpoint provider.
+    /// Amazon AgentRegistry endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AgentRegistryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonAgentRegistryEndpointProvider : IEndpointProvider
+    public class AmazonAgentRegistryEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonAgentRegistryEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public AgentRegistryEndpointParameters Parameters { get; }
+
+            public Context(AgentRegistryEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QEAAAADAAAAAQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for AgentRegistryEndpointParameters
+        /// Resolves the endpoint for AgentRegistryEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -43,20 +58,38 @@ namespace Amazon.AgentRegistry.Internal
                 throw new ArgumentNullException("parameters");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (AgentRegistryEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 2:
+                    return new Endpoint($"https://agent-registry.{context.Parameters.Region}.api.aws");
+                case 3:
+                    throw new AmazonClientException("Unable to resolve an Agent Registry endpoint: Region was not set and no explicit Endpoint override was provided.");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                return new Endpoint(Interpolate(@"https://agent-registry.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Unable to resolve an Agent Registry endpoint: Region was not set and no explicit Endpoint override was provided.");
         }
     }
 }

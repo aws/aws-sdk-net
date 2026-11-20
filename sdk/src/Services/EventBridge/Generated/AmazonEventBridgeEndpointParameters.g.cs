@@ -45,46 +45,67 @@ namespace Amazon.EventBridge.Endpoints
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
-        public bool? UseDualStack
-        {
-            get => (bool?)this["UseDualStack"];
-            set => this["UseDualStack"] = value;
-        }
+        public bool? UseDualStack { get; set; }
 
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request
         /// </summary>
-        public string Endpoint
-        {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
-        }
+        public string Endpoint { get; set; }
 
         /// <summary>
         /// Operation parameter for EndpointId
         /// </summary>
-        public string EndpointId
+        public string EndpointId { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["EndpointId"];
-            set => this["EndpointId"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "UseDualStack" => UseDualStack,
+                "UseFIPS" => UseFIPS,
+                "Endpoint" => Endpoint,
+                "EndpointId" => EndpointId,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "UseDualStack": UseDualStack = (bool?)value; break;
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    case "EndpointId": EndpointId = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (EventBridgeEndpointParameters)other;
+            return Region == o.Region
+                && UseDualStack == o.UseDualStack
+                && UseFIPS == o.UseFIPS
+                && Endpoint == o.Endpoint
+                && EndpointId == o.EndpointId
+                && base.ParameterValuesEqual(other);
         }
     }
 }

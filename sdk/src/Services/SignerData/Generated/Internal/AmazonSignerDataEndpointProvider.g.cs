@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.SignerData.Endpoints;
 
 namespace Amazon.SignerData.Internal
 {
     /// <summary>
-    /// AWS Signer Data Plane endpoint provider.
+    /// Amazon SignerData endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="SignerDataEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonSignerDataEndpointProvider : IEndpointProvider
+    public class AmazonSignerDataEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonSignerDataEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public SignerDataEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(SignerDataEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAX14QEAAAADAAAAAQAAAAQF9eEAAAAAAgAAAAYAAAAFAAAAAwX14QQF9eEFAAAAAwX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for SignerDataEndpointParameters
+        /// Resolves the endpoint for SignerDataEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -55,34 +71,46 @@ namespace Amazon.SignerData.Internal
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (SignerDataEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 2:
+                    return new Endpoint($"https://data-signer-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 3:
+                    return new Endpoint($"https://data-signer-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 4:
+                    return new Endpoint($"https://data-signer.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 5:
+                    return new Endpoint($"https://data-signer.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://data-signer-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://data-signer-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://data-signer.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://data-signer.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 2:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 3:
+                    return Equals(context.Parameters.UseDualStack, true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Cannot resolve endpoint");
         }
     }
 }

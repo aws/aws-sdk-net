@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.AWSHealth.Endpoints;
 
 namespace Amazon.AWSHealth.Internal
 {
     /// <summary>
-    /// AWS Health APIs and Notifications endpoint provider.
+    /// Amazon AWSHealth endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="AWSHealthEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonAWSHealthEndpointProvider : IEndpointProvider
+    public class AmazonAWSHealthEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonAWSHealthEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public AWSHealthEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(AWSHealthEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABYAAAADAAAAAQAAAAQF9eENAAAAAgAAAAUF9eENAAAAAwAAABIAAAAGAAAABAAAAA4AAAAHAAAABQAAAA4AAAAIAAAABgAAAA4AAAAJAAAABwAAAA4AAAAKAAAACAAAAA4AAAALAAAACgAAAA4AAAAMAAAACwAAAA4AAAANAAAADAX14QEF9eECAAAADAAAABEAAAAPAAAADgX14QoAAAAQAAAADwX14QsF9eEMAAAADQX14QcF9eEIAAAACQAAABQAAAATAAAADAX14QYF9eEJAAAADAAAABUF9eECAAAADQX14QEF9eEGAAAAAwAAABgAAAAXAAAADAX14QMF9eEFAAAADAX14QMF9eEE");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for AWSHealthEndpointParameters
+        /// Resolves the endpoint for AWSHealthEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,89 +67,92 @@ namespace Amazon.AWSHealth.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (AWSHealthEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-            };
-            if (!IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], false) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f"))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
-                    return new Endpoint(Interpolate(@"https://health-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                return new Endpoint(Interpolate(@"https://health.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    return new Endpoint($"https://health-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 2:
+                    return new Endpoint($"https://health.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}");
+                case 3:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 4:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 5:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 6:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 7:
+                    return new Endpoint($"https://health-fips.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 8:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 9:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 10:
+                    return new Endpoint("https://global.health.amazonaws.com")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "health", "us-east-1", null, null) },
+                    };
+                case 11:
+                    return new Endpoint("https://global.health.amazonaws.com.cn")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", "health", "cn-northwest-1", null, null) },
+                    };
+                case 12:
+                    return new Endpoint($"https://health.{context.Parameters.Region}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}");
+                case 13:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://health-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://health-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://health.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    if (Equals(refs["Region"], "aws-global"))
-                    {
-                        return new Endpoint("https://global.health.amazonaws.com", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""health"",
-                                                            ""signingRegion"": ""us-east-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "aws-cn-global"))
-                    {
-                        return new Endpoint("https://global.health.amazonaws.com.cn", InterpolateJson(@"{
-                                                    ""authSchemes"": [
-                                                        {
-                                                            ""name"": ""sigv4"",
-                                                            ""signingName"": ""health"",
-                                                            ""signingRegion"": ""cn-northwest-1""
-                                                        }
-                                                    ]
-                                                }", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://health.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 5:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-us-gov");
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso");
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-b");
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-e");
+                case 9:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                case 10:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-f");
+                case 11:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
+                case 12:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 13:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 14:
+                    return Equals(context.Parameters.Region, "aws-global");
+                case 15:
+                    return Equals(context.Parameters.Region, "aws-cn-global");
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

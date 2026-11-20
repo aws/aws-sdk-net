@@ -21,20 +21,35 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.OpenSearchMemory.Endpoints;
 
 namespace Amazon.OpenSearchMemory.Internal
 {
     /// <summary>
-    /// Amazon OpenSearch Memory endpoint provider.
+    /// Amazon OpenSearchMemory endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="OpenSearchMemoryEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonOpenSearchMemoryEndpointProvider : IEndpointProvider
+    public class AmazonOpenSearchMemoryEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonOpenSearchMemoryEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public OpenSearchMemoryEndpointParameters Parameters { get; }
+
+            public Context(OpenSearchMemoryEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAcAAAADAAAAAQX14QMAAAAEAAAAAgAAAAUF9eEEAAAAAwAAAAYF9eEHAAAABAX14QUF9eEGAAAAAQX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for OpenSearchMemoryEndpointParameters
+        /// Resolves the endpoint for OpenSearchMemoryEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,38 +66,52 @@ namespace Amazon.OpenSearchMemory.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (OpenSearchMemoryEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["Region"] = parameters["Region"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["SpaceId"] = parameters["SpaceId"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-            };
-            if (IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], true))
-            {
-                throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                case 2:
+                    return new Endpoint($"{context.Parameters.Endpoint}");
+                case 3:
+                    throw new AmazonClientException("Invalid Configuration: FIPS is not supported with OpenSearch Memory.");
+                case 4:
+                    throw new AmazonClientException("Invalid Configuration: Region must be a valid host label");
+                case 5:
+                    return new Endpoint($"https://{context.Parameters.SpaceId}.osm.{context.Parameters.Region}.on.aws");
+                case 6:
+                    throw new AmazonClientException("Invalid SpaceId: must be a valid host label");
+                case 7:
+                    return new Endpoint($"https://osm.{context.Parameters.Region}.api.aws");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Endpoint"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                return new Endpoint(Interpolate(@"{Endpoint}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 2:
+                    return IsValidHostLabel((string)context.Parameters.Region, true);
+                case 3:
+                    return IsSet(context.Parameters.SpaceId);
+                case 4:
+                    return IsValidHostLabel((string)context.Parameters.SpaceId, false);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            if (Equals(refs["UseFIPS"], true))
-            {
-                throw new AmazonClientException("Invalid Configuration: FIPS is not supported with OpenSearch Memory.");
-            }
-            if (!IsValidHostLabel((string)refs["Region"], true))
-            {
-                throw new AmazonClientException("Invalid Configuration: Region must be a valid host label");
-            }
-            if (IsSet(refs["SpaceId"]) && IsValidHostLabel((string)refs["SpaceId"], false))
-            {
-                return new Endpoint(Interpolate(@"https://{SpaceId}.osm.{Region}.on.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["SpaceId"]))
-            {
-                throw new AmazonClientException("Invalid SpaceId: must be a valid host label");
-            }
-            return new Endpoint(Interpolate(@"https://osm.{Region}.api.aws", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
         }
     }
 }

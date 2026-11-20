@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.CostExplorer.Endpoints;
 
 namespace Amazon.CostExplorer.Internal
 {
     /// <summary>
-    /// AWS Cost Explorer Service endpoint provider.
+    /// Amazon CostExplorer endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="CostExplorerEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonCostExplorerEndpointProvider : IEndpointProvider
+    public class AmazonCostExplorerEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonCostExplorerEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public CostExplorerEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(CostExplorerEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAABQAAAADAAAAAQAAAAQF9eESAAAAAgAAAAUF9eESAAAAAwAAABAAAAAGAAAABQAAAAwAAAAHAAAABgX14QYAAAAIAAAABwX14QcAAAAJAAAACAX14QgAAAAKAAAACwX14QkAAAALAAAADAX14QoF9eERAAAACQX14QQAAAANAAAACgX14QUAAAAOAAAADAX14QoAAAAPAAAADQX14Q8F9eEQAAAABAAAABIAAAARAAAABQX14QwF9eEOAAAABQAAABMF9eENAAAADQX14QsF9eEMAAAAAwX14QEAAAAVAAAABQX14QIF9eED");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for CostExplorerEndpointParameters
+        /// Resolves the endpoint for CostExplorerEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -51,173 +67,125 @@ namespace Amazon.CostExplorer.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (CostExplorerEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseDualStack"] = parameters["UseDualStack"],
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
+                case 2:
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                case 3:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 4:
+                    return new Endpoint("https://ce.us-east-1.api.aws")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-east-1", null, null) },
+                    };
+                case 5:
+                    return new Endpoint("https://ce.cn-northwest-1.api.amazonwebservices.com.cn")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "cn-northwest-1", null, null) },
+                    };
+                case 6:
+                    return new Endpoint("https://ce.us-iso-east-1.c2s.ic.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-iso-east-1", null, null) },
+                    };
+                case 7:
+                    return new Endpoint("https://ce.us-isob-east-1.sc2s.sgov.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-isob-east-1", null, null) },
+                    };
+                case 8:
+                    return new Endpoint("https://ce.eu-isoe-west-1.cloud.adc-e.uk")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "eu-isoe-west-1", null, null) },
+                    };
+                case 9:
+                    return new Endpoint("https://ce.us-isof-south-1.csp.hci.ic.gov")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "us-isof-south-1", null, null) },
+                    };
+                case 10:
+                    return new Endpoint("https://ce.eusc-de-east-1.api.amazonwebservices.eu")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, "eusc-de-east-1", null, null) },
+                    };
+                case 11:
+                    return new Endpoint($"https://ce-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 12:
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                case 13:
+                    return new Endpoint($"https://ce-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 14:
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                case 15:
+                    return new Endpoint($"https://ce.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 16:
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                case 17:
+                    return new Endpoint($"https://ce.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 18:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            if (IsSet(refs["Region"]))
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
             {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://ce.us-east-1.api.aws", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://ce.cn-northwest-1.api.amazonwebservices.com.cn", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""cn-northwest-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://ce.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-iso-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://ce.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-isob-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://ce.eu-isoe-west-1.cloud.adc-e.uk", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""eu-isoe-west-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://ce.us-isof-south-1.csp.hci.ic.gov", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""us-isof-south-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-eusc") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        return new Endpoint("https://ce.eusc-de-east-1.api.amazonwebservices.eu", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""eusc-de-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-eusc") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
-                    {
-                        return new Endpoint("https://ce.eusc-de-east-1.api.amazonwebservices.eu", InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""eusc-de-east-1""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://ce-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                    }
-                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
-                    {
-                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
-                        {
-                            return new Endpoint(Interpolate(@"https://ce-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                    }
-                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
-                    {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                        {
-                            return new Endpoint(Interpolate(@"https://ce.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                                            ""authSchemes"": [
-                                                                                {
-                                                                                    ""name"": ""sigv4"",
-                                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                                }
-                                                                            ]
-                                                                        }", refs), InterpolateJson(@"", refs));
-                        }
-                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    return new Endpoint(Interpolate(@"https://ce.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                case 4:
+                    return Equals(GetAttr(context.PartitionResult, "supportsFIPS"), true);
+                case 5:
+                    return Equals(context.Parameters.UseDualStack, true);
+                case 6:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso");
+                case 7:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-b");
+                case 8:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-e");
+                case 9:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws");
+                case 10:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-cn");
+                case 11:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-iso-f");
+                case 12:
+                    return Equals(GetAttr(context.PartitionResult, "name"), "aws-eusc");
+                case 13:
+                    return Equals(GetAttr(context.PartitionResult, "supportsDualStack"), true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
         }
     }
 }

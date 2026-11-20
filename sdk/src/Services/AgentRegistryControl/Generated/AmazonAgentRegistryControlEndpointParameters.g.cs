@@ -43,19 +43,43 @@ namespace Amazon.AgentRegistryControl.Endpoints
         /// <summary>
         /// The AWS region of the service.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send requests.
         /// </summary>
-        public string Endpoint
+        public string Endpoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
+            get => name switch
+            {
+                "Region" => Region,
+                "Endpoint" => Endpoint,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "Region": Region = (string)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (AgentRegistryControlEndpointParameters)other;
+            return Region == o.Region
+                && Endpoint == o.Endpoint
+                && base.ParameterValuesEqual(other);
         }
     }
 }

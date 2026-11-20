@@ -21,20 +21,36 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn;
+using Amazon.Runtime.Internal.Endpoints;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Amazon.NotificationsContacts.Endpoints;
 
 namespace Amazon.NotificationsContacts.Internal
 {
     /// <summary>
-    /// AWS User Notifications Contacts endpoint provider.
+    /// Amazon NotificationsContacts endpoint provider.
     /// <para />
     /// Resolves endpoint for given set of <see cref="NotificationsContactsEndpointParameters"/>.
     /// Can throw <see cref="AmazonClientException"/> if endpoint resolution is unsuccessful.
     /// </summary>
-    public class AmazonNotificationsContactsEndpointProvider : IEndpointProvider
+    public class AmazonNotificationsContactsEndpointProvider : IEndpointProvider, IBddConditionEvaluator<AmazonNotificationsContactsEndpointProvider.Context>
     {
+        private sealed class Context
+        {
+            public NotificationsContactsEndpointParameters Parameters { get; }
+            public global::Amazon.Runtime.Internal.Endpoints.StandardLibrary.Partition PartitionResult { get; set; }
+
+            public Context(NotificationsContactsEndpointParameters parameters)
+            {
+                Parameters = parameters;
+            }
+        }
+
+        private static readonly int[] Nodes = BddNodeDecoder.Decode("/////wAAAAH/////AAAAAAAAAAYAAAADAAAAAQAAAAQF9eEFAAAAAgAAAAUF9eEFAAAAAwX14QMF9eEEAAAAAwX14QEF9eEC");
+        private const int Root = 2;
+
         /// <summary>
-        /// Resolve endpoint for NotificationsContactsEndpointParameters
+        /// Resolves the endpoint for NotificationsContactsEndpointParameters.
         /// </summary>
         public Endpoint ResolveEndpoint(EndpointParameters parameters)
         {
@@ -47,46 +63,52 @@ namespace Amazon.NotificationsContacts.Internal
                 throw new AmazonClientException("UseFIPS parameter must be set for endpoint resolution");
             }
 
-            var refs = new Dictionary<string, object>()
+            var typed = (NotificationsContactsEndpointParameters)parameters;
+            var context = new Context(typed);
+            var result = BddEvaluator.Evaluate(Nodes, Root, this, context);
+            switch (result)
             {
-                ["UseFIPS"] = parameters["UseFIPS"],
-                ["Endpoint"] = parameters["Endpoint"],
-                ["Region"] = parameters["Region"],
-            };
-            if (IsSet(refs["Endpoint"]))
-            {
-                if (Equals(refs["UseFIPS"], true))
-                {
+                case 0:
+                    throw new AmazonClientException("Cannot resolve endpoint");
+                case 1:
                     throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-            }
-            if (IsSet(refs["Region"]))
-            {
-                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true))
+                case 2:
+                    return new Endpoint((string)context.Parameters.Endpoint);
+                case 3:
+                    return new Endpoint($"https://notifications-contacts-fips.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
                     {
-                        return new Endpoint(Interpolate(@"https://notifications-contacts-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://notifications-contacts.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
-                                                            ""authSchemes"": [
-                                                                {
-                                                                    ""name"": ""sigv4"",
-                                                                    ""signingRegion"": ""{PartitionResult#implicitGlobalRegion}""
-                                                                }
-                                                            ]
-                                                        }", refs), InterpolateJson(@"", refs));
-                }
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 4:
+                    return new Endpoint($"https://notifications-contacts.{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}.{Fn.GetAttr(context.PartitionResult, "dualStackDnsSuffix")}")
+                    {
+                        AuthSchemes = new AuthScheme[] { new AuthScheme("sigv4", null, $"{Fn.GetAttr(context.PartitionResult, "implicitGlobalRegion")}", null, null) },
+                    };
+                case 5:
+                    throw new AmazonClientException("Invalid Configuration: Missing Region");
+                default:
+                    throw new AmazonClientException("Cannot resolve endpoint");
             }
-            throw new AmazonClientException("Invalid Configuration: Missing Region");
+        }
+
+        /// <summary>
+        /// Evaluates the BDD condition at <paramref name="conditionIndex"/> against the context.
+        /// </summary>
+        bool IBddConditionEvaluator<Context>.EvaluateCondition(int conditionIndex, Context context)
+        {
+            switch (conditionIndex)
+            {
+                case 0:
+                    return IsSet(context.Parameters.Endpoint);
+                case 1:
+                    return IsSet(context.Parameters.Region);
+                case 2:
+                    return (context.PartitionResult = Partition((string)context.Parameters.Region)) != null;
+                case 3:
+                    return Equals(context.Parameters.UseFIPS, true);
+                default:
+                    throw new AmazonClientException($"Unknown BDD condition index {conditionIndex}");
+            }
         }
     }
 }

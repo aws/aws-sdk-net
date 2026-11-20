@@ -44,28 +44,51 @@ namespace Amazon.CodeCatalyst.Endpoints
         /// <summary>
         /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
         /// </summary>
-        public bool? UseFIPS
-        {
-            get => (bool?)this["UseFIPS"];
-            set => this["UseFIPS"] = value;
-        }
+        public bool? UseFIPS { get; set; }
 
         /// <summary>
         /// The AWS region used to dispatch the request.
         /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
+        public string Region { get; set; }
 
         /// <summary>
         /// Override the endpoint used to send this request
         /// </summary>
-        public string Endpoint
+        public string Endpoint { get; set; }
+
+        /// <summary>
+        /// Gets or sets an endpoint parameter by name. Known parameters read and write the typed
+        /// properties; any other name falls through to the underlying property bag.
+        /// </summary>
+        public override object this[string name]
         {
-            get => (string)this["Endpoint"];
-            set => this["Endpoint"] = value;
+            get => name switch
+            {
+                "UseFIPS" => UseFIPS,
+                "Region" => Region,
+                "Endpoint" => Endpoint,
+                _ => base[name],
+            };
+            set
+            {
+                switch (name)
+                {
+                    case "UseFIPS": UseFIPS = (bool?)value; break;
+                    case "Region": Region = (string)value; break;
+                    case "Endpoint": Endpoint = (string)value; break;
+                    default: base[name] = value; break;
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override bool ParameterValuesEqual(EndpointParameters other)
+        {
+            var o = (CodeCatalystEndpointParameters)other;
+            return UseFIPS == o.UseFIPS
+                && Region == o.Region
+                && Endpoint == o.Endpoint
+                && base.ParameterValuesEqual(other);
         }
     }
 }
