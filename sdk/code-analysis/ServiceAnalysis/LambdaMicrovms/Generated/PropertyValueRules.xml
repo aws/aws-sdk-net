@@ -33,6 +33,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.CreateMicrovmImageRequest.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.CreateMicrovmImageRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -67,6 +73,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.CreateMicrovmImageResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.CreateMicrovmImageResponse.LatestActiveImageVersion</property>
@@ -154,6 +166,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.GetMicrovmResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.GetMicrovmResponse.MicrovmId</property>
@@ -278,6 +296,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.GetMicrovmImageVersionResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.ListManagedMicrovmImageVersionsRequest.ImageIdentifier</property>
     <min>1</min>
     <max>256</max>
@@ -379,6 +403,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.RunMicrovmRequest.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.RunMicrovmRequest.MaximumDurationInSeconds</property>
     <min>1</min>
     <max>28800</max>
@@ -409,6 +439,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.RunMicrovmResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.RunMicrovmResponse.MicrovmId</property>
@@ -472,6 +508,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.UpdateMicrovmImageRequest.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.UpdateMicrovmImageResponse.BaseImageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -500,6 +542,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.UpdateMicrovmImageResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.UpdateMicrovmImageResponse.LatestActiveImageVersion</property>
@@ -559,6 +607,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.UpdateMicrovmImageVersionResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.CloudWatchLogging.LogGroup</property>
@@ -716,6 +770,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LambdaMicrovms.Model.MicrovmImageVersionSummary.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws[a-z-]*:kms:[a-z0-9-]+:[0-9]{12}:(key|alias)/[a-zA-Z0-9:/_-]+|alias/[a-zA-Z0-9:/_-]+|[a-zA-Z0-9-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.MicrovmItem.ImageArn</property>

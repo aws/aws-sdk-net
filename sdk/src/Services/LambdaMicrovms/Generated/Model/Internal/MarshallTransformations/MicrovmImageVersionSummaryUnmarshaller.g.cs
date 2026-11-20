@@ -144,6 +144,13 @@ namespace Amazon.LambdaMicrovms.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("kmsKeyIdentifier", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("logging", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingUnmarshaller.Instance;

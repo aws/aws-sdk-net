@@ -223,6 +223,35 @@ namespace Amazon.LambdaMicrovms.Model
         internal bool IsSetImageIdentifier() => this.ImageIdentifier != null;
 
         /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The customer managed Amazon Web Services Key Management Service (Amazon Web Services
+        /// KMS) key that encrypts the contents and metadata of your MicroVM image version. You
+        /// must have permission to use the key. Specify the key in one of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias ARN
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a key, your MicroVM image version uses an Amazon Web Services
+        /// owned key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsKeyIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyIdentifier property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyIdentifier() => this.KmsKeyIdentifier != null;
+
+        /// <summary>
         /// Gets and sets the property Logging. 
         /// <para>
         /// The logging configuration for build-time and runtime logs. Specify {"cloudWatch":

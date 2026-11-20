@@ -165,6 +165,11 @@ namespace Amazon.LambdaMicrovms.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetKmsKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("kmsKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
+            }
             if (publicRequest.IsSetLogging())
             {
                 context.Writer.WritePropertyName("logging");

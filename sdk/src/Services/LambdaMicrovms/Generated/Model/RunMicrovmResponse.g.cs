@@ -145,6 +145,22 @@ namespace Amazon.LambdaMicrovms.Model
         internal bool IsSetIngressNetworkConnectors() => this.IngressNetworkConnectors != null && (this.IngressNetworkConnectors.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The customer managed Amazon Web Services Key Management Service (Amazon Web Services
+        /// KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a
+        /// key, your MicroVM uses an Amazon Web Services owned key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsKeyIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyIdentifier property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyIdentifier() => this.KmsKeyIdentifier != null;
+
+        /// <summary>
         /// Gets and sets the property MaximumDurationInSeconds. 
         /// <para>
         /// The maximum duration in seconds that the MicroVM can exist.

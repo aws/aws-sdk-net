@@ -234,6 +234,23 @@ namespace Amazon.LambdaMicrovms.Model
         internal bool IsSetImageVersion() => this.ImageVersion != null;
 
         /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The customer managed Amazon Web Services Key Management Service (Amazon Web Services
+        /// KMS) key that encrypts the contents and metadata of your MicroVM image version. If
+        /// you don't specify a key, your MicroVM image version uses an Amazon Web Services owned
+        /// key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsKeyIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyIdentifier property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyIdentifier() => this.KmsKeyIdentifier != null;
+
+        /// <summary>
         /// Gets and sets the property LatestActiveImageVersion. 
         /// <para>
         /// The latest active version of the MicroVM image.
