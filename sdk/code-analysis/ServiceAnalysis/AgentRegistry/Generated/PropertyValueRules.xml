@@ -201,4 +201,14 @@
     <max>2048</max>
     <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistry.Model.SignatureAgentCardDescriptor.Data</property>
+    <min>1</min>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistry.Model.SignatureAgentCardDescriptor.DataSchemaVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
 </property-value-rules>

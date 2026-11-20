@@ -68,6 +68,127 @@ namespace Amazon.AgentRegistry
     }
 
     /// <summary>
+    /// Constants used for properties of type BotCategory.
+    /// </summary>
+    public class BotCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant Advertising for BotCategory
+        /// </summary>
+        public static readonly BotCategory Advertising = new BotCategory("advertising");
+
+        /// <summary>
+        /// Constant Ai_assistant for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_assistant = new BotCategory("ai_assistant");
+
+        /// <summary>
+        /// Constant Ai_content_optimization for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_content_optimization = new BotCategory("ai_content_optimization");
+
+        /// <summary>
+        /// Constant Ai_search for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_search = new BotCategory("ai_search");
+
+        /// <summary>
+        /// Constant Ai_training for BotCategory
+        /// </summary>
+        public static readonly BotCategory Ai_training = new BotCategory("ai_training");
+
+        /// <summary>
+        /// Constant Archiver for BotCategory
+        /// </summary>
+        public static readonly BotCategory Archiver = new BotCategory("archiver");
+
+        /// <summary>
+        /// Constant Content_fetcher for BotCategory
+        /// </summary>
+        public static readonly BotCategory Content_fetcher = new BotCategory("content_fetcher");
+
+        /// <summary>
+        /// Constant Email_client for BotCategory
+        /// </summary>
+        public static readonly BotCategory Email_client = new BotCategory("email_client");
+
+        /// <summary>
+        /// Constant Http_library for BotCategory
+        /// </summary>
+        public static readonly BotCategory Http_library = new BotCategory("http_library");
+
+        /// <summary>
+        /// Constant Link_checker for BotCategory
+        /// </summary>
+        public static readonly BotCategory Link_checker = new BotCategory("link_checker");
+
+        /// <summary>
+        /// Constant Miscellaneous for BotCategory
+        /// </summary>
+        public static readonly BotCategory Miscellaneous = new BotCategory("miscellaneous");
+
+        /// <summary>
+        /// Constant Monitoring for BotCategory
+        /// </summary>
+        public static readonly BotCategory Monitoring = new BotCategory("monitoring");
+
+        /// <summary>
+        /// Constant Page_preview for BotCategory
+        /// </summary>
+        public static readonly BotCategory Page_preview = new BotCategory("page_preview");
+
+        /// <summary>
+        /// Constant Scraping_framework for BotCategory
+        /// </summary>
+        public static readonly BotCategory Scraping_framework = new BotCategory("scraping_framework");
+
+        /// <summary>
+        /// Constant Search_engine for BotCategory
+        /// </summary>
+        public static readonly BotCategory Search_engine = new BotCategory("search_engine");
+
+        /// <summary>
+        /// Constant Security for BotCategory
+        /// </summary>
+        public static readonly BotCategory Security = new BotCategory("security");
+
+        /// <summary>
+        /// Constant Seo for BotCategory
+        /// </summary>
+        public static readonly BotCategory Seo = new BotCategory("seo");
+
+        /// <summary>
+        /// Constant Social_media for BotCategory
+        /// </summary>
+        public static readonly BotCategory Social_media = new BotCategory("social_media");
+
+        /// <summary>
+        /// Constructs a custom BotCategory for a value not among the defined constants.
+        /// </summary>
+        public BotCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotCategory FindValue(string value)
+        {
+            return FindValue<BotCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type RecordType.
     /// </summary>
     public class RecordType : ConstantClass
@@ -96,6 +217,11 @@ namespace Amazon.AgentRegistry
         /// Constant SKILL for RecordType
         /// </summary>
         public static readonly RecordType SKILL = new RecordType("SKILL");
+
+        /// <summary>
+        /// Constant WEB_BOT for RecordType
+        /// </summary>
+        public static readonly RecordType WEB_BOT = new RecordType("WEB_BOT");
 
         /// <summary>
         /// Constructs a custom RecordType for a value not among the defined constants.

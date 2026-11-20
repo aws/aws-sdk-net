@@ -112,5 +112,19 @@ namespace Amazon.AgentRegistry.Model
         /// Checks to see if the McpServer property is set.
         /// </summary>
         internal bool IsSetMcpServer() => this.McpServer != null;
+
+        /// <summary>
+        /// Gets and sets the property SignatureAgentCard. 
+        /// <para>
+        ///  The signature agent card descriptor, populated when the record represents a web bot.
+        /// It identifies the JSON Web Key Set (JWKS) used to verify the bot's HTTP message signatures.
+        /// </para>
+        /// </summary>
+        public SignatureAgentCardDescriptor SignatureAgentCard { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SignatureAgentCard property is set.
+        /// </summary>
+        internal bool IsSetSignatureAgentCard() => this.SignatureAgentCard != null;
     }
 }
