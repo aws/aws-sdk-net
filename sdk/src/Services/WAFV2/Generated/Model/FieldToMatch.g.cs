@@ -116,7 +116,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// For AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can
+        /// change the limit in the web ACL <c>AssociationConfig</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -294,7 +299,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// For AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Application Load Balancer, the default limit is 8 KB (8,192 bytes), and you can
+        /// change the limit in the web ACL <c>AssociationConfig</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

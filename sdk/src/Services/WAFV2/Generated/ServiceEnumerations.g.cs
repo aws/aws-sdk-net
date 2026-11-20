@@ -144,6 +144,11 @@ namespace Amazon.WAFV2
         public static readonly AssociatedResourceType API_GATEWAY = new AssociatedResourceType("API_GATEWAY");
 
         /// <summary>
+        /// Constant APPLICATION_LOAD_BALANCER for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType APPLICATION_LOAD_BALANCER = new AssociatedResourceType("APPLICATION_LOAD_BALANCER");
+
+        /// <summary>
         /// Constant APP_RUNNER_SERVICE for AssociatedResourceType
         /// </summary>
         public static readonly AssociatedResourceType APP_RUNNER_SERVICE = new AssociatedResourceType("APP_RUNNER_SERVICE");
@@ -342,6 +347,52 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Confidence.
+    /// </summary>
+    public class Confidence : ConstantClass
+    {
+        /// <summary>
+        /// Constant HIGH for Confidence
+        /// </summary>
+        public static readonly Confidence HIGH = new Confidence("HIGH");
+
+        /// <summary>
+        /// Constant LOW for Confidence
+        /// </summary>
+        public static readonly Confidence LOW = new Confidence("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for Confidence
+        /// </summary>
+        public static readonly Confidence MEDIUM = new Confidence("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom Confidence for a value not among the defined constants.
+        /// </summary>
+        public Confidence(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Confidence FindValue(string value)
+        {
+            return FindValue<Confidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Confidence(string value)
         {
             return FindValue(value);
         }
@@ -1824,6 +1875,252 @@ namespace Amazon.WAFV2
     }
 
     /// <summary>
+    /// Constants used for properties of type EventActorSortBy.
+    /// </summary>
+    public class EventActorSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVENT_COUNT for EventActorSortBy
+        /// </summary>
+        public static readonly EventActorSortBy EVENT_COUNT = new EventActorSortBy("EVENT_COUNT");
+
+        /// <summary>
+        /// Constructs a custom EventActorSortBy for a value not among the defined constants.
+        /// </summary>
+        public EventActorSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventActorSortBy FindValue(string value)
+        {
+            return FindValue<EventActorSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventActorSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventCategory.
+    /// </summary>
+    public class EventCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant API_SECURITY for EventCategory
+        /// </summary>
+        public static readonly EventCategory API_SECURITY = new EventCategory("API_SECURITY");
+
+        /// <summary>
+        /// Constructs a custom EventCategory for a value not among the defined constants.
+        /// </summary>
+        public EventCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventCategory FindValue(string value)
+        {
+            return FindValue<EventCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventFilterKey.
+    /// </summary>
+    public class EventFilterKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVENT_CATEGORY for EventFilterKey
+        /// </summary>
+        public static readonly EventFilterKey EVENT_CATEGORY = new EventFilterKey("EVENT_CATEGORY");
+
+        /// <summary>
+        /// Constant RESOURCE_ARN for EventFilterKey
+        /// </summary>
+        public static readonly EventFilterKey RESOURCE_ARN = new EventFilterKey("RESOURCE_ARN");
+
+        /// <summary>
+        /// Constructs a custom EventFilterKey for a value not among the defined constants.
+        /// </summary>
+        public EventFilterKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventFilterKey FindValue(string value)
+        {
+            return FindValue<EventFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventIncludeField.
+    /// </summary>
+    public class EventIncludeField : ConstantClass
+    {
+        /// <summary>
+        /// Constant TIMELINE for EventIncludeField
+        /// </summary>
+        public static readonly EventIncludeField TIMELINE = new EventIncludeField("TIMELINE");
+
+        /// <summary>
+        /// Constructs a custom EventIncludeField for a value not among the defined constants.
+        /// </summary>
+        public EventIncludeField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventIncludeField FindValue(string value)
+        {
+            return FindValue<EventIncludeField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventIncludeField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventSortBy.
+    /// </summary>
+    public class EventSortBy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIDENCE for EventSortBy
+        /// </summary>
+        public static readonly EventSortBy CONFIDENCE = new EventSortBy("CONFIDENCE");
+
+        /// <summary>
+        /// Constant END_TIME for EventSortBy
+        /// </summary>
+        public static readonly EventSortBy END_TIME = new EventSortBy("END_TIME");
+
+        /// <summary>
+        /// Constant START_TIME for EventSortBy
+        /// </summary>
+        public static readonly EventSortBy START_TIME = new EventSortBy("START_TIME");
+
+        /// <summary>
+        /// Constructs a custom EventSortBy for a value not among the defined constants.
+        /// </summary>
+        public EventSortBy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSortBy FindValue(string value)
+        {
+            return FindValue<EventSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EventStatus.
+    /// </summary>
+    public class EventStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant EVENT_COMPLETED for EventStatus
+        /// </summary>
+        public static readonly EventStatus EVENT_COMPLETED = new EventStatus("EVENT_COMPLETED");
+
+        /// <summary>
+        /// Constant EVENT_ENDED for EventStatus
+        /// </summary>
+        public static readonly EventStatus EVENT_ENDED = new EventStatus("EVENT_ENDED");
+
+        /// <summary>
+        /// Constant EVENT_IN_PROGRESS for EventStatus
+        /// </summary>
+        public static readonly EventStatus EVENT_IN_PROGRESS = new EventStatus("EVENT_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant EVENT_STARTED for EventStatus
+        /// </summary>
+        public static readonly EventStatus EVENT_STARTED = new EventStatus("EVENT_STARTED");
+
+        /// <summary>
+        /// Constructs a custom EventStatus for a value not among the defined constants.
+        /// </summary>
+        public EventStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventStatus FindValue(string value)
+        {
+            return FindValue<EventStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -2621,6 +2918,11 @@ namespace Amazon.WAFV2
         public static readonly ParameterExceptionField ATP_RULE_SET_RESPONSE_INSPECTION = new ParameterExceptionField("ATP_RULE_SET_RESPONSE_INSPECTION");
 
         /// <summary>
+        /// Constant BEDROCK_GUARDRAILS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField BEDROCK_GUARDRAILS = new ParameterExceptionField("BEDROCK_GUARDRAILS");
+
+        /// <summary>
         /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");
@@ -2894,6 +3196,11 @@ namespace Amazon.WAFV2
         /// Constant RESPONSE_CONTENT_TYPE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField RESPONSE_CONTENT_TYPE = new ParameterExceptionField("RESPONSE_CONTENT_TYPE");
+
+        /// <summary>
+        /// Constant ROLE_ARN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ROLE_ARN = new ParameterExceptionField("ROLE_ARN");
 
         /// <summary>
         /// Constant RULE for ParameterExceptionField
@@ -3724,6 +4031,11 @@ namespace Amazon.WAFV2
         /// Constant KB_64 for SizeInspectionLimit
         /// </summary>
         public static readonly SizeInspectionLimit KB_64 = new SizeInspectionLimit("KB_64");
+
+        /// <summary>
+        /// Constant KB_8 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_8 = new SizeInspectionLimit("KB_8");
 
         /// <summary>
         /// Constructs a custom SizeInspectionLimit for a value not among the defined constants.

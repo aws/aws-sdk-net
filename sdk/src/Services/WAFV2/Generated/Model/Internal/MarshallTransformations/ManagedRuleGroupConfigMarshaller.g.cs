@@ -56,6 +56,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetAWSManagedRulesAISecurityRuleSet())
+            {
+                context.Writer.WritePropertyName("AWSManagedRulesAISecurityRuleSet");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AWSManagedRulesAISecurityRuleSetMarshaller.Instance;
+                marshaller.Marshall(requestObject.AWSManagedRulesAISecurityRuleSet, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetAWSManagedRulesATPRuleSet())
             {
                 context.Writer.WritePropertyName("AWSManagedRulesATPRuleSet");

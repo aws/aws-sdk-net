@@ -83,9 +83,10 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Use this to customize the maximum size of the request body that your protected resources
-        /// forward to WAF for inspection. You can customize this setting for CloudFront, API
-        /// Gateway, Amazon Cognito, App Runner, or Verified Access resources. The default setting
-        /// is 16 KB (16,384 bytes). 
+        /// forward to WAF for inspection. You can customize this setting for Application Load
+        /// Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access
+        /// resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer
+        /// and 16 KB (16,384 bytes) for the other resource types. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -95,7 +96,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// For AppSync, the limit is fixed at 8 KB (8,192 bytes).
         /// </para>
         ///  
         /// <para>

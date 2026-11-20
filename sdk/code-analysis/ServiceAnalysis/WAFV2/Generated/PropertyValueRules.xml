@@ -247,6 +247,24 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetEventRequest.EventId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetEventRequest.WebAclArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetEventActorRequest.EventActorId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetIPSetRequest.Id</property>
     <min>1</min>
     <max>36</max>
@@ -576,6 +594,63 @@
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupsResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventActorsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventActorsRequest.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventActorsResponse.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsRequest.Limit</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsRequest.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsResponse.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsByWebACLRequest.Limit</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsByWebACLRequest.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsByWebACLRequest.WebAclArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListEventsByWebACLResponse.NextMarker</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -982,10 +1057,64 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPattern.Method</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPattern.PathPattern</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPattern.Port</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPatternFilter.Method</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPatternFilter.PathPattern</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiPatternFilter.Port</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiSecurityEventDetail.Category</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ApiSecurityEventDetail.Label</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.ApplicationAttribute.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.BedrockGuardrailsRequestAndResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:iam::\d{12}:role/(?:[\x21-\x7F]+/)?[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.BedrockGuardrailsRequestOnly.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:iam::\d{12}:role/(?:[\x21-\x7F]+/)?[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.BotStatistics.BotName</property>
@@ -1086,6 +1215,142 @@
     <min>1</min>
     <max>512</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorChange.Asn</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorChange.AsnOrganization</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorChange.ClientIp</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorChange.Country</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorChange.TlsFingerprint</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.Asn</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.AsnOrganization</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.AuthFingerprint</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.ClientIp</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.Country</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.EventActorId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorDetailSummary.TlsFingerprint</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorReference.EventActorId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorReference.EventActorValue</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.Asn</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.AsnOrganization</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.AuthFingerprint</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.ClientIp</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.Country</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.EventActorId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.EventCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventActorSummary.TlsFingerprint</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventDetailSummary.EventId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventDetailSummary.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventDetailSummary.WebAclArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.EventTimelineEntry.Label</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ExcludedRule.Name</property>
@@ -1561,6 +1826,24 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RelatedEvent.Category</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RelatedEvent.EventId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RelatedEvent.Label</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.ReleaseSummary.ReleaseVersion</property>

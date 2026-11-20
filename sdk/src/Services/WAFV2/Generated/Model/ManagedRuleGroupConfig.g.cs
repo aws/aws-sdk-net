@@ -47,6 +47,13 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Use the <c>AWSManagedRulesAISecurityRuleSet</c> configuration object to configure
+    /// the AI security managed rule group. The configuration specifies whether the rule group
+    /// uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses,
+    /// and the IAM role that WAF uses to call Amazon Bedrock Guardrails. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Use the <c>AWSManagedRulesAntiDDoSRuleSet</c> configuration object to configure the
     /// anti-DDoS managed rule group. The configuration includes the sensitivity levels to
     /// use in the rules that typically block and challenge requests that might be participating
@@ -95,6 +102,26 @@ namespace Amazon.WAFV2.Model
         /// Checks to see if the AWSManagedRulesACFPRuleSet property is set.
         /// </summary>
         internal bool IsSetAWSManagedRulesACFPRuleSet() => this.AWSManagedRulesACFPRuleSet != null;
+
+        /// <summary>
+        /// Gets and sets the property AWSManagedRulesAISecurityRuleSet. 
+        /// <para>
+        /// Additional configuration for using the AI security managed rule group, <c>AWSManagedRulesAISecurityRuleSet</c>.
+        /// Use this to specify whether the rule group uses Amazon Bedrock Guardrails to inspect
+        /// web requests, or web requests and responses. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the Amazon Web Services Managed Rules rule groups, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list">Amazon
+        /// Web Services Managed Rules rule groups list</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AWSManagedRulesAISecurityRuleSet AWSManagedRulesAISecurityRuleSet { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AWSManagedRulesAISecurityRuleSet property is set.
+        /// </summary>
+        internal bool IsSetAWSManagedRulesAISecurityRuleSet() => this.AWSManagedRulesAISecurityRuleSet != null;
 
         /// <summary>
         /// Gets and sets the property AWSManagedRulesATPRuleSet. 

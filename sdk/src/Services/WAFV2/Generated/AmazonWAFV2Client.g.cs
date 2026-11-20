@@ -3716,6 +3716,258 @@ namespace Amazon.WAFV2
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves the details of the specified event for the specified web ACL, including
+        /// the event actors that are associated with the event and the event timeline. Currently,
+        /// this operation supports API Security Amazon Web Services Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
+        /// <returns>The response from the GetEvent service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEvent">REST API Reference for GetEvent Operation</seealso>
+        public virtual GetEventResponse GetEvent(GetEventRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventResponse>(request, options);
+        }
+#else
+        internal virtual GetEventResponse GetEvent(GetEventRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the details of the specified event for the specified web ACL, including
+        /// the event actors that are associated with the event and the event timeline. Currently,
+        /// this operation supports API Security Amazon Web Services Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetEvent service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEvent">REST API Reference for GetEvent Operation</seealso>
+        public virtual Task<GetEventResponse> GetEventAsync(GetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the details of the specified event actor. An event actor is a client that
+        /// is associated with one or more events. The details include the latest observed attributes
+        /// of the event actor, the events that it's associated with, and the history of changes
+        /// to its attributes. Currently, this operation supports API Security Amazon Web Services
+        /// Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventActor service method.</param>
+        /// <returns>The response from the GetEventActor service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEventActor">REST API Reference for GetEventActor Operation</seealso>
+        public virtual GetEventActorResponse GetEventActor(GetEventActorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventActorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActorResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventActorResponse>(request, options);
+        }
+#else
+        internal virtual GetEventActorResponse GetEventActor(GetEventActorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventActorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActorResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventActorResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the details of the specified event actor. An event actor is a client that
+        /// is associated with one or more events. The details include the latest observed attributes
+        /// of the event actor, the events that it's associated with, and the history of changes
+        /// to its attributes. Currently, this operation supports API Security Amazon Web Services
+        /// Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventActor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetEventActor service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetEventActor">REST API Reference for GetEventActor Operation</seealso>
+        public virtual Task<GetEventActorResponse> GetEventActorAsync(GetEventActorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEventActorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventActorResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the specified <a>IPSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIPSet service method.</param>
@@ -6112,6 +6364,412 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = ListAvailableManagedRuleGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAvailableManagedRuleGroupsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a paginated list of the event actors in your account that are associated
+        /// with events in the specified time window. An event actor is a client that is associated
+        /// with one or more events. The operation returns up to the top 100 event actors by event
+        /// count. Results are paginated. Use the <c>NextMarker</c> value from the response to
+        /// retrieve the next batch of results. Currently, this operation supports API Security
+        /// Amazon Web Services Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActors service method.</param>
+        /// <returns>The response from the ListEventActors service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventActors">REST API Reference for ListEventActors Operation</seealso>
+        public virtual ListEventActorsResponse ListEventActors(ListEventActorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventActorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventActorsResponse>(request, options);
+        }
+#else
+        internal virtual ListEventActorsResponse ListEventActors(ListEventActorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventActorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventActorsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a paginated list of the event actors in your account that are associated
+        /// with events in the specified time window. An event actor is a client that is associated
+        /// with one or more events. The operation returns up to the top 100 event actors by event
+        /// count. Results are paginated. Use the <c>NextMarker</c> value from the response to
+        /// retrieve the next batch of results. Currently, this operation supports API Security
+        /// Amazon Web Services Managed Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListEventActors service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventActors">REST API Reference for ListEventActors Operation</seealso>
+        public virtual Task<ListEventActorsResponse> ListEventActorsAsync(ListEventActorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventActorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventActorsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a paginated list of event summaries for your account. Use this operation
+        /// to monitor and investigate potential threats to the resources that your web ACLs protect.
+        /// Results are paginated. Use the <c>NextMarker</c> value from the response to retrieve
+        /// the next batch of results. Currently, this operation supports API Security Amazon
+        /// Web Services Managed Rules.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by time window, event category, resource, and API pattern,
+        /// and sort them by start time, end time, or confidence.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the events for a single web ACL, use <a>ListEventsByWebACL</a>. To retrieve
+        /// the full details of a single event, use <a>GetEvent</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvents service method.</param>
+        /// <returns>The response from the ListEvents service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEvents">REST API Reference for ListEvents Operation</seealso>
+        public virtual ListEventsResponse ListEvents(ListEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsResponse>(request, options);
+        }
+#else
+        internal virtual ListEventsResponse ListEvents(ListEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a paginated list of event summaries for your account. Use this operation
+        /// to monitor and investigate potential threats to the resources that your web ACLs protect.
+        /// Results are paginated. Use the <c>NextMarker</c> value from the response to retrieve
+        /// the next batch of results. Currently, this operation supports API Security Amazon
+        /// Web Services Managed Rules.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by time window, event category, resource, and API pattern,
+        /// and sort them by start time, end time, or confidence.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the events for a single web ACL, use <a>ListEventsByWebACL</a>. To retrieve
+        /// the full details of a single event, use <a>GetEvent</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListEvents service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEvents">REST API Reference for ListEvents Operation</seealso>
+        public virtual Task<ListEventsResponse> ListEventsAsync(ListEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves a paginated list of event summaries for the specified web ACL. Use this
+        /// operation to monitor and investigate potential threats to the resources that the web
+        /// ACL protects. Results are paginated. Use the <c>NextMarker</c> value from the response
+        /// to retrieve the next batch of results. Currently, this operation supports API Security
+        /// Amazon Web Services Managed Rules.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by time window, event category, resource, and API pattern,
+        /// and sort them by start time, end time, or confidence.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the events for all of the web ACLs in your account, use <a>ListEvents</a>.
+        /// To retrieve the full details of a single event, use <a>GetEvent</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventsByWebACL service method.</param>
+        /// <returns>The response from the ListEventsByWebACL service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventsByWebACL">REST API Reference for ListEventsByWebACL Operation</seealso>
+        public virtual ListEventsByWebACLResponse ListEventsByWebACL(ListEventsByWebACLRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsByWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsByWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsByWebACLResponse>(request, options);
+        }
+#else
+        internal virtual ListEventsByWebACLResponse ListEventsByWebACL(ListEventsByWebACLRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsByWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsByWebACLResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsByWebACLResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves a paginated list of event summaries for the specified web ACL. Use this
+        /// operation to monitor and investigate potential threats to the resources that the web
+        /// ACL protects. Results are paginated. Use the <c>NextMarker</c> value from the response
+        /// to retrieve the next batch of results. Currently, this operation supports API Security
+        /// Amazon Web Services Managed Rules.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by time window, event category, resource, and API pattern,
+        /// and sort them by start time, end time, or confidence.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the events for all of the web ACLs in your account, use <a>ListEvents</a>.
+        /// To retrieve the full details of a single event, use <a>GetEvent</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventsByWebACL service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListEventsByWebACL service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListEventsByWebACL">REST API Reference for ListEventsByWebACL Operation</seealso>
+        public virtual Task<ListEventsByWebACLResponse> ListEventsByWebACLAsync(ListEventsByWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEventsByWebACLRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsByWebACLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventsByWebACLResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

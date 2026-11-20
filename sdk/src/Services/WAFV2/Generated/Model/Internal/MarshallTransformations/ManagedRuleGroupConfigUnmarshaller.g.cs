@@ -60,6 +60,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("AWSManagedRulesAISecurityRuleSet", targetDepth, ref reader))
+                {
+                    var unmarshaller = AWSManagedRulesAISecurityRuleSetUnmarshaller.Instance;
+                    unmarshalledObject.AWSManagedRulesAISecurityRuleSet = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;

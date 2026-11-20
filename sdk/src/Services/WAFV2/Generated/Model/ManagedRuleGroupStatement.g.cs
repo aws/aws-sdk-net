@@ -99,6 +99,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Use the <c>AWSManagedRulesAISecurityRuleSet</c> configuration object to configure
+        /// the AI security managed rule group. The configuration specifies whether the rule group
+        /// uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses,
+        /// and the IAM role that WAF uses to call Amazon Bedrock Guardrails. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Use the <c>AWSManagedRulesAntiDDoSRuleSet</c> configuration object to configure the
         /// anti-DDoS managed rule group. The configuration includes the sensitivity levels to
         /// use in the rules that typically block and challenge requests that might be participating
