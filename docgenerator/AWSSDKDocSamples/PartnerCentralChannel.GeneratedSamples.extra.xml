@@ -18,6 +18,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CancelChannelContract(Amazon.PartnerCentralChannel.Model.CancelChannelContractRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CancelChannelContract(Amazon.PartnerCentralChannel.Model.CancelChannelContractRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CancelChannelContractRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CancelChannelContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for CancelChannelContract" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CancelChannelContract-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CancelChannelHandshake(Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest)" />
       <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CancelChannelHandshake(Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest)" />
       <member name="T:Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest" />
@@ -29,6 +45,22 @@
 
         </para>
         <code title="Example for CancelChannelHandshake" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CancelChannelHandshake-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateChannelContract(Amazon.PartnerCentralChannel.Model.CreateChannelContractRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateChannelContract(Amazon.PartnerCentralChannel.Model.CreateChannelContractRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelContractRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for CreateChannelContract - MANAGED_SERVICES_ATTESTATION" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CreateChannelContract-1" />
       </example>
     </value>
   </doc>
@@ -114,6 +146,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for CreateProgramManagementAccount - MANAGED_SERVICES" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CreateProgramManagementAccount-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
       <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
       <member name="T:Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest" />
@@ -125,6 +173,22 @@
 
         </para>
         <code title="Example for CreateRelationship" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CreateRelationship-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.CreateRelationshipResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for CreateRelationship - MANAGED_SERVICES_END_CUSTOMER" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="CreateRelationship-2" />
       </example>
     </value>
   </doc>
@@ -162,6 +226,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.GetChannelContract(Amazon.PartnerCentralChannel.Model.GetChannelContractRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.GetChannelContract(Amazon.PartnerCentralChannel.Model.GetChannelContractRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetChannelContractRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetChannelContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for GetChannelContract - MANAGED_SERVICES_ATTESTATION" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="GetChannelContract-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.GetChannelContract(Amazon.PartnerCentralChannel.Model.GetChannelContractRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.GetChannelContract(Amazon.PartnerCentralChannel.Model.GetChannelContractRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetChannelContractRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetChannelContractResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for GetChannelContract - CANCELED" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="GetChannelContract-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
       <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
       <member name="T:Amazon.PartnerCentralChannel.Model.GetRelationshipRequest" />
@@ -173,6 +269,38 @@
 
         </para>
         <code title="Example for GetRelationship" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="GetRelationship-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetRelationshipRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.GetRelationshipResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for GetRelationship - MANAGED_SERVICES_END_CUSTOMER" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="GetRelationship-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListChannelContracts(Amazon.PartnerCentralChannel.Model.ListChannelContractsRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListChannelContracts(Amazon.PartnerCentralChannel.Model.ListChannelContractsRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelContractsRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelContractsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for ListChannelContracts - MANAGED_SERVICES_ATTESTATION" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="ListChannelContracts-1" />
       </example>
     </value>
   </doc>
@@ -301,6 +429,22 @@
 
         </para>
         <code title="Example for TagResource" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.TagResource(Amazon.PartnerCentralChannel.Model.TagResourceRequest)" />
+      <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.TagResource(Amazon.PartnerCentralChannel.Model.TagResourceRequest)" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.TagResourceRequest" />
+      <member name="T:Amazon.PartnerCentralChannel.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Example for TagResource - ChannelContract" source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs" region="TagResource-2" />
       </example>
     </value>
   </doc>

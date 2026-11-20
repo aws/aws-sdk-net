@@ -38,6 +38,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<PricingUnit> pricingUnits = response.PricingUnits;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
             SellerInformation publisher = response.Publisher;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             ReviewSummary reviewSummary = response.ReviewSummary;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
@@ -73,6 +74,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<PricingUnit> pricingUnits = response.PricingUnits;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
             SellerInformation publisher = response.Publisher;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             ReviewSummary reviewSummary = response.ReviewSummary;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
@@ -109,8 +111,79 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             List<PricingUnit> pricingUnits = response.PricingUnits;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
             SellerInformation publisher = response.Publisher;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             ReviewSummary reviewSummary = response.ReviewSummary;
+            List<SellerEngagement> sellerEngagements = response.SellerEngagements;
+            string shortDescription = response.ShortDescription;
+            List<UseCaseEntry> useCases = response.UseCases;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetListing()
+        {
+            #region GetListing-4
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetListing(new GetListingRequest
+            {
+                ListingId = "prodview-sampleNoSubscriptionId",
+                Locale = "en-US"
+            });
+
+            List<ListingAssociatedEntity> associatedEntities = response.AssociatedEntities;
+            List<ListingBadge> badges = response.Badges;
+            string catalog = response.Catalog;
+            List<Category> categories = response.Categories;
+            List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
+            List<string> highlights = response.Highlights;
+            string listingId = response.ListingId;
+            string listingName = response.ListingName;
+            string locale = response.Locale;
+            string logoThumbnailUrl = response.LogoThumbnailUrl;
+            string longDescription = response.LongDescription;
+            List<PricingModel> pricingModels = response.PricingModels;
+            List<PricingUnit> pricingUnits = response.PricingUnits;
+            List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            SellerInformation publisher = response.Publisher;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
+            List<Resource> resources = response.Resources;
+            List<SellerEngagement> sellerEngagements = response.SellerEngagements;
+            string shortDescription = response.ShortDescription;
+            List<UseCaseEntry> useCases = response.UseCases;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetListing()
+        {
+            #region GetListing-5
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetListing(new GetListingRequest
+            {
+                ListingId = "prodview-sampleUnavailableId",
+                Locale = "en-US"
+            });
+
+            List<ListingAssociatedEntity> associatedEntities = response.AssociatedEntities;
+            List<ListingBadge> badges = response.Badges;
+            string catalog = response.Catalog;
+            List<Category> categories = response.Categories;
+            List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
+            List<string> highlights = response.Highlights;
+            string listingId = response.ListingId;
+            string listingName = response.ListingName;
+            string locale = response.Locale;
+            string logoThumbnailUrl = response.LogoThumbnailUrl;
+            string longDescription = response.LongDescription;
+            List<PricingModel> pricingModels = response.PricingModels;
+            List<PricingUnit> pricingUnits = response.PricingUnits;
+            List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            SellerInformation publisher = response.Publisher;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
+            List<Resource> resources = response.Resources;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
             string shortDescription = response.ShortDescription;
             List<UseCaseEntry> useCases = response.UseCases;
@@ -316,7 +389,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleByolId"
+                OfferId = "offer-sampleRegionalPricingId"
             });
 
             string locale = response.Locale;
@@ -333,7 +406,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleConfigUpfrontId"
+                OfferId = "offer-sampleByolId"
             });
 
             string locale = response.Locale;
@@ -350,7 +423,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleFreeTrialId"
+                OfferId = "offer-sampleConfigUpfrontId"
             });
 
             string locale = response.Locale;
@@ -367,7 +440,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleRecurringId"
+                OfferId = "offer-sampleFreeTrialId"
             });
 
             string locale = response.Locale;
@@ -384,7 +457,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleVariableId"
+                OfferId = "offer-sampleRecurringId"
             });
 
             string locale = response.Locale;
@@ -401,7 +474,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleRenewalId"
+                OfferId = "offer-sampleVariableId"
             });
 
             string locale = response.Locale;
@@ -418,7 +491,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleRenewalFixedId"
+                OfferId = "offer-sampleRenewalId"
             });
 
             string locale = response.Locale;
@@ -435,7 +508,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleRenewalNoPriceIncreaseId"
+                OfferId = "offer-sampleRenewalFixedId"
             });
 
             string locale = response.Locale;
@@ -452,7 +525,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleSupportId"
+                OfferId = "offer-sampleRenewalNoPriceIncreaseId"
             });
 
             string locale = response.Locale;
@@ -469,7 +542,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var response = client.GetOfferTerms(new GetOfferTermsRequest
             {
                 Locale = "en-US",
-                OfferId = "offer-sampleValidityId"
+                OfferId = "offer-sampleSupportId"
             });
 
             string locale = response.Locale;
@@ -481,6 +554,23 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
         public void MarketplaceDiscoveryGetOfferTerms()
         {
             #region GetOfferTerms-12
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetOfferTerms(new GetOfferTermsRequest
+            {
+                Locale = "en-US",
+                OfferId = "offer-sampleValidityId"
+            });
+
+            string locale = response.Locale;
+            List<OfferTerm> offerTerms = response.OfferTerms;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetOfferTerms()
+        {
+            #region GetOfferTerms-13
 
             var client = new AmazonMarketplaceDiscoveryClient();
             var response = client.GetOfferTerms(new GetOfferTermsRequest
@@ -519,6 +609,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             string productId = response.ProductId;
             string productName = response.ProductName;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
             string shortDescription = response.ShortDescription;
@@ -550,6 +641,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             string productId = response.ProductId;
             string productName = response.ProductName;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
             string shortDescription = response.ShortDescription;
@@ -581,6 +673,71 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             string productId = response.ProductId;
             string productName = response.ProductName;
             List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
+            List<Resource> resources = response.Resources;
+            List<SellerEngagement> sellerEngagements = response.SellerEngagements;
+            string shortDescription = response.ShortDescription;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetProduct()
+        {
+            #region GetProduct-4
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetProduct(new GetProductRequest
+            {
+                Locale = "en-US",
+                ProductId = "prod-sampleNoSubscriptionId"
+            });
+
+            string catalog = response.Catalog;
+            List<Category> categories = response.Categories;
+            DeployedOnAwsStatus deployedOnAws = response.DeployedOnAws;
+            List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
+            List<string> highlights = response.Highlights;
+            string listingId = response.ListingId;
+            string locale = response.Locale;
+            string logoThumbnailUrl = response.LogoThumbnailUrl;
+            string longDescription = response.LongDescription;
+            SellerInformation manufacturer = response.Manufacturer;
+            string productId = response.ProductId;
+            string productName = response.ProductName;
+            List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
+            List<Resource> resources = response.Resources;
+            List<SellerEngagement> sellerEngagements = response.SellerEngagements;
+            string shortDescription = response.ShortDescription;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetProduct()
+        {
+            #region GetProduct-5
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetProduct(new GetProductRequest
+            {
+                Locale = "en-US",
+                ProductId = "prod-sampleUnavailableId"
+            });
+
+            string catalog = response.Catalog;
+            List<Category> categories = response.Categories;
+            DeployedOnAwsStatus deployedOnAws = response.DeployedOnAws;
+            List<FulfillmentOptionSummary> fulfillmentOptionSummaries = response.FulfillmentOptionSummaries;
+            List<string> highlights = response.Highlights;
+            string listingId = response.ListingId;
+            string locale = response.Locale;
+            string logoThumbnailUrl = response.LogoThumbnailUrl;
+            string longDescription = response.LongDescription;
+            SellerInformation manufacturer = response.Manufacturer;
+            string productId = response.ProductId;
+            string productName = response.ProductName;
+            List<PromotionalMedia> promotionalMedia = response.PromotionalMedia;
+            List<PurchaseIndicator> purchaseIndicators = response.PurchaseIndicators;
             List<Resource> resources = response.Resources;
             List<SellerEngagement> sellerEngagements = response.SellerEngagements;
             string shortDescription = response.ShortDescription;
@@ -792,6 +949,251 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             #endregion
         }
 
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-1
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "CASE_STUDY"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-2
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "CASE_STUDY"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US",
+                MaxResults = 1
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-3
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "SPECIALIZATION_DETAIL"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-4
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_SOURCE",
+                    "TRUST_CENTER_CERTIFICATION",
+                    "TRUST_CENTER_DOCUMENT"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US",
+                MaxResults = 25
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-5
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_CERTIFICATION"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-6
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_DOCUMENT"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-7
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_DOCUMENT"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-8
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_DOCUMENT"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-9
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_CONTROL"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-10
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_FAQ"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-11
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_UPDATE"
+                },
+                ListingId = "prodview-sampleListingId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryListListingAttributes()
+        {
+            #region ListListingAttributes-12
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.ListListingAttributes(new ListListingAttributesRequest
+            {
+                AttributeTypes = new List<string> {
+                    "TRUST_CENTER_CERTIFICATION"
+                },
+                ListingId = "prodview-sampleNonApplicableId",
+                Locale = "en-US"
+            });
+
+            List<ListingAttributeResults> listingAttributes = response.ListingAttributes;
+            string locale = response.Locale;
+
+            #endregion
+        }
+
         public void MarketplaceDiscoveryListPurchaseOptions()
         {
             #region ListPurchaseOptions-1
@@ -919,6 +1321,72 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             #endregion
         }
 
+        public void MarketplaceDiscoverySearchFacets()
+        {
+            #region SearchFacets-3
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.SearchFacets(new SearchFacetsRequest
+            {
+                FacetTypes = new List<string> {
+                    "SPECIALIZATION",
+                    "SPECIALIZATION_CATEGORY"
+                },
+                Filters = new List<SearchFilter> {
+                    new SearchFilter {
+                        FilterType = "SPECIALIZATION",
+                        FilterValues = new List<string> {
+                            "spec-0ae8wm2xxde76e"
+                        }
+                    }
+                },
+                Locale = "en-US"
+            });
+
+            Dictionary<string, List<ListingFacet>> listingFacets = response.ListingFacets;
+            long? totalResults = response.TotalResults;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoverySearchFacets()
+        {
+            #region SearchFacets-4
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.SearchFacets(new SearchFacetsRequest
+            {
+                FacetTypes = new List<string> {
+                    "CERTIFICATES"
+                },
+                Locale = "en-US"
+            });
+
+            Dictionary<string, List<ListingFacet>> listingFacets = response.ListingFacets;
+            long? totalResults = response.TotalResults;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoverySearchFacets()
+        {
+            #region SearchFacets-5
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.SearchFacets(new SearchFacetsRequest
+            {
+                FacetTypes = new List<string> {
+                    "TRUST_CENTER"
+                },
+                Locale = "en-US"
+            });
+
+            Dictionary<string, List<ListingFacet>> listingFacets = response.ListingFacets;
+            long? totalResults = response.TotalResults;
+
+            #endregion
+        }
+
         public void MarketplaceDiscoverySearchListings()
         {
             #region SearchListings-1
@@ -938,6 +1406,12 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
                         FilterValues = new List<string> {
                             "SAAS"
                         }
+                    },
+                    new SearchFilter {
+                        FilterType = "CERTIFICATES",
+                        FilterValues = new List<string> {
+                            "ISO_27001"
+                        }
                     }
                 },
                 Locale = "en-US",
@@ -945,6 +1419,33 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
                 SearchText = "computer vision",
                 SortBy = "RELEVANCE",
                 SortOrder = "DESCENDING"
+            });
+
+            List<ListingSummary> listingSummaries = response.ListingSummaries;
+            string nextToken = response.NextToken;
+            long? totalResults = response.TotalResults;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoverySearchListings()
+        {
+            #region SearchListings-2
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.SearchListings(new SearchListingsRequest
+            {
+                Filters = new List<SearchFilter> {
+                    new SearchFilter {
+                        FilterType = "TRUST_CENTER",
+                        FilterValues = new List<string> {
+                            "HAS_TRUST_CENTER"
+                        }
+                    }
+                },
+                Locale = "en-US",
+                MaxResults = 1,
+                SearchText = "security"
             });
 
             List<ListingSummary> listingSummaries = response.ListingSummaries;

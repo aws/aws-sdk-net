@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.BatchGetFinancialRecord(Amazon.Payments.Model.BatchGetFinancialRecordRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.BatchGetFinancialRecord(Amazon.Payments.Model.BatchGetFinancialRecordRequest)" />
+      <member name="T:Amazon.Payments.Model.BatchGetFinancialRecordRequest" />
+      <member name="T:Amazon.Payments.Model.BatchGetFinancialRecordResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke BatchGetFinancialRecord" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="BatchGetFinancialRecord-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.GetAccountBalance(Amazon.Payments.Model.GetAccountBalanceRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.GetAccountBalance(Amazon.Payments.Model.GetAccountBalanceRequest)" />
+      <member name="T:Amazon.Payments.Model.GetAccountBalanceRequest" />
+      <member name="T:Amazon.Payments.Model.GetAccountBalanceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke GetAccountBalance" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="GetAccountBalance-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.GetFinancialRecord(Amazon.Payments.Model.GetFinancialRecordRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.GetFinancialRecord(Amazon.Payments.Model.GetFinancialRecordRequest)" />
+      <member name="T:Amazon.Payments.Model.GetFinancialRecordRequest" />
+      <member name="T:Amazon.Payments.Model.GetFinancialRecordResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke GetFinancialRecord" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="GetFinancialRecord-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.GetPaymentInstrument(Amazon.Payments.Model.GetPaymentInstrumentRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.GetPaymentInstrument(Amazon.Payments.Model.GetPaymentInstrumentRequest)" />
+      <member name="T:Amazon.Payments.Model.GetPaymentInstrumentRequest" />
+      <member name="T:Amazon.Payments.Model.GetPaymentInstrumentResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke GetPaymentInstrument" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="GetPaymentInstrument-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.ListFinancialRecords(Amazon.Payments.Model.ListFinancialRecordsRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.ListFinancialRecords(Amazon.Payments.Model.ListFinancialRecordsRequest)" />
+      <member name="T:Amazon.Payments.Model.ListFinancialRecordsRequest" />
+      <member name="T:Amazon.Payments.Model.ListFinancialRecordsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListFinancialRecords" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="ListFinancialRecords-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.Payments.IAmazonPayments.ListPaymentInstruments(Amazon.Payments.Model.ListPaymentInstrumentsRequest)" />
+      <member name="M:Amazon.Payments.AmazonPaymentsClient.ListPaymentInstruments(Amazon.Payments.Model.ListPaymentInstrumentsRequest)" />
+      <member name="T:Amazon.Payments.Model.ListPaymentInstrumentsRequest" />
+      <member name="T:Amazon.Payments.Model.ListPaymentInstrumentsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListPaymentInstruments" source=".\AWSSDKDocSamples\Payments\Payments.GeneratedSamples.cs" region="ListPaymentInstruments-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

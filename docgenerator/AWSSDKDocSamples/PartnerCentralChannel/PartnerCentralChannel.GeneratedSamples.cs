@@ -28,6 +28,24 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             #endregion
         }
 
+        public void PartnerCentralChannelCancelChannelContract()
+        {
+            #region CancelChannelContract-1
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.CancelChannelContract(new CancelChannelContractRequest
+            {
+                Catalog = "AWS",
+                ClientToken = "clientToken",
+                Identifier = "cc-4fj3bd2o3vb91",
+                Reason = "No longer providing managed services for this customer"
+            });
+
+            CancelChannelContractDetail channelContractDetail = response.ChannelContractDetail;
+
+            #endregion
+        }
+
         public void PartnerCentralChannelCancelChannelHandshake()
         {
             #region CancelChannelHandshake-1
@@ -40,6 +58,46 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             });
 
             CancelChannelHandshakeDetail channelHandshakeDetail = response.ChannelHandshakeDetail;
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelCreateChannelContract()
+        {
+            #region CreateChannelContract-1
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.CreateChannelContract(new CreateChannelContractRequest
+            {
+                Catalog = "AWS",
+                ClientToken = "clientToken",
+                ContractType = "MANAGED_SERVICES_ATTESTATION",
+                Payload = new ChannelContractPayload { ManagedServicesAttestationPayload = new ManagedServicesAttestationPayload {
+                    EndDate = new DateTime(2027, 3, 31, 0, 0, 0, DateTimeKind.Utc),
+                    LegalEntityAddress = new Address {
+                        AddressLine = "123 Any Street",
+                        AddressLine2 = "Suite 100",
+                        City = "Anytown",
+                        CountryCode = "US",
+                        PostalCode = "98101",
+                        StateOrRegion = "WA"
+                    },
+                    LegalEntityName = "Example Partner Corp",
+                    MemberAccountIds = new List<string> {
+                        "111122224444"
+                    },
+                    ProgramManagementAccountIdentifier = "pma-abcdef123456g",
+                    RelationshipIdentifier = "rs-abc123def456g",
+                    SignatoryEmail = "mary.major@example.com",
+                    SignatoryName = "Mary Major",
+                    SupportedServices = new List<string> {
+                        "MONITORING",
+                        "SECURITY"
+                    }
+                } }
+            });
+
+            CreateChannelContractDetail channelContractDetail = response.ChannelContractDetail;
 
             #endregion
         }
@@ -151,6 +209,26 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             #endregion
         }
 
+        public void PartnerCentralChannelCreateProgramManagementAccount()
+        {
+            #region CreateProgramManagementAccount-2
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.CreateProgramManagementAccount(new CreateProgramManagementAccountRequest
+            {
+                AccountId = "111122223333",
+                Catalog = "AWS",
+                ClientToken = "clientToken",
+                DisplayName = "TestManagedServices",
+                Program = "MANAGED_SERVICES_PROVIDER",
+                Type = "MANAGED_SERVICES"
+            });
+
+            CreateProgramManagementAccountDetail programManagementAccountDetail = response.ProgramManagementAccountDetail;
+
+            #endregion
+        }
+
         public void PartnerCentralChannelCreateRelationship()
         {
             #region CreateRelationship-1
@@ -166,6 +244,29 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
                 ProgramManagementAccountIdentifier = "pma-u8ic702rtzng8",
                 ResaleAccountModel = "END_CUSTOMER",
                 Sector = "COMMERCIAL"
+            });
+
+            CreateRelationshipDetail relationshipDetail = response.RelationshipDetail;
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelCreateRelationship()
+        {
+            #region CreateRelationship-2
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.CreateRelationship(new CreateRelationshipRequest
+            {
+                AccountScope = "ENTIRE_ORGANIZATION",
+                AssociatedAccountId = "987654321012",
+                AssociationType = "MANAGED_SERVICES_END_CUSTOMER",
+                Catalog = "AWS",
+                ClientToken = "clientToken",
+                DisplayName = "TestManagedCustomer",
+                ProgramManagementAccountIdentifier = "pma-abcdef123456g",
+                Sector = "COMMERCIAL",
+                StartDate = new DateTime(2026, 10, 1, 0, 0, 0, DateTimeKind.Utc)
             });
 
             CreateRelationshipDetail relationshipDetail = response.RelationshipDetail;
@@ -206,6 +307,38 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             #endregion
         }
 
+        public void PartnerCentralChannelGetChannelContract()
+        {
+            #region GetChannelContract-1
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.GetChannelContract(new GetChannelContractRequest
+            {
+                Catalog = "AWS",
+                Identifier = "cc-4fj3bd2o3vb91"
+            });
+
+            ChannelContractDetail channelContractDetail = response.ChannelContractDetail;
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelGetChannelContract()
+        {
+            #region GetChannelContract-2
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.GetChannelContract(new GetChannelContractRequest
+            {
+                Catalog = "AWS",
+                Identifier = "cc-9xq4rt6w2zp81"
+            });
+
+            ChannelContractDetail channelContractDetail = response.ChannelContractDetail;
+
+            #endregion
+        }
+
         public void PartnerCentralChannelGetRelationship()
         {
             #region GetRelationship-1
@@ -219,6 +352,56 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             });
 
             RelationshipDetail relationshipDetail = response.RelationshipDetail;
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelGetRelationship()
+        {
+            #region GetRelationship-2
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.GetRelationship(new GetRelationshipRequest
+            {
+                Catalog = "AWS",
+                Identifier = "rs-abc123def456g",
+                ProgramManagementAccountIdentifier = "pma-abcdef123456g"
+            });
+
+            RelationshipDetail relationshipDetail = response.RelationshipDetail;
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelListChannelContracts()
+        {
+            #region ListChannelContracts-1
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.ListChannelContracts(new ListChannelContractsRequest
+            {
+                Catalog = "AWS",
+                ContractType = "MANAGED_SERVICES_ATTESTATION",
+                ContractTypeFilters = new ListChannelContractsTypeFilters { ManagedServicesAttestationTypeFilters = new ManagedServicesAttestationTypeFilters {
+                    LegalEntityNames = new List<string> {
+                        "Example Partner Corp"
+                    },
+                    RelationshipIdentifiers = new List<string> {
+                        "rs-abc123def456g"
+                    }
+                } },
+                ContractTypeSort = new ListChannelContractsTypeSort { ManagedServicesAttestationTypeSort = new ManagedServicesAttestationTypeSort {
+                    SortBy = "UpdatedAt",
+                    SortOrder = "Descending"
+                } },
+                MaxResults = 20,
+                Statuses = new List<string> {
+                    "PENDING"
+                }
+            });
+
+            List<ChannelContractSummary> items = response.Items;
+            string nextToken = response.NextToken;
 
             #endregion
         }
@@ -424,6 +607,26 @@ namespace AWSSDKDocSamples.Amazon.PartnerCentralChannel.Generated
             var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:partnercentral:us-east-1:123456789012:catalog/AWS/program-management-account/pma-u8ic702rtzng8/relationship/rs-l9o4fj3b5zb91",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "ExampleKey",
+                        Value = "ExampleValue"
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void PartnerCentralChannelTagResource()
+        {
+            #region TagResource-2
+
+            var client = new AmazonPartnerCentralChannelClient();
+            var response = client.TagResource(new TagResourceRequest
+            {
+                ResourceArn = "arn:aws:partnercentral:us-east-1:123456789012:catalog/AWS/channel-contract/cc-4fj3bd2o3vb91",
                 Tags = new List<Tag> {
                     new Tag {
                         Key = "ExampleKey",

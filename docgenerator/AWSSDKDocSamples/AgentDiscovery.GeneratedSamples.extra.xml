@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.AgentDiscovery.IAmazonAgentDiscovery.SearchPublicRecords(Amazon.AgentDiscovery.Model.SearchPublicRecordsRequest)" />
+      <member name="M:Amazon.AgentDiscovery.AmazonAgentDiscoveryClient.SearchPublicRecords(Amazon.AgentDiscovery.Model.SearchPublicRecordsRequest)" />
+      <member name="T:Amazon.AgentDiscovery.Model.SearchPublicRecordsRequest" />
+      <member name="T:Amazon.AgentDiscovery.Model.SearchPublicRecordsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example searches public records for flight booking agents and returns the first match.
+        </para>
+        <code title="To search for agents by keyword" source=".\AWSSDKDocSamples\AgentDiscovery\AgentDiscovery.GeneratedSamples.cs" region="SearchPublicRecords-1" />
+      </example>
+    </value>
+  </doc>
+</docs>
