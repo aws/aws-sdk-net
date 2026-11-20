@@ -237,6 +237,12 @@ public sealed record CustomizationsModel
     /// <summary>True when <c>accessModifier</c> makes modeled member <paramref name="memberName"/> <c>internal</c>, the only value supported.</summary>
     public bool IsInternal(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AccessModifier == "internal";
 
+    /// <summary>The <c>injectPropertyGetter</c> lines that replace modeled member <paramref name="memberName"/>'s getter, or null.</summary>
+    public List<string>? CustomGetter(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPropertyGetter;
+
+    /// <summary>The <c>injectPropertySetter</c> lines that replace modeled member <paramref name="memberName"/>'s setter, or null.</summary>
+    public List<string>? CustomSetter(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPropertySetter;
+
     /// <summary>
     /// The <c>marshallNameOverrides</c> wire name <paramref name="operationName"/>'s request gives property
     /// <paramref name="propertyName"/> of <paramref name="shapeName"/>, or null.
@@ -711,6 +717,17 @@ public sealed record PropertyModifier
     /// <summary>restXml-only: see <see cref="CustomizationsModel.SkipsXmlIsSet"/>.</summary>
     [JsonPropertyName("skipXmlIsSet")]
     public bool SkipXmlIsSet { get; init; }
+
+    /// <summary>
+    /// Lines that replace the property's getter (S3's <c>get { return this._tagCount ?? 0; }</c>), reading the C2J-named
+    /// backing field. Keyed by the modeled member name, like every other <c>modify</c> key (C2J uses the emitted name).
+    /// </summary>
+    [JsonPropertyName("injectPropertyGetter")]
+    public List<string>? InjectPropertyGetter { get; init; }
+
+    /// <summary>Lines that replace the property's setter; see <see cref="InjectPropertyGetter"/>.</summary>
+    [JsonPropertyName("injectPropertySetter")]
+    public List<string>? InjectPropertySetter { get; init; }
 }
 
 /// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>

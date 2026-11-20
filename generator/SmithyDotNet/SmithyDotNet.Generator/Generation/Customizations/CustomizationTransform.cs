@@ -21,7 +21,13 @@ public static class CustomizationTransform
     public static void Apply(SmithyModel model, CustomizationsModel customizations)
     {
         // First, so a member-keyed copy exists for the hooks below. Every hook keys a shape by its modeled name,
-        // unlike C2J, which keys a renamed structure by its new name (S3's customizations need rekeying).
+        // unlike C2J, which keys a renamed structure by its new name.
+        // TODO: rekey s3.customizations.json by modeled name when S3 moves off C2J (C2J still reads the current keys):
+        // - its renamed structures' entries (BucketLifecycleConfiguration, keyed today as LifecycleConfiguration);
+        // - C2J's injectXmlPropertyGetter/Setter, renamed injectPropertyGetter/Setter here. On a renamed member C2J reads
+        //   them by the new name, so S3 puts them in a second entry (CopyObjectRequest's ModifiedSinceDate beside
+        //   CopySourceIfModifiedSince's emitPropertyName). They belong in the modeled member's entry; the new-name entry
+        //   otherwise fails as an unknown member.
         ShapeSubstitutions.Apply(model, customizations);
         // Before shapeModifiers, which address a flattened member on its new parent, as C2J does (S3's RestoreObjectRequest.Tier).
         FlattenShapes.Apply(model, customizations);

@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation;
+
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
@@ -32,7 +34,8 @@ public static class MemberWriter
 
     private static void WriteMember(CodeWriter writer, Member member)
     {
-        var field = member.EmitIsSetProperties ? WriteBackingField(writer, member) : null;
+        var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;
+        var field = member.EmitIsSetProperties || hasAccessor ? WriteBackingField(writer, member) : null;
 
         writer.WriteLine("/// <summary>");
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
@@ -79,10 +82,23 @@ public static class MemberWriter
         }
 
         var declaration = $"{(member.IsInternal ? "internal" : "public")} {modifier}{member.Type.DotNetType} {member.PropertyName}";
-        if (field is not null)
+        if (hasAccessor && field is not null)
+        {
+            writer.OpenBlock(declaration, () =>
+            {
+                foreach (var line in member.CustomGetter ?? [$"get {{ return this.{field}; }}"])
+                {
+                    writer.WriteLine(line);
+                }
+                foreach (var line in member.CustomSetter ?? [$"set {{ this.{field} = value; }}"])
+                {
+                    writer.WriteLine(line);
+                }
+            });
+        }
+        else if (field is not null)
         {
             writer.WriteLine($"{declaration} {{ get => this.{field}; set => this.{field} = value; }}");
-            WriteIsSetFlag(writer, member, field);
         }
         else if (member.Type.IsCollection)
         {
@@ -91,6 +107,11 @@ public static class MemberWriter
         else
         {
             writer.WriteLine($"{declaration} {{ get; set; }}");
+        }
+
+        if (member.EmitIsSetProperties && field is not null)
+        {
+            WriteIsSetFlag(writer, member, field);
         }
 
         if (member.SkipIsSet)
@@ -102,21 +123,25 @@ public static class MemberWriter
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Checks to see if the {member.PropertyName} property is set.");
         writer.WriteLine("/// </summary>");
-        var isSet = field is not null ? $"this.Is{member.PropertyName}Set" : member.IsSetExpression;
+        // An injected getter may never return null (S3's `?? new LifecycleConfiguration()`), so set-ness reads the field, as in C2J.
+        var isSet = member.EmitIsSetProperties ? $"this.Is{member.PropertyName}Set" : field is not null ? member.IsSetOf(field) : member.IsSetExpression;
         writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {isSet};");
     }
 
     // The emitIsSetProperties flag's setter passes the value to InternalSDKUtils.SetIsSet by ref, which a
-    // property can't be, so listed members get a backing field instead of an auto-property.
+    // property can't be, and injected accessors read the field, so those members get one instead of an auto-property.
+    // An emitIsSetProperties field keeps its shipped _{Property} name. An injected-accessor field is named as C2J names
+    // it (_camelCase), because the injected lines are C2J's and refer to it.
     private static string WriteBackingField(CodeWriter writer, Member member)
     {
         // SetIsSet only has Nullable<T>/List/Dictionary overloads; anything else would not compile.
-        if (!member.Type.IsNullableValueType && !member.Type.IsCollection)
+        if (member.EmitIsSetProperties && !member.Type.IsNullableValueType && !member.Type.IsCollection)
         {
             throw new GeneratorException($"emitIsSetProperties lists member '{member.PropertyName}', whose type {member.Type.DotNetType} has no InternalSDKUtils.SetIsSet overload.");
         }
 
-        var field = $"_{member.PropertyName}";
+        var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;
+        var field = hasAccessor ? "_" + SdkNaming.ToParameterName(member.PropertyName).TrimStart('@') : $"_{member.PropertyName}";
         var initializer = member.Type.IsCollection ? $" = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null" : string.Empty;
         writer.WriteLine($"private {member.Type.DotNetType} {field}{initializer};");
         writer.WriteLine();

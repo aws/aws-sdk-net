@@ -172,6 +172,32 @@ public class StructureWriterTests
         Assert.Contains("public bool IsTotalSet", structure);
     }
 
+    // S3's CopyObjectRequest.ModifiedSinceDate: the accessors sit in the renamed member's own entry and use the new
+    // name's _camelCase field, which IsSet reads too since an injected getter can hide a null.
+    [Fact]
+    public void InjectedAccessors_ReplaceTheirDefaultsOverABackingField()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify("since", new PropertyModifier
+        {
+            EmitPropertyName = "ModifiedSinceDate",
+            InjectPropertyGetter = ["get => this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc);"],
+        });
+        customizations.ShapeModifiers["DoScalarsRequest"] = modifier;
+        TestCustomizations.Modify("count", new PropertyModifier { InjectPropertySetter = ["set => CountCustomSetter(value);"] }, modifier);
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+
+        Assert.Contains("private DateTime? _modifiedSinceDate;", structure);
+        Assert.Contains("get => this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc);", structure);
+        Assert.Contains("set { this._modifiedSinceDate = value; }", structure);
+        Assert.Contains("internal bool IsSetModifiedSinceDate() => this._modifiedSinceDate.HasValue;", structure);
+        Assert.Contains("get { return this._count; }", structure);
+        Assert.Contains("set => CountCustomSetter(value);", structure);
+    }
+
     // CognitoIdentity's and SecurityToken's Credentials derive from AWSCredentials, whose Expiration they override.
     [Fact]
     public void MemberOverridingABaseMember_EmitsOverride()

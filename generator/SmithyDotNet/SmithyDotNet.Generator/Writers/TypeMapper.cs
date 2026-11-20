@@ -151,6 +151,8 @@ public sealed record UnwrappedValue(string Wrapper, string QueryName, string Ele
 /// <param name="IsExcludedFromMarshalling">True when <c>excludeFromMarshalling</c> lists the member: hand-written code sends it.</param>
 /// <param name="IsExcludedFromUnmarshalling">True when <c>excludeFromUnmarshalling</c> lists the member: hand-written code reads it.</param>
 /// <param name="SkipIsSet">True when the customizations' <c>skipXmlIsSet</c> is set: the member gets no <c>IsSet</c> method, so the restXml request marshaller sends it unguarded.</param>
+/// <param name="CustomGetter">The <c>injectPropertyGetter</c> lines that replace the getter, or null.</param>
+/// <param name="CustomSetter">The <c>injectPropertySetter</c> lines that replace the setter, or null.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
@@ -171,7 +173,9 @@ public sealed record Member(
     bool IsPropertyExcluded = false,
     bool IsExcludedFromMarshalling = false,
     bool IsExcludedFromUnmarshalling = false,
-    bool SkipIsSet = false
+    bool SkipIsSet = false,
+    IReadOnlyList<string>? CustomGetter = null,
+    IReadOnlyList<string>? CustomSetter = null
 )
 {
     /// <summary>
@@ -195,13 +199,21 @@ public sealed record Member(
     /// reference-null nor <c>.HasValue</c> compiles) uses <c>!….IsNull()</c>, matching C2J;
     /// reference types (<c>string</c>, generated classes) use <c>!= null</c>.
     /// </summary>
-    public string IsSetExpression => Type.IsCollection
-        ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
-        : Type.IsDocument
-            ? $"!this.{PropertyName}.IsNull()"
-            : IsNullableValueType
-                ? $"this.{PropertyName}.HasValue"
-                : $"this.{PropertyName} != null";
+    public string IsSetExpression => IsSetOf(PropertyName);
+
+    /// <summary><see cref="IsSetExpression"/> over <paramref name="name"/>, the property or its backing field.</summary>
+    public string IsSetOf(string name)
+    {
+        if (Type.IsCollection)
+        {
+            return $"this.{name} != null && (this.{name}.Count > 0 || !AWSConfigs.InitializeCollections)";
+        }
+        if (Type.IsDocument)
+        {
+            return $"!this.{name}.IsNull()";
+        }
+        return IsNullableValueType ? $"this.{name}.HasValue" : $"this.{name} != null";
+    }
 }
 
 /// <summary>
@@ -262,7 +274,9 @@ public static class TypeMapper
                 IsPropertyExcluded: context.Customizations.IsExcludedMember(shapeName, emittedName),
                 IsExcludedFromMarshalling: context.Customizations.IsExcludedFromMarshalling(shapeName, memberName),
                 IsExcludedFromUnmarshalling: context.Customizations.IsExcludedFromUnmarshalling(shapeName, memberName),
-                SkipIsSet: context.Customizations.SkipsXmlIsSet(shapeName, memberName))
+                SkipIsSet: context.Customizations.SkipsXmlIsSet(shapeName, memberName),
+                CustomGetter: context.Customizations.CustomGetter(shapeName, memberName),
+                CustomSetter: context.Customizations.CustomSetter(shapeName, memberName))
             );
         }
 

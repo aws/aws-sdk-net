@@ -290,10 +290,20 @@ required.
 **Exception — `emitIsSetProperties` customization.** A listed member (shape name → modeled member
 names) also gets a public `bool Is{Property}Set { get; set; }` whose accessors call
 `InternalSDKUtils.GetIsSet`/`SetIsSet(value, ref field)`. A property can't be passed by `ref`, so the
-member gets a private `_{Property}` backing field (collections keep the `InitializeCollections`
-initializer) instead of an auto-property. `IsSet{Property}()` returns `Is{Property}Set`. Only nullable
-value types and collections have `SetIsSet` overloads; any other listed member throws. Doc text
-matches C2J's `StructureGenerator.tt`.
+member gets a private `_{Property}` backing field (collections keep the `InitializeCollections` initializer)
+instead of an auto-property. `IsSet{Property}()` returns `Is{Property}Set`. Only nullable value types and
+collections have `SetIsSet` overloads; any other listed member throws. Doc text matches C2J's
+`StructureGenerator.tt`.
+
+**Exception — `injectPropertyGetter`/`injectPropertySetter` (S3; C2J's `injectXmlPropertyGetter`/`Setter`).**
+The lines replace that accessor verbatim, and the member gets a backing field the injected code reads; the other accessor is
+`get { return this._field; }`/`set { this._field = value; }`. `IsSet{Property}()` checks the field, since an
+injected getter can hide a null (`?? new LifecycleConfiguration()`). Both keys sit in the modeled member's
+entry like every other `modify` key. C2J reads them by the emitted name instead, so S3's renamed members keep
+them in a second entry (`ModifiedSinceDate` beside `CopySourceIfModifiedSince`) that must be rekeyed on migration.
+
+An injected-accessor backing field is named as C2J names it, `_` + the camel-cased property name
+(`_modifiedSinceDate`), because the injected lines are C2J's and refer to it.
 
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait, unless it also carries `@idempotencyToken` (the SDK fills it)

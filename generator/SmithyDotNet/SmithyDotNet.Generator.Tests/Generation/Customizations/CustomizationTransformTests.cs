@@ -172,6 +172,17 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    // S3's C2J layout (CopySourceIfModifiedSince renamed, its getter keyed by ModifiedSinceDate) must be rekeyed.
+    [Fact]
+    public void ShapeModifiers_InjectedAccessorKeyedByTheNewName_Throws()
+    {
+        var customizations = TestCustomizations.Rename("Bucket", "name", "Title");
+        TestCustomizations.Modify("Title", new PropertyModifier { InjectPropertyGetter = ["get { return this._title; }"] }, customizations.ShapeModifiers["Bucket"]);
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains("shapeModifiers['Bucket'] modifies member 'Title', which the shape does not have", ex.Message);
+    }
+
     [Fact]
     public void ShapeModifiers_TwoMembersRenamedToOneName_Throws()
     {
