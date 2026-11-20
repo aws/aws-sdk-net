@@ -45,6 +45,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetCentralizeWithDataProtection())
+            {
+                context.Writer.WritePropertyName("CentralizeWithDataProtection");
+                context.Writer.WriteStringValue(requestObject.CentralizeWithDataProtection);
+            }
+
             if (requestObject.IsSetDataSourceSelectionCriteria())
             {
                 context.Writer.WritePropertyName("DataSourceSelectionCriteria");

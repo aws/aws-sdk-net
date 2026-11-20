@@ -53,6 +53,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CentralizeWithDataProtection", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CentralizeWithDataProtection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DataSourceSelectionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

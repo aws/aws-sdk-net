@@ -216,6 +216,47 @@ namespace Amazon.ObservabilityAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type CentralizeWithDataProtection.
+    /// </summary>
+    public class CentralizeWithDataProtection : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for CentralizeWithDataProtection
+        /// </summary>
+        public static readonly CentralizeWithDataProtection DISABLED = new CentralizeWithDataProtection("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for CentralizeWithDataProtection
+        /// </summary>
+        public static readonly CentralizeWithDataProtection ENABLED = new CentralizeWithDataProtection("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom CentralizeWithDataProtection for a value not among the defined constants.
+        /// </summary>
+        public CentralizeWithDataProtection(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CentralizeWithDataProtection FindValue(string value)
+        {
+            return FindValue<CentralizeWithDataProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CentralizeWithDataProtection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ConnectorProvider.
     /// </summary>
     public class ConnectorProvider : ConstantClass
@@ -682,6 +723,11 @@ namespace Amazon.ObservabilityAdmin
         public static readonly LogType ALB_HEALTH_CHECK_LOGS = new LogType("ALB_HEALTH_CHECK_LOGS");
 
         /// <summary>
+        /// Constant ALERT_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALERT_LOGS = new LogType("ALERT_LOGS");
+
+        /// <summary>
         /// Constant APPLICATION_LOGS for LogType
         /// </summary>
         public static readonly LogType APPLICATION_LOGS = new LogType("APPLICATION_LOGS");
@@ -692,6 +738,11 @@ namespace Amazon.ObservabilityAdmin
         public static readonly LogType CONNECTION_LOGS = new LogType("CONNECTION_LOGS");
 
         /// <summary>
+        /// Constant FLOW_LOGS for LogType
+        /// </summary>
+        public static readonly LogType FLOW_LOGS = new LogType("FLOW_LOGS");
+
+        /// <summary>
         /// Constant S3_SERVER_ACCESS_LOGS for LogType
         /// </summary>
         public static readonly LogType S3_SERVER_ACCESS_LOGS = new LogType("S3_SERVER_ACCESS_LOGS");
@@ -700,6 +751,11 @@ namespace Amazon.ObservabilityAdmin
         /// Constant SECURITY_FINDING_LOGS for LogType
         /// </summary>
         public static readonly LogType SECURITY_FINDING_LOGS = new LogType("SECURITY_FINDING_LOGS");
+
+        /// <summary>
+        /// Constant TLS_LOGS for LogType
+        /// </summary>
+        public static readonly LogType TLS_LOGS = new LogType("TLS_LOGS");
 
         /// <summary>
         /// Constant USAGE_LOGS for LogType
@@ -926,6 +982,11 @@ namespace Amazon.ObservabilityAdmin
         public static readonly ResourceType AWSCloudWatchOTelEnrichment = new ResourceType("AWS::CloudWatch::OTelEnrichment");
 
         /// <summary>
+        /// Constant AWSCloudWatchOmni for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudWatchOmni = new ResourceType("AWS::CloudWatchOmni");
+
+        /// <summary>
         /// Constant AWSEC2Instance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2Instance = new ResourceType("AWS::EC2::Instance");
@@ -954,6 +1015,11 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSMSKCluster for ResourceType
         /// </summary>
         public static readonly ResourceType AWSMSKCluster = new ResourceType("AWS::MSK::Cluster");
+
+        /// <summary>
+        /// Constant AWSNetworkFirewallFirewall for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSNetworkFirewallFirewall = new ResourceType("AWS::NetworkFirewall::Firewall");
 
         /// <summary>
         /// Constant AWSRoute53ResolverResolverEndpoint for ResourceType

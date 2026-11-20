@@ -35,6 +35,35 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class SourceLogsConfiguration
     {
         /// <summary>
+        /// Gets and sets the property CentralizeWithDataProtection. 
+        /// <para>
+        /// Specifies whether this centralization rule centralizes log events with data protection
+        /// applied. If you don't specify this setting, or you set it to <c>DISABLED</c>, the
+        /// rule centralizes the original log events, including any sensitive data that a data
+        /// protection policy on the source log group masks.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set this to <c>ENABLED</c>, the rule centralizes the same masked data that
+        /// anyone in the source account without the <c>logs:Unmask</c> permission sees. The rule
+        /// doesn't copy the original values to the destination, so you can't unmask them in the
+        /// destination account. The rule centralizes log events from source log groups that don't
+        /// have a data protection policy without changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The setting applies only to log events that the rule centralizes after you enable
+        /// it. It doesn't change log events that the rule already centralized.
+        /// </para>
+        /// </summary>
+        public CentralizeWithDataProtection CentralizeWithDataProtection { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CentralizeWithDataProtection property is set.
+        /// </summary>
+        internal bool IsSetCentralizeWithDataProtection() => this.CentralizeWithDataProtection != null;
+
+        /// <summary>
         /// Gets and sets the property DataSourceSelectionCriteria. 
         /// <para>
         /// The selection criteria that specifies which data sources to centralize. The selection

@@ -39,7 +39,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Gets and sets the property LabelName. 
         /// <para>
         ///  The label name to match, supporting alphanumeric characters, underscores, hyphens,
-        /// and colons. 
+        /// colons, and periods. 
         /// </para>
         /// </summary>
         [AWSProperty(Min = 1, Max = 1024)]

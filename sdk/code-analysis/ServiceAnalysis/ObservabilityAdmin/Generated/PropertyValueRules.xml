@@ -782,7 +782,7 @@
     <property>Amazon.ObservabilityAdmin.Model.LabelNameCondition.LabelName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[0-9A-Za-z_\-:]+$</pattern>
+    <pattern>^[0-9A-Za-z_\-:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.LogGroupNameConfiguration.LogGroupNamePattern</property>
