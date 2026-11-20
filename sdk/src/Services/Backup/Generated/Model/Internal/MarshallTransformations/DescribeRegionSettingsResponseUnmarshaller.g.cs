@@ -59,6 +59,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ResourceTypeOptInIncremental", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, bool, StringUnmarshaller, BoolUnmarshaller>(StringUnmarshaller.Instance, BoolUnmarshaller.Instance);
+                    unmarshalledObject.ResourceTypeOptInIncremental = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ResourceTypeOptInPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, bool, StringUnmarshaller, BoolUnmarshaller>(StringUnmarshaller.Instance, BoolUnmarshaller.Instance);

@@ -80,6 +80,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetResourceTypeOptInIncremental())
+            {
+                context.Writer.WritePropertyName("ResourceTypeOptInIncremental");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResourceTypeOptInIncrementalKvp in publicRequest.ResourceTypeOptInIncremental)
+                {
+                    context.Writer.WritePropertyName(publicRequestResourceTypeOptInIncrementalKvp.Key);
+                    var publicRequestResourceTypeOptInIncrementalValue = publicRequestResourceTypeOptInIncrementalKvp.Value;
+                    context.Writer.WriteBooleanValue(publicRequestResourceTypeOptInIncrementalValue);
+                }
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetResourceTypeOptInPreference())
             {
                 context.Writer.WritePropertyName("ResourceTypeOptInPreference");

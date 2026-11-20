@@ -59,6 +59,34 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceTypeManagementPreference() => this.ResourceTypeManagementPreference != null && (this.ResourceTypeManagementPreference.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property ResourceTypeOptInIncremental. 
+        /// <para>
+        /// Specifies whether you opt in to incremental backups for each resource type in the
+        /// Region. Opt in when you want to reduce backup storage and backup time for large resources
+        /// that change infrequently. Incremental backup opt-in is currently available for Amazon
+        /// DynamoDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view your current incremental backup settings, use the <c>DescribeRegionSettings</c>
+        /// API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, bool> ResourceTypeOptInIncremental { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
+
+        /// <summary>
+        /// Checks to see if the ResourceTypeOptInIncremental property is set.
+        /// </summary>
+        internal bool IsSetResourceTypeOptInIncremental() => this.ResourceTypeOptInIncremental != null && (this.ResourceTypeOptInIncremental.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property ResourceTypeOptInPreference. 
         /// <para>
         /// Updates the list of services along with the opt-in preferences for the Region.
