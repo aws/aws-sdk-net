@@ -378,6 +378,38 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>New Zealand</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>sector</c>. Valid values are <c>Government</c> and
+        /// <c>Business</c>. Non-government customers use <c>Business</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your <c>sector</c> is <c>Government</c>, you can optionally specify the <c>peppolId</c>
+        /// in the <c>newZealandAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Norway</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>TaxRegistrationNumber</c>
+        /// and <c>LocalRegistrationNumber</c>. Use <c>LocalRegistrationNumber</c> to register
+        /// a Norwegian Organisation Number for a business that isn't VAT registered. In that
+        /// case, the <c>registrationId</c> must be the 9-digit Organisation Number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Saudi Arabia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -470,12 +502,48 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>United Arab Emirates</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>unitedArabEmiratesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>VATTaxRegistrationNumber</c>
+        /// and <c>LocalTaxRegistrationNumber</c> (Corporate Tax).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c>, <c>tradeLicenseNumber</c>, and <c>emiratesId</c>
+        /// in the <c>unitedArabEmiratesAdditionalInfo</c> field.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Uruguay</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
         /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Vietnam</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>vatCreditMethod</c> in the <c>vietnamAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>true</c>, the sector must be <c>Business</c>, and
+        /// you must specify the <c>enterpriseIdentificationNumber</c>, <c>electronicTransactionCodeNumber</c>,
+        /// <c>paymentVoucherNumber</c>, and <c>paymentVoucherNumberDate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>false</c>, the sector must be <c>Individual</c>, and
+        /// you must not specify those four fields. The tax registration number can also be 12
+        /// digits.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -791,6 +859,38 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>New Zealand</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>sector</c>. Valid values are <c>Government</c> and
+        /// <c>Business</c>. Non-government customers use <c>Business</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your <c>sector</c> is <c>Government</c>, you can optionally specify the <c>peppolId</c>
+        /// in the <c>newZealandAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Norway</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>TaxRegistrationNumber</c>
+        /// and <c>LocalRegistrationNumber</c>. Use <c>LocalRegistrationNumber</c> to register
+        /// a Norwegian Organisation Number for a business that isn't VAT registered. In that
+        /// case, the <c>registrationId</c> must be the 9-digit Organisation Number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Saudi Arabia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -883,12 +983,48 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>United Arab Emirates</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>unitedArabEmiratesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>VATTaxRegistrationNumber</c>
+        /// and <c>LocalTaxRegistrationNumber</c> (Corporate Tax).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c>, <c>tradeLicenseNumber</c>, and <c>emiratesId</c>
+        /// in the <c>unitedArabEmiratesAdditionalInfo</c> field.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Uruguay</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
         /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Vietnam</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>vatCreditMethod</c> in the <c>vietnamAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>true</c>, the sector must be <c>Business</c>, and
+        /// you must specify the <c>enterpriseIdentificationNumber</c>, <c>electronicTransactionCodeNumber</c>,
+        /// <c>paymentVoucherNumber</c>, and <c>paymentVoucherNumberDate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>false</c>, the sector must be <c>Individual</c>, and
+        /// you must not specify those four fields. The tax registration number can also be 12
+        /// digits.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1752,6 +1888,38 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>New Zealand</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>sector</c>. Valid values are <c>Government</c> and
+        /// <c>Business</c>. Non-government customers use <c>Business</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your <c>sector</c> is <c>Government</c>, you can optionally specify the <c>peppolId</c>
+        /// in the <c>newZealandAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Norway</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>TaxRegistrationNumber</c>
+        /// and <c>LocalRegistrationNumber</c>. Use <c>LocalRegistrationNumber</c> to register
+        /// a Norwegian Organisation Number for a business that isn't VAT registered. In that
+        /// case, the <c>registrationId</c> must be the 9-digit Organisation Number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Saudi Arabia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -1844,12 +2012,48 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>United Arab Emirates</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>unitedArabEmiratesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>VATTaxRegistrationNumber</c>
+        /// and <c>LocalTaxRegistrationNumber</c> (Corporate Tax).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c>, <c>tradeLicenseNumber</c>, and <c>emiratesId</c>
+        /// in the <c>unitedArabEmiratesAdditionalInfo</c> field.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Uruguay</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
         /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Vietnam</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>vatCreditMethod</c> in the <c>vietnamAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>true</c>, the sector must be <c>Business</c>, and
+        /// you must specify the <c>enterpriseIdentificationNumber</c>, <c>electronicTransactionCodeNumber</c>,
+        /// <c>paymentVoucherNumber</c>, and <c>paymentVoucherNumberDate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>false</c>, the sector must be <c>Individual</c>, and
+        /// you must not specify those four fields. The tax registration number can also be 12
+        /// digits.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2164,6 +2368,38 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>New Zealand</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>sector</c>. Valid values are <c>Government</c> and
+        /// <c>Business</c>. Non-government customers use <c>Business</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your <c>sector</c> is <c>Government</c>, you can optionally specify the <c>peppolId</c>
+        /// in the <c>newZealandAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Norway</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>TaxRegistrationNumber</c>
+        /// and <c>LocalRegistrationNumber</c>. Use <c>LocalRegistrationNumber</c> to register
+        /// a Norwegian Organisation Number for a business that isn't VAT registered. In that
+        /// case, the <c>registrationId</c> must be the 9-digit Organisation Number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>norwayAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Saudi Arabia</b> 
         /// </para>
         ///  <ul> <li> 
@@ -2256,12 +2492,48 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>United Arab Emirates</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>taxRegistrationNumberType</c> in the <c>unitedArabEmiratesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>VATTaxRegistrationNumber</c>
+        /// and <c>LocalTaxRegistrationNumber</c> (Corporate Tax).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c>, <c>tradeLicenseNumber</c>, and <c>emiratesId</c>
+        /// in the <c>unitedArabEmiratesAdditionalInfo</c> field.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Uruguay</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>RegistrationType</c> valid values are <c>RUT</c> (Registro Único Tributario),
         /// <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c> (Cedula Identidad).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Vietnam</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>vatCreditMethod</c> in the <c>vietnamAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>true</c>, the sector must be <c>Business</c>, and
+        /// you must specify the <c>enterpriseIdentificationNumber</c>, <c>electronicTransactionCodeNumber</c>,
+        /// <c>paymentVoucherNumber</c>, and <c>paymentVoucherNumberDate</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>vatCreditMethod</c> is <c>false</c>, the sector must be <c>Individual</c>, and
+        /// you must not specify those four fields. The tax registration number can also be 12
+        /// digits.
         /// </para>
         ///  </li> </ul> 
         /// <para>

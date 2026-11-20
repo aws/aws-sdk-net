@@ -258,6 +258,32 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetMonacoAdditionalInfo() => this.MonacoAdditionalInfo != null;
 
         /// <summary>
+        /// Gets and sets the property NewZealandAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.
+        /// </para>
+        /// </summary>
+        public NewZealandAdditionalInfo NewZealandAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NewZealandAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetNewZealandAdditionalInfo() => this.NewZealandAdditionalInfo != null;
+
+        /// <summary>
+        /// Gets and sets the property NorwayAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a Tax Registration Number (TRN) in Norway.
+        /// </para>
+        /// </summary>
+        public NorwayAdditionalInfo NorwayAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NorwayAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetNorwayAdditionalInfo() => this.NorwayAdditionalInfo != null;
+
+        /// <summary>
         /// Gets and sets the property PhilippinesAdditionalInfo. 
         /// <para>
         /// Additional tax information to specify for a TRN in the Philippines.
@@ -360,6 +386,20 @@ namespace Amazon.TaxSettings.Model
         /// Checks to see if the UkraineAdditionalInfo property is set.
         /// </summary>
         internal bool IsSetUkraineAdditionalInfo() => this.UkraineAdditionalInfo != null;
+
+        /// <summary>
+        /// Gets and sets the property UnitedArabEmiratesAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a Tax Registration Number (TRN) in the United
+        /// Arab Emirates.
+        /// </para>
+        /// </summary>
+        public UnitedArabEmiratesAdditionalInfo UnitedArabEmiratesAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UnitedArabEmiratesAdditionalInfo property is set.
+        /// </summary>
+        internal bool IsSetUnitedArabEmiratesAdditionalInfo() => this.UnitedArabEmiratesAdditionalInfo != null;
 
         /// <summary>
         /// Gets and sets the property UzbekistanAdditionalInfo. 

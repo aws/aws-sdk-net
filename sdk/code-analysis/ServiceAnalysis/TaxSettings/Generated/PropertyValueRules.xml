@@ -386,6 +386,14 @@
     <pattern>^[a-zA-Z0-9]{1,12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.NewZealandAdditionalInfo.PeppolId</property>
+    <pattern>^[0-9]{13}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.NorwayAdditionalInfo.PeppolId</property>
+    <pattern>^[0-9]{9}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.PolandAdditionalInfo.IndividualRegistrationNumber</property>
     <pattern>^([0-9]{10})$</pattern>
   </property-value-rule>
@@ -575,6 +583,18 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.UnitedArabEmiratesAdditionalInfo.EmiratesId</property>
+    <pattern>^784-[0-9]{4}-[0-9]{7}-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.UnitedArabEmiratesAdditionalInfo.PeppolId</property>
+    <pattern>^[0-9]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.UnitedArabEmiratesAdditionalInfo.TradeLicenseNumber</property>
+    <pattern>^[0-9]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.UzbekistanAdditionalInfo.VatRegistrationNumber</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -598,7 +618,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.VietnamAdditionalInfo.PaymentVoucherNumber</property>
-    <pattern>^(\d{17}|[A-Za-z]{3}\d{13}|(?=[^A-Za-z]*[A-Za-z][^A-Za-z]*$)[0-9A-Za-z]{17})$</pattern>
+    <pattern>^(\d{17}|\d{20}|[A-Za-z]{3}\d{13}|(?=[^A-Za-z]*[A-Za-z][^A-Za-z]*$)[0-9A-Za-z]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.VietnamAdditionalInfo.PaymentVoucherNumberDate</property>

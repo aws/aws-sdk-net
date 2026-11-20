@@ -186,6 +186,20 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("newZealandAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = NewZealandAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.NewZealandAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("norwayAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = NorwayAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.NorwayAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("philippinesAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = PhilippinesAdditionalInfoUnmarshaller.Instance;
@@ -239,6 +253,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UkraineAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("unitedArabEmiratesAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = UnitedArabEmiratesAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.UnitedArabEmiratesAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

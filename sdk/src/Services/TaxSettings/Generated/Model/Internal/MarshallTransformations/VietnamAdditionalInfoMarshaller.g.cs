@@ -68,6 +68,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("paymentVoucherNumberDate");
                 context.Writer.WriteStringValue(requestObject.PaymentVoucherNumberDate);
             }
+
+            if (requestObject.IsSetVatCreditMethod())
+            {
+                context.Writer.WritePropertyName("vatCreditMethod");
+                context.Writer.WriteBooleanValue(requestObject.VatCreditMethod.Value);
+            }
         }
 
         /// <summary>

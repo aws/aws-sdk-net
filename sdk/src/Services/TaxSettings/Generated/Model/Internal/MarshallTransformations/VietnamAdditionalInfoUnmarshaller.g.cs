@@ -80,6 +80,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.PaymentVoucherNumberDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("vatCreditMethod", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.VatCreditMethod = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

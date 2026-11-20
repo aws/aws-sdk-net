@@ -37,8 +37,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property ElectronicTransactionCodeNumber. 
         /// <para>
-        /// The electronic transaction code number on the tax return document. This field must
-        /// be provided for successful API operation.
+        /// The electronic transaction code number on the tax return document. Required when <c>vatCreditMethod</c>
+        /// is <c>true</c>; must not be specified when it is <c>false</c>.
         /// </para>
         /// </summary>
         public string ElectronicTransactionCodeNumber { get; set; }
@@ -51,8 +51,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property EnterpriseIdentificationNumber. 
         /// <para>
-        /// The enterprise identification number for tax registration. This field must be provided
-        /// for successful API operation.
+        /// The enterprise identification number for tax registration. Required when <c>vatCreditMethod</c>
+        /// is <c>true</c>; must not be specified when it is <c>false</c>.
         /// </para>
         /// </summary>
         public string EnterpriseIdentificationNumber { get; set; }
@@ -65,8 +65,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property PaymentVoucherNumber. 
         /// <para>
-        /// The payment voucher number on the tax return payment document. This field must be
-        /// provided for successful API operation.
+        /// The payment voucher number on the tax return payment document. Required when <c>vatCreditMethod</c>
+        /// is <c>true</c>; must not be specified when it is <c>false</c>.
         /// </para>
         /// </summary>
         public string PaymentVoucherNumber { get; set; }
@@ -79,8 +79,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property PaymentVoucherNumberDate. 
         /// <para>
-        /// The date on the tax return payment document. This field must be provided for successful
-        /// API operation.
+        /// The date on the tax return payment document. Required when <c>vatCreditMethod</c>
+        /// is <c>true</c>; must not be specified when it is <c>false</c>.
         /// </para>
         /// </summary>
         public string PaymentVoucherNumberDate { get; set; }
@@ -89,5 +89,20 @@ namespace Amazon.TaxSettings.Model
         /// Checks to see if the PaymentVoucherNumberDate property is set.
         /// </summary>
         internal bool IsSetPaymentVoucherNumberDate() => this.PaymentVoucherNumberDate != null;
+
+        /// <summary>
+        /// Gets and sets the property VatCreditMethod. 
+        /// <para>
+        /// Whether your business applies the VAT credit method in Vietnam. Specify <c>true</c>
+        /// for a business (sector <c>Business</c>) or <c>false</c> for an individual (sector
+        /// <c>Individual</c>).
+        /// </para>
+        /// </summary>
+        public bool? VatCreditMethod { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VatCreditMethod property is set.
+        /// </summary>
+        internal bool IsSetVatCreditMethod() => this.VatCreditMethod.HasValue;
     }
 }

@@ -487,6 +487,47 @@ namespace Amazon.TaxSettings
     }
 
     /// <summary>
+    /// Constants used for properties of type NorwayTaxRegistrationNumberType.
+    /// </summary>
+    public class NorwayTaxRegistrationNumberType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LocalRegistrationNumber for NorwayTaxRegistrationNumberType
+        /// </summary>
+        public static readonly NorwayTaxRegistrationNumberType LocalRegistrationNumber = new NorwayTaxRegistrationNumberType("LocalRegistrationNumber");
+
+        /// <summary>
+        /// Constant TaxRegistrationNumber for NorwayTaxRegistrationNumberType
+        /// </summary>
+        public static readonly NorwayTaxRegistrationNumberType TaxRegistrationNumber = new NorwayTaxRegistrationNumberType("TaxRegistrationNumber");
+
+        /// <summary>
+        /// Constructs a custom NorwayTaxRegistrationNumberType for a value not among the defined constants.
+        /// </summary>
+        public NorwayTaxRegistrationNumberType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NorwayTaxRegistrationNumberType FindValue(string value)
+        {
+            return FindValue<NorwayTaxRegistrationNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NorwayTaxRegistrationNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PersonType.
     /// </summary>
     public class PersonType : ConstantClass
@@ -935,6 +976,47 @@ namespace Amazon.TaxSettings
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaxRegistrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UaeTaxRegistrationNumberType.
+    /// </summary>
+    public class UaeTaxRegistrationNumberType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LocalTaxRegistrationNumber for UaeTaxRegistrationNumberType
+        /// </summary>
+        public static readonly UaeTaxRegistrationNumberType LocalTaxRegistrationNumber = new UaeTaxRegistrationNumberType("LocalTaxRegistrationNumber");
+
+        /// <summary>
+        /// Constant VATTaxRegistrationNumber for UaeTaxRegistrationNumberType
+        /// </summary>
+        public static readonly UaeTaxRegistrationNumberType VATTaxRegistrationNumber = new UaeTaxRegistrationNumberType("VATTaxRegistrationNumber");
+
+        /// <summary>
+        /// Constructs a custom UaeTaxRegistrationNumberType for a value not among the defined constants.
+        /// </summary>
+        public UaeTaxRegistrationNumberType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UaeTaxRegistrationNumberType FindValue(string value)
+        {
+            return FindValue<UaeTaxRegistrationNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UaeTaxRegistrationNumberType(string value)
         {
             return FindValue(value);
         }

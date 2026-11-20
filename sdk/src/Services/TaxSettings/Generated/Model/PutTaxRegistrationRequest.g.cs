@@ -106,21 +106,34 @@ namespace Amazon.TaxSettings.Model
     /// field. </para> </li> <li> <para> You do not need to provide address and legal name.
     /// These will be populated based on your tax registration number. </para> </li> </ul>
     /// <para> <b>Nepal</b> </para> <ul> <li> <para> The sector valid values are <c>Business</c>
-    /// and <c>Individual</c>. </para> </li> </ul> <para> <b>Saudi Arabia</b> </para> <ul>
-    /// <li> <para> For <c>address</c>, you must specify <c>addressLine3</c>. </para> </li>
-    /// </ul> <para> <b>South Korea</b> </para> <ul> <li> <para> You must specify the <c>certifiedEmailId</c>
-    /// and <c>legalName</c> in the <c>TaxRegistrationEntry</c> object. Use Korean characters
-    /// for <c>legalName</c>. </para> </li> <li> <para> You must specify the <c>businessRepresentativeName</c>,
-    /// <c>itemOfBusiness</c>, and <c>lineOfBusiness</c> in the <c>southKoreaAdditionalInfo</c>
-    /// field of the <c>additionalTaxInformation</c> object. Use Korean characters for these
-    /// fields. </para> </li> <li> <para> You must specify the tax registration certificate
-    /// document in the <c>taxRegistrationDocuments</c> field of the <c>VerificationDetails</c>
-    /// object. </para> </li> <li> <para> For the <c>address</c> object, use Korean characters
-    /// for <c>addressLine1</c>, <c>addressLine2</c> <c>city</c>, <c>postalCode</c>, and <c>stateOrRegion</c>.
-    /// </para> </li> </ul> <para> <b>Spain</b> </para> <ul> <li> <para> You must specify
-    /// the <c>registrationType</c> in the <c>spainAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
-    /// object. </para> </li> <li> <para> If the <c>registrationType</c> is <c>Local</c>,
-    /// you must specify the tax registration certificate document in the <c>taxRegistrationDocuments</c>
+    /// and <c>Individual</c>. </para> </li> </ul> <para> <b>New Zealand</b> </para> <ul>
+    /// <li> <para> You can optionally specify the <c>sector</c>. Valid values are <c>Government</c>
+    /// and <c>Business</c>. Non-government customers use <c>Business</c>. </para> </li> <li>
+    /// <para> If your <c>sector</c> is <c>Government</c>, you can optionally specify the
+    /// <c>peppolId</c> in the <c>newZealandAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+    /// object. </para> </li> </ul> <para> <b>Norway</b> </para> <ul> <li> <para> You can
+    /// optionally specify the <c>taxRegistrationNumberType</c> in the <c>norwayAdditionalInfo</c>
+    /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>TaxRegistrationNumber</c>
+    /// and <c>LocalRegistrationNumber</c>. Use <c>LocalRegistrationNumber</c> to register
+    /// a Norwegian Organisation Number for a business that isn't VAT registered. In that
+    /// case, the <c>registrationId</c> must be the 9-digit Organisation Number. </para> </li>
+    /// <li> <para> You can optionally specify the <c>peppolId</c> in the <c>norwayAdditionalInfo</c>
+    /// field of the <c>additionalTaxInformation</c> object. </para> </li> </ul> <para> <b>Saudi
+    /// Arabia</b> </para> <ul> <li> <para> For <c>address</c>, you must specify <c>addressLine3</c>.
+    /// </para> </li> </ul> <para> <b>South Korea</b> </para> <ul> <li> <para> You must specify
+    /// the <c>certifiedEmailId</c> and <c>legalName</c> in the <c>TaxRegistrationEntry</c>
+    /// object. Use Korean characters for <c>legalName</c>. </para> </li> <li> <para> You
+    /// must specify the <c>businessRepresentativeName</c>, <c>itemOfBusiness</c>, and <c>lineOfBusiness</c>
+    /// in the <c>southKoreaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+    /// object. Use Korean characters for these fields. </para> </li> <li> <para> You must
+    /// specify the tax registration certificate document in the <c>taxRegistrationDocuments</c>
+    /// field of the <c>VerificationDetails</c> object. </para> </li> <li> <para> For the
+    /// <c>address</c> object, use Korean characters for <c>addressLine1</c>, <c>addressLine2</c>
+    /// <c>city</c>, <c>postalCode</c>, and <c>stateOrRegion</c>. </para> </li> </ul> <para>
+    /// <b>Spain</b> </para> <ul> <li> <para> You must specify the <c>registrationType</c>
+    /// in the <c>spainAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+    /// </para> </li> <li> <para> If the <c>registrationType</c> is <c>Local</c>, you must
+    /// specify the tax registration certificate document in the <c>taxRegistrationDocuments</c>
     /// field of the <c>VerificationDetails</c> object. </para> </li> </ul> <para> <b>Turkey</b>
     /// </para> <ul> <li> <para> You must specify the <c>sector</c> in the <c>taxRegistrationEntry</c>
     /// object. </para> </li> <li> <para> If your <c>sector</c> is <c>Business</c>, <c>Individual</c>,
@@ -133,11 +146,24 @@ namespace Amazon.TaxSettings.Model
     /// you're subject to KDV tax, you must specify your industry in the <c>industries</c>
     /// field. </para> </li> <li> <para> For <c>address</c>, you must specify <c>districtOrCounty</c>.
     /// </para> </li> </ul> <para> <b>Ukraine</b> </para> <ul> <li> <para> The sector valid
-    /// values are <c>Business</c> and <c>Individual</c>. </para> </li> </ul> <para> <b>Uruguay</b>
-    /// </para> <ul> <li> <para> <c>RegistrationType</c> valid values are <c>RUT</c> (Registro
-    /// Único Tributario), <c>NIE</c> (Numero de Identificacion del Extranjero), and <c>CI</c>
-    /// (Cedula Identidad). </para> </li> </ul> <para> <b>Philippines</b> </para> <ul> <li>
-    /// <para> You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+    /// values are <c>Business</c> and <c>Individual</c>. </para> </li> </ul> <para> <b>United
+    /// Arab Emirates</b> </para> <ul> <li> <para> You must specify the <c>taxRegistrationNumberType</c>
+    /// in the <c>unitedArabEmiratesAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+    /// object. Valid values are <c>VATTaxRegistrationNumber</c> and <c>LocalTaxRegistrationNumber</c>
+    /// (Corporate Tax). </para> </li> <li> <para> You can optionally specify the <c>peppolId</c>,
+    /// <c>tradeLicenseNumber</c>, and <c>emiratesId</c> in the <c>unitedArabEmiratesAdditionalInfo</c>
+    /// field. </para> </li> </ul> <para> <b>Uruguay</b> </para> <ul> <li> <para> <c>RegistrationType</c>
+    /// valid values are <c>RUT</c> (Registro Único Tributario), <c>NIE</c> (Numero de Identificacion
+    /// del Extranjero), and <c>CI</c> (Cedula Identidad). </para> </li> </ul> <para> <b>Vietnam</b>
+    /// </para> <ul> <li> <para> You must specify the <c>vatCreditMethod</c> in the <c>vietnamAdditionalInfo</c>
+    /// field of the <c>additionalTaxInformation</c> object. </para> </li> <li> <para> If
+    /// <c>vatCreditMethod</c> is <c>true</c>, the sector must be <c>Business</c>, and you
+    /// must specify the <c>enterpriseIdentificationNumber</c>, <c>electronicTransactionCodeNumber</c>,
+    /// <c>paymentVoucherNumber</c>, and <c>paymentVoucherNumberDate</c>. </para> </li> <li>
+    /// <para> If <c>vatCreditMethod</c> is <c>false</c>, the sector must be <c>Individual</c>,
+    /// and you must not specify those four fields. The tax registration number can also be
+    /// 12 digits. </para> </li> </ul> <para> <b>Philippines</b> </para> <ul> <li> <para>
+    /// You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
     /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
     /// status with the Bureau of Internal Revenue (BIR). </para> </li> </ul> <para> <b>Belgium</b>
     /// </para> <ul> <li> <para> You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>

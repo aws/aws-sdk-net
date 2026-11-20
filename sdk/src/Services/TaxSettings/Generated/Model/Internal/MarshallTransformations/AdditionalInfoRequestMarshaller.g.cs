@@ -221,6 +221,28 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetNewZealandAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("newZealandAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NewZealandAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.NewZealandAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetNorwayAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("norwayAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NorwayAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.NorwayAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetPhilippinesAdditionalInfo())
             {
                 context.Writer.WritePropertyName("philippinesAdditionalInfo");
@@ -305,6 +327,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = UkraineAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.UkraineAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetUnitedArabEmiratesAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("unitedArabEmiratesAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UnitedArabEmiratesAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.UnitedArabEmiratesAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }
