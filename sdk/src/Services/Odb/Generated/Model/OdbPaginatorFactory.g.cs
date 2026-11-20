@@ -65,6 +65,14 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Paginator for ListAutonomousDatabaseRefreshableClones operation
+        /// </summary>
+        public IListAutonomousDatabaseRefreshableClonesPaginator ListAutonomousDatabaseRefreshableClones(ListAutonomousDatabaseRefreshableClonesRequest request)
+        {
+            return new ListAutonomousDatabaseRefreshableClonesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAutonomousDatabaseVersions operation
         /// </summary>
         public IListAutonomousDatabaseVersionsPaginator ListAutonomousDatabaseVersions(ListAutonomousDatabaseVersionsRequest request)

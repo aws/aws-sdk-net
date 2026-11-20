@@ -57,6 +57,12 @@ namespace Amazon.Odb.Model
         IListAutonomousDatabasePeersPaginator ListAutonomousDatabasePeers(ListAutonomousDatabasePeersRequest request);
 
         /// <summary>
+        /// Paginator for ListAutonomousDatabaseRefreshableClones operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAutonomousDatabaseRefreshableClonesPaginator ListAutonomousDatabaseRefreshableClones(ListAutonomousDatabaseRefreshableClonesRequest request);
+
+        /// <summary>
         /// Paginator for ListAutonomousDatabaseVersions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
