@@ -361,6 +361,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
 
         /// <summary>
+        /// Gets and sets the property UnmaterializedCalculatedColumns. 
+        /// <para>
+        /// A list of unmaterialized calculated columns for the dataset. These columns are computed
+        /// at analysis time and are not stored in the prepared data. You can only use this with
+        /// the new data preparation experience.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 512)]
+        public List<UnmaterializedCalculatedColumn> UnmaterializedCalculatedColumns { get; set; } = AWSConfigs.InitializeCollections ? new List<UnmaterializedCalculatedColumn>() : null;
+
+        /// <summary>
+        /// Checks to see if the UnmaterializedCalculatedColumns property is set.
+        /// </summary>
+        internal bool IsSetUnmaterializedCalculatedColumns() => this.UnmaterializedCalculatedColumns != null && (this.UnmaterializedCalculatedColumns.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property UseAs. 
         /// <para>
         /// The usage of the dataset. <c>RLS_RULES</c> must be specified for RLS permission datasets.

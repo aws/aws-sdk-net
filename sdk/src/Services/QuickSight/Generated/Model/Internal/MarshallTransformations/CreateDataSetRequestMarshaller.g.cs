@@ -285,6 +285,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 context.Writer.WriteEndArray();
             }
+            if (publicRequest.IsSetUnmaterializedCalculatedColumns())
+            {
+                context.Writer.WritePropertyName("UnmaterializedCalculatedColumns");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestUnmaterializedCalculatedColumnsListValue in publicRequest.UnmaterializedCalculatedColumns)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UnmaterializedCalculatedColumnMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUnmaterializedCalculatedColumnsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetUseAs())
             {
                 context.Writer.WritePropertyName("UseAs");

@@ -67,6 +67,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("FederatedCatalog", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FederatedCatalog = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Host", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

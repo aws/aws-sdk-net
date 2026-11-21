@@ -193,6 +193,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("UnmaterializedCalculatedColumns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<UnmaterializedCalculatedColumn, UnmaterializedCalculatedColumnUnmarshaller>(UnmaterializedCalculatedColumnUnmarshaller.Instance);
+                    unmarshalledObject.UnmaterializedCalculatedColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("UseAs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

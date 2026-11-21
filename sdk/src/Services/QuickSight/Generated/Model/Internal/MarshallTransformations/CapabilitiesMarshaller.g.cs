@@ -525,6 +525,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateLinearAction);
             }
 
+            if (requestObject.IsSetCreateAndUpdateLocalMCPAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateLocalMCPAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateLocalMCPAction);
+            }
+
             if (requestObject.IsSetCreateAndUpdateMCPAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateMCPAction");
@@ -1381,6 +1387,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LinearAction");
                 context.Writer.WriteStringValue(requestObject.LinearAction);
+            }
+
+            if (requestObject.IsSetLocalMCPAction())
+            {
+                context.Writer.WritePropertyName("LocalMCPAction");
+                context.Writer.WriteStringValue(requestObject.LocalMCPAction);
             }
 
             if (requestObject.IsSetMCPAction())
@@ -3193,6 +3205,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseLinearAction");
                 context.Writer.WriteStringValue(requestObject.UseLinearAction);
+            }
+
+            if (requestObject.IsSetUseLocalMCPAction())
+            {
+                context.Writer.WritePropertyName("UseLocalMCPAction");
+                context.Writer.WriteStringValue(requestObject.UseLocalMCPAction);
             }
 
             if (requestObject.IsSetUseMCPAction())

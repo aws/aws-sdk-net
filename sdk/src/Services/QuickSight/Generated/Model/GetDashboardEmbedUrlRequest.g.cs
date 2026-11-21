@@ -43,10 +43,10 @@ namespace Amazon.QuickSight.Model
     /// valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional
     /// <c>SessionLifetimeInMinutes</c> parameter to customize session duration. </para> </li>
     /// </ul> <para> For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-    /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick User Guide</i>. </para>
-    /// <para> For more information about the high-level steps for embedding and for an interactive
-    /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-    /// Quick Developer Portal</a>. </para>
+    /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Quick User Guide</i>. </para> <para>
+    /// For more information about the high-level steps for embedding and for an interactive
+    /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+    /// Developer Portal</a>. </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
     {
@@ -196,9 +196,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon Quick user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c>
-        /// identity type. You can use this for any Amazon Quick users in your account (readers,
-        /// authors, or admins) authenticated as one of the following:
+        /// The Quick user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c> identity
+        /// type. You can use this for any Quick users in your account (readers, authors, or admins)
+        /// authenticated as one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

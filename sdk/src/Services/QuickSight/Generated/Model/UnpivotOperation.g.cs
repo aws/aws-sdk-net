@@ -88,7 +88,7 @@ namespace Amazon.QuickSight.Model
         /// A unique identifier for the new column that will contain the unpivoted column names.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string UnpivotedLabelColumnId { get; set; }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// A unique identifier for the new column that will contain the unpivoted values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string UnpivotedValueColumnId { get; set; }
 
         /// <summary>

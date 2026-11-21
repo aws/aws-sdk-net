@@ -45,6 +45,12 @@ namespace Amazon.QuickSight.Model
         IDescribeFolderResolvedPermissionsPaginator DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListAccessControlApplications operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAccessControlApplicationsPaginator ListAccessControlApplications(ListAccessControlApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for ListActionConnectors operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -171,10 +177,28 @@ namespace Amazon.QuickSight.Model
         IListIAMPolicyAssignmentsForUserPaginator ListIAMPolicyAssignmentsForUser(ListIAMPolicyAssignmentsForUserRequest request);
 
         /// <summary>
+        /// Paginator for ListInboundConnectorApplicationAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInboundConnectorApplicationAssociationsPaginator ListInboundConnectorApplicationAssociations(ListInboundConnectorApplicationAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInboundConnectors operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListInboundConnectorsPaginator ListInboundConnectors(ListInboundConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListIngestions operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListIngestionsPaginator ListIngestions(ListIngestionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListKnowledgeBaseRefreshSchedules operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListKnowledgeBaseRefreshSchedulesPaginator ListKnowledgeBaseRefreshSchedules(ListKnowledgeBaseRefreshSchedulesRequest request);
 
         /// <summary>
         /// Paginator for ListKnowledgeBases operation
@@ -199,6 +223,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListOAuthClientApplicationsPaginator ListOAuthClientApplications(ListOAuthClientApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrincipalsForPolicy operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPrincipalsForPolicyPaginator ListPrincipalsForPolicy(ListPrincipalsForPolicyRequest request);
 
         /// <summary>
         /// Paginator for ListRoleMemberships operation

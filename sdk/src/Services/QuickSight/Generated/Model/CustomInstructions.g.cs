@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// A text field for providing additional guidance or context for response generation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Sensitive = true, Min = 0, Max = 5000)]
+        [AWSProperty(Required = true, Sensitive = true, Min = 0, Max = 50000)]
         public string CustomInstructionsString { get; set; }
 
         /// <summary>

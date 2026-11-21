@@ -1,0 +1,64 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.QuickSight.Model
+{
+    /// <summary>
+    /// The Quick Sight authentication configuration of an access control application.
+    /// </summary>
+    public partial class QuickAuthenticationConfig
+    {
+        /// <summary>
+        /// Gets and sets the property QuickAuthenticationConfigurationDetail. 
+        /// <para>
+        /// The details of the Quick Sight authentication configuration.
+        /// </para>
+        /// </summary>
+        public QuickAuthenticationConfigurationDetail QuickAuthenticationConfigurationDetail { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QuickAuthenticationConfigurationDetail property is set.
+        /// </summary>
+        internal bool IsSetQuickAuthenticationConfigurationDetail() => this.QuickAuthenticationConfigurationDetail != null;
+
+        /// <summary>
+        /// Gets and sets the property QuickAuthenticationType. 
+        /// <para>
+        /// How the external client authenticates to Quick Sight.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public QuickAuthenticationType QuickAuthenticationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QuickAuthenticationType property is set.
+        /// </summary>
+        internal bool IsSetQuickAuthenticationType() => this.QuickAuthenticationType != null;
+    }
+}

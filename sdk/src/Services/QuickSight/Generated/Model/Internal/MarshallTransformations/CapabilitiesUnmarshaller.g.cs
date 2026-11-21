@@ -613,6 +613,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CreateAndUpdateLocalMCPAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreateAndUpdateLocalMCPAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CreateAndUpdateMCPAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -1611,6 +1618,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LinearAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LocalMCPAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LocalMCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -3725,6 +3739,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseLinearAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("UseLocalMCPAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UseLocalMCPAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

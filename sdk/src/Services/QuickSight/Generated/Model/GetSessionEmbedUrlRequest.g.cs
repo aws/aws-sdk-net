@@ -39,10 +39,10 @@ namespace Amazon.QuickSight.Model
     /// of these features, add a custom permissions profile to the user with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
     /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
     /// </c> API operation to add a new user with a custom permission profile attached. For
-    /// more information, see the following sections in the <i>Amazon Quick User Guide</i>:
-    /// <ul> <li> <para> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
+    /// more information, see the following sections in the <i>Quick User Guide</i>: <ul>
+    /// <li> <para> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding
     /// Analytics</a> </para> </li> <li> <para> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-    /// Access to the Amazon Quick Console</a> </para> </li> </ul>
+    /// Access to the Quick Console</a> </para> </li> </ul>
     /// </summary>
     public partial class GetSessionEmbedUrlRequest : AmazonQuickSightRequest
     {
@@ -120,9 +120,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon Quick user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c>
-        /// identity type. You can use this for any type of Amazon Quick users in your account
-        /// (readers, authors, or admins). They need to be authenticated as one of the following:
+        /// The Quick user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c> identity
+        /// type. You can use this for any type of Quick users in your account (readers, authors,
+        /// or admins). They need to be authenticated as one of the following:
         /// </para>
         ///  <ol> <li> 
         /// <para>

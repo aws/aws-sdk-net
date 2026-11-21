@@ -1049,6 +1049,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateLinearAction() => this.CreateAndUpdateLinearAction != null;
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateLocalMCPAction. 
+        /// <para>
+        /// The ability to create and update local Model Context Protocol (MCP) server configurations.
+        /// Denying this capability does not by itself deny use of previously configured local
+        /// MCP servers.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateLocalMCPAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreateAndUpdateLocalMCPAction property is set.
+        /// </summary>
+        internal bool IsSetCreateAndUpdateLocalMCPAction() => this.CreateAndUpdateLocalMCPAction != null;
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateMCPAction. 
         /// <para>
         /// The ability to create and update Model Context Protocol actions.
@@ -2886,6 +2901,20 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the LinearAction property is set.
         /// </summary>
         internal bool IsSetLinearAction() => this.LinearAction != null;
+
+        /// <summary>
+        /// Gets and sets the property LocalMCPAction. 
+        /// <para>
+        /// The ability to create, update, and use local Model Context Protocol (MCP) actions.
+        /// This capability includes <c>CreateAndUpdateLocalMCPAction</c> and <c>UseLocalMCPAction</c>.
+        /// </para>
+        /// </summary>
+        public CapabilityState LocalMCPAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LocalMCPAction property is set.
+        /// </summary>
+        internal bool IsSetLocalMCPAction() => this.LocalMCPAction != null;
 
         /// <summary>
         /// Gets and sets the property MCPAction. 
@@ -6764,6 +6793,20 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the UseLinearAction property is set.
         /// </summary>
         internal bool IsSetUseLinearAction() => this.UseLinearAction != null;
+
+        /// <summary>
+        /// Gets and sets the property UseLocalMCPAction. 
+        /// <para>
+        /// The ability to start local Model Context Protocol (MCP) servers and use their actions,
+        /// including actions from previously configured local MCP servers.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseLocalMCPAction { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseLocalMCPAction property is set.
+        /// </summary>
+        internal bool IsSetUseLocalMCPAction() => this.UseLocalMCPAction != null;
 
         /// <summary>
         /// Gets and sets the property UseMCPAction. 

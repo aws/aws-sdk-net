@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// preserves the existing calculated column.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string ColumnId { get; set; }
 
         /// <summary>

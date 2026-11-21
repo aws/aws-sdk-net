@@ -30,7 +30,7 @@ namespace Amazon.QuickSight
     /// <summary>
     /// <para>Interface for accessing QuickSight</para>
     ///
-    /// Amazon Quick API Reference 
+    /// Quick API Reference 
     /// <para>
     /// Amazon Quick Sight is a fully managed, serverless business intelligence service for
     /// the Amazon Web Services Cloud that makes it easy to extend data and insights to every
@@ -175,6 +175,77 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Removes a governance policy from multiple Amazon Quick Sight principals in a single
+        /// request. A principal that doesn't have the policy is reported as a success.
+        /// 
+        ///  
+        /// <para>
+        /// Each entry succeeds or fails independently. Check the <c>Errors</c> list in the response
+        /// for entries that failed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeletePolicyAssignmentByPolicy service method.</param>
+        /// <returns>The response from the BatchDeletePolicyAssignmentByPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeletePolicyAssignmentByPolicy">REST API Reference for BatchDeletePolicyAssignmentByPolicy Operation</seealso>
+        BatchDeletePolicyAssignmentByPolicyResponse BatchDeletePolicyAssignmentByPolicy(BatchDeletePolicyAssignmentByPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Removes a governance policy from multiple Amazon Quick Sight principals in a single
+        /// request. A principal that doesn't have the policy is reported as a success.
+        /// 
+        ///  
+        /// <para>
+        /// Each entry succeeds or fails independently. Check the <c>Errors</c> list in the response
+        /// for entries that failed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeletePolicyAssignmentByPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchDeletePolicyAssignmentByPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeletePolicyAssignmentByPolicy">REST API Reference for BatchDeletePolicyAssignmentByPolicy Operation</seealso>
+        Task<BatchDeletePolicyAssignmentByPolicyResponse> BatchDeletePolicyAssignmentByPolicyAsync(BatchDeletePolicyAssignmentByPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes reviewed answers for Q Topic.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTopicReviewedAnswer service method.</param>
@@ -291,6 +362,79 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Assigns a governance policy to multiple Amazon Quick Sight principals in a single
+        /// request. If a principal already has a policy of the same type, this operation replaces
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// Each entry succeeds or fails independently. Check the <c>Errors</c> list in the response
+        /// for entries that failed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutPolicyAssignmentByPolicy service method.</param>
+        /// <returns>The response from the BatchPutPolicyAssignmentByPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchPutPolicyAssignmentByPolicy">REST API Reference for BatchPutPolicyAssignmentByPolicy Operation</seealso>
+        BatchPutPolicyAssignmentByPolicyResponse BatchPutPolicyAssignmentByPolicy(BatchPutPolicyAssignmentByPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Assigns a governance policy to multiple Amazon Quick Sight principals in a single
+        /// request. If a principal already has a policy of the same type, this operation replaces
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// Each entry succeeds or fails independently. Check the <c>Errors</c> list in the response
+        /// for entries that failed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutPolicyAssignmentByPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchPutPolicyAssignmentByPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchPutPolicyAssignmentByPolicy">REST API Reference for BatchPutPolicyAssignmentByPolicy Operation</seealso>
+        Task<BatchPutPolicyAssignmentByPolicyResponse> BatchPutPolicyAssignmentByPolicyAsync(BatchPutPolicyAssignmentByPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Cancels an ongoing ingestion of data into SPICE.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelIngestion service method.</param>
@@ -351,6 +495,176 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CancelIngestion">REST API Reference for CancelIngestion Operation</seealso>
         Task<CancelIngestionResponse> CancelIngestionAsync(CancelIngestionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an access control application in an Amazon Quick Sight account. You use an
+        /// access control application to define how an external client signs in to Quick Sight
+        /// with OAuth 2.0.
+        /// 
+        ///  
+        /// <para>
+        /// To connect a client to Quick Sight through an inbound connector, associate the access
+        /// control application with the connector by using the <c>UpdateInboundConnectorApplicationAssociations</c>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlApplication service method.</param>
+        /// <returns>The response from the CreateAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplication">REST API Reference for CreateAccessControlApplication Operation</seealso>
+        CreateAccessControlApplicationResponse CreateAccessControlApplication(CreateAccessControlApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an access control application in an Amazon Quick Sight account. You use an
+        /// access control application to define how an external client signs in to Quick Sight
+        /// with OAuth 2.0.
+        /// 
+        ///  
+        /// <para>
+        /// To connect a client to Quick Sight through an inbound connector, associate the access
+        /// control application with the connector by using the <c>UpdateInboundConnectorApplicationAssociations</c>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplication">REST API Reference for CreateAccessControlApplication Operation</seealso>
+        Task<CreateAccessControlApplicationResponse> CreateAccessControlApplicationAsync(CreateAccessControlApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a client secret for an access control application. An access control application
+        /// can have up to two client secrets, so that you can rotate a secret without downtime.
+        /// 
+        ///  
+        /// <para>
+        /// Provide the Amazon Web Services Secrets Manager (Secrets Manager) secret ARN for each
+        /// Region where the client secret, issued by your identity provider (IdP), is stored.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlApplicationSecret service method.</param>
+        /// <returns>The response from the CreateAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplicationSecret">REST API Reference for CreateAccessControlApplicationSecret Operation</seealso>
+        CreateAccessControlApplicationSecretResponse CreateAccessControlApplicationSecret(CreateAccessControlApplicationSecretRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a client secret for an access control application. An access control application
+        /// can have up to two client secrets, so that you can rotate a secret without downtime.
+        /// 
+        ///  
+        /// <para>
+        /// Provide the Amazon Web Services Secrets Manager (Secrets Manager) secret ARN for each
+        /// Region where the client secret, issued by your identity provider (IdP), is stored.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlApplicationSecret service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccessControlApplicationSecret">REST API Reference for CreateAccessControlApplicationSecret Operation</seealso>
+        Task<CreateAccessControlApplicationSecretResponse> CreateAccessControlApplicationSecretAsync(CreateAccessControlApplicationSecretRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1924,6 +2238,99 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an inbound connector in a Quick Sight account. An inbound connector is the
+        /// endpoint that an external client, such as the Quick Sight desktop application, uses
+        /// to reach Quick Sight in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Your users authenticate through the access control applications that are associated
+        /// with the connector. To manage these associations, use <c>UpdateInboundConnectorApplicationAssociations</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An account can have one <c>QUICK_DESKTOP</c> inbound connector in each Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInboundConnector service method.</param>
+        /// <returns>The response from the CreateInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateInboundConnector">REST API Reference for CreateInboundConnector Operation</seealso>
+        CreateInboundConnectorResponse CreateInboundConnector(CreateInboundConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an inbound connector in a Quick Sight account. An inbound connector is the
+        /// endpoint that an external client, such as the Quick Sight desktop application, uses
+        /// to reach Quick Sight in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Your users authenticate through the access control applications that are associated
+        /// with the connector. To manage these associations, use <c>UpdateInboundConnectorApplicationAssociations</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An account can have one <c>QUICK_DESKTOP</c> inbound connector in each Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInboundConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateInboundConnector">REST API Reference for CreateInboundConnector Operation</seealso>
+        Task<CreateInboundConnectorResponse> CreateInboundConnectorAsync(CreateInboundConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates and starts a new SPICE ingestion for a dataset. You can manually refresh datasets
         /// in an Enterprise edition account 32 times in a 24-hour period. You can manually refresh
         /// datasets in a Standard edition account 8 times in a 24-hour period. Each 24-hour period
@@ -2149,6 +2556,103 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a schedule that periodically refreshes an Amazon Quick Sight knowledge base
+        /// at the frequency that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// A knowledge base can have only one refresh schedule. If the knowledge base already
+        /// has a refresh schedule, the request fails with a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKnowledgeBaseRefreshSchedule service method.</param>
+        /// <returns>The response from the CreateKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBaseRefreshSchedule">REST API Reference for CreateKnowledgeBaseRefreshSchedule Operation</seealso>
+        CreateKnowledgeBaseRefreshScheduleResponse CreateKnowledgeBaseRefreshSchedule(CreateKnowledgeBaseRefreshScheduleRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a schedule that periodically refreshes an Amazon Quick Sight knowledge base
+        /// at the frequency that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// A knowledge base can have only one refresh schedule. If the knowledge base already
+        /// has a refresh schedule, the request fails with a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKnowledgeBaseRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBaseRefreshSchedule">REST API Reference for CreateKnowledgeBaseRefreshSchedule Operation</seealso>
+        Task<CreateKnowledgeBaseRefreshScheduleResponse> CreateKnowledgeBaseRefreshScheduleAsync(CreateKnowledgeBaseRefreshScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3275,6 +3779,146 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection">REST API Reference for CreateVPCConnection Operation</seealso>
         Task<CreateVPCConnectionResponse> CreateVPCConnectionAsync(CreateVPCConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an access control application. You can't delete an access control application
+        /// that is associated with an inbound connector whose status is <c>ENABLED</c>.
+        /// 
+        ///  
+        /// <para>
+        /// If another update to the same application is in progress, Quick Sight returns a <c>ConflictException</c>.
+        /// Retry the request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlApplication service method.</param>
+        /// <returns>The response from the DeleteAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplication">REST API Reference for DeleteAccessControlApplication Operation</seealso>
+        DeleteAccessControlApplicationResponse DeleteAccessControlApplication(DeleteAccessControlApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an access control application. You can't delete an access control application
+        /// that is associated with an inbound connector whose status is <c>ENABLED</c>.
+        /// 
+        ///  
+        /// <para>
+        /// If another update to the same application is in progress, Quick Sight returns a <c>ConflictException</c>.
+        /// Retry the request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplication">REST API Reference for DeleteAccessControlApplication Operation</seealso>
+        Task<DeleteAccessControlApplicationResponse> DeleteAccessControlApplicationAsync(DeleteAccessControlApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a client secret from an access control application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlApplicationSecret service method.</param>
+        /// <returns>The response from the DeleteAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplicationSecret">REST API Reference for DeleteAccessControlApplicationSecret Operation</seealso>
+        DeleteAccessControlApplicationSecretResponse DeleteAccessControlApplicationSecret(DeleteAccessControlApplicationSecretRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a client secret from an access control application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlApplicationSecret service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccessControlApplicationSecret">REST API Reference for DeleteAccessControlApplicationSecret Operation</seealso>
+        Task<DeleteAccessControlApplicationSecretResponse> DeleteAccessControlApplicationSecretAsync(DeleteAccessControlApplicationSecretRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5086,6 +5730,73 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes an inbound connector. You must disable the connector before you can delete
+        /// it. When you delete a connector, Quick Sight doesn't delete the access control applications
+        /// that are associated with it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInboundConnector service method.</param>
+        /// <returns>The response from the DeleteInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteInboundConnector">REST API Reference for DeleteInboundConnector Operation</seealso>
+        DeleteInboundConnectorResponse DeleteInboundConnector(DeleteInboundConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an inbound connector. You must disable the connector before you can delete
+        /// it. When you delete a connector, Quick Sight doesn't delete the access control applications
+        /// that are associated with it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInboundConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteInboundConnector">REST API Reference for DeleteInboundConnector Operation</seealso>
+        Task<DeleteInboundConnectorResponse> DeleteInboundConnectorAsync(DeleteInboundConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes a knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBase service method.</param>
@@ -5166,6 +5877,77 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes the refresh schedule for an Amazon Quick Sight knowledge base. Delete the
+        /// schedule when you no longer want the knowledge base to refresh automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseRefreshSchedule service method.</param>
+        /// <returns>The response from the DeleteKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBaseRefreshSchedule">REST API Reference for DeleteKnowledgeBaseRefreshSchedule Operation</seealso>
+        DeleteKnowledgeBaseRefreshScheduleResponse DeleteKnowledgeBaseRefreshSchedule(DeleteKnowledgeBaseRefreshScheduleRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes the refresh schedule for an Amazon Quick Sight knowledge base. Delete the
+        /// schedule when you no longer want the knowledge base to refresh automatically.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBaseRefreshSchedule">REST API Reference for DeleteKnowledgeBaseRefreshSchedule Operation</seealso>
+        Task<DeleteKnowledgeBaseRefreshScheduleResponse> DeleteKnowledgeBaseRefreshScheduleAsync(DeleteKnowledgeBaseRefreshScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -5367,6 +6149,73 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteOAuthClientApplication">REST API Reference for DeleteOAuthClientApplication Operation</seealso>
         Task<DeleteOAuthClientApplicationResponse> DeleteOAuthClientApplicationAsync(DeleteOAuthClientApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes a governance policy from an Amazon Quick Sight principal. If the principal
+        /// doesn't have the specified policy, the request succeeds and makes no change. If the
+        /// principal has a different policy of the same type, the request fails with a <c>ConflictException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyAssignment service method.</param>
+        /// <returns>The response from the DeletePolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeletePolicyAssignment">REST API Reference for DeletePolicyAssignment Operation</seealso>
+        DeletePolicyAssignmentResponse DeletePolicyAssignment(DeletePolicyAssignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Removes a governance policy from an Amazon Quick Sight principal. If the principal
+        /// doesn't have the specified policy, the request succeeds and makes no change. If the
+        /// principal has a different policy of the same type, the request fails with a <c>ConflictException</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyAssignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeletePolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeletePolicyAssignment">REST API Reference for DeletePolicyAssignment Operation</seealso>
+        Task<DeletePolicyAssignmentResponse> DeletePolicyAssignmentAsync(DeletePolicyAssignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -6388,6 +7237,65 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection">REST API Reference for DeleteVPCConnection Operation</seealso>
         Task<DeleteVPCConnectionResponse> DeleteVPCConnectionAsync(DeleteVPCConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes an access control application. The response includes client secret metadata,
+        /// but never client secret values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessControlApplication service method.</param>
+        /// <returns>The response from the DescribeAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccessControlApplication">REST API Reference for DescribeAccessControlApplication Operation</seealso>
+        DescribeAccessControlApplicationResponse DescribeAccessControlApplication(DescribeAccessControlApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Describes an access control application. The response includes client secret metadata,
+        /// but never client secret values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessControlApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccessControlApplication">REST API Reference for DescribeAccessControlApplication Operation</seealso>
+        Task<DescribeAccessControlApplicationResponse> DescribeAccessControlApplicationAsync(DescribeAccessControlApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -9422,6 +10330,63 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes an inbound connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundConnector service method.</param>
+        /// <returns>The response from the DescribeInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeInboundConnector">REST API Reference for DescribeInboundConnector Operation</seealso>
+        DescribeInboundConnectorResponse DescribeInboundConnector(DescribeInboundConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Describes an inbound connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeInboundConnector">REST API Reference for DescribeInboundConnector Operation</seealso>
+        Task<DescribeInboundConnectorResponse> DescribeInboundConnectorAsync(DescribeInboundConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes a SPICE ingestion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIngestion service method.</param>
@@ -9744,6 +10709,85 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBasePermissions">REST API Reference for DescribeKnowledgeBasePermissions Operation</seealso>
         Task<DescribeKnowledgeBasePermissionsResponse> DescribeKnowledgeBasePermissionsAsync(DescribeKnowledgeBasePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Describes the refresh schedule for an Amazon Quick Sight knowledge base, including
+        /// the schedule's frequency, start time, and state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBaseRefreshSchedule service method.</param>
+        /// <returns>The response from the DescribeKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBaseRefreshSchedule">REST API Reference for DescribeKnowledgeBaseRefreshSchedule Operation</seealso>
+        DescribeKnowledgeBaseRefreshScheduleResponse DescribeKnowledgeBaseRefreshSchedule(DescribeKnowledgeBaseRefreshScheduleRequest request);
+#endif
+
+        /// <summary>
+        /// Describes the refresh schedule for an Amazon Quick Sight knowledge base, including
+        /// the schedule's frequency, start time, and state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBaseRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBaseRefreshSchedule">REST API Reference for DescribeKnowledgeBaseRefreshSchedule Operation</seealso>
+        Task<DescribeKnowledgeBaseRefreshScheduleResponse> DescribeKnowledgeBaseRefreshScheduleAsync(DescribeKnowledgeBaseRefreshScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -11439,9 +12483,9 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon Quick dashboard or visual
-        /// in your website, without having to register any reader users. Before you use this
-        /// action, make sure that you have configured the dashboards and permissions.
+        /// Generates an embed URL that you can use to embed an Quick dashboard or visual in your
+        /// website, without having to register any reader users. Before you use this action,
+        /// make sure that you have configured the dashboards and permissions.
         /// 
         ///  
         /// <para>
@@ -11461,18 +12505,18 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon Quick.
+        /// You are charged only when the URL is used or there is interaction with Quick.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForAnonymousUser service method.</param>
@@ -11522,9 +12566,9 @@ namespace Amazon.QuickSight
 #endif
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon Quick dashboard or visual
-        /// in your website, without having to register any reader users. Before you use this
-        /// action, make sure that you have configured the dashboards and permissions.
+        /// Generates an embed URL that you can use to embed an Quick dashboard or visual in your
+        /// website, without having to register any reader users. Before you use this action,
+        /// make sure that you have configured the dashboards and permissions.
         /// 
         ///  
         /// <para>
@@ -11544,18 +12588,18 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon Quick.
+        /// You are charged only when the URL is used or there is interaction with Quick.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForAnonymousUser service method.</param>
@@ -11608,10 +12652,10 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon Quick experience in your
-        /// website. This action can be used for any type of user registered in an Amazon Quick
-        /// account. Before you use this action, make sure that you have configured the relevant
-        /// Amazon Quick resource and permissions.
+        /// Generates an embed URL that you can use to embed an Quick experience in your website.
+        /// This action can be used for any type of user registered in an Quick account. Before
+        /// you use this action, make sure that you have configured the relevant Quick resource
+        /// and permissions.
         /// 
         ///  
         /// <para>
@@ -11635,18 +12679,18 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon Quick.
+        /// You are charged only when the URL is used or there is interaction with Quick.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForRegisteredUser service method.</param>
@@ -11701,10 +12745,10 @@ namespace Amazon.QuickSight
 #endif
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon Quick experience in your
-        /// website. This action can be used for any type of user registered in an Amazon Quick
-        /// account. Before you use this action, make sure that you have configured the relevant
-        /// Amazon Quick resource and permissions.
+        /// Generates an embed URL that you can use to embed an Quick experience in your website.
+        /// This action can be used for any type of user registered in an Quick account. Before
+        /// you use this action, make sure that you have configured the relevant Quick resource
+        /// and permissions.
         /// 
         ///  
         /// <para>
@@ -11728,18 +12772,18 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are charged only when the URL is used or there is interaction with Amazon Quick.
+        /// You are charged only when the URL is used or there is interaction with Quick.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-        /// Analytics</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateEmbedUrlForRegisteredUser service method.</param>
@@ -11973,13 +13017,13 @@ namespace Amazon.QuickSight
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -12080,13 +13124,13 @@ namespace Amazon.QuickSight
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick User Guide</i>.
+        /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
-        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Developer Portal</a>.
+        /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Quick
+        /// Developer Portal</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -12514,6 +13558,65 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Describes the policy of the specified type that an Amazon Quick Sight principal has.
+        /// If the principal has no policy of that type, the response contains no policy details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyAssignment service method.</param>
+        /// <returns>The response from the GetPolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetPolicyAssignment">REST API Reference for GetPolicyAssignment Operation</seealso>
+        GetPolicyAssignmentResponse GetPolicyAssignment(GetPolicyAssignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Describes the policy of the specified type that an Amazon Quick Sight principal has.
+        /// If the principal has no policy of that type, the response contains no policy details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyAssignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetPolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetPolicyAssignment">REST API Reference for GetPolicyAssignment Operation</seealso>
+        Task<GetPolicyAssignmentResponse> GetPolicyAssignmentAsync(GetPolicyAssignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
         /// Amazon Quick Sight console in your web server code. Use <c>GetSessionEmbedUrl</c>
         /// where you want to provide an authoring portal that allows users to create data sources,
@@ -12523,7 +13626,7 @@ namespace Amazon.QuickSight
         /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </c> API operation to add a new user with a custom permission profile attached. For
-        /// more information, see the following sections in the <i>Amazon Quick User Guide</i>:
+        /// more information, see the following sections in the <i>Quick User Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -12533,7 +13636,7 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-        /// Access to the Amazon Quick Console</a> 
+        /// Access to the Quick Console</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12589,7 +13692,7 @@ namespace Amazon.QuickSight
         /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </c> API operation to add a new user with a custom permission profile attached. For
-        /// more information, see the following sections in the <i>Amazon Quick User Guide</i>:
+        /// more information, see the following sections in the <i>Quick User Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -12599,7 +13702,7 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-        /// Access to the Amazon Quick Console</a> 
+        /// Access to the Quick Console</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -12646,6 +13749,67 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
         Task<GetSessionEmbedUrlResponse> GetSessionEmbedUrlAsync(GetSessionEmbedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the access control applications in a Quick Sight account in the current Amazon
+        /// Web Services Region. You can filter the results by namespace. Quick Sight paginates
+        /// the results. To retrieve additional results, use the <c>NextToken</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlApplications service method.</param>
+        /// <returns>The response from the ListAccessControlApplications service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAccessControlApplications">REST API Reference for ListAccessControlApplications Operation</seealso>
+        ListAccessControlApplicationsResponse ListAccessControlApplications(ListAccessControlApplicationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the access control applications in a Quick Sight account in the current Amazon
+        /// Web Services Region. You can filter the results by namespace. Quick Sight paginates
+        /// the results. To retrieve additional results, use the <c>NextToken</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAccessControlApplications service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAccessControlApplications">REST API Reference for ListAccessControlApplications Operation</seealso>
+        Task<ListAccessControlApplicationsResponse> ListAccessControlApplicationsAsync(ListAccessControlApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -14140,6 +15304,128 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Lists the access control applications that are associated with an inbound connector.
+        /// Quick Sight paginates the results. To retrieve additional results, use the <c>NextToken</c>
+        /// parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInboundConnectorApplicationAssociations service method.</param>
+        /// <returns>The response from the ListInboundConnectorApplicationAssociations service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectorApplicationAssociations">REST API Reference for ListInboundConnectorApplicationAssociations Operation</seealso>
+        ListInboundConnectorApplicationAssociationsResponse ListInboundConnectorApplicationAssociations(ListInboundConnectorApplicationAssociationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the access control applications that are associated with an inbound connector.
+        /// Quick Sight paginates the results. To retrieve additional results, use the <c>NextToken</c>
+        /// parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInboundConnectorApplicationAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInboundConnectorApplicationAssociations service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectorApplicationAssociations">REST API Reference for ListInboundConnectorApplicationAssociations Operation</seealso>
+        Task<ListInboundConnectorApplicationAssociationsResponse> ListInboundConnectorApplicationAssociationsAsync(ListInboundConnectorApplicationAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the inbound connectors in a Quick Sight account. You can filter the results
+        /// by connector type. Quick Sight paginates the results. To retrieve additional results,
+        /// use the <c>NextToken</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInboundConnectors service method.</param>
+        /// <returns>The response from the ListInboundConnectors service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectors">REST API Reference for ListInboundConnectors Operation</seealso>
+        ListInboundConnectorsResponse ListInboundConnectors(ListInboundConnectorsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the inbound connectors in a Quick Sight account. You can filter the results
+        /// by connector type. Quick Sight paginates the results. To retrieve additional results,
+        /// use the <c>NextToken</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInboundConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListInboundConnectors service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListInboundConnectors">REST API Reference for ListInboundConnectors Operation</seealso>
+        Task<ListInboundConnectorsResponse> ListInboundConnectorsAsync(ListInboundConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and
         /// 25 TPS per account.
         /// </summary>
@@ -14208,6 +15494,87 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIngestions">REST API Reference for ListIngestions Operation</seealso>
         Task<ListIngestionsResponse> ListIngestionsAsync(ListIngestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the refresh schedules for an Amazon Quick Sight knowledge base. Currently, a
+        /// knowledge base can have only one refresh schedule, so the list contains at most one
+        /// schedule. Results are paginated. To retrieve the next page of results, use the <c>NextToken</c>
+        /// value from the previous response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseRefreshSchedules service method.</param>
+        /// <returns>The response from the ListKnowledgeBaseRefreshSchedules service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListKnowledgeBaseRefreshSchedules">REST API Reference for ListKnowledgeBaseRefreshSchedules Operation</seealso>
+        ListKnowledgeBaseRefreshSchedulesResponse ListKnowledgeBaseRefreshSchedules(ListKnowledgeBaseRefreshSchedulesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the refresh schedules for an Amazon Quick Sight knowledge base. Currently, a
+        /// knowledge base can have only one refresh schedule, so the list contains at most one
+        /// schedule. Results are paginated. To retrieve the next page of results, use the <c>NextToken</c>
+        /// value from the previous response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseRefreshSchedules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListKnowledgeBaseRefreshSchedules service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListKnowledgeBaseRefreshSchedules">REST API Reference for ListKnowledgeBaseRefreshSchedules Operation</seealso>
+        Task<ListKnowledgeBaseRefreshSchedulesResponse> ListKnowledgeBaseRefreshSchedulesAsync(ListKnowledgeBaseRefreshSchedulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -14470,6 +15837,85 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListOAuthClientApplications">REST API Reference for ListOAuthClientApplications Operation</seealso>
         Task<ListOAuthClientApplicationsResponse> ListOAuthClientApplicationsAsync(ListOAuthClientApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the Amazon Quick Sight principals that have a governance policy. This operation
+        /// returns paginated results. A page can contain fewer results than <c>MaxResults</c>,
+        /// or none, and still include a <c>NextToken</c>. Continue to call the operation until
+        /// the response doesn't include a <c>NextToken</c>. We recommend that you use pagination
+        /// to make sure that the operation returns quickly and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// Results are eventually consistent and might not reflect recent changes. If the policy
+        /// has no assignments, the response contains an empty <c>Principals</c> list. If the
+        /// policy doesn't exist, the request fails with a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrincipalsForPolicy service method.</param>
+        /// <returns>The response from the ListPrincipalsForPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListPrincipalsForPolicy">REST API Reference for ListPrincipalsForPolicy Operation</seealso>
+        ListPrincipalsForPolicyResponse ListPrincipalsForPolicy(ListPrincipalsForPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the Amazon Quick Sight principals that have a governance policy. This operation
+        /// returns paginated results. A page can contain fewer results than <c>MaxResults</c>,
+        /// or none, and still include a <c>NextToken</c>. Continue to call the operation until
+        /// the response doesn't include a <c>NextToken</c>. We recommend that you use pagination
+        /// to make sure that the operation returns quickly and successfully.
+        /// 
+        ///  
+        /// <para>
+        /// Results are eventually consistent and might not reflect recent changes. If the policy
+        /// has no assignments, the response contains an empty <c>Principals</c> list. If the
+        /// policy doesn't exist, the request fails with a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrincipalsForPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListPrincipalsForPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListPrincipalsForPolicy">REST API Reference for ListPrincipalsForPolicy Operation</seealso>
+        Task<ListPrincipalsForPolicyResponse> ListPrincipalsForPolicyAsync(ListPrincipalsForPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -15960,6 +17406,89 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties">REST API Reference for PutDataSetRefreshProperties Operation</seealso>
         Task<PutDataSetRefreshPropertiesResponse> PutDataSetRefreshPropertiesAsync(PutDataSetRefreshPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Assigns a governance policy to an Amazon Quick Sight principal. A principal can have
+        /// one policy of each policy type. If the principal already has a policy of the same
+        /// type, this operation replaces it.
+        /// 
+        ///  
+        /// <para>
+        /// To make the change conditional, specify <c>ExistingPolicyArn</c>, <c>Revision</c>,
+        /// or both. If the current assignment doesn't match, the request fails with a <c>ConflictException</c>
+        /// and makes no change. If the principal already has the specified policy, the request
+        /// succeeds and makes no change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicyAssignment service method.</param>
+        /// <returns>The response from the PutPolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutPolicyAssignment">REST API Reference for PutPolicyAssignment Operation</seealso>
+        PutPolicyAssignmentResponse PutPolicyAssignment(PutPolicyAssignmentRequest request);
+#endif
+
+        /// <summary>
+        /// Assigns a governance policy to an Amazon Quick Sight principal. A principal can have
+        /// one policy of each policy type. If the principal already has a policy of the same
+        /// type, this operation replaces it.
+        /// 
+        ///  
+        /// <para>
+        /// To make the change conditional, specify <c>ExistingPolicyArn</c>, <c>Revision</c>,
+        /// or both. If the current assignment doesn't match, the request fails with a <c>ConflictException</c>
+        /// and makes no change. If the principal already has the specified policy, the request
+        /// succeeds and makes no change.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicyAssignment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutPolicyAssignment service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutPolicyAssignment">REST API Reference for PutPolicyAssignment Operation</seealso>
+        Task<PutPolicyAssignmentResponse> PutPolicyAssignmentAsync(PutPolicyAssignmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -18195,6 +19724,156 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an access control application. You can change its name, description, status,
+        /// IdP settings such as the client ID and issuer URL, and its Quick Sight authentication
+        /// settings such as redirect URIs.
+        /// 
+        ///  
+        /// <para>
+        /// You can't change the <c>IdpAuthorizingType</c>, the <c>QuickAuthenticationType</c>,
+        /// or the trusted token issuer after the application is created. To manage client secrets,
+        /// use <c>CreateAccessControlApplicationSecret</c>, <c>UpdateAccessControlApplicationSecret</c>,
+        /// and <c>DeleteAccessControlApplicationSecret</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlApplication service method.</param>
+        /// <returns>The response from the UpdateAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplication">REST API Reference for UpdateAccessControlApplication Operation</seealso>
+        UpdateAccessControlApplicationResponse UpdateAccessControlApplication(UpdateAccessControlApplicationRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an access control application. You can change its name, description, status,
+        /// IdP settings such as the client ID and issuer URL, and its Quick Sight authentication
+        /// settings such as redirect URIs.
+        /// 
+        ///  
+        /// <para>
+        /// You can't change the <c>IdpAuthorizingType</c>, the <c>QuickAuthenticationType</c>,
+        /// or the trusted token issuer after the application is created. To manage client secrets,
+        /// use <c>CreateAccessControlApplicationSecret</c>, <c>UpdateAccessControlApplicationSecret</c>,
+        /// and <c>DeleteAccessControlApplicationSecret</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAccessControlApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplication">REST API Reference for UpdateAccessControlApplication Operation</seealso>
+        Task<UpdateAccessControlApplicationResponse> UpdateAccessControlApplicationAsync(UpdateAccessControlApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the Amazon Web Services Secrets Manager secret ARNs of an IdP-provided client
+        /// secret. You can add, replace, or remove the ARN for a Region, but you can't remove
+        /// the last remaining Region. To remove it, delete the client secret.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlApplicationSecret service method.</param>
+        /// <returns>The response from the UpdateAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplicationSecret">REST API Reference for UpdateAccessControlApplicationSecret Operation</seealso>
+        UpdateAccessControlApplicationSecretResponse UpdateAccessControlApplicationSecret(UpdateAccessControlApplicationSecretRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the Amazon Web Services Secrets Manager secret ARNs of an IdP-provided client
+        /// secret. You can add, replace, or remove the ARN for a Region, but you can't remove
+        /// the last remaining Region. To remove it, delete the client secret.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlApplicationSecret service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAccessControlApplicationSecret service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccessControlApplicationSecret">REST API Reference for UpdateAccessControlApplicationSecret Operation</seealso>
+        Task<UpdateAccessControlApplicationSecretResponse> UpdateAccessControlApplicationSecretAsync(UpdateAccessControlApplicationSecretRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -20604,6 +22283,144 @@ namespace Amazon.QuickSight
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates an inbound connector. You can change its name, description, status, and configuration.
+        /// You can't change the connector type after the connector is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInboundConnector service method.</param>
+        /// <returns>The response from the UpdateInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnector">REST API Reference for UpdateInboundConnector Operation</seealso>
+        UpdateInboundConnectorResponse UpdateInboundConnector(UpdateInboundConnectorRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an inbound connector. You can change its name, description, status, and configuration.
+        /// You can't change the connector type after the connector is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInboundConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateInboundConnector service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnector">REST API Reference for UpdateInboundConnector Operation</seealso>
+        Task<UpdateInboundConnectorResponse> UpdateInboundConnectorAsync(UpdateInboundConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Associates access control applications with an inbound connector, disassociates them
+        /// from it, or both. You can add up to 20 associations and remove up to 20 associations
+        /// in each request. An inbound connector supports up to 6,000 associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInboundConnectorApplicationAssociations service method.</param>
+        /// <returns>The response from the UpdateInboundConnectorApplicationAssociations service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnectorApplicationAssociations">REST API Reference for UpdateInboundConnectorApplicationAssociations Operation</seealso>
+        UpdateInboundConnectorApplicationAssociationsResponse UpdateInboundConnectorApplicationAssociations(UpdateInboundConnectorApplicationAssociationsRequest request);
+#endif
+
+        /// <summary>
+        /// Associates access control applications with an inbound connector, disassociates them
+        /// from it, or both. You can add up to 20 associations and remove up to 20 associations
+        /// in each request. An inbound connector supports up to 6,000 associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInboundConnectorApplicationAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateInboundConnectorApplicationAssociations service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateInboundConnectorApplicationAssociations">REST API Reference for UpdateInboundConnectorApplicationAssociations Operation</seealso>
+        Task<UpdateInboundConnectorApplicationAssociationsResponse> UpdateInboundConnectorApplicationAssociationsAsync(UpdateInboundConnectorApplicationAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates the content and status of IP rules. Traffic from a source is allowed when
         /// the source satisfies either the <c>IpRestrictionRule</c>, <c>VpcIdRestrictionRule</c>,
         /// or <c>VpcEndpointIdRestrictionRule</c>. To use this operation, you must provide the
@@ -20889,6 +22706,87 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBasePermissions">REST API Reference for UpdateKnowledgeBasePermissions Operation</seealso>
         Task<UpdateKnowledgeBasePermissionsResponse> UpdateKnowledgeBasePermissionsAsync(UpdateKnowledgeBasePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the refresh schedule for an Amazon Quick Sight knowledge base. Use this operation
+        /// to change how often the knowledge base refreshes, or to enable or disable the schedule.
+        /// Specify the schedule by its <c>ScheduleId</c>. The operation changes only the fields
+        /// that you provide. Any field that you omit keeps its existing value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBaseRefreshSchedule service method.</param>
+        /// <returns>The response from the UpdateKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBaseRefreshSchedule">REST API Reference for UpdateKnowledgeBaseRefreshSchedule Operation</seealso>
+        UpdateKnowledgeBaseRefreshScheduleResponse UpdateKnowledgeBaseRefreshSchedule(UpdateKnowledgeBaseRefreshScheduleRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the refresh schedule for an Amazon Quick Sight knowledge base. Use this operation
+        /// to change how often the knowledge base refreshes, or to enable or disable the schedule.
+        /// Specify the schedule by its <c>ScheduleId</c>. The operation changes only the fields
+        /// that you provide. Any field that you omit keeps its existing value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBaseRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateKnowledgeBaseRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBaseRefreshSchedule">REST API Reference for UpdateKnowledgeBaseRefreshSchedule Operation</seealso>
+        Task<UpdateKnowledgeBaseRefreshScheduleResponse> UpdateKnowledgeBaseRefreshScheduleAsync(UpdateKnowledgeBaseRefreshScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

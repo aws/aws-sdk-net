@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         /// A unique identifier for the column in the appended result.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string NewColumnId { get; set; }
 
         /// <summary>

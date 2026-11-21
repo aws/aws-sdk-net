@@ -57,6 +57,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Database);
             }
 
+            if (requestObject.IsSetFederatedCatalog())
+            {
+                context.Writer.WritePropertyName("FederatedCatalog");
+                context.Writer.WriteStringValue(requestObject.FederatedCatalog);
+            }
+
             if (requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");

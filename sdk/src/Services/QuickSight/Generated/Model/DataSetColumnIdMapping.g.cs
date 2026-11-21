@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// Source column ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string SourceColumnId { get; set; }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         /// Target column ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string TargetColumnId { get; set; }
 
         /// <summary>

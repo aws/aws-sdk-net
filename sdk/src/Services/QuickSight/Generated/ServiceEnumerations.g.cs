@@ -22,6 +22,83 @@ using Amazon.Runtime;
 namespace Amazon.QuickSight
 {
     /// <summary>
+    /// Constants used for properties of type AccessControlApplicationAuthenticationType.
+    /// </summary>
+    public class AccessControlApplicationAuthenticationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant OIDC for AccessControlApplicationAuthenticationType
+        /// </summary>
+        public static readonly AccessControlApplicationAuthenticationType OIDC = new AccessControlApplicationAuthenticationType("OIDC");
+
+        /// <summary>
+        /// Constructs a custom AccessControlApplicationAuthenticationType for a value not among the defined constants.
+        /// </summary>
+        public AccessControlApplicationAuthenticationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessControlApplicationAuthenticationType FindValue(string value)
+        {
+            return FindValue<AccessControlApplicationAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessControlApplicationAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AccessControlApplicationStatus.
+    /// </summary>
+    public class AccessControlApplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AccessControlApplicationStatus
+        /// </summary>
+        public static readonly AccessControlApplicationStatus DISABLED = new AccessControlApplicationStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AccessControlApplicationStatus
+        /// </summary>
+        public static readonly AccessControlApplicationStatus ENABLED = new AccessControlApplicationStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AccessControlApplicationStatus for a value not among the defined constants.
+        /// </summary>
+        public AccessControlApplicationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessControlApplicationStatus FindValue(string value)
+        {
+            return FindValue<AccessControlApplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessControlApplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ActionConnectorErrorType.
     /// </summary>
     public class ActionConnectorErrorType : ConstantClass
@@ -1672,6 +1749,11 @@ namespace Amazon.QuickSight
         public static readonly AssetType AGENT = new AssetType("AGENT");
 
         /// <summary>
+        /// Constant FLOW for AssetType
+        /// </summary>
+        public static readonly AssetType FLOW = new AssetType("FLOW");
+
+        /// <summary>
         /// Constant KNOWLEDGE_BASE for AssetType
         /// </summary>
         public static readonly AssetType KNOWLEDGE_BASE = new AssetType("KNOWLEDGE_BASE");
@@ -2744,6 +2826,42 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClientCredentialsSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClientSecretSourceType.
+    /// </summary>
+    public class ClientSecretSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant IDP_PROVIDED for ClientSecretSourceType
+        /// </summary>
+        public static readonly ClientSecretSourceType IDP_PROVIDED = new ClientSecretSourceType("IDP_PROVIDED");
+
+        /// <summary>
+        /// Constructs a custom ClientSecretSourceType for a value not among the defined constants.
+        /// </summary>
+        public ClientSecretSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientSecretSourceType FindValue(string value)
+        {
+            return FindValue<ClientSecretSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientSecretSourceType(string value)
         {
             return FindValue(value);
         }
@@ -7000,6 +7118,11 @@ namespace Amazon.QuickSight
     public class GovernedAction : ConstantClass
     {
         /// <summary>
+        /// Constant PUBLISH for GovernedAction
+        /// </summary>
+        public static readonly GovernedAction PUBLISH = new GovernedAction("PUBLISH");
+
+        /// <summary>
         /// Constant SHARE for GovernedAction
         /// </summary>
         public static readonly GovernedAction SHARE = new GovernedAction("SHARE");
@@ -7479,6 +7602,57 @@ namespace Amazon.QuickSight
     }
 
     /// <summary>
+    /// Constants used for properties of type IdpAuthorizingType.
+    /// </summary>
+    public class IdpAuthorizingType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXTERNAL_IDP_CONFIDENTIAL_AUTH_CODE for IdpAuthorizingType
+        /// </summary>
+        public static readonly IdpAuthorizingType EXTERNAL_IDP_CONFIDENTIAL_AUTH_CODE = new IdpAuthorizingType("EXTERNAL_IDP_CONFIDENTIAL_AUTH_CODE");
+
+        /// <summary>
+        /// Constant EXTERNAL_IDP_PUBLIC_AUTH_CODE for IdpAuthorizingType
+        /// </summary>
+        public static readonly IdpAuthorizingType EXTERNAL_IDP_PUBLIC_AUTH_CODE = new IdpAuthorizingType("EXTERNAL_IDP_PUBLIC_AUTH_CODE");
+
+        /// <summary>
+        /// Constant IDC_AUTH_CODE for IdpAuthorizingType
+        /// </summary>
+        public static readonly IdpAuthorizingType IDC_AUTH_CODE = new IdpAuthorizingType("IDC_AUTH_CODE");
+
+        /// <summary>
+        /// Constant QUICK_MANAGED_AUTH_CODE for IdpAuthorizingType
+        /// </summary>
+        public static readonly IdpAuthorizingType QUICK_MANAGED_AUTH_CODE = new IdpAuthorizingType("QUICK_MANAGED_AUTH_CODE");
+
+        /// <summary>
+        /// Constructs a custom IdpAuthorizingType for a value not among the defined constants.
+        /// </summary>
+        public IdpAuthorizingType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdpAuthorizingType FindValue(string value)
+        {
+            return FindValue<IdpAuthorizingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdpAuthorizingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ImageCustomActionTrigger.
     /// </summary>
     public class ImageCustomActionTrigger : ConstantClass
@@ -7555,6 +7729,83 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InboundConnectorStatus.
+    /// </summary>
+    public class InboundConnectorStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for InboundConnectorStatus
+        /// </summary>
+        public static readonly InboundConnectorStatus DISABLED = new InboundConnectorStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for InboundConnectorStatus
+        /// </summary>
+        public static readonly InboundConnectorStatus ENABLED = new InboundConnectorStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom InboundConnectorStatus for a value not among the defined constants.
+        /// </summary>
+        public InboundConnectorStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InboundConnectorStatus FindValue(string value)
+        {
+            return FindValue<InboundConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InboundConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InboundConnectorType.
+    /// </summary>
+    public class InboundConnectorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant QUICK_DESKTOP for InboundConnectorType
+        /// </summary>
+        public static readonly InboundConnectorType QUICK_DESKTOP = new InboundConnectorType("QUICK_DESKTOP");
+
+        /// <summary>
+        /// Constructs a custom InboundConnectorType for a value not among the defined constants.
+        /// </summary>
+        public InboundConnectorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InboundConnectorType FindValue(string value)
+        {
+            return FindValue<InboundConnectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InboundConnectorType(string value)
         {
             return FindValue(value);
         }
@@ -8394,6 +8645,72 @@ namespace Amazon.QuickSight
     }
 
     /// <summary>
+    /// Constants used for properties of type KbDayOfWeek.
+    /// </summary>
+    public class KbDayOfWeek : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek FRIDAY = new KbDayOfWeek("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek MONDAY = new KbDayOfWeek("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek SATURDAY = new KbDayOfWeek("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek SUNDAY = new KbDayOfWeek("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek THURSDAY = new KbDayOfWeek("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek TUESDAY = new KbDayOfWeek("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for KbDayOfWeek
+        /// </summary>
+        public static readonly KbDayOfWeek WEDNESDAY = new KbDayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom KbDayOfWeek for a value not among the defined constants.
+        /// </summary>
+        public KbDayOfWeek(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KbDayOfWeek FindValue(string value)
+        {
+            return FindValue<KbDayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KbDayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type KbIngestionStatus.
     /// </summary>
     public class KbIngestionStatus : ConstantClass
@@ -8459,6 +8776,57 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KbIngestionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type KbRefreshInterval.
+    /// </summary>
+    public class KbRefreshInterval : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAILY for KbRefreshInterval
+        /// </summary>
+        public static readonly KbRefreshInterval DAILY = new KbRefreshInterval("DAILY");
+
+        /// <summary>
+        /// Constant HOURLY for KbRefreshInterval
+        /// </summary>
+        public static readonly KbRefreshInterval HOURLY = new KbRefreshInterval("HOURLY");
+
+        /// <summary>
+        /// Constant MONTHLY for KbRefreshInterval
+        /// </summary>
+        public static readonly KbRefreshInterval MONTHLY = new KbRefreshInterval("MONTHLY");
+
+        /// <summary>
+        /// Constant WEEKLY for KbRefreshInterval
+        /// </summary>
+        public static readonly KbRefreshInterval WEEKLY = new KbRefreshInterval("WEEKLY");
+
+        /// <summary>
+        /// Constructs a custom KbRefreshInterval for a value not among the defined constants.
+        /// </summary>
+        public KbRefreshInterval(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KbRefreshInterval FindValue(string value)
+        {
+            return FindValue<KbRefreshInterval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KbRefreshInterval(string value)
         {
             return FindValue(value);
         }
@@ -10699,6 +11067,47 @@ namespace Amazon.QuickSight
     }
 
     /// <summary>
+    /// Constants used for properties of type PolicyType.
+    /// </summary>
+    public class PolicyType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOM_PERMISSIONS for PolicyType
+        /// </summary>
+        public static readonly PolicyType CUSTOM_PERMISSIONS = new PolicyType("CUSTOM_PERMISSIONS");
+
+        /// <summary>
+        /// Constant LIMITS_PROFILE for PolicyType
+        /// </summary>
+        public static readonly PolicyType LIMITS_PROFILE = new PolicyType("LIMITS_PROFILE");
+
+        /// <summary>
+        /// Constructs a custom PolicyType for a value not among the defined constants.
+        /// </summary>
+        public PolicyType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyType FindValue(string value)
+        {
+            return FindValue<PolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PrimaryValueDisplayType.
     /// </summary>
     public class PrimaryValueDisplayType : ConstantClass
@@ -10739,6 +11148,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrimaryValueDisplayType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PrincipalType.
+    /// </summary>
+    public class PrincipalType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType ACCOUNT = new PrincipalType("ACCOUNT");
+
+        /// <summary>
+        /// Constant GROUP for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType GROUP = new PrincipalType("GROUP");
+
+        /// <summary>
+        /// Constant USER for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType USER = new PrincipalType("USER");
+
+        /// <summary>
+        /// Constructs a custom PrincipalType for a value not among the defined constants.
+        /// </summary>
+        public PrincipalType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalType FindValue(string value)
+        {
+            return FindValue<PrincipalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalType(string value)
         {
             return FindValue(value);
         }
@@ -11077,6 +11532,42 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryExecutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type QuickAuthenticationType.
+    /// </summary>
+    public class QuickAuthenticationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant QUICK_MANAGED_PUBLIC_AUTH_CODE for QuickAuthenticationType
+        /// </summary>
+        public static readonly QuickAuthenticationType QUICK_MANAGED_PUBLIC_AUTH_CODE = new QuickAuthenticationType("QUICK_MANAGED_PUBLIC_AUTH_CODE");
+
+        /// <summary>
+        /// Constructs a custom QuickAuthenticationType for a value not among the defined constants.
+        /// </summary>
+        public QuickAuthenticationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuickAuthenticationType FindValue(string value)
+        {
+            return FindValue<QuickAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuickAuthenticationType(string value)
         {
             return FindValue(value);
         }
@@ -11950,6 +12441,47 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RowLevelPermissionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScheduleState.
+    /// </summary>
+    public class ScheduleState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState DISABLED = new ScheduleState("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState ENABLED = new ScheduleState("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom ScheduleState for a value not among the defined constants.
+        /// </summary>
+        public ScheduleState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleState FindValue(string value)
+        {
+            return FindValue<ScheduleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleState(string value)
         {
             return FindValue(value);
         }

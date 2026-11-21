@@ -49,6 +49,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccessControlApplications operation
+        /// </summary>
+        public IListAccessControlApplicationsPaginator ListAccessControlApplications(ListAccessControlApplicationsRequest request)
+        {
+            return new ListAccessControlApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActionConnectors operation
         /// </summary>
         public IListActionConnectorsPaginator ListActionConnectors(ListActionConnectorsRequest request)
@@ -217,11 +225,35 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListInboundConnectorApplicationAssociations operation
+        /// </summary>
+        public IListInboundConnectorApplicationAssociationsPaginator ListInboundConnectorApplicationAssociations(ListInboundConnectorApplicationAssociationsRequest request)
+        {
+            return new ListInboundConnectorApplicationAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInboundConnectors operation
+        /// </summary>
+        public IListInboundConnectorsPaginator ListInboundConnectors(ListInboundConnectorsRequest request)
+        {
+            return new ListInboundConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIngestions operation
         /// </summary>
         public IListIngestionsPaginator ListIngestions(ListIngestionsRequest request)
         {
             return new ListIngestionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListKnowledgeBaseRefreshSchedules operation
+        /// </summary>
+        public IListKnowledgeBaseRefreshSchedulesPaginator ListKnowledgeBaseRefreshSchedules(ListKnowledgeBaseRefreshSchedulesRequest request)
+        {
+            return new ListKnowledgeBaseRefreshSchedulesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -254,6 +286,14 @@ namespace Amazon.QuickSight.Model
         public IListOAuthClientApplicationsPaginator ListOAuthClientApplications(ListOAuthClientApplicationsRequest request)
         {
             return new ListOAuthClientApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPrincipalsForPolicy operation
+        /// </summary>
+        public IListPrincipalsForPolicyPaginator ListPrincipalsForPolicy(ListPrincipalsForPolicyRequest request)
+        {
+            return new ListPrincipalsForPolicyPaginator(this.client, request);
         }
 
         /// <summary>

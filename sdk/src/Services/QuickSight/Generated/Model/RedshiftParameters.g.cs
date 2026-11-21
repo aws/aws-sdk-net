@@ -65,6 +65,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDatabase() => this.Database != null;
 
         /// <summary>
+        /// Gets and sets the property FederatedCatalog. 
+        /// <para>
+        /// The federated database to use for table and schema discovery. Specify the exact database
+        /// name returned by <c>SHOW DATABASES</c>, such as <c>producer_database@catalog_name</c>.
+        /// This value must differ from <c>Database</c>, which specifies the database used for
+        /// the connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <c>UpdateDataSource</c>, omit this parameter to keep the current catalog, or specify
+        /// an empty string to clear the configured catalog.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 127)]
+        public string FederatedCatalog { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FederatedCatalog property is set.
+        /// </summary>
+        internal bool IsSetFederatedCatalog() => this.FederatedCatalog != null;
+
+        /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
         /// Host. This field can be blank if <c>ClusterId</c> is provided.

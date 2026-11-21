@@ -53,6 +53,7 @@ namespace Amazon.QuickSight.Model
         /// Determines the Unicode icon type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min = 1, Max = 16)]
         public string UnicodeIcon { get; set; }
 
         /// <summary>

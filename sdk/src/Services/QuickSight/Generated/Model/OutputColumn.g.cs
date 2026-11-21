@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         /// A unique identifier for the output column.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 64)]
+        [AWSProperty(Min = 1, Max = 256)]
         public string Id { get; set; }
 
         /// <summary>
