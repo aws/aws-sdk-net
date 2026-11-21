@@ -1,3 +1,9 @@
+### 4.1.8.0 (2026-11-21 00:26 UTC)
+* QuickSight (4.1.1.0)
+	* Quicksight public SDK release for November 20
+* SageMaker (4.1.5.0)
+	* Amazon SageMaker AI adds APIs to view capacity reservations and their usage.
+
 ### 4.1.7.0 (2026-11-20 20:02 UTC)
 * AgentDiscovery (4.1.0.0)
 	* Adds the SearchPublicRecords API, which searches public registry records for AI agents, tools, and skills that their publishers have made discoverable.
