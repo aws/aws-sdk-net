@@ -3982,6 +3982,170 @@ namespace Amazon.SageMaker
     }
 
     /// <summary>
+    /// Constants used for properties of type CapacityReservationEndpointSharing.
+    /// </summary>
+    public class CapacityReservationEndpointSharing : ConstantClass
+    {
+        /// <summary>
+        /// Constant MultipleEndpoints for CapacityReservationEndpointSharing
+        /// </summary>
+        public static readonly CapacityReservationEndpointSharing MultipleEndpoints = new CapacityReservationEndpointSharing("MultipleEndpoints");
+
+        /// <summary>
+        /// Constant SingleEndpoint for CapacityReservationEndpointSharing
+        /// </summary>
+        public static readonly CapacityReservationEndpointSharing SingleEndpoint = new CapacityReservationEndpointSharing("SingleEndpoint");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationEndpointSharing for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationEndpointSharing(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationEndpointSharing FindValue(string value)
+        {
+            return FindValue<CapacityReservationEndpointSharing>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationEndpointSharing(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationFilterName.
+    /// </summary>
+    public class CapacityReservationFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Status for CapacityReservationFilterName
+        /// </summary>
+        public static readonly CapacityReservationFilterName Status = new CapacityReservationFilterName("Status");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationFilterName for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationFilterName FindValue(string value)
+        {
+            return FindValue<CapacityReservationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationMatchCriteria.
+    /// </summary>
+    public class CapacityReservationMatchCriteria : ConstantClass
+    {
+        /// <summary>
+        /// Constant Open for CapacityReservationMatchCriteria
+        /// </summary>
+        public static readonly CapacityReservationMatchCriteria Open = new CapacityReservationMatchCriteria("Open");
+
+        /// <summary>
+        /// Constant Targeted for CapacityReservationMatchCriteria
+        /// </summary>
+        public static readonly CapacityReservationMatchCriteria Targeted = new CapacityReservationMatchCriteria("Targeted");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationMatchCriteria for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationMatchCriteria(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationMatchCriteria FindValue(string value)
+        {
+            return FindValue<CapacityReservationMatchCriteria>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationMatchCriteria(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationOptInStatus.
+    /// </summary>
+    public class CapacityReservationOptInStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for CapacityReservationOptInStatus
+        /// </summary>
+        public static readonly CapacityReservationOptInStatus Active = new CapacityReservationOptInStatus("Active");
+
+        /// <summary>
+        /// Constant Inactive for CapacityReservationOptInStatus
+        /// </summary>
+        public static readonly CapacityReservationOptInStatus Inactive = new CapacityReservationOptInStatus("Inactive");
+
+        /// <summary>
+        /// Constant Pending for CapacityReservationOptInStatus
+        /// </summary>
+        public static readonly CapacityReservationOptInStatus Pending = new CapacityReservationOptInStatus("Pending");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationOptInStatus for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationOptInStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationOptInStatus FindValue(string value)
+        {
+            return FindValue<CapacityReservationOptInStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationOptInStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationPreference.
     /// </summary>
     public class CapacityReservationPreference : ConstantClass
@@ -4012,6 +4176,93 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationResourceType.
+    /// </summary>
+    public class CapacityReservationResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Endpoints for CapacityReservationResourceType
+        /// </summary>
+        public static readonly CapacityReservationResourceType Endpoints = new CapacityReservationResourceType("Endpoints");
+
+        /// <summary>
+        /// Constant HyperPodClusters for CapacityReservationResourceType
+        /// </summary>
+        public static readonly CapacityReservationResourceType HyperPodClusters = new CapacityReservationResourceType("HyperPodClusters");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationResourceType for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationResourceType FindValue(string value)
+        {
+            return FindValue<CapacityReservationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationStatus.
+    /// </summary>
+    public class CapacityReservationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus Active = new CapacityReservationStatus("Active");
+
+        /// <summary>
+        /// Constant Expired for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus Expired = new CapacityReservationStatus("Expired");
+
+        /// <summary>
+        /// Constant Scheduled for CapacityReservationStatus
+        /// </summary>
+        public static readonly CapacityReservationStatus Scheduled = new CapacityReservationStatus("Scheduled");
+
+        /// <summary>
+        /// Constructs a custom CapacityReservationStatus for a value not among the defined constants.
+        /// </summary>
+        public CapacityReservationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationStatus FindValue(string value)
+        {
+            return FindValue<CapacityReservationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationStatus(string value)
         {
             return FindValue(value);
         }
@@ -22003,6 +22254,11 @@ namespace Amazon.SageMaker
         /// Constant InProgress for SoftwareUpdateStatus
         /// </summary>
         public static readonly SoftwareUpdateStatus InProgress = new SoftwareUpdateStatus("InProgress");
+
+        /// <summary>
+        /// Constant PartiallySucceeded for SoftwareUpdateStatus
+        /// </summary>
+        public static readonly SoftwareUpdateStatus PartiallySucceeded = new SoftwareUpdateStatus("PartiallySucceeded");
 
         /// <summary>
         /// Constant Pending for SoftwareUpdateStatus

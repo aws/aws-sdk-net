@@ -39,10 +39,22 @@ namespace Amazon.SageMaker.Model
         ICreateHubContentPresignedUrlsPaginator CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeResourceAssociations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeResourceAssociationsPaginator DescribeResourceAssociations(DescribeResourceAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeTrainingPlanExtensionHistory operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IDescribeTrainingPlanExtensionHistoryPaginator DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityReservationUsage operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetCapacityReservationUsagePaginator GetCapacityReservationUsage(GetCapacityReservationUsageRequest request);
 
         /// <summary>
         /// Paginator for ListAIBenchmarkJobs operation
@@ -115,6 +127,12 @@ namespace Amazon.SageMaker.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListCandidatesForAutoMLJobPaginator ListCandidatesForAutoMLJob(ListCandidatesForAutoMLJobRequest request);
+
+        /// <summary>
+        /// Paginator for ListCapacityReservations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCapacityReservationsPaginator ListCapacityReservations(ListCapacityReservationsRequest request);
 
         /// <summary>
         /// Paginator for ListClusterEvents operation

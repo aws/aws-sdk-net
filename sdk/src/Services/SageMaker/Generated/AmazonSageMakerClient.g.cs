@@ -12278,6 +12278,58 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns details about a SageMaker Capacity Reservation, such as its instance type,
+        /// instance count, Availability Zone, and start and end times.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservation service method.</param>
+        /// <returns>The response from the DescribeCapacityReservation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        public virtual DescribeCapacityReservationResponse DescribeCapacityReservation(DescribeCapacityReservationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationResponse>(request, options);
+        }
+#else
+        internal virtual DescribeCapacityReservationResponse DescribeCapacityReservation(DescribeCapacityReservationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns details about a SageMaker Capacity Reservation, such as its instance type,
+        /// instance count, Availability Zone, and start and end times.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeCapacityReservation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        public virtual Task<DescribeCapacityReservationResponse> DescribeCapacityReservationAsync(DescribeCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves information of a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
@@ -15340,6 +15392,60 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the resources in your account that are associated with a SageMaker Capacity
+        /// Reservation and the status of each association. Resources include SageMaker AI HyperPod
+        /// clusters and SageMaker AI endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceAssociations service method.</param>
+        /// <returns>The response from the DescribeResourceAssociations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeResourceAssociations">REST API Reference for DescribeResourceAssociations Operation</seealso>
+        public virtual DescribeResourceAssociationsResponse DescribeResourceAssociations(DescribeResourceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceAssociationsResponse>(request, options);
+        }
+#else
+        internal virtual DescribeResourceAssociationsResponse DescribeResourceAssociations(DescribeResourceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceAssociationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the resources in your account that are associated with a SageMaker Capacity
+        /// Reservation and the status of each association. Resources include SageMaker AI HyperPod
+        /// clusters and SageMaker AI endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeResourceAssociations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeResourceAssociations">REST API Reference for DescribeResourceAssociations Operation</seealso>
+        public virtual Task<DescribeResourceAssociationsResponse> DescribeResourceAssociationsAsync(DescribeResourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourceAssociationsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes the space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpace service method.</param>
@@ -16378,6 +16484,70 @@ namespace Amazon.SageMaker
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the number of instances in use from a SageMaker Capacity Reservation, for
+        /// each account that uses them.
+        /// 
+        ///  
+        /// <para>
+        /// SageMaker AI refreshes the usage counts periodically. The <c>LastRefreshTime</c> value
+        /// shows when the counts were last refreshed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
+        /// <returns>The response from the GetCapacityReservationUsage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityReservationUsageResponse>(request, options);
+        }
+#else
+        internal virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityReservationUsageResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the number of instances in use from a SageMaker Capacity Reservation, for
+        /// each account that uses them.
+        /// 
+        ///  
+        /// <para>
+        /// SageMaker AI refreshes the usage counts periodically. The <c>LastRefreshTime</c> value
+        /// shows when the counts were last refreshed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityReservationUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetCapacityReservationUsage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
+        public virtual Task<GetCapacityReservationUsageResponse> GetCapacityReservationUsageAsync(GetCapacityReservationUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCapacityReservationUsageResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Describes a fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeviceFleetReport service method.</param>
@@ -17348,6 +17518,60 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListCandidatesForAutoMLJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCandidatesForAutoMLJobResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the SageMaker Capacity Reservations in your account.
+        /// 
+        ///  
+        /// <para>
+        /// An empty list is a valid response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityReservations service method.</param>
+        /// <returns>The response from the ListCapacityReservations service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        public virtual ListCapacityReservationsResponse ListCapacityReservations(ListCapacityReservationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCapacityReservationsResponse>(request, options);
+        }
+#else
+        internal virtual ListCapacityReservationsResponse ListCapacityReservations(ListCapacityReservationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCapacityReservationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Lists the SageMaker Capacity Reservations in your account.
+        /// 
+        ///  
+        /// <para>
+        /// An empty list is a valid response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityReservations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListCapacityReservations service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
+        public virtual Task<ListCapacityReservationsResponse> ListCapacityReservationsAsync(ListCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCapacityReservationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

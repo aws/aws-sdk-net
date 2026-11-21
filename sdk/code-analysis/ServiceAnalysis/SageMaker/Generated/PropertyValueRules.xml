@@ -2958,6 +2958,12 @@
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeCapacityReservationRequest.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeClusterRequest.ClusterName</property>
     <min>0</min>
     <max>256</max>
@@ -5048,6 +5054,39 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsRequest.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsResponse.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeResourceAssociationsResponse.SMCapacityReservationId</property>
+    <pattern>^smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeSpaceRequest.DomainId</property>
     <min>0</min>
     <max>63</max>
@@ -5521,6 +5560,41 @@
     <min>0</min>
     <max>256</max>
     <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageRequest.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageResponse.AvailableInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageResponse.SMCapacityReservationId</property>
+    <pattern>^smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.GetCapacityReservationUsageResponse.TotalInstanceCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GetDeviceFleetReportRequest.DeviceFleetName</property>
@@ -6014,6 +6088,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListCandidatesForAutoMLJobResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListCapacityReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListCapacityReservationsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListCapacityReservationsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
     <pattern>.*</pattern>
@@ -10562,6 +10653,108 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CandidateArtifactLocations.ModelInsights</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.AvailabilityZone</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-z]+\-[0-9a-z\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.AvailabilityZoneId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.InstanceType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.Owner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.SMCapacityReservationId</property>
+    <pattern>^smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationDetail.TotalInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationEndpointsAssociation.FailureReason</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationEndpointsAssociation.MlReservationArn</property>
+    <min>20</min>
+    <max>258</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z0-9\-]{1,14}/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationHyperPodClustersAssociation.FailureReason</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationInstanceUsage.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationInstanceUsage.InUseInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationResourceUsage.InUseInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.AvailabilityZone</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-z]+\-[0-9a-z\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.AvailabilityZoneId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.InstanceType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.Owner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.SMCapacityReservationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]+:[0-9]{12}:sm-capacity-reservation/smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.SMCapacityReservationId</property>
+    <pattern>^smcr-[0-9a-z]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CapacityReservationSummary.TotalInstanceCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CapacitySize.Value</property>

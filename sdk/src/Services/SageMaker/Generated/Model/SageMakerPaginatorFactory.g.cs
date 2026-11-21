@@ -41,11 +41,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeResourceAssociations operation
+        /// </summary>
+        public IDescribeResourceAssociationsPaginator DescribeResourceAssociations(DescribeResourceAssociationsRequest request)
+        {
+            return new DescribeResourceAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeTrainingPlanExtensionHistory operation
         /// </summary>
         public IDescribeTrainingPlanExtensionHistoryPaginator DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request)
         {
             return new DescribeTrainingPlanExtensionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityReservationUsage operation
+        /// </summary>
+        public IGetCapacityReservationUsagePaginator GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
+        {
+            return new GetCapacityReservationUsagePaginator(this.client, request);
         }
 
         /// <summary>
@@ -142,6 +158,14 @@ namespace Amazon.SageMaker.Model
         public IListCandidatesForAutoMLJobPaginator ListCandidatesForAutoMLJob(ListCandidatesForAutoMLJobRequest request)
         {
             return new ListCandidatesForAutoMLJobPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCapacityReservations operation
+        /// </summary>
+        public IListCapacityReservationsPaginator ListCapacityReservations(ListCapacityReservationsRequest request)
+        {
+            return new ListCapacityReservationsPaginator(this.client, request);
         }
 
         /// <summary>
