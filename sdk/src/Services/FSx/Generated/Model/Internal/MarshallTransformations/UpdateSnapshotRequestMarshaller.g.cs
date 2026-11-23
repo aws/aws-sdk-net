@@ -85,6 +85,16 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
+            if (publicRequest.IsSetOntapConfiguration())
+            {
+                context.Writer.WritePropertyName("OntapConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateOntapSnapshotConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetSnapshotId())
             {
                 context.Writer.WritePropertyName("SnapshotId");

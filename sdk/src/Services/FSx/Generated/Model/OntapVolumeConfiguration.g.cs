@@ -49,6 +49,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetAggregateConfiguration() => this.AggregateConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property CloneConfiguration. 
+        /// <para>
+        /// The clone configuration of the volume, if the volume is a clone. This property doesn't
+        /// appear for a volume that isn't a clone, or for a clone that has been split from its
+        /// parent volume.
+        /// </para>
+        /// </summary>
+        public CloneConfiguration CloneConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloneConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCloneConfiguration() => this.CloneConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
         /// A boolean flag indicating whether tags for the volume should be copied to backups.

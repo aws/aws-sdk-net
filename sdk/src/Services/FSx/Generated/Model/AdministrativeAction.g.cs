@@ -69,8 +69,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent. 
         /// <para>
-        /// The percentage-complete status of a <c>STORAGE_OPTIMIZATION</c> or <c>DOWNLOAD_DATA_FROM_BACKUP</c>
-        /// administrative action. Does not apply to any other administrative action type.
+        /// The percentage-complete status of a <c>STORAGE_OPTIMIZATION</c>, <c>DOWNLOAD_DATA_FROM_BACKUP</c>,
+        /// or <c>VOLUME_CLONE_SPLIT</c> administrative action. Does not apply to any other administrative
+        /// action type.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 100)]

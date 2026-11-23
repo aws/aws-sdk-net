@@ -822,6 +822,85 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a cluster peer relationship between an Amazon FSx for NetApp ONTAP file system
+        /// and another ONTAP cluster.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateClusterPeer</c> operation returns while the cluster peer's lifecycle
+        /// state is still <c>CREATING</c>. You can check the cluster peer creation status by
+        /// calling the DescribeClusterPeers operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterPeer service method.</param>
+        /// <returns>The response from the CreateClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateClusterPeer">REST API Reference for CreateClusterPeer Operation</seealso>
+        CreateClusterPeerResponse CreateClusterPeer(CreateClusterPeerRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a cluster peer relationship between an Amazon FSx for NetApp ONTAP file system
+        /// and another ONTAP cluster.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateClusterPeer</c> operation returns while the cluster peer's lifecycle
+        /// state is still <c>CREATING</c>. You can check the cluster peer creation status by
+        /// calling the DescribeClusterPeers operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateClusterPeer">REST API Reference for CreateClusterPeer Operation</seealso>
+        Task<CreateClusterPeerResponse> CreateClusterPeerAsync(CreateClusterPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an Amazon FSx for Lustre data repository association (DRA). A data repository
         /// association is a link between a directory on the file system and an Amazon S3 bucket
         /// or prefix. You can have a maximum of 8 data repository associations on a file system.
@@ -1537,9 +1616,171 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
-        /// can easily undo file changes and compare file versions by restoring the volume to
-        /// a previous version.
+        /// Creates a SnapMirror policy for an Amazon FSx for NetApp ONTAP file system or storage
+        /// virtual machine (SVM). A SnapMirror policy defines how the SnapMirror relationships
+        /// that use the policy replicate data, including which snapshots to transfer, the maximum
+        /// number of snapshots to retain on the destination volume, and when to transfer data.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapmirrorPolicy</c> operation returns while the SnapMirror policy's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SnapMirror policy creation
+        /// status by calling the DescribeSnapmirrorPolicies operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapmirrorPolicy service method.</param>
+        /// <returns>The response from the CreateSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorPolicy">REST API Reference for CreateSnapmirrorPolicy Operation</seealso>
+        CreateSnapmirrorPolicyResponse CreateSnapmirrorPolicy(CreateSnapmirrorPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a SnapMirror policy for an Amazon FSx for NetApp ONTAP file system or storage
+        /// virtual machine (SVM). A SnapMirror policy defines how the SnapMirror relationships
+        /// that use the policy replicate data, including which snapshots to transfer, the maximum
+        /// number of snapshots to retain on the destination volume, and when to transfer data.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapmirrorPolicy</c> operation returns while the SnapMirror policy's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SnapMirror policy creation
+        /// status by calling the DescribeSnapmirrorPolicies operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapmirrorPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorPolicy">REST API Reference for CreateSnapmirrorPolicy Operation</seealso>
+        Task<CreateSnapmirrorPolicyResponse> CreateSnapmirrorPolicyAsync(CreateSnapmirrorPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a SnapMirror relationship that replicates data from a source volume to a destination
+        /// volume on an Amazon FSx for NetApp ONTAP file system.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapmirrorRelationship</c> operation returns while the SnapMirror relationship's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SnapMirror relationship
+        /// creation status by calling the DescribeSnapmirrorRelationships operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapmirrorRelationship service method.</param>
+        /// <returns>The response from the CreateSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorRelationship">REST API Reference for CreateSnapmirrorRelationship Operation</seealso>
+        CreateSnapmirrorRelationshipResponse CreateSnapmirrorRelationship(CreateSnapmirrorRelationshipRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a SnapMirror relationship that replicates data from a source volume to a destination
+        /// volume on an Amazon FSx for NetApp ONTAP file system.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapmirrorRelationship</c> operation returns while the SnapMirror relationship's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SnapMirror relationship
+        /// creation status by calling the DescribeSnapmirrorRelationships operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapmirrorRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapmirrorRelationship">REST API Reference for CreateSnapmirrorRelationship Operation</seealso>
+        Task<CreateSnapmirrorRelationshipResponse> CreateSnapmirrorRelationshipAsync(CreateSnapmirrorRelationshipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS or Amazon FSx for NetApp
+        /// ONTAP volume. With snapshots, you can easily undo file changes and compare file versions
+        /// by restoring the volume to a previous version.
         /// 
         ///  
         /// <para>
@@ -1551,8 +1792,7 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state
-        /// of <c>CREATING</c>.
+        /// Creates a new snapshot with an assigned ID, and an initial lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1579,6 +1819,11 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
@@ -1594,9 +1839,9 @@ namespace Amazon.FSx
 #endif
 
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
-        /// can easily undo file changes and compare file versions by restoring the volume to
-        /// a previous version.
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS or Amazon FSx for NetApp
+        /// ONTAP volume. With snapshots, you can easily undo file changes and compare file versions
+        /// by restoring the volume to a previous version.
         /// 
         ///  
         /// <para>
@@ -1608,8 +1853,7 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state
-        /// of <c>CREATING</c>.
+        /// Creates a new snapshot with an assigned ID, and an initial lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1639,6 +1883,11 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
@@ -1651,6 +1900,89 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a snapshot policy for an Amazon FSx for NetApp ONTAP file system or storage
+        /// virtual machine (SVM). A snapshot policy defines the schedules on which ONTAP automatically
+        /// creates snapshots of the volumes that use the policy, and the maximum number of snapshots
+        /// to retain for each schedule.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapshotPolicy</c> operation returns while the snapshot policy's lifecycle
+        /// state is still <c>CREATING</c>. You can check the snapshot policy creation status
+        /// by calling the DescribeSnapshotPolicies operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotPolicy service method.</param>
+        /// <returns>The response from the CreateSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshotPolicy">REST API Reference for CreateSnapshotPolicy Operation</seealso>
+        CreateSnapshotPolicyResponse CreateSnapshotPolicy(CreateSnapshotPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a snapshot policy for an Amazon FSx for NetApp ONTAP file system or storage
+        /// virtual machine (SVM). A snapshot policy defines the schedules on which ONTAP automatically
+        /// creates snapshots of the volumes that use the policy, and the maximum number of snapshots
+        /// to retain for each schedule.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateSnapshotPolicy</c> operation returns while the snapshot policy's lifecycle
+        /// state is still <c>CREATING</c>. You can check the snapshot policy creation status
+        /// by calling the DescribeSnapshotPolicies operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshotPolicy">REST API Reference for CreateSnapshotPolicy Operation</seealso>
+        Task<CreateSnapshotPolicyResponse> CreateSnapshotPolicyAsync(CreateSnapshotPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -1723,6 +2055,85 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a storage virtual machine (SVM) peer relationship between an SVM on an Amazon
+        /// FSx for NetApp ONTAP file system and another SVM.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateStorageVirtualMachinePeer</c> operation returns while the SVM peer's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SVM peer creation status
+        /// by calling the DescribeStorageVirtualMachinePeers operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageVirtualMachinePeer service method.</param>
+        /// <returns>The response from the CreateStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachinePeer">REST API Reference for CreateStorageVirtualMachinePeer Operation</seealso>
+        CreateStorageVirtualMachinePeerResponse CreateStorageVirtualMachinePeer(CreateStorageVirtualMachinePeerRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a storage virtual machine (SVM) peer relationship between an SVM on an Amazon
+        /// FSx for NetApp ONTAP file system and another SVM.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>CreateStorageVirtualMachinePeer</c> operation returns while the SVM peer's
+        /// lifecycle state is still <c>CREATING</c>. You can check the SVM peer creation status
+        /// by calling the DescribeStorageVirtualMachinePeers operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageVirtualMachinePeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachinePeer">REST API Reference for CreateStorageVirtualMachinePeer Operation</seealso>
+        Task<CreateStorageVirtualMachinePeerResponse> CreateStorageVirtualMachinePeerAsync(CreateStorageVirtualMachinePeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
@@ -1753,6 +2164,9 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         CreateVolumeResponse CreateVolume(CreateVolumeRequest request);
@@ -1792,6 +2206,9 @@ namespace Amazon.FSx
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1965,6 +2382,55 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP cluster peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPeer service method.</param>
+        /// <returns>The response from the DeleteClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteClusterPeer">REST API Reference for DeleteClusterPeer Operation</seealso>
+        DeleteClusterPeerResponse DeleteClusterPeer(DeleteClusterPeerRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP cluster peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteClusterPeer">REST API Reference for DeleteClusterPeer Operation</seealso>
+        Task<DeleteClusterPeerResponse> DeleteClusterPeerAsync(DeleteClusterPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2291,9 +2757,107 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
-        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
-        /// in a file system backup. 
+        /// Deletes an Amazon FSx for NetApp ONTAP SnapMirror policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapmirrorPolicy service method.</param>
+        /// <returns>The response from the DeleteSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorPolicy">REST API Reference for DeleteSnapmirrorPolicy Operation</seealso>
+        DeleteSnapmirrorPolicyResponse DeleteSnapmirrorPolicy(DeleteSnapmirrorPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP SnapMirror policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapmirrorPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorPolicy">REST API Reference for DeleteSnapmirrorPolicy Operation</seealso>
+        Task<DeleteSnapmirrorPolicyResponse> DeleteSnapmirrorPolicyAsync(DeleteSnapmirrorPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP SnapMirror relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapmirrorRelationship service method.</param>
+        /// <returns>The response from the DeleteSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorRelationship">REST API Reference for DeleteSnapmirrorRelationship Operation</seealso>
+        DeleteSnapmirrorRelationshipResponse DeleteSnapmirrorRelationship(DeleteSnapmirrorRelationshipRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP SnapMirror relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapmirrorRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapmirrorRelationship">REST API Reference for DeleteSnapmirrorRelationship Operation</seealso>
+        Task<DeleteSnapmirrorRelationshipResponse> DeleteSnapmirrorRelationshipAsync(DeleteSnapmirrorRelationshipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot. After deletion,
+        /// the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect
+        /// snapshots stored in a file system backup.
         /// 
         ///  
         /// <para>
@@ -2306,6 +2870,11 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
@@ -2317,9 +2886,9 @@ namespace Amazon.FSx
 #endif
 
         /// <summary>
-        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
-        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
-        /// in a file system backup. 
+        /// Deletes an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot. After deletion,
+        /// the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect
+        /// snapshots stored in a file system backup.
         /// 
         ///  
         /// <para>
@@ -2335,6 +2904,11 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
@@ -2343,6 +2917,55 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP snapshot policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotPolicy service method.</param>
+        /// <returns>The response from the DeleteSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshotPolicy">REST API Reference for DeleteSnapshotPolicy Operation</seealso>
+        DeleteSnapshotPolicyResponse DeleteSnapshotPolicy(DeleteSnapshotPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP snapshot policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshotPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshotPolicy">REST API Reference for DeleteSnapshotPolicy Operation</seealso>
+        Task<DeleteSnapshotPolicyResponse> DeleteSnapshotPolicyAsync(DeleteSnapshotPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2396,6 +3019,57 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         Task<DeleteStorageVirtualMachineResponse> DeleteStorageVirtualMachineAsync(DeleteStorageVirtualMachineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageVirtualMachinePeer service method.</param>
+        /// <returns>The response from the DeleteStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachinePeer">REST API Reference for DeleteStorageVirtualMachinePeer Operation</seealso>
+        DeleteStorageVirtualMachinePeerResponse DeleteStorageVirtualMachinePeer(DeleteStorageVirtualMachinePeerRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStorageVirtualMachinePeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachinePeer">REST API Reference for DeleteStorageVirtualMachinePeer Operation</seealso>
+        Task<DeleteStorageVirtualMachinePeerResponse> DeleteStorageVirtualMachinePeerAsync(DeleteStorageVirtualMachinePeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -2574,6 +3248,75 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP cluster peers, if
+        /// a <c>ClusterPeerIds</c> value is provided. Otherwise, this operation returns all cluster
+        /// peers owned by your Amazon Web Services account in the Amazon Web Services Region
+        /// of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all cluster peers, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of cluster peers in a response. If more cluster peers
+        /// remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this case,
+        /// send a later request with the <c>NextToken</c> request parameter set to the value
+        /// of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterPeers service method.</param>
+        /// <returns>The response from the DescribeClusterPeers service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeClusterPeers">REST API Reference for DescribeClusterPeers Operation</seealso>
+        DescribeClusterPeersResponse DescribeClusterPeers(DescribeClusterPeersRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP cluster peers, if
+        /// a <c>ClusterPeerIds</c> value is provided. Otherwise, this operation returns all cluster
+        /// peers owned by your Amazon Web Services account in the Amazon Web Services Region
+        /// of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all cluster peers, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of cluster peers in a response. If more cluster peers
+        /// remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this case,
+        /// send a later request with the <c>NextToken</c> request parameter set to the value
+        /// of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterPeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeClusterPeers service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeClusterPeers">REST API Reference for DescribeClusterPeers Operation</seealso>
+        Task<DescribeClusterPeersResponse> DescribeClusterPeersAsync(DescribeClusterPeersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3118,10 +3861,205 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <c>SnapshotIds</c>
-        /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
-        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
-        /// calling.
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror policies,
+        /// if a <c>SnapmirrorPolicyIds</c> value is provided. Otherwise, this operation returns
+        /// all SnapMirror policies owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SnapMirror policies, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of SnapMirror policies in a response. If more SnapMirror
+        /// policies remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this
+        /// case, send a later request with the <c>NextToken</c> request parameter set to the
+        /// value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapmirrorPolicies service method.</param>
+        /// <returns>The response from the DescribeSnapmirrorPolicies service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorPolicies">REST API Reference for DescribeSnapmirrorPolicies Operation</seealso>
+        DescribeSnapmirrorPoliciesResponse DescribeSnapmirrorPolicies(DescribeSnapmirrorPoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror policies,
+        /// if a <c>SnapmirrorPolicyIds</c> value is provided. Otherwise, this operation returns
+        /// all SnapMirror policies owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SnapMirror policies, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of SnapMirror policies in a response. If more SnapMirror
+        /// policies remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this
+        /// case, send a later request with the <c>NextToken</c> request parameter set to the
+        /// value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapmirrorPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeSnapmirrorPolicies service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorPolicies">REST API Reference for DescribeSnapmirrorPolicies Operation</seealso>
+        Task<DescribeSnapmirrorPoliciesResponse> DescribeSnapmirrorPoliciesAsync(DescribeSnapmirrorPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror relationships,
+        /// if a <c>SnapmirrorRelationshipIds</c> value is provided. Otherwise, this operation
+        /// returns all SnapMirror relationships owned by your Amazon Web Services account in
+        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SnapMirror relationships, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of SnapMirror relationships in a response. If more SnapMirror
+        /// relationships remain, Amazon FSx returns a <c>NextToken</c> value in the response.
+        /// In this case, send a later request with the <c>NextToken</c> request parameter set
+        /// to the value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapmirrorRelationships service method.</param>
+        /// <returns>The response from the DescribeSnapmirrorRelationships service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorRelationships">REST API Reference for DescribeSnapmirrorRelationships Operation</seealso>
+        DescribeSnapmirrorRelationshipsResponse DescribeSnapmirrorRelationships(DescribeSnapmirrorRelationshipsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP SnapMirror relationships,
+        /// if a <c>SnapmirrorRelationshipIds</c> value is provided. Otherwise, this operation
+        /// returns all SnapMirror relationships owned by your Amazon Web Services account in
+        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SnapMirror relationships, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of SnapMirror relationships in a response. If more SnapMirror
+        /// relationships remain, Amazon FSx returns a <c>NextToken</c> value in the response.
+        /// In this case, send a later request with the <c>NextToken</c> request parameter set
+        /// to the value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapmirrorRelationships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeSnapmirrorRelationships service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapmirrorRelationships">REST API Reference for DescribeSnapmirrorRelationships Operation</seealso>
+        Task<DescribeSnapmirrorRelationshipsResponse> DescribeSnapmirrorRelationshipsAsync(DescribeSnapmirrorRelationshipsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP snapshot policies,
+        /// if a <c>SnapshotPolicyIds</c> value is provided. Otherwise, this operation returns
+        /// all snapshot policies owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all snapshot policies, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of snapshot policies in a response. If more snapshot
+        /// policies remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this
+        /// case, send a later request with the <c>NextToken</c> request parameter set to the
+        /// value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotPolicies service method.</param>
+        /// <returns>The response from the DescribeSnapshotPolicies service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshotPolicies">REST API Reference for DescribeSnapshotPolicies Operation</seealso>
+        DescribeSnapshotPoliciesResponse DescribeSnapshotPolicies(DescribeSnapshotPoliciesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP snapshot policies,
+        /// if a <c>SnapshotPolicyIds</c> value is provided. Otherwise, this operation returns
+        /// all snapshot policies owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all snapshot policies, you can optionally specify the <c>MaxResults</c>
+        /// parameter to limit the number of snapshot policies in a response. If more snapshot
+        /// policies remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this
+        /// case, send a later request with the <c>NextToken</c> request parameter set to the
+        /// value of <c>NextToken</c> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeSnapshotPolicies service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshotPolicies">REST API Reference for DescribeSnapshotPolicies Operation</seealso>
+        Task<DescribeSnapshotPoliciesResponse> DescribeSnapshotPoliciesAsync(DescribeSnapshotPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for OpenZFS and Amazon FSx for NetApp
+        /// ONTAP snapshots, if a <c>SnapshotIds</c> value is provided. Otherwise, this operation
+        /// returns all snapshots owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -3171,10 +4109,10 @@ namespace Amazon.FSx
 #endif
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <c>SnapshotIds</c>
-        /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
-        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
-        /// calling.
+        /// Returns the description of specific Amazon FSx for OpenZFS and Amazon FSx for NetApp
+        /// ONTAP snapshots, if a <c>SnapshotIds</c> value is provided. Otherwise, this operation
+        /// returns all snapshots owned by your Amazon Web Services account in the Amazon Web
+        /// Services Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
@@ -3224,6 +4162,83 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP storage virtual machine
+        /// (SVM) peers, if a <c>StorageVirtualMachinePeerIds</c> value is provided. Otherwise,
+        /// this operation returns all SVM peers owned by your Amazon Web Services account in
+        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SVM peers, you can optionally specify the <c>MaxResults</c> parameter
+        /// to limit the number of SVM peers in a response. If more SVM peers remain, Amazon FSx
+        /// returns a <c>NextToken</c> value in the response. In this case, send a later request
+        /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
+        /// the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageVirtualMachinePeers service method.</param>
+        /// <returns>The response from the DescribeStorageVirtualMachinePeers service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachinePeers">REST API Reference for DescribeStorageVirtualMachinePeers Operation</seealso>
+        DescribeStorageVirtualMachinePeersResponse DescribeStorageVirtualMachinePeers(DescribeStorageVirtualMachinePeersRequest request);
+#endif
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for NetApp ONTAP storage virtual machine
+        /// (SVM) peers, if a <c>StorageVirtualMachinePeerIds</c> value is provided. Otherwise,
+        /// this operation returns all SVM peers owned by your Amazon Web Services account in
+        /// the Amazon Web Services Region of the endpoint that you're calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all SVM peers, you can optionally specify the <c>MaxResults</c> parameter
+        /// to limit the number of SVM peers in a response. If more SVM peers remain, Amazon FSx
+        /// returns a <c>NextToken</c> value in the response. In this case, send a later request
+        /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
+        /// the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStorageVirtualMachinePeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DescribeStorageVirtualMachinePeers service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachinePeers">REST API Reference for DescribeStorageVirtualMachinePeers Operation</seealso>
+        Task<DescribeStorageVirtualMachinePeersResponse> DescribeStorageVirtualMachinePeersAsync(DescribeStorageVirtualMachinePeersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -3806,6 +4821,55 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP cluster peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterPeer service method.</param>
+        /// <returns>The response from the UpdateClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateClusterPeer">REST API Reference for UpdateClusterPeer Operation</seealso>
+        UpdateClusterPeerResponse UpdateClusterPeer(UpdateClusterPeerRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP cluster peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateClusterPeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ClusterPeerNotFoundException">
+        /// No Amazon FSx cluster peers were found based on the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateClusterPeer">REST API Reference for UpdateClusterPeer Operation</seealso>
+        Task<UpdateClusterPeerResponse> UpdateClusterPeerAsync(UpdateClusterPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4491,12 +5555,121 @@ namespace Amazon.FSx
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
+        /// Updates an Amazon FSx for NetApp ONTAP SnapMirror policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapmirrorPolicy service method.</param>
+        /// <returns>The response from the UpdateSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorPolicy">REST API Reference for UpdateSnapmirrorPolicy Operation</seealso>
+        UpdateSnapmirrorPolicyResponse UpdateSnapmirrorPolicy(UpdateSnapmirrorPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP SnapMirror policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapmirrorPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSnapmirrorPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorPolicyNotFoundException">
+        /// No Amazon FSx SnapMirror policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorPolicy">REST API Reference for UpdateSnapmirrorPolicy Operation</seealso>
+        Task<UpdateSnapmirrorPolicyResponse> UpdateSnapmirrorPolicyAsync(UpdateSnapmirrorPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP SnapMirror relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapmirrorRelationship service method.</param>
+        /// <returns>The response from the UpdateSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorRelationship">REST API Reference for UpdateSnapmirrorRelationship Operation</seealso>
+        UpdateSnapmirrorRelationshipResponse UpdateSnapmirrorRelationship(UpdateSnapmirrorRelationshipRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP SnapMirror relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapmirrorRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSnapmirrorRelationship service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapmirrorRelationshipNotFoundException">
+        /// No Amazon FSx SnapMirror relationships were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapmirrorRelationship">REST API Reference for UpdateSnapmirrorRelationship Operation</seealso>
+        Task<UpdateSnapmirrorRelationshipResponse> UpdateSnapmirrorRelationshipAsync(UpdateSnapmirrorRelationshipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for OpenZFS snapshots, you can update only the name. For Amazon FSx
+        /// for NetApp ONTAP snapshots, you can update the name and the properties in <c>OntapConfiguration</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// <returns>The response from the UpdateSnapshot service method, as returned by FSx.</returns>
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
@@ -4509,7 +5682,13 @@ namespace Amazon.FSx
 #endif
 
         /// <summary>
-        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
+        /// Updates an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// For Amazon FSx for OpenZFS snapshots, you can update only the name. For Amazon FSx
+        /// for NetApp ONTAP snapshots, you can update the name and the properties in <c>OntapConfiguration</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -4519,6 +5698,11 @@ namespace Amazon.FSx
         /// <exception cref="Amazon.FSx.Model.BadRequestException">
         /// A generic error indicating a failure with a client request.
         /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
         /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
         /// A generic error indicating a server-side failure.
         /// </exception>
@@ -4527,6 +5711,57 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         Task<UpdateSnapshotResponse> UpdateSnapshotAsync(UpdateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP snapshot policy. You can enable or disable
+        /// the snapshot policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotPolicy service method.</param>
+        /// <returns>The response from the UpdateSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshotPolicy">REST API Reference for UpdateSnapshotPolicy Operation</seealso>
+        UpdateSnapshotPolicyResponse UpdateSnapshotPolicy(UpdateSnapshotPolicyRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP snapshot policy. You can enable or disable
+        /// the snapshot policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshotPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateSnapshotPolicy service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotPolicyNotFoundException">
+        /// No Amazon FSx snapshot policies were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshotPolicy">REST API Reference for UpdateSnapshotPolicy Operation</seealso>
+        Task<UpdateSnapshotPolicyResponse> UpdateSnapshotPolicyAsync(UpdateSnapshotPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>
@@ -4582,6 +5817,57 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">REST API Reference for UpdateStorageVirtualMachine Operation</seealso>
         Task<UpdateStorageVirtualMachineResponse> UpdateStorageVirtualMachineAsync(UpdateStorageVirtualMachineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageVirtualMachinePeer service method.</param>
+        /// <returns>The response from the UpdateStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachinePeer">REST API Reference for UpdateStorageVirtualMachinePeer Operation</seealso>
+        UpdateStorageVirtualMachinePeerResponse UpdateStorageVirtualMachinePeer(UpdateStorageVirtualMachinePeerRequest request);
+#endif
+
+        /// <summary>
+        /// Updates an Amazon FSx for NetApp ONTAP storage virtual machine (SVM) peer relationship.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStorageVirtualMachinePeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateStorageVirtualMachinePeer service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.StorageVirtualMachinePeerNotFoundException">
+        /// No Amazon FSx storage virtual machine (SVM) peers were found based on the supplied
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachinePeer">REST API Reference for UpdateStorageVirtualMachinePeer Operation</seealso>
+        Task<UpdateStorageVirtualMachinePeerResponse> UpdateStorageVirtualMachinePeerAsync(UpdateStorageVirtualMachinePeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
         /// <summary>

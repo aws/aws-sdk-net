@@ -60,6 +60,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CloneConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = CloneConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CloneConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("CopyTagsToBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

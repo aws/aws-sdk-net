@@ -103,6 +103,30 @@
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateClusterPeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateClusterPeerRequest.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateClusterPeerRequest.PassphraseSecretArn</property>
+    <min>64</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateClusterPeerRequest.PeerClusterName</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,44}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateDataRepositoryAssociationRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -224,6 +248,59 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorPolicyRequest.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorRelationshipRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorRelationshipRequest.PolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorRelationshipRequest.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorRelationshipRequest.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateSnapshotRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -240,6 +317,29 @@
     <min>23</min>
     <max>23</max>
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapshotPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapshotPolicyRequest.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapshotPolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapshotPolicyRequest.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateStorageVirtualMachineRequest.ClientRequestToken</property>
@@ -264,6 +364,36 @@
     <min>8</min>
     <max>50</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{8,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateStorageVirtualMachinePeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateStorageVirtualMachinePeerRequest.PeerClusterName</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,44}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateStorageVirtualMachinePeerRequest.PeerSvmAlias</property>
+    <min>1</min>
+    <max>41</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,41}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateStorageVirtualMachinePeerRequest.PeerSvmName</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,47}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateStorageVirtualMachinePeerRequest.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateVolumeRequest.ClientRequestToken</property>
@@ -312,6 +442,20 @@
     <min>12</min>
     <max>128</max>
     <pattern>^(backup-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteClusterPeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteClusterPeerRequest.ClusterPeerId</property>
+    <pattern>^(clusterpeer-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteClusterPeerResponse.ClusterPeerId</property>
+    <pattern>^(clusterpeer-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteDataRepositoryAssociationRequest.AssociationId</property>
@@ -368,6 +512,34 @@
     <pattern>^(fs-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorPolicyRequest.SnapmirrorPolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorPolicyResponse.SnapmirrorPolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorRelationshipRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorRelationshipRequest.SnapmirrorRelationshipId</property>
+    <pattern>^(snapmirror-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapmirrorRelationshipResponse.SnapmirrorRelationshipId</property>
+    <pattern>^(snapmirror-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.DeleteSnapshotRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -386,6 +558,24 @@
     <pattern>^((fs)?volsnap-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapshotPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapshotPolicyRequest.SnapshotPolicyId</property>
+    <min>29</min>
+    <max>29</max>
+    <pattern>^snapshotpol-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteSnapshotPolicyResponse.SnapshotPolicyId</property>
+    <min>29</min>
+    <max>29</max>
+    <pattern>^snapshotpol-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.DeleteStorageVirtualMachineRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -402,6 +592,20 @@
     <min>21</min>
     <max>21</max>
     <pattern>^(svm-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteStorageVirtualMachinePeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteStorageVirtualMachinePeerRequest.StorageVirtualMachinePeerId</property>
+    <pattern>^(svmpeer-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DeleteStorageVirtualMachinePeerResponse.StorageVirtualMachinePeerId</property>
+    <pattern>^(svmpeer-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DeleteVolumeRequest.ClientRequestToken</property>
@@ -434,6 +638,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DescribeBackupsResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeClusterPeersRequest.MaxResults</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeClusterPeersRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeClusterPeersResponse.NextToken</property>
     <min>1</min>
     <max>255</max>
     <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
@@ -559,6 +780,57 @@
     <pattern>^(?i)(true|false)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorPoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorPoliciesRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorRelationshipsRequest.MaxResults</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorRelationshipsRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapmirrorRelationshipsResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapshotPoliciesRequest.MaxResults</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapshotPoliciesRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeSnapshotPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.DescribeSnapshotsRequest.MaxResults</property>
     <min>1</min>
     <max>2147483647</max>
@@ -571,6 +843,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DescribeSnapshotsResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeStorageVirtualMachinePeersRequest.MaxResults</property>
+    <min>1</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeStorageVirtualMachinePeersRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.DescribeStorageVirtualMachinePeersResponse.NextToken</property>
     <min>1</min>
     <max>255</max>
     <pattern>^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$</pattern>
@@ -723,6 +1012,22 @@
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateClusterPeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateClusterPeerRequest.ClusterPeerId</property>
+    <pattern>^(clusterpeer-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateClusterPeerRequest.PeerClusterName</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,44}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.UpdateDataRepositoryAssociationRequest.AssociationId</property>
     <min>13</min>
     <max>23</max>
@@ -793,6 +1098,50 @@
     <pattern>^(?i)(true|false)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorPolicyRequest.SnapmirrorPolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorPolicyRequest.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorPolicyRequest.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorRelationshipRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorRelationshipRequest.PolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorRelationshipRequest.SnapmirrorRelationshipId</property>
+    <pattern>^(snapmirror-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorRelationshipRequest.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapmirrorRelationshipRequest.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.UpdateSnapshotRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -811,6 +1160,18 @@
     <pattern>^((fs)?volsnap-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapshotPolicyRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateSnapshotPolicyRequest.SnapshotPolicyId</property>
+    <min>29</min>
+    <max>29</max>
+    <pattern>^snapshotpol-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.UpdateStorageVirtualMachineRequest.ClientRequestToken</property>
     <min>1</min>
     <max>63</max>
@@ -827,6 +1188,22 @@
     <min>8</min>
     <max>50</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{8,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateStorageVirtualMachinePeerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateStorageVirtualMachinePeerRequest.PeerSvmAlias</property>
+    <min>1</min>
+    <max>41</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,41}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateStorageVirtualMachinePeerRequest.StorageVirtualMachinePeerId</property>
+    <pattern>^(svmpeer-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateVolumeRequest.ClientRequestToken</property>
@@ -977,6 +1354,67 @@
     <pattern>^(fs-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CloneConfiguration.ParentVolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CloneConfiguration.SnapshotId</property>
+    <min>11</min>
+    <max>28</max>
+    <pattern>^((fs)?volsnap-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.ClusterPeerId</property>
+    <pattern>^(clusterpeer-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.PassphraseSecretArn</property>
+    <min>64</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.PeerClusterName</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,44}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.ResourceARN</property>
+    <min>8</min>
+    <max>512</max>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeer.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeerAuthenticationStatus.InUse</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.ClusterPeerAuthenticationStatus.State</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CompletionReport.Path</property>
     <min>3</min>
     <max>4357</max>
@@ -1003,6 +1441,18 @@
     <property>Amazon.FSx.Model.CreateAndAttachS3AccessPointS3Configuration.Policy</property>
     <min>1</min>
     <max>200000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateCloneConfiguration.ParentVolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateCloneConfiguration.SnapshotId</property>
+    <min>11</min>
+    <max>28</max>
+    <pattern>^((fs)?volsnap-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileCacheLustreConfiguration.PerUnitStorageThroughput</property>
@@ -1195,6 +1645,11 @@
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateOntapSnapshotConfiguration.SnapmirrorLabel</property>
+    <min>0</min>
+    <max>31</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateOntapVolumeConfiguration.JunctionPath</property>
     <min>1</min>
     <max>255</max>
@@ -1247,6 +1702,18 @@
     <property>Amazon.FSx.Model.CreateOpenZFSVolumeConfiguration.StorageCapacityReservationGiB</property>
     <min>-1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorDestination.VolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateSnapmirrorSource.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,512}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateSvmActiveDirectoryConfiguration.NetBiosName</property>
@@ -1686,6 +2153,16 @@
     <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.OntapError.Code</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OntapError.Message</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
     <max>90</max>
@@ -1740,6 +2217,21 @@
     <min>7</min>
     <max>7</max>
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OntapSnapshotConfiguration.SizeInMegabytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OntapSnapshotConfiguration.SnapmirrorLabel</property>
+    <min>0</min>
+    <max>31</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OntapSnapshotConfiguration.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapUnixFileSystemUser.Name</property>
@@ -2086,6 +2578,163 @@
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorDestination.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,512}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorDestination.VolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorExportedSnapshot.SnapshotId</property>
+    <min>11</min>
+    <max>28</max>
+    <pattern>^((fs)?volsnap-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorExportedSnapshot.SnapshotName</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.ResourceARN</property>
+    <min>8</min>
+    <max>512</max>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.SnapmirrorPolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicy.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicyRetentionRule.Count</property>
+    <min>1</min>
+    <max>1019</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicyRetentionRule.CreationSchedule</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorPolicyRetentionRule.Label</property>
+    <min>0</min>
+    <max>31</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.LagTimeInMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.ResourceARN</property>
+    <min>8</min>
+    <max>512</max>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.SnapmirrorRelationshipId</property>
+    <pattern>^(snapmirror-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.ThrottleInKbps</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.TransferSchedule</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_:.-]{0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationship.UnhealthyReason</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationshipPolicy.PolicyId</property>
+    <pattern>^(snapmirrorpol-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorRelationshipPolicy.PolicyName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorSource.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,512}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorTransferState.BytesTransferred</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorTransferState.Duration</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorTransferState.State</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapmirrorTransferState.Type</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.Snapshot.Name</property>
     <min>1</min>
     <max>203</max>
@@ -2108,6 +2757,66 @@
     <min>23</min>
     <max>23</max>
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.ResourceARN</property>
+    <min>8</min>
+    <max>512</max>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.SnapshotPolicyId</property>
+    <min>29</min>
+    <max>29</max>
+    <pattern>^snapshotpol-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicy.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicyRetentionPeriod.Value</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicySchedule.Count</property>
+    <min>0</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicySchedule.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicySchedule.Prefix</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SnapshotPolicySchedule.SnapmirrorLabel</property>
+    <min>0</min>
+    <max>31</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SourceBackupUnavailableException.BackupId</property>
@@ -2141,6 +2850,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.StorageVirtualMachine.UUID</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.PeerClusterName</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,44}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.PeerSvmAlias</property>
+    <min>1</min>
+    <max>41</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,41}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.PeerSvmName</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,47}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.ResourceARN</property>
+    <min>8</min>
+    <max>512</max>
+    <pattern>^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?&lt;!-)):){4}(?!/).{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.StorageVirtualMachineId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^(svm-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.StorageVirtualMachinePeerId</property>
+    <pattern>^(svmpeer-[0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.StorageVirtualMachinePeer.UUID</property>
     <min>0</min>
     <max>36</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
@@ -2310,6 +3065,11 @@
     <min>7</min>
     <max>7</max>
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateOntapSnapshotConfiguration.SnapmirrorLabel</property>
+    <min>0</min>
+    <max>31</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateOntapVolumeConfiguration.JunctionPath</property>

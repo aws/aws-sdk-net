@@ -48,6 +48,20 @@ namespace Amazon.FSx.Model
         internal bool IsSetAggregateConfiguration() => this.AggregateConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property CloneConfiguration. 
+        /// <para>
+        /// Specifies the configuration to use when creating the volume as a clone of another
+        /// FSx for ONTAP volume. A clone is a writable, point-in-time copy of its parent volume.
+        /// </para>
+        /// </summary>
+        public CreateCloneConfiguration CloneConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloneConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCloneConfiguration() => this.CloneConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
         /// A boolean flag indicating whether tags for the volume should be copied to backups.

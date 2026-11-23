@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A snapshot of an Amazon FSx for OpenZFS volume.
+    /// A snapshot of an Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP volume.
     /// </summary>
     public partial class Snapshot
     {
@@ -86,6 +86,10 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <c>AVAILABLE</c> - The snapshot is fully available.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED</c> - Amazon FSx was unable to create the snapshot.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public SnapshotLifecycle Lifecycle { get; set; }
@@ -96,7 +100,10 @@ namespace Amazon.FSx.Model
         internal bool IsSetLifecycle() => this.Lifecycle != null;
 
         /// <summary>
-        /// Gets and sets the property LifecycleTransitionReason.
+        /// Gets and sets the property LifecycleTransitionReason. 
+        /// <para>
+        /// The reason why the snapshot lifecycle status changed.
+        /// </para>
         /// </summary>
         public LifecycleTransitionReason LifecycleTransitionReason { get; set; }
 
@@ -118,6 +125,19 @@ namespace Amazon.FSx.Model
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration. 
+        /// <para>
+        /// The configuration of an Amazon FSx for NetApp ONTAP snapshot.
+        /// </para>
+        /// </summary>
+        public OntapSnapshotConfiguration OntapConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OntapConfiguration property is set.
+        /// </summary>
+        internal bool IsSetOntapConfiguration() => this.OntapConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN.
@@ -143,6 +163,19 @@ namespace Amazon.FSx.Model
         /// Checks to see if the SnapshotId property is set.
         /// </summary>
         internal bool IsSetSnapshotId() => this.SnapshotId != null;
+
+        /// <summary>
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        /// The type of the snapshot.
+        /// </para>
+        /// </summary>
+        public SnapshotType SnapshotType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SnapshotType property is set.
+        /// </summary>
+        internal bool IsSetSnapshotType() => this.SnapshotType != null;
 
         /// <summary>
         /// Gets and sets the property Tags.

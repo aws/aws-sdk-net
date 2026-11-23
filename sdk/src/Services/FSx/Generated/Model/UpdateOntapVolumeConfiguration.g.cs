@@ -35,6 +35,20 @@ namespace Amazon.FSx.Model
     public partial class UpdateOntapVolumeConfiguration
     {
         /// <summary>
+        /// Gets and sets the property CloneConfiguration. 
+        /// <para>
+        /// Specifies the clone configuration changes to make to the volume. Use this property
+        /// to split a clone from its parent volume.
+        /// </para>
+        /// </summary>
+        public UpdateCloneConfiguration CloneConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CloneConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCloneConfiguration() => this.CloneConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
         /// A boolean flag indicating whether tags for the volume should be copied to backups.

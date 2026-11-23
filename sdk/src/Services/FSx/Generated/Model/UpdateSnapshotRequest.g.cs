@@ -30,8 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateSnapshot operation. Updates the name of
-    /// an Amazon FSx for OpenZFS snapshot.
+    /// Container for the parameters to the UpdateSnapshot operation. Updates an Amazon FSx
+    /// for OpenZFS or Amazon FSx for NetApp ONTAP snapshot. <para> For Amazon FSx for OpenZFS
+    /// snapshots, you can update only the name. For Amazon FSx for NetApp ONTAP snapshots,
+    /// you can update the name and the properties in <c>OntapConfiguration</c>. </para>
     /// </summary>
     public partial class UpdateSnapshotRequest : AmazonFSxRequest
     {
@@ -52,13 +54,26 @@ namespace Amazon.FSx.Model
         /// The name of the snapshot to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 203)]
+        [AWSProperty(Min = 1, Max = 203)]
         public string Name { get; set; }
 
         /// <summary>
         /// Checks to see if the Name property is set.
         /// </summary>
         internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property OntapConfiguration. 
+        /// <para>
+        /// The configuration of the ONTAP snapshot that you are updating.
+        /// </para>
+        /// </summary>
+        public UpdateOntapSnapshotConfiguration OntapConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OntapConfiguration property is set.
+        /// </summary>
+        internal bool IsSetOntapConfiguration() => this.OntapConfiguration != null;
 
         /// <summary>
         /// Gets and sets the property SnapshotId. 

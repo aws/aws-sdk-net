@@ -56,6 +56,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCloneConfiguration())
+            {
+                context.Writer.WritePropertyName("CloneConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateCloneConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloneConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");

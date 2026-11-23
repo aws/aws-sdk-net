@@ -44,5 +44,19 @@ namespace Amazon.FSx.Model
         /// Checks to see if the Message property is set.
         /// </summary>
         internal bool IsSetMessage() => this.Message != null;
+
+        /// <summary>
+        /// Gets and sets the property OntapError. 
+        /// <para>
+        /// The error returned by ONTAP when an operation on the resource fails. Returned only
+        /// for certain FSx for ONTAP resources.
+        /// </para>
+        /// </summary>
+        public OntapError OntapError { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OntapError property is set.
+        /// </summary>
+        internal bool IsSetOntapError() => this.OntapError != null;
     }
 }

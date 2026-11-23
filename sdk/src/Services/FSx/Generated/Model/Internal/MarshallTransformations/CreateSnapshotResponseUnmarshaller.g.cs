@@ -85,6 +85,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     {
                         return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleParameterError"))
+                    {
+                        return IncompatibleParameterErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                     {
                         return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

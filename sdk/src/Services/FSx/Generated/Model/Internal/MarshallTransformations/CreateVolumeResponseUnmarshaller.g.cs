@@ -113,6 +113,10 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     {
                         return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("VolumeNotFound"))
+                    {
+                        return VolumeNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                 }
             }
             return new AmazonFSxException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -39,6 +39,12 @@ namespace Amazon.FSx.Model
         IDescribeBackupsPaginator DescribeBackups(DescribeBackupsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeClusterPeers operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeClusterPeersPaginator DescribeClusterPeers(DescribeClusterPeersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDataRepositoryAssociations operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -75,10 +81,34 @@ namespace Amazon.FSx.Model
         IDescribeS3AccessPointAttachmentsPaginator DescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSnapmirrorPolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeSnapmirrorPoliciesPaginator DescribeSnapmirrorPolicies(DescribeSnapmirrorPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSnapmirrorRelationships operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeSnapmirrorRelationshipsPaginator DescribeSnapmirrorRelationships(DescribeSnapmirrorRelationshipsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSnapshotPolicies operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeSnapshotPoliciesPaginator DescribeSnapshotPolicies(DescribeSnapshotPoliciesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeStorageVirtualMachinePeers operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IDescribeStorageVirtualMachinePeersPaginator DescribeStorageVirtualMachinePeers(DescribeStorageVirtualMachinePeersRequest request);
 
         /// <summary>
         /// Paginator for DescribeStorageVirtualMachines operation

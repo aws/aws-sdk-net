@@ -88,6 +88,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("OntapConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = OntapSnapshotConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ResourceARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -99,6 +106,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SnapshotType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 

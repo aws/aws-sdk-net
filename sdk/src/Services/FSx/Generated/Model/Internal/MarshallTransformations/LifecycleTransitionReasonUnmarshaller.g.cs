@@ -59,6 +59,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+
+                if (context.TestExpression("OntapError", targetDepth, ref reader))
+                {
+                    var unmarshaller = OntapErrorUnmarshaller.Instance;
+                    unmarshalledObject.OntapError = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

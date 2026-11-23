@@ -138,6 +138,11 @@ namespace Amazon.FSx
         public static readonly AdministrativeActionType THROUGHPUT_OPTIMIZATION = new AdministrativeActionType("THROUGHPUT_OPTIMIZATION");
 
         /// <summary>
+        /// Constant VOLUME_CLONE_SPLIT for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType VOLUME_CLONE_SPLIT = new AdministrativeActionType("VOLUME_CLONE_SPLIT");
+
+        /// <summary>
         /// Constant VOLUME_INITIALIZE_WITH_SNAPSHOT for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType VOLUME_INITIALIZE_WITH_SNAPSHOT = new AdministrativeActionType("VOLUME_INITIALIZE_WITH_SNAPSHOT");
@@ -234,6 +239,52 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AliasLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AllowedSvmMode.
+    /// </summary>
+    public class AllowedSvmMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for AllowedSvmMode
+        /// </summary>
+        public static readonly AllowedSvmMode ALL = new AllowedSvmMode("ALL");
+
+        /// <summary>
+        /// Constant NONE for AllowedSvmMode
+        /// </summary>
+        public static readonly AllowedSvmMode NONE = new AllowedSvmMode("NONE");
+
+        /// <summary>
+        /// Constant SPECIFIED for AllowedSvmMode
+        /// </summary>
+        public static readonly AllowedSvmMode SPECIFIED = new AllowedSvmMode("SPECIFIED");
+
+        /// <summary>
+        /// Constructs a custom AllowedSvmMode for a value not among the defined constants.
+        /// </summary>
+        public AllowedSvmMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowedSvmMode FindValue(string value)
+        {
+            return FindValue<AllowedSvmMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowedSvmMode(string value)
         {
             return FindValue(value);
         }
@@ -458,6 +509,129 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BackupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CloneSplitAction.
+    /// </summary>
+    public class CloneSplitAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant START for CloneSplitAction
+        /// </summary>
+        public static readonly CloneSplitAction START = new CloneSplitAction("START");
+
+        /// <summary>
+        /// Constructs a custom CloneSplitAction for a value not among the defined constants.
+        /// </summary>
+        public CloneSplitAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloneSplitAction FindValue(string value)
+        {
+            return FindValue<CloneSplitAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloneSplitAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClusterPeerFilterName.
+    /// </summary>
+    public class ClusterPeerFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant FileSystemId for ClusterPeerFilterName
+        /// </summary>
+        public static readonly ClusterPeerFilterName FileSystemId = new ClusterPeerFilterName("file-system-id");
+
+        /// <summary>
+        /// Constructs a custom ClusterPeerFilterName for a value not among the defined constants.
+        /// </summary>
+        public ClusterPeerFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterPeerFilterName FindValue(string value)
+        {
+            return FindValue<ClusterPeerFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterPeerFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClusterPeerLifecycle.
+    /// </summary>
+    public class ClusterPeerLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for ClusterPeerLifecycle
+        /// </summary>
+        public static readonly ClusterPeerLifecycle CREATED = new ClusterPeerLifecycle("CREATED");
+
+        /// <summary>
+        /// Constant CREATING for ClusterPeerLifecycle
+        /// </summary>
+        public static readonly ClusterPeerLifecycle CREATING = new ClusterPeerLifecycle("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for ClusterPeerLifecycle
+        /// </summary>
+        public static readonly ClusterPeerLifecycle DELETING = new ClusterPeerLifecycle("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for ClusterPeerLifecycle
+        /// </summary>
+        public static readonly ClusterPeerLifecycle FAILED = new ClusterPeerLifecycle("FAILED");
+
+        /// <summary>
+        /// Constructs a custom ClusterPeerLifecycle for a value not among the defined constants.
+        /// </summary>
+        public ClusterPeerLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterPeerLifecycle FindValue(string value)
+        {
+            return FindValue<ClusterPeerLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterPeerLifecycle(string value)
         {
             return FindValue(value);
         }
@@ -2640,6 +2814,333 @@ namespace Amazon.FSx
     }
 
     /// <summary>
+    /// Constants used for properties of type SnapmirrorPolicyFilterName.
+    /// </summary>
+    public class SnapmirrorPolicyFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant FileSystemId for SnapmirrorPolicyFilterName
+        /// </summary>
+        public static readonly SnapmirrorPolicyFilterName FileSystemId = new SnapmirrorPolicyFilterName("file-system-id");
+
+        /// <summary>
+        /// Constant StorageVirtualMachineId for SnapmirrorPolicyFilterName
+        /// </summary>
+        public static readonly SnapmirrorPolicyFilterName StorageVirtualMachineId = new SnapmirrorPolicyFilterName("storage-virtual-machine-id");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorPolicyFilterName for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorPolicyFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorPolicyFilterName FindValue(string value)
+        {
+            return FindValue<SnapmirrorPolicyFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorPolicyFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorPolicyLifecycle.
+    /// </summary>
+    public class SnapmirrorPolicyLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for SnapmirrorPolicyLifecycle
+        /// </summary>
+        public static readonly SnapmirrorPolicyLifecycle CREATED = new SnapmirrorPolicyLifecycle("CREATED");
+
+        /// <summary>
+        /// Constant CREATING for SnapmirrorPolicyLifecycle
+        /// </summary>
+        public static readonly SnapmirrorPolicyLifecycle CREATING = new SnapmirrorPolicyLifecycle("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for SnapmirrorPolicyLifecycle
+        /// </summary>
+        public static readonly SnapmirrorPolicyLifecycle DELETING = new SnapmirrorPolicyLifecycle("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for SnapmirrorPolicyLifecycle
+        /// </summary>
+        public static readonly SnapmirrorPolicyLifecycle FAILED = new SnapmirrorPolicyLifecycle("FAILED");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorPolicyLifecycle for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorPolicyLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorPolicyLifecycle FindValue(string value)
+        {
+            return FindValue<SnapmirrorPolicyLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorPolicyLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorPolicyScope.
+    /// </summary>
+    public class SnapmirrorPolicyScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant FILESYSTEM for SnapmirrorPolicyScope
+        /// </summary>
+        public static readonly SnapmirrorPolicyScope FILESYSTEM = new SnapmirrorPolicyScope("FILESYSTEM");
+
+        /// <summary>
+        /// Constant SVM for SnapmirrorPolicyScope
+        /// </summary>
+        public static readonly SnapmirrorPolicyScope SVM = new SnapmirrorPolicyScope("SVM");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorPolicyScope for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorPolicyScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorPolicyScope FindValue(string value)
+        {
+            return FindValue<SnapmirrorPolicyScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorPolicyScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorPolicySnapshotCopyMode.
+    /// </summary>
+    public class SnapmirrorPolicySnapshotCopyMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant COPY_ALL_SOURCE_SNAPSHOTS for SnapmirrorPolicySnapshotCopyMode
+        /// </summary>
+        public static readonly SnapmirrorPolicySnapshotCopyMode COPY_ALL_SOURCE_SNAPSHOTS = new SnapmirrorPolicySnapshotCopyMode("COPY_ALL_SOURCE_SNAPSHOTS");
+
+        /// <summary>
+        /// Constant COPY_LATEST_SOURCE_SNAPSHOT for SnapmirrorPolicySnapshotCopyMode
+        /// </summary>
+        public static readonly SnapmirrorPolicySnapshotCopyMode COPY_LATEST_SOURCE_SNAPSHOT = new SnapmirrorPolicySnapshotCopyMode("COPY_LATEST_SOURCE_SNAPSHOT");
+
+        /// <summary>
+        /// Constant NO_CREATE_SNAPSHOT_ON_SOURCE for SnapmirrorPolicySnapshotCopyMode
+        /// </summary>
+        public static readonly SnapmirrorPolicySnapshotCopyMode NO_CREATE_SNAPSHOT_ON_SOURCE = new SnapmirrorPolicySnapshotCopyMode("NO_CREATE_SNAPSHOT_ON_SOURCE");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorPolicySnapshotCopyMode for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorPolicySnapshotCopyMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorPolicySnapshotCopyMode FindValue(string value)
+        {
+            return FindValue<SnapmirrorPolicySnapshotCopyMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorPolicySnapshotCopyMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorRelationshipFilterName.
+    /// </summary>
+    public class SnapmirrorRelationshipFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant DestinationVolumeId for SnapmirrorRelationshipFilterName
+        /// </summary>
+        public static readonly SnapmirrorRelationshipFilterName DestinationVolumeId = new SnapmirrorRelationshipFilterName("destination-volume-id");
+
+        /// <summary>
+        /// Constant FileSystemId for SnapmirrorRelationshipFilterName
+        /// </summary>
+        public static readonly SnapmirrorRelationshipFilterName FileSystemId = new SnapmirrorRelationshipFilterName("file-system-id");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorRelationshipFilterName for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorRelationshipFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorRelationshipFilterName FindValue(string value)
+        {
+            return FindValue<SnapmirrorRelationshipFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorRelationshipFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorRelationshipLifecycle.
+    /// </summary>
+    public class SnapmirrorRelationshipLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for SnapmirrorRelationshipLifecycle
+        /// </summary>
+        public static readonly SnapmirrorRelationshipLifecycle CREATED = new SnapmirrorRelationshipLifecycle("CREATED");
+
+        /// <summary>
+        /// Constant CREATING for SnapmirrorRelationshipLifecycle
+        /// </summary>
+        public static readonly SnapmirrorRelationshipLifecycle CREATING = new SnapmirrorRelationshipLifecycle("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for SnapmirrorRelationshipLifecycle
+        /// </summary>
+        public static readonly SnapmirrorRelationshipLifecycle DELETING = new SnapmirrorRelationshipLifecycle("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for SnapmirrorRelationshipLifecycle
+        /// </summary>
+        public static readonly SnapmirrorRelationshipLifecycle FAILED = new SnapmirrorRelationshipLifecycle("FAILED");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorRelationshipLifecycle for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorRelationshipLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorRelationshipLifecycle FindValue(string value)
+        {
+            return FindValue<SnapmirrorRelationshipLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorRelationshipLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapmirrorRelationshipState.
+    /// </summary>
+    public class SnapmirrorRelationshipState : ConstantClass
+    {
+        /// <summary>
+        /// Constant BROKEN_OFF for SnapmirrorRelationshipState
+        /// </summary>
+        public static readonly SnapmirrorRelationshipState BROKEN_OFF = new SnapmirrorRelationshipState("BROKEN_OFF");
+
+        /// <summary>
+        /// Constant PAUSED for SnapmirrorRelationshipState
+        /// </summary>
+        public static readonly SnapmirrorRelationshipState PAUSED = new SnapmirrorRelationshipState("PAUSED");
+
+        /// <summary>
+        /// Constant SNAPMIRRORED for SnapmirrorRelationshipState
+        /// </summary>
+        public static readonly SnapmirrorRelationshipState SNAPMIRRORED = new SnapmirrorRelationshipState("SNAPMIRRORED");
+
+        /// <summary>
+        /// Constant TRANSFERRING for SnapmirrorRelationshipState
+        /// </summary>
+        public static readonly SnapmirrorRelationshipState TRANSFERRING = new SnapmirrorRelationshipState("TRANSFERRING");
+
+        /// <summary>
+        /// Constant UNINITIALIZED for SnapmirrorRelationshipState
+        /// </summary>
+        public static readonly SnapmirrorRelationshipState UNINITIALIZED = new SnapmirrorRelationshipState("UNINITIALIZED");
+
+        /// <summary>
+        /// Constructs a custom SnapmirrorRelationshipState for a value not among the defined constants.
+        /// </summary>
+        public SnapmirrorRelationshipState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapmirrorRelationshipState FindValue(string value)
+        {
+            return FindValue<SnapmirrorRelationshipState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapmirrorRelationshipState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SnapshotFilterName.
     /// </summary>
     public class SnapshotFilterName : ConstantClass
@@ -2701,6 +3202,11 @@ namespace Amazon.FSx
         public static readonly SnapshotLifecycle DELETING = new SnapshotLifecycle("DELETING");
 
         /// <summary>
+        /// Constant FAILED for SnapshotLifecycle
+        /// </summary>
+        public static readonly SnapshotLifecycle FAILED = new SnapshotLifecycle("FAILED");
+
+        /// <summary>
         /// Constant PENDING for SnapshotLifecycle
         /// </summary>
         public static readonly SnapshotLifecycle PENDING = new SnapshotLifecycle("PENDING");
@@ -2726,6 +3232,246 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnapshotLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotPolicyFilterName.
+    /// </summary>
+    public class SnapshotPolicyFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant FileSystemId for SnapshotPolicyFilterName
+        /// </summary>
+        public static readonly SnapshotPolicyFilterName FileSystemId = new SnapshotPolicyFilterName("file-system-id");
+
+        /// <summary>
+        /// Constant StorageVirtualMachineId for SnapshotPolicyFilterName
+        /// </summary>
+        public static readonly SnapshotPolicyFilterName StorageVirtualMachineId = new SnapshotPolicyFilterName("storage-virtual-machine-id");
+
+        /// <summary>
+        /// Constructs a custom SnapshotPolicyFilterName for a value not among the defined constants.
+        /// </summary>
+        public SnapshotPolicyFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotPolicyFilterName FindValue(string value)
+        {
+            return FindValue<SnapshotPolicyFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotPolicyFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotPolicyLifecycle.
+    /// </summary>
+    public class SnapshotPolicyLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for SnapshotPolicyLifecycle
+        /// </summary>
+        public static readonly SnapshotPolicyLifecycle CREATED = new SnapshotPolicyLifecycle("CREATED");
+
+        /// <summary>
+        /// Constant CREATING for SnapshotPolicyLifecycle
+        /// </summary>
+        public static readonly SnapshotPolicyLifecycle CREATING = new SnapshotPolicyLifecycle("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for SnapshotPolicyLifecycle
+        /// </summary>
+        public static readonly SnapshotPolicyLifecycle DELETING = new SnapshotPolicyLifecycle("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for SnapshotPolicyLifecycle
+        /// </summary>
+        public static readonly SnapshotPolicyLifecycle FAILED = new SnapshotPolicyLifecycle("FAILED");
+
+        /// <summary>
+        /// Constructs a custom SnapshotPolicyLifecycle for a value not among the defined constants.
+        /// </summary>
+        public SnapshotPolicyLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotPolicyLifecycle FindValue(string value)
+        {
+            return FindValue<SnapshotPolicyLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotPolicyLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotPolicyRetentionPeriodType.
+    /// </summary>
+    public class SnapshotPolicyRetentionPeriodType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAYS for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType DAYS = new SnapshotPolicyRetentionPeriodType("DAYS");
+
+        /// <summary>
+        /// Constant HOURS for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType HOURS = new SnapshotPolicyRetentionPeriodType("HOURS");
+
+        /// <summary>
+        /// Constant INFINITE for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType INFINITE = new SnapshotPolicyRetentionPeriodType("INFINITE");
+
+        /// <summary>
+        /// Constant MINUTES for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType MINUTES = new SnapshotPolicyRetentionPeriodType("MINUTES");
+
+        /// <summary>
+        /// Constant MONTHS for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType MONTHS = new SnapshotPolicyRetentionPeriodType("MONTHS");
+
+        /// <summary>
+        /// Constant SECONDS for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType SECONDS = new SnapshotPolicyRetentionPeriodType("SECONDS");
+
+        /// <summary>
+        /// Constant YEARS for SnapshotPolicyRetentionPeriodType
+        /// </summary>
+        public static readonly SnapshotPolicyRetentionPeriodType YEARS = new SnapshotPolicyRetentionPeriodType("YEARS");
+
+        /// <summary>
+        /// Constructs a custom SnapshotPolicyRetentionPeriodType for a value not among the defined constants.
+        /// </summary>
+        public SnapshotPolicyRetentionPeriodType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotPolicyRetentionPeriodType FindValue(string value)
+        {
+            return FindValue<SnapshotPolicyRetentionPeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotPolicyRetentionPeriodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotPolicyScope.
+    /// </summary>
+    public class SnapshotPolicyScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant FILESYSTEM for SnapshotPolicyScope
+        /// </summary>
+        public static readonly SnapshotPolicyScope FILESYSTEM = new SnapshotPolicyScope("FILESYSTEM");
+
+        /// <summary>
+        /// Constant SVM for SnapshotPolicyScope
+        /// </summary>
+        public static readonly SnapshotPolicyScope SVM = new SnapshotPolicyScope("SVM");
+
+        /// <summary>
+        /// Constructs a custom SnapshotPolicyScope for a value not among the defined constants.
+        /// </summary>
+        public SnapshotPolicyScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotPolicyScope FindValue(string value)
+        {
+            return FindValue<SnapshotPolicyScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotPolicyScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotType.
+    /// </summary>
+    public class SnapshotType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ONTAP for SnapshotType
+        /// </summary>
+        public static readonly SnapshotType ONTAP = new SnapshotType("ONTAP");
+
+        /// <summary>
+        /// Constant OPENZFS for SnapshotType
+        /// </summary>
+        public static readonly SnapshotType OPENZFS = new SnapshotType("OPENZFS");
+
+        /// <summary>
+        /// Constructs a custom SnapshotType for a value not among the defined constants.
+        /// </summary>
+        public SnapshotType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotType FindValue(string value)
+        {
+            return FindValue<SnapshotType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotType(string value)
         {
             return FindValue(value);
         }
@@ -2946,6 +3692,256 @@ namespace Amazon.FSx
     }
 
     /// <summary>
+    /// Constants used for properties of type StorageVirtualMachinePeerApplication.
+    /// </summary>
+    public class StorageVirtualMachinePeerApplication : ConstantClass
+    {
+        /// <summary>
+        /// Constant FILE_COPY for StorageVirtualMachinePeerApplication
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerApplication FILE_COPY = new StorageVirtualMachinePeerApplication("FILE_COPY");
+
+        /// <summary>
+        /// Constant FLEXCACHE for StorageVirtualMachinePeerApplication
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerApplication FLEXCACHE = new StorageVirtualMachinePeerApplication("FLEXCACHE");
+
+        /// <summary>
+        /// Constant LUN_COPY for StorageVirtualMachinePeerApplication
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerApplication LUN_COPY = new StorageVirtualMachinePeerApplication("LUN_COPY");
+
+        /// <summary>
+        /// Constant SNAPMIRROR for StorageVirtualMachinePeerApplication
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerApplication SNAPMIRROR = new StorageVirtualMachinePeerApplication("SNAPMIRROR");
+
+        /// <summary>
+        /// Constructs a custom StorageVirtualMachinePeerApplication for a value not among the defined constants.
+        /// </summary>
+        public StorageVirtualMachinePeerApplication(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachinePeerApplication FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachinePeerApplication>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachinePeerApplication(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachinePeerFilterName.
+    /// </summary>
+    public class StorageVirtualMachinePeerFilterName : ConstantClass
+    {
+        /// <summary>
+        /// Constant FileSystemId for StorageVirtualMachinePeerFilterName
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerFilterName FileSystemId = new StorageVirtualMachinePeerFilterName("file-system-id");
+
+        /// <summary>
+        /// Constant StorageVirtualMachineId for StorageVirtualMachinePeerFilterName
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerFilterName StorageVirtualMachineId = new StorageVirtualMachinePeerFilterName("storage-virtual-machine-id");
+
+        /// <summary>
+        /// Constructs a custom StorageVirtualMachinePeerFilterName for a value not among the defined constants.
+        /// </summary>
+        public StorageVirtualMachinePeerFilterName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachinePeerFilterName FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachinePeerFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachinePeerFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachinePeerLifecycle.
+    /// </summary>
+    public class StorageVirtualMachinePeerLifecycle : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for StorageVirtualMachinePeerLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerLifecycle CREATED = new StorageVirtualMachinePeerLifecycle("CREATED");
+
+        /// <summary>
+        /// Constant CREATING for StorageVirtualMachinePeerLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerLifecycle CREATING = new StorageVirtualMachinePeerLifecycle("CREATING");
+
+        /// <summary>
+        /// Constant DELETING for StorageVirtualMachinePeerLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerLifecycle DELETING = new StorageVirtualMachinePeerLifecycle("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for StorageVirtualMachinePeerLifecycle
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerLifecycle FAILED = new StorageVirtualMachinePeerLifecycle("FAILED");
+
+        /// <summary>
+        /// Constructs a custom StorageVirtualMachinePeerLifecycle for a value not among the defined constants.
+        /// </summary>
+        public StorageVirtualMachinePeerLifecycle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachinePeerLifecycle FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachinePeerLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachinePeerLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachinePeerState.
+    /// </summary>
+    public class StorageVirtualMachinePeerState : ConstantClass
+    {
+        /// <summary>
+        /// Constant INITIALIZING for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState INITIALIZING = new StorageVirtualMachinePeerState("INITIALIZING");
+
+        /// <summary>
+        /// Constant INITIATED for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState INITIATED = new StorageVirtualMachinePeerState("INITIATED");
+
+        /// <summary>
+        /// Constant PEERED for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState PEERED = new StorageVirtualMachinePeerState("PEERED");
+
+        /// <summary>
+        /// Constant PENDING for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState PENDING = new StorageVirtualMachinePeerState("PENDING");
+
+        /// <summary>
+        /// Constant REJECTED for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState REJECTED = new StorageVirtualMachinePeerState("REJECTED");
+
+        /// <summary>
+        /// Constant SUSPENDED for StorageVirtualMachinePeerState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerState SUSPENDED = new StorageVirtualMachinePeerState("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom StorageVirtualMachinePeerState for a value not among the defined constants.
+        /// </summary>
+        public StorageVirtualMachinePeerState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachinePeerState FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachinePeerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachinePeerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StorageVirtualMachinePeerUpdateState.
+    /// </summary>
+    public class StorageVirtualMachinePeerUpdateState : ConstantClass
+    {
+        /// <summary>
+        /// Constant PEERED for StorageVirtualMachinePeerUpdateState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerUpdateState PEERED = new StorageVirtualMachinePeerUpdateState("PEERED");
+
+        /// <summary>
+        /// Constant REJECTED for StorageVirtualMachinePeerUpdateState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerUpdateState REJECTED = new StorageVirtualMachinePeerUpdateState("REJECTED");
+
+        /// <summary>
+        /// Constant SUSPENDED for StorageVirtualMachinePeerUpdateState
+        /// </summary>
+        public static readonly StorageVirtualMachinePeerUpdateState SUSPENDED = new StorageVirtualMachinePeerUpdateState("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom StorageVirtualMachinePeerUpdateState for a value not among the defined constants.
+        /// </summary>
+        public StorageVirtualMachinePeerUpdateState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageVirtualMachinePeerUpdateState FindValue(string value)
+        {
+            return FindValue<StorageVirtualMachinePeerUpdateState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageVirtualMachinePeerUpdateState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type StorageVirtualMachineRootVolumeSecurityStyle.
     /// </summary>
     public class StorageVirtualMachineRootVolumeSecurityStyle : ConstantClass
@@ -3124,6 +4120,52 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdatableSnapmirrorRelationshipState.
+    /// </summary>
+    public class UpdatableSnapmirrorRelationshipState : ConstantClass
+    {
+        /// <summary>
+        /// Constant BROKEN_OFF for UpdatableSnapmirrorRelationshipState
+        /// </summary>
+        public static readonly UpdatableSnapmirrorRelationshipState BROKEN_OFF = new UpdatableSnapmirrorRelationshipState("BROKEN_OFF");
+
+        /// <summary>
+        /// Constant PAUSED for UpdatableSnapmirrorRelationshipState
+        /// </summary>
+        public static readonly UpdatableSnapmirrorRelationshipState PAUSED = new UpdatableSnapmirrorRelationshipState("PAUSED");
+
+        /// <summary>
+        /// Constant SNAPMIRRORED for UpdatableSnapmirrorRelationshipState
+        /// </summary>
+        public static readonly UpdatableSnapmirrorRelationshipState SNAPMIRRORED = new UpdatableSnapmirrorRelationshipState("SNAPMIRRORED");
+
+        /// <summary>
+        /// Constructs a custom UpdatableSnapmirrorRelationshipState for a value not among the defined constants.
+        /// </summary>
+        public UpdatableSnapmirrorRelationshipState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdatableSnapmirrorRelationshipState FindValue(string value)
+        {
+            return FindValue<UpdatableSnapmirrorRelationshipState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdatableSnapmirrorRelationshipState(string value)
         {
             return FindValue(value);
         }

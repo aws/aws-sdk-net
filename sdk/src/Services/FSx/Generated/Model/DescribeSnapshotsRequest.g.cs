@@ -31,23 +31,24 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation. Returns the description
-    /// of specific Amazon FSx for OpenZFS snapshots, if a <c>SnapshotIds</c> value is provided.
-    /// Otherwise, this operation returns all snapshots owned by your Amazon Web Services
-    /// account in the Amazon Web Services Region of the endpoint that you're calling. <para>
-    /// When retrieving all snapshots, you can optionally specify the <c>MaxResults</c> parameter
-    /// to limit the number of snapshots in a response. If more snapshots remain, Amazon FSx
-    /// returns a <c>NextToken</c> value in the response. In this case, send a later request
-    /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
-    /// the last response. </para> <para> Use this operation in an iterative process to retrieve
-    /// a list of your snapshots. <c>DescribeSnapshots</c> is called first without a <c>NextToken</c>
-    /// value. Then the operation continues to be called with the <c>NextToken</c> parameter
-    /// set to the value of the last <c>NextToken</c> value until a response has no <c>NextToken</c>
-    /// value. </para> <para> When using this operation, keep the following in mind: </para>
-    /// <ul> <li> <para> The operation might return fewer than the <c>MaxResults</c> value
-    /// of snapshot descriptions while still including a <c>NextToken</c> value. </para> </li>
-    /// <li> <para> The order of snapshots returned in the response of one <c>DescribeSnapshots</c>
-    /// call and the order of snapshots returned across the responses of a multi-call iteration
-    /// is unspecified. </para> </li> </ul>
+    /// of specific Amazon FSx for OpenZFS and Amazon FSx for NetApp ONTAP snapshots, if a
+    /// <c>SnapshotIds</c> value is provided. Otherwise, this operation returns all snapshots
+    /// owned by your Amazon Web Services account in the Amazon Web Services Region of the
+    /// endpoint that you're calling. <para> When retrieving all snapshots, you can optionally
+    /// specify the <c>MaxResults</c> parameter to limit the number of snapshots in a response.
+    /// If more snapshots remain, Amazon FSx returns a <c>NextToken</c> value in the response.
+    /// In this case, send a later request with the <c>NextToken</c> request parameter set
+    /// to the value of <c>NextToken</c> from the last response. </para> <para> Use this operation
+    /// in an iterative process to retrieve a list of your snapshots. <c>DescribeSnapshots</c>
+    /// is called first without a <c>NextToken</c> value. Then the operation continues to
+    /// be called with the <c>NextToken</c> parameter set to the value of the last <c>NextToken</c>
+    /// value until a response has no <c>NextToken</c> value. </para> <para> When using this
+    /// operation, keep the following in mind: </para> <ul> <li> <para> The operation might
+    /// return fewer than the <c>MaxResults</c> value of snapshot descriptions while still
+    /// including a <c>NextToken</c> value. </para> </li> <li> <para> The order of snapshots
+    /// returned in the response of one <c>DescribeSnapshots</c> call and the order of snapshots
+    /// returned across the responses of a multi-call iteration is unspecified. </para> </li>
+    /// </ul>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonFSxRequest
     {
@@ -111,8 +112,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SnapshotIds. 
         /// <para>
-        /// The IDs of the snapshots that you want to retrieve. This parameter value overrides
-        /// any filters. If any IDs aren't found, a <c>SnapshotNotFound</c> error occurs.
+        /// The IDs of the snapshots that you want to retrieve. You can include snapshots of Amazon
+        /// FSx for OpenZFS and Amazon FSx for NetApp ONTAP volumes in the same request. If you
+        /// also specify <c>Filters</c>, only snapshots that match both the IDs and the filters
+        /// are returned. If any IDs aren't found, or if a filter excludes any of them, a <c>SnapshotNotFound</c>
+        /// error occurs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

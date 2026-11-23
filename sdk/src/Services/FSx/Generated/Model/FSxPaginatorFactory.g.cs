@@ -41,6 +41,14 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeClusterPeers operation
+        /// </summary>
+        public IDescribeClusterPeersPaginator DescribeClusterPeers(DescribeClusterPeersRequest request)
+        {
+            return new DescribeClusterPeersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDataRepositoryAssociations operation
         /// </summary>
         public IDescribeDataRepositoryAssociationsPaginator DescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request)
@@ -89,11 +97,43 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSnapmirrorPolicies operation
+        /// </summary>
+        public IDescribeSnapmirrorPoliciesPaginator DescribeSnapmirrorPolicies(DescribeSnapmirrorPoliciesRequest request)
+        {
+            return new DescribeSnapmirrorPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSnapmirrorRelationships operation
+        /// </summary>
+        public IDescribeSnapmirrorRelationshipsPaginator DescribeSnapmirrorRelationships(DescribeSnapmirrorRelationshipsRequest request)
+        {
+            return new DescribeSnapmirrorRelationshipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSnapshotPolicies operation
+        /// </summary>
+        public IDescribeSnapshotPoliciesPaginator DescribeSnapshotPolicies(DescribeSnapshotPoliciesRequest request)
+        {
+            return new DescribeSnapshotPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         /// </summary>
         public IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             return new DescribeSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeStorageVirtualMachinePeers operation
+        /// </summary>
+        public IDescribeStorageVirtualMachinePeersPaginator DescribeStorageVirtualMachinePeers(DescribeStorageVirtualMachinePeersRequest request)
+        {
+            return new DescribeStorageVirtualMachinePeersPaginator(this.client, request);
         }
 
         /// <summary>
