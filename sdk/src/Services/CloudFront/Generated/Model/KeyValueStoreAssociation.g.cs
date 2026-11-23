@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// The Amazon Resource Name (ARN) of the key value store association.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 85)]
+        [AWSProperty(Required = true, Min = 0, Max = 90)]
         public string KeyValueStoreARN { get; set; }
 
         /// <summary>

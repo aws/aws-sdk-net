@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model
         /// The Amazon Resource Name (ARN) of the function.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 0, Max = 108)]
+        [AWSProperty(Required = true, Min = 0, Max = 111)]
         public string FunctionARN { get; set; }
 
         /// <summary>

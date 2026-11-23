@@ -109,7 +109,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.ListTagsForResourceRequest.Resource</property>
-    <pattern>^arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
+    <pattern>^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.PublishConnectionFunctionRequest.Id</property>
@@ -124,7 +124,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.TagResourceRequest.Resource</property>
-    <pattern>^arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
+    <pattern>^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.TestConnectionFunctionRequest.ConnectionObject</property>
@@ -149,7 +149,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.UntagResourceRequest.Resource</property>
-    <pattern>^arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
+    <pattern>^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.UpdateConnectionFunctionRequest.ConnectionFunctionCode</property>
@@ -204,7 +204,7 @@
     <property>Amazon.CloudFront.Model.CaCertificatesBundleS3Location.Region</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-z]{2}-[a-z]+-\d$</pattern>
+    <pattern>^([a-z]+-){2,3}\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.ConnectionFunctionAssociation.Id</property>
@@ -225,8 +225,8 @@
   <property-value-rule>
     <property>Amazon.CloudFront.Model.FunctionAssociation.FunctionARN</property>
     <min>0</min>
-    <max>108</max>
-    <pattern>^arn:aws:cloudfront::[0-9]{12}:function\/[a-zA-Z0-9-_]{1,64}$</pattern>
+    <max>111</max>
+    <pattern>^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:function\/[a-zA-Z0-9-_]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.FunctionSummary.Name</property>
@@ -237,14 +237,14 @@
   <property-value-rule>
     <property>Amazon.CloudFront.Model.KeyValueStoreAssociation.KeyValueStoreARN</property>
     <min>0</min>
-    <max>85</max>
-    <pattern>^arn:aws:cloudfront::[0-9]{12}:key-value-store\/[0-9a-fA-F-]{36}$</pattern>
+    <max>90</max>
+    <pattern>^arn:aws(-[a-z]+)*:cloudfront::[0-9]{12}:key-value-store\/[0-9a-fA-F-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.OriginShield.OriginShieldRegion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-z]{2}-[a-z]+-\d$</pattern>
+    <pattern>^([a-z]+-){2,3}\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.Parameter.Name</property>
