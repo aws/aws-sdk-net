@@ -11,12 +11,13 @@ namespace SmithyDotNet.Generator.Writers.Endpoints;
 public sealed class EndpointParametersWriter(GenerationContext context, string modelFileName)
 {
     /// <summary>
-    /// Emits the endpoint parameters source. The rule set is required; callers gate on
-    /// <see cref="GenerationContext.HasEndpointRuleSet"/>.
+    /// Emits the endpoint parameters source from <see cref="GenerationContext.EndpointParameters"/>. A rule set
+    /// or endpoint BDD is required; callers gate on <see cref="GenerationContext.HasEndpointRuleSet"/> or
+    /// <see cref="GenerationContext.HasEndpointBdd"/>.
     /// </summary>
     public string Write(CancellationToken cancellationToken = default)
     {
-        var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointParametersWriter requires an endpoint rule set.");
+        var parameters = context.EndpointParameters ?? throw new GeneratorException("EndpointParametersWriter requires an endpoint rule set or endpoint BDD.");
         var className = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
@@ -35,26 +36,29 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public class {className} : EndpointParameters", () =>
             {
-                WriteConstructor(writer, ruleSet, className);
-                foreach (var (name, parameter) in ruleSet.Parameters)
+                WriteConstructor(writer, parameters, className);
+                foreach (var (name, parameter) in parameters)
                 {
                     writer.WriteLine();
                     WriteProperty(writer, name, parameter);
                 }
+
+                WriteIndexer(writer, parameters);
+                WriteParameterValuesEqual(writer, parameters, className);
             });
         });
 
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private static void WriteConstructor(CodeWriter writer, EndpointRuleSet ruleSet, string className)
+    private static void WriteConstructor(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters, string className)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// {className} constructor");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {className}()", () =>
         {
-            foreach (var (name, parameter) in ruleSet.Parameters)
+            foreach (var (name, parameter) in parameters)
             {
                 if (parameter.Default is { } defaultValue)
                 {
@@ -77,10 +81,70 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// {parameter.Documentation ?? $"{name} parameter"}");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public {type} {name}", () =>
+        // A typed auto-property (backing field, no dictionary lookup/boxing). The overridden indexer
+        // routes parameters["X"] to this same property so string and typed access stay in sync.
+        writer.WriteLine($"public {type} {name} {{ get; set; }}");
+    }
+
+    // Overrides PropertyBag's (virtual) indexer so parameters["X"] reads/writes the same typed
+    // backing field as parameters.X. Unknown keys fall through to the base dictionary, preserving the
+    // custom-provider contract.
+    private static void WriteIndexer(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters)
+    {
+        writer.WriteLine();
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Gets or sets an endpoint parameter by name. Known parameters read and write the typed");
+        writer.WriteLine("/// properties; any other name falls through to the underlying property bag.");
+        writer.WriteLine("/// </summary>");
+        writer.OpenBlock("public override object this[string name]", () =>
         {
-            writer.WriteLine($"get => ({type})this[\"{name}\"];");
-            writer.WriteLine($"set => this[\"{name}\"] = value;");
+            writer.OpenBlock("get => name switch", "};", () =>
+            {
+                foreach (var (name, _) in parameters)
+                {
+                    writer.WriteLine($"\"{name}\" => {name},");
+                }
+
+                writer.WriteLine("_ => base[name],");
+            });
+
+            writer.OpenBlock("set", () =>
+            {
+                writer.OpenBlock("switch (name)", () =>
+                {
+                    foreach (var (name, parameter) in parameters)
+                    {
+                        writer.WriteLine($"case \"{name}\": {name} = ({NativeType(parameter.Type)})value; break;");
+                    }
+
+                    writer.WriteLine("default: base[name] = value; break;");
+                });
+            });
+        });
+    }
+
+    // Core's endpoint cache reuses an endpoint resolved earlier in the request when the parameters are
+    // unchanged. The base comparison only sees the property bag, which typed properties never write, so
+    // compare each typed property here and defer to the base for keys set only through the indexer.
+    // string/bool? use == (no boxing); stringArray uses Equals, the same reference comparison the bag
+    // applies to list values.
+    private static void WriteParameterValuesEqual(CodeWriter writer, IReadOnlyDictionary<string, EndpointParameter> parameters, string className)
+    {
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.OpenBlock("protected override bool ParameterValuesEqual(EndpointParameters other)", () =>
+        {
+            writer.WriteLine($"var o = ({className})other;");
+            var comparisons = parameters.Select(p => NativeType(p.Value.Type) == "IEnumerable<string>"
+                ? $"Equals({p.Key}, o.{p.Key})"
+                : $"{p.Key} == o.{p.Key}");
+            var lines = comparisons.Append("base.ParameterValuesEqual(other)").ToList();
+            for (var i = 0; i < lines.Count; i++)
+            {
+                var prefix = i == 0 ? "return " : "    && ";
+                var suffix = i == lines.Count - 1 ? ";" : string.Empty;
+                writer.WriteLine($"{prefix}{lines[i]}{suffix}");
+            }
         });
     }
 
