@@ -361,4 +361,16 @@ public class OperationWriterTests
         var request = new OperationWriter(context, "send.json").WriteRequest(context.Operations.Single(o => o.Name == "Send"), TestContext.Current.CancellationToken);
         Assert.Contains("public Func<System.Threading.Tasks.Task<IInputStreamEvent>> InputPublisher { get; set; }", request);
     }
+
+    [Fact]
+    public void Request_InjectPrivateMemberAssignmentOnEventStreamMember_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["SendRequest"] = TestCustomizations.Modify("stream", new PropertyModifier { InjectPrivateMemberAssignment = ["private object _stream;"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/EventStreams/event-stream-input-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "Send");
+
+        var ex = Assert.Throws<GeneratorException>(() => new OperationWriter(context, "send.json").WriteRequest(operation, TestContext.Current.CancellationToken));
+        Assert.Contains("an event-stream publisher has no backing field", ex.Message);
+    }
 }

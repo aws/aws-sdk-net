@@ -141,19 +141,12 @@ public sealed record UnwrappedValue(string Wrapper, string QueryName, string Ele
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
-/// <param name="EmitIsSetProperties">True when the <c>emitIsSetProperties</c> customization lists this member: it gets a public <c>Is{Property}Set</c> flag backing its set-ness.</param>
+/// <param name="ShapeName">The name of the structure that has the member.</param>
+/// <param name="Customizations">The service's customizations, which the properties below are read from once.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="BaseMemberModifier">How the member relates to a same-named base-class member: <c>new</c> for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>); <c>override</c> when the customizations set <c>overridesBaseMember</c>.</param>
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
 /// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
-/// <param name="IsInternal">True when the customizations' <c>accessModifier</c> makes the property <c>internal</c>.</param>
-/// <param name="IsPropertyExcluded">True when <c>excludeMembers</c> lists the member: hand-written code declares the property, so the class omits it but the (un)marshallers still use it.</param>
-/// <param name="IsExcludedFromMarshalling">True when <c>excludeFromMarshalling</c> lists the member: hand-written code sends it.</param>
-/// <param name="IsExcludedFromUnmarshalling">True when <c>excludeFromUnmarshalling</c> lists the member: hand-written code reads it.</param>
-/// <param name="SkipIsSet">True when the customizations' <c>skipXmlIsSet</c> is set: the member gets no <c>IsSet</c> method, so the restXml request marshaller sends it unguarded.</param>
-/// <param name="InjectedMarshallCode">The <c>injectMarshallCode</c> lines written in place of the member, or null.</param>
-/// <param name="CustomGetter">The <c>injectPropertyGetter</c> lines that replace the getter, or null.</param>
-/// <param name="CustomSetter">The <c>injectPropertySetter</c> lines that replace the setter, or null.</param>
 /// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
@@ -164,22 +157,51 @@ public sealed record Member(
     string? Obsolete,
     string Documentation,
     string ModeledName,
-    bool EmitIsSetProperties = false,
+    string ShapeName,
+    CustomizationsModel Customizations,
     string? JsonName = null,
     BaseMemberModifier BaseMemberModifier = BaseMemberModifier.None,
     bool IsEventPayload = false,
     bool IsEventHeader = false,
-    EventStreamPublisherInfo? EventStreamPublisher = null,
-    bool IsInternal = false,
-    bool IsPropertyExcluded = false,
-    bool IsExcludedFromMarshalling = false,
-    bool IsExcludedFromUnmarshalling = false,
-    bool SkipIsSet = false,
-    IReadOnlyList<string>? InjectedMarshallCode = null,
-    IReadOnlyList<string>? CustomGetter = null,
-    IReadOnlyList<string>? CustomSetter = null
+    EventStreamPublisherInfo? EventStreamPublisher = null
 )
 {
+    /// <summary>True when the <c>emitIsSetProperties</c> customization lists this member: it gets a public <c>Is{Property}Set</c> flag backing its set-ness.</summary>
+    public bool EmitIsSetProperties { get; } = Customizations.EmitIsSet(ShapeName, ModeledName);
+
+    /// <summary>True when <c>excludeMembers</c> lists the member: hand-written code declares the property, so the class omits it but the (un)marshallers still use it.</summary>
+    public bool IsPropertyExcluded { get; } = Customizations.IsExcludedMember(ShapeName, ModeledName);
+
+    /// <summary>True when the customizations' <c>accessModifier</c> makes the property <c>internal</c>.</summary>
+    public bool IsInternal { get; } = Customizations.IsInternal(ShapeName, ModeledName);
+
+    /// <summary>True when <c>excludeFromMarshalling</c> lists the member: hand-written code sends it.</summary>
+    public bool IsExcludedFromMarshalling { get; } = Customizations.IsExcludedFromMarshalling(ShapeName, ModeledName);
+
+    /// <summary>True when <c>excludeFromUnmarshalling</c> lists the member: hand-written code reads it.</summary>
+    public bool IsExcludedFromUnmarshalling { get; } = Customizations.IsExcludedFromUnmarshalling(ShapeName, ModeledName);
+
+    /// <summary>True when the customizations' <c>skipXmlIsSet</c> is set: the member gets no <c>IsSet</c> method, so the restXml request marshaller sends it unguarded.</summary>
+    public bool SkipIsSet { get; } = Customizations.SkipsXmlIsSet(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectMarshallCode</c> lines written in place of the member, or null.</summary>
+    public IReadOnlyList<string>? InjectedMarshallCode { get; } = Customizations.InjectedMarshallCode(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectUnmarshallCode</c> lines written in place of the member's read, or null.</summary>
+    public IReadOnlyList<string>? InjectedUnmarshallCode { get; } = Customizations.InjectedUnmarshallCode(ShapeName, ModeledName);
+
+    /// <summary>True when <c>skipXmlTestExpression</c> lists the member: its read is not guarded by a name match.</summary>
+    public bool SkipsTestExpression { get; } = Customizations.SkipsXmlTestExpression(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectPrivateMemberAssignment</c> lines that replace the backing field's declaration, or null.</summary>
+    public IReadOnlyList<string>? CustomFieldDeclaration { get; } = Customizations.CustomFieldDeclaration(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectPropertyGetter</c> lines that replace the getter, or null.</summary>
+    public IReadOnlyList<string>? CustomGetter { get; } = Customizations.CustomGetter(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectPropertySetter</c> lines that replace the setter, or null.</summary>
+    public IReadOnlyList<string>? CustomSetter { get; } = Customizations.CustomSetter(ShapeName, ModeledName);
+
     /// <summary>
     /// The member's explicit <c>@timestampFormat</c>, or null when unset. Lives on <see cref="Type"/>
     /// so it is resolved once and shared with nested collection elements; surfaced here for the common
@@ -266,20 +288,13 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                EmitIsSetProperties: context.Customizations.EmitIsSet(shapeName, emittedName),
+                ShapeName: shapeName,
+                Customizations: context.Customizations,
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 BaseMemberModifier: BaseMemberModifierFor(context.Customizations, shapeName, memberName, propertyName),
                 IsEventPayload: member.IsEventPayload(),
-                IsEventHeader: member.IsEventHeader(),
-                IsInternal: context.Customizations.IsInternal(shapeName, memberName),
-                IsPropertyExcluded: context.Customizations.IsExcludedMember(shapeName, emittedName),
-                IsExcludedFromMarshalling: context.Customizations.IsExcludedFromMarshalling(shapeName, memberName),
-                IsExcludedFromUnmarshalling: context.Customizations.IsExcludedFromUnmarshalling(shapeName, memberName),
-                SkipIsSet: context.Customizations.SkipsXmlIsSet(shapeName, memberName),
-                InjectedMarshallCode: context.Customizations.InjectedMarshallCode(shapeName, memberName),
-                CustomGetter: context.Customizations.CustomGetter(shapeName, memberName),
-                CustomSetter: context.Customizations.CustomSetter(shapeName, memberName))
+                IsEventHeader: member.IsEventHeader())
             );
         }
 

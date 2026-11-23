@@ -28,6 +28,14 @@ public sealed record ShapeModifier
     [JsonPropertyName("injectMarshallCodeInPayload")]
     public List<string>? InjectMarshallCodeInPayload { get; init; }
 
+    /// <summary>Lines written before a response's body read loop; C2J's <c>injectXmlUnmarshallResultCode</c>.</summary>
+    [JsonPropertyName("injectUnmarshallResultCode")]
+    public List<string>? InjectUnmarshallResultCode { get; init; }
+
+    /// <summary>restXml-only: see <see cref="CustomizationsModel.SkipsXmlTestExpression"/>.</summary>
+    [JsonPropertyName("skipXmlTestExpression")]
+    public List<string> SkipXmlTestExpression { get; init; } = [];
+
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
@@ -43,11 +51,21 @@ public sealed record ShapeModifier
             return true;
         }
 
+        if (InjectUnmarshallResultCode is not null || SkipXmlTestExpression.Count > 0)
+        {
+            return true;
+        }
+
         foreach (var entry in Modify)
         {
             foreach (var property in entry.Values)
             {
                 if (property.SkipXmlIsSet || property.InjectMarshallCode is not null)
+                {
+                    return true;
+                }
+
+                if (property.InjectUnmarshallCode is not null)
                 {
                     return true;
                 }
@@ -102,6 +120,18 @@ public sealed record PropertyModifier
     /// <summary>See <see cref="CustomizationsModel.InjectedMarshallCode"/>.</summary>
     [JsonPropertyName("injectMarshallCode")]
     public List<string>? InjectMarshallCode { get; init; }
+
+    /// <summary>See <see cref="CustomizationsModel.InjectedUnmarshallCode"/>; C2J's <c>injectXmlUnmarshallCode</c>.</summary>
+    [JsonPropertyName("injectUnmarshallCode")]
+    public List<string>? InjectUnmarshallCode { get; init; }
+
+    /// <summary>
+    /// Lines that replace the backing field's declaration, to give it a default (S3's
+    /// <c>private CompressionType _compressionType = CompressionType.None;</c>); C2J's <c>injectXmlPrivateMemberAssignment</c>.
+    /// They declare the field as <see cref="InjectPropertyGetter"/> names it.
+    /// </summary>
+    [JsonPropertyName("injectPrivateMemberAssignment")]
+    public List<string>? InjectPrivateMemberAssignment { get; init; }
 
     /// <summary>
     /// Lines that replace the property's getter (S3's <c>get { return this._tagCount ?? 0; }</c>), reading the C2J-named

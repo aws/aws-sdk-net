@@ -68,8 +68,21 @@ internal static class XmlBodyMemberUnmarshaller
                 expression = $"{expression}/{unwrapped.ElementName}";
             }
 
-            var testArg = depth is null ? $"\"{expression}\"" : $"\"{expression}\", {depth}";
-            writer.OpenBlock($"if (context.TestExpression({testArg}))", () =>
+            // S3's GetBucketCorsOutput.Configuration: its unmarshaller reads the whole body, starting at the first element.
+            if (member.SkipsTestExpression)
+            {
+                WriteMemberBody(writer, member, incrementalMap);
+                writer.WriteLine("continue;");
+                continue;
+            }
+
+            var test = $"""context.TestExpression("{expression}")""";
+            if (depth is not null)
+            {
+                test = $"""context.TestExpression("{expression}", {depth})""";
+            }
+
+            writer.OpenBlock($"if ({test})", () =>
             {
                 WriteMemberBody(writer, member, incrementalMap);
                 if (depthExpr is not null)
@@ -87,6 +100,12 @@ internal static class XmlBodyMemberUnmarshaller
 
     private static void WriteMemberBody(CodeWriter writer, Member member, bool incrementalMap)
     {
+        if (member.InjectedUnmarshallCode is { } injectedCode)
+        {
+            writer.WriteLines(injectedCode);
+            return;
+        }
+
         var target = $"unmarshalledObject.{member.PropertyName}";
 
         if (member.Type.ListElement is { } element)

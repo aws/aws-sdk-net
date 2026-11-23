@@ -30,6 +30,9 @@ public static class CustomizationTransform
         //   otherwise fails as an unknown member.
         // - C2J's injectXmlMarshallCode(InPayload), renamed injectMarshallCode(InPayload) here; RestoreRequest's lines
         //   move to RestoreObjectRequest, which takes the flattened member.
+        // - C2J's injectXmlUnmarshallCode, injectXmlUnmarshallResultCode and injectXmlPrivateMemberAssignment lose the "Xml";
+        //   skipContextTestExpressionUnmarshallingLogic goes, and predicateListUnmarshallers become injectUnmarshallCode lines.
+        //   A response's lines name the response "unmarshalledObject", not "response".
         // - a shape modified from two files (C2J merges the entries, the loader throws): keep each shape in one file.
         // - inheritAlternateBaseClass: "PutObjectRequest": { "alternateBaseClass": "PutWithACLRequest" } becomes
         //   "PutObjectRequest": "PutWithACLRequest".

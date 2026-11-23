@@ -156,6 +156,7 @@ public static class CustomizationValidator
         }
 
         ValidateInjectedMarshallCode(model, customizations);
+        ValidateInjectedUnmarshallCode(model, customizations);
 
         // ExceptionWriter always derives from the service exception, so an error's entry would do nothing.
         foreach (var (shapeName, baseClass) in customizations.InheritAlternateBaseClass)
@@ -210,6 +211,10 @@ public static class CustomizationValidator
     // The request marshaller writes the lines in place of a header, a body element or a structure payload only.
     private static void ValidateInjectedMarshallCode(SmithyModel model, CustomizationsModel customizations)
     {
+        // Only a structure a request reaches gets a marshaller.
+        var inputs = model.Shapes.Values.OfType<OperationShape>().Select(operation => operation.Input);
+        var requestShapes = ServiceIndex.ReachableFrom(model, inputs);
+
         foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
         {
             var context = $"shapeModifiers['{shapeName}']";
@@ -233,12 +238,12 @@ public static class CustomizationValidator
 
                 if (code.Count == 0)
                 {
-                    throw new GeneratorException($"{context} sets injectMarshallCode on '{memberName}' without lines.");
+                    throw new GeneratorException($"{context} sets an empty injectMarshallCode on '{memberName}'.");
                 }
 
-                if (CustomizationTransform.FindSingleShape(model, shapeName, context) is not StructureShape structure)
+                if (CustomizationTransform.FindSingleShape(model, shapeName, context) is not StructureShape structure || !requestShapes.ContainsKey(structure.Id))
                 {
-                    throw new GeneratorException($"{context} targets a shape that is not a structure.");
+                    throw new GeneratorException($"{context} sets injectMarshallCode, but is not part of a request.");
                 }
 
                 var member = structure.Members[memberName];
@@ -253,6 +258,101 @@ public static class CustomizationValidator
                 {
                     throw new GeneratorException($"{context} sets injectMarshallCode on '{memberName}', which excludeFromMarshalling drops.");
                 }
+            }
+        }
+    }
+
+    // Each hook throws where the unmarshaller would not read it.
+    private static void ValidateInjectedUnmarshallCode(SmithyModel model, CustomizationsModel customizations)
+    {
+        // Only a structure a response reaches gets an unmarshaller.
+        var outputs = model.Shapes.Values.OfType<OperationShape>().Select(operation => operation.Output);
+        var responseShapes = ServiceIndex.ReachableFrom(model, outputs);
+
+        foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
+        {
+            var context = $"shapeModifiers['{shapeName}']";
+            if (modifier.InjectUnmarshallResultCode is not null || modifier.SkipXmlTestExpression.Count > 0)
+            {
+                ValidateResponseBodyHooks(model, customizations, shapeName, modifier);
+            }
+
+            foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
+            {
+                if (property.InjectUnmarshallCode?.Count == 0 || property.InjectPrivateMemberAssignment?.Count == 0)
+                {
+                    throw new GeneratorException($"{context} sets an empty injectUnmarshallCode or injectPrivateMemberAssignment on '{memberName}'.");
+                }
+
+                if (property.InjectPrivateMemberAssignment is not null && customizations.IsExcludedMember(shapeName, memberName))
+                {
+                    throw new GeneratorException($"{context} sets injectPrivateMemberAssignment on '{memberName}', which excludeMembers drops.");
+                }
+
+                if (property.InjectUnmarshallCode is null)
+                {
+                    continue;
+                }
+
+                var shape = CustomizationTransform.FindSingleShape(model, shapeName, context);
+                if (shape is not StructureShape structure || !responseShapes.ContainsKey(shape.Id))
+                {
+                    throw new GeneratorException($"{context} sets injectUnmarshallCode, but is not part of a response.");
+                }
+
+                var member = structure.Members[memberName];
+                if (member.IsHttpPayload() || member.IsHttpResponseCode())
+                {
+                    throw new GeneratorException($"{context} sets injectUnmarshallCode on '{memberName}', which is a payload or status code member.");
+                }
+
+                if (modifier.ExcludeFromUnmarshalling.Contains(customizations.EmittedName(shapeName, memberName)))
+                {
+                    throw new GeneratorException($"{context} sets injectUnmarshallCode on '{memberName}', which excludeFromUnmarshalling drops.");
+                }
+            }
+        }
+    }
+
+    // injectUnmarshallResultCode and skipXmlTestExpression are read in a response's body loop.
+    private static void ValidateResponseBodyHooks(SmithyModel model, CustomizationsModel customizations, string shapeName, ShapeModifier modifier)
+    {
+        var context = $"shapeModifiers['{shapeName}']";
+        if (modifier.InjectUnmarshallResultCode?.Count == 0)
+        {
+            throw new GeneratorException($"{context} sets an empty injectUnmarshallResultCode.");
+        }
+
+        var shape = CustomizationTransform.FindSingleShape(model, shapeName, context);
+        var isOutput = model.Shapes.Values.OfType<OperationShape>().Any(operation => operation.Output == shape.Id);
+        var bodyMembers = new List<string>();
+        if (shape is StructureShape structure && isOutput)
+        {
+            foreach (var (memberName, member) in structure.Members)
+            {
+                if (modifier.ExcludeFromUnmarshalling.Contains(customizations.EmittedName(shapeName, memberName)))
+                {
+                    continue;
+                }
+
+                if (member.GetHttpHeader() is null && member.GetHttpPrefixHeaders() is null && !member.IsHttpResponseCode() && !member.IsHttpPayload())
+                {
+                    bodyMembers.Add(memberName);
+                }
+            }
+        }
+
+        if (bodyMembers.Count == 0)
+        {
+            throw new GeneratorException($"{context} sets injectUnmarshallResultCode or skipXmlTestExpression, but is not an operation's output with body members.");
+        }
+
+        // Without the test every element is read into the member, so it has to be the only one.
+        foreach (var memberName in modifier.SkipXmlTestExpression)
+        {
+            if (bodyMembers.Count != 1 || bodyMembers[0] != memberName)
+            {
+                throw new GeneratorException($"{context} lists '{memberName}' in skipXmlTestExpression, which is not the output's only body member.");
             }
         }
     }

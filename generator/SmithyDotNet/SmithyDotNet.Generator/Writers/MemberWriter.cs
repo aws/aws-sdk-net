@@ -35,7 +35,8 @@ public static class MemberWriter
     private static void WriteMember(CodeWriter writer, Member member)
     {
         var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;
-        var field = member.EmitIsSetProperties || hasAccessor ? WriteBackingField(writer, member) : null;
+        var hasField = member.EmitIsSetProperties || hasAccessor || member.CustomFieldDeclaration is not null;
+        var field = hasField ? WriteBackingField(writer, member) : null;
 
         writer.WriteLine("/// <summary>");
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
@@ -122,16 +123,32 @@ public static class MemberWriter
         writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {isSet};");
     }
 
-    // The emitIsSetProperties flag's setter passes the value to InternalSDKUtils.SetIsSet by ref, which a
-    // property can't be, and injected accessors read the field, so those members get one instead of an auto-property.
-    // An emitIsSetProperties field keeps its shipped _{Property} name. An injected-accessor field is named as C2J names
-    // it (_camelCase), because the injected lines are C2J's and refer to it.
+    // A member gets a backing field when SetIsSet needs it by ref (emitIsSetProperties, named _{Property}) or when
+    // injected accessors or injectPrivateMemberAssignment refer to it (named _camelCase, as in C2J).
     private static string WriteBackingField(CodeWriter writer, Member member)
     {
         // SetIsSet only has Nullable<T>/List/Dictionary overloads; anything else would not compile.
         if (member.EmitIsSetProperties && !member.Type.IsNullableValueType && !member.Type.IsCollection)
         {
             throw new GeneratorException($"emitIsSetProperties lists member '{member.PropertyName}', whose type {member.Type.DotNetType} has no InternalSDKUtils.SetIsSet overload.");
+        }
+
+        if (member.CustomFieldDeclaration is not null)
+        {
+            if (member.EventStreamPublisher is not null)
+            {
+                throw new GeneratorException($"injectPrivateMemberAssignment on member '{member.PropertyName}' is not supported: an event-stream publisher has no backing field.");
+            }
+
+            var declaredField = "_" + SdkNaming.ToParameterName(member.PropertyName).TrimStart('@');
+            if (!string.Concat(member.CustomFieldDeclaration).Contains(declaredField))
+            {
+                throw new GeneratorException($"injectPrivateMemberAssignment on member '{member.PropertyName}' has to declare the field {declaredField}.");
+            }
+
+            writer.WriteLines(member.CustomFieldDeclaration);
+            writer.WriteLine();
+            return declaredField;
         }
 
         var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;

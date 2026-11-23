@@ -307,6 +307,43 @@ public class RestXmlCodegenTests
         Assert.DoesNotContain("UnmarshallResult", ResponseUnmarshaller(context, "PutThing"));
     }
 
+    // S3's GetObjectOutput (a header and Metadata's prefix headers) and GetBucketWebsiteOutput (body members, read into
+    // an object the result code creates).
+    [Fact]
+    public void InjectUnmarshallCode_ReplacesTheMemberRead()
+    {
+        var customizations = new CustomizationsModel();
+        var modifier = TestCustomizations.Modify("arn", new PropertyModifier { InjectUnmarshallCode = ["ArnUnmarshall(context, unmarshalledObject);"] });
+        TestCustomizations.Modify("meta", new PropertyModifier { InjectUnmarshallCode = ["MetaUnmarshall(context, unmarshalledObject);"] }, modifier);
+        customizations.ShapeModifiers["GetThingResponse"] = modifier with { InjectUnmarshallResultCode = ["Prepare(unmarshalledObject);"] };
+        customizations.ShapeModifiers["PutThingResponse"] = TestCustomizations.Modify("thingId", new PropertyModifier { InjectUnmarshallCode = ["ThingIdUnmarshall(context, unmarshalledObject);"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+
+        var source = ResponseUnmarshaller(context, "GetThing");
+        var beforeLoop = source[..source.IndexOf("while (context.Read())", StringComparison.Ordinal)];
+        Assert.Contains("Prepare(unmarshalledObject);", beforeLoop);
+        Assert.Contains("ArnUnmarshall(context, unmarshalledObject);", source);
+        Assert.DoesNotContain("unmarshalledObject.Arn =", source);
+        Assert.Contains("MetaUnmarshall(context, unmarshalledObject);", source);
+        Assert.DoesNotContain("headersForMeta", source);
+
+        var putThing = ResponseUnmarshaller(context, "PutThing");
+        Assert.Contains("ThingIdUnmarshall(context, unmarshalledObject);", putThing);
+        Assert.DoesNotContain("x-thing-id", putThing);
+    }
+
+    // S3's GetBucketCorsOutput.Configuration.
+    [Fact]
+    public void Response_SkipXmlTestExpression_ReadsTheMemberWithoutMatchingItsName()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["GetThingResponse"] = new ShapeModifier { SkipXmlTestExpression = ["arn"] };
+        var source = ResponseUnmarshaller(TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations), "GetThing");
+        Assert.DoesNotContain("TestExpression", source);
+        Assert.Contains("unmarshalledObject.Arn = unmarshaller.Unmarshall(context);", source);
+        Assert.Contains("continue;", source);
+    }
+
     // S3's FilterRule.Name, and PutObjectRequest.ContentType: an excluded header, which hand-written code sends.
     [Fact]
     public void Request_SkipXmlIsSet_SendsTheElementUnguarded()

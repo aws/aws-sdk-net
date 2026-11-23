@@ -13,6 +13,9 @@ public sealed partial record CustomizationsModel
         // An unknown key at any depth is a hook not implemented yet; generating while ignoring
         // one would silently diverge from C2J output, so deserialization fails instead.
         UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow,
+
+        // A null list or section would otherwise surface later as a NullReferenceException.
+        RespectNullableAnnotations = true,
     };
 
     /// <summary>

@@ -77,7 +77,9 @@ internal static class ShapeModifiers
     // becomes one entry per structure.
     private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
     {
-        if (global.HasExclusions() || global.DeprecatedMessage is not null || global.InjectMarshallCodeInPayload is not null)
+        var hasShapeHooks = global.HasExclusions() || global.DeprecatedMessage is not null || global.InjectMarshallCodeInPayload is not null;
+        var hasResponseBodyHooks = global.InjectUnmarshallResultCode is not null || global.SkipXmlTestExpression.Count > 0;
+        if (hasShapeHooks || hasResponseBodyHooks)
         {
             throw new GeneratorException("shapeModifiers['*'] only supports modify.");
         }

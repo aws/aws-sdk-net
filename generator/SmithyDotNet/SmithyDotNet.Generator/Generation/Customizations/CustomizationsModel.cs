@@ -61,8 +61,8 @@ public sealed partial record CustomizationsModel
     [JsonPropertyName("emitIsSetProperties")]
     public Dictionary<string, List<string>> EmitIsSetProperties { get; init; } = [];
 
-    /// <summary>True when <c>emitIsSetProperties</c> lists <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
-    public bool EmitIsSet(string shapeName, string memberName) => EmitIsSetProperties.TryGetValue(shapeName, out var members) && members.Contains(memberName);
+    /// <summary>True when <c>emitIsSetProperties</c> lists modeled member <paramref name="memberName"/> by its <see cref="EmittedName"/>.</summary>
+    public bool EmitIsSet(string shapeName, string memberName) => EmitIsSetProperties.TryGetValue(shapeName, out var members) && members.Contains(EmittedName(shapeName, memberName));
 
     /// <summary>Type overrides keyed by modeled shape name, then <see cref="EmittedName"/> (C2J's <c>dataTypeSwap</c>).</summary>
     [JsonPropertyName("dataTypeSwap")]
@@ -179,8 +179,8 @@ public sealed partial record CustomizationsModel
     /// <summary>True when <c>excludeShapes</c> lists modeled shape <paramref name="shapeName"/>.</summary>
     public bool IsExcludedShape(string shapeName) => ExcludeShapes.Contains(shapeName);
 
-    /// <summary>True when <c>excludeMembers</c> lists the member emitted as <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
-    public bool IsExcludedMember(string shapeName, string memberName) => ExcludeMembers.TryGetValue(shapeName, out var members) && members.Contains(memberName);
+    /// <summary>True when <c>excludeMembers</c> lists modeled member <paramref name="memberName"/> by its <see cref="EmittedName"/>.</summary>
+    public bool IsExcludedMember(string shapeName, string memberName) => ExcludeMembers.TryGetValue(shapeName, out var members) && members.Contains(EmittedName(shapeName, memberName));
 
     /// <summary>The value member an <c>emitFromMember</c> substitution unwraps <paramref name="shapeName"/> to, or null.</summary>
     public string? EmittedValueMember(string shapeName) => ShapeSubstitutions.GetValueOrDefault(shapeName)?.EmitFromMember;
@@ -219,6 +219,19 @@ public sealed partial record CustomizationsModel
     /// <summary>The <c>injectMarshallCodeInPayload</c> lines of <paramref name="shapeName"/>, or null.</summary>
     public List<string>? InjectedMarshallCodeInPayload(string shapeName) => ShapeModifiers.GetValueOrDefault(shapeName)?.InjectMarshallCodeInPayload;
 
+    /// <summary>The <c>injectUnmarshallCode</c> lines written in place of <paramref name="memberName"/>'s read, or null.</summary>
+    public List<string>? InjectedUnmarshallCode(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectUnmarshallCode;
+
+    /// <summary>The <c>injectUnmarshallResultCode</c> lines of <paramref name="shapeName"/>, or null.</summary>
+    public List<string>? InjectedUnmarshallResultCode(string shapeName) => ShapeModifiers.GetValueOrDefault(shapeName)?.InjectUnmarshallResultCode;
+
+    /// <summary>
+    /// True when <c>skipXmlTestExpression</c> lists <paramref name="memberName"/>: it is read on whichever element
+    /// comes first, without matching its name.
+    /// </summary>
+    public bool SkipsXmlTestExpression(string shapeName, string memberName) =>
+        ShapeModifiers.TryGetValue(shapeName, out var modifier) && modifier.SkipXmlTestExpression.Contains(memberName);
+
     /// <summary>True when <c>accessModifier</c> makes modeled member <paramref name="memberName"/> <c>internal</c>, the only value supported.</summary>
     public bool IsInternal(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AccessModifier == "internal";
 
@@ -227,6 +240,9 @@ public sealed partial record CustomizationsModel
 
     /// <summary>The <c>injectPropertySetter</c> lines that replace modeled member <paramref name="memberName"/>'s setter, or null.</summary>
     public List<string>? CustomSetter(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPropertySetter;
+
+    /// <summary>The <c>injectPrivateMemberAssignment</c> lines that replace modeled member <paramref name="memberName"/>'s field declaration, or null.</summary>
+    public List<string>? CustomFieldDeclaration(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPrivateMemberAssignment;
 
     /// <summary>
     /// The <c>marshallNameOverrides</c> wire name <paramref name="operationName"/>'s request gives property

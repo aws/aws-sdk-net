@@ -131,6 +131,9 @@ public class GenerationContextTests
     [InlineData("skipXmlIsSet")]
     [InlineData("injectMarshallCode")]
     [InlineData("injectMarshallCodeInPayload")]
+    [InlineData("injectUnmarshallCode")]
+    [InlineData("injectUnmarshallResultCode")]
+    [InlineData("skipXmlTestExpression")]
     public void MarshallingExclusionHooks_OutsideRestXml_Throw(string hook)
     {
         var customizations = new CustomizationsModel();
@@ -140,6 +143,9 @@ public class GenerationContextTests
             "excludeFromUnmarshalling" => new ShapeModifier { ExcludeFromUnmarshalling = ["id"] },
             "injectMarshallCode" => TestCustomizations.Modify("id", new PropertyModifier { InjectMarshallCode = ["IdMarshall(request, publicRequest);"] }),
             "injectMarshallCodeInPayload" => new ShapeModifier { InjectMarshallCodeInPayload = ["Sort(publicRequest);"] },
+            "injectUnmarshallCode" => TestCustomizations.Modify("id", new PropertyModifier { InjectUnmarshallCode = ["IdUnmarshall(context, unmarshalledObject);"] }),
+            "injectUnmarshallResultCode" => new ShapeModifier { InjectUnmarshallResultCode = ["Prepare(unmarshalledObject);"] },
+            "skipXmlTestExpression" => new ShapeModifier { SkipXmlTestExpression = ["id"] },
             _ => TestCustomizations.Modify("id", new PropertyModifier { SkipXmlIsSet = true }),
         };
 

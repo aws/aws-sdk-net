@@ -56,7 +56,7 @@ public class CustomizationsModelTests
     [InlineData("""[{ "operation": "remove", "targetType": "T", "newType": "N" }]""", "overrides[0] needs")]
     [InlineData("""[{ "operation": "addbefore", "targetType": "T", "newType": "N" }]""", "overrides[0] needs")]
     [InlineData("""[{ "operation": "addBefore", "targetType": "", "newType": "N" }]""", "overrides[0] needs")]
-    [InlineData("""[{ "operation": "addBefore", "targetType": "T", "newType": null }]""", "overrides[0] needs")]
+    [InlineData("""[{ "operation": "addBefore", "targetType": "T", "newType": null }]""", "newType")]
     [InlineData("""[null]""", "overrides[0] needs")]
     [InlineData("""null""", "needs an 'overrides' list")]
     [InlineData("""[{ "operation": "addBefore", "targetType": "T" }]""", "newType")]
@@ -247,9 +247,12 @@ public class CustomizationsModelTests
                   "modify": [
                     { "Tagging": { "emitPropertyName": "TagSet" } },
                     { "ContentType": { "skipXmlIsSet": true } },
-                    { "Range": { "injectMarshallCode": ["RangeMarshall(request, publicRequest);"] } }
+                    { "Range": { "injectMarshallCode": ["RangeMarshall(request, publicRequest);"] } },
+                    { "ETag": { "injectUnmarshallCode": ["ETagUnmarshall(context, unmarshalledObject);"], "injectPrivateMemberAssignment": ["private string _eTag = string.Empty;"] } }
                   ],
                   "injectMarshallCodeInPayload": ["Sort(publicRequest);"],
+                  "injectUnmarshallResultCode": ["Prepare(unmarshalledObject);"],
+                  "skipXmlTestExpression": ["Configuration"],
                   "excludeFromMarshalling": ["TagSet"],
                   "excludeFromUnmarshalling": ["Expiration"]
                 }
@@ -262,6 +265,10 @@ public class CustomizationsModelTests
         Assert.True(model.SkipsXmlIsSet("PutObjectRequest", "ContentType"));
         Assert.Equal(["RangeMarshall(request, publicRequest);"], model.InjectedMarshallCode("PutObjectRequest", "Range"));
         Assert.Equal(["Sort(publicRequest);"], model.ShapeModifiers["PutObjectRequest"].InjectMarshallCodeInPayload);
+        Assert.Equal(["ETagUnmarshall(context, unmarshalledObject);"], model.InjectedUnmarshallCode("PutObjectRequest", "ETag"));
+        Assert.Equal(["private string _eTag = string.Empty;"], model.CustomFieldDeclaration("PutObjectRequest", "ETag"));
+        Assert.Equal(["Prepare(unmarshalledObject);"], model.InjectedUnmarshallResultCode("PutObjectRequest"));
+        Assert.True(model.SkipsXmlTestExpression("PutObjectRequest", "Configuration"));
     }
 
     [Theory]

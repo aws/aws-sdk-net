@@ -506,6 +506,8 @@ Writers and their output are pinned by `RestXmlCodegenTests` and the restXml pro
   name, that hand-written code sends or reads. `skipXmlIsSet` drops a member's `IsSet`, so its string body element
   is sent unguarded. `injectMarshallCode` lines replace a member's write, and
   `injectMarshallCodeInPayload` lines come before the payload's root.
+  `injectUnmarshallCode` lines replace a member's read, `skipXmlTestExpression` drops the `TestExpression` around
+  it, and `injectUnmarshallResultCode` lines are written in `UnmarshallResult`, before the first `context.Read()`.
 - **Errors** — `XmlErrorResponseUnmarshaller` parses the `ErrorResponse/Error/Code` envelope; dispatch is
   on `errorResponse.Code` against the Smithy shape name, same structure as the JSON path. S3 supplies its own
   error handling through `service.customErrorHandling`, whose three parts are all required (a partial set fails at

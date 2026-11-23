@@ -143,6 +143,7 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
             {
                 writer.WriteLine("return;");
             });
+            writer.WriteLines(context.Customizations.InjectedUnmarshallResultCode(operation.Output.Id.Name));
             writer.OpenBlock("while (context.Read())", () =>
             {
                 writer.OpenBlock("if (context.IsStartElement || context.IsAttribute)", () =>
@@ -186,10 +187,28 @@ public sealed class XmlResponseUnmarshallerWriter(GenerationContext context, str
     // restJson1 emitters are reused verbatim; both write into the in-scope `unmarshalledObject` local.
     private static void WriteHeaderReads(CodeWriter writer, JsonResponseUnmarshallerWriter.PartitionedMembers members)
     {
-        JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, members.HeaderMembers);
+        foreach (var header in members.HeaderMembers)
+        {
+            if (header.Member.InjectedUnmarshallCode is null)
+            {
+                JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, [header]);
+            }
+            else
+            {
+                writer.WriteLines(header.Member.InjectedUnmarshallCode);
+            }
+        }
+
         if (members.PrefixHeadersMember is { } prefixHeaders)
         {
-            JsonResponseUnmarshallerWriter.WritePrefixHeadersUnmarshaller(writer, prefixHeaders.Member, prefixHeaders.Prefix);
+            if (prefixHeaders.Member.InjectedUnmarshallCode is null)
+            {
+                JsonResponseUnmarshallerWriter.WritePrefixHeadersUnmarshaller(writer, prefixHeaders.Member, prefixHeaders.Prefix);
+            }
+            else
+            {
+                writer.WriteLines(prefixHeaders.Member.InjectedUnmarshallCode);
+            }
         }
     }
 

@@ -229,13 +229,15 @@ public class CustomizationValidatorTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
-    [Fact]
-    public void InjectMarshallCode_OnALabel_Throws()
+    [Theory]
+    [InlineData("PutBucketRequest", "id", "shapeModifiers['PutBucketRequest'] sets injectMarshallCode on 'id', which is a query, label, attribute or non-structure payload member.")]
+    [InlineData("BucketPage", "nextToken", "shapeModifiers['BucketPage'] sets injectMarshallCode, but is not part of a request.")]
+    public void InjectMarshallCode_Misplaced_Throws(string shape, string member, string expectedMessage)
     {
         var customizations = new CustomizationsModel();
-        customizations.ShapeModifiers["PutBucketRequest"] = TestCustomizations.Modify("id", new PropertyModifier { InjectMarshallCode = ["Marshall(request, publicRequest);"] });
+        customizations.ShapeModifiers[shape] = TestCustomizations.Modify(member, new PropertyModifier { InjectMarshallCode = ["Marshall(request, publicRequest);"] });
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
-        Assert.Equal("shapeModifiers['PutBucketRequest'] sets injectMarshallCode on 'id', which is a query, label, attribute or non-structure payload member.", ex.Message);
+        Assert.Equal(expectedMessage, ex.Message);
     }
 
     [Theory]
@@ -245,6 +247,57 @@ public class CustomizationValidatorTests
     {
         var customizations = new CustomizationsModel();
         customizations.ShapeModifiers[shape] = new ShapeModifier { InjectMarshallCodeInPayload = ["Sort(publicRequest);"] };
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
+    [Theory]
+    [InlineData("injectUnmarshallCode", "shapeModifiers['Bucket'] sets an empty injectUnmarshallCode or injectPrivateMemberAssignment on 'name'.")]
+    [InlineData("injectPrivateMemberAssignment", "shapeModifiers['Bucket'] sets an empty injectUnmarshallCode or injectPrivateMemberAssignment on 'name'.")]
+    [InlineData("injectUnmarshallResultCode", "shapeModifiers['Bucket'] sets an empty injectUnmarshallResultCode.")]
+    public void UnmarshallingHooks_Empty_Throw(string hook, string expectedMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Bucket"] = hook switch
+        {
+            "injectUnmarshallCode" => TestCustomizations.Modify("name", new PropertyModifier { InjectUnmarshallCode = [] }),
+            "injectPrivateMemberAssignment" => TestCustomizations.Modify("name", new PropertyModifier { InjectPrivateMemberAssignment = [] }),
+            _ => new ShapeModifier { InjectUnmarshallResultCode = [] },
+        };
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
+    [Fact]
+    public void InjectPrivateMemberAssignment_OnAnExcludedMember_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ExcludeMembers["Bucket"] = ["name"];
+        customizations.ShapeModifiers["Bucket"] = TestCustomizations.Modify("name", new PropertyModifier { InjectPrivateMemberAssignment = ["private string _name;"] });
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Equal("shapeModifiers['Bucket'] sets injectPrivateMemberAssignment on 'name', which excludeMembers drops.", ex.Message);
+    }
+
+    [Theory]
+    [InlineData("BucketConfig", "injectUnmarshallCode", "name", "shapeModifiers['BucketConfig'] sets injectUnmarshallCode, but is not part of a response.")]
+    [InlineData("BucketPage", "injectUnmarshallCode", "status", "shapeModifiers['BucketPage'] sets injectUnmarshallCode on 'status', which is a payload or status code member.")]
+    [InlineData("Bucket", "excludeFromUnmarshalling", "name", "shapeModifiers['Bucket'] sets injectUnmarshallCode on 'name', which excludeFromUnmarshalling drops.")]
+    [InlineData("Bucket", "injectUnmarshallResultCode", "", "shapeModifiers['Bucket'] sets injectUnmarshallResultCode or skipXmlTestExpression, but is not an operation's output with body members.")]
+    [InlineData("BucketPage", "allBodyMembersExcluded", "", "shapeModifiers['BucketPage'] sets injectUnmarshallResultCode or skipXmlTestExpression, but is not an operation's output with body members.")]
+    [InlineData("*", "injectUnmarshallResultCode", "", "shapeModifiers['*'] only supports modify.")]
+    [InlineData("BucketPage", "skipXmlTestExpression", "nextToken", "shapeModifiers['BucketPage'] lists 'nextToken' in skipXmlTestExpression, which is not the output's only body member.")]
+    public void UnmarshallingHooks_Misplaced_Throw(string shape, string hook, string member, string expectedMessage)
+    {
+        var inject = new PropertyModifier { InjectUnmarshallCode = ["Read(context, unmarshalledObject);"] };
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers[shape] = hook switch
+        {
+            "injectUnmarshallCode" => TestCustomizations.Modify(member, inject),
+            "excludeFromUnmarshalling" => TestCustomizations.Modify(member, inject, new ShapeModifier { ExcludeFromUnmarshalling = [member] }),
+            "injectUnmarshallResultCode" => new ShapeModifier { InjectUnmarshallResultCode = ["Prepare(unmarshalledObject);"] },
+            "allBodyMembersExcluded" => new ShapeModifier { InjectUnmarshallResultCode = ["Prepare(unmarshalledObject);"], ExcludeFromUnmarshalling = ["nextToken", "buckets"] },
+            _ => new ShapeModifier { SkipXmlTestExpression = [member] },
+        };
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Equal(expectedMessage, ex.Message);
     }

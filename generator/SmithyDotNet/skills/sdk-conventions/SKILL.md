@@ -305,6 +305,8 @@ them in a second entry (`ModifiedSinceDate` beside `CopySourceIfModifiedSince`) 
 An injected-accessor backing field is named as C2J names it, `_` + the camel-cased property name
 (`_modifiedSinceDate`), because the injected lines are C2J's and refer to it.
 
+`injectPrivateMemberAssignment` lines replace that field's declaration, to give it a default.
+
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait, unless it also carries `@idempotencyToken` (the SDK fills it)
 - `Min=N` when member has `@length` trait with min, or `@range` trait with min

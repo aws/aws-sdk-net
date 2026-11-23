@@ -198,6 +198,33 @@ public class StructureWriterTests
         Assert.Contains("set => CountCustomSetter(value);", structure);
     }
 
+    // S3's InputSerialization.CompressionType: the lines declare the _camelCase field with its default.
+    [Fact]
+    public void InjectPrivateMemberAssignment_ReplacesTheBackingFieldDeclaration()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("count", new PropertyModifier { InjectPrivateMemberAssignment = ["private int? _count = 1;"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+
+        Assert.Contains("private int? _count = 1;", structure);
+        Assert.Contains("internal bool IsSetCount() => this._count.HasValue;", structure);
+    }
+
+    [Fact]
+    public void InjectPrivateMemberAssignment_DeclaringAnotherField_Throws()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("count", new PropertyModifier { InjectPrivateMemberAssignment = ["private int? _total = 1;"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var ex = Assert.Throws<GeneratorException>(() => new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken));
+        Assert.Equal("injectPrivateMemberAssignment on member 'Count' has to declare the field _count.", ex.Message);
+    }
+
     // CognitoIdentity's and SecurityToken's Credentials derive from AWSCredentials, whose Expiration they override.
     [Fact]
     public void MemberOverridingABaseMember_EmitsOverride()

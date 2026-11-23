@@ -25,7 +25,8 @@
       "type": "structure",
       "members": {
         "nextToken": { "target": "smithy.api#String" },
-        "buckets": { "target": "com.example#BucketList" }
+        "buckets": { "target": "com.example#BucketList" },
+        "status": { "target": "smithy.api#Integer", "traits": { "smithy.api#httpResponseCode": {} } }
       },
       "traits": { "smithy.api#output": {} }
     },

@@ -94,7 +94,8 @@
     "com.example#GetThingResponse": {
       "type": "structure",
       "members": {
-        "arn": { "target": "smithy.api#String" }
+        "arn": { "target": "smithy.api#String" },
+        "meta": { "target": "com.example#LabelMap", "traits": { "smithy.api#httpPrefixHeaders": "x-meta-" } }
       }
     },
 
