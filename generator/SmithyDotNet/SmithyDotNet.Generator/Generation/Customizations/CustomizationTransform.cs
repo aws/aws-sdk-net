@@ -6,6 +6,7 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 /// <summary>
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
 /// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (<c>deprecatedMessage</c>;
+/// <c>shapeDocumentation</c> and an operation's <c>documentation</c> set <c>@documentation</c>;
 /// <c>renameShape</c> adds a service <c>rename</c> entry; <c>locationName</c> sets <c>@ec2QueryName</c>) or a
 /// structural edit (a member-keyed <c>renameShape</c> copies the member's target; <c>exclude</c> unbinds an operation
 /// or drops members; <c>useWrappingResult</c> wraps an output; <c>emitAsShape</c> retargets members; <c>inject</c> adds
@@ -33,6 +34,10 @@ public static class CustomizationTransform
         // - C2J's injectXmlUnmarshallCode, injectXmlUnmarshallResultCode and injectXmlPrivateMemberAssignment lose the "Xml";
         //   skipContextTestExpressionUnmarshallingLogic goes, and predicateListUnmarshallers become injectUnmarshallCode lines.
         //   A response's lines name the response "unmarshalledObject", not "response".
+        // - C2J's injectXmlIsSet, renamed injectIsSet here. Like the accessors, C2J reads it (and skipSetter,
+        //   skipPrivateMember) by a renamed member's new name; move it to the modeled member's entry (CopyObjectRequest's
+        //   DestinationBucket lines go under Bucket).
+        // - additionalDocumentation, too: PutObjectRequest's InputStream entry goes under Body.
         // - a shape modified from two files (C2J merges the entries, the loader throws): keep each shape in one file.
         // - inheritAlternateBaseClass: "PutObjectRequest": { "alternateBaseClass": "PutWithACLRequest" } becomes
         //   "PutObjectRequest": "PutWithACLRequest".

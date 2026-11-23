@@ -213,6 +213,55 @@ public class StructureWriterTests
         Assert.Contains("internal bool IsSetCount() => this._count.HasValue;", structure);
     }
 
+    // S3's CompleteMultipartUploadRequest.IfMatch: the lines read the _camelCase field of the emitted name.
+    [Fact]
+    public void InjectIsSet_ReplacesTheIsSetBodyOverABackingField()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("count", new PropertyModifier { EmitPropertyName = "Total", InjectIsSet = ["return this._total > 0;"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+
+        Assert.Contains("private int? _total;", structure);
+        Assert.Contains("public int? Total { get => this._total; set => this._total = value; }", structure);
+        Assert.Contains("internal bool IsSetTotal()" + Environment.NewLine, structure);
+        Assert.Contains("return this._total > 0;", structure);
+    }
+
+    // S3's S3Grantee.Type is computed: no field, no setter.
+    [Fact]
+    public void SkipSetterAndSkipPrivateMember_EmitAGetterOnlyProperty()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("count", new PropertyModifier { InjectPropertyGetter = ["get { return CountGetter(); }"], SkipSetter = true, SkipPrivateMember = true });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+
+        Assert.DoesNotContain("_count", structure);
+        Assert.Contains("get { return CountGetter(); }", structure);
+        Assert.Contains("internal bool IsSetCount() => this.Count.HasValue;", structure);
+        Assert.DoesNotContain("set {", structure);
+    }
+
+    // S3's GetObjectRequest.Key: a repeated entry is written once, as C2J's HashSet does; the rest are uncleaned.
+    [Fact]
+    public void AdditionalDocumentation_FollowsTheSummary()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["DoScalarsRequest"] = TestCustomizations.Modify("count", new PropertyModifier { AdditionalDocumentation = ["<remarks>\n", "<para>Kept <code>as is</code>.</para>\n", "<para>Kept <code>as is</code>.</para>\n", "</remarks>"] });
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+
+        var lines = string.Join("\n", structure.Split(Environment.NewLine).Select(line => line.Trim()));
+        Assert.Contains("/// </summary>\n/// <remarks>\n/// <para>Kept <code>as is</code>.</para>\n/// </remarks>\n", lines);
+    }
+
     [Fact]
     public void InjectPrivateMemberAssignment_DeclaringAnotherField_Throws()
     {

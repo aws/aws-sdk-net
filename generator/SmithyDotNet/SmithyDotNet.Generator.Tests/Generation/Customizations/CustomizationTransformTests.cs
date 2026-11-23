@@ -389,6 +389,40 @@ public class CustomizationTransformTests
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
+    // C2J appends each entry and a space to the modeled text; an operation's documentation replaces it.
+    [Fact]
+    public void DocumentationHooks_SetTheDocumentationTrait()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Bucket"] = new ShapeModifier { ShapeDocumentation = ["First.", "<para>Second.</para>"] };
+        customizations.OperationModifiers["ListBuckets"] = new OperationModifier { Documentation = "Lists the buckets." };
+
+        var model = Apply(customizations);
+
+        Assert.Equal("<p>A bucket.</p>First. <para>Second.</para> ", Structure(model, "Bucket").GetDocumentation());
+        Assert.Equal("Lists the buckets.", model.Shapes["com.example#ListBuckets"]?.GetDocumentation());
+    }
+
+    [Theory]
+    [InlineData("shapeDocumentation", "Bucket", "shapeModifiers['Bucket'] sets an empty shapeDocumentation.")]
+    [InlineData("shapeDocumentation", "*", "shapeModifiers['*'] only supports modify.")]
+    [InlineData("documentation", "ListBuckets", "operationModifiers['ListBuckets'] sets an empty documentation.")]
+    public void DocumentationHooks_Invalid_Throw(string hook, string key, string expectedMessage)
+    {
+        var customizations = new CustomizationsModel();
+        if (hook == "documentation")
+        {
+            customizations.OperationModifiers[key] = new OperationModifier { Documentation = " " };
+        }
+        else
+        {
+            customizations.ShapeModifiers[key] = new ShapeModifier { ShapeDocumentation = key == "*" ? ["Text."] : [] };
+        }
+
+        var ex = Assert.Throws<GeneratorException>(() => Apply(customizations));
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
     [Theory]
     [InlineData("ListBuckets", " ", "name must be a new, non-empty name")]
     [InlineData("ListBuckets", "ListBuckets", "name must be a new, non-empty name")]
@@ -545,7 +579,7 @@ public class CustomizationTransformTests
     [InlineData("sentByRequest", "which a request already sends")]
     [InlineData("oldNameRename", "changes the emitted 'Spec' class")]
     [InlineData("oldNameExclusion", "modifies a substituted shape, which only supports modify and inject")]
-    [InlineData("oldNameSkipXmlIsSet", "changes the emitted 'Spec' class")]
+    [InlineData("oldNameInjectIsSet", "changes the emitted 'Spec' class")]
     [InlineData("oldNameInject", "does not inject as 'IdList'")]
     [InlineData("newNameOnly", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
     [InlineData("differentLocationName", "sets an inject, locationName or customMarshall on 'Groups' that shapeModifiers['SpotSpec'] does not mirror")]
@@ -601,9 +635,9 @@ public class CustomizationTransformTests
                 customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
                 customizations.ShapeModifiers["SpotSpec"] = new ShapeModifier { ExcludeFromUnmarshalling = ["Kind"] };
                 break;
-            case "oldNameSkipXmlIsSet":
+            case "oldNameInjectIsSet":
                 customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };
-                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Modify("Kind", new PropertyModifier { SkipXmlIsSet = true });
+                customizations.ShapeModifiers["SpotSpec"] = TestCustomizations.Modify("Kind", new PropertyModifier { InjectIsSet = ["return true;"] });
                 break;
             case "oldNameInject":
                 customizations.ShapeSubstitutions["SpotSpec"] = new ShapeSubstitution { EmitAsShape = "Spec" };

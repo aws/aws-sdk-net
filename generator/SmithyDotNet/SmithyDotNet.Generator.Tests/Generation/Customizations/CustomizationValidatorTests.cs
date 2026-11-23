@@ -268,6 +268,25 @@ public class CustomizationValidatorTests
         Assert.Equal(expectedMessage, ex.Message);
     }
 
+    [Theory]
+    [InlineData("emptyInjectIsSet", "shapeModifiers['Bucket'] sets an empty injectIsSet or additionalDocumentation on 'name'.")]
+    [InlineData("injectIsSetWithSkipXmlIsSet", "shapeModifiers['Bucket'] sets injectIsSet on 'name', which emitIsSetProperties or skipXmlIsSet also sets.")]
+    [InlineData("skipSetterWithoutGetter", "shapeModifiers['Bucket'] sets skipSetter on 'name', which needs injectPropertyGetter and no injectPropertySetter.")]
+    [InlineData("skipPrivateMemberWithoutGetter", "shapeModifiers['Bucket'] sets skipPrivateMember on 'name', which needs an injected getter and setter (or skipSetter) and no emitIsSetProperties or injectPrivateMemberAssignment.")]
+    public void AccessorHooks_Conflicting_Throw(string hook, string expectedMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Bucket"] = TestCustomizations.Modify("name", hook switch
+        {
+            "emptyInjectIsSet" => new PropertyModifier { InjectIsSet = [] },
+            "injectIsSetWithSkipXmlIsSet" => new PropertyModifier { InjectIsSet = ["return true;"], SkipXmlIsSet = true },
+            "skipSetterWithoutGetter" => new PropertyModifier { SkipSetter = true },
+            _ => new PropertyModifier { SkipPrivateMember = true },
+        });
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
     [Fact]
     public void InjectPrivateMemberAssignment_OnAnExcludedMember_Throws()
     {

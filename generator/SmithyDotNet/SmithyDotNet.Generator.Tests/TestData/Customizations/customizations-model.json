@@ -51,7 +51,8 @@
         "name": { "target": "smithy.api#String" },
         "arn": { "target": "smithy.api#String" },
         "created": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#deprecated": { "since": "2020-01-01" } } }
-      }
+      },
+      "traits": { "smithy.api#documentation": "<p>A bucket.</p>" }
     },
     "com.example#Holder": {
       "type": "structure",

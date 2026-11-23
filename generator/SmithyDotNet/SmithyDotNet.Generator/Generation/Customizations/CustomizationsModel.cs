@@ -241,6 +241,18 @@ public sealed partial record CustomizationsModel
     /// <summary>The <c>injectPropertySetter</c> lines that replace modeled member <paramref name="memberName"/>'s setter, or null.</summary>
     public List<string>? CustomSetter(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPropertySetter;
 
+    /// <summary>The <c>additionalDocumentation</c> entries of modeled member <paramref name="memberName"/>, or null.</summary>
+    public List<string>? AdditionalDocumentation(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.AdditionalDocumentation;
+
+    /// <summary>The <c>injectIsSet</c> lines that replace modeled member <paramref name="memberName"/>'s <c>IsSet</c> body, or null.</summary>
+    public List<string>? CustomIsSet(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectIsSet;
+
+    /// <summary>True when <c>skipSetter</c> leaves modeled member <paramref name="memberName"/> without a setter.</summary>
+    public bool SkipsSetter(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.SkipSetter ?? false;
+
+    /// <summary>True when <c>skipPrivateMember</c> leaves modeled member <paramref name="memberName"/> without a backing field.</summary>
+    public bool SkipsPrivateMember(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.SkipPrivateMember ?? false;
+
     /// <summary>The <c>injectPrivateMemberAssignment</c> lines that replace modeled member <paramref name="memberName"/>'s field declaration, or null.</summary>
     public List<string>? CustomFieldDeclaration(string shapeName, string memberName) => PropertyModifierFor(shapeName, memberName)?.InjectPrivateMemberAssignment;
 

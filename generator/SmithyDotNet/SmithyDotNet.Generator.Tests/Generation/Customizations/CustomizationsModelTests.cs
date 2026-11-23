@@ -271,6 +271,37 @@ public class CustomizationsModelTests
         Assert.True(model.SkipsXmlTestExpression("PutObjectRequest", "Configuration"));
     }
 
+    // Keyed by the modeled name, unlike C2J, which reads these by a renamed member's new name.
+    [Fact]
+    public void Load_AccessorAndDocumentationHooks()
+    {
+        var model = LoadFiles(
+            """
+            {
+              "shapeModifiers": {
+                "Grantee": {
+                  "modify": [
+                    { "ID": { "emitPropertyName": "CanonicalUser", "injectIsSet": ["return this._canonicalUser != null;"] } },
+                    { "Type": { "skipSetter": true, "skipPrivateMember": true, "additionalDocumentation": ["<para>Derived.</para>"] } }
+                  ],
+                  "shapeDocumentation": ["A grantee."]
+                }
+              },
+              "operationModifiers": {
+                "GetBucketReplication": { "documentation": "Retrieves the replication configuration." }
+              }
+            }
+            """);
+
+        Assert.Equal(["return this._canonicalUser != null;"], model.CustomIsSet("Grantee", "ID"));
+        Assert.Null(model.CustomIsSet("Grantee", "CanonicalUser"));
+        Assert.True(model.SkipsSetter("Grantee", "Type"));
+        Assert.True(model.SkipsPrivateMember("Grantee", "Type"));
+        Assert.Equal(["<para>Derived.</para>"], model.AdditionalDocumentation("Grantee", "Type"));
+        Assert.Equal(["A grantee."], model.ShapeModifiers["Grantee"].ShapeDocumentation);
+        Assert.Equal("Retrieves the replication configuration.", model.OperationModifiers["GetBucketReplication"].Documentation);
+    }
+
     [Theory]
     [InlineData("""{ "excludeShapes": ["Protocol"] }""", "excludeShapes lists 'Protocol' more than once")]
     [InlineData("""{ "excludeMembers": { "PartDetail": ["Size"] } }""", "excludeMembers['PartDetail'] appears in more than one customizations file")]

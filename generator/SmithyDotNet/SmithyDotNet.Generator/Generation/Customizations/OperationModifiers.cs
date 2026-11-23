@@ -39,6 +39,17 @@ internal static class OperationModifiers
                 operation.SetDeprecatedMessage(message);
             }
 
+            // C2J ignores an empty string; it would blank the docs here, so it throws instead.
+            if (modifier.Documentation is { } documentation)
+            {
+                if (string.IsNullOrWhiteSpace(documentation))
+                {
+                    throw new GeneratorException($"operationModifiers['{operationName}'] sets an empty documentation.");
+                }
+
+                operation.SetDocumentation(documentation);
+            }
+
             if (modifier.Exclude && modifier.ClientMethodOnly)
             {
                 throw new GeneratorException($"operationModifiers['{operationName}'] both excludes the operation and keeps its client methods.");

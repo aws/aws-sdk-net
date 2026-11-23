@@ -13,6 +13,10 @@ public sealed record OperationModifier
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
+    /// <summary>The operation's <c>@documentation</c> instead of the modeled one (S3's GetBucketReplication).</summary>
+    [JsonPropertyName("documentation")]
+    public string? Documentation { get; init; }
+
     /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }

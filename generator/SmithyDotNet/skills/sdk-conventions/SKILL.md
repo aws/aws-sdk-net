@@ -307,6 +307,12 @@ An injected-accessor backing field is named as C2J names it, `_` + the camel-cas
 
 `injectPrivateMemberAssignment` lines replace that field's declaration, to give it a default.
 
+`injectIsSet` lines replace the `IsSet` body and read the same `_camelCase` field. `skipSetter` drops the
+setter and needs an injected getter; `skipPrivateMember` drops the field, so both accessors must be injected (or the setter skipped).
+
+`additionalDocumentation` entries are deduplicated (C2J's HashSet), joined and written uncleaned after a property's `</summary>`.
+`shapeDocumentation` and an operation's `documentation` set `@documentation` in the transform, so every writer sees them.
+
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait, unless it also carries `@idempotencyToken` (the SDK fills it)
 - `Min=N` when member has `@length` trait with min, or `@range` trait with min

@@ -27,6 +27,16 @@ internal static class ShapeModifiers
                 shape.SetDeprecatedMessage(shapeMessage);
             }
 
+            if (modifier.ShapeDocumentation is { } shapeDocumentation)
+            {
+                if (shapeDocumentation.Count == 0)
+                {
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] sets an empty shapeDocumentation.");
+                }
+
+                shape.SetDocumentation(shape.GetDocumentation() + string.Concat(shapeDocumentation.Select(entry => entry + " ")));
+            }
+
             // An inject's originalMember names a member as modeled, which exclude drops.
             var modeledMembers = new Dictionary<string, MemberShape>();
 
@@ -77,7 +87,7 @@ internal static class ShapeModifiers
     // becomes one entry per structure.
     private static void ExpandGlobal(SmithyModel model, ShapeModifier global, CustomizationsModel customizations)
     {
-        var hasShapeHooks = global.HasExclusions() || global.DeprecatedMessage is not null || global.InjectMarshallCodeInPayload is not null;
+        var hasShapeHooks = global.HasExclusions() || global.DeprecatedMessage is not null || global.ShapeDocumentation is not null || global.InjectMarshallCodeInPayload is not null;
         var hasResponseBodyHooks = global.InjectUnmarshallResultCode is not null || global.SkipXmlTestExpression.Count > 0;
         if (hasShapeHooks || hasResponseBodyHooks)
         {

@@ -202,6 +202,18 @@ public sealed record Member(
     /// <summary>The <c>injectPropertySetter</c> lines that replace the setter, or null.</summary>
     public IReadOnlyList<string>? CustomSetter { get; } = Customizations.CustomSetter(ShapeName, ModeledName);
 
+    /// <summary>The <c>additionalDocumentation</c> entries written after the property's summary, or null.</summary>
+    public IReadOnlyList<string>? AdditionalDocumentation { get; } = Customizations.AdditionalDocumentation(ShapeName, ModeledName);
+
+    /// <summary>The <c>injectIsSet</c> lines that replace the <c>IsSet</c> method's body, or null.</summary>
+    public IReadOnlyList<string>? CustomIsSet { get; } = Customizations.CustomIsSet(ShapeName, ModeledName);
+
+    /// <summary>True when <c>skipSetter</c> is set: the property has only a getter.</summary>
+    public bool SkipSetter { get; } = Customizations.SkipsSetter(ShapeName, ModeledName);
+
+    /// <summary>True when <c>skipPrivateMember</c> is set: the injected accessors need no backing field.</summary>
+    public bool SkipPrivateMember { get; } = Customizations.SkipsPrivateMember(ShapeName, ModeledName);
+
     /// <summary>
     /// The member's explicit <c>@timestampFormat</c>, or null when unset. Lives on <see cref="Type"/>
     /// so it is resolved once and shared with nested collection elements; surfaced here for the common

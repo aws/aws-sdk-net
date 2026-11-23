@@ -36,6 +36,13 @@ public sealed record ShapeModifier
     [JsonPropertyName("skipXmlTestExpression")]
     public List<string> SkipXmlTestExpression { get; init; } = [];
 
+    /// <summary>
+    /// Text appended to the shape's <c>@documentation</c>, each entry followed by a space as in C2J (S3's
+    /// TopicConfiguration points at the SNS helper that sets up the topic policy).
+    /// </summary>
+    [JsonPropertyName("shapeDocumentation")]
+    public List<string>? ShapeDocumentation { get; init; }
+
     /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
@@ -88,6 +95,13 @@ public sealed record PropertyModifier
     /// <summary>The .NET property name to emit instead of the modeled member name; the wire name is unaffected.</summary>
     [JsonPropertyName("emitPropertyName")]
     public string? EmitPropertyName { get; init; }
+
+    /// <summary>
+    /// Doc comment text written as-is after the property's <c>&lt;/summary&gt;</c> (S3's GetObjectRequest.Key
+    /// <c>&lt;remarks&gt;</c>); as in C2J, repeated entries are dropped and the rest joined, then split into lines.
+    /// </summary>
+    [JsonPropertyName("additionalDocumentation")]
+    public List<string>? AdditionalDocumentation { get; init; }
 
     /// <summary>The <c>[Obsolete]</c> message for the member; applied only when the member is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
@@ -143,6 +157,24 @@ public sealed record PropertyModifier
     /// <summary>Lines that replace the property's setter; see <see cref="InjectPropertyGetter"/>.</summary>
     [JsonPropertyName("injectPropertySetter")]
     public List<string>? InjectPropertySetter { get; init; }
+
+    /// <summary>
+    /// Lines that replace the <c>IsSet</c> method's body (S3's <c>return !string.IsNullOrEmpty(this._ifMatch);</c>),
+    /// reading the backing field as <see cref="InjectPropertyGetter"/> names it; C2J's <c>injectXmlIsSet</c>.
+    /// </summary>
+    [JsonPropertyName("injectIsSet")]
+    public List<string>? InjectIsSet { get; init; }
+
+    /// <summary>Emit the property with only its injected getter: S3's S3Grantee.Type is derived from the grantee's other members.</summary>
+    [JsonPropertyName("skipSetter")]
+    public bool SkipSetter { get; init; }
+
+    /// <summary>
+    /// Emit no backing field: the injected accessors keep the value elsewhere (S3's PutObjectRequest.ContentType
+    /// reads and writes <c>this.Headers.ContentType</c>).
+    /// </summary>
+    [JsonPropertyName("skipPrivateMember")]
+    public bool SkipPrivateMember { get; init; }
 }
 
 /// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>

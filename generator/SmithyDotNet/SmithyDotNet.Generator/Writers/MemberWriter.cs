@@ -35,8 +35,8 @@ public static class MemberWriter
     private static void WriteMember(CodeWriter writer, Member member)
     {
         var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;
-        var hasField = member.EmitIsSetProperties || hasAccessor || member.CustomFieldDeclaration is not null;
-        var field = hasField ? WriteBackingField(writer, member) : null;
+        var hasField = member.EmitIsSetProperties || hasAccessor || member.CustomFieldDeclaration is not null || member.CustomIsSet is not null;
+        var field = hasField && !member.SkipPrivateMember ? WriteBackingField(writer, member, hasAccessor) : null;
 
         writer.WriteLine("/// <summary>");
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
@@ -56,6 +56,13 @@ public static class MemberWriter
         }
 
         writer.WriteLine("/// </summary>");
+
+        // Not cleaned up, as in C2J: the entries are already C# doc markup. C2J reads them into a HashSet, so a repeated
+        // entry (S3's GetObjectRequest.Key repeats "<para>\n") ships once.
+        if (member.AdditionalDocumentation is { } additionalDocumentation)
+        {
+            DocumentationFormatter.WriteCommentBlock(writer, string.Concat(additionalDocumentation.Distinct()));
+        }
 
         if (member.Obsolete is string obsolete)
         {
@@ -83,12 +90,16 @@ public static class MemberWriter
         }
 
         var declaration = $"{(member.IsInternal ? "internal" : "public")} {modifier}{member.Type.DotNetType} {member.PropertyName}";
-        if (hasAccessor && field is not null)
+        // Without a field (skipPrivateMember), the validator has ensured both accessors are injected or the setter skipped.
+        if (hasAccessor)
         {
             writer.OpenBlock(declaration, () =>
             {
                 writer.WriteLines(member.CustomGetter ?? [$"get {{ return this.{field}; }}"]);
-                writer.WriteLines(member.CustomSetter ?? [$"set {{ this.{field} = value; }}"]);
+                if (!member.SkipSetter)
+                {
+                    writer.WriteLines(member.CustomSetter ?? [$"set {{ this.{field} = value; }}"]);
+                }
             });
         }
         else if (field is not null)
@@ -118,14 +129,20 @@ public static class MemberWriter
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Checks to see if the {member.PropertyName} property is set.");
         writer.WriteLine("/// </summary>");
+        if (member.CustomIsSet is { } customIsSet)
+        {
+            writer.OpenBlock($"internal bool IsSet{member.PropertyName}()", () => writer.WriteLines(customIsSet));
+            return;
+        }
+
         // An injected getter may never return null (S3's `?? new LifecycleConfiguration()`), so set-ness reads the field, as in C2J.
         var isSet = member.EmitIsSetProperties ? $"this.Is{member.PropertyName}Set" : field is not null ? member.IsSetOf(field) : member.IsSetExpression;
         writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {isSet};");
     }
 
     // A member gets a backing field when SetIsSet needs it by ref (emitIsSetProperties, named _{Property}) or when
-    // injected accessors or injectPrivateMemberAssignment refer to it (named _camelCase, as in C2J).
-    private static string WriteBackingField(CodeWriter writer, Member member)
+    // injected accessors, injectIsSet or injectPrivateMemberAssignment refer to it (named _camelCase, as in C2J).
+    private static string WriteBackingField(CodeWriter writer, Member member, bool hasAccessor)
     {
         // SetIsSet only has Nullable<T>/List/Dictionary overloads; anything else would not compile.
         if (member.EmitIsSetProperties && !member.Type.IsNullableValueType && !member.Type.IsCollection)
@@ -151,8 +168,7 @@ public static class MemberWriter
             return declaredField;
         }
 
-        var hasAccessor = member.CustomGetter is not null || member.CustomSetter is not null;
-        var field = hasAccessor ? "_" + SdkNaming.ToParameterName(member.PropertyName).TrimStart('@') : $"_{member.PropertyName}";
+        var field = member.EmitIsSetProperties && !hasAccessor ? $"_{member.PropertyName}" : "_" + SdkNaming.ToParameterName(member.PropertyName).TrimStart('@');
         var initializer = member.Type.IsCollection ? $" = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null" : string.Empty;
         writer.WriteLine($"private {member.Type.DotNetType} {field}{initializer};");
         writer.WriteLine();

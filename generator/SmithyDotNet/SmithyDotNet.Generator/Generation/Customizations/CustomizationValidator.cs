@@ -157,6 +157,7 @@ public static class CustomizationValidator
 
         ValidateInjectedMarshallCode(model, customizations);
         ValidateInjectedUnmarshallCode(model, customizations);
+        ValidateAccessorHooks(customizations);
 
         // ExceptionWriter always derives from the service exception, so an error's entry would do nothing.
         foreach (var (shapeName, baseClass) in customizations.InheritAlternateBaseClass)
@@ -309,6 +310,49 @@ public static class CustomizationValidator
                 if (modifier.ExcludeFromUnmarshalling.Contains(customizations.EmittedName(shapeName, memberName)))
                 {
                     throw new GeneratorException($"{context} sets injectUnmarshallCode on '{memberName}', which excludeFromUnmarshalling drops.");
+                }
+            }
+        }
+    }
+
+    // Each throw is a combination where one hook would silently win over another, or the emitted property would not compile.
+    private static void ValidateAccessorHooks(CustomizationsModel customizations)
+    {
+        foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
+        {
+            var context = $"shapeModifiers['{shapeName}']";
+            foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
+            {
+                if (property.InjectIsSet?.Count == 0 || property.AdditionalDocumentation?.Count == 0)
+                {
+                    throw new GeneratorException($"{context} sets an empty injectIsSet or additionalDocumentation on '{memberName}'.");
+                }
+
+                var hasGetter = property.InjectPropertyGetter is not null;
+                var hasSetter = property.InjectPropertySetter is not null;
+                var emitsIsSetFlag = customizations.EmitIsSet(shapeName, memberName);
+
+                if (property.InjectIsSet is not null && (emitsIsSetFlag || property.SkipXmlIsSet))
+                {
+                    throw new GeneratorException($"{context} sets injectIsSet on '{memberName}', which emitIsSetProperties or skipXmlIsSet also sets.");
+                }
+
+                // Every S3 skipSetter injects its getter; a default getter over a field nothing can set would be useless.
+                if (property.SkipSetter && (!hasGetter || hasSetter))
+                {
+                    throw new GeneratorException($"{context} sets skipSetter on '{memberName}', which needs injectPropertyGetter and no injectPropertySetter.");
+                }
+
+                if (property.SkipPrivateMember)
+                {
+                    // Each of these uses the field.
+                    var defaultGetter = !hasGetter;
+                    var defaultSetter = !hasSetter && !property.SkipSetter;
+                    var declaresField = property.InjectPrivateMemberAssignment is not null;
+                    if (defaultGetter || defaultSetter || emitsIsSetFlag || declaresField)
+                    {
+                        throw new GeneratorException($"{context} sets skipPrivateMember on '{memberName}', which needs an injected getter and setter (or skipSetter) and no emitIsSetProperties or injectPrivateMemberAssignment.");
+                    }
                 }
             }
         }
