@@ -1,3 +1,13 @@
+### 4.1.9.0 (2026-11-23 20:19 UTC)
+* CloudFront (4.1.3.0)
+	* Launch CloudFront in AWS European Sovereign Cloud.
+* CloudFrontKeyValueStore (4.1.1.0)
+	* This release adds support for KVSHQ API in the AWS European Sovereign Cloud. Requests for key value stores in the aws-eusc partition are now routed to account-based endpoints under cloudfront-kvs.global.api.amazonwebservices.eu.
+* CloudWatchOmni (4.1.2.0)
+	* Release of the new integration type in CreateIntegration API - Used to add Microsoft Azure resources to the Amazon CloudWatch Omni context graph through an AWS Config connector for your Azure tenant.
+* FSx (4.1.2.0)
+	* Adds support for new FSx for NetApp ONTAP resources
+
 ### 4.1.8.0 (2026-11-21 00:26 UTC)
 * QuickSight (4.1.1.0)
 	* Quicksight public SDK release for November 20
