@@ -348,6 +348,16 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("Endpoints")]
         [TestCategory("StandardLibrary")]
+        public void UriEncode_NullInput_ReturnsNull()
+        {
+            Assert.IsNull(Fn.UriEncode(null));
+            Assert.AreEqual("a%2Fb%20c", Fn.UriEncode("a/b c"));
+            Assert.AreEqual(string.Empty, Fn.UriEncode(string.Empty));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
         public void IsValidHostLabel_NullInput_ReturnsFalse()
         {
             Assert.IsFalse(Fn.IsValidHostLabel(null, false));

@@ -301,6 +301,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         public static string UriEncode(string value)
 #pragma warning restore CA1055 // Uri return values should not be strings
         {
+            if (value == null) return null;
+
             return AWSSDKUtils.UrlEncode(value, false);
         }
 
