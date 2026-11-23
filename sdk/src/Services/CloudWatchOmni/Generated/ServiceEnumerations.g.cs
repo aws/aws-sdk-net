@@ -727,6 +727,11 @@ namespace Amazon.CloudWatchOmni
     public class IntegrationType : ConstantClass
     {
         /// <summary>
+        /// Constant AWS_CONFIG_AZURE_SLREC for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType AWS_CONFIG_AZURE_SLREC = new IntegrationType("AWS_CONFIG_AZURE_SLREC");
+
+        /// <summary>
         /// Constant AWS_CONFIG_SLREC for IntegrationType
         /// </summary>
         public static readonly IntegrationType AWS_CONFIG_SLREC = new IntegrationType("AWS_CONFIG_SLREC");
