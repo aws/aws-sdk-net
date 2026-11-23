@@ -413,6 +413,12 @@ namespace Amazon.Runtime.Internal
         IPropertyBag EndpointAttributes { get; set; }
 
         /// <summary>
+        /// Typed endpoint auth schemes, set when the resolved endpoint carries them.
+        /// Preferred over EndpointAttributes["authSchemes"].
+        /// </summary>
+        IReadOnlyList<AuthScheme> EndpointAuthSchemes { get; set; }
+
+        /// <summary>
         /// The selected compression algorithm to be used to compress the payload of the request.
         /// </summary>
         CompressionEncodingAlgorithm CompressionAlgorithm { get; set; }

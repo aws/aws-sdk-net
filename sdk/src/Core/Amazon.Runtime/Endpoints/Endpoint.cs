@@ -74,14 +74,32 @@ namespace Amazon.Runtime.Endpoints
         /// </summary>
         public string URL { get; set; }
 
+        private IPropertyBag _attributes;
+
         /// <summary>
         /// Custom endpoint attributes
         /// </summary>
-        public IPropertyBag Attributes { get; set; }
+        public IPropertyBag Attributes
+        {
+            get => _attributes;
+            set => _attributes = value;
+        }
+
+        /// <summary>
+        /// Internal fast-path accessor returning the raw attributes bag, or null when none was set.
+        /// Core's request path reads this to avoid materializing a bag on the common BDD path.
+        /// TODO: synthesize a bag from AuthSchemes here so Attributes["authSchemes"] works for BDD endpoints.
+        /// </summary>
+        internal IPropertyBag RawAttributesOrNull => _attributes;
 
         /// <summary>
         /// Custom endpoint headers
         /// </summary>
         public IDictionary<string, IList<string>> Headers { get; set; }
+
+        /// <summary>
+        /// Typed auth schemes resolved by BDD providers. Preferred over Attributes["authSchemes"].
+        /// </summary>
+        public IReadOnlyList<AuthScheme> AuthSchemes { get; set; }
     }
 }

@@ -59,7 +59,8 @@ namespace Amazon.Runtime.Internal
 
             var endpoint = GetEndpoint(executionContext, parameters);
             requestContext.Request.Endpoint = new Uri(endpoint.URL);
-            requestContext.Request.EndpointAttributes = endpoint.Attributes;
+            requestContext.Request.EndpointAttributes = endpoint.RawAttributesOrNull;
+            requestContext.Request.EndpointAuthSchemes = endpoint.AuthSchemes;
 
             // If an explicit ServiceURL was provided, do not manipulate it based on UseHttp
             // This preserves existing behavior prior to 3.7.100
@@ -108,7 +109,7 @@ namespace Amazon.Runtime.Internal
             // endpoint once in the auth resolver and again here. Rule evaluation is a pure function of
             // the parameters, so the previous result is reused when the parameters have not changed since.
             var cache = requestContext as RequestContext;
-            if (cache != null && cache.ResolvedEndpoint != null && cache.ResolvedEndpointParameters != null && cache.ResolvedEndpointParameters.ContentEquals(parameters))
+            if (cache != null && cache.ResolvedEndpoint != null && cache.ResolvedEndpointParameters != null && cache.ResolvedEndpointParameters.ParametersEqual(parameters))
             {
                 endpoint = cache.ResolvedEndpoint;
                 endpoint.URL = cache.ResolvedEndpointUrl;

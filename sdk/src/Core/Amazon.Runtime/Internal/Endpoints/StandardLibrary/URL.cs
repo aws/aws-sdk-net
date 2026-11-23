@@ -22,49 +22,54 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
     /// </summary>
     public class URL : PropertyBag
     {
+        public override object this[string propertyName]
+        {
+            get => propertyName switch
+            {
+                "scheme" => scheme,
+                "authority" => authority,
+                "path" => path,
+                "normalizedPath" => normalizedPath,
+                "isIp" => isIp,
+                _ => base[propertyName],
+            };
+            set
+            {
+                switch (propertyName)
+                {
+                    case "scheme": scheme = (string)value; break;
+                    case "authority": authority = (string)value; break;
+                    case "path": path = (string)value; break;
+                    case "normalizedPath": normalizedPath = (string)value; break;
+                    case "isIp": isIp = (bool)value; break;
+                    default: base[propertyName] = value; break;
+                }
+            }
+        }
+
         /// <summary>
         /// URL scheme
         /// </summary>
-        public string scheme
-        {
-            get { return (string)this["scheme"]; }
-            set { this["scheme"] = value; }
-        }
+        public string scheme { get; set; }
 
         /// <summary>
         /// URL authority
         /// </summary>
-        public string authority
-        {
-            get { return (string)this["authority"]; }
-            set { this["authority"] = value; }
-        }
+        public string authority { get; set; }
 
         /// <summary>
         /// URL path
         /// </summary>
-        public string path
-        {
-            get { return (string)this["path"]; }
-            set { this["path"] = value; }
-        }
+        public string path { get; set; }
 
         /// <summary>
         /// URL normalized path
         /// </summary>
-        public string normalizedPath
-        {
-            get { return (string)this["normalizedPath"]; }
-            set { this["normalizedPath"] = value; }
-        }
+        public string normalizedPath { get; set; }
 
         /// <summary>
         /// URL is IP address
         /// </summary>
-        public bool isIp
-        {
-            get { return (bool)this["isIp"]; }
-            set { this["isIp"] = value; }
-        }
+        public bool isIp { get; set; }
     }
 }
