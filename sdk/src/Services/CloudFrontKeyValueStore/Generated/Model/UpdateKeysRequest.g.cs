@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateKeys operation. Puts or Deletes multiple
-    /// key value pairs in a single, all-or-nothing operation.
+    /// Container for the parameters to the UpdateKeys operation. Puts or deletes multiple
+    /// key-value pairs in a single, all-or-nothing operation.
     /// </summary>
     public partial class UpdateKeysRequest : AmazonCloudFrontKeyValueStoreRequest
     {
@@ -57,8 +57,8 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current version (ETag) of the Key Value Store that you are updating keys of, which
-        /// you can get using DescribeKeyValueStore.
+        /// The current version (<c>ETag</c>) of the key value store that you are updating keys
+        /// of, which you can get by using the <c>DescribeKeyValueStore</c> API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -72,7 +72,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property KvsARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]
@@ -86,7 +86,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Puts. 
         /// <para>
-        /// List of key value pairs to put.
+        /// List of key-value pairs to put.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

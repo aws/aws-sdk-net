@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutKey operation. Creates a new key value pair
+    /// Container for the parameters to the PutKey operation. Creates a new key-value pair
     /// or replaces the value of an existing key.
     /// </summary>
     public partial class PutKeyRequest : AmazonCloudFrontKeyValueStoreRequest
@@ -38,8 +38,8 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current version (ETag) of the Key Value Store that you are putting keys into,
-        /// which you can get using DescribeKeyValueStore.
+        /// The current version (<c>ETag</c>) of the key value store that you are putting keys
+        /// into, which you can get by using the <c>DescribeKeyValueStore</c> API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -67,7 +67,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property KvsARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]

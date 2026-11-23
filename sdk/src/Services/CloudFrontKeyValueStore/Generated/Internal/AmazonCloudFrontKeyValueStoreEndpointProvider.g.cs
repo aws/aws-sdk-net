@@ -54,23 +54,103 @@ namespace Amazon.CloudFrontKeyValueStore.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
-            if (Equals(refs["UseFIPS"], false))
+            if (IsSet(refs["KvsARN"]))
             {
-                if (IsSet(refs["KvsARN"]))
+                if ((refs["parsedArn"] = ParseArn((string)refs["KvsARN"])) != null)
                 {
-                    if ((refs["parsedArn"] = ParseArn((string)refs["KvsARN"])) != null)
+                    if (Equals(GetAttr(refs["parsedArn"], "service"), "cloudfront"))
                     {
-                        if (Equals(GetAttr(refs["parsedArn"], "service"), "cloudfront"))
+                        if (Equals(GetAttr(refs["parsedArn"], "region"), ""))
                         {
-                            if (Equals(GetAttr(refs["parsedArn"], "region"), ""))
+                            if ((refs["arnType"] = GetAttr(refs["parsedArn"], "resourceId[0]")) != null)
                             {
-                                if ((refs["arnType"] = GetAttr(refs["parsedArn"], "resourceId[0]")) != null)
+                                if (!Equals(refs["arnType"], ""))
                                 {
-                                    if (!Equals(refs["arnType"], ""))
+                                    if (Equals(refs["arnType"], "key-value-store"))
                                     {
-                                        if (Equals(refs["arnType"], "key-value-store"))
+                                        if (Equals(GetAttr(refs["parsedArn"], "partition"), "aws"))
                                         {
-                                            if (Equals(GetAttr(refs["parsedArn"], "partition"), "aws"))
+                                            if (IsSet(refs["Region"]))
+                                            {
+                                                if ((refs["partitionResult"] = Partition((string)refs["Region"])) != null)
+                                                {
+                                                    if (Equals(GetAttr(refs["partitionResult"], "name"), Interpolate(@"{parsedArn#partition}", refs)))
+                                                    {
+                                                        if (IsSet(refs["Endpoint"]))
+                                                        {
+                                                            if (Equals(refs["UseFIPS"], false))
+                                                            {
+                                                                if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                                                                {
+                                                                    return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
+                                                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            ]
+                                                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                                                }
+                                                                throw new AmazonClientException("Provided endpoint is not a valid URL");
+                                                            }
+                                                            throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                                                        }
+                                                        return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
+                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            ]
+                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                                    }
+                                                    throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but Kvs ARN has `{parsedArn#partition}`", refs));
+                                                }
+                                                throw new AmazonClientException("A valid partition could not be determined");
+                                            }
+                                            if (IsSet(refs["Endpoint"]))
+                                            {
+                                                if (Equals(refs["UseFIPS"], false))
+                                                {
+                                                    if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                                                    {
+                                                        return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
+                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            ]
+                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                                    }
+                                                    throw new AmazonClientException("Provided endpoint is not a valid URL");
+                                                }
+                                                throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                                            }
+                                            return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
+                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                {
+                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                        ""*""
+                                                                                                                                                                                    ]
+                                                                                                                                                                                }
+                                                                                                                                                                            ]
+                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                        }
+                                        if (Equals(GetAttr(refs["parsedArn"], "partition"), "aws-eusc"))
+                                        {
+                                            if (Equals(refs["UseFIPS"], false))
                                             {
                                                 if (IsSet(refs["Region"]))
                                                 {
@@ -83,81 +163,82 @@ namespace Amazon.CloudFrontKeyValueStore.Internal
                                                                 if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                                                                 {
                                                                     return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
-                                                                                                                                                    ""authSchemes"": [
-                                                                                                                                                        {
-                                                                                                                                                            ""name"": ""sigv4a"",
-                                                                                                                                                            ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                                            ""signingRegionSet"": [
-                                                                                                                                                                ""*""
-                                                                                                                                                            ]
-                                                                                                                                                        }
-                                                                                                                                                    ]
-                                                                                                                                                }", refs), InterpolateJson(@"", refs));
+                                                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            ]
+                                                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
                                                                 }
                                                                 throw new AmazonClientException("Provided endpoint is not a valid URL");
                                                             }
-                                                            return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
-                                                                                                                                    ""authSchemes"": [
-                                                                                                                                        {
-                                                                                                                                            ""name"": ""sigv4a"",
-                                                                                                                                            ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                            ""signingRegionSet"": [
-                                                                                                                                                ""*""
-                                                                                                                                            ]
-                                                                                                                                        }
-                                                                                                                                    ]
-                                                                                                                                }", refs), InterpolateJson(@"", refs));
+                                                            return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.amazonwebservices.eu", refs), InterpolateJson(@"{
+                                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            ]
+                                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
                                                         }
                                                         throw new AmazonClientException(Interpolate(@"Client was configured for partition `{partitionResult#name}` but Kvs ARN has `{parsedArn#partition}`", refs));
                                                     }
+                                                    throw new AmazonClientException("A valid partition could not be determined");
                                                 }
                                                 if (IsSet(refs["Endpoint"]))
                                                 {
                                                     if ((refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                                                     {
                                                         return new Endpoint(Interpolate(@"{url#scheme}://{parsedArn#accountId}.{url#authority}{url#path}", refs), InterpolateJson(@"{
-                                                                                                                            ""authSchemes"": [
-                                                                                                                                {
-                                                                                                                                    ""name"": ""sigv4a"",
-                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                                    ""signingRegionSet"": [
-                                                                                                                                        ""*""
-                                                                                                                                    ]
-                                                                                                                                }
-                                                                                                                            ]
-                                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                                    ]
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            ]
+                                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
                                                     }
                                                     throw new AmazonClientException("Provided endpoint is not a valid URL");
                                                 }
-                                                return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.aws", refs), InterpolateJson(@"{
-                                                                                                            ""authSchemes"": [
-                                                                                                                {
-                                                                                                                    ""name"": ""sigv4a"",
-                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
-                                                                                                                    ""signingRegionSet"": [
-                                                                                                                        ""*""
-                                                                                                                    ]
-                                                                                                                }
-                                                                                                            ]
-                                                                                                        }", refs), InterpolateJson(@"", refs));
+                                                return new Endpoint(Interpolate(@"https://{parsedArn#accountId}.cloudfront-kvs.global.api.amazonwebservices.eu", refs), InterpolateJson(@"{
+                                                                                                                                                                                            ""authSchemes"": [
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    ""name"": ""sigv4a"",
+                                                                                                                                                                                                    ""signingName"": ""cloudfront-keyvaluestore"",
+                                                                                                                                                                                                    ""signingRegionSet"": [
+                                                                                                                                                                                                        ""*""
+                                                                                                                                                                                                    ]
+                                                                                                                                                                                                }
+                                                                                                                                                                                            ]
+                                                                                                                                                                                        }", refs), InterpolateJson(@"", refs));
                                             }
-                                            throw new AmazonClientException(Interpolate(@"CloudFront-KeyValueStore is not supported in partition `{parsedArn#partition}`", refs));
+                                            throw new AmazonClientException("Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.");
                                         }
-                                        throw new AmazonClientException(Interpolate(@"ARN resource type is invalid. Expected `key-value-store`, found: `{arnType}`", refs));
+                                        throw new AmazonClientException(Interpolate(@"CloudFront-KeyValueStore is not supported in partition `{parsedArn#partition}`", refs));
                                     }
-                                    throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
+                                    throw new AmazonClientException(Interpolate(@"ARN resource type is invalid. Expected `key-value-store`, found: `{arnType}`", refs));
                                 }
                                 throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
                             }
-                            throw new AmazonClientException(Interpolate(@"Provided ARN must be a global resource ARN. Found: `{parsedArn#region}`", refs));
+                            throw new AmazonClientException("No resource type found in the KVS ARN. Resource type must be `key-value-store`.");
                         }
-                        throw new AmazonClientException(Interpolate(@"Provided ARN is not a valid CloudFront Service ARN. Found: `{parsedArn#service}`", refs));
+                        throw new AmazonClientException(Interpolate(@"Provided ARN must be a global resource ARN. Found: `{parsedArn#region}`", refs));
                     }
-                    throw new AmazonClientException("KVS ARN must be a valid ARN");
+                    throw new AmazonClientException(Interpolate(@"Provided ARN is not a valid CloudFront Service ARN. Found: `{parsedArn#service}`", refs));
                 }
-                throw new AmazonClientException("KVS ARN must be provided to use this service");
+                throw new AmazonClientException("KVS ARN must be a valid ARN");
             }
-            throw new AmazonClientException("Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.");
+            throw new AmazonClientException("KVS ARN must be provided to use this service");
         }
     }
 }

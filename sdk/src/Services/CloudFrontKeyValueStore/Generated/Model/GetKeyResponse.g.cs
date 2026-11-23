@@ -37,7 +37,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
-        /// Number of key value pairs in the Key Value Store.
+        /// Number of key-value pairs in the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the key value pair.
+        /// The key of the key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
@@ -65,7 +65,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property TotalSizeInBytes. 
         /// <para>
-        /// Total size of the Key Value Store in bytes.
+        /// Total size of the key value store in bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -79,7 +79,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the key value pair.
+        /// The value of the key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]

@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// A key value pair.
+    /// A key-value pair.
     /// </summary>
     public partial class ListKeysResponseListItem
     {
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the key value pair.
+        /// The key of the key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the key value pair.
+        /// The value of the key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]

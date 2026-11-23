@@ -37,7 +37,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the key value pair to be deleted.
+        /// The key of the key-value pair to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]

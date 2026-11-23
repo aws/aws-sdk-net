@@ -43,7 +43,9 @@ namespace Amazon.CloudFrontKeyValueStore
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
+    /// You can use Amazon CloudFront KeyValueStore to view and update data in a key value
+    /// store resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/kvs-with-functions.html">Using
+    /// CloudFront KeyValueStore</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class AmazonCloudFrontKeyValueStoreClient : AmazonServiceClient, IAmazonCloudFrontKeyValueStore
     {
@@ -248,7 +250,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Deletes the key value pair specified by the key.
+        /// Deletes the key-value pair specified by the key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
         /// <returns>The response from the DeleteKey service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -291,7 +293,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Deletes the key value pair specified by the key.
+        /// Deletes the key-value pair specified by the key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
         /// <param name="cancellationToken">
@@ -328,7 +330,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns metadata information about Key Value Store.
+        /// Returns metadata information about the key value store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
         /// <returns>The response from the DescribeKeyValueStore service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -365,7 +367,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Returns metadata information about Key Value Store.
+        /// Returns metadata information about the key value store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
         /// <param name="cancellationToken">
@@ -396,7 +398,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns a key value pair.
+        /// Returns a key-value pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKey service method.</param>
         /// <returns>The response from the GetKey service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -433,7 +435,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Returns a key value pair.
+        /// Returns a key-value pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKey service method.</param>
         /// <param name="cancellationToken">
@@ -464,7 +466,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Returns a list of key value pairs.
+        /// Returns a list of key-value pairs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// <returns>The response from the ListKeys service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -504,7 +506,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Returns a list of key value pairs.
+        /// Returns a list of key-value pairs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// <param name="cancellationToken">
@@ -538,7 +540,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Creates a new key value pair or replaces the value of an existing key.
+        /// Creates a new key-value pair or replaces the value of an existing key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutKey service method.</param>
         /// <returns>The response from the PutKey service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -581,7 +583,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Creates a new key value pair or replaces the value of an existing key.
+        /// Creates a new key-value pair or replaces the value of an existing key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutKey service method.</param>
         /// <param name="cancellationToken">
@@ -618,7 +620,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
 #if NETFRAMEWORK
         /// <summary>
-        /// Puts or Deletes multiple key value pairs in a single, all-or-nothing operation.
+        /// Puts or deletes multiple key-value pairs in a single, all-or-nothing operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeys service method.</param>
         /// <returns>The response from the UpdateKeys service method, as returned by CloudFrontKeyValueStore.</returns>
@@ -661,7 +663,7 @@ namespace Amazon.CloudFrontKeyValueStore
 #endif
 
         /// <summary>
-        /// Puts or Deletes multiple key value pairs in a single, all-or-nothing operation.
+        /// Puts or deletes multiple key-value pairs in a single, all-or-nothing operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeys service method.</param>
         /// <param name="cancellationToken">

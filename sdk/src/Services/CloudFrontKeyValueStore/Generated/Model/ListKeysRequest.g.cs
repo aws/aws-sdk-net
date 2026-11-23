@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListKeys operation. Returns a list of key value
+    /// Container for the parameters to the ListKeys operation. Returns a list of key-value
     /// pairs.
     /// </summary>
     public partial class ListKeysRequest : AmazonCloudFrontKeyValueStoreRequest
@@ -38,7 +38,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property KvsARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]
@@ -67,8 +67,8 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned in the response, there are more results available. Make the
-        /// next call using the returned token to retrieve the next page.
+        /// If <c>nextToken</c> is returned in the response, there are more results available.
+        /// Make the next call using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken { get; set; }

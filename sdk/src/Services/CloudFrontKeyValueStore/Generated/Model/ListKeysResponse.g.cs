@@ -37,7 +37,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Key value pairs
+        /// The key-value pairs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -56,8 +56,8 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If nextToken is returned in the response, there are more results available. Make the
-        /// next call using the returned token to retrieve the next page.
+        /// If <c>nextToken</c> is returned in the response, there are more results available.
+        /// Make the next call using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken { get; set; }

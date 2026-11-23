@@ -37,7 +37,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version identifier of the Key Value Store after the successful put.
+        /// The current version identifier of the key value store after the successful put.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
-        /// Number of key value pairs in the Key Value Store after the successful put.
+        /// Number of key-value pairs in the key value store after the successful put.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -65,7 +65,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property TotalSizeInBytes. 
         /// <para>
-        /// Total size of the Key Value Store after the successful put, in bytes.
+        /// Total size of the key value store after the successful put, in bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -37,7 +37,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// Date and time when the Key Value Store was created.
+        /// Date and time when the key value store was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The version identifier for the current version of the Key Value Store.
+        /// The version identifier for the current version of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -65,7 +65,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for Key Value Store creation failure.
+        /// The reason why the key value store wasn't created.
         /// </para>
         /// </summary>
         public string FailureReason { get; set; }
@@ -78,7 +78,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property ItemCount. 
         /// <para>
-        /// Number of key value pairs in the Key Value Store.
+        /// Number of key-value pairs in the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -92,7 +92,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property KvsARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]
@@ -106,7 +106,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// Date and time when the key value pairs in the Key Value Store was last modified.
+        /// Date and time when the key-value pairs in the key value store was last modified.
         /// </para>
         /// </summary>
         public DateTime? LastModified { get; set; }
@@ -119,7 +119,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Key Value Store.
+        /// The current status of the key value store.
         /// </para>
         /// </summary>
         public string Status { get; set; }
@@ -132,7 +132,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property TotalSizeInBytes. 
         /// <para>
-        /// Total size of the Key Value Store in bytes.
+        /// Total size of the key value store in bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

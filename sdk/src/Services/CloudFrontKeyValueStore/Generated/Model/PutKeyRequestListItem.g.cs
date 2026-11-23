@@ -30,14 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// List item for key value pair to put.
+    /// List item for key-value pair to put.
     /// </summary>
     public partial class PutKeyRequestListItem
     {
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the key value pair list item to put.
+        /// The key of the key-value pair list item to put.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 1024)]
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the key value pair to put.
+        /// The value for the key-value pair to put.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Sensitive = true)]

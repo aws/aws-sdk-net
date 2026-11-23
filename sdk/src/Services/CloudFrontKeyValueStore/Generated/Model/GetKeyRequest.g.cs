@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKey operation. Returns a key value pair.
+    /// Container for the parameters to the GetKey operation. Returns a key-value pair.
     /// </summary>
     public partial class GetKeyRequest : AmazonCloudFrontKeyValueStoreRequest
     {
@@ -51,7 +51,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// <summary>
         /// Gets and sets the property KvsARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Value Store.
+        /// The Amazon Resource Name (ARN) of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true, Min = 1, Max = 2048)]
