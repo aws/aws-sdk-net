@@ -72,7 +72,7 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// The naming convention for the DNS name for an accelerator is the following: A lowercase
-        /// letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com.
+        /// letter a, followed by a 16-character random hexadecimal string, followed by .awsglobalaccelerator.com.
         /// For example: a1234567890abcdef.awsglobalaccelerator.com.
         /// </para>
         ///  
@@ -106,7 +106,7 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// The naming convention for the dual-stack DNS name is the following: A lowercase letter
-        /// a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com.
+        /// a, followed by a 16-character random hexadecimal string, followed by .dualstack.awsglobalaccelerator.com.
         /// For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.
         /// </para>
         ///  

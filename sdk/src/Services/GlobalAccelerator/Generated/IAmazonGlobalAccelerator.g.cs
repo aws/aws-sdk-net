@@ -76,7 +76,7 @@ namespace Amazon.GlobalAccelerator
     /// </para>
     ///  
     /// <para>
-    /// For a standard accelerator, they distribute incoming application traffic across multiple
+    /// For a standard accelerator, it distributes incoming application traffic across multiple
     /// endpoint resources in multiple Amazon Web Services Regions , which increases the availability
     /// of your applications. Endpoints for standard accelerators can be Network Load Balancers,
     /// Application Load Balancers, Amazon EC2 instances, or Elastic IP addresses that are
@@ -149,7 +149,7 @@ namespace Amazon.GlobalAccelerator
         /// You can't use both of those options.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointAlreadyExistsException">
-        /// The endpoint that you specified doesn't exist.
+        /// The endpoint that you specified already exists.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
         /// The endpoint group that you specified doesn't exist.
@@ -202,7 +202,7 @@ namespace Amazon.GlobalAccelerator
         /// You can't use both of those options.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointAlreadyExistsException">
-        /// The endpoint that you specified doesn't exist.
+        /// The endpoint that you specified already exists.
         /// </exception>
         /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
         /// The endpoint group that you specified doesn't exist.
@@ -2312,7 +2312,7 @@ namespace Amazon.GlobalAccelerator
 #if NETFRAMEWORK
         /// <summary>
         /// Provides a complete mapping from the public accelerator IP address and port to destination
-        /// EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint
+        /// EC2 instance IP addresses and ports in the virtual private cloud (VPC) subnet endpoint
         /// for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator
         /// creates a new static port mapping for the accelerator. The port mappings don't change
         /// after Global Accelerator generates them, so you can retrieve and cache the full mapping
@@ -2355,7 +2355,7 @@ namespace Amazon.GlobalAccelerator
 
         /// <summary>
         /// Provides a complete mapping from the public accelerator IP address and port to destination
-        /// EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint
+        /// EC2 instance IP addresses and ports in the virtual private cloud (VPC) subnet endpoint
         /// for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator
         /// creates a new static port mapping for the accelerator. The port mappings don't change
         /// after Global Accelerator generates them, so you can retrieve and cache the full mapping
@@ -2747,8 +2747,8 @@ namespace Amazon.GlobalAccelerator
         /// The <c>RemoveEndpoints</c> API operation is the recommended option for removing endpoints.
         /// The alternative is to remove endpoints by updating an endpoint group by using the
         /// <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
-        /// API operation. There are two advantages to using <c>AddEndpoints</c> to remove endpoints
-        /// instead:
+        /// API operation. There are two advantages to using <c>RemoveEndpoints</c> to remove
+        /// endpoints instead:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2794,8 +2794,8 @@ namespace Amazon.GlobalAccelerator
         /// The <c>RemoveEndpoints</c> API operation is the recommended option for removing endpoints.
         /// The alternative is to remove endpoints by updating an endpoint group by using the
         /// <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
-        /// API operation. There are two advantages to using <c>AddEndpoints</c> to remove endpoints
-        /// instead:
+        /// API operation. There are two advantages to using <c>RemoveEndpoints</c> to remove
+        /// endpoints instead:
         /// </para>
         ///  <ul> <li> 
         /// <para>

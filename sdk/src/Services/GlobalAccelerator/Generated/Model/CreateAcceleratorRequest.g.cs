@@ -113,8 +113,12 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that you can't update IP addresses for an existing accelerator. To change them,
-        /// you must create a new accelerator with the new addresses.
+        /// If you create an accelerator with only IP addresses provided by Global Accelerator,
+        /// you can't update it later to use BYOIP addresses. If you create an accelerator with
+        /// at least one BYOIP address, you can update its IP addresses later. For more information,
+        /// see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.update-accelerator.html">Update
+        /// an accelerator to change your IP addresses</a> in the <i>Global Accelerator Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>

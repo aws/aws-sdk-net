@@ -97,7 +97,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The IP address of the VPC subnet (the subnet ID).
+        /// The ID of the virtual private cloud (VPC) subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 255)]

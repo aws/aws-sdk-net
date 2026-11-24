@@ -39,9 +39,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// An IP address range, in CIDR format, that is specified as resource. The address must
-        /// be provisioned and advertised in Global Accelerator by following the bring your own
-        /// IP address (BYOIP) process for Global Accelerator
+        /// An IP address range, in CIDR format, that is specified as a resource. The address
+        /// must be provisioned and advertised in Global Accelerator by following the bring your
+        /// own IP address (BYOIP) process for Global Accelerator
         /// </para>
         ///  
         /// <para>

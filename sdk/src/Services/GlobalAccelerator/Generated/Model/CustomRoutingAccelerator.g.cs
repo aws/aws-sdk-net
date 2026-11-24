@@ -70,8 +70,8 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// The naming convention for the DNS name is the following: A lowercase letter a, followed
-        /// by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
-        /// a1234567890abcdef.awsglobalaccelerator.com.
+        /// by a 16-character random hexadecimal string, followed by .awsglobalaccelerator.com.
+        /// For example: a1234567890abcdef.awsglobalaccelerator.com.
         /// </para>
         ///  
         /// <para>
