@@ -509,18 +509,24 @@ namespace Amazon.S3
 
         private static long GetSecondsUntilExpiration(IClientConfig config, GetPreSignedUrlRequest request, SignatureVersion signatureVersion)
         {
-            DateTime baselineTime;
+            var expires = request.Expires.GetValueOrDefault().ToUniversalTime();
             if (signatureVersion == SignatureVersion.SigV2)
             {
-                baselineTime = AWSSDKUtils.EPOCH_START;
+                return Convert.ToInt64((expires - AWSSDKUtils.EPOCH_START).TotalSeconds);
             }
-            else // SigV4 or SigV4a
+
+            var parameters = new ServiceOperationEndpointParameters(request);
+            var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+            var seconds = Convert.ToInt64((expires - CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL, config)).TotalSeconds);
+            var secondsOnCallersClock = Convert.ToInt64((expires - AWSSDKUtils.CorrectedUtcNow).TotalSeconds);
+
+            // Expires comes from the caller's clock. If it is within the limit there, the recorded clock skew must not push it over.
+            if (secondsOnCallersClock <= AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry && seconds > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
-                var parameters = new ServiceOperationEndpointParameters(request);
-                var endpoint = config.DetermineServiceOperationEndpoint(parameters);
-                baselineTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
+                return secondsOnCallersClock;
             }
-            return Convert.ToInt64((request.Expires.GetValueOrDefault().ToUniversalTime() - baselineTime).TotalSeconds);
+
+            return seconds;
         }
 
         internal static void CleanupRequest(AmazonWebServiceRequest request)
