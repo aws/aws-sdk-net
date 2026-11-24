@@ -1,3 +1,11 @@
+### 4.1.10.0 (2026-11-24 19:11 UTC)
+* BedrockAgentCore (4.1.3.0)
+	* Adds the optional userLocation parameter to InvokeWebSearch. Specify a two-letter ISO 3166-1 alpha-2 country code to refine web search results for that country. InvokeWebSearch also accepts search queries in languages other than English.
+* GlobalAccelerator (4.1.0.3)
+	* AWS Global Accelerator supports Client IP Preservation for NLBs with TLS Listener endpoints.
+* S3 (4.1.2.1)
+	* Fixed `GetPreSignedURL` intermittently rejecting a 7 day expiry as over the SigV4 limit (https://github.com/aws/aws-sdk-net/issues/4604)
+
 ### 4.1.9.0 (2026-11-23 20:19 UTC)
 * CloudFront (4.1.3.0)
 	* Launch CloudFront in AWS European Sovereign Cloud.
