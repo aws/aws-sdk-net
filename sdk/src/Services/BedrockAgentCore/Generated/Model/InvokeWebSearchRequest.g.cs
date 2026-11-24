@@ -81,6 +81,27 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSearchQuery() => this.SearchQuery != null;
 
         /// <summary>
+        /// Gets and sets the property UserLocation. 
+        /// <para>
+        ///  <c>userLocation</c> may allow for Web Search results to be refined for that location.
+        /// This is done by supplying a <c>country</c>. The field is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value is checked against assigned ISO 3166-1 alpha-2 codes, so unassigned and
+        /// user-assigned codes such as <c>UK</c> and <c>XK</c>, empty or whitespace-only values
+        /// are rejected. An omitted value is treated as absent. Without location, as a fallback
+        /// Web Search may use your query to localize results or default to <c>en_US</c>.
+        /// </para>
+        /// </summary>
+        public WebSearchUserLocation UserLocation { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UserLocation property is set.
+        /// </summary>
+        internal bool IsSetUserLocation() => this.UserLocation != null;
+
+        /// <summary>
         /// Gets and sets the property WebSearchId. 
         /// <para>
         /// The identifier of the web search tool to invoke. The Amazon Web Services-managed web

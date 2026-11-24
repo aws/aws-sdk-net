@@ -94,6 +94,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("searchQuery");
                 context.Writer.WriteStringValue(publicRequest.SearchQuery);
             }
+            if (publicRequest.IsSetUserLocation())
+            {
+                context.Writer.WritePropertyName("userLocation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WebSearchUserLocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserLocation, context);
+
+                context.Writer.WriteEndObject();
+            }
 
             writer.WriteEndObject();
             writer.Flush();
