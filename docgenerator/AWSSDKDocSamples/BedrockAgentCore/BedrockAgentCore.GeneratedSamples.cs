@@ -27,6 +27,7 @@ namespace AWSSDKDocSamples.Amazon.BedrockAgentCore.Generated
                 },
                 MaxResults = 1,
                 SearchQuery = "Amazon Bedrock AgentCore web search",
+                UserLocation = new WebSearchUserLocation { Country = "US" },
                 WebSearchId = "web-search.v1"
             });
 
