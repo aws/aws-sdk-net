@@ -30,11 +30,11 @@ namespace Amazon.Runtime.Endpoints
     /// </summary>
     public class PropertyBag : IPropertyBag
     {
-        private readonly Dictionary<string, object> properties;
+        // Created on the first write; null means empty. Typed subclasses keep their values in fields.
+        private Dictionary<string, object> properties;
 
         public PropertyBag()
         {
-            properties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -43,7 +43,10 @@ namespace Amazon.Runtime.Endpoints
         /// </summary>
         internal PropertyBag(PropertyBag source)
         {
-            properties = new Dictionary<string, object>(source.properties);
+            if (source.properties != null && source.properties.Count > 0)
+            {
+                properties = new Dictionary<string, object>(source.properties);
+            }
         }
 
         public virtual object this[string propertyName]
@@ -51,7 +54,7 @@ namespace Amazon.Runtime.Endpoints
             get 
             {
                 object result;
-                if (properties.TryGetValue(propertyName, out result))
+                if (properties != null && properties.TryGetValue(propertyName, out result))
                 {
                     return result;
                 }
@@ -59,7 +62,7 @@ namespace Amazon.Runtime.Endpoints
             }
             set 
             { 
-                properties[propertyName] = value; 
+                (properties ??= new Dictionary<string, object>())[propertyName] = value;
             }
         }
 
@@ -69,9 +72,14 @@ namespace Amazon.Runtime.Endpoints
         /// </summary>
         internal bool ContentEquals(PropertyBag other)
         {
-            if (other == null || other.properties.Count != properties.Count)
+            if (other == null || CountOf(other.properties) != CountOf(properties))
             {
                 return false;
+            }
+
+            if (properties == null)
+            {
+                return true;
             }
 
             foreach (var kvp in properties)
@@ -85,6 +93,8 @@ namespace Amazon.Runtime.Endpoints
 
             return true;
         }
+
+        private static int CountOf(Dictionary<string, object> dictionary) => dictionary?.Count ?? 0;
 
         /// <summary>
         /// Creates PropertyBag based object tree from JsonElement.

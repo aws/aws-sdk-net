@@ -25,10 +25,7 @@ namespace AWSSDK.UnitTests
     {
         private const int ResultOffset = 100_000_000;
 
-        /// <summary>
-        /// Scripted condition evaluator which returns a pre-set bool per condition
-        /// index so tests exercise BddEvaluator traversal without any real Fn evaluation.
-        /// </summary>
+        // Returns a pre-set bool per condition index, so the traversal is tested without any real Fn evaluation.
         private sealed class StubConditions : IBddConditionEvaluator<object>
         {
             private readonly Dictionary<int, bool> _results;
@@ -61,111 +58,38 @@ namespace AWSSDK.UnitTests
         public void Decode_KnownBytes_ReadsBigEndianInt32Triples()
         {
             var expected = new[] { 5, ResultOffset + 2, -1 };
-            var decoded = BddNodeDecoder.Decode(EncodeNodes(expected));
-            CollectionAssert.AreEqual(expected, decoded);
+            CollectionAssert.AreEqual(expected, BddNodeDecoder.Decode(EncodeNodes(expected)));
+            Assert.AreEqual(0, BddNodeDecoder.Decode("").Length);
         }
 
         [TestMethod]
         [TestCategory("Endpoints")]
-        public void Decode_EmptyString_ReturnsEmptyArray()
-        {
-            var decoded = BddNodeDecoder.Decode("");
-            Assert.AreEqual(0, decoded.Length);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_ConditionTrue_FollowsHighBranch()
+        [DataRow(true, false, 7, 1)]
+        [DataRow(false, true, 1, 2)]
+        [DataRow(false, false, 5, 2)]
+        public void Evaluate_FollowsBranchesAndComplementedEdges(bool condition0, bool condition1, int expectedResult, int expectedEvaluations)
         {
             var nodes = BddNodeDecoder.Decode(EncodeNodes(
                 -1, 1, -1,
-                0, ResultOffset + 7, ResultOffset + 3));
-            var conditions = new StubConditions(new Dictionary<int, bool> { { 0, true } });
-
-            var result = BddEvaluator.Evaluate<object>(nodes, 2, conditions, null);
-
-            Assert.AreEqual(7, result);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_ConditionFalse_FollowsLowBranch()
-        {
-            var nodes = BddNodeDecoder.Decode(EncodeNodes(
-                -1, 1, -1,
-                0, ResultOffset + 7, ResultOffset + 3));
-            var conditions = new StubConditions(new Dictionary<int, bool> { { 0, false } });
-
-            var result = BddEvaluator.Evaluate<object>(nodes, 2, conditions, null);
-
-            Assert.AreEqual(3, result);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_ComplementRoot_SwapsBranches()
-        {
-            var nodes = BddNodeDecoder.Decode(EncodeNodes(
-                -1, 1, -1,
-                0, ResultOffset + 7, ResultOffset + 3));
-            var conditions = new StubConditions(new Dictionary<int, bool> { { 0, true } });
-
-            var result = BddEvaluator.Evaluate<object>(nodes, -2, conditions, null);
-
-            Assert.AreEqual(3, result);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_TrueTerminalRoot_ReturnsZeroNoMatchRule()
-        {
-            // Terminal refs are never dereferenced, Evaluate returns 0
-            var conditions = new StubConditions(new Dictionary<int, bool>());
-
-            var result = BddEvaluator.Evaluate<object>(Array.Empty<int>(), 1, conditions, null);
-
-            Assert.AreEqual(0, result);
-            Assert.AreEqual(0, conditions.EvaluatedCount); // no condition evaluated for a terminal
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_FalseTerminalRoot_ReturnsZeroNoMatchRule()
-        {
-            var conditions = new StubConditions(new Dictionary<int, bool>());
-
-            var result = BddEvaluator.Evaluate<object>(Array.Empty<int>(), -1, conditions, null);
-
-            Assert.AreEqual(0, result);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_ResultRefRoot_ReturnsDecodedIndexWithoutEvaluating()
-        {
-            // A root that is already a result reference resolves directly to its index
-            var conditions = new StubConditions(new Dictionary<int, bool>());
-
-            var result = BddEvaluator.Evaluate<object>(Array.Empty<int>(), ResultOffset + 42, conditions, null);
-
-            Assert.AreEqual(42, result);
-            Assert.AreEqual(0, conditions.EvaluatedCount);
-        }
-
-        [TestMethod]
-        [TestCategory("Endpoints")]
-        public void Evaluate_MultiHop_WalksToNextNodeBeforeResult()
-        {
-            var nodes = BddNodeDecoder.Decode(EncodeNodes(
-                -1, 1, -1,
-                0, 3, ResultOffset + 9,
+                0, ResultOffset + 7, -3,
                 1, ResultOffset + 5, ResultOffset + 1));
-            var conditions = new StubConditions(new Dictionary<int, bool> { { 0, true }, { 1, true } });
+            var conditions = new StubConditions(new Dictionary<int, bool> { { 0, condition0 }, { 1, condition1 } });
 
-            var result = BddEvaluator.Evaluate<object>(nodes, 2, conditions, null);
+            Assert.AreEqual(expectedResult, BddEvaluator.Evaluate<object>(nodes, 2, conditions, null));
+            Assert.AreEqual(expectedEvaluations, conditions.EvaluatedCount);
+        }
 
-            Assert.AreEqual(5, result);
-            Assert.AreEqual(2, conditions.EvaluatedCount); // both nodes visited
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [DataRow(1, 0)]
+        [DataRow(-1, 0)]
+        [DataRow(ResultOffset + 42, 42)]
+        public void Evaluate_TerminalAndResultRoots_ResolveWithoutEvaluatingConditions(int root, int expectedResult)
+        {
+            var conditions = new StubConditions(new Dictionary<int, bool>());
+
+            Assert.AreEqual(expectedResult, BddEvaluator.Evaluate<object>(Array.Empty<int>(), root, conditions, null));
+            Assert.AreEqual(0, conditions.EvaluatedCount);
         }
     }
 }

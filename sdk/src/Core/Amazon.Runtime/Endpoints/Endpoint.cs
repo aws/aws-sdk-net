@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Threading;
 
 namespace Amazon.Runtime.Endpoints
 {
@@ -75,20 +76,36 @@ namespace Amazon.Runtime.Endpoints
         public string URL { get; set; }
 
         private IPropertyBag _attributes;
+        private IReadOnlyList<AuthScheme> _authSchemes;
+        private bool _authSchemesSynthesized;
+
+        // Guards the one-time synthesis of Attributes["authSchemes"]. Created on first use so endpoints
+        // whose Attributes are never read allocate no lock.
+        private object _synthesisLock;
 
         /// <summary>
-        /// Custom endpoint attributes
+        /// Custom endpoint attributes. When typed <see cref="AuthSchemes"/> are set, reading this
+        /// builds an "authSchemes" entry in the same shape the rules-based provider produces.
         /// </summary>
         public IPropertyBag Attributes
         {
-            get => _attributes;
-            set => _attributes = value;
+            get
+            {
+                if (_authSchemes != null && !_authSchemesSynthesized)
+                {
+                    SynthesizeAuthSchemes();
+                }
+                return _attributes;
+            }
+            set
+            {
+                _attributes = value;
+                _authSchemesSynthesized = false;
+            }
         }
 
         /// <summary>
         /// Internal fast-path accessor returning the raw attributes bag, or null when none was set.
-        /// Core's request path reads this to avoid materializing a bag on the common BDD path.
-        /// TODO: synthesize a bag from AuthSchemes here so Attributes["authSchemes"] works for BDD endpoints.
         /// </summary>
         internal IPropertyBag RawAttributesOrNull => _attributes;
 
@@ -100,6 +117,50 @@ namespace Amazon.Runtime.Endpoints
         /// <summary>
         /// Typed auth schemes resolved by BDD providers. Preferred over Attributes["authSchemes"].
         /// </summary>
-        public IReadOnlyList<AuthScheme> AuthSchemes { get; set; }
+        public IReadOnlyList<AuthScheme> AuthSchemes
+        {
+            get => _authSchemes;
+            set
+            {
+                _authSchemes = value;
+                _authSchemesSynthesized = false;
+            }
+        }
+
+        private void SynthesizeAuthSchemes()
+        {
+            lock (LazyInitializer.EnsureInitialized(ref _synthesisLock, () => new object()))
+            {
+                if (_authSchemesSynthesized || _authSchemes == null)
+                {
+                    return;
+                }
+
+                var bag = _attributes ?? new PropertyBag();
+                // A provider-supplied list (e.g. from attributesJson) is authoritative; don't overwrite it.
+                if (bag["authSchemes"] == null)
+                {
+                    var list = new List<object>(_authSchemes.Count);
+                    foreach (var scheme in _authSchemes)
+                    {
+                        list.Add(ToPropertyBag(scheme));
+                    }
+                    bag["authSchemes"] = list;
+                }
+                _attributes = bag;
+                _authSchemesSynthesized = true;
+            }
+        }
+
+        private static PropertyBag ToPropertyBag(AuthScheme scheme)
+        {
+            var bag = new PropertyBag();
+            bag["name"] = scheme.Name;
+            if (scheme.SigningName != null) bag["signingName"] = scheme.SigningName;
+            if (scheme.SigningRegion != null) bag["signingRegion"] = scheme.SigningRegion;
+            if (scheme.SigningRegionSet != null) bag["signingRegionSet"] = new List<object>(scheme.SigningRegionSet);
+            if (scheme.DisableDoubleEncoding is bool disable) bag["disableDoubleEncoding"] = disable;
+            return bag;
+        }
     }
 }

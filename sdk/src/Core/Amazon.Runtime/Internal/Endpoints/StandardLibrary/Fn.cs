@@ -534,6 +534,14 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         }
 
         /// <summary>
+        /// Ordinal string comparison.
+        /// </summary>
+        public static bool StringEquals(string value1, string value2)
+        {
+            return string.Equals(value1, value2, StringComparison.Ordinal);
+        }
+
+        /// <summary>
         /// Splits input on separator into at most limit parts, with 0 being unlimited.
         /// </summary>
         public static IList<string> Split(string input, string separator, int limit)
@@ -552,6 +560,82 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
             var i = index < 0 ? list.Count + index : index;
             return i < 0 || i > list.Count - 1 ? null : list[i];
+        }
+
+        /// <summary>
+        /// Compares a substring of input to expected without creating it.
+        /// </summary>
+        public static bool SubstringEquals(string input, int start, int stop, bool reverse, string expected)
+        {
+            if (input == null || start >= stop || input.Length < stop || HasNonAscii(input))
+            {
+                return expected != null && expected.Length == 0;
+            }
+
+            var length = stop - start;
+            var offset = reverse ? input.Length - stop : start;
+            return expected != null
+                && expected.Length == length
+                && string.CompareOrdinal(input, offset, expected, 0, length) == 0;
+        }
+
+        /// <summary>
+        /// Returns one item of input split on separator without creating the others. Same result as
+        /// <c>ListItemOrNull(Split(input, separator, limit), index)</c>.
+        /// </summary>
+        public static string SplitItemOrNull(string input, string separator, int limit, int index)
+        {
+            if (input == null)
+            {
+                return null;
+            }
+            // A limit or empty separator changes how Split divides the input, so reuse it.
+            if (limit != 0 || string.IsNullOrEmpty(separator))
+            {
+                return ListItemOrNull(Split(input, separator, limit), index);
+            }
+
+            var target = index;
+            if (index < 0)
+            {
+                var count = 1;
+                for (var next = input.IndexOf(separator, StringComparison.Ordinal); next >= 0;
+                     next = input.IndexOf(separator, next + separator.Length, StringComparison.Ordinal))
+                {
+                    count++;
+                }
+                target = count + index;
+                if (target < 0)
+                {
+                    return null;
+                }
+            }
+
+            var start = 0;
+            for (var i = 0; i < target; i++)
+            {
+                var next = input.IndexOf(separator, start, StringComparison.Ordinal);
+                if (next < 0)
+                {
+                    return null;
+                }
+                start = next + separator.Length;
+            }
+
+            var end = input.IndexOf(separator, start, StringComparison.Ordinal);
+            return end < 0 ? input.Substring(start) : input.Substring(start, end - start);
+        }
+
+        private static bool HasNonAscii(string value)
+        {
+            foreach (var c in value)
+            {
+                if (c > 127)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
