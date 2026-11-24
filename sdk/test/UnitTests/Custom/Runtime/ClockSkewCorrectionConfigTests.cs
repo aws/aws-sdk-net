@@ -17,6 +17,9 @@ using System;
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests
@@ -194,6 +197,25 @@ namespace AWSSDK.UnitTests
             {
                 RestoreClockState(saved);
             }
+        }
+
+        [TestMethod]
+        [DataRow(-30, 604800.0, true)]
+        [DataRow(-30, 604800.4, true)]
+        [DataRow(-43200, 604800.0, true)]
+        public void GetPreSignedURL_SevenDayExpiryIgnoresRecordedClockSkew(int skewSeconds, double expiresInSeconds, bool signedForSevenDays)
+        {
+            CorrectClockSkew.SetClockCorrectionForEndpoint("https://skewed-bucket.s3.us-east-1.amazonaws.com/", TimeSpan.FromSeconds(skewSeconds));
+
+            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), RegionEndpoint.USEast1);
+            var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
+            {
+                BucketName = "skewed-bucket",
+                Key = "key",
+                Verb = HttpVerb.GET,
+                Expires = AWSSDKUtils.CorrectedUtcNow.AddSeconds(expiresInSeconds)
+            });
+            Assert.AreEqual(signedForSevenDays, url.Contains("X-Amz-Expires=604800"), url);
         }
     }
 }
