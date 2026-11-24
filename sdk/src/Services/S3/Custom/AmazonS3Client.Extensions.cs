@@ -517,13 +517,13 @@ namespace Amazon.S3
 
             var parameters = new ServiceOperationEndpointParameters(request);
             var endpoint = config.DetermineServiceOperationEndpoint(parameters);
-            var seconds = Convert.ToInt64((expires - CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL)).TotalSeconds);
+            var seconds = Convert.ToInt64((expires - CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL, config)).TotalSeconds);
             var secondsOnCallersClock = Convert.ToInt64((expires - AWSSDKUtils.CorrectedUtcNow).TotalSeconds);
 
             // Expires comes from the caller's clock. If it is within the limit there, the recorded clock skew must not push it over.
-            if (secondsOnCallersClock <= AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+            if (secondsOnCallersClock <= AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry && seconds > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
-                return Math.Min(seconds, AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry);
+                return secondsOnCallersClock;
             }
 
             return seconds;

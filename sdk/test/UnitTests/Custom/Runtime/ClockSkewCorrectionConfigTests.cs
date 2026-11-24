@@ -200,14 +200,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [DataRow(-30, 604800.0, true)]
-        [DataRow(-30, 604800.4, true)]
-        [DataRow(-43200, 604800.0, true)]
-        public void GetPreSignedURL_SevenDayExpiryIgnoresRecordedClockSkew(int skewSeconds, double expiresInSeconds, bool signedForSevenDays)
+        [DataRow(-30, 604800.0, false, 604800)]
+        [DataRow(-30, 604800.4, false, 604800)]
+        [DataRow(-43200, 604800.0, false, 604800)]
+        [DataRow(-3600, 604000.0, false, 604000)]
+        [DataRow(-30, 3600.0, true, 3600)]
+        public void GetPreSignedURL_SevenDayExpiryIgnoresRecordedClockSkew(int skewSeconds, double expiresInSeconds, bool disableClockSkewCorrection, long expectedSeconds)
         {
             CorrectClockSkew.SetClockCorrectionForEndpoint("https://skewed-bucket.s3.us-east-1.amazonaws.com/", TimeSpan.FromSeconds(skewSeconds));
 
-            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), RegionEndpoint.USEast1);
+            var config = new AmazonS3Config { RegionEndpoint = RegionEndpoint.USEast1, DisableClockSkewCorrection = disableClockSkewCorrection };
+            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), config);
             var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
             {
                 BucketName = "skewed-bucket",
@@ -215,7 +218,7 @@ namespace AWSSDK.UnitTests
                 Verb = HttpVerb.GET,
                 Expires = AWSSDKUtils.CorrectedUtcNow.AddSeconds(expiresInSeconds)
             });
-            Assert.AreEqual(signedForSevenDays, url.Contains("X-Amz-Expires=604800"), url);
+            Assert.IsTrue(url.Contains("X-Amz-Expires=" + expectedSeconds + "&"), url);
         }
     }
 }
