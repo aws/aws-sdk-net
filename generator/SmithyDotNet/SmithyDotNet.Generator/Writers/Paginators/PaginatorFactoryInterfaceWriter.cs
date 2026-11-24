@@ -20,7 +20,9 @@ public sealed class PaginatorFactoryInterfaceWriter(GenerationContext context, s
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Paginators for the {context.ServiceName} service");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public interface I{context.ServiceName}PaginatorFactory", () =>
+
+            var keyword = context.Customizations.PartialEnumsAndPaginators ? "partial interface" : "interface";
+            writer.OpenBlock($"public {keyword} I{context.ServiceName}PaginatorFactory", () =>
             {
                 for (var i = 0; i < context.PaginatedOperations.Count; i++)
                 {

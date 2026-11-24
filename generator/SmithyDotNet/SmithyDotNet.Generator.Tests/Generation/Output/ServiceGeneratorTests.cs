@@ -1,6 +1,7 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.ProjectFiles;
+using SmithyDotNet.Generator.Model;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Generation.Output;
@@ -134,6 +135,27 @@ public class ServiceGeneratorTests : IDisposable
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
         Assert.Contains(Path.Combine(marshalling, "DoThingResponseUnmarshaller.g.cs"), written);
         Assert.DoesNotContain(Path.Combine(marshalling, "AttributeValueUnmarshaller.g.cs"), written);
+    }
+
+    [Fact]
+    public void ExcludePaginators_WritesOnlyTheFactoryMethod()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["ListThings"] = new OperationModifier { ExcludePaginators = true };
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Model/paginated-model.json")), TestManifests.CloudTrailData("TestPaginated"), customizations: customizations);
+        var outputDir = Path.Combine(_outputDir, "paginated");
+        var generator = new ServiceGenerator(context, ModelFileName, ServiceFileVersion, _fixture.DefaultConfigurationModes);
+        var written = generator.Generate(outputDir, Path.Combine(outputDir, "code-analysis"), testsOutputPath: null, TestContext.Current.CancellationToken);
+
+        var model = Path.Combine("Generated", "Model");
+        Assert.DoesNotContain(Path.Combine(model, "ListThingsPaginator.g.cs"), written);
+        Assert.DoesNotContain(Path.Combine(model, "IListThingsPaginator.g.cs"), written);
+        Assert.Contains(Path.Combine(model, "ListWidgetsPaginator.g.cs"), written);
+
+        var factoryInterface = File.ReadAllText(Path.Combine(outputDir, model, "ITestPaginatedPaginatorFactory.g.cs"));
+        var factoryClass = File.ReadAllText(Path.Combine(outputDir, model, "TestPaginatedPaginatorFactory.g.cs"));
+        Assert.Contains("IListThingsPaginator ListThings(ListThingsRequest request);", factoryInterface);
+        Assert.Contains("public IListThingsPaginator ListThings(ListThingsRequest request)", factoryClass);
     }
 
     [Fact]

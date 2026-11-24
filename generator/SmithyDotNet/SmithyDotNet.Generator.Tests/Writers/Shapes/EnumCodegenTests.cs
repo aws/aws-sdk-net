@@ -49,6 +49,16 @@ public class EnumCodegenTests
     }
 
     [Fact]
+    public void PartialEnumsAndPaginators_EmitsPartialEnums()
+    {
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { PartialEnumsAndPaginators = true } };
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+        var enums = new ServiceEnumerationsWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class Category : ConstantClass", enums);
+    }
+
+    [Fact]
     public void Emission_NamesPropertiesFromTheWireValueNotTheMemberName()
     {
         Assert.Contains("""public static readonly InstanceType T2Micro = new InstanceType("t2.micro");""", _enums);

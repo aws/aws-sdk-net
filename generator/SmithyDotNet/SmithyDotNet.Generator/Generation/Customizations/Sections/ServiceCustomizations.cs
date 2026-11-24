@@ -58,6 +58,10 @@ public sealed record ServiceCustomizations
     [JsonPropertyName("endpointResolverPartial")]
     public bool EndpointResolverPartial { get; init; }
 
+    /// <summary>Emit the enums, the paginator factory, its interface and the paginator interfaces as <c>partial</c>; S3 adds to them by hand.</summary>
+    [JsonPropertyName("partialEnumsAndPaginators")]
+    public bool PartialEnumsAndPaginators { get; init; }
+
     /// <summary>
     /// An <c>@httpLabel</c> the endpoint resolver adds to the URL (S3's <c>Bucket</c>). It is removed from
     /// <c>ResourcePath</c> and gets no <c>AddPathResource</c>; its required check stays.

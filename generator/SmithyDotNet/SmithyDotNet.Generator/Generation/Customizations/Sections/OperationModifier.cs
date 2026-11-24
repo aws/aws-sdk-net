@@ -28,6 +28,10 @@ public sealed record OperationModifier
     [JsonPropertyName("stopPaginationOnSameToken")]
     public bool StopPaginationOnSameToken { get; init; }
 
+    /// <summary>The operation's paginator and its interface are hand-written (S3 <c>ListParts</c>); the factory still returns them.</summary>
+    [JsonPropertyName("excludePaginators")]
+    public bool ExcludePaginators { get; init; }
+
     /// <summary>Drops the operation, and with it the structures only it uses.</summary>
     [JsonPropertyName("exclude")]
     public bool Exclude { get; init; }

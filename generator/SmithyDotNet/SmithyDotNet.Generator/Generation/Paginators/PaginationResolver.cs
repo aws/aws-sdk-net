@@ -79,8 +79,8 @@ public static class PaginationResolver
 
             // A wrapped output's members sit under its one wrapper member.
             customizations.OperationModifiers.TryGetValue(operation.Shape.Id.Name, out var modifier);
-            var outputPrefix = modifier is { UseWrappingResult: true } ? $"{modifier.WrappedResultMember}." : "";
 
+            var outputPrefix = modifier is { UseWrappingResult: true } ? $"{modifier.WrappedResultMember}." : "";
             var inputTokenProperties = new List<string>();
             var outputTokenProperties = new List<string>();
             var tokensAreMaps = false;

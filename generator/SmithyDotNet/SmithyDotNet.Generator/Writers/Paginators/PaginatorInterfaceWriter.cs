@@ -21,7 +21,9 @@ public sealed class PaginatorInterfaceWriter(GenerationContext context, string m
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Paginator for the {opName} operation");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public interface I{opName}Paginator", () =>
+
+            var keyword = context.Customizations.PartialEnumsAndPaginators ? "partial interface" : "interface";
+            writer.OpenBlock($"public {keyword} I{opName}Paginator", () =>
             {
                 writer.WriteLine("/// <summary>");
                 writer.WriteLine("/// Enumerable containing all full responses for the operation");

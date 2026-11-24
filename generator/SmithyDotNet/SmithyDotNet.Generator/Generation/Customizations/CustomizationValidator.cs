@@ -159,6 +159,27 @@ public static class CustomizationValidator
         ValidateInjectedUnmarshallCode(model, customizations);
         ValidateAccessorHooks(customizations);
 
+        // excludePaginators needs a paginator to leave out.
+        foreach (var (operationName, modifier) in customizations.OperationModifiers)
+        {
+            if (!modifier.ExcludePaginators)
+            {
+                continue;
+            }
+
+            var operation = CustomizationTransform.FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
+            var isPaginated = operation.GetPaginated() is not null || customizations.Paginators.ContainsKey(operationName);
+            if (!isPaginated)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] sets excludePaginators, but the operation is not paginated.");
+            }
+
+            if (modifier.StopPaginationOnSameToken)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] sets excludePaginators, so its stopPaginationOnSameToken would do nothing.");
+            }
+        }
+
         // ExceptionWriter always derives from the service exception, so an error's entry would do nothing.
         foreach (var (shapeName, baseClass) in customizations.InheritAlternateBaseClass)
         {

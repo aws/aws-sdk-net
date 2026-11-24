@@ -94,6 +94,7 @@ public class CustomizationsModelTests
                     "retryPolicyRequestList": true,
                     "customPropertyValueRules": true,
                     "endpointResolverPartial": true,
+                    "partialEnumsAndPaginators": true,
                     "endpointResolvedLabel": "Bucket",
                     "keepGreedyLabelLeadingSlash": true
                 }
@@ -108,6 +109,7 @@ public class CustomizationsModelTests
         Assert.True(model.Service?.RetryPolicyRequestList);
         Assert.True(model.Service?.CustomPropertyValueRules);
         Assert.True(model.Service?.EndpointResolverPartial);
+        Assert.True(model.Service?.PartialEnumsAndPaginators);
         Assert.Equal("Bucket", model.Service?.EndpointResolvedLabel);
         Assert.True(model.Service?.KeepGreedyLabelLeadingSlash);
     }
@@ -159,6 +161,7 @@ public class CustomizationsModelTests
                 "InvokeAsync": { "exclude": true },
                 "CreateBucket": { "name": "PutBucket" },
                 "SelectObjectContent": { "clientMethodOnly": true },
+                "ListParts": { "excludePaginators": true },
                 "DescribeDomain": { "useWrappingResult": true, "wrappedResultShape": "DomainDetail", "wrappedResultMember": "DomainDetail" }
               }
             }
@@ -168,8 +171,19 @@ public class CustomizationsModelTests
         Assert.True(model.OperationModifiers["InvokeAsync"].Exclude);
         Assert.Equal("PutBucket", model.OperationName("CreateBucket"));
         Assert.True(model.IsClientMethodOnly("SelectObjectContent"));
+        Assert.True(model.OperationModifiers["ListParts"].ExcludePaginators);
         var wrap = model.OperationModifiers["DescribeDomain"];
         Assert.Equal((true, "DomainDetail", "DomainDetail"), (wrap.UseWrappingResult, wrap.WrappedResultShape, wrap.WrappedResultMember));
+    }
+
+    [Fact]
+    public void ExcludesPaginators_FindsARenamedOperationByEitherName()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["ListObjectVersions"] = new OperationModifier { Name = "ListVersions", ExcludePaginators = true };
+
+        Assert.True(customizations.ExcludesPaginators("ListVersions"));
+        Assert.True(customizations.ExcludesPaginators("ListObjectVersions"));
     }
 
     [Fact]

@@ -268,7 +268,9 @@ public class PaginationResolverTests
         var classCode = new PaginatorFactoryClassWriter(PaginatorContext, ModelFileName).Write(token);
 
         Assert.Contains("""[AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]""", interfaceCode);
+        Assert.Contains("public interface ITestPaginatedPaginatorFactory", interfaceCode);
         Assert.Contains("IListThingsPaginator ListThings(ListThingsRequest request);", interfaceCode);
+        Assert.Contains("public class TestPaginatedPaginatorFactory : ITestPaginatedPaginatorFactory", classCode);
         Assert.Contains("return new ListThingsPaginator(this.client, request);", classCode);
     }
 
@@ -307,6 +309,23 @@ public class PaginationResolverTests
         Assert.Contains("_request.StartType = startType;", multiTokenClass);
         Assert.Contains("startType = response.NextType;", multiTokenClass);
         Assert.Contains("while (!string.IsNullOrEmpty(startName));", multiTokenClass);
+    }
+
+    [Fact]
+    public void PartialEnumsAndPaginators_EmitsPartialFactoryAndInterfaces()
+    {
+        var token = TestContext.Current.CancellationToken;
+        var customizations = new CustomizationsModel { Service = new ServiceCustomizations { PartialEnumsAndPaginators = true } };
+        var context = new GenerationContext(new ServiceIndex(TestModels.Load("Model/paginated-model.json")), TestManifests.Example(), customizations: customizations);
+        var listThings = context.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
+
+        var factoryInterface = new PaginatorFactoryInterfaceWriter(context, ModelFileName).Write(token);
+        var factoryClass = new PaginatorFactoryClassWriter(context, ModelFileName).Write(token);
+        var paginatorInterface = new PaginatorInterfaceWriter(context, ModelFileName).Write(listThings, token);
+
+        Assert.Contains("public partial interface ITestPaginatedPaginatorFactory", factoryInterface);
+        Assert.Contains("public partial class TestPaginatedPaginatorFactory : ITestPaginatedPaginatorFactory", factoryClass);
+        Assert.Contains("public partial interface IListThingsPaginator", paginatorInterface);
     }
 
     private static PaginatedOperation Resolve(string operationName)

@@ -20,7 +20,9 @@ public sealed class PaginatorFactoryClassWriter(GenerationContext context, strin
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Paginators for the {context.ServiceName} service");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public class {context.ServiceName}PaginatorFactory : I{context.ServiceName}PaginatorFactory", () =>
+
+            var keyword = context.Customizations.PartialEnumsAndPaginators ? "partial class" : "class";
+            writer.OpenBlock($"public {keyword} {context.ServiceName}PaginatorFactory : I{context.ServiceName}PaginatorFactory", () =>
             {
                 writer.WriteLine($"private readonly {clientInterface} client;");
                 writer.WriteLine();

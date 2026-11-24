@@ -45,6 +45,9 @@ public static class CustomizationTransform
         //   MFADelete and MFADeleteStatus merge into VersionStatus, which is only BucketVersioningStatus's renameShape
         //   name: a no-op in C2J, a throw here. Move both to excludeShapes; rekeying them would add a
         //   VersionStatus.Disabled the shipped SDK doesn't have.
+        // - ListVersions' excludeResultKey is not ported; delete it. The paginators entry for ListObjectVersions leaves
+        //   DeleteMarkers out of its items.
+        // - suppressSimpleMethodExceptionDocs is not ported; delete it.
         ShapeSubstitutions.Apply(model, customizations);
 
         // Before shapeModifiers, which address a flattened member on its new parent, as C2J does (S3's RestoreObjectRequest.Tier).

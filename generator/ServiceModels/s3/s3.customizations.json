@@ -13,6 +13,7 @@
         "retryPolicyRequestList": true,
         "customPropertyValueRules": true,
         "endpointResolverPartial": true,
+        "partialEnumsAndPaginators": true,
         "endpointResolvedLabel": "Bucket",
         "keepGreedyLabelLeadingSlash": true,
         "requiredLabelServiceExceptionOperations": ["CreateSession", "GetObjectAttributes", "GetBucketAcl", "PutObjectAcl", "GetObjectAcl", "PutBucketAcl", "CreateBucketMetadataConfiguration", "GetBucketMetadataConfiguration", "DeleteBucketMetadataConfiguration"]

@@ -78,6 +78,18 @@ public class CustomizationValidatorTests
         Assert.Contains("noArgOverloads['Bucket'] targets a shape that is not an operation", ex.Message);
     }
 
+    [Theory]
+    [InlineData("PutBucket", false, "is not paginated")]
+    [InlineData("ListBuckets", true, "would do nothing")]
+    public void ExcludePaginators_ThatCannotBeMet_Throws(string operation, bool stopOnSameToken, string expectedInMessage)
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers[operation] = new OperationModifier { ExcludePaginators = true, StopPaginationOnSameToken = stopOnSameToken };
+
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
     // C2J keys these by the operation's C# name, so S3's simpleMethods list PutBucket, not CreateBucket.
     [Fact]
     public void ConvenienceHooks_OnRenamedOperation_KeyByCSharpName()

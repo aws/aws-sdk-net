@@ -457,6 +457,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             foreach (var paginatedOp in context.PaginatedOperations)
             {
+                if (context.Customizations.ExcludesPaginators(paginatedOp.Operation.Name))
+                {
+                    continue;
+                }
+
                 Emit(Path.Combine(model, $"I{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorInterfaceWriter.Write(paginatedOp, cancellationToken));
                 Emit(Path.Combine(model, $"{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorClassWriter.Write(paginatedOp, cancellationToken));
             }

@@ -43,8 +43,14 @@ public sealed partial record CustomizationsModel
     [JsonPropertyName("retainOriginalMemberOrdering")]
     public bool RetainOriginalMemberOrdering { get; init; }
 
+    /// <summary>True when <c>service.partialEnumsAndPaginators</c> is set.</summary>
+    public bool PartialEnumsAndPaginators => Service is not null && Service.PartialEnumsAndPaginators;
+
     /// <summary>True when <c>operationModifiers.{op}.clientMethodOnly</c> is set for modeled operation <paramref name="operationName"/>.</summary>
     public bool IsClientMethodOnly(string operationName) => OperationModifiers.GetValueOrDefault(operationName) is { ClientMethodOnly: true };
+
+    /// <summary>True when <c>operationModifiers.{op}.excludePaginators</c> is set for <paramref name="operationName"/>.</summary>
+    public bool ExcludesPaginators(string operationName) => ModifierFor(operationName) is { ExcludePaginators: true };
 
     /// <summary>True when <c>operationModifiers.{op}.allowEmptyResult</c> is set for <paramref name="operationName"/>.</summary>
     public bool AllowsEmptyResult(string operationName) => ModifierFor(operationName) is { AllowEmptyResult: true };

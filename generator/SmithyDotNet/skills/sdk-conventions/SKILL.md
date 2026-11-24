@@ -24,7 +24,7 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - Public method signatures (name, parameters, return type)
 - `[AWSProperty]` attributes on public members (Required, Min, Max)
 - XML doc comments on public types and members (content, not formatting)
-- `partial` modifier on all generated types
+- `partial` modifier on generated types (see below for the three kinds that are not)
 - Namespace structure (`{Namespace}`, `{Namespace}.Model`)
 - `internal bool IsSet{Property}()` per member — the public `AWSSDKUtils.IsPropertySet`
   reflection API and existing marshallers invoke these by name
@@ -259,7 +259,8 @@ differ (see `marshalling`). Each `@streaming` union is emitted once, however man
 
 ## All Types Are `partial`
 
-Every generated class and interface uses the `partial` modifier.
+Every generated class and interface uses the `partial` modifier, except the enums, the paginator factory with its
+interface, and the paginator interfaces. Those are `partial` only with `service.partialEnumsAndPaginators`.
 
 ## Property Pattern
 
@@ -372,6 +373,11 @@ nothing targets it.
   operation-keyed hooks keep the modeled name (the lookup helpers accept the C# name the writers pass);
   `simpleMethods`, `noArgOverloads` and `simpleConstructors` take the C# name, as C2J does.
 - `operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
+- `operationModifiers.{Operation}.excludePaginators` writes no paginator class or interface for the operation; the
+  factory still returns the hand-written ones (S3 `ListParts`). It fails together with `stopPaginationOnSameToken`
+  and on an operation that is not paginated.
+- `operationModifiers.{Operation}.excludeResultKey` — not supported; the key fails to load. Leave the entry out of the
+  operation's `paginators` items instead (S3 `ListObjectVersions`).
 - `operationModifiers.{Operation}.skipChecksumDuringMarshalling` drops the marshaller's checksum call (S3 `PutObject`,
   `UploadPart`).
 - The Smithy-only `service` section (one file per service) replaces C2J's `ServiceId == "S3"` branches. Each key names
@@ -391,6 +397,8 @@ nothing targets it.
     half must implement, so a missing file fails to compile: `BeforeInjectHostPrefix` (S3's SigV2/KMS tweaks) and
     `TryMapNonGeneratedRequest` (maps presigned/ACL requests and returns early, ahead of the per-operation blocks).
     Needs an endpoint rule set, else generation fails.
+  - `partialEnumsAndPaginators`: the enums, the paginator factory with its interface, and the paginator interfaces are
+    `partial` (S3 adds to them by hand). C2J hard-codes this for S3.
   - `endpointResolvedLabel`, `keepGreedyLabelLeadingSlash`, `requiredLabelServiceExceptionOperations`: change the
     `@httpLabel` handling (see marshalling).
 
@@ -400,6 +408,8 @@ generation, as the other hooks do (`CustomizationValidator.Validate` for the ope
 for a form member). All three carry the member `@documentation` onto the parameters via `DocumentationFormatter.ParamDocFor*`.
 - `noArgOverloads` — parameterless client overloads (sync + async), via `ClientClassWriter`/`ClientInterfaceWriter`.
 - `simpleMethods` — client overloads taking listed request members positionally (sync + async), same writers.
+- `suppressSimpleMethodExceptionDocs` — not supported; the key fails to load. S3's client methods get `<exception>`
+  tags, which C2J leaves off.
 - `simpleConstructors` — request/structure constructors taking listed members, via `OperationWriter`/`StructureWriter` using
   `SimpleConstructorWriter` (assigns the property, not C2J's backing field — same constructor signature).
 

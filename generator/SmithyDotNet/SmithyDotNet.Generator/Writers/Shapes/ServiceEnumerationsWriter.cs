@@ -43,7 +43,9 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Constants used for properties of type {className}.");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public class {className} : ConstantClass", () =>
+
+        var keyword = context.Customizations.PartialEnumsAndPaginators ? "partial class" : "class";
+        writer.OpenBlock($"public {keyword} {className} : ConstantClass", () =>
         {
             for (var i = 0; i < members.Count; i++)
             {
