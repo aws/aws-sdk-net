@@ -160,9 +160,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
-        /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
-        /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic
+        /// Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase
+        /// the limit for each resource type in the web ACL <c>AssociationConfig</c>, for additional
+        /// processing fees. 
         /// </para>
         ///  </li> <li> 
         /// <para>

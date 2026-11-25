@@ -45,22 +45,23 @@ namespace Amazon.WAFV2.Model
     /// in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and
     /// managed rule group. You can associate a web ACL with one or more Amazon Web Services
     /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
-    /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-    /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
-    /// instance, and Amazon Bedrock AgentCore Gateway. </para> <para> <b>Temporary inconsistencies
-    /// during updates</b> </para> <para> When you create or change a web ACL or other WAF
-    /// resources, the changes take a small amount of time to propagate to all areas where
-    /// the resources are stored. The propagation time can be from a few seconds to a number
-    /// of minutes. </para> <para> The following are examples of the temporary inconsistencies
-    /// that you might notice during change propagation: </para> <ul> <li> <para> After you
-    /// create a web ACL, if you try to associate it with a resource, you might get an exception
-    /// indicating that the web ACL is unavailable. </para> </li> <li> <para> After you add
-    /// a rule group to a web ACL, the new rule group rules might be in effect in one area
-    /// where the web ACL is used and not in another. </para> </li> <li> <para> After you
-    /// change a rule action setting, you might see the old action in some places and the
-    /// new action in others. </para> </li> <li> <para> After you add an IP address to an
-    /// IP set that is in use in a blocking rule, the new address might be blocked in one
-    /// area while still allowed in another. </para> </li> </ul>
+    /// API Gateway REST API, Application Load Balancer, Elastic Load Balancing for Envoy
+    /// proxy, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify
+    /// application, Amazon Web Services Verified Access instance, and Amazon Bedrock AgentCore
+    /// Gateway. </para> <para> <b>Temporary inconsistencies during updates</b> </para> <para>
+    /// When you create or change a web ACL or other WAF resources, the changes take a small
+    /// amount of time to propagate to all areas where the resources are stored. The propagation
+    /// time can be from a few seconds to a number of minutes. </para> <para> The following
+    /// are examples of the temporary inconsistencies that you might notice during change
+    /// propagation: </para> <ul> <li> <para> After you create a web ACL, if you try to associate
+    /// it with a resource, you might get an exception indicating that the web ACL is unavailable.
+    /// </para> </li> <li> <para> After you add a rule group to a web ACL, the new rule group
+    /// rules might be in effect in one area where the web ACL is used and not in another.
+    /// </para> </li> <li> <para> After you change a rule action setting, you might see the
+    /// old action in some places and the new action in others. </para> </li> <li> <para>
+    /// After you add an IP address to an IP set that is in use in a blocking rule, the new
+    /// address might be blocked in one area while still allowed in another. </para> </li>
+    /// </ul>
     /// </summary>
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
     {
@@ -117,9 +118,10 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Use this to customize the maximum size of the request body that your protected resources
         /// forward to WAF for inspection. You can customize this setting for Application Load
-        /// Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access
-        /// resources. The default setting is 8 KB (8,192 bytes) for Application Load Balancer
-        /// and 16 KB (16,384 bytes) for the other resource types. 
+        /// Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, or
+        /// Elastic Load Balancing for Envoy resources. The default setting is 8 KB (8,192 bytes)
+        /// for Application Load Balancer and 16 KB (16,384 bytes) for the other resource types.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>

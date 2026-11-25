@@ -31,10 +31,11 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Customizes the maximum size of the request body that your protected Application Load
-    /// Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access
-    /// resources forward to WAF for inspection. The default size is 8 KB (8,192 bytes) for
-    /// Application Load Balancer and 16 KB (16,384 bytes) for the other resource types. You
-    /// can change the setting for any of the available resource types. 
+    /// Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and
+    /// Elastic Load Balancing for Envoy resources forward to WAF for inspection. The default
+    /// size is 8 KB (8,192 bytes) for Application Load Balancer and 16 KB (16,384 bytes)
+    /// for the other resource types. You can change the setting for any of the available
+    /// resource types. 
     /// 
     ///  <note> 
     /// <para>
@@ -62,9 +63,9 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property DefaultSizeInspectionLimit. 
         /// <para>
         /// Specifies the maximum size of the web request body component that an associated Application
-        /// Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified Access
-        /// resource should send to WAF for inspection. This applies to statements in the web
-        /// ACL that inspect the body or JSON body. 
+        /// Load Balancer, CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access,
+        /// or Elastic Load Balancing for Envoy resource should send to WAF for inspection. This
+        /// applies to statements in the web ACL that inspect the body or JSON body. 
         /// </para>
         ///  
         /// <para>

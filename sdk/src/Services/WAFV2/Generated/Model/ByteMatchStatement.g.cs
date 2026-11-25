@@ -172,13 +172,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>JA3Fingerprint</c>: Available for use with Amazon CloudFront distributions and
-        /// Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint
-        /// is a 32-character hash derived from the TLS Client Hello of an incoming request. This
-        /// fingerprint serves as a unique identifier for the client's TLS configuration. You
-        /// can use this choice with a <c>ByteMatchStatement</c>, <c>RegexMatchStatement</c>,
-        /// <c>RegexPatternSetReferenceStatement</c>, or <c>SizeConstraintStatement</c>. You can't
-        /// use it with <c>SqliMatchStatement</c> or <c>XssMatchStatement</c>. 
+        ///  <c>JA3Fingerprint</c>: Available for use with Amazon CloudFront distributions, Application
+        /// Load Balancers, and Elastic Load Balancing for Envoy proxies. Match against the request's
+        /// JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client
+        /// Hello of an incoming request. This fingerprint serves as a unique identifier for the
+        /// client's TLS configuration. You can use this choice with a <c>ByteMatchStatement</c>,
+        /// <c>RegexMatchStatement</c>, <c>RegexPatternSetReferenceStatement</c>, or <c>SizeConstraintStatement</c>.
+        /// You can't use it with <c>SqliMatchStatement</c> or <c>XssMatchStatement</c>. 
         /// </para>
         ///  
         /// <para>

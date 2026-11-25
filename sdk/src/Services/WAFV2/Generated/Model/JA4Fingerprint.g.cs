@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
-    /// Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character
-    /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
-    /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
-    /// this fingerprint for each request that has enough TLS Client Hello information for
-    /// the calculation. Almost all web requests include this information.
+    /// Available for use with Amazon CloudFront distributions, Application Load Balancers,
+    /// and Elastic Load Balancing for Envoy proxies. Match against the request's JA4 fingerprint.
+    /// The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an
+    /// incoming request. This fingerprint serves as a unique identifier for the client's
+    /// TLS configuration. WAF calculates and logs this fingerprint for each request that
+    /// has enough TLS Client Hello information for the calculation. Almost all web requests
+    /// include this information.
     /// 
     ///  <note> 
     /// <para>

@@ -125,9 +125,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
-        /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
-        /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic
+        /// Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase
+        /// the limit for each resource type in the web ACL <c>AssociationConfig</c>, for additional
+        /// processing fees. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,12 +212,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property JA3Fingerprint. 
         /// <para>
-        /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
-        /// Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
-        /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
-        /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
-        /// this fingerprint for each request that has enough TLS Client Hello information for
-        /// the calculation. Almost all web requests include this information.
+        /// Available for use with Amazon CloudFront distributions, Application Load Balancers,
+        /// and Elastic Load Balancing for Envoy proxies. Match against the request's JA3 fingerprint.
+        /// The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+        /// incoming request. This fingerprint serves as a unique identifier for the client's
+        /// TLS configuration. WAF calculates and logs this fingerprint for each request that
+        /// has enough TLS Client Hello information for the calculation. Almost all web requests
+        /// include this information.
         /// </para>
         ///  <note> 
         /// <para>
@@ -248,12 +250,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property JA4Fingerprint. 
         /// <para>
-        /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
-        /// Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character
-        /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
-        /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
-        /// this fingerprint for each request that has enough TLS Client Hello information for
-        /// the calculation. Almost all web requests include this information.
+        /// Available for use with Amazon CloudFront distributions, Application Load Balancers,
+        /// and Elastic Load Balancing for Envoy proxies. Match against the request's JA4 fingerprint.
+        /// The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an
+        /// incoming request. This fingerprint serves as a unique identifier for the client's
+        /// TLS configuration. WAF calculates and logs this fingerprint for each request that
+        /// has enough TLS Client Hello information for the calculation. Almost all web requests
+        /// include this information.
         /// </para>
         ///  <note> 
         /// <para>
@@ -308,9 +311,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
-        /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
-        /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, Verified Access, and Elastic
+        /// Load Balancing for Envoy, the default limit is 16 KB (16,384 bytes), and you can increase
+        /// the limit for each resource type in the web ACL <c>AssociationConfig</c>, for additional
+        /// processing fees. 
         /// </para>
         ///  </li> <li> 
         /// <para>

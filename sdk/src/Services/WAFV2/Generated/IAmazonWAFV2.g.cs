@@ -54,14 +54,14 @@ namespace Amazon.WAFV2
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to a protected resource. Protected resource types include Amazon
-    /// CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync
-    /// GraphQL API, Amazon Cognito user pool, App Runner service, Amplify application, and
-    /// Amazon Web Services Verified Access instance. WAF also lets you control access to
-    /// your content, to protect the Amazon Web Services resource that WAF is monitoring.
-    /// Based on conditions that you specify, such as the IP addresses that requests originate
-    /// from or the values of query strings, the protected resource responds to requests with
-    /// either the requested content, an HTTP 403 status code (Forbidden), or with a custom
-    /// response. 
+    /// CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, Elastic
+    /// Load Balancing for Envoy proxy, AppSync GraphQL API, Amazon Cognito user pool, App
+    /// Runner service, Amplify application, and Amazon Web Services Verified Access instance.
+    /// WAF also lets you control access to your content, to protect the Amazon Web Services
+    /// resource that WAF is monitoring. Based on conditions that you specify, such as the
+    /// IP addresses that requests originate from or the values of query strings, the protected
+    /// resource responds to requests with either the requested content, an HTTP 403 status
+    /// code (Forbidden), or with a custom response. 
     /// </para>
     ///  
     /// <para>
@@ -78,9 +78,9 @@ namespace Amazon.WAFV2
     ///  <ul> <li> 
     /// <para>
     /// For regional resources, you can use any of the endpoints in the list. A regional application
-    /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-    /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
-    /// Services Verified Access instance. 
+    /// can be an Application Load Balancer (ALB), an Elastic Load Balancing for Envoy proxy,
+    /// an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+    /// an App Runner service, or an Amazon Web Services Verified Access instance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1095,9 +1095,10 @@ namespace Amazon.WAFV2
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
-        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
-        /// instance, and Amazon Bedrock AgentCore Gateway. 
+        /// API Gateway REST API, Application Load Balancer, Elastic Load Balancing for Envoy
+        /// proxy, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify
+        /// application, Amazon Web Services Verified Access instance, and Amazon Bedrock AgentCore
+        /// Gateway. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1217,9 +1218,10 @@ namespace Amazon.WAFV2
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
-        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
-        /// instance, and Amazon Bedrock AgentCore Gateway. 
+        /// API Gateway REST API, Application Load Balancer, Elastic Load Balancing for Envoy
+        /// proxy, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify
+        /// application, Amazon Web Services Verified Access instance, and Amazon Bedrock AgentCore
+        /// Gateway. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -8504,9 +8506,10 @@ namespace Amazon.WAFV2
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
-        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
-        /// instance, and Amazon Bedrock AgentCore Gateway. 
+        /// API Gateway REST API, Application Load Balancer, Elastic Load Balancing for Envoy
+        /// proxy, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify
+        /// application, Amazon Web Services Verified Access instance, and Amazon Bedrock AgentCore
+        /// Gateway. 
         /// </para>
         ///  
         /// <para>
@@ -8681,9 +8684,10 @@ namespace Amazon.WAFV2
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
-        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
-        /// instance, and Amazon Bedrock AgentCore Gateway. 
+        /// API Gateway REST API, Application Load Balancer, Elastic Load Balancing for Envoy
+        /// proxy, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify
+        /// application, Amazon Web Services Verified Access instance, and Amazon Bedrock AgentCore
+        /// Gateway. 
         /// </para>
         ///  
         /// <para>

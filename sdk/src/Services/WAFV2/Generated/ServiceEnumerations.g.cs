@@ -164,6 +164,11 @@ namespace Amazon.WAFV2
         public static readonly AssociatedResourceType COGNITO_USER_POOL = new AssociatedResourceType("COGNITO_USER_POOL");
 
         /// <summary>
+        /// Constant ELB_PROXY for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType ELB_PROXY = new AssociatedResourceType("ELB_PROXY");
+
+        /// <summary>
         /// Constant VERIFIED_ACCESS_INSTANCE for AssociatedResourceType
         /// </summary>
         public static readonly AssociatedResourceType VERIFIED_ACCESS_INSTANCE = new AssociatedResourceType("VERIFIED_ACCESS_INSTANCE");
@@ -3689,6 +3694,11 @@ namespace Amazon.WAFV2
         /// Constant COGNITO_USER_POOL for ResourceType
         /// </summary>
         public static readonly ResourceType COGNITO_USER_POOL = new ResourceType("COGNITO_USER_POOL");
+
+        /// <summary>
+        /// Constant ELB_PROXY for ResourceType
+        /// </summary>
+        public static readonly ResourceType ELB_PROXY = new ResourceType("ELB_PROXY");
 
         /// <summary>
         /// Constant VERIFIED_ACCESS_INSTANCE for ResourceType

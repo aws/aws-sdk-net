@@ -71,6 +71,11 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For an Elastic Load Balancing for Envoy proxy: <c>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:proxy/<i>proxy-name</i>:<i>proxy-id</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For an Amazon API Gateway REST API: <c>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
         /// </c> 
         /// </para>

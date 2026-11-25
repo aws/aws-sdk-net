@@ -140,8 +140,9 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether the web ACL is for an Amazon Web Services CloudFront distribution
         /// or for a regional application. A regional application can be an Application Load Balancer,
-        /// an AppSync GraphQL API, an Amazon Cognito user pool, an Amazon Web Services App Runner
-        /// service, or an Amazon Web Services Verified Access instance.
+        /// an Elastic Load Balancing for Envoy proxy, an AppSync GraphQL API, an Amazon Cognito
+        /// user pool, an Amazon Web Services App Runner service, or an Amazon Web Services Verified
+        /// Access instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
