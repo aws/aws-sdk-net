@@ -23,7 +23,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// member it describes the swapped type (<c>DateTime?</c> is, <c>string</c> is not).</param>
 /// <param name="IsStructure">True if this targets a structure shape.</param>
 /// <param name="IsString">True if this targets a string shape.</param>
-/// <param name="IsCollection">True if this is itself a list or map.</param>
+/// <param name="IsCollection">True if this is itself a list or map, or a scalar swapped to a <c>List&lt;&gt;</c> or
+/// <c>Dictionary&lt;&gt;</c> (S3's <c>TagSet</c> header), which gets the same default and <c>IsSet</c> check as in C2J.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalsAsString"/>).</param>
 /// <param name="IsBlob">True if this targets a blob shape. A non-streaming blob maps to <c>MemoryStream</c>
 /// (supported as an <c>@httpPayload</c> body or a JSON body member — base64 string on the wire); a
@@ -61,6 +62,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// modeled conversion, or null.</param>
 /// <param name="UnmarshallerOverride">The <c>dataTypeSwap</c> unmarshaller the writers use instead of the
 /// modeled one, or null.</param>
+/// <param name="IsSwapped">True when a <c>dataTypeSwap</c> set <see cref="DotNetType"/>; the other fields describe the
+/// modeled <see cref="Target"/>.</param>
 /// <param name="MarshallerName">The generated marshaller class for a structure target (see
 /// <see cref="GenerationContext.StructureMarshallerName"/>); null for any other target. Non-null whenever
 /// <see cref="IsStructure"/> is.</param>
@@ -89,6 +92,7 @@ public sealed record TypeDescriptor(
     string? MediaType = null,
     string? MarshallerOverride = null,
     string? UnmarshallerOverride = null,
+    bool IsSwapped = false,
     string? MarshallerName = null,
     string? UnmarshallerName = null,
     UnwrappedValue? Unwrapped = null)
@@ -98,7 +102,7 @@ public sealed record TypeDescriptor(
     /// nullable value type. Aggregates (list, map, structure) and blobs are excluded; unsupported
     /// shapes never reach here (they throw in <see cref="TypeMapper.MapType"/>).
     /// </summary>
-    public bool IsScalar => !IsCollection && !IsStructure && !IsBlob && !IsDocument;
+    public bool IsScalar => ListElement is null && MapValue is null && !IsStructure && !IsBlob && !IsDocument;
 
     /// <summary>
     /// True when the value is a string on the wire (a real string, or an enum: its ConstantClass
@@ -195,6 +199,13 @@ public sealed record Member(
 
     /// <summary>The <c>injectPrivateMemberAssignment</c> lines that replace the backing field's declaration, or null.</summary>
     public IReadOnlyList<string>? CustomFieldDeclaration { get; } = Customizations.CustomFieldDeclaration(ShapeName, ModeledName);
+
+    /// <summary>
+    /// A <c>dataTypeSwap</c>'s path-shaped <c>alternateLocationName</c> (S3's <c>ErrorDocument/Key</c>), which the
+    /// restXml unmarshaller matches instead of the element name, or null.
+    /// </summary>
+    public string? ResponseElementPath { get; } =
+        Customizations.DataTypeSwapFor(ShapeName, Customizations.EmittedName(ShapeName, ModeledName))?.AlternateLocationName is { } name && name.Contains('/') ? name : null;
 
     /// <summary>The <c>injectPropertyGetter</c> lines that replace the getter, or null.</summary>
     public IReadOnlyList<string>? CustomGetter { get; } = Customizations.CustomGetter(ShapeName, ModeledName);
@@ -382,13 +393,24 @@ public static class TypeMapper
             dotNetType = MapType(target, context);
         }
 
+        var isCollection = IsCollection(target);
+        if (swap is not null && swap.Type.StartsWith("List<", StringComparison.Ordinal))
+        {
+            isCollection = true;
+        }
+
+        if (swap is not null && swap.Type.StartsWith("Dictionary<", StringComparison.Ordinal))
+        {
+            isCollection = true;
+        }
+
         return new TypeDescriptor(
             DotNetType: dotNetType,
             Target: target,
             IsNullableValueType: swap is null ? isNullableValueType : swap.Type.EndsWith('?'),
             IsStructure: target is StructureShape,
             IsString: target is StringShape,
-            IsCollection: IsCollection(target),
+            IsCollection: isCollection,
             IsEnum: target is EnumShape,
             IsBlob: target is BlobShape,
             IsStreaming: target is BlobShape && target.IsStreaming(),
@@ -404,6 +426,7 @@ public static class TypeMapper
             MediaType: target.GetMediaType(),
             MarshallerOverride: swap?.Marshaller,
             UnmarshallerOverride: swap?.Unmarshaller,
+            IsSwapped: swap is not null,
             MarshallerName: target is StructureShape ? context.StructureMarshallerName(target.Id) : null,
             UnmarshallerName: target is StructureShape ? context.StructureUnmarshallerName(target.Id) : null);
     }

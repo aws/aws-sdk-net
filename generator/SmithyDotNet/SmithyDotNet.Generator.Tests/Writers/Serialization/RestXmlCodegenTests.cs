@@ -748,4 +748,70 @@ public class RestXmlCodegenTests
         Assert.True(sortedSource.IndexOf("WriteElementString(\"apple\"", StringComparison.Ordinal)
             < sortedSource.IndexOf("WriteElementString(\"zebra\"", StringComparison.Ordinal));
     }
+
+    private static GenerationContext SwapContext(string shape, string member, DataTypeSwap swap)
+    {
+        var swaps = new Dictionary<string, DataTypeSwap>();
+        swaps[member] = swap;
+        var customizations = new CustomizationsModel();
+        customizations.DataTypeSwaps[shape] = swaps;
+        return TestModels.Context(TestModels.Load("Codegen/restxml-model.json"), customizations);
+    }
+
+    // S3's TopicConfiguration.Events and ListObjectsOutput.CommonPrefixes: the modeled unmarshaller would build a Thing.
+    [Fact]
+    public void Response_SwappedList_ReadsEachItemWithTheSwapUnmarshaller()
+    {
+        var context = SwapContext("PutThingResponse", "things", new DataTypeSwap { Type = "List<string>", Unmarshaller = "ThingArnUnmarshaller" });
+
+        var source = ResponseUnmarshaller(context, "PutThing");
+
+        Assert.Contains("unmarshalledObject.Things = new List<string>();", source);
+        Assert.Contains("var unmarshaller = ThingArnUnmarshaller.Instance;", source);
+        Assert.Contains("unmarshalledObject.Things.Add(unmarshaller.Unmarshall(context));", source);
+    }
+
+    // S3's GetBucketWebsiteOutput.ErrorDocument: a string read from the Key inside <ErrorDocument>.
+    [Fact]
+    public void Response_SwapWithAPath_TestsTheNestedElement()
+    {
+        var context = SwapContext("GetWebsiteResponse", "ErrorDocument", new DataTypeSwap { Type = "string", AlternateLocationName = "ErrorDocument/Key" });
+        context.Customizations.ShapeModifiers["GetWebsiteResponse"] = TestCustomizations.Modify("ErrorDocument", new PropertyModifier { InjectUnmarshallCode = ["ReadErrorDocument(context, unmarshalledObject);"] });
+
+        var source = ResponseUnmarshaller(context, "GetWebsite");
+
+        Assert.Contains("""if (context.TestExpression("ErrorDocument/Key", targetDepth))""", source);
+        Assert.Contains("ReadErrorDocument(context, unmarshalledObject);", source);
+    }
+
+    [Theory]
+    [InlineData("PutThingResponse", "things", "PutThing", "dataTypeSwap swaps list member 'Things' without an Unmarshaller; name one, or read the member with injectUnmarshallCode.")]
+    [InlineData("GetWebsiteResponse", "ErrorDocument", "GetWebsite", "dataTypeSwap swaps structure member 'ErrorDocument'; read it with injectUnmarshallCode.")]
+    public void Response_SwappedListOrStructure_Throws(string shape, string member, string operation, string expectedMessage)
+    {
+        var context = SwapContext(shape, member, new DataTypeSwap { Type = "string" });
+
+        var ex = Assert.Throws<GeneratorException>(() => ResponseUnmarshaller(context, operation));
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
+    // S3's CopyObjectRequest.Metadata, a MetadataCollection.
+    [Fact]
+    public void Request_SwappedPrefixHeaders_Throws()
+    {
+        var context = SwapContext("PutThingRequest", "meta", new DataTypeSwap { Type = "MetadataCollection" });
+        var ex = Assert.Throws<GeneratorException>(() => RequestMarshaller(context, "PutThing"));
+        Assert.Equal("dataTypeSwap on @httpPrefixHeaders member 'Meta' can't be written; send it with injectMarshallCode or excludeFromMarshalling.", ex.Message);
+    }
+
+    [Theory]
+    [InlineData("nested", "Nested", "string", null)]
+    [InlineData("count", "Count", "int?", "count/value")]
+    public void Request_SwapTheMarshallerCannotWrite_Throws(string member, string property, string type, string? path)
+    {
+        var context = SwapContext("PutThingRequest", member, new DataTypeSwap { Type = type, AlternateLocationName = path });
+
+        var ex = Assert.Throws<GeneratorException>(() => RequestMarshaller(context, "PutThing"));
+        Assert.Equal($"dataTypeSwap on member '{property}' of 'PutThingRequest' swaps a structure or names a path, which the restXml marshaller can't write; write it with injectMarshallCode.", ex.Message);
+    }
 }

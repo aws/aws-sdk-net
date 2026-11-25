@@ -11,6 +11,7 @@
         { "target": "com.example#PutPayload" },
         { "target": "com.example#GetPayload" },
         { "target": "com.example#GetLocation" },
+        { "target": "com.example#GetWebsite" },
         { "target": "com.example#PutChecksummedThing" },
         { "target": "com.example#GetChecksummedThing" },
         { "target": "com.example#PutChecksummedBlob" },
@@ -155,6 +156,24 @@
       "type": "structure",
       "members": {
         "location": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#GetWebsite": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetWebsiteResponse" },
+      "traits": { "smithy.api#http": { "uri": "/website", "method": "GET" } }
+    },
+    "com.example#GetWebsiteResponse": {
+      "type": "structure",
+      "members": {
+        "ErrorDocument": { "target": "com.example#ErrorDocument" }
+      }
+    },
+    "com.example#ErrorDocument": {
+      "type": "structure",
+      "members": {
+        "Key": { "target": "smithy.api#String" }
       }
     },
 

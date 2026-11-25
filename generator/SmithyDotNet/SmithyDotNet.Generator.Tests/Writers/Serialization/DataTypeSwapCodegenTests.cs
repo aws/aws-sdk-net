@@ -147,29 +147,41 @@ public class DataTypeSwapCodegenTests
         Assert.DoesNotContain("string.IsNullOrEmpty(publicRequest.Marker)", requestMarshaller);
     }
 
-    // Positions whose writers would ignore the swapped type: a structure, a path label, a host label,
-    // an idempotency token (GUID fallback), and a swap to a collection type.
-    [Theory]
-    [InlineData("widget", "Widget")]
-    [InlineData("id", "int?")]
-    [InlineData("accountId", "int?")]
-    [InlineData("clientToken", "int?")]
-    [InlineData("stamp", "List<string>")]
-    public void UnsupportedSwap_FailsLoud(string member, string type)
+    [Fact]
+    public void StructureSwapOutsideRestXml_FailsLoud()
     {
-        var customizations = new CustomizationsModel { DataTypeSwaps = { ["PutRequest"] = new() { [member] = Unused with { Type = type } } } };
+        var customizations = new CustomizationsModel { DataTypeSwaps = { ["PutRequest"] = new() { ["widget"] = Unused with { Type = "Widget" } } } };
 
         var ex = Assert.Throws<GeneratorException>(() => Context(customizations));
-        Assert.Contains(member, ex.Message);
+        Assert.Contains("widget", ex.Message);
+    }
+
+    // S3's CopyPartRequest.ETagToMatch: a string header the customer sets as a list.
+    [Fact]
+    public void HeaderMember_SwappedToAList_IsACollectionJoinedByTheSwapMarshaller()
+    {
+        var swaps = new Dictionary<string, DataTypeSwap>();
+        swaps["partSize"] = new DataTypeSwap { Type = "List<string>", Marshaller = "Amazon.Util.AWSSDKUtils.Join" };
+        var customizations = new CustomizationsModel();
+        customizations.DataTypeSwaps["PutRequest"] = swaps;
+        var context = Context(customizations);
+        var operation = context.Operations.Single();
+
+        var request = new OperationWriter(context, ModelFileName).WriteRequest(operation, TestContext.Current.CancellationToken);
+        var requestMarshaller = new JsonRequestMarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("public List<string> PartSize { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;", request);
+        Assert.Contains("internal bool IsSetPartSize() => this.PartSize != null && (this.PartSize.Count > 0 || !AWSConfigs.InitializeCollections);", request);
+        Assert.Contains("""request.Headers["x-amz-part-size"] = Amazon.Util.AWSSDKUtils.Join(publicRequest.PartSize);""", requestMarshaller);
     }
 
     [Fact]
-    public void ResponseHeaderMember_Swap_FailsLoud()
+    public void ResponseHeaderMember_Swap_ReadsTheModeledType()
     {
-        var context = Context(new CustomizationsModel { DataTypeSwaps = { ["PutResponse"] = new() { ["requestId"] = Unused } } });
+        var context = Context(new CustomizationsModel { DataTypeSwaps = { ["PutResponse"] = new() { ["requestId"] = new DataTypeSwap { Type = "RequestKind", Unmarshaller = "StringUnmarshaller" } } } });
 
-        var ex = Assert.Throws<GeneratorException>(() => new JsonResponseUnmarshallerWriter(context, ModelFileName).Write(context.Operations.Single(), TestContext.Current.CancellationToken));
-        Assert.Contains("RequestId", ex.Message);
+        var source = new JsonResponseUnmarshallerWriter(context, ModelFileName).Write(context.Operations.Single(), TestContext.Current.CancellationToken);
+        Assert.Contains("""unmarshalledObject.RequestId = context.ResponseData.GetHeaderValue("x-request-id");""", source);
     }
 
     // Member hooks key a renamed structure by its modeled name.

@@ -32,7 +32,10 @@ internal static class XmlBodyMemberUnmarshaller
         {
             var member = members[i];
             var memberShape = owner.Members[member.ModeledName];
-            var name = protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2ResponseName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName);
+
+            // A dataTypeSwap path (S3's ErrorDocument/Key) reads the member from a nested element, which no @xmlName can name.
+            var name = member.ResponseElementPath ?? (protocol == AWSProtocol.Ec2Query ? XmlNames.Ec2ResponseName(memberShape, member.ModeledName) : XmlNames.ElementName(memberShape, member.ModeledName));
+
             var isAttribute = memberShape.IsXmlAttribute();
             var flattened = XmlNames.IsFlattened(memberShape, member.Type.Target);
             // C2J's awsQuery templates build every map one entry at a time, so an empty <map/> leaves the
@@ -107,6 +110,27 @@ internal static class XmlBodyMemberUnmarshaller
         }
 
         var target = $"unmarshalledObject.{member.PropertyName}";
+
+        // S3 reads every swapped structure with injected code (GetBucketWebsiteOutput's ErrorDocument and IndexDocumentSuffix).
+        if (member.Type.IsSwapped && member.Type.IsStructure)
+        {
+            throw new GeneratorException($"dataTypeSwap swaps structure member '{member.PropertyName}'; read it with injectUnmarshallCode.");
+        }
+
+        // The modeled unmarshaller would build the modeled type (S3's CommonPrefixes, a List<string> of CommonPrefix), so
+        // the swap's own one reads each list item.
+        if (member.Type.IsSwapped && member.Type.ListElement is not null)
+        {
+            var swapped = member.Type.UnmarshallerOverride
+                ?? throw new GeneratorException($"dataTypeSwap swaps list member '{member.PropertyName}' without an Unmarshaller; name one, or read the member with injectUnmarshallCode.");
+            writer.OpenBlock($"if ({target} == null)", () =>
+            {
+                writer.WriteLine($"{target} = new {member.Type.DotNetType}();");
+            });
+            writer.WriteLine($"var unmarshaller = {swapped}.Instance;");
+            writer.WriteLine($"{target}.Add(unmarshaller.Unmarshall(context));");
+            return;
+        }
 
         if (member.Type.ListElement is { } element)
         {

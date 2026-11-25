@@ -56,14 +56,18 @@ public class CustomizationValidatorTests
     // dataTypeSwap
 
     [Theory]
-    [InlineData("missing", "int?", null, "swaps member 'missing', which the shape does not have")]
+    [InlineData("Bucket", "missing", "int?", null, "swaps member 'missing', which the shape does not have")]
     // `required` only checks the JSON key is present, so a blank Type reaches Validate.
-    [InlineData("name", " ", null, "without a 'Type'")]
-    [InlineData("name", "List<string>", true, "isFlattened")]
-    public void DataTypeSwap_Invalid_Throws(string member, string type, bool? isFlattened, string expectedInMessage)
+    [InlineData("Bucket", "name", " ", null, "without a 'Type'")]
+    [InlineData("Bucket", "name", "string", "Title", "one-segment 'alternateLocationName'")]
+    [InlineData("PutBucketRequest", "id", "int?", null, "whose binding can't take a swapped type")]
+    [InlineData("PutBucketRequest", "config", "Stream", null, "whose binding can't take a swapped type")]
+    public void DataTypeSwap_Invalid_Throws(string shape, string member, string type, string? alternateLocationName, string expectedInMessage)
     {
+        var swaps = new Dictionary<string, DataTypeSwap>();
+        swaps[member] = new DataTypeSwap { Type = type, AlternateLocationName = alternateLocationName };
         var customizations = new CustomizationsModel();
-        customizations.DataTypeSwaps["Bucket"] = new Dictionary<string, DataTypeSwap> { [member] = new DataTypeSwap { Type = type, IsFlattened = isFlattened } };
+        customizations.DataTypeSwaps[shape] = swaps;
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(customizations));
         Assert.Contains(expectedInMessage, ex.Message);
     }

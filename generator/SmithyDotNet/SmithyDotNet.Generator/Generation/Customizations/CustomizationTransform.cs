@@ -38,6 +38,12 @@ public static class CustomizationTransform
         //   skipPrivateMember) by a renamed member's new name; move it to the modeled member's entry (CopyObjectRequest's
         //   DestinationBucket lines go under Bucket).
         // - additionalDocumentation, too: PutObjectRequest's InputStream entry goes under Body.
+        // - dataTypeSwap's isFlattened and one-segment alternateLocationName are not ported (the loader rejects isFlattened);
+        //   delete them from the three Events entries. The model has @xmlFlattened and @xmlName("Event") on those members.
+        // - dataTypeSwap of a streaming payload to Stream (PutObjectRequest and UploadPartRequest's InputStream,
+        //   WriteGetObjectResponseRequest's Body) is the modeled type; delete the three entries.
+        // - the enums file's Permission exclude of RESTORE (not in the model) and BucketLocationConstraint's inject of
+        //   ca-west-1 (already modeled): delete both.
         // - a shape modified from two files (C2J merges the entries, the loader throws): keep each shape in one file.
         // - inheritAlternateBaseClass: "PutObjectRequest": { "alternateBaseClass": "PutWithACLRequest" } becomes
         //   "PutObjectRequest": "PutWithACLRequest".

@@ -284,12 +284,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     {
         foreach (var (member, headerName) in headerMembers)
         {
-            // TODO: no service names an unmarshaller for a response header swap yet; the header conversion would need it.
-            if (member.Type.UnmarshallerOverride is not null)
-            {
-                throw new GeneratorException($"dataTypeSwap on response header member '{member.PropertyName}' is not supported yet.");
-            }
-
+            // Every protocol with @httpHeader (restJson, restXml) reads response headers here. A swap's Unmarshaller reads a
+            // body, not a header, so it is ignored, as in C2J.
             writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
             {
                 // A @mediaType string header is base64 on the wire.

@@ -42,6 +42,27 @@ internal static class ShapeModifiers
 
             foreach (var memberName in modifier.Exclude)
             {
+                // An enum's entries are keyed by wire value, like its modify entries (S3's Permission keeps only hand-written values).
+                if (shape is EnumShape excludedEnum)
+                {
+                    string? excludedKey = null;
+                    foreach (var (key, value) in excludedEnum.Members)
+                    {
+                        if (value.GetEnumValue() == memberName)
+                        {
+                            excludedKey = key;
+                        }
+                    }
+
+                    if (excludedKey is null)
+                    {
+                        throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes value '{memberName}', which the enum does not have.");
+                    }
+
+                    excludedEnum.Members.Remove(excludedKey);
+                    continue;
+                }
+
                 if (shape is not StructureShape excluded || !excluded.Members.Remove(memberName, out var removed))
                 {
                     throw new GeneratorException($"shapeModifiers['{shapeName}'] excludes member '{memberName}', which the shape does not have.");
@@ -51,9 +72,23 @@ internal static class ShapeModifiers
 
             foreach (var (memberName, injector) in modifier.Inject.SelectMany(entry => entry))
             {
+                // On an enum the entry adds a value (S3's ObjectCannedACL gets "log-delivery-write").
+                if (shape is EnumShape injectedEnum)
+                {
+                    if (injectedEnum.Members.Values.Any(existing => existing.GetEnumValue() == memberName))
+                    {
+                        throw new GeneratorException($"shapeModifiers['{shapeName}'] injects value '{memberName}', which the enum already has.");
+                    }
+
+                    var value = new MemberShape { Target = ShapeId.Unit };
+                    value.SetEnumValue(memberName);
+                    injectedEnum.Members[memberName] = value;
+                    continue;
+                }
+
                 if (shape is not StructureShape target)
                 {
-                    throw new GeneratorException($"shapeModifiers['{shapeName}'] injects '{memberName}' into a '{shape.Type}' shape; only structures are supported.");
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] injects '{memberName}' into a '{shape.Type}' shape; only structures and enums are supported.");
                 }
                 MemberInjection.Apply(model, target, modeledMembers, memberName, injector, shapeName, customizations);
             }

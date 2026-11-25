@@ -61,6 +61,8 @@ public static class ScalarTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/simple-types.html#enum" /></remarks>
     public static string? GetEnumValue(this Shape shape) => GetStringTrait(shape, "smithy.api#enumValue");
 
+    public static void SetEnumValue(this Shape shape, string value) => SetStringTrait(shape, "smithy.api#enumValue", value);
+
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httperror-trait" /></remarks>
     public static int? GetHttpError(this Shape shape) =>
         shape.Traits.TryGetValue("smithy.api#httpError", out var value) && value.ValueKind == JsonValueKind.Number && value.TryGetInt32(out var code)

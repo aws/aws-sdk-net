@@ -250,6 +250,18 @@ public class CustomizationTransformTests
         Assert.Contains("excludes member 'missing', which the shape does not have", ex.Message);
     }
 
+    // Action's READ has the wire value "read".
+    [Fact]
+    public void ShapeModifiers_OnEnum_ExcludesAndInjectsValues()
+    {
+        var inject = new Dictionary<string, PropertyInjector>();
+        inject["write"] = new PropertyInjector();
+        var customizations = new CustomizationsModel();
+        customizations.ShapeModifiers["Action"] = new ShapeModifier { Exclude = ["read"], Inject = [inject] };
+
+        Assert.Equal(["write"], Assert.IsType<EnumShape>(Apply(customizations).Shapes["com.example#Action"]).Members.Keys);
+    }
+
     // inject
 
     // S3's CopyObjectRequest.DestinationKey and GetBucketCorsOutput.Configuration: the original is excluded first, and its

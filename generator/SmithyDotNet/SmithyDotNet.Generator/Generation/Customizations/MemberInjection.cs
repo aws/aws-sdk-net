@@ -67,6 +67,7 @@ internal static class MemberInjection
 
     private static MemberShape NewMember(SmithyModel model, IReadOnlyDictionary<string, MemberShape> modeledMembers, PropertyInjector injector, string context)
     {
+        var shape = injector.Shape ?? throw new GeneratorException($"{context} without a 'shape'.");
         if (injector.OriginalMemberIsOutsideContainingShape != (injector.OutsideOriginalMember is not null))
         {
             throw new GeneratorException($"{context} sets only one of originalMemberIsOutsideContainingShape and outsideOriginalMember.");
@@ -85,11 +86,12 @@ internal static class MemberInjection
             {
                 throw new GeneratorException($"{context} copies outsideOriginalMember '{path}', which is not a 'ShapeName,MemberName' of a structure.");
             }
+
             // C2J copies the member's own JSON, never reading `shape`; checking it against the copy's target catches a
             // stale entry.
-            if (FindSingleShapeId(model, injector.Shape, context) != outsideMember.Target)
+            if (FindSingleShapeId(model, shape, context) != outsideMember.Target)
             {
-                throw new GeneratorException($"{context} names shape '{injector.Shape}', but outsideOriginalMember '{path}' targets '{outsideMember.Target.Name}'.");
+                throw new GeneratorException($"{context} names shape '{shape}', but outsideOriginalMember '{path}' targets '{outsideMember.Target.Name}'.");
             }
 
             // The payload belongs to the containing shape in C2J.
@@ -98,7 +100,7 @@ internal static class MemberInjection
             return copy;
         }
 
-        var injected = new MemberShape { Target = FindSingleShapeId(model, injector.Shape, context) };
+        var injected = new MemberShape { Target = FindSingleShapeId(model, shape, context) };
         if (injector.OriginalMember is { } originalName)
         {
             if (!modeledMembers.TryGetValue(originalName, out var original))

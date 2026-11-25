@@ -48,8 +48,16 @@ public static class CustomizationValidator
 
             foreach (var (memberName, swap) in swaps)
             {
-                var member = FindByEmittedName(structure, shapeName, memberName, customizations) ?? throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which the shape does not have.");
-                ValidateDataTypeSwap(model, member, memberName, swap, shapeName);
+                var member = FindByEmittedName(structure, shapeName, memberName, customizations)
+                    ?? throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which the shape does not have.");
+
+                // These bindings write the modeled type (a label's StringUtils.FromString, a payload's stream), so a swap wouldn't compile.
+                if (member.IsHttpLabel() || member.IsHostLabel() || member.IsHttpPayload() || member.IsHttpQueryParams())
+                {
+                    throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', whose binding can't take a swapped type.");
+                }
+
+                ValidateDataTypeSwap(memberName, swap, shapeName);
             }
         }
 
@@ -442,37 +450,19 @@ public static class CustomizationValidator
     private static bool ModelHasShape<T>(SmithyModel model, string bareName) where T : Shape =>
         model.Shapes.Any(entry => ShapeId.Parse(entry.Key).Name == bareName && entry.Value is T);
 
-    private static void ValidateDataTypeSwap(SmithyModel model, MemberShape member, string memberName, DataTypeSwap swap, string shapeName)
+    private static void ValidateDataTypeSwap(string memberName, DataTypeSwap swap, string shapeName)
     {
         if (string.IsNullOrWhiteSpace(swap.Type))
         {
             throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' without a 'Type'.");
         }
 
-        // TODO: not honored yet.
-        if (swap.IsFlattened is not null || swap.AlternateLocationName is not null)
+        // A one-segment name is the model's @xmlName; only a path (S3's ErrorDocument/Key) is not.
+        if (swap.AlternateLocationName?.Contains('/') == false)
         {
-            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' with the XML-only 'isFlattened'/'alternateLocationName', which are not supported yet.");
-        }
-
-        var target = model.Shapes.GetValueOrDefault(member.Target.AbsoluteName) ?? PreludeShapes.Resolve(member.Target)
-            ?? throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', whose target '{member.Target}' is not in the model.");
-        if (!IsSwappable(member, target, swap.Type))
-        {
-            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which is not supported yet: only scalar body, query, and header members swapped to a non-collection type are handled so far.");
+            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' with a one-segment 'alternateLocationName', which is not supported: the model's @xmlName says it.");
         }
     }
-
-    // TODO: C2J swaps any member (S3 swaps structures, lists and enums); these are the positions the writers
-    // honor so far. Elsewhere they would ignore the swapped type (a label's TrimStart or host-prefix substitution,
-    // an idempotency token's GUID fallback), and a List<>/Dictionary<> swap needs C2J's collection handling
-    // (Member.IsCollection: the InitializeCollections default and the IsSet count check).
-    private static bool IsSwappable(MemberShape member, Shape target, string swappedType) =>
-        target is (StringShape or EnumShape or BooleanShape or IntegerShape or IntEnumShape or LongShape or FloatShape or DoubleShape or TimestampShape)
-        && !member.IsHttpPayload() && !member.IsHttpResponseCode() && !member.IsHttpQueryParams() && member.GetHttpPrefixHeaders() is null
-        && !member.IsHttpLabel() && !member.IsHostLabel() && !member.IsIdempotencyToken()
-        && !member.IsEventHeader() && !member.IsEventPayload()
-        && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
 
     private static MemberShape? FindByEmittedName(StructureShape structure, string shapeName, string emittedName, CustomizationsModel customizations) =>
         structure.Members.FirstOrDefault(entry => customizations.EmittedName(shapeName, entry.Key) == emittedName).Value;

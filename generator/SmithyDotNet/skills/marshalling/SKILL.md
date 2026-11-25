@@ -412,7 +412,14 @@ writer gets swaps by reusing those helpers; an omitted override keeps the modele
 - CBOR body: `WriteInt64({Marshaller}(x))` for the epoch-millis marshaller, else `WriteTextString`; reads use
   `Cbor{Unmarshaller}.Instance` (as C2J). The wire type stays the modeled one, so a swap on a string member
   (the runtime cannot read a text string as another type) or a namespace-qualified name fails loud.
-- A response header swap that names an `Unmarshaller` fails loud (not supported yet).
+- Response headers ignore the swap's `Unmarshaller`, as in C2J.
+- restXml swapped list: the unmarshaller reads each item with `{Unmarshaller}.Instance` (S3's `CommonPrefixes`) and
+  fails loud without one. The marshaller writes a list of scalars as modeled, ignoring its `Marshaller`, as C2J does.
+- restXml swapped structure: both writers fail loud (S3 reads and writes them with injected code). The marshaller also
+  fails loud on a swapped list of structures.
+- A swapped `@httpPrefixHeaders` request member fails loud; send it with `injectMarshallCode` or exclude it with
+  `excludeFromMarshalling` (S3's `Metadata`).
+- A path `alternateLocationName` (S3's `ErrorDocument/Key`) is read at that path; the marshaller fails loud on it.
 
 ## Error Dispatch
 

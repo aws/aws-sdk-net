@@ -177,11 +177,14 @@ public sealed record PropertyModifier
     public bool SkipPrivateMember { get; init; }
 }
 
-/// <summary>An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>.</summary>
+/// <summary>
+/// An <c>inject</c> entry: a member the model lacks, typed by the modeled shape <see cref="Shape"/>. On an enum the
+/// entry is empty and its key is the value to add.
+/// </summary>
 public sealed record PropertyInjector
 {
     [JsonPropertyName("shape")]
-    public required string Shape { get; init; }
+    public string? Shape { get; init; }
 
     [JsonPropertyName("documentation")]
     public string? Documentation { get; init; }

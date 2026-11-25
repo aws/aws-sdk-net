@@ -57,12 +57,11 @@ A member renamed by `emitPropertyName` is named by its new name, as in C2J. Noth
 `MarshallerOverride` / `UnmarshallerOverride` carry the conversion (see marshalling → Data Type Swaps).
 `Target` stays the modeled shape.
 
-`CustomizationValidator` rejects an entry that names no structure member or has a blank `Type`. C2J swaps
-any member, but these are not supported yet: a swap on a non-scalar member, on a payload, response-code,
-prefix-header, query-map, label, host-label, idempotency-token, or event member (the writers would ignore the
-swapped type there), or to a `List<>`/`Dictionary<>` type (C2J then treats the member as a collection).
-The XML-only entry fields `isFlattened` and `alternateLocationName` are rejected until an XML protocol is
-supported.
+`CustomizationValidator` rejects a swap that names no structure member, has no `Type`, or sits on a label, host label, payload or `@httpQueryParams` member (those write the modeled type, so the swap would not compile).
+
+- A list or structure swap, and a path-shaped `alternateLocationName`, are restXml only (see marshalling → Data Type Swaps).
+- A member swapped to a collection gets the `InitializeCollections` default and a count-based `IsSet`. That covers a swapped list or map, and a scalar swapped to `List<>`/`Dictionary<>`, as in C2J.
+- `isFlattened` is not a key (the model's `@xmlFlattened` says it), and a one-segment `alternateLocationName` is rejected (the model's `@xmlName` says it).
 
 ## Substituted and Injected Members (ec2Query)
 

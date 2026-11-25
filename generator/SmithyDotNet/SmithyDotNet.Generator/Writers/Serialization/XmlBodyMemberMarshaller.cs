@@ -99,6 +99,14 @@ public static class XmlBodyMemberMarshaller
             return;
         }
 
+        // A swapped list of scalars is written as modeled, as C2J does (ignoring its Marshaller); the generated
+        // marshallers only take the modeled structure, and a path is no element name.
+        var swapsStructure = member.Type.IsSwapped && (member.Type.IsStructure || member.Type.ListElement is { IsStructure: true });
+        if (swapsStructure || member.ResponseElementPath is not null)
+        {
+            throw new GeneratorException($"dataTypeSwap on member '{member.PropertyName}' of '{owner.Id.Name}' swaps a structure or names a path, which the restXml marshaller can't write; write it with injectMarshallCode.");
+        }
+
         if (member.Type.IsStructure)
         {
             writer.OpenBlock($"if ({isSet})", () =>

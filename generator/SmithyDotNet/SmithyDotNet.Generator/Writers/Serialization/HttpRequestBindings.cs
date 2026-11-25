@@ -184,6 +184,12 @@ public sealed class HttpRequestBindings(GenerationContext context)
             throw new GeneratorException($"@httpPrefixHeaders member '{member.PropertyName}' must target a map of string; got a map value of '{value.DotNetType}'.");
         }
 
+        // The loop below takes the modeled dictionary (S3's MetadataCollection and HeadersCollection are sent by hand-written code).
+        if (member.Type.IsSwapped)
+        {
+            throw new GeneratorException($"dataTypeSwap on @httpPrefixHeaders member '{member.PropertyName}' can't be written; send it with injectMarshallCode or excludeFromMarshalling.");
+        }
+
         writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
         {
             writer.OpenBlock($"foreach (var kvp in publicRequest.{member.PropertyName})", () =>

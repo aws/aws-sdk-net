@@ -315,6 +315,24 @@ public class GenerationContext
             throw new GeneratorException($"overrideTreatEnumsAsString['{enumList}'] types a list's elements as their enum, which is only supported for restXml.");
         }
 
+        // The other protocols' writers read a list or structure with its modeled unmarshaller, which builds the modeled type.
+        foreach (var (shapeName, swaps) in Protocol is AWSProtocol.RestXml ? [] : Customizations.DataTypeSwaps)
+        {
+            if (swaps.Values.Any(swap => swap.AlternateLocationName is not null))
+            {
+                throw new GeneratorException($"dataTypeSwap['{shapeName}'] sets alternateLocationName, which is only supported for restXml.");
+            }
+
+            var structure = index.Shapes.Values.OfType<StructureShape>().FirstOrDefault(shape => shape.Id.Name == shapeName);
+            foreach (var (memberName, member) in structure?.Members ?? [])
+            {
+                if (swaps.ContainsKey(Customizations.EmittedName(shapeName, memberName)) && Resolve(member.Target) is ListShape or StructureShape)
+                {
+                    throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps list or structure member '{memberName}', which is only supported for restXml.");
+                }
+            }
+        }
+
         foreach (var (shapeName, modifier) in Customizations.ShapeModifiers)
         {
             if (modifier.HasRestXmlHooks() && Protocol is not AWSProtocol.RestXml)

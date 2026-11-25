@@ -14,14 +14,14 @@ public sealed record DataTypeSwap
     [JsonPropertyName("Marshaller")]
     public string? Marshaller { get; init; }
 
+    /// <summary>Read for a body member on any protocol; ignored on a response header, as in C2J.</summary>
     [JsonPropertyName("Unmarshaller")]
     public string? Unmarshaller { get; init; }
 
-    /// <summary>XML-only: marks a swapped collection as flattened. Rejected until an XML protocol is supported.</summary>
-    [JsonPropertyName("isFlattened")]
-    public bool? IsFlattened { get; init; }
-
-    /// <summary>XML-only: overrides the member's XML element name. Rejected until an XML protocol is supported.</summary>
+    /// <summary>
+    /// restXml-only: a path (S3's <c>ErrorDocument/Key</c>) the unmarshaller reads the member from. A one-segment
+    /// name is rejected: the model's <c>@xmlName</c> says it.
+    /// </summary>
     [JsonPropertyName("alternateLocationName")]
     public string? AlternateLocationName { get; init; }
 }
