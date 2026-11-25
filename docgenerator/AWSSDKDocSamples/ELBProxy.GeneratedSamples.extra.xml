@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.AssociateCertificate(Amazon.ELBProxy.Model.AssociateCertificateRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.AssociateCertificate(Amazon.ELBProxy.Model.AssociateCertificateRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.AssociateCertificateRequest" />
+      <member name="T:Amazon.ELBProxy.Model.AssociateCertificateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example associates the specified ACM certificate with the specified proxy.
+        </para>
+        <code title="To associate a certificate with a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="AssociateCertificate-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.CreateProxy(Amazon.ELBProxy.Model.CreateProxyRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.CreateProxy(Amazon.ELBProxy.Model.CreateProxyRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.CreateProxyRequest" />
+      <member name="T:Amazon.ELBProxy.Model.CreateProxyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example creates a proxy with the specified name, Envoy version, IAM role, and configuration file. The proxy is internet-facing over IPv4, runs in the specified subnets with the specified security group, and has deletion protection enabled.
+        </para>
+        <code title="To create a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="CreateProxy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.DeleteProxy(Amazon.ELBProxy.Model.DeleteProxyRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.DeleteProxy(Amazon.ELBProxy.Model.DeleteProxyRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.DeleteProxyRequest" />
+      <member name="T:Amazon.ELBProxy.Model.DeleteProxyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example deletes the specified proxy. You must turn off deletion protection before you can delete a proxy.
+        </para>
+        <code title="To delete a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="DeleteProxy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.DisassociateCertificate(Amazon.ELBProxy.Model.DisassociateCertificateRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.DisassociateCertificate(Amazon.ELBProxy.Model.DisassociateCertificateRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.DisassociateCertificateRequest" />
+      <member name="T:Amazon.ELBProxy.Model.DisassociateCertificateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example disassociates the specified ACM certificate from the specified proxy.
+        </para>
+        <code title="To disassociate a certificate from a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="DisassociateCertificate-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.GetProxy(Amazon.ELBProxy.Model.GetProxyRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.GetProxy(Amazon.ELBProxy.Model.GetProxyRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyRequest" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets information about the specified proxy.
+        </para>
+        <code title="To get information about a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="GetProxy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.GetProxyAttributes(Amazon.ELBProxy.Model.GetProxyAttributesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.GetProxyAttributes(Amazon.ELBProxy.Model.GetProxyAttributesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyAttributesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyAttributesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets the attributes for the specified proxy. The output includes the default value of each attribute that you can update.
+        </para>
+        <code title="To get the attributes for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="GetProxyAttributes-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.GetProxyConfigurationContents(Amazon.ELBProxy.Model.GetProxyConfigurationContentsRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.GetProxyConfigurationContents(Amazon.ELBProxy.Model.GetProxyConfigurationContentsRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyConfigurationContentsRequest" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyConfigurationContentsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets the configuration file for the specified proxy. The configuration archive isn't included.
+        </para>
+        <code title="To get the configuration for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="GetProxyConfigurationContents-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.GetProxyUpdate(Amazon.ELBProxy.Model.GetProxyUpdateRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.GetProxyUpdate(Amazon.ELBProxy.Model.GetProxyUpdateRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyUpdateRequest" />
+      <member name="T:Amazon.ELBProxy.Model.GetProxyUpdateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example gets information about the specified update for the specified proxy. The configuration is valid and was applied to all proxy nodes.
+        </para>
+        <code title="To get information about a proxy update" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="GetProxyUpdate-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.ListCertificateAssociations(Amazon.ELBProxy.Model.ListCertificateAssociationsRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.ListCertificateAssociations(Amazon.ELBProxy.Model.ListCertificateAssociationsRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.ListCertificateAssociationsRequest" />
+      <member name="T:Amazon.ELBProxy.Model.ListCertificateAssociationsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the ACM certificates associated with the specified proxy.
+        </para>
+        <code title="To list the certificate associations for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="ListCertificateAssociations-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.ListProxies(Amazon.ELBProxy.Model.ListProxiesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.ListProxies(Amazon.ELBProxy.Model.ListProxiesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxiesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxiesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the proxies owned by the calling account.
+        </para>
+        <code title="To list your proxies" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="ListProxies-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.ListProxyUpdates(Amazon.ELBProxy.Model.ListProxyUpdatesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.ListProxyUpdates(Amazon.ELBProxy.Model.ListProxyUpdatesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxyUpdatesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxyUpdatesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the updates for the specified proxy.
+        </para>
+        <code title="To list the updates for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="ListProxyUpdates-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.ListProxyVersions(Amazon.ELBProxy.Model.ListProxyVersionsRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.ListProxyVersions(Amazon.ELBProxy.Model.ListProxyVersionsRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxyVersionsRequest" />
+      <member name="T:Amazon.ELBProxy.Model.ListProxyVersionsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the Envoy versions that you can specify when you create a proxy or update its version.
+        </para>
+        <code title="To list the proxy versions" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="ListProxyVersions-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.ListTagsForResource(Amazon.ELBProxy.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.ListTagsForResource(Amazon.ELBProxy.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.ELBProxy.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the tags for the specified proxy.
+        </para>
+        <code title="To list the tags for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.TagResource(Amazon.ELBProxy.Model.TagResourceRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.TagResource(Amazon.ELBProxy.Model.TagResourceRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.TagResourceRequest" />
+      <member name="T:Amazon.ELBProxy.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example adds the specified tags to the specified proxy.
+        </para>
+        <code title="To add tags to a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UntagResource(Amazon.ELBProxy.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UntagResource(Amazon.ELBProxy.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UntagResourceRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example removes the specified tags from the specified proxy.
+        </para>
+        <code title="To remove tags from a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UntagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example enables deletion protection for the specified proxy.
+        </para>
+        <code title="To enable deletion protection" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyAttributes-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example changes the Envoy log level for the specified proxy to debug.
+        </para>
+        <code title="To change the Envoy log level" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyAttributes-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example changes the log level for the http and router Envoy components on the specified proxy to debug. Components that aren't specified use the log level set by envoy.log_level.
+        </para>
+        <code title="To change the log level for specific Envoy components" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyAttributes-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyAttributes(Amazon.ELBProxy.Model.UpdateProxyAttributesRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyAttributesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example enables AWS WAF fail open for the specified proxy.
+        </para>
+        <code title="To enable AWS WAF fail open" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyAttributes-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyConfiguration(Amazon.ELBProxy.Model.UpdateProxyConfigurationRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyConfiguration(Amazon.ELBProxy.Model.UpdateProxyConfigurationRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyConfigurationRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example replaces the configuration file for the specified proxy. You can use the update ID in the output to track the progress of the update.
+        </para>
+        <code title="To update the configuration for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.ELBProxy.IAmazonELBProxy.UpdateProxyNetworkConfiguration(Amazon.ELBProxy.Model.UpdateProxyNetworkConfigurationRequest)" />
+      <member name="M:Amazon.ELBProxy.AmazonELBProxyClient.UpdateProxyNetworkConfiguration(Amazon.ELBProxy.Model.UpdateProxyNetworkConfigurationRequest)" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyNetworkConfigurationRequest" />
+      <member name="T:Amazon.ELBProxy.Model.UpdateProxyNetworkConfigurationResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example replaces the security groups for the specified proxy. The subnets don't change.
+        </para>
+        <code title="To update the network configuration for a proxy" source=".\AWSSDKDocSamples\ELBProxy\ELBProxy.GeneratedSamples.cs" region="UpdateProxyNetworkConfiguration-1" />
+      </example>
+    </value>
+  </doc>
+</docs>
