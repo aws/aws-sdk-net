@@ -1,3 +1,9 @@
+### 4.1.11.0 (2026-11-25 19:14 UTC)
+* ELBProxy (4.1.0.0)
+	* Introducing Elastic Load Balancing for Envoy. Run your existing Envoy configurations with AWS integrations, managed scaling, and automatic patching.
+* WAFV2 (4.1.3.0)
+	* AWS WAF added support for associating AWS WAF web ACLs with Elastic Load Balancing proxies. You can now use AssociateWebACL, DisassociateWebACL, GetWebACLForResource, and ListResourcesForWebACL with the ELB PROXY resource type to protect your proxies with AWS WAF
+
 ### 4.1.10.0 (2026-11-24 19:11 UTC)
 * BedrockAgentCore (4.1.3.0)
 	* Adds the optional userLocation parameter to InvokeWebSearch. Specify a two-letter ISO 3166-1 alpha-2 country code to refine web search results for that country. InvokeWebSearch also accepts search queries in languages other than English.

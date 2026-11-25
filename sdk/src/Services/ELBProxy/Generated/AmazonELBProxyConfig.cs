@@ -32,7 +32,7 @@ namespace Amazon.ELBProxy
     public partial class AmazonELBProxyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ELB Proxy", "4.0");
+            InternalSDKUtils.BuildUserAgentString("ELB Proxy", "4.1.0.0");
 
         private static readonly AmazonELBProxyEndpointResolver EndpointResolver =
             new AmazonELBProxyEndpointResolver();
