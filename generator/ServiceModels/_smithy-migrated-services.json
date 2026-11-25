@@ -159,6 +159,7 @@
     "ECS",
     "EKS",
     "EKSAuth",
+    "ELBProxy",
     "EMRContainers",
     "EMRServerless",
     "ElastiCache",
