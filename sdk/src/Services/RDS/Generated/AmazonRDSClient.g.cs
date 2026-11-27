@@ -4587,6 +4587,12 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
+        /// To delete an Amazon Aurora DB cluster and all of its DB instances in a single call,
+        /// set <c>DeleteDBInstances</c> to <c>true</c>. Otherwise, delete each DB instance in
+        /// the DB cluster before you delete the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
         /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
@@ -4653,6 +4659,12 @@ namespace Amazon.RDS
         /// <para>
         /// If you're deleting a Multi-AZ DB cluster with read replicas, all cluster members are
         /// terminated and read replicas are promoted to standalone instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete an Amazon Aurora DB cluster and all of its DB instances in a single call,
+        /// set <c>DeleteDBInstances</c> to <c>true</c>. Otherwise, delete each DB instance in
+        /// the DB cluster before you delete the DB cluster.
         /// </para>
         ///  
         /// <para>

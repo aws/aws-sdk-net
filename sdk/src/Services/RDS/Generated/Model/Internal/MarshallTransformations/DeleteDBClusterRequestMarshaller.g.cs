@@ -61,6 +61,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("DeleteAutomatedBackups", StringUtils.FromBool(publicRequest.DeleteAutomatedBackups.Value));
             }
+            if (publicRequest.IsSetDeleteDBInstances())
+            {
+                request.Parameters.Add("DeleteDBInstances", StringUtils.FromBool(publicRequest.DeleteDBInstances.Value));
+            }
             if (publicRequest.IsSetFinalDBSnapshotIdentifier())
             {
                 request.Parameters.Add("FinalDBSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalDBSnapshotIdentifier));
