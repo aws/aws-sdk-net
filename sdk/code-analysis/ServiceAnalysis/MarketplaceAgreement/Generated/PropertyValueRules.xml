@@ -1907,6 +1907,18 @@
     <pattern>^[A-Za-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.RegionalPrice.Price</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceAgreement.Model.RegionalPrice.Region</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-z]{2,3}(-[a-z]+)+-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceAgreement.Model.RenewalSummary.OfferId</property>
     <min>1</min>
     <max>64</max>

@@ -74,6 +74,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "regionalPrices":
+                        context.AddPathSegment("RegionalPrices");
+                        unmarshalledObject.RegionalPrices = new CborListUnmarshaller<RegionalPrice, RegionalPriceUnmarshaller>(RegionalPriceUnmarshaller.Instance).Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     default:
                         reader.SkipValue();
                         break;
