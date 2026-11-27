@@ -122,6 +122,20 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAutomatedSnapshotPauseOptions() => this.AutomatedSnapshotPauseOptions != null;
 
         /// <summary>
+        /// Gets and sets the property CatalogOptions. 
+        /// <para>
+        /// Options for publishing the domain's data to a data catalog, such as a service-managed
+        /// Amazon S3 Tables catalog.
+        /// </para>
+        /// </summary>
+        public CatalogOptions CatalogOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CatalogOptions property is set.
+        /// </summary>
+        internal bool IsSetCatalogOptions() => this.CatalogOptions != null;
+
+        /// <summary>
         /// Gets and sets the property CognitoOptions. 
         /// <para>
         /// Options to specify the Cognito user and identity pools for Kibana authentication.

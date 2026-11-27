@@ -125,6 +125,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetCatalogOptions())
+            {
+                context.Writer.WritePropertyName("CatalogOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CatalogOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CatalogOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetClusterConfig())
             {
                 context.Writer.WritePropertyName("ClusterConfig");

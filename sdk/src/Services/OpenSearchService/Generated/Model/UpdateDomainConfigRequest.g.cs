@@ -185,6 +185,20 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAutomatedSnapshotPauseOptions() => this.AutomatedSnapshotPauseOptions != null;
 
         /// <summary>
+        /// Gets and sets the property CatalogOptions. 
+        /// <para>
+        /// Options for publishing the domain's data to a data catalog, such as a service-managed
+        /// Amazon S3 Tables catalog.
+        /// </para>
+        /// </summary>
+        public CatalogOptions CatalogOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CatalogOptions property is set.
+        /// </summary>
+        internal bool IsSetCatalogOptions() => this.CatalogOptions != null;
+
+        /// <summary>
         /// Gets and sets the property ClusterConfig. 
         /// <para>
         /// Changes that you want to make to the cluster configuration, such as the instance type

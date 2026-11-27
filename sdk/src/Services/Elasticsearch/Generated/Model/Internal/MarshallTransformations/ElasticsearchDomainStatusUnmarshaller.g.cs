@@ -95,6 +95,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("CatalogOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = CatalogOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CatalogOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ChangeProgressDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;

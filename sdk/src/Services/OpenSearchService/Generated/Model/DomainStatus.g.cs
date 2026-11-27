@@ -137,6 +137,19 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAutomatedSnapshotPauseOptions() => this.AutomatedSnapshotPauseOptions != null;
 
         /// <summary>
+        /// Gets and sets the property CatalogOptions. 
+        /// <para>
+        /// The catalog options for the domain.
+        /// </para>
+        /// </summary>
+        public CatalogOptions CatalogOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CatalogOptions property is set.
+        /// </summary>
+        internal bool IsSetCatalogOptions() => this.CatalogOptions != null;
+
+        /// <summary>
         /// Gets and sets the property ChangeProgressDetails. 
         /// <para>
         /// Information about a configuration change happening on the domain.

@@ -122,6 +122,19 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAutomatedSnapshotPauseOptions() => this.AutomatedSnapshotPauseOptions != null;
 
         /// <summary>
+        /// Gets and sets the property CatalogOptions. 
+        /// <para>
+        /// The catalog options for the given domain.
+        /// </para>
+        /// </summary>
+        public CatalogOptions CatalogOptions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CatalogOptions property is set.
+        /// </summary>
+        internal bool IsSetCatalogOptions() => this.CatalogOptions != null;
+
+        /// <summary>
         /// Gets and sets the property ChangeProgressDetails. 
         /// <para>
         /// Specifies change details of the domain configuration change.
