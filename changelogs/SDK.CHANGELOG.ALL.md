@@ -1,3 +1,17 @@
+### 4.1.12.0 (2026-11-27 19:12 UTC)
+* CloudWatch (4.1.2.0)
+	* CloudWatch OTel enrichment supports a free basic option and a paid tag enrichment option, using the EnableTagEnrichment flag. Set it to true (default) to enrich vended metrics with resource ARN and tag labels for PromQL queries. Set it to false to get the free basic option without resource tags.
+* Elasticsearch (4.1.1.0)
+	* Catalog APIs for Optimized engine domains
+* MarketplaceAgreement (4.1.2.0)
+	* This release adds per-Region pricing to AWS Marketplace usage-based pricing terms. Rate card items can now include Region-specific price overrides. When a Regional price is present for an AWS Region, it replaces the default price for that dimension.
+* NeptuneGraph (4.1.1.0)
+	* Adds support for Graph Sessions, a new offering backed by on-demand ephemeral compute.
+* OpenSearchService (4.1.1.0)
+	* Catalog APIs for Optimized engine domains
+* RDS (4.1.2.0)
+	* Aurora PostgreSQL and Aurora MySQL now let you delete a DB cluster and all its instances in a single API call or console action, without deleting each instance first. Cluster deletion also completes faster.
+
 ### 4.1.11.0 (2026-11-25 19:14 UTC)
 * ELBProxy (4.1.0.0)
 	* Introducing Elastic Load Balancing for Envoy. Run your existing Envoy configurations with AWS integrations, managed scaling, and automatic patching.
