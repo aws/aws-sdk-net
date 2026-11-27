@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace AWSSDK.UnitTests
@@ -237,6 +238,173 @@ namespace AWSSDK.UnitTests
             var bag = new PropertyBag();
             bag["property"] = 42; // int is not a PropertyBag
             Assert.ThrowsExactly<ArgumentException>(() => Fn.GetAttr(bag, "property.subproperty"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void GetAttr_NegativeIndex_ReturnsValueFromEnd()
+        {
+            var bag = new PropertyBag();
+            bag["List"] = new List<string> { "a", "b", "c" };
+            Assert.AreEqual("c", Fn.GetAttr(bag, "List[-1]"));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void BooleanEquals_ComparesNullableBools_ReturnsBool()
+        {
+            Assert.IsTrue(Fn.BooleanEquals(true, true));
+            Assert.IsFalse(Fn.BooleanEquals(true, false));
+            Assert.IsFalse(Fn.BooleanEquals(null, true));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void StringEquals_ComparesOrdinally_ReturnsBool()
+        {
+            Assert.IsTrue(Fn.StringEquals("aws", "aws"));
+            Assert.IsFalse(Fn.StringEquals("aws", "AWS"));
+            Assert.IsFalse(Fn.StringEquals(null, "aws"));
+            Assert.IsTrue(Fn.StringEquals(null, null));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        [DataRow(2, "|x-s3--azid--suffix")]
+        [DataRow(0, "|x-s3|azid|suffix")]
+        public void Split_SplitsOnTheSeparatorUpToTheLimit(int limit, string expected)
+        {
+            Assert.AreEqual(expected, string.Join("|", Fn.Split("--x-s3--azid--suffix", "--", limit)));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        [DataRow(1, "usw2-az1")]
+        [DataRow(-1, "x-s3")]
+        [DataRow(4, null)]
+        public void ListItemOrNull_ReturnsTheItemOrNull(int index, string expected)
+        {
+            var list = new List<string> { "mybucket", "usw2-az1", "x-s3" };
+            Assert.AreEqual(expected, Fn.ListItemOrNull(list, index));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void NullInput_ReturnsNullOrFalse()
+        {
+            Assert.IsNull(Fn.GetAttr(null, "anything"));
+            Assert.IsNull(Fn.Partition(null));
+            Assert.IsNull(Fn.Substring(null, 0, 1, false));
+            Assert.IsNull(Fn.UriEncode(null));
+            Assert.IsNull(Fn.Split(null, "--", 2));
+            Assert.IsNull(Fn.ListItemOrNull((IList<string>)null, 0));
+            Assert.IsFalse(Fn.IsValidHostLabel(null, false));
+            Assert.IsFalse(Fn.IsVirtualHostableS3Bucket(null, false));
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void Partition_TypedPropertiesAndIndexerStayInSync()
+        {
+            var partition = new Partition();
+            Assert.IsFalse(partition.supportsFIPS);
+            Assert.IsFalse(partition.supportsDualStack);
+            Assert.AreEqual(false, partition["supportsFIPS"]);
+            Assert.IsNull(partition["notARealProperty"]);
+
+            partition.supportsFIPS = true;
+            partition.dnsSuffix = "amazonaws.com";
+            Assert.AreEqual(true, partition["supportsFIPS"]);
+            Assert.AreEqual("amazonaws.com", partition["dnsSuffix"]);
+
+            partition["dualStackDnsSuffix"] = "api.aws";
+            partition["supportsDualStack"] = true;
+            Assert.AreEqual("api.aws", partition.dualStackDnsSuffix);
+            Assert.IsTrue(partition.supportsDualStack);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void URL_TypedPropertiesAndIndexerStayInSync()
+        {
+            var url = new URL();
+            Assert.IsFalse(url.isIp);
+            Assert.AreEqual(false, url["isIp"]);
+
+            url.isIp = true;
+            url.scheme = "https";
+            Assert.AreEqual(true, url["isIp"]);
+            Assert.AreEqual("https", url["scheme"]);
+
+            url["authority"] = "example.com";
+            Assert.AreEqual("example.com", url.authority);
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void SubstringEquals_MatchesSubstringThenStringEquals()
+        {
+            Assert.IsTrue(Fn.SubstringEquals("mybucket--x-s3", 0, 6, true, "--x-s3"));
+            Assert.IsFalse(Fn.SubstringEquals("mybucket--x-s3", 0, 6, true, "--xa-s3"));
+            Assert.IsTrue(Fn.SubstringEquals("abc", 0, 4, false, ""));
+            Assert.IsFalse(Fn.SubstringEquals("bücket--x-s3", 0, 6, true, "--x-s3"));
+
+            var inputs = new[] { null, "", "a", "abc", "mybucket--x-s3", "mybucket--xa-s3", "bücket--x-s3" };
+            var ranges = new[] { (0, 1), (0, 3), (1, 3), (2, 2), (3, 2), (0, 6), (0, 7), (8, 12) };
+            foreach (var input in inputs)
+            {
+                foreach (var (start, stop) in ranges)
+                {
+                    foreach (var reverse in new[] { false, true })
+                    {
+                        var substring = Fn.Substring(input, start, stop, reverse);
+                        foreach (var expected in new[] { substring, "", "--x-s3", "x", null })
+                        {
+                            Assert.AreEqual(
+                                Fn.StringEquals(substring ?? "", expected),
+                                Fn.SubstringEquals(input, start, stop, reverse, expected),
+                                $"input={input}, start={start}, stop={stop}, reverse={reverse}, expected={expected}");
+                        }
+                    }
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        [TestCategory("StandardLibrary")]
+        public void SplitItemOrNull_MatchesSplitThenListItemOrNull()
+        {
+            Assert.AreEqual("usw2-az1", Fn.SplitItemOrNull("mybucket--usw2-az1--x-s3", "--", 0, -2));
+            Assert.IsNull(Fn.SplitItemOrNull("mybucket--usw2-az1--x-s3", "--", 0, 5));
+            Assert.AreEqual("usw2-az1--x-s3", Fn.SplitItemOrNull("mybucket--usw2-az1--x-s3", "--", 2, 1));
+
+            var inputs = new[] { null, "", "-", "--", "---", "a", "a--b", "a--b--c", "--a--", "a-b-c", "x--x--x--x" };
+            foreach (var input in inputs)
+            {
+                foreach (var separator in new[] { "--", "-", "x", "" })
+                {
+                    foreach (var limit in new[] { 0, 1, 2 })
+                    {
+                        for (var index = -5; index <= 5; index++)
+                        {
+                            Assert.AreEqual(
+                                Fn.ListItemOrNull(Fn.Split(input, separator, limit), index),
+                                Fn.SplitItemOrNull(input, separator, limit, index),
+                                $"input={input}, separator={separator}, limit={limit}, index={index}");
+                        }
+                    }
+                }
+            }
         }
     }
 }

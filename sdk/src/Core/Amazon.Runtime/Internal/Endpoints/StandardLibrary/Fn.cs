@@ -57,6 +57,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static object GetAttr(object value, string path)
         {
+            if (value == null) return null;
+
 #if NET8_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(path);
 #else
@@ -118,7 +120,10 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
                         // avoid Cast<object>().ToList() – use IList direct access when possible
                         if (enumerable is IList directList)
-                            return index >= 0 && index < directList.Count ? directList[index] : null;
+                        {
+                            var i = index < 0 ? directList.Count + index : index;
+                            return i >= 0 && i < directList.Count ? directList[i] : null;
+                        }
 
                         // fallback for non-IList enumerables: walk without allocating a list
                         int pos = 0;
@@ -142,6 +147,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static Partition Partition(string region)
         {
+            if (region == null) return null;
+            
             return StandardLibrary.Partition.GetPartitionByRegion(region);
         }
 
@@ -168,6 +175,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static bool IsValidHostLabel(string hostLabel, bool allowSubDomains)
         {
+            if (hostLabel == null) return false;
+
             var hosts = new List<string>();
 
             if (allowSubDomains)
@@ -218,6 +227,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static bool IsVirtualHostableS3Bucket(string hostLabel, bool allowSubDomains)
         {
+            if (hostLabel == null) return false;
+
             if (IsIpV4Address(hostLabel))
             {
                 return false;
@@ -290,6 +301,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         public static string UriEncode(string value)
 #pragma warning restore CA1055 // Uri return values should not be strings
         {
+            if (value == null) return null;
+
             return AWSSDKUtils.UrlEncode(value, false);
         }
 
@@ -492,6 +505,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string Substring(string input, int start, int stop, bool reverse)
         {
+            if (input == null) return null;
+
             var str = (string)input;
             if (start >= stop || str.Length < stop)
             {
@@ -508,6 +523,119 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             var r_start = str.Length - stop;
             var r_stop = str.Length - start;
             return str.Substring(r_start, r_stop - r_start);
+        }
+
+        /// <summary>
+        /// Compares a nullable bool to a bool without boxing.
+        /// </summary>
+        public static bool BooleanEquals(bool? value1, bool value2)
+        {
+            return value1 == value2;
+        }
+
+        /// <summary>
+        /// Ordinal string comparison.
+        /// </summary>
+        public static bool StringEquals(string value1, string value2)
+        {
+            return string.Equals(value1, value2, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// Splits input on separator into at most limit parts, with 0 being unlimited.
+        /// </summary>
+        public static IList<string> Split(string input, string separator, int limit)
+        {
+            if (input == null) return null;
+
+            return input.Split(new[] { separator }, limit == 0 ? int.MaxValue : limit, StringSplitOptions.None);
+        }
+
+        /// <summary>
+        /// Returns the item at index or null if out of range. Counts from the end if negative.
+        /// </summary>
+        public static T ListItemOrNull<T>(IList<T> list, int index) where T : class
+        {
+            if (list == null) return null;
+
+            var i = index < 0 ? list.Count + index : index;
+            return i < 0 || i > list.Count - 1 ? null : list[i];
+        }
+
+        /// <summary>
+        /// Compares a substring of input to expected without creating it.
+        /// </summary>
+        public static bool SubstringEquals(string input, int start, int stop, bool reverse, string expected)
+        {
+            if (input == null || start >= stop || input.Length < stop || HasNonAscii(input))
+            {
+                return expected != null && expected.Length == 0;
+            }
+
+            var length = stop - start;
+            var offset = reverse ? input.Length - stop : start;
+            return expected != null
+                && expected.Length == length
+                && string.CompareOrdinal(input, offset, expected, 0, length) == 0;
+        }
+
+        /// <summary>
+        /// Returns one item of input split on separator without creating the others. Same result as
+        /// <c>ListItemOrNull(Split(input, separator, limit), index)</c>.
+        /// </summary>
+        public static string SplitItemOrNull(string input, string separator, int limit, int index)
+        {
+            if (input == null)
+            {
+                return null;
+            }
+            // A limit or empty separator changes how Split divides the input, so reuse it.
+            if (limit != 0 || string.IsNullOrEmpty(separator))
+            {
+                return ListItemOrNull(Split(input, separator, limit), index);
+            }
+
+            var target = index;
+            if (index < 0)
+            {
+                var count = 1;
+                for (var next = input.IndexOf(separator, StringComparison.Ordinal); next >= 0;
+                     next = input.IndexOf(separator, next + separator.Length, StringComparison.Ordinal))
+                {
+                    count++;
+                }
+                target = count + index;
+                if (target < 0)
+                {
+                    return null;
+                }
+            }
+
+            var start = 0;
+            for (var i = 0; i < target; i++)
+            {
+                var next = input.IndexOf(separator, start, StringComparison.Ordinal);
+                if (next < 0)
+                {
+                    return null;
+                }
+                start = next + separator.Length;
+            }
+
+            var end = input.IndexOf(separator, start, StringComparison.Ordinal);
+            return end < 0 ? input.Substring(start) : input.Substring(start, end - start);
+        }
+
+        private static bool HasNonAscii(string value)
+        {
+            foreach (var c in value)
+            {
+                if (c > 127)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
