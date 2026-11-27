@@ -49,6 +49,20 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
+        /// Gets and sets the property EnableTagEnrichment. 
+        /// <para>
+        /// Specifies whether enriched metrics include resource tag labels for the account. This
+        /// parameter is omitted when enrichment is stopped.
+        /// </para>
+        /// </summary>
+        public bool? EnableTagEnrichment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableTagEnrichment property is set.
+        /// </summary>
+        internal bool IsSetEnableTagEnrichment() => this.EnableTagEnrichment.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ExcludeFilters. 
         /// <para>
         /// The metric namespaces, and the metric names, that are left unenriched. This parameter

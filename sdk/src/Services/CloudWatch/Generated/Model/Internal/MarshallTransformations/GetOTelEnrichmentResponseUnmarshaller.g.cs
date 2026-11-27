@@ -61,6 +61,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         context.PopPathSegment();
                         break;
 
+                    case "EnableTagEnrichment":
+                        context.AddPathSegment("EnableTagEnrichment");
+                        unmarshalledObject.EnableTagEnrichment = CborNullableBoolUnmarshaller.Instance.Unmarshall(context);
+                        context.PopPathSegment();
+                        break;
+
                     case "ExcludeFilters":
                         context.AddPathSegment("ExcludeFilters");
                         unmarshalledObject.ExcludeFilters = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance).Unmarshall(context);

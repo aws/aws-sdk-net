@@ -68,6 +68,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEnableTagEnrichment())
+                {
+                    context.Writer.WriteTextString("EnableTagEnrichment");
+                    context.Writer.WriteBoolean(publicRequest.EnableTagEnrichment.Value);
+                }
                 if (publicRequest.IsSetExcludeFilters())
                 {
                     context.Writer.WriteTextString("ExcludeFilters");

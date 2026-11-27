@@ -43,6 +43,29 @@ namespace Amazon.CloudWatch.Model
     public partial class UpdateOTelEnrichmentRequest : AmazonCloudWatchRequest
     {
         /// <summary>
+        /// Gets and sets the property EnableTagEnrichment. 
+        /// <para>
+        /// Specifies whether enriched metrics include resource tag labels. If <c>true</c>, enriched
+        /// metrics include resource tag labels. If <c>false</c>, they include resource ARN labels
+        /// but no resource tag labels. If you omit this parameter, the stored value is not changed.
+        /// The operation also replaces the stored filters, so to change only this setting, specify
+        /// the current <c>IncludeFilters</c> and <c>ExcludeFilters</c> in the same request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>EnableTagEnrichment</c> is <c>true</c>, enriched metrics that carry resource
+        /// tag labels are charged at the OTel enrichment rate. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>.
+        /// </para>
+        /// </summary>
+        public bool? EnableTagEnrichment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnableTagEnrichment property is set.
+        /// </summary>
+        internal bool IsSetEnableTagEnrichment() => this.EnableTagEnrichment.HasValue;
+
+        /// <summary>
         /// Gets and sets the property ExcludeFilters. 
         /// <para>
         /// The metric namespaces, and the metric names, to leave unenriched. If this parameter

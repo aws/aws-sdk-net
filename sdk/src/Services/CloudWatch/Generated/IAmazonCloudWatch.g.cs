@@ -4456,22 +4456,24 @@ namespace Amazon.CloudWatch
         /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
         /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
         /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
-        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
-        /// using PromQL.
+        /// dimension) are enriched with resource ARN labels and, optionally, resource tag labels,
+        /// and become queryable using PromQL.
         /// 
         ///  
         /// <para>
-        /// Before calling this operation, you must enable resource tags on telemetry for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
-        /// resource tags on telemetry</a>.
+        /// To include resource tag labels, you must also enable resource tags on telemetry for
+        /// the account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>. If <c>EnableTagEnrichment</c> is <c>false</c>, enrichment
+        /// reads no resource tags, so it does not require resource tags on telemetry.
         /// </para>
         ///  
         /// <para>
         /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
-        /// subset of the account's metrics. These filters are stored only when this operation
+        /// subset of the account's metrics, and <c>EnableTagEnrichment</c> controls whether enriched
+        /// metrics include resource tag labels. These settings are stored only when this operation
         /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
-        /// is already running has no effect and does not modify the filters that are applied.
-        /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+        /// is already running has no effect and does not modify the filters or the tag enrichment
+        /// setting that are applied. To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
@@ -4488,22 +4490,24 @@ namespace Amazon.CloudWatch
         /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
         /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
         /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
-        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
-        /// using PromQL.
+        /// dimension) are enriched with resource ARN labels and, optionally, resource tag labels,
+        /// and become queryable using PromQL.
         /// 
         ///  
         /// <para>
-        /// Before calling this operation, you must enable resource tags on telemetry for your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
-        /// resource tags on telemetry</a>.
+        /// To include resource tag labels, you must also enable resource tags on telemetry for
+        /// the account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>. If <c>EnableTagEnrichment</c> is <c>false</c>, enrichment
+        /// reads no resource tags, so it does not require resource tags on telemetry.
         /// </para>
         ///  
         /// <para>
         /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
-        /// subset of the account's metrics. These filters are stored only when this operation
+        /// subset of the account's metrics, and <c>EnableTagEnrichment</c> controls whether enriched
+        /// metrics include resource tag labels. These settings are stored only when this operation
         /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
-        /// is already running has no effect and does not modify the filters that are applied.
-        /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+        /// is already running has no effect and does not modify the filters or the tag enrichment
+        /// setting that are applied. To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
