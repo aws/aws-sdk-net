@@ -23,6 +23,7 @@ using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
 using System.Globalization;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Amazon.Runtime
@@ -37,6 +38,9 @@ namespace Amazon.Runtime
     /// </summary>
     public class LoginAWSCredentials : RefreshingAWSCredentials
     {
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
         private readonly Logger _logger = Logger.GetLogger(typeof(LoginAWSCredentials));
         private readonly ILoginTokenManager _loginTokenManager;
         private static readonly LoginTokenFileCache _loginFileCache = 
@@ -86,6 +90,33 @@ namespace Amazon.Runtime
             return SigninServiceClientHelpers.BuildSigninClient(region, Options.ProfileName, Options.ProxySettings);
         }
 
+// The access key ID of credentials that a service rejected, until a token with other credentials replaces them.
+        private string _rejectedAccessKeyId;
+
+        /// <inheritdoc/>
+        /// <remarks>
+        /// The credentials are the access token of the cached Login Token, so the refresh that invalidation triggers
+        /// must refresh that token through the Sign-In service, even when it has not reached its own refresh window:
+        /// returning the cached token would hand back the rejected credentials.
+        /// </remarks>
+        public override void Invalidate(ImmutableCredentials rejectedCredentials)
+        {
+            if (!string.IsNullOrEmpty(rejectedCredentials?.AccessKey))
+            {
+                Volatile.Write(ref _rejectedAccessKeyId, rejectedCredentials.AccessKey);
+            }
+            base.Invalidate(rejectedCredentials);
+        }
+
+        private void ClearRejectedAccessKeyIdIfReplaced(string rejectedAccessKeyId, LoginToken loginToken)
+        {
+            if (rejectedAccessKeyId != null &&
+                !string.Equals(loginToken.AccessToken?.AccessKey, rejectedAccessKeyId, StringComparison.Ordinal))
+            {
+                Interlocked.CompareExchange(ref _rejectedAccessKeyId, null, rejectedAccessKeyId);
+            }
+        }
+
 #if BCL
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
@@ -93,7 +124,8 @@ namespace Amazon.Runtime
             {
                 LoginSession = Options.LoginSession,
                 Region = Options.Region,
-                ProxySettings = Options.ProxySettings
+                ProxySettings = Options.ProxySettings,
+                RejectedAccessKeyId = Volatile.Read(ref _rejectedAccessKeyId)
             };
 
             var loginToken = _loginTokenManager.GetToken(loginTokenManagerGetTokenOptions);
@@ -101,6 +133,7 @@ namespace Amazon.Runtime
             {
                 throw new InvalidOperationException("Login Token not found. Please reauthenticate.");
             }
+            ClearRejectedAccessKeyIdIfReplaced(loginTokenManagerGetTokenOptions.RejectedAccessKeyId, loginToken);
 
             _logger.DebugFormat("AWS Login credentials found that expire at {0}", loginToken.AccessToken.ExpiresAt.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(loginToken.AccessToken, loginToken.AccessToken.ExpiresAt.Value);
@@ -118,7 +151,8 @@ namespace Amazon.Runtime
             {
                 LoginSession = Options.LoginSession,
                 Region = Options.Region,
-                ProxySettings = Options.ProxySettings
+                ProxySettings = Options.ProxySettings,
+                RejectedAccessKeyId = Volatile.Read(ref _rejectedAccessKeyId)
             };
 
             var loginToken = await _loginTokenManager.GetTokenAsync(loginTokenManagerGetTokenOptions).ConfigureAwait(false);
@@ -126,6 +160,7 @@ namespace Amazon.Runtime
             {
                 throw new InvalidOperationException("Login Token not found. Please reauthenticate.");
             }
+            ClearRejectedAccessKeyIdIfReplaced(loginTokenManagerGetTokenOptions.RejectedAccessKeyId, loginToken);
 
             _logger.DebugFormat("AWS Login credentials found that expire at {0}", loginToken.AccessToken.ExpiresAt.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(loginToken.AccessToken, loginToken.AccessToken.ExpiresAt.Value);

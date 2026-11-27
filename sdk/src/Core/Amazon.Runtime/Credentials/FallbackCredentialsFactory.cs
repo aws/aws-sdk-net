@@ -35,6 +35,13 @@ namespace Amazon.Runtime
         internal const string DefaultProfileName = "default";
 
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+
+        // The DefaultInstanceProfileAWSCredentials that FallbackCredentialsFactory returns for the EC2 path, kept for the
+        // lifetime of the process. It is created when the fallback chain first reaches the EC2 path, and Reset() does
+        // not replace it: Reset() only rebuilds the generator list, and a new provider would lose its cached
+        // credentials and refresh backoff.
+        private static readonly Lazy<DefaultInstanceProfileAWSCredentials> _instanceProfileCredentials =
+            new Lazy<DefaultInstanceProfileAWSCredentials>(() => new DefaultInstanceProfileAWSCredentials());
         static FallbackCredentialsFactory()
         {
             Reset();
@@ -130,7 +137,11 @@ namespace Amazon.Runtime
                 Logger.GetLogger(typeof(GenericContainerCredentials)).Error(e, $"Failed to access environment variables {GenericContainerCredentials.RelativeURIEnvVariable} and {GenericContainerCredentials.FullURIEnvVariable}." +
                     $" Either {GenericContainerCredentials.RelativeURIEnvVariable} or {GenericContainerCredentials.FullURIEnvVariable} environment variables must be set.");
             }
-            return DefaultInstanceProfileAWSCredentials.Instance;
+
+            // When IMDS is disabled, fail this generator so the chain falls through to anonymous credentials or
+            // "Unable to find credentials" instead of returning (and caching) a provider that fails on first use.
+            DefaultInstanceProfileAWSCredentials.ThrowIfIMDSDisabled();
+            return _instanceProfileCredentials.Value;
         }
 
         private static AWSCredentials cachedCredentials;

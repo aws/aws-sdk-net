@@ -70,6 +70,34 @@ namespace Amazon.Runtime.Credentials.Internal
         }
 
         /// <summary>
+        /// Checks that a cached Login token can be used. A token that is missing, or is present but missing required
+        /// fields, is non-recoverable: the user must sign in again. This is detected before the token is used or the
+        /// Sign-In service is contacted. Throws <see cref="AmazonNonRecoverableCredentialsException"/> for a null
+        /// token or one lacking the required credential material -- a null <see cref="LoginToken.AccessToken"/>, an
+        /// empty access key / secret key / session token, or a missing expiry
+        /// (<see cref="LoginImmutableCredentials.ExpiresAt"/>, read later through <c>.Value</c>). A well-formed token
+        /// is a no-op. This is not called on the logout paths, so a malformed token can still be deleted.
+        /// </summary>
+        /// <param name="token">Login Token instance (may be null).</param>
+        /// <exception cref="AmazonNonRecoverableCredentialsException">The token is missing or malformed.</exception>
+        public static void EnsureUsable(this LoginToken token)
+        {
+            if (token == null)
+                throw new AmazonNonRecoverableCredentialsException("Cached Login Token is missing. Please reauthenticate.");
+
+            var accessToken = token.AccessToken;
+            if (accessToken == null
+                || string.IsNullOrEmpty(accessToken.AccessKey)
+                || string.IsNullOrEmpty(accessToken.SecretKey)
+                || string.IsNullOrEmpty(accessToken.Token)
+                || !accessToken.ExpiresAt.HasValue)
+            {
+                throw new AmazonNonRecoverableCredentialsException(
+                    "Cached Login Token is missing required fields. Please reauthenticate.");
+            }
+        }
+
+        /// <summary>
         /// Serializes the Login Token to JSON
         /// </summary>
         /// <param name="token">Token to serialize</param>

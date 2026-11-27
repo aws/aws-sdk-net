@@ -376,7 +376,11 @@ namespace Amazon.Runtime.CredentialManagement
             switch (type)
             {
                 case CredentialSourceType.Ec2InstanceMetadata:
-                    credentials = DefaultInstanceProfileAWSCredentials.Instance;
+                    // Each resolution of a credential_source=Ec2InstanceMetadata profile creates its own provider,
+                    // which caches and refreshes its credentials independently. When IMDS is disabled, fail here
+                    // rather than returning credentials that fail on first use.
+                    DefaultInstanceProfileAWSCredentials.ThrowIfIMDSDisabled();
+                    credentials = new DefaultInstanceProfileAWSCredentials();
                     break;
                 case CredentialSourceType.Environment:
                     credentials = new EnvironmentVariablesAWSCredentials();

@@ -81,9 +81,11 @@ namespace AWSSDK.UnitTests
                     Assert.AreEqual(expectedAttempts, attempts);
                 }
 
+                // Once the token has expired, a failed refresh is non-recoverable (an expired SSO token that could not be
+                // refreshed). The refresh is still attempted again after the cooldown, so it recovers.
                 foreach (var secondsLater in new[] { 150, 150 })
                 {
-                    await Assert.ThrowsExactlyAsync<AmazonClientException>(() => GetTokenAt(secondsLater));
+                    await Assert.ThrowsExactlyAsync<AmazonNonRecoverableCredentialsException>(() => GetTokenAt(secondsLater));
                     Assert.AreEqual(4, attempts);
                 }
 

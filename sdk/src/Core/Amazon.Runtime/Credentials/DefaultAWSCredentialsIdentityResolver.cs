@@ -57,6 +57,14 @@ namespace Amazon.Runtime.Credentials
         private long _lastSeenConfigFileToken;
         private long _lastSeenNetSdkFileToken;
 
+        // The DefaultInstanceProfileAWSCredentials this resolver instance uses for the EC2 fallback path. Each
+        // resolver instance owns its own (the shared _defaultInstance and the resolver in
+        // DefaultIdentityResolverConfiguration are separate instances), and FallbackCredentialsFactory and
+        // credential_source=Ec2InstanceMetadata profiles create their own, so there is no single provider per
+        // process. Created lazily and guarded by <see cref="_credentialResolutionLock"/> -- see
+        // GetOrCreateInstanceProfileCredentials. Not disposed with the resolver: it is handed to callers.
+        private DefaultInstanceProfileAWSCredentials _instanceProfileCredentials;
+
         public DefaultAWSCredentialsIdentityResolver()
         {
             _cachedCredentials = null;
@@ -399,7 +407,7 @@ namespace Amazon.Runtime.Credentials
             return profileName;
         }
 
-        private static AWSCredentials ContainerEC2CredentialsWrapper()
+        private AWSCredentials ContainerEC2CredentialsWrapper()
         {
             try
             {
@@ -423,7 +431,7 @@ namespace Amazon.Runtime.Credentials
 
             try
             {
-                var credentials = DefaultInstanceProfileAWSCredentials.Instance;
+                var credentials = GetOrCreateInstanceProfileCredentials();
 
                 // Test that credentials can be resolved using EC2 instance metadata. Assuming the
                 // credentials are successfully resolved the credentials will be cached so the
@@ -441,6 +449,22 @@ namespace Amazon.Runtime.Credentials
             }
         }
 
+        /// <summary>
+        /// Returns this resolver's <see cref="DefaultInstanceProfileAWSCredentials"/>, creating it on first use.
+        /// The resolver returns this same provider whenever it resolves credentials from EC2 instance metadata, so
+        /// the clients using this resolver share one cache and refresh lifecycle. Other resolver instances,
+        /// including the one behind the static <see cref="GetCredentials(IClientConfig)"/>, have their own.
+        /// <para />
+        /// Must be called while holding <see cref="_credentialResolutionLock"/>. It always is: the only caller
+        /// is <see cref="ContainerEC2CredentialsWrapper"/>, dispatched from <see cref="ResolveCredentialChain"/>,
+        /// which runs under that lock. The lazy init therefore needs no separate synchronization (and must not
+        /// re-acquire the non-reentrant semaphore).
+        /// </summary>
+        private DefaultInstanceProfileAWSCredentials GetOrCreateInstanceProfileCredentials()
+        {
+            return _instanceProfileCredentials ??= new DefaultInstanceProfileAWSCredentials();
+        }
+
         public void Dispose()
         {
             Dispose(true);
@@ -454,6 +478,9 @@ namespace Amazon.Runtime.Credentials
             {
                 _credentialResolutionLock.Dispose();
                 _cachedProfileCredentialResolver.Dispose();
+
+                // _instanceProfileCredentials is intentionally not disposed: it may already have been returned to
+                // callers and service clients, which keep using it after this resolver is disposed.
 
                 foreach (var watcher in _fileWatchers.Values)
                     watcher.Dispose();

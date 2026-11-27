@@ -36,7 +36,9 @@ namespace Amazon.Runtime
     /// </summary>
     public partial class AssumeRoleWithWebIdentityCredentials : RefreshingAWSCredentials
     {
-        private const int PREEMPT_EXPIRY_MINUTES = 15;
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
         private static readonly RegionEndpoint _defaultSTSClientRegion = RegionEndpoint.USEast1;
         private static readonly string _roleSessionNameDefault = Guid.NewGuid().ToString();
 
@@ -127,22 +129,10 @@ namespace Amazon.Runtime
             _options = options;
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE_WEB_ID);
 
-            // The minimum duration for AssumeRoleWithWebIdentity is 15 minutes (900 seconds), and if that value
-            // is requested a 15-minute preempt expiry time may cause the SDK to generate credentials
-            // more frequently than needed (https://github.com/aws/aws-sdk-net/issues/4313).
-            //
-            // If customers request a duration of 20 minutes (1200 seconds) or less, use a smaller
-            // preempt expiry time of 5 minutes.
-            if (_options != null && _options.DurationSeconds.HasValue && _options.DurationSeconds.Value <= 1200)
-            {
-                PreemptExpiryTime = TimeSpan.FromMinutes(5);
-            }
-            else
-            {
-                // Otherwise, use the default of 15 minutes to make sure to fetch new credentials well before
-                // the current credentials expire to avoid any request being made with expired credentials.
-                PreemptExpiryTime = TimeSpan.FromMinutes(PREEMPT_EXPIRY_MINUTES);
-            }
+            // PreemptExpiryTime is not set here. The base class chooses the background refresh window from the
+            // lifetime of each set of credentials (5 minutes for a lifetime of 20 minutes or less), and it does not
+            // start a background refresh for credentials that are already inside that window when they are fetched
+            // (https://github.com/aws/aws-sdk-net/issues/4313). A value that the caller sets takes precedence.
         }
 
         /// <summary>
@@ -162,7 +152,81 @@ namespace Amazon.Runtime
             return credentials;
         }
 
+        // The STS error code for an expired web identity token. The STS client wraps the service's
+        // ExpiredTokenException in an AmazonClientException, and Core cannot reference the STS exception type, so the
+        // error is matched by this code on the inner AmazonServiceException.
+        private const string ExpiredWebIdentityTokenErrorCode = "ExpiredTokenException";
+
+        // The wait before STS is called again after it rejected the web identity token as expired: 100, 400 and then
+        // 1000 milliseconds, the waits of DefaultRetryPolicy.WaitBeforeRetry(retry, 1000).
+        private static TimeSpan ExpiredTokenRetryDelay(int retry)
+            => TimeSpan.FromMilliseconds(Math.Min(Math.Pow(4, retry) * 100, 1000));
+
+        /// <summary>
+        /// Waits before <see cref="GenerateNewCredentialsAsync"/> calls STS again after STS rejected the web identity
+        /// token as expired. The wait does not block a thread. Replaced in unit tests so that they do not wait.
+        /// </summary>
+        internal Func<int, Task> WaitBeforeExpiredTokenRetryAsync { get; set; } = retry => Task.Delay(ExpiredTokenRetryDelay(retry));
+
         protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            // Read the OIDC token file and call STS again when STS rejects the web identity token as expired, because
+            // the OIDC provider may have written a rotated token to disk since the last read. Bounded by
+            // DefaultMaxRetry (the initial attempt plus DefaultMaxRetry retries). The STS client's own
+            // InvalidIdentityToken/IDPCommunicationError retries and the file-read retries still apply. On any other
+            // error, or once these retries are exhausted, the error propagates and the base class handles it as a
+            // failed refresh. One STS client is created for the refresh, after the token file is first read, and is
+            // used for every attempt.
+            ICoreAmazonSTS coreStsClient = null;
+            for (var stsRetry = 0; ; stsRetry++)
+            {
+                var token = ReadTokenFromFile();
+                if (coreStsClient == null)
+                    coreStsClient = CreateClient();
+                try
+                {
+                    AssumeRoleImmutableCredentials credentials = coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication(token, RoleArn, RoleSessionName, _options); // Will retry InvalidIdentityToken and IDPCommunicationError
+                    _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+                    return new CredentialsRefreshState(credentials, credentials.Expiration);
+                }
+                catch (Exception e) when (stsRetry < AWSSDKUtils.DefaultMaxRetry && IsExpiredWebIdentityTokenError(e))
+                {
+                    _logger.DebugFormat("The web identity token was rejected as expired by STS; reloading the WebIdentityTokenFile and retrying the STS call (attempt {0} of {1}).", stsRetry + 1, AWSSDKUtils.DefaultMaxRetry);
+                    AWSSDKUtils.Sleep(ExpiredTokenRetryDelay(stsRetry));
+                }
+            }
+        }
+
+        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            // Asynchronous counterpart of GenerateNewCredentials; see that method. The wait before each retry is
+            // awaited, so it does not block a thread while the refresh lock is held.
+            ICoreAmazonSTS coreStsClient = null;
+            for (var stsRetry = 0; ; stsRetry++)
+            {
+                var token = await ReadTokenFromFileAsync().ConfigureAwait(false);
+                if (coreStsClient == null)
+                    coreStsClient = CreateClient();
+                try
+                {
+                    AssumeRoleImmutableCredentials credentials = await coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(token, RoleArn, RoleSessionName, _options).ConfigureAwait(false); // Will retry InvalidIdentityToken and IDPCommunicationError
+                    _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+                    return new CredentialsRefreshState(credentials, credentials.Expiration);
+                }
+                catch (Exception e) when (stsRetry < AWSSDKUtils.DefaultMaxRetry && IsExpiredWebIdentityTokenError(e))
+                {
+                    _logger.DebugFormat("The web identity token was rejected as expired by STS; reloading the WebIdentityTokenFile and retrying the STS call (attempt {0} of {1}).", stsRetry + 1, AWSSDKUtils.DefaultMaxRetry);
+                    await WaitBeforeExpiredTokenRetryAsync(stsRetry).ConfigureAwait(false);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads the OIDC token from <see cref="WebIdentityTokenFile"/>, retrying transient read failures up to
+        /// <see cref="AWSSDKUtils.DefaultMaxRetry"/> times. Throws <see cref="InvalidOperationException"/> if the
+        /// file cannot be read after the final retry.
+        /// </summary>
+        private string ReadTokenFromFile()
         {
             string token = null;
             for (var retry = 0; retry <= AWSSDKUtils.DefaultMaxRetry; retry++)
@@ -190,13 +254,13 @@ namespace Amazon.Runtime
                 }
             }
 
-            var coreStsClient = CreateClient();
-            AssumeRoleImmutableCredentials credentials = coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication(token, RoleArn, RoleSessionName, _options); // Will retry InvalidIdentityToken and IDPCommunicationError
-            _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
-            return new CredentialsRefreshState(credentials, credentials.Expiration);
+            return token;
         }
 
-        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        /// <summary>
+        /// Asynchronous counterpart of <see cref="ReadTokenFromFile"/>.
+        /// </summary>
+        private async Task<string> ReadTokenFromFileAsync()
         {
             string token = null;
             for (var retry = 0; retry <= AWSSDKUtils.DefaultMaxRetry; retry++)
@@ -224,10 +288,28 @@ namespace Amazon.Runtime
                 }
             }
 
-            var coreStsClient = CreateClient();
-            AssumeRoleImmutableCredentials credentials = await coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(token, RoleArn, RoleSessionName, _options).ConfigureAwait(false); // Will retry InvalidIdentityToken and IDPCommunicationError
-            _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
-            return new CredentialsRefreshState(credentials, credentials.Expiration);
+            return token;
+        }
+
+        /// <summary>
+        /// Returns true only when <paramref name="exception"/> (or an exception in its inner-exception chain) is an
+        /// <see cref="AmazonServiceException"/> whose <see cref="AmazonServiceException.ErrorCode"/> is exactly the
+        /// modeled STS expired-web-identity-token code. The chain is walked because the STS ICoreAmazonSTS extension
+        /// wraps the modeled exception in an <see cref="AmazonClientException"/>. The match is on the exact error
+        /// code so that other STS errors are not swallowed and still drive the base refresh backoff.
+        /// </summary>
+        private static bool IsExpiredWebIdentityTokenError(Exception exception)
+        {
+            for (var current = exception; current != null; current = current.InnerException)
+            {
+                if (current is AmazonServiceException serviceException &&
+                    string.Equals(serviceException.ErrorCode, ExpiredWebIdentityTokenErrorCode, StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         /// <summary>

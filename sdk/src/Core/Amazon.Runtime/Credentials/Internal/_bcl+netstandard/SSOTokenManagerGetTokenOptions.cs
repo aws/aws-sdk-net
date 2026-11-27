@@ -69,6 +69,17 @@ namespace Amazon.Runtime.Credentials.Internal
         public bool SupportsGettingNewToken { get; set; } = true;
 
         /// <summary>
+        /// When <c>true</c>, <see cref="SSOTokenManager"/> does not start the interactive sign-in (the device
+        /// authorization or PKCE flow) even if <see cref="SupportsGettingNewToken"/> is <c>true</c>: when a new token
+        /// would need it, the token manager throws <see cref="Amazon.Runtime.Internal.CredentialRefreshDeferredException"/>
+        /// instead, without calling SSO OIDC or the sign-in callbacks. A cached token is still used, and refreshed with
+        /// its refresh token when it can be. <see cref="SSOAWSCredentials"/> sets this during a background refresh,
+        /// including the background refresh of a provider that uses it as its source credentials, so that the sign-in
+        /// starts on the caller's thread when a call finds the credentials expired.
+        /// </summary>
+        internal bool DeferInteractiveSignIn { get; set; }
+
+        /// <summary>
         /// The resolved AWS-owned start URL to use for SSO-OIDC API calls (StartDeviceAuthorization, CreateToken).
         /// When set, this URL is used for OIDC API calls instead of <see cref="StartUrl"/>.
         /// <see cref="StartUrl"/> continues to be used as the cache key.

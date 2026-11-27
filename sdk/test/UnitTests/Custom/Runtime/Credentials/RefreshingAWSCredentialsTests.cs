@@ -1,4 +1,3 @@
-#if !NETFRAMEWORK
 using System;
 using System.Linq;
 using System.Threading;
@@ -449,4 +448,3 @@ namespace AWSSDK.UnitTests
         }
     }
 }
-#endif

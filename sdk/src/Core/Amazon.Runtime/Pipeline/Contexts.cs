@@ -36,6 +36,13 @@ namespace Amazon.Runtime
         ISigner Signer { get; set; }
         BaseIdentity Identity { get; set; }
         AWSCredentials ExplicitAWSCredentials { get; }
+
+        /// <summary>
+        /// The credentials the signer resolved and signed this request with, or <c>null</c> when the request was not
+        /// signed with AWS credentials. Set on each signing, so a retry that is signed again records the credentials it
+        /// used. The SDK uses it to invalidate exactly those credentials if the service rejects them as expired.
+        /// </summary>
+        ImmutableCredentials ResolvedCredentials { get; set; }
         IClientConfig ClientConfig { get; }
         IRequest Request { get; set; }
         bool IsSigned { get; set; }
@@ -125,6 +132,9 @@ namespace Amazon.Runtime.Internal
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
         public AWSCredentials ExplicitAWSCredentials { get; set; }
+
+        /// <inheritdoc/>
+        public ImmutableCredentials ResolvedCredentials { get; set; }
         public UserAgentDetails UserAgentDetails
         {
             get

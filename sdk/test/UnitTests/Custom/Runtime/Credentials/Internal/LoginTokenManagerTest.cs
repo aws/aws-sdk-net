@@ -42,14 +42,16 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task GetTokenAsync_NoToken_ThrowsAmazonClientException()
+        public async Task GetTokenAsync_NoToken_ThrowsNonRecoverable()
         {
             var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
 
             _mockFileCache.Setup(x => x.TryGetLoginTokenAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
                          .ReturnsAsync(new TryResponse<LoginToken> { Success = false });
 
-            await Assert.ThrowsExactlyAsync<AmazonClientException>(() => _tokenManager.GetTokenAsync(options));
+            // A missing cached Login token is non-recoverable (AmazonNonRecoverableCredentialsException derives from
+            // AmazonClientException).
+            await Assert.ThrowsExactlyAsync<AmazonNonRecoverableCredentialsException>(() => _tokenManager.GetTokenAsync(options));
         }
 
         [TestMethod]
@@ -207,6 +209,68 @@ namespace AWSSDK.UnitTests
             return new LoginTokenManagerGetTokenOptions { LoginSession = Guid.NewGuid().ToString() };
         }
 
+        private static LoginToken CreateToken(TimeSpan expiresIn, string accessKey)
+        {
+            var token = CreateToken(expiresIn);
+            token.AccessToken = new LoginImmutableCredentials(accessKey, "secret", "token", DateTime.UtcNow.Add(expiresIn), "123456789012");
+            return token;
+        }
+
+        // A service rejected the credentials of a cached token that is outside its refresh window (for example a
+        // revoked session): the token is refreshed through Sign-In instead of being returned again.
+        [TestMethod]
+        public async Task GetTokenAsync_RejectedAccessKey_TokenOutsideRefreshWindow_RefreshesThroughSignin()
+        {
+            SetupDiskToken(CreateToken(TimeSpan.FromHours(1), "rejected-key"));
+            SetupRefreshWrites(CreateToken(TimeSpan.FromHours(1), "fresh-key"));
+            var tokenManager = new LoginTokenManager(_ => _mockSigninClient.Object, _mockFileCache.Object);
+            var options = NewOptions();
+            options.RejectedAccessKeyId = "rejected-key";
+
+            var result = await tokenManager.GetTokenAsync(options);
+
+            Assert.AreEqual("fresh-key", result.AccessToken.AccessKey);
+            _mockSigninClient.Verify(x => x.CreateOAuth2TokenAsync(It.IsAny<CoreCreateOAuth2TokenRequest>(), false, It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        // The in-memory cached token is the rejected one: it is refreshed too, not returned from the cache.
+        [TestMethod]
+        public async Task GetTokenAsync_RejectedAccessKey_InMemoryCachedToken_RefreshesThroughSignin()
+        {
+            var originalUseSdkCache = AWSConfigs.UseSdkCache;
+            AWSConfigs.UseSdkCache = true; // in-memory branch is gated on this
+            try
+            {
+                SetupDiskToken(CreateToken(TimeSpan.FromHours(1), "rejected-key"));
+                SetupRefreshWrites(CreateToken(TimeSpan.FromHours(1), "fresh-key"));
+                var tokenManager = new LoginTokenManager(_ => _mockSigninClient.Object, _mockFileCache.Object);
+                var options = NewOptions();
+                Assert.AreEqual("rejected-key", (await tokenManager.GetTokenAsync(options)).AccessToken.AccessKey, "cached in memory");
+
+                options.RejectedAccessKeyId = "rejected-key";
+                Assert.AreEqual("fresh-key", (await tokenManager.GetTokenAsync(options)).AccessToken.AccessKey);
+                _mockSigninClient.Verify(x => x.CreateOAuth2TokenAsync(It.IsAny<CoreCreateOAuth2TokenRequest>(), false, It.IsAny<CancellationToken>()), Times.Once);
+            }
+            finally
+            {
+                AWSConfigs.UseSdkCache = originalUseSdkCache;
+            }
+        }
+
+        // A rejection of other credentials (a token another process already replaced) does not force a refresh.
+        [TestMethod]
+        public async Task GetTokenAsync_RejectedAccessKeyOfAnotherToken_ReturnsCachedTokenWithoutRefresh()
+        {
+            var current = CreateToken(TimeSpan.FromHours(1), "current-key");
+            SetupDiskToken(current);
+            var tokenManager = new LoginTokenManager(_ => _mockSigninClient.Object, _mockFileCache.Object);
+            var options = NewOptions();
+            options.RejectedAccessKeyId = "older-key";
+
+            Assert.AreSame(current, await tokenManager.GetTokenAsync(options));
+            _mockSigninClient.Verify(x => x.CreateOAuth2TokenAsync(It.IsAny<CoreCreateOAuth2TokenRequest>(), It.IsAny<bool>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
         private static LoginToken CreateToken(TimeSpan expiresIn)
         {
             return new LoginToken
@@ -232,5 +296,101 @@ namespace AWSSDK.UnitTests
                              .Callback(() => _diskToken = refreshedToken)
                              .ReturnsAsync(new CoreCreateOAuth2TokenResponse());
         }
+
+        // A cached token that is present but has no AccessToken is non-recoverable. It is detected client-side at the
+        // file-cache read site, before NeedsRefresh would dereference AccessToken.ExpiresAt.
+        [TestMethod]
+        public async Task GetTokenAsync_MalformedCachedToken_NullAccessToken_ThrowsNonRecoverable()
+        {
+            var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
+            var malformed = new LoginToken { AccessToken = null };
+
+            _mockFileCache.Setup(x => x.TryGetLoginTokenAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                         .ReturnsAsync(new TryResponse<LoginToken> { Success = true, Value = malformed });
+
+            await Assert.ThrowsExactlyAsync<AmazonNonRecoverableCredentialsException>(() => _tokenManager.GetTokenAsync(options));
+        }
+
+        // A cached token missing a required field (here: no expiry) is non-recoverable. ExpiresAt == null keeps
+        // NeedsRefresh() false, so control reaches the read-site guard.
+        [TestMethod]
+        public async Task GetTokenAsync_MalformedCachedToken_MissingExpiry_ThrowsNonRecoverable()
+        {
+            var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
+            var malformed = new LoginToken
+            {
+                AccessToken = new LoginImmutableCredentials("key", "secret", "token", null, "123456789012")
+            };
+
+            _mockFileCache.Setup(x => x.TryGetLoginTokenAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                         .ReturnsAsync(new TryResponse<LoginToken> { Success = true, Value = malformed });
+
+            await Assert.ThrowsExactlyAsync<AmazonNonRecoverableCredentialsException>(() => _tokenManager.GetTokenAsync(options));
+        }
+
+        // The logout path does not validate the token, so a malformed token can still be deleted.
+        [TestMethod]
+        public async Task LogoutAsync_MalformedToken_StillDeletes()
+        {
+            var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
+            var malformed = new LoginToken { AccessToken = null };
+
+            _mockFileCache.Setup(x => x.TryGetLoginTokenAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()))
+                         .ReturnsAsync(new TryResponse<LoginToken> { Success = true, Value = malformed });
+
+            await _tokenManager.LogoutAsync(options);
+
+            _mockFileCache.Verify(x => x.DeleteLoginToken(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+        }
+
+        // A malformed token already held in the in-memory cache (null AccessToken) is non-recoverable. The in-memory read
+        // site validates the token before NeedsRefresh() dereferences AccessToken.ExpiresAt, so the caller gets
+        // AmazonNonRecoverableCredentialsException rather than a NullReferenceException. This drives the real
+        // in-memory manager path (seeded cache), not EnsureUsable in isolation.
+        [TestMethod]
+        public async Task GetTokenAsync_MalformedInMemoryCachedToken_NullAccessToken_ThrowsNonRecoverable()
+        {
+            var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
+            var malformed = new LoginToken { AccessToken = null };
+
+            var originalUseSdkCache = AWSConfigs.UseSdkCache;
+            AWSConfigs.UseSdkCache = true; // in-memory branch is gated on this
+            try
+            {
+                _tokenManager.SeedInMemoryCacheForTest(options.LoginSession, malformed);
+
+                await Assert.ThrowsExactlyAsync<AmazonNonRecoverableCredentialsException>(
+                    () => _tokenManager.GetTokenAsync(options));
+            }
+            finally
+            {
+                AWSConfigs.UseSdkCache = originalUseSdkCache;
+            }
+        }
+
+#if NETFRAMEWORK
+        // Sync counterpart of the in-memory malformed-token test above. The synchronous GetToken is compiled only into
+        // the .NET Framework build of AWSSDK.Core, which the net472 test targets reference, so this test runs there.
+        [TestMethod]
+        public void GetToken_MalformedInMemoryCachedToken_NullAccessToken_ThrowsNonRecoverable()
+        {
+            var options = new LoginTokenManagerGetTokenOptions { LoginSession = "test-session" };
+            var malformed = new LoginToken { AccessToken = null };
+
+            var originalUseSdkCache = AWSConfigs.UseSdkCache;
+            AWSConfigs.UseSdkCache = true; // in-memory branch is gated on this
+            try
+            {
+                _tokenManager.SeedInMemoryCacheForTest(options.LoginSession, malformed);
+
+                Assert.ThrowsExactly<AmazonNonRecoverableCredentialsException>(
+                    () => _tokenManager.GetToken(options));
+            }
+            finally
+            {
+                AWSConfigs.UseSdkCache = originalUseSdkCache;
+            }
+        }
+#endif
     }
 }
