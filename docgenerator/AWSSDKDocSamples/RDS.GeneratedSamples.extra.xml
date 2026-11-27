@@ -626,6 +626,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBCluster(Amazon.RDS.Model.DeleteDBClusterRequest)" />
+      <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBCluster(Amazon.RDS.Model.DeleteDBClusterRequest)" />
+      <member name="T:Amazon.RDS.Model.DeleteDBClusterRequest" />
+      <member name="T:Amazon.RDS.Model.DeleteDBClusterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example deletes the Aurora DB cluster named sample-cluster and all of the DB instances in it in a single call.
+        </para>
+        <code title="To delete a DB cluster and all of its DB instances" source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs" region="DeleteDBCluster-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.RDS.IAmazonRDS.DeleteDBClusterEndpoint(Amazon.RDS.Model.DeleteDBClusterEndpointRequest)" />
       <member name="M:Amazon.RDS.AmazonRDSClient.DeleteDBClusterEndpoint(Amazon.RDS.Model.DeleteDBClusterEndpointRequest)" />
       <member name="T:Amazon.RDS.Model.DeleteDBClusterEndpointRequest" />

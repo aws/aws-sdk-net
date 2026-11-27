@@ -740,6 +740,23 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSDeleteDBCluster()
+        {
+            #region DeleteDBCluster-2
+
+            var client = new AmazonRDSClient();
+            var response = client.DeleteDBCluster(new DeleteDBClusterRequest
+            {
+                DBClusterIdentifier = "sample-cluster",
+                DeleteDBInstances = true,
+                SkipFinalSnapshot = true
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
         public void RDSDeleteDBClusterEndpoint()
         {
             #region DeleteDBClusterEndpoint-1
