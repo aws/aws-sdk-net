@@ -36,6 +36,22 @@ namespace Amazon.NeptuneGraph.Model
     public partial class RestoreGraphFromSnapshotRequest : AmazonNeptuneGraphRequest
     {
         /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration for the restored graph. A snapshot can be restored into
+        /// either a provisioned graph or a graph session, regardless of the compute type of the
+        /// source graph. A snapshot taken from a provisioned graph can be restored into a graph
+        /// session as long as the data in the snapshot fits within the graph session.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetComputeConfiguration() => this.ComputeConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// A value that indicates whether the graph has deletion protection enabled. The graph
@@ -78,8 +94,14 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// Min = 16
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is deprecated. We recommend using <c>computeConfiguration</c> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min = 16, Max = 24576)]
+        [Obsolete("ProvisionedMemory is deprecated. Use ComputeConfiguration instead.")]
+        [AWSProperty(Min = 1, Max = 24576)]
         public int? ProvisionedMemory { get; set; }
 
         /// <summary>

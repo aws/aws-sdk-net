@@ -31,10 +31,33 @@ namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGraph operation. Creates a new Neptune Analytics
-    /// graph.
+    /// graph. <para> Neptune Analytics supports two types of graphs, selected using <c>computeConfiguration</c>:
+    /// </para> <ul> <li> <para> <i>Provisioned graphs</i> use dedicated compute that is always
+    /// available. Use provisioned graphs for workloads that require higher memory or predictable
+    /// latency. </para> </li> <li> <para> <i>Graph sessions</i> use ephemeral compute that
+    /// is bootstrapped when a query is sent to the graph. The compute is automatically stopped
+    /// after a few minutes with no traffic. The next query sent to the graph bootstraps the
+    /// compute again, so queries that bootstrap the compute are subject to cold start latency.
+    /// </para> </li> </ul>
     /// </summary>
     public partial class CreateGraphRequest : AmazonNeptuneGraphRequest
     {
+        /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration for the new graph. Specify <c>provisionedGraph</c> to create
+        /// a provisioned graph with dedicated, always-available compute, or <c>graphSession</c>
+        /// to create a graph session that uses ephemeral compute bootstrapped on demand when
+        /// a query is sent, and is subject to cold start latency.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetComputeConfiguration() => this.ComputeConfiguration != null;
+
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
@@ -89,8 +112,14 @@ namespace Amazon.NeptuneGraph.Model
         /// The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.
         /// Min = 16
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is deprecated. We recommend using <c>computeConfiguration</c> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required = true, Min = 16, Max = 24576)]
+        [Obsolete("ProvisionedMemory is deprecated. Use ComputeConfiguration instead.")]
+        [AWSProperty(Min = 1, Max = 24576)]
         public int? ProvisionedMemory { get; set; }
 
         /// <summary>

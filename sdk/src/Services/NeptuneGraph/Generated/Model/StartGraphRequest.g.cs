@@ -31,6 +31,9 @@ namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the StartGraph operation. Starts the specific graph.
+    /// <note> <para> Graph sessions are started automatically when a query is sent to the
+    /// graph. While this API is supported for graph sessions, it isn't required. </para>
+    /// </note>
     /// </summary>
     public partial class StartGraphRequest : AmazonNeptuneGraphRequest
     {

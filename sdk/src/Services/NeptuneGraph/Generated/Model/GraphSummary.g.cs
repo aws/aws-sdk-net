@@ -49,6 +49,19 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetArn() => this.Arn != null;
 
         /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration of the graph: either a provisioned graph or a graph session.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeConfiguration property is set.
+        /// </summary>
+        internal bool IsSetComputeConfiguration() => this.ComputeConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// If <c>true</c>, deletion protection is enabled for the graph.
@@ -120,8 +133,16 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// The number of memory-optimized Neptune Capacity Units (m-NCUs) allocated to the graph.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is deprecated. For backward compatibility, it returns <c>memory</c> for
+        /// a <c>provisionedGraph</c> and <c>minMemory</c> for a <c>graphSession</c>. Use <c>computeConfiguration</c>
+        /// instead.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min = 16, Max = 24576)]
+        [Obsolete("ProvisionedMemory is deprecated. Refer to ComputeConfiguration instead.")]
+        [AWSProperty(Min = 1, Max = 24576)]
         public int? ProvisionedMemory { get; set; }
 
         /// <summary>

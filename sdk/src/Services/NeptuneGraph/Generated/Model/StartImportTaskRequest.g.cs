@@ -32,7 +32,9 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Container for the parameters to the StartImportTask operation. Import data into existing
     /// Neptune Analytics graph from Amazon Simple Storage Service (S3). The graph needs to
-    /// be empty and in the AVAILABLE state.
+    /// be empty and in the AVAILABLE state. <note> <para> Graph sessions don't support this
+    /// API. Use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+    /// CALL procedure</a> to load data into the Graph Session instead. </para> </note>
     /// </summary>
     public partial class StartImportTaskRequest : AmazonNeptuneGraphRequest
     {
@@ -96,7 +98,13 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetGraphIdentifier() => this.GraphIdentifier != null;
 
         /// <summary>
-        /// Gets and sets the property ImportOptions.
+        /// Gets and sets the property ImportOptions. 
+        /// <para>
+        /// Contains options for controlling the import process. For example, if the <c>failOnError</c>
+        /// key is set to <c>false</c>, the import skips problem data and attempts to continue
+        /// (whereas if set to <c>true</c>, the default, or if omitted, the import operation halts
+        /// immediately when an error is encountered.
+        /// </para>
         /// </summary>
         public ImportOptions ImportOptions { get; set; }
 

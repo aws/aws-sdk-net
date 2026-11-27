@@ -66,6 +66,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("computeConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("createTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

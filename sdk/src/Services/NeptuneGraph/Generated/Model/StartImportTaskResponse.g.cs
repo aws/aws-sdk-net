@@ -63,7 +63,13 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetGraphId() => this.GraphId != null;
 
         /// <summary>
-        /// Gets and sets the property ImportOptions.
+        /// Gets and sets the property ImportOptions. 
+        /// <para>
+        /// Contains options for controlling the import process. For example, if the <c>failOnError</c>
+        /// key is set to <c>false</c>, the import skips problem data and attempts to continue
+        /// (whereas if set to <c>true</c>, the default, or if omitted, the import operation halts
+        /// immediately when an error is encountered.
+        /// </para>
         /// </summary>
         public ImportOptions ImportOptions { get; set; }
 

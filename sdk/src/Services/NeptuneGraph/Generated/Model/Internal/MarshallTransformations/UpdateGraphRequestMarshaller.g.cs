@@ -74,6 +74,16 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("computeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDeletionProtection())
             {
                 context.Writer.WritePropertyName("deletionProtection");

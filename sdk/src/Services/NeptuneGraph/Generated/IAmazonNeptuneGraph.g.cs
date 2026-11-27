@@ -198,6 +198,24 @@ namespace Amazon.NeptuneGraph
 #if NETFRAMEWORK
         /// <summary>
         /// Creates a new Neptune Analytics graph.
+        /// 
+        ///  
+        /// <para>
+        /// Neptune Analytics supports two types of graphs, selected using <c>computeConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Provisioned graphs</i> use dedicated compute that is always available. Use provisioned
+        /// graphs for workloads that require higher memory or predictable latency.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Graph sessions</i> use ephemeral compute that is bootstrapped when a query is
+        /// sent to the graph. The compute is automatically stopped after a few minutes with no
+        /// traffic. The next query sent to the graph bootstraps the compute again, so queries
+        /// that bootstrap the compute are subject to cold start latency.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGraph service method.</param>
         /// <returns>The response from the CreateGraph service method, as returned by NeptuneGraph.</returns>
@@ -222,6 +240,24 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Creates a new Neptune Analytics graph.
+        /// 
+        ///  
+        /// <para>
+        /// Neptune Analytics supports two types of graphs, selected using <c>computeConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Provisioned graphs</i> use dedicated compute that is always available. Use provisioned
+        /// graphs for workloads that require higher memory or predictable latency.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Graph sessions</i> use ephemeral compute that is bootstrapped when a query is
+        /// sent to the graph. The compute is automatically stopped after a few minutes with no
+        /// traffic. The next query sent to the graph bootstraps the compute again, so queries
+        /// that bootstrap the compute are subject to cold start latency.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGraph service method.</param>
         /// <param name="cancellationToken">
@@ -314,6 +350,15 @@ namespace Amazon.NeptuneGraph
         /// CSV format</a> or the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// load format</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Graph session cannot be created using this API. Create an empty Graph Session using
+        /// <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html">CreateGraph</a>
+        /// or restore a snapshot as Graph Session using <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html">RestoreGraphFromSnapshot</a>
+        /// and use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+        /// CALL procedure</a> to load data into the Graph Session instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGraphUsingImportTask service method.</param>
         /// <returns>The response from the CreateGraphUsingImportTask service method, as returned by NeptuneGraph.</returns>
@@ -346,6 +391,15 @@ namespace Amazon.NeptuneGraph
         /// CSV format</a> or the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// load format</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Graph session cannot be created using this API. Create an empty Graph Session using
+        /// <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html">CreateGraph</a>
+        /// or restore a snapshot as Graph Session using <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html">RestoreGraphFromSnapshot</a>
+        /// and use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+        /// CALL procedure</a> to load data into the Graph Session instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGraphUsingImportTask service method.</param>
         /// <param name="cancellationToken">
@@ -1507,6 +1561,13 @@ namespace Amazon.NeptuneGraph
 #if NETFRAMEWORK
         /// <summary>
         /// Starts the specific graph.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions are started automatically when a query is sent to the graph. While
+        /// this API is supported for graph sessions, it isn't required.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGraph service method.</param>
         /// <returns>The response from the StartGraph service method, as returned by NeptuneGraph.</returns>
@@ -1531,6 +1592,13 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Starts the specific graph.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions are started automatically when a query is sent to the graph. While
+        /// this API is supported for graph sessions, it isn't required.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGraph service method.</param>
         /// <param name="cancellationToken">
@@ -1559,6 +1627,13 @@ namespace Amazon.NeptuneGraph
         /// <summary>
         /// Import data into existing Neptune Analytics graph from Amazon Simple Storage Service
         /// (S3). The graph needs to be empty and in the AVAILABLE state.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions don't support this API. Use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+        /// CALL procedure</a> to load data into the Graph Session instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImportTask service method.</param>
         /// <returns>The response from the StartImportTask service method, as returned by NeptuneGraph.</returns>
@@ -1584,6 +1659,13 @@ namespace Amazon.NeptuneGraph
         /// <summary>
         /// Import data into existing Neptune Analytics graph from Amazon Simple Storage Service
         /// (S3). The graph needs to be empty and in the AVAILABLE state.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions don't support this API. Use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+        /// CALL procedure</a> to load data into the Graph Session instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImportTask service method.</param>
         /// <param name="cancellationToken">
@@ -1611,6 +1693,13 @@ namespace Amazon.NeptuneGraph
 #if NETFRAMEWORK
         /// <summary>
         /// Stops the specific graph.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions are stopped automatically after a few minutes with no traffic. While
+        /// this API is supported for graph sessions, it isn't required.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopGraph service method.</param>
         /// <returns>The response from the StopGraph service method, as returned by NeptuneGraph.</returns>
@@ -1635,6 +1724,13 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Stops the specific graph.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Graph sessions are stopped automatically after a few minutes with no traffic. While
+        /// this API is supported for graph sessions, it isn't required.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopGraph service method.</param>
         /// <param name="cancellationToken">

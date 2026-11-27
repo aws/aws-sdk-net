@@ -35,7 +35,11 @@ namespace Amazon.NeptuneGraph.Model
     /// Storage Service (S3) or from a Neptune database or a Neptune database snapshot. <para>
     /// The data can be loaded from files in S3 that in either the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
     /// CSV format</a> or the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-    /// load format</a>. </para>
+    /// load format</a>. </para> <note> <para> Graph session cannot be created using this
+    /// API. Create an empty Graph Session using <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_CreateGraph.html">CreateGraph</a>
+    /// or restore a snapshot as Graph Session using <a href="https://docs.aws.amazon.com/neptune-analytics/latest/apiref/API_RestoreGraphFromSnapshot.html">RestoreGraphFromSnapshot</a>
+    /// and use <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/batch-load.html">neptune.load
+    /// CALL procedure</a> to load data into the Graph Session instead. </para> </note>
     /// </summary>
     public partial class CreateGraphUsingImportTaskRequest : AmazonNeptuneGraphRequest
     {
@@ -163,7 +167,7 @@ namespace Amazon.NeptuneGraph.Model
         /// 128 m-NCUs are used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 16, Max = 24576)]
+        [AWSProperty(Min = 1, Max = 24576)]
         public int? MaxProvisionedMemory { get; set; }
 
         /// <summary>
@@ -178,7 +182,7 @@ namespace Amazon.NeptuneGraph.Model
         /// the graph. Default: 16
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 16, Max = 24576)]
+        [AWSProperty(Min = 1, Max = 24576)]
         public int? MinProvisionedMemory { get; set; }
 
         /// <summary>
